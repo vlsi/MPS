@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Evgeny Gryaznov, Oct 4, 2010
  */
-public class IncrementalGenerationTest extends IncrementalGenerationTestBase {
+public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIdeActions() throws IOException {

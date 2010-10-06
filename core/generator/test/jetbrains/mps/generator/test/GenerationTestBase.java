@@ -51,7 +51,7 @@ import java.util.*;
 /**
  * Evgeny Gryaznov, Oct 6, 2010
  */
-public class IncrementalGenerationTestBase {
+public class GenerationTestBase {
   private static boolean DEBUG = false;
 
   @BeforeClass
@@ -67,6 +67,55 @@ public class IncrementalGenerationTestBase {
     Testbench.initLibs();
     Testbench.makeAll();
     Testbench.reloadAll();
+  }
+
+  protected void doMeasureParallelGeneration(final MPSProject p, final SModelDescriptor descr, int threads) throws IOException {
+    GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
+
+    // Stage 1. Regenerate
+
+    GenerationOptions options = GenerationOptions.getDefaults()
+      .generateInParallel(false, 1)
+      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(false, null).create();
+    IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
+    gm.generateModels(
+      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+      generationHandler,
+      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+
+    assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
+
+    // Stage 2. Regenerate. Measure time.
+
+    options = GenerationOptions.getDefaults()
+      .generateInParallel(false, 1)
+      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(false, null).create();
+    generationHandler = new IncrementalTestGenerationHandler();
+    long start = System.nanoTime();
+    gm.generateModels(
+      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+      generationHandler,
+      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+    long singleThread = System.nanoTime() - start;
+
+    // Stage 3. Regenerate in parallel
+
+    options = GenerationOptions.getDefaults()
+      .generateInParallel(true, threads)
+      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(false, null).create();
+    generationHandler = new IncrementalTestGenerationHandler();
+    start = System.nanoTime();
+    gm.generateModels(
+      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+      generationHandler,
+      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+    long severalThreads = System.nanoTime() - start;
+
+    assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
+
+    if(DEBUG) {
+      System.out.println("Single thread: " + singleThread/1000000/1000. + ", 4 threads: " + severalThreads/1000000/1000.);
+    }
   }
 
   protected void doTestIncrementalGeneration(final MPSProject p, final SModelDescriptor descr, final Runnable ...changeModel) throws IOException {
