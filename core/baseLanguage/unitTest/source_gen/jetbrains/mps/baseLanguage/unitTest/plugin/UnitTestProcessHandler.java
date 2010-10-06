@@ -20,14 +20,16 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
     this.myDispatcher = dispartcher;
 
     this.addProcessListener(new ProcessAdapter() {
-      private StringBuffer buffer = new StringBuffer();
+      private final StringBuffer buffer = new StringBuffer();
 
-      private String getLine(String text, StringBuffer buffer) {
+      private String getLine(String text) {
+        text = text.replaceAll("\r\n", "\n");
         buffer.append(text);
-        if (buffer.toString().contains("\n")) {
-          int pos = buffer.toString().lastIndexOf("\n");
-          String lineToAppend = buffer.toString().substring(0, pos);
-          buffer.replace(0, pos, "");
+
+        int index = buffer.lastIndexOf("\n");
+        if (index > 0) {
+          String lineToAppend = buffer.substring(0, index);
+          buffer.replace(0, index, "");
           return lineToAppend;
         } else {
           return null;
@@ -51,7 +53,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         boolean system = ProcessOutputTypes.SYSTEM.equals(k);
         String text = (error || system ?
           event.getText() :
-          this.getLine(event.getText(), this.buffer)
+          this.getLine(event.getText())
         );
         if (text == null) {
           return;

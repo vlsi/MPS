@@ -3315,78 +3315,80 @@
     <nodeInfo nodeId="40577050485377677" fileName="UnitTestProcessHandler.java" startLine="18" startPosition="99" endLine="19" endPosition="53" />
     <nodeInfo nodeId="1200269551723285589" fileName="UnitTestProcessHandler.java" startLine="19" startPosition="53" endLine="20" endPosition="36" />
     <nodeInfo nodeId="1200269551723285588" fileName="UnitTestProcessHandler.java" startLine="20" startPosition="36" endLine="21" endPosition="0" />
-    <nodeInfo nodeId="308525442908715180" fileName="UnitTestProcessHandler.java" startLine="22" startPosition="50" endLine="23" endPosition="55" />
-    <nodeInfo nodeId="308525442908715207" fileName="UnitTestProcessHandler.java" startLine="25" startPosition="64" endLine="26" endPosition="28" />
-    <nodeInfo nodeId="308525442909614026" fileName="UnitTestProcessHandler.java" startLine="27" startPosition="47" endLine="28" endPosition="56" />
-    <nodeInfo nodeId="308525442908715252" fileName="UnitTestProcessHandler.java" startLine="28" startPosition="56" endLine="29" endPosition="68" />
-    <nodeInfo nodeId="308525442909614051" fileName="UnitTestProcessHandler.java" startLine="29" startPosition="68" endLine="30" endPosition="37" />
-    <nodeInfo nodeId="308525442908715288" fileName="UnitTestProcessHandler.java" startLine="30" startPosition="37" endLine="31" endPosition="30" />
-    <nodeInfo nodeId="308525442908715238" fileName="UnitTestProcessHandler.java" startLine="32" startPosition="16" endLine="33" endPosition="22" />
-    <nodeInfo nodeId="7167801372691505493" fileName="UnitTestProcessHandler.java" startLine="39" startPosition="89" endLine="40" endPosition="24" />
-    <nodeInfo nodeId="7167801372691505497" fileName="UnitTestProcessHandler.java" startLine="42" startPosition="9" endLine="43" endPosition="21" />
-    <nodeInfo nodeId="7167801372691505754" fileName="UnitTestProcessHandler.java" startLine="47" startPosition="39" endLine="48" endPosition="88" />
-    <nodeInfo nodeId="4060094294590056951" fileName="UnitTestProcessHandler.java" startLine="49" startPosition="9" endLine="50" endPosition="60" />
-    <nodeInfo nodeId="1813715713114782860" fileName="UnitTestProcessHandler.java" startLine="50" startPosition="60" endLine="51" endPosition="61" />
-    <nodeInfo nodeId="308525442909614082" fileName="UnitTestProcessHandler.java" startLine="56" startPosition="27" endLine="57" endPosition="17" />
-    <nodeInfo nodeId="4060094294590056940" fileName="UnitTestProcessHandler.java" startLine="58" startPosition="9" endLine="59" endPosition="52" />
-    <nodeInfo nodeId="4060094294590056971" fileName="UnitTestProcessHandler.java" startLine="59" startPosition="52" endLine="60" endPosition="59" />
-    <nodeInfo nodeId="455600000066043916" fileName="UnitTestProcessHandler.java" startLine="61" startPosition="32" endLine="62" endPosition="74" />
-    <nodeInfo nodeId="1200269551723286767" fileName="UnitTestProcessHandler.java" startLine="63" startPosition="16" endLine="64" endPosition="82" />
-    <nodeInfo nodeId="1813715713114959850" fileName="UnitTestProcessHandler.java" startLine="67" startPosition="7" endLine="68" endPosition="43" />
-    <nodeInfo nodeId="308525442908715236" fileName="UnitTestProcessHandler.java" startLine="32" startPosition="14" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="1200269551723286763" fileName="UnitTestProcessHandler.java" startLine="63" startPosition="14" endLine="65" endPosition="9" />
-    <nodeInfo nodeId="7167801372691499213" fileName="UnitTestProcessHandler.java" startLine="38" startPosition="82" endLine="41" endPosition="11" />
-    <nodeInfo nodeId="7167801372691505747" fileName="UnitTestProcessHandler.java" startLine="46" startPosition="62" endLine="49" endPosition="9" />
-    <nodeInfo nodeId="308525442909614073" fileName="UnitTestProcessHandler.java" startLine="55" startPosition="10" endLine="58" endPosition="9" />
-    <nodeInfo nodeId="4060094294590056934" fileName="UnitTestProcessHandler.java" startLine="51" startPosition="61" endLine="55" endPosition="10" />
-    <nodeInfo nodeId="7167801372691499182" fileName="UnitTestProcessHandler.java" startLine="37" startPosition="43" endLine="42" endPosition="9" />
-    <nodeInfo nodeId="455600000066043897" fileName="UnitTestProcessHandler.java" startLine="60" startPosition="59" endLine="65" endPosition="9" />
-    <nodeInfo nodeId="308525442908715216" fileName="UnitTestProcessHandler.java" startLine="26" startPosition="28" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="7167801372691466719" fileName="UnitTestProcessHandler.java" startLine="36" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="308525442908715188" fileName="UnitTestProcessHandler.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="40577050485366638" fileName="UnitTestProcessHandler.java" startLine="45" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="40577050485366609" fileName="UnitTestProcessHandler.java" startLine="21" startPosition="0" endLine="67" endPosition="7" />
-    <nodeInfo nodeId="40577050485366479" fileName="UnitTestProcessHandler.java" startLine="17" startPosition="0" endLine="69" endPosition="3" />
-    <scopeInfo nodeId="308525442908715237" fileName="UnitTestProcessHandler.java" startLine="32" startPosition="16" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="7167801372691499215" fileName="UnitTestProcessHandler.java" startLine="39" startPosition="89" endLine="40" endPosition="24" />
-    <scopeInfo nodeId="7167801372691505748" fileName="UnitTestProcessHandler.java" startLine="47" startPosition="39" endLine="48" endPosition="88" />
-    <scopeInfo nodeId="308525442909614074" fileName="UnitTestProcessHandler.java" startLine="56" startPosition="27" endLine="57" endPosition="17" />
-    <scopeInfo nodeId="455600000066043898" fileName="UnitTestProcessHandler.java" startLine="61" startPosition="32" endLine="62" endPosition="74" />
-    <scopeInfo nodeId="1200269551723286764" fileName="UnitTestProcessHandler.java" startLine="63" startPosition="16" endLine="64" endPosition="82" />
-    <scopeInfo nodeId="7167801372691499183" fileName="UnitTestProcessHandler.java" startLine="38" startPosition="82" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="308525442908715217" fileName="UnitTestProcessHandler.java" startLine="27" startPosition="47" endLine="31" endPosition="30">
+    <nodeInfo nodeId="308525442908715180" fileName="UnitTestProcessHandler.java" startLine="22" startPosition="50" endLine="23" endPosition="61" />
+    <nodeInfo nodeId="5754707105312518111" fileName="UnitTestProcessHandler.java" startLine="25" startPosition="43" endLine="26" endPosition="45" />
+    <nodeInfo nodeId="308525442908715207" fileName="UnitTestProcessHandler.java" startLine="26" startPosition="45" endLine="27" endPosition="28" />
+    <nodeInfo nodeId="5754707105312518171" fileName="UnitTestProcessHandler.java" startLine="27" startPosition="28" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="5754707105312518140" fileName="UnitTestProcessHandler.java" startLine="28" startPosition="0" endLine="29" endPosition="45" />
+    <nodeInfo nodeId="308525442908715252" fileName="UnitTestProcessHandler.java" startLine="30" startPosition="24" endLine="31" endPosition="59" />
+    <nodeInfo nodeId="308525442909614051" fileName="UnitTestProcessHandler.java" startLine="31" startPosition="59" endLine="32" endPosition="39" />
+    <nodeInfo nodeId="308525442908715288" fileName="UnitTestProcessHandler.java" startLine="32" startPosition="39" endLine="33" endPosition="30" />
+    <nodeInfo nodeId="308525442908715238" fileName="UnitTestProcessHandler.java" startLine="34" startPosition="16" endLine="35" endPosition="22" />
+    <nodeInfo nodeId="7167801372691505493" fileName="UnitTestProcessHandler.java" startLine="41" startPosition="89" endLine="42" endPosition="24" />
+    <nodeInfo nodeId="7167801372691505497" fileName="UnitTestProcessHandler.java" startLine="44" startPosition="9" endLine="45" endPosition="21" />
+    <nodeInfo nodeId="7167801372691505754" fileName="UnitTestProcessHandler.java" startLine="49" startPosition="39" endLine="50" endPosition="88" />
+    <nodeInfo nodeId="4060094294590056951" fileName="UnitTestProcessHandler.java" startLine="51" startPosition="9" endLine="52" endPosition="60" />
+    <nodeInfo nodeId="1813715713114782860" fileName="UnitTestProcessHandler.java" startLine="52" startPosition="60" endLine="53" endPosition="61" />
+    <nodeInfo nodeId="308525442909614082" fileName="UnitTestProcessHandler.java" startLine="58" startPosition="27" endLine="59" endPosition="17" />
+    <nodeInfo nodeId="4060094294590056940" fileName="UnitTestProcessHandler.java" startLine="60" startPosition="9" endLine="61" endPosition="52" />
+    <nodeInfo nodeId="4060094294590056971" fileName="UnitTestProcessHandler.java" startLine="61" startPosition="52" endLine="62" endPosition="59" />
+    <nodeInfo nodeId="455600000066043916" fileName="UnitTestProcessHandler.java" startLine="63" startPosition="32" endLine="64" endPosition="74" />
+    <nodeInfo nodeId="1200269551723286767" fileName="UnitTestProcessHandler.java" startLine="65" startPosition="16" endLine="66" endPosition="82" />
+    <nodeInfo nodeId="1813715713114959850" fileName="UnitTestProcessHandler.java" startLine="69" startPosition="7" endLine="70" endPosition="43" />
+    <nodeInfo nodeId="308525442908715236" fileName="UnitTestProcessHandler.java" startLine="34" startPosition="14" endLine="36" endPosition="9" />
+    <nodeInfo nodeId="1200269551723286763" fileName="UnitTestProcessHandler.java" startLine="65" startPosition="14" endLine="67" endPosition="9" />
+    <nodeInfo nodeId="7167801372691499213" fileName="UnitTestProcessHandler.java" startLine="40" startPosition="82" endLine="43" endPosition="11" />
+    <nodeInfo nodeId="7167801372691505747" fileName="UnitTestProcessHandler.java" startLine="48" startPosition="62" endLine="51" endPosition="9" />
+    <nodeInfo nodeId="308525442909614073" fileName="UnitTestProcessHandler.java" startLine="57" startPosition="10" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="4060094294590056934" fileName="UnitTestProcessHandler.java" startLine="53" startPosition="61" endLine="57" endPosition="10" />
+    <nodeInfo nodeId="7167801372691499182" fileName="UnitTestProcessHandler.java" startLine="39" startPosition="43" endLine="44" endPosition="9" />
+    <nodeInfo nodeId="455600000066043897" fileName="UnitTestProcessHandler.java" startLine="62" startPosition="59" endLine="67" endPosition="9" />
+    <nodeInfo nodeId="308525442908715216" fileName="UnitTestProcessHandler.java" startLine="29" startPosition="45" endLine="36" endPosition="9" />
+    <nodeInfo nodeId="7167801372691466719" fileName="UnitTestProcessHandler.java" startLine="38" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="308525442908715188" fileName="UnitTestProcessHandler.java" startLine="24" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="40577050485366638" fileName="UnitTestProcessHandler.java" startLine="47" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="40577050485366609" fileName="UnitTestProcessHandler.java" startLine="21" startPosition="0" endLine="69" endPosition="7" />
+    <nodeInfo nodeId="40577050485366479" fileName="UnitTestProcessHandler.java" startLine="17" startPosition="0" endLine="71" endPosition="3" />
+    <scopeInfo nodeId="308525442908715237" fileName="UnitTestProcessHandler.java" startLine="34" startPosition="16" endLine="35" endPosition="22" />
+    <scopeInfo nodeId="7167801372691499215" fileName="UnitTestProcessHandler.java" startLine="41" startPosition="89" endLine="42" endPosition="24" />
+    <scopeInfo nodeId="7167801372691505748" fileName="UnitTestProcessHandler.java" startLine="49" startPosition="39" endLine="50" endPosition="88" />
+    <scopeInfo nodeId="308525442909614074" fileName="UnitTestProcessHandler.java" startLine="58" startPosition="27" endLine="59" endPosition="17" />
+    <scopeInfo nodeId="455600000066043898" fileName="UnitTestProcessHandler.java" startLine="63" startPosition="32" endLine="64" endPosition="74" />
+    <scopeInfo nodeId="1200269551723286764" fileName="UnitTestProcessHandler.java" startLine="65" startPosition="16" endLine="66" endPosition="82" />
+    <scopeInfo nodeId="308525442908715217" fileName="UnitTestProcessHandler.java" startLine="30" startPosition="24" endLine="33" endPosition="30">
       <varInfo nodeId="308525442908715253" varName="lineToAppend" />
-      <varInfo nodeId="308525442909614027" varName="pos" />
     </scopeInfo>
-    <scopeInfo nodeId="7167801372691499182" fileName="UnitTestProcessHandler.java" startLine="37" startPosition="43" endLine="42" endPosition="9">
+    <scopeInfo nodeId="7167801372691499183" fileName="UnitTestProcessHandler.java" startLine="40" startPosition="82" endLine="43" endPosition="11" />
+    <scopeInfo nodeId="7167801372691499182" fileName="UnitTestProcessHandler.java" startLine="39" startPosition="43" endLine="44" endPosition="9">
       <varInfo nodeId="7167801372691499186" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="7167801372691466722" fileName="UnitTestProcessHandler.java" startLine="37" startPosition="43" endLine="43" endPosition="21" />
-    <scopeInfo nodeId="308525442908715191" fileName="UnitTestProcessHandler.java" startLine="25" startPosition="64" endLine="34" endPosition="9" />
-    <scopeInfo nodeId="7167801372691466719" fileName="UnitTestProcessHandler.java" startLine="36" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="308525442908715188" fileName="UnitTestProcessHandler.java" startLine="24" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="308525442908715204" varName="buffer" />
+    <scopeInfo nodeId="7167801372691466722" fileName="UnitTestProcessHandler.java" startLine="39" startPosition="43" endLine="45" endPosition="21" />
+    <scopeInfo nodeId="7167801372691466719" fileName="UnitTestProcessHandler.java" startLine="38" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="308525442908715191" fileName="UnitTestProcessHandler.java" startLine="25" startPosition="43" endLine="36" endPosition="9">
+      <varInfo nodeId="5754707105312518141" varName="index" />
+    </scopeInfo>
+    <scopeInfo nodeId="308525442908715188" fileName="UnitTestProcessHandler.java" startLine="24" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="308525442908715193" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="40577050485366645" fileName="UnitTestProcessHandler.java" startLine="46" startPosition="62" endLine="65" endPosition="9">
+    <scopeInfo nodeId="40577050485366645" fileName="UnitTestProcessHandler.java" startLine="48" startPosition="62" endLine="67" endPosition="9">
       <varInfo nodeId="4060094294590056935" varName="text" />
       <varInfo nodeId="1813715713114782861" varName="system" />
       <varInfo nodeId="4060094294590056952" varName="error" />
       <varInfo nodeId="4060094294590056941" varName="textTrimmed" />
       <varInfo nodeId="4060094294590056972" varName="testEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="40577050485366638" fileName="UnitTestProcessHandler.java" startLine="45" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="40577050485366638" fileName="UnitTestProcessHandler.java" startLine="47" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="40577050485366641" varName="event" />
       <varInfo nodeId="40577050485366643" varName="k" />
     </scopeInfo>
-    <scopeInfo nodeId="40577050485366482" fileName="UnitTestProcessHandler.java" startLine="18" startPosition="99" endLine="68" endPosition="43" />
-    <scopeInfo nodeId="40577050485366479" fileName="UnitTestProcessHandler.java" startLine="17" startPosition="0" endLine="69" endPosition="3">
+    <scopeInfo nodeId="40577050485366482" fileName="UnitTestProcessHandler.java" startLine="18" startPosition="99" endLine="70" endPosition="43" />
+    <scopeInfo nodeId="40577050485366479" fileName="UnitTestProcessHandler.java" startLine="17" startPosition="0" endLine="71" endPosition="3">
       <varInfo nodeId="40577050485366485" varName="process" />
       <varInfo nodeId="8276781848148281930" varName="params" />
       <varInfo nodeId="1200269551723285581" varName="dispartcher" />
     </scopeInfo>
-    <unitInfo nodeId="40577050485366615" fileName="UnitTestProcessHandler.java" startLine="22" startPosition="32" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessHandler$1" />
-    <unitInfo nodeId="40577050485366448" fileName="UnitTestProcessHandler.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessHandler" />
+    <unitInfo nodeId="40577050485366615" fileName="UnitTestProcessHandler.java" startLine="22" startPosition="32" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessHandler$1" />
+    <unitInfo nodeId="40577050485366448" fileName="UnitTestProcessHandler.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestProcessHandler" />
   </root>
   <root nodeId="4403789015609956665">
     <nodeInfo nodeId="4403789015609956770" fileName="TestTreeSelectionListener.java" startLine="10" startPosition="73" endLine="11" endPosition="48" />
