@@ -35,7 +35,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
 
   public void resume() {
     SuspendContext context = getUiState().getContext();
-    assert context != null : "Context is null while debug session state is " + myExecutionState;
+    if (context == null) return; // context is null => already resumed
     myEventsProcessor.resume(context);
   }
 
