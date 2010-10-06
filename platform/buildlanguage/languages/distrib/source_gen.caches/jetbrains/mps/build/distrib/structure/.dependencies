@@ -182,7 +182,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.distrib.structure.WindowsConfig" file="WindowsConfig.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.distrib.structure.AbstractPath" />
     <classNode dependClassName="jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration" />
     <classNode dependClassName="jetbrains.mps.build.distrib.structure.SystemSpecificConfig" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.IPath" />

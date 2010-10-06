@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
@@ -636,38 +637,6 @@
                   </node>
                 </node>
                 <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239880057476" />
-              </node>
-              <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1241014749269">
-                <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1241014826947">
-                  <property name="text:32" value="settings directory" />
-                  <link role="styleClass:32" targetNodeId="1230217833302" resolveInfo="keyword" />
-                </node>
-                <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1241014749270">
-                  <property name="flag:32" value="false" />
-                </node>
-                <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1241014755774">
-                  <link role="relationDeclaration:32" targetNodeId="1.1241014670163:0" />
-                </node>
-                <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1241014749272" />
-                <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1241014749273">
-                  <property name="flag:32" value="false" />
-                </node>
-              </node>
-              <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1241014850870">
-                <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1241014850871">
-                  <property name="text:32" value="examples directory" />
-                  <link role="styleClass:32" targetNodeId="1230217833302" resolveInfo="keyword" />
-                </node>
-                <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1241014850872">
-                  <property name="flag:32" value="false" />
-                </node>
-                <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1241014850873">
-                  <link role="relationDeclaration:32" targetNodeId="1.1241014690867:0" />
-                </node>
-                <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1241014850874" />
-                <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1241014850875">
-                  <property name="flag:32" value="false" />
-                </node>
               </node>
               <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1234790806972">
                 <property name="vertical:32" value="false" />

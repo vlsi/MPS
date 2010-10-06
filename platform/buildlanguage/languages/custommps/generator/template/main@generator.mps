@@ -966,24 +966,6 @@
           </node>
         </node>
       </node>
-      <node role="settingsDir:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1241015675910">
-        <property name="path:0" value=".MPS1x" />
-      </node>
-      <node role="examplesDir:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1241015683677">
-        <property name="path:0" value="MPSSamples" />
-        <node role="propertyMacro$property_attribute$path:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241015690725">
-          <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241015690726">
-            <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241015690727">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241015702100">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1241015702101">
-                  <link role="classifier:3" targetNodeId="25.~SamplesInfo" resolveInfo="SamplesInfo" />
-                  <link role="variableDeclaration:3" targetNodeId="25.~SamplesInfo.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node role="startupDirectory:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780752550">
       <property name="path:0" value="bin" />

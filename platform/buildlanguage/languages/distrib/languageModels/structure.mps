@@ -260,16 +260,6 @@
       <property name="role:0" value="embeddedJrePath" />
       <link role="target:0" targetNodeId="3v.1233321544558:7" resolveInfo="IPath" />
     </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1241014670163">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="settingsDir" />
-      <link role="target:0" targetNodeId="1230059161512:0" resolveInfo="AbstractPath" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1241014690867">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="examplesDir" />
-      <link role="target:0" targetNodeId="1230059161512:0" resolveInfo="AbstractPath" />
-    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1231856017880">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="signatureConfiguration" />

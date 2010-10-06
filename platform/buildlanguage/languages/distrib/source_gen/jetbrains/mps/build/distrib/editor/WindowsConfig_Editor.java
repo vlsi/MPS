@@ -111,8 +111,6 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_v3o62r_f1b4a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_v3o62r_g1b4a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_v3o62r_h1b4a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_v3o62r_i1b4a0(editorContext, node));
     return editorCell;
   }
 
@@ -207,32 +205,6 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_v3o62r_h1b4a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_v3o62r_h1b4a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_v3o62r_a7b1e0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_v3o62r_b7b1e0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_v3o62r_i1b4a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_v3o62r_i1b4a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_v3o62r_a8b1e0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_v3o62r_b8b1e0a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_v3o62r_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_v3o62r_c0a");
@@ -297,24 +269,8 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_v3o62r_a6b1e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "settings directory");
-    editorCell.setCellId("Constant_v3o62r_a6b1e0a");
-    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_v3o62r_a7b1e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "examples directory");
-    editorCell.setCellId("Constant_v3o62r_a7b1e0a");
-    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_v3o62r_a8b1e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "license");
-    editorCell.setCellId("Constant_v3o62r_a8b1e0a");
+    editorCell.setCellId("Constant_v3o62r_a6b1e0a");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -447,40 +403,6 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_v3o62r_b6b1e0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("settingsDir");
-    provider.setNoTargetText("<no settingsDir>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_v3o62r_b7b1e0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("examplesDir");
-    provider.setNoTargetText("<no examplesDir>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_v3o62r_b8b1e0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("license");
     provider.setNoTargetText("<no license>");

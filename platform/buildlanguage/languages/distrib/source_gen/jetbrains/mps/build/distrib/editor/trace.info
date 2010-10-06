@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="DistribConfiguration_Styles_StyleSheet.java" startLine="27" startPosition="46" endLine="37" endPosition="5" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Styles_StyleSheet$1" />
   <unitInfo fileName="ArtifactReferenceCommandLinePart_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ArtifactReferenceCommandLinePart_Editor" />
-  <unitInfo fileName="WindowsConfig_Editor.java" startLine="544" startPosition="0" endLine="557" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor$WindowsConfig_generic_cellMenu_a0a2e0a" />
+  <unitInfo fileName="WindowsConfig_Editor.java" startLine="466" startPosition="0" endLine="479" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor$WindowsConfig_generic_cellMenu_a0a2e0a" />
   <unitInfo fileName="StringCommandLinePart_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.StringCommandLinePart_Editor" />
   <unitInfo fileName="Role_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.Role_Editor" />
   <unitInfo fileName="SystemSpecificConfig_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.SystemSpecificConfig_Editor" />
@@ -22,20 +22,20 @@
   <unitInfo fileName="MacOsFileAssociation_Editor.java" startLine="17" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacOsFileAssociation_Editor" />
   <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="27" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor" />
   <unitInfo fileName="MacConfig_Editor.java" startLine="28" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor" />
-  <unitInfo fileName="WindowsConfig_Editor.java" startLine="29" startPosition="0" endLine="558" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor" />
+  <unitInfo fileName="WindowsConfig_Editor.java" startLine="29" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor" />
   <unitInfo fileName="DistribConfiguration_Editor.java" startLine="34" startPosition="0" endLine="936" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor" />
   <root nodeId="1230056321889">
     <nodeInfo nodeId="1231768853802" fileName="DistribConfiguration_Editor.java" startLine="827" startPosition="115" endLine="828" endPosition="68" />
     <scopeInfo nodeId="1231768824493" fileName="DistribConfiguration_Editor.java" startLine="827" startPosition="115" endLine="828" endPosition="68" />
   </root>
   <root nodeId="1230208353028">
-    <nodeInfo nodeId="1234796160621" fileName="WindowsConfig_Editor.java" startLine="536" startPosition="115" endLine="537" endPosition="144" />
-    <nodeInfo nodeId="1231856139132" fileName="WindowsConfig_Editor.java" startLine="540" startPosition="113" endLine="541" endPosition="85" />
-    <nodeInfo nodeId="1231856399899" fileName="WindowsConfig_Editor.java" startLine="548" startPosition="106" endLine="549" endPosition="142" />
-    <nodeInfo nodeId="1231856421251" fileName="WindowsConfig_Editor.java" startLine="549" startPosition="142" endLine="550" endPosition="82" />
-    <scopeInfo nodeId="1234796159096" fileName="WindowsConfig_Editor.java" startLine="536" startPosition="115" endLine="537" endPosition="144" />
-    <scopeInfo nodeId="1231856085300" fileName="WindowsConfig_Editor.java" startLine="540" startPosition="113" endLine="541" endPosition="85" />
-    <scopeInfo nodeId="1231856319835" fileName="WindowsConfig_Editor.java" startLine="548" startPosition="106" endLine="550" endPosition="82">
+    <nodeInfo nodeId="1234796160621" fileName="WindowsConfig_Editor.java" startLine="458" startPosition="115" endLine="459" endPosition="144" />
+    <nodeInfo nodeId="1231856139132" fileName="WindowsConfig_Editor.java" startLine="462" startPosition="113" endLine="463" endPosition="85" />
+    <nodeInfo nodeId="1231856399899" fileName="WindowsConfig_Editor.java" startLine="470" startPosition="106" endLine="471" endPosition="142" />
+    <nodeInfo nodeId="1231856421251" fileName="WindowsConfig_Editor.java" startLine="471" startPosition="142" endLine="472" endPosition="82" />
+    <scopeInfo nodeId="1234796159096" fileName="WindowsConfig_Editor.java" startLine="458" startPosition="115" endLine="459" endPosition="144" />
+    <scopeInfo nodeId="1231856085300" fileName="WindowsConfig_Editor.java" startLine="462" startPosition="113" endLine="463" endPosition="85" />
+    <scopeInfo nodeId="1231856319835" fileName="WindowsConfig_Editor.java" startLine="470" startPosition="106" endLine="472" endPosition="82">
       <varInfo nodeId="1231856399900" varName="signConfig" />
     </scopeInfo>
   </root>

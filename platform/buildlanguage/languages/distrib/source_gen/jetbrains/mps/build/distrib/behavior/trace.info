@@ -11,8 +11,8 @@
   <unitInfo fileName="ExternalVariableReference_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ExternalVariableReference_Behavior" />
   <unitInfo fileName="UniversalConfig_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior" />
   <unitInfo fileName="MacConfig_Behavior.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.MacConfig_Behavior" />
+  <unitInfo fileName="WindowsConfig_Behavior.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.WindowsConfig_Behavior" />
   <unitInfo fileName="SystemSpecificConfig_Behavior.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior" />
-  <unitInfo fileName="WindowsConfig_Behavior.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.WindowsConfig_Behavior" />
   <unitInfo fileName="DistribConfiguration_Behavior.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior" />
   <root nodeId="1230059208734">
     <scopeInfo nodeId="1230059208740" fileName="AbstractPath_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
@@ -52,47 +52,36 @@
     <unitInfo nodeId="1234793567460" fileName="SystemSpecificConfig_Behavior.java" startLine="45" startPosition="56" endLine="49" endPosition="5" unitName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior$1" />
   </root>
   <root nodeId="1230208019848">
-    <nodeInfo nodeId="1230208038940" fileName="WindowsConfig_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="210" />
-    <nodeInfo nodeId="1230208076473" fileName="WindowsConfig_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="17" />
-    <nodeInfo nodeId="1234793006858" fileName="WindowsConfig_Behavior.java" startLine="26" startPosition="82" endLine="27" endPosition="23" />
-    <nodeInfo nodeId="1234793035443" fileName="WindowsConfig_Behavior.java" startLine="30" startPosition="90" endLine="31" endPosition="17" />
-    <nodeInfo nodeId="1234793461974" fileName="WindowsConfig_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="29" />
-    <nodeInfo nodeId="1234793472163" fileName="WindowsConfig_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="26" />
-    <nodeInfo nodeId="1240557277376" fileName="WindowsConfig_Behavior.java" startLine="42" startPosition="76" endLine="43" endPosition="27" />
-    <nodeInfo nodeId="1240557275698" fileName="WindowsConfig_Behavior.java" startLine="46" startPosition="78" endLine="47" endPosition="29" />
-    <nodeInfo nodeId="1237900632171" fileName="WindowsConfig_Behavior.java" startLine="50" startPosition="74" endLine="51" endPosition="25" />
-    <nodeInfo nodeId="1241017536807" fileName="WindowsConfig_Behavior.java" startLine="54" startPosition="80" endLine="55" endPosition="48" />
-    <nodeInfo nodeId="1241017621106" fileName="WindowsConfig_Behavior.java" startLine="56" startPosition="77" endLine="57" endPosition="105" />
-    <nodeInfo nodeId="1241017630783" fileName="WindowsConfig_Behavior.java" startLine="59" startPosition="77" endLine="60" endPosition="105" />
-    <nodeInfo nodeId="1241017596353" fileName="WindowsConfig_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="18" />
-    <nodeInfo nodeId="8356548439144137534" fileName="WindowsConfig_Behavior.java" startLine="65" startPosition="83" endLine="66" endPosition="104" />
-    <nodeInfo nodeId="8356548439144137540" fileName="WindowsConfig_Behavior.java" startLine="66" startPosition="104" endLine="67" endPosition="138" />
-    <nodeInfo nodeId="8356548439144137550" fileName="WindowsConfig_Behavior.java" startLine="68" startPosition="72" endLine="69" endPosition="98" />
-    <nodeInfo nodeId="8356548439144137562" fileName="WindowsConfig_Behavior.java" startLine="70" startPosition="5" endLine="71" endPosition="177" />
-    <nodeInfo nodeId="8356548439144137603" fileName="WindowsConfig_Behavior.java" startLine="74" startPosition="92" endLine="75" endPosition="326" />
-    <nodeInfo nodeId="1241017606513" fileName="WindowsConfig_Behavior.java" startLine="55" startPosition="48" endLine="58" endPosition="5" />
-    <nodeInfo nodeId="1241017630781" fileName="WindowsConfig_Behavior.java" startLine="58" startPosition="5" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="8356548439144137548" fileName="WindowsConfig_Behavior.java" startLine="67" startPosition="138" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="1230208019850" fileName="WindowsConfig_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1230208021946" fileName="WindowsConfig_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="210" />
-    <scopeInfo nodeId="1230208056586" fileName="WindowsConfig_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="17" />
-    <scopeInfo nodeId="1234792987226" fileName="WindowsConfig_Behavior.java" startLine="26" startPosition="82" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="1234793014845" fileName="WindowsConfig_Behavior.java" startLine="30" startPosition="90" endLine="31" endPosition="17" />
-    <scopeInfo nodeId="1234793320555" fileName="WindowsConfig_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="29" />
-    <scopeInfo nodeId="1234793472162" fileName="WindowsConfig_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="26" />
-    <scopeInfo nodeId="1240557277375" fileName="WindowsConfig_Behavior.java" startLine="42" startPosition="76" endLine="43" endPosition="27" />
-    <scopeInfo nodeId="1240557275697" fileName="WindowsConfig_Behavior.java" startLine="46" startPosition="78" endLine="47" endPosition="29" />
-    <scopeInfo nodeId="1237900615476" fileName="WindowsConfig_Behavior.java" startLine="50" startPosition="74" endLine="51" endPosition="25" />
-    <scopeInfo nodeId="1241017606514" fileName="WindowsConfig_Behavior.java" startLine="56" startPosition="77" endLine="57" endPosition="105" />
-    <scopeInfo nodeId="1241017630782" fileName="WindowsConfig_Behavior.java" startLine="59" startPosition="77" endLine="60" endPosition="105" />
-    <scopeInfo nodeId="8356548439144137549" fileName="WindowsConfig_Behavior.java" startLine="68" startPosition="72" endLine="69" endPosition="98" />
-    <scopeInfo nodeId="8356548439144137602" fileName="WindowsConfig_Behavior.java" startLine="74" startPosition="92" endLine="75" endPosition="326" />
-    <scopeInfo nodeId="8356548439144137533" fileName="WindowsConfig_Behavior.java" startLine="65" startPosition="83" endLine="71" endPosition="177">
+    <nodeInfo nodeId="1230208038940" fileName="WindowsConfig_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="210" />
+    <nodeInfo nodeId="1230208076473" fileName="WindowsConfig_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="17" />
+    <nodeInfo nodeId="1234793006858" fileName="WindowsConfig_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="23" />
+    <nodeInfo nodeId="1234793035443" fileName="WindowsConfig_Behavior.java" startLine="27" startPosition="90" endLine="28" endPosition="17" />
+    <nodeInfo nodeId="1234793461974" fileName="WindowsConfig_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="29" />
+    <nodeInfo nodeId="1234793472163" fileName="WindowsConfig_Behavior.java" startLine="35" startPosition="75" endLine="36" endPosition="26" />
+    <nodeInfo nodeId="1240557277376" fileName="WindowsConfig_Behavior.java" startLine="39" startPosition="76" endLine="40" endPosition="27" />
+    <nodeInfo nodeId="1240557275698" fileName="WindowsConfig_Behavior.java" startLine="43" startPosition="78" endLine="44" endPosition="29" />
+    <nodeInfo nodeId="1237900632171" fileName="WindowsConfig_Behavior.java" startLine="47" startPosition="74" endLine="48" endPosition="25" />
+    <nodeInfo nodeId="8356548439144137534" fileName="WindowsConfig_Behavior.java" startLine="51" startPosition="83" endLine="52" endPosition="104" />
+    <nodeInfo nodeId="8356548439144137540" fileName="WindowsConfig_Behavior.java" startLine="52" startPosition="104" endLine="53" endPosition="138" />
+    <nodeInfo nodeId="8356548439144137550" fileName="WindowsConfig_Behavior.java" startLine="54" startPosition="72" endLine="55" endPosition="98" />
+    <nodeInfo nodeId="8356548439144137562" fileName="WindowsConfig_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="177" />
+    <nodeInfo nodeId="8356548439144137603" fileName="WindowsConfig_Behavior.java" startLine="60" startPosition="92" endLine="61" endPosition="326" />
+    <nodeInfo nodeId="8356548439144137548" fileName="WindowsConfig_Behavior.java" startLine="53" startPosition="138" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="1230208019850" fileName="WindowsConfig_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1230208021946" fileName="WindowsConfig_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="210" />
+    <scopeInfo nodeId="1230208056586" fileName="WindowsConfig_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="17" />
+    <scopeInfo nodeId="1234792987226" fileName="WindowsConfig_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="23" />
+    <scopeInfo nodeId="1234793014845" fileName="WindowsConfig_Behavior.java" startLine="27" startPosition="90" endLine="28" endPosition="17" />
+    <scopeInfo nodeId="1234793320555" fileName="WindowsConfig_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="29" />
+    <scopeInfo nodeId="1234793472162" fileName="WindowsConfig_Behavior.java" startLine="35" startPosition="75" endLine="36" endPosition="26" />
+    <scopeInfo nodeId="1240557277375" fileName="WindowsConfig_Behavior.java" startLine="39" startPosition="76" endLine="40" endPosition="27" />
+    <scopeInfo nodeId="1240557275697" fileName="WindowsConfig_Behavior.java" startLine="43" startPosition="78" endLine="44" endPosition="29" />
+    <scopeInfo nodeId="1237900615476" fileName="WindowsConfig_Behavior.java" startLine="47" startPosition="74" endLine="48" endPosition="25" />
+    <scopeInfo nodeId="8356548439144137549" fileName="WindowsConfig_Behavior.java" startLine="54" startPosition="72" endLine="55" endPosition="98" />
+    <scopeInfo nodeId="8356548439144137602" fileName="WindowsConfig_Behavior.java" startLine="60" startPosition="92" endLine="61" endPosition="326" />
+    <scopeInfo nodeId="8356548439144137533" fileName="WindowsConfig_Behavior.java" startLine="51" startPosition="83" endLine="57" endPosition="177">
       <varInfo nodeId="8356548439144137541" varName="vmoptionsDir" />
       <varInfo nodeId="8356548439144137535" varName="distConf" />
-    </scopeInfo>
-    <scopeInfo nodeId="1241017510519" fileName="WindowsConfig_Behavior.java" startLine="54" startPosition="80" endLine="62" endPosition="18">
-      <varInfo nodeId="1241017536808" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="1230292751070">
