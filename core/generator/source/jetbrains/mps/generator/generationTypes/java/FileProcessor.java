@@ -82,15 +82,21 @@ class FileProcessor {
         ApplicationManager.getApplication().invokeAndWait(new Runnable() {
           @Override
           public void run() {
-            for (FileAndContent filesAndContent : myFilesAndContents) {
-              filesAndContent.save();
-            }
+            ModelAccess.instance().runReadInWriteWorker(new Runnable() {
 
-            for (IFile file : myFilesToDelete) {
-              file.delete();
-            }
+              @Override
+              public void run() {
+                for (FileAndContent filesAndContent : myFilesAndContents) {
+                  filesAndContent.save();
+                }
 
-            ModelGenerationStatusManager.getInstance().invalidateData(myModels);
+                for (IFile file : myFilesToDelete) {
+                  file.delete();
+                }
+
+                ModelGenerationStatusManager.getInstance().invalidateData(myModels);
+              }
+            });
           }
         }, ModalityState.defaultModalityState());
         return null;

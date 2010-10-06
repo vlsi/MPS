@@ -36,15 +36,6 @@ public class DefaultModelAccess extends ModelAccess {
       r.run();
       return;
     }
-    if (mySharedReadInWriteMode) {
-      try {
-        mySharedReadInWriteLock.readLock().lock();
-        r.run();
-      } finally {
-        mySharedReadInWriteLock.readLock().unlock();
-      }
-      return;
-    }
     getReadLock().lock();
     try {
       r.run();
@@ -78,14 +69,6 @@ public class DefaultModelAccess extends ModelAccess {
   public <T> T runReadAction(final Computable<T> c) {
     if (canRead()) {
       return c.compute();
-    }
-    if (mySharedReadInWriteMode) {
-      try {
-        mySharedReadInWriteLock.readLock().lock();
-        return c.compute();
-      } finally {
-        mySharedReadInWriteLock.readLock().unlock();
-      }
     }
     getReadLock().lock();
     try {

@@ -96,6 +96,20 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     }
   }
 
+  public void runReadInWriteWorker(final Runnable r) {
+    if (mySharedReadInWriteMode) {
+      try {
+        mySharedReadInWriteLock.readLock().lock();
+        r.run();
+      } finally {
+        mySharedReadInWriteLock.readLock().unlock();
+      }
+      return;
+    }
+    throw new IllegalStateException();
+  }
+
+
   @Override
   public void checkReadAccess() {
     if (!canRead()) {

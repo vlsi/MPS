@@ -59,15 +59,6 @@ public class WorkbenchModelAccess extends ModelAccess {
       r.run();
       return;
     }
-    if (mySharedReadInWriteMode) {
-      try {
-        mySharedReadInWriteLock.readLock().lock();
-        r.run();
-      } finally {
-        mySharedReadInWriteLock.readLock().unlock();
-      }
-      return;
-    }
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         getReadLock().lock();
@@ -141,14 +132,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   public <T> T runReadAction(final Computable<T> c) {
     if (canRead()) {
       return c.compute();
-    }
-    if (mySharedReadInWriteMode) {
-      try {
-        mySharedReadInWriteLock.readLock().lock();
-        return c.compute();
-      } finally {
-        mySharedReadInWriteLock.readLock().unlock();
-      }
     }
     return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
       public T compute() {
