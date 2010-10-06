@@ -44,9 +44,7 @@ import org.junit.BeforeClass;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, Oct 6, 2010
@@ -78,17 +76,18 @@ public class IncrementalGenerationTestBase {
     // Stage 1. Regenerate
 
     GenerationOptions options = GenerationOptions.getDefaults()
-      .rebuildAll(true).strictMode(true).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
+      .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
     gm.generateModels(
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
-      new EmptyProgressIndicator(), new TestMessageHandler(), options);
+      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
     // Stage 2. Modify model
     Map<String, String> incrementalGenerationResults = null;
+    List<Long> time = new ArrayList<Long>();
     Assert.assertTrue(changeModel.length > 0);
     for(final Runnable r : changeModel) {
 
@@ -102,28 +101,30 @@ public class IncrementalGenerationTestBase {
       // Stage 3. Generate incrementally
 
       options = GenerationOptions.getDefaults()
-        .rebuildAll(false).strictMode(true).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
-      generationHandler = new IncrementalTestGenerationHandler();
+        .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
+      generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+      long start = System.nanoTime();
       gm.generateModels(
         Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
         generationHandler,
-        new EmptyProgressIndicator(), new TestMessageHandler(), options);
-
-      Map<String,String> prevResults = incrementalGenerationResults == null ? generationHandler.getExistingContent() : incrementalGenerationResults;
+        new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+      time.add(System.nanoTime() - start);
 
       incrementalGenerationResults = generationHandler.getGeneratedContent();
-      assertDiff(prevResults, incrementalGenerationResults, 1);
+      assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults, 1);
     }
 
     // Stage 4. Regenerate. Check incremental results.
 
     options = GenerationOptions.getDefaults()
-      .rebuildAll(true).strictMode(true).incremental(false, null).create();
+      .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
     generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+    long start = System.nanoTime();
     gm.generateModels(
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       generationHandler,
-      new EmptyProgressIndicator(), new TestMessageHandler(), options);
+      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+    time.add(System.nanoTime() - start);
 
     assertNoDiff(generationHandler.getGeneratedContent(), incrementalGenerationResults);
 
@@ -139,6 +140,14 @@ public class IncrementalGenerationTestBase {
       }
     });
 
+    if(DEBUG) {
+      long regen = time.remove(time.size() - 1);
+      System.out.print("Full cycle: " + regen/1000000/1000.);
+      for(long l : time) {
+        System.out.print(", incremental: " + l/1000000/1000.);
+      }
+      System.out.println();
+    }
   }
 
   protected static SModelDescriptor findModel(MPSProject project, String fqName) {
@@ -230,23 +239,5 @@ public class IncrementalGenerationTestBase {
       }
     }
     Assert.assertTrue("At least " + numberOfChanges + " are required (have " + changes + ")", changes >= numberOfChanges);
-  }
-
-  protected static class TestMessageHandler implements IMessageHandler {
-
-    @Override
-    public void handle(Message msg) {
-      switch (msg.getKind()) {
-        case ERROR:
-        case WARNING:
-          Assert.fail((msg.getKind() == MessageKind.ERROR ? "error: " : "warning: ") + msg.getText());
-          break;
-      }
-    }
-
-    @Override
-
-    public void clear() {
-    }
   }
 }

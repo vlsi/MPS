@@ -25,6 +25,9 @@ import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -66,6 +69,10 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   public Map<String, String> getGeneratedContent() {
     return generatedContent;
+  }
+
+  public IMessageHandler getMessageHandler() {
+    return new TestMessageHandler();
   }
 
   public Map<String, String> getExistingContent() {
@@ -168,6 +175,28 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     @Override
     public void dispose() {
+    }
+  }
+
+  private class TestMessageHandler implements IMessageHandler {
+
+    @Override
+    public void handle(Message msg) {
+      switch (msg.getKind()) {
+        case ERROR:
+        case WARNING:
+          Assert.fail((msg.getKind() == MessageKind.ERROR ? "error: " : "warning: ") + msg.getText());
+          break;
+
+        case INFORMATION:
+          System.out.println(msg.getText());
+          break;
+      }
+    }
+
+    @Override
+
+    public void clear() {
     }
   }
 }
