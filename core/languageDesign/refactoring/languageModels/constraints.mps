@@ -639,5 +639,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="2210862369564128646">
+    <property name="package:8" value="RefDecl.Methods.UpdateModel" />
+    <link role="concept:8" targetNodeId="1.1189694434958:1" resolveInfo="UpdateModelClause" />
+    <node role="canBeAncestor:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor:8" id="2210862369564128647">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2210862369564128648">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2210862369564128649">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="2210862369564128658">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2210862369564128671">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="2210862369564128661" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation:16" id="2210862369564128675">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2210862369564128677">
+                  <link role="conceptDeclaration:16" targetNodeId="1.1197382578687:1" resolveInfo="UpdateModelByDefaultOperation" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2210862369564307038">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="2210862369564128650" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation:16" id="2210862369564307042">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2210862369564307044">
+                  <link role="conceptDeclaration:16" targetNodeId="8.1068580123136:3" resolveInfo="StatementList" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

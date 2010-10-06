@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="UpdateModelClause_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.UpdateModelClause_Constraints" />
   <unitInfo fileName="ModelsToGenerateByDefault_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.ModelsToGenerateByDefault_Constraints" />
   <unitInfo fileName="AskBooleanExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.AskBooleanExpression_Constraints" />
   <unitInfo fileName="ChangeFeatureNameOperation_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.refactoring.constraints.ChangeFeatureNameOperation_Constraints" />
@@ -45,6 +46,10 @@
   <root nodeId="1216118084966">
     <nodeInfo nodeId="4972933694980428024" fileName="AbstractUIArgumentExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="180" />
     <scopeInfo nodeId="1216118089594" fileName="AbstractUIArgumentExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="180" />
+  </root>
+  <root nodeId="2210862369564128646">
+    <nodeInfo nodeId="2210862369564128649" fileName="UpdateModelClause_Constraints.java" startLine="10" startPosition="122" endLine="11" endPosition="256" />
+    <scopeInfo nodeId="2210862369564128648" fileName="UpdateModelClause_Constraints.java" startLine="10" startPosition="122" endLine="11" endPosition="256" />
   </root>
   <root nodeId="3242588059496701744">
     <nodeInfo nodeId="3242588059496701747" fileName="RefactoringAction_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" />

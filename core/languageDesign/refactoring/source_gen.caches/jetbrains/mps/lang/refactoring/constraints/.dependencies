@@ -139,5 +139,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.refactoring.constraints.UpdateModelClause_Constraints" file="UpdateModelClause_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAnAncestorContext" />
+  </dependency>
 </dependenciesRoot>
 
