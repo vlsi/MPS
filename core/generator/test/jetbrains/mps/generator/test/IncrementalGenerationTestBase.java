@@ -205,8 +205,10 @@ public class IncrementalGenerationTestBase {
       if(!existing.equals(content)) {
         TextDiffBuilder tbuilder = new TextDiffBuilder(existing.split("\n|\r\n"), content.split("\n|\r\n"));
         tbuilder.compare();
-        for(String s : tbuilder.getResult()) {
-          errors.append(s).append('\n');
+        if(tbuilder.hasDifference()) {
+          for(String s : tbuilder.getResult()) {
+            errors.append(s).append('\n');
+          }
         }
       }
     }
