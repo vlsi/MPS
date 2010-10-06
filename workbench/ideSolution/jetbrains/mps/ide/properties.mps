@@ -2974,7 +2974,7 @@
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939457">
-                        <link role="baseMethodDeclaration:3" targetNodeId="15.~RefactoringHistory.getRefactoringContexts():java.util.List" resolveInfo="getRefactoringContexts" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="15.~RefactoringHistory.getDataList():java.util.List" resolveInfo="getDataList" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939458">
