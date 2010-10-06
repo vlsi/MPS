@@ -38,14 +38,29 @@ public class Mockups {
     });
   }
 
-  public static ITarget target(Mockery context, final String name) {
+  public static ITarget target(Mockery context, String name, final ITarget.Name tname) {
     final ITarget trg = context.mock(ITarget.class, name);
     context.checking(new Expectations() {
       {
         this.atLeast(2).of(trg).getName();
-        this.will(returnValue(new ITarget.Name(name)));
+        this.will(returnValue(tname));
       }
     });
     return trg;
+  }
+
+  public static void allowing(Mockery context, final ITarget trg) {
+    context.checking(new Expectations() {
+      {
+        this.allowing(trg).before();
+        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.allowing(trg).notBefore();
+        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.allowing(trg).after();
+        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+        this.allowing(trg).notAfter();
+        this.will(returnValue(Sequence.fromArray(new ITarget.Name[]{})));
+      }
+    });
   }
 }

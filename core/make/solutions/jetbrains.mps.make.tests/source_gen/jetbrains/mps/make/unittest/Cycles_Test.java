@@ -43,9 +43,7 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("B", "B");
     List<List<String>> cycles2 = cd.findCycles();
     Assert.assertSame(2, ListSequence.fromList(cycles2).count());
-
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), ListSequence.fromListAndArray(new ArrayList<String>(), "A"), ListSequence.fromListAndArray(new ArrayList<String>(), "B"))).disjunction(ListSequence.fromList(cycles2)).isEmpty());
-
   }
 
   public void test_oneCycle() throws Exception {
