@@ -929,7 +929,7 @@
       <link role="target:0" targetNodeId="3.1169125787135:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1138055932762">
-      <property name="value:0" value="node&lt; &gt;" />
+      <property name="value:0" value="node&lt;&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1205963330815">
@@ -1626,7 +1626,7 @@
     <property name="package:0" value="type" />
     <link role="extends:0" targetNodeId="2.1068431790189:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1145383176232">
-      <property name="value:0" value="nlist" />
+      <property name="value:0" value="nlist&lt;&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1145383185202">
@@ -2439,7 +2439,7 @@
     <property name="name:0" value="SNodeCreator" />
     <link role="extends:0" targetNodeId="2.1145552809883:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1180636770614">
-      <property name="value:0" value="node" />
+      <property name="value:0" value="node&lt;&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1180636770615">

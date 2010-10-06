@@ -26,7 +26,7 @@ public class SNodeType_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode concept = SLinkOperations.getTarget(thisNode, "concept", false);
     if (concept == null) {
-      return "node< >";
+      return "node<>";
     }
     return "node<" + SPropertyOperations.getString(concept, "name") + ">";
   }

@@ -627,7 +627,7 @@
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877317127">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877317128">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1213877317129">
-                <property name="value:3" value="node&lt; &gt;" />
+                <property name="value:3" value="node&lt;&gt;" />
               </node>
             </node>
           </node>
