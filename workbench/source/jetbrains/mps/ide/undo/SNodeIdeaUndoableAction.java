@@ -19,6 +19,7 @@ import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -29,7 +30,7 @@ import java.util.Map.Entry;
 class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
   private DocumentReference[] myAffectedDocuments;
-  private Map<MPSNodeVirtualFile, Long> myChangedTimestamps = new HashMap<MPSNodeVirtualFile, Long>();
+  private Map<SNodePointer, Long> myChangedTimestamps = new HashMap<SNodePointer, Long>();
 
   private List<SNodeUndoableAction> myWrapped;
 
@@ -40,24 +41,19 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     myIsGlobal = false;
     for (SNodeUndoableAction a : wrapped) {
       myIsGlobal |= a.isGlobal();
+      if (a.getRoot() == null) continue;
+      myChangedTimestamps.put(a.getRoot(), a.getModificationStamp());
     }
 
-    if (myIsGlobal) {
-      myAffectedDocuments = new DocumentReference[0];
-      return;
-    }
-
-    for (SNodeUndoableAction a : wrapped) {
-      if (a.getRoot() != null) {
+    if (!myIsGlobal) {
+      for (SNodeUndoableAction a : wrapped) {
+        if (a.getRoot() == null) continue;
         MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(a.getRoot());
         assert file.isValid() : "Invalid file was returned by VFS node is not available: " + file.getNode();
-        myChangedTimestamps.put(file, file.getModificationStamp());
 
-        if (MPSUndoUtil.getDoc(file) != null) {
-          affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
-        }
+        if (MPSUndoUtil.getDoc(file) == null) continue;
+        affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
       }
-
     }
 
     myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
@@ -66,14 +62,15 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   public final void undo() throws UnexpectedUndoException {
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
-        for (Entry<MPSNodeVirtualFile, Long> e : myChangedTimestamps.entrySet()) {
-          e.getKey().setModificationStamp(e.getValue());
-        }
-
         List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
         Collections.reverse(rev);
         for (SNodeUndoableAction a : rev) {
           a.undo();
+        }
+
+        MPSNodesVirtualFileSystem vfs = MPSNodesVirtualFileSystem.getInstance();
+        for (Entry<SNodePointer, Long> e : myChangedTimestamps.entrySet()) {
+          vfs.getFileFor(e.getKey()).setModificationStamp(e.getValue());
         }
       }
     });
