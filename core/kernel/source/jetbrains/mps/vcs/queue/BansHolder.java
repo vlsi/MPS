@@ -33,10 +33,6 @@ public abstract class BansHolder {
     }
   }
 
-  public final synchronized void removeAllProcessingBans() {
-    doProcess();
-  }
-
   protected abstract void doProcess();
 
   public final synchronized void banProcessing() {
