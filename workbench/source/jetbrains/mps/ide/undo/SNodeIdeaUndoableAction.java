@@ -38,6 +38,14 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     List<DocumentReference> affected = new LinkedList<DocumentReference>();
 
     myIsGlobal = false;
+    for (SNodeUndoableAction a : wrapped) {
+      myIsGlobal |= a.isGlobal();
+    }
+
+    if (myIsGlobal) {
+      myAffectedDocuments = new DocumentReference[0];
+      return;
+    }
 
     for (SNodeUndoableAction a : wrapped) {
       if (a.getRoot() != null) {
@@ -45,12 +53,11 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         assert file.isValid() : "Invalid file was returned by VFS node is not available: " + file.getNode();
         myChangedTimestamps.put(file, file.getModificationStamp());
 
-        if(MPSUndoUtil.getDoc(file) != null) {
+        if (MPSUndoUtil.getDoc(file) != null) {
           affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
         }
       }
 
-      myIsGlobal |= a.isGlobal();
     }
 
     myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
