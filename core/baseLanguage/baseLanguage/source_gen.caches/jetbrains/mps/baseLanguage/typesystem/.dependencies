@@ -1670,6 +1670,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisResult" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction" />

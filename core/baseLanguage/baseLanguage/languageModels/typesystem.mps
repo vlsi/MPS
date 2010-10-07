@@ -25542,12 +25542,14 @@
                     </node>
                   </node>
                 </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="5458794980455178759">
-                  <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5458794980455178760">
-                    <link role="classifier:3" targetNodeId="70.~ReadInstruction" resolveInfo="ReadInstruction" />
-                  </node>
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5458794980455178761">
-                    <link role="variableDeclaration:3" targetNodeId="3791846458263577222" resolveInfo="instruction" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7672002174045331885">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="5458794980455178759">
+                    <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7672002174045331887">
+                      <link role="classifier:3" targetNodeId="70.~IfJumpInstruction" resolveInfo="IfJumpInstruction" />
+                    </node>
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5458794980455178761">
+                      <link role="variableDeclaration:3" targetNodeId="3791846458263577222" resolveInfo="instruction" />
+                    </node>
                   </node>
                 </node>
               </node>

@@ -357,7 +357,7 @@
   <unitInfo fileName="typeOf_AssertStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_AssertStatement_InferenceRule" />
   <unitInfo fileName="subtyping_classifier_SubtypingRule.java" startLine="23" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.subtyping_classifier_SubtypingRule" />
   <unitInfo fileName="ChooseAppropriateMethodDeclaration_QuickFix.java" startLine="23" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix" />
-  <unitInfo fileName="check_NullableStates_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule" />
+  <unitInfo fileName="check_NullableStates_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule" />
   <unitInfo fileName="typeOf_VarRef_InferenceRule.java" startLine="20" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_VarRef_InferenceRule" />
   <unitInfo fileName="typeOf_ForeachStatement_InferenceRule.java" startLine="60" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_ForeachStatement_InferenceRule$QuotationClass_9mvp38_a0a1a0" />
   <unitInfo fileName="typeOf_thisExpr_InferenceRule.java" startLine="23" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_thisExpr_InferenceRule" />
@@ -5064,109 +5064,109 @@
     <unitInfo nodeId="8512491756795014532" fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="70" startPosition="50" endLine="74" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.check_CaughtWasThrown_NonTypesystemRule$1" />
   </root>
   <root nodeId="3791846458263577202">
-    <nodeInfo nodeId="3791846458263577204" fileName="check_NullableStates_NonTypesystemRule.java" startLine="35" startPosition="124" endLine="36" endPosition="109" />
-    <nodeInfo nodeId="3791846458263577212" fileName="check_NullableStates_NonTypesystemRule.java" startLine="36" startPosition="109" endLine="37" endPosition="80" />
-    <nodeInfo nodeId="3791846458263577225" fileName="check_NullableStates_NonTypesystemRule.java" startLine="38" startPosition="83" endLine="39" endPosition="53" />
-    <nodeInfo nodeId="3791846458263577233" fileName="check_NullableStates_NonTypesystemRule.java" startLine="39" startPosition="53" endLine="40" endPosition="30" />
-    <nodeInfo nodeId="3791846458263577239" fileName="check_NullableStates_NonTypesystemRule.java" startLine="41" startPosition="107" endLine="42" endPosition="163" />
-    <nodeInfo nodeId="3791846458263577250" fileName="check_NullableStates_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="44" endPosition="69" />
-    <nodeInfo nodeId="3791846458263577260" fileName="check_NullableStates_NonTypesystemRule.java" startLine="44" startPosition="69" endLine="45" endPosition="55" />
-    <nodeInfo nodeId="3791846458263577268" fileName="check_NullableStates_NonTypesystemRule.java" startLine="46" startPosition="261" endLine="47" endPosition="103" />
-    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="50" startPosition="13" endLine="51" endPosition="61" />
-    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="51" startPosition="61" endLine="52" endPosition="63" />
-    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="52" startPosition="63" endLine="53" endPosition="292" />
-    <nodeInfo nodeId="3791846458263577304" fileName="check_NullableStates_NonTypesystemRule.java" startLine="57" startPosition="7" endLine="58" endPosition="60" />
-    <nodeInfo nodeId="3791846458263577308" fileName="check_NullableStates_NonTypesystemRule.java" startLine="59" startPosition="250" endLine="60" endPosition="36" />
-    <nodeInfo nodeId="3791846458263577312" fileName="check_NullableStates_NonTypesystemRule.java" startLine="60" startPosition="36" endLine="61" endPosition="119" />
-    <nodeInfo nodeId="3791846458263577319" fileName="check_NullableStates_NonTypesystemRule.java" startLine="61" startPosition="119" endLine="62" endPosition="61" />
-    <nodeInfo nodeId="3791846458263577326" fileName="check_NullableStates_NonTypesystemRule.java" startLine="62" startPosition="61" endLine="63" endPosition="67" />
-    <nodeInfo nodeId="3791846458263577337" fileName="check_NullableStates_NonTypesystemRule.java" startLine="65" startPosition="360" endLine="66" endPosition="31" />
-    <nodeInfo nodeId="3791846458263577363" fileName="check_NullableStates_NonTypesystemRule.java" startLine="68" startPosition="366" endLine="69" endPosition="31" />
-    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="73" startPosition="15" endLine="74" endPosition="63" />
-    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="74" startPosition="63" endLine="75" endPosition="65" />
-    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="75" startPosition="65" endLine="76" endPosition="268" />
-    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="80" startPosition="15" endLine="81" endPosition="63" />
-    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="81" startPosition="63" endLine="82" endPosition="65" />
-    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="82" startPosition="65" endLine="83" endPosition="267" />
-    <nodeInfo nodeId="3791846458263577441" fileName="check_NullableStates_NonTypesystemRule.java" startLine="89" startPosition="52" endLine="90" endPosition="64" />
-    <nodeInfo nodeId="3791846458263577447" fileName="check_NullableStates_NonTypesystemRule.java" startLine="90" startPosition="64" endLine="91" endPosition="111" />
-    <nodeInfo nodeId="3791846458263577460" fileName="check_NullableStates_NonTypesystemRule.java" startLine="100" startPosition="137" endLine="101" endPosition="49" />
-    <nodeInfo nodeId="3791846458263577470" fileName="check_NullableStates_NonTypesystemRule.java" startLine="102" startPosition="110" endLine="103" endPosition="163" />
-    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="106" startPosition="13" endLine="107" endPosition="61" />
-    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="107" startPosition="61" endLine="108" endPosition="63" />
-    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="108" startPosition="63" endLine="109" endPosition="354" />
-    <nodeInfo nodeId="3791846458263577237" fileName="check_NullableStates_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="3791846458263577335" fileName="check_NullableStates_NonTypesystemRule.java" startLine="64" startPosition="191" endLine="67" endPosition="11" />
-    <nodeInfo nodeId="3791846458263577361" fileName="check_NullableStates_NonTypesystemRule.java" startLine="67" startPosition="11" endLine="70" endPosition="11" />
-    <nodeInfo nodeId="3791846458263577468" fileName="check_NullableStates_NonTypesystemRule.java" startLine="101" startPosition="49" endLine="104" endPosition="11" />
-    <nodeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="92" startPosition="101" endLine="96" endPosition="0" />
-    <nodeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="96" startPosition="49" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="49" startPosition="50" endLine="54" endPosition="13" />
-    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="72" startPosition="61" endLine="77" endPosition="15" />
-    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="79" startPosition="61" endLine="84" endPosition="15" />
-    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="105" startPosition="76" endLine="110" endPosition="13" />
-    <nodeInfo nodeId="3791846458263577275" fileName="check_NullableStates_NonTypesystemRule.java" startLine="48" startPosition="190" endLine="55" endPosition="11" />
-    <nodeInfo nodeId="3791846458263577389" fileName="check_NullableStates_NonTypesystemRule.java" startLine="71" startPosition="28" endLine="78" endPosition="13" />
-    <nodeInfo nodeId="3791846458263577402" fileName="check_NullableStates_NonTypesystemRule.java" startLine="78" startPosition="13" endLine="85" endPosition="13" />
-    <nodeInfo nodeId="3791846458263577481" fileName="check_NullableStates_NonTypesystemRule.java" startLine="104" startPosition="11" endLine="111" endPosition="11" />
-    <nodeInfo nodeId="3791846458263577273" fileName="check_NullableStates_NonTypesystemRule.java" startLine="47" startPosition="103" endLine="56" endPosition="9" />
-    <nodeInfo nodeId="3791846458263577266" fileName="check_NullableStates_NonTypesystemRule.java" startLine="45" startPosition="55" endLine="57" endPosition="7" />
-    <nodeInfo nodeId="3791846458263577387" fileName="check_NullableStates_NonTypesystemRule.java" startLine="70" startPosition="11" endLine="86" endPosition="11" />
-    <nodeInfo nodeId="3791846458263577458" fileName="check_NullableStates_NonTypesystemRule.java" startLine="91" startPosition="111" endLine="112" endPosition="9" />
-    <nodeInfo nodeId="3791846458263577333" fileName="check_NullableStates_NonTypesystemRule.java" startLine="63" startPosition="67" endLine="87" endPosition="9" />
-    <nodeInfo nodeId="3791846458263577439" fileName="check_NullableStates_NonTypesystemRule.java" startLine="88" startPosition="7" endLine="113" endPosition="7" />
-    <nodeInfo nodeId="3791846458263577306" fileName="check_NullableStates_NonTypesystemRule.java" startLine="58" startPosition="60" endLine="88" endPosition="7" />
-    <nodeInfo nodeId="3791846458263577221" fileName="check_NullableStates_NonTypesystemRule.java" startLine="37" startPosition="80" endLine="114" endPosition="5" />
-    <scopeInfo nodeId="3791846458263577238" fileName="check_NullableStates_NonTypesystemRule.java" startLine="41" startPosition="107" endLine="42" endPosition="163" />
-    <scopeInfo nodeId="3791846458263577336" fileName="check_NullableStates_NonTypesystemRule.java" startLine="65" startPosition="360" endLine="66" endPosition="31" />
-    <scopeInfo nodeId="3791846458263577362" fileName="check_NullableStates_NonTypesystemRule.java" startLine="68" startPosition="366" endLine="69" endPosition="31" />
-    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="93" startPosition="43" endLine="94" endPosition="80" />
-    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="97" startPosition="41" endLine="98" endPosition="70" />
-    <scopeInfo nodeId="3791846458263577469" fileName="check_NullableStates_NonTypesystemRule.java" startLine="102" startPosition="110" endLine="103" endPosition="163" />
-    <scopeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="50" startPosition="13" endLine="53" endPosition="292" />
-    <scopeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="73" startPosition="15" endLine="76" endPosition="268" />
-    <scopeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="80" startPosition="15" endLine="83" endPosition="267" />
-    <scopeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="106" startPosition="13" endLine="109" endPosition="354" />
-    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="92" startPosition="101" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="96" startPosition="49" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="3791846458263577276" fileName="check_NullableStates_NonTypesystemRule.java" startLine="49" startPosition="50" endLine="54" endPosition="13" />
-    <scopeInfo nodeId="3791846458263577390" fileName="check_NullableStates_NonTypesystemRule.java" startLine="72" startPosition="61" endLine="77" endPosition="15" />
-    <scopeInfo nodeId="3791846458263577403" fileName="check_NullableStates_NonTypesystemRule.java" startLine="79" startPosition="61" endLine="84" endPosition="15" />
-    <scopeInfo nodeId="3791846458263577482" fileName="check_NullableStates_NonTypesystemRule.java" startLine="105" startPosition="76" endLine="110" endPosition="13" />
-    <scopeInfo nodeId="3791846458263577274" fileName="check_NullableStates_NonTypesystemRule.java" startLine="48" startPosition="190" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="3791846458263577267" fileName="check_NullableStates_NonTypesystemRule.java" startLine="46" startPosition="261" endLine="56" endPosition="9">
+    <nodeInfo nodeId="3791846458263577204" fileName="check_NullableStates_NonTypesystemRule.java" startLine="36" startPosition="124" endLine="37" endPosition="109" />
+    <nodeInfo nodeId="3791846458263577212" fileName="check_NullableStates_NonTypesystemRule.java" startLine="37" startPosition="109" endLine="38" endPosition="80" />
+    <nodeInfo nodeId="3791846458263577225" fileName="check_NullableStates_NonTypesystemRule.java" startLine="39" startPosition="83" endLine="40" endPosition="53" />
+    <nodeInfo nodeId="3791846458263577233" fileName="check_NullableStates_NonTypesystemRule.java" startLine="40" startPosition="53" endLine="41" endPosition="30" />
+    <nodeInfo nodeId="3791846458263577239" fileName="check_NullableStates_NonTypesystemRule.java" startLine="42" startPosition="107" endLine="43" endPosition="163" />
+    <nodeInfo nodeId="3791846458263577250" fileName="check_NullableStates_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="45" endPosition="69" />
+    <nodeInfo nodeId="3791846458263577260" fileName="check_NullableStates_NonTypesystemRule.java" startLine="45" startPosition="69" endLine="46" endPosition="55" />
+    <nodeInfo nodeId="3791846458263577268" fileName="check_NullableStates_NonTypesystemRule.java" startLine="47" startPosition="266" endLine="48" endPosition="103" />
+    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="51" startPosition="13" endLine="52" endPosition="61" />
+    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="52" startPosition="61" endLine="53" endPosition="63" />
+    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="53" startPosition="63" endLine="54" endPosition="292" />
+    <nodeInfo nodeId="3791846458263577304" fileName="check_NullableStates_NonTypesystemRule.java" startLine="58" startPosition="7" endLine="59" endPosition="60" />
+    <nodeInfo nodeId="3791846458263577308" fileName="check_NullableStates_NonTypesystemRule.java" startLine="60" startPosition="250" endLine="61" endPosition="36" />
+    <nodeInfo nodeId="3791846458263577312" fileName="check_NullableStates_NonTypesystemRule.java" startLine="61" startPosition="36" endLine="62" endPosition="119" />
+    <nodeInfo nodeId="3791846458263577319" fileName="check_NullableStates_NonTypesystemRule.java" startLine="62" startPosition="119" endLine="63" endPosition="61" />
+    <nodeInfo nodeId="3791846458263577326" fileName="check_NullableStates_NonTypesystemRule.java" startLine="63" startPosition="61" endLine="64" endPosition="67" />
+    <nodeInfo nodeId="3791846458263577337" fileName="check_NullableStates_NonTypesystemRule.java" startLine="66" startPosition="360" endLine="67" endPosition="31" />
+    <nodeInfo nodeId="3791846458263577363" fileName="check_NullableStates_NonTypesystemRule.java" startLine="69" startPosition="366" endLine="70" endPosition="31" />
+    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="74" startPosition="15" endLine="75" endPosition="63" />
+    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="75" startPosition="63" endLine="76" endPosition="65" />
+    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="76" startPosition="65" endLine="77" endPosition="268" />
+    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="81" startPosition="15" endLine="82" endPosition="63" />
+    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="82" startPosition="63" endLine="83" endPosition="65" />
+    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="83" startPosition="65" endLine="84" endPosition="267" />
+    <nodeInfo nodeId="3791846458263577441" fileName="check_NullableStates_NonTypesystemRule.java" startLine="90" startPosition="52" endLine="91" endPosition="64" />
+    <nodeInfo nodeId="3791846458263577447" fileName="check_NullableStates_NonTypesystemRule.java" startLine="91" startPosition="64" endLine="92" endPosition="111" />
+    <nodeInfo nodeId="3791846458263577460" fileName="check_NullableStates_NonTypesystemRule.java" startLine="101" startPosition="137" endLine="102" endPosition="49" />
+    <nodeInfo nodeId="3791846458263577470" fileName="check_NullableStates_NonTypesystemRule.java" startLine="103" startPosition="110" endLine="104" endPosition="163" />
+    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="107" startPosition="13" endLine="108" endPosition="61" />
+    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="108" startPosition="61" endLine="109" endPosition="63" />
+    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="109" startPosition="63" endLine="110" endPosition="354" />
+    <nodeInfo nodeId="3791846458263577237" fileName="check_NullableStates_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="44" endPosition="7" />
+    <nodeInfo nodeId="3791846458263577335" fileName="check_NullableStates_NonTypesystemRule.java" startLine="65" startPosition="191" endLine="68" endPosition="11" />
+    <nodeInfo nodeId="3791846458263577361" fileName="check_NullableStates_NonTypesystemRule.java" startLine="68" startPosition="11" endLine="71" endPosition="11" />
+    <nodeInfo nodeId="3791846458263577468" fileName="check_NullableStates_NonTypesystemRule.java" startLine="102" startPosition="49" endLine="105" endPosition="11" />
+    <nodeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="93" startPosition="101" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="97" startPosition="49" endLine="101" endPosition="0" />
+    <nodeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="50" startPosition="50" endLine="55" endPosition="13" />
+    <nodeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="73" startPosition="61" endLine="78" endPosition="15" />
+    <nodeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="80" startPosition="61" endLine="85" endPosition="15" />
+    <nodeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="106" startPosition="76" endLine="111" endPosition="13" />
+    <nodeInfo nodeId="3791846458263577275" fileName="check_NullableStates_NonTypesystemRule.java" startLine="49" startPosition="190" endLine="56" endPosition="11" />
+    <nodeInfo nodeId="3791846458263577389" fileName="check_NullableStates_NonTypesystemRule.java" startLine="72" startPosition="28" endLine="79" endPosition="13" />
+    <nodeInfo nodeId="3791846458263577402" fileName="check_NullableStates_NonTypesystemRule.java" startLine="79" startPosition="13" endLine="86" endPosition="13" />
+    <nodeInfo nodeId="3791846458263577481" fileName="check_NullableStates_NonTypesystemRule.java" startLine="105" startPosition="11" endLine="112" endPosition="11" />
+    <nodeInfo nodeId="3791846458263577273" fileName="check_NullableStates_NonTypesystemRule.java" startLine="48" startPosition="103" endLine="57" endPosition="9" />
+    <nodeInfo nodeId="3791846458263577266" fileName="check_NullableStates_NonTypesystemRule.java" startLine="46" startPosition="55" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="3791846458263577387" fileName="check_NullableStates_NonTypesystemRule.java" startLine="71" startPosition="11" endLine="87" endPosition="11" />
+    <nodeInfo nodeId="3791846458263577458" fileName="check_NullableStates_NonTypesystemRule.java" startLine="92" startPosition="111" endLine="113" endPosition="9" />
+    <nodeInfo nodeId="3791846458263577333" fileName="check_NullableStates_NonTypesystemRule.java" startLine="64" startPosition="67" endLine="88" endPosition="9" />
+    <nodeInfo nodeId="3791846458263577439" fileName="check_NullableStates_NonTypesystemRule.java" startLine="89" startPosition="7" endLine="114" endPosition="7" />
+    <nodeInfo nodeId="3791846458263577306" fileName="check_NullableStates_NonTypesystemRule.java" startLine="59" startPosition="60" endLine="89" endPosition="7" />
+    <nodeInfo nodeId="3791846458263577221" fileName="check_NullableStates_NonTypesystemRule.java" startLine="38" startPosition="80" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="3791846458263577238" fileName="check_NullableStates_NonTypesystemRule.java" startLine="42" startPosition="107" endLine="43" endPosition="163" />
+    <scopeInfo nodeId="3791846458263577336" fileName="check_NullableStates_NonTypesystemRule.java" startLine="66" startPosition="360" endLine="67" endPosition="31" />
+    <scopeInfo nodeId="3791846458263577362" fileName="check_NullableStates_NonTypesystemRule.java" startLine="69" startPosition="366" endLine="70" endPosition="31" />
+    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="94" startPosition="43" endLine="95" endPosition="80" />
+    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="98" startPosition="41" endLine="99" endPosition="70" />
+    <scopeInfo nodeId="3791846458263577469" fileName="check_NullableStates_NonTypesystemRule.java" startLine="103" startPosition="110" endLine="104" endPosition="163" />
+    <scopeInfo nodeId="3791846458263577277" fileName="check_NullableStates_NonTypesystemRule.java" startLine="51" startPosition="13" endLine="54" endPosition="292" />
+    <scopeInfo nodeId="3791846458263577391" fileName="check_NullableStates_NonTypesystemRule.java" startLine="74" startPosition="15" endLine="77" endPosition="268" />
+    <scopeInfo nodeId="3791846458263577404" fileName="check_NullableStates_NonTypesystemRule.java" startLine="81" startPosition="15" endLine="84" endPosition="267" />
+    <scopeInfo nodeId="3791846458263577483" fileName="check_NullableStates_NonTypesystemRule.java" startLine="107" startPosition="13" endLine="110" endPosition="354" />
+    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="93" startPosition="101" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="97" startPosition="49" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="3791846458263577276" fileName="check_NullableStates_NonTypesystemRule.java" startLine="50" startPosition="50" endLine="55" endPosition="13" />
+    <scopeInfo nodeId="3791846458263577390" fileName="check_NullableStates_NonTypesystemRule.java" startLine="73" startPosition="61" endLine="78" endPosition="15" />
+    <scopeInfo nodeId="3791846458263577403" fileName="check_NullableStates_NonTypesystemRule.java" startLine="80" startPosition="61" endLine="85" endPosition="15" />
+    <scopeInfo nodeId="3791846458263577482" fileName="check_NullableStates_NonTypesystemRule.java" startLine="106" startPosition="76" endLine="111" endPosition="13" />
+    <scopeInfo nodeId="3791846458263577274" fileName="check_NullableStates_NonTypesystemRule.java" startLine="49" startPosition="190" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="3791846458263577267" fileName="check_NullableStates_NonTypesystemRule.java" startLine="47" startPosition="266" endLine="57" endPosition="9">
       <varInfo nodeId="3791846458263577269" varName="dot" />
     </scopeInfo>
-    <scopeInfo nodeId="3791846458263577459" fileName="check_NullableStates_NonTypesystemRule.java" startLine="100" startPosition="137" endLine="111" endPosition="11">
+    <scopeInfo nodeId="3791846458263577459" fileName="check_NullableStates_NonTypesystemRule.java" startLine="101" startPosition="137" endLine="112" endPosition="11">
       <varInfo nodeId="3791846458263577461" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3791846458263577388" fileName="check_NullableStates_NonTypesystemRule.java" startLine="71" startPosition="28" endLine="85" endPosition="13" />
-    <scopeInfo nodeId="3791846458263577334" fileName="check_NullableStates_NonTypesystemRule.java" startLine="64" startPosition="191" endLine="86" endPosition="11" />
-    <scopeInfo nodeId="3791846458263577440" fileName="check_NullableStates_NonTypesystemRule.java" startLine="89" startPosition="52" endLine="112" endPosition="9">
+    <scopeInfo nodeId="3791846458263577388" fileName="check_NullableStates_NonTypesystemRule.java" startLine="72" startPosition="28" endLine="86" endPosition="13" />
+    <scopeInfo nodeId="3791846458263577334" fileName="check_NullableStates_NonTypesystemRule.java" startLine="65" startPosition="191" endLine="87" endPosition="11" />
+    <scopeInfo nodeId="3791846458263577440" fileName="check_NullableStates_NonTypesystemRule.java" startLine="90" startPosition="52" endLine="113" endPosition="9">
       <varInfo nodeId="3791846458263577448" varName="annotation" />
       <varInfo nodeId="3791846458263577442" varName="write" />
     </scopeInfo>
-    <scopeInfo nodeId="3791846458263577307" fileName="check_NullableStates_NonTypesystemRule.java" startLine="59" startPosition="250" endLine="87" endPosition="9">
+    <scopeInfo nodeId="3791846458263577307" fileName="check_NullableStates_NonTypesystemRule.java" startLine="60" startPosition="250" endLine="88" endPosition="9">
       <varInfo nodeId="3791846458263577327" varName="isNotNull" />
       <varInfo nodeId="3791846458263577320" varName="isNull" />
       <varInfo nodeId="3791846458263577313" varName="equals" />
       <varInfo nodeId="3791846458263577309" varName="inCondition" />
     </scopeInfo>
-    <scopeInfo nodeId="3791846458263577224" fileName="check_NullableStates_NonTypesystemRule.java" startLine="38" startPosition="83" endLine="113" endPosition="7">
+    <scopeInfo nodeId="3791846458263577224" fileName="check_NullableStates_NonTypesystemRule.java" startLine="39" startPosition="83" endLine="114" endPosition="7">
       <varInfo nodeId="3791846458263577226" varName="source" />
       <varInfo nodeId="3791846458263577251" varName="varState" />
       <varInfo nodeId="3791846458263577261" varName="parent" />
       <varInfo nodeId="3791846458263577234" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="3791846458263577221" fileName="check_NullableStates_NonTypesystemRule.java" startLine="37" startPosition="80" endLine="114" endPosition="5">
+    <scopeInfo nodeId="3791846458263577221" fileName="check_NullableStates_NonTypesystemRule.java" startLine="38" startPosition="80" endLine="115" endPosition="5">
       <varInfo nodeId="3791846458263577222" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="3791846458263577203" fileName="check_NullableStates_NonTypesystemRule.java" startLine="35" startPosition="124" endLine="114" endPosition="5">
+    <scopeInfo nodeId="3791846458263577203" fileName="check_NullableStates_NonTypesystemRule.java" startLine="36" startPosition="124" endLine="115" endPosition="5">
       <varInfo nodeId="3791846458263577213" varName="result" />
       <varInfo nodeId="3791846458263577205" varName="nullableRunner" />
     </scopeInfo>
-    <unitInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="92" startPosition="78" endLine="96" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$1" />
-    <unitInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="96" startPosition="22" endLine="100" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$2" />
+    <unitInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="93" startPosition="78" endLine="97" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$1" />
+    <unitInfo nodeId="3791846458263577500" fileName="check_NullableStates_NonTypesystemRule.java" startLine="97" startPosition="22" endLine="101" endPosition="9" unitName="jetbrains.mps.baseLanguage.typesystem.check_NullableStates_NonTypesystemRule$2" />
   </root>
   <root nodeId="3860149536565525475">
     <nodeInfo nodeId="7602524515424797598" fileName="typeof_UnaryMinus_InferenceRule.java" startLine="28" startPosition="118" endLine="29" endPosition="113" />
