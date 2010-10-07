@@ -133,4 +133,13 @@ public class GeomUtil {
     }
     return direction;
   }
+
+  public static Point[] getCornerPoints(Rectangle rect) {
+    Point[] points = new Point[4];
+    points[0] = new Point(rect.x, rect.y);
+    points[1] = new Point(rect.x, rect.y + rect.height);
+    points[2] = new Point(rect.x + rect.width, rect.y + rect.height);
+    points[3] = new Point(rect.x + rect.width, rect.y);
+    return points;
+  }
 }
