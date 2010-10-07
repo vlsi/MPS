@@ -257,12 +257,12 @@ public class StructureModificationData {
     mySourceMap.put(new FullNodeId(node), new FullNodeId(source));
   }
 
-  public void addDependencyModel(SModelReference modelReference, int version) {
+  public void addDependencyModel(@NotNull SModelReference modelReference, int version) {
     if (myDependencies == null)  myDependencies = new ArrayList<Dependency>();
     myDependencies.add(new Dependency(modelReference, version));
   }
 
-  public void addDependencyModel(EditableSModelDescriptor model) {
+  public void addDependencyModel(@NotNull EditableSModelDescriptor model) {
     addDependencyModel(model.getSModelReference(), model.getVersion());
   }
 
@@ -468,7 +468,7 @@ public class StructureModificationData {
   }
 
 
-  //transient caches
+  // transient caches for updateModelWithMaps()
   private Map<String, Set<ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<ConceptFeature>>();
   private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
   private boolean myCachesAreUpToDate = false;
@@ -633,8 +633,6 @@ public class StructureModificationData {
 
 
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {
-    if (!myCachesAreUpToDate)  computeCaches();
-    //assert myCachesAreUpToDate;
     for (ConceptFeature conceptFeature : myConceptFeatureMap.keySet()) {
       ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
       if (newConceptFeature == null) continue;

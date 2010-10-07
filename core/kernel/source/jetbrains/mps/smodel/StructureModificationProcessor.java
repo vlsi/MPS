@@ -44,9 +44,7 @@ public class StructureModificationProcessor {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     if (!refactoringContext.isLocal()) {
-//      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
-      refactoringContext.getStructureModificationData().addDependencyModel((EditableSModelDescriptor) modelDescriptor);
-      addToHistory(refactoringContext);
+      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
       updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
     } else {
       UsagesList usages = refactoringContext.getUsages();
@@ -76,31 +74,22 @@ public class StructureModificationProcessor {
     });
   }
 
-/*
   public static void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-    model.getSModel(); // ensure model is loaded
-    RefactoringHistory refactoringHistory = model.getRefactoringHistory();
-    refactoringHistory.addStructureModificationData(refactoringContext.getStructureModificationData());
-    model.setVersion(model.getVersion() + 1);
-    refactoringContext.setModelVersion(model.getVersion()); // should be a copy of context
-    SModelRepository.getInstance().markChanged(model, true);
-    model.saveRefactoringHistory();
+    refactoringContext.getStructureModificationData().addDependencyModel(model);
+    addToHistory(refactoringContext.getStructureModificationData());
   }
-*/
 
-  public static void addToHistory(RefactoringContext context) {
-    assert !context.isLocal();
-
-    for (StructureModificationData.Dependency d : context.getStructureModificationData().getDependencies()) {
+  public static void addToHistory(@NotNull StructureModificationData data) {
+    for (StructureModificationData.Dependency d : data.getDependencies()) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
 //      model.getSModel(); // ensure model is loaded
       RefactoringHistory history = model.getRefactoringHistory();
-      history.addStructureModificationData(context.getStructureModificationData());
+      history.addStructureModificationData(data);
       model.setVersion(model.getVersion() + 1);
-      context.getStructureModificationData().setModelVersion(model.getVersion());
+      data.setModelVersion(model.getVersion());
       model.saveRefactoringHistory(history);
       SModelRepository.getInstance().markChanged(model, true);
     }

@@ -278,12 +278,6 @@ public class RefactoringContext {
   }
 
 
-/*
-  public void setModelVersion(int version) {
-    myModelVersion = version;
-  }
-*/
-
   public void setRefactoring(IRefactoring refactoring) {
     myRefactoring = refactoring;
     myData.setRefactoringClassName(refactoring == null ? null : getRefactoringClassName(refactoring));
