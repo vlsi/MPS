@@ -129,7 +129,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public boolean isReadOnly() {
-    return !findVirtualFile() || !myVirtualFile.isWritable();
+    return exists() && !myVirtualFile.isWritable();
   }
 
   @Override
