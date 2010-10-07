@@ -72,11 +72,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final Timer myTimer;
   private int myBans = 0;
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
-    public void beforeRefreshStart(boolean asynchonous) {
+    public void beforeRefreshStart(boolean async) {
       suspendTasksProcessing();
     }
 
-    public void afterRefreshFinish(boolean asynchonous) {
+    public void afterRefreshFinish(boolean async) {
       tryToResumeTasksProcessing();
     }
   };
@@ -90,12 +90,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   };
   private final ProjectManagerListener myProjectManagerListener = new ProjectManagerAdapter() {
-    @Override
     public void projectOpened(Project project) {
       ((ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class)).addBackgroundOperationsListener(myVcsListener);
     }
 
-    @Override
     public void projectClosing(Project project) {
       ((ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class)).removeBackgroundOperationsListener(myVcsListener);
     }
@@ -104,12 +102,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
   public void tryToResumeTasksProcessing() {
     synchronized (myLock) {
       myBans--;
-      if (myBans == 0) {
-        if (myReloadSession == null || !myReloadSession.hasAnythingToDo()) {
-          return;
-        }
-        myTimer.resume();
-      }
+      if (myBans != 0) return;
+      if (myReloadSession == null) return;
+      if (!myReloadSession.hasAnythingToDo()) return;
+      
+      myTimer.resume();
     }
   }
 
@@ -128,7 +125,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
     myTimer = new Timer("Model Changes Watcher", 50) {
-      @Override
       protected void onTimer() throws InterruptedException {
         synchronized (myLock) {
           if (myReloadSession != null) {
@@ -244,11 +240,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (file.isDirectory() && file.exists() && (file.getChildren() != null) && file.isInLocalFileSystem()) {
             if (isUnderSignificantRoots(VirtualFileUtils.toFile(file))) {
               VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
-                          public boolean process(VirtualFile file) {
-                            processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
-                            return true;
-                          }
-                        });
+                public boolean process(VirtualFile file) {
+                  processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
+                  return true;
+                }
+              });
             }
           } else if (!file.isDirectory()) {
             processBeforeEvent(event, filePath, reloadSession);
@@ -338,15 +334,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
       HashSet<IReloadListener> listeners = new HashSet<IReloadListener>();
       listeners.addAll(myReloadListeners);
       return listeners;
-    }
-  }
-
-  public void executeUnderBlockedReload(Runnable runnable) {
-    try {
-      suspendTasksProcessing();
-      runnable.run();
-    } finally {
-      tryToResumeTasksProcessing();
     }
   }
 

@@ -42,7 +42,6 @@ public class VcsHelper {
 
   public static boolean resolveDiskMemoryConflict(final IFile modelFile, final SModel inMemory) {
     return ModelChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
-      @Override
       public Boolean compute() {
         try {
           File backupFile = doBackup(modelFile, inMemory);
