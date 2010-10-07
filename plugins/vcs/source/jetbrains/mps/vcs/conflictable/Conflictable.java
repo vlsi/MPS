@@ -13,29 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs.queue;
+package jetbrains.mps.vcs.conflictable;
 
-public abstract class BansHolder {
-  protected int myProcessingBans;
+import jetbrains.mps.vfs.IFile;
 
-  public BansHolder(boolean isProcessingAllowed) {
-    if (isProcessingAllowed) {
-      myProcessingBans = 0;
-    } else {
-      myProcessingBans = 1;
-    }
+public abstract class Conflictable {
+  public abstract boolean isConflictDetected();
+
+  public abstract IFile getFile();
+
+  public abstract void reloadFromDisk();
+
+  public abstract boolean needReloading();
+
+  @Override
+  public boolean equals(Object object) {
+    if (!(object instanceof Conflictable)) return false;
+
+    return getFile().equals(((Conflictable) object).getFile());
   }
 
-  public final synchronized void removeProcessingBan() {
-    myProcessingBans--;
-    if (myProcessingBans <= 0) {
-      doProcess();
-    }
-  }
-
-  protected abstract void doProcess();
-
-  public final synchronized void banProcessing() {
-    myProcessingBans++;
+  public int hashCode() {
+    return getFile().hashCode();
   }
 }

@@ -106,107 +106,6 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
 
 
-  @Patch
-  public void startBackgroundVcsOperation() {
-    myBackgroundOperationCounter++;
-    // MPS Patch begins:
-    fireBackgroundOperationStarted();
-    // MPS Patch ends
-  }
-
-
-  @Patch
-  public void stopBackgroundVcsOperation() {
-    // in fact, the condition is "should not be called under ApplicationManager.invokeLater() and similiar"
-    assert !ApplicationManager.getApplication().isDispatchThread();
-    LOG.assertTrue(myBackgroundOperationCounter > 0, "myBackgroundOperationCounter > 0");
-    myBackgroundOperationCounter--;
-    // MPS Patch begins:
-    if (myBackgroundOperationCounter == 0) {
-      fireAllBackgroundOperationsStopped();
-    }
-    // MPS Patch ends
-  }
-
-
-
-
-  //Patched by MPS
-  @Patch
-  private final Set<IBackgroundVcsOperationsListener> myBackgroundOperationListeners = new LinkedHashSet<IBackgroundVcsOperationsListener>();
-
-  /*
-  Method added by MPS
-   */
-  @Patch
-  public void addBackgroundOperationsListener(IBackgroundVcsOperationsListener listener) {
-    myBackgroundOperationListeners.add(listener);
-  }
-
-  /*
-  Method added by MPS
-   */
-  @Patch
-  public void removeBackgroundOperationsListener(IBackgroundVcsOperationsListener listener) {
-    myBackgroundOperationListeners.remove(listener);
-  }
-
-  /*
-  Method added by MPS
-   */
-  @Patch
-  private void fireBackgroundOperationStarted() {
-    for (IBackgroundVcsOperationsListener l : myBackgroundOperationListeners) {
-      l.backgroundOperationStarted();
-    }
-  }
-
-  /*
-  Method added by MPS
-   */
-  @Patch
-  private void fireAllBackgroundOperationsStopped() {
-    for (IBackgroundVcsOperationsListener l : myBackgroundOperationListeners) {
-      l.allBackgroundOperationsStopped();
-    }
-  }
-
-  //Patched by MPS
-  @Patch
-  public interface IBackgroundVcsOperationsListener {
-    public void backgroundOperationStarted();
-
-    public void allBackgroundOperationsStopped();
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl");
@@ -271,6 +170,19 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         onProjectClosing();
       }
     });
+  }
+
+
+  public void startBackgroundVcsOperation() {
+    myBackgroundOperationCounter++;
+  }
+
+
+  public void stopBackgroundVcsOperation() {
+    // in fact, the condition is "should not be called under ApplicationManager.invokeLater() and similiar"
+    assert !ApplicationManager.getApplication().isDispatchThread();
+    LOG.assertTrue(myBackgroundOperationCounter > 0, "myBackgroundOperationCounter > 0");
+    myBackgroundOperationCounter--;
   }
 
   public void readDirectoryMappings(final Element element) {

@@ -20,25 +20,20 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectManagerListener;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
-import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.IBackgroundVcsOperationsListener;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.conflictable.Conflictable;
+import jetbrains.mps.vcs.conflictable.ConflictableModelAdapter;
+import jetbrains.mps.vcs.conflictable.ConflictableModuleAdapter;
 import jetbrains.mps.vcs.queue.TaskQueue;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,62 +48,20 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private final ModelChangesWatcher myWatcher;
   private final VirtualFileManager myVirtualFileManager;
 
-  private final SuspiciousModelIndex.ProjectOpenedListener myProjectManagerListener;
-  private final jetbrains.mps.vcs.queue.TaskQueue<Conflictable> myTaskQueue = new TaskQueue<Conflictable>(false) {
-    public void processTask(final List<Conflictable> tasks) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          mergeModels(tasks);
-        }
-      }, ModalityState.NON_MODAL);
-    }
-  };
-  private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
-    public void beforeRefreshStart(boolean asynchonous) {
-      if (!asynchonous) {
-        myTaskQueue.banProcessing();
-      }
-    }
-
-    public void afterRefreshFinish(boolean asynchonous) {
-      if (!asynchonous) {
-        myTaskQueue.removeProcessingBan();
-      }
-    }
-  };
-  private final IReloadListener myReloadListener = new IReloadListener() {
-    public void reloadStarted() {
-      myTaskQueue.banProcessing();
-    }
-
-    public void reloadFinished() {
-      myTaskQueue.removeProcessingBan();
-    }
-  };
-
-  private final IBackgroundVcsOperationsListener myVcsListener = new IBackgroundVcsOperationsListener() {
-    public void backgroundOperationStarted() {
-      myTaskQueue.banProcessing();
-    }
-
-    public void allBackgroundOperationsStopped() {
-      myTaskQueue.removeProcessingBan();
-    }
-  };
+  private TaskQueue<Conflictable> myTaskQueue;
 
   public SuspiciousModelIndex(ProjectManager manager, ModelChangesWatcher watcher, VirtualFileManager vfManager) {
     myProjectManager = manager;
-    myProjectManagerListener = new ProjectOpenedListener();
     myWatcher = watcher;
     myVirtualFileManager = vfManager;
   }
 
   public void addModel(EditableSModelDescriptor model, boolean isInConflict) {
-    myTaskQueue.invokeLater(new ConflictableModelAdapter(model, isInConflict));
+    myTaskQueue.addTask(new ConflictableModelAdapter(model, isInConflict));
   }
 
   public void addModule(AbstractModule abstractModule, boolean inConflict) {
-    myTaskQueue.invokeLater(new ConflictableModuleAdapter(abstractModule, inConflict));
+    myTaskQueue.addTask(new ConflictableModuleAdapter(abstractModule, inConflict));
   }
 
   @NonNls
@@ -120,44 +73,13 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   public void initComponent() {
     if (MPSCore.getInstance().isTestMode()) return;
 
-    myProjectManager.addProjectManagerListener(myProjectManagerListener);
-    myWatcher.addReloadListener(myReloadListener);
-    myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
+    myTaskQueue = new MyTaskQueue(myProjectManager, myWatcher, myVirtualFileManager);
   }
 
   public void disposeComponent() {
     if (MPSCore.getInstance().isTestMode()) return;
 
-    myProjectManager.removeProjectManagerListener(myProjectManagerListener);
-    myWatcher.removeReloadListener(myReloadListener);
-    myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
-  }
-
-  private class ProjectOpenedListener implements ProjectManagerListener {
-    public void projectOpened(Project project) {
-      StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
-        public void run() {
-          myTaskQueue.removeProcessingBan();
-        }
-      });
-      ProjectLevelVcsManagerImpl manager = (ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class);
-      manager.addBackgroundOperationsListener(myVcsListener);
-    }
-
-    public boolean canCloseProject(Project project) {
-      return true;
-    }
-
-    public void projectClosed(Project project) {
-      if (myProjectManager.getOpenProjects().length == 0) {
-        myTaskQueue.banProcessing();
-      }
-    }
-
-    public void projectClosing(Project project) {
-      ProjectLevelVcsManagerImpl manager = (ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class);
-      manager.removeBackgroundOperationsListener(myVcsListener);
-    }
+    myTaskQueue.dispose();
   }
 
   public synchronized void mergeModels(List<Conflictable> models) {
@@ -227,77 +149,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     return toReload;
   }
 
-  private static abstract class Conflictable {
-    public abstract boolean isConflictDetected();
 
-    public abstract IFile getFile();
-
-    public abstract void reloadFromDisk();
-
-    public abstract boolean needReloading();
-
-    @Override
-    public boolean equals(Object object) {
-      if (!(object instanceof Conflictable)) return false;
-
-      return getFile().equals(((Conflictable) object).getFile());
+  private class MyTaskQueue extends TaskQueue<Conflictable> {
+    public MyTaskQueue(ProjectManager manager, ModelChangesWatcher watcher, VirtualFileManager virtualFileManager) {
+      super(manager, watcher, virtualFileManager);
     }
 
-    public int hashCode() {
-      return getFile().hashCode();
+    protected void processTask(final List<Conflictable> tasks) {
+      mergeModels(tasks);
     }
   }
-
-  private static class ConflictableModelAdapter extends Conflictable {
-    private final EditableSModelDescriptor myModel;
-    private final boolean myIsConflictDetected;
-
-    public ConflictableModelAdapter(EditableSModelDescriptor model, boolean isConflictDetected) {
-      myModel = model;
-      myIsConflictDetected = isConflictDetected;
-    }
-
-    public boolean isConflictDetected() {
-      return myIsConflictDetected;
-    }
-
-    public IFile getFile() {
-      return myModel.getModelFile();
-    }
-
-    public void reloadFromDisk() {
-      myModel.reloadFromDisk();
-    }
-
-    public boolean needReloading() {
-      return myModel.needsReloading();
-    }
-  }
-
-  private static class ConflictableModuleAdapter extends Conflictable {
-    private final IModule myModule;
-    private final boolean myIsConflictDetected;
-
-    public ConflictableModuleAdapter(IModule module, boolean isConflictDetected) {
-      myModule = module;
-      myIsConflictDetected = isConflictDetected;
-    }
-
-    public boolean isConflictDetected() {
-      return myIsConflictDetected;
-    }
-
-    public IFile getFile() {
-      return myModule.getDescriptorFile();
-    }
-
-    public void reloadFromDisk() {
-      myModule.reloadFromDisk(true);
-    }
-
-    public boolean needReloading() {
-      return myModule.needReloading();
-    }
-  }
-
 }
