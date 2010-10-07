@@ -8,6 +8,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
@@ -291,7 +292,7 @@ class IdeaFile implements IFileEx {
       if (myPath.contains("!")) {
         int index = myPath.indexOf("!");
         String jarPath = myPath.substring(0, index);
-        String entryPath = myPath.substring(index + 1);
+        String entryPath = StringUtil.replace(myPath.substring(index + 1), "\\", "/");
 
         if (entryPath.startsWith("/")) {
           entryPath = entryPath.substring(1);
