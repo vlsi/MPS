@@ -15,77 +15,18 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
-
 public class StructureModificationProcessor {
   protected static final Logger LOG = Logger.getLogger(StructureModificationProcessor.class);
-
-  public static void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
-    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
-      if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
-      SModel anotherModel = anotherDescriptor.getSModel();
-
-      Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
-      if (/*model != anotherDescriptor
-        &&*/ !dependenciesModels.contains(initialModelReference)) continue;
-      updateModel(anotherModel, model, refactoringContext);
-    }
-  }
-
-  protected static void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, SModelReference initialModelReference) {
-    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
-
-    if (!refactoringContext.isLocal()) {
-      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
-      updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
-    } else {
-      UsagesList usages = refactoringContext.getUsages();
-      if (usages != null) {
-        for (SModel anotherModel : usages.getAffectedModels()) {
-          updateModel(anotherModel, modelDescriptor, refactoringContext);
-        }
-      }
-    }
-  }
-
-  protected static void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
-    model.runLoadingAction(new Runnable() {
-      public void run() {
-        IRefactoring refactoring = refactoringContext.getRefactoring();
-        try {
-          ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
-        } catch (Throwable t) {
-          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
-        }
-
-        if (!refactoringContext.isLocal()) {
-          model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((EditableSModelDescriptor) usedModel).getVersion());
-        }
-        SModelRepository.getInstance().markChanged(model);
-      }
-    });
-  }
-
-  public static void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
-    assert !refactoringContext.isLocal();
-    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
-
-    refactoringContext.getStructureModificationData().addDependencyModel(model);
-    addToHistory(refactoringContext.getStructureModificationData());
-  }
 
   public static void addToHistory(@NotNull StructureModificationData data) {
     for (StructureModificationData.Dependency d : data.getDependencies()) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
-//      model.getSModel(); // ensure model is loaded
       StructureModificationHistory history = model.getStructureModificationHistory();
       history.addStructureModificationData(data);
       model.setVersion(model.getVersion() + 1);
@@ -96,7 +37,7 @@ public class StructureModificationProcessor {
   }
 
   /**
-   * Silently update model with structure refactorings from other models (without loading other models)
+   * Silently update model with structure modifications from other models (without loading other models)
    * @param model - model to update
    * @return true if model was updated with refactoring
    */

@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring.renameLanguage;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -83,7 +84,7 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    StructureModificationProcessor.writeIntoLog(structure, myContext);
+    RefactoringFacade.writeIntoLog(structure, myContext);
     SModelRepository.getInstance().saveAll();
   }
 
@@ -109,7 +110,7 @@ public class LanguageRenamer {
   public void update() {
     updateReferences();
     EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    StructureModificationProcessor.updateLoadedModels(structure.getSModelReference(), structure, myContext);
+    RefactoringFacade.updateLoadedModels(structure.getSModelReference(), structure, myContext);
   }
 
   private void updateReferences() {

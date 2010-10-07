@@ -1098,7 +1098,7 @@ public class SModel implements Iterable<SNode> {
     return importElement.getUsedVersion();
   }
 
-  void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = getImportElement(sModelReference);

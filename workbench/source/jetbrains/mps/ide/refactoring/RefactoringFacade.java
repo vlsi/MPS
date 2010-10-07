@@ -21,12 +21,14 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,6 +37,7 @@ import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, Aug 25, 2010
@@ -227,5 +230,60 @@ public class RefactoringFacade extends StructureModificationProcessor {
     } finally {
       SNode.setNodeMemeberAccessModifier(null);
     }
+  }
+
+  protected static void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, SModelReference initialModelReference) {
+    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
+
+    if (!refactoringContext.isLocal()) {
+      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
+      updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
+    } else {
+      UsagesList usages = refactoringContext.getUsages();
+      if (usages != null) {
+        for (SModel anotherModel : usages.getAffectedModels()) {
+          updateModel(anotherModel, modelDescriptor, refactoringContext);
+        }
+      }
+    }
+  }
+
+  public static void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
+    for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
+      if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
+      if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
+      SModel anotherModel = anotherDescriptor.getSModel();
+
+      Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
+      if (/*model != anotherDescriptor
+        &&*/ !dependenciesModels.contains(initialModelReference)) continue;
+      updateModel(anotherModel, model, refactoringContext);
+    }
+  }
+
+  protected static void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
+    model.runLoadingAction(new Runnable() {
+      public void run() {
+        IRefactoring refactoring = refactoringContext.getRefactoring();
+        try {
+          ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
+        } catch (Throwable t) {
+          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
+        }
+
+        if (!refactoringContext.isLocal()) {
+          model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((EditableSModelDescriptor) usedModel).getVersion());
+        }
+        SModelRepository.getInstance().markChanged(model);
+      }
+    });
+  }
+
+  public static void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
+    assert !refactoringContext.isLocal();
+    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
+
+    refactoringContext.getStructureModificationData().addDependencyModel(model);
+    addToHistory(refactoringContext.getStructureModificationData());
   }
 }
