@@ -18,6 +18,7 @@ package jetbrains.mps.generator.test;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationOptions;
@@ -112,6 +113,8 @@ public class GenerationTestBase {
     long severalThreads = System.nanoTime() - start;
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
+
+    PerformanceMessenger.getInstance().reportPercent("parallelGeneration", singleThread/1000000, severalThreads/1000000);
 
     if(DEBUG) {
       System.out.println("Single thread: " + singleThread/1000000/1000. + ", 4 threads: " + severalThreads/1000000/1000.);

@@ -1,5 +1,6 @@
 package jetbrains.mps.testbench.junit.runners;
 
+import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
@@ -28,6 +29,7 @@ public class WatchingSuite extends Suite{
       super.runChild(runner, runNotifier);
     }
     finally {
+      PerformanceMessenger.getInstance().generateReport();
       runNotifier.dispose();
     }
   }
