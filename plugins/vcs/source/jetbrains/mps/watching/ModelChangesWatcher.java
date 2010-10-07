@@ -21,13 +21,9 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
-import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.IBackgroundVcsOperationsListener;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -80,24 +76,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
       tryToResumeTasksProcessing();
     }
   };
-  private final IBackgroundVcsOperationsListener myVcsListener = new IBackgroundVcsOperationsListener() {
-    public void backgroundOperationStarted() {
-      suspendTasksProcessing();
-    }
-
-    public void allBackgroundOperationsStopped() {
-      tryToResumeTasksProcessing();
-    }
-  };
-  private final ProjectManagerListener myProjectManagerListener = new ProjectManagerAdapter() {
-    public void projectOpened(Project project) {
-      ((ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class)).addBackgroundOperationsListener(myVcsListener);
-    }
-
-    public void projectClosing(Project project) {
-      ((ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class)).removeBackgroundOperationsListener(myVcsListener);
-    }
-  };
 
   public void tryToResumeTasksProcessing() {
     synchronized (myLock) {
@@ -105,7 +83,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (myBans != 0) return;
       if (myReloadSession == null) return;
       if (!myReloadSession.hasAnythingToDo()) return;
-      
+
+      for (Project project : myProjectManager.getOpenProjects()) {
+        if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) return;
+      }
+
       myTimer.resume();
     }
   }
@@ -150,7 +132,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
-    myProjectManager.addProjectManagerListener(myProjectManagerListener);
   }
 
   public void disposeComponent() {
@@ -158,7 +139,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     myConnection.disconnect();
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
-    myProjectManager.removeProjectManagerListener(myProjectManagerListener);
   }
 
   private void doReload() {
