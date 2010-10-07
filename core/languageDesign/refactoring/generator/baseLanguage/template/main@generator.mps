@@ -2806,12 +2806,12 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1197382741524">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1197382776484">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743159">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1197382776485">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104002">
               <link role="variableDeclaration:3" targetNodeId="1197382763121" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743160">
               <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.updateByDefault(jetbrains.mps.smodel.SModel):void" resolveInfo="updateByDefault" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1197382780426">
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104003">
                 <link role="variableDeclaration:3" targetNodeId="1197382761104" resolveInfo="model" />
               </node>
             </node>
@@ -2825,7 +2825,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1197382763121">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197382768733">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104001">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -2921,7 +2921,7 @@
           <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1198577805223">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1198577818587">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743529">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1198577818588">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104005">
                   <link role="variableDeclaration:3" targetNodeId="1198577784560" resolveInfo="refactoringContext" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743530">
@@ -2932,8 +2932,8 @@
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1198577826556">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1198577830108">
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204227884675">
-                              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1198577830109" />
-                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1198577833178">
+                              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4109347764213104006" />
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4109347764213104007">
                                 <link role="link:16" targetNodeId="1.1198577431631:1" />
                               </node>
                             </node>
@@ -2951,7 +2951,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1198577784560">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1198577789598">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104004">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -2968,7 +2968,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199623458873">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1199623467645">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743715">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1199623467646">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104015">
               <link role="variableDeclaration:3" targetNodeId="1199623458908" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743716">
@@ -3012,7 +3012,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1199623458908">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1199623458909">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104014">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -3029,7 +3029,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199623584603">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1199623590765">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743308">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1199623590766">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104368">
               <link role="variableDeclaration:3" targetNodeId="1199623584638" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743309">
@@ -3089,7 +3089,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1199623584638">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1199623584639">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104367">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -3106,7 +3106,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199623713516">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1199623717585">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743494">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1199623717586">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104370">
               <link role="variableDeclaration:3" targetNodeId="1199623713551" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743495">
@@ -3150,7 +3150,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1199623713551">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1199623713552">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104369">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -3167,7 +3167,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199623848246">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1199623855752">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743425">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1199623855753">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104372">
               <link role="variableDeclaration:3" targetNodeId="1199623848297" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743426">
@@ -3227,7 +3227,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1199623848297">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1199623848298">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104371">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -3650,7 +3650,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3242588059496756726">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3242588059496756727">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3242588059496756728">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3242588059496756729">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104013">
               <link role="variableDeclaration:3" targetNodeId="3242588059496756756" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3242588059496756730">
@@ -3694,7 +3694,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3242588059496756756">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3242588059496756757">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104012">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -7179,7 +7179,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3302086321379403307">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3302086321379403308">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3302086321379403309">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3302086321379403310">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104009">
               <link role="variableDeclaration:3" targetNodeId="3302086321379403337" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3302086321379403311">
@@ -7239,7 +7239,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3302086321379403337">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3302086321379403338">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104008">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
@@ -7256,7 +7256,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3302086321379403384">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3302086321379403385">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3302086321379403386">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3302086321379403387">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4109347764213104011">
               <link role="variableDeclaration:3" targetNodeId="3302086321379403398" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3302086321379403388">
@@ -7284,7 +7284,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3302086321379403398">
         <property name="name:3" value="refactoringContext" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3302086321379403399">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4109347764213104010">
           <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
