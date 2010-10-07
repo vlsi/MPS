@@ -7,10 +7,17 @@ import jetbrains.mps.make.runtime.ITarget;
 import jetbrains.mps.make.runtime.IMonitor;
 
 public class InvalidScript implements IScript {
-  public InvalidScript() {
+  private Iterable<ValidationError> errors;
+
+  public InvalidScript(Iterable<ValidationError> errors) {
+    this.errors = errors;
   }
 
   public IScript.Result execute(ITarget trg, IMonitor monit) {
+    return null;
+  }
+
+  public ITarget defaultTarget() {
     return null;
   }
 

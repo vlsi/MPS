@@ -9,13 +9,16 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.runtime.ITarget;
 import jetbrains.mps.make.runtime.IScript;
 import junit.framework.Assert;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.make.runtime.internal.FacetRegistry;
 import org.jmock.Expectations;
 
 public class ScriptBuilder_Test extends MockTestCase {
   private IFacet[] facets;
 
-  public void test_buildScript() throws Exception {
+  public void test_make() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
@@ -25,6 +28,43 @@ public class ScriptBuilder_Test extends MockTestCase {
     scb.withTarget(new ITarget.Name("make"));
     IScript sc = scb.toScript();
     Assert.assertNotNull(sc);
+    Assert.assertTrue(sc.isValid());
+    List<ITarget.Name> expected = ListSequence.fromListAndArray(new ArrayList<ITarget.Name>(), new ITarget.Name("gen"), new ITarget.Name("textgen"), new ITarget.Name("make"));
+    Assert.assertSame(ListSequence.fromList(expected).count(), Sequence.fromIterable(sc.allTargets()).count());
+    for (ITarget t : Sequence.fromIterable(sc.allTargets())) {
+      Assert.assertEquals(ListSequence.fromList(expected).removeElementAt(0), t.getName());
+    }
+  }
+
+  public void test_gen() throws Exception {
+    ScriptBuilder scb = new ScriptBuilder();
+    scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).select(new ISelector<IFacet, IFacet.Name>() {
+      public IFacet.Name select(IFacet f) {
+        return f.getName();
+      }
+    }));
+    scb.withTarget(new ITarget.Name("gen"));
+    IScript sc = scb.toScript();
+    Assert.assertNotNull(sc);
+    Assert.assertTrue(sc.isValid());
+    List<ITarget.Name> expected = ListSequence.fromListAndArray(new ArrayList<ITarget.Name>(), new ITarget.Name("gen"), new ITarget.Name("textgen"), new ITarget.Name("make"));
+    Assert.assertSame(ListSequence.fromList(expected).count(), Sequence.fromIterable(sc.allTargets()).count());
+    for (ITarget t : Sequence.fromIterable(sc.allTargets())) {
+      Assert.assertEquals(ListSequence.fromList(expected).removeElementAt(0), t.getName());
+    }
+  }
+
+  public void test_none() throws Exception {
+    ScriptBuilder scb = new ScriptBuilder();
+    scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).select(new ISelector<IFacet, IFacet.Name>() {
+      public IFacet.Name select(IFacet f) {
+        return f.getName();
+      }
+    }));
+    scb.withTarget(new ITarget.Name("none"));
+    IScript sc = scb.toScript();
+    Assert.assertNotNull(sc);
+    Assert.assertFalse(sc.isValid());
   }
 
   @Override
@@ -39,20 +79,33 @@ public class ScriptBuilder_Test extends MockTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     final IFacet fmake = Mockups.facet(context, "Make");
+    final ITarget tmake = Mockups.target(context, "make", new ITarget.Name("make"));
     final IFacet fgen = Mockups.facet(context, "Gen");
     final ITarget tgen = Mockups.target(context, "gen", new ITarget.Name("gen"));
     final IFacet ftextgen = Mockups.facet(context, "Textgen");
     final ITarget ttextgen = Mockups.target(context, "textgen", new ITarget.Name("textgen"));
     context.checking(new Expectations() {
       {
+        atLeast(1).of(fmake).targets();
+        will(returnValue(Sequence.fromArray(new ITarget[]{tmake})));
+
         atLeast(1).of(fgen).required();
         will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName()})));
         atLeast(1).of(fgen).targets();
         will(returnValue(Sequence.fromArray(new ITarget[]{tgen})));
+
+        allowing(tgen).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+
         atLeast(1).of(ftextgen).required();
         will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName(), fgen.getName()})));
         atLeast(1).of(ftextgen).targets();
         will(returnValue(Sequence.fromArray(new ITarget[]{ttextgen})));
+
+        allowing(ttextgen).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        allowing(ttextgen).after();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
       }
     });
     FacetRegistry.getInstance().register(fmake);
@@ -62,6 +115,7 @@ public class ScriptBuilder_Test extends MockTestCase {
     Mockups.allowing(context, fgen);
     Mockups.allowing(context, ftextgen);
     this.facets = new IFacet[]{fmake, fgen, ftextgen};
+    Mockups.allowing(context, tmake);
     Mockups.allowing(context, tgen);
     Mockups.allowing(context, ttextgen);
   }

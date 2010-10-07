@@ -8,68 +8,60 @@ import jetbrains.mps.make.runtime.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Collections;
 import jetbrains.mps.make.runtime.IMonitor;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
 
-  private ITarget defaultTarget;
-  private List<ITarget> targets;
-  private Script.State state = Script.State.UNKNOWN;
+  private ITarget.Name defaultTargetName;
   private TargetRange targetRange;
+  private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
 
-  public Script(TargetRange targetRange, Iterable<ITarget> targets, ITarget defaultTarget) {
+  public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
-    this.targets = ListSequence.fromListWithValues(new ArrayList<ITarget>(), targets);
-    this.defaultTarget = defaultTarget;
+    this.defaultTargetName = defaultTargetName;
   }
 
   public void validate() {
+    ListSequence.fromList(errors).clear();
+    if (defaultTargetName != null && !(targetRange.hasTarget(defaultTargetName))) {
+      LOG.error("unknown default target: " + defaultTargetName);
+      error(defaultTargetName, "unknown default target: " + defaultTargetName);
+    }
+    if (targetRange.hasCycles()) {
+      LOG.error("cycle(s) detected: " + targetRange.cycles());
+      error(this, "cycle(s) detected: " + targetRange.cycles());
+    }
   }
 
   public boolean isValid() {
-    return Script.State.VALID == state;
-  }
-
-  public ITarget getTarget(final ITarget.Name name) {
-    return ListSequence.fromList(targets).findFirst(new IWhereFilter<ITarget>() {
-      public boolean accept(ITarget t) {
-        return t.getName().equals(name);
-      }
-    });
-  }
-
-  public ITarget getDefault() {
-    return defaultTarget;
+    return ListSequence.fromList(errors).isEmpty();
   }
 
   public Iterable<ITarget> allTargets() {
-    return Collections.unmodifiableList(targets);
+    return targetRange.sortedTargets();
+  }
+
+  public ITarget defaultTarget() {
+    ITarget trg = targetRange.getTarget(defaultTargetName);
+    if (trg == null) {
+      LOG.error("no such target: " + defaultTargetName);
+    }
+    return trg;
+  }
+
+  private void error(Object o, String message) {
+    ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
   public IScript.Result execute(ITarget trg, IMonitor monit) {
-    if (!(ListSequence.fromList(targets).contains(trg))) {
-      throw new IllegalArgumentException("unknown target");
+    if (!(targetRange.hasTarget(trg.getName()) || targetRange.getTarget(trg.getName()) != trg)) {
+      throw new IllegalArgumentException("unknown target: " + trg.getName());
     }
     if (!(isValid())) {
       LOG.error("attempt to execute invalid script");
       throw new IllegalStateException("invalid script");
     }
     return null;
-  }
-
-  protected void invalidate() {
-    this.state = Script.State.UNKNOWN;
-  }
-
-  protected static   enum State {
-    UNKNOWN(),
-    VALID(),
-    INVALID();
-
-    State() {
-    }
   }
 }

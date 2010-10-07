@@ -4,25 +4,14 @@ package jetbrains.mps.make.unittest;
 
 import jetbrains.mps.make.runtime.script.TargetRange;
 import jetbrains.mps.make.runtime.ITarget;
-import junit.framework.Assert;
-import jetbrains.mps.make.runtime.script.NoSuchTargetException;
 import org.jmock.Expectations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Targets_Test extends MockTestCase {
-  public void test_missing() throws Exception {
-    TargetRange tr = new TargetRange();
-    try {
-      tr.getTarget(new ITarget.Name("none"));
-      Assert.fail();
-    } catch (NoSuchTargetException e) {
-      // expected exception 
-    }
-  }
-
   public void test_extended() throws Exception {
     TargetRange tr = new TargetRange();
     final ITarget foo = Mockups.target(context, "foo", new ITarget.Name("foo"));

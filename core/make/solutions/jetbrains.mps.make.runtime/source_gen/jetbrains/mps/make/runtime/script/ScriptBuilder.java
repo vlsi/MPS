@@ -30,7 +30,7 @@ public class ScriptBuilder {
   private Set<ITarget.Name> requestedTargets = SetSequence.fromSet(new HashSet<ITarget.Name>());
   private ITarget.Name defaultTarget;
   private ResourcePool pool;
-  private List<ScriptBuilder.ValidationError> errors = ListSequence.fromList(new ArrayList<ScriptBuilder.ValidationError>());
+  private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
 
   public ScriptBuilder() {
   }
@@ -67,19 +67,29 @@ public class ScriptBuilder {
 
   public IScript toScript() {
     if (ListSequence.fromList(errors).isNotEmpty()) {
-      return new InvalidScript();
+      return new InvalidScript(errors);
     }
     final Map<IFacet.Name, ScriptBuilder.FacetRefs> refs = MapSequence.fromMap(new HashMap<IFacet.Name, ScriptBuilder.FacetRefs>());
     this.collectRefs(refs);
     if (ListSequence.fromList(errors).isNotEmpty()) {
-      return new InvalidScript();
+      return new InvalidScript(errors);
     }
-    Iterable<IFacet.Name> sorted = this.toposortByExtended(refs);
+    Iterable<IFacet.Name> sortedFacets = this.toposortByExtended(refs);
     if (ListSequence.fromList(errors).isNotEmpty()) {
-      return new InvalidScript();
+      return new InvalidScript(errors);
     }
     TargetRange tr = new TargetRange();
-    List<ITarget> allTargets = ListSequence.fromList(Sequence.fromIterable(sorted).translate(new ITranslator2<IFacet.Name, ITarget>() {
+    this.collectTargets(sortedFacets, tr);
+    if (ListSequence.fromList(errors).isNotEmpty()) {
+      return new InvalidScript(errors);
+    }
+    Script sc = new Script(tr, defaultTarget);
+    sc.validate();
+    return sc;
+  }
+
+  private void collectTargets(Iterable<IFacet.Name> sortedFacets, TargetRange tr) {
+    List<ITarget> allTargets = ListSequence.fromList(Sequence.fromIterable(sortedFacets).translate(new ITranslator2<IFacet.Name, ITarget>() {
       public Iterable<ITarget> translate(IFacet.Name fname) {
         return MapSequence.fromMap(facetsView).get(fname).targets();
       }
@@ -89,12 +99,24 @@ public class ScriptBuilder {
         tr.addTarget(trg);
       }
     }
+    if (defaultTarget != null && !(tr.hasTarget(defaultTarget))) {
+      LOG.error("target not found: " + defaultTarget);
+      error(defaultTarget, "target not found: " + defaultTarget);
+    }
+    for (ITarget.Name tn : SetSequence.fromSet(requestedTargets)) {
+      if (!(tr.hasTarget(tn))) {
+        LOG.error("target not found: " + tn);
+        error(defaultTarget, "target not found: " + tn);
+      }
+    }
+    if (ListSequence.fromList(errors).isNotEmpty()) {
+      return;
+    }
     tr.addRelated(Sequence.fromIterable(MapSequence.fromMap(facetsView).values()).translate(new ITranslator2<IFacet, ITarget>() {
       public Iterable<ITarget> translate(IFacet fct) {
         return fct.targets();
       }
     }));
-    return new InvalidScript();
   }
 
   private void collectRefs(final Map<IFacet.Name, ScriptBuilder.FacetRefs> refs) {
@@ -170,11 +192,11 @@ public class ScriptBuilder {
     }
   }
 
-  public void error(IFacet.Name fn, String message) {
-    ListSequence.fromList(this.errors).addElement(new ScriptBuilder.ValidationError(fn, message));
+  private void error(Object o, String message) {
+    ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public void clearErrors() {
+  private void clearErrors() {
     ListSequence.fromList(this.errors).clear();
   }
 
@@ -185,16 +207,6 @@ public class ScriptBuilder {
     private List<IFacet> optional = ListSequence.fromList(new ArrayList<IFacet>());
 
     public FacetRefs() {
-    }
-  }
-
-  public static class ValidationError {
-    private IFacet.Name facetName;
-    private String message;
-
-    public ValidationError(IFacet.Name facet, String message) {
-      this.facetName = facet;
-      this.message = message;
     }
   }
 }

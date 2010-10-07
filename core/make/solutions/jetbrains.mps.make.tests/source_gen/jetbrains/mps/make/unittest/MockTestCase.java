@@ -5,6 +5,7 @@ package jetbrains.mps.make.unittest;
 import org.jmock.integration.junit3.VerifyingTestCase;
 import org.jmock.Mockery;
 import org.jmock.integration.junit3.JUnit3Mockery;
+import org.apache.log4j.BasicConfigurator;
 
 public abstract class MockTestCase extends VerifyingTestCase {
   protected Mockery context = new JUnit3Mockery();
@@ -16,5 +17,9 @@ public abstract class MockTestCase extends VerifyingTestCase {
   public void verify() {
     context.assertIsSatisfied();
     super.verify();
+  }
+
+  static {
+    BasicConfigurator.configure();
   }
 }

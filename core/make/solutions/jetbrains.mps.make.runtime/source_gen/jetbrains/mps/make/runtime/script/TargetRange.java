@@ -165,24 +165,12 @@ __switch__:
     } while (atsize < SetSequence.fromSet(allTargets).count());
   }
 
-  public ITarget getTarget(ITarget.Name name) throws NoSuchTargetException {
-    ITarget trg = MapSequence.fromMap(targetsView).get(name);
-    if (trg == null) {
-      throw new NoSuchTargetException(String.valueOf(name));
-    }
-    return trg;
+  public ITarget getTarget(ITarget.Name name) {
+    return MapSequence.fromMap(targetsView).get(name);
   }
 
   public boolean hasTarget(ITarget.Name name) {
     return MapSequence.fromMap(targetsView).containsKey(name);
-  }
-
-  public boolean hasCycles() {
-    return ListSequence.fromList(new TargetRange.TargetsGraph().findCycles()).isNotEmpty();
-  }
-
-  public List<List<ITarget.Name>> cycles() {
-    return new TargetRange.TargetsGraph().findCycles();
   }
 
   public Iterable<ITarget> sortedTargets() {
@@ -191,6 +179,14 @@ __switch__:
         return MapSequence.fromMap(targetsView).get(tn);
       }
     });
+  }
+
+  public boolean hasCycles() {
+    return ListSequence.fromList(new TargetRange.TargetsGraph().findCycles()).isNotEmpty();
+  }
+
+  public List<List<ITarget.Name>> cycles() {
+    return new TargetRange.TargetsGraph().findCycles();
   }
 
   private ITarget primAddTarget(ITarget trg) {
