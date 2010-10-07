@@ -85,7 +85,7 @@ public class LanguageRenamer {
     myLanguage.save();
 
     myContext.getStructureModificationData().addDependencyModel(structure);
-    StructureModificationProcessor.updateRefactoringHistory(myContext);
+    StructureModificationProcessor.addToHistory(myContext);
     SModelRepository.getInstance().saveAll();
   }
 

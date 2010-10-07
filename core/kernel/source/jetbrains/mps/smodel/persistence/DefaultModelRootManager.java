@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelRefCreator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -98,6 +97,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     int persistence = dsm.getPersistenceVersion();
     if (persistence >= 5) {
       RefactoringsPersistence.save(dsm.getModelFile(), history);
+    } else {
+      dsm.getSModel().setRefactoringHistory(history);
     }
   }
 

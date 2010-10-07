@@ -46,7 +46,7 @@ public class StructureModificationProcessor {
     if (!refactoringContext.isLocal()) {
 //      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
       refactoringContext.getStructureModificationData().addDependencyModel((EditableSModelDescriptor) modelDescriptor);
-      updateRefactoringHistory(refactoringContext);
+      addToHistory(refactoringContext);
       updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
     } else {
       UsagesList usages = refactoringContext.getUsages();
@@ -91,17 +91,18 @@ public class StructureModificationProcessor {
   }
 */
 
-  public static void updateRefactoringHistory(RefactoringContext context) {
+  public static void addToHistory(RefactoringContext context) {
     assert !context.isLocal();
 
     for (StructureModificationData.Dependency d : context.getStructureModificationData().getDependencies()) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
-      model.getSModel(); // ensure model is loaded
-      model.getRefactoringHistory().addStructureModificationData(context.getStructureModificationData());
+//      model.getSModel(); // ensure model is loaded
+      RefactoringHistory history = model.getRefactoringHistory();
+      history.addStructureModificationData(context.getStructureModificationData());
       model.setVersion(model.getVersion() + 1);
       context.getStructureModificationData().setModelVersion(model.getVersion());
+      model.saveRefactoringHistory(history);
       SModelRepository.getInstance().markChanged(model, true);
-      model.saveRefactoringHistory();
     }
   }
 

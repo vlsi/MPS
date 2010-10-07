@@ -7,7 +7,7 @@ public interface Refactorable {
   @NotNull
   RefactoringHistory getRefactoringHistory();
 
-  void saveRefactoringHistory();
+  void saveRefactoringHistory(@NotNull RefactoringHistory history);
 
   int getVersion();
 

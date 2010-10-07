@@ -157,11 +157,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return myRefactoringHistory;
   }
 
-  public void saveRefactoringHistory() {
-    RefactoringHistory toSave = myRefactoringHistory;
-    if (toSave != null) {
-      myModelRootManager.saveModelRefactorings(this, toSave);
-    }
+  public void saveRefactoringHistory(@NotNull RefactoringHistory history) {
+    myRefactoringHistory = history;
+    myModelRootManager.saveModelRefactorings(this, history);
   }
 
   public long lastChangeTime() {
