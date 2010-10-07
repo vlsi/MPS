@@ -47,7 +47,6 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -55,7 +54,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import java.io.CharArrayReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
@@ -300,7 +298,7 @@ public class ModelPersistence {
     final int[] version = new int[]{-1};
     try {
       SAXParser parser = JDOMUtil.createSAXParser();
-      parser.parse(new InputSource(new InputStreamReader(file.openInputStream())), new DefaultHandler() {
+      parser.parse(JDOMUtil.loadSource(file), new DefaultHandler() {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
           if (version[0] == -1 && MODEL.equals(qName)) {

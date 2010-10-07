@@ -58,32 +58,21 @@ class FileProcessor {
   }
 
   private void saveContent(FileAndContent fileAndContent) {
-    if (ApplicationManager.getApplication().isWriteAccessAllowed()) {
-      fileAndContent.save();
-    } else {
-      myFilesAndContents.add(fileAndContent);
-    }
+    myFilesAndContents.add(fileAndContent);
   }
 
   public void filesToDelete(Collection<IFile> files) {
-    if (ApplicationManager.getApplication().isWriteAccessAllowed()) {
-      for (IFile file : files) {
-        file.delete();
-      }
-    } else {
-      myFilesToDelete.addAll(files);
-    }
+    myFilesToDelete.addAll(files);
   }
 
   public void invoke() {
     ModelAccess.instance().runReadInWriteAction(new Computable<Object>() {
       @Override
       public Object compute() {
-        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        Runnable task = new Runnable() {
           @Override
           public void run() {
             ModelAccess.instance().runReadInWriteWorker(new Runnable() {
-
               @Override
               public void run() {
                 for (FileAndContent filesAndContent : myFilesAndContents) {
@@ -98,7 +87,12 @@ class FileProcessor {
               }
             });
           }
-        }, ModalityState.defaultModalityState());
+        };
+        if (ApplicationManager.getApplication().isDispatchThread()) {
+          task.run();
+        } else {
+          ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
+        }
         return null;
       }
     });
@@ -115,6 +109,11 @@ class FileProcessor {
 
     private void save() {
       myContent.saveToFile(myFile);
+    }
+
+    @Override
+    public String toString() {
+      return myFile.toString();
     }
   }
 

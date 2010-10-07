@@ -16,6 +16,8 @@
 package jetbrains.mps.build.ant.generation;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
@@ -45,6 +47,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -137,8 +140,8 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void generateModulesCycle(final GeneratorManager gm, final Cycle cycle) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
+      public void run(@NotNull ProgressIndicator indicator) {
         info("Start " + cycle);
         cycle.generate(gm, new JavaGenerationHandler() {
           @Override
@@ -152,9 +155,7 @@ public class GeneratorWorker extends MpsWorker {
           @Override
           protected boolean compileModuleInMPS(IModule module, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
             return
-              requiresCompilationAfterGeneration()
-                ? super.compileModuleInMPS(module, progressHelper)
-                : true;
+              !requiresCompilationAfterGeneration() || super.compileModuleInMPS(module, progressHelper);
           }
 
           private boolean requiresCompilationAfterGeneration() {
@@ -165,13 +166,13 @@ public class GeneratorWorker extends MpsWorker {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         info("Finished " + cycle);
       }
-    });
+    }, "", false, null);
   }
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
-    extractModels(go.getProjects(), go.getModules(), (Set) go.getModels(), (Map) moduleToModels);
+    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
 
     // calculate order
     List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
@@ -330,7 +331,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : (List<IModule>) new ArrayList<IModule>(myModule.getDependenciesManager().getDependOnModules())) {
+      for (IModule m : new ArrayList<IModule>(myModule.getDependenciesManager().getDependOnModules())) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }

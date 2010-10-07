@@ -287,7 +287,7 @@ public class TestMakeOnRealProject {
   }
 
   private Language createNewLanguage() {
-    String languageNamespace = "TestLanguasge";
+    String languageNamespace = "TestLanguage";
     IFile descriptorFile = myTmpDir.child(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
     Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
     descriptorFile.createNewFile();
