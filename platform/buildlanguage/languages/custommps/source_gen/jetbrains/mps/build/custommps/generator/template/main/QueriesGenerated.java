@@ -10,7 +10,6 @@ import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior;
-import jetbrains.mps.samples.SamplesInfo;
 import jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -110,10 +109,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1240558476327(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1241015690726(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SamplesInfo.SAMPLES_IN_USER_HOME_DIR;
   }
 
   public static Object propertyMacro_GetPropertyValue_2235195415637077314(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -253,7 +248,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6128676491055373718(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a15().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a15().createNode());
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a05().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a05().createNode());
   }
 
   public static Iterable sourceNodesQuery_2235195415637077365(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -296,8 +291,8 @@ public class QueriesGenerated {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static class QuotationClass_x583g4_a1a0a15 {
-    public QuotationClass_x583g4_a1a0a15() {
+  public static class QuotationClass_x583g4_a1a0a05 {
+    public QuotationClass_x583g4_a1a0a05() {
     }
 
     public SNode createNode() {
@@ -315,8 +310,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a2a0a15 {
-    public QuotationClass_x583g4_a2a0a15() {
+  public static class QuotationClass_x583g4_a2a0a05 {
+    public QuotationClass_x583g4_a2a0a05() {
     }
 
     public SNode createNode() {
