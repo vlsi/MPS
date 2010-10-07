@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.refactoring.framework;
+package jetbrains.mps.refactoring;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.JDomReader;
 import com.thoughtworks.xstream.io.xml.JDomWriter;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.refactoring.framework.ISerializable;
+import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;

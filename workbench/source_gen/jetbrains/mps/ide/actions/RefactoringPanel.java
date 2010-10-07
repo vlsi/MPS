@@ -13,7 +13,7 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import jetbrains.mps.refactoring.framework.StructureModificationData;
+import jetbrains.mps.refactoring.StructureModificationData;
 import java.awt.GridBagLayout;
 import javax.swing.border.TitledBorder;
 import java.awt.GridBagConstraints;

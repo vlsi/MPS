@@ -16,7 +16,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.StructureModificationData.ConceptFeatureKind;
+import jetbrains.mps.refactoring.StructureModificationData.ConceptFeatureKind;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;

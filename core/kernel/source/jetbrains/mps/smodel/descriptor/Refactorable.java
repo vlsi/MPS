@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel.descriptor;
 
-import jetbrains.mps.refactoring.framework.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationHistory;
 import org.jetbrains.annotations.NotNull;
 
 public interface Refactorable {

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.framework.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;

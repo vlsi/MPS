@@ -21,7 +21,7 @@ import com.intellij.util.text.CharSequenceReader;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;

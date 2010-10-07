@@ -23,7 +23,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <maxImportIndex value="82" />
+  <maxImportIndex value="83" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project.structure.modules.mappingpriorities(jetbrains.mps.project.structure.modules.mappingpriorities@java_stub)" version="-1" />
@@ -78,6 +78,7 @@
   <import index="80" modelUID="f:java_stub#jetbrains.mps.lang.generator.structure(jetbrains.mps.lang.generator.structure@java_stub)" version="-1" />
   <import index="81" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="82" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
+  <import index="83" modelUID="f:java_stub#jetbrains.mps.refactoring(jetbrains.mps.refactoring@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4060390951635972879">
     <property name="name:3" value="StandardComponents" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4060390951635972880" />
@@ -2970,11 +2971,11 @@
                           <link role="variableDeclaration:3" targetNodeId="4060390951635973965" resolveInfo="modelDescriptor" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939456">
-                          <link role="baseMethodDeclaration:3" targetNodeId="81.~Refactorable.getStructureModificationHistory():jetbrains.mps.refactoring.framework.StructureModificationHistory" resolveInfo="getStructureModificationHistory" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="81.~Refactorable.getStructureModificationHistory():jetbrains.mps.refactoring.StructureModificationHistory" resolveInfo="getStructureModificationHistory" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939457">
-                        <link role="baseMethodDeclaration:3" targetNodeId="15.~StructureModificationHistory.getDataList():java.util.List" resolveInfo="getDataList" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="83.~StructureModificationHistory.getDataList():java.util.List" resolveInfo="getDataList" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3816779761300068929">

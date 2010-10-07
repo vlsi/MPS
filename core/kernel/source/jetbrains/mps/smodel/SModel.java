@@ -22,7 +22,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.framework.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;

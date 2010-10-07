@@ -26,6 +26,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
