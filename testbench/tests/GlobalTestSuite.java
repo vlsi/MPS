@@ -345,7 +345,7 @@ jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,
 jetbrains.mps.vcs.diff.MergeReferencesTest.class,
 jetbrains.mps.vcs.diff.MergeConceptAndImportsTest.class,
 jetbrains.mps.generator.test.ParallelPoolTest.class,
-jetbrains.mps.generator.test.IncrementalGenerationTest.class,
+/*jetbrains.mps.generator.test.IncrementalGenerationTest.class,*/
 jetbrains.mps.generator.test.ParallelGenerationMeasuringTest.class,
 tests.Match_Test.class,
 tests.PerlReplace_Test.class,
