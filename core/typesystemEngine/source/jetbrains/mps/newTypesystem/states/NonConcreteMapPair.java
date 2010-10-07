@@ -26,11 +26,9 @@ import jetbrains.mps.typesystem.inference.IWrapper;
  * To change this template use File | Settings | File Templates.
  */
 public class NonConcreteMapPair extends MapPair<IWrapper> {
-  private boolean isShallow;
 
-  public NonConcreteMapPair(State state, boolean isShallow) {
+   public NonConcreteMapPair(State state) {
     super(state);
-    this.isShallow = isShallow;
   }
 
   @Override

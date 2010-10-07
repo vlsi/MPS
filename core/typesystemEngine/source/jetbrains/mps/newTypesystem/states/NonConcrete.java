@@ -37,7 +37,7 @@ public class NonConcrete {
   public NonConcrete(State state) {
     myState = state;
     myEquations = myState.getEquations();
-    myNonConcrete = new NonConcreteMapPair(myState, true);
+    myNonConcrete = new NonConcreteMapPair(myState);
   }
 
   public void substitute(IWrapper var, IWrapper type) {

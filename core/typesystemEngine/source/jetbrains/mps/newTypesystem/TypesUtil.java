@@ -42,4 +42,11 @@ public class TypesUtil {
     return !isVariable(wrapper);
   }
 
+
+  public IWrapper expandNode(IWrapper wrapper) {
+    if (wrapper == null) {
+      return null;
+    }
+    return null;
+  }
 }
