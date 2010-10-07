@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
@@ -69,12 +69,12 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
   @Override
-  public RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
+  public StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
     return null;
   }
 
   @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history) {
+  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationHistory history) {
     throw new UnsupportedOperationException();
   }
 

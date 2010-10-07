@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v1;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -56,7 +56,7 @@ public class ModelWriter1 implements IModelWriter {
     }
 
     //noinspection deprecation
-    RefactoringHistory history = sourceModel.getRefactoringHistory();
+    StructureModificationHistory history = sourceModel.getRefactoringHistory();
     rootElement.addContent(history.toElement());
 
     // languages

@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.refactoring.framework.StructureModificationData;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -45,7 +45,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private boolean myMetadataLoaded;
 
   private Object myRefactoringHistoryLock = new Object();
-  private RefactoringHistory myRefactoringHistory;
+  private StructureModificationHistory myStructureModificationHistory;
 
 
   private long myLastChange;
@@ -138,27 +138,27 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   @NotNull
-  public RefactoringHistory getRefactoringHistory() {
+  public StructureModificationHistory getStructureModificationHistory() {
     synchronized (myRefactoringHistoryLock) {
-      if (myRefactoringHistory == null) {
+      if (myStructureModificationHistory == null) {
         SModel model = mySModel;
         if (model != null && model.getPersistenceVersion() >= 0 && model.getPersistenceVersion() < 5) {
           //noinspection deprecation
-          myRefactoringHistory = model.getRefactoringHistory();
+          myStructureModificationHistory = model.getRefactoringHistory();
         }
-        if (myRefactoringHistory == null) {
-          myRefactoringHistory = myModelRootManager.loadModelRefactorings(this);
+        if (myStructureModificationHistory == null) {
+          myStructureModificationHistory = myModelRootManager.loadModelRefactorings(this);
         }
-        if (myRefactoringHistory == null) {
-          myRefactoringHistory = new RefactoringHistory();
+        if (myStructureModificationHistory == null) {
+          myStructureModificationHistory = new StructureModificationHistory();
         }
       }
     }
-    return myRefactoringHistory;
+    return myStructureModificationHistory;
   }
 
-  public void saveRefactoringHistory(@NotNull RefactoringHistory history) {
-    myRefactoringHistory = history;
+  public void saveStructureModificationHistory(@NotNull StructureModificationHistory history) {
+    myStructureModificationHistory = history;
     myModelRootManager.saveModelRefactorings(this, history);
   }
 
@@ -234,7 +234,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     mySModel = newModel;
     setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
 
-    myRefactoringHistory = null;
+    myStructureModificationHistory = null;
     if (mySModel != null) {
       mySModel.setModelDescriptor(this);
     }
@@ -335,7 +335,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       }
     }
     tryFixingVersion();
-    myRefactoringHistory = null;
+    myStructureModificationHistory = null;
     updateDiskTimestamp();
     return result;
   }
@@ -369,7 +369,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (getVersion() != -1) return;
 
     int maxVersion = -1;
-    for (StructureModificationData data : getRefactoringHistory().getDataList()) {
+    for (StructureModificationData data : getStructureModificationHistory().getDataList()) {
       maxVersion = Math.max(maxVersion, data.getModelVersion());
     }
 

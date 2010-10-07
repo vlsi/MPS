@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -43,9 +43,9 @@ public interface IModelRootManager {
 
   void saveMetadata(@NotNull SModelDescriptor modelDescriptor);
 
-  RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
+  StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
 
-  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history);
+  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationHistory history);
 
   boolean isFindUsagesSupported();
 

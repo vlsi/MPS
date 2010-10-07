@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
@@ -185,10 +185,10 @@ public class ModelReader4 implements IModelReader {
   }
 
   protected void readRefactorings(Element rootElement, SModel model) {
-    RefactoringHistory history = new RefactoringHistory();
+    StructureModificationHistory history = new StructureModificationHistory();
     //noinspection deprecation
     model.setRefactoringHistory(history);
-    history.fromElement(rootElement.getChild(RefactoringHistory.REFACTORING_HISTORY));
+    history.fromElement(rootElement.getChild(StructureModificationHistory.REFACTORING_HISTORY));
   }
 
   public SModelReference upgradeModelUID(SModelReference modelReference) {

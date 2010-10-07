@@ -2,7 +2,7 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -26,7 +26,7 @@ public class RefactoringsPersistence {
     return FileSystem.getInstance().getFileByPath(refactoringsPath);
   }
 
-  public static void save(IFile modelFile, RefactoringHistory refactorings) {
+  public static void save(IFile modelFile, StructureModificationHistory refactorings) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
     refactoringsFile.createNewFile();
 
@@ -43,15 +43,15 @@ public class RefactoringsPersistence {
     }
   }
 
-  public static RefactoringHistory load(IFile modelFile) {
+  public static StructureModificationHistory load(IFile modelFile) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
     if (!refactoringsFile.exists()) {
       return null;
     }
     try {
       Element root = JDOMUtil.loadDocument(refactoringsFile).getRootElement();
-      if (RefactoringHistory.REFACTORING_HISTORY.equals(root.getName())) {
-        return new RefactoringHistory().fromElement(root);
+      if (StructureModificationHistory.REFACTORING_HISTORY.equals(root.getName())) {
+        return new StructureModificationHistory().fromElement(root);
       }
       return null;
     } catch (IOException e) {
@@ -63,16 +63,16 @@ public class RefactoringsPersistence {
     }
   }
 
-  public static RefactoringHistory loadFromModel(IFile modelFile) {
+  public static StructureModificationHistory loadFromModel(IFile modelFile) {
     if (!modelFile.exists()) {
       return null;
     }
     try {
       Element root = JDOMUtil.loadDocument(modelFile).getRootElement();
       if (ModelPersistence.MODEL.equals(root.getName())) {
-        Element child = root.getChild(RefactoringHistory.REFACTORING_HISTORY);
+        Element child = root.getChild(StructureModificationHistory.REFACTORING_HISTORY);
         if (child != null) {
-          return new RefactoringHistory().fromElement(child);
+          return new StructureModificationHistory().fromElement(child);
         }
       }
       return null;

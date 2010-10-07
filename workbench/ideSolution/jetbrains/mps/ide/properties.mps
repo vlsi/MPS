@@ -2963,21 +2963,21 @@
             <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698773788">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3631268986232939450">
                 <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="3631268986232939451">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3631268986232939452">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3816779761300068925">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3631268986232939453">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3631268986232939454">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3631268986232939470">
                           <link role="variableDeclaration:3" targetNodeId="4060390951635973965" resolveInfo="modelDescriptor" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939456">
-                          <link role="baseMethodDeclaration:3" targetNodeId="81.~Refactorable.getRefactoringHistory():jetbrains.mps.refactoring.framework.RefactoringHistory" resolveInfo="getRefactoringHistory" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="81.~Refactorable.getStructureModificationHistory():jetbrains.mps.refactoring.framework.StructureModificationHistory" resolveInfo="getStructureModificationHistory" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939457">
-                        <link role="baseMethodDeclaration:3" targetNodeId="15.~RefactoringHistory.getDataList():java.util.List" resolveInfo="getDataList" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="15.~StructureModificationHistory.getDataList():java.util.List" resolveInfo="getDataList" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3631268986232939458">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3816779761300068929">
                       <link role="baseMethodDeclaration:3" targetNodeId="12.~List.isEmpty():boolean" resolveInfo="isEmpty" />
                     </node>
                   </node>

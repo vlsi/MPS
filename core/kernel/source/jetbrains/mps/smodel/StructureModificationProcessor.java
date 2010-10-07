@@ -86,11 +86,11 @@ public class StructureModificationProcessor {
     for (StructureModificationData.Dependency d : data.getDependencies()) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
 //      model.getSModel(); // ensure model is loaded
-      RefactoringHistory history = model.getRefactoringHistory();
+      StructureModificationHistory history = model.getStructureModificationHistory();
       history.addStructureModificationData(data);
       model.setVersion(model.getVersion() + 1);
       data.setModelVersion(model.getVersion());
-      model.saveRefactoringHistory(history);
+      model.saveStructureModificationHistory(history);
       SModelRepository.getInstance().markChanged(model, true);
     }
   }
@@ -134,8 +134,8 @@ public class StructureModificationProcessor {
 
     if (currentVersion > usedVersion) {
       boolean played = false;
-      RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
-      for (StructureModificationData data : refactoringHistory.getDataList()) {
+      StructureModificationHistory history = usedModelDescriptor.getStructureModificationHistory();
+      for (StructureModificationData data : history.getDataList()) {
         if (data.getModelVersion() <= usedVersion) continue;
         if (playRefactoring(model, data)) {
           played = true;

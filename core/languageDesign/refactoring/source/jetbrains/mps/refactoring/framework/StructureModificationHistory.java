@@ -20,7 +20,7 @@ import org.jdom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RefactoringHistory {
+public class StructureModificationHistory {
   public static final String REFACTORING_HISTORY = "refactoringHistory";
 
   private List<StructureModificationData> myDataList = new ArrayList<StructureModificationData>();
@@ -33,7 +33,7 @@ public class RefactoringHistory {
     myDataList.add(data);
   }
 
-  public RefactoringHistory fromElement(Element e) {
+  public StructureModificationHistory fromElement(Element e) {
     if (e == null) return this;
     for (Element refactoringContextElement : (List<Element>) e.getChildren(StructureModificationData.REFACTORING_CONTEXT)) {
       myDataList.add(new StructureModificationData().fromElement(refactoringContextElement));

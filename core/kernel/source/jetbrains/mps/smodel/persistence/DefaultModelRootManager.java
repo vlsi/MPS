@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
@@ -92,7 +92,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull RefactoringHistory history) {
+  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationHistory history) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     int persistence = dsm.getPersistenceVersion();
     if (persistence >= 5) {
@@ -103,9 +103,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @Override
-  public RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor sm) {
+  public StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    RefactoringHistory refactorings = RefactoringsPersistence.load(dsm.getModelFile());
+    StructureModificationHistory refactorings = RefactoringsPersistence.load(dsm.getModelFile());
     if (refactorings != null) {
       return refactorings;
     }

@@ -50,7 +50,7 @@ public class RefactoringPanel {
     String modelName = "<html><b>" + myModel.getLongName() + "</b></html>";
     JLabel modelNameLabel = new JLabel(modelName, modelIcon, SwingConstants.LEADING);
     myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
-    List<StructureModificationData> dataList = myModel.getRefactoringHistory().getDataList();
+    List<StructureModificationData> dataList = myModel.getStructureModificationHistory().getDataList();
     JPanel mainPanel = new JPanel(new GridBagLayout());
     mainPanel.setBorder(new TitledBorder("actions"));
     GridBagConstraints gridBagConstraints = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(4, 8, 4, 8), 0, 0);

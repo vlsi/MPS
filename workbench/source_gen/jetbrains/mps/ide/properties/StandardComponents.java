@@ -420,7 +420,7 @@ public class StandardComponents {
     final Wrappers._T<RefactoringPanel> refactoringPanel = new Wrappers._T<RefactoringPanel>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (!(modelDescriptor.getRefactoringHistory().getDataList().isEmpty())) {
+        if (!(modelDescriptor.getStructureModificationHistory().getDataList().isEmpty())) {
           refactoringPanel.value = new RefactoringPanel(modelDescriptor, RefactoringUtil.getAllRefactoringNodes(), context);
         }
       }

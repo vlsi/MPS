@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel.descriptor;
 
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import org.jetbrains.annotations.NotNull;
 
 public interface Refactorable {
   @NotNull
-  RefactoringHistory getRefactoringHistory();
+  StructureModificationHistory getStructureModificationHistory();
 
-  void saveRefactoringHistory(@NotNull RefactoringHistory history);
+  void saveStructureModificationHistory(@NotNull StructureModificationHistory history);
 
   int getVersion();
 

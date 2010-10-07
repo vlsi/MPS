@@ -21,7 +21,7 @@ import com.intellij.util.text.CharSequenceReader;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -262,7 +262,7 @@ public class ModelPersistence {
    */
   public static SModel upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
     SModelReference reference = model.getSModelReference();
-    RefactoringHistory refactorings = null;
+    StructureModificationHistory refactorings = null;
     int version = fromVersion;
     while (version < toVersion) {
       IModelWriter writer = modelWriters.get(++version);

@@ -22,7 +22,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -63,7 +63,7 @@ public class SModel implements Iterable<SNode> {
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
-  private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
+  private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
 
@@ -1119,27 +1119,27 @@ public class SModel implements Iterable<SNode> {
    * @deprecated Use SModelDescriptor.getRefactoringsHistory()
    */
   @Deprecated
-  public RefactoringHistory getRefactoringHistory() {
-    return myRefactoringHistory;
+  public StructureModificationHistory getRefactoringHistory() {
+    return myStructureModificationHistory;
   }
 
   public void refreshRefactoringHistory() {
     ModelChange.assertLegalChange(this);
 
     try {
-      Element e = myRefactoringHistory.toElement();
-      myRefactoringHistory = new RefactoringHistory();
-      myRefactoringHistory.fromElement(e);
+      Element e = myStructureModificationHistory.toElement();
+      myStructureModificationHistory = new StructureModificationHistory();
+      myStructureModificationHistory.fromElement(e);
     } catch (Throwable t) {
       LOG.error("refactoring history refresh failed " + this, t, this);
     }
   }
 
   @Deprecated
-  public void setRefactoringHistory(RefactoringHistory refactoringHistory) {
+  public void setRefactoringHistory(StructureModificationHistory history) {
     ModelChange.assertLegalChange(this);
 
-    myRefactoringHistory = refactoringHistory;
+    myStructureModificationHistory = history;
   }
 
   public void clearAdaptersAndUserObjects() {
