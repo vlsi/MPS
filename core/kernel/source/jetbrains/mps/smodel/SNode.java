@@ -701,8 +701,6 @@ public final class SNode {
     return myProperties.get(propertyName);
   }
 
-  /*package*/
-
   void changePropertyName(String oldPropertyName, String newPropertyName) {
     //todo make undo?
     if (myProperties == null) return;
@@ -755,16 +753,6 @@ public final class SNode {
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
-      boolean addedOrRemoved = false;
-      boolean isRemoved = false;
-      if (SModelUtil_new.isEmptyPropertyValue(oldValue)) {
-        addedOrRemoved = true;
-        isRemoved = false;
-      }
-      if (SModelUtil_new.isEmptyPropertyValue(propertyValue)) {
-        addedOrRemoved = true;
-        isRemoved = true;
-      }
       getModel().firePropertyChangedEvent(this, propertyName_, oldValue, propertyValue);
     }
   }
@@ -884,26 +872,30 @@ public final class SNode {
     return nodes;
   }
 
+  /**
+   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
+   */
+  public SNode[] getChildrenArray(String role) {
+    List<SNode> children = getChildren(role);
+    return children.toArray(new SNode[children.size()]);
+  }
+
   public Iterable<SNode> getChildrenIterable() {
     return new Iterable<SNode>() {
-      @Override
       public Iterator<SNode> iterator() {
         return new Iterator<SNode>() {
           private SNode current = myFirstChild;
 
-          @Override
           public boolean hasNext() {
             return current != null;
           }
 
-          @Override
           public SNode next() {
             SNode result = current;
             current = current.myNextSibling;
             return result;
           }
 
-          @Override
           public void remove() {
             throw new UnsupportedOperationException();
           }
@@ -966,14 +958,6 @@ public final class SNode {
       }
     }
     return result;
-  }
-
-  /**
-   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
-   */
-  public SNode[] getChildrenArray(String role) {
-    List<SNode> children = getChildren(role);
-    return children.toArray(new SNode[children.size()]);
   }
 
   public SNode getNextChild(SNode child) {
@@ -1063,8 +1047,6 @@ public final class SNode {
     }
   }
 
-  /*package*/
-
   void unRegisterFromModel() {
     if (!myRegisteredInModelFlag) return;
     UnregisteredNodes.instance().put(this);
@@ -1084,7 +1066,7 @@ public final class SNode {
   void registerInModel(SModel model) {
     registerInModel_internal(model);
 
-    // add language because helgins needs it to invalidate/revalidate its caches
+    // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
     model.validateLanguages(this);
   }
@@ -1117,11 +1099,11 @@ public final class SNode {
   }
 
   void dispose() {
-//    myModel = null;
-//    myRegisteredInModelFlag = false;
-//    myChildren = null;
-//    myReferences = null;
-//    myProperties = null;
+    //myModel = null;
+    //myRegisteredInModelFlag = false;
+    //myChildren = null;
+    //myReferences = null;
+    //myProperties = null;
     myAdapter = null;
     myUserObjects = null;
     myDisposed = true;
@@ -1163,12 +1145,10 @@ public final class SNode {
 
   public Collection<SReference> getReferencesIterable() {
     return new AbstractList<SReference>() {
-      @Override
       public SReference get(int index) {
         return myReferences[index];
       }
 
-      @Override
       public int size() {
         return myReferences.length;
       }
@@ -1516,10 +1496,6 @@ public final class SNode {
     return getDescendants(null);
   }
 
-  public Iterable<SNode> getDescendantsIterable() {
-    return getDescendantsIterable(null, false);
-  }
-
   public Iterable<SNode> getDescendantsIterable(final Condition<SNode> condition, final boolean includeFirst) {
     return new DescendantsIterable(this, includeFirst ? this : myFirstChild, condition);
   }
@@ -1561,7 +1537,6 @@ public final class SNode {
   }
 
   //todo remove into editor code
-
   public void addRightTransformHint() {
     setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
   }
@@ -1598,11 +1573,6 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return myConceptFqName;
-  }
-
-  @Deprecated
-  public SConceptReference getConceptRefernece() {
-    return getConceptReference();
   }
 
   public SConceptReference getConceptReference() {
@@ -1961,7 +1931,6 @@ public final class SNode {
       super(first, size);
     }
 
-    @Override
     protected SNode next(SNode node) {
       SNode result = node.myNextSibling;
       while (result != null && result.isAttribute()) {
@@ -1970,7 +1939,6 @@ public final class SNode {
       return result;
     }
 
-    @Override
     protected SNode prev(SNode node) {
       SNode result = myFirst == node ? null : node.myPrevSibling;
       while (result != null && result.isAttribute()) {
@@ -1979,56 +1947,12 @@ public final class SNode {
       return result;
     }
 
-    @Override
     protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
       return new SkipAttributesChildrenList(elem, size);
     }
   }
-/*
-  private void children_check() {
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      if(child.myParent != this) {
-        throw new IllegalModelAccessError("BAD child: another parent");
-      }
-      if(child.myNextSibling != null) {
-        if(child.myNextSibling.myPrevSibling != child) {
-          throw new IllegalModelAccessError("wrong link");
-        }
-      } else {
-        if(myFirstChild.myPrevSibling != child) {
-          throw new IllegalModelAccessError("BAD child");
-        }
-      }
-    }
-
-    SNode child =myFirstChild;
-    for(SNode n : new ChildrenList(myFirstChild)) {
-      if(n != child) {
-        throw new IllegalModelAccessError("BAD iterator");
-      }
-      child = child != null ? child.myNextSibling : null;
-    }
-    if(child != null) {
-       throw new IllegalModelAccessError("BAD iterator");
-    }
-
-    child = myFirstChild != null ? myFirstChild.myPrevSibling : null;
-    List<SNode> l = new ChildrenList(myFirstChild);
-    ListIterator<SNode> it = l.listIterator(l.size());
-    while(it.hasPrevious()) {
-      SNode n = it.previous();
-      if(n != child) {
-        throw new IllegalModelAccessError("BAD iterator");
-      }
-      child = child != null && child != myFirstChild ? child.myPrevSibling: null;
-    }
-    if(child != null) {
-       throw new IllegalModelAccessError("BAD iterator");
-    }
-  } */
 
   private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
-    @Override
     protected Set<Pair<SNode, String>> initialValue() {
       return new HashSet<Pair<SNode, String>>();
     }
@@ -2048,12 +1972,10 @@ public final class SNode {
       }
     }
 
-    @Override
     public boolean hasNext() {
       return current != null;
     }
 
-    @Override
     public SNode next() {
       SNode result = current;
       do {
@@ -2081,12 +2003,10 @@ public final class SNode {
       return null;
     }
 
-    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
 
-    @Override
     public Iterator<SNode> iterator() {
       return this;
     }
