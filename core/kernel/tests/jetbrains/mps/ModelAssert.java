@@ -15,16 +15,13 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.util.CollectionUtil;
+import org.junit.Assert;
 
 import java.util.*;
 
 import static org.junit.Assert.*;
-
-import org.junit.Assert;
 
 public class ModelAssert {
   public static void assertDeepModelEquals(SModel expectedModel, SModel actualModel) {
@@ -36,14 +33,13 @@ public class ModelAssert {
 
     // todo check not only child nodes
 
-    List<SNode> expectedRoots = expectedModel.getRoots();
 
     HashMap<SNodeId, SNode> actualRoots = new HashMap<SNodeId, SNode>();
-    for (SNode actualRoot : actualModel.getRoots()) {
+    for (SNode actualRoot : actualModel.roots()) {
       actualRoots.put(actualRoot.getSNodeId(), actualRoot);
     }
 
-    for (SNode expectedRoot : expectedRoots) {
+    for (SNode expectedRoot : expectedModel.roots()) {
       SNode actualRoot = actualRoots.get(expectedRoot.getSNodeId());
       assertNotNull("Not found expected root " + expectedRoot, actualRoot);
       assertDeepNodeEquals(expectedRoot, actualRoot);
@@ -147,11 +143,11 @@ public class ModelAssert {
       }
     }
 
-    if (!notFoundExpected.isEmpty()){
+    if (!notFoundExpected.isEmpty()) {
       fail("Not found expected " + name + " " + Arrays.toString(notFoundExpected.toArray()));
     }
 
-    if (!notFoundActual.isEmpty()){
+    if (!notFoundActual.isEmpty()) {
       fail("Not expected " + name + " " + Arrays.toString(notFoundActual.toArray()));
     }
   }

@@ -103,7 +103,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       oldidsToOriginal.put(entry.getKey().getSNodeId(), entry.getValue());
     }
     currentToOriginalMap = new HashMap<SNode, SNode>();
-    for (SNode root : newmodel.getRoots()) {
+    for (SNode root : newmodel.roots()) {
       SNodeId id = root.getSNodeId();
       SNode original = oldidsToOriginal.get(id);
       currentToOriginalMap.put(root, original);

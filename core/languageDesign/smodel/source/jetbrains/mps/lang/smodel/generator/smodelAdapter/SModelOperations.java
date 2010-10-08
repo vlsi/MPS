@@ -22,9 +22,10 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +36,7 @@ import java.util.List;
  * Feb 10, 2006
  */
 public class SModelOperations {
-  public static List<SNode> getRoots(SModel model, String conceptFqName) {
+  public static List<SNode> getRoots(SModel model, final String conceptFqName) {
     if (model == null) return new ArrayList<SNode>();
     if (conceptFqName == null) {
       return model.getRoots();
@@ -45,10 +46,14 @@ public class SModelOperations {
     if (concept == null) return new ArrayList<SNode>();
 
     List<SNode> list = new ArrayList<SNode>();
-    for (SNode node : model.getRoots()) {
-      if (node.isInstanceOfConcept(conceptFqName)) {
-        list.add(node);
+    Condition<SNode> cond = new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return node.isInstanceOfConcept(conceptFqName);
       }
+    };
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
+    for (SNode node : iterable) {
+      list.add(node);
     }
     return list;
   }

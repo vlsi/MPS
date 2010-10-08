@@ -21,6 +21,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -109,10 +111,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());
-    for (SNode root : outputModel.getRoots()) {
-      if (root.getName() == null) {
-        continue;
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(),new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return node.getName() != null;
       }
+    });
+    for (SNode root : iterable) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();

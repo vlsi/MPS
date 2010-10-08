@@ -25,8 +25,8 @@ public class CloneModelUtil {
   public static SModel cloneModel(final SModel model, final SModel modelCopy, IScope scope) {
     modelCopy.runLoadingAction(new Runnable() {
       public void run() {
-        for (SNode root : CopyUtil.copy(model.getRoots())) {
-          modelCopy.addRoot(root);
+        for (SNode root : model.roots()) {
+          modelCopy.addRoot(CopyUtil.copy(root));
         }
         // fix MPS-3829: save model in order to ensure it was added to vcs (new models are added on first save event)
         ((EditableSModelDescriptor) modelCopy.getModelDescriptor()).save();

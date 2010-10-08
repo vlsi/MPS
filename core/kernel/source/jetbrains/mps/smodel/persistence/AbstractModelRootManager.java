@@ -36,7 +36,7 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
   public boolean isEmpty(SModelDescriptor modelDescriptor) {
-    return modelDescriptor.getSModel().getRoots().size() == 0;
+    return modelDescriptor.getSModel().rootsCount() == 0;
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor,

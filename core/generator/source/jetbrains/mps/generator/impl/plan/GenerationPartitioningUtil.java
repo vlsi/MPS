@@ -91,7 +91,7 @@ public class GenerationPartitioningUtil {
     for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.getEngagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
-    for (SNode root : model.getRoots()) {
+    for (SNode root : model.roots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     List<Language> result = new ArrayList<Language>();
@@ -111,7 +111,7 @@ public class GenerationPartitioningUtil {
     for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.getEngagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
-    for (SNode root : model.getRoots()) {
+    for (SNode root : model.roots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
     return CollectionUtil.asList(namespaces);

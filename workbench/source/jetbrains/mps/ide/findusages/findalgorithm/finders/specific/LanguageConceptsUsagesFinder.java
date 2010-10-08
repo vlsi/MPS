@@ -44,7 +44,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (structureModel == null) return searchResults;
     SModel sModel = structureModel.getSModel();
     if (sModel == null) return searchResults;
-    if (sModel.getRoots().isEmpty()) return searchResults;
+    if (sModel.rootsCount() == 0) return searchResults;
 
     searchResults.getSearchedNodes().addAll(sModel.getRoots());
 

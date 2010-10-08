@@ -63,7 +63,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.getRoots().get(0);
+              SNode root = sModel.rootsIterator().next();
               SReference reference = root.getReference(linkName[0]);
               result[0] = (reference == null);
             } catch (Throwable t) {

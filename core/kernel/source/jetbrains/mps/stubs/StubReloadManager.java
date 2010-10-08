@@ -16,6 +16,7 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.commons.lang.ObjectUtils;
@@ -127,9 +128,10 @@ public class StubReloadManager implements ApplicationComponent {
       SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
       if (descriptor == null) continue;
 
-      List<SNode> nodes = descriptor.getSModel().getRoots(new IsInstanceCondition(LibraryStubDescriptor.concept));
+      IsInstanceCondition cond = new IsInstanceCondition(LibraryStubDescriptor.concept);
+      Iterable<SNode> iterable = new ConditionalIterable<SNode>(descriptor.getSModel().roots(), cond);
 
-      for (SNode node : nodes) {
+      for (SNode node : iterable) {
         Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getName() + "_StubDescriptor");
         if (descrClass == null) continue;
 
@@ -401,11 +403,11 @@ public class StubReloadManager implements ApplicationComponent {
       if (file == null) return 0L;
       final long[] timeStamp = {file.getTimeStamp()};
       VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
-          public boolean process(VirtualFile virtualFile) {
-            timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
-            return true;
-          }
-        });
+        public boolean process(VirtualFile virtualFile) {
+          timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
+          return true;
+        }
+      });
 
       return timeStamp[0];
     }

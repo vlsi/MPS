@@ -31,7 +31,7 @@ public class CloneUtil {
    * it allows to resolve internal references much faster
    */
   public static void cloneModel(SModel inputModel, SModel outputModel, boolean originalInput) {
-    for (SNode node : inputModel.getRoots()) {
+    for (SNode node : inputModel.roots()) {
       SNode outputNode = clone(node, outputModel, originalInput);
       outputModel.addRoot(outputNode);
     }

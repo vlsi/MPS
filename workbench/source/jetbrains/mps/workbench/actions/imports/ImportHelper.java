@@ -190,7 +190,7 @@ public class ImportHelper {
           for (SModelDescriptor modelDescriptor : modelDescriptors) {
             SModel model = modelDescriptor.getSModel();
             if (model == null) continue;
-            for (SNode node : model.getRoots()) {
+            for (SNode node : model.roots()) {
               nodes.add(node);
             }
           }

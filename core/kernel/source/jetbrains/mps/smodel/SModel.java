@@ -148,7 +148,7 @@ public class SModel implements Iterable<SNode> {
   //use roots() instead
   public List<INodeAdapter> getRootsAdapters() {
     List<INodeAdapter> result = new ArrayList<INodeAdapter>();
-    for (SNode root : getRoots()) {
+    for (SNode root : roots()) {
       result.add(root.getAdapter());
     }
     return result;
@@ -158,7 +158,7 @@ public class SModel implements Iterable<SNode> {
   //use roots() instead
   public <N extends INodeAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
     List<N> result = new ArrayList<N>();
-    for (SNode root : getRoots()) {
+    for (SNode root : roots()) {
       INodeAdapter a = root.getAdapter();
       if (cls.isInstance(a)) {
         result.add((N) a);
@@ -171,9 +171,8 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SNode> allNodes() {
-    SModel model = this;
     List<SNode> result = new ArrayList<SNode>(this.registeredNodesCount());
-    for (SNode root : model.getRoots()) {
+    for (SNode root : myRoots) {
       for (SNode i : root.getDescendantsIterable(null, true)) {
         result.add(i);
       }
@@ -192,7 +191,7 @@ public class SModel implements Iterable<SNode> {
 
     List<SNode> resultNodes = new ArrayList<SNode>();
 
-    for (SNode node : getRoots()) {
+    for (SNode node : myRoots) {
       for (SNode i : node.getDescendantsIterable(condition, true)) {
         resultNodes.add(i);
       }
@@ -236,7 +235,7 @@ public class SModel implements Iterable<SNode> {
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.getRoots());
+      resultNodes.addAll(aModel.myRoots);
     }
     return resultNodes;
   }
@@ -294,7 +293,7 @@ public class SModel implements Iterable<SNode> {
 
   @Nullable
   public SNode getRootByName(@NotNull String name) {
-    for (SNode root : getRoots()) {
+    for (SNode root : roots()) {
       if (name.equals(root.getName())) return root;
     }
     return null;
@@ -309,6 +308,10 @@ public class SModel implements Iterable<SNode> {
 
   public int registeredNodesCount() {
     return myIdToNodeMap.size();
+  }
+
+  public int rootsCount(){
+    return myRoots.size();
   }
 
   //---------imports manipulation--------

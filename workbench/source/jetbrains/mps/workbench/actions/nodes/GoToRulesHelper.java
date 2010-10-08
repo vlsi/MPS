@@ -64,7 +64,7 @@ public class GoToRulesHelper {
     if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {
       SModelDescriptor helginsDescriptor = LanguageAspect.TYPESYSTEM.get(language);
       if (helginsDescriptor != null) {
-        rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
+        Condition<SNode> cond = new Condition<SNode>() {
           public boolean met(SNode n) {
             INodeAdapter object = BaseAdapter.fromNode(n);
             if (!(object instanceof AbstractRule)) return false;
@@ -76,7 +76,8 @@ public class GoToRulesHelper {
               return maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), scope);
             }
           }
-        }));
+        };
+        rules.addAll(helginsDescriptor.getSModel().getRoots(cond));
       }
     }
     return rules;

@@ -114,7 +114,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
           references += node.getReferences().size();
           properties += node.getPropertyNames().size();
         }
-        messageText.append("Roots : ").append(myModel.getSModel().getRoots().size()).append("<br>");
+        messageText.append("Roots : ").append(myModel.getSModel().rootsCount()).append("<br>");
         messageText.append("Nodes : ").append(nodes).append("<br>");
         messageText.append("References : ").append(references).append("<br>");
         messageText.append("Properties : ").append(properties).append("<br>");

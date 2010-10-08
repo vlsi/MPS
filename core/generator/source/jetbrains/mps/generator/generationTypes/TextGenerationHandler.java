@@ -33,10 +33,10 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext ocontext, ITaskProgressHelper progressHelper) {
     String targetDir = module.getOutputFor(inputModel);
     SModel outputModel = status.getOutputModel();
-    List<SNode> roots = outputModel != null ? outputModel.getRoots() : Collections.<SNode>emptyList();
+    if (outputModel == null) return true;
     boolean generatedOk = true;
     // generate files
-    for (SNode output : roots) {
+    for (SNode output : outputModel.roots()) {
       String fileName = output.getName() + "." + TextGenManager.instance().getExtension(output);
       TextGenerationResult result = TextGenerationUtil.generateText(ocontext, output);
       if (result.hasErrors()) {

@@ -30,7 +30,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   }
 
   private void initCache() {
-    for (SNode root : myModel.getRoots()) {
+    for (SNode root : myModel.roots()) {
       addToCache(root);
     }
     myInitialized = true;

@@ -185,21 +185,19 @@ public class GenerationFilter {
     }
 
     // collect unchanged roots (same hash; external dependencies are unchanged)
-    List<SNode> rootsList = myModel.getSModel().getRoots();
-    myRootsCount = rootsList.size();
+    SModel smodel = myModel.getSModel();
+    myRootsCount = smodel.rootsCount();
 
     myUnchangedRoots = new HashSet<SNode>();
-    for (SNode root : rootsList) {
+    for (SNode root : smodel.roots()) {
       String id = root.getId();
       GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
       String oldHash;
-      if (rd == null || (oldHash = rd.getHash()) == null) {
-        continue;
-      }
+      if (rd == null || (oldHash = rd.getHash()) == null) continue;
+
       String newHash = myGenerationHashes.get(id);
-      if (newHash == null || !newHash.equals(oldHash)) {
-        continue;
-      }
+      if (newHash == null || !newHash.equals(oldHash)) continue;
+      
       boolean isDirty = false;
       for (String m : rd.getExternal()) {
         if (changedModels.contains(m)) {
@@ -226,21 +224,23 @@ public class GenerationFilter {
     ConnectedComponentPartitioner partitioner = null;
     boolean changed;
 
+    List<SNode> roots = smodel.getRoots();
+
     // Phase 1: build closure using strongly connected components (only if we have cache)
     if(myCache != null) {
       closureUsingSavedDependencies(savedDep);
 
-      if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+      if (myUnchangedRoots.isEmpty() && !myConditionalsUnchanged) {
         return;
       }
 
-      partitioner = new ConnectedComponentPartitioner(rootsList);
+      partitioner = new ConnectedComponentPartitioner(roots);
       Component[] strongComponents = partitioner.partitionStrong();
       changed = closureUsingStrongComponents(strongComponents, savedDep);
 
       // repeat
       while (changed) {
-        if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+        if (myUnchangedRoots.isEmpty() && !myConditionalsUnchanged) {
           return;
         }
         changed = closureUsingSavedDependencies(savedDep);
@@ -260,20 +260,20 @@ public class GenerationFilter {
     addIncomingDependencies(oldDependencies, savedDep);
     closureUsingSavedDependencies(savedDep);
 
-    if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+    if (myUnchangedRoots.isEmpty() && !myConditionalsUnchanged) {
       return;
     }
 
     // closure using current dependencies
     if(partitioner == null) {
-      partitioner = new ConnectedComponentPartitioner(rootsList);
+      partitioner = new ConnectedComponentPartitioner(roots);
     }
     List<SNode[]> components = partitioner.partition();
     changed = closureUsingReferences(components, savedDep);
 
     // repeat
     while (changed) {
-      if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+      if (myUnchangedRoots.isEmpty() && !myConditionalsUnchanged) {
         return;
       }
       changed = closureUsingSavedDependencies(savedDep);

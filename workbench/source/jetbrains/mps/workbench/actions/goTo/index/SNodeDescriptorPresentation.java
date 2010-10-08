@@ -43,15 +43,6 @@ public class SNodeDescriptorPresentation extends BasePresentation {
     return "(" + getModelName() + ")";
   }
 
-  private SNode getRootByName(SModel model) {
-    for (SNode node : model.getRoots()) {
-      if (myNodeResult.getNodeName().equals(node.getName())) {
-        return node;
-      }
-    }
-    return null;
-  }
-
   public Icon doGetIcon() {
     String conceptFqName = myNodeResult.getConceptFqName();
 

@@ -21,10 +21,7 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.textdiff.TextDiffBuilder;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -68,10 +65,14 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     myOutputModelRefToPath.put(outputModel.getSModelReference(), outputDir);
     List<String> roots = new ArrayList<String>();
     myOutputModelRefToRoots.put(outputModel.getSModelReference(), roots);
-    for (SNode outputRoot : outputModel.getRoots()) {
-      if (outputRoot.getName() == null) {
-        continue;
+
+    Condition<SNode> cond = new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return node.getName() != null;
       }
+    };
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(), cond);
+    for (SNode outputRoot : iterable) {
       roots.add(getKey(outputModel.getSModelReference(), outputRoot));
     }
     return super.collectSources(module, inputModel, context, outputModel);

@@ -36,7 +36,7 @@ public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
 
   public List<SNode> getNodesToIterate(SModel model) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : model.getRoots()) {
+    for (SNode node : model.roots()) {
       if (!(node.getSNodeId() instanceof Foreign)) {
         return model.getRoots();
       }

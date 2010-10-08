@@ -114,7 +114,7 @@ public class GenerationSession {
 
       if(myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
         myLogger.info("Processing:");
-        for(SNode node : myOriginalInputModel.getSModel().getRoots()) {
+        for(SNode node : myOriginalInputModel.getSModel().roots()) {
           if(filter.getRequiredRoots().contains(node)) {
             myLogger.info(node.getName() + " (cache)");
           } else if(!filter.getIgnoredRoots().contains(node)) {
@@ -188,7 +188,7 @@ public class GenerationSession {
     myMinorStep = -1;
 
     if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
-      if (inputModel.getRoots().size() > 0) {
+      if (inputModel.rootsCount() > 0) {
         myLogger.warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       }
       return inputModel;

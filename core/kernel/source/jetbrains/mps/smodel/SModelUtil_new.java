@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NonNls;
@@ -67,13 +68,16 @@ public class SModelUtil_new implements ApplicationComponent {
       if (!modelName.equals(descriptor.getLongName())) continue;
 
       SModel model = descriptor.getSModel();
-      List<SNode> roots = model.getRoots();
-      for (SNode node : roots) {
-        if (name.equals(node.getName())) {
-          INodeAdapter adapter = BaseAdapter.fromNode(node);
-          if (conceptClass.isAssignableFrom(adapter.getClass())) {
-            return (T) adapter;
-          }
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode node) {
+          return name.equals(node.getName());
+        }
+      };
+      Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
+      for (SNode node : iterable) {
+        INodeAdapter adapter = BaseAdapter.fromNode(node);
+        if (conceptClass.isAssignableFrom(adapter.getClass())) {
+          return (T) adapter;
         }
       }
     }

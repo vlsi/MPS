@@ -129,7 +129,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public boolean isEmpty() {
     if (getLoadingState().compareTo(ModelLoadingState.ROOTS_LOADED) >= 0) {
-      return getSModel().getRoots().isEmpty();
+      return getSModel().rootsCount() == 0;
     }
 
     return myModelRootManager.isEmpty(this);
@@ -169,7 +169,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public void addModelListener(@NotNull SModelListener listener) {
-    if(listener.getPriority() == SModelListenerPriority.PLATFORM) {
+    if (listener.getPriority() == SModelListenerPriority.PLATFORM) {
       myModelListeners.add(0, listener);
     } else {
       myModelListeners.add(listener);
@@ -199,6 +199,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   // Not SModel-specific listener notifications
+
   void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {

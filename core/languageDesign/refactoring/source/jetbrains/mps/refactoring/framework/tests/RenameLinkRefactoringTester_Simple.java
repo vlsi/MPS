@@ -63,7 +63,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.getRoots().get(0);
+              SNode root = sModel.rootsIterator().next();
               SNode referent = root.getReferent(newLinkName);
               if (referent == null) {
                 System.err.println("referent is null");
