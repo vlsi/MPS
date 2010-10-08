@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
 import java.util.ArrayList;
@@ -68,13 +68,11 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             SModel sModel = descriptor.getSModel();
-            for (SNode root : ListSequence.fromList(sModel.getRoots())) {
-              if (SNodeOperations.isInstanceOf(((SNode) root), "jetbrains.mps.buildlanguage.structure.IAntScript")) {
-                SNodePointer pointer = new SNodePointer(root);
-                String pointerString = BuildTableModel.pointerToString(pointer);
-                if (!(MapSequence.fromMap(AntRunnerPreferences_PreferencesComponent.this.getStateObject().data).containsKey(pointerString))) {
-                  MapSequence.fromMap(AntRunnerPreferences_PreferencesComponent.this.getStateObject().data).put(pointerString, "");
-                }
+            for (SNode root : ListSequence.fromList(SModelOperations.getRoots(sModel, "jetbrains.mps.buildlanguage.structure.IAntScript"))) {
+              SNodePointer pointer = new SNodePointer(root);
+              String pointerString = BuildTableModel.pointerToString(pointer);
+              if (!(MapSequence.fromMap(AntRunnerPreferences_PreferencesComponent.this.getStateObject().data).containsKey(pointerString))) {
+                MapSequence.fromMap(AntRunnerPreferences_PreferencesComponent.this.getStateObject().data).put(pointerString, "");
               }
             }
           }

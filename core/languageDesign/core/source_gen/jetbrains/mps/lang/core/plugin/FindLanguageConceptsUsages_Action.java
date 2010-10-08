@@ -14,9 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -53,7 +50,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     if (structureModelDescriptor == null) {
       return false;
     }
-    if (ListSequence.fromList(((List<SNode>) structureModelDescriptor.getSModel().getRoots())).isEmpty()) {
+    if (structureModelDescriptor.getSModel().rootsCount() == 0) {
       return false;
     }
     return true;
