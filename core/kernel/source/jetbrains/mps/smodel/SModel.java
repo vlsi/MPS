@@ -60,7 +60,6 @@ public class SModel implements Iterable<SNode> {
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
-  private boolean myRegistrationsForbidden = false;
 
   private int myPersistenceVersion = -1;
 
@@ -850,10 +849,6 @@ public class SModel implements Iterable<SNode> {
     checkNotDisposed();
     if (myDisposed) return;
 
-    if (myRegistrationsForbidden) {
-      LOG.error("Registration in model " + getSModelReference() + " is temporarily forbidden");
-    }
-
     SNodeId id = node.hasId() ? node.getSNodeId() : null;
     SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
     if (id == null || existingNode != null && existingNode != node) {
@@ -1239,10 +1234,6 @@ public class SModel implements Iterable<SNode> {
     }
 
     return resultNodes;
-  }
-
-  public void setRegistrationsForbidden(boolean registrationsForbidden) {
-    myRegistrationsForbidden = registrationsForbidden;
   }
 
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
