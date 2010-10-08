@@ -126,7 +126,7 @@ public class Solution extends AbstractModule {
       mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getUUID());
     } else {
       assert myDescriptorFile != null;
-      mp = new ModuleReference(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()), mySolutionDescriptor.getUUID());
+      mp = new ModuleReference(myDescriptorFile.getAbsolutePath(), mySolutionDescriptor.getUUID());
     }
 
     setModuleReference(mp);
@@ -172,13 +172,13 @@ public class Solution extends AbstractModule {
     String generatorOutputPath = mySolutionDescriptor.getOutputPath();
     if (generatorOutputPath != null) return generatorOutputPath;
     assert myDescriptorFile != null;
-    generatorOutputPath = myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "source_gen";
+    generatorOutputPath = myDescriptorFile.getParent().getAbsolutePath() + File.separatorChar + "source_gen";
     return generatorOutputPath;
   }
 
   public String getTestsGeneratorOutputPath() {
     assert myDescriptorFile != null;
-    return myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "test_gen";
+    return myDescriptorFile.getParent().getAbsolutePath() + File.separatorChar + "test_gen";
   }
 
   protected void collectRuntimePackages(Set<String> result, String current) {

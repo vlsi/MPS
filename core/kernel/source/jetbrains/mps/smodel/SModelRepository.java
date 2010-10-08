@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -90,7 +91,7 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public SModelDescriptor findModel(IFile modelFile) {
-    String canonicalPath = modelFile.getCanonicalPath();
+    String canonicalPath = IFileUtils.getCanonicalPath(modelFile);
     return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
   }
 
@@ -323,13 +324,13 @@ public class SModelRepository implements ApplicationComponent {
   private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile == null) return;
-    myCanonicalPathsToModelDescriptorMap.put(modelFile.getCanonicalPath(), modelDescriptor);
+    myCanonicalPathsToModelDescriptorMap.put(IFileUtils.getCanonicalPath(modelFile), modelDescriptor);
   }
 
   private boolean removeModelFromFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile == null) return true;
-    SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
+    SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(IFileUtils.getCanonicalPath(modelFile));
     return sd == modelDescriptor;
   }
 

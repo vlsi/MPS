@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
@@ -232,7 +231,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     if (myThis.getProject() == null) {
       return;
     }
-    String path = FileUtil.getCanonicalPath(myThis.getProject().getProjectFile().getParentFile());
+    String path = myThis.getProject().getProjectFile().getParentFile().getAbsolutePath();
     String prefix = path + File.separator + "devkits" + File.separator;
     if (myThis.getDevkitDir().length() == 0 || myThis.getDevkitDir().startsWith(prefix)) {
       myThis.setDevkitDir(prefix + myThis.getDevkitName());

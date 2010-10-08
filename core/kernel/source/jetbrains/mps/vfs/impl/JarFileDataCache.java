@@ -47,7 +47,7 @@ class JarFileDataCache {
     synchronized (myLock) {
       removeGCedReferences();
 
-      String path = FileUtil.getCanonicalPath(file);
+      String path = file.getAbsolutePath();
 
       if (myPathToRef.containsKey(path)) {
         WeakReference<JarFileData> ref = myPathToRef.get(path);

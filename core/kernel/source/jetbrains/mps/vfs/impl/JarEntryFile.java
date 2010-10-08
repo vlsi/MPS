@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
@@ -95,21 +94,12 @@ public class JarEntryFile implements IFileEx {
     return new JarEntryFile(myJarFileData, myJarFile, path);
   }
 
-  @Override
-  public IFile findChild(String name) {
-    return child(name);
-  }
-
   public boolean isDirectory() {
     return myJarFileData != null && myJarFileData.isDirectory(myEntryPath);
   }
 
   public String getAbsolutePath() {
-    return getCanonicalPath();
-  }
-
-  public String getCanonicalPath() {
-    return FileUtil.getCanonicalPath(myJarFile) + "!" + myEntryPath;
+    return myJarFile.getAbsolutePath() + "!" + myEntryPath;
   }
 
   public long lastModified() {
@@ -134,7 +124,7 @@ public class JarEntryFile implements IFileEx {
 
   public InputStream openInputStream() throws IOException {
     if (myJarFileData == null) {
-      throw new IOException("File is not found " + getCanonicalPath());
+      throw new IOException("File is not found " + getAbsolutePath());
     }
     return myJarFileData.openStream(myEntryPath);
   }

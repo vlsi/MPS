@@ -121,7 +121,7 @@ public class LanguageStep extends BaseStep {
   }
 
   private void updateLanguagePath() {
-    String path = FileUtil.getCanonicalPath(myOptions.getProjectPath());
+    String path = myOptions.getProjectPath();
     String prefix = path + File.separator + "languages" + File.separator;
     if (myPath.getPath() == null || myPath.getPath().startsWith(prefix)) {
       myPath.setPath(prefix + NameUtil.shortNameFromLongName(myNamespace.getText()));

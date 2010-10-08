@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -63,7 +62,7 @@ public class EditorUtil {
         IFile result = chooser.showDialog(frame);
         if (result == null) return;
 
-        String selectedPath = FileUtil.getCanonicalPath(result.getAbsolutePath());
+        String selectedPath = result.getAbsolutePath();
         final String pathToShow;
         if (finalModule != null) {
           pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());

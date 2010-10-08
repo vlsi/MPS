@@ -40,7 +40,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
-import jetbrains.mps.util.FileUtil;
 
 public class NewLanguageDialogContentPane extends JPanel {
   public NewLanguageDialogContentPane myThis;
@@ -331,7 +330,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     if (myThis.getProject() == null) {
       return;
     }
-    String path = FileUtil.getCanonicalPath(myThis.getProject().getProjectFile().getParentFile());
+    String path = myThis.getProject().getProjectFile().getParentFile().getAbsolutePath();
     String prefix = path + File.separator + "languages" + File.separator;
     if (myThis.getLanguagePath().length() == 0 || myThis.getLanguagePath().startsWith(prefix)) {
       myThis.setLanguagePath(prefix + NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()));

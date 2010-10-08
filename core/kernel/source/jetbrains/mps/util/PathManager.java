@@ -81,7 +81,7 @@ public class PathManager {
     File file = new File(path);
     if (!file.exists()) return path;
     file = file.getAbsoluteFile();
-    return FileUtil.getCanonicalPath(file.getAbsolutePath());
+    return file.getAbsolutePath();
   }
 
   //------------------

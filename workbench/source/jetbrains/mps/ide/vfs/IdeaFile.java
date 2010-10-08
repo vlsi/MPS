@@ -14,7 +14,6 @@ import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -53,11 +52,6 @@ class IdeaFile implements IFileEx {
     } else {
       return myPath;
     }
-  }
-
-  @Override
-  public String getCanonicalPath() {
-    return FileUtil.getCanonicalPath(getAbsolutePath());
   }
 
   @Override
@@ -106,21 +100,6 @@ class IdeaFile implements IFileEx {
   @Override
   public IFile child(String suffix) {
     return new IdeaFile(myProvider, getAbsolutePath() + File.separator + suffix);
-  }
-
-  @Override
-  @Nullable
-  public IFile findChild(String name) {
-    if (findVirtualFile()) {
-      VirtualFile child = myVirtualFile.findChild(name);
-      if (child == null) {
-        return null;
-      } else {
-        return new IdeaFile(myProvider, child);
-      }
-    } else {
-      return null;
-    }
   }
 
   @Override
@@ -342,7 +321,7 @@ class IdeaFile implements IFileEx {
 
     IdeaFile ideaFile = (IdeaFile) o;
 
-    return ObjectUtils.equals(FileUtil.getCanonicalPath(getAbsolutePath()), FileUtil.getCanonicalPath(ideaFile.getAbsolutePath()));
+    return ObjectUtils.equals(getAbsolutePath(), ideaFile.getAbsolutePath());
   }
 
   @Override
@@ -350,7 +329,7 @@ class IdeaFile implements IFileEx {
     if (getAbsolutePath() == null) {
       return 0;
     } else {
-      return FileUtil.getCanonicalPath(getAbsolutePath()).hashCode();
+      return getAbsolutePath().hashCode();
     }
   }
 

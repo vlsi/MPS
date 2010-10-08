@@ -1,6 +1,7 @@
 package jetbrains.mps.vfs;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -49,5 +50,10 @@ public class IFileUtils {
     IFile result = tmpHome.child("mpstemp" + i);
     result.mkdirs();
     return result;
+  }
+
+  public static String getCanonicalPath(IFile file) {
+    if (file == null) return null;
+    return FileUtil.getCanonicalPath(file.getAbsolutePath());
   }
 }

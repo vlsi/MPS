@@ -35,6 +35,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -120,7 +121,7 @@ public class NewGeneratorDialog extends BaseDialog {
   private void updateTemplateModelsDir() {
     IFile descriptorFile = mySourceLanguage.getDescriptorFile();
     assert descriptorFile != null;
-    String path = descriptorFile.getParent().getCanonicalPath();
+    String path = descriptorFile.getParent().getAbsolutePath();
     String modelsDir = path +
       File.separatorChar + "generator" +
       File.separatorChar + "template";

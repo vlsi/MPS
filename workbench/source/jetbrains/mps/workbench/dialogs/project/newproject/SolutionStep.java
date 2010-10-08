@@ -115,7 +115,7 @@ public class SolutionStep extends BaseStep {
   }
 
   private void updateSolutionPath() {
-    String path = FileUtil.getCanonicalPath(myOptions.getProjectPath());
+    String path = myOptions.getProjectPath();
     String prefix = path + File.separator + "solutions" + File.separator;
     if (myPath.getPath() == null || myPath.getPath().startsWith(prefix)) {
       myPath.setPath(prefix + myNamespace.getText());

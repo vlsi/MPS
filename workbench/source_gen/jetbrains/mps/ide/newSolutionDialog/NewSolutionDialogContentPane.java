@@ -28,7 +28,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.FileUtil;
 
 public class NewSolutionDialogContentPane extends JPanel {
   public NewSolutionDialogContentPane myThis;
@@ -249,7 +248,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     if (myThis.getProject() == null) {
       return;
     }
-    String path = FileUtil.getCanonicalPath(myThis.getProject().getProjectFile().getParentFile());
+    String path = myThis.getProject().getProjectFile().getParentFile().getAbsolutePath();
     String prefix = path + File.separator + "solutions" + File.separator;
     if (myThis.getSolutionPath().length() == 0 || myThis.getSolutionPath().startsWith(prefix)) {
       myThis.setSolutionPath(prefix + myThis.getSolutionName());

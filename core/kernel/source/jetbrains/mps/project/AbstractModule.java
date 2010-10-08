@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -195,7 +196,7 @@ public abstract class AbstractModule implements IModule {
   public List<StubPath> getOwnStubPaths() {
     ArrayList<StubPath> result = new ArrayList<StubPath>();
     if (isCompileInMPS() && getClassesGen() != null && new File(getClassesGen().getAbsolutePath()).exists()) {
-      result.add(new StubPath(getClassesGen().getCanonicalPath(), LanguageID.JAVA_MANAGER));
+      result.add(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
     }
     return result;
   }

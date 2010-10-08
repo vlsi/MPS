@@ -18,6 +18,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -67,8 +68,8 @@ public class ModelRefCreator {
   }
 
   private static String cropModelPath(IFile modelFile, IFile root) {
-    String modelPath = modelFile.getCanonicalPath();
-    String rootPath = root.getCanonicalPath();
+    String modelPath = IFileUtils.getCanonicalPath(modelFile);
+    String rootPath = IFileUtils.getCanonicalPath(root);
     if (!modelPath.startsWith(rootPath)) return null;
 
     int length = rootPath.length();

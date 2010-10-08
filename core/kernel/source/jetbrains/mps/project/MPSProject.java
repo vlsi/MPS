@@ -232,7 +232,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
+    Path path = new Path(file.getAbsolutePath());
     for (Path sp : getAllModulePaths()) {
       if (sp.isSamePath(path)) {
         return sp.getMPSFolder();
@@ -244,7 +244,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   public void setFolderFor(IModule module, String newFolder) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
+    Path path = new Path(file.getAbsolutePath());
     for (Path sp : getAllModulePaths()) {
       if (sp.isSamePath(path)) {
         sp.setMPSFolder(newFolder);
@@ -421,7 +421,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
       if (descriptorFile.exists()) {
         mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
       } else {
-        error("Can't load solution from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
+        error("Can't load solution from " + descriptorFile.getAbsolutePath() + " File doesn't exist.");
       }
     }
 
@@ -433,7 +433,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
       if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
       } else {
-        error("Can't load language from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
+        error("Can't load language from " + descriptorFile.getAbsolutePath() + " File doesn't exist.");
       }
     }
 
@@ -445,7 +445,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
       if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
-        error("Can't load devkit from " + devKit.getCanonicalPath() + " File doesn't exist");
+        error("Can't load devkit from " + devKit.getAbsolutePath() + " File doesn't exist");
       }
     }
   }

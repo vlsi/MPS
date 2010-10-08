@@ -24,15 +24,13 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -44,7 +42,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
   }
 
-  private Map<String, IModule> myFileToModuleMap = new ConcurrentHashMap<String, IModule>();
+  private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
   private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
   private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
 
@@ -203,7 +201,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   public IModule getModuleByFile(IFile file) {
     assertCanRead();
 
-    return myFileToModuleMap.get(file.getCanonicalPath());
+    return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
   }
 
   //todo rename to getByFqName
@@ -239,8 +237,8 @@ public class MPSModuleRepository implements ApplicationComponent {
     assertCanWrite();
 
     myDirtyFlag = true;
-    String canonicalPath = file.getCanonicalPath();
-    IModule module = myFileToModuleMap.get(canonicalPath);
+    String canonicalPath = IFileUtils.getCanonicalPath(file);
+    IModule module = myCanonicalFileToModuleMap.get(canonicalPath);
     if (module == null) {
       if (cls == Language.class) {
         module = Language.createLanguage(null, file, owner);
@@ -283,15 +281,9 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
-    IFile descriptorFile = module.getDescriptorFile();
-    String canonicalDescriptorPath;
-    if (descriptorFile == null) {
-      canonicalDescriptorPath = null;
-    } else {
-      canonicalDescriptorPath = descriptorFile.getCanonicalPath();
-    }
-    if (canonicalDescriptorPath != null && !myFileToModuleMap.containsKey(canonicalDescriptorPath)) {
-      myFileToModuleMap.put(canonicalDescriptorPath, module);
+    String canonicalDescriptorPath = IFileUtils.getCanonicalPath(module.getDescriptorFile());
+    if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
+      myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
     }
 
     String moduleFqName = module.getModuleFqName();
@@ -412,7 +404,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
 
     if (descriptorFile != null) {
-      myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
+      myCanonicalFileToModuleMap.remove(IFileUtils.getCanonicalPath(descriptorFile));
     }
 
     fireModuleRemoved(module);
@@ -617,17 +609,11 @@ public class MPSModuleRepository implements ApplicationComponent {
   public List<IModule> getAllModulesInDirectory(IFile file) {
     assertCanRead();
 
-    String path = file.getCanonicalPath();
+    String path = IFileUtils.getCanonicalPath(file);
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : getAllModules()) {
-      IFile descriptorFile = m.getDescriptorFile();
-
-      if (descriptorFile == null) {
-        continue;
-      }
-
-      String modulePath = descriptorFile.getCanonicalPath();
-      if (modulePath != null && modulePath.startsWith(path)) {
+      String moduleCanonicalPath = IFileUtils.getCanonicalPath(m.getDescriptorFile());
+      if (moduleCanonicalPath != null && moduleCanonicalPath.startsWith(path)) {
         result.add(m);
       }
     }

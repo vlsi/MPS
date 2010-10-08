@@ -145,7 +145,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private void updateClassesGen(IModule module) {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
-    myExcludedClassPath.add(classesGen.getCanonicalPath());
+    myExcludedClassPath.add(classesGen.getAbsolutePath());
   }
 
 
@@ -284,6 +284,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private void excludeClassesGen(IModule module) {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
-    myExcludedClassPath.add(classesGen.getCanonicalPath());
+    myExcludedClassPath.add(classesGen.getAbsolutePath());
   }
 }

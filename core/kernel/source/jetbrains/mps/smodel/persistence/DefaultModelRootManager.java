@@ -248,7 +248,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     assert root.getPrefix().length() <= 0 || fqName.getLongName().startsWith(root.getPrefix()) : "Model name should start with model root prefix";
 
     IFile modelFile = createFileForModelUID(root, fqName);
-    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), fqName, owner);
+    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getAbsolutePath(), fqName, owner);
 
     return result;
   }

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.vfs;
 
-import org.jetbrains.annotations.Nullable;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -28,14 +26,12 @@ import java.util.List;
 public interface IFile {
   String getName();
   String getAbsolutePath(); // TODO rename to getPath()
-  String getCanonicalPath(); // TODO refactor to using FileUtil.getCanonicalPath()  
+
   IFile getParent();
 
   List<IFile> list(); // TODO rename to getChildren()
   List<IFile> list(IFileNameFilter filter); // TODO rename to getChildren()
   IFile child(String suffix); // TODO rename to getDescendant()
-  @Nullable
-  IFile findChild(String name); // TODO check if this method is needed
 
   boolean isDirectory();
   boolean isReadOnly();

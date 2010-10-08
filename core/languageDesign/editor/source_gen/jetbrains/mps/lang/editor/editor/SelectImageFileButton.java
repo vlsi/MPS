@@ -19,7 +19,6 @@ import java.awt.Frame;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class SelectImageFileButton extends JButton {
@@ -48,7 +47,7 @@ public class SelectImageFileButton extends JButton {
           if (result == null) {
             return;
           }
-          String selectedPath = FileUtil.getCanonicalPath(result.getAbsolutePath());
+          String selectedPath = result.getAbsolutePath();
           final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
