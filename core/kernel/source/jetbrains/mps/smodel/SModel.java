@@ -135,17 +135,6 @@ public class SModel implements Iterable<SNode> {
 
   @Deprecated
   //use roots() instead
-  @NotNull
-  public List<SNode> getRoots(@NotNull Condition<SNode> condition) {
-    List<SNode> list = new ArrayList<SNode>();
-    for (SNode node : myRoots) {
-      if (condition.met(node)) list.add(node);
-    }
-    return list;
-  }
-
-  @Deprecated
-  //use roots() instead
   public List<INodeAdapter> getRootsAdapters() {
     List<INodeAdapter> result = new ArrayList<INodeAdapter>();
     for (SNode root : roots()) {
