@@ -16,7 +16,6 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.application.PathManager;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.diff.ActionButtonPresentation;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.MergeRequest;
@@ -27,6 +26,7 @@ import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,7 +35,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 
 class MergeProviderDecorator implements MergeProvider {
-  private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.MergeProviderDecorator");
+  private static final Logger LOG = Logger.getLogger(MergeProviderDecorator.class);
 
   private File myBackup;
   private final MergeProvider myProvider;

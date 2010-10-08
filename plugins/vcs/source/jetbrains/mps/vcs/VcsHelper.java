@@ -93,7 +93,7 @@ public class VcsHelper {
     if (modelFile.exists()) {
       FileUtil.copy(new File(modelFile.getAbsolutePath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
-    File zipfile = MPSVcsUtil.chooseZipFileNameForModelFile(modelFile.getAbsolutePath());
+    File zipfile = VcsHelperUtil.chooseZipFileNameForModelFile(modelFile.getAbsolutePath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
 
     jetbrains.mps.util.FileUtil.delete(tmp);

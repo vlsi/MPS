@@ -20,9 +20,6 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.merge.MergeData;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.MPSVcsUtil;
-import jetbrains.mps.vcs.ModelMergeRequestConstants;
-import jetbrains.mps.vcs.VcsMergeVersion;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -56,7 +53,7 @@ public class VcsHelperUtil {
     writeContentsToFile(contents[ModelMergeRequestConstants.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[ModelMergeRequestConstants.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
     writeMetaInformation(request, file, tmp);
-    File zipfile = MPSVcsUtil.chooseZipFileNameForModelFile(file.getPath());
+    File zipfile = chooseZipFileNameForModelFile(file.getPath());
     FileUtil.zip(tmp, zipfile);
 
     FileUtil.delete(tmp);
@@ -70,5 +67,19 @@ public class VcsHelperUtil {
     OutputStream stream = new FileOutputStream(baseFile);
     stream.write(contents);
     stream.close();
+  }
+
+  public static File chooseZipFileNameForModelFile(String modelFilePath) {
+    Calendar cal = Calendar.getInstance();
+    String timestamp = cal.get(Calendar.HOUR_OF_DAY) + "." + cal.get(Calendar.MINUTE) + "." +
+      cal.get(Calendar.DAY_OF_MONTH) + "." + cal.get(Calendar.MONTH) + "." + cal.get(Calendar.YEAR);
+    modelFilePath = modelFilePath + "." + timestamp;
+    File zipfile = new File(modelFilePath + ".zip");
+    int i = 0;
+    while (zipfile.exists()) {
+      zipfile = new File(modelFilePath + "." + i + ".zip");
+      i++;
+    }
+    return zipfile;
   }
 }

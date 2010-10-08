@@ -53,7 +53,6 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     if (isExcluded(file.getPath())) return true;
 
     VirtualFile parent = file.getParent();
-    if (parent == null) return false;
-    return isExcluded(parent);
+    return parent != null && isExcluded(parent);
   }
 }
