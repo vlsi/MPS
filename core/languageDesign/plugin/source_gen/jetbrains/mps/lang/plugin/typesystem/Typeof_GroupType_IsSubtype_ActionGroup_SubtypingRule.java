@@ -19,7 +19,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
   public Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.QuotationClass_o1uhq5_a0a0a().createNode(typeCheckingContext);
   }
 

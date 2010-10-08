@@ -19,7 +19,7 @@ public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends 
   public typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode refType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode refType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.QuotationClass_d1kmw7_a0a0a().createNode(typeCheckingContext);
   }
 

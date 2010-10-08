@@ -19,7 +19,7 @@ public class typeof_MultitabbedEditorTabType_SubtypingRule extends SubtypingRule
   public typeof_MultitabbedEditorTabType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode tabType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode tabType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new typeof_MultitabbedEditorTabType_SubtypingRule.QuotationClass_aofz3z_a0a0a().createNode(typeCheckingContext);
   }
 

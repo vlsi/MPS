@@ -185,8 +185,8 @@
     <scopeInfo nodeId="1206093147164" fileName="typeof_ActionParameterReferenceOperation_InferenceRule.java" startLine="19" startPosition="140" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1206190254217">
-    <nodeInfo nodeId="1206190254219" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="22" startPosition="93" endLine="23" endPosition="116" />
-    <scopeInfo nodeId="1206190254218" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="22" startPosition="93" endLine="23" endPosition="116" />
+    <nodeInfo nodeId="1206190254219" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="22" startPosition="120" endLine="23" endPosition="116" />
+    <scopeInfo nodeId="1206190254218" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="22" startPosition="120" endLine="23" endPosition="116" />
   </root>
   <root nodeId="1206193985723">
     <nodeInfo nodeId="1206194021314" fileName="typeof_BootstrapActionGroup_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="106" />
@@ -219,12 +219,12 @@
     <scopeInfo nodeId="1207145525060" fileName="typeof_AddActionStatement_InferenceRule.java" startLine="25" startPosition="131" endLine="32" endPosition="5" />
   </root>
   <root nodeId="1207491155028">
-    <nodeInfo nodeId="1207491156890" fileName="Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="130" />
-    <scopeInfo nodeId="1207491155029" fileName="Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="130" />
+    <nodeInfo nodeId="1207491156890" fileName="Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="130" />
+    <scopeInfo nodeId="1207491155029" fileName="Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="130" />
   </root>
   <root nodeId="1208529625341">
-    <nodeInfo nodeId="2247201315540920226" fileName="Typeof_ToolType_Instanceof_BaseTool_SubtypingRule.java" startLine="22" startPosition="91" endLine="23" endPosition="127" />
-    <scopeInfo nodeId="1208529625342" fileName="Typeof_ToolType_Instanceof_BaseTool_SubtypingRule.java" startLine="22" startPosition="91" endLine="23" endPosition="127" />
+    <nodeInfo nodeId="2247201315540920226" fileName="Typeof_ToolType_Instanceof_BaseTool_SubtypingRule.java" startLine="22" startPosition="118" endLine="23" endPosition="127" />
+    <scopeInfo nodeId="1208529625342" fileName="Typeof_ToolType_Instanceof_BaseTool_SubtypingRule.java" startLine="22" startPosition="118" endLine="23" endPosition="127" />
   </root>
   <root nodeId="1209909990027">
     <nodeInfo nodeId="1209910058897" fileName="typeof_GetToolOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="58" />
@@ -282,12 +282,12 @@
     <scopeInfo nodeId="1210690974774" fileName="typeof_PreferencePage_InferenceRule.java" startLine="25" startPosition="127" endLine="32" endPosition="5" />
   </root>
   <root nodeId="1215279115577">
-    <nodeInfo nodeId="1215279115579" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="22" startPosition="110" endLine="23" endPosition="120" />
-    <scopeInfo nodeId="1215279115578" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="22" startPosition="110" endLine="23" endPosition="120" />
+    <nodeInfo nodeId="1215279115579" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="22" startPosition="137" endLine="23" endPosition="120" />
+    <scopeInfo nodeId="1215279115578" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="22" startPosition="137" endLine="23" endPosition="120" />
   </root>
   <root nodeId="1215783797680">
-    <nodeInfo nodeId="1215783815856" fileName="Typeof_Action_SubtypingRule.java" startLine="22" startPosition="93" endLine="23" endPosition="105" />
-    <scopeInfo nodeId="1215783797681" fileName="Typeof_Action_SubtypingRule.java" startLine="22" startPosition="93" endLine="23" endPosition="105" />
+    <nodeInfo nodeId="1215783815856" fileName="Typeof_Action_SubtypingRule.java" startLine="22" startPosition="120" endLine="23" endPosition="105" />
+    <scopeInfo nodeId="1215783797681" fileName="Typeof_Action_SubtypingRule.java" startLine="22" startPosition="120" endLine="23" endPosition="105" />
   </root>
   <root nodeId="1217252506509">
     <nodeInfo nodeId="1217252597084" fileName="typeof_ActionDataParameterReferenceOperation_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="51" />
@@ -359,12 +359,12 @@
     <scopeInfo nodeId="1227032271476" fileName="check_ParametersCount_NonTypesystemRule.java" startLine="22" startPosition="121" endLine="29" endPosition="5" />
   </root>
   <root nodeId="144706109457490158">
-    <nodeInfo nodeId="144706109457490160" fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="124" />
-    <scopeInfo nodeId="144706109457490159" fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="124" />
+    <nodeInfo nodeId="144706109457490160" fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="124" />
+    <scopeInfo nodeId="144706109457490159" fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="124" />
   </root>
   <root nodeId="144706109457490164">
-    <nodeInfo nodeId="144706109457490167" fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="123" />
-    <scopeInfo nodeId="144706109457490165" fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="123" />
+    <nodeInfo nodeId="144706109457490167" fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="123" />
+    <scopeInfo nodeId="144706109457490165" fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="123" />
   </root>
   <root nodeId="162872405267677846">
     <nodeInfo nodeId="162872405267677886" fileName="typeof_ConfigurationEditorDeclaration_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="91" />
@@ -482,8 +482,8 @@
     <scopeInfo nodeId="1628770029971140810" fileName="typeof_PropertyRefExpression_PropertyRefType_InferenceRule.java" startLine="19" startPosition="123" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1628770029971140820">
-    <nodeInfo nodeId="1628770029971140822" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="136" />
-    <scopeInfo nodeId="1628770029971140821" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="136" />
+    <nodeInfo nodeId="1628770029971140822" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="136" />
+    <scopeInfo nodeId="1628770029971140821" fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="136" />
   </root>
   <root nodeId="2195473424935456956">
     <nodeInfo nodeId="2195473424935459724" fileName="check_RunConfigurationEditor_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="26" endPosition="55" />
@@ -959,8 +959,8 @@
     <scopeInfo nodeId="9061443648117359124" fileName="typeof_ProcessStatement_InferenceRule.java" startLine="25" startPosition="122" endLine="39" endPosition="5" />
   </root>
   <root nodeId="9061443648117368098">
-    <nodeInfo nodeId="9061443648117368102" fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="22" startPosition="94" endLine="23" endPosition="127" />
-    <scopeInfo nodeId="9061443648117368099" fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="22" startPosition="94" endLine="23" endPosition="127" />
+    <nodeInfo nodeId="9061443648117368102" fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="22" startPosition="121" endLine="23" endPosition="127" />
+    <scopeInfo nodeId="9061443648117368099" fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="22" startPosition="121" endLine="23" endPosition="127" />
   </root>
   <root nodeId="9061443648117368146">
     <nodeInfo nodeId="9061443648117368153" fileName="typeof_ConsoleExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" />

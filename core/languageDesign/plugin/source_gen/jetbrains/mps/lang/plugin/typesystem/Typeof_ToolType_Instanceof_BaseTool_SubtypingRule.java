@@ -19,7 +19,7 @@ public class Typeof_ToolType_Instanceof_BaseTool_SubtypingRule extends Subtyping
   public Typeof_ToolType_Instanceof_BaseTool_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode toolType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode toolType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Typeof_ToolType_Instanceof_BaseTool_SubtypingRule.QuotationClass_dttelk_a0a0a().createNode(typeCheckingContext);
   }
 

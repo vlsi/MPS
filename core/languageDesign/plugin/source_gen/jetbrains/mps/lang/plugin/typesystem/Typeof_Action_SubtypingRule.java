@@ -19,7 +19,7 @@ public class Typeof_Action_SubtypingRule extends SubtypingRule_Runtime implement
   public Typeof_Action_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode actionType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode actionType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Typeof_Action_SubtypingRule.QuotationClass_mjowdo_a0a0a().createNode(typeCheckingContext);
   }
 

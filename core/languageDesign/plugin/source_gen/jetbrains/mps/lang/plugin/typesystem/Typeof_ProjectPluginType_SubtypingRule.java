@@ -19,7 +19,7 @@ public class Typeof_ProjectPluginType_SubtypingRule extends SubtypingRule_Runtim
   public Typeof_ProjectPluginType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode pluginType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode pluginType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Typeof_ProjectPluginType_SubtypingRule.QuotationClass_lh579i_a0a0a().createNode(typeCheckingContext);
   }
 

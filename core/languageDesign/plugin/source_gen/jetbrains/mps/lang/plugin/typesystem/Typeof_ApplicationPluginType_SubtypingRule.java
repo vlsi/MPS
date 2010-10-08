@@ -19,7 +19,7 @@ public class Typeof_ApplicationPluginType_SubtypingRule extends SubtypingRule_Ru
   public Typeof_ApplicationPluginType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode customApplicationPluginType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode customApplicationPluginType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Typeof_ApplicationPluginType_SubtypingRule.QuotationClass_mtmcrl_a0a0a().createNode(typeCheckingContext);
   }
 
