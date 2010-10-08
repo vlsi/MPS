@@ -100,7 +100,7 @@ public class GoToEditorDeclarationHelper {
     SModel editorModel = editorModelDescriptor.getSModel();
     ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration(ConceptEditorDeclaration.concept, editorModel, scope).getAdapter();
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
-    editorModel.addRoot(editorDeclaration);
+    editorModel.addRoot(editorDeclaration.getNode());
     return editorDeclaration;
   }
 }

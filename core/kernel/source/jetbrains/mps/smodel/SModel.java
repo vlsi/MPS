@@ -170,16 +170,6 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
-
-  public void addRoot(@NotNull INodeAdapter node) {
-    addRoot(node.getNode());
-  }
-
-  public void removeRoot(@NotNull INodeAdapter node) {
-    removeRoot(node.getNode());
-  }
-
-
   public void addRoot(@NotNull SNode node) {
     ModelChange.assertLegalNodeRegistration(this, node);
     if (myRoots.contains(node)) return;

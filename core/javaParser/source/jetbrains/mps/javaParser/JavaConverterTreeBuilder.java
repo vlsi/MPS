@@ -1593,7 +1593,7 @@ public class JavaConverterTreeBuilder {
         Classifier classifier = processType(type);
         if (referentsCreator.isTopLevelClassifier(type)) {
           if (!myIsolated) {
-            myCurrentModel.addRoot(classifier);
+            myCurrentModel.addRoot(classifier.getNode());
           }
           result.add(classifier);
         }

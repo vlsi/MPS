@@ -257,7 +257,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
       MappingConfiguration mappingConfiguration = MappingConfiguration.newInstance(templateModel);
       mappingConfiguration.setName("main");
-      templateModel.addRoot(mappingConfiguration);
+      templateModel.addRoot(mappingConfiguration.getNode());
       templateModelDescriptor.save();
     }
 
