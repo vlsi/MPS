@@ -483,6 +483,9 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="1193733698246:3" resolveInfo="Dependency" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4484478261143583663">
+      <link role="intfc:0" targetNodeId="4484478261143582584:3" resolveInfo="IRuleWithOneNode" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174648085619">
     <property name="name:0" value="AbstractRule" />
@@ -698,6 +701,9 @@
     <property name="iconPath:0" value="${language_descriptor}\icons\subtyping.png" />
     <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="1175147569072:3" resolveInfo="AbstractSubtypingRule" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4484478261143583665">
+      <link role="intfc:0" targetNodeId="4484478261143582584:3" resolveInfo="IRuleWithOneNode" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175496148685">
     <property name="name:0" value="GivetypeStatement" />
@@ -1119,6 +1125,9 @@
       <property name="role:0" value="anotherNode" />
       <link role="target:0" targetNodeId="1174642743670:3" resolveInfo="ApplicableNodeCondition" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4484478261143583667">
+      <link role="intfc:0" targetNodeId="4484478261143582585:3" resolveInfo="IRuleWithTwoNodes" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1193662402729">
     <property name="name:0" value="EquationDirection_Enum" />
@@ -1208,6 +1217,9 @@
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}\icons\nontypesystem.png" />
     <link role="extends:0" targetNodeId="1195213580585:3" resolveInfo="AbstractCheckingRule" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4484478261143583664">
+      <link role="intfc:0" targetNodeId="4484478261143582584:3" resolveInfo="IRuleWithOneNode" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1201607707634">
     <property name="name:0" value="InequationReplacementRule" />
@@ -1224,6 +1236,9 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="isApplicableClause" />
       <link role="target:0" targetNodeId="3592071576955708904:3" resolveInfo="IsReplacementRuleApplicable_ConceptFunction" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4484478261143583666">
+      <link role="intfc:0" targetNodeId="4484478261143582585:3" resolveInfo="IRuleWithTwoNodes" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1201618299781">
@@ -2590,6 +2605,12 @@
       <property name="value:0" value="wasSelectedNode" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="4484478261143582584">
+    <property name="name:0" value="IRuleWithOneNode" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="4484478261143582585">
+    <property name="name:0" value="IRuleWithTwoNodes" />
   </node>
 </model>
 

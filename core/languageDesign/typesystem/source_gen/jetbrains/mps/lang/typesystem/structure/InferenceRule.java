@@ -9,12 +9,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InferenceRule extends AbstractCheckingRule {
+public class InferenceRule extends AbstractCheckingRule implements IRuleWithOneNode {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InferenceRule";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DEPENDENCY = "dependency";
 
   public InferenceRule(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(InferenceRule.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(InferenceRule.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InferenceRule.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InferenceRule.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InferenceRule.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InferenceRule.VIRTUAL_PACKAGE, value);
   }
 
   public int getDependenciesCount() {

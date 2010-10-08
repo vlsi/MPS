@@ -175,6 +175,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -491,6 +492,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode" file="IRuleWithOneNode.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes" file="IRuleWithTwoNodes.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression" file="ImmediateSupertypesExpression.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
@@ -526,6 +535,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -569,6 +579,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.Dependency" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -791,6 +802,7 @@
   <dependency className="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" file="NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1191,6 +1203,7 @@
   <dependency className="jetbrains.mps.lang.typesystem.structure.SubtypingRule" file="SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

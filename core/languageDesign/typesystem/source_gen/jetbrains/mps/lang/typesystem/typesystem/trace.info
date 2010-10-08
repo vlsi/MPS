@@ -249,8 +249,8 @@
     <scopeInfo nodeId="1178192297561" fileName="typeOf_GivetypeStatement_InferenceRule.java" startLine="22" startPosition="130" endLine="36" endPosition="5" />
   </root>
   <root nodeId="1178193992124">
-    <nodeInfo nodeId="1178194029472" fileName="erasure_SNodeType_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="109" />
-    <scopeInfo nodeId="1178193992125" fileName="erasure_SNodeType_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="109" />
+    <nodeInfo nodeId="1178194029472" fileName="erasure_SNodeType_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="109" />
+    <scopeInfo nodeId="1178193992125" fileName="erasure_SNodeType_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="109" />
   </root>
   <root nodeId="1178271564672">
     <nodeInfo nodeId="1178271610359" fileName="typeOf_AssertStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="103" />

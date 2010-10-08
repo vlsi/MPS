@@ -7,11 +7,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SubtypingRule extends AbstractSubtypingRule {
+public class SubtypingRule extends AbstractSubtypingRule implements IRuleWithOneNode {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.SubtypingRule";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public SubtypingRule(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(SubtypingRule.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(SubtypingRule.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(SubtypingRule.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(SubtypingRule.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(SubtypingRule.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(SubtypingRule.VIRTUAL_PACKAGE, value);
   }
 
   public static SubtypingRule newInstance(SModel sm, boolean init) {

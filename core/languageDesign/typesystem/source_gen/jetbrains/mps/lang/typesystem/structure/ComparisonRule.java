@@ -7,12 +7,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ComparisonRule extends AbstractSubtypingRule {
+public class ComparisonRule extends AbstractSubtypingRule implements IRuleWithTwoNodes {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.ComparisonRule";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ANOTHER_NODE = "anotherNode";
 
   public ComparisonRule(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ComparisonRule.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ComparisonRule.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ComparisonRule.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ComparisonRule.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ComparisonRule.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ComparisonRule.VIRTUAL_PACKAGE, value);
   }
 
   public ApplicableNodeCondition getAnotherNode() {

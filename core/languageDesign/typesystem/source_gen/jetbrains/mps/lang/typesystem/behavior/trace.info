@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MessageStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatement_Behavior" />
+  <unitInfo fileName="TypeVarReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarReference_Behavior" />
+  <unitInfo fileName="WhenConcreteVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_Behavior" />
+  <unitInfo fileName="PatternVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_Behavior" />
+  <unitInfo fileName="TypesystemIntentionArgument_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_Behavior" />
+  <unitInfo fileName="ListVarReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ListVarReference_Behavior" />
+  <unitInfo fileName="PropertyPatternVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_Behavior" />
+  <unitInfo fileName="ChildTypeRestrictionReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestrictionReference_Behavior" />
+  <unitInfo fileName="ApplicableNodeReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_Behavior" />
+  <unitInfo fileName="ChildTypeRestriction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ChildTypeRestriction_Behavior" />
+  <unitInfo fileName="RuntimeErrorType_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeErrorType_Behavior" />
+  <unitInfo fileName="RuntimeTypeVariable_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.RuntimeTypeVariable_Behavior" />
+  <unitInfo fileName="ConceptReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptReference_Behavior" />
+  <unitInfo fileName="InequationsGroupReference_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.InequationsGroupReference_Behavior" />
+  <unitInfo fileName="PatternCondition_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternCondition_Behavior" />
+  <unitInfo fileName="IRuleWithTwoNodes_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_Behavior" />
+  <unitInfo fileName="ApplicableNodeCondition_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_Behavior" />
+  <unitInfo fileName="LinkPatternVariableReference_Behavior.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.LinkPatternVariableReference_Behavior" />
+  <unitInfo fileName="JoinType_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinType_Behavior" />
+  <unitInfo fileName="MeetType_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetType_Behavior" />
+  <unitInfo fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="21" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DependentComputationItem_FindMasterBlock_Behavior$QuotationClass_fiyp4x_a0a0b" />
+  <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="83" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior$QuotationClass_1go9bg_a1a0a1a5a2" />
+  <unitInfo fileName="DefaultGroupReference_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_Behavior" />
+  <unitInfo fileName="InequationReplacementRule_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule_Behavior" />
+  <unitInfo fileName="ComparisonRule_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ComparisonRule_Behavior" />
+  <unitInfo fileName="NonTypesystemRule_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule_Behavior" />
+  <unitInfo fileName="InferenceRule_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.InferenceRule_Behavior" />
+  <unitInfo fileName="SubtypingRule_Behavior.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_Behavior" />
+  <unitInfo fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DependentComputationItem_FindMasterBlock_Behavior" />
+  <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="47" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior$QuotationClass_1go9bg_a0a0b" />
+  <unitInfo fileName="AbstractRule_Behavior.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractRule_Behavior" />
+  <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior" />
   <root nodeId="1213877218089">
     <scopeInfo nodeId="1213877218091" fileName="LinkPatternVariableReference_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1225210740877" fileName="LinkPatternVariableReference_Behavior.java" startLine="15" startPosition="90" endLine="15" endPosition="90" />
@@ -162,6 +194,19 @@
     <scopeInfo nodeId="4214710807058415625" fileName="SubtypingRule_Behavior.java" startLine="14" startPosition="85" endLine="31" endPosition="16">
       <varInfo nodeId="4214710807058415782" varName="initialConcept" />
     </scopeInfo>
+  </root>
+  <root nodeId="4484478261143583669">
+    <scopeInfo nodeId="4484478261143583671" fileName="IRuleWithTwoNodes_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+  </root>
+  <root nodeId="4484478261143589910">
+    <nodeInfo nodeId="4484478261143622398" fileName="ComparisonRule_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="68" />
+    <scopeInfo nodeId="4484478261143589912" fileName="ComparisonRule_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="4484478261143589915" fileName="ComparisonRule_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="68" />
+  </root>
+  <root nodeId="4484478261143622407">
+    <nodeInfo nodeId="4484478261143622414" fileName="InequationReplacementRule_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="70" />
+    <scopeInfo nodeId="4484478261143622409" fileName="InequationReplacementRule_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="4484478261143622412" fileName="InequationReplacementRule_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="70" />
   </root>
   <root nodeId="590757823759239746">
     <nodeInfo nodeId="590757823759239755" fileName="InferenceRule_Behavior.java" startLine="17" startPosition="100" endLine="18" endPosition="153" />

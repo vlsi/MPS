@@ -16,7 +16,7 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   public erasure_SNodeType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode snodeType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode snodeType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new erasure_SNodeType_SubtypingRule.QuotationClass_ak4xkm_a0a0a().createNode(typeCheckingContext);
   }
 

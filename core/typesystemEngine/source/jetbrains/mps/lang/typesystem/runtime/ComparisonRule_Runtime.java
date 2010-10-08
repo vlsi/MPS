@@ -19,7 +19,9 @@ import jetbrains.mps.smodel.SNode;
 
 public abstract class ComparisonRule_Runtime implements IRuleWithTwoApplicableNodes {
   @Deprecated
-  public abstract boolean areComparable(SNode type1, SNode type2);
+  public boolean areComparable(SNode type1, SNode type2) {
+    return false;
+  }
 
   //todo generate this method
   public boolean areComparable(SNode type1, SNode type2, IsApplicable2Status status) {
@@ -33,6 +35,16 @@ public abstract class ComparisonRule_Runtime implements IRuleWithTwoApplicableNo
   @Deprecated
   public boolean isApplicable(SNode node1, SNode node2) {
     return isApplicable1(node1) && isApplicable2(node2);
+  }
+
+  @Override
+  public boolean isApplicable1(SNode node) {
+    return false;
+  }
+
+  @Override
+  public boolean isApplicable2(SNode node) {
+    return false;
   }
 
   public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {

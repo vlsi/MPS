@@ -20,9 +20,28 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public abstract class AbstractInequationReplacementRule_Runtime extends InequationReplacementRule_Runtime {
+  @Deprecated
   public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo) {
     processInequation(subtype, supertype, errorInfo, (TypeCheckingContext)null);
   }
 
-  public abstract void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext);
+  @Deprecated
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext) {
+
+  }
+
+  @Override
+  public boolean isApplicableSubtype(SNode node) {
+    return false;
+  }
+
+  @Override
+  public boolean isApplicableSupertype(SNode node) {
+    return false;
+  }
+
+  //todo generate this method
+  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
+    processInequation(subtype, supertype, errorInfo, typeCheckingContext);
+  }
 }

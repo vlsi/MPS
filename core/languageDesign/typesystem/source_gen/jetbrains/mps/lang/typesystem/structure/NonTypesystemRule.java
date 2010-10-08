@@ -7,11 +7,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NonTypesystemRule extends AbstractCheckingRule {
+public class NonTypesystemRule extends AbstractCheckingRule implements IRuleWithOneNode {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public NonTypesystemRule(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(NonTypesystemRule.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(NonTypesystemRule.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(NonTypesystemRule.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(NonTypesystemRule.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(NonTypesystemRule.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(NonTypesystemRule.VIRTUAL_PACKAGE, value);
   }
 
   public static NonTypesystemRule newInstance(SModel sm, boolean init) {

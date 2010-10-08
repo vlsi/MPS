@@ -383,9 +383,9 @@ public class EquationManager {
                                                            TypeCheckingContext typeCheckingContext,
                                                            IsApplicable2Status status) {
     if (rule instanceof AbstractInequationReplacementRule_Runtime) {
-      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext);
+      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext, status);
     } else {
-      rule.processInequation(node1, node2, equationInfo, status);
+      rule.processInequation(node1, node2, equationInfo);
     }
   }
 

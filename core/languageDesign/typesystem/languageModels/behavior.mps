@@ -1252,5 +1252,71 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="160921426017537693" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4484478261143583669">
+    <link role="concept" targetNodeId="1.4484478261143582585:3" resolveInfo="IRuleWithTwoNodes" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4484478261143583672">
+      <property name="isAbstract" value="true" />
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getSecondNodeCondition" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4484478261143583673" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4484478261143589909">
+        <link role="concept:16" targetNodeId="1.1174642743670:3" resolveInfo="ApplicableNodeCondition" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4484478261143583675" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4484478261143583670">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4484478261143583671" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4484478261143589910">
+    <link role="concept" targetNodeId="1.1188811367543:3" resolveInfo="ComparisonRule" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4484478261143589911">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4484478261143589912" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4484478261143589913">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getSecondNodeCondition" />
+      <link role="overriddenMethod" targetNodeId="4484478261143583672" resolveInfo="getSecondNodeCondition" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4484478261143589914" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4484478261143589915">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4484478261143622398">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4484478261143622401">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4484478261143622400" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4484478261143622406">
+              <link role="link:16" targetNodeId="1.1188820750135:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4484478261143589916">
+        <link role="concept:16" targetNodeId="1.1174642743670:3" resolveInfo="ApplicableNodeCondition" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4484478261143622407">
+    <link role="concept" targetNodeId="1.1201607707634:3" resolveInfo="InequationReplacementRule" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4484478261143622408">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4484478261143622409" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4484478261143622410">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getSecondNodeCondition" />
+      <link role="overriddenMethod" targetNodeId="4484478261143583672" resolveInfo="getSecondNodeCondition" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4484478261143622411" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4484478261143622412">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4484478261143622414">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4484478261143622417">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4484478261143622416" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4484478261143622421">
+              <link role="link:16" targetNodeId="1.1201607798918:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4484478261143622413">
+        <link role="concept:16" targetNodeId="1.1174642743670:3" resolveInfo="ApplicableNodeCondition" />
+      </node>
+    </node>
+  </node>
 </model>
 

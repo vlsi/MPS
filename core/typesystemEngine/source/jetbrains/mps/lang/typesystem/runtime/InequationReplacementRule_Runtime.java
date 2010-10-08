@@ -23,11 +23,6 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
   @Deprecated
   public abstract void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo);
 
-  //todo generate this method
-  public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, IsApplicable2Status status) {
-    processInequation(subtype, supertype, errorInfo);
-  }
-
   @Deprecated
   public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     return false;

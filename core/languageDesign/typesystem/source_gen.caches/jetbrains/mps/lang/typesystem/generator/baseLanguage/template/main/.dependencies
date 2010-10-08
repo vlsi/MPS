@@ -36,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
