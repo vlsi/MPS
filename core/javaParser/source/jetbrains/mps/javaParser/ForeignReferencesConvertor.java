@@ -86,7 +86,7 @@ public class ForeignReferencesConvertor {
       idString = idString.substring(Foreign.ID_PREFIX.length());
     }
     String className = idString;    //todo inner classes
-    INodeAdapter nodeAdapter = model.getRootAdapterByName(className);
+    INodeAdapter nodeAdapter = BaseAdapter.fromNode(model.getRootByName(className));
     if (nodeAdapter == null) {
       return null;
     }

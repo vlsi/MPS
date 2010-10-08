@@ -40,7 +40,7 @@ public class Queries {
       SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("java.lang@java_stub"));
       assert javaLangJavaStubModelDescriptor != null;
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
-      INodeAdapter stringClass = javaLang.getRootAdapterByName("String");
+      INodeAdapter stringClass = BaseAdapter.fromNode(javaLang.getRootByName("String"));
       if (SNodeOperations.isInstanceOf(leftType, ClassifierType.concept) &&
         ((ClassifierType) BaseAdapter.fromNode(leftType)).getClassifier() == stringClass
         || SNodeOperations.isInstanceOf(rightType, ClassifierType.concept) &&

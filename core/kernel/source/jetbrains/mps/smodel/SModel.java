@@ -128,20 +128,15 @@ public class SModel implements Iterable<SNode> {
     return roots();
   }
 
-  @NotNull
-  public Iterator<SNode> roots() {
-    return myRoots.iterator();
-  }
-
+  @Deprecated
+  //use roots() instead
   @NotNull
   public List<SNode> getRoots() {
     return new ArrayList<SNode>(myRoots);
   }
 
-  public boolean isRoot(@Nullable SNode node) {
-    return myRoots.contains(node);
-  }
-
+  @Deprecated
+  //use roots() instead
   @NotNull
   public List<SNode> getRoots(@NotNull Condition<SNode> condition) {
     List<SNode> list = new ArrayList<SNode>();
@@ -151,6 +146,8 @@ public class SModel implements Iterable<SNode> {
     return list;
   }
 
+  @Deprecated
+  //use roots() instead
   public List<INodeAdapter> getRootsAdapters() {
     List<INodeAdapter> result = new ArrayList<INodeAdapter>();
     for (SNode root : getRoots()) {
@@ -159,6 +156,8 @@ public class SModel implements Iterable<SNode> {
     return result;
   }
 
+  @Deprecated
+  //use roots() instead
   public <N extends INodeAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
     List<N> result = new ArrayList<N>();
     for (SNode root : getRoots()) {
@@ -168,6 +167,86 @@ public class SModel implements Iterable<SNode> {
       }
     }
     return result;
+  }
+
+  //todo replace with iterator
+  @NotNull
+  public List<SNode> allNodes() {
+    SModel model = this;
+    List<SNode> result = new ArrayList<SNode>(this.registeredNodesCount());
+    for (SNode root : model.getRoots()) {
+      for (SNode i : root.getDescendantsIterable(null, true)) {
+        result.add(i);
+      }
+    }
+
+    return result;
+  }
+
+  //todo replace with iterator
+  public List<SNode> allNodes(Condition<SNode> condition) {
+    if (condition instanceof IsInstanceCondition) {
+      IsInstanceCondition c = (IsInstanceCondition) condition;
+      return getFastNodeFinder().getNodes(c.getConceptFqName(), true);
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+
+    for (SNode node : getRoots()) {
+      for (SNode i : node.getDescendantsIterable(condition, true)) {
+        resultNodes.add(i);
+      }
+    }
+
+    return resultNodes;
+  }
+
+  //todo replace with iterator
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
+    return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
+  }
+
+  //todo replace with iterator
+  public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(this);
+    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      resultNodes.addAll(aModel.allNodes(condition));
+    }
+    return resultNodes;
+  }
+
+  //todo replace with iterator
+  public List<SNode> allRootsIncludingImported(IScope scope) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(this);
+    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      resultNodes.addAll(aModel.getRoots());
+    }
+    return resultNodes;
+  }
+
+
+
+  @NotNull
+  public Iterator<SNode> roots() {
+    return myRoots.iterator();
+  }
+
+  public boolean isRoot(@Nullable SNode node) {
+    return myRoots.contains(node);
   }
 
   public void addRoot(@NotNull SNode node) {
@@ -202,80 +281,12 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public INodeAdapter getRootAdapterByName(@NotNull String name) {
-    return BaseAdapter.fromNode(getRootByName(name));
-  }
-
   @Nullable
   public SNode getRootByName(@NotNull String name) {
     for (SNode root : getRoots()) {
       if (name.equals(root.getName())) return root;
     }
     return null;
-  }
-
-  @NotNull
-  public List<SNode> allNodes() {
-    SModel model = this;
-    List<SNode> result = new ArrayList<SNode>(this.registeredNodesCount());
-    for (SNode root : model.getRoots()) {
-      for (SNode i : root.getDescendantsIterable(null, true)) {
-        result.add(i);
-      }
-    }
-
-    return result;
-  }
-
-  public List<SNode> allNodes(Condition<SNode> condition) {
-    if (condition instanceof IsInstanceCondition) {
-      IsInstanceCondition c = (IsInstanceCondition) condition;
-      return getFastNodeFinder().getNodes(c.getConceptFqName(), true);
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-
-    for (SNode node : getRoots()) {
-      for (SNode i : node.getDescendantsIterable(condition, true)) {
-        resultNodes.add(i);
-      }
-    }
-
-    return resultNodes;
-  }
-
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
-    return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
-  }
-
-  public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.allNodes(condition));
-    }
-    return resultNodes;
-  }
-
-  public List<SNode> allRootsIncludingImported(IScope scope) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.getRoots());
-    }
-    return resultNodes;
   }
 
   public void clearAdaptersAndUserObjects() {
