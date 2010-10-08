@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
@@ -28,7 +29,7 @@ public interface DependenciesBuilder {
 
   void dropModel();
 
-  GenerationDependencies getResult(IOperationContext operationContext);
+  GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy);
 
   void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException;
 
@@ -74,7 +75,7 @@ public interface DependenciesBuilder {
     }
 
     @Override
-    public GenerationDependencies getResult(IOperationContext operationContext) {
+    public GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy) {
       return null;
     }
 

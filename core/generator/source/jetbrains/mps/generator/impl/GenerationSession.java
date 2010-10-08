@@ -105,7 +105,7 @@ public class GenerationSession {
         myLogger.info("generated files are up-to-date");
         ttrace.pop();
         return new GenerationStatus(myOriginalInputModel.getSModel(), null,
-          myDependenciesBuilder.getResult(myInvocationContext), false, false, false);
+          myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
       }
 
       if(!filter.getRequiredRoots().isEmpty() || filter.requireConditionals()) {
@@ -157,7 +157,7 @@ public class GenerationSession {
       }
 
       GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
-        myDependenciesBuilder.getResult(myInvocationContext), myLogger.getErrorCount() > 0,
+        myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
       success = generationStatus.isOk();
       return generationStatus;

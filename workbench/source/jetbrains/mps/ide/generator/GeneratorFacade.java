@@ -25,6 +25,8 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -204,16 +206,32 @@ public class GeneratorFacade {
           ? project.getComponent(GenerationTracer.class)
           : new NullGenerationTracer();
 
-        GenerationCacheContainer cacheContainer = null;
-        if(settings.isIncremental() && settings.isIncrementalUseCache()) {
-          cacheContainer = GeneratorCacheComponent.getInstance().getCache();
+        IncrementalGenerationStrategy strategy = null;
+        if(settings.isIncremental()) {
+          final GenerationCacheContainer cache = settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
+          strategy = new IncrementalGenerationStrategy() {
+            @Override
+            public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+              return ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
+            }
+
+            @Override
+            public GenerationCacheContainer getContainer() {
+              return cache;
+            }
+
+            @Override
+            public GenerationDependencies getDependencies(SModelDescriptor sm) {
+              return GenerationDependenciesCache.getInstance().get(sm);
+            }
+          };
         }
 
         GenerationOptions options = GenerationOptions.getDefaults()
           .saveTransientModels(saveTransientModels)
           .strictMode(settings.isStrictMode())
           .rebuildAll(rebuildAll)
-          .incremental(settings.isIncremental(), cacheContainer)
+          .incremental(strategy)
           .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
           .tracing(settings.getPerformanceTracingLevel(), tracer)
           .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())

@@ -3,6 +3,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.*;
@@ -49,23 +50,25 @@ public class GenerationFilter {
   }
 
   private void init() {
-    if (!myGenerationOptions.isIncremental()) {
+    IncrementalGenerationStrategy incrementalStrategy = myGenerationOptions.getIncrementalStrategy();
+    if (incrementalStrategy == null) {
       return;
     }
 
-    myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myOperationContext);
+
+    myGenerationHashes = incrementalStrategy.getModelHashes(myModel, myOperationContext);
 
     if (myGenerationOptions.isRebuildAll()) {
       return;
     }
 
-    GenerationDependencies dependencies = GenerationDependenciesCache.getInstance().get(myModel);
+    GenerationDependencies dependencies = incrementalStrategy.getDependencies(myModel);
     if (dependencies == null || myGenerationHashes == null) {
       return;
     }
 
     loadCaches(dependencies);
-    if(myCache == null && myGenerationOptions.isIncremental() && myGenerationOptions.getIncrementalCacheContainer() != null) {
+    if(myCache == null && incrementalStrategy.getContainer() != null) {
       // if we are creating a new cache without the previous one => rebuild all
       return;
     }
@@ -78,11 +81,12 @@ public class GenerationFilter {
   }
 
   public IntermediateModelsCache createNewCache() {
-    if (!myGenerationOptions.isIncremental() || myGenerationHashes == null) {
+    IncrementalGenerationStrategy incrementalStrategy = myGenerationOptions.getIncrementalStrategy();
+    if (incrementalStrategy == null || myGenerationHashes == null) {
       return null;
     }
 
-    GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalCacheContainer();
+    GenerationCacheContainer incrementalCacheContainer = incrementalStrategy.getContainer();
     if(incrementalCacheContainer == null) {
       return null;
     }
@@ -97,7 +101,7 @@ public class GenerationFilter {
   }
 
   private void loadCaches(GenerationDependencies dependencies) {
-    GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalCacheContainer();
+    GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalStrategy().getContainer();
     if(incrementalCacheContainer == null) {
       return;
     }
@@ -173,7 +177,7 @@ public class GenerationFilter {
         }
         continue;
       }
-      Map<String, String> map = ModelDigestHelper.getInstance().getGenerationHashes(sm, myOperationContext);
+      Map<String, String> map = myGenerationOptions.getIncrementalStrategy().getModelHashes(sm, myOperationContext);
       String newHash = map != null ? map.get(ModelDigestHelper.FILE) : null;
       if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);
@@ -439,7 +443,7 @@ public class GenerationFilter {
   }
 
   public DependenciesBuilder createDependenciesBuilder() {
-    if (!myGenerationOptions.isIncremental()) {
+    if (myGenerationOptions.getIncrementalStrategy() == null) {
       return new NullDependenciesBuilder();
     }
 

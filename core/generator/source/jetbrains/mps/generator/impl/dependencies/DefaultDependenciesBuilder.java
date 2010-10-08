@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
@@ -182,8 +183,8 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public GenerationDependencies getResult(IOperationContext operationContext) {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext, myUnchangedSet.size(), myRequiredSet.size());
+  public GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy) {
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size());
   }
 
   /* working with cache */

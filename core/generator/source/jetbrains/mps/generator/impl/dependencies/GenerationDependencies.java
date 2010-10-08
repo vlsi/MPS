@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
@@ -134,7 +135,7 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext, int skippedCount, int fromCacheCount) {
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount) {
     Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
     Map<String, String> externalHashes = new HashMap<String, String>();
 
@@ -171,7 +172,7 @@ public class GenerationDependencies {
       for (String modelReference : dep.getExternal()) {
         if (!externalHashes.containsKey(modelReference)) {
           SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
-          Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
+          Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, operationContext);
           String value = hashes != null ? hashes.get(ModelDigestHelper.FILE) : null;
           externalHashes.put(modelReference, value);
         }
