@@ -16,16 +16,16 @@
 package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-
-import java.util.List;
-import java.util.ArrayList;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -55,11 +55,13 @@ public class CellMenuPart_ReplaceNode_replacementConcept_SearchScope extends Abs
 
       // add all sub-concepts declared in the same language
       if (myConcept != null) {
-        List<ConceptDeclaration> sub_concepts = myConcept.getModel().allAdapters(ConceptDeclaration.class, new Condition<ConceptDeclaration>() {
+        Condition<ConceptDeclaration> c = new Condition<ConceptDeclaration>() {
           public boolean met(ConceptDeclaration object) {
             return object != myConcept && SModelUtil_new.isAssignableConcept(object, myConcept);
           }
-        });
+        };
+        List<ConceptDeclaration> sub_concepts = myConcept.getModel().allAdapters(ConceptDeclaration.class);
+        sub_concepts = CollectionUtil.filter(sub_concepts, c);
         myConcepts.addAll(sub_concepts);
       }
     }

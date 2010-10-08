@@ -248,18 +248,6 @@ public class SModel implements Iterable<SNode> {
     return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
   }
 
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<? super E> condition) {
-    List<E> result = allAdapters(cls);
-    Iterator<E> it = result.iterator();
-    while (it.hasNext()) {
-      E e = it.next();
-      if (!condition.met(e)) {
-        it.remove();
-      }
-    }
-    return result;
-  }
-
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
