@@ -1,17 +1,10 @@
 package jetbrains.mps.smodel;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 25.03.2010
- * Time: 14:28:11
- * To change this template use File | Settings | File Templates.
- */
 public class ModelChangedCaster {
-  private List<NodeModelChangedListener> myListeners = new ArrayList<NodeModelChangedListener>();
+  private List<NodeModelChangedListener> myListeners = new CopyOnWriteArrayList<NodeModelChangedListener>();
   private static ModelChangedCaster ourInstance = new ModelChangedCaster();
 
   private ModelChangedCaster() {
@@ -22,13 +15,9 @@ public class ModelChangedCaster {
   }
 
   void fireModelChanged(SNode node, SModel oldModel) {
-    for (NodeModelChangedListener listener : copyListeners()) {
+    for (NodeModelChangedListener listener : myListeners) {
       listener.modelChanged(node, oldModel);
     }
-  }
-
-  private synchronized ArrayList<NodeModelChangedListener> copyListeners() {
-    return new ArrayList<NodeModelChangedListener>(myListeners);
   }
 
   public synchronized void addListener(NodeModelChangedListener listener) {
