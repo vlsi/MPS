@@ -1229,20 +1229,20 @@ public class SModel implements Iterable<SNode> {
     }
 
     for (ImportElement e : myImports) {
-      SModelReference oldReference = e.myModelDescriptor;
+      SModelReference oldReference = e.myModelReference;
       SModelReference newRef = oldReference.update();
       if (newRef.differs(oldReference)) {
         changed = true;
-        e.myModelDescriptor = newRef;
+        e.myModelReference = newRef;
       }
     }
 
     for (ImportElement e : myAdditionalModelsVersions) {
-      SModelReference oldReference = e.myModelDescriptor;
+      SModelReference oldReference = e.myModelReference;
       SModelReference newRef = oldReference.update();
       if (newRef.differs(oldReference)) {
         changed = true;
-        e.myModelDescriptor = newRef;
+        e.myModelReference = newRef;
       }
     }
 
@@ -1317,7 +1317,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public static class ImportElement {
-    private SModelReference myModelDescriptor;
+    private SModelReference myModelReference;
     private int myReferenceID;
     private int myUsedVersion;
 
@@ -1326,13 +1326,13 @@ public class SModel implements Iterable<SNode> {
     }
 
     public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
-      myModelDescriptor = modelReference;
+      myModelReference = modelReference;
       myReferenceID = referenceID;
       myUsedVersion = usedVersion;
     }
 
     public SModelReference getModelReference() {
-      return myModelDescriptor;
+      return myModelReference;
     }
 
     public int getReferenceID() {
@@ -1345,7 +1345,7 @@ public class SModel implements Iterable<SNode> {
 
     public String toString() {
       return "ImportElement(" +
-        "uid=" + myModelDescriptor + ", " +
+        "uid=" + myModelReference + ", " +
         "referenceId=" + myReferenceID + ", " +
         "usedVersion=" + myUsedVersion + ")";
     }
@@ -1359,7 +1359,7 @@ public class SModel implements Iterable<SNode> {
 
       if (myReferenceID != that.myReferenceID) return false;
       if (myUsedVersion != that.myUsedVersion) return false;
-      if (myModelDescriptor != null ? !myModelDescriptor.equals(that.myModelDescriptor) : that.myModelDescriptor != null)
+      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
         return false;
 
       return true;
@@ -1367,7 +1367,7 @@ public class SModel implements Iterable<SNode> {
 
     @Override
     public int hashCode() {
-      int result = myModelDescriptor != null ? myModelDescriptor.hashCode() : 0;
+      int result = myModelReference != null ? myModelReference.hashCode() : 0;
       result = 31 * result + myReferenceID;
       result = 31 * result + myUsedVersion;
       return result;
