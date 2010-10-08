@@ -202,7 +202,7 @@ public class ModelUtils {
   private static Document modelToDom(final SModel model) {
     Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
       public Document compute() {
-        return ModelPersistence.saveModel(model, false);
+        return ModelPersistence.saveModel(model);
       }
     });
     return document;

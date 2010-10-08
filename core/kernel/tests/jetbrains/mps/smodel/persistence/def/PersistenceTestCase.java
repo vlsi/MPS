@@ -56,7 +56,7 @@ public class PersistenceTestCase extends BaseMPSTest {
       @Override
       public void run() {
         SModel model = modelDescriptor.getSModel();
-        Document document = writer.saveModel(model, true);
+        Document document = writer.saveModel(model);
         SModel readModel = reader.readModel(document, model.getShortName(), model.getStereotype());
         ModelAssert.assertDeepModelEquals(model, readModel);
       }

@@ -25,7 +25,7 @@ import org.jdom.Element;
  * this class is not used any longer
  */
 public class ModelWriter0 implements IModelWriter {
-  public Document saveModel(SModel sourceModel, boolean validate) {
+  public Document saveModel(SModel sourceModel) {
     throw new RuntimeException("not implemented");
   }
 

@@ -204,7 +204,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     }
     IFile modelFile = dsm.getModelFile();
     assert modelFile != null;
-    return ModelPersistence.saveModel(smodel, modelFile, true, true);
+    return ModelPersistence.saveModel(smodel, modelFile, true);
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {

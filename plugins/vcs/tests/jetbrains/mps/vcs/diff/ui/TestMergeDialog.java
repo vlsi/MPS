@@ -111,7 +111,7 @@ public class TestMergeDialog {
           public void run() {
             IFile iFile = FileSystem.getInstance().getFileByPath(args[3]);
             if (!iFile.exists()) iFile.createNewFile();
-            ModelPersistence.saveModel(result, iFile, true, false);
+            ModelPersistence.saveModel(result, iFile, false);
           }
         });
         dialog.dispose();

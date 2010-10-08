@@ -273,7 +273,7 @@ public class ModelPersistence {
           refactorings = null;
         }
       }
-      Document document = writer.saveModel(model, false);
+      Document document = writer.saveModel(model);
       model.dispose();
       LOG.assertLog(modelReaders.get(version) != null);
       model = modelReaders.get(version).readModel(document, reference.getShortName(), reference.getStereotype());
@@ -282,7 +282,7 @@ public class ModelPersistence {
     model.setPersistenceVersion(toVersion);
 
     try {
-      Document document = saveModel(model, false);
+      Document document = saveModel(model);
       JDOMUtil.writeDocument(document, file);
 
       if (refactorings != null) {
@@ -340,7 +340,7 @@ public class ModelPersistence {
 
   @NotNull
   public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model, true), model.getShortName(), model.getStereotype());
+    return readModel(saveModel(model), model.getShortName(), model.getStereotype());
   }
 
   @NotNull
@@ -366,7 +366,7 @@ public class ModelPersistence {
   /**
    * returns upgraded model, or null if the model doesn't require update or canUpgrade is false
    */
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean validate, boolean canUpgrade) {
+  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
 
     if (file.isReadOnly()) {
@@ -383,7 +383,7 @@ public class ModelPersistence {
     }
 
     // no, save
-    Document document = saveModel(model, validate);
+    Document document = saveModel(model);
     try {
       JDOMUtil.writeDocument(document, file);
       SModelRepository.getInstance().markUnchanged(model);
@@ -394,7 +394,7 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static Document saveModel(@NotNull SModel sourceModel, boolean validate) {
+  public static Document saveModel(@NotNull SModel sourceModel) {
     //model persistence level update is performed on startup;
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
@@ -402,7 +402,7 @@ public class ModelPersistence {
       sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
     }
 
-    return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel, validate);
+    return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel);
   }
 
   public static void saveNode(Element container, SNode node) {

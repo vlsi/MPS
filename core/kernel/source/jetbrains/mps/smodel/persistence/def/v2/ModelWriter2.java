@@ -36,16 +36,12 @@ public class ModelWriter2 implements IModelWriter {
     return 2;
   }
 
-  public Document saveModel(SModel sourceModel, boolean validate) {
+  public Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.NAME, sourceModel.getLongName());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
     persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
-
-    if (validate) {
-      sourceModel.validateLanguagesAndImports();
-    }
 
     //noinspection deprecation
     StructureModificationHistory history = sourceModel.getRefactoringHistory();

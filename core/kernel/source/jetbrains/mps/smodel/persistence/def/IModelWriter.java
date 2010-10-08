@@ -25,7 +25,7 @@ import org.jdom.Element;
  * Oct 9, 2007
  */
 public interface IModelWriter {
-  Document saveModel(SModel sourceModel, boolean validate);
+  Document saveModel(SModel sourceModel);
 
   void saveNode(Element container, SNode node);
 }
