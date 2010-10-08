@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences.mapPair;
 
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
@@ -26,7 +27,7 @@ import jetbrains.mps.typesystem.inference.IWrapper;
  * To change this template use File | Settings | File Templates.
  */
 public class SubTypingAdded extends MapPairDifference {
-  public SubTypingAdded(IWrapper subType, IWrapper superType, InequalityMapPair mapPair) {
+  public SubTypingAdded(SNode subType, SNode superType, InequalityMapPair mapPair) {
     super(subType, superType, mapPair);
   }
 

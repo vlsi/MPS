@@ -21,7 +21,6 @@ import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,15 +49,15 @@ public class State {
     return myEquations;
   }
 
-  public void addEquation(IWrapper left, IWrapper right, EquationInfo info) {
+  public void addEquation(SNode left, SNode right, EquationInfo info) {
     myEquations.addEquation(left, right, info);
   }
 
-  public void addInequality(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) { 
+  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) { 
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addNonConcrete(IWrapper left, IWrapper right) {
+  public void addNonConcrete(SNode left, SNode right) {
     myNonConcrete.addNonConcrete(left, right);
   }
 
@@ -80,7 +79,7 @@ public class State {
     }
   }
 
-  public boolean isConcrete(IWrapper wrapper) {
+  public boolean isConcrete(SNode wrapper) {
     return myNonConcrete.isConcrete(wrapper);
   }
 
@@ -88,18 +87,16 @@ public class State {
     myNodeMaps.addNodeToError(node, error);
   }
 
-
-  ///DEBUG ----------------------------------
-
-  public void print() {
-    System.out.println("-----state---------");
-    myEquations.print();
-    myInequalities.print();
-    myNonConcrete.print();
-   
-  }
-
   public NonConcrete getNonConcrete() {
     return myNonConcrete;
+  }
+
+  public void clear() {
+    myEquations.clear();
+  }
+
+  public void print() {
+    myEquations.printEquations();
+    myInequalities.print();
   }
 }

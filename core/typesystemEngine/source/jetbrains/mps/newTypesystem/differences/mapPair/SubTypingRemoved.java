@@ -16,8 +16,8 @@
 package jetbrains.mps.newTypesystem.differences.mapPair;
 
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,14 +29,14 @@ import jetbrains.mps.typesystem.inference.IWrapper;
 public class SubTypingRemoved extends MapPairDifference {
   private EquationInfo myInfo;
 
-  public SubTypingRemoved(IWrapper subType, IWrapper superType, EquationInfo info, InequalityMapPair mapPair) {
+  public SubTypingRemoved(SNode subType, SNode superType, EquationInfo info, InequalityMapPair mapPair) {
     super(subType, superType, mapPair);
     myInfo = info;
   }
 
   @Override
   public void rollBack() {
-    ((InequalityMapPair)myMapPair).add(myKeyType, myValueType, myInfo);
+    myMapPair.add(myKeyType, myValueType, myInfo);
   }
 
   public String getPresentation() {

@@ -31,12 +31,12 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
   private String myBefore;
   private String myBetween;
   private String myAfter;
-  private IWrapper myLeft;
-  private IWrapper myRight;
+  private SNode myLeft;
+  private SNode myRight;
 
   private SNode mySNode;
 
-  public EquationErrorReporterNew(SNode node, State state, String before,IWrapper left, String between, IWrapper right,
+  public EquationErrorReporterNew(SNode node, State state, String before,SNode left, String between, SNode right,
                                   String after, String ruleModel, String ruleId) {
     super(ruleModel, ruleId);
     myState = state;
@@ -48,22 +48,23 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
     mySNode = node;
   }
 
-  public EquationErrorReporterNew(SNode node, State state, String before,IWrapper left, String between, IWrapper right,
+  public EquationErrorReporterNew(SNode node, State state, String before,SNode left, String between, SNode right,
                                   String after, EquationInfo info) {
-    this(node, state, before, left, between, right, after, info.getRuleModel(), info.getRuleId());
+    this(node, state, before, left, between, right, after, info != null ? info.getRuleModel() : null,
+      info != null ? info.getRuleId() : null);
   }
 
   public String reportError() {
-    IWrapper lRepresentative = myLeft;
-    if (lRepresentative != null && lRepresentative.isVariable()) {
+    SNode lRepresentative = myLeft;
+    if (lRepresentative != null && TypesUtil.isVariable(lRepresentative)) {
       lRepresentative = myState.getEquations().getRepresentative(myLeft);
     }
-    IWrapper rRepresentative = myRight;
-    if (rRepresentative != null && rRepresentative.isVariable()) {
+    SNode rRepresentative = myRight;
+    if (rRepresentative != null && TypesUtil.isVariable(rRepresentative)) {
       rRepresentative = myState.getEquations().getRepresentative(myRight);
     }
     return myBefore + PresentationManager.toString(lRepresentative) +
-      myBetween + PresentationManager.toString(rRepresentative) + myAfter;
+      myBetween + PresentationManager.toString(rRepresentative) + myAfter;        
   }
 
   public MessageStatus getMessageStatus() {

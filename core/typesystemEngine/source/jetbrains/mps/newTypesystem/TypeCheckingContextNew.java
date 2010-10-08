@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
@@ -35,11 +36,16 @@ import java.util.Stack;
 public class TypeCheckingContextNew extends TypeCheckingContext {
 
   private State myState;
+  private SNode myRootNode;
   private Stack<Difference> myDifferenceStack = new Stack<Difference>();
+  private NodeTypesComponentNew myNodeTypesComponent;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
+    System.out.println("Started type checking");
     myState = new State(this);
+    myRootNode = rootNode;
+    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
   }
 
   public void rollBack() {
@@ -53,33 +59,55 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createEquation(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myState.addEquation(left, right, equationInfo);
+    myState.addEquation(left.getNode(), right.getNode(), equationInfo);
   }
 
   public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myState.addInequality(left, right, true, true, equationInfo);
+    myState.addInequality(left.getNode(), right.getNode(), true, true, equationInfo);
   }
 
-  public void createNonConcrete(IWrapper left, IWrapper right) {
-    myState.addNonConcrete(left, right);
+  public void createLessThanInequationStrong(SNode node1,SNode node2, SNode nodeToCheck,
+                                             String errorString,String ruleModel, String ruleId, boolean checkOnly,
+                                             int inequationPriority, IntentionProvider intentionProvider) {
+      myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel, 
+                            ruleId, inequationPriority, intentionProvider));
   }
+
 
   @Override
   public void checkRoot() {
+    myNodeTypesComponent.checkNode(myRootNode);
+  }
+
+  @Override
+  public void checkRoot(boolean refreshTypes) {
+    myState.clear();
+    myDifferenceStack.clear();
+    
+  }
+
+  @Override
+  public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
+    myState.addInequality(node1, node2, true, checkOnly, equationInfo);
   }
 
   public void addDifference(Difference diff) {
     myDifferenceStack.add(diff);
   }
 
+  @Override
+  public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
+    myState.addEquation(node1, node2, equationInfo);
+    print();
+  }
 
-  ///debug
-  public void printState() {
+  public void print() {
+    System.out.println("---State-----");
     myState.print();
-    System.out.println("---Difference-----");
-    for (Difference diff : myDifferenceStack) {
-      System.out.println(diff.getPresentation());
+    System.out.println("--Difference-");
+    for (Difference d : myDifferenceStack) {
+      System.out.println(d.getPresentation());
     }
-    System.out.println("----------------");
+    System.out.println("---End-------");
   }
 }

@@ -17,7 +17,6 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.mapPair.NonConcreteAdded;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.typesystem.inference.NodeWrapper;
@@ -32,43 +31,21 @@ import jetbrains.mps.typesystem.inference.NodeWrapper;
 public class NonConcrete {
   private State myState;
   private Equations myEquations;
-  private NonConcreteMapPair myNonConcrete;
 
   public NonConcrete(State state) {
     myState = state;
     myEquations = myState.getEquations();
-    myNonConcrete = new NonConcreteMapPair(myState);
   }
 
-  public void substitute(IWrapper var, IWrapper type) {
-    myNonConcrete.substitute(var, type);
+  public void substitute(SNode var, SNode type) {
   }
 
-  public void addNonConcrete(IWrapper left, IWrapper right) {
-    if (right.isConcrete()) {
-      return;
-    }
-    NonConcreteMapPair nonConcrete = myNonConcrete;
-    if (!nonConcrete.contains(left, right)) {
-      nonConcrete.add(left, right);
-      myState.addDifference(new NonConcreteAdded(left, right, nonConcrete));
-    }
+  public void addNonConcrete(SNode left, SNode right) {
   }
 
-  public boolean isConcrete(IWrapper wrapper) {
-    wrapper = myEquations.getRepresentative(wrapper);
-    if (wrapper == null || !(wrapper instanceof NodeWrapper)) return false;
-    if (!wrapper.isConcrete()) {
-      return false;
-    }
-    if (TypesUtil.isVariable(wrapper)) {
-      return false;
-    }
+  public boolean isConcrete(SNode wrapper) {
 
-
-
-
-    return true;
+    return false;
   }
 
 
@@ -78,7 +55,4 @@ public class NonConcrete {
   }
 
   //----------------DEBUG
-  void print() {
-    myNonConcrete.print("<---", "--->");
-  }
 }

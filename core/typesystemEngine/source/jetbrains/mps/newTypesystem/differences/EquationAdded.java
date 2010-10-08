@@ -13,37 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.states;
+package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.differences.mapPair.NonConcreteRemoved;
+import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 23, 2010
- * Time: 6:58:07 PM
+ * Date: Sep 15, 2010
+ * Time: 12:54:50 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NonConcreteMapPair extends MapPair<IWrapper> {
+public class EquationAdded extends EquationDifference {
+  private SNode myChild;
 
-   public NonConcreteMapPair(State state) {
-    super(state);
+  public EquationAdded(SNode prev, Equations equations) {
+    super(equations);
+    myChild = prev;
   }
 
   @Override
-  public void performActions(IWrapper var, IWrapper value, IWrapper type, IWrapper info, boolean reversed) {
-    if (reversed) {
-      myState.addDifference(new NonConcreteRemoved(var, value, this));
-      myState.addNonConcrete(type, value);
-    } else {
-      myState.addDifference(new NonConcreteRemoved(value, var, this));
-      myState.addNonConcrete(value, type);
-    }
+  public void rollBack() {
+    myEquations.rollBack(this);
   }
 
-  public void add(IWrapper subType, IWrapper superType) {
-    add(subType, superType, superType);
+  public SNode getChild() {
+    return myChild;
   }
 
+  @Override
+  public String getPresentation() {
+    return "Equation added " + myChild; 
+  }
 }

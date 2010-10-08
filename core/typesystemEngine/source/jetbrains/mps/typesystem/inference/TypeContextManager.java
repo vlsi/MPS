@@ -3,6 +3,7 @@ package jetbrains.mps.typesystem.inference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -22,7 +23,7 @@ import java.util.Map.Entry;
  */
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
-
+  private static final boolean useNewTypeSystem = true;
   public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
 
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
@@ -95,6 +96,9 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
+    if (!useNewTypeSystem) {
+      return new TypeCheckingContextNew(node, myTypeChecker);
+    }
     return new TypeCheckingContext(node, myTypeChecker);
   }
 

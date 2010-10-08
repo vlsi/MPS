@@ -13,29 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.mapPair;
+package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
-import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 23, 2010
- * Time: 6:42:27 PM
+ * Date: Oct 8, 2010
+ * Time: 1:17:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NonConcreteRemoved extends MapPairDifference {
-  public NonConcreteRemoved(IWrapper keyType, IWrapper valueType, NonConcreteMapPair mapPair) {
-    super(keyType, valueType, mapPair);
+public class EquationRemoved extends EquationDifference {
+  private SNode myChild;
+  private SNode myParent;
+
+  public EquationRemoved(SNode child, SNode parent, Equations equations) {
+    super(equations);
+    myChild = child;
+    myParent = parent;
   }
 
   @Override
   public void rollBack() {
-    ((NonConcreteMapPair)myMapPair).add(myKeyType, myValueType);
+    myEquations.rollBack(this);
   }
 
+  @Override
   public String getPresentation() {
-    return "NonConcrete removed " + myKeyType + " " + myValueType;
+    return "Equation removed " + myChild + " = " + myParent;
+  }
+
+  public SNode getChild() {
+    return myChild;
+  }
+
+  public SNode getParent() {
+    return myParent;
   }
 }

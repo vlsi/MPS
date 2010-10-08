@@ -13,29 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.mapPair;
+package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
-import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 23, 2010
- * Time: 6:42:15 PM
+ * Date: Oct 8, 2010
+ * Time: 1:19:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NonConcreteAdded extends MapPairDifference {
-  public NonConcreteAdded(IWrapper keyType, IWrapper valueType, NonConcreteMapPair mapPair) {
-    super(keyType, valueType, mapPair);
+public class EquationSubstituted extends CompositeDifference {
+  EquationAdded myAdded;
+  EquationRemoved myRemoved;
+
+  public EquationSubstituted(SNode key, SNode prev, SNode cur, Equations equations) {
+    myAdded = new EquationAdded(key, equations);
+    myRemoved = new EquationRemoved(key, prev, equations);
   }
 
   @Override
-  public void rollBack() {
-    myMapPair.remove(myKeyType, myValueType);
-  }
-
   public String getPresentation() {
-    return "NonConcrete added " + myKeyType + " " + myValueType;
+    return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
+      myAdded.getChild() + " = " + myRemoved.getParent() ;
   }
 }

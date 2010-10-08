@@ -34,19 +34,19 @@ public class TypesUtil {
     return left;
   }
 
-  public static boolean isVariable(IWrapper wrapper) {
-    return RuntimeTypeVariable.concept.equals(wrapper.getNode().getConceptFqName());
+  public static boolean isVariable(SNode node) {
+    return RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
-  public static boolean isType(IWrapper wrapper) {
-    return !isVariable(wrapper);
+  public static boolean isType(SNode node) {
+    return !isVariable(node);
+  }
+
+  public static int getDegree(SNode node) {
+    if (isVariable(node)) return 0;
+    return 1;
   }
 
 
-  public IWrapper expandNode(IWrapper wrapper) {
-    if (wrapper == null) {
-      return null;
-    }
-    return null;
-  }
+
 }

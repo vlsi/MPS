@@ -16,8 +16,8 @@
 package jetbrains.mps.newTypesystem.differences.mapPair;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.MapPair;
-import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.newTypesystem.states.InequalityMapPair;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,11 +27,11 @@ import jetbrains.mps.typesystem.inference.IWrapper;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class MapPairDifference extends Difference {
-  MapPair myMapPair;
-  IWrapper myKeyType;
-  IWrapper myValueType;
+  InequalityMapPair myMapPair;
+  SNode myKeyType;
+  SNode myValueType;
 
-  public MapPairDifference(IWrapper keyType, IWrapper valueType, MapPair mapPair) {
+  public MapPairDifference(SNode keyType, SNode valueType, InequalityMapPair mapPair) {
     myKeyType = keyType;
     myValueType = valueType;
     myMapPair = mapPair;

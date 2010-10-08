@@ -82,7 +82,7 @@ public class RulesManager {
     return myModelsWithLoadedRules.contains(modelReference);
   }
 
-  void markModelHasLoadedRules(SModelReference modelReference) {
+  public void markModelHasLoadedRules(SModelReference modelReference) {
     myModelsWithLoadedRules.add(modelReference);
   }
 

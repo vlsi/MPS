@@ -146,7 +146,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
     myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
-
     myModelListenerManager.track(myRootNode);
   }
 

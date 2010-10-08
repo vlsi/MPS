@@ -16,35 +16,20 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.newTypesystem.states.Equations;
-import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 12:54:50 PM
+ * Date: Oct 8, 2010
+ * Time: 1:17:32 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationDifference extends Difference {
-  private IWrapper myChild;
-  private Equations myEquations;
+public abstract class EquationDifference extends Difference {
+  protected Equations myEquations;
 
-  public EquationDifference(IWrapper prev, Equations equations) {
-    myChild = prev;
+  public EquationDifference(Equations equations) {
     myEquations = equations;
   }
 
-  @Override
-  public void rollBack() {
-    myEquations.rollBack(this);
-  }
 
-  public IWrapper getChild() {
-    return myChild;
-  }
-
-  @Override
-  public String getPresentation() {
-    return "Equation added " + myChild; 
-  }
 }

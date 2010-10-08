@@ -16,8 +16,8 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.newTypesystem.differences.mapPair.SubTypingAdded;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,18 +42,19 @@ public class Inequalities {
     myStrongCheckInequalities = new InequalityMapPair(myState, false, true);
   }
 
-  public void substitute(IWrapper var, IWrapper type) {
+  public void substitute(SNode var, SNode type) {
     myWeakInequalities.substitute(var, type);
     myStrongInequalities.substitute(var, type);
     myWeakCheckInequalities.substitute(var, type);
     myStrongCheckInequalities.substitute(var, type);
   }
 
-  public void addInequality(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
+  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
+    printInequality(subType, superType, isWeak);
     Equations equations = myState.getEquations();
     subType = equations.getRepresentative(subType);
     superType = equations.getRepresentative(superType);
-    if (subType == null || superType == null || subType.getNode() == superType.getNode()) {
+    if (subType == null || superType == null || subType == superType) {
       return;
     }
     if (!myState.isConcrete(subType) || !myState.isConcrete(superType)) {
@@ -62,7 +63,7 @@ public class Inequalities {
     
   }
 
-  public void addSubTyping(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
+  public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
     InequalityMapPair inequality;
     if (isWeak) {
       inequality = check ? myWeakCheckInequalities : myWeakInequalities;
@@ -75,11 +76,18 @@ public class Inequalities {
     }
   }
 
-  //----------------DEBUG
-  void print() {
-    myStrongInequalities.print("<", ">");
-    myWeakInequalities.print("<", ">");
-    myStrongCheckInequalities.print("<", ">");
-    myWeakCheckInequalities.print("<", ">");
+  public void solveInequlities() {
+    
+  }
+
+  public void printInequality(SNode subType, SNode superType, boolean isWeak) {
+    System.out.println(subType + (isWeak ? " <= " : " < ") + superType);
+  }
+
+  public void print() {
+    myWeakInequalities.print();
+    myWeakCheckInequalities.print();
+    myStrongInequalities.print();
+    myStrongCheckInequalities.print();
   }
 }
