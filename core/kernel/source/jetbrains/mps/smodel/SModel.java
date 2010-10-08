@@ -69,13 +69,7 @@ public class SModel implements Iterable<SNode> {
     myReference = modelReference;
   }
 
-  public void setPersistenceVersion(int persistenceVersion) {
-    myPersistenceVersion = persistenceVersion;
-  }
-
-  public int getPersistenceVersion() {
-    return myPersistenceVersion;
-  }
+  //---------common properties--------
 
   @NotNull
   public SModelReference getSModelReference() {
@@ -95,20 +89,6 @@ public class SModel implements Iterable<SNode> {
     return myReference.getShortName();
   }
 
-  public void runLoadingAction(@NotNull Runnable runnable) {
-    boolean wasLoading = setLoading(true);
-    try {
-      runnable.run();
-    } finally {
-      setLoading(wasLoading);
-    }
-  }
-
-  @NotNull
-  public Iterator<SNode> iterator() {
-    return roots();
-  }
-
   @NotNull
   public String getStereotype() {
     return myReference.getStereotype();
@@ -117,6 +97,25 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public String getLongName() {
     return myReference.getLongName();
+  }
+
+  public boolean isTransient() {
+    return false;
+  }
+
+  public SModelDescriptor getModelDescriptor() {
+    return myModelDescriptor;
+  }
+
+  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
+    myModelDescriptor = modelDescriptor;
+  }
+
+  //---------root manipulation--------
+
+  @NotNull
+  public Iterator<SNode> iterator() {
+    return roots();
   }
 
   @NotNull
@@ -203,6 +202,598 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  public INodeAdapter getRootAdapterByName(@NotNull String name) {
+    return BaseAdapter.fromNode(getRootByName(name));
+  }
+
+  @Nullable
+  public SNode getRootByName(@NotNull String name) {
+    for (SNode root : getRoots()) {
+      if (name.equals(root.getName())) return root;
+    }
+    return null;
+  }
+
+  //---------imports manipulation--------
+
+  public boolean hasLanguage(@NotNull ModuleReference ref) {
+    return getLanguageRefs(GlobalScope.getInstance()).contains(ref);
+  }
+
+  public void addLanguage(@NotNull Language language) {
+    addLanguage_internal(language.getModuleReference());
+    addAspectModelsVersions(language);
+  }
+
+  public void addLanguage(@NotNull ModuleReference ref) {
+    addLanguage(ref, false);
+  }
+
+  public void addLanguage(@NotNull ModuleReference ref, boolean firstVersion) {
+    addLanguage_internal(ref);
+    Language language = GlobalScope.getInstance().getLanguage(ref);
+    if (language != null) {
+      addAspectModelsVersions(language, firstVersion);
+    }
+  }
+
+  public void addLanguage_internal(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+    if (hasLanguage(ref)) return;
+
+    if (ref.getModuleId() == null) {
+      LOG.warning("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
+    }
+
+    if (!myLanguages.contains(ref)) {
+      myLanguages.add(ref);
+      fireLanguageAddedEvent(ref);
+    }
+  }
+
+  public void deleteLanguage(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
+    myLanguages.remove(ref);
+    myVersionedLanguages.remove(ref);
+    removeUnusedLanguageAspectModelElements();
+    fireLanguageRemovedEvent(ref);
+  }
+
+  public void addNewlyImportedDevKit(ModuleReference ref) {
+    addDevKit(ref);
+    addAspectModelsVersions(GlobalScope.getInstance().getDevKit(ref));
+  }
+
+  public void addDevKit(@NotNull DevKit devKit) {
+    addDevKit(devKit.getModuleReference());
+  }
+
+  public void addDevKit(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
+    if (!myDevKits.contains(ref)) {
+      myDevKits.add(ref);
+      fireDevKitAddedEvent(ref);
+    }
+  }
+
+  public void deleteDevKit(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
+    myDevKits.remove(ref);
+    fireDevKitRemovedEvent(ref);
+  }
+
+  @NotNull
+  public List<Language> getLanguages(@NotNull IScope scope) {
+    Set<Language> languages = new LinkedHashSet<Language>();
+
+    for (ModuleReference lang : myLanguages) {
+      Language language = scope.getLanguage(lang);
+
+      if (language != null) {
+        languages.add(language);
+        languages.addAll(language.getAllExtendedLanguages());
+        //addAspectModelsVersions(languageNamespace, language);
+      }
+    }
+
+    for (ModuleReference dk : getDevKitRefs()) {
+      DevKit devKit = scope.getDevKit(dk);
+      if (devKit != null) {
+        //addDevkitModelsVersions(dk, devKit);
+        for (Language l : devKit.getAllExportedLanguages()) {
+          if (!languages.contains(l)) {
+            languages.add(l);
+            languages.addAll(l.getAllExtendedLanguages());
+          }
+        }
+      }
+    }
+
+    if (getModelDescriptor() != null && getModelDescriptor().getModule() != null) {
+      IModule module = getModelDescriptor().getModule();
+      languages.addAll(module.getImplicitlyImportedLanguages(getModelDescriptor()));
+    }
+
+    return new ArrayList<Language>(languages);
+  }
+
+  public List<DevKit> getDevkits(@NotNull IScope scope) {
+    ModelAccess.assertLegalRead();
+
+    List<DevKit> result = new ArrayList<DevKit>();
+    for (ModuleReference dk : myDevKits) {
+      DevKit devKit = scope.getDevKit(dk);
+      if (devKit != null) {
+        //addDevkitModelsVersions(dk, devKit);
+        result.add(devKit);
+      } else {
+        LOG.error("Can't find devkit " + dk.getModuleFqName() + " in scope " + scope);
+      }
+    }
+    return result;
+  }
+
+  @NotNull
+  public Set<ModuleReference> getLanguageRefs(IScope scope) {
+//    ModelAccess.assertLegalRead();
+
+    Set<ModuleReference> result = new HashSet<ModuleReference>(myLanguages.size() + myDevKits.size() * 8);
+    result.addAll(myLanguages);
+    for (ModuleReference dk : myDevKits) {
+      DevKit devKit = scope.getDevKit(dk);
+      if (devKit != null) {
+        //addDevkitModelsVersions(dk, devKit);
+        for (Language l : devKit.getExportedLanguages()) {
+          if (!result.contains(l.getModuleReference())) {
+            result.add(l.getModuleReference());
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  @NotNull
+  public List<ModuleReference> getDevKitRefs() {
+    return new ArrayList<ModuleReference>(myDevKits);
+  }
+
+  @NotNull
+  public List<ModuleReference> getExplicitlyImportedLanguages() {
+    return new ArrayList<ModuleReference>(myLanguages);
+  }
+
+  public boolean hasImportedModel(@NotNull SModelReference modelReference) {
+    return getImportElement(modelReference) != null;
+  }
+
+  public void addImportedModel(@NotNull SModelReference modelReference) {
+    addImportedModel(modelReference, false);
+  }
+
+  public void addImportedModel(@NotNull SModelReference modelReference, boolean firstVersion) {
+    addImportElement(modelReference, firstVersion);
+  }
+
+  void addImportElement(@NotNull SModelReference modelReference, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+
+    ImportElement importElement = getImportElement(modelReference);
+    if (importElement != null) return;
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    int usedVersion = -1;
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
+      usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
+    }
+    importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
+    myImports.add(importElement);
+
+    fireImportAddedEvent(modelReference);
+  }
+
+  public void addImportElement(ImportElement importElement) {
+    ModelChange.assertLegalChange(this);
+
+    myImports.add(importElement);
+    fireImportAddedEvent(importElement.getModelReference());
+  }
+
+  @Nullable
+  public ImportElement getImportElement(@NotNull SModelReference modelReference) {
+    for (ImportElement importElement : myImports) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
+  }
+
+  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
+    ModelChange.assertLegalChange(this);
+
+    ImportElement importElement = new ImportElement(modelReference, -1, usedVersion);
+    myAdditionalModelsVersions.add(importElement);
+  }
+
+  @Nullable
+  ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
+    for (ImportElement importElement : myAdditionalModelsVersions) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
+  }
+
+  public List<ImportElement> getLanguageAspectModelElements() {
+    return new ArrayList<ImportElement>(myAdditionalModelsVersions);
+  }
+
+  public void removeUnusedLanguageAspectModelElements() {
+    Set<SModelReference> dependencies = getDependenciesModelUIDs();
+    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
+      ImportElement elem = iter.next();
+      if (!dependencies.contains(elem.getModelReference())) {
+        iter.remove();
+      }
+    }
+  }
+
+  public void deleteImportedModel(@NotNull SModelReference modelReference) {
+    ModelChange.assertLegalChange(this);
+
+    ImportElement importElement = getImportElement(modelReference);
+    if (importElement != null) {
+      myImports.remove(importElement);
+      fireImportRemovedEvent(modelReference);
+    }
+  }
+
+  @NotNull
+  public List<SModelReference> getImportedModelUIDs() {
+    List<SModelReference> references = new ArrayList<SModelReference>();
+    for (ImportElement importElement : myImports) {
+      references.add(importElement.getModelReference());
+    }
+    return Collections.unmodifiableList(references);
+  }
+
+  @NotNull
+  public Set<SModelDescriptor> getDependenciesModels() {
+    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(GlobalScope.getInstance()));
+    for (Language language : getLanguages(GlobalScope.getInstance())) {
+      modelDescriptors.addAll(language.getAspectModelDescriptors());
+    }
+    return modelDescriptors;
+  }
+
+  @NotNull
+  public Set<SModelReference> getDependenciesModelUIDs() {
+    Set<SModelReference> result = new HashSet<SModelReference>();
+    for (SModelDescriptor sm : getDependenciesModels()) {
+      result.add(sm.getSModelReference());
+    }
+    return result;
+  }
+
+  @Nullable
+  public SModelReference getImportedModelUID(int referenceID) {
+    for (ImportElement importElement : myImports) {
+      if (importElement.getReferenceID() == referenceID) {
+        return importElement.getModelReference();
+      }
+    }
+    return null;
+  }
+
+  @NotNull
+  public List<SModelDescriptor> importedModels(@NotNull IScope scope) {
+    List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
+    for (ImportElement importElement : myImports) {
+      SModelReference modelReference = importElement.getModelReference();
+      SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
+
+      if (modelDescriptor == null) {
+        for (Language l : getLanguages(scope)) {
+          for (SModelDescriptor accessory : l.getAccessoryModels()) {
+            if (modelReference.equals(accessory.getSModelReference())) {
+              modelDescriptor = accessory;
+              break;
+            }
+          }
+        }
+      }
+
+      if (modelDescriptor != null) {
+        modelsList.add(modelDescriptor);
+      }
+    }
+    return modelsList;
+  }
+
+  public List<SModelDescriptor> allImportedModels(IScope scope) {
+    SModelDescriptor sourceModel = getModelDescriptor();
+    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+    for (Language language : getLanguages(scope)) {
+      for (SModelDescriptor am : language.getAccessoryModels()) {
+        if (am != sourceModel) {
+          result.add(am);
+        }
+      }
+    }
+
+    for (SModelDescriptor importedModel : importedModels(scope)) {
+      if (importedModel != sourceModel) {
+        result.add(importedModel);
+      }
+    }
+
+    if (sourceModel != null) {
+      IModule module = sourceModel.getModule();
+      if (module != null) {
+        result.addAll(module.getImplicitlyImportedModelsFor(sourceModel));
+      }
+    }
+
+    return new ArrayList<SModelDescriptor>(result);
+  }
+
+  @NotNull
+  public Iterator<ImportElement> importElements() {
+    return myImports.iterator();
+  }
+
+  public List<ImportElement> getImportElements() {
+    return new ArrayList<ImportElement>(myImports);
+  }
+
+  public void setMaxImportIndex(int i) {
+    myMaxImportIndex = i;
+  }
+
+  public int getMaxImportIndex() {
+    return myMaxImportIndex;
+  }
+
+  public void validateLanguagesAndImports() {
+    validateLanguagesAndImports(false, false);
+  }
+
+  public Set<ModuleReference> getUsedLanguages() {
+    Set<ModuleReference> result = new HashSet<ModuleReference>();
+    for (SNode node : allNodes()) {
+      Language lang = node.getLanguage(GlobalScope.getInstance());
+      ModuleReference ref = lang.getModuleReference();
+      result.add(ref);
+    }
+    return result;
+  }
+
+  public Set<SModelReference> getUsedImportedModels() {
+    Set<SModelReference> result = new HashSet<SModelReference>();
+    for (SNode node : allNodes()) {
+      List<SReference> references = node.getReferences();
+      for (SReference reference : references) {
+        if (reference.isExternal()) {
+          SModelReference targetModelReference = reference.getTargetSModelReference();
+          if (targetModelReference != null && !result.contains(targetModelReference)) {
+            result.add(targetModelReference);
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+
+    GlobalScope scope = GlobalScope.getInstance();
+    SModelDescriptor modelDescriptor = this.getModelDescriptor();
+    IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
+    Set<ModuleReference> usedLanguages = getLanguageRefs(scope);
+    Set<SModelReference> importedModels = new HashSet<SModelReference>();
+    for (SModelDescriptor sm : allImportedModels(scope)) {
+      importedModels.add(sm.getSModelReference());
+    }
+    List<SNode> nodes = allNodes();
+    for (SNode node : nodes) {
+      Language lang = node.getLanguage(scope);
+      if (lang == null) {
+        LOG.error("Can't find language " + node.getLanguageNamespace());
+        continue;
+      }
+      ModuleReference ref = lang.getModuleReference();
+      if (!usedLanguages.contains(ref)) {
+        if (module != null) {
+          if (respectModulesScopes && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+            module.addUsedLanguage(ref);
+          }
+        }
+
+        usedLanguages.add(ref);
+
+        addLanguage(ref, firstVersion);
+      }
+
+      for (SReference reference : node.getReferencesIterable()) {
+        if (reference.isExternal()) {
+          SModelReference targetModelReference = reference.getTargetSModelReference();
+          if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
+            if (respectModulesScopes && module != null) {
+              SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+              IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
+              if (targetModule != null && !module.getDependenciesManager().getAllDependOnModules().contains(targetModule)) {
+                module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
+              }
+            }
+            addImportedModel(targetModelReference, firstVersion);
+            importedModels.add(targetModelReference);
+          }
+        }
+      }
+    }
+    importedModels.clear();
+  }
+
+  void validateLanguages(SNode node) {
+    Collection<ModuleReference> allrefs = getLanguageRefs(GlobalScope.getInstance());
+    Set<String> available = new HashSet<String>(allrefs.size());
+    for (ModuleReference ref : allrefs) {
+      available.add(ref.getModuleFqName());
+    }
+    for (SNode n : node.getDescendantsIterable(null, true)) {
+      String namespace = n.getLanguageNamespace();
+      if (!available.contains(namespace)) {
+        available.add(namespace);
+        Language lang = GlobalScope.getInstance().getLanguage(namespace);
+        if (lang != null) {
+          addLanguage_internal(lang.getModuleReference());
+          // add language also to module if necessary
+          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
+          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+            module.addUsedLanguage(lang.getModuleReference());
+          }
+        }
+      }
+    }
+  }
+
+  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
+    if (!myLanguagesEngagedOnGeneration.contains(ref)) {
+      myLanguagesEngagedOnGeneration.add(ref);
+      // don't send event but mark model as changed
+      if (!isLoading()) {
+        SModelRepository.getInstance().markChanged(this);
+      }
+    }
+  }
+
+  public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
+    if (myLanguagesEngagedOnGeneration.contains(ref)) {
+      myLanguagesEngagedOnGeneration.remove(ref);
+      // don't send event but mark model as changed
+      if (!isLoading()) {
+        SModelRepository.getInstance().markChanged(this);
+      }
+    }
+  }
+
+  @NotNull
+  public List<ModuleReference> getEngagedOnGenerationLanguages() {
+    return new ArrayList<ModuleReference>(myLanguagesEngagedOnGeneration);
+  }
+
+  public int getUsedVersion(SModelReference sModelReference) {
+    ImportElement importElement = getImportElement(sModelReference);
+    if (importElement == null) {
+      return getLanguageAspectModelVersion(sModelReference);
+    }
+    return importElement.getUsedVersion();
+  }
+
+  public int getLanguageAspectModelVersion(SModelReference sModelReference) {
+    ImportElement importElement = getAdditionalModelElement(sModelReference);
+    if (importElement == null) return -1;
+    return importElement.getUsedVersion();
+  }
+
+  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+    ModelChange.assertLegalChange(this);
+
+    ImportElement importElement = getImportElement(sModelReference);
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    }
+
+    importElement = getAdditionalModelElement(sModelReference);
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    } else {
+      addAdditionalModelVersion(sModelReference, currentVersion);
+    }
+    fireImportAddedEvent(myReference);
+  }
+
+  //---------persistance-related refactorings--------
+
+  public void setPersistenceVersion(int persistenceVersion) {
+    myPersistenceVersion = persistenceVersion;
+  }
+
+  public int getPersistenceVersion() {
+    return myPersistenceVersion;
+  }
+
+  public void addAspectModelsVersions(@NotNull Language language) {
+    addAspectModelsVersions(language, false);
+  }
+
+  public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+    if (myVersionedLanguages.contains(language.getModuleReference())) return;
+
+    for (EditableSModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
+      addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
+    }
+    myVersionedLanguages.add(language.getModuleReference());
+    for (Language l : language.getExtendedLanguages()) {
+      addAspectModelsVersions(l);
+    }
+  }
+
+  private void addAspectModelsVersions(DevKit devKit) {
+    for (Language language : devKit.getExportedLanguages()) {
+      addAspectModelsVersions(language);
+    }
+  }
+
+  /**
+   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
+   */
+  @Deprecated
+  public StructureModificationHistory getRefactoringHistory() {
+    return myStructureModificationHistory;
+  }
+
+  public void refreshRefactoringHistory() {
+    ModelChange.assertLegalChange(this);
+
+    try {
+      Element e = myStructureModificationHistory.toElement();
+      myStructureModificationHistory = new StructureModificationHistory();
+      myStructureModificationHistory.fromElement(e);
+    } catch (Throwable t) {
+      LOG.error("refactoring history refresh failed " + this, t, this);
+    }
+  }
+
+  @Deprecated
+  public void setRefactoringHistory(StructureModificationHistory history) {
+    ModelChange.assertLegalChange(this);
+
+    myStructureModificationHistory = history;
+  }
+
+
+  //---------loading state--------
+
+  public void runLoadingAction(@NotNull Runnable runnable) {
+    boolean wasLoading = setLoading(true);
+    try {
+      runnable.run();
+    } finally {
+      setLoading(wasLoading);
+    }
+  }
+
   public boolean setLoading(boolean loading) {
     boolean wasLoading = myLoading;
     myLoading = loading;
@@ -216,17 +807,11 @@ public class SModel implements Iterable<SNode> {
     return myLoading;
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
-  }
-
-  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
-  }
-
   private boolean canFireEvent() {
     return !myLoading;
   }
+
+  //---------listeners--------
 
   private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
@@ -412,399 +997,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public boolean hasLanguage(@NotNull ModuleReference ref) {
-    return getLanguageRefs(GlobalScope.getInstance()).contains(ref);
-  }
+  //--------- --------
 
-  public void addLanguage(@NotNull Language language) {
-    addLanguage_internal(language.getModuleReference());
-    addAspectModelsVersions(language);
-  }
-
-  public void addLanguage(@NotNull ModuleReference ref) {
-    addLanguage(ref, false);
-  }
-
-  public void addLanguage(@NotNull ModuleReference ref, boolean firstVersion) {
-    addLanguage_internal(ref);
-    Language language = GlobalScope.getInstance().getLanguage(ref);
-    if (language != null) {
-      addAspectModelsVersions(language, firstVersion);
-    }
-  }
-
-  public void addAspectModelsVersions(@NotNull Language language) {
-    addAspectModelsVersions(language, false);
-  }
-
-  public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
-    ModelChange.assertLegalChange(this);
-    if (myVersionedLanguages.contains(language.getModuleReference())) return;
-
-    for (EditableSModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-      addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
-    }
-    myVersionedLanguages.add(language.getModuleReference());
-    for (Language l : language.getExtendedLanguages()) {
-      addAspectModelsVersions(l);
-    }
-  }
-
-  private void addAspectModelsVersions(DevKit devKit) {
-    for (Language language : devKit.getExportedLanguages()) {
-      addAspectModelsVersions(language);
-    }
-  }
-
-
-  public void addLanguage_internal(@NotNull ModuleReference ref) {
-    ModelChange.assertLegalChange(this);
-    if (hasLanguage(ref)) return;
-
-    if (ref.getModuleId() == null) {
-      LOG.warning("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
-    }
-
-    if (!myLanguages.contains(ref)) {
-      myLanguages.add(ref);
-      fireLanguageAddedEvent(ref);
-    }
-  }
-
-  public void deleteLanguage(@NotNull ModuleReference ref) {
-    ModelChange.assertLegalChange(this);
-
-    myLanguages.remove(ref);
-    myVersionedLanguages.remove(ref);
-    removeUnusedLanguageAspectModelElements();
-    fireLanguageRemovedEvent(ref);
-  }
-
-  public void deleteAllLanguages() {
-    ArrayList<ModuleReference> languages = new ArrayList<ModuleReference>(myLanguages);
-    for (ModuleReference language : languages) {
-      deleteLanguage(language);
-    }
-  }
-
-  public void addNewlyImportedDevKit(ModuleReference ref) {
-    addDevKit(ref);
-    addAspectModelsVersions(GlobalScope.getInstance().getDevKit(ref));
-  }
-
-  public void addDevKit(@NotNull DevKit devKit) {
-    addDevKit(devKit.getModuleReference());
-  }
-
-  public void addDevKit(@NotNull ModuleReference ref) {
-    ModelChange.assertLegalChange(this);
-
-    if (!myDevKits.contains(ref)) {
-      myDevKits.add(ref);
-      fireDevKitAddedEvent(ref);
-    }
-  }
-
-  public void deleteDevKit(@NotNull ModuleReference ref) {
-    ModelChange.assertLegalChange(this);
-
-    myDevKits.remove(ref);
-    fireDevKitRemovedEvent(ref);
-  }
-
-  @NotNull
-  public List<Language> getLanguages(@NotNull IScope scope) {
-    Set<Language> languages = new LinkedHashSet<Language>();
-
-    for (ModuleReference lang : myLanguages) {
-      Language language = scope.getLanguage(lang);
-
-      if (language != null) {
-        languages.add(language);
-        languages.addAll(language.getAllExtendedLanguages());
-        //addAspectModelsVersions(languageNamespace, language);
-      }
-    }
-
-    for (ModuleReference dk : getDevKitRefs()) {
-      DevKit devKit = scope.getDevKit(dk);
-      if (devKit != null) {
-        //addDevkitModelsVersions(dk, devKit);
-        for (Language l : devKit.getAllExportedLanguages()) {
-          if (!languages.contains(l)) {
-            languages.add(l);
-            languages.addAll(l.getAllExtendedLanguages());
-          }
-        }
-      }
-    }
-
-    if (getModelDescriptor() != null && getModelDescriptor().getModule() != null) {
-      IModule module = getModelDescriptor().getModule();
-      languages.addAll(module.getImplicitlyImportedLanguages(getModelDescriptor()));
-    }
-
-    return new ArrayList<Language>(languages);
-  }
-
-  public List<DevKit> getDevkits(@NotNull IScope scope) {
-    ModelAccess.assertLegalRead();
-
-    List<DevKit> result = new ArrayList<DevKit>();
-    for (ModuleReference dk : myDevKits) {
-      DevKit devKit = scope.getDevKit(dk);
-      if (devKit != null) {
-        //addDevkitModelsVersions(dk, devKit);
-        result.add(devKit);
-      } else {
-        LOG.error("Can't find devkit " + dk.getModuleFqName() + " in scope " + scope);
-      }
-    }
-    return result;
-  }
-
-  @NotNull
-  public Set<ModuleReference> getLanguageRefs(IScope scope) {
-//    ModelAccess.assertLegalRead();
-
-    Set<ModuleReference> result = new HashSet<ModuleReference>(myLanguages.size() + myDevKits.size() * 8);
-    result.addAll(myLanguages);
-    for (ModuleReference dk : myDevKits) {
-      DevKit devKit = scope.getDevKit(dk);
-      if (devKit != null) {
-        //addDevkitModelsVersions(dk, devKit);
-        for (Language l : devKit.getExportedLanguages()) {
-          if (!result.contains(l.getModuleReference())) {
-            result.add(l.getModuleReference());
-          }
-        }
-      }
-    }
-    return result;
-  }
-
-  @NotNull
-  public List<ModuleReference> getDevKitRefs() {
-    return new ArrayList<ModuleReference>(myDevKits);
-  }
-
-  public INodeAdapter getRootAdapterByName(@NotNull String name) {
-    return BaseAdapter.fromNode(getRootByName(name));
-  }
-
-
-  @Nullable
-  public SNode getRootByName(@NotNull String name) {
-    for (SNode root : getRoots()) {
-      if (name.equals(root.getName())) return root;
-    }
-    return null;
-  }
-
-  @NotNull
-  public List<ModuleReference> getExplicitlyImportedLanguages() {
-    return new ArrayList<ModuleReference>(myLanguages);
-  }
-
-  public boolean hasImportedModel(@NotNull SModelReference modelReference) {
-    return getImportElement(modelReference) != null;
-  }
-
-  public void addImportedModel(@NotNull SModelReference modelReference) {
-    addImportedModel(modelReference, false);
-  }
-
-  public void addImportedModel(@NotNull SModelReference modelReference, boolean firstVersion) {
-    addImportElement(modelReference, firstVersion);
-  }
-
-  void addImportElement(@NotNull SModelReference modelReference, boolean firstVersion) {
-    ModelChange.assertLegalChange(this);
-
-    ImportElement importElement = getImportElement(modelReference);
-    if (importElement != null) return;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    int usedVersion = -1;
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
-    }
-    importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
-    myImports.add(importElement);
-
-    fireImportAddedEvent(modelReference);
-  }
-
-  public void addImportElement(ImportElement importElement) {
-    ModelChange.assertLegalChange(this);
-
-    myImports.add(importElement);
-    fireImportAddedEvent(importElement.getModelReference());
-  }
-
-  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    ModelChange.assertLegalChange(this);
-
-    ImportElement importElement = new ImportElement(modelReference, -1, usedVersion);
-    myAdditionalModelsVersions.add(importElement);
-  }
-
-  @Nullable
-  public ImportElement getImportElement(@NotNull SModelReference modelReference) {
-    for (ImportElement importElement : myImports) {
-      if (importElement.getModelReference().equals(modelReference)) {
-        return importElement;
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
-    for (ImportElement importElement : myAdditionalModelsVersions) {
-      if (importElement.getModelReference().equals(modelReference)) {
-        return importElement;
-      }
-    }
-    return null;
-  }
-
-  public List<ImportElement> getLanguageAspectModelElements() {
-    return new ArrayList<ImportElement>(myAdditionalModelsVersions);
-  }
-
-  public void removeUnusedLanguageAspectModelElements() {
-    Set<SModelReference> dependencies = getDependenciesModelUIDs();
-    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
-      ImportElement elem = iter.next();
-      if (!dependencies.contains(elem.getModelReference())) {
-        iter.remove();
-      }
-    }
-  }
-
-  public void deleteImportedModel(@NotNull SModelReference modelReference) {
-    ModelChange.assertLegalChange(this);
-
-    ImportElement importElement = getImportElement(modelReference);
-    if (importElement != null) {
-      myImports.remove(importElement);
-      fireImportRemovedEvent(modelReference);
-    }
-  }
-
-  public void deleteImportedModel(@NotNull SModel model) {
-    deleteImportedModel(model.getSModelReference());
-  }
-
-  @NotNull
-  public List<SModelReference> getImportedModelUIDs() {
-    List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : myImports) {
-      references.add(importElement.getModelReference());
-    }
-    return Collections.unmodifiableList(references);
-  }
-
-  @NotNull
-  public Set<SModelDescriptor> getDependenciesModels() {
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(GlobalScope.getInstance()));
-    for (Language language : getLanguages(GlobalScope.getInstance())) {
-      modelDescriptors.addAll(language.getAspectModelDescriptors());
-    }
-    return modelDescriptors;
-  }
-
-  @NotNull
-  public Set<SModelReference> getDependenciesModelUIDs() {
-    Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SModelDescriptor sm : getDependenciesModels()) {
-      result.add(sm.getSModelReference());
-    }
-    return result;
-  }
-
-  @Nullable
-  public SModelReference getImportedModelUID(int referenceID) {
-    for (ImportElement importElement : myImports) {
-      if (importElement.getReferenceID() == referenceID) {
-        return importElement.getModelReference();
-      }
-    }
-    return null;
-  }
-
-  @NotNull
-  public List<SModelDescriptor> importedModels(@NotNull IScope scope) {
-    List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
-    for (ImportElement importElement : myImports) {
-      SModelReference modelReference = importElement.getModelReference();
-      SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
-
-      if (modelDescriptor == null) {
-        for (Language l : getLanguages(scope)) {
-          for (SModelDescriptor accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getSModelReference())) {
-              modelDescriptor = accessory;
-              break;
-            }
-          }
-        }
-      }
-
-      if (modelDescriptor != null) {
-        modelsList.add(modelDescriptor);
-      }
-    }
-    return modelsList;
-  }
-
-  public List<SModelDescriptor> allImportedModels(IScope scope) {
-    SModelDescriptor sourceModel = getModelDescriptor();
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
-    for (Language language : getLanguages(scope)) {
-      for (SModelDescriptor am : language.getAccessoryModels()) {
-        if (am != sourceModel) {
-          result.add(am);
-        }
-      }
-    }
-
-    for (SModelDescriptor importedModel : importedModels(scope)) {
-      if (importedModel != sourceModel) {
-        result.add(importedModel);
-      }
-    }
-
-    if (sourceModel != null) {
-      IModule module = sourceModel.getModule();
-      if (module != null) {
-        result.addAll(module.getImplicitlyImportedModelsFor(sourceModel));
-      }
-    }
-
-    return new ArrayList<SModelDescriptor>(result);
-  }
-
-  @NotNull
-  public Iterator<ImportElement> importElements() {
-    return myImports.iterator();
-  }
-
-  public List<ImportElement> getImportElements() {
-    return new ArrayList<ImportElement>(myImports);
-  }
-
-  public boolean isImported(@NotNull SModel model) {
-    return getImportElement(model.getSModelReference()) != null;
-  }
-
-  public void setMaxImportIndex(int i) {
-    myMaxImportIndex = i;
-  }
-
-  public int getMaxImportIndex() {
-    return myMaxImportIndex;
-  }
+  //--------- --------
 
   @NotNull
   public String toString() {
@@ -907,114 +1102,6 @@ public class SModel implements Iterable<SNode> {
     return myDisposed;
   }
 
-  public void validateLanguagesAndImports() {
-    validateLanguagesAndImports(false, false);
-  }
-
-  public Set<ModuleReference> getUsedLanguages() {
-    Set<ModuleReference> result = new HashSet<ModuleReference>();
-    for (SNode node : allNodes()) {
-      Language lang = node.getLanguage(GlobalScope.getInstance());
-      ModuleReference ref = lang.getModuleReference();
-      result.add(ref);
-    }
-    return result;
-  }
-
-  public Set<SModelReference> getUsedImportedModels() {
-    Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SNode node : allNodes()) {
-      List<SReference> references = node.getReferences();
-      for (SReference reference : references) {
-        if (reference.isExternal()) {
-          SModelReference targetModelReference = reference.getTargetSModelReference();
-          if (targetModelReference != null && !result.contains(targetModelReference)) {
-            result.add(targetModelReference);
-          }
-        }
-      }
-    }
-    return result;
-  }
-
-  public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
-    ModelChange.assertLegalChange(this);
-
-    GlobalScope scope = GlobalScope.getInstance();
-    SModelDescriptor modelDescriptor = this.getModelDescriptor();
-    IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
-    Set<ModuleReference> usedLanguages = getLanguageRefs(scope);
-    Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModelDescriptor sm : allImportedModels(scope)) {
-      importedModels.add(sm.getSModelReference());
-    }
-    List<SNode> nodes = allNodes();
-    for (SNode node : nodes) {
-      Language lang = node.getLanguage(scope);
-      if (lang == null) {
-        LOG.error("Can't find language " + node.getLanguageNamespace());
-        continue;
-      }
-      ModuleReference ref = lang.getModuleReference();
-      if (!usedLanguages.contains(ref)) {
-        if (module != null) {
-          if (respectModulesScopes && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(ref);
-          }
-        }
-
-        usedLanguages.add(ref);
-
-        addLanguage(ref, firstVersion);
-      }
-
-      for (SReference reference : node.getReferencesIterable()) {
-        if (reference.isExternal()) {
-          SModelReference targetModelReference = reference.getTargetSModelReference();
-          if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            if (respectModulesScopes && module != null) {
-              SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-              IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-              if (targetModule != null && !module.getDependenciesManager().getAllDependOnModules().contains(targetModule)) {
-                module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
-              }
-            }
-            addImportedModel(targetModelReference, firstVersion);
-            importedModels.add(targetModelReference);
-          }
-        }
-      }
-    }
-    importedModels.clear();
-  }
-
-  public SNode getNodeByCondition(Condition<SNode> c) {
-    checkNotDisposed();
-    if (myDisposed) return null;
-
-    for (SNode node : myIdToNodeMap.values()) {
-      if (c.met(node)) {
-        return node;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * not used anymore?
-   */
-  public void clearAdapters() {
-    for (SNode node : getAllNodesWithIds()) {
-      node.clearAdapter();
-    }
-  }
-
-  public void clearUserObjects() {
-    for (SNode root : getRoots()) {
-      root.clearUserObjects();
-    }
-  }
-
   public void changeModelReference(SModelReference newModelReference) {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1027,93 +1114,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
-    ModelChange.assertLegalChange(this);
-
-    if (!myLanguagesEngagedOnGeneration.contains(ref)) {
-      myLanguagesEngagedOnGeneration.add(ref);
-      // don't send event but mark model as changed
-      if (!isLoading()) {
-        SModelRepository.getInstance().markChanged(this);
-      }
-    }
-  }
-
-  public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
-    ModelChange.assertLegalChange(this);
-
-    if (myLanguagesEngagedOnGeneration.contains(ref)) {
-      myLanguagesEngagedOnGeneration.remove(ref);
-      // don't send event but mark model as changed
-      if (!isLoading()) {
-        SModelRepository.getInstance().markChanged(this);
-      }
-    }
-  }
-
-  @NotNull
-  public List<ModuleReference> getEngagedOnGenerationLanguages() {
-    return new ArrayList<ModuleReference>(myLanguagesEngagedOnGeneration);
-  }
-
-  public int getUsedVersion(SModelReference sModelReference) {
-    ImportElement importElement = getImportElement(sModelReference);
-    if (importElement == null) {
-      return getLanguageAspectModelVersion(sModelReference);
-    }
-    return importElement.getUsedVersion();
-  }
-
-  public int getLanguageAspectModelVersion(SModelReference sModelReference) {
-    ImportElement importElement = getAdditionalModelElement(sModelReference);
-    if (importElement == null) return -1;
-    return importElement.getUsedVersion();
-  }
-
-  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
-    ModelChange.assertLegalChange(this);
-
-    ImportElement importElement = getImportElement(sModelReference);
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    }
-
-    importElement = getAdditionalModelElement(sModelReference);
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    } else {
-      addAdditionalModelVersion(sModelReference, currentVersion);
-    }
-    fireImportAddedEvent(myReference);
-  }
-
-  /**
-   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
-   */
-  @Deprecated
-  public StructureModificationHistory getRefactoringHistory() {
-    return myStructureModificationHistory;
-  }
-
-  public void refreshRefactoringHistory() {
-    ModelChange.assertLegalChange(this);
-
-    try {
-      Element e = myStructureModificationHistory.toElement();
-      myStructureModificationHistory = new StructureModificationHistory();
-      myStructureModificationHistory.fromElement(e);
-    } catch (Throwable t) {
-      LOG.error("refactoring history refresh failed " + this, t, this);
-    }
-  }
-
-  @Deprecated
-  public void setRefactoringHistory(StructureModificationHistory history) {
-    ModelChange.assertLegalChange(this);
-
-    myStructureModificationHistory = history;
-  }
-
   public void clearAdaptersAndUserObjects() {
     for (SNode node : getAllNodesWithIds()) {
       node.clearAdapter();
@@ -1123,87 +1123,6 @@ public class SModel implements Iterable<SNode> {
 
   public int size() {
     return myIdToNodeMap.size();
-  }
-
-  void validateLanguages(SNode node) {
-    Collection<ModuleReference> allrefs = getLanguageRefs(GlobalScope.getInstance());
-    Set<String> available = new HashSet<String>(allrefs.size());
-    for (ModuleReference ref : allrefs) {
-      available.add(ref.getModuleFqName());
-    }
-    for (SNode n : node.getDescendantsIterable(null, true)) {
-      String namespace = n.getLanguageNamespace();
-      if (!available.contains(namespace)) {
-        available.add(namespace);
-        Language lang = GlobalScope.getInstance().getLanguage(namespace);
-        if (lang != null) {
-          addLanguage_internal(lang.getModuleReference());
-          // add language also to module if necessary
-          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
-          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(lang.getModuleReference());
-          }
-        }
-      }
-    }
-  }
-
-  public static class ImportElement {
-    private SModelReference myModelDescriptor;
-    private int myReferenceID;
-    private int myUsedVersion;
-
-    public ImportElement(SModelReference modelReference, int referenceID) {
-      this(modelReference, referenceID, -1);
-    }
-
-    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
-      myModelDescriptor = modelReference;
-      myReferenceID = referenceID;
-      myUsedVersion = usedVersion;
-    }
-
-    public SModelReference getModelReference() {
-      return myModelDescriptor;
-    }
-
-    public int getReferenceID() {
-      return myReferenceID;
-    }
-
-    public int getUsedVersion() {
-      return myUsedVersion;
-    }
-
-    public String toString() {
-      return "ImportElement(" +
-        "uid=" + myModelDescriptor + ", " +
-        "referenceId=" + myReferenceID + ", " +
-        "usedVersion=" + myUsedVersion + ")";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      ImportElement that = (ImportElement) o;
-
-      if (myReferenceID != that.myReferenceID) return false;
-      if (myUsedVersion != that.myUsedVersion) return false;
-      if (myModelDescriptor != null ? !myModelDescriptor.equals(that.myModelDescriptor) : that.myModelDescriptor != null)
-        return false;
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int result = myModelDescriptor != null ? myModelDescriptor.hashCode() : 0;
-      result = 31 * result + myReferenceID;
-      result = 31 * result + myUsedVersion;
-      return result;
-    }
   }
 
   @NotNull
@@ -1391,35 +1310,67 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-
-  private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();
-
-  {
-    ourActiveModels.add(this);
-  }
-
-  public static void checkModels() {
-    System.out.println("total models : " + ourActiveModels.size());
-
-    for (SModel sm : ourActiveModels) {
-      if (sm == null) continue;
-      SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(sm.getSModelReference());
-
-      if (md == null) {
-        System.out.println("can't find a descriptor for " + sm.getSModelReference());
-      } else if (sm != md.getSModel()) {
-        System.out.println("Found a leak! : " + sm.getSModelReference());
-      }
-    }
-  }
-
   public void checkNotDisposed() {
     if (myDisposed) {
       LOG.error(new IllegalModelAccessError("accessing disposed model"));
     }
   }
 
-  public boolean isTransient() {
-    return false;
+  public static class ImportElement {
+    private SModelReference myModelDescriptor;
+    private int myReferenceID;
+    private int myUsedVersion;
+
+    public ImportElement(SModelReference modelReference, int referenceID) {
+      this(modelReference, referenceID, -1);
+    }
+
+    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
+      myModelDescriptor = modelReference;
+      myReferenceID = referenceID;
+      myUsedVersion = usedVersion;
+    }
+
+    public SModelReference getModelReference() {
+      return myModelDescriptor;
+    }
+
+    public int getReferenceID() {
+      return myReferenceID;
+    }
+
+    public int getUsedVersion() {
+      return myUsedVersion;
+    }
+
+    public String toString() {
+      return "ImportElement(" +
+        "uid=" + myModelDescriptor + ", " +
+        "referenceId=" + myReferenceID + ", " +
+        "usedVersion=" + myUsedVersion + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      ImportElement that = (ImportElement) o;
+
+      if (myReferenceID != that.myReferenceID) return false;
+      if (myUsedVersion != that.myUsedVersion) return false;
+      if (myModelDescriptor != null ? !myModelDescriptor.equals(that.myModelDescriptor) : that.myModelDescriptor != null)
+        return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = myModelDescriptor != null ? myModelDescriptor.hashCode() : 0;
+      result = 31 * result + myReferenceID;
+      result = 31 * result + myUsedVersion;
+      return result;
+    }
   }
 }
