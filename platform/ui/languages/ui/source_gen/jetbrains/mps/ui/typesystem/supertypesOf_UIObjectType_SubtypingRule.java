@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,7 +20,7 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
   public supertypesOf_UIObjectType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode uiot, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode uiot, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(uiot, "uiObject", false) != null)) {
       ListSequence.fromList(res).addElement(new supertypesOf_UIObjectType_SubtypingRule.QuotationClass_bsrb1x_a0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(uiot, "uiObject", false), "extends", false), typeCheckingContext));
@@ -31,8 +32,11 @@ public class supertypesOf_UIObjectType_SubtypingRule extends SubtypingRule_Runti
     return "jetbrains.mps.ui.structure.UIObjectType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean isWeak() {

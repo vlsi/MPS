@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -18,7 +19,7 @@ public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRu
   public TreePathType_extends_SequenceType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode treepath, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode treepath, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new TreePathType_extends_SequenceType_SubtypingRule.QuotationClass_bmglej_a0a0a().createNode(SLinkOperations.getTarget(treepath, "nodeType", true), typeCheckingContext);
   }
 
@@ -26,8 +27,11 @@ public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRu
     return "jetbrains.mps.ypath.structure.TreePathType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean isWeak() {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.ui.behavior.IUIObjectContextProvider_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -20,7 +21,7 @@ public class typeof_IterateContentsVariable_InferenceRule extends AbstractInfere
   public typeof_IterateContentsVariable_InferenceRule() {
   }
 
-  public void applyRule(final SNode icvar, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode icvar, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode oexp = IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(SNodeOperations.getAncestor(icvar, "jetbrains.mps.ui.structure.IUIObjectContextProvider", false, false));
     if ((oexp != null)) {
       final SNode UIOT_typevar_2459884175397753215 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -52,8 +53,11 @@ public class typeof_IterateContentsVariable_InferenceRule extends AbstractInfere
     return "jetbrains.mps.ui.structure.IterateContentsVariable";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

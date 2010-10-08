@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ui.behavior.View_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -19,7 +20,7 @@ public class checkEditable_BeanPropertyView_InferenceRule extends AbstractInfere
   public checkEditable_BeanPropertyView_InferenceRule() {
   }
 
-  public void applyRule(final SNode bv, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode bv, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(View_Behavior.call_getProperty_9014158157446906285(bv), "jetbrains.mps.ui.modeling.structure.EditableUIProperty")) {
       if (!(SPropertyOperations.getBoolean(bv, "canWrite"))) {
         BaseIntentionProvider intentionProvider = null;
@@ -33,8 +34,11 @@ public class checkEditable_BeanPropertyView_InferenceRule extends AbstractInfere
     return "jetbrains.mps.ui.structure.BeanPropertyView";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

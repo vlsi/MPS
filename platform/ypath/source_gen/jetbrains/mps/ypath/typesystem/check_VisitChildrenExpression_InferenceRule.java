@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
@@ -22,7 +23,7 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
   public check_VisitChildrenExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode visitChildrenExpression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode visitChildrenExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     int actualCount = ListSequence.fromList(SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true)).count();
     SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(visitChildrenExpression);
     if (!((visitBlock != null))) {
@@ -66,8 +67,11 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
     return "jetbrains.mps.ypath.structure.VisitChildrenExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

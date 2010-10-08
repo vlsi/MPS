@@ -19,7 +19,7 @@ public class ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule extends S
   public ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode creatorType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode creatorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule.QuotationClass_2ew8he_a0a0a().createNode(typeCheckingContext);
   }
 

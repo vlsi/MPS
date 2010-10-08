@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,7 +20,7 @@ public class typeof_FunctionParameterDeclaration_InferenceRule extends AbstractI
   public typeof_FunctionParameterDeclaration_InferenceRule() {
   }
 
-  public void applyRule(final SNode fpd, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode fpd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.as(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.getAncestor(fpd, "jetbrains.mps.baseLanguage.structure.TypeDerivable", false, false), SNodeOperations.as(SNodeOperations.getParent(fpd), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true);
     {
       SNode _nodeToCheck_1029348928467 = fpd;
@@ -33,8 +34,11 @@ public class typeof_FunctionParameterDeclaration_InferenceRule extends AbstractI
     return "jetbrains.mps.ui.structure.FunctionParameterDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

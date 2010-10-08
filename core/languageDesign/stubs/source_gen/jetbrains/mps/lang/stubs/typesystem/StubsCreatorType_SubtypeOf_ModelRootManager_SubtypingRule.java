@@ -19,7 +19,7 @@ public class StubsCreatorType_SubtypeOf_ModelRootManager_SubtypingRule extends S
   public StubsCreatorType_SubtypeOf_ModelRootManager_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode creatorType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode creatorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new StubsCreatorType_SubtypeOf_ModelRootManager_SubtypingRule.QuotationClass_zbzv9t_a0a0a().createNode(typeCheckingContext);
   }
 
