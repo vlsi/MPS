@@ -4,6 +4,7 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
@@ -16,15 +17,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConfigCreator<SNode> implements Cloneable {
+  private static final Logger LOG = Logger.getLogger(DefaultPackagingLanguageConfigurationFromMPSLayout.class);
+
   private RunConfiguration myConfig;
 
   public DefaultPackagingLanguageConfigurationFromMPSLayout() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), new _FunctionTypes._return_P0_E0<Class<ConfigurationType>>() {
+    super(findFactoryImpl(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), new _FunctionTypes._return_P0_E0<Class<ConfigurationType>>() {
       public Class<ConfigurationType> invoke() {
         try {
           return (Class<ConfigurationType>) getClass().getClassLoader().loadClass("jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType");
@@ -32,7 +35,7 @@ public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConf
           return (Class<ConfigurationType>) null;
         }
       }
-    }.invoke()));
+    }.invoke()), "DefaultPackagingLanguageApplication"));
   }
 
   protected RunConfiguration doCreateConfiguration(SNode node) {
@@ -87,13 +90,19 @@ public class DefaultPackagingLanguageConfigurationFromMPSLayout extends BaseConf
     return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.build.packaging.structure.MPSLayout");
   }
 
-  @Nullable
-  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+  @NotNull
+  private ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    return findFactoryImpl(configurationType, configurationName);
+  }
+
+  @NotNull
+  private static ConfigurationFactory findFactoryImpl(ConfigurationType configurationType, String configurationName) {
     for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
       if (factory.getClass().getName().contains(configurationName)) {
         return factory;
       }
     }
-    return null;
+    LOG.warning("Cound not find configuration factory for " + configurationName + " in type " + configurationType.getDisplayName() + ".");
+    return configurationType.getConfigurationFactories()[0];
   }
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import java.util.List;
+import jetbrains.mps.logging.Logger;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
@@ -16,14 +17,16 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
 
 public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements Cloneable {
+  private static final Logger LOG = Logger.getLogger(JUnitConfigFromMethods.class);
+
   private RunConfiguration myConfig;
 
   public JUnitConfigFromMethods() {
-    super(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class));
+    super(findFactoryImpl(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class), "DefaultJUnit"));
   }
 
   protected RunConfiguration doCreateConfiguration(List node) {
@@ -73,13 +76,19 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
     return true;
   }
 
-  @Nullable
-  public ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+  @NotNull
+  private ConfigurationFactory findFactory(ConfigurationType configurationType, String configurationName) {
+    return findFactoryImpl(configurationType, configurationName);
+  }
+
+  @NotNull
+  private static ConfigurationFactory findFactoryImpl(ConfigurationType configurationType, String configurationName) {
     for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
       if (factory.getClass().getName().contains(configurationName)) {
         return factory;
       }
     }
-    return null;
+    LOG.warning("Cound not find configuration factory for " + configurationName + " in type " + configurationType.getDisplayName() + ".");
+    return configurationType.getConfigurationFactories()[0];
   }
 }

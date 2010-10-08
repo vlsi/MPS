@@ -18,6 +18,7 @@ package jetbrains.mps.plugins.pluginparts.runconfigs;
 import com.intellij.execution.Location;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.actions.ConfigurationContext;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.UnknownConfigurationType;
@@ -37,6 +38,10 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
 
   public BaseConfigCreator(ConfigurationType configurationType) {
     super(configurationType != null ? configurationType : UnknownConfigurationType.INSTANCE);
+  }
+
+  public BaseConfigCreator(ConfigurationFactory configurationFactory) {
+    super(configurationFactory);
   }
 
   public void setSourceElement(PsiElement sourceElement) {
