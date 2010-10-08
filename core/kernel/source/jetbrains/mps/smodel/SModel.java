@@ -304,8 +304,7 @@ public class SModel implements Iterable<SNode> {
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
         for (Language l : devKit.getAllExportedLanguages()) {
-          if (!languages.contains(l)) {
-            languages.add(l);
+          if (languages.add(l)) {
             languages.addAll(l.getAllExtendedLanguages());
           }
         }
@@ -347,9 +346,7 @@ public class SModel implements Iterable<SNode> {
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
         for (Language l : devKit.getExportedLanguages()) {
-          if (!result.contains(l.getModuleReference())) {
-            result.add(l.getModuleReference());
-          }
+          result.add(l.getModuleReference());
         }
       }
     }
