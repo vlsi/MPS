@@ -103,7 +103,7 @@ public class ModelWriter2 implements IModelWriter {
 
     VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 
-    Iterator<SNode> iterator = sourceModel.roots();
+    Iterator<SNode> iterator = sourceModel.rootsIterator();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
       saveNode(rootElement, semanticNode, visibleModelElements);

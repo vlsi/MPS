@@ -123,7 +123,7 @@ public class SModel implements Iterable<SNode> {
   //use roots() instead
   @NotNull
   public Iterator<SNode> iterator() {
-    return roots();
+    return rootsIterator();
   }
 
   @Deprecated
@@ -243,8 +243,16 @@ public class SModel implements Iterable<SNode> {
 
   //---------nodes manipulation--------
 
+  public Iterable<SNode> roots(){
+    return new Iterable<SNode>() {
+      public Iterator<SNode> iterator() {
+        return rootsIterator();
+      }
+    };
+  }
+
   @NotNull
-  public Iterator<SNode> roots() {
+  public Iterator<SNode> rootsIterator() {
     return myRoots.iterator();
   }
 
