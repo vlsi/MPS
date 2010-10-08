@@ -114,7 +114,7 @@ public class IntelligentInputUtil {
       info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
       nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
-      cell.getSNode().removeRightTransformHint();
+      SNodeEditorUtil.removeRightTransformHint(cell.getSNode());
 
       EditorCell_Label label = (EditorCell_Label) nextCell;
       label.changeText(pattern);

@@ -48,9 +48,6 @@ public final class SNode {
   public static final String PACK = "package";
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
-  public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
-  public static final String LEFT_TRANSFORM_HINT = "left_transfrom_hint";
-
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
@@ -1534,31 +1531,6 @@ public final class SNode {
       current = current.getParent();
     }
     return false;
-  }
-
-  //todo remove into editor code
-  public void addRightTransformHint() {
-    setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
-  }
-
-  public boolean hasRightTransformHint() {
-    return getBooleanProperty(RIGHT_TRANSFORM_HINT);
-  }
-
-  public void removeRightTransformHint() {
-    setBooleanProperty(RIGHT_TRANSFORM_HINT, false);
-  }
-
-  public void addLeftTransformHint() {
-    setBooleanProperty(LEFT_TRANSFORM_HINT, true);
-  }
-
-  public boolean hasLeftTransformHint() {
-    return getBooleanProperty(LEFT_TRANSFORM_HINT);
-  }
-
-  public void removeLeftTransformHint() {
-    setBooleanProperty(LEFT_TRANSFORM_HINT, false);
   }
 
   public Language getNodeLanguage() {

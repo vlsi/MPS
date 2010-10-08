@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
@@ -84,16 +85,20 @@ public class CellAction_SideTransform extends EditorCellAction {
     EditorCell selectedCell = context.getSelectedCell();
     SNode node = selectedCell.getSNode();
 
-    if (node.hasRightTransformHint()) node.removeRightTransformHint();
-    if (node.hasLeftTransformHint()) node.removeLeftTransformHint();
+    if (SNodeEditorUtil.hasRightTransformHint(node)) {
+      SNodeEditorUtil.removeRightTransformHint(node);
+    }
+    if (SNodeEditorUtil.hasLeftTransformHint(node)) {
+      SNodeEditorUtil.removeLeftTransformHint(node);
+    }
 
     EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
 
     String anchorTag = selectedCell.getRightTransformAnchorTag();
     if (mySide == CellSide.LEFT) {
-      node.addLeftTransformHint();
+      SNodeEditorUtil.addLeftTransformHint(node);
     } else {
-      node.addRightTransformHint();
+      SNodeEditorUtil.addRightTransformHint(node);
     }
 
     node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, anchorCell.getCellId());

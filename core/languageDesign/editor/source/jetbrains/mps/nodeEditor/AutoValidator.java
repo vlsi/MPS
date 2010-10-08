@@ -24,11 +24,8 @@ import jetbrains.mps.nodeEditor.cells.CellInfo;
 import javax.swing.SwingUtilities;
 
 class AutoValidator {
-  private EditorComponent myEditorComponent;
-
   AutoValidator(EditorComponent editorComponent) {
-    myEditorComponent = editorComponent;
-    myEditorComponent.addCellSelectionListener(new MyCellSelectionListener());
+    editorComponent.addCellSelectionListener(new MyCellSelectionListener());
   }
 
   private class MyCellSelectionListener implements CellSelectionListener {
@@ -41,7 +38,7 @@ class AutoValidator {
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                if (oldSelection != null && !!oldSelection.isErrorState()) {
+                if (oldSelection.isErrorState()) {
                   EditorCell cell = cellInfo.findCell(editor);
                   if (cell != null) {
                     Object memento = editor.getEditorContext().createMemento();
@@ -52,8 +49,8 @@ class AutoValidator {
                 }
 
                 if (oldSelection instanceof EditorCell_STHint) {
-                  node.removeRightTransformHint();
-                  node.removeLeftTransformHint();
+                  SNodeEditorUtil.removeRightTransformHint(node);
+                  SNodeEditorUtil.removeLeftTransformHint(node);
                 }
               }
             });

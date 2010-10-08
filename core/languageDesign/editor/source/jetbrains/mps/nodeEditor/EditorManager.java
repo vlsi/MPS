@@ -238,12 +238,12 @@ public class EditorManager {
       nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
       //-voodoo
 
-      if (node.hasRightTransformHint()) {
+      if (SNodeEditorUtil.hasRightTransformHint(node)) {
         nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.RIGHT);
         return nodeCell;
       }
 
-      if (node.hasLeftTransformHint()) {
+      if (SNodeEditorUtil.hasLeftTransformHint(node)) {
         nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.LEFT);
         return nodeCell;
       }
@@ -319,8 +319,8 @@ public class EditorManager {
             public SNode substitute(@Nullable EditorContext context, String pattern) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
-                  node.removeRightTransformHint();
-                  node.removeLeftTransformHint();
+                  SNodeEditorUtil.removeRightTransformHint(node);
+                  SNodeEditorUtil.removeLeftTransformHint(node);
                 }
               });
               return super.substitute(context, pattern);
@@ -368,8 +368,8 @@ public class EditorManager {
   }
 
   private void removeSTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
-    node.removeRightTransformHint();
-    node.removeLeftTransformHint();
+    SNodeEditorUtil.removeRightTransformHint(node);
+    SNodeEditorUtil.removeLeftTransformHint(node);
 
     context.flushEvents();
 
@@ -411,8 +411,8 @@ public class EditorManager {
     public void changeText(String text) {
       super.changeText(text);
       if ("".equals(getText())) {
-        getSNode().removeRightTransformHint();
-        getSNode().removeLeftTransformHint();
+        SNodeEditorUtil.removeRightTransformHint(getSNode());
+        SNodeEditorUtil.removeLeftTransformHint(getSNode());
       }
     }
 
@@ -436,14 +436,13 @@ public class EditorManager {
     }
 
     public void synchronizeViewWithModel() {
+
     }
   }
 
-
-  /*package*/ EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, true);
   }
-
 
   private INodeEditor getEditor(EditorContext context, SNode node) {
     INodeEditor editor = null;
@@ -455,10 +454,9 @@ public class EditorManager {
     return editor;
   }
 
-
   public static class NoAttribute {
-  }
 
+  }
 
   private static class STHintCellInfo extends DefaultCellInfo {
     CellInfo myAnchorCellInfo;
