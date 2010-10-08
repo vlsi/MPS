@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -125,7 +123,7 @@ public class SModel implements Iterable<SNode> {
   //use roots() instead
   @NotNull
   public Iterator<SNode> iterator() {
-    return roots();
+    return roots(null);
   }
 
   @Deprecated
@@ -170,6 +168,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   //todo replace with iterator
+
   @NotNull
   public List<SNode> allNodes() {
     SModel model = this;
@@ -184,6 +183,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   //todo replace with iterator
+
   public List<SNode> allNodes(Condition<SNode> condition) {
     if (condition instanceof IsInstanceCondition) {
       IsInstanceCondition c = (IsInstanceCondition) condition;
@@ -202,11 +202,13 @@ public class SModel implements Iterable<SNode> {
   }
 
   //todo replace with iterator
+
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
     return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
   }
 
   //todo replace with iterator
+
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
@@ -223,6 +225,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   //todo replace with iterator
+
   public List<SNode> allRootsIncludingImported(IScope scope) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
@@ -238,11 +241,12 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
-
+  //---------nodes manipulation--------
 
   @NotNull
-  public Iterator<SNode> roots() {
-    return myRoots.iterator();
+  public Iterator<SNode> roots(@Nullable Condition<SNode> cond) {
+    if (cond == null) return myRoots.iterator();
+    return new ConditionalIterator<SNode>(myRoots.iterator(), cond);
   }
 
   public boolean isRoot(@Nullable SNode node) {
