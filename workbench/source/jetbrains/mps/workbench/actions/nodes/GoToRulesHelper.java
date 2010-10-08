@@ -25,6 +25,8 @@ import jetbrains.mps.lang.typesystem.structure.PatternCondition;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.ConditionalIterator;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -36,6 +38,7 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class GoToRulesHelper {
@@ -77,7 +80,10 @@ public class GoToRulesHelper {
             }
           }
         };
-        rules.addAll(helginsDescriptor.getSModel().getRoots(cond));
+        Iterable<SNode> iter = new ConditionalIterable<SNode>(helginsDescriptor.getSModel().roots(),cond);
+        for (SNode node:iter){
+          rules.add(node);
+        }
       }
     }
     return rules;
