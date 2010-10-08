@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.WeakSet;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -103,6 +102,15 @@ public class SModel implements Iterable<SNode> {
     return false;
   }
 
+  public boolean isNotEditable() {
+    assert !isDisposed();
+    return !(getModelDescriptor() instanceof EditableSModelDescriptor);
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
   public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
@@ -111,8 +119,10 @@ public class SModel implements Iterable<SNode> {
     myModelDescriptor = modelDescriptor;
   }
 
-  //---------root manipulation--------
+  //---------nodes manipulation--------
 
+  @Deprecated
+  //use roots() instead
   @NotNull
   public Iterator<SNode> iterator() {
     return roots();
@@ -212,6 +222,93 @@ public class SModel implements Iterable<SNode> {
       if (name.equals(root.getName())) return root;
     }
     return null;
+  }
+
+  @NotNull
+  public List<SNode> allNodes() {
+    SModel model = this;
+    List<SNode> result = new ArrayList<SNode>(this.registeredNodesCount());
+    for (SNode root : model.getRoots()) {
+      for (SNode i : root.getDescendantsIterable(null, true)) {
+        result.add(i);
+      }
+    }
+
+    return result;
+  }
+
+  public List<SNode> allNodes(Condition<SNode> condition) {
+    if (condition instanceof IsInstanceCondition) {
+      IsInstanceCondition c = (IsInstanceCondition) condition;
+      return getFastNodeFinder().getNodes(c.getConceptFqName(), true);
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+
+    for (SNode node : getRoots()) {
+      for (SNode i : node.getDescendantsIterable(condition, true)) {
+        resultNodes.add(i);
+      }
+    }
+
+    return resultNodes;
+  }
+
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
+    return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
+  }
+
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<? super E> condition) {
+    List<E> result = allAdapters(cls);
+    Iterator<E> it = result.iterator();
+    while (it.hasNext()) {
+      E e = it.next();
+      if (!condition.met(e)) {
+        it.remove();
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(this);
+    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      resultNodes.addAll(aModel.allNodes(condition));
+    }
+    return resultNodes;
+  }
+
+  public List<SNode> allRootsIncludingImported(IScope scope) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(this);
+    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      resultNodes.addAll(aModel.getRoots());
+    }
+    return resultNodes;
+  }
+
+  public void clearAdaptersAndUserObjects() {
+    for (SNode node : getAllNodesWithIds()) {
+      node.clearAdapter();
+      node.removeAllUserObjects();
+    }
+  }
+
+  public int registeredNodesCount() {
+    return myIdToNodeMap.size();
   }
 
   //---------imports manipulation--------
@@ -903,10 +1000,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void firePropertyChangedEvent(@NotNull SNode node,
-                                @NotNull String property,
-                                @Nullable String oldValue,
-                                @Nullable String newValue) {
+  void firePropertyChangedEvent(@NotNull SNode node, @NotNull String property, @Nullable String oldValue, @Nullable String newValue) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -917,10 +1011,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireChildAddedEvent(@NotNull SNode parent,
-                           @NotNull String role,
-                           @NotNull SNode child,
-                           SNode anchor) {
+  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -932,10 +1023,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireChildRemovedEvent(@NotNull SNode parent,
-                             @NotNull String role,
-                             @NotNull SNode child,
-                             SNode anchor) {
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -947,10 +1035,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent,
-                                   @NotNull String role,
-                                   @NotNull SNode child,
-                                   SNode anchor) {
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -994,14 +1079,27 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  //--------- --------
+  //---------fast node finder--------
 
-  //--------- --------
-
-  @NotNull
-  public String toString() {
-    return this.getSModelReference().toString();
+  public final synchronized FastNodeFinder getFastNodeFinder() {
+    if (myFastNodeFinder == null) {
+      myFastNodeFinder = createFastNodeFinder();
+    }
+    return myFastNodeFinder;
   }
+
+  protected FastNodeFinder createFastNodeFinder() {
+    return new DefaultFastNodeFinder(this);
+  }
+
+  public synchronized void disposeFastNodeFinder() {
+    if (myFastNodeFinder != null) {
+      myFastNodeFinder.dispose();
+      myFastNodeFinder = null;
+    }
+  }
+
+  //---------node id--------
 
   @Nullable
   public SNode getNodeById(String idString) {
@@ -1037,6 +1135,15 @@ public class SModel implements Iterable<SNode> {
     return new SNodeId.Regular(id);
   }
 
+  @NotNull
+  public Collection<SNode> getAllNodesWithIds() {
+    checkNotDisposed();
+    if (myDisposed) return Collections.emptySet();
+    return Collections.unmodifiableCollection(myIdToNodeMap.values());
+  }
+
+  //---------node registration--------
+
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();
     if (myDisposed) return;
@@ -1061,16 +1168,11 @@ public class SModel implements Iterable<SNode> {
     myIdToNodeMap.remove(id);
   }
 
-  @NotNull
-  public Collection<SNode> getAllNodesWithIds() {
-    checkNotDisposed();
-    if (myDisposed) return Collections.emptySet();
-    return Collections.unmodifiableCollection(myIdToNodeMap.values());
-  }
+  //--------- --------
 
-  public boolean isNotEditable() {
-    assert !isDisposed();
-    return !(getModelDescriptor() instanceof EditableSModelDescriptor);
+  @NotNull
+  public String toString() {
+    return this.getSModelReference().toString();
   }
 
   public void clear() {
@@ -1095,10 +1197,6 @@ public class SModel implements Iterable<SNode> {
     myRoots.clear();
   }
 
-  public boolean isDisposed() {
-    return myDisposed;
-  }
-
   public void changeModelReference(SModelReference newModelReference) {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1109,104 +1207,6 @@ public class SModel implements Iterable<SNode> {
         }
       }
     }
-  }
-
-  public void clearAdaptersAndUserObjects() {
-    for (SNode node : getAllNodesWithIds()) {
-      node.clearAdapter();
-      node.removeAllUserObjects();
-    }
-  }
-
-  public int size() {
-    return myIdToNodeMap.size();
-  }
-
-  @NotNull
-  public List<SNode> allNodes() {
-    SModel model = this;
-    List<SNode> result = new ArrayList<SNode>(this.size());
-    for (SNode root : model.getRoots()) {
-      for (SNode i : root.getDescendantsIterable(null, true)) {
-        result.add(i);
-      }
-    }
-
-    return result;
-  }
-
-  public List<SNode> allNodes(Condition<SNode> condition) {
-    if (condition instanceof IsInstanceCondition) {
-      IsInstanceCondition c = (IsInstanceCondition) condition;
-      return getFastNodeFinder().getNodes(c.getConceptFqName(), true);
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-
-    for (SNode node : getRoots()) {
-      for (SNode i : node.getDescendantsIterable(condition, true)) {
-        resultNodes.add(i);
-      }
-    }
-
-    return resultNodes;
-  }
-
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
-    return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
-  }
-
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<? super E> condition) {
-    List<E> result = allAdapters(cls);
-    Iterator<E> it = result.iterator();
-    while (it.hasNext()) {
-      E e = it.next();
-      if (!condition.met(e)) {
-        it.remove();
-      }
-    }
-    return result;
-  }
-
-  public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.allNodes(condition));
-    }
-    return resultNodes;
-  }
-
-  public List<SNode> allRootsIncludingImported(IScope scope) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = allImportedModels(scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.getRoots());
-    }
-    return resultNodes;
-  }
-
-  public List<AbstractConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<AbstractConceptDeclaration> condition, IScope scope) {
-    List<AbstractConceptDeclaration> list = new ArrayList<AbstractConceptDeclaration>();
-    List<Language> languages = getLanguages(scope);
-    for (Language language : languages) {
-      SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
-      SModel structureModel = structureModelDescriptor.getSModel();
-      list.addAll(structureModel.allAdapters(ConceptDeclaration.class, condition));
-    }
-    return list;
   }
 
   public boolean updateSModelReferences() {
@@ -1287,24 +1287,6 @@ public class SModel implements Iterable<SNode> {
   private boolean changed(ModuleReference ref1, ModuleReference ref2) {
     return !ObjectUtils.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
       !ObjectUtils.equals(ref1.getModuleId(), ref2.getModuleId());
-  }
-
-  public synchronized FastNodeFinder getFastNodeFinder() {
-    if (myFastNodeFinder == null) {
-      myFastNodeFinder = createFastNodeFinder();
-    }
-    return myFastNodeFinder;
-  }
-
-  protected FastNodeFinder createFastNodeFinder() {
-    return new DefaultFastNodeFinder(this);
-  }
-
-  public synchronized void disposeFastNodeFinder() {
-    if (myFastNodeFinder != null) {
-      myFastNodeFinder.dispose();
-      myFastNodeFinder = null;
-    }
   }
 
   public void checkNotDisposed() {

@@ -199,17 +199,6 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   /**
-   * @return list of sub-concepts including the concept passed as parameter
-   */
-  public static List<AbstractConceptDeclaration> getSubconcepts(final AbstractConceptDeclaration baseConcept, SModel sourceModel, final IScope scope) {
-    return sourceModel.conceptAdaptersFromModelLanguages(new Condition<AbstractConceptDeclaration>() {
-      public boolean met(AbstractConceptDeclaration node) {
-        return SModelUtil_new.isAssignableConcept(node, baseConcept);
-      }
-    }, scope);
-  }
-
-  /**
    * @deprecated moved to SModelSearchUtil (remove after dnq migrated to build 696)
    */
   public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {

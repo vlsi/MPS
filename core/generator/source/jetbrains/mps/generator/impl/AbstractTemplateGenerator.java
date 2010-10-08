@@ -50,7 +50,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myLogger = logger;
     myInputModel = inputModel;
     myOutputModel = outputModel;
-    myMappings = new GeneratorMappings(inputModel.size());
+    myMappings = new GeneratorMappings(inputModel.registeredNodesCount());
   }
 
   public IOperationContext getOperationContext() {
