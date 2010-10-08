@@ -42,8 +42,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1216860931317">
-    <nodeInfo nodeId="1216860931319" fileName="supertypesOf_GenerationContextType_SubtypingRule.java" startLine="22" startPosition="104" endLine="23" endPosition="126" />
-    <scopeInfo nodeId="1216860931318" fileName="supertypesOf_GenerationContextType_SubtypingRule.java" startLine="22" startPosition="104" endLine="23" endPosition="126" />
+    <nodeInfo nodeId="1216860931319" fileName="supertypesOf_GenerationContextType_SubtypingRule.java" startLine="22" startPosition="131" endLine="23" endPosition="126" />
+    <scopeInfo nodeId="1216860931318" fileName="supertypesOf_GenerationContextType_SubtypingRule.java" startLine="22" startPosition="131" endLine="23" endPosition="126" />
   </root>
   <root nodeId="1216860931323">
     <nodeInfo nodeId="1216860931325" fileName="typeof_GenerationContextOp_GetOutputByLabel_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="44" />

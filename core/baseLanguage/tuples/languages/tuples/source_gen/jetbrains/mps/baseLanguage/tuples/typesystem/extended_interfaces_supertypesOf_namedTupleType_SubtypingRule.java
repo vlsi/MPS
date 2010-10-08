@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,7 +22,7 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
   public extended_interfaces_supertypesOf_namedTupleType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode namedTupleType, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode namedTupleType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode ct : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(namedTupleType, "classifier", false), "extends", true))) {
       List<SNode> paramTypes = new ArrayList<SNode>();
@@ -41,8 +42,11 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean isWeak() {

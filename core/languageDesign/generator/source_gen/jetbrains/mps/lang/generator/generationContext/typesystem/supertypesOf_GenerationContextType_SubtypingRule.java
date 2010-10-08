@@ -19,7 +19,7 @@ public class supertypesOf_GenerationContextType_SubtypingRule extends SubtypingR
   public supertypesOf_GenerationContextType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode generationContextType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode generationContextType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_GenerationContextType_SubtypingRule.QuotationClass_uev2l9_a0a0a().createNode(typeCheckingContext);
   }
 

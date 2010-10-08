@@ -62,7 +62,6 @@
   <unitInfo fileName="biginteger_extends_BigInteger_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.biginteger_extends_BigInteger_SubtypingRule" />
   <unitInfo fileName="bigdecimal_extends_BigDecimal_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.bigdecimal_extends_BigDecimal_SubtypingRule" />
   <unitInfo fileName="complex_extends_Complex_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.complex_extends_Complex_SubtypingRule" />
-  <unitInfo fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.vector_vector_replacement_rule_InequationReplacementRule" />
   <unitInfo fileName="typeof_IntervalContainsExpression_InferenceRule.java" startLine="56" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_IntervalContainsExpression_InferenceRule$QuotationClass_4gr5io_a0a1a0" />
   <unitInfo fileName="typeof_InIntervalExpression_InferenceRule.java" startLine="56" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_InIntervalExpression_InferenceRule$QuotationClass_ajlbhv_a0a1a0" />
   <unitInfo fileName="typeof_VectorInitializer_InferenceRule.java" startLine="63" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_VectorInitializer_InferenceRule$QuotationClass_gm7xg3_a0a1a0" />
@@ -83,12 +82,13 @@
   <unitInfo fileName="typeof_MathSymbolIndex_InferenceRule.java" startLine="59" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MathSymbolIndex_InferenceRule$QuotationClass_xcqvod_a0a1a0" />
   <unitInfo fileName="typeof_IntervalType_InferenceRule.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_IntervalType_InferenceRule" />
   <unitInfo fileName="vector_subtype_of_matrix_SubtypingRule.java" startLine="42" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.vector_subtype_of_matrix_SubtypingRule$QuotationClass_exb2lq_a0a0a" />
+  <unitInfo fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.vector_vector_replacement_rule_InequationReplacementRule" />
   <unitInfo fileName="typeof_AbsExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_AbsExpression_InferenceRule" />
   <unitInfo fileName="typeof_ExtrSymbol_InferenceRule.java" startLine="21" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_ExtrSymbol_InferenceRule" />
   <unitInfo fileName="typeof_MatrixElementAccessExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixElementAccessExpression_InferenceRule" />
-  <unitInfo fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.matrix_replacement_rule_InequationReplacementRule" />
-  <unitInfo fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.matrix_vector_replacement_rule_InequationReplacementRule" />
   <unitInfo fileName="typeof_PowExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_PowExpression_InferenceRule" />
+  <unitInfo fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.matrix_replacement_rule_InequationReplacementRule" />
+  <unitInfo fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.matrix_vector_replacement_rule_InequationReplacementRule" />
   <unitInfo fileName="typeof_LinearSolveOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_LinearSolveOperation_InferenceRule" />
   <unitInfo fileName="IntervalSupertypes_SubtypingRule.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.IntervalSupertypes_SubtypingRule" />
   <unitInfo fileName="vector_subtype_of_matrix_SubtypingRule.java" startLine="19" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.vector_subtype_of_matrix_SubtypingRule" />
@@ -107,8 +107,8 @@
   <unitInfo fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixNorm_InferenceRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="15" startPosition="0" endLine="575" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.TypesystemDescriptor" />
   <root nodeId="1235747425214">
-    <nodeInfo nodeId="1235747425216" fileName="IntervalSupertypes_SubtypingRule.java" startLine="25" startPosition="95" endLine="26" endPosition="172" />
-    <scopeInfo nodeId="1235747425215" fileName="IntervalSupertypes_SubtypingRule.java" startLine="25" startPosition="95" endLine="26" endPosition="172" />
+    <nodeInfo nodeId="1235747425216" fileName="IntervalSupertypes_SubtypingRule.java" startLine="25" startPosition="122" endLine="26" endPosition="172" />
+    <scopeInfo nodeId="1235747425215" fileName="IntervalSupertypes_SubtypingRule.java" startLine="25" startPosition="122" endLine="26" endPosition="172" />
   </root>
   <root nodeId="1235747425225">
     <nodeInfo nodeId="1235747425227" fileName="typeof_InIntervalExpression_InferenceRule.java" startLine="24" startPosition="123" endLine="25" endPosition="104" />
@@ -350,28 +350,28 @@
     <unitInfo nodeId="1418611629041884893" fileName="typeof_DivOperationFraction_InferenceRule.java" startLine="42" startPosition="53" endLine="67" endPosition="7" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_DivOperationFraction_InferenceRule$1" />
   </root>
   <root nodeId="1237205116347">
-    <nodeInfo nodeId="1237206343050" fileName="double_extends_complex_SubtypingRule.java" startLine="17" startPosition="93" endLine="18" endPosition="59" />
-    <scopeInfo nodeId="1237205116348" fileName="double_extends_complex_SubtypingRule.java" startLine="17" startPosition="93" endLine="18" endPosition="59" />
+    <nodeInfo nodeId="1237206343050" fileName="double_extends_complex_SubtypingRule.java" startLine="17" startPosition="120" endLine="18" endPosition="59" />
+    <scopeInfo nodeId="1237205116348" fileName="double_extends_complex_SubtypingRule.java" startLine="17" startPosition="120" endLine="18" endPosition="59" />
   </root>
   <root nodeId="1237206461318">
-    <nodeInfo nodeId="1237206499822" fileName="long_extends_biginteger_SubtypingRule.java" startLine="17" startPosition="91" endLine="18" endPosition="62" />
-    <scopeInfo nodeId="1237206461319" fileName="long_extends_biginteger_SubtypingRule.java" startLine="17" startPosition="91" endLine="18" endPosition="62" />
+    <nodeInfo nodeId="1237206499822" fileName="long_extends_biginteger_SubtypingRule.java" startLine="17" startPosition="118" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1237206461319" fileName="long_extends_biginteger_SubtypingRule.java" startLine="17" startPosition="118" endLine="18" endPosition="62" />
   </root>
   <root nodeId="1237207311140">
-    <nodeInfo nodeId="1237207360438" fileName="biginteger_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="97" endLine="18" endPosition="62" />
-    <scopeInfo nodeId="1237207311141" fileName="biginteger_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="97" endLine="18" endPosition="62" />
+    <nodeInfo nodeId="1237207360438" fileName="biginteger_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="124" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1237207311141" fileName="biginteger_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="124" endLine="18" endPosition="62" />
   </root>
   <root nodeId="1237207446792">
-    <nodeInfo nodeId="1237207512545" fileName="complex_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="94" endLine="18" endPosition="62" />
-    <scopeInfo nodeId="1237207446793" fileName="complex_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="94" endLine="18" endPosition="62" />
+    <nodeInfo nodeId="1237207512545" fileName="complex_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="121" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1237207446793" fileName="complex_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="121" endLine="18" endPosition="62" />
   </root>
   <root nodeId="1237207449560">
-    <nodeInfo nodeId="1237207578077" fileName="bigdecimal_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="97" endLine="18" endPosition="62" />
-    <scopeInfo nodeId="1237207449561" fileName="bigdecimal_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="97" endLine="18" endPosition="62" />
+    <nodeInfo nodeId="1237207578077" fileName="bigdecimal_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="124" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1237207449561" fileName="bigdecimal_extends_bigcomplex_SubtypingRule.java" startLine="17" startPosition="124" endLine="18" endPosition="62" />
   </root>
   <root nodeId="1237207452282">
-    <nodeInfo nodeId="1237207475752" fileName="double_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="93" endLine="18" endPosition="62" />
-    <scopeInfo nodeId="1237207452283" fileName="double_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="93" endLine="18" endPosition="62" />
+    <nodeInfo nodeId="1237207475752" fileName="double_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="120" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1237207452283" fileName="double_extends_bigdecimal_SubtypingRule.java" startLine="17" startPosition="120" endLine="18" endPosition="62" />
   </root>
   <root nodeId="1237209207766">
     <nodeInfo nodeId="1237817263811" fileName="TypesystemDescriptor.java" startLine="258" startPosition="99" endLine="259" endPosition="38" />
@@ -1588,12 +1588,12 @@
     <scopeInfo nodeId="1238333113145" fileName="highlight_complex_to_real_casts_NonTypesystemRule.java" startLine="23" startPosition="127" endLine="37" endPosition="5" />
   </root>
   <root nodeId="1238336037193">
-    <nodeInfo nodeId="1238336280084" fileName="biginteger_extends_BigInteger_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="121" />
-    <scopeInfo nodeId="1238336037194" fileName="biginteger_extends_BigInteger_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="121" />
+    <nodeInfo nodeId="1238336280084" fileName="biginteger_extends_BigInteger_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="121" />
+    <scopeInfo nodeId="1238336037194" fileName="biginteger_extends_BigInteger_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="121" />
   </root>
   <root nodeId="1238337334592">
-    <nodeInfo nodeId="1238337365356" fileName="bigdecimal_extends_BigDecimal_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="121" />
-    <scopeInfo nodeId="1238337334593" fileName="bigdecimal_extends_BigDecimal_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="121" />
+    <nodeInfo nodeId="1238337365356" fileName="bigdecimal_extends_BigDecimal_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="121" />
+    <scopeInfo nodeId="1238337334593" fileName="bigdecimal_extends_BigDecimal_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="121" />
   </root>
   <root nodeId="1238338614962">
     <nodeInfo nodeId="1238338983313" fileName="typeof_PowExpression_InferenceRule.java" startLine="24" startPosition="123" endLine="25" endPosition="95" />
@@ -1690,12 +1690,12 @@
     <unitInfo nodeId="1238344499368" fileName="typeof_TrigonometricExpression_InferenceRule.java" startLine="34" startPosition="48" endLine="58" endPosition="7" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_TrigonometricExpression_InferenceRule$1" />
   </root>
   <root nodeId="1238398982442">
-    <nodeInfo nodeId="1238399020960" fileName="complex_extends_Complex_SubtypingRule.java" startLine="22" startPosition="94" endLine="23" endPosition="115" />
-    <scopeInfo nodeId="1238398982443" fileName="complex_extends_Complex_SubtypingRule.java" startLine="22" startPosition="94" endLine="23" endPosition="115" />
+    <nodeInfo nodeId="1238399020960" fileName="complex_extends_Complex_SubtypingRule.java" startLine="22" startPosition="121" endLine="23" endPosition="115" />
+    <scopeInfo nodeId="1238398982443" fileName="complex_extends_Complex_SubtypingRule.java" startLine="22" startPosition="121" endLine="23" endPosition="115" />
   </root>
   <root nodeId="1238427819860">
-    <nodeInfo nodeId="1238427842499" fileName="bigcomplex_extends_BigComplex_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="121" />
-    <scopeInfo nodeId="1238427819861" fileName="bigcomplex_extends_BigComplex_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="121" />
+    <nodeInfo nodeId="1238427842499" fileName="bigcomplex_extends_BigComplex_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="121" />
+    <scopeInfo nodeId="1238427819861" fileName="bigcomplex_extends_BigComplex_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="121" />
   </root>
   <root nodeId="1238943151392">
     <nodeInfo nodeId="1238947038712" fileName="typeof_BinaryOperationMathContext_InferenceRule.java" startLine="27" startPosition="117" endLine="28" endPosition="82" />
@@ -1998,52 +1998,52 @@
     <scopeInfo nodeId="4815887568697245517" fileName="typeof_MatrixConstructor_InferenceRule.java" startLine="19" startPosition="115" endLine="20" endPosition="180" />
   </root>
   <root nodeId="4815887568697258227">
-    <nodeInfo nodeId="4815887568697312392" fileName="vector_subtype_of_matrix_SubtypingRule.java" startLine="23" startPosition="93" endLine="24" endPosition="235" />
-    <scopeInfo nodeId="4815887568697258228" fileName="vector_subtype_of_matrix_SubtypingRule.java" startLine="23" startPosition="93" endLine="24" endPosition="235" />
+    <nodeInfo nodeId="4815887568697312392" fileName="vector_subtype_of_matrix_SubtypingRule.java" startLine="23" startPosition="120" endLine="24" endPosition="235" />
+    <scopeInfo nodeId="4815887568697258228" fileName="vector_subtype_of_matrix_SubtypingRule.java" startLine="23" startPosition="120" endLine="24" endPosition="235" />
   </root>
   <root nodeId="4815887568697558565">
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="23" startPosition="5" endLine="24" endPosition="73" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="73" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="53" endLine="26" endPosition="221" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="26" startPosition="221" endLine="27" endPosition="62" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="27" startPosition="62" endLine="28" endPosition="54" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="28" startPosition="54" endLine="29" endPosition="209" />
-    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="34" endPosition="57" />
-    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="57" endLine="35" endPosition="59" />
-    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="59" endLine="36" endPosition="288" />
-    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="36" startPosition="288" endLine="37" endPosition="74" />
-    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="9" endLine="44" endPosition="57" />
-    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="57" endLine="45" endPosition="59" />
-    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="59" endLine="46" endPosition="288" />
-    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="288" endLine="47" endPosition="74" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="55" endPosition="237" />
-    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="57" startPosition="122" endLine="58" endPosition="32" />
-    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="62" startPosition="116" endLine="63" endPosition="32" />
-    <nodeInfo nodeId="7676695779583848930" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="127" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="7676695779583848958" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="61" startPosition="121" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="7676695779583848928" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="55" startPosition="237" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="7676695779583848956" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="60" startPosition="5" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="122" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="42" startPosition="116" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="22" startPosition="157" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="7676695779583848930" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="127" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="7676695779583848958" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="41" startPosition="121" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="7676695779583848928" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="7676695779583848956" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="40" startPosition="5" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="55" endPosition="237" />
-    <scopeInfo nodeId="7676695779583848931" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="57" startPosition="122" endLine="58" endPosition="32" />
-    <scopeInfo nodeId="7676695779583848959" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="62" startPosition="116" endLine="63" endPosition="32" />
-    <scopeInfo nodeId="7676695779583848929" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="127" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="7676695779583848957" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="61" startPosition="121" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="37" endPosition="74" />
-    <scopeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="9" endLine="47" endPosition="74" />
-    <scopeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="23" startPosition="5" endLine="29" endPosition="209" />
-    <scopeInfo nodeId="7676695779583848931" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="122" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="7676695779583848959" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="42" startPosition="116" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="7676695779583848929" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="127" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="7676695779583848957" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="41" startPosition="121" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="22" startPosition="157" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="26" endPosition="73" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="26" startPosition="73" endLine="27" endPosition="53" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="27" startPosition="53" endLine="28" endPosition="221" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="28" startPosition="221" endLine="29" endPosition="62" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="29" startPosition="62" endLine="30" endPosition="54" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="54" endLine="31" endPosition="209" />
+    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="9" endLine="36" endPosition="57" />
+    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="36" startPosition="57" endLine="37" endPosition="59" />
+    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="37" startPosition="59" endLine="38" endPosition="288" />
+    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="38" startPosition="288" endLine="39" endPosition="74" />
+    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="46" endPosition="57" />
+    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="57" endLine="47" endPosition="59" />
+    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="47" startPosition="59" endLine="48" endPosition="288" />
+    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="48" startPosition="288" endLine="49" endPosition="74" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="57" endPosition="237" />
+    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="59" startPosition="122" endLine="60" endPosition="32" />
+    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="64" startPosition="116" endLine="65" endPosition="32" />
+    <nodeInfo nodeId="7676695779583848930" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="58" startPosition="127" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="7676695779583848958" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="63" startPosition="121" endLine="66" endPosition="7" />
+    <nodeInfo nodeId="7676695779583848928" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="57" startPosition="237" endLine="62" endPosition="5" />
+    <nodeInfo nodeId="7676695779583848956" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="62" startPosition="5" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="122" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="116" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="7676695779583848930" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="127" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="7676695779583848958" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="121" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="7676695779583848928" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="7676695779583848956" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="57" endPosition="237" />
+    <scopeInfo nodeId="7676695779583848931" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="59" startPosition="122" endLine="60" endPosition="32" />
+    <scopeInfo nodeId="7676695779583848959" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="64" startPosition="116" endLine="65" endPosition="32" />
+    <scopeInfo nodeId="7676695779583848929" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="58" startPosition="127" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="7676695779583848957" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="63" startPosition="121" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="7676695779583848932" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="9" endLine="39" endPosition="74" />
+    <scopeInfo nodeId="7676695779583848960" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="49" endPosition="74" />
+    <scopeInfo nodeId="3498370411873359101" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="31" endPosition="209" />
+    <scopeInfo nodeId="7676695779583848931" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="122" endLine="40" endPosition="9" />
+    <scopeInfo nodeId="7676695779583848959" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="116" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="7676695779583848929" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="127" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="7676695779583848957" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="121" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="4815887568697558567" fileName="matrix_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="52" endPosition="5" />
   </root>
   <root nodeId="6219660258344753241">
     <nodeInfo nodeId="6219660258344759842" fileName="typeof_MatrixInitializer_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="100" />
@@ -2108,8 +2108,8 @@
     <scopeInfo nodeId="6219660258345567354" fileName="typeof_VectorInitializer_InferenceRule.java" startLine="25" startPosition="124" endLine="45" endPosition="5" />
   </root>
   <root nodeId="6337538773050829451">
-    <nodeInfo nodeId="6337538773050831540" fileName="matrix_subtype_of_object_SubtypingRule.java" startLine="22" startPosition="93" endLine="23" endPosition="116" />
-    <scopeInfo nodeId="6337538773050829452" fileName="matrix_subtype_of_object_SubtypingRule.java" startLine="22" startPosition="93" endLine="23" endPosition="116" />
+    <nodeInfo nodeId="6337538773050831540" fileName="matrix_subtype_of_object_SubtypingRule.java" startLine="22" startPosition="120" endLine="23" endPosition="116" />
+    <scopeInfo nodeId="6337538773050829452" fileName="matrix_subtype_of_object_SubtypingRule.java" startLine="22" startPosition="120" endLine="23" endPosition="116" />
   </root>
   <root nodeId="6389121991274973534">
     <nodeInfo nodeId="6389121991274973547" fileName="vector_element_must_be_number_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="55" />
@@ -2122,77 +2122,77 @@
     <scopeInfo nodeId="6389121991274973535" fileName="vector_element_must_be_number_NonTypesystemRule.java" startLine="22" startPosition="115" endLine="29" endPosition="5" />
   </root>
   <root nodeId="6389121991275037260">
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="23" startPosition="5" endLine="24" endPosition="73" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="73" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="53" endLine="26" endPosition="221" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="26" startPosition="221" endLine="27" endPosition="62" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="27" startPosition="62" endLine="28" endPosition="54" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="28" startPosition="54" endLine="29" endPosition="209" />
-    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="34" endPosition="57" />
-    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="57" endLine="35" endPosition="59" />
-    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="59" endLine="36" endPosition="288" />
-    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="36" startPosition="288" endLine="37" endPosition="74" />
-    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="9" endLine="44" endPosition="57" />
-    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="57" endLine="45" endPosition="59" />
-    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="59" endLine="46" endPosition="288" />
-    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="288" endLine="47" endPosition="74" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="55" endPosition="237" />
-    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="57" startPosition="73" endLine="58" endPosition="32" />
-    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="62" startPosition="118" endLine="63" endPosition="32" />
-    <nodeInfo nodeId="6389121991275039371" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="68" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="6389121991275039399" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="61" startPosition="123" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="6389121991275039369" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="55" startPosition="237" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="6389121991275039397" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="60" startPosition="5" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="73" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="42" startPosition="118" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="22" startPosition="157" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="6389121991275039371" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="68" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="6389121991275039399" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="41" startPosition="123" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="6389121991275039369" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="6389121991275039397" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="40" startPosition="5" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="55" endPosition="237" />
-    <scopeInfo nodeId="6389121991275039372" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="57" startPosition="73" endLine="58" endPosition="32" />
-    <scopeInfo nodeId="6389121991275039400" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="62" startPosition="118" endLine="63" endPosition="32" />
-    <scopeInfo nodeId="6389121991275039370" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="68" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="6389121991275039398" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="61" startPosition="123" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="37" endPosition="74" />
-    <scopeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="9" endLine="47" endPosition="74" />
-    <scopeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="23" startPosition="5" endLine="29" endPosition="209" />
-    <scopeInfo nodeId="6389121991275039372" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="73" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="6389121991275039400" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="42" startPosition="118" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="6389121991275039370" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="68" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="6389121991275039398" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="41" startPosition="123" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="54" startPosition="35" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="22" startPosition="157" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="26" endPosition="73" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="26" startPosition="73" endLine="27" endPosition="53" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="27" startPosition="53" endLine="28" endPosition="221" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="28" startPosition="221" endLine="29" endPosition="62" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="29" startPosition="62" endLine="30" endPosition="54" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="54" endLine="31" endPosition="209" />
+    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="9" endLine="36" endPosition="57" />
+    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="36" startPosition="57" endLine="37" endPosition="59" />
+    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="37" startPosition="59" endLine="38" endPosition="288" />
+    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="38" startPosition="288" endLine="39" endPosition="74" />
+    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="46" endPosition="57" />
+    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="57" endLine="47" endPosition="59" />
+    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="47" startPosition="59" endLine="48" endPosition="288" />
+    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="48" startPosition="288" endLine="49" endPosition="74" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="57" endPosition="237" />
+    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="59" startPosition="73" endLine="60" endPosition="32" />
+    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="64" startPosition="118" endLine="65" endPosition="32" />
+    <nodeInfo nodeId="6389121991275039371" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="58" startPosition="68" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="6389121991275039399" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="63" startPosition="123" endLine="66" endPosition="7" />
+    <nodeInfo nodeId="6389121991275039369" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="57" startPosition="237" endLine="62" endPosition="5" />
+    <nodeInfo nodeId="6389121991275039397" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="62" startPosition="5" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="73" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="118" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="6389121991275039371" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="68" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="6389121991275039399" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="123" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="6389121991275039369" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="6389121991275039397" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="57" endPosition="237" />
+    <scopeInfo nodeId="6389121991275039372" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="59" startPosition="73" endLine="60" endPosition="32" />
+    <scopeInfo nodeId="6389121991275039400" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="64" startPosition="118" endLine="65" endPosition="32" />
+    <scopeInfo nodeId="6389121991275039370" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="58" startPosition="68" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="6389121991275039398" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="63" startPosition="123" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="6389121991275039373" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="9" endLine="39" endPosition="74" />
+    <scopeInfo nodeId="6389121991275039401" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="9" endLine="49" endPosition="74" />
+    <scopeInfo nodeId="6389121991275039360" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="31" endPosition="209" />
+    <scopeInfo nodeId="6389121991275039372" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="73" endLine="40" endPosition="9" />
+    <scopeInfo nodeId="6389121991275039400" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="118" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="6389121991275039370" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="68" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="6389121991275039398" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="43" startPosition="123" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="56" startPosition="35" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="6389121991275037262" fileName="matrix_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="52" endPosition="5" />
   </root>
   <root nodeId="6389121991275104307">
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="23" startPosition="5" endLine="24" endPosition="73" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="73" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="53" endLine="26" endPosition="221" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="26" startPosition="221" endLine="27" endPosition="62" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="27" startPosition="62" endLine="28" endPosition="54" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="28" startPosition="54" endLine="29" endPosition="209" />
-    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="34" endPosition="57" />
-    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="57" endLine="35" endPosition="59" />
-    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="59" endLine="36" endPosition="288" />
-    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="36" startPosition="288" endLine="37" endPosition="74" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="45" endPosition="237" />
-    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="47" startPosition="120" endLine="48" endPosition="32" />
-    <nodeInfo nodeId="6389121991275106418" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="125" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="6389121991275106416" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="45" startPosition="237" endLine="50" endPosition="5" />
-    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="120" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="22" startPosition="157" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="6389121991275106418" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="125" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="6389121991275106416" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="45" endPosition="237" />
-    <scopeInfo nodeId="6389121991275106419" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="47" startPosition="120" endLine="48" endPosition="32" />
-    <scopeInfo nodeId="6389121991275106417" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="125" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="37" endPosition="74" />
-    <scopeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="23" startPosition="5" endLine="29" endPosition="209" />
-    <scopeInfo nodeId="6389121991275106419" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="120" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="6389121991275106417" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="31" startPosition="125" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="22" startPosition="157" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="26" endPosition="73" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="26" startPosition="73" endLine="27" endPosition="53" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="27" startPosition="53" endLine="28" endPosition="221" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="28" startPosition="221" endLine="29" endPosition="62" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="29" startPosition="62" endLine="30" endPosition="54" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="30" startPosition="54" endLine="31" endPosition="209" />
+    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="9" endLine="36" endPosition="57" />
+    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="36" startPosition="57" endLine="37" endPosition="59" />
+    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="37" startPosition="59" endLine="38" endPosition="288" />
+    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="38" startPosition="288" endLine="39" endPosition="74" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="35" endLine="47" endPosition="237" />
+    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="49" startPosition="120" endLine="50" endPosition="32" />
+    <nodeInfo nodeId="6389121991275106418" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="48" startPosition="125" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="6389121991275106416" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="47" startPosition="237" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="120" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="6389121991275106418" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="125" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="6389121991275106416" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="35" endLine="47" endPosition="237" />
+    <scopeInfo nodeId="6389121991275106419" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="49" startPosition="120" endLine="50" endPosition="32" />
+    <scopeInfo nodeId="6389121991275106417" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="48" startPosition="125" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="6389121991275106420" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="35" startPosition="9" endLine="39" endPosition="74" />
+    <scopeInfo nodeId="6389121991275106407" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="25" startPosition="5" endLine="31" endPosition="209" />
+    <scopeInfo nodeId="6389121991275106419" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="34" startPosition="120" endLine="40" endPosition="9" />
+    <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="46" startPosition="35" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="6389121991275106417" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="33" startPosition="125" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="6389121991275104309" fileName="vector_vector_replacement_rule_InequationReplacementRule.java" startLine="24" startPosition="185" endLine="42" endPosition="5" />
   </root>
   <root nodeId="7388416617632225854">
     <nodeInfo nodeId="7388416617632227872" fileName="typeof_TransposeOperation_InferenceRule.java" startLine="30" startPosition="5" endLine="31" endPosition="216" />

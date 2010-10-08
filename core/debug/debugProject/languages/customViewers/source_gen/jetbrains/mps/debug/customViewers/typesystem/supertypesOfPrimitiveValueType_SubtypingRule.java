@@ -16,7 +16,7 @@ public class supertypesOfPrimitiveValueType_SubtypingRule extends SubtypingRule_
   public supertypesOfPrimitiveValueType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode primitiveValueType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode primitiveValueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOfPrimitiveValueType_SubtypingRule.QuotationClass_hx1rza_a0a0a().createNode(typeCheckingContext);
   }
 

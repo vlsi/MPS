@@ -19,7 +19,7 @@ public class WatchableListIsAList_SubtypingRule extends SubtypingRule_Runtime im
   public WatchableListIsAList_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new WatchableListIsAList_SubtypingRule.QuotationClass_ucp7lt_a0a0a().createNode(typeCheckingContext);
   }
 

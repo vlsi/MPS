@@ -19,7 +19,7 @@ public class biginteger_extends_BigInteger_SubtypingRule extends SubtypingRule_R
   public biginteger_extends_BigInteger_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode bigIntegerType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode bigIntegerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new biginteger_extends_BigInteger_SubtypingRule.QuotationClass_nvphb0_a0a0a().createNode(typeCheckingContext);
   }
 

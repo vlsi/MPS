@@ -19,7 +19,7 @@ public class complex_extends_Complex_SubtypingRule extends SubtypingRule_Runtime
   public complex_extends_Complex_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new complex_extends_Complex_SubtypingRule.QuotationClass_jvezdz_a0a0a().createNode(typeCheckingContext);
   }
 

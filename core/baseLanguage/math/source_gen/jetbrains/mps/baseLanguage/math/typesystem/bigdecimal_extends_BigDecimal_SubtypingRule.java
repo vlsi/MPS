@@ -19,7 +19,7 @@ public class bigdecimal_extends_BigDecimal_SubtypingRule extends SubtypingRule_R
   public bigdecimal_extends_BigDecimal_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode bigDecimalType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode bigDecimalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new bigdecimal_extends_BigDecimal_SubtypingRule.QuotationClass_pi7wq4_a0a0a().createNode(typeCheckingContext);
   }
 

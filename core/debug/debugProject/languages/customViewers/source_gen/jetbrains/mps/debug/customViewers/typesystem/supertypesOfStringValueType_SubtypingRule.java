@@ -16,7 +16,7 @@ public class supertypesOfStringValueType_SubtypingRule extends SubtypingRule_Run
   public supertypesOfStringValueType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode stringValueType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode stringValueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOfStringValueType_SubtypingRule.QuotationClass_xvuiq4_a0a0a().createNode(typeCheckingContext);
   }
 

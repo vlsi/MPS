@@ -16,7 +16,7 @@ public class supertypesOfObjectValueType_SubtypingRule extends SubtypingRule_Run
   public supertypesOfObjectValueType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode objectValueType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode objectValueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOfObjectValueType_SubtypingRule.QuotationClass_nwwc7p_a0a0a().createNode(typeCheckingContext);
   }
 

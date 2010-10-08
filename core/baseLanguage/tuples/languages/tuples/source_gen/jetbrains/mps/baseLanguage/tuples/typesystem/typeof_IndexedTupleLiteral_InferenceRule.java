@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
   public typeof_IndexedTupleLiteral_InferenceRule() {
   }
 
-  public void applyRule(final SNode tuple, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode tuple, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> memberTypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode mbr : SLinkOperations.getTargets(tuple, "component", true)) {
       ListSequence.fromList(memberTypes).addElement(typeCheckingContext.typeOf(mbr, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "974579920306587589", true));
@@ -39,8 +40,11 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

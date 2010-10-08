@@ -16,7 +16,7 @@ public class supertypesOfArrayValueType_SubtypingRule extends SubtypingRule_Runt
   public supertypesOfArrayValueType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode arrayValueType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode arrayValueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOfArrayValueType_SubtypingRule.QuotationClass_ft0v9p_a0a0a().createNode(typeCheckingContext);
   }
 

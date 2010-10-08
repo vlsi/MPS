@@ -19,7 +19,7 @@ public class matrix_subtype_of_object_SubtypingRule extends SubtypingRule_Runtim
   public matrix_subtype_of_object_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode matrixType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode matrixType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new matrix_subtype_of_object_SubtypingRule.QuotationClass_9nrg6k_a0a0a().createNode(typeCheckingContext);
   }
 

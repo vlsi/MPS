@@ -6,9 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
   public vector_subtype_of_matrix_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new vector_subtype_of_matrix_SubtypingRule.QuotationClass_exb2lq_a0a0a().createNode(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"), typeCheckingContext);
   }
 

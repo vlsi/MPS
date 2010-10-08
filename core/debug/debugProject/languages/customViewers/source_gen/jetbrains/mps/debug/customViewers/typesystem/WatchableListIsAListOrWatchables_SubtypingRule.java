@@ -19,7 +19,7 @@ public class WatchableListIsAListOrWatchables_SubtypingRule extends SubtypingRul
   public WatchableListIsAListOrWatchables_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new WatchableListIsAListOrWatchables_SubtypingRule.QuotationClass_izre6f_a0a0a().createNode(typeCheckingContext);
   }
 

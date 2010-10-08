@@ -19,7 +19,7 @@ public class bigcomplex_extends_BigComplex_SubtypingRule extends SubtypingRule_R
   public bigcomplex_extends_BigComplex_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode bigComplexType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode bigComplexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new bigcomplex_extends_BigComplex_SubtypingRule.QuotationClass_ertxks_a0a0a().createNode(typeCheckingContext);
   }
 
