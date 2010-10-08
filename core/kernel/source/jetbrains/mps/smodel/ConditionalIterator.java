@@ -33,34 +33,32 @@ public class ConditionalIterator<T> implements Iterator<T> {
 
   public boolean hasNext() {
     if (myObject != null) return true;
-
-    while (myIterator.hasNext()) {
-      T obj = myIterator.next();
-      if (myCond.met(obj)) {
-        myObject = obj;
-        return true;
-      }
-    }
-
-    return false;
+    myObject = moveToNext();
+    return myObject != null;
   }
 
   public T next() {
-    if (myObject != null) {
-      T obj = myObject;
-      myObject = null;
-      return obj;
+    if (myObject == null) {
+      myObject = moveToNext();
+      if (myObject == null) throw new NoSuchElementException();
     }
 
-    while (myIterator.hasNext()) {
-      T obj = myIterator.next();
-      if (myCond.met(obj)) return obj;
-    }
-
-    throw new NoSuchElementException();
+    T obj = myObject;
+    myObject = null;
+    return obj;
   }
 
   public void remove() {
-    throw new UnsupportedOperationException();
+    myIterator.remove();
+  }
+
+  private T moveToNext() {
+    while (myIterator.hasNext()) {
+      T obj = myIterator.next();
+      if (myCond.met(obj)) {
+        return obj;
+      }
+    }
+    return null;
   }
 }
