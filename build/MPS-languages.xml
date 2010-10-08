@@ -301,11 +301,11 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor.editorTest_e3f0">
-    <mkdir dir="core/languageDesign/editorTest/classes_gen" />
+    <mkdir dir="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.editor.editorTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/editorTest/editorTest.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/editorTest" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/editorTest/classes_gen" />
+      <zipfileset file="core/languageDesign/editor/languages/editorTest/editorTest.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/languages/editorTest" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/languages/editorTest/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.editor_f3f0">

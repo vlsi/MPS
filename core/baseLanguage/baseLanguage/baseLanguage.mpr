@@ -17,7 +17,7 @@
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
       <languagePath path="${project}/baseLanguage.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/editorTest/editorTest.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/editor/languages/editorTest/editorTest.mpl" />
     </projectLanguages>
     <projectDevkits>
       <devkitPath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />

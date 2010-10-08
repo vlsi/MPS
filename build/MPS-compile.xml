@@ -37,7 +37,7 @@
   <property name="jetbrains.mps.gwt.client.classes" value="platform/gwtsupport/languages/client/classes_gen" />
   <property name="jetbrains.mps.ide.uiLanguage.classes" value="workbench/ideUiLanguage/classes_gen" />
   <property name="jetbrains.mps.ide.uiLanguage.runtime.classes" value="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-  <property name="jetbrains.mps.lang.editor.editorTest.classes" value="core/languageDesign/editorTest/classes_gen" />
+  <property name="jetbrains.mps.lang.editor.editorTest.classes" value="core/languageDesign/editor/languages/editorTest/classes_gen" />
   <property name="jetbrains.mps.lang.stubs.classes" value="core/languageDesign/stubs/classes_gen" />
   <property name="jetbrains.mps.quickQueryLanguage.classes" value="platform/quickQueryLanguage/classes_gen" />
   <property name="jetbrains.mps.ui.classes" value="platform/ui/languages/ui/classes_gen" />
@@ -194,7 +194,7 @@
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.src">
-    <path path="core/languageDesign/editorTest/source_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.stubs_tjc.src">
     <path path="core/languageDesign/stubs/source_gen" />
@@ -305,8 +305,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -413,8 +413,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -521,8 +521,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -629,8 +629,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -737,8 +737,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -845,8 +845,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -953,8 +953,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1062,8 +1062,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1178,8 +1178,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1286,8 +1286,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1394,8 +1394,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1502,8 +1502,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1612,8 +1612,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1720,8 +1720,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1835,8 +1835,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1945,8 +1945,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2073,8 +2073,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2182,8 +2182,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2305,8 +2305,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2423,8 +2423,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2545,8 +2545,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2660,8 +2660,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2768,8 +2768,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2876,8 +2876,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2991,8 +2991,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3051,7 +3051,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths">
-    <path path="core/languageDesign/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -3104,8 +3104,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3212,8 +3212,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3321,8 +3321,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3434,8 +3434,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3553,8 +3553,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3673,8 +3673,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3800,8 +3800,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3910,8 +3910,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4019,8 +4019,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4129,8 +4129,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4237,8 +4237,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4348,8 +4348,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4456,8 +4456,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4565,8 +4565,8 @@
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
     <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -5150,7 +5150,7 @@
   </target>
   <target name="compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.editor.editorTest.classes}.tmp" />
-    <mkdir dir="core/languageDesign/editorTest/source_gen" />
+    <mkdir dir="core/languageDesign/editor/languages/editorTest/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.editor.editorTest.classes}" />
     <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" destdir="${classes.dump}">
@@ -5158,7 +5158,7 @@
     </javac>
     <javac classpathref="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.editorTest.classes}">
       <src>
-        <path path="core/languageDesign/editorTest/source_gen" />
+        <path path="core/languageDesign/editor/languages/editorTest/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
