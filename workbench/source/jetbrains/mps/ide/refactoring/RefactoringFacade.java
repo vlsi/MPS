@@ -219,7 +219,7 @@ public class RefactoringFacade extends StructureModificationProcessor {
         public void run() {
           refactoringContext.setUpMembersAccessModifier(modifier);
           modifier.addModelsToModify(sourceModels);
-          SNode.setNodeMemeberAccessModifier(modifier);
+          SNode.setNodeMemberAccessModifier(modifier);
 
           for (SModel model : sourceModels) {
             descriptors.add(model.getModelDescriptor());
@@ -229,7 +229,7 @@ public class RefactoringFacade extends StructureModificationProcessor {
       IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
       GeneratorFacade.getInstance().generateModels(operationContext, descriptors, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } finally {
-      SNode.setNodeMemeberAccessModifier(null);
+      SNode.setNodeMemberAccessModifier(null);
     }
   }
 

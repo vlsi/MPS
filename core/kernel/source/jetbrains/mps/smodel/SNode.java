@@ -83,7 +83,7 @@ public final class SNode {
 
   private boolean myIsFrozen = false;
 
-  public static void setNodeMemeberAccessModifier(NodeMemberAccessModifier modifier) {
+  public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }
 
