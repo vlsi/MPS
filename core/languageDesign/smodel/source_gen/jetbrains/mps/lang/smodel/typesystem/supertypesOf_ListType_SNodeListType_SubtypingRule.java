@@ -20,8 +20,8 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   public supertypesOf_ListType_SNodeListType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode subtype, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_l03ebm_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elem")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode subtype, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_l03ebm_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_elem")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

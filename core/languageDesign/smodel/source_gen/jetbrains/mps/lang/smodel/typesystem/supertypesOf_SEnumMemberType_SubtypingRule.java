@@ -16,7 +16,7 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
   public supertypesOf_SEnumMemberType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_SEnumMemberType_SubtypingRule.QuotationClass_qj2lih_a0a0a().createNode(typeCheckingContext);
   }
 

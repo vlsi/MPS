@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -25,7 +25,7 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   public supertypesOf_ListType_ListType_elementSNode_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode listType, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode listType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true, typeCheckingContext);
     if (SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(new supertypesOf_ListType_ListType_elementSNode_SubtypingRule.QuotationClass_84rynv_a0a0c0a().createNode(typeCheckingContext), "classifier", false)) {

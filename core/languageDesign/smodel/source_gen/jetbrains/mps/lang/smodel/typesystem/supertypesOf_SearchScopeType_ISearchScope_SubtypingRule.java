@@ -19,7 +19,7 @@ public class supertypesOf_SearchScopeType_ISearchScope_SubtypingRule extends Sub
   public supertypesOf_SearchScopeType_ISearchScope_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_SearchScopeType_ISearchScope_SubtypingRule.QuotationClass_dug57h_a0a0a().createNode(typeCheckingContext);
   }
 

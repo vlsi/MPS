@@ -23,7 +23,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
   public supertypesOf_SNodeType_BaseConcept_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode nodeType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode nodeType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_SNodeType_BaseConcept_SubtypingRule.QuotationClass_7ci8rs_a0a0a().createNode(typeCheckingContext);
   }
 

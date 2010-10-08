@@ -19,7 +19,7 @@ public class supertypesOf_SReferenceType_SubtypingRule extends SubtypingRule_Run
   public supertypesOf_SReferenceType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode referenceType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode referenceType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_SReferenceType_SubtypingRule.QuotationClass_kps41k_a0a0a().createNode(typeCheckingContext);
   }
 

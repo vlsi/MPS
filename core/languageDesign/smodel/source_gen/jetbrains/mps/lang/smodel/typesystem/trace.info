@@ -1481,11 +1481,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1178287491362">
-    <nodeInfo nodeId="1178287491364" fileName="supertypesOf_SModelType_ClassifierTypeSModel_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="136" />
-    <scopeInfo nodeId="1178287491363" fileName="supertypesOf_SModelType_ClassifierTypeSModel_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="136" />
+    <nodeInfo nodeId="1178287491364" fileName="supertypesOf_SModelType_ClassifierTypeSModel_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="136" />
+    <scopeInfo nodeId="1178287491363" fileName="supertypesOf_SModelType_ClassifierTypeSModel_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="136" />
   </root>
   <root nodeId="1178287491368">
-    <nodeInfo nodeId="1179275501549" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="24" startPosition="94" endLine="25" endPosition="75" />
+    <nodeInfo nodeId="1179275501549" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="24" startPosition="121" endLine="25" endPosition="75" />
     <nodeInfo nodeId="1179365670970" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="25" startPosition="75" endLine="26" endPosition="84" />
     <nodeInfo nodeId="1179365709343" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="27" startPosition="33" endLine="28" endPosition="99" />
     <nodeInfo nodeId="1179365768691" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="29" startPosition="71" endLine="30" endPosition="195" />
@@ -1499,17 +1499,17 @@
     <scopeInfo nodeId="1179365685529" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="27" startPosition="33" endLine="33" endPosition="177">
       <varInfo nodeId="1179365709344" varName="superConcepts" />
     </scopeInfo>
-    <scopeInfo nodeId="1178287491369" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="24" startPosition="94" endLine="35" endPosition="22">
+    <scopeInfo nodeId="1178287491369" fileName="supertypesOf_SNodeListType_SNodeListType_SubtypingRule.java" startLine="24" startPosition="121" endLine="35" endPosition="22">
       <varInfo nodeId="1179275501550" varName="supertypes" />
       <varInfo nodeId="1179365670971" varName="elementConcept" />
     </scopeInfo>
   </root>
   <root nodeId="1178287491374">
-    <nodeInfo nodeId="1178287491376" fileName="supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="134" />
-    <scopeInfo nodeId="1178287491375" fileName="supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="134" />
+    <nodeInfo nodeId="1178287491376" fileName="supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="134" />
+    <scopeInfo nodeId="1178287491375" fileName="supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="134" />
   </root>
   <root nodeId="1178287491380">
-    <nodeInfo nodeId="1179363847372" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="25" startPosition="94" endLine="26" endPosition="46" />
+    <nodeInfo nodeId="1179363847372" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="25" startPosition="121" endLine="26" endPosition="46" />
     <nodeInfo nodeId="1179363886747" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="26" startPosition="46" endLine="27" endPosition="70" />
     <nodeInfo nodeId="7376433222636454335" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="27" startPosition="70" endLine="28" endPosition="59" />
     <nodeInfo nodeId="1179363975332" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="29" startPosition="136" endLine="30" endPosition="92" />
@@ -1523,13 +1523,13 @@
     <scopeInfo nodeId="1179363923749" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="29" startPosition="136" endLine="34" endPosition="163">
       <varInfo nodeId="1179363975333" varName="superConcepts" />
     </scopeInfo>
-    <scopeInfo nodeId="1178287491381" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="25" startPosition="94" endLine="36" endPosition="16">
+    <scopeInfo nodeId="1178287491381" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="25" startPosition="121" endLine="36" endPosition="16">
       <varInfo nodeId="1179363886748" varName="concept" />
       <varInfo nodeId="1179363847373" varName="list" />
     </scopeInfo>
   </root>
   <root nodeId="1178287491408">
-    <nodeInfo nodeId="1180544752193" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="24" startPosition="94" endLine="25" endPosition="87" />
+    <nodeInfo nodeId="1180544752193" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="24" startPosition="121" endLine="25" endPosition="87" />
     <nodeInfo nodeId="1180545081632" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="27" startPosition="111" endLine="28" endPosition="135" />
     <nodeInfo nodeId="7376433222636453681" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="29" startPosition="7" endLine="30" endPosition="32" />
     <nodeInfo nodeId="7376433222636454245" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="30" startPosition="32" endLine="31" endPosition="107" />
@@ -1544,7 +1544,7 @@
     <scopeInfo nodeId="1180545047058" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="27" startPosition="111" endLine="28" endPosition="135" />
     <scopeInfo nodeId="1227611647414" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="35" startPosition="122" endLine="36" endPosition="138" />
     <scopeInfo nodeId="1180544724302" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="26" startPosition="26" endLine="38" endPosition="8" />
-    <scopeInfo nodeId="1178287491409" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="24" startPosition="94" endLine="40" endPosition="127">
+    <scopeInfo nodeId="1178287491409" fileName="supertypesOf_SConceptType_SNodeType_SubtypingRule.java" startLine="24" startPosition="121" endLine="40" endPosition="127">
       <varInfo nodeId="1180544752194" varName="concept" />
     </scopeInfo>
   </root>
@@ -1820,17 +1820,17 @@
     <scopeInfo nodeId="1179168249240" fileName="typeof_Node_GetIndexInParentOperation_InferenceRule.java" startLine="21" startPosition="117" endLine="27" endPosition="5" />
   </root>
   <root nodeId="1179273722874">
-    <nodeInfo nodeId="1179273762255" fileName="supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.java" startLine="26" startPosition="87" endLine="27" endPosition="134" />
-    <scopeInfo nodeId="1179273722875" fileName="supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.java" startLine="26" startPosition="87" endLine="27" endPosition="134" />
+    <nodeInfo nodeId="1179273762255" fileName="supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="134" />
+    <scopeInfo nodeId="1179273722875" fileName="supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="134" />
   </root>
   <root nodeId="1179273814674">
-    <nodeInfo nodeId="1179273814676" fileName="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java" startLine="26" startPosition="87" endLine="27" endPosition="136" />
-    <scopeInfo nodeId="1179273814675" fileName="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java" startLine="26" startPosition="87" endLine="27" endPosition="136" />
+    <nodeInfo nodeId="1179273814676" fileName="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="136" />
+    <scopeInfo nodeId="1179273814675" fileName="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="136" />
   </root>
   <root nodeId="1179364931863">
-    <nodeInfo nodeId="1179365563880" fileName="supertypesOf_SNodeListType_ListType_SubtypingRule.java" startLine="20" startPosition="87" endLine="21" endPosition="84" />
+    <nodeInfo nodeId="1179365563880" fileName="supertypesOf_SNodeListType_ListType_SubtypingRule.java" startLine="20" startPosition="114" endLine="21" endPosition="84" />
     <nodeInfo nodeId="1179365499101" fileName="supertypesOf_SNodeListType_ListType_SubtypingRule.java" startLine="21" startPosition="84" endLine="22" endPosition="143" />
-    <scopeInfo nodeId="1179364931864" fileName="supertypesOf_SNodeListType_ListType_SubtypingRule.java" startLine="20" startPosition="87" endLine="22" endPosition="143">
+    <scopeInfo nodeId="1179364931864" fileName="supertypesOf_SNodeListType_ListType_SubtypingRule.java" startLine="20" startPosition="114" endLine="22" endPosition="143">
       <varInfo nodeId="1179365563881" varName="elementConcept" />
     </scopeInfo>
   </root>
@@ -1887,11 +1887,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1180462861797">
-    <nodeInfo nodeId="1180462919850" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="26" startPosition="87" endLine="27" endPosition="127" />
-    <scopeInfo nodeId="1180462861798" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="26" startPosition="87" endLine="27" endPosition="127" />
+    <nodeInfo nodeId="1180462919850" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="127" />
+    <scopeInfo nodeId="1180462861798" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="26" startPosition="114" endLine="27" endPosition="127" />
   </root>
   <root nodeId="1180547887028">
-    <nodeInfo nodeId="1180547887030" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="25" startPosition="94" endLine="26" endPosition="69" />
+    <nodeInfo nodeId="1180547887030" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="25" startPosition="121" endLine="26" endPosition="69" />
     <nodeInfo nodeId="1180547887037" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="26" startPosition="69" endLine="27" endPosition="80" />
     <nodeInfo nodeId="1180547887045" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="28" startPosition="117" endLine="29" endPosition="92" />
     <nodeInfo nodeId="1180547887056" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="30" startPosition="71" endLine="31" endPosition="195" />
@@ -1904,7 +1904,7 @@
     <scopeInfo nodeId="1180547887044" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="28" startPosition="117" endLine="33" endPosition="177">
       <varInfo nodeId="1180547887046" varName="superConcepts" />
     </scopeInfo>
-    <scopeInfo nodeId="1180547887029" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="25" startPosition="94" endLine="35" endPosition="16">
+    <scopeInfo nodeId="1180547887029" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="25" startPosition="121" endLine="35" endPosition="16">
       <varInfo nodeId="1180547887038" varName="concept" />
       <varInfo nodeId="1180547887031" varName="list" />
     </scopeInfo>
@@ -2053,20 +2053,20 @@
     <scopeInfo nodeId="1182512146598" fileName="typeOf_Model_NodesIncludingImportedOperation_InferenceRule.java" startLine="25" startPosition="117" endLine="38" endPosition="5" />
   </root>
   <root nodeId="1193943556383">
-    <nodeInfo nodeId="1193947530695" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="28" startPosition="98" endLine="29" endPosition="48" />
+    <nodeInfo nodeId="1193947530695" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="28" startPosition="125" endLine="29" endPosition="48" />
     <nodeInfo nodeId="1193944857496" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="29" startPosition="48" endLine="30" endPosition="265" />
     <nodeInfo nodeId="1193947565440" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="31" startPosition="250" endLine="32" endPosition="176" />
     <nodeInfo nodeId="1193947322493" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="33" startPosition="5" endLine="34" endPosition="18" />
     <nodeInfo nodeId="1193945364985" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="30" startPosition="265" endLine="33" endPosition="5" />
     <scopeInfo nodeId="1193945364986" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="31" startPosition="250" endLine="32" endPosition="176" />
-    <scopeInfo nodeId="1193943556384" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="28" startPosition="98" endLine="34" endPosition="18">
+    <scopeInfo nodeId="1193943556384" fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="28" startPosition="125" endLine="34" endPosition="18">
       <varInfo nodeId="1193944857497" varName="classifierType" />
       <varInfo nodeId="1193947530696" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="1197650845844">
-    <nodeInfo nodeId="1197650920026" fileName="supertypesOf_ListType_SNodeListType_SubtypingRule.java" startLine="23" startPosition="90" endLine="24" endPosition="194" />
-    <scopeInfo nodeId="1197650845845" fileName="supertypesOf_ListType_SNodeListType_SubtypingRule.java" startLine="23" startPosition="90" endLine="24" endPosition="194" />
+    <nodeInfo nodeId="1197650920026" fileName="supertypesOf_ListType_SNodeListType_SubtypingRule.java" startLine="23" startPosition="117" endLine="24" endPosition="191" />
+    <scopeInfo nodeId="1197650845845" fileName="supertypesOf_ListType_SNodeListType_SubtypingRule.java" startLine="23" startPosition="117" endLine="24" endPosition="191" />
   </root>
   <root nodeId="1204764495310">
     <nodeInfo nodeId="1204764563136" fileName="typeof_NodeAttributeAccessQualifier_InferenceRule.java" startLine="28" startPosition="124" endLine="29" endPosition="91" />
@@ -2394,8 +2394,8 @@
     <scopeInfo nodeId="1219354452459" fileName="typeof_NodeRefExpression_InferenceRule.java" startLine="23" startPosition="120" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1221163216580">
-    <nodeInfo nodeId="1221163216582" fileName="supertypesOf_SearchScopeType_ISearchScope_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="133" />
-    <scopeInfo nodeId="1221163216581" fileName="supertypesOf_SearchScopeType_ISearchScope_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="133" />
+    <nodeInfo nodeId="1221163216582" fileName="supertypesOf_SearchScopeType_ISearchScope_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="133" />
+    <scopeInfo nodeId="1221163216581" fileName="supertypesOf_SearchScopeType_ISearchScope_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="133" />
   </root>
   <root nodeId="1221167369897">
     <nodeInfo nodeId="1221168255365" fileName="typeof_Node_GetReferentSearchScopeOperation_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="44" />
@@ -2844,8 +2844,8 @@
     </scopeInfo>
   </root>
   <root nodeId="3010989094832023640">
-    <nodeInfo nodeId="3010989094832023798" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="22" startPosition="96" endLine="23" endPosition="119" />
-    <scopeInfo nodeId="3010989094832023641" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="22" startPosition="96" endLine="23" endPosition="119" />
+    <nodeInfo nodeId="3010989094832023798" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="22" startPosition="123" endLine="23" endPosition="119" />
+    <scopeInfo nodeId="3010989094832023641" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="22" startPosition="123" endLine="23" endPosition="119" />
   </root>
   <root nodeId="4175779910939087788">
     <nodeInfo nodeId="1892129828611705349" fileName="typeof_Reference_GetLinkDeclarationOperation_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="51" />
@@ -2936,8 +2936,8 @@
     </scopeInfo>
   </root>
   <root nodeId="7414068155431224995">
-    <nodeInfo nodeId="7414068155431225001" fileName="supertypesOf_SNodeType_BaseConcept_SubtypingRule.java" startLine="26" startPosition="91" endLine="27" endPosition="126" />
-    <scopeInfo nodeId="7414068155431224996" fileName="supertypesOf_SNodeType_BaseConcept_SubtypingRule.java" startLine="26" startPosition="91" endLine="27" endPosition="126" />
+    <nodeInfo nodeId="7414068155431225001" fileName="supertypesOf_SNodeType_BaseConcept_SubtypingRule.java" startLine="26" startPosition="118" endLine="27" endPosition="126" />
+    <scopeInfo nodeId="7414068155431224996" fileName="supertypesOf_SNodeType_BaseConcept_SubtypingRule.java" startLine="26" startPosition="118" endLine="27" endPosition="126" />
   </root>
   <root nodeId="8405512791876070018">
     <nodeInfo nodeId="8405512791876070126" fileName="typeof_SLinkImplicitSelect_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="56" />
@@ -2949,8 +2949,8 @@
     <scopeInfo nodeId="8405512791876070019" fileName="typeof_SLinkImplicitSelect_InferenceRule.java" startLine="22" startPosition="127" endLine="28" endPosition="5" />
   </root>
   <root nodeId="8468166043514848111">
-    <nodeInfo nodeId="8468166043514848217" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="87" endLine="20" endPosition="120" />
-    <scopeInfo nodeId="8468166043514848112" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="87" endLine="20" endPosition="120" />
+    <nodeInfo nodeId="8468166043514848217" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="120" />
+    <scopeInfo nodeId="8468166043514848112" fileName="supertypesOf_SEnumMemberType_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="120" />
   </root>
   <root nodeId="8469340927680549794">
     <nodeInfo nodeId="8469340927680549905" fileName="typeof_Reference_GetTargetOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="51" />

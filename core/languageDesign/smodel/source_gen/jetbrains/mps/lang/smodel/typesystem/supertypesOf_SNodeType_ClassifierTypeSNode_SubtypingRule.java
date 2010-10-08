@@ -19,7 +19,7 @@ public class supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule extends Su
   public supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule.QuotationClass_rz0oei_a0a0a().createNode(typeCheckingContext);
   }
 

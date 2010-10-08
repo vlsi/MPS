@@ -23,7 +23,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
   public supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.QuotationClass_fggx2c_a0a0a().createNode(typeCheckingContext);
   }
 

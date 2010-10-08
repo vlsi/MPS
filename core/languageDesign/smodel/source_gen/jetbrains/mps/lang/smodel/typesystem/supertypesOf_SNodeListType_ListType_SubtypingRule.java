@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -17,7 +17,7 @@ public class supertypesOf_SNodeListType_ListType_SubtypingRule extends Subtyping
   public supertypesOf_SNodeListType_ListType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     return new supertypesOf_SNodeListType_ListType_SubtypingRule.QuotationClass_r2ybw4_a0b0a().createNode(elementConcept, typeCheckingContext);
   }
