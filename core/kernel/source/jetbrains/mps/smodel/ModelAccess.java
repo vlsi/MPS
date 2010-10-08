@@ -139,9 +139,11 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   static final void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
-      if (ourErroredModels.add(node.getModelName_internal())) {
+      SModel model = node.getModel();
+      String modelName = model == null ? "<null>" : model.getLongName();
+      if (ourErroredModels.add(modelName)) {
         System.err.println("CRITICAL: INVALID OPERATION DETECTED");
-        System.err.println("model: " + node.getModelName_internal());
+        System.err.println("model: " + modelName);
         new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
       }
     }

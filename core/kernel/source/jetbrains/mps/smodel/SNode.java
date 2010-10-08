@@ -38,10 +38,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-/**
- * User: Sergey Dmitriev
- * Date: Aug 2, 2003
- */
 public final class SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
@@ -121,14 +117,6 @@ public final class SNode {
     myParent.insertChild(this, myRoleInParent, newSibling, true);
   }
 
-  //do not use this method
-
-  @Deprecated()
-  public String getModelName_internal() {
-    if (myModel == null) return "<null>";
-    return myModel.getLongName();
-  }
-
   public SModel getModel() {
     ModelAccess.assertLegalRead(this);
 
@@ -140,8 +128,6 @@ public final class SNode {
     return myIsFrozen;
   }
 
-  /*package*/
-
   void freeze() {
     myIsFrozen = true;
 
@@ -149,8 +135,6 @@ public final class SNode {
       child.freeze();
     }
   }
-
-  /*package*/
 
   void unfreeze() {
     if (myParent != null && myParent.myIsFrozen) {
@@ -166,7 +150,6 @@ public final class SNode {
       child.unfreezeRec();
     }
   }
-
 
   public boolean isModelLoading() {
     return myModel.isLoading();
