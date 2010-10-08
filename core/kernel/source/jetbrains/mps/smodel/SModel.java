@@ -64,7 +64,6 @@ public class SModel implements Iterable<SNode> {
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
-  private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
 
   private int myPersistenceVersion = -1;
@@ -123,15 +122,6 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public String getLongName() {
     return myReference.getLongName();
-  }
-
-  @Deprecated
-  public boolean usesLog() {
-    return myUsesLog;
-  }
-
-  public void setUsesLog(boolean usesLog) {
-    myUsesLog = usesLog;
   }
 
   @NotNull
