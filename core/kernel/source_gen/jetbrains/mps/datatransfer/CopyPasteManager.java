@@ -15,10 +15,8 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior;
@@ -90,24 +88,22 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
     myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
     for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
-      if (actionsModelDescriptor != null) {
-        List<SNode> rootNodes = BaseAdapter.toNodes(actionsModelDescriptor.getSModel().getRootsAdapters());
-        for (SNode copyPasteHandlers : ListSequence.fromList(rootNodes).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
-          }
-        }).select(new ISelector<SNode, SNode>() {
-          public SNode select(SNode it) {
-            return SNodeOperations.as(it, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
-          }
-        })) {
-          for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(copyPasteHandlers, "preProcessor", true))) {
-            MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
-          }
-          for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(copyPasteHandlers, "postProcessor", true))) {
-            MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
-          }
+      if (actionsModelDescriptor == null) {
+        continue;
+      }
+      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getSModel().roots(), new Condition<SNode>() {
+        public boolean met(SNode node) {
+          return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
         }
+      });
+      for (SNode root : roots) {
+        for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "preProcessor", true))) {
+          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
+        }
+        for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "postProcessor", true))) {
+          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
+        }
+
       }
     }
     myLoaded = true;

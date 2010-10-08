@@ -9,11 +9,12 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.INodeAdapter;
 import java.util.Set;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -28,9 +29,8 @@ import jetbrains.mps.cache.CachesManager;
 
   protected ClassifiersCache(Object key, SModelDescriptor model) {
     super(key);
-    List<INodeAdapter> list = model.getSModel().getRootsAdapters();
-    for (INodeAdapter adapter : list) {
-      this.processNode(adapter, true);
+    for (SNode node : model.getSModel().roots()) {
+      this.processNode(node, true);
     }
   }
 
@@ -39,15 +39,16 @@ import jetbrains.mps.cache.CachesManager;
     return Collections.singleton((SModelDescriptor) element);
   }
 
-  private void processNode(INodeAdapter adapter, boolean put) {
-    if (adapter instanceof Classifier) {
+  private void processNode(SNode adapter, boolean put) {
+    if (SNodeOperations.isInstanceOf(adapter, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      Classifier classifier = ((Classifier) SNodeOperations.getAdapter(SNodeOperations.cast(adapter, "jetbrains.mps.baseLanguage.structure.Classifier")));
       if (put) {
-        this.putClassifier((Classifier) adapter);
+        this.putClassifier(classifier);
       } else {
-        this.removeClassifier((Classifier) adapter);
+        this.removeClassifier(classifier);
       }
     } else {
-      for (INodeAdapter child : adapter.getChildren()) {
+      for (SNode child : SNodeOperations.getChildren(adapter)) {
         this.processNode(child, put);
       }
     }
@@ -108,33 +109,31 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   public void rootAdded(SModelRootEvent event) {
-    INodeAdapter adapter = event.getRoot().getAdapter();
-    this.processNode(adapter, true);
+    this.processNode(event.getRoot(), true);
   }
 
   public void rootRemoved(SModelRootEvent event) {
-    INodeAdapter adapter = event.getRoot().getAdapter();
-    this.processNode(adapter, false);
+    this.processNode(event.getRoot(), false);
   }
 
   public void childAdded(SModelChildEvent event) {
-    BaseAdapter adapter = event.getChild().getAdapter();
-    if (!((adapter instanceof Classifier))) {
-      if (adapter.getParent(Classifier.class, false) != null) {
+    SNode node = event.getChild();
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null) {
         return;
       }
     }
-    this.processNode(adapter, true);
+    this.processNode(node, true);
   }
 
   public void beforeChildRemoved(SModelChildEvent event) {
-    BaseAdapter adapter = event.getChild().getAdapter();
-    if (!((adapter instanceof Classifier))) {
-      if (adapter.getParent(Classifier.class, false) != null) {
+    SNode node = event.getChild();
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null) {
         return;
       }
     }
-    this.processNode(adapter, false);
+    this.processNode(node, true);
   }
 
   public void propertyChanged(SModelPropertyEvent event) {

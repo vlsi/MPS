@@ -757,251 +757,245 @@
     <unitInfo nodeId="3161373106581136687" fileName="ClassifierAndSuperClassifiersCache.java" startLine="42" startPosition="0" endLine="559" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" />
   </root>
   <root nodeId="3161373106581136688">
-    <nodeInfo nodeId="3161373106581136690" fileName="ClassifiersCache.java" startLine="23" startPosition="58" endLine="24" endPosition="67" />
-    <nodeInfo nodeId="3161373106581136695" fileName="ClassifiersCache.java" startLine="25" startPosition="0" endLine="26" endPosition="92" />
-    <nodeInfo nodeId="3161373106581136706" fileName="ClassifiersCache.java" startLine="26" startPosition="92" endLine="27" endPosition="79" />
-    <nodeInfo nodeId="3161373106581136775" fileName="ClassifiersCache.java" startLine="29" startPosition="66" endLine="30" endPosition="15" />
-    <nodeInfo nodeId="3161373106581136777" fileName="ClassifiersCache.java" startLine="30" startPosition="15" endLine="31" endPosition="67" />
-    <nodeInfo nodeId="3161373106581136791" fileName="ClassifiersCache.java" startLine="32" startPosition="39" endLine="33" endPosition="38" />
+    <nodeInfo nodeId="3161373106581136690" fileName="ClassifiersCache.java" startLine="24" startPosition="58" endLine="25" endPosition="67" />
+    <nodeInfo nodeId="3161373106581136695" fileName="ClassifiersCache.java" startLine="26" startPosition="0" endLine="27" endPosition="92" />
+    <nodeInfo nodeId="3161373106581136706" fileName="ClassifiersCache.java" startLine="27" startPosition="92" endLine="28" endPosition="79" />
+    <nodeInfo nodeId="3161373106581136775" fileName="ClassifiersCache.java" startLine="30" startPosition="66" endLine="31" endPosition="15" />
+    <nodeInfo nodeId="3161373106581136791" fileName="ClassifiersCache.java" startLine="32" startPosition="50" endLine="33" endPosition="35" />
     <nodeInfo nodeId="3161373106581136762" fileName="ClassifiersCache.java" startLine="38" startPosition="67" endLine="39" endPosition="61" />
-    <nodeInfo nodeId="3161373106581136837" fileName="ClassifiersCache.java" startLine="44" startPosition="16" endLine="45" endPosition="49" />
-    <nodeInfo nodeId="3161373106581136829" fileName="ClassifiersCache.java" startLine="46" startPosition="14" endLine="47" endPosition="52" />
-    <nodeInfo nodeId="3161373106581136818" fileName="ClassifiersCache.java" startLine="50" startPosition="56" endLine="51" endPosition="37" />
-    <nodeInfo nodeId="3161373106581136850" fileName="ClassifiersCache.java" startLine="56" startPosition="53" endLine="57" endPosition="46" />
-    <nodeInfo nodeId="3161373106581136866" fileName="ClassifiersCache.java" startLine="58" startPosition="56" endLine="59" endPosition="66" />
-    <nodeInfo nodeId="3161373106581136877" fileName="ClassifiersCache.java" startLine="60" startPosition="5" endLine="61" endPosition="65" />
-    <nodeInfo nodeId="3161373106581136889" fileName="ClassifiersCache.java" startLine="61" startPosition="65" endLine="62" endPosition="60" />
-    <nodeInfo nodeId="3161373106581136899" fileName="ClassifiersCache.java" startLine="62" startPosition="60" endLine="63" endPosition="69" />
-    <nodeInfo nodeId="3161373106581136911" fileName="ClassifiersCache.java" startLine="64" startPosition="45" endLine="65" endPosition="42" />
-    <nodeInfo nodeId="3161373106581136922" fileName="ClassifiersCache.java" startLine="69" startPosition="56" endLine="70" endPosition="46" />
-    <nodeInfo nodeId="3161373106581136937" fileName="ClassifiersCache.java" startLine="71" startPosition="53" endLine="72" endPosition="61" />
-    <nodeInfo nodeId="3161373106581136947" fileName="ClassifiersCache.java" startLine="72" startPosition="61" endLine="73" endPosition="41" />
-    <nodeInfo nodeId="3161373106581136959" fileName="ClassifiersCache.java" startLine="74" startPosition="28" endLine="75" endPosition="46" />
-    <nodeInfo nodeId="3161373106581136966" fileName="ClassifiersCache.java" startLine="77" startPosition="5" endLine="78" endPosition="57" />
-    <nodeInfo nodeId="3161373106581136975" fileName="ClassifiersCache.java" startLine="78" startPosition="57" endLine="79" endPosition="69" />
-    <nodeInfo nodeId="3161373106581136987" fileName="ClassifiersCache.java" startLine="80" startPosition="45" endLine="81" endPosition="45" />
-    <nodeInfo nodeId="3161373106581136998" fileName="ClassifiersCache.java" startLine="85" startPosition="52" endLine="86" endPosition="39" />
-    <nodeInfo nodeId="3161373106581137009" fileName="ClassifiersCache.java" startLine="87" startPosition="23" endLine="88" endPosition="16" />
-    <nodeInfo nodeId="3161373106581137013" fileName="ClassifiersCache.java" startLine="89" startPosition="5" endLine="90" endPosition="49" />
-    <nodeInfo nodeId="3161373106581137024" fileName="ClassifiersCache.java" startLine="91" startPosition="39" endLine="92" endPosition="65" />
-    <nodeInfo nodeId="3161373106581137036" fileName="ClassifiersCache.java" startLine="93" startPosition="5" endLine="94" endPosition="16" />
-    <nodeInfo nodeId="3161373106581137043" fileName="ClassifiersCache.java" startLine="97" startPosition="44" endLine="98" endPosition="80" />
-    <nodeInfo nodeId="3161373106581137055" fileName="ClassifiersCache.java" startLine="98" startPosition="80" endLine="99" endPosition="42" />
-    <nodeInfo nodeId="3161373106581137065" fileName="ClassifiersCache.java" startLine="102" startPosition="67" endLine="103" endPosition="63" />
-    <nodeInfo nodeId="3161373106581137080" fileName="ClassifiersCache.java" startLine="104" startPosition="25" endLine="105" endPosition="44" />
-    <nodeInfo nodeId="3161373106581137083" fileName="ClassifiersCache.java" startLine="106" startPosition="5" endLine="107" endPosition="39" />
-    <nodeInfo nodeId="3161373106581137093" fileName="ClassifiersCache.java" startLine="110" startPosition="48" endLine="111" endPosition="56" />
-    <nodeInfo nodeId="3161373106581137101" fileName="ClassifiersCache.java" startLine="111" startPosition="56" endLine="112" endPosition="36" />
-    <nodeInfo nodeId="3161373106581137113" fileName="ClassifiersCache.java" startLine="115" startPosition="50" endLine="116" endPosition="56" />
-    <nodeInfo nodeId="3161373106581137121" fileName="ClassifiersCache.java" startLine="116" startPosition="56" endLine="117" endPosition="37" />
-    <nodeInfo nodeId="3161373106581137133" fileName="ClassifiersCache.java" startLine="120" startPosition="50" endLine="121" endPosition="56" />
-    <nodeInfo nodeId="3161373106581137157" fileName="ClassifiersCache.java" startLine="123" startPosition="63" endLine="124" endPosition="15" />
-    <nodeInfo nodeId="3161373106581137158" fileName="ClassifiersCache.java" startLine="126" startPosition="5" endLine="127" endPosition="36" />
-    <nodeInfo nodeId="3161373106581137170" fileName="ClassifiersCache.java" startLine="130" startPosition="58" endLine="131" endPosition="56" />
-    <nodeInfo nodeId="3161373106581137194" fileName="ClassifiersCache.java" startLine="133" startPosition="63" endLine="134" endPosition="15" />
-    <nodeInfo nodeId="3161373106581137195" fileName="ClassifiersCache.java" startLine="136" startPosition="5" endLine="137" endPosition="37" />
-    <nodeInfo nodeId="3161373106581137207" fileName="ClassifiersCache.java" startLine="140" startPosition="58" endLine="141" endPosition="55" />
-    <nodeInfo nodeId="3161373106581137227" fileName="ClassifiersCache.java" startLine="142" startPosition="91" endLine="143" endPosition="73" />
-    <nodeInfo nodeId="3161373106581137234" fileName="ClassifiersCache.java" startLine="143" startPosition="73" endLine="144" endPosition="54" />
-    <nodeInfo nodeId="3161373106581137242" fileName="ClassifiersCache.java" startLine="144" startPosition="54" endLine="145" endPosition="74" />
-    <nodeInfo nodeId="3161373106581137255" fileName="ClassifiersCache.java" startLine="146" startPosition="57" endLine="147" endPosition="78" />
-    <nodeInfo nodeId="3161373106581137266" fileName="ClassifiersCache.java" startLine="147" startPosition="78" endLine="148" endPosition="69" />
-    <nodeInfo nodeId="3161373106581137276" fileName="ClassifiersCache.java" startLine="149" startPosition="28" endLine="150" endPosition="45" />
-    <nodeInfo nodeId="3161373106581137288" fileName="ClassifiersCache.java" startLine="152" startPosition="47" endLine="153" endPosition="54" />
-    <nodeInfo nodeId="3161373106581137295" fileName="ClassifiersCache.java" startLine="154" startPosition="9" endLine="155" endPosition="61" />
-    <nodeInfo nodeId="3161373106581137304" fileName="ClassifiersCache.java" startLine="156" startPosition="7" endLine="157" endPosition="49" />
-    <nodeInfo nodeId="3161373106581137321" fileName="ClassifiersCache.java" startLine="161" startPosition="84" endLine="162" endPosition="73" />
-    <nodeInfo nodeId="3161373106581137328" fileName="ClassifiersCache.java" startLine="162" startPosition="73" endLine="163" endPosition="24" />
-    <nodeInfo nodeId="3161373106581137338" fileName="ClassifiersCache.java" startLine="164" startPosition="37" endLine="165" endPosition="44" />
-    <nodeInfo nodeId="3161373106581136721" fileName="ClassifiersCache.java" startLine="169" startPosition="70" endLine="170" endPosition="55" />
-    <nodeInfo nodeId="3161373106581136729" fileName="ClassifiersCache.java" startLine="170" startPosition="55" endLine="171" endPosition="44" />
-    <nodeInfo nodeId="3161373106581137345" fileName="ClassifiersCache.java" startLine="173" startPosition="73" endLine="174" endPosition="50" />
-    <nodeInfo nodeId="3161373106581136827" fileName="ClassifiersCache.java" startLine="46" startPosition="12" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="3161373106581136786" fileName="ClassifiersCache.java" startLine="31" startPosition="67" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="3161373106581136811" fileName="ClassifiersCache.java" startLine="49" startPosition="12" endLine="52" endPosition="7" />
-    <nodeInfo nodeId="3161373106581136857" fileName="ClassifiersCache.java" startLine="57" startPosition="46" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="3161373106581136906" fileName="ClassifiersCache.java" startLine="63" startPosition="69" endLine="66" endPosition="5" />
-    <nodeInfo nodeId="3161373106581136954" fileName="ClassifiersCache.java" startLine="73" startPosition="41" endLine="76" endPosition="7" />
-    <nodeInfo nodeId="3161373106581136982" fileName="ClassifiersCache.java" startLine="79" startPosition="69" endLine="82" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137004" fileName="ClassifiersCache.java" startLine="86" startPosition="39" endLine="89" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137019" fileName="ClassifiersCache.java" startLine="90" startPosition="49" endLine="93" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137075" fileName="ClassifiersCache.java" startLine="103" startPosition="63" endLine="106" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137148" fileName="ClassifiersCache.java" startLine="122" startPosition="45" endLine="125" endPosition="7" />
-    <nodeInfo nodeId="3161373106581137185" fileName="ClassifiersCache.java" startLine="132" startPosition="45" endLine="135" endPosition="7" />
-    <nodeInfo nodeId="3427990840445467895" fileName="ClassifiersCache.java" startLine="148" startPosition="69" endLine="151" endPosition="9" />
-    <nodeInfo nodeId="3161373106581137283" fileName="ClassifiersCache.java" startLine="151" startPosition="9" endLine="154" endPosition="9" />
-    <nodeInfo nodeId="3161373106581137333" fileName="ClassifiersCache.java" startLine="163" startPosition="24" endLine="166" endPosition="5" />
-    <nodeInfo nodeId="3161373106581136809" fileName="ClassifiersCache.java" startLine="49" startPosition="10" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="3161373106581136747" fileName="ClassifiersCache.java" startLine="172" startPosition="131" endLine="176" endPosition="0" />
+    <nodeInfo nodeId="2197509460969611250" fileName="ClassifiersCache.java" startLine="43" startPosition="99" endLine="44" endPosition="154" />
+    <nodeInfo nodeId="3161373106581136837" fileName="ClassifiersCache.java" startLine="45" startPosition="16" endLine="46" endPosition="39" />
+    <nodeInfo nodeId="3161373106581136829" fileName="ClassifiersCache.java" startLine="47" startPosition="14" endLine="48" endPosition="42" />
+    <nodeInfo nodeId="3161373106581136818" fileName="ClassifiersCache.java" startLine="51" startPosition="64" endLine="52" endPosition="37" />
+    <nodeInfo nodeId="3161373106581136850" fileName="ClassifiersCache.java" startLine="57" startPosition="53" endLine="58" endPosition="46" />
+    <nodeInfo nodeId="3161373106581136866" fileName="ClassifiersCache.java" startLine="59" startPosition="56" endLine="60" endPosition="66" />
+    <nodeInfo nodeId="3161373106581136877" fileName="ClassifiersCache.java" startLine="61" startPosition="5" endLine="62" endPosition="65" />
+    <nodeInfo nodeId="3161373106581136889" fileName="ClassifiersCache.java" startLine="62" startPosition="65" endLine="63" endPosition="60" />
+    <nodeInfo nodeId="3161373106581136899" fileName="ClassifiersCache.java" startLine="63" startPosition="60" endLine="64" endPosition="69" />
+    <nodeInfo nodeId="3161373106581136911" fileName="ClassifiersCache.java" startLine="65" startPosition="45" endLine="66" endPosition="42" />
+    <nodeInfo nodeId="3161373106581136922" fileName="ClassifiersCache.java" startLine="70" startPosition="56" endLine="71" endPosition="46" />
+    <nodeInfo nodeId="3161373106581136937" fileName="ClassifiersCache.java" startLine="72" startPosition="53" endLine="73" endPosition="61" />
+    <nodeInfo nodeId="3161373106581136947" fileName="ClassifiersCache.java" startLine="73" startPosition="61" endLine="74" endPosition="41" />
+    <nodeInfo nodeId="3161373106581136959" fileName="ClassifiersCache.java" startLine="75" startPosition="28" endLine="76" endPosition="46" />
+    <nodeInfo nodeId="3161373106581136966" fileName="ClassifiersCache.java" startLine="78" startPosition="5" endLine="79" endPosition="57" />
+    <nodeInfo nodeId="3161373106581136975" fileName="ClassifiersCache.java" startLine="79" startPosition="57" endLine="80" endPosition="69" />
+    <nodeInfo nodeId="3161373106581136987" fileName="ClassifiersCache.java" startLine="81" startPosition="45" endLine="82" endPosition="45" />
+    <nodeInfo nodeId="3161373106581136998" fileName="ClassifiersCache.java" startLine="86" startPosition="52" endLine="87" endPosition="39" />
+    <nodeInfo nodeId="3161373106581137009" fileName="ClassifiersCache.java" startLine="88" startPosition="23" endLine="89" endPosition="16" />
+    <nodeInfo nodeId="3161373106581137013" fileName="ClassifiersCache.java" startLine="90" startPosition="5" endLine="91" endPosition="49" />
+    <nodeInfo nodeId="3161373106581137024" fileName="ClassifiersCache.java" startLine="92" startPosition="39" endLine="93" endPosition="65" />
+    <nodeInfo nodeId="3161373106581137036" fileName="ClassifiersCache.java" startLine="94" startPosition="5" endLine="95" endPosition="16" />
+    <nodeInfo nodeId="3161373106581137043" fileName="ClassifiersCache.java" startLine="98" startPosition="44" endLine="99" endPosition="80" />
+    <nodeInfo nodeId="3161373106581137055" fileName="ClassifiersCache.java" startLine="99" startPosition="80" endLine="100" endPosition="42" />
+    <nodeInfo nodeId="3161373106581137065" fileName="ClassifiersCache.java" startLine="103" startPosition="67" endLine="104" endPosition="63" />
+    <nodeInfo nodeId="3161373106581137080" fileName="ClassifiersCache.java" startLine="105" startPosition="25" endLine="106" endPosition="44" />
+    <nodeInfo nodeId="3161373106581137083" fileName="ClassifiersCache.java" startLine="107" startPosition="5" endLine="108" endPosition="39" />
+    <nodeInfo nodeId="3161373106581137101" fileName="ClassifiersCache.java" startLine="111" startPosition="48" endLine="112" endPosition="44" />
+    <nodeInfo nodeId="3161373106581137121" fileName="ClassifiersCache.java" startLine="115" startPosition="50" endLine="116" endPosition="45" />
+    <nodeInfo nodeId="3161373106581137133" fileName="ClassifiersCache.java" startLine="119" startPosition="50" endLine="120" endPosition="34" />
+    <nodeInfo nodeId="3161373106581137157" fileName="ClassifiersCache.java" startLine="122" startPosition="119" endLine="123" endPosition="15" />
+    <nodeInfo nodeId="3161373106581137158" fileName="ClassifiersCache.java" startLine="125" startPosition="5" endLine="126" endPosition="33" />
+    <nodeInfo nodeId="2197509460969611332" fileName="ClassifiersCache.java" startLine="129" startPosition="58" endLine="130" endPosition="34" />
+    <nodeInfo nodeId="2197509460969611354" fileName="ClassifiersCache.java" startLine="132" startPosition="119" endLine="133" endPosition="15" />
+    <nodeInfo nodeId="2197509460969611355" fileName="ClassifiersCache.java" startLine="135" startPosition="5" endLine="136" endPosition="33" />
+    <nodeInfo nodeId="3161373106581137207" fileName="ClassifiersCache.java" startLine="139" startPosition="58" endLine="140" endPosition="55" />
+    <nodeInfo nodeId="3161373106581137227" fileName="ClassifiersCache.java" startLine="141" startPosition="91" endLine="142" endPosition="73" />
+    <nodeInfo nodeId="3161373106581137234" fileName="ClassifiersCache.java" startLine="142" startPosition="73" endLine="143" endPosition="54" />
+    <nodeInfo nodeId="3161373106581137242" fileName="ClassifiersCache.java" startLine="143" startPosition="54" endLine="144" endPosition="74" />
+    <nodeInfo nodeId="3161373106581137255" fileName="ClassifiersCache.java" startLine="145" startPosition="57" endLine="146" endPosition="78" />
+    <nodeInfo nodeId="3161373106581137266" fileName="ClassifiersCache.java" startLine="146" startPosition="78" endLine="147" endPosition="69" />
+    <nodeInfo nodeId="3161373106581137276" fileName="ClassifiersCache.java" startLine="148" startPosition="28" endLine="149" endPosition="45" />
+    <nodeInfo nodeId="3161373106581137288" fileName="ClassifiersCache.java" startLine="151" startPosition="47" endLine="152" endPosition="54" />
+    <nodeInfo nodeId="3161373106581137295" fileName="ClassifiersCache.java" startLine="153" startPosition="9" endLine="154" endPosition="61" />
+    <nodeInfo nodeId="3161373106581137304" fileName="ClassifiersCache.java" startLine="155" startPosition="7" endLine="156" endPosition="49" />
+    <nodeInfo nodeId="3161373106581137321" fileName="ClassifiersCache.java" startLine="160" startPosition="84" endLine="161" endPosition="73" />
+    <nodeInfo nodeId="3161373106581137328" fileName="ClassifiersCache.java" startLine="161" startPosition="73" endLine="162" endPosition="24" />
+    <nodeInfo nodeId="3161373106581137338" fileName="ClassifiersCache.java" startLine="163" startPosition="37" endLine="164" endPosition="44" />
+    <nodeInfo nodeId="3161373106581136721" fileName="ClassifiersCache.java" startLine="168" startPosition="70" endLine="169" endPosition="55" />
+    <nodeInfo nodeId="3161373106581136729" fileName="ClassifiersCache.java" startLine="169" startPosition="55" endLine="170" endPosition="44" />
+    <nodeInfo nodeId="3161373106581137345" fileName="ClassifiersCache.java" startLine="172" startPosition="73" endLine="173" endPosition="50" />
+    <nodeInfo nodeId="3161373106581136827" fileName="ClassifiersCache.java" startLine="47" startPosition="12" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="3161373106581136786" fileName="ClassifiersCache.java" startLine="31" startPosition="15" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="3161373106581136811" fileName="ClassifiersCache.java" startLine="50" startPosition="12" endLine="53" endPosition="7" />
+    <nodeInfo nodeId="3161373106581136857" fileName="ClassifiersCache.java" startLine="58" startPosition="46" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="3161373106581136906" fileName="ClassifiersCache.java" startLine="64" startPosition="69" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="3161373106581136954" fileName="ClassifiersCache.java" startLine="74" startPosition="41" endLine="77" endPosition="7" />
+    <nodeInfo nodeId="3161373106581136982" fileName="ClassifiersCache.java" startLine="80" startPosition="69" endLine="83" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137004" fileName="ClassifiersCache.java" startLine="87" startPosition="39" endLine="90" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137019" fileName="ClassifiersCache.java" startLine="91" startPosition="49" endLine="94" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137075" fileName="ClassifiersCache.java" startLine="104" startPosition="63" endLine="107" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137148" fileName="ClassifiersCache.java" startLine="121" startPosition="99" endLine="124" endPosition="7" />
+    <nodeInfo nodeId="2197509460969611345" fileName="ClassifiersCache.java" startLine="131" startPosition="99" endLine="134" endPosition="7" />
+    <nodeInfo nodeId="3427990840445467895" fileName="ClassifiersCache.java" startLine="147" startPosition="69" endLine="150" endPosition="9" />
+    <nodeInfo nodeId="3161373106581137283" fileName="ClassifiersCache.java" startLine="150" startPosition="9" endLine="153" endPosition="9" />
+    <nodeInfo nodeId="3161373106581137333" fileName="ClassifiersCache.java" startLine="162" startPosition="24" endLine="165" endPosition="5" />
+    <nodeInfo nodeId="3161373106581136809" fileName="ClassifiersCache.java" startLine="50" startPosition="10" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137087" fileName="ClassifiersCache.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137107" fileName="ClassifiersCache.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <nodeInfo nodeId="3161373106581136747" fileName="ClassifiersCache.java" startLine="171" startPosition="131" endLine="175" endPosition="0" />
     <nodeInfo nodeId="3161373106581136755" fileName="ClassifiersCache.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="3161373106581136825" fileName="ClassifiersCache.java" startLine="43" startPosition="40" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="3161373106581137038" fileName="ClassifiersCache.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137087" fileName="ClassifiersCache.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137107" fileName="ClassifiersCache.java" startLine="114" startPosition="0" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137141" fileName="ClassifiersCache.java" startLine="121" startPosition="56" endLine="126" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137178" fileName="ClassifiersCache.java" startLine="131" startPosition="56" endLine="136" endPosition="5" />
-    <nodeInfo nodeId="3161373106581136736" fileName="ClassifiersCache.java" startLine="171" startPosition="44" endLine="176" endPosition="7" />
-    <nodeInfo nodeId="3161373106581136768" fileName="ClassifiersCache.java" startLine="28" startPosition="0" endLine="35" endPosition="3" />
-    <nodeInfo nodeId="3161373106581136929" fileName="ClassifiersCache.java" startLine="70" startPosition="46" endLine="77" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137058" fileName="ClassifiersCache.java" startLine="101" startPosition="0" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137312" fileName="ClassifiersCache.java" startLine="160" startPosition="0" endLine="168" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137127" fileName="ClassifiersCache.java" startLine="119" startPosition="0" endLine="129" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137164" fileName="ClassifiersCache.java" startLine="129" startPosition="0" endLine="139" endPosition="0" />
-    <nodeInfo nodeId="3161373106581136715" fileName="ClassifiersCache.java" startLine="168" startPosition="0" endLine="178" endPosition="0" />
-    <nodeInfo nodeId="3161373106581136805" fileName="ClassifiersCache.java" startLine="42" startPosition="63" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137250" fileName="ClassifiersCache.java" startLine="145" startPosition="74" endLine="156" endPosition="7" />
-    <nodeInfo nodeId="3161373106581136992" fileName="ClassifiersCache.java" startLine="84" startPosition="0" endLine="96" endPosition="0" />
-    <nodeInfo nodeId="3161373106581136844" fileName="ClassifiersCache.java" startLine="55" startPosition="0" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="3161373106581136797" fileName="ClassifiersCache.java" startLine="41" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="3161373106581136916" fileName="ClassifiersCache.java" startLine="68" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="3161373106581137215" fileName="ClassifiersCache.java" startLine="141" startPosition="55" endLine="158" endPosition="5" />
-    <nodeInfo nodeId="3161373106581137201" fileName="ClassifiersCache.java" startLine="139" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="3161373106581136790" fileName="ClassifiersCache.java" startLine="32" startPosition="39" endLine="33" endPosition="38" />
+    <nodeInfo nodeId="3161373106581136825" fileName="ClassifiersCache.java" startLine="44" startPosition="154" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="3161373106581137038" fileName="ClassifiersCache.java" startLine="97" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137141" fileName="ClassifiersCache.java" startLine="120" startPosition="34" endLine="125" endPosition="5" />
+    <nodeInfo nodeId="2197509460969611338" fileName="ClassifiersCache.java" startLine="130" startPosition="34" endLine="135" endPosition="5" />
+    <nodeInfo nodeId="3161373106581136736" fileName="ClassifiersCache.java" startLine="170" startPosition="44" endLine="175" endPosition="7" />
+    <nodeInfo nodeId="3161373106581136768" fileName="ClassifiersCache.java" startLine="29" startPosition="0" endLine="35" endPosition="3" />
+    <nodeInfo nodeId="3161373106581136929" fileName="ClassifiersCache.java" startLine="71" startPosition="46" endLine="78" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137058" fileName="ClassifiersCache.java" startLine="102" startPosition="0" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137312" fileName="ClassifiersCache.java" startLine="159" startPosition="0" endLine="167" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137127" fileName="ClassifiersCache.java" startLine="118" startPosition="0" endLine="128" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137164" fileName="ClassifiersCache.java" startLine="128" startPosition="0" endLine="138" endPosition="0" />
+    <nodeInfo nodeId="3161373106581136715" fileName="ClassifiersCache.java" startLine="167" startPosition="0" endLine="177" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137250" fileName="ClassifiersCache.java" startLine="144" startPosition="74" endLine="155" endPosition="7" />
+    <nodeInfo nodeId="3161373106581136805" fileName="ClassifiersCache.java" startLine="42" startPosition="56" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="3161373106581136992" fileName="ClassifiersCache.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="3161373106581136844" fileName="ClassifiersCache.java" startLine="56" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="3161373106581136797" fileName="ClassifiersCache.java" startLine="41" startPosition="0" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="3161373106581136916" fileName="ClassifiersCache.java" startLine="69" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="3161373106581137215" fileName="ClassifiersCache.java" startLine="140" startPosition="55" endLine="157" endPosition="5" />
+    <nodeInfo nodeId="3161373106581137201" fileName="ClassifiersCache.java" startLine="138" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="3161373106581136790" fileName="ClassifiersCache.java" startLine="32" startPosition="50" endLine="33" endPosition="35" />
     <scopeInfo nodeId="3161373106581136761" fileName="ClassifiersCache.java" startLine="38" startPosition="67" endLine="39" endPosition="61" />
-    <scopeInfo nodeId="3161373106581136836" fileName="ClassifiersCache.java" startLine="44" startPosition="16" endLine="45" endPosition="49" />
-    <scopeInfo nodeId="3161373106581136828" fileName="ClassifiersCache.java" startLine="46" startPosition="14" endLine="47" endPosition="52" />
-    <scopeInfo nodeId="3161373106581136817" fileName="ClassifiersCache.java" startLine="50" startPosition="56" endLine="51" endPosition="37" />
-    <scopeInfo nodeId="3161373106581136865" fileName="ClassifiersCache.java" startLine="58" startPosition="56" endLine="59" endPosition="66" />
-    <scopeInfo nodeId="3161373106581136910" fileName="ClassifiersCache.java" startLine="64" startPosition="45" endLine="65" endPosition="42" />
-    <scopeInfo nodeId="3161373106581136958" fileName="ClassifiersCache.java" startLine="74" startPosition="28" endLine="75" endPosition="46" />
-    <scopeInfo nodeId="3161373106581136986" fileName="ClassifiersCache.java" startLine="80" startPosition="45" endLine="81" endPosition="45" />
-    <scopeInfo nodeId="3161373106581137008" fileName="ClassifiersCache.java" startLine="87" startPosition="23" endLine="88" endPosition="16" />
-    <scopeInfo nodeId="3161373106581137023" fileName="ClassifiersCache.java" startLine="91" startPosition="39" endLine="92" endPosition="65" />
-    <scopeInfo nodeId="3161373106581137079" fileName="ClassifiersCache.java" startLine="104" startPosition="25" endLine="105" endPosition="44" />
-    <scopeInfo nodeId="3161373106581137156" fileName="ClassifiersCache.java" startLine="123" startPosition="63" endLine="124" endPosition="15" />
-    <scopeInfo nodeId="3161373106581137193" fileName="ClassifiersCache.java" startLine="133" startPosition="63" endLine="134" endPosition="15" />
-    <scopeInfo nodeId="3427990840445467896" fileName="ClassifiersCache.java" startLine="149" startPosition="28" endLine="150" endPosition="45" />
-    <scopeInfo nodeId="3161373106581137287" fileName="ClassifiersCache.java" startLine="152" startPosition="47" endLine="153" endPosition="54" />
-    <scopeInfo nodeId="3161373106581137337" fileName="ClassifiersCache.java" startLine="164" startPosition="37" endLine="165" endPosition="44" />
-    <scopeInfo nodeId="3161373106581137344" fileName="ClassifiersCache.java" startLine="173" startPosition="73" endLine="174" endPosition="50" />
-    <scopeInfo nodeId="3161373106581137042" fileName="ClassifiersCache.java" startLine="97" startPosition="44" endLine="99" endPosition="42">
+    <scopeInfo nodeId="3161373106581136836" fileName="ClassifiersCache.java" startLine="45" startPosition="16" endLine="46" endPosition="39" />
+    <scopeInfo nodeId="3161373106581136828" fileName="ClassifiersCache.java" startLine="47" startPosition="14" endLine="48" endPosition="42" />
+    <scopeInfo nodeId="3161373106581136817" fileName="ClassifiersCache.java" startLine="51" startPosition="64" endLine="52" endPosition="37" />
+    <scopeInfo nodeId="3161373106581136865" fileName="ClassifiersCache.java" startLine="59" startPosition="56" endLine="60" endPosition="66" />
+    <scopeInfo nodeId="3161373106581136910" fileName="ClassifiersCache.java" startLine="65" startPosition="45" endLine="66" endPosition="42" />
+    <scopeInfo nodeId="3161373106581136958" fileName="ClassifiersCache.java" startLine="75" startPosition="28" endLine="76" endPosition="46" />
+    <scopeInfo nodeId="3161373106581136986" fileName="ClassifiersCache.java" startLine="81" startPosition="45" endLine="82" endPosition="45" />
+    <scopeInfo nodeId="3161373106581137008" fileName="ClassifiersCache.java" startLine="88" startPosition="23" endLine="89" endPosition="16" />
+    <scopeInfo nodeId="3161373106581137023" fileName="ClassifiersCache.java" startLine="92" startPosition="39" endLine="93" endPosition="65" />
+    <scopeInfo nodeId="3161373106581137079" fileName="ClassifiersCache.java" startLine="105" startPosition="25" endLine="106" endPosition="44" />
+    <scopeInfo nodeId="3161373106581137092" fileName="ClassifiersCache.java" startLine="111" startPosition="48" endLine="112" endPosition="44" />
+    <scopeInfo nodeId="3161373106581137112" fileName="ClassifiersCache.java" startLine="115" startPosition="50" endLine="116" endPosition="45" />
+    <scopeInfo nodeId="3161373106581137156" fileName="ClassifiersCache.java" startLine="122" startPosition="119" endLine="123" endPosition="15" />
+    <scopeInfo nodeId="2197509460969611353" fileName="ClassifiersCache.java" startLine="132" startPosition="119" endLine="133" endPosition="15" />
+    <scopeInfo nodeId="3427990840445467896" fileName="ClassifiersCache.java" startLine="148" startPosition="28" endLine="149" endPosition="45" />
+    <scopeInfo nodeId="3161373106581137287" fileName="ClassifiersCache.java" startLine="151" startPosition="47" endLine="152" endPosition="54" />
+    <scopeInfo nodeId="3161373106581137337" fileName="ClassifiersCache.java" startLine="163" startPosition="37" endLine="164" endPosition="44" />
+    <scopeInfo nodeId="3161373106581137344" fileName="ClassifiersCache.java" startLine="172" startPosition="73" endLine="173" endPosition="50" />
+    <scopeInfo nodeId="3161373106581137042" fileName="ClassifiersCache.java" startLine="98" startPosition="44" endLine="100" endPosition="42">
       <varInfo nodeId="3161373106581137044" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137092" fileName="ClassifiersCache.java" startLine="110" startPosition="48" endLine="112" endPosition="36">
-      <varInfo nodeId="3161373106581137094" varName="adapter" />
+    <scopeInfo nodeId="3161373106581136786" fileName="ClassifiersCache.java" startLine="31" startPosition="15" endLine="34" endPosition="5">
+      <varInfo nodeId="3161373106581136788" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137112" fileName="ClassifiersCache.java" startLine="115" startPosition="50" endLine="117" endPosition="37">
-      <varInfo nodeId="3161373106581137114" varName="adapter" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581136786" fileName="ClassifiersCache.java" startLine="31" startPosition="67" endLine="34" endPosition="5">
-      <varInfo nodeId="3161373106581136788" varName="adapter" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581136810" fileName="ClassifiersCache.java" startLine="49" startPosition="12" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="3161373106581136811" fileName="ClassifiersCache.java" startLine="49" startPosition="12" endLine="52" endPosition="7">
+    <scopeInfo nodeId="3161373106581136810" fileName="ClassifiersCache.java" startLine="50" startPosition="12" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="3161373106581136811" fileName="ClassifiersCache.java" startLine="50" startPosition="12" endLine="53" endPosition="7">
       <varInfo nodeId="3161373106581136815" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136906" fileName="ClassifiersCache.java" startLine="63" startPosition="69" endLine="66" endPosition="5">
+    <scopeInfo nodeId="3161373106581136906" fileName="ClassifiersCache.java" startLine="64" startPosition="69" endLine="67" endPosition="5">
       <varInfo nodeId="3161373106581136908" varName="innerClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136982" fileName="ClassifiersCache.java" startLine="79" startPosition="69" endLine="82" endPosition="5">
+    <scopeInfo nodeId="3161373106581136982" fileName="ClassifiersCache.java" startLine="80" startPosition="69" endLine="83" endPosition="5">
       <varInfo nodeId="3161373106581136984" varName="innerClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137147" fileName="ClassifiersCache.java" startLine="122" startPosition="45" endLine="125" endPosition="7" />
-    <scopeInfo nodeId="3161373106581137184" fileName="ClassifiersCache.java" startLine="132" startPosition="45" endLine="135" endPosition="7" />
-    <scopeInfo nodeId="3161373106581137333" fileName="ClassifiersCache.java" startLine="163" startPosition="24" endLine="166" endPosition="5">
+    <scopeInfo nodeId="3161373106581137147" fileName="ClassifiersCache.java" startLine="121" startPosition="99" endLine="124" endPosition="7" />
+    <scopeInfo nodeId="2197509460969611344" fileName="ClassifiersCache.java" startLine="131" startPosition="99" endLine="134" endPosition="7" />
+    <scopeInfo nodeId="3161373106581137333" fileName="ClassifiersCache.java" startLine="162" startPosition="24" endLine="165" endPosition="5">
       <varInfo nodeId="3161373106581137335" varName="inner" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136747" fileName="ClassifiersCache.java" startLine="172" startPosition="131" endLine="176" endPosition="0">
+    <scopeInfo nodeId="3161373106581136774" fileName="ClassifiersCache.java" startLine="30" startPosition="66" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="3161373106581137087" fileName="ClassifiersCache.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="3161373106581137090" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3161373106581137107" fileName="ClassifiersCache.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="3161373106581137110" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3161373106581136747" fileName="ClassifiersCache.java" startLine="171" startPosition="131" endLine="175" endPosition="0">
       <varInfo nodeId="3161373106581136752" varName="element" />
       <varInfo nodeId="3161373106581136750" varName="key" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581136774" fileName="ClassifiersCache.java" startLine="29" startPosition="66" endLine="34" endPosition="5">
-      <varInfo nodeId="3161373106581136778" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3161373106581136755" fileName="ClassifiersCache.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3161373106581136759" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136824" fileName="ClassifiersCache.java" startLine="43" startPosition="40" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="3161373106581136936" fileName="ClassifiersCache.java" startLine="71" startPosition="53" endLine="76" endPosition="7">
+    <scopeInfo nodeId="3161373106581136936" fileName="ClassifiersCache.java" startLine="72" startPosition="53" endLine="77" endPosition="7">
       <varInfo nodeId="3161373106581136938" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137038" fileName="ClassifiersCache.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="3161373106581137064" fileName="ClassifiersCache.java" startLine="102" startPosition="67" endLine="107" endPosition="39">
+    <scopeInfo nodeId="3161373106581137038" fileName="ClassifiersCache.java" startLine="97" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="3161373106581137064" fileName="ClassifiersCache.java" startLine="103" startPosition="67" endLine="108" endPosition="39">
       <varInfo nodeId="3161373106581137066" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137087" fileName="ClassifiersCache.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="3161373106581137090" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581137107" fileName="ClassifiersCache.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="3161373106581137110" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581137320" fileName="ClassifiersCache.java" startLine="161" startPosition="84" endLine="166" endPosition="5">
+    <scopeInfo nodeId="3161373106581137320" fileName="ClassifiersCache.java" startLine="160" startPosition="84" endLine="165" endPosition="5">
       <varInfo nodeId="3161373106581137322" varName="inners" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136768" fileName="ClassifiersCache.java" startLine="28" startPosition="0" endLine="35" endPosition="3">
+    <scopeInfo nodeId="3161373106581136768" fileName="ClassifiersCache.java" startLine="29" startPosition="0" endLine="35" endPosition="3">
       <varInfo nodeId="3161373106581136772" varName="model" />
       <varInfo nodeId="3161373106581136770" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137132" fileName="ClassifiersCache.java" startLine="120" startPosition="50" endLine="127" endPosition="36">
-      <varInfo nodeId="3161373106581137134" varName="adapter" />
+    <scopeInfo nodeId="3161373106581136824" fileName="ClassifiersCache.java" startLine="43" startPosition="99" endLine="49" endPosition="7">
+      <varInfo nodeId="2197509460969611251" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137169" fileName="ClassifiersCache.java" startLine="130" startPosition="58" endLine="137" endPosition="37">
-      <varInfo nodeId="3161373106581137171" varName="adapter" />
+    <scopeInfo nodeId="3161373106581137132" fileName="ClassifiersCache.java" startLine="119" startPosition="50" endLine="126" endPosition="33">
+      <varInfo nodeId="3161373106581137134" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136720" fileName="ClassifiersCache.java" startLine="169" startPosition="70" endLine="176" endPosition="7">
+    <scopeInfo nodeId="3161373106581137169" fileName="ClassifiersCache.java" startLine="129" startPosition="58" endLine="136" endPosition="33">
+      <varInfo nodeId="2197509460969611333" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3161373106581136720" fileName="ClassifiersCache.java" startLine="168" startPosition="70" endLine="175" endPosition="7">
       <varInfo nodeId="3161373106581136722" varName="uid" />
       <varInfo nodeId="3161373106581136730" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137058" fileName="ClassifiersCache.java" startLine="101" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="3161373106581137058" fileName="ClassifiersCache.java" startLine="102" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="3161373106581137062" varName="refName" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137312" fileName="ClassifiersCache.java" startLine="160" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="3161373106581137312" fileName="ClassifiersCache.java" startLine="159" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="3161373106581137317" varName="list" />
       <varInfo nodeId="3161373106581137315" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136997" fileName="ClassifiersCache.java" startLine="85" startPosition="52" endLine="94" endPosition="16">
+    <scopeInfo nodeId="3161373106581136997" fileName="ClassifiersCache.java" startLine="86" startPosition="52" endLine="95" endPosition="16">
       <varInfo nodeId="3161373106581136999" varName="name" />
       <varInfo nodeId="3161373106581137014" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137254" fileName="ClassifiersCache.java" startLine="146" startPosition="57" endLine="155" endPosition="61">
+    <scopeInfo nodeId="3161373106581137254" fileName="ClassifiersCache.java" startLine="145" startPosition="57" endLine="154" endPosition="61">
       <varInfo nodeId="3161373106581137267" varName="nodes" />
       <varInfo nodeId="3161373106581137256" varName="oldRefName" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136849" fileName="ClassifiersCache.java" startLine="56" startPosition="53" endLine="66" endPosition="5">
+    <scopeInfo nodeId="3161373106581136849" fileName="ClassifiersCache.java" startLine="57" startPosition="53" endLine="67" endPosition="5">
       <varInfo nodeId="3161373106581136851" varName="name" />
       <varInfo nodeId="3161373106581136900" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137127" fileName="ClassifiersCache.java" startLine="119" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="3161373106581137127" fileName="ClassifiersCache.java" startLine="118" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="3161373106581137130" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137164" fileName="ClassifiersCache.java" startLine="129" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="3161373106581137164" fileName="ClassifiersCache.java" startLine="128" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="3161373106581137167" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136715" fileName="ClassifiersCache.java" startLine="168" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="3161373106581136715" fileName="ClassifiersCache.java" startLine="167" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="3161373106581136718" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136804" fileName="ClassifiersCache.java" startLine="42" startPosition="63" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="3161373106581137250" fileName="ClassifiersCache.java" startLine="145" startPosition="74" endLine="156" endPosition="7">
+    <scopeInfo nodeId="3161373106581137250" fileName="ClassifiersCache.java" startLine="144" startPosition="74" endLine="155" endPosition="7">
       <varInfo nodeId="3161373106581137252" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136992" fileName="ClassifiersCache.java" startLine="84" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="3161373106581136804" fileName="ClassifiersCache.java" startLine="42" startPosition="56" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="3161373106581136992" fileName="ClassifiersCache.java" startLine="85" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="3161373106581136995" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136844" fileName="ClassifiersCache.java" startLine="55" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="3161373106581136844" fileName="ClassifiersCache.java" startLine="56" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="3161373106581136847" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136921" fileName="ClassifiersCache.java" startLine="69" startPosition="56" endLine="82" endPosition="5">
+    <scopeInfo nodeId="3161373106581136921" fileName="ClassifiersCache.java" startLine="70" startPosition="56" endLine="83" endPosition="5">
       <varInfo nodeId="3161373106581136923" varName="name" />
       <varInfo nodeId="3161373106581136976" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136797" fileName="ClassifiersCache.java" startLine="41" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="3161373106581136797" fileName="ClassifiersCache.java" startLine="41" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="3161373106581136802" varName="put" />
       <varInfo nodeId="3161373106581136800" varName="adapter" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137226" fileName="ClassifiersCache.java" startLine="142" startPosition="91" endLine="157" endPosition="49">
+    <scopeInfo nodeId="3161373106581137226" fileName="ClassifiersCache.java" startLine="141" startPosition="91" endLine="156" endPosition="49">
       <varInfo nodeId="3161373106581137228" varName="classifiersToUpdate" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581136916" fileName="ClassifiersCache.java" startLine="68" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="3161373106581136916" fileName="ClassifiersCache.java" startLine="69" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="3161373106581136919" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137206" fileName="ClassifiersCache.java" startLine="140" startPosition="58" endLine="158" endPosition="5">
+    <scopeInfo nodeId="3161373106581137206" fileName="ClassifiersCache.java" startLine="139" startPosition="58" endLine="157" endPosition="5">
       <varInfo nodeId="3161373106581137208" varName="adapter" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137201" fileName="ClassifiersCache.java" startLine="139" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="3161373106581137201" fileName="ClassifiersCache.java" startLine="138" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="3161373106581137204" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3161373106581136745" fileName="ClassifiersCache.java" startLine="172" startPosition="83" endLine="176" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache$1" />
-    <unitInfo nodeId="3161373106581136688" fileName="ClassifiersCache.java" startLine="23" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache" />
+    <unitInfo nodeId="3161373106581136745" fileName="ClassifiersCache.java" startLine="171" startPosition="83" endLine="175" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache$1" />
+    <unitInfo nodeId="3161373106581136688" fileName="ClassifiersCache.java" startLine="24" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache" />
   </root>
   <root nodeId="3161373106581137350">
     <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="24" startPosition="80" endLine="25" endPosition="115" />
