@@ -59,6 +59,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   private IFile myFilesDir;
   private int timesCalled = 0;
   private boolean myCheckIncremental = false;
+  private GenerationDependencies myLastDependencies;
 
   public IncrementalTestGenerationHandler() {
   }
@@ -69,6 +70,10 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   public void checkIncremental() {
     myCheckIncremental = true;
+  }
+
+  public GenerationDependencies getLastDependencies() {
+    return myLastDependencies;
   }
 
   public Map<String, String> getGeneratedContent() {
@@ -112,6 +117,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
+    myLastDependencies = null;
     IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
 
     Assert.assertTrue(status.isOk());
@@ -123,6 +129,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     }
 
     if (status.isOk()) {
+      myLastDependencies = status.getDependencies();
       myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
       IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, FileGenerationUtil.getCachesDir(targetDir));
 
@@ -174,12 +181,6 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
           StringWriter writer = new StringWriter();
           JDOMUtil.writeDocument(new Document(content), writer);
           saveStream(name, writer.toString(), isCache);
-        } catch (IOException e) {
-          Assert.fail(e.toString());
-        }
-      } else if(name.equals(".generated")) {
-        try {
-          JDOMUtil.writeDocument(new Document(content), myCaches.child(name));
         } catch (IOException e) {
           Assert.fail(e.toString());
         }
