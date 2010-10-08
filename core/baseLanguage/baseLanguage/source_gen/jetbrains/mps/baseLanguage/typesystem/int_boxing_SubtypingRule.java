@@ -19,7 +19,7 @@ public class int_boxing_SubtypingRule extends SubtypingRule_Runtime implements I
   public int_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode integerType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode integerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new int_boxing_SubtypingRule.QuotationClass_cqci4d_a0a0a().createNode(typeCheckingContext);
   }
 

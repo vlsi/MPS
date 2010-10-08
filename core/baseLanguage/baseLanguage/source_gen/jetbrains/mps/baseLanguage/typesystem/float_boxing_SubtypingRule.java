@@ -19,7 +19,7 @@ public class float_boxing_SubtypingRule extends SubtypingRule_Runtime implements
   public float_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new float_boxing_SubtypingRule.QuotationClass_1ae1j_a0a0a().createNode(typeCheckingContext);
   }
 

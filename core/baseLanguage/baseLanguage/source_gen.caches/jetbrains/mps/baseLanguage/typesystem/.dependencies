@@ -694,6 +694,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_to_wildcard_type_ComparisonRule" file="any_type_comparable_to_wildcard_type_ComparisonRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
@@ -701,12 +703,16 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_with_nulltype_ComparisonRule" file="any_type_comparable_with_nulltype_ComparisonRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeof_wildcard_type_InequationReplacementRule" file="any_type_subtypeof_wildcard_type_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
@@ -715,6 +721,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_supertypeof_bottom_InequationReplacementRule" file="any_type_supertypeof_bottom_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
@@ -725,6 +733,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.intentions.BaseIntentionProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -2029,6 +2039,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
@@ -2179,6 +2191,8 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -2196,6 +2210,8 @@
     <classNode dependClassName="jetbrains.mps.intentions.BaseIntentionProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
@@ -2208,6 +2224,8 @@
     <classNode dependClassName="jetbrains.mps.intentions.BaseIntentionProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
@@ -3636,6 +3654,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.typevar_comparable_with_classifier_type_ComparisonRule" file="typevar_comparable_with_classifier_type_ComparisonRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />

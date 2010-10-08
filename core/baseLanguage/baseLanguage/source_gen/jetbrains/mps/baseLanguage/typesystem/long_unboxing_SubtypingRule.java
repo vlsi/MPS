@@ -23,7 +23,7 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public long_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new long_unboxing_SubtypingRule.QuotationClass_34hpo3_a0a0a().createNode(typeCheckingContext);
   }
 

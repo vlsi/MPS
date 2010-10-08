@@ -23,7 +23,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
   public Boolean_extends_boolean_2_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Boolean_extends_boolean_2_SubtypingRule.QuotationClass_9ehkah_a0a0a().createNode(typeCheckingContext);
   }
 

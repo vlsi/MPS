@@ -7,11 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
@@ -21,7 +21,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
   public anonymousClassExtendsItsClassifier_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     do {
       SNode matchedNode_q6q799_b0 = SLinkOperations.getTarget(classifierType, "classifier", false);

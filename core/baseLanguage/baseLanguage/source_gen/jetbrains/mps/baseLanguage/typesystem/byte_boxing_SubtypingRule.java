@@ -19,7 +19,7 @@ public class byte_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
   public byte_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new byte_boxing_SubtypingRule.QuotationClass_k7m4u9_a0a0a().createNode(typeCheckingContext);
   }
 

@@ -19,7 +19,7 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
   public Class_Void_weak_supertypeof_void_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode voidType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode voidType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Class_Void_weak_supertypeof_void_SubtypingRule.QuotationClass_or08yn_a0a0a().createNode(typeCheckingContext);
   }
 

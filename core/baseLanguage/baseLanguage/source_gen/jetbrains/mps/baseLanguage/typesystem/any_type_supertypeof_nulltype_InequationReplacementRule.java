@@ -7,10 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_supertypeof_nulltype_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
@@ -21,7 +23,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
     return !(SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -32,7 +34,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
     }
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       result_14532009 = false;
@@ -44,12 +46,18 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
     return true;
   }
 
-  public boolean isApplicableSubtype(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSubtypeConceptFQName());
+  public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSubtypeConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
-  public boolean isApplicableSupertype(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSupertypeConceptFQName());
+  public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSupertypeConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public String getApplicableSubtypeConceptFQName() {

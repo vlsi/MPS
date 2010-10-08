@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -24,7 +24,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
   public subtyping_arrayType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       for (SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(arrayType, "componentType", true))) {

@@ -16,7 +16,7 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
   public byte_extends_short_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new byte_extends_short_SubtypingRule.QuotationClass_jozoh5_a0a0a().createNode(typeCheckingContext);
   }
 

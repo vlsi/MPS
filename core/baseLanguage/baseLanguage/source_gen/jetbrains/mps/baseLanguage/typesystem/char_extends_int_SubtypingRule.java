@@ -16,7 +16,7 @@ public class char_extends_int_SubtypingRule extends SubtypingRule_Runtime implem
   public char_extends_int_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new char_extends_int_SubtypingRule.QuotationClass_r2yoi2_a0a0a().createNode(typeCheckingContext);
   }
 

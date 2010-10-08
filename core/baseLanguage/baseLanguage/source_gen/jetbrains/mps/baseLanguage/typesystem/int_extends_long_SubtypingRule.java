@@ -16,7 +16,7 @@ public class int_extends_long_SubtypingRule extends SubtypingRule_Runtime implem
   public int_extends_long_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode intType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode intType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new int_extends_long_SubtypingRule.QuotationClass_z16tdf_a0a0a().createNode(typeCheckingContext);
   }
 

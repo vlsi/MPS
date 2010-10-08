@@ -16,7 +16,7 @@ public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime impl
   public long_extends_float_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new long_extends_float_SubtypingRule.QuotationClass_gbknn_a0a0a().createNode(typeCheckingContext);
   }
 

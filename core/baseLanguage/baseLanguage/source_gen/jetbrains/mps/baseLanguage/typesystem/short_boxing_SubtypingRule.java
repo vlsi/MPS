@@ -19,7 +19,7 @@ public class short_boxing_SubtypingRule extends SubtypingRule_Runtime implements
   public short_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new short_boxing_SubtypingRule.QuotationClass_xys8ef_a0a0a().createNode(typeCheckingContext);
   }
 

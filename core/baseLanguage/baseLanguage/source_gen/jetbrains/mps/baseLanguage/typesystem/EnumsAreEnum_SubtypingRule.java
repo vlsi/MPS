@@ -7,11 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -24,7 +24,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
   public EnumsAreEnum_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {

@@ -4,13 +4,15 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typevar_comparable_with_classifier_type_ComparisonRule extends ComparisonRule_Runtime {
   public typevar_comparable_with_classifier_type_ComparisonRule() {
   }
 
-  public boolean areComparable(SNode node1, SNode node2) {
+  public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
 
@@ -18,12 +20,18 @@ public class typevar_comparable_with_classifier_type_ComparisonRule extends Comp
     return true;
   }
 
-  public boolean isApplicable1(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+  public IsApplicableStatus isApplicableFirst(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
-  public boolean isApplicable2(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName2());
+  public IsApplicableStatus isApplicableSecond(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName2());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public String getApplicableConceptFQName1() {

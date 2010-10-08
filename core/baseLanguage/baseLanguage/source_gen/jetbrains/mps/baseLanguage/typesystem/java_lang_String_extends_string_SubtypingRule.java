@@ -23,7 +23,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
   public java_lang_String_extends_string_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode stringClassType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode stringClassType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new java_lang_String_extends_string_SubtypingRule.QuotationClass_cxnqcy_a0a0a().createNode(typeCheckingContext);
   }
 

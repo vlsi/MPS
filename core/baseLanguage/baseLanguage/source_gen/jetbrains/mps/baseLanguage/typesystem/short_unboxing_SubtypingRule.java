@@ -23,7 +23,7 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   public short_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new short_unboxing_SubtypingRule.QuotationClass_8bm4vn_a0a0a().createNode(typeCheckingContext);
   }
 

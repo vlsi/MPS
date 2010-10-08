@@ -19,7 +19,7 @@ public class wildCard_is_Object_SubtypingRule extends SubtypingRule_Runtime impl
   public wildCard_is_Object_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode wildCardType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode wildCardType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new wildCard_is_Object_SubtypingRule.QuotationClass_9oqlj5_a0a0a().createNode(typeCheckingContext);
   }
 

@@ -23,7 +23,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   public float_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new float_unboxing_SubtypingRule.QuotationClass_4czxhf_a0a0a().createNode(typeCheckingContext);
   }
 

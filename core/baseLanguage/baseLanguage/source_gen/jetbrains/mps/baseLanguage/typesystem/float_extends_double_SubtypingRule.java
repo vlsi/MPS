@@ -16,7 +16,7 @@ public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime im
   public float_extends_double_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new float_extends_double_SubtypingRule.QuotationClass_lsip07_a0a0a().createNode(typeCheckingContext);
   }
 

@@ -23,7 +23,7 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public char_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new char_unboxing_SubtypingRule.QuotationClass_4wj0va_a0a0a().createNode(typeCheckingContext);
   }
 

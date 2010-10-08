@@ -23,7 +23,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
   public double_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new double_unboxing_SubtypingRule.QuotationClass_jy4zax_a0a0a().createNode(typeCheckingContext);
   }
 

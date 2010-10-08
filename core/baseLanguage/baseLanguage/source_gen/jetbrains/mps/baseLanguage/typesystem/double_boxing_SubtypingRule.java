@@ -19,7 +19,7 @@ public class double_boxing_SubtypingRule extends SubtypingRule_Runtime implement
   public double_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new double_boxing_SubtypingRule.QuotationClass_lpig6k_a0a0a().createNode(typeCheckingContext);
   }
 

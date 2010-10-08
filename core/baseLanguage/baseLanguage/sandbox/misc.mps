@@ -392,7 +392,23 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4092478060242771903" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7603438276886023870">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7603438276886023871">
+            <property name="name:3" value="statements" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="7603438276886023872">
+              <link role="elementConcept:16" targetNodeId="138.1068580123157:3" resolveInfo="Statement" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7603438276886023874">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreator:3" id="7603438276886089744">
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListType:7" id="7603438276886089747">
+                  <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7603438276886089749">
+                    <link role="concept:16" targetNodeId="138.1068580123157:3" resolveInfo="Statement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="873252349305453049">
