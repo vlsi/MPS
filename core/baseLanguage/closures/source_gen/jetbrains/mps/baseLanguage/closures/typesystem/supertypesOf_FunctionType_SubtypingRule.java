@@ -7,12 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,7 +22,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   public supertypesOf_FunctionType_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode ft, TypeCheckingContext typeCheckingContext) {
+  public List<SNode> getSubOrSuperTypes(SNode ft, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> supertypes = null;
     SNode ct = null;
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) == null)) {

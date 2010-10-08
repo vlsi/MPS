@@ -25,8 +25,8 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   public SortedMap_comparableTo_sorted_map_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext) {
-    return new SortedMap_comparableTo_sorted_map_SubtypingRule.QuotationClass_nagdzg_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_VALUE")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar_KEY")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new SortedMap_comparableTo_sorted_map_SubtypingRule.QuotationClass_nagdzg_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_VALUE")), ((SNode) status.getPattern().getFieldValue("PatternVar_KEY")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

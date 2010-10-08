@@ -16,7 +16,7 @@ public class supertypesOf_StackType_StackType_withWildcard_SubtypingRule extends
   public supertypesOf_StackType_StackType_withWildcard_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_StackType_StackType_withWildcard_SubtypingRule.QuotationClass_p2tngs_a0a0a().createNode(typeCheckingContext);
   }
 

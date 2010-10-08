@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,7 +22,7 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
   public IMapping_interface_supertypeOf_mappingType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode mappingType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode mappingType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new IMapping_interface_supertypeOf_mappingType_SubtypingRule.QuotationClass_chrt0k_a0a0a().createNode(SLinkOperations.getTarget(mappingType, "keyType", true), SLinkOperations.getTarget(mappingType, "valueType", true), typeCheckingContext);
   }
 

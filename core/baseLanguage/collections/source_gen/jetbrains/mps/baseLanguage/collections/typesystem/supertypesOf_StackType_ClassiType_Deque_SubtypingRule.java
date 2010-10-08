@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -22,7 +22,7 @@ public class supertypesOf_StackType_ClassiType_Deque_SubtypingRule extends Subty
   public supertypesOf_StackType_ClassiType_Deque_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_StackType_ClassiType_Deque_SubtypingRule.QuotationClass_sv1i1f_a0a0a().createNode(SLinkOperations.getTarget(stackType, "elementType", true), typeCheckingContext);
   }
 

@@ -22,8 +22,8 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   public sequence_supertypeOf_set_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext) {
-    return new sequence_supertypeOf_set_SubtypingRule.QuotationClass_5z9xz6_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elementType")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new sequence_supertypeOf_set_SubtypingRule.QuotationClass_5z9xz6_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_elementType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

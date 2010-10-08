@@ -16,7 +16,7 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
   public supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.QuotationClass_jf1pf8_a0a0a().createNode(typeCheckingContext);
   }
 

@@ -16,7 +16,7 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
   public supertypesOf_ListType_ListType_withWildcard_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_ListType_ListType_withWildcard_SubtypingRule.QuotationClass_ms4v5r_a0a0a().createNode(typeCheckingContext);
   }
 

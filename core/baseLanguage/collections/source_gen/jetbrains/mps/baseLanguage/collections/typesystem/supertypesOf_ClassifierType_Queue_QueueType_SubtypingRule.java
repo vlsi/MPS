@@ -25,8 +25,8 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
   public supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode classQueueType, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.QuotationClass_4viu4b_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_ELEMENT_TYPE")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode classQueueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.QuotationClass_4viu4b_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_ELEMENT_TYPE")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

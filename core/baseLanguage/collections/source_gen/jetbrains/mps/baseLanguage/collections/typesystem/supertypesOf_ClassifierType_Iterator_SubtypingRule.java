@@ -25,8 +25,8 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   public supertypesOf_ClassifierType_Iterator_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode iterator, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierType_Iterator_SubtypingRule.QuotationClass_36aa7y_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_p")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode iterator, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new supertypesOf_ClassifierType_Iterator_SubtypingRule.QuotationClass_36aa7y_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_p")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

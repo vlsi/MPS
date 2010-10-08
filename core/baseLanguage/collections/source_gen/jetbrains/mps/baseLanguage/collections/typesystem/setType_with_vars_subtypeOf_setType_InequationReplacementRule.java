@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class setType_with_vars_subtypeOf_setType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
@@ -29,11 +31,11 @@ public class setType_with_vars_subtypeOf_setType_InequationReplacementRule exten
     });
   }
 
-  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext) {
+  public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
     // Anyway... there should be the only one child. 
   }
 
-  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
+  public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
     boolean result_14532009 = true;
     // Anyway... there should be the only one child. 
     return result_14532009;
@@ -43,12 +45,18 @@ public class setType_with_vars_subtypeOf_setType_InequationReplacementRule exten
     return true;
   }
 
-  public boolean isApplicableSubtype(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSubtypeConceptFQName());
+  public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSubtypeConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
-  public boolean isApplicableSupertype(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSupertypeConceptFQName());
+  public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableSupertypeConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public String getApplicableSubtypeConceptFQName() {

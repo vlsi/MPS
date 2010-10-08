@@ -16,7 +16,7 @@ public class supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule extends
   public supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.QuotationClass_y0z7r7_a0a0a().createNode(typeCheckingContext);
   }
 

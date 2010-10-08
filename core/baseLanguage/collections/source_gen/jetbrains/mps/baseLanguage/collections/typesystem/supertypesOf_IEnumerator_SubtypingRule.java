@@ -25,8 +25,8 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
   public supertypesOf_IEnumerator_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode enumerator, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_IEnumerator_SubtypingRule.QuotationClass_24ecqj_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_p")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode enumerator, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new supertypesOf_IEnumerator_SubtypingRule.QuotationClass_24ecqj_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_p")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

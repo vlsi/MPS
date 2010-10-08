@@ -6,6 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
@@ -17,7 +19,7 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
   public list_type_comparableWith_List_ComparisonRule() {
   }
 
-  public boolean areComparable(SNode node1, SNode node2) {
+  public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
 
@@ -25,13 +27,20 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
     return true;
   }
 
-  public boolean isApplicable1(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+  public IsApplicableStatus isApplicableFirst(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
-  public boolean isApplicable2(SNode node) {
-    this.myMatchingPattern2 = new list_type_comparableWith_List_ComparisonRule.Pattern_ovtchh_a0a0a0a3();
-    return this.myMatchingPattern2.match(node);
+  public IsApplicableStatus isApplicableSecond(SNode node) {
+    {
+      GeneratedMatchingPattern pattern = new list_type_comparableWith_List_ComparisonRule.Pattern_ovtchh_a0a0a0a3();
+      this.myMatchingPattern2 = pattern;
+      boolean b = pattern.match(node);
+      return new IsApplicableStatus(b, pattern);
+    }
   }
 
   public String getApplicableConceptFQName1() {

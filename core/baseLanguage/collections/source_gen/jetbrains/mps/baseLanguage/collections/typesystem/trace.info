@@ -62,8 +62,6 @@
   <unitInfo fileName="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" startLine="42" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule$QuotationClass_jf1pf8_a0a0a" />
   <unitInfo fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="42" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule$QuotationClass_y0z7r7_a0a0a" />
   <unitInfo fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="42" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ListType_withWildcard_SubtypingRule$QuotationClass_ms4v5r_a0a0a" />
-  <unitInfo fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.containerIterator_subtrypeOf_containerIterator_InequationReplacementRule" />
-  <unitInfo fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.enumerator_subtypeOf_enumerator_InequationReplacementRule" />
   <unitInfo fileName="typeof_DowncastExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_DowncastExpression_InferenceRule" />
   <unitInfo fileName="typeof_ReverseOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ReverseOperation_InferenceRule" />
   <unitInfo fileName="typeof_PushOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_PushOperation_InferenceRule" />
@@ -71,19 +69,19 @@
   <unitInfo fileName="typeof_AddFirstElementOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddFirstElementOperation_InferenceRule" />
   <unitInfo fileName="typeof_RemoveElementOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveElementOperation_InferenceRule" />
   <unitInfo fileName="typeof_AddElementOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddElementOperation_InferenceRule" />
-  <unitInfo fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_subtypeOf_sequence_InequationReplacementRule" />
-  <unitInfo fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.listType_with_vars_subtypeOf_listType_InequationReplacementRule" />
-  <unitInfo fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule" />
+  <unitInfo fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.containerIterator_subtrypeOf_containerIterator_InequationReplacementRule" />
+  <unitInfo fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.enumerator_subtypeOf_enumerator_InequationReplacementRule" />
   <unitInfo fileName="sequence_supertypeOf_set_SubtypingRule.java" startLine="103" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_set_SubtypingRule$Pattern_5z9xz6_a0a0a0a2" />
   <unitInfo fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="108" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.ClassifierType_Set_weakSupertypeOf_set_SubtypingRule$Pattern_jipg91_a0a0a0a2" />
-  <unitInfo fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_equivalent_to_subconcepts_InequationReplacementRule" />
-  <unitInfo fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.iterator_subtypeOf_iterator_InequationReplacementRule" />
-  <unitInfo fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="45" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.list_type_comparableWith_List_ComparisonRule$Pattern_ovtchh_a0a0a0a3" />
-  <unitInfo fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="45" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.stack_type_comparableWith_Deque_ComparisonRule$Pattern_2rsa22_a0a0a0a3" />
-  <unitInfo fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="45" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.deque_type_comparableWith_Deque_ComparisonRule$Pattern_9xe6am_a0a0a0a3" />
-  <unitInfo fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="45" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.queue_type_comparableWith_Queue_ComparisonRule$Pattern_ma7wq5_a0a0a0a3" />
-  <unitInfo fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="45" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_type_comparableWith_Iterable_ComparisonRule$Pattern_sh3asd_a0a0a0a3" />
-  <unitInfo fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="45" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_comparableWith_Set_ComparisonRule$Pattern_3k2v7g_a0a0a0a3" />
+  <unitInfo fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_subtypeOf_sequence_InequationReplacementRule" />
+  <unitInfo fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.listType_with_vars_subtypeOf_listType_InequationReplacementRule" />
+  <unitInfo fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule" />
+  <unitInfo fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.list_type_comparableWith_List_ComparisonRule$Pattern_ovtchh_a0a0a0a3" />
+  <unitInfo fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.stack_type_comparableWith_Deque_ComparisonRule$Pattern_2rsa22_a0a0a0a3" />
+  <unitInfo fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.deque_type_comparableWith_Deque_ComparisonRule$Pattern_9xe6am_a0a0a0a3" />
+  <unitInfo fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.queue_type_comparableWith_Queue_ComparisonRule$Pattern_ma7wq5_a0a0a0a3" />
+  <unitInfo fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_type_comparableWith_Iterable_ComparisonRule$Pattern_sh3asd_a0a0a0a3" />
+  <unitInfo fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_comparableWith_Set_ComparisonRule$Pattern_3k2v7g_a0a0a0a3" />
   <unitInfo fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="106" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule$Pattern_4viu4b_a0a0a0a2" />
   <unitInfo fileName="SortedSet_comparableTo_sorted_set_SubtypingRule.java" startLine="106" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.SortedSet_comparableTo_sorted_set_SubtypingRule$Pattern_9omwya_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_IEnumerator_SubtypingRule.java" startLine="106" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IEnumerator_SubtypingRule$Pattern_24ecqj_a0a0a0a2" />
@@ -91,6 +89,8 @@
   <unitInfo fileName="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" startLine="106" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_weakSupertypeOf_ClassifierType_Set_SubtypingRule$Pattern_lt6k7h_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" startLine="106" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule$Pattern_x5x8gb_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" startLine="106" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ClassifierTypeList_ListType_SubtypingRule$Pattern_u9nlj8_a0a0a0a2" />
+  <unitInfo fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_equivalent_to_subconcepts_InequationReplacementRule" />
+  <unitInfo fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.iterator_subtypeOf_iterator_InequationReplacementRule" />
   <unitInfo fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="41" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.stack_supertypeOf_deque_SubtypingRule$QuotationClass_9c4fxh_a0a0a" />
   <unitInfo fileName="sequence_supertypeOf_stack_SubtypingRule.java" startLine="41" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_stack_SubtypingRule$QuotationClass_1nphrp_a0a0a" />
   <unitInfo fileName="queue_supertypeOf_deque_SubtypingRule.java" startLine="41" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.queue_supertypeOf_deque_SubtypingRule$QuotationClass_if93vt_a0a0a" />
@@ -199,7 +199,7 @@
   <unitInfo fileName="typeof_ToIteratorOperation_InferenceRule.java" startLine="116" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ToIteratorOperation_InferenceRule$QuotationClass_qlsgpf_a0a3a0" />
   <unitInfo fileName="typeof_TakeOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TakeOperation_InferenceRule" />
   <unitInfo fileName="typeof_SkipOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SkipOperation_InferenceRule" />
-  <unitInfo fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="45" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.map_type_comparableWith_Map_ComparisonRule$Pattern_yoc8ci_a0a0a0a3" />
+  <unitInfo fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="54" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.map_type_comparableWith_Map_ComparisonRule$Pattern_yoc8ci_a0a0a0a3" />
   <unitInfo fileName="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" startLine="134" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.mappingType_sypertypeOf_IMapping_interface_SubtypingRule$Pattern_y1o6nk_a0a0a0a2" />
   <unitInfo fileName="SortedMap_comparableTo_sorted_map_SubtypingRule.java" startLine="134" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.SortedMap_comparableTo_sorted_map_SubtypingRule$Pattern_nagdzg_a0a0a0a2" />
   <unitInfo fileName="java_util_Map_extends_map_SubtypingRule.java" startLine="134" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.java_util_Map_extends_map_SubtypingRule$Pattern_cwf9bn_a0a0a0a2" />
@@ -209,7 +209,6 @@
   <unitInfo fileName="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule" />
   <unitInfo fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule" />
   <unitInfo fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ListType_withWildcard_SubtypingRule" />
-  <unitInfo fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="17" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.mapWithTypeVars_subtypeOf_map_InequationReplacementRule" />
   <unitInfo fileName="typeof_RemoveWhereOperation_InferenceRule.java" startLine="72" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveWhereOperation_InferenceRule$QuotationClass_w1as5g_a0a4a0" />
   <unitInfo fileName="typeof_SequenceCreator_InferenceRule.java" startLine="115" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SequenceCreator_InferenceRule$QuotationClass_qzfpnd_a0a0a2a0" />
   <unitInfo fileName="typeof_FindLastOperation_InferenceRule.java" startLine="121" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_FindLastOperation_InferenceRule$QuotationClass_q7hdhc_a0a3a0" />
@@ -221,6 +220,7 @@
   <unitInfo fileName="typeof_SortOperation_InferenceRule.java" startLine="132" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SortOperation_InferenceRule$QuotationClass_6zmwfs_a0a2a0" />
   <unitInfo fileName="typeof_RemoveAtElementOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveAtElementOperation_InferenceRule" />
   <unitInfo fileName="typeof_GetElementOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetElementOperation_InferenceRule" />
+  <unitInfo fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.mapWithTypeVars_subtypeOf_map_InequationReplacementRule" />
   <unitInfo fileName="typeof_IsNotEmptyOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_IsNotEmptyOperation_InferenceRule" />
   <unitInfo fileName="typeof_IsEmptyOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_IsEmptyOperation_InferenceRule" />
   <unitInfo fileName="typeof_SetElementOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SetElementOperation_InferenceRule" />
@@ -271,24 +271,24 @@
   <unitInfo fileName="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" startLine="44" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IMapping_interface_supertypeOf_mappingType_SubtypingRule$QuotationClass_chrt0k_a0a0a" />
   <unitInfo fileName="sorted_map_comparableTo_SortedMap_SubtypingRule.java" startLine="44" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sorted_map_comparableTo_SortedMap_SubtypingRule$QuotationClass_j8vd07_a0a0a" />
   <unitInfo fileName="map_extends_java_util_Map_SubtypingRule.java" startLine="44" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.map_extends_java_util_Map_SubtypingRule$QuotationClass_ngln7_a0a0a" />
-  <unitInfo fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.list_type_comparableWith_List_ComparisonRule" />
-  <unitInfo fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.stack_type_comparableWith_Deque_ComparisonRule" />
-  <unitInfo fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.deque_type_comparableWith_Deque_ComparisonRule" />
-  <unitInfo fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.queue_type_comparableWith_Queue_ComparisonRule" />
-  <unitInfo fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_type_comparableWith_Iterable_ComparisonRule" />
-  <unitInfo fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="12" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_comparableWith_Set_ComparisonRule" />
   <unitInfo fileName="typeof_GetCurrentOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetCurrentOperation_InferenceRule" />
   <unitInfo fileName="typeof_GetNextOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetNextOperation_InferenceRule" />
   <unitInfo fileName="typeof_SingletonSequenceCreator_InferenceRule.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SingletonSequenceCreator_InferenceRule" />
+  <unitInfo fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.list_type_comparableWith_List_ComparisonRule" />
+  <unitInfo fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.stack_type_comparableWith_Deque_ComparisonRule" />
+  <unitInfo fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.deque_type_comparableWith_Deque_ComparisonRule" />
+  <unitInfo fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.queue_type_comparableWith_Queue_ComparisonRule" />
+  <unitInfo fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_type_comparableWith_Iterable_ComparisonRule" />
+  <unitInfo fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_type_comparableWith_Set_ComparisonRule" />
   <unitInfo fileName="typeof_PageOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_PageOperation_InferenceRule" />
   <unitInfo fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="21" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SmartClosureParameterDeclaration_InferenceRule" />
   <unitInfo fileName="typeof_TreeSetCreator_InferenceRule.java" startLine="116" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_TreeSetCreator_InferenceRule$QuotationClass_3g5uu_a0a2a0a0" />
   <unitInfo fileName="typeof_MappingOperation_InferenceRule.java" startLine="122" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MappingOperation_InferenceRule$QuotationClass_ev5xzi_a0a3a0" />
   <unitInfo fileName="typeof_ComparatorSortOperation_InferenceRule.java" startLine="129" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ComparatorSortOperation_InferenceRule$QuotationClass_8czehp_a0a3a0" />
-  <unitInfo fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="12" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.map_type_comparableWith_Map_ComparisonRule" />
   <unitInfo fileName="typeof_ForEachStatement_InferenceRule.java" startLine="20" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ForEachStatement_InferenceRule" />
   <unitInfo fileName="typeof_RemoveSetElementOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_RemoveSetElementOperation_InferenceRule" />
   <unitInfo fileName="typeof_AddSetElementOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AddSetElementOperation_InferenceRule" />
+  <unitInfo fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="14" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.map_type_comparableWith_Map_ComparisonRule" />
   <unitInfo fileName="sortedMap_subtypeOf_map_SubtypingRule.java" startLine="18" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sortedMap_subtypeOf_map_SubtypingRule" />
   <unitInfo fileName="typeof_AbstractContainerCreator_InferenceRule.java" startLine="108" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AbstractContainerCreator_InferenceRule$QuotationClass_eiap6w_a0a1a2a0" />
   <unitInfo fileName="typeof_BinaryOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_BinaryOperation_InferenceRule" />
@@ -376,22 +376,22 @@
   <unitInfo fileName="typeof_GetIteratorOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetIteratorOperation_InferenceRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="16" startPosition="0" endLine="728" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
   <root nodeId="1115463791055875289">
-    <nodeInfo nodeId="1115463791055875333" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="39" endLine="21" endPosition="110" />
-    <nodeInfo nodeId="1115463791055875308" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
-    <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="30" startPosition="157" endLine="31" endPosition="53" />
-    <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="35" startPosition="35" endLine="36" endPosition="53" />
-    <nodeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="19" startPosition="106" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="23" startPosition="102" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="1115463791055875299" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="18" startPosition="69" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1115463791055875332" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="39" endLine="21" endPosition="110" />
-    <scopeInfo nodeId="1115463791055875307" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
-    <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="30" startPosition="157" endLine="31" endPosition="53" />
-    <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="35" startPosition="35" endLine="36" endPosition="53" />
-    <scopeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="19" startPosition="106" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="23" startPosition="102" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1115463791055875296" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="18" startPosition="69" endLine="27" endPosition="7" />
-    <unitInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="19" startPosition="83" endLine="23" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
-    <unitInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="23" startPosition="79" endLine="27" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
+    <nodeInfo nodeId="1115463791055875333" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
+    <nodeInfo nodeId="1115463791055875308" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
+    <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="32" startPosition="185" endLine="33" endPosition="53" />
+    <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" />
+    <nodeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="21" startPosition="106" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="1115463791055875299" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="1115463791055875332" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
+    <scopeInfo nodeId="1115463791055875307" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
+    <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="32" startPosition="185" endLine="33" endPosition="53" />
+    <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" />
+    <scopeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="21" startPosition="106" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1115463791055875296" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="29" endPosition="7" />
+    <unitInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="21" startPosition="83" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
+    <unitInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="25" startPosition="79" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1178725704623">
     <nodeInfo nodeId="1184784036890" fileName="RulesFunctions_Collections.java" startLine="25" startPosition="89" endLine="26" endPosition="23" />
@@ -1222,20 +1222,20 @@
     </scopeInfo>
   </root>
   <root nodeId="1178725705699">
-    <nodeInfo nodeId="1178725705701" fileName="supertypesOf_ListType_SequenceType_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="180" />
-    <scopeInfo nodeId="1178725705700" fileName="supertypesOf_ListType_SequenceType_SubtypingRule.java" startLine="22" startPosition="87" endLine="23" endPosition="180" />
+    <nodeInfo nodeId="1178725705701" fileName="supertypesOf_ListType_SequenceType_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="180" />
+    <scopeInfo nodeId="1178725705700" fileName="supertypesOf_ListType_SequenceType_SubtypingRule.java" startLine="22" startPosition="114" endLine="23" endPosition="180" />
   </root>
   <root nodeId="1178725705709">
-    <nodeInfo nodeId="1178725705711" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="87" endLine="26" endPosition="186" />
-    <scopeInfo nodeId="1178725705710" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="87" endLine="26" endPosition="186" />
+    <nodeInfo nodeId="1178725705711" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="114" endLine="26" endPosition="186" />
+    <scopeInfo nodeId="1178725705710" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="114" endLine="26" endPosition="186" />
   </root>
   <root nodeId="1178725705719">
-    <nodeInfo nodeId="1178725705721" fileName="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" startLine="28" startPosition="87" endLine="29" endPosition="203" />
-    <scopeInfo nodeId="1178725705720" fileName="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" startLine="28" startPosition="87" endLine="29" endPosition="203" />
+    <nodeInfo nodeId="1178725705721" fileName="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" startLine="28" startPosition="114" endLine="29" endPosition="200" />
+    <scopeInfo nodeId="1178725705720" fileName="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" startLine="28" startPosition="114" endLine="29" endPosition="200" />
   </root>
   <root nodeId="1178881531250">
-    <nodeInfo nodeId="1178881599082" fileName="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" startLine="28" startPosition="105" endLine="29" endPosition="204" />
-    <scopeInfo nodeId="1178881531251" fileName="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" startLine="28" startPosition="105" endLine="29" endPosition="204" />
+    <nodeInfo nodeId="1178881599082" fileName="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" startLine="28" startPosition="132" endLine="29" endPosition="201" />
+    <scopeInfo nodeId="1178881531251" fileName="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" startLine="28" startPosition="132" endLine="29" endPosition="201" />
   </root>
   <root nodeId="1178899814661">
     <nodeInfo nodeId="1184785386681" fileName="typeof_DistinctOperation_InferenceRule.java" startLine="16" startPosition="115" endLine="17" endPosition="81" />
@@ -1413,12 +1413,12 @@
     <unitInfo nodeId="1179160244196" fileName="TypeUtil_Collections.java" startLine="22" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypeUtil_Collections" />
   </root>
   <root nodeId="1179262299939">
-    <nodeInfo nodeId="1179262412845" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="87" endLine="26" endPosition="194" />
-    <scopeInfo nodeId="1179262299940" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="87" endLine="26" endPosition="194" />
+    <nodeInfo nodeId="1179262412845" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="114" endLine="26" endPosition="194" />
+    <scopeInfo nodeId="1179262299940" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="114" endLine="26" endPosition="194" />
   </root>
   <root nodeId="1179272327821">
-    <nodeInfo nodeId="1179272408184" fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="19" startPosition="87" endLine="20" endPosition="135" />
-    <scopeInfo nodeId="1179272327822" fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="19" startPosition="87" endLine="20" endPosition="135" />
+    <nodeInfo nodeId="1179272408184" fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="135" />
+    <scopeInfo nodeId="1179272327822" fileName="supertypesOf_ListType_ListType_withWildcard_SubtypingRule.java" startLine="19" startPosition="114" endLine="20" endPosition="135" />
   </root>
   <root nodeId="1184970373516">
     <nodeInfo nodeId="1184970400755" fileName="typeof_ToArrayOperation_InferenceRule.java" startLine="23" startPosition="129" endLine="24" endPosition="93" />
@@ -1484,12 +1484,12 @@
     <scopeInfo nodeId="1198083415475" fileName="typeof_MapElement_InferenceRule.java" startLine="24" startPosition="123" endLine="46" endPosition="5" />
   </root>
   <root nodeId="1198165935901">
-    <nodeInfo nodeId="1198165982252" fileName="map_extends_java_util_Map_SubtypingRule.java" startLine="25" startPosition="90" endLine="26" endPosition="224" />
-    <scopeInfo nodeId="1198165935902" fileName="map_extends_java_util_Map_SubtypingRule.java" startLine="25" startPosition="90" endLine="26" endPosition="224" />
+    <nodeInfo nodeId="1198165982252" fileName="map_extends_java_util_Map_SubtypingRule.java" startLine="25" startPosition="117" endLine="26" endPosition="224" />
+    <scopeInfo nodeId="1198165935902" fileName="map_extends_java_util_Map_SubtypingRule.java" startLine="25" startPosition="117" endLine="26" endPosition="224" />
   </root>
   <root nodeId="1198166032007">
-    <nodeInfo nodeId="1198166091720" fileName="java_util_Map_extends_map_SubtypingRule.java" startLine="28" startPosition="90" endLine="29" endPosition="259" />
-    <scopeInfo nodeId="1198166032008" fileName="java_util_Map_extends_map_SubtypingRule.java" startLine="28" startPosition="90" endLine="29" endPosition="259" />
+    <nodeInfo nodeId="1198166091720" fileName="java_util_Map_extends_map_SubtypingRule.java" startLine="28" startPosition="117" endLine="29" endPosition="253" />
+    <scopeInfo nodeId="1198166032008" fileName="java_util_Map_extends_map_SubtypingRule.java" startLine="28" startPosition="117" endLine="29" endPosition="253" />
   </root>
   <root nodeId="1201872573502">
     <nodeInfo nodeId="1201873006966" fileName="typeof_ContainsKeyOperation_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="62" />
@@ -1616,7 +1616,7 @@
     <scopeInfo nodeId="1202129057671" fileName="typeof_SelectOperation_InferenceRule.java" startLine="25" startPosition="115" endLine="54" endPosition="5" />
   </root>
   <root nodeId="1203341187034">
-    <nodeInfo nodeId="1241361724926" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="28" startPosition="92" endLine="29" endPosition="68" />
+    <nodeInfo nodeId="1241361724926" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="28" startPosition="119" endLine="29" endPosition="68" />
     <nodeInfo nodeId="1241361760096" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="30" startPosition="223" endLine="31" endPosition="58" />
     <nodeInfo nodeId="1241361777942" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="31" startPosition="58" endLine="32" endPosition="77" />
     <nodeInfo nodeId="1203342961853" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="33" startPosition="54" endLine="34" endPosition="67" />
@@ -1630,7 +1630,7 @@
     <scopeInfo nodeId="1203342752980" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="30" startPosition="223" endLine="36" endPosition="7">
       <varInfo nodeId="1241361777943" varName="ptypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1203341187035" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="28" startPosition="92" endLine="38" endPosition="15">
+    <scopeInfo nodeId="1203341187035" fileName="supertypesOf_ISequence_class_SubtypingRule.java" startLine="28" startPosition="119" endLine="38" endPosition="15">
       <varInfo nodeId="1241361724927" varName="res" />
     </scopeInfo>
   </root>
@@ -2066,38 +2066,38 @@
     <scopeInfo nodeId="1226594103504" fileName="typeof_RemoveAllSetElementsOperation_InferenceRule.java" startLine="25" startPosition="122" endLine="46" endPosition="5" />
   </root>
   <root nodeId="1226598429206">
-    <nodeInfo nodeId="1226598588376" fileName="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" startLine="28" startPosition="86" endLine="29" endPosition="204" />
-    <scopeInfo nodeId="1226598429207" fileName="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" startLine="28" startPosition="86" endLine="29" endPosition="204" />
+    <nodeInfo nodeId="1226598588376" fileName="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" startLine="28" startPosition="113" endLine="29" endPosition="201" />
+    <scopeInfo nodeId="1226598429207" fileName="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" startLine="28" startPosition="113" endLine="29" endPosition="201" />
   </root>
   <root nodeId="1226598870189">
-    <nodeInfo nodeId="1226598901185" fileName="sequence_supertypeOf_set_SubtypingRule.java" startLine="25" startPosition="86" endLine="26" endPosition="190" />
-    <scopeInfo nodeId="1226598870190" fileName="sequence_supertypeOf_set_SubtypingRule.java" startLine="25" startPosition="86" endLine="26" endPosition="190" />
+    <nodeInfo nodeId="1226598901185" fileName="sequence_supertypeOf_set_SubtypingRule.java" startLine="25" startPosition="113" endLine="26" endPosition="187" />
+    <scopeInfo nodeId="1226598870190" fileName="sequence_supertypeOf_set_SubtypingRule.java" startLine="25" startPosition="113" endLine="26" endPosition="187" />
   </root>
   <root nodeId="1226598928538">
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="25" startPosition="166" endLine="26" endPosition="53" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="53" endLine="27" endPosition="55" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="27" startPosition="55" endLine="28" endPosition="277" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="28" startPosition="277" endLine="29" endPosition="70" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="32" endPosition="73" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="32" startPosition="73" endLine="33" endPosition="53" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="33" startPosition="53" endLine="34" endPosition="222" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="34" startPosition="222" endLine="35" endPosition="62" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="35" startPosition="62" endLine="36" endPosition="192" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="42" startPosition="166" endLine="43" endPosition="30" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="197" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="41" startPosition="35" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="24" startPosition="157" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="42" startPosition="166" endLine="43" endPosition="30" />
-    <scopeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="45" endPosition="197" />
-    <scopeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="25" startPosition="166" endLine="29" endPosition="70" />
-    <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="41" startPosition="35" endLine="45" endPosition="197" />
-    <scopeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="36" endPosition="192" />
-    <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="24" startPosition="157" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="27" startPosition="166" endLine="28" endPosition="53" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="28" startPosition="53" endLine="29" endPosition="55" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="29" startPosition="55" endLine="30" endPosition="277" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="30" startPosition="277" endLine="31" endPosition="70" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="33" startPosition="5" endLine="34" endPosition="73" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="34" startPosition="73" endLine="35" endPosition="53" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="35" startPosition="53" endLine="36" endPosition="222" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="36" startPosition="222" endLine="37" endPosition="62" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="37" startPosition="62" endLine="38" endPosition="192" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="166" endLine="45" endPosition="30" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="46" startPosition="5" endLine="47" endPosition="197" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="43" startPosition="35" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="44" startPosition="166" endLine="45" endPosition="30" />
+    <scopeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="46" startPosition="5" endLine="47" endPosition="197" />
+    <scopeInfo nodeId="1240249913658" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="27" startPosition="166" endLine="31" endPosition="70" />
+    <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="43" startPosition="35" endLine="47" endPosition="197" />
+    <scopeInfo nodeId="1241473625701" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="33" startPosition="5" endLine="38" endPosition="192" />
+    <scopeInfo nodeId="1226598928540" fileName="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="39" endPosition="5" />
   </root>
   <root nodeId="1226599215753">
-    <nodeInfo nodeId="1226599255596" fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="28" startPosition="86" endLine="29" endPosition="204" />
-    <scopeInfo nodeId="1226599215754" fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="28" startPosition="86" endLine="29" endPosition="204" />
+    <nodeInfo nodeId="1226599255596" fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="28" startPosition="113" endLine="29" endPosition="201" />
+    <scopeInfo nodeId="1226599215754" fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="28" startPosition="113" endLine="29" endPosition="201" />
   </root>
   <root nodeId="1226934632457">
     <nodeInfo nodeId="1226934681270" fileName="typeof_ClearSetOperation_InferenceRule.java" startLine="24" startPosition="122" endLine="25" endPosition="104" />
@@ -2335,35 +2335,35 @@
     </scopeInfo>
   </root>
   <root nodeId="1237469184035">
-    <nodeInfo nodeId="1237469865564" fileName="supertypesOf_IteratorType_SubtypingRule.java" startLine="25" startPosition="95" endLine="26" endPosition="178" />
-    <scopeInfo nodeId="1237469184036" fileName="supertypesOf_IteratorType_SubtypingRule.java" startLine="25" startPosition="95" endLine="26" endPosition="178" />
+    <nodeInfo nodeId="1237469865564" fileName="supertypesOf_IteratorType_SubtypingRule.java" startLine="25" startPosition="122" endLine="26" endPosition="178" />
+    <scopeInfo nodeId="1237469184036" fileName="supertypesOf_IteratorType_SubtypingRule.java" startLine="25" startPosition="122" endLine="26" endPosition="178" />
   </root>
   <root nodeId="1237469274783">
-    <nodeInfo nodeId="1237469942895" fileName="supertypesOf_ClassifierType_Iterator_SubtypingRule.java" startLine="28" startPosition="91" endLine="29" endPosition="192" />
-    <scopeInfo nodeId="1237469274784" fileName="supertypesOf_ClassifierType_Iterator_SubtypingRule.java" startLine="28" startPosition="91" endLine="29" endPosition="192" />
+    <nodeInfo nodeId="1237469942895" fileName="supertypesOf_ClassifierType_Iterator_SubtypingRule.java" startLine="28" startPosition="118" endLine="29" endPosition="189" />
+    <scopeInfo nodeId="1237469274784" fileName="supertypesOf_ClassifierType_Iterator_SubtypingRule.java" startLine="28" startPosition="118" endLine="29" endPosition="189" />
   </root>
   <root nodeId="1237470007043">
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="25" startPosition="166" endLine="26" endPosition="53" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="53" endLine="27" endPosition="55" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="27" startPosition="55" endLine="28" endPosition="277" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="28" startPosition="277" endLine="29" endPosition="70" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="32" endPosition="73" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="32" startPosition="73" endLine="33" endPosition="53" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="33" startPosition="53" endLine="34" endPosition="222" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="34" startPosition="222" endLine="35" endPosition="62" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="35" startPosition="62" endLine="36" endPosition="54" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="36" startPosition="54" endLine="37" endPosition="209" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="43" startPosition="166" endLine="44" endPosition="30" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="45" startPosition="5" endLine="46" endPosition="237" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="42" startPosition="35" endLine="45" endPosition="5" />
-    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="24" startPosition="157" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="43" startPosition="166" endLine="44" endPosition="30" />
-    <scopeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="45" startPosition="5" endLine="46" endPosition="237" />
-    <scopeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="25" startPosition="166" endLine="29" endPosition="70" />
-    <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="42" startPosition="35" endLine="46" endPosition="237" />
-    <scopeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="37" endPosition="209" />
-    <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="24" startPosition="157" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="27" startPosition="166" endLine="28" endPosition="53" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="28" startPosition="53" endLine="29" endPosition="55" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="29" startPosition="55" endLine="30" endPosition="277" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="30" startPosition="277" endLine="31" endPosition="70" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="33" startPosition="5" endLine="34" endPosition="73" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="34" startPosition="73" endLine="35" endPosition="53" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="35" startPosition="53" endLine="36" endPosition="222" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="36" startPosition="222" endLine="37" endPosition="62" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="37" startPosition="62" endLine="38" endPosition="54" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="38" startPosition="54" endLine="39" endPosition="209" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="45" startPosition="166" endLine="46" endPosition="30" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="47" startPosition="5" endLine="48" endPosition="237" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="45" startPosition="166" endLine="46" endPosition="30" />
+    <scopeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="47" startPosition="5" endLine="48" endPosition="237" />
+    <scopeInfo nodeId="1240153585729" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="27" startPosition="166" endLine="31" endPosition="70" />
+    <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="48" endPosition="237" />
+    <scopeInfo nodeId="1237470147423" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="33" startPosition="5" endLine="39" endPosition="209" />
+    <scopeInfo nodeId="1237470007045" fileName="iterator_subtypeOf_iterator_InequationReplacementRule.java" startLine="26" startPosition="185" endLine="40" endPosition="5" />
   </root>
   <root nodeId="1237470333097">
     <nodeInfo nodeId="1237470428123" fileName="typeof_GetIteratorOperation_InferenceRule.java" startLine="24" startPosition="121" endLine="25" endPosition="104" />
@@ -2494,30 +2494,30 @@
     <scopeInfo nodeId="1237471184665" fileName="typeof_MoveNextOperation_InferenceRule.java" startLine="24" startPosition="121" endLine="38" endPosition="5" />
   </root>
   <root nodeId="1237496559130">
-    <nodeInfo nodeId="1237496623456" fileName="supertypesOf_EnumeratorType_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="183" />
-    <scopeInfo nodeId="1237496559131" fileName="supertypesOf_EnumeratorType_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="183" />
+    <nodeInfo nodeId="1237496623456" fileName="supertypesOf_EnumeratorType_SubtypingRule.java" startLine="25" startPosition="124" endLine="26" endPosition="183" />
+    <scopeInfo nodeId="1237496559131" fileName="supertypesOf_EnumeratorType_SubtypingRule.java" startLine="25" startPosition="124" endLine="26" endPosition="183" />
   </root>
   <root nodeId="1237496656054">
-    <nodeInfo nodeId="1237496697088" fileName="supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="196" />
-    <scopeInfo nodeId="1237496656055" fileName="supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" startLine="22" startPosition="97" endLine="23" endPosition="196" />
+    <nodeInfo nodeId="1237496697088" fileName="supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="196" />
+    <scopeInfo nodeId="1237496656055" fileName="supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="196" />
   </root>
   <root nodeId="1237496715796">
-    <nodeInfo nodeId="1237496748592" fileName="supertypesOf_IEnumerator_SubtypingRule.java" startLine="28" startPosition="93" endLine="29" endPosition="180" />
-    <scopeInfo nodeId="1237496715797" fileName="supertypesOf_IEnumerator_SubtypingRule.java" startLine="28" startPosition="93" endLine="29" endPosition="180" />
+    <nodeInfo nodeId="1237496748592" fileName="supertypesOf_IEnumerator_SubtypingRule.java" startLine="28" startPosition="120" endLine="29" endPosition="177" />
+    <scopeInfo nodeId="1237496715797" fileName="supertypesOf_IEnumerator_SubtypingRule.java" startLine="28" startPosition="120" endLine="29" endPosition="177" />
   </root>
   <root nodeId="1237496769944">
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="19" startPosition="5" endLine="20" endPosition="73" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="20" startPosition="73" endLine="21" endPosition="53" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="21" startPosition="53" endLine="22" endPosition="222" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="22" startPosition="222" endLine="23" endPosition="62" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="23" startPosition="62" endLine="24" endPosition="54" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="24" startPosition="54" endLine="25" endPosition="209" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="30" startPosition="35" endLine="31" endPosition="237" />
-    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="18" startPosition="157" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="30" startPosition="35" endLine="31" endPosition="237" />
-    <scopeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="30" startPosition="35" endLine="31" endPosition="237" />
-    <scopeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="19" startPosition="5" endLine="25" endPosition="209" />
-    <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="18" startPosition="157" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="21" startPosition="5" endLine="22" endPosition="73" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="22" startPosition="73" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="23" startPosition="53" endLine="24" endPosition="222" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="24" startPosition="222" endLine="25" endPosition="62" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="25" startPosition="62" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="26" startPosition="54" endLine="27" endPosition="209" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="237" />
+    <nodeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="20" startPosition="185" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="237" />
+    <scopeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="237" />
+    <scopeInfo nodeId="1237496801702" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="21" startPosition="5" endLine="27" endPosition="209" />
+    <scopeInfo nodeId="1237496769946" fileName="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" startLine="20" startPosition="185" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1237549316054">
     <nodeInfo nodeId="1237549347223" fileName="typeof_GetEnumeratorOperation_InferenceRule.java" startLine="24" startPosition="123" endLine="25" endPosition="104" />
@@ -2647,22 +2647,22 @@
     <scopeInfo nodeId="1237909243403" fileName="typeof_GetValuesOperation_InferenceRule.java" startLine="24" startPosition="115" endLine="39" endPosition="5" />
   </root>
   <root nodeId="1240151356714">
-    <nodeInfo nodeId="1240151408821" fileName="supertypesOf_ContainerIteratorType_SubtypingRule.java" startLine="22" startPosition="86" endLine="23" endPosition="179" />
-    <scopeInfo nodeId="1240151356715" fileName="supertypesOf_ContainerIteratorType_SubtypingRule.java" startLine="22" startPosition="86" endLine="23" endPosition="179" />
+    <nodeInfo nodeId="1240151408821" fileName="supertypesOf_ContainerIteratorType_SubtypingRule.java" startLine="22" startPosition="113" endLine="23" endPosition="179" />
+    <scopeInfo nodeId="1240151356715" fileName="supertypesOf_ContainerIteratorType_SubtypingRule.java" startLine="22" startPosition="113" endLine="23" endPosition="179" />
   </root>
   <root nodeId="1240151461838">
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="19" startPosition="5" endLine="20" endPosition="73" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="20" startPosition="73" endLine="21" endPosition="53" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="21" startPosition="53" endLine="22" endPosition="222" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="22" startPosition="222" endLine="23" endPosition="62" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="23" startPosition="62" endLine="24" endPosition="54" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="24" startPosition="54" endLine="25" endPosition="209" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="30" startPosition="35" endLine="31" endPosition="237" />
-    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="18" startPosition="157" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="30" startPosition="35" endLine="31" endPosition="237" />
-    <scopeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="30" startPosition="35" endLine="31" endPosition="237" />
-    <scopeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="19" startPosition="5" endLine="25" endPosition="209" />
-    <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="18" startPosition="157" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="21" startPosition="5" endLine="22" endPosition="73" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="22" startPosition="73" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="23" startPosition="53" endLine="24" endPosition="222" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="24" startPosition="222" endLine="25" endPosition="62" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="25" startPosition="62" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="26" startPosition="54" endLine="27" endPosition="209" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="237" />
+    <nodeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="20" startPosition="185" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="237" />
+    <scopeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="237" />
+    <scopeInfo nodeId="1240151505426" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="21" startPosition="5" endLine="27" endPosition="209" />
+    <scopeInfo nodeId="1240151461840" fileName="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" startLine="20" startPosition="185" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1240151619985">
     <nodeInfo nodeId="1240151823485" fileName="typeof_RemoveOperation_InferenceRule.java" startLine="24" startPosition="122" endLine="25" endPosition="105" />
@@ -2682,8 +2682,8 @@
     <scopeInfo nodeId="1240151619986" fileName="typeof_RemoveOperation_InferenceRule.java" startLine="24" startPosition="122" endLine="38" endPosition="5" />
   </root>
   <root nodeId="1240239213915">
-    <nodeInfo nodeId="1240240706015" fileName="sortedMap_subtypeOf_map_SubtypingRule.java" startLine="22" startPosition="96" endLine="23" endPosition="235" />
-    <scopeInfo nodeId="1240239213916" fileName="sortedMap_subtypeOf_map_SubtypingRule.java" startLine="22" startPosition="96" endLine="23" endPosition="235" />
+    <nodeInfo nodeId="1240240706015" fileName="sortedMap_subtypeOf_map_SubtypingRule.java" startLine="22" startPosition="123" endLine="23" endPosition="235" />
+    <scopeInfo nodeId="1240239213916" fileName="sortedMap_subtypeOf_map_SubtypingRule.java" startLine="22" startPosition="123" endLine="23" endPosition="235" />
   </root>
   <root nodeId="1240239578560">
     <nodeInfo nodeId="1240239601988" fileName="typeof_TreeMapCreator_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="49" />
@@ -2856,24 +2856,24 @@
     <scopeInfo nodeId="1240251724630" fileName="typeof_SubSetOperation_InferenceRule.java" startLine="25" startPosition="122" endLine="53" endPosition="5" />
   </root>
   <root nodeId="1240252125253">
-    <nodeInfo nodeId="1240253050698" fileName="SortedMap_comparableTo_sorted_map_SubtypingRule.java" startLine="28" startPosition="92" endLine="29" endPosition="259" />
-    <scopeInfo nodeId="1240252125254" fileName="SortedMap_comparableTo_sorted_map_SubtypingRule.java" startLine="28" startPosition="92" endLine="29" endPosition="259" />
+    <nodeInfo nodeId="1240253050698" fileName="SortedMap_comparableTo_sorted_map_SubtypingRule.java" startLine="28" startPosition="119" endLine="29" endPosition="253" />
+    <scopeInfo nodeId="1240252125254" fileName="SortedMap_comparableTo_sorted_map_SubtypingRule.java" startLine="28" startPosition="119" endLine="29" endPosition="253" />
   </root>
   <root nodeId="1240252246637">
-    <nodeInfo nodeId="1240253065222" fileName="sorted_map_comparableTo_SortedMap_SubtypingRule.java" startLine="25" startPosition="96" endLine="26" endPosition="245" />
-    <scopeInfo nodeId="1240252246638" fileName="sorted_map_comparableTo_SortedMap_SubtypingRule.java" startLine="25" startPosition="96" endLine="26" endPosition="245" />
+    <nodeInfo nodeId="1240253065222" fileName="sorted_map_comparableTo_SortedMap_SubtypingRule.java" startLine="25" startPosition="123" endLine="26" endPosition="245" />
+    <scopeInfo nodeId="1240252246638" fileName="sorted_map_comparableTo_SortedMap_SubtypingRule.java" startLine="25" startPosition="123" endLine="26" endPosition="245" />
   </root>
   <root nodeId="1240252404452">
-    <nodeInfo nodeId="1240253019884" fileName="SortedSet_comparableTo_sorted_set_SubtypingRule.java" startLine="28" startPosition="92" endLine="29" endPosition="195" />
-    <scopeInfo nodeId="1240252404453" fileName="SortedSet_comparableTo_sorted_set_SubtypingRule.java" startLine="28" startPosition="92" endLine="29" endPosition="195" />
+    <nodeInfo nodeId="1240253019884" fileName="SortedSet_comparableTo_sorted_set_SubtypingRule.java" startLine="28" startPosition="119" endLine="29" endPosition="192" />
+    <scopeInfo nodeId="1240252404453" fileName="SortedSet_comparableTo_sorted_set_SubtypingRule.java" startLine="28" startPosition="119" endLine="29" endPosition="192" />
   </root>
   <root nodeId="1240252457931">
-    <nodeInfo nodeId="1240252789516" fileName="sorted_set_comparableTo_SortedSet_SubtypingRule.java" startLine="25" startPosition="96" endLine="26" endPosition="188" />
-    <scopeInfo nodeId="1240252457932" fileName="sorted_set_comparableTo_SortedSet_SubtypingRule.java" startLine="25" startPosition="96" endLine="26" endPosition="188" />
+    <nodeInfo nodeId="1240252789516" fileName="sorted_set_comparableTo_SortedSet_SubtypingRule.java" startLine="25" startPosition="123" endLine="26" endPosition="188" />
+    <scopeInfo nodeId="1240252457932" fileName="sorted_set_comparableTo_SortedSet_SubtypingRule.java" startLine="25" startPosition="123" endLine="26" endPosition="188" />
   </root>
   <root nodeId="1240252516761">
-    <nodeInfo nodeId="1240252778651" fileName="sorted_set_subtypeOf_set_SubtypingRule.java" startLine="22" startPosition="96" endLine="23" endPosition="179" />
-    <scopeInfo nodeId="1240252516762" fileName="sorted_set_subtypeOf_set_SubtypingRule.java" startLine="22" startPosition="96" endLine="23" endPosition="179" />
+    <nodeInfo nodeId="1240252778651" fileName="sorted_set_subtypeOf_set_SubtypingRule.java" startLine="22" startPosition="123" endLine="23" endPosition="179" />
+    <scopeInfo nodeId="1240252516762" fileName="sorted_set_subtypeOf_set_SubtypingRule.java" startLine="22" startPosition="123" endLine="23" endPosition="179" />
   </root>
   <root nodeId="1240319956157">
     <nodeInfo nodeId="1240320006906" fileName="check_container_creator_not_primitive_array_NonTypesystemRule.java" startLine="26" startPosition="5" endLine="27" endPosition="136" />
@@ -2940,12 +2940,12 @@
     <scopeInfo nodeId="1240687811539" fileName="typeof_JoinOperation_InferenceRule.java" startLine="25" startPosition="122" endLine="54" endPosition="5" />
   </root>
   <root nodeId="1240824145431">
-    <nodeInfo nodeId="1240826015617" fileName="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" startLine="25" startPosition="94" endLine="26" endPosition="250" />
-    <scopeInfo nodeId="1240824145432" fileName="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" startLine="25" startPosition="94" endLine="26" endPosition="250" />
+    <nodeInfo nodeId="1240826015617" fileName="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" startLine="25" startPosition="121" endLine="26" endPosition="250" />
+    <scopeInfo nodeId="1240824145432" fileName="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" startLine="25" startPosition="121" endLine="26" endPosition="250" />
   </root>
   <root nodeId="1240824401992">
-    <nodeInfo nodeId="1240826025185" fileName="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" startLine="28" startPosition="89" endLine="29" endPosition="268" />
-    <scopeInfo nodeId="1240824401993" fileName="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" startLine="28" startPosition="89" endLine="29" endPosition="268" />
+    <nodeInfo nodeId="1240826025185" fileName="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" startLine="28" startPosition="116" endLine="29" endPosition="262" />
+    <scopeInfo nodeId="1240824401993" fileName="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" startLine="28" startPosition="116" endLine="29" endPosition="262" />
   </root>
   <root nodeId="1240825492651">
     <nodeInfo nodeId="1240825584221" fileName="typeof_ValueAccessOperation_InferenceRule.java" startLine="24" startPosition="122" endLine="25" endPosition="96" />
@@ -3009,9 +3009,9 @@
     <scopeInfo nodeId="1240854419721" fileName="typeof_MappingsSetOperation_InferenceRule.java" startLine="24" startPosition="122" endLine="46" endPosition="5" />
   </root>
   <root nodeId="1240857007399">
-    <nodeInfo nodeId="1240857089236" fileName="sequence_supertypeOf_map_SubtypingRule.java" startLine="22" startPosition="90" endLine="23" endPosition="238" />
+    <nodeInfo nodeId="1240857089236" fileName="sequence_supertypeOf_map_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="238" />
     <nodeInfo nodeId="1240857046028" fileName="sequence_supertypeOf_map_SubtypingRule.java" startLine="23" startPosition="238" endLine="24" endPosition="129" />
-    <scopeInfo nodeId="1240857007400" fileName="sequence_supertypeOf_map_SubtypingRule.java" startLine="22" startPosition="90" endLine="24" endPosition="129">
+    <scopeInfo nodeId="1240857007400" fileName="sequence_supertypeOf_map_SubtypingRule.java" startLine="22" startPosition="117" endLine="24" endPosition="129">
       <varInfo nodeId="1240857089237" varName="mappingType" />
     </scopeInfo>
   </root>
@@ -3041,20 +3041,20 @@
     <scopeInfo nodeId="1240906947629" fileName="typeof_PutAllOperation_InferenceRule.java" startLine="25" startPosition="122" endLine="47" endPosition="5" />
   </root>
   <root nodeId="1241437869459">
-    <nodeInfo nodeId="1241438003084" fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="1241437869461" fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1241438003084" fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1241437869461" fileName="set_type_comparableWith_Set_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="1241438170772">
-    <nodeInfo nodeId="1241438219887" fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="1241438170774" fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1241438219887" fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1241438170774" fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="1241438229076">
-    <nodeInfo nodeId="1241438258821" fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="1241438229078" fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1241438258821" fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1241438229078" fileName="map_type_comparableWith_Map_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="1241438271946">
-    <nodeInfo nodeId="1241438337158" fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="1241438271948" fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1241438337158" fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1241438271948" fileName="sequence_type_comparableWith_Iterable_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="1279588871815200404">
     <nodeInfo nodeId="1279588871815202423" fileName="typeof_CustomContainerDeclaration_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="91" />
@@ -3069,46 +3069,46 @@
     <scopeInfo nodeId="1279588871815200405" fileName="typeof_CustomContainerDeclaration_InferenceRule.java" startLine="19" startPosition="116" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1434634659123637361">
-    <nodeInfo nodeId="1434634659123639431" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="38" endLine="24" endPosition="109" />
-    <nodeInfo nodeId="1434634659123639517" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="27" startPosition="38" endLine="28" endPosition="109" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="35" startPosition="7" endLine="36" endPosition="75" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="36" startPosition="75" endLine="37" endPosition="55" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="37" startPosition="55" endLine="38" endPosition="230" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="38" startPosition="230" endLine="39" endPosition="64" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="39" startPosition="64" endLine="40" endPosition="186" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="44" startPosition="7" endLine="45" endPosition="75" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="45" startPosition="75" endLine="46" endPosition="55" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="46" startPosition="55" endLine="47" endPosition="230" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="47" startPosition="230" endLine="48" endPosition="64" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="48" startPosition="64" endLine="49" endPosition="190" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="56" startPosition="157" endLine="57" endPosition="191" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="59" startPosition="159" endLine="60" endPosition="195" />
-    <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="55" startPosition="35" endLine="58" endPosition="5" />
-    <nodeInfo nodeId="1434634659123764044" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="58" startPosition="5" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="22" startPosition="106" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="26" startPosition="102" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="157" endLine="41" endPosition="7" />
-    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="43" startPosition="159" endLine="50" endPosition="7" />
-    <nodeInfo nodeId="1434634659123639366" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="30" endPosition="7" />
-    <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="33" startPosition="157" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="1434634659123764044" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="1434634659123639430" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="38" endLine="24" endPosition="109" />
-    <scopeInfo nodeId="1434634659123639506" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="27" startPosition="38" endLine="28" endPosition="109" />
-    <scopeInfo nodeId="1434634659123763895" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="56" startPosition="157" endLine="57" endPosition="191" />
-    <scopeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="56" startPosition="157" endLine="57" endPosition="191" />
-    <scopeInfo nodeId="1434634659123764045" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="59" startPosition="159" endLine="60" endPosition="195" />
-    <scopeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="59" startPosition="159" endLine="60" endPosition="195" />
-    <scopeInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="22" startPosition="106" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="26" startPosition="102" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="35" startPosition="7" endLine="40" endPosition="186" />
-    <scopeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="44" startPosition="7" endLine="49" endPosition="190" />
-    <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="55" startPosition="35" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1434634659123763895" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="157" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="1434634659123764045" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="43" startPosition="159" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="1434634659123637373" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="33" startPosition="157" endLine="51" endPosition="5" />
-    <unitInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="22" startPosition="83" endLine="26" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
-    <unitInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="26" startPosition="79" endLine="30" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
+    <nodeInfo nodeId="1434634659123639431" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="25" startPosition="38" endLine="26" endPosition="109" />
+    <nodeInfo nodeId="1434634659123639517" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="29" startPosition="38" endLine="30" endPosition="109" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="37" startPosition="7" endLine="38" endPosition="75" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="38" startPosition="75" endLine="39" endPosition="55" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="39" startPosition="55" endLine="40" endPosition="230" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="40" startPosition="230" endLine="41" endPosition="64" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="41" startPosition="64" endLine="42" endPosition="186" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="46" startPosition="7" endLine="47" endPosition="75" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="47" startPosition="75" endLine="48" endPosition="55" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="48" startPosition="55" endLine="49" endPosition="230" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="49" startPosition="230" endLine="50" endPosition="64" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="50" startPosition="64" endLine="51" endPosition="190" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="58" startPosition="157" endLine="59" endPosition="191" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="61" startPosition="159" endLine="62" endPosition="195" />
+    <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="57" startPosition="35" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="1434634659123764044" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="60" startPosition="5" endLine="63" endPosition="5" />
+    <nodeInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="24" startPosition="106" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="28" startPosition="102" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="36" startPosition="157" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="45" startPosition="159" endLine="52" endPosition="7" />
+    <nodeInfo nodeId="1434634659123639366" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="69" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="35" startPosition="185" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="1434634659123764044" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="44" startPosition="5" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1434634659123639430" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="25" startPosition="38" endLine="26" endPosition="109" />
+    <scopeInfo nodeId="1434634659123639506" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="29" startPosition="38" endLine="30" endPosition="109" />
+    <scopeInfo nodeId="1434634659123763895" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="58" startPosition="157" endLine="59" endPosition="191" />
+    <scopeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="58" startPosition="157" endLine="59" endPosition="191" />
+    <scopeInfo nodeId="1434634659123764045" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="61" startPosition="159" endLine="62" endPosition="195" />
+    <scopeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="61" startPosition="159" endLine="62" endPosition="195" />
+    <scopeInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="24" startPosition="106" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="28" startPosition="102" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="37" startPosition="7" endLine="42" endPosition="186" />
+    <scopeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="46" startPosition="7" endLine="51" endPosition="190" />
+    <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="57" startPosition="35" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="1434634659123763895" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="36" startPosition="157" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="1434634659123764045" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="45" startPosition="159" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1434634659123637373" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="69" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="1434634659123637363" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="35" startPosition="185" endLine="53" endPosition="5" />
+    <unitInfo nodeId="1434634659123639429" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="24" startPosition="83" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
+    <unitInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="28" startPosition="79" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1522217801069359740">
     <nodeInfo nodeId="1522217801069359744" fileName="typeof_ReduceLeftOperation_InferenceRule.java" startLine="25" startPosition="122" endLine="26" endPosition="110" />
@@ -3250,20 +3250,20 @@
     <scopeInfo nodeId="2261417478148990391" fileName="typeof_TreeSetCreator_InferenceRule.java" startLine="24" startPosition="127" endLine="41" endPosition="5" />
   </root>
   <root nodeId="2976448425532784006">
-    <nodeInfo nodeId="2976448425532787438" fileName="sequence_supertypeOf_queue_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="177" />
-    <scopeInfo nodeId="2976448425532784007" fileName="sequence_supertypeOf_queue_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="177" />
+    <nodeInfo nodeId="2976448425532787438" fileName="sequence_supertypeOf_queue_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="177" />
+    <scopeInfo nodeId="2976448425532784007" fileName="sequence_supertypeOf_queue_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="177" />
   </root>
   <root nodeId="2976448425532787456">
-    <nodeInfo nodeId="2976448425532787469" fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="2976448425532787458" fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="2976448425532787469" fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="2976448425532787458" fileName="queue_type_comparableWith_Queue_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="2976448425532787472">
-    <nodeInfo nodeId="2976448425532787478" fileName="supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="190" />
-    <scopeInfo nodeId="2976448425532787473" fileName="supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="190" />
+    <nodeInfo nodeId="2976448425532787478" fileName="supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="190" />
+    <scopeInfo nodeId="2976448425532787473" fileName="supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="190" />
   </root>
   <root nodeId="2976448425532787493">
-    <nodeInfo nodeId="2976448425532787504" fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="28" startPosition="97" endLine="29" endPosition="210" />
-    <scopeInfo nodeId="2976448425532787494" fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="28" startPosition="97" endLine="29" endPosition="210" />
+    <nodeInfo nodeId="2976448425532787504" fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="28" startPosition="124" endLine="29" endPosition="207" />
+    <scopeInfo nodeId="2976448425532787494" fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="28" startPosition="124" endLine="29" endPosition="207" />
   </root>
   <root nodeId="3055999550620863368">
     <nodeInfo nodeId="3055999550620863371" fileName="typeof_RemoveWhereOperation_InferenceRule.java" startLine="26" startPosition="116" endLine="27" endPosition="109" />
@@ -3338,54 +3338,54 @@
     <scopeInfo nodeId="3358009230508799530" fileName="typeof_PushOperation_InferenceRule.java" startLine="21" startPosition="115" endLine="42" endPosition="5" />
   </root>
   <root nodeId="3358009230509562498">
-    <nodeInfo nodeId="3358009230509562504" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="25" startPosition="93" endLine="26" endPosition="45" />
+    <nodeInfo nodeId="3358009230509562504" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="25" startPosition="120" endLine="26" endPosition="45" />
     <nodeInfo nodeId="3358009230509562511" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="26" startPosition="45" endLine="27" endPosition="202" />
     <nodeInfo nodeId="3358009230509562536" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="27" startPosition="202" endLine="28" endPosition="202" />
     <nodeInfo nodeId="3358009230509562558" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="28" startPosition="202" endLine="29" endPosition="202" />
     <nodeInfo nodeId="3358009230509562597" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="29" startPosition="202" endLine="30" endPosition="15" />
-    <scopeInfo nodeId="3358009230509562499" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="25" startPosition="93" endLine="30" endPosition="15">
+    <scopeInfo nodeId="3358009230509562499" fileName="supertypesOf_linkedlist_SubtypingRule.java" startLine="25" startPosition="120" endLine="30" endPosition="15">
       <varInfo nodeId="3358009230509562505" varName="res" />
     </scopeInfo>
   </root>
   <root nodeId="3524442294805830747">
-    <nodeInfo nodeId="3524442294805834186" fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="137" />
-    <scopeInfo nodeId="3524442294805830748" fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="137" />
+    <nodeInfo nodeId="3524442294805834186" fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="137" />
+    <scopeInfo nodeId="3524442294805830748" fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="137" />
   </root>
   <root nodeId="4498918741262504537">
-    <nodeInfo nodeId="4498918741262504608" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
-    <nodeInfo nodeId="4498918741262504730" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
-    <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="32" startPosition="157" endLine="33" endPosition="53" />
-    <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" />
-    <nodeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="21" startPosition="262" endLine="25" endPosition="0" />
-    <nodeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="4498918741262504545" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="4498918741262504600" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
-    <scopeInfo nodeId="4498918741262504717" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
-    <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="32" startPosition="157" endLine="33" endPosition="53" />
-    <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" />
-    <scopeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="21" startPosition="262" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4498918741262504544" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="29" endPosition="7" />
-    <unitInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="21" startPosition="239" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
-    <unitInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="25" startPosition="79" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
+    <nodeInfo nodeId="4498918741262504608" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
+    <nodeInfo nodeId="4498918741262504730" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="28" startPosition="39" endLine="29" endPosition="110" />
+    <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="34" startPosition="185" endLine="35" endPosition="53" />
+    <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="40" endPosition="53" />
+    <nodeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="23" startPosition="262" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="27" startPosition="102" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="4498918741262504545" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="4498918741262504600" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
+    <scopeInfo nodeId="4498918741262504717" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="28" startPosition="39" endLine="29" endPosition="110" />
+    <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="34" startPosition="185" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="40" endPosition="53" />
+    <scopeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="23" startPosition="262" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="27" startPosition="102" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="4498918741262504544" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="69" endLine="31" endPosition="7" />
+    <unitInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="23" startPosition="239" endLine="27" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
+    <unitInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="27" startPosition="79" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.typesystem.IWhereFilter$anonymous" />
   </root>
   <root nodeId="5108199730660923207">
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="20" startPosition="7" endLine="21" endPosition="75" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="21" startPosition="75" endLine="22" endPosition="55" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="22" startPosition="55" endLine="23" endPosition="230" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="23" startPosition="230" endLine="24" endPosition="64" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="24" startPosition="64" endLine="25" endPosition="56" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="25" startPosition="56" endLine="26" endPosition="211" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="33" startPosition="78" endLine="34" endPosition="239" />
-    <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="35" endPosition="5" />
-    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="19" startPosition="78" endLine="27" endPosition="7" />
-    <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="18" startPosition="157" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="33" startPosition="78" endLine="34" endPosition="239" />
-    <scopeInfo nodeId="5661972054202985632" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="33" startPosition="78" endLine="34" endPosition="239" />
-    <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="20" startPosition="7" endLine="26" endPosition="211" />
-    <scopeInfo nodeId="5661972054202985632" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="19" startPosition="78" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="18" startPosition="157" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="22" startPosition="7" endLine="23" endPosition="75" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="23" startPosition="75" endLine="24" endPosition="55" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="24" startPosition="55" endLine="25" endPosition="230" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="25" startPosition="230" endLine="26" endPosition="64" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="26" startPosition="64" endLine="27" endPosition="56" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="27" startPosition="56" endLine="28" endPosition="211" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="35" startPosition="78" endLine="36" endPosition="239" />
+    <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="21" startPosition="78" endLine="29" endPosition="7" />
+    <nodeInfo nodeId="5661972054202985631" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="20" startPosition="185" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="35" startPosition="78" endLine="36" endPosition="239" />
+    <scopeInfo nodeId="5661972054202985632" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="35" startPosition="78" endLine="36" endPosition="239" />
+    <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="34" startPosition="35" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="5108199730660924415" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="22" startPosition="7" endLine="28" endPosition="211" />
+    <scopeInfo nodeId="5661972054202985632" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="21" startPosition="78" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="5108199730660923209" fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="20" startPosition="185" endLine="30" endPosition="5" />
   </root>
   <root nodeId="5192033827214196961">
     <nodeInfo nodeId="5192033827214196968" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="22" startPosition="116" endLine="23" endPosition="56" />
@@ -3524,40 +3524,40 @@
     <scopeInfo nodeId="6126991172893688511" fileName="typeof_ContainsAllOperation_InferenceRule.java" startLine="25" startPosition="115" endLine="53" endPosition="5" />
   </root>
   <root nodeId="6801639034384703215">
-    <nodeInfo nodeId="6801639034384703217" fileName="supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="190" />
-    <scopeInfo nodeId="6801639034384703216" fileName="supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="190" />
+    <nodeInfo nodeId="6801639034384703217" fileName="supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="190" />
+    <scopeInfo nodeId="6801639034384703216" fileName="supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="190" />
   </root>
   <root nodeId="6801639034384706562">
-    <nodeInfo nodeId="6801639034384706564" fileName="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="137" />
-    <scopeInfo nodeId="6801639034384706563" fileName="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="137" />
+    <nodeInfo nodeId="6801639034384706564" fileName="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="137" />
+    <scopeInfo nodeId="6801639034384706563" fileName="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="137" />
   </root>
   <root nodeId="6801639034384706572">
-    <nodeInfo nodeId="6801639034384706579" fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="6801639034384706578" fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="6801639034384706579" fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="6801639034384706578" fileName="deque_type_comparableWith_Deque_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="6801639034384706583">
-    <nodeInfo nodeId="6801639034384706585" fileName="queue_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="174" />
-    <scopeInfo nodeId="6801639034384706584" fileName="queue_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="174" />
+    <nodeInfo nodeId="6801639034384706585" fileName="queue_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="174" />
+    <scopeInfo nodeId="6801639034384706584" fileName="queue_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="174" />
   </root>
   <root nodeId="6801639034384800409">
-    <nodeInfo nodeId="6801639034384800411" fileName="supertypesOf_StackType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="190" />
-    <scopeInfo nodeId="6801639034384800410" fileName="supertypesOf_StackType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="92" endLine="26" endPosition="190" />
+    <nodeInfo nodeId="6801639034384800411" fileName="supertypesOf_StackType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="190" />
+    <scopeInfo nodeId="6801639034384800410" fileName="supertypesOf_StackType_ClassiType_Deque_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="190" />
   </root>
   <root nodeId="6801639034384801580">
-    <nodeInfo nodeId="6801639034384801582" fileName="supertypesOf_StackType_StackType_withWildcard_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="137" />
-    <scopeInfo nodeId="6801639034384801581" fileName="supertypesOf_StackType_StackType_withWildcard_SubtypingRule.java" startLine="19" startPosition="92" endLine="20" endPosition="137" />
+    <nodeInfo nodeId="6801639034384801582" fileName="supertypesOf_StackType_StackType_withWildcard_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="137" />
+    <scopeInfo nodeId="6801639034384801581" fileName="supertypesOf_StackType_StackType_withWildcard_SubtypingRule.java" startLine="19" startPosition="119" endLine="20" endPosition="137" />
   </root>
   <root nodeId="6801639034384806465">
-    <nodeInfo nodeId="6801639034384806472" fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="6801639034384806471" fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="6801639034384806472" fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="6801639034384806471" fileName="stack_type_comparableWith_Deque_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="6801639034384806476">
-    <nodeInfo nodeId="6801639034384806478" fileName="sequence_supertypeOf_stack_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="177" />
-    <scopeInfo nodeId="6801639034384806477" fileName="sequence_supertypeOf_stack_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="177" />
+    <nodeInfo nodeId="6801639034384806478" fileName="sequence_supertypeOf_stack_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="177" />
+    <scopeInfo nodeId="6801639034384806477" fileName="sequence_supertypeOf_stack_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="177" />
   </root>
   <root nodeId="6801639034384806488">
-    <nodeInfo nodeId="6801639034384806490" fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="174" />
-    <scopeInfo nodeId="6801639034384806489" fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="92" endLine="23" endPosition="174" />
+    <nodeInfo nodeId="6801639034384806490" fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="174" />
+    <scopeInfo nodeId="6801639034384806489" fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="174" />
   </root>
 </debugInfo>
 

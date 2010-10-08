@@ -25,8 +25,8 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   public mappingType_sypertypeOf_IMapping_interface_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext) {
-    return new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.QuotationClass_y1o6nk_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_KEY")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar_VALUE")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.QuotationClass_y1o6nk_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_KEY")), ((SNode) status.getPattern().getFieldValue("PatternVar_VALUE")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

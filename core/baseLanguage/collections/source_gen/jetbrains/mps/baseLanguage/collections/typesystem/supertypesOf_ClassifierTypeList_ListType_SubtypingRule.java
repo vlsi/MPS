@@ -25,8 +25,8 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   public supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.QuotationClass_u9nlj8_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elemType")), typeCheckingContext);
+  public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.QuotationClass_u9nlj8_a0a0a().createNode(((SNode) status.getPattern().getFieldValue("PatternVar_elemType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
