@@ -26257,5 +26257,55 @@
       <link role="concept:3" targetNodeId="1.1068580123140:3" resolveInfo="ConstructorDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="7854098281915049056">
+    <property name="name:3" value="check_InstanceOf" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7854098281915049057">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.MatchStatement:3" id="7854098281915102836">
+        <node role="item:3" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem:3" id="7854098281915102838">
+          <node role="condition:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7854098281915102844">
+            <property name="name:3" value="classifierType" />
+            <link role="concept:3" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
+          </node>
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7854098281915102840">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7854098281915102845">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7854098281915102854">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7854098281915102849">
+                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7854098281915102848">
+                    <link role="applicableNode:3" targetNodeId="7854098281915102844" resolveInfo="classifierType" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="7854098281915102853">
+                    <link role="link:16" targetNodeId="1.1109201940907:3" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="7854098281915102858" />
+              </node>
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7854098281915102847">
+                <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="7854098281915151107">
+                  <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7854098281915151110">
+                    <property name="value:3" value="parameterized type in instanceof is not allowed" />
+                  </node>
+                  <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7854098281915151111">
+                    <link role="applicableNode:3" targetNodeId="7854098281915102844" resolveInfo="classifierType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7854098281915102841">
+          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7854098281915102842">
+            <link role="applicableNode:3" targetNodeId="7854098281915059583" resolveInfo="instanceOfExpression" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7854098281915102843">
+            <link role="link:16" targetNodeId="1.1081256993305:3" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7854098281915059583">
+      <property name="name:3" value="instanceOfExpression" />
+      <link role="concept:3" targetNodeId="1.1081256982272:3" resolveInfo="InstanceOfExpression" />
+    </node>
+  </node>
 </model>
 
