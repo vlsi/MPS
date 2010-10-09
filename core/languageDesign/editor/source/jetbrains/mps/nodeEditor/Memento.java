@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
+import org.jdom.Element;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -35,6 +36,8 @@ class Memento {
   private Integer mySelectionEnd;
   private SNode myFirstRangeSelectionNode;
   private SNode myLastRangeSelectionNode;
+
+  private Memento() {}
 
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
@@ -188,5 +191,72 @@ class Memento {
       "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
       "  foldedCells = " + myFolded + "\n" +
       "]\n";
+  }
+
+  private static final String SELECTED_CELL = "selectedCell";
+  private static final String SELECTED_STACK = "selectedStack";
+  private static final String STACK_ELEMENT = "stackElement";
+  private static final String FOLDED = "folded";
+  private static final String FOLDED_ELEMENT = "foldedElement";
+
+  public void save(Element e) {
+    if (mySelectedCellInfo instanceof DefaultCellInfo) {
+        Element cellElem = new Element(SELECTED_CELL);
+        ((DefaultCellInfo)mySelectedCellInfo).saveTo(cellElem);
+        e.addContent(cellElem);
+    }
+    Element selectedStack = new Element(SELECTED_STACK);
+    boolean success = true;
+    for (CellInfo cellInfo : mySelectedStack) {
+      if (cellInfo instanceof DefaultCellInfo) {
+        Element stackElement = new Element(STACK_ELEMENT);
+        ((DefaultCellInfo)cellInfo).saveTo(stackElement);
+        selectedStack.addContent(stackElement);
+      } else {
+        success = false;
+        break;
+      }
+    }
+    if (success) {
+      e.addContent(selectedStack);
+    }
+    success = true;
+    Element folded = new Element(FOLDED);
+    for (CellInfo cellInfo : myFolded) {
+      if (cellInfo instanceof DefaultCellInfo) {
+        Element foldedElement = new Element(FOLDED_ELEMENT);
+        ((DefaultCellInfo)cellInfo).saveTo(foldedElement);
+        folded.addContent(foldedElement);
+      } else {
+        success = false;
+        break;
+      }
+    }
+    if (success) {
+      e.addContent(folded);
+    }
+  }
+
+  public static Memento load(Element e) {
+    Memento memento = new Memento();
+    Element selectedCell = e.getChild(SELECTED_CELL);
+    if (selectedCell != null) {
+      memento.mySelectedCellInfo = DefaultCellInfo.loadFrom(selectedCell);
+    }
+    Element selectedStack = e.getChild(SELECTED_STACK);
+    if (selectedStack != null) {
+      List children = selectedStack.getChildren(STACK_ELEMENT);
+      for (Object o : children) {
+        memento.mySelectedStack.add(DefaultCellInfo.loadFrom((Element) o));
+      }
+    }
+    Element folded = e.getChild(FOLDED);
+    if (folded != null) {
+      List children = folded.getChildren(FOLDED_ELEMENT);
+      for (Object o : children) {
+        memento.myFolded.add(DefaultCellInfo.loadFrom((Element) o));
+      }
+    }
+    return memento;
   }
 }

@@ -147,10 +147,10 @@ public class NodeEditor implements IEditor {
       if (editorComponent != null) {
         EditorComponent inspector = editorComponent.getInspector();
         result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
-        EditorCell selectedCell = editorComponent.getSelectedCell();
+       /* EditorCell selectedCell = editorComponent.getSelectedCell();
         if (selectedCell != null) {
           result.mySelectedCell = new DefaultCellInfo(selectedCell);
-        }
+        }*/
       }
     }
     return result;
@@ -171,7 +171,7 @@ public class NodeEditor implements IEditor {
         editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
       }
     }
-    if (s.myIsExternal && s.mySelectedCell != null) {
+    /*if (s.myIsExternal && s.mySelectedCell != null) {
       NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
       if (editorComponent != null) {
         EditorCell closestCell = s.mySelectedCell.findClosestCell(editorComponent);
@@ -179,29 +179,38 @@ public class NodeEditor implements IEditor {
           editorComponent.changeSelection(closestCell);
         }
       }
-    }
+    }*/
   }
 
   public static class MyFileEditorState implements MPSEditorState {
-    private static final String SELECTED_CELL = "selectedCell";
+    private static final String MEMENTO = "memento";
+    private static final String INSPECTOR_MEMENTO = "inspectorMemento";
 
     private Object myMemento;
     private Object myInspectorMemento;
     private boolean myIsExternal = false;
-    private DefaultCellInfo mySelectedCell;
 
     public void save(Element e) {
-      if (mySelectedCell != null) {
-        Element cellElem = new Element(SELECTED_CELL);
-        mySelectedCell.saveTo(cellElem);
-        e.addContent(cellElem);
+      if (myMemento != null) {
+        Element mementoElem = new Element(MEMENTO);
+        MementoPersistence.saveMemento(myMemento, mementoElem);
+        e.addContent(mementoElem);
+      }
+      if (myInspectorMemento != null) {
+        Element mementoElem = new Element(INSPECTOR_MEMENTO);
+        MementoPersistence.saveMemento(myInspectorMemento, mementoElem);
+        e.addContent(mementoElem);
       }
     }
 
     public void load(Element e) {
-      Element cellElem = e.getChild(SELECTED_CELL);
-      if (cellElem != null) {
-        mySelectedCell = DefaultCellInfo.loadFrom(cellElem);
+      Element mementoElem = e.getChild(MEMENTO);
+      if (mementoElem != null) {
+        myMemento = MementoPersistence.loadMemento(mementoElem);
+      }
+      Element inspectorMementoElem = e.getChild(MEMENTO);
+      if (inspectorMementoElem != null) {
+        myInspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
       }
       myIsExternal = true;
     }
