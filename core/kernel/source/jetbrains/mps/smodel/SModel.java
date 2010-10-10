@@ -735,89 +735,6 @@ public class SModel {
     return null;
   }
 
-  //validation
-
-  public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
-    ModelChange.assertLegalChange(this);
-
-    GlobalScope scope = GlobalScope.getInstance();
-    SModelDescriptor modelDescriptor = this.getModelDescriptor();
-    IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
-    Set<ModuleReference> usedLanguages = getLanguageRefs(scope);
-    Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModelDescriptor sm : allImportedModels(scope)) {
-      importedModels.add(sm.getSModelReference());
-    }
-    for (SNode node : nodes()) {
-      Language lang = node.getLanguage(scope);
-      if (lang == null) {
-        LOG.error("Can't find language " + node.getLanguageNamespace());
-        continue;
-      }
-      ModuleReference ref = lang.getModuleReference();
-      if (!usedLanguages.contains(ref)) {
-        if (module != null) {
-          if (respectModulesScopes && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(ref);
-          }
-        }
-
-        usedLanguages.add(ref);
-
-        addLanguage(ref, firstVersion);
-      }
-
-      for (SReference reference : node.getReferencesIterable()) {
-        if (reference.isExternal()) {
-          SModelReference targetModelReference = reference.getTargetSModelReference();
-          if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            if (respectModulesScopes && module != null) {
-              SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-              IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-              if (targetModule != null && !module.getDependenciesManager().getAllDependOnModules().contains(targetModule)) {
-                module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
-              }
-            }
-            addImportedModel(targetModelReference, firstVersion);
-            importedModels.add(targetModelReference);
-          }
-        }
-      }
-    }
-    importedModels.clear();
-  }
-
-  void validateLanguages(SNode node) {
-    Collection<ModuleReference> allrefs = getLanguageRefs(GlobalScope.getInstance());
-    Set<String> available = new HashSet<String>(allrefs.size());
-    for (ModuleReference ref : allrefs) {
-      available.add(ref.getModuleFqName());
-    }
-    for (SNode n : node.getDescendantsIterable(null, true)) {
-      String namespace = n.getLanguageNamespace();
-      if (!available.contains(namespace)) {
-        available.add(namespace);
-        Language lang = GlobalScope.getInstance().getLanguage(namespace);
-        if (lang != null) {
-          addLanguage_internal(lang.getModuleReference());
-          // add language also to module if necessary
-          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
-          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(lang.getModuleReference());
-          }
-        }
-      }
-    }
-  }
-
-
-
-
-
-
-
-
-
   public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
     ModelChange.assertLegalChange(this);
 
@@ -1287,5 +1204,29 @@ public class SModel {
       resultNodes.addAll(aModel.myRoots);
     }
     return resultNodes;
+  }
+
+  @Deprecated
+  void validateLanguages(SNode node) {
+    Collection<ModuleReference> allrefs = getLanguageRefs(GlobalScope.getInstance());
+    Set<String> available = new HashSet<String>(allrefs.size());
+    for (ModuleReference ref : allrefs) {
+      available.add(ref.getModuleFqName());
+    }
+    for (SNode n : node.getDescendantsIterable(null, true)) {
+      String namespace = n.getLanguageNamespace();
+      if (!available.contains(namespace)) {
+        available.add(namespace);
+        Language lang = GlobalScope.getInstance().getLanguage(namespace);
+        if (lang != null) {
+          addLanguage_internal(lang.getModuleReference());
+          // add language also to module if necessary
+          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
+          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+            module.addUsedLanguage(lang.getModuleReference());
+          }
+        }
+      }
+    }
   }
 }

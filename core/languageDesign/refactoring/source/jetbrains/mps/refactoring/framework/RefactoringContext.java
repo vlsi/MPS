@@ -200,7 +200,7 @@ public class RefactoringContext {
     for (SNode node : sourceNodes) {
       node.delete();
     }
-    targetModel.validateLanguagesAndImports(false, true);
+    SModelOperations.validateLanguagesAndImports(targetModel, false, true);
     // targetModel.addImportedModel(sourceModel.getUID());
     return targetNodes;
   }

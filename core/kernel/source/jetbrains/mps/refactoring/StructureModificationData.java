@@ -633,7 +633,7 @@ public class StructureModificationData {
         }
       }
     }
-    model.validateLanguagesAndImports(true, true);  // not a good place for this validation, should be on higher level or exact import adding
+    SModelOperations.validateLanguagesAndImports(model, true, true);  // not a good place for this validation, should be on higher level or exact import adding
   }
 
 

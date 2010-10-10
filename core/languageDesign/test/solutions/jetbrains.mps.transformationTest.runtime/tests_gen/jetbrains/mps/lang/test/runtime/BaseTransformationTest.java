@@ -23,7 +23,7 @@ public class BaseTransformationTest extends TestCase {
   private static ProjectContainer myContainer = new ProjectContainer();
 
   private SModelDescriptor myModel;
-  private SModelDescriptor myTransidentModel;
+  private SModelDescriptor myTransientModel;
   private MPSProject myProject;
   private TemporaryModelOwner myModelOwner;
 
@@ -59,13 +59,13 @@ public class BaseTransformationTest extends TestCase {
 
   public final void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModel = modelDescriptor;
-    myTransidentModel = ProjectModels.createDescriptorFor(myModelOwner = new TemporaryModelOwner());
-    myTransidentModel.getSModel().runLoadingAction(new Runnable() {
+    myTransientModel = ProjectModels.createDescriptorFor(myModelOwner = new TemporaryModelOwner());
+    myTransientModel.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        CloneUtil.cloneModel(myModel.getSModel(), myTransidentModel.getSModel(), false);
+        CloneUtil.cloneModel(myModel.getSModel(), myTransientModel.getSModel(), false);
       }
     });
-    myTransidentModel.getSModel().validateLanguagesAndImports(false, false);
+    SModelOperations.validateLanguagesAndImports(myTransientModel.getSModel(),false, false);
   }
 
   public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {
@@ -79,7 +79,7 @@ public class BaseTransformationTest extends TestCase {
       }
     });
     final Object obj = clazz.value.newInstance();
-    clazz.value.getField("myModel").set(obj, this.myTransidentModel);
+    clazz.value.getField("myModel").set(obj, this.myTransientModel);
     clazz.value.getField("myProject").set(obj, this.myProject);
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
@@ -97,7 +97,7 @@ public class BaseTransformationTest extends TestCase {
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().removeModelDescriptor(myTransidentModel);
+        SModelRepository.getInstance().removeModelDescriptor(myTransientModel);
         myModelOwner.unregisterModelOwner();
       }
     });

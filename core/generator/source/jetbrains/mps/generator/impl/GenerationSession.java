@@ -29,10 +29,7 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -108,16 +105,16 @@ public class GenerationSession {
           myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
       }
 
-      if(!filter.getRequiredRoots().isEmpty() || filter.requireConditionals()) {
+      if (!filter.getRequiredRoots().isEmpty() || filter.requireConditionals()) {
         myLogger.info((!filter.requireConditionals() ? "" : "descriptors and ") + filter.getRequiredRoots().size() + " roots can be used from cache");
       }
 
-      if(myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
+      if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
         myLogger.info("Processing:");
-        for(SNode node : myOriginalInputModel.getSModel().roots()) {
-          if(filter.getRequiredRoots().contains(node)) {
+        for (SNode node : myOriginalInputModel.getSModel().roots()) {
+          if (filter.getRequiredRoots().contains(node)) {
             myLogger.info(node.getName() + " (cache)");
-          } else if(!filter.getIgnoredRoots().contains(node)) {
+          } else if (!filter.getIgnoredRoots().contains(node)) {
             myLogger.info(node.getName());
           }
         }
@@ -173,8 +170,8 @@ public class GenerationSession {
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + e);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     } finally {
-      if(myNewCache != null) {
-        if(success) {
+      if (myNewCache != null) {
+        if (success) {
           myNewCache.store();
         } else {
           myNewCache.remove();
@@ -234,7 +231,7 @@ public class GenerationSession {
     }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
-      currentOutputModel.validateLanguagesAndImports(false, false);
+      SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
       myDependenciesBuilder.updateModel(currentOutputModel);
       recycleWasteModel(currentInputModel);
       return currentOutputModel;
@@ -245,7 +242,7 @@ public class GenerationSession {
     // -----------------------
     int secondaryMappingRepeatCount = 1;
     while (true) {
-      currentOutputModel.validateLanguagesAndImports(false, false);
+      SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
       myDependenciesBuilder.updateModel(currentOutputModel);
 
       // apply mapping to the output model
@@ -321,7 +318,7 @@ public class GenerationSession {
     } else {
       hasChanges = tg.apply(isPrimary);
     }
-    if(myNewCache != null && (isPrimary || hasChanges)) {
+    if (myNewCache != null && (isPrimary || hasChanges)) {
       ttrace.push("saving cache", false);
       TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, myDependenciesBuilder);
       tg.getMappings().export(modelWithMetaInfo, myDependenciesBuilder);
@@ -383,7 +380,7 @@ public class GenerationSession {
     }
     if (needToCloneInputModel) {
       myDependenciesBuilder.scriptApplied(currentInputModel);
-      if(myNewCache != null) {
+      if (myNewCache != null) {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
@@ -432,7 +429,7 @@ public class GenerationSession {
     }
     if (needToCloneModel) {
       myDependenciesBuilder.scriptApplied(currentModel);
-      if(myNewCache != null) {
+      if (myNewCache != null) {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
