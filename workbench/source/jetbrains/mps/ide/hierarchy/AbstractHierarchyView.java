@@ -21,11 +21,8 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
@@ -155,13 +152,11 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     BaseAction action = new BaseAction("Show Hierarchy For Concept") {
       protected void doExecute(AnActionEvent e) {
         List<SNode> nodes = new ArrayList<SNode>();
-        for (SModelDescriptor model : myContext.getScope().getModelDescriptors()) {
-          if (SModelStereotype.isStubModelStereotype(model.getStereotype())) continue;
-          AbstractConceptDeclaration decl = SModelUtil_new.findConceptDeclaration(aClass.getName(), GlobalScope.getInstance());
-          String name = NameUtil.nodeFQName(decl);
-
-          List<SNode> nlist = model.getSModel().getFastNodeFinder().getNodes(name, true);
-          nodes.addAll(nlist);
+        for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
+          if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) continue;
+          for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
+            if (aClass.isInstance(node)) nodes.add(node.getNode());
+          }
         }
 
         CommonChoosers.showSimpleNodeChooser(nodes, new ChooserCallback<SNode>() {
