@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement;
 import jetbrains.mps.lang.typesystem.structure.NormalTypeClause;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
@@ -32,9 +31,7 @@ public class RefactorModelUtil {
     try {
       model.setLoading(true);
       boolean modified = false;
-      for (SNode es : model.roots()) {
-        if (!(es.isInstanceOfConcept(AbstractEquationStatement.concept))) continue;
-
+      for (SNode es : model.getFastNodeFinder().getNodes(AbstractEquationStatement.concept, true)) {
         INodeAdapter left = es.getChild(AbstractEquationStatement.LEFT_EXPRESSION).getAdapter();
         INodeAdapter right = es.getChild(AbstractEquationStatement.RIGHT_EXPRESSION).getAdapter();
         if (left instanceof Expression) {

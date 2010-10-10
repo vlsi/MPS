@@ -63,9 +63,7 @@ public class SideTransformHintSubstituteActionsHelper {
       for (Language language : languages) {
         SModelDescriptor actionsModel = language.getActionsModelDescriptor();
         if (actionsModel == null || actionsModel.getSModel() == null) continue;
-        for (SNode builder : actionsModel.getSModel().roots()) {
-          if (!(builder.getAdapter() instanceof SideTransformHintSubstituteActionsBuilder)) continue;
-
+        for (SNode builder : actionsModel.getSModel().getFastNodeFinder().getNodes(SideTransformHintSubstituteActionsBuilder.concept, true)) {
           SideTransformHintSubstituteActionsBuilder adapter = (SideTransformHintSubstituteActionsBuilder) builder.getAdapter();
           for (SideTransformTag tag : myTransformTags) {
             if (isApplicable(adapter, tag, sourceConcept)) return true;
