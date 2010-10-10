@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.util.containers.EmptyIterator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -229,9 +230,9 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
-  //---------nodes manipulation--------
+  //---------roots manipulation--------
 
-  public Iterable<SNode> roots() {
+  public final Iterable<SNode> roots() {
     return new Iterable<SNode>() {
       public Iterator<SNode> iterator() {
         return rootsIterator();
@@ -239,19 +240,14 @@ public class SModel implements Iterable<SNode> {
     };
   }
 
-  @NotNull
   public Iterator<SNode> rootsIterator() {
     return myRoots.iterator();
-  }
-
-  public boolean isRoot(@Nullable SNode node) {
-    return myRoots.contains(node);
   }
 
   public void addRoot(@NotNull SNode node) {
     ModelChange.assertLegalNodeRegistration(this, node);
     if (myRoots.contains(node)) return;
-    if (node.getModel() != this && node.getModel().isRoot(node)) {
+    if (node.getModel() != this && node.isRoot()) {
       node.getModel().removeRoot(node);
     } else {
       SNode parent = node.getParent();
@@ -280,12 +276,26 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public int registeredNodesCount() {
-    return myIdToNodeMap.size();
-  }
-
   public int rootsCount() {
     return myRoots.size();
+  }
+
+  //---------nodes manipulation--------
+
+  public final Iterable<SNode> nodes() {
+    return new Iterable<SNode>() {
+      public Iterator<SNode> iterator() {
+        return nodesIterator();
+      }
+    };
+  }
+
+  public Iterator<SNode> nodesIterator() {
+    return new NodesIterator(rootsIterator());
+  }
+
+  public int registeredNodesCount() {
+    return myIdToNodeMap.size();
   }
 
   public void clearAdaptersAndUserObjects() {
@@ -1181,6 +1191,12 @@ public class SModel implements Iterable<SNode> {
     myRoots.clear();
   }
 
+  //this method is only for access from SNode. Use SNode.isRoot from outer code
+
+  boolean isRoot(@Nullable SNode node) {
+    return myRoots.contains(node);
+  }
+
   public void changeModelReference(SModelReference newModelReference) {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1334,6 +1350,44 @@ public class SModel implements Iterable<SNode> {
       result = 31 * result + myReferenceID;
       result = 31 * result + myUsedVersion;
       return result;
+    }
+  }
+
+  private class NodesIterator implements Iterator<SNode> {
+    private Iterator<SNode> myRoots;
+    private Iterator<SNode> myCurrent;
+
+    private NodesIterator(Iterator<SNode> roots) {
+      myRoots = roots;
+      myCurrent = getIterForNextRoot(roots);
+    }
+
+    public boolean hasNext() {
+      moveToNextRootIfNeeded();
+      return myCurrent.hasNext();
+    }
+
+    public SNode next() {
+      moveToNextRootIfNeeded();
+      return myCurrent.next();
+    }
+
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+
+    private void moveToNextRootIfNeeded() {
+      if (myCurrent.hasNext()) return;
+      if (!myRoots.hasNext()) return;
+
+      while (myRoots.hasNext() && !(myCurrent.hasNext())) {
+        myCurrent = getIterForNextRoot(myRoots);
+      }
+    }
+
+    private Iterator<SNode> getIterForNextRoot(Iterator<SNode> roots) {
+      if (!roots.hasNext()) return new EmptyIterator<SNode>();
+      return roots.next().getDescendantsIterable(null, true).iterator();
     }
   }
 }
