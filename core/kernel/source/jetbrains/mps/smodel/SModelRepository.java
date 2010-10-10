@@ -356,7 +356,6 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelDescriptor sm : getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
-
       if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor)) {
         markChanged(((EditableSModelDescriptor) sm), true);
       }

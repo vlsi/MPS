@@ -947,11 +947,69 @@ public class SModel {
     fireImportAddedEvent(myReference);
   }
 
-  //--------- --------
+  public static class ImportElement {
+    private SModelReference myModelReference;
+    private int myReferenceID;
+    private int myUsedVersion;
+
+    public ImportElement(SModelReference modelReference, int referenceID) {
+      this(modelReference, referenceID, -1);
+    }
+
+    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
+      myModelReference = modelReference;
+      myReferenceID = referenceID;
+      myUsedVersion = usedVersion;
+    }
+
+    public SModelReference getModelReference() {
+      return myModelReference;
+    }
+
+    public int getReferenceID() {
+      return myReferenceID;
+    }
+
+    public int getUsedVersion() {
+      return myUsedVersion;
+    }
+
+    public String toString() {
+      return "ImportElement(" +
+        "uid=" + myModelReference + ", " +
+        "referenceId=" + myReferenceID + ", " +
+        "usedVersion=" + myUsedVersion + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      ImportElement that = (ImportElement) o;
+
+      if (myReferenceID != that.myReferenceID) return false;
+      if (myUsedVersion != that.myUsedVersion) return false;
+      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
+        return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = myModelReference != null ? myModelReference.hashCode() : 0;
+      result = 31 * result + myReferenceID;
+      result = 31 * result + myUsedVersion;
+      return result;
+    }
+  }
+
+  //--------- stuff --------
 
   @NotNull
   public String toString() {
-    return this.getSModelReference().toString();
+    return getSModelReference().toString();
   }
 
   public void dispose() {
@@ -965,24 +1023,6 @@ public class SModel {
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
-  }
-
-  //this method is only for access from SNode. Use SNode.isRoot from outer code
-
-  boolean isRoot(@Nullable SNode node) {
-    return myRoots.contains(node);
-  }
-
-  public void changeModelReference(SModelReference newModelReference) {
-    SModelReference oldReference = myReference;
-    myReference = newModelReference;
-    for (SNode node : getAllNodesWithIds()) {
-      for (SReference reference : node.getReferences()) {
-        if (oldReference.equals(reference.getTargetSModelReference())) {
-          reference.setTargetSModelReference(newModelReference);
-        }
-      }
-    }
   }
 
   public boolean updateSModelReferences() {
@@ -1046,6 +1086,23 @@ public class SModel {
     return changed;
   }
 
+  //this method is only for access from SNode. Use SNode.isRoot from outer code
+  boolean isRoot(@Nullable SNode node) {
+    return myRoots.contains(node);
+  }
+
+  void changeModelReference(SModelReference newModelReference) {
+    SModelReference oldReference = myReference;
+    myReference = newModelReference;
+    for (SNode node : getAllNodesWithIds()) {
+      for (SReference reference : node.getReferences()) {
+        if (oldReference.equals(reference.getTargetSModelReference())) {
+          reference.setTargetSModelReference(newModelReference);
+        }
+      }
+    }
+  }
+
   private boolean updateRefs(List<ModuleReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
@@ -1065,67 +1122,9 @@ public class SModel {
       !ObjectUtils.equals(ref1.getModuleId(), ref2.getModuleId());
   }
 
-  public void checkNotDisposed() {
+  private void checkNotDisposed() {
     if (myDisposed) {
       LOG.error(new IllegalModelAccessError("accessing disposed model"));
-    }
-  }
-
-  public static class ImportElement {
-    private SModelReference myModelReference;
-    private int myReferenceID;
-    private int myUsedVersion;
-
-    public ImportElement(SModelReference modelReference, int referenceID) {
-      this(modelReference, referenceID, -1);
-    }
-
-    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
-      myModelReference = modelReference;
-      myReferenceID = referenceID;
-      myUsedVersion = usedVersion;
-    }
-
-    public SModelReference getModelReference() {
-      return myModelReference;
-    }
-
-    public int getReferenceID() {
-      return myReferenceID;
-    }
-
-    public int getUsedVersion() {
-      return myUsedVersion;
-    }
-
-    public String toString() {
-      return "ImportElement(" +
-        "uid=" + myModelReference + ", " +
-        "referenceId=" + myReferenceID + ", " +
-        "usedVersion=" + myUsedVersion + ")";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      ImportElement that = (ImportElement) o;
-
-      if (myReferenceID != that.myReferenceID) return false;
-      if (myUsedVersion != that.myUsedVersion) return false;
-      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
-        return false;
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int result = myModelReference != null ? myModelReference.hashCode() : 0;
-      result = 31 * result + myReferenceID;
-      result = 31 * result + myUsedVersion;
-      return result;
     }
   }
 

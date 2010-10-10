@@ -64,13 +64,11 @@ public abstract class SReference {
   }
 
   public final SNode getTargetNode() {
-    SNode targetNode = getTargetNode_internal(false);
-    return targetNode;
+    return getTargetNode_internal(false);
   }
 
   public final SNode getTargetNodeSilently() {
-    SNode targetNode = getTargetNode_internal(true);
-    return targetNode;
+    return getTargetNode_internal(true);
   }
 
   @Nullable

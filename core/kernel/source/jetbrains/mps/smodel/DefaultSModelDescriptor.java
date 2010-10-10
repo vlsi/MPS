@@ -393,11 +393,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return myMetadata;
   }
 
-  void changeSModelUID(SModelReference newModelReference) {
-    myModelReference = newModelReference;
-    getSModel().changeModelReference(newModelReference);
-  }
-
   private void updateLastChange() {
     if (myModelFile != null) {
       myLastChange = myModelFile.lastModified();
