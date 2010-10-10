@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement;
 import jetbrains.mps.lang.typesystem.structure.NormalTypeClause;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class RefactorModelUtil {
@@ -30,18 +32,20 @@ public class RefactorModelUtil {
     try {
       model.setLoading(true);
       boolean modified = false;
-      for (AbstractEquationStatement equationStatement : model.allAdapters(AbstractEquationStatement.class)) {
-        INodeAdapter left = equationStatement.getChild(AbstractEquationStatement.LEFT_EXPRESSION);
-        INodeAdapter right = equationStatement.getChild(AbstractEquationStatement.RIGHT_EXPRESSION);
+      for (SNode es : model.roots()) {
+        if (!(es.isInstanceOfConcept(AbstractEquationStatement.concept))) continue;
+
+        INodeAdapter left = es.getChild(AbstractEquationStatement.LEFT_EXPRESSION).getAdapter();
+        INodeAdapter right = es.getChild(AbstractEquationStatement.RIGHT_EXPRESSION).getAdapter();
         if (left instanceof Expression) {
           NormalTypeClause normalTypeClause = NormalTypeClause.newInstance(model);
-          equationStatement.replaceChild(left, normalTypeClause);
+          es.replaceChild(left.getNode(), normalTypeClause.getNode());
           normalTypeClause.setNormalType((Expression) left);
           modified = true;
         }
         if (right instanceof Expression) {
           NormalTypeClause normalTypeClause = NormalTypeClause.newInstance(model);
-          equationStatement.replaceChild(right, normalTypeClause);
+          es.replaceChild(right.getNode(), normalTypeClause.getNode());
           normalTypeClause.setNormalType((Expression) right);
           modified = true;
         }
