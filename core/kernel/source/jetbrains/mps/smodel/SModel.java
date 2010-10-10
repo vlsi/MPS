@@ -124,17 +124,6 @@ public class SModel {
 
   @Deprecated
   //use roots() instead
-  @NotNull
-  public List<SNode> getRoots() {
-    ArrayList<SNode> result = new ArrayList<SNode>();
-    for (SNode root : roots()) {
-      result.add(root);
-    }
-    return result;
-  }
-
-  @Deprecated
-  //use roots() instead
   public List<INodeAdapter> getRootsAdapters() {
     List<INodeAdapter> result = new ArrayList<INodeAdapter>();
     for (SNode root : roots()) {
