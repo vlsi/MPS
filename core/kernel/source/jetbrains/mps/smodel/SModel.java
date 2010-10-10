@@ -150,14 +150,6 @@ public class SModel {
   }
 
   @Deprecated
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
-    SNode decl = SModelUtil.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
-    String name = NameUtil.nodeFQName(decl);
-    List<SNode> nodes = getFastNodeFinder().getNodes(name, true);
-    return BaseAdapter.toAdapters(nodes);
-  }
-
-  @Deprecated
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);

@@ -148,12 +148,13 @@ public class SideTransformHintSubstituteActionsHelper {
     List<Language> languages = mySourceNode.getModel().getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
-      if (actionsModel != null && actionsModel.getSModel() != null) {
-        for (SideTransformHintSubstituteActionsBuilder builder : actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class)) {
-          for (SideTransformTag tag : myTransformTags) {
-            if (isApplicable(builder, tag, sourceConcept)) {
-              actionsBuilders.add(builder);
-            }
+      if (actionsModel == null || actionsModel.getSModel() == null) continue;
+
+      List<SNode> nodes = actionsModel.getSModel().getFastNodeFinder().getNodes(SideTransformHintSubstituteActionsBuilder.concept, true);
+      for (SideTransformHintSubstituteActionsBuilder builder : BaseAdapter.<SideTransformHintSubstituteActionsBuilder>toAdapters(nodes)) {
+        for (SideTransformTag tag : myTransformTags) {
+          if (isApplicable(builder, tag, sourceConcept)) {
+            actionsBuilders.add(builder);
           }
         }
       }

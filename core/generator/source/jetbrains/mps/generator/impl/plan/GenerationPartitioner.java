@@ -277,7 +277,8 @@ public class GenerationPartitioner {
 
         if (refModel != null) {
           if (nodeID.equals("*")) {
-            return refModel.getSModel().allAdapters(MappingConfiguration.class);
+            List<SNode> nodes = refModel.getSModel().getFastNodeFinder().getNodes(MappingConfiguration.concept, true);
+            return BaseAdapter.toAdapters(nodes);
           } else {
             SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
             if (mappingConfig != null) {

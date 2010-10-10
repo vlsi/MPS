@@ -377,7 +377,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<ConceptDeclaration> getConceptDeclarations() {
     SModelDescriptor struc = getStructureModelDescriptor();
     if (struc == null) return new ArrayList<ConceptDeclaration>();
-    return struc.getSModel().allAdapters(ConceptDeclaration.class);
+    List<SNode> nodes = struc.getSModel().getFastNodeFinder().getNodes(ConceptDeclaration.concept, true);
+    return BaseAdapter.toAdapters(nodes);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {

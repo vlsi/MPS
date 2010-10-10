@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -157,7 +158,8 @@ public class Generator extends AbstractModule {
     List<SModelDescriptor> list = getOwnTemplateModels();
     List<MappingConfiguration> mappings = new ArrayList<MappingConfiguration>();
     for (SModelDescriptor templateModel : list) {
-      mappings.addAll(templateModel.getSModel().allAdapters(MappingConfiguration.class));
+      List<SNode> nodes = templateModel.getSModel().getFastNodeFinder().getNodes(MappingConfiguration.concept, true);
+      mappings.addAll(BaseAdapter.<MappingConfiguration>toAdapters(nodes));
     }
     return mappings;
   }

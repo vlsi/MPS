@@ -167,7 +167,7 @@ public class GenerationPartitioningUtil {
     Iterator<SModel> models = numOfMappingsByModel.keySet().iterator();
     while (models.hasNext()) {
       SModel model = models.next();
-      int totalMappings = model.allAdapters(MappingConfiguration.class).size();
+      int totalMappings = model.getFastNodeFinder().getNodes(MappingConfiguration.concept,true).size();
       if (totalMappings <= 1 || numOfMappingsByModel.get(model) < totalMappings) {
         models.remove();
       } else {
