@@ -954,15 +954,6 @@ public class SModel {
     return this.getSModelReference().toString();
   }
 
-  public void clear() {
-    ModelChange.assertLegalChange(this);
-
-    List<SNode> roots = new ArrayList<SNode>(myRoots);
-    for (SNode root : roots) {
-      root.delete();
-    }
-  }
-
   public void dispose() {
     ModelChange.assertLegalChange(this);
     if (myDisposed) return;
