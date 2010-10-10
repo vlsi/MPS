@@ -234,7 +234,7 @@ public class GenerationSession {
     }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
-      currentOutputModel.validateLanguagesAndImports();
+      currentOutputModel.validateLanguagesAndImports(false, false);
       myDependenciesBuilder.updateModel(currentOutputModel);
       recycleWasteModel(currentInputModel);
       return currentOutputModel;
@@ -245,7 +245,7 @@ public class GenerationSession {
     // -----------------------
     int secondaryMappingRepeatCount = 1;
     while (true) {
-      currentOutputModel.validateLanguagesAndImports();
+      currentOutputModel.validateLanguagesAndImports(false, false);
       myDependenciesBuilder.updateModel(currentOutputModel);
 
       // apply mapping to the output model
