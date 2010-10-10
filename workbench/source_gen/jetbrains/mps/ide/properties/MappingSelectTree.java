@@ -19,6 +19,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MappingSelectTree extends JTree {
@@ -167,7 +168,7 @@ public class MappingSelectTree extends JTree {
     }
 
     public String getText() {
-      return getObject().getShortName();
+      return NameUtil.shortNameFromLongName(getObject().getLongName());
     }
   }
 

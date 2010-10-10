@@ -78,19 +78,6 @@ public class SModelFqName implements Comparable<Object> {
     } else {
       return compactNamespace + "@" + myStereotype.charAt(0);
     }
-
-  }
-
-  public String getNamespace() {
-    return NameUtil.namespaceFromLongName(getLongName());
-  }
-
-  public String getShortName() {
-    int offset = getLongName().lastIndexOf('.');
-    if (offset < 0) {
-      return getLongName();
-    }
-    return getLongName().substring(offset + 1);
   }
 
   public String getStereotype() {

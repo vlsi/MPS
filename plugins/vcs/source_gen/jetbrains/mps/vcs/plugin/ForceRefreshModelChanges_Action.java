@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
@@ -35,7 +37,10 @@ public class ForceRefreshModelChanges_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      event.getPresentation().setText("Force Refresh Model Changes for " + ForceRefreshModelChanges_Action.this.model.getModelDescriptor().getSModelReference().getSModelFqName().getShortName());
+      {
+        SModelDescriptor md = ForceRefreshModelChanges_Action.this.model.getModelDescriptor();
+        event.getPresentation().setText("Force Refresh Model Changes for " + NameUtil.shortNameFromLongName(md.getLongName()));
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ForceRefreshModelChanges", t);

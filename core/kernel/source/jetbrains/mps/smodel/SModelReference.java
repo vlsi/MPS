@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.apache.commons.lang.ObjectUtils;
 
@@ -100,11 +101,7 @@ public final class SModelReference {
   }
 
   public String getNamespace() {
-    return myModelFqName.getNamespace();
-  }
-
-  public String getShortName() {
-    return myModelFqName.getShortName();
+    return NameUtil.namespaceFromLongName(myModelFqName.getLongName());
   }
 
   public String getStereotype() {

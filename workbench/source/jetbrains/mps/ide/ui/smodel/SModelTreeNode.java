@@ -500,7 +500,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (myShowLongName) {
       return reference.getLongName();
     } else if (myCountAdditionalNamePart == 0) {
-      return reference.getShortName();
+      return NameUtil.shortNameFromLongName(reference.getLongName());
     }
     StringBuilder stringBuilder = new StringBuilder();
     String[] namePart = reference.getLongName().split("\\.");
@@ -508,7 +508,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     for (int i = firstPart; i < namePart.length - 1; i++) {
       stringBuilder.append(namePart[i]).append('.');
     }
-    stringBuilder.append(reference.getShortName());
+    stringBuilder.append(NameUtil.shortNameFromLongName(reference.getLongName()));
     return stringBuilder.toString();
   }
 

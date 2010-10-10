@@ -13,9 +13,9 @@
   <unitInfo fileName="GoToNextChange_Action.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToNextChange_Action" />
   <unitInfo fileName="RollbackChanges_Action.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />
   <unitInfo fileName="IgnoreInVcs_Action.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.vcs.plugin.IgnoreInVcs_Action" />
-  <unitInfo fileName="ForceRefreshModelChanges_Action.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
   <unitInfo fileName="AddToVcs_Action.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AddToVcs_Action" />
   <unitInfo fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
+  <unitInfo fileName="ForceRefreshModelChanges_Action.java" startLine="20" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
   <unitInfo fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action" />
   <unitInfo fileName="ReRunMergeFromBackup_Action.java" startLine="30" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
   <root nodeId="1596063027222054292">
@@ -84,21 +84,24 @@
     <nodeInfo nodeId="6763225944573505233" fileName="DumpChangesManager_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="87" />
   </root>
   <root nodeId="6763225944573505242">
-    <nodeInfo nodeId="6763225944573505243" fileName="ForceRefreshModelChanges_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="23" />
-    <nodeInfo nodeId="6763225944573505246" fileName="ForceRefreshModelChanges_Action.java" startLine="22" startPosition="23" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="6763225944573505294" fileName="ForceRefreshModelChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="194" />
-    <nodeInfo nodeId="6763225944573505249" fileName="ForceRefreshModelChanges_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="106" />
-    <nodeInfo nodeId="6763225944573505252" fileName="ForceRefreshModelChanges_Action.java" startLine="73" startPosition="106" endLine="74" endPosition="75" />
-    <nodeInfo nodeId="6763225944573505269" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="162" />
-    <nodeInfo nodeId="6763225944573505284" fileName="ForceRefreshModelChanges_Action.java" startLine="78" startPosition="50" endLine="79" endPosition="51" />
-    <nodeInfo nodeId="6763225944573505282" fileName="ForceRefreshModelChanges_Action.java" startLine="77" startPosition="162" endLine="80" endPosition="11" />
-    <nodeInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="121" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="6763225944573505258" fileName="ForceRefreshModelChanges_Action.java" startLine="74" startPosition="75" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="6763225944573505293" fileName="ForceRefreshModelChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="194" />
-    <scopeInfo nodeId="6763225944573505283" fileName="ForceRefreshModelChanges_Action.java" startLine="78" startPosition="50" endLine="79" endPosition="51" />
-    <scopeInfo nodeId="6763225944573505268" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="27" endLine="80" endPosition="11" />
-    <scopeInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="121" endLine="82" endPosition="0" />
-    <unitInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="109" endLine="82" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action$1" />
+    <nodeInfo nodeId="6763225944573505243" fileName="ForceRefreshModelChanges_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="23" />
+    <nodeInfo nodeId="6763225944573505246" fileName="ForceRefreshModelChanges_Action.java" startLine="24" startPosition="23" endLine="25" endPosition="26" />
+    <nodeInfo nodeId="5917128770759540768" fileName="ForceRefreshModelChanges_Action.java" startLine="40" startPosition="7" endLine="41" endPosition="94" />
+    <nodeInfo nodeId="6763225944573505294" fileName="ForceRefreshModelChanges_Action.java" startLine="41" startPosition="94" endLine="42" endPosition="127" />
+    <nodeInfo nodeId="6763225944573505249" fileName="ForceRefreshModelChanges_Action.java" startLine="77" startPosition="9" endLine="78" endPosition="106" />
+    <nodeInfo nodeId="6763225944573505252" fileName="ForceRefreshModelChanges_Action.java" startLine="78" startPosition="106" endLine="79" endPosition="75" />
+    <nodeInfo nodeId="6763225944573505269" fileName="ForceRefreshModelChanges_Action.java" startLine="81" startPosition="27" endLine="82" endPosition="162" />
+    <nodeInfo nodeId="6763225944573505284" fileName="ForceRefreshModelChanges_Action.java" startLine="83" startPosition="50" endLine="84" endPosition="51" />
+    <nodeInfo nodeId="6763225944573505282" fileName="ForceRefreshModelChanges_Action.java" startLine="82" startPosition="162" endLine="85" endPosition="11" />
+    <nodeInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="80" startPosition="121" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="6763225944573505258" fileName="ForceRefreshModelChanges_Action.java" startLine="79" startPosition="75" endLine="87" endPosition="9" />
+    <scopeInfo nodeId="6763225944573505283" fileName="ForceRefreshModelChanges_Action.java" startLine="83" startPosition="50" endLine="84" endPosition="51" />
+    <scopeInfo nodeId="6763225944573505293" fileName="ForceRefreshModelChanges_Action.java" startLine="40" startPosition="7" endLine="42" endPosition="127">
+      <varInfo nodeId="5917128770759540769" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="6763225944573505268" fileName="ForceRefreshModelChanges_Action.java" startLine="81" startPosition="27" endLine="85" endPosition="11" />
+    <scopeInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="80" startPosition="121" endLine="87" endPosition="0" />
+    <unitInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="80" startPosition="109" endLine="87" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action$1" />
   </root>
   <root nodeId="6763225944573563931">
     <nodeInfo nodeId="6763225944573589040" fileName="main_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="33" />

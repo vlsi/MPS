@@ -131,6 +131,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode extendsClassName="javax.swing.AbstractCellEditor" />
     <classNode extendsClassName="javax.swing.JTree" />
     <classNode extendsClassName="javax.swing.tree.TreeCellEditor" />

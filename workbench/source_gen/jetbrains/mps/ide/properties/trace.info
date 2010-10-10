@@ -2352,212 +2352,212 @@
     <unitInfo nodeId="5923576889075044542" fileName="ModuleProperties.java" startLine="14" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.ide.properties.ModuleProperties" />
   </root>
   <root nodeId="5923576889075046252">
-    <nodeInfo nodeId="5923576889075046899" fileName="MappingSelectTree.java" startLine="25" startPosition="44" endLine="26" endPosition="12" />
-    <nodeInfo nodeId="5923576889075046900" fileName="MappingSelectTree.java" startLine="26" startPosition="12" endLine="27" endPosition="66" />
-    <nodeInfo nodeId="5923576889075046906" fileName="MappingSelectTree.java" startLine="27" startPosition="66" endLine="28" endPosition="62" />
-    <nodeInfo nodeId="5923576889075046912" fileName="MappingSelectTree.java" startLine="28" startPosition="62" endLine="29" endPosition="22" />
-    <nodeInfo nodeId="5923576889075046917" fileName="MappingSelectTree.java" startLine="29" startPosition="22" endLine="30" endPosition="30" />
-    <nodeInfo nodeId="5923576889075046926" fileName="MappingSelectTree.java" startLine="31" startPosition="17" endLine="32" endPosition="32" />
-    <nodeInfo nodeId="5923576889075046258" fileName="MappingSelectTree.java" startLine="36" startPosition="66" endLine="37" endPosition="51" />
-    <nodeInfo nodeId="5923576889075046266" fileName="MappingSelectTree.java" startLine="39" startPosition="35" endLine="40" endPosition="49" />
-    <nodeInfo nodeId="5923576889075046276" fileName="MappingSelectTree.java" startLine="41" startPosition="25" endLine="42" endPosition="33" />
-    <nodeInfo nodeId="5923576889075046283" fileName="MappingSelectTree.java" startLine="43" startPosition="7" endLine="44" endPosition="86" />
-    <nodeInfo nodeId="5923576889075046290" fileName="MappingSelectTree.java" startLine="44" startPosition="86" endLine="45" endPosition="69" />
-    <nodeInfo nodeId="5923576889075046306" fileName="MappingSelectTree.java" startLine="48" startPosition="36" endLine="49" endPosition="24" />
-    <nodeInfo nodeId="5923576889075046328" fileName="MappingSelectTree.java" startLine="52" startPosition="154" endLine="53" endPosition="81" />
-    <nodeInfo nodeId="5923576889075046333" fileName="MappingSelectTree.java" startLine="53" startPosition="81" endLine="54" endPosition="81" />
-    <nodeInfo nodeId="5923576889075046338" fileName="MappingSelectTree.java" startLine="54" startPosition="81" endLine="55" endPosition="71" />
-    <nodeInfo nodeId="5923576889075046343" fileName="MappingSelectTree.java" startLine="55" startPosition="71" endLine="56" endPosition="71" />
-    <nodeInfo nodeId="5923576889075046348" fileName="MappingSelectTree.java" startLine="56" startPosition="71" endLine="57" endPosition="46" />
-    <nodeInfo nodeId="5923576889075046376" fileName="MappingSelectTree.java" startLine="58" startPosition="21" endLine="59" endPosition="54" />
-    <nodeInfo nodeId="5923576889075046383" fileName="MappingSelectTree.java" startLine="59" startPosition="54" endLine="60" endPosition="54" />
-    <nodeInfo nodeId="5923576889075046361" fileName="MappingSelectTree.java" startLine="61" startPosition="14" endLine="62" endPosition="49" />
-    <nodeInfo nodeId="5923576889075046368" fileName="MappingSelectTree.java" startLine="62" startPosition="49" endLine="63" endPosition="49" />
-    <nodeInfo nodeId="5923576889075046390" fileName="MappingSelectTree.java" startLine="64" startPosition="7" endLine="65" endPosition="73" />
-    <nodeInfo nodeId="5923576889075046396" fileName="MappingSelectTree.java" startLine="65" startPosition="73" endLine="66" endPosition="98" />
-    <nodeInfo nodeId="5923576889075046442" fileName="MappingSelectTree.java" startLine="69" startPosition="75" endLine="70" endPosition="96" />
-    <nodeInfo nodeId="5923576889075046450" fileName="MappingSelectTree.java" startLine="70" startPosition="96" endLine="71" endPosition="47" />
-    <nodeInfo nodeId="5923576889075046459" fileName="MappingSelectTree.java" startLine="71" startPosition="47" endLine="72" endPosition="54" />
-    <nodeInfo nodeId="5923576889075046427" fileName="MappingSelectTree.java" startLine="73" startPosition="18" endLine="74" endPosition="37" />
-    <nodeInfo nodeId="5923576889075046434" fileName="MappingSelectTree.java" startLine="74" startPosition="37" endLine="75" endPosition="42" />
-    <nodeInfo nodeId="5923576889075046468" fileName="MappingSelectTree.java" startLine="78" startPosition="9" endLine="79" endPosition="24" />
-    <nodeInfo nodeId="5923576889075046476" fileName="MappingSelectTree.java" startLine="83" startPosition="89" endLine="84" endPosition="109" />
-    <nodeInfo nodeId="5923576889075046481" fileName="MappingSelectTree.java" startLine="84" startPosition="109" endLine="85" endPosition="48" />
-    <nodeInfo nodeId="5923576889075046491" fileName="MappingSelectTree.java" startLine="90" startPosition="40" endLine="91" endPosition="52" />
-    <nodeInfo nodeId="5923576889075046499" fileName="MappingSelectTree.java" startLine="91" startPosition="52" endLine="92" endPosition="38" />
-    <nodeInfo nodeId="5923576889075046583" fileName="MappingSelectTree.java" startLine="93" startPosition="63" endLine="94" endPosition="70" />
-    <nodeInfo nodeId="5923576889075046569" fileName="MappingSelectTree.java" startLine="96" startPosition="65" endLine="97" endPosition="111" />
-    <nodeInfo nodeId="5923576889075046555" fileName="MappingSelectTree.java" startLine="99" startPosition="67" endLine="100" endPosition="115" />
-    <nodeInfo nodeId="5923576889075046541" fileName="MappingSelectTree.java" startLine="102" startPosition="66" endLine="103" endPosition="113" />
-    <nodeInfo nodeId="5923576889075046528" fileName="MappingSelectTree.java" startLine="104" startPosition="14" endLine="105" endPosition="96" />
-    <nodeInfo nodeId="5923576889075046593" fileName="MappingSelectTree.java" startLine="106" startPosition="7" endLine="107" endPosition="46" />
-    <nodeInfo nodeId="5923576889075046600" fileName="MappingSelectTree.java" startLine="107" startPosition="46" endLine="108" endPosition="18" />
-    <nodeInfo nodeId="5923576889075046618" fileName="MappingSelectTree.java" startLine="111" startPosition="134" endLine="112" endPosition="111" />
-    <nodeInfo nodeId="5923576889075046633" fileName="MappingSelectTree.java" startLine="112" startPosition="111" endLine="113" endPosition="67" />
-    <nodeInfo nodeId="5923576889075046639" fileName="MappingSelectTree.java" startLine="113" startPosition="67" endLine="114" endPosition="67" />
-    <nodeInfo nodeId="5923576889075046666" fileName="MappingSelectTree.java" startLine="117" startPosition="58" endLine="118" endPosition="57" />
-    <nodeInfo nodeId="5923576889075046675" fileName="MappingSelectTree.java" startLine="122" startPosition="40" endLine="123" endPosition="59" />
-    <nodeInfo nodeId="5923576889075046683" fileName="MappingSelectTree.java" startLine="124" startPosition="7" endLine="125" endPosition="20" />
-    <nodeInfo nodeId="5923576889075046688" fileName="MappingSelectTree.java" startLine="129" startPosition="71" endLine="130" endPosition="26" />
-    <nodeInfo nodeId="5923576889075046696" fileName="MappingSelectTree.java" startLine="132" startPosition="38" endLine="133" endPosition="18" />
-    <nodeInfo nodeId="5923576889075046698" fileName="MappingSelectTree.java" startLine="133" startPosition="18" endLine="134" endPosition="20" />
-    <nodeInfo nodeId="5923576889075046708" fileName="MappingSelectTree.java" startLine="137" startPosition="29" endLine="138" endPosition="20" />
-    <nodeInfo nodeId="5923576889075046720" fileName="MappingSelectTree.java" startLine="143" startPosition="48" endLine="144" endPosition="17" />
-    <nodeInfo nodeId="5923576889075046726" fileName="MappingSelectTree.java" startLine="147" startPosition="40" endLine="148" endPosition="49" />
-    <nodeInfo nodeId="5923576889075046734" fileName="MappingSelectTree.java" startLine="151" startPosition="29" endLine="152" endPosition="97" />
-    <nodeInfo nodeId="5923576889075046750" fileName="MappingSelectTree.java" startLine="153" startPosition="30" endLine="154" endPosition="35" />
-    <nodeInfo nodeId="5923576889075046752" fileName="MappingSelectTree.java" startLine="155" startPosition="7" endLine="156" endPosition="34" />
-    <nodeInfo nodeId="5923576889075046764" fileName="MappingSelectTree.java" startLine="161" startPosition="56" endLine="162" endPosition="23" />
-    <nodeInfo nodeId="5923576889075046770" fileName="MappingSelectTree.java" startLine="165" startPosition="40" endLine="166" endPosition="49" />
-    <nodeInfo nodeId="5923576889075046778" fileName="MappingSelectTree.java" startLine="169" startPosition="29" endLine="170" endPosition="40" />
-    <nodeInfo nodeId="5923576889075046792" fileName="MappingSelectTree.java" startLine="175" startPosition="46" endLine="176" endPosition="17" />
-    <nodeInfo nodeId="5923576889075046798" fileName="MappingSelectTree.java" startLine="179" startPosition="37" endLine="180" endPosition="46" />
-    <nodeInfo nodeId="5923576889075046806" fileName="MappingSelectTree.java" startLine="183" startPosition="29" endLine="184" endPosition="45" />
-    <nodeInfo nodeId="5923576889075046816" fileName="MappingSelectTree.java" startLine="188" startPosition="41" endLine="189" endPosition="31" />
-    <nodeInfo nodeId="5923576889075046819" fileName="MappingSelectTree.java" startLine="189" startPosition="31" endLine="190" endPosition="28" />
-    <nodeInfo nodeId="5923576889075046822" fileName="MappingSelectTree.java" startLine="190" startPosition="28" endLine="191" endPosition="34" />
-    <nodeInfo nodeId="5923576889075046830" fileName="MappingSelectTree.java" startLine="193" startPosition="36" endLine="194" endPosition="24" />
-    <nodeInfo nodeId="5923576889075046836" fileName="MappingSelectTree.java" startLine="194" startPosition="24" endLine="195" endPosition="28" />
-    <nodeInfo nodeId="5923576889075046846" fileName="MappingSelectTree.java" startLine="198" startPosition="31" endLine="199" endPosition="22" />
-    <nodeInfo nodeId="5923576889075046854" fileName="MappingSelectTree.java" startLine="202" startPosition="36" endLine="203" endPosition="27" />
-    <nodeInfo nodeId="5923576889075046864" fileName="MappingSelectTree.java" startLine="206" startPosition="53" endLine="207" endPosition="34" />
-    <nodeInfo nodeId="5923576889075046874" fileName="MappingSelectTree.java" startLine="210" startPosition="33" endLine="211" endPosition="24" />
-    <nodeInfo nodeId="5923576889075046884" fileName="MappingSelectTree.java" startLine="214" startPosition="47" endLine="215" endPosition="28" />
-    <nodeInfo nodeId="5923576889075046484" fileName="MappingSelectTree.java" startLine="86" startPosition="0" endLine="88" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046526" fileName="MappingSelectTree.java" startLine="104" startPosition="12" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046890" fileName="MappingSelectTree.java" startLine="217" startPosition="0" endLine="219" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046923" fileName="MappingSelectTree.java" startLine="30" startPosition="30" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046271" fileName="MappingSelectTree.java" startLine="40" startPosition="49" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046359" fileName="MappingSelectTree.java" startLine="61" startPosition="12" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046425" fileName="MappingSelectTree.java" startLine="73" startPosition="16" endLine="76" endPosition="11" />
-    <nodeInfo nodeId="5923576889075046661" fileName="MappingSelectTree.java" startLine="116" startPosition="59" endLine="119" endPosition="11" />
-    <nodeInfo nodeId="5923576889075046670" fileName="MappingSelectTree.java" startLine="121" startPosition="8" endLine="124" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046715" fileName="MappingSelectTree.java" startLine="142" startPosition="73" endLine="145" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046745" fileName="MappingSelectTree.java" startLine="152" startPosition="97" endLine="155" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046759" fileName="MappingSelectTree.java" startLine="160" startPosition="75" endLine="163" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046787" fileName="MappingSelectTree.java" startLine="174" startPosition="74" endLine="177" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046302" fileName="MappingSelectTree.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046691" fileName="MappingSelectTree.java" startLine="131" startPosition="0" endLine="135" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046704" fileName="MappingSelectTree.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046722" fileName="MappingSelectTree.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046766" fileName="MappingSelectTree.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046774" fileName="MappingSelectTree.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046794" fileName="MappingSelectTree.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046802" fileName="MappingSelectTree.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046825" fileName="MappingSelectTree.java" startLine="192" startPosition="0" endLine="196" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046842" fileName="MappingSelectTree.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046850" fileName="MappingSelectTree.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046858" fileName="MappingSelectTree.java" startLine="205" startPosition="0" endLine="209" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046870" fileName="MappingSelectTree.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046878" fileName="MappingSelectTree.java" startLine="213" startPosition="0" endLine="217" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046520" fileName="MappingSelectTree.java" startLine="101" startPosition="12" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046655" fileName="MappingSelectTree.java" startLine="115" startPosition="54" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046357" fileName="MappingSelectTree.java" startLine="57" startPosition="46" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046649" fileName="MappingSelectTree.java" startLine="114" startPosition="67" endLine="121" endPosition="8" />
-    <nodeInfo nodeId="5923576889075046263" fileName="MappingSelectTree.java" startLine="38" startPosition="0" endLine="46" endPosition="5" />
-    <nodeInfo nodeId="5923576889075046419" fileName="MappingSelectTree.java" startLine="68" startPosition="27" endLine="76" endPosition="11" />
-    <nodeInfo nodeId="5923576889075046514" fileName="MappingSelectTree.java" startLine="98" startPosition="12" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046730" fileName="MappingSelectTree.java" startLine="150" startPosition="0" endLine="158" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046894" fileName="MappingSelectTree.java" startLine="24" startPosition="46" endLine="34" endPosition="3" />
-    <nodeInfo nodeId="5923576889075046415" fileName="MappingSelectTree.java" startLine="67" startPosition="59" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046508" fileName="MappingSelectTree.java" startLine="95" startPosition="12" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046408" fileName="MappingSelectTree.java" startLine="66" startPosition="98" endLine="78" endPosition="9" />
-    <nodeInfo nodeId="5923576889075046502" fileName="MappingSelectTree.java" startLine="92" startPosition="38" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="5923576889075046602" fileName="MappingSelectTree.java" startLine="110" startPosition="0" endLine="127" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046487" fileName="MappingSelectTree.java" startLine="89" startPosition="0" endLine="110" endPosition="0" />
-    <nodeInfo nodeId="5923576889075046310" fileName="MappingSelectTree.java" startLine="51" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046486" fileName="MappingSelectTree.java" startLine="87" startPosition="33" endLine="87" endPosition="33" />
-    <scopeInfo nodeId="5923576889075046925" fileName="MappingSelectTree.java" startLine="31" startPosition="17" endLine="32" endPosition="32" />
-    <scopeInfo nodeId="5923576889075046275" fileName="MappingSelectTree.java" startLine="41" startPosition="25" endLine="42" endPosition="33" />
-    <scopeInfo nodeId="5923576889075046305" fileName="MappingSelectTree.java" startLine="48" startPosition="36" endLine="49" endPosition="24" />
-    <scopeInfo nodeId="5923576889075046582" fileName="MappingSelectTree.java" startLine="93" startPosition="63" endLine="94" endPosition="70" />
-    <scopeInfo nodeId="5923576889075046568" fileName="MappingSelectTree.java" startLine="96" startPosition="65" endLine="97" endPosition="111" />
-    <scopeInfo nodeId="5923576889075046554" fileName="MappingSelectTree.java" startLine="99" startPosition="67" endLine="100" endPosition="115" />
-    <scopeInfo nodeId="5923576889075046540" fileName="MappingSelectTree.java" startLine="102" startPosition="66" endLine="103" endPosition="113" />
-    <scopeInfo nodeId="5923576889075046527" fileName="MappingSelectTree.java" startLine="104" startPosition="14" endLine="105" endPosition="96" />
-    <scopeInfo nodeId="5923576889075046665" fileName="MappingSelectTree.java" startLine="117" startPosition="58" endLine="118" endPosition="57" />
-    <scopeInfo nodeId="5923576889075046674" fileName="MappingSelectTree.java" startLine="122" startPosition="40" endLine="123" endPosition="59" />
-    <scopeInfo nodeId="5923576889075046707" fileName="MappingSelectTree.java" startLine="137" startPosition="29" endLine="138" endPosition="20" />
-    <scopeInfo nodeId="5923576889075046719" fileName="MappingSelectTree.java" startLine="143" startPosition="48" endLine="144" endPosition="17" />
-    <scopeInfo nodeId="5923576889075046725" fileName="MappingSelectTree.java" startLine="147" startPosition="40" endLine="148" endPosition="49" />
-    <scopeInfo nodeId="5923576889075046749" fileName="MappingSelectTree.java" startLine="153" startPosition="30" endLine="154" endPosition="35" />
-    <scopeInfo nodeId="5923576889075046763" fileName="MappingSelectTree.java" startLine="161" startPosition="56" endLine="162" endPosition="23" />
-    <scopeInfo nodeId="5923576889075046769" fileName="MappingSelectTree.java" startLine="165" startPosition="40" endLine="166" endPosition="49" />
-    <scopeInfo nodeId="5923576889075046777" fileName="MappingSelectTree.java" startLine="169" startPosition="29" endLine="170" endPosition="40" />
-    <scopeInfo nodeId="5923576889075046791" fileName="MappingSelectTree.java" startLine="175" startPosition="46" endLine="176" endPosition="17" />
-    <scopeInfo nodeId="5923576889075046797" fileName="MappingSelectTree.java" startLine="179" startPosition="37" endLine="180" endPosition="46" />
-    <scopeInfo nodeId="5923576889075046805" fileName="MappingSelectTree.java" startLine="183" startPosition="29" endLine="184" endPosition="45" />
-    <scopeInfo nodeId="5923576889075046845" fileName="MappingSelectTree.java" startLine="198" startPosition="31" endLine="199" endPosition="22" />
-    <scopeInfo nodeId="5923576889075046853" fileName="MappingSelectTree.java" startLine="202" startPosition="36" endLine="203" endPosition="27" />
-    <scopeInfo nodeId="5923576889075046863" fileName="MappingSelectTree.java" startLine="206" startPosition="53" endLine="207" endPosition="34" />
-    <scopeInfo nodeId="5923576889075046873" fileName="MappingSelectTree.java" startLine="210" startPosition="33" endLine="211" endPosition="24" />
-    <scopeInfo nodeId="5923576889075046883" fileName="MappingSelectTree.java" startLine="214" startPosition="47" endLine="215" endPosition="28" />
-    <scopeInfo nodeId="5923576889075046375" fileName="MappingSelectTree.java" startLine="58" startPosition="21" endLine="60" endPosition="54" />
-    <scopeInfo nodeId="5923576889075046360" fileName="MappingSelectTree.java" startLine="61" startPosition="14" endLine="63" endPosition="49" />
-    <scopeInfo nodeId="5923576889075046426" fileName="MappingSelectTree.java" startLine="73" startPosition="18" endLine="75" endPosition="42" />
-    <scopeInfo nodeId="5923576889075046484" fileName="MappingSelectTree.java" startLine="86" startPosition="0" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="5923576889075046695" fileName="MappingSelectTree.java" startLine="132" startPosition="38" endLine="134" endPosition="20" />
-    <scopeInfo nodeId="5923576889075046829" fileName="MappingSelectTree.java" startLine="193" startPosition="36" endLine="195" endPosition="28" />
-    <scopeInfo nodeId="5923576889075046890" fileName="MappingSelectTree.java" startLine="217" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046441" fileName="MappingSelectTree.java" startLine="69" startPosition="75" endLine="72" endPosition="54">
+    <nodeInfo nodeId="5923576889075046899" fileName="MappingSelectTree.java" startLine="26" startPosition="44" endLine="27" endPosition="12" />
+    <nodeInfo nodeId="5923576889075046900" fileName="MappingSelectTree.java" startLine="27" startPosition="12" endLine="28" endPosition="66" />
+    <nodeInfo nodeId="5923576889075046906" fileName="MappingSelectTree.java" startLine="28" startPosition="66" endLine="29" endPosition="62" />
+    <nodeInfo nodeId="5923576889075046912" fileName="MappingSelectTree.java" startLine="29" startPosition="62" endLine="30" endPosition="22" />
+    <nodeInfo nodeId="5923576889075046917" fileName="MappingSelectTree.java" startLine="30" startPosition="22" endLine="31" endPosition="30" />
+    <nodeInfo nodeId="5923576889075046926" fileName="MappingSelectTree.java" startLine="32" startPosition="17" endLine="33" endPosition="32" />
+    <nodeInfo nodeId="5923576889075046258" fileName="MappingSelectTree.java" startLine="37" startPosition="66" endLine="38" endPosition="51" />
+    <nodeInfo nodeId="5923576889075046266" fileName="MappingSelectTree.java" startLine="40" startPosition="35" endLine="41" endPosition="49" />
+    <nodeInfo nodeId="5923576889075046276" fileName="MappingSelectTree.java" startLine="42" startPosition="25" endLine="43" endPosition="33" />
+    <nodeInfo nodeId="5923576889075046283" fileName="MappingSelectTree.java" startLine="44" startPosition="7" endLine="45" endPosition="86" />
+    <nodeInfo nodeId="5923576889075046290" fileName="MappingSelectTree.java" startLine="45" startPosition="86" endLine="46" endPosition="69" />
+    <nodeInfo nodeId="5923576889075046306" fileName="MappingSelectTree.java" startLine="49" startPosition="36" endLine="50" endPosition="24" />
+    <nodeInfo nodeId="5923576889075046328" fileName="MappingSelectTree.java" startLine="53" startPosition="154" endLine="54" endPosition="81" />
+    <nodeInfo nodeId="5923576889075046333" fileName="MappingSelectTree.java" startLine="54" startPosition="81" endLine="55" endPosition="81" />
+    <nodeInfo nodeId="5923576889075046338" fileName="MappingSelectTree.java" startLine="55" startPosition="81" endLine="56" endPosition="71" />
+    <nodeInfo nodeId="5923576889075046343" fileName="MappingSelectTree.java" startLine="56" startPosition="71" endLine="57" endPosition="71" />
+    <nodeInfo nodeId="5923576889075046348" fileName="MappingSelectTree.java" startLine="57" startPosition="71" endLine="58" endPosition="46" />
+    <nodeInfo nodeId="5923576889075046376" fileName="MappingSelectTree.java" startLine="59" startPosition="21" endLine="60" endPosition="54" />
+    <nodeInfo nodeId="5923576889075046383" fileName="MappingSelectTree.java" startLine="60" startPosition="54" endLine="61" endPosition="54" />
+    <nodeInfo nodeId="5923576889075046361" fileName="MappingSelectTree.java" startLine="62" startPosition="14" endLine="63" endPosition="49" />
+    <nodeInfo nodeId="5923576889075046368" fileName="MappingSelectTree.java" startLine="63" startPosition="49" endLine="64" endPosition="49" />
+    <nodeInfo nodeId="5923576889075046390" fileName="MappingSelectTree.java" startLine="65" startPosition="7" endLine="66" endPosition="73" />
+    <nodeInfo nodeId="5923576889075046396" fileName="MappingSelectTree.java" startLine="66" startPosition="73" endLine="67" endPosition="98" />
+    <nodeInfo nodeId="5923576889075046442" fileName="MappingSelectTree.java" startLine="70" startPosition="75" endLine="71" endPosition="96" />
+    <nodeInfo nodeId="5923576889075046450" fileName="MappingSelectTree.java" startLine="71" startPosition="96" endLine="72" endPosition="47" />
+    <nodeInfo nodeId="5923576889075046459" fileName="MappingSelectTree.java" startLine="72" startPosition="47" endLine="73" endPosition="54" />
+    <nodeInfo nodeId="5923576889075046427" fileName="MappingSelectTree.java" startLine="74" startPosition="18" endLine="75" endPosition="37" />
+    <nodeInfo nodeId="5923576889075046434" fileName="MappingSelectTree.java" startLine="75" startPosition="37" endLine="76" endPosition="42" />
+    <nodeInfo nodeId="5923576889075046468" fileName="MappingSelectTree.java" startLine="79" startPosition="9" endLine="80" endPosition="24" />
+    <nodeInfo nodeId="5923576889075046476" fileName="MappingSelectTree.java" startLine="84" startPosition="89" endLine="85" endPosition="109" />
+    <nodeInfo nodeId="5923576889075046481" fileName="MappingSelectTree.java" startLine="85" startPosition="109" endLine="86" endPosition="48" />
+    <nodeInfo nodeId="5923576889075046491" fileName="MappingSelectTree.java" startLine="91" startPosition="40" endLine="92" endPosition="52" />
+    <nodeInfo nodeId="5923576889075046499" fileName="MappingSelectTree.java" startLine="92" startPosition="52" endLine="93" endPosition="38" />
+    <nodeInfo nodeId="5923576889075046583" fileName="MappingSelectTree.java" startLine="94" startPosition="63" endLine="95" endPosition="70" />
+    <nodeInfo nodeId="5923576889075046569" fileName="MappingSelectTree.java" startLine="97" startPosition="65" endLine="98" endPosition="111" />
+    <nodeInfo nodeId="5923576889075046555" fileName="MappingSelectTree.java" startLine="100" startPosition="67" endLine="101" endPosition="115" />
+    <nodeInfo nodeId="5923576889075046541" fileName="MappingSelectTree.java" startLine="103" startPosition="66" endLine="104" endPosition="113" />
+    <nodeInfo nodeId="5923576889075046528" fileName="MappingSelectTree.java" startLine="105" startPosition="14" endLine="106" endPosition="96" />
+    <nodeInfo nodeId="5923576889075046593" fileName="MappingSelectTree.java" startLine="107" startPosition="7" endLine="108" endPosition="46" />
+    <nodeInfo nodeId="5923576889075046600" fileName="MappingSelectTree.java" startLine="108" startPosition="46" endLine="109" endPosition="18" />
+    <nodeInfo nodeId="5923576889075046618" fileName="MappingSelectTree.java" startLine="112" startPosition="134" endLine="113" endPosition="111" />
+    <nodeInfo nodeId="5923576889075046633" fileName="MappingSelectTree.java" startLine="113" startPosition="111" endLine="114" endPosition="67" />
+    <nodeInfo nodeId="5923576889075046639" fileName="MappingSelectTree.java" startLine="114" startPosition="67" endLine="115" endPosition="67" />
+    <nodeInfo nodeId="5923576889075046666" fileName="MappingSelectTree.java" startLine="118" startPosition="58" endLine="119" endPosition="57" />
+    <nodeInfo nodeId="5923576889075046675" fileName="MappingSelectTree.java" startLine="123" startPosition="40" endLine="124" endPosition="59" />
+    <nodeInfo nodeId="5923576889075046683" fileName="MappingSelectTree.java" startLine="125" startPosition="7" endLine="126" endPosition="20" />
+    <nodeInfo nodeId="5923576889075046688" fileName="MappingSelectTree.java" startLine="130" startPosition="71" endLine="131" endPosition="26" />
+    <nodeInfo nodeId="5923576889075046696" fileName="MappingSelectTree.java" startLine="133" startPosition="38" endLine="134" endPosition="18" />
+    <nodeInfo nodeId="5923576889075046698" fileName="MappingSelectTree.java" startLine="134" startPosition="18" endLine="135" endPosition="20" />
+    <nodeInfo nodeId="5923576889075046708" fileName="MappingSelectTree.java" startLine="138" startPosition="29" endLine="139" endPosition="20" />
+    <nodeInfo nodeId="5923576889075046720" fileName="MappingSelectTree.java" startLine="144" startPosition="48" endLine="145" endPosition="17" />
+    <nodeInfo nodeId="5923576889075046726" fileName="MappingSelectTree.java" startLine="148" startPosition="40" endLine="149" endPosition="49" />
+    <nodeInfo nodeId="5923576889075046734" fileName="MappingSelectTree.java" startLine="152" startPosition="29" endLine="153" endPosition="97" />
+    <nodeInfo nodeId="5923576889075046750" fileName="MappingSelectTree.java" startLine="154" startPosition="30" endLine="155" endPosition="35" />
+    <nodeInfo nodeId="5923576889075046752" fileName="MappingSelectTree.java" startLine="156" startPosition="7" endLine="157" endPosition="34" />
+    <nodeInfo nodeId="5923576889075046764" fileName="MappingSelectTree.java" startLine="162" startPosition="56" endLine="163" endPosition="23" />
+    <nodeInfo nodeId="5923576889075046770" fileName="MappingSelectTree.java" startLine="166" startPosition="40" endLine="167" endPosition="49" />
+    <nodeInfo nodeId="5923576889075046778" fileName="MappingSelectTree.java" startLine="170" startPosition="29" endLine="171" endPosition="71" />
+    <nodeInfo nodeId="5923576889075046792" fileName="MappingSelectTree.java" startLine="176" startPosition="46" endLine="177" endPosition="17" />
+    <nodeInfo nodeId="5923576889075046798" fileName="MappingSelectTree.java" startLine="180" startPosition="37" endLine="181" endPosition="46" />
+    <nodeInfo nodeId="5923576889075046806" fileName="MappingSelectTree.java" startLine="184" startPosition="29" endLine="185" endPosition="45" />
+    <nodeInfo nodeId="5923576889075046816" fileName="MappingSelectTree.java" startLine="189" startPosition="41" endLine="190" endPosition="31" />
+    <nodeInfo nodeId="5923576889075046819" fileName="MappingSelectTree.java" startLine="190" startPosition="31" endLine="191" endPosition="28" />
+    <nodeInfo nodeId="5923576889075046822" fileName="MappingSelectTree.java" startLine="191" startPosition="28" endLine="192" endPosition="34" />
+    <nodeInfo nodeId="5923576889075046830" fileName="MappingSelectTree.java" startLine="194" startPosition="36" endLine="195" endPosition="24" />
+    <nodeInfo nodeId="5923576889075046836" fileName="MappingSelectTree.java" startLine="195" startPosition="24" endLine="196" endPosition="28" />
+    <nodeInfo nodeId="5923576889075046846" fileName="MappingSelectTree.java" startLine="199" startPosition="31" endLine="200" endPosition="22" />
+    <nodeInfo nodeId="5923576889075046854" fileName="MappingSelectTree.java" startLine="203" startPosition="36" endLine="204" endPosition="27" />
+    <nodeInfo nodeId="5923576889075046864" fileName="MappingSelectTree.java" startLine="207" startPosition="53" endLine="208" endPosition="34" />
+    <nodeInfo nodeId="5923576889075046874" fileName="MappingSelectTree.java" startLine="211" startPosition="33" endLine="212" endPosition="24" />
+    <nodeInfo nodeId="5923576889075046884" fileName="MappingSelectTree.java" startLine="215" startPosition="47" endLine="216" endPosition="28" />
+    <nodeInfo nodeId="5923576889075046484" fileName="MappingSelectTree.java" startLine="87" startPosition="0" endLine="89" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046526" fileName="MappingSelectTree.java" startLine="105" startPosition="12" endLine="107" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046890" fileName="MappingSelectTree.java" startLine="218" startPosition="0" endLine="220" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046923" fileName="MappingSelectTree.java" startLine="31" startPosition="30" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046271" fileName="MappingSelectTree.java" startLine="41" startPosition="49" endLine="44" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046359" fileName="MappingSelectTree.java" startLine="62" startPosition="12" endLine="65" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046425" fileName="MappingSelectTree.java" startLine="74" startPosition="16" endLine="77" endPosition="11" />
+    <nodeInfo nodeId="5923576889075046661" fileName="MappingSelectTree.java" startLine="117" startPosition="59" endLine="120" endPosition="11" />
+    <nodeInfo nodeId="5923576889075046670" fileName="MappingSelectTree.java" startLine="122" startPosition="8" endLine="125" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046715" fileName="MappingSelectTree.java" startLine="143" startPosition="73" endLine="146" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046745" fileName="MappingSelectTree.java" startLine="153" startPosition="97" endLine="156" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046759" fileName="MappingSelectTree.java" startLine="161" startPosition="75" endLine="164" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046787" fileName="MappingSelectTree.java" startLine="175" startPosition="74" endLine="178" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046302" fileName="MappingSelectTree.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046691" fileName="MappingSelectTree.java" startLine="132" startPosition="0" endLine="136" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046704" fileName="MappingSelectTree.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046722" fileName="MappingSelectTree.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046766" fileName="MappingSelectTree.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046774" fileName="MappingSelectTree.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046794" fileName="MappingSelectTree.java" startLine="179" startPosition="0" endLine="183" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046802" fileName="MappingSelectTree.java" startLine="183" startPosition="0" endLine="187" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046825" fileName="MappingSelectTree.java" startLine="193" startPosition="0" endLine="197" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046842" fileName="MappingSelectTree.java" startLine="198" startPosition="0" endLine="202" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046850" fileName="MappingSelectTree.java" startLine="202" startPosition="0" endLine="206" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046858" fileName="MappingSelectTree.java" startLine="206" startPosition="0" endLine="210" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046870" fileName="MappingSelectTree.java" startLine="210" startPosition="0" endLine="214" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046878" fileName="MappingSelectTree.java" startLine="214" startPosition="0" endLine="218" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046520" fileName="MappingSelectTree.java" startLine="102" startPosition="12" endLine="107" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046655" fileName="MappingSelectTree.java" startLine="116" startPosition="54" endLine="122" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046357" fileName="MappingSelectTree.java" startLine="58" startPosition="46" endLine="65" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046649" fileName="MappingSelectTree.java" startLine="115" startPosition="67" endLine="122" endPosition="8" />
+    <nodeInfo nodeId="5923576889075046263" fileName="MappingSelectTree.java" startLine="39" startPosition="0" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="5923576889075046419" fileName="MappingSelectTree.java" startLine="69" startPosition="27" endLine="77" endPosition="11" />
+    <nodeInfo nodeId="5923576889075046514" fileName="MappingSelectTree.java" startLine="99" startPosition="12" endLine="107" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046730" fileName="MappingSelectTree.java" startLine="151" startPosition="0" endLine="159" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046894" fileName="MappingSelectTree.java" startLine="25" startPosition="46" endLine="35" endPosition="3" />
+    <nodeInfo nodeId="5923576889075046415" fileName="MappingSelectTree.java" startLine="68" startPosition="59" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046508" fileName="MappingSelectTree.java" startLine="96" startPosition="12" endLine="107" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046408" fileName="MappingSelectTree.java" startLine="67" startPosition="98" endLine="79" endPosition="9" />
+    <nodeInfo nodeId="5923576889075046502" fileName="MappingSelectTree.java" startLine="93" startPosition="38" endLine="107" endPosition="7" />
+    <nodeInfo nodeId="5923576889075046602" fileName="MappingSelectTree.java" startLine="111" startPosition="0" endLine="128" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046487" fileName="MappingSelectTree.java" startLine="90" startPosition="0" endLine="111" endPosition="0" />
+    <nodeInfo nodeId="5923576889075046310" fileName="MappingSelectTree.java" startLine="52" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046486" fileName="MappingSelectTree.java" startLine="88" startPosition="33" endLine="88" endPosition="33" />
+    <scopeInfo nodeId="5923576889075046925" fileName="MappingSelectTree.java" startLine="32" startPosition="17" endLine="33" endPosition="32" />
+    <scopeInfo nodeId="5923576889075046275" fileName="MappingSelectTree.java" startLine="42" startPosition="25" endLine="43" endPosition="33" />
+    <scopeInfo nodeId="5923576889075046305" fileName="MappingSelectTree.java" startLine="49" startPosition="36" endLine="50" endPosition="24" />
+    <scopeInfo nodeId="5923576889075046582" fileName="MappingSelectTree.java" startLine="94" startPosition="63" endLine="95" endPosition="70" />
+    <scopeInfo nodeId="5923576889075046568" fileName="MappingSelectTree.java" startLine="97" startPosition="65" endLine="98" endPosition="111" />
+    <scopeInfo nodeId="5923576889075046554" fileName="MappingSelectTree.java" startLine="100" startPosition="67" endLine="101" endPosition="115" />
+    <scopeInfo nodeId="5923576889075046540" fileName="MappingSelectTree.java" startLine="103" startPosition="66" endLine="104" endPosition="113" />
+    <scopeInfo nodeId="5923576889075046527" fileName="MappingSelectTree.java" startLine="105" startPosition="14" endLine="106" endPosition="96" />
+    <scopeInfo nodeId="5923576889075046665" fileName="MappingSelectTree.java" startLine="118" startPosition="58" endLine="119" endPosition="57" />
+    <scopeInfo nodeId="5923576889075046674" fileName="MappingSelectTree.java" startLine="123" startPosition="40" endLine="124" endPosition="59" />
+    <scopeInfo nodeId="5923576889075046707" fileName="MappingSelectTree.java" startLine="138" startPosition="29" endLine="139" endPosition="20" />
+    <scopeInfo nodeId="5923576889075046719" fileName="MappingSelectTree.java" startLine="144" startPosition="48" endLine="145" endPosition="17" />
+    <scopeInfo nodeId="5923576889075046725" fileName="MappingSelectTree.java" startLine="148" startPosition="40" endLine="149" endPosition="49" />
+    <scopeInfo nodeId="5923576889075046749" fileName="MappingSelectTree.java" startLine="154" startPosition="30" endLine="155" endPosition="35" />
+    <scopeInfo nodeId="5923576889075046763" fileName="MappingSelectTree.java" startLine="162" startPosition="56" endLine="163" endPosition="23" />
+    <scopeInfo nodeId="5923576889075046769" fileName="MappingSelectTree.java" startLine="166" startPosition="40" endLine="167" endPosition="49" />
+    <scopeInfo nodeId="5923576889075046777" fileName="MappingSelectTree.java" startLine="170" startPosition="29" endLine="171" endPosition="71" />
+    <scopeInfo nodeId="5923576889075046791" fileName="MappingSelectTree.java" startLine="176" startPosition="46" endLine="177" endPosition="17" />
+    <scopeInfo nodeId="5923576889075046797" fileName="MappingSelectTree.java" startLine="180" startPosition="37" endLine="181" endPosition="46" />
+    <scopeInfo nodeId="5923576889075046805" fileName="MappingSelectTree.java" startLine="184" startPosition="29" endLine="185" endPosition="45" />
+    <scopeInfo nodeId="5923576889075046845" fileName="MappingSelectTree.java" startLine="199" startPosition="31" endLine="200" endPosition="22" />
+    <scopeInfo nodeId="5923576889075046853" fileName="MappingSelectTree.java" startLine="203" startPosition="36" endLine="204" endPosition="27" />
+    <scopeInfo nodeId="5923576889075046863" fileName="MappingSelectTree.java" startLine="207" startPosition="53" endLine="208" endPosition="34" />
+    <scopeInfo nodeId="5923576889075046873" fileName="MappingSelectTree.java" startLine="211" startPosition="33" endLine="212" endPosition="24" />
+    <scopeInfo nodeId="5923576889075046883" fileName="MappingSelectTree.java" startLine="215" startPosition="47" endLine="216" endPosition="28" />
+    <scopeInfo nodeId="5923576889075046375" fileName="MappingSelectTree.java" startLine="59" startPosition="21" endLine="61" endPosition="54" />
+    <scopeInfo nodeId="5923576889075046360" fileName="MappingSelectTree.java" startLine="62" startPosition="14" endLine="64" endPosition="49" />
+    <scopeInfo nodeId="5923576889075046426" fileName="MappingSelectTree.java" startLine="74" startPosition="18" endLine="76" endPosition="42" />
+    <scopeInfo nodeId="5923576889075046484" fileName="MappingSelectTree.java" startLine="87" startPosition="0" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="5923576889075046695" fileName="MappingSelectTree.java" startLine="133" startPosition="38" endLine="135" endPosition="20" />
+    <scopeInfo nodeId="5923576889075046829" fileName="MappingSelectTree.java" startLine="194" startPosition="36" endLine="196" endPosition="28" />
+    <scopeInfo nodeId="5923576889075046890" fileName="MappingSelectTree.java" startLine="218" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046441" fileName="MappingSelectTree.java" startLine="70" startPosition="75" endLine="73" endPosition="54">
       <varInfo nodeId="5923576889075046443" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046660" fileName="MappingSelectTree.java" startLine="116" startPosition="59" endLine="119" endPosition="11" />
-    <scopeInfo nodeId="5923576889075046715" fileName="MappingSelectTree.java" startLine="142" startPosition="73" endLine="145" endPosition="5">
+    <scopeInfo nodeId="5923576889075046660" fileName="MappingSelectTree.java" startLine="117" startPosition="59" endLine="120" endPosition="11" />
+    <scopeInfo nodeId="5923576889075046715" fileName="MappingSelectTree.java" startLine="143" startPosition="73" endLine="146" endPosition="5">
       <varInfo nodeId="5923576889075046717" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046759" fileName="MappingSelectTree.java" startLine="160" startPosition="75" endLine="163" endPosition="5">
+    <scopeInfo nodeId="5923576889075046759" fileName="MappingSelectTree.java" startLine="161" startPosition="75" endLine="164" endPosition="5">
       <varInfo nodeId="5923576889075046761" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046787" fileName="MappingSelectTree.java" startLine="174" startPosition="74" endLine="177" endPosition="5">
+    <scopeInfo nodeId="5923576889075046787" fileName="MappingSelectTree.java" startLine="175" startPosition="74" endLine="178" endPosition="5">
       <varInfo nodeId="5923576889075046789" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046302" fileName="MappingSelectTree.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046691" fileName="MappingSelectTree.java" startLine="131" startPosition="0" endLine="135" endPosition="5">
+    <scopeInfo nodeId="5923576889075046302" fileName="MappingSelectTree.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046691" fileName="MappingSelectTree.java" startLine="132" startPosition="0" endLine="136" endPosition="5">
       <varInfo nodeId="5923576889075046693" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046704" fileName="MappingSelectTree.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046722" fileName="MappingSelectTree.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046766" fileName="MappingSelectTree.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046774" fileName="MappingSelectTree.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046794" fileName="MappingSelectTree.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046802" fileName="MappingSelectTree.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046825" fileName="MappingSelectTree.java" startLine="192" startPosition="0" endLine="196" endPosition="5">
+    <scopeInfo nodeId="5923576889075046704" fileName="MappingSelectTree.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046722" fileName="MappingSelectTree.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046766" fileName="MappingSelectTree.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046774" fileName="MappingSelectTree.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046794" fileName="MappingSelectTree.java" startLine="179" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046802" fileName="MappingSelectTree.java" startLine="183" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046825" fileName="MappingSelectTree.java" startLine="193" startPosition="0" endLine="197" endPosition="5">
       <varInfo nodeId="5923576889075046827" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046842" fileName="MappingSelectTree.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046850" fileName="MappingSelectTree.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046858" fileName="MappingSelectTree.java" startLine="205" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="5923576889075046842" fileName="MappingSelectTree.java" startLine="198" startPosition="0" endLine="202" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046850" fileName="MappingSelectTree.java" startLine="202" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046858" fileName="MappingSelectTree.java" startLine="206" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="5923576889075046861" varName="checksUnder" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046870" fileName="MappingSelectTree.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046878" fileName="MappingSelectTree.java" startLine="213" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="5923576889075046870" fileName="MappingSelectTree.java" startLine="210" startPosition="0" endLine="214" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046878" fileName="MappingSelectTree.java" startLine="214" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="5923576889075046881" varName="newValue" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046733" fileName="MappingSelectTree.java" startLine="151" startPosition="29" endLine="156" endPosition="34">
+    <scopeInfo nodeId="5923576889075046733" fileName="MappingSelectTree.java" startLine="152" startPosition="29" endLine="157" endPosition="34">
       <varInfo nodeId="5923576889075046735" varName="generator" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046265" fileName="MappingSelectTree.java" startLine="39" startPosition="35" endLine="45" endPosition="69">
+    <scopeInfo nodeId="5923576889075046265" fileName="MappingSelectTree.java" startLine="40" startPosition="35" endLine="46" endPosition="69">
       <varInfo nodeId="5923576889075046267" varName="font" />
       <varInfo nodeId="5923576889075046284" varName="iconBorder" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046655" fileName="MappingSelectTree.java" startLine="115" startPosition="54" endLine="121" endPosition="0">
+    <scopeInfo nodeId="5923576889075046655" fileName="MappingSelectTree.java" startLine="116" startPosition="54" endLine="122" endPosition="0">
       <varInfo nodeId="5923576889075046658" varName="itemEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046898" fileName="MappingSelectTree.java" startLine="25" startPosition="44" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="5923576889075046263" fileName="MappingSelectTree.java" startLine="38" startPosition="0" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="5923576889075046418" fileName="MappingSelectTree.java" startLine="68" startPosition="27" endLine="76" endPosition="11" />
-    <scopeInfo nodeId="5923576889075046730" fileName="MappingSelectTree.java" startLine="150" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046894" fileName="MappingSelectTree.java" startLine="24" startPosition="46" endLine="34" endPosition="3">
+    <scopeInfo nodeId="5923576889075046898" fileName="MappingSelectTree.java" startLine="26" startPosition="44" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="5923576889075046263" fileName="MappingSelectTree.java" startLine="39" startPosition="0" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="5923576889075046418" fileName="MappingSelectTree.java" startLine="69" startPosition="27" endLine="77" endPosition="11" />
+    <scopeInfo nodeId="5923576889075046730" fileName="MappingSelectTree.java" startLine="151" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046894" fileName="MappingSelectTree.java" startLine="25" startPosition="46" endLine="35" endPosition="3">
       <varInfo nodeId="5923576889075046896" varName="isLeft" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046415" fileName="MappingSelectTree.java" startLine="67" startPosition="59" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046617" fileName="MappingSelectTree.java" startLine="111" startPosition="134" endLine="125" endPosition="20">
+    <scopeInfo nodeId="5923576889075046415" fileName="MappingSelectTree.java" startLine="68" startPosition="59" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046617" fileName="MappingSelectTree.java" startLine="112" startPosition="134" endLine="126" endPosition="20">
       <varInfo nodeId="5923576889075046650" varName="itemListener" />
       <varInfo nodeId="5923576889075046634" varName="node" />
       <varInfo nodeId="5923576889075046619" varName="editor" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046602" fileName="MappingSelectTree.java" startLine="110" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="5923576889075046602" fileName="MappingSelectTree.java" startLine="111" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="5923576889075046609" varName="selected" />
       <varInfo nodeId="5923576889075046605" varName="tree" />
       <varInfo nodeId="5923576889075046607" varName="value" />
@@ -2565,12 +2565,12 @@
       <varInfo nodeId="5923576889075046611" varName="expanded" />
       <varInfo nodeId="5923576889075046615" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046490" fileName="MappingSelectTree.java" startLine="90" startPosition="40" endLine="108" endPosition="18">
+    <scopeInfo nodeId="5923576889075046490" fileName="MappingSelectTree.java" startLine="91" startPosition="40" endLine="109" endPosition="18">
       <varInfo nodeId="5923576889075046500" varName="data" />
       <varInfo nodeId="5923576889075046492" varName="checkbox" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046487" fileName="MappingSelectTree.java" startLine="89" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="5923576889075046327" fileName="MappingSelectTree.java" startLine="52" startPosition="154" endLine="79" endPosition="24">
+    <scopeInfo nodeId="5923576889075046487" fileName="MappingSelectTree.java" startLine="90" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5923576889075046327" fileName="MappingSelectTree.java" startLine="53" startPosition="154" endLine="80" endPosition="24">
       <varInfo nodeId="5923576889075046397" varName="text" />
       <varInfo nodeId="5923576889075046391" varName="node" />
       <varInfo nodeId="5923576889075046344" varName="textBackground" />
@@ -2578,7 +2578,7 @@
       <varInfo nodeId="5923576889075046339" varName="textForeground" />
       <varInfo nodeId="5923576889075046334" varName="selectionBackground" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075046310" fileName="MappingSelectTree.java" startLine="51" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="5923576889075046310" fileName="MappingSelectTree.java" startLine="52" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="5923576889075046317" varName="selected" />
       <varInfo nodeId="5923576889075046313" varName="tree" />
       <varInfo nodeId="5923576889075046315" varName="value" />
@@ -2587,16 +2587,16 @@
       <varInfo nodeId="5923576889075046319" varName="expanded" />
       <varInfo nodeId="5923576889075046323" varName="row" />
     </scopeInfo>
-    <unitInfo nodeId="5923576889075046654" fileName="MappingSelectTree.java" startLine="115" startPosition="38" endLine="121" endPosition="7" unitName="jetbrains.mps.ide.properties.MappingSelectTree$1" />
-    <unitInfo nodeId="5923576889075046414" fileName="MappingSelectTree.java" startLine="67" startPosition="47" endLine="78" endPosition="7" unitName="jetbrains.mps.ide.properties.MappingSelectTree$1" />
-    <unitInfo nodeId="5923576889075046685" fileName="MappingSelectTree.java" startLine="129" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$RootNodeData" />
-    <unitInfo nodeId="5923576889075046756" fileName="MappingSelectTree.java" startLine="160" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$ModelRefNodeData" />
-    <unitInfo nodeId="5923576889075046784" fileName="MappingSelectTree.java" startLine="174" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$NodeRefNodeData" />
-    <unitInfo nodeId="5923576889075046712" fileName="MappingSelectTree.java" startLine="142" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$GenRefNodeData" />
-    <unitInfo nodeId="5923576889075046814" fileName="MappingSelectTree.java" startLine="188" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$NodeData" />
-    <unitInfo nodeId="5923576889075046472" fileName="MappingSelectTree.java" startLine="83" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$CheckBoxNodeEditor" />
-    <unitInfo nodeId="5923576889075046255" fileName="MappingSelectTree.java" startLine="36" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$CheckBoxNodeRenderer" />
-    <unitInfo nodeId="5923576889075046252" fileName="MappingSelectTree.java" startLine="24" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree" />
+    <unitInfo nodeId="5923576889075046654" fileName="MappingSelectTree.java" startLine="116" startPosition="38" endLine="122" endPosition="7" unitName="jetbrains.mps.ide.properties.MappingSelectTree$1" />
+    <unitInfo nodeId="5923576889075046414" fileName="MappingSelectTree.java" startLine="68" startPosition="47" endLine="79" endPosition="7" unitName="jetbrains.mps.ide.properties.MappingSelectTree$1" />
+    <unitInfo nodeId="5923576889075046685" fileName="MappingSelectTree.java" startLine="130" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$RootNodeData" />
+    <unitInfo nodeId="5923576889075046756" fileName="MappingSelectTree.java" startLine="161" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$ModelRefNodeData" />
+    <unitInfo nodeId="5923576889075046784" fileName="MappingSelectTree.java" startLine="175" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$NodeRefNodeData" />
+    <unitInfo nodeId="5923576889075046712" fileName="MappingSelectTree.java" startLine="143" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$GenRefNodeData" />
+    <unitInfo nodeId="5923576889075046814" fileName="MappingSelectTree.java" startLine="189" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$NodeData" />
+    <unitInfo nodeId="5923576889075046472" fileName="MappingSelectTree.java" startLine="84" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$CheckBoxNodeEditor" />
+    <unitInfo nodeId="5923576889075046255" fileName="MappingSelectTree.java" startLine="37" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree$CheckBoxNodeRenderer" />
+    <unitInfo nodeId="5923576889075046252" fileName="MappingSelectTree.java" startLine="25" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.properties.MappingSelectTree" />
   </root>
   <root nodeId="5923576889075046931">
     <nodeInfo nodeId="5923576889075046934" fileName="EditOperandDialog.java" startLine="34" startPosition="51" endLine="35" endPosition="45" />

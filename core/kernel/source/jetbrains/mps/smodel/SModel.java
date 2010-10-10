@@ -86,7 +86,7 @@ public class SModel {
 
   @NotNull
   public String getShortName() {
-    return myReference.getShortName();
+    return NameUtil.shortNameFromLongName(getLongName());
   }
 
   @NotNull

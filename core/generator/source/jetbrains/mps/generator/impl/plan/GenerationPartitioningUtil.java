@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -239,7 +240,7 @@ public class GenerationPartitioningUtil {
     if (mappingRef instanceof MappingConfig_SimpleRef) {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      String modelName = moreDetails ? SModelReference.fromString(modelUID).getLongName() : SModelReference.fromString(modelUID).getShortName();
+      String modelName = moreDetails ? SModelReference.fromString(modelUID).getLongName() : NameUtil.shortNameFromLongName(SModelReference.fromString(modelUID).getLongName());
       String s = modelName + ".";
       if (nodeID.equals("*")) {
         return s + "*";

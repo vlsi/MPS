@@ -19,12 +19,12 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
@@ -90,7 +90,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       SModelReference modelRef = SModelReference.fromString(refC.getModelUID());
       String nodeName;
       if (refC.getNodeID().equals("*")) {
-        nodeName = modelRef.getShortName() + ".*";
+        nodeName = NameUtil.shortNameFromLongName(modelRef.getLongName()) + ".*";
       } else {
         final SNodePointer p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {

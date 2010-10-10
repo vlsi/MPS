@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -249,7 +250,7 @@ public class ModelPersistence {
     if (!matcher.find()) return null;
     SModelReference modelReference = SModelReference.fromString(matcher.group(1));
     String modelStereotype = modelReference.getStereotype();
-    String modelShortName = modelReference.getShortName();
+    String modelShortName = NameUtil.shortNameFromLongName(modelReference.getLongName());
     IModelReader modelReader = modelReaders.get(modelPersistenceVersion);
     if (modelReader == null) {
       return handleNullReaderForPersistence(modelReference.getLongName());
@@ -276,7 +277,7 @@ public class ModelPersistence {
       Document document = writer.saveModel(model);
       model.dispose();
       LOG.assertLog(modelReaders.get(version) != null);
-      model = modelReaders.get(version).readModel(document, reference.getShortName(), reference.getStereotype());
+      model = modelReaders.get(version).readModel(document, NameUtil.shortNameFromLongName(reference.getLongName()), reference.getStereotype());
     }
     LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
     model.setPersistenceVersion(toVersion);

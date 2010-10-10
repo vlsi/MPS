@@ -3028,16 +3028,20 @@
                           <link role="variableDeclaration:3" targetNodeId="1560298786499495069" resolveInfo="nodeName" />
                         </node>
                         <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1560298786499495144">
-                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499495145">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499495146">
-                              <link role="variableDeclaration:3" targetNodeId="1560298786499495062" resolveInfo="modelRef" />
-                            </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499495147">
-                              <link role="baseMethodDeclaration:3" targetNodeId="10.~SModelReference.getShortName():java.lang.String" />
-                            </node>
-                          </node>
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1560298786499495148">
                             <property name="value:3" value=".*" />
+                          </node>
+                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5917128770759891423">
+                            <link role="baseMethodDeclaration:3" targetNodeId="14.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolveInfo="shortNameFromLongName" />
+                            <link role="classConcept:3" targetNodeId="14.~NameUtil" resolveInfo="NameUtil" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5917128770759891424">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5917128770759891428">
+                                <link role="variableDeclaration:3" targetNodeId="1560298786499495062" resolveInfo="modelRef" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5917128770759891426">
+                                <link role="baseMethodDeclaration:3" targetNodeId="10.~SModelReference.getLongName():java.lang.String" resolveInfo="getLongName" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>

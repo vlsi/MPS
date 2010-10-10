@@ -17388,12 +17388,16 @@
         </node>
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5923576889075046777">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5923576889075046778">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5923576889075046779">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1200564340082201668">
-                <link role="baseMethodDeclaration:3" targetNodeId="5923576889075046766" resolveInfo="getObject" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075046783">
-                <link role="baseMethodDeclaration:3" targetNodeId="31.~SModelReference.getShortName():java.lang.String" resolveInfo="getShortName" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5917128770759888117">
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolveInfo="shortNameFromLongName" />
+              <link role="classConcept:3" targetNodeId="24.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5917128770759888119">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="5917128770759888118">
+                  <link role="baseMethodDeclaration:3" targetNodeId="5923576889075046766" resolveInfo="getObject" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5917128770759888123">
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~SModelReference.getLongName():java.lang.String" resolveInfo="getLongName" />
+                </node>
               </node>
             </node>
           </node>
