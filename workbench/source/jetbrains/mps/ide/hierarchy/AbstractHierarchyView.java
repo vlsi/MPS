@@ -21,8 +21,11 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
@@ -154,8 +157,12 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
         List<SNode> nodes = new ArrayList<SNode>();
         for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
           if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) continue;
-          for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
-            if (aClass.isInstance(node)) nodes.add(node.getNode());
+          SNode decl = SModelUtil.findConceptDeclaration(aClass.getName(), GlobalScope.getInstance());
+          String name = NameUtil.nodeFQName(decl);
+
+
+          for (SNode node : modelDescriptor.getSModel().roots()) {
+            if (node.isInstanceOfConcept(name)) nodes.add(node);
           }
         }
 
