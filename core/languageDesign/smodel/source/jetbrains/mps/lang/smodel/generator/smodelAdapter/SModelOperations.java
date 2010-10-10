@@ -96,11 +96,13 @@ public class SModelOperations {
 
   public static List<SNode> getNodes(SModel model, final String conceptFqName) {
     if (model == null) return new ArrayList<SNode>();
-    if (conceptFqName == null) {
-      return (List<SNode>) model.allNodes();
-    }
+    if (conceptFqName != null) return model.allNodes(new IsInstanceCondition(conceptFqName));
 
-    return model.allNodes(new IsInstanceCondition(conceptFqName));
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode node:model.nodes()){
+      result.add(node);
+    }
+    return result;
   }
 
 

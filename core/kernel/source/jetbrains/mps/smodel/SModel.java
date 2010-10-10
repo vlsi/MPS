@@ -150,21 +150,6 @@ public class SModel{
   }
 
   //todo replace with iterator
-
-  @NotNull
-  public List<SNode> allNodes() {
-    List<SNode> result = new ArrayList<SNode>(this.registeredNodesCount());
-    for (SNode root : myRoots) {
-      for (SNode i : root.getDescendantsIterable(null, true)) {
-        result.add(i);
-      }
-    }
-
-    return result;
-  }
-
-  //todo replace with iterator
-
   public List<SNode> allNodes(Condition<SNode> condition) {
     if (condition instanceof IsInstanceCondition) {
       IsInstanceCondition c = (IsInstanceCondition) condition;
@@ -183,13 +168,11 @@ public class SModel{
   }
 
   //todo replace with iterator
-
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
     return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
   }
 
   //todo replace with iterator
-
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
@@ -206,7 +189,6 @@ public class SModel{
   }
 
   //todo replace with iterator
-
   public List<SNode> allRootsIncludingImported(IScope scope) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
