@@ -109,13 +109,13 @@ public class ReferencesTest extends BaseMPSTest {
       LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : " + item);
     }
 
-    for (SNode node : sm.getSModel().allNodes()) {
+    for (SNode node : sm.getSModel().nodes()) {
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
         LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Unknown concept " + node.getConceptFqName());
       }
     }
 
-    for (SNode node : sm.getSModel().allNodes()) {
+    for (SNode node : sm.getSModel().nodes()) {
 
       for (SReference ref : node.getReferences()) {
         if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {

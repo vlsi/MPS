@@ -647,7 +647,7 @@ public class SModel implements Iterable<SNode> {
 
   public Set<ModuleReference> getUsedLanguages() {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
-    for (SNode node : allNodes()) {
+    for (SNode node : nodes()) {
       Language lang = node.getLanguage(GlobalScope.getInstance());
       ModuleReference ref = lang.getModuleReference();
       result.add(ref);
@@ -657,7 +657,7 @@ public class SModel implements Iterable<SNode> {
 
   public Set<SModelReference> getUsedImportedModels() {
     Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SNode node : allNodes()) {
+    for (SNode node : nodes()) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (reference.isExternal()) {
@@ -682,8 +682,7 @@ public class SModel implements Iterable<SNode> {
     for (SModelDescriptor sm : allImportedModels(scope)) {
       importedModels.add(sm.getSModelReference());
     }
-    List<SNode> nodes = allNodes();
-    for (SNode node : nodes) {
+    for (SNode node : nodes()) {
       Language lang = node.getLanguage(scope);
       if (lang == null) {
         LOG.error("Can't find language " + node.getLanguageNamespace());
