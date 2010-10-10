@@ -80,7 +80,7 @@ public class NodeTypesComponentNew {
   }
 
   private boolean applyRulesToNode(SNode node) {
-    Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    Set<InferenceRule_Runtime> newRules = null;//myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {
       for (InferenceRule_Runtime rule : newRules) {
@@ -97,7 +97,7 @@ public class NodeTypesComponentNew {
       } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
         ((AbstractNonTypesystemRule_Runtime) rule).applyRule(node, myTypeCheckingContext);
       } else {
-        rule.applyRule(node);
+       // rule.applyRule(node);
       }
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
