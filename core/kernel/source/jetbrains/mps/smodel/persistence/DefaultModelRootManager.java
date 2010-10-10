@@ -372,14 +372,5 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     dsm.save();
     oldFile.delete();
   }
-
-  public void changeSModelRoot(SModelDescriptor sm, SModelRoot modelRoot) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    IFile oldFile = dsm.getModelFile();
-    IFile newFile = createFileForModelUID(modelRoot, sm.getSModelReference().getSModelFqName());
-    dsm.changeModelFile(newFile);
-    dsm.save();
-    oldFile.delete();
-  }
 }
 

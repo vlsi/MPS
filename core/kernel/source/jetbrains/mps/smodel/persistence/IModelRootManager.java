@@ -71,7 +71,5 @@ public interface IModelRootManager {
 
   void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile);
 
-  void changeSModelRoot(SModelDescriptor model, SModelRoot modelRoot);
-
   void dispose();
 }

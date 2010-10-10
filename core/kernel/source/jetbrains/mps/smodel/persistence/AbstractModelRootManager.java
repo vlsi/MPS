@@ -84,8 +84,4 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   public void rename(SModelDescriptor model, SModelFqName modelFqName, boolean changeFile) {
     throw new UnsupportedOperationException();
   }
-
-  public void changeSModelRoot(SModelDescriptor model, SModelRoot modelRoot) {
-    throw new UnsupportedOperationException();
-  }
 }
