@@ -202,13 +202,6 @@ public class SModelUtil_new implements ApplicationComponent {
     return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept), scope);
   }
 
-  /**
-   * @deprecated moved to SModelSearchUtil (remove after dnq migrated to build 696)
-   */
-  public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
-    return SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
-  }
-
   public static boolean isAcceptableTarget(LinkDeclaration linkDeclaration, SNode referentNode) {
     AbstractConceptDeclaration linkTargetConcept = linkDeclaration.getTarget();
     return isAssignableConcept(referentNode.getConceptFqName(), NameUtil.nodeFQName(linkTargetConcept));
@@ -223,7 +216,6 @@ public class SModelUtil_new implements ApplicationComponent {
     }
     return isAcceptableTarget(linkDeclaration, targetNode);
   }
-
 
   public static String getAlias(AbstractConceptDeclaration conceptDeclaration) {
     return getStringConceptProperty(conceptDeclaration, BaseConcept.CPR_Alias);

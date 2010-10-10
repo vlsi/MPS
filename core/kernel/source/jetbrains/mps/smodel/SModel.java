@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -150,7 +151,7 @@ public class SModel {
 
   @Deprecated
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
-    AbstractConceptDeclaration decl = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
+    SNode decl = SModelUtil.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
     String name = NameUtil.nodeFQName(decl);
     List<SNode> nodes = getFastNodeFinder().getNodes(name, true);
     return BaseAdapter.toAdapters(nodes);
