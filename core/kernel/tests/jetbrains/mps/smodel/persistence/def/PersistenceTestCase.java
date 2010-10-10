@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Document;
 
@@ -57,7 +58,7 @@ public class PersistenceTestCase extends BaseMPSTest {
       public void run() {
         SModel model = modelDescriptor.getSModel();
         Document document = writer.saveModel(model);
-        SModel readModel = reader.readModel(document, model.getShortName(), model.getStereotype());
+        SModel readModel = reader.readModel(document, NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
         ModelAssert.assertDeepModelEquals(model, readModel);
       }
     });

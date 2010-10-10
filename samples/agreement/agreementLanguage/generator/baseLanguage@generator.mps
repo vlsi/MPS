@@ -866,13 +866,19 @@
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1197662818880">
                 <link role="baseMethodDeclaration:3" targetNodeId="15.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
                 <link role="classConcept:3" targetNodeId="15.~NameUtil" resolveInfo="NameUtil" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1214252619892">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217013946471">
-                    <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1217013945095" />
-                    <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="1217013949692" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1214252619893">
-                    <link role="baseMethodDeclaration:3" targetNodeId="16.~SModel.getShortName():java.lang.String" resolveInfo="getShortName" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5917128770759921116">
+                  <link role="baseMethodDeclaration:3" targetNodeId="15.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolveInfo="shortNameFromLongName" />
+                  <link role="classConcept:3" targetNodeId="15.~NameUtil" resolveInfo="NameUtil" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5917128770759921126">
+                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="5917128770759921124">
+                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5917128770759921117">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5917128770759921118" />
+                        <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="5917128770759921119" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5917128770759924357">
+                      <link role="baseMethodDeclaration:3" targetNodeId="16.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
+                    </node>
                   </node>
                 </node>
               </node>

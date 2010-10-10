@@ -124,7 +124,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1197662782219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String prefix = NameUtil.capitalize(_context.getInputModel().getShortName());
+    String prefix = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getInputModel().getLongName()));
     return prefix + "RegistryBuilder";
   }
 

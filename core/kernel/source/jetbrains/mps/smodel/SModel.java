@@ -85,11 +85,6 @@ public class SModel {
   }
 
   @NotNull
-  public String getShortName() {
-    return NameUtil.shortNameFromLongName(getLongName());
-  }
-
-  @NotNull
   public String getStereotype() {
     return myReference.getStereotype();
   }

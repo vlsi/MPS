@@ -341,7 +341,7 @@ public class ModelPersistence {
 
   @NotNull
   public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model), model.getShortName(), model.getStereotype());
+    return readModel(saveModel(model), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
   }
 
   @NotNull
