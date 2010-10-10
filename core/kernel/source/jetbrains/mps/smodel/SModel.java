@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +26,8 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +37,7 @@ import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel{
+public class SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
@@ -150,6 +153,7 @@ public class SModel{
   }
 
   //todo replace with iterator
+
   public List<SNode> allNodes(Condition<SNode> condition) {
     if (condition instanceof IsInstanceCondition) {
       IsInstanceCondition c = (IsInstanceCondition) condition;
@@ -168,11 +172,16 @@ public class SModel{
   }
 
   //todo replace with iterator
+
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
-    return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
+    AbstractConceptDeclaration decl = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
+    String name = NameUtil.nodeFQName(decl);
+    List<SNode> nodes = getFastNodeFinder().getNodes(name, true);
+    return BaseAdapter.toAdapters(nodes);
   }
 
   //todo replace with iterator
+
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
@@ -183,12 +192,16 @@ public class SModel{
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.allNodes(condition));
+      Iterable<SNode> iter = new ConditionalIterable<SNode>(aModel.nodes(), condition);
+      for (SNode node : iter) {
+        resultNodes.add(node);
+      }
     }
     return resultNodes;
   }
 
   //todo replace with iterator
+
   public List<SNode> allRootsIncludingImported(IScope scope) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);

@@ -96,7 +96,9 @@ public class SModelOperations {
 
   public static List<SNode> getNodes(SModel model, final String conceptFqName) {
     if (model == null) return new ArrayList<SNode>();
-    if (conceptFqName != null) return model.allNodes(new IsInstanceCondition(conceptFqName));
+    if (conceptFqName != null) {
+      return model.getFastNodeFinder().getNodes(conceptFqName, true);
+    }
 
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node:model.nodes()){
