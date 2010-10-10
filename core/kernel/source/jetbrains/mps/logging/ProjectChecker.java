@@ -52,7 +52,7 @@ public class ProjectChecker {
     }
 
     for (SModelDescriptor m : modelsToTest) {
-      m.getSModel().getRoots();
+      m.getSModel();
     }
 
     return ErrorsLog.getInstance().getText().length() == 0;

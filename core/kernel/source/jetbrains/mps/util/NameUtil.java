@@ -27,11 +27,6 @@ import java.io.File;
 import java.util.*;
 import java.util.regex.Pattern;
 
-
-/**
- * User: Dmitriev.
- * Date: Dec 27, 2003
- */
 public class NameUtil {
   private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
 
@@ -395,8 +390,7 @@ public class NameUtil {
 
 
   public static String conceptFQNameByAdapterClass(Class<? extends BaseAdapter> cls) {
-    String className = cls.getName();
-    return className;
+    return cls.getName();
   }
 
   public static String convertToMetaString(String s) {
@@ -411,13 +405,9 @@ public class NameUtil {
   }
 
   public static String toValidIdentifier(String s) {
-    if (s == null) {
-      return null;
-    }
+    if (s == null) return null;
+    if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) return s;
 
-    if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) {
-      return s;
-    }
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < s.length(); i++) {
       char c = s.charAt(i);
@@ -434,9 +424,8 @@ public class NameUtil {
   }
 
   public static String toValidCamelIdentifier(String s) {
-    if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) {
-      return s;
-    }
+    if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) return s;
+
     StringBuilder sb = new StringBuilder();
     boolean upperCaseNext = false;
     for (int i = 0; i < s.length(); i++) {

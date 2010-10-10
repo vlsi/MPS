@@ -29,6 +29,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class LanguageConceptsUsagesFinder implements IFinder {
@@ -46,7 +47,12 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (sModel == null) return searchResults;
     if (sModel.rootsCount() == 0) return searchResults;
 
-    searchResults.getSearchedNodes().addAll(sModel.getRoots());
+    List<SNode> roots = new LinkedList<SNode>();
+    for (SNode root:sModel.roots()){
+      roots.add(root);
+    }
+
+    searchResults.getSearchedNodes().addAll(roots);
 
     SearchResults<SModel> modelResults = FindUtils.getSearchResults(indicator, new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
@@ -57,7 +63,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
 
     IScope scope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
 
-    SearchResults results = FindUtils.getSearchResults(indicator, sModel.getRoots(), scope, new NodeUsages_Finder());
+    SearchResults results = FindUtils.getSearchResults(indicator, roots, scope, new NodeUsages_Finder());
     searchResults.getSearchResults().addAll(results.getSearchResults());
 
     return searchResults;

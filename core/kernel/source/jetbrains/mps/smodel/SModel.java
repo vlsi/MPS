@@ -152,8 +152,7 @@ public class SModel {
     return result;
   }
 
-  //todo replace with iterator
-
+  @Deprecated
   public List<SNode> allNodes(Condition<SNode> condition) {
     if (condition instanceof IsInstanceCondition) {
       IsInstanceCondition c = (IsInstanceCondition) condition;
@@ -171,8 +170,7 @@ public class SModel {
     return resultNodes;
   }
 
-  //todo replace with iterator
-
+  @Deprecated
   public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
     AbstractConceptDeclaration decl = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
     String name = NameUtil.nodeFQName(decl);
@@ -180,8 +178,7 @@ public class SModel {
     return BaseAdapter.toAdapters(nodes);
   }
 
-  //todo replace with iterator
-
+  @Deprecated
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);
@@ -200,8 +197,7 @@ public class SModel {
     return resultNodes;
   }
 
-  //todo replace with iterator
-
+  @Deprecated
   public List<SNode> allRootsIncludingImported(IScope scope) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);

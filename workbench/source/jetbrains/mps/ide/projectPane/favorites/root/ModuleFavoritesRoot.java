@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -37,7 +36,10 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
         }
       });
       if (model == null) continue;
-      result.addAll(model.getRoots());
+
+      for (SNode node:model.roots()){
+        result.add(node);
+      }
     }
     return result;
   }

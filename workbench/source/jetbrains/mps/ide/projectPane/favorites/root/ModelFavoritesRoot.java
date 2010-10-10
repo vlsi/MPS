@@ -31,7 +31,10 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
       }
     });
     if (model == null) return result;
-    result.addAll(model.getRoots());
+
+    for (SNode node:model.roots()){
+      result.add(node);
+    }
     return result;
   }
 }
