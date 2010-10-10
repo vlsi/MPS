@@ -15,9 +15,21 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.lang.pattern.util.IMatchModifier;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,6 +59,37 @@ public class TypesUtil {
     return 1;
   }
 
+  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo errorInfo) {
+    if (left == right) {
+      return true;
+    }
+    if (left == null || right == null) {
+      return false;
+    }
 
+    final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
+    boolean b = MatchingUtil.matchNodes(left, right, new IMatchModifier() {
+      public boolean accept(SNode node1, SNode node2) {
+        return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
+      }
 
+      public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
+        return false;
+      }
+
+      public void performAction(SNode node1, SNode node2) {
+        childEQs.add(new Pair<SNode, SNode>(node1, node2));
+      }
+
+      public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
+      }
+    }, false);
+    if (b) {
+      if (equations != null) {
+        equations.addEquations(childEQs, errorInfo);
+      }
+    }
+    return b;
+  }
 }
+

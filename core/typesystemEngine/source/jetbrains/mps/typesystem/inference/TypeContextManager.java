@@ -96,7 +96,7 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
-    if (!useNewTypeSystem) {
+    if (useNewTypeSystem) {
       return new TypeCheckingContextNew(node, myTypeChecker);
     }
     return new TypeCheckingContext(node, myTypeChecker);

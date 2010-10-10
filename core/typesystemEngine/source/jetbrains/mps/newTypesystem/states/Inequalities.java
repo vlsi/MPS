@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.differences.mapPair.SubTypingAdded;
+import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.LinkedList;
@@ -70,7 +74,13 @@ public class Inequalities {
     }
     if (!myState.isConcrete(subType) || !myState.isConcrete(superType)) {
       addSubTyping(subType, superType, isWeak, check, info);
+      return;
     }
+    if (isWeak) {
+      myState.addEquation(subType, superType, info);
+    }
+
+
     
   }
 
@@ -85,6 +95,24 @@ public class Inequalities {
       inequality.add(subType, superType, info);
       myState.addDifference(new SubTypingAdded(subType, superType, inequality));
     }
+  }
+
+  private void reportError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
+    IErrorReporter errorReporter;
+    String errorString = equationInfo.getErrorString();
+    String ruleModel = equationInfo.getRuleModel();
+    String ruleId = equationInfo.getRuleId();
+    SNode nodeWithError = equationInfo.getNodeWithError();
+    if (errorString == null) {
+      String strongString = isWeak ? "" : " strong";
+      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType,
+        " is not a" + strongString + " subtype of ", superType, "", ruleModel, ruleId);
+    } else {
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+    }
+    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
+    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void solveInequalities() {

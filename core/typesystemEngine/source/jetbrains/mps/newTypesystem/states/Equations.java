@@ -25,11 +25,9 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -85,22 +83,19 @@ public class Equations {
       processEquation(lRepresentative, rRepresentative, info);
       return;
     }
-    if (!compareTypes(lRepresentative, rRepresentative)) {
+    if (!compareTypes(lRepresentative, rRepresentative, info)) {
       reportEquationBroken(info, lRepresentative, rRepresentative);
     }
   }
 
-  private boolean compareTypes(SNode left, SNode right) {
+  private boolean compareTypes(SNode left, SNode right, EquationInfo info) {
     if (left == right) {
       return true;
     }
     if (left == null || right == null) {
       return false;
     }
-    if (left.equals(right)) {
-      return true;
-    }
-    return false;
+    return TypesUtil.match(left, right, this, info);
   }
 
   private void processEquation(SNode var, SNode type, EquationInfo errorInfo) {
@@ -160,6 +155,13 @@ public class Equations {
     }
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
+
+  public void addEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
+    for (Pair<SNode, SNode> eq : childEqs) {
+      addEquation(eq.o2, eq.o1, errorInfo);
+    }
+  }
+
 
   public void clear() {
     myRepresentatives.clear();
