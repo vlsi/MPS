@@ -92,8 +92,12 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   private static SNode[] getRoots(SModel model) {
-    List<SNode> roots = model.getRoots();
-    return roots.toArray(new SNode[roots.size()]);
+    SNode[] result = new SNode[model.rootsCount()];
+    Iterator<SNode> iter = model.rootsIterator();
+    for (int i = 0; i < result.length; i++) {
+      result[i] = iter.next();
+    }
+    return result;
   }
 
   @Override
@@ -206,19 +210,19 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException {
-    if(myRequiredSet.isEmpty()) {
+    if (myRequiredSet.isEmpty()) {
       assert myRequiredSet.isEmpty();
       return;
     }
 
     loadCachedModel();
 
-    List<SNode> toCopy = new ArrayList<SNode>(myRequiredSet.size()*2 + 16);
-    List<MappingsMemento> toImport = new ArrayList<MappingsMemento>(myRequiredSet.size()*2);
+    List<SNode> toCopy = new ArrayList<SNode>(myRequiredSet.size() * 2 + 16);
+    List<MappingsMemento> toImport = new ArrayList<MappingsMemento>(myRequiredSet.size() * 2);
 
     for (SNode root : myCachedModel.getRoots()) {
       String originalId = myCachedModel.getOriginal(root);
-      if(myRequiredSet.containsKey(originalId)) {
+      if (myRequiredSet.containsKey(originalId)) {
         SNode originalRoot = myRequiredSet.get(originalId);
         if (nextStepToOriginalMap == null) {
           nextStepToOriginalMap = new HashMap<SNode, SNode>();
@@ -226,7 +230,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
         nextStepToOriginalMap.put(root, originalRoot);
         toCopy.add(root);
         MappingsMemento val = myCachedModel.getMappingsMemento(originalId);
-        if(val != null) {
+        if (val != null) {
           toImport.add(val);
         }
       }
@@ -252,11 +256,11 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
     for (SNode root : myCachedModel.getRoots()) {
       String originalId = myCachedModel.getOriginal(root);
-      if(myUnchangedSet.containsKey(originalId)) {
+      if (myUnchangedSet.containsKey(originalId)) {
         model.getRoots().add(root);
         model.setOriginal(root.getSNodeId(), originalId);
         MappingsMemento mappingsMemento = myCachedModel.getMappingsMemento(originalId);
-        if(mappingsMemento != null) {
+        if (mappingsMemento != null) {
           model.updateMappings(originalId, mappingsMemento);
         }
       }

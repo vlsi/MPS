@@ -460,7 +460,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           return !(SNodeOperations.isInstanceOf(object, AttributeConcept.concept));
         }
       };
-      List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new AndCondition<SNode>(condition, myNodesCondition));
+      AndCondition<SNode> cond = new AndCondition<SNode>(condition, myNodesCondition);
+      Iterable<SNode> iter = new ConditionalIterable(model.roots(), cond);
+
+      List<SNode> filteredRoots = new ArrayList<SNode>();
+      for (SNode node : iter) {
+        filteredRoots.add(node);
+      }
       List<SNode> sortedRoots = SortUtil.sortNodesByPresentation(filteredRoots);
       Comparator<Object> childrenComparator = getTree().getChildrenComparator();
       if (childrenComparator != null) {
@@ -567,13 +573,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected void insertRoots(Set<SNode> addedRoots) {
-    if (addedRoots.isEmpty()) {
-      return;
-    }
+    if (addedRoots.isEmpty()) return;
 
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
-    final List<SNode> allRoots = getSModel().getRoots();
+    final ArrayList<SNode> allRoots = new ArrayList<SNode>();
+    for (SNode root1 : getSModel().roots()) {
+      allRoots.add(root1);
+    }
     Collections.sort(allRoots, new ToStringComparator(true));
 
     List<SNode> added = new ArrayList<SNode>(addedRoots);

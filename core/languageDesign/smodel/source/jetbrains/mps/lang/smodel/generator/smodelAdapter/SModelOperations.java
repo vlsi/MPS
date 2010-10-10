@@ -39,7 +39,11 @@ public class SModelOperations {
   public static List<SNode> getRoots(SModel model, final String conceptFqName) {
     if (model == null) return new ArrayList<SNode>();
     if (conceptFqName == null) {
-      return model.getRoots();
+      ArrayList<SNode> result = new ArrayList<SNode>();
+      for (SNode root : model.roots()) {
+        result.add(root);
+      }
+      return result;
     }
     GlobalScope scope = GlobalScope.getInstance();
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);

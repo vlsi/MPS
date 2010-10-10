@@ -38,7 +38,11 @@ public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : model.roots()) {
       if (!(node.getSNodeId() instanceof Foreign)) {
-        return model.getRoots();
+        ArrayList<SNode> res = new ArrayList<SNode>();
+        for (SNode root : model.roots()) {
+          res.add(root);
+        }
+        return res;
       }
       if (!node.getSNodeId().toString().contains("$")) {
         result.add(node);

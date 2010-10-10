@@ -126,7 +126,11 @@ public class SModel {
   //use roots() instead
   @NotNull
   public List<SNode> getRoots() {
-    return new ArrayList<SNode>(myRoots);
+    ArrayList<SNode> result = new ArrayList<SNode>();
+    for (SNode root : roots()) {
+      result.add(root);
+    }
+    return result;
   }
 
   @Deprecated

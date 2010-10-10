@@ -224,7 +224,10 @@ public class GenerationFilter {
     ConnectedComponentPartitioner partitioner = null;
     boolean changed;
 
-    List<SNode> roots = smodel.getRoots();
+    ArrayList<SNode> roots = new ArrayList<SNode>();
+    for (SNode root : smodel.roots()) {
+      roots.add(root);
+    }
 
     // Phase 1: build closure using strongly connected components (only if we have cache)
     if(myCache != null) {
