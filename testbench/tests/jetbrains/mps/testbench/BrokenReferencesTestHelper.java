@@ -22,13 +22,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: Aug 19, 2010
- * Time: 5:13:29 PM
- * To change this template use File | Settings | File Templates.
- */
 public class BrokenReferencesTestHelper {
 
   private final ModelsExtractor myModelsExtractor = new ModelsExtractor();
@@ -161,7 +154,7 @@ public class BrokenReferencesTestHelper {
       errorMessages.append("\n");
     }
 
-    for (SNode node : sm.getSModel().allNodes()) {
+    for (SNode node : sm.getSModel().nodes()) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -170,7 +163,7 @@ public class BrokenReferencesTestHelper {
       }
     }
 
-    for (SNode node : sm.getSModel().allNodes()) {
+    for (SNode node : sm.getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
         if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {
           continue;

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.util.containers.EmptyIterator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -283,11 +282,7 @@ public class SModel implements Iterable<SNode> {
   //---------nodes manipulation--------
 
   public final Iterable<SNode> nodes() {
-    return new Iterable<SNode>() {
-      public Iterator<SNode> iterator() {
-        return nodesIterator();
-      }
-    };
+    return new NodesIterable(this);
   }
 
   public Iterator<SNode> nodesIterator() {
@@ -1353,41 +1348,4 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  private class NodesIterator implements Iterator<SNode> {
-    private Iterator<SNode> myRoots;
-    private Iterator<SNode> myCurrent;
-
-    private NodesIterator(Iterator<SNode> roots) {
-      myRoots = roots;
-      myCurrent = getIterForNextRoot(roots);
-    }
-
-    public boolean hasNext() {
-      moveToNextRootIfNeeded();
-      return myCurrent.hasNext();
-    }
-
-    public SNode next() {
-      moveToNextRootIfNeeded();
-      return myCurrent.next();
-    }
-
-    public void remove() {
-      throw new UnsupportedOperationException();
-    }
-
-    private void moveToNextRootIfNeeded() {
-      if (myCurrent.hasNext()) return;
-      if (!myRoots.hasNext()) return;
-
-      while (myRoots.hasNext() && !(myCurrent.hasNext())) {
-        myCurrent = getIterForNextRoot(myRoots);
-      }
-    }
-
-    private Iterator<SNode> getIterForNextRoot(Iterator<SNode> roots) {
-      if (!roots.hasNext()) return new EmptyIterator<SNode>();
-      return roots.next().getDescendantsIterable(null, true).iterator();
-    }
-  }
 }
