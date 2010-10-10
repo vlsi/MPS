@@ -104,7 +104,7 @@ public class PartitioningHelper {
     List<SNode> roots = new ArrayList<SNode>();
     for (SModelDescriptor md : models) {
       SModel model = md.getSModel();
-      for (SNode root : model.getRoots()) {
+      for (SNode root : model.roots()) {
         roots.add(root);
       }
     }

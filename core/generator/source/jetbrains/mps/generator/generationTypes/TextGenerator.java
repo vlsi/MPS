@@ -68,19 +68,19 @@ public class TextGenerator {
     status.setBLDependencies(dependRoot);
 
     SModel outputModel = status.getOutputModel();
-    if (outputModel != null) {
-      for (SNode outputNode : outputModel.getRoots()) {
-        try {
-          TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-          String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
-          fillDebugInfo(info, fileName, result);
-          fillDependencies(dependRoot, outputNode, fileName, result);
+    if (outputModel == null) return !hasErrors;
 
-          hasErrors |= result.hasErrors();
-          outputNodeContents.put(outputNode, result.getText());
-        } finally {
-          TextGenManager.reset();
-        }
+    for (SNode outputNode : outputModel.roots()) {
+      try {
+        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
+        String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
+        fillDebugInfo(info, fileName, result);
+        fillDependencies(dependRoot, outputNode, fileName, result);
+
+        hasErrors |= result.hasErrors();
+        outputNodeContents.put(outputNode, result.getText());
+      } finally {
+        TextGenManager.reset();
       }
     }
     return !hasErrors;

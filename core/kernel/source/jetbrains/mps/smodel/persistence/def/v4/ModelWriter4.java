@@ -102,7 +102,7 @@ public class ModelWriter4 implements IModelWriter {
 
     VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 
-    for (SNode root : sourceModel.getRoots()) {
+    for (SNode root : sourceModel.roots()) {
       saveNode(rootElement, root, visibleModelElements);
     }
 

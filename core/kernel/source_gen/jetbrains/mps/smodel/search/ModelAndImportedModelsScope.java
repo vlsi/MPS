@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = Logger.getLogger(ModelAndImportedModelsScope.class);
@@ -45,7 +46,10 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
     List<SNode> result = new ArrayList<SNode>();
     if (myRootsOnly) {
       for (SModelDescriptor model : models) {
-        result.addAll(model.getSModel().getRoots(condition));
+        Iterable<SNode> roots = new ConditionalIterable(model.getSModel().roots(), condition);
+        for (SNode root : roots) {
+          result.add(root);
+        }
       }
     } else {
       for (SModelDescriptor model : models) {

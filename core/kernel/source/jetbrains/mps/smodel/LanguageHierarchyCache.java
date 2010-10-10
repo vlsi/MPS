@@ -29,6 +29,8 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -289,12 +291,16 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       public void run() {
         for (Language language : myModuleRepository.getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
-          if (structureDescriptor != null) {
-            for (SNode root : structureDescriptor.getSModel().getRoots()) {
-              if (root.isInstanceOfConcept(AbstractConceptDeclaration.concept)) {
-                addToCache(NameUtil.nodeFQName(root));
-              }
+          if (structureDescriptor == null) continue;
+          
+          Condition<SNode> cond = new Condition<SNode>() {
+            public boolean met(SNode node) {
+              return node.isInstanceOfConcept(AbstractConceptDeclaration.concept);
             }
+          };
+          Iterable<SNode> iterable = new ConditionalIterable<SNode>(structureDescriptor.getSModel().roots(), cond);
+          for (SNode root : iterable) {
+            addToCache(NameUtil.nodeFQName(root));
           }
         }
       }

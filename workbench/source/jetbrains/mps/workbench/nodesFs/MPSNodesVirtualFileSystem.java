@@ -24,6 +24,9 @@ import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.ConditionalIterator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -100,20 +104,19 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (!m.matches()) return null;
 
         SModelReference reference = SModelReference.fromString(m.group(1));
-        String name = m.group(2);
+        final String name = m.group(2);
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(reference);
         if (sm == null) return null;
 
         SNode node = null;
-        for (SNode root : sm.getSModel().getRoots()) {
-          if (root.getPresentation().equals(name)) {
-            node = root;
-            break;
+        Condition<SNode> cond = new Condition<SNode>() {
+          public boolean met(SNode node) {
+            return node.getPresentation().equals(name);
           }
-        }
-
-        if (node == null) return null;
-        return getFileFor(node);
+        };
+        Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getSModel().rootsIterator(), cond);
+        if (!iter.hasNext()) return null;
+        return getFileFor(iter.next());
       }
     });
   }
@@ -204,7 +207,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
-      for (final SNode root : modelDescriptor.getSModel().getRoots()) {
+      for (final SNode root : modelDescriptor.getSModel().roots()) {
         final SNodePointer pointer = new SNodePointer(root);
         final VirtualFile vf = myVirtualFiles.get(pointer);
         if (vf == null) continue;
@@ -226,7 +229,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
 
     public void modelReplaced(final SModelDescriptor sm) {
-      for (SNode root : sm.getSModel().getRoots()) {
+      for (SNode root : sm.getSModel().roots()) {
         updateModificationStamp(root);
       }
 

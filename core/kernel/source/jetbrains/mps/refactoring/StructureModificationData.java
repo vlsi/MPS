@@ -510,7 +510,7 @@ public class StructureModificationData {
     if (!myCachesAreUpToDate)  computeCaches();
     assert myCachesAreUpToDate;
 
-    for (SNode node : model.allNodes()) {
+    for (SNode node : model.nodes()) {
 
       //updating concept features' names
       String conceptFQName = node.getConceptFqName();

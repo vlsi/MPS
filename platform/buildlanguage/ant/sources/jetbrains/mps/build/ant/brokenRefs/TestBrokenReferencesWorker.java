@@ -116,7 +116,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
       errorMessages.append("\n");
     }
 
-    for (SNode node : sm.getSModel().allNodes()) {
+    for (SNode node : sm.getSModel().nodes()) {
       debug("Checking node " + node);
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -125,8 +125,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
       }
     }
 
-    for (SNode node : sm.getSModel().allNodes()) {
-
+    for (SNode node : sm.getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
         if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {
           continue;

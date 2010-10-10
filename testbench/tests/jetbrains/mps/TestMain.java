@@ -54,6 +54,8 @@ import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import junit.framework.TestCase;
@@ -493,24 +495,20 @@ public class TestMain {
     }
 
     public static void invokeTests(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> outputModels, junit.framework.TestResult testResult, ClassLoader baseClassLoader) {
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode node) {
+          return node.isInstanceOfConcept(ClassConcept.concept);
+        }
+      };
       for (final SModel model : outputModels) {
-        for (final SNode outputRoot : model.getRoots()) {
+        Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
+        for (final SNode outputRoot : iterable) {
           if (baseClassLoader == null) {
             baseClassLoader = model.getClass().getClassLoader();
           }
           ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
-          Boolean isClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            @Override
-            public Boolean compute() {
-              return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
-            }
-          });
-          if (isClassConcept) {
-            continue;
-          }
           try {
             String className = ModelAccess.instance().runReadAction(new Computable<String>() {
-              @Override
               public String compute() {
                 return model.getLongName() + "." + outputRoot.getName();
               }

@@ -43,8 +43,8 @@ public class TransformationTests {
     runCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
-        SNode s1 = m.getRootByName("c1");
-        SNode s2 = m.getRootByName("c1");
+        SNode s1 = SModelOperations.getRootByName(m,"c1");
+        SNode s2 = SModelOperations.getRootByName(m,"c1");
         Assert.assertEquals(null, NodesMatcher.matchNodes(s1, s2));
       }
     }, project);
@@ -58,8 +58,8 @@ public class TransformationTests {
     runCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
-        SNode s1 = m.getRootByName("i1");
-        SNode s2 = m.getRootByName("c2");
+        SNode s1 = SModelOperations.getRootByName(m,"i1");
+        SNode s2 = SModelOperations.getRootByName(m,"c2");
         NodeDifference d = difference("i1", new ConceptDifference("jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         Assert.assertEquals(d, NodesMatcher.matchNodes(s1, s2));
       }
@@ -74,8 +74,8 @@ public class TransformationTests {
     runCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
-        SNode s1 = m.getRootByName("c1");
-        SNode s2 = m.getRootByName("c2");
+        SNode s1 = SModelOperations.getRootByName(m,"c1");
+        SNode s2 = SModelOperations.getRootByName(m,"c2");
         NodeDifference d = difference("c1", new PropertyDifferense("name"));
         Assert.assertEquals(d, NodesMatcher.matchNodes(s1, s2));
       }
@@ -93,8 +93,8 @@ public class TransformationTests {
     runCommand(new Runnable() {
       public void run() {
         final SModel m = getModel();
-        SNode s1 = m.getRootByName("c1");
-        SNode s2 = m.getRootByName("differentMethod");
+        SNode s1 = SModelOperations.getRootByName(m,"c1");
+        SNode s2 = SModelOperations.getRootByName(m,"differentMethod");
         NodeDifference d = difference("c1",
                 new PropertyDifferense("name"),
                 new ChildrenCountDifference("field", 1, 2),
@@ -113,8 +113,8 @@ public class TransformationTests {
     runCommand(new Runnable() {
       public void run() {
         SModel m = getModel();
-        SNode s1 = m.getRootByName("differentReference1");
-        SNode s2 = m.getRootByName("differentReference2");
+        SNode s1 = SModelOperations.getRootByName(m,"differentReference1");
+        SNode s2 = SModelOperations.getRootByName(m,"differentReference2");
         NodeDifference d = difference("differentReference1",
                 new PropertyDifferense("name"),
                 difference("c1",

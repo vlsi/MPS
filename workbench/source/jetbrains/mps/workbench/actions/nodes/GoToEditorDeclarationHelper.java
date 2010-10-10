@@ -21,8 +21,10 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterator;
 
 import javax.swing.JOptionPane;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -82,7 +84,7 @@ public class GoToEditorDeclarationHelper {
   }
 
   public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, final AbstractConceptDeclaration conceptDeclaration) {
-    List<SNode> editors = editorModel.getRoots(new Condition<SNode>() {
+    Condition<SNode> cond = new Condition<SNode>() {
       public boolean met(SNode n) {
         INodeAdapter object = BaseAdapter.fromNode(n);
         if (object instanceof ConceptEditorDeclaration) {
@@ -91,9 +93,10 @@ public class GoToEditorDeclarationHelper {
         }
         return false;
       }
-    });
-    if (editors.isEmpty()) return null;
-    return ((ConceptEditorDeclaration) editors.get(0).getAdapter());
+    };
+    Iterator<SNode> editors = new ConditionalIterator<SNode>(editorModel.rootsIterator(),cond);
+    if (!editors.hasNext()) return null;
+    return ((ConceptEditorDeclaration) editors.next().getAdapter());
   }
 
   public static ConceptEditorDeclaration createEditorDeclaration(AbstractConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {

@@ -38,7 +38,8 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        SNode node = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
+        SModel model = structureModelDescriptor.getSModel();
+        SNode node = SModelOperations.getRootByName(model,"MyVeryGoodConcept1");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
         refactoringContext.setSelectedProject(project);
@@ -63,7 +64,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.getRoots().get(0);
+              SNode root = sModel.rootsIterator().next();
               SNode referent = root.getReferent(newLinkName);
               if (referent == null) {
                 System.err.println("referent is null");

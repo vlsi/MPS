@@ -38,7 +38,8 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        SNode node = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
+        SModel model = structureModelDescriptor.getSModel();
+        SNode node = SModelOperations.getRootByName(model,"MyVeryGoodConcept1");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
         linkName[0] = link.getProperty("role");
@@ -63,7 +64,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.getRoots().get(0);
+              SNode root = sModel.rootsIterator().next();
               SReference reference = root.getReference(linkName[0]);
               result[0] = (reference == null);
             } catch (Throwable t) {

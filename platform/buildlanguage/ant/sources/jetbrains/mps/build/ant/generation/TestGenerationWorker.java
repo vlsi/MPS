@@ -44,9 +44,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.AbstractClassLoader;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import jetbrains.mps.project.MPSExtentions;
 import junit.framework.TestCase;
 import org.apache.tools.ant.BuildException;
@@ -363,20 +361,19 @@ public class TestGenerationWorker extends GeneratorWorker {
   private List<String> getTestClassesNames(DiffGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
     List<String> testClasses = new ArrayList<String>();
 
+    Condition<SNode> nodeCond = new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return node.isInstanceOfConcept(ClassConcept.concept);
+      }
+    };
+
     for (final SModel model : outputModels) {
-      for (final SNode outputRoot : model.getRoots()) {
+      Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), nodeCond);
+      for (final SNode outputRoot : iterable) {
         if (baseClassLoader == null) {
           model.getClass().getClassLoader();
         }
         ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
-        Boolean isNotClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
-          }
-        });
-        if (isNotClassConcept) {
-          continue;
-        }
         try {
           String className = ModelAccess.instance().runReadAction(new Computable<String>() {
             public String compute() {

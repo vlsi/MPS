@@ -135,20 +135,9 @@ public class SModel implements Iterable<SNode> {
 
   @Deprecated
   //use roots() instead
-  @NotNull
-  public List<SNode> getRoots(@NotNull Condition<SNode> condition) {
-    List<SNode> list = new ArrayList<SNode>();
-    for (SNode node : myRoots) {
-      if (condition.met(node)) list.add(node);
-    }
-    return list;
-  }
-
-  @Deprecated
-  //use roots() instead
   public List<INodeAdapter> getRootsAdapters() {
     List<INodeAdapter> result = new ArrayList<INodeAdapter>();
-    for (SNode root : getRoots()) {
+    for (SNode root : roots()) {
       result.add(root.getAdapter());
     }
     return result;
@@ -158,7 +147,7 @@ public class SModel implements Iterable<SNode> {
   //use roots() instead
   public <N extends INodeAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
     List<N> result = new ArrayList<N>();
-    for (SNode root : getRoots()) {
+    for (SNode root : roots()) {
       INodeAdapter a = root.getAdapter();
       if (cls.isInstance(a)) {
         result.add((N) a);
@@ -171,9 +160,8 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SNode> allNodes() {
-    SModel model = this;
     List<SNode> result = new ArrayList<SNode>(this.registeredNodesCount());
-    for (SNode root : model.getRoots()) {
+    for (SNode root : myRoots) {
       for (SNode i : root.getDescendantsIterable(null, true)) {
         result.add(i);
       }
@@ -192,7 +180,7 @@ public class SModel implements Iterable<SNode> {
 
     List<SNode> resultNodes = new ArrayList<SNode>();
 
-    for (SNode node : getRoots()) {
+    for (SNode node : myRoots) {
       for (SNode i : node.getDescendantsIterable(condition, true)) {
         resultNodes.add(i);
       }
@@ -236,14 +224,14 @@ public class SModel implements Iterable<SNode> {
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.getRoots());
+      resultNodes.addAll(aModel.myRoots);
     }
     return resultNodes;
   }
 
-  //---------nodes manipulation--------
+  //---------roots manipulation--------
 
-  public Iterable<SNode> roots(){
+  public final Iterable<SNode> roots() {
     return new Iterable<SNode>() {
       public Iterator<SNode> iterator() {
         return rootsIterator();
@@ -251,19 +239,14 @@ public class SModel implements Iterable<SNode> {
     };
   }
 
-  @NotNull
   public Iterator<SNode> rootsIterator() {
     return myRoots.iterator();
-  }
-
-  public boolean isRoot(@Nullable SNode node) {
-    return myRoots.contains(node);
   }
 
   public void addRoot(@NotNull SNode node) {
     ModelChange.assertLegalNodeRegistration(this, node);
     if (myRoots.contains(node)) return;
-    if (node.getModel() != this && node.getModel().isRoot(node)) {
+    if (node.getModel() != this && node.isRoot()) {
       node.getModel().removeRoot(node);
     } else {
       SNode parent = node.getParent();
@@ -292,12 +275,22 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @Nullable
-  public SNode getRootByName(@NotNull String name) {
-    for (SNode root : getRoots()) {
-      if (name.equals(root.getName())) return root;
-    }
-    return null;
+  public int rootsCount() {
+    return myRoots.size();
+  }
+
+  //---------nodes manipulation--------
+
+  public final Iterable<SNode> nodes() {
+    return new NodesIterable(this);
+  }
+
+  public Iterator<SNode> nodesIterator() {
+    return new NodesIterator(rootsIterator());
+  }
+
+  public int registeredNodesCount() {
+    return myIdToNodeMap.size();
   }
 
   public void clearAdaptersAndUserObjects() {
@@ -305,10 +298,6 @@ public class SModel implements Iterable<SNode> {
       node.clearAdapter();
       node.removeAllUserObjects();
     }
-  }
-
-  public int registeredNodesCount() {
-    return myIdToNodeMap.size();
   }
 
   //---------imports manipulation--------
@@ -658,7 +647,7 @@ public class SModel implements Iterable<SNode> {
 
   public Set<ModuleReference> getUsedLanguages() {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
-    for (SNode node : allNodes()) {
+    for (SNode node : nodes()) {
       Language lang = node.getLanguage(GlobalScope.getInstance());
       ModuleReference ref = lang.getModuleReference();
       result.add(ref);
@@ -668,7 +657,7 @@ public class SModel implements Iterable<SNode> {
 
   public Set<SModelReference> getUsedImportedModels() {
     Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SNode node : allNodes()) {
+    for (SNode node : nodes()) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (reference.isExternal()) {
@@ -693,8 +682,7 @@ public class SModel implements Iterable<SNode> {
     for (SModelDescriptor sm : allImportedModels(scope)) {
       importedModels.add(sm.getSModelReference());
     }
-    List<SNode> nodes = allNodes();
-    for (SNode node : nodes) {
+    for (SNode node : nodes()) {
       Language lang = node.getLanguage(scope);
       if (lang == null) {
         LOG.error("Can't find language " + node.getLanguageNamespace());
@@ -1197,6 +1185,12 @@ public class SModel implements Iterable<SNode> {
     myRoots.clear();
   }
 
+  //this method is only for access from SNode. Use SNode.isRoot from outer code
+
+  boolean isRoot(@Nullable SNode node) {
+    return myRoots.contains(node);
+  }
+
   public void changeModelReference(SModelReference newModelReference) {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1352,4 +1346,5 @@ public class SModel implements Iterable<SNode> {
       return result;
     }
   }
+
 }

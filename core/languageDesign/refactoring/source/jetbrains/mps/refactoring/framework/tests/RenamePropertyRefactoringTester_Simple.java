@@ -38,7 +38,8 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        SNode node = structureModelDescriptor.getSModel().getRootByName("YetAnotherGoodConcept");
+        SModel model = structureModelDescriptor.getSModel();
+        SNode node = SModelOperations.getRootByName(model,"YetAnotherGoodConcept");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode property = concept.getPropertyDeclarations().get(0).getNode();
         refactoringContext.setSelectedProject(project);
@@ -62,7 +63,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.getRoots().get(0);
+              SNode root = sModel.rootsIterator().next();
               SNode firstChild = root.getChildren("anotherGoodConcept").get(0);
               String propertyValue = firstChild.getProperty(newPropertyName);
               result[0] = "cat".equals(propertyValue);

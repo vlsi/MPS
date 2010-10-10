@@ -25,6 +25,8 @@ import jetbrains.mps.lang.typesystem.structure.PatternCondition;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.ConditionalIterator;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -36,6 +38,7 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class GoToRulesHelper {
@@ -64,7 +67,7 @@ public class GoToRulesHelper {
     if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {
       SModelDescriptor helginsDescriptor = LanguageAspect.TYPESYSTEM.get(language);
       if (helginsDescriptor != null) {
-        rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
+        Condition<SNode> cond = new Condition<SNode>() {
           public boolean met(SNode n) {
             INodeAdapter object = BaseAdapter.fromNode(n);
             if (!(object instanceof AbstractRule)) return false;
@@ -76,7 +79,11 @@ public class GoToRulesHelper {
               return maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), scope);
             }
           }
-        }));
+        };
+        Iterable<SNode> iter = new ConditionalIterable<SNode>(helginsDescriptor.getSModel().roots(),cond);
+        for (SNode node:iter){
+          rules.add(node);
+        }
       }
     }
     return rules;

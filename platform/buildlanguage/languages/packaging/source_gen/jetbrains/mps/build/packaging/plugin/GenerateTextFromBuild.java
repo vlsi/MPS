@@ -21,9 +21,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class GenerateTextFromBuild {
   private static Logger LOG = Logger.getLogger(GenerateTextFromBuild.class);
@@ -59,17 +59,12 @@ public class GenerateTextFromBuild {
     return fileToRun[0];
   }
 
-  public static SNode getLayout(SModelDescriptor descriptor) {
-    final List<SNode> roots = descriptor.getSModel().getRoots();
+  public static SNode getLayout(final SModelDescriptor descriptor) {
     final Wrappers._T<SNode> layout = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SNode root : ListSequence.fromList(roots)) {
-          if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.build.packaging.structure.MPSLayout")) {
-            layout.value = SNodeOperations.cast(root, "jetbrains.mps.build.packaging.structure.MPSLayout");
-            return;
-          }
-        }
+        SModel model = descriptor.getSModel();
+        layout.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.build.packaging.structure.MPSLayout")).first();
       }
     });
     return layout.value;

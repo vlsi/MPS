@@ -35,7 +35,7 @@
   <unitInfo fileName="Copy_Behavior.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Copy_Behavior" />
   <unitInfo fileName="Path_Behavior.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
   <unitInfo fileName="IMacroHolder_Behavior.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
-  <unitInfo fileName="Variable_Behavior.java" startLine="17" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior" />
+  <unitInfo fileName="Variable_Behavior.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior" />
   <unitInfo fileName="AbstractProjectComponent_Behavior.java" startLine="17" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
   <unitInfo fileName="MPSLayout_Behavior.java" startLine="23" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
   <unitInfo fileName="Module_Behavior.java" startLine="33" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
@@ -508,85 +508,83 @@
     <unitInfo nodeId="1480356222699429714" fileName="Module_Behavior.java" startLine="138" startPosition="135" endLine="142" endPosition="7" unitName="jetbrains.mps.build.packaging.behavior.Module_Behavior$2" />
   </root>
   <root nodeId="1213877518466">
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="75" startPosition="27" endLine="75" endPosition="27" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="78" startPosition="27" endLine="78" endPosition="27" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="70" startPosition="27" endLine="70" endPosition="27" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="73" startPosition="27" endLine="73" endPosition="27" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="76" startPosition="27" endLine="76" endPosition="27" />
     <nodeInfo nodeId="5558646027962553681" fileName="Variable_Behavior.java" startLine="21" startPosition="69" endLine="22" endPosition="171" />
     <nodeInfo nodeId="7323449223785135122" fileName="Variable_Behavior.java" startLine="25" startPosition="71" endLine="26" endPosition="127" />
     <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="37" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="32" startPosition="37" endLine="33" endPosition="47" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="33" startPosition="47" endLine="34" endPosition="36" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="34" startPosition="36" endLine="35" endPosition="49" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="35" startPosition="49" endLine="36" endPosition="57" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="36" startPosition="57" endLine="37" endPosition="70" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="44" startPosition="28" endLine="45" endPosition="54" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="45" startPosition="54" endLine="46" endPosition="35" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="47" startPosition="27" endLine="48" endPosition="83" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="50" startPosition="57" endLine="51" endPosition="40" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="51" startPosition="40" endLine="52" endPosition="30" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="53" startPosition="23" endLine="54" endPosition="60" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="54" startPosition="60" endLine="55" endPosition="38" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="55" startPosition="38" endLine="56" endPosition="28" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="57" startPosition="27" endLine="58" endPosition="186" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="60" startPosition="78" endLine="61" endPosition="40" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="61" startPosition="40" endLine="62" endPosition="30" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="63" startPosition="23" endLine="64" endPosition="102" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="64" startPosition="102" endLine="65" endPosition="38" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="65" startPosition="38" endLine="66" endPosition="28" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="67" startPosition="28" endLine="68" endPosition="38" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="68" startPosition="38" endLine="69" endPosition="63" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="69" startPosition="63" endLine="70" endPosition="34" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="71" startPosition="27" endLine="72" endPosition="68" />
-    <nodeInfo nodeId="7323449223785135138" fileName="Variable_Behavior.java" startLine="71" startPosition="27" endLine="72" endPosition="68" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="72" startPosition="68" endLine="73" endPosition="38" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="73" startPosition="38" endLine="74" endPosition="28" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="75" startPosition="27" endLine="76" endPosition="38" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="76" startPosition="38" endLine="77" endPosition="28" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="78" startPosition="27" endLine="79" endPosition="39" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="79" startPosition="39" endLine="80" endPosition="28" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="81" startPosition="28" endLine="82" endPosition="37" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="84" startPosition="31" endLine="85" endPosition="29" />
-    <nodeInfo nodeId="7323449223785135160" fileName="Variable_Behavior.java" startLine="91" startPosition="7" endLine="92" endPosition="61" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="49" startPosition="27" endLine="53" endPosition="23" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="59" startPosition="27" endLine="63" endPosition="23" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="41" startPosition="20" endLine="83" endPosition="19" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="39" startPosition="46" endLine="84" endPosition="31" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="38" startPosition="0" endLine="87" endPosition="0" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="30" startPosition="45" endLine="87" endPosition="14" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="29" startPosition="38" endLine="89" endPosition="0" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="28" startPosition="71" endLine="89" endPosition="10" />
-    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="27" startPosition="122" endLine="91" endPosition="0" />
-    <nodeInfo nodeId="7323449223785135129" fileName="Variable_Behavior.java" startLine="26" startPosition="127" endLine="91" endPosition="7" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="32" startPosition="37" endLine="33" endPosition="36" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="33" startPosition="36" endLine="34" endPosition="49" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="34" startPosition="49" endLine="35" endPosition="57" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="35" startPosition="57" endLine="36" endPosition="70" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="43" startPosition="28" endLine="44" endPosition="54" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="44" startPosition="54" endLine="45" endPosition="35" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="46" startPosition="27" endLine="47" endPosition="78" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="49" startPosition="57" endLine="50" endPosition="40" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="50" startPosition="40" endLine="51" endPosition="30" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="52" startPosition="23" endLine="53" endPosition="60" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="53" startPosition="60" endLine="54" endPosition="38" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="54" startPosition="38" endLine="55" endPosition="28" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="56" startPosition="27" endLine="57" endPosition="186" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="59" startPosition="78" endLine="60" endPosition="40" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="60" startPosition="40" endLine="61" endPosition="30" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="62" startPosition="23" endLine="63" endPosition="102" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="63" startPosition="102" endLine="64" endPosition="38" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="64" startPosition="38" endLine="65" endPosition="28" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="66" startPosition="27" endLine="67" endPosition="38" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="67" startPosition="38" endLine="68" endPosition="63" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="68" startPosition="63" endLine="69" endPosition="34" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="38" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="71" startPosition="38" endLine="72" endPosition="28" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="73" startPosition="27" endLine="74" endPosition="38" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="74" startPosition="38" endLine="75" endPosition="28" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="76" startPosition="27" endLine="77" endPosition="38" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="77" startPosition="38" endLine="78" endPosition="28" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="79" startPosition="28" endLine="80" endPosition="37" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="82" startPosition="31" endLine="83" endPosition="29" />
+    <nodeInfo nodeId="7323449223785135160" fileName="Variable_Behavior.java" startLine="89" startPosition="7" endLine="90" endPosition="61" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="48" startPosition="27" endLine="52" endPosition="23" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="58" startPosition="27" endLine="62" endPosition="23" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="40" startPosition="20" endLine="81" endPosition="19" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="38" startPosition="46" endLine="82" endPosition="31" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="37" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="30" startPosition="45" endLine="85" endPosition="14" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="29" startPosition="38" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="28" startPosition="71" endLine="87" endPosition="10" />
+    <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="27" startPosition="122" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="7323449223785135129" fileName="Variable_Behavior.java" startLine="26" startPosition="127" endLine="89" endPosition="7" />
     <scopeInfo nodeId="1213877518468" fileName="Variable_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="75" startPosition="27" endLine="75" endPosition="27" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="78" startPosition="27" endLine="78" endPosition="27" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="70" startPosition="27" endLine="70" endPosition="27" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="73" startPosition="27" endLine="73" endPosition="27" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="76" startPosition="27" endLine="76" endPosition="27" />
     <scopeInfo nodeId="5558646027962551672" fileName="Variable_Behavior.java" startLine="21" startPosition="69" endLine="22" endPosition="171" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="47" startPosition="27" endLine="48" endPosition="83" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="57" startPosition="27" endLine="58" endPosition="186" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="71" startPosition="27" endLine="72" endPosition="68" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="81" startPosition="28" endLine="82" endPosition="37" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="44" startPosition="28" endLine="46" endPosition="35" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="50" startPosition="57" endLine="52" endPosition="30" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="60" startPosition="78" endLine="62" endPosition="30" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="75" startPosition="27" endLine="77" endPosition="28" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="78" startPosition="27" endLine="80" endPosition="28" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="67" startPosition="28" endLine="70" endPosition="34" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="71" startPosition="27" endLine="74" endPosition="28" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="49" startPosition="27" endLine="56" endPosition="28" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="59" startPosition="27" endLine="66" endPosition="28" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="41" startPosition="20" endLine="83" endPosition="19" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="39" startPosition="46" endLine="85" endPosition="29" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="38" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="30" startPosition="45" endLine="87" endPosition="14" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="29" startPosition="38" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="28" startPosition="71" endLine="89" endPosition="10" />
-    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="27" startPosition="122" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="7323449223785133413" fileName="Variable_Behavior.java" startLine="25" startPosition="71" endLine="92" endPosition="61">
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="46" startPosition="27" endLine="47" endPosition="78" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="56" startPosition="27" endLine="57" endPosition="186" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="79" startPosition="28" endLine="80" endPosition="37" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="43" startPosition="28" endLine="45" endPosition="35" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="49" startPosition="57" endLine="51" endPosition="30" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="59" startPosition="78" endLine="61" endPosition="30" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="70" startPosition="27" endLine="72" endPosition="28" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="73" startPosition="27" endLine="75" endPosition="28" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="76" startPosition="27" endLine="78" endPosition="28" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="66" startPosition="27" endLine="69" endPosition="34" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="48" startPosition="27" endLine="55" endPosition="28" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="58" startPosition="27" endLine="65" endPosition="28" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="40" startPosition="20" endLine="81" endPosition="19" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="38" startPosition="46" endLine="83" endPosition="29" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="37" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="30" startPosition="45" endLine="85" endPosition="14" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="29" startPosition="38" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="28" startPosition="71" endLine="87" endPosition="10" />
+    <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="27" startPosition="122" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="7323449223785133413" fileName="Variable_Behavior.java" startLine="25" startPosition="71" endLine="90" endPosition="61">
       <varInfo nodeId="7323449223785135123" varName="accessories" />
       <varInfo nodeId="7323449223785135130" varName="variables" />
     </scopeInfo>
-    <unitInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="31" startPosition="23" endLine="87" endPosition="13" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior$3" />
-    <unitInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="29" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior$2" />
-    <unitInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="27" startPosition="81" endLine="91" endPosition="5" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior$1" />
+    <unitInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="31" startPosition="23" endLine="85" endPosition="13" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior$3" />
+    <unitInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="29" startPosition="19" endLine="87" endPosition="9" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior$2" />
+    <unitInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="27" startPosition="81" endLine="89" endPosition="5" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior$1" />
   </root>
   <root nodeId="1213877541033">
     <nodeInfo nodeId="1213877541036" fileName="VariableReference_Behavior.java" startLine="13" startPosition="71" endLine="14" endPosition="121" />

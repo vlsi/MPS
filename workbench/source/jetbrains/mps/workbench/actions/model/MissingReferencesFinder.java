@@ -41,7 +41,7 @@ public class MissingReferencesFinder implements IFinder {
 
   public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
     Set<SearchResult<SNode>> badNodes = new LinkedHashSet<SearchResult<SNode>>();
-    for (SNode node : myModelDescriptor.getSModel().allNodes()) {
+    for (SNode node : myModelDescriptor.getSModel().nodes()) {
       if (node.getLanguage(myScope) == null) {
         badNodes.add(new SearchResult<SNode>(node, "instance"));
       }

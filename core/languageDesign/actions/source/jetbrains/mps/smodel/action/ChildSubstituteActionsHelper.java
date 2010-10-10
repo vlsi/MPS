@@ -315,10 +315,11 @@ public class ChildSubstituteActionsHelper {
     List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
-      List<INodeAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
-      for (INodeAdapter root : roots) {
-        if (root instanceof NodeSubstituteActions) {
-          result.addAll(((NodeSubstituteActions) root).getActionsBuilders());
+      Iterable<SNode> iter = actionsModelDescr.getSModel().roots();
+      for (SNode root : iter) {
+        INodeAdapter adapter = BaseAdapter.fromNode(root);
+        if (adapter instanceof NodeSubstituteActions) {
+          result.addAll(((NodeSubstituteActions) adapter).getActionsBuilders());
         }
       }
     }

@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex;
@@ -68,18 +69,23 @@ public class GoToNamedNodeAction extends BaseAction {
         public SNode[] find(IScope scope) {
           final List<SNode> nodes = new ArrayList<SNode>();
           List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+
+          Condition<SNode> cond = new Condition<SNode>() {
+            public boolean met(SNode node) {
+              String name = node.getName();
+              return name != null && name.length() > 0;
+            }
+          };
+
           for (SModelDescriptor modelDescriptor : modelDescriptors) {
             if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
-            nodes.addAll(modelDescriptor.getSModel().allNodes(new Condition<SNode>() {
-              public boolean met(SNode node) {
-                String name = node.getName();
-                if (name == null) return false;
-                return name.length() > 0;
-              }
-            }));
+            Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().nodes(), cond);
+            for (SNode node : iter) {
+              nodes.add(node);
+            }
           }
-          return nodes.toArray(new SNode[0]);
+          return nodes.toArray(new SNode[nodes.size()]);
         }
       };
       popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);

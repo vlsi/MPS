@@ -54,12 +54,11 @@ public class GoToConceptNodeAction extends BaseAction {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         for (Language l : scope.getVisibleLanguages()) {
-          for (SNode node : l.getStructureModelDescriptor().getSModel().getRoots()) {
+          for (SNode node : l.getStructureModelDescriptor().getSModel().roots()) {
             nodes.add(node);
           }
         }
         return nodes.toArray(new SNode[0]);
-
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());

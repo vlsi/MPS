@@ -44,7 +44,7 @@ public class ModelFindOperations {
     if (model == null) return Collections.emptySet();
 
     Set<SReference> result = new HashSet<SReference>();
-    for (SNode root : model.getRoots()) {
+    for (SNode root : model.roots()) {
       addUsages(root, nodes, result);
     }
     return result;
@@ -118,7 +118,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     if (model != null) {
-      for (SNode root : model.getRoots()) {
+      for (SNode root : model.roots()) {
         addDescendants(root, node, result);
       }
     }
@@ -176,7 +176,7 @@ public class ModelFindOperations {
     if (model == null) return Collections.emptySet();
 
     Set<SNode> result = new HashSet<SNode>();
-    for (SNode root : model.getRoots()) {
+    for (SNode root : model.roots()) {
       addInstances(root, concept, result, scope);
     }
     return result;
@@ -189,7 +189,7 @@ public class ModelFindOperations {
     if (model == null) return Collections.emptySet();
 
     Set<SNode> result = new HashSet<SNode>();
-    for (SNode root : model.getRoots()) {
+    for (SNode root : model.roots()) {
       addExactInstances(root, concept, result, scope);
     }
     return result;

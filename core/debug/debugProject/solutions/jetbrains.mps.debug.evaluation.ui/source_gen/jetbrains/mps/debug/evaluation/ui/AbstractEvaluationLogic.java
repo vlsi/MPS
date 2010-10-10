@@ -51,6 +51,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationLogic {
@@ -253,7 +254,7 @@ public abstract class AbstractEvaluationLogic {
     public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
       SModel model = status.getOutputModel();
       if (model != null) {
-        final SNode evaluator = model.getRootByName(AbstractEvaluationLogic.EVALUATOR_NAME);
+        final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationLogic.EVALUATOR_NAME);
 
         if (evaluator != null) {
           try {

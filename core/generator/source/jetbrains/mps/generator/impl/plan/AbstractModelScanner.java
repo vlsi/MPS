@@ -50,7 +50,7 @@ abstract class AbstractModelScanner {
 
   private List<Language> getUsedLanguages(SModel model, IScope scope) {
     Set<String> namespaces = new HashSet<String>();
-    for (SNode root : model.getRoots()) {
+    for (SNode root : model.roots()) {
       collectLanguageNamespaces(root, namespaces);
     }
     List<Language> result = new ArrayList<Language>();

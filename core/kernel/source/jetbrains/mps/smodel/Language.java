@@ -495,15 +495,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       if (structureModelDescriptor == null) return null;
 
       SModel structureModel = structureModelDescriptor.getSModel();
-      structureModel.allNodes(new Condition<SNode>() {
-        public boolean met(SNode node) {
-          //do not use IsInstanceOf Condition here and isInstanceOf(String). They will lead to stack overflow
-          if (node.getAdapter() instanceof AbstractConceptDeclaration) {
-            myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
-          }
-          return false;
+      for (SNode node:structureModel.nodes()){
+        if (node.getAdapter() instanceof AbstractConceptDeclaration) {
+          myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
         }
-      });
+      }
     }
     return myNameToConceptCache.get(conceptName);
   }

@@ -55,8 +55,7 @@ public class GoToRootNodeAction extends BaseAction {
           List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
           for (SModelDescriptor modelDescriptor : modelDescriptors) {
             if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
-
-            for (SNode node : modelDescriptor.getSModel().getRoots()) {
+            for (SNode node : modelDescriptor.getSModel().roots()) {
               nodes.add(node);
             }
           }

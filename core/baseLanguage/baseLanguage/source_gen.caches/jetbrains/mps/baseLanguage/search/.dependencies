@@ -176,6 +176,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
     <classNode dependClassName="jetbrains.mps.cache.CachesManager" />
     <classNode dependClassName="jetbrains.mps.cache.KeyProducer" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />

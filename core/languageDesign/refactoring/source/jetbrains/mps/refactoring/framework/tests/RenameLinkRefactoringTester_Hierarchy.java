@@ -37,7 +37,8 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringTargetLanguage.getStructureModelDescriptor();
-        SNode node = structureModelDescriptor.getSModel().getRootByName("AbstractGoodConcept");
+        SModel model = structureModelDescriptor.getSModel();
+        SNode node = SModelOperations.getRootByName(model,"AbstractGoodConcept");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
         refactoringContext.setSelectedProject(project);
@@ -62,7 +63,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.getRoots().get(0);
+              SNode root = sModel.rootsIterator().next();
               result[0] = (root.getChildren(newLinkName).size() == 4);
             } catch (Throwable t) {
               t.printStackTrace();

@@ -20,8 +20,10 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.NonNls;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
@@ -33,12 +35,18 @@ public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
   }
 
   public List<SNode> getNodesToIterate(SModel model) {
-    return model.allNodes(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        if (node.isRoot()) return true;
-        if (node.getPersistentProperty(INamedConcept.NAME) != null) return true;
-        return false;
-      }
-    });
+    List<SNode> result = new ArrayList<SNode>();
+    Condition<SNode> cond = new SNodeCondition();
+    Iterable<SNode> iter = new ConditionalIterable<SNode>(model.nodes(), cond);
+    for (SNode node : iter) {
+      result.add(node);
+    }
+    return result;
+  }
+
+  private static class SNodeCondition implements Condition<SNode> {
+    public boolean met(SNode node) {
+      return node.isRoot() || node.getPersistentProperty(INamedConcept.NAME) != null;
+    }
   }
 }

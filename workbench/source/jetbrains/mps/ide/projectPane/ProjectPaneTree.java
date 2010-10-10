@@ -135,27 +135,27 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
         for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
           String searchedPack = treeNode.getFullPackage();
           if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
-          for (final SNode node : contextDescriptor.getSModel().getRoots()) {
+          for (final SNode node : contextDescriptor.getSModel().roots()) {
             String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
               public String compute() {
                 return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
               }
             });
             if (nodePack == null) continue;
-            if (nodePack.startsWith(searchedPack)) {
-              StringBuilder basePack = new StringBuilder();
-              String firstPart = treeNode.getPackage();
-              String secondPart = "";
-              if (nodePack.startsWith(searchedPack + ".")) {
-                secondPart = nodePack.replaceFirst(searchedPack + ".", "");
-              }
-              basePack.append(firstPart);
-              if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
-                basePack.append(".");
-              }
-              basePack.append(secondPart);
-              result.add(new Pair(node, basePack.toString()));
+            if (!nodePack.startsWith(searchedPack)) continue;
+
+            StringBuilder basePack = new StringBuilder();
+            String firstPart = treeNode.getPackage();
+            String secondPart = "";
+            if (nodePack.startsWith(searchedPack + ".")) {
+              secondPart = nodePack.replaceFirst(searchedPack + ".", "");
             }
+            basePack.append(firstPart);
+            if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
+              basePack.append(".");
+            }
+            basePack.append(secondPart);
+            result.add(new Pair(node, basePack.toString()));
           }
         }
       }

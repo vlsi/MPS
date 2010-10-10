@@ -49,7 +49,7 @@ public class AspectMethodsFinder implements IFinder {
 
     SearchResults<SNode> res = new SearchResults<SNode>();
     for (SModel model : applicableModelDescriptors) {
-      for (SNode root : model.getRoots()) {
+      for (SNode root : model.roots()) {
         findNodes(res, root, data.myMethodName);
       }
     }

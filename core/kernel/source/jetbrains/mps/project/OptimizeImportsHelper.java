@@ -103,7 +103,7 @@ public class OptimizeImportsHelper {
   private Result optimizeModelImports_internal(SModelDescriptor modelDescriptor) {
     Result result = new Result();
 
-    for (SNode node : modelDescriptor.getSModel().allNodes()) {
+    for (SNode node : modelDescriptor.getSModel().nodes()) {
       result.myUsedLanguages.add(node.getLanguage(GlobalScope.getInstance()));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();

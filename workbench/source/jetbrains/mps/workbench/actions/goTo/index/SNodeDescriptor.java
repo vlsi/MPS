@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 
 import java.util.UUID;
@@ -79,7 +76,7 @@ public class SNodeDescriptor {
     if (getNumberInModel() != -1) {
       return model.getRoots().get(getNumberInModel());
     } else {
-      return model.getRootByName(getNodeName());
+      return SModelOperations.getRootByName(model,getNodeName());
     }
   }
 

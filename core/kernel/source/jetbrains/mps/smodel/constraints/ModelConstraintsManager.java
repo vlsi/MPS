@@ -797,7 +797,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
     SModelDescriptor sm = language.getConstraintsModelDescriptor();
     if (sm == null) return null;
-    SNode root = sm.getSModel().getRootByName(rootName);
+    SNode root = SModelOperations.getRootByName(sm.getSModel(),rootName);
     if (root == null) return null;
     if (root.getAdapter() instanceof ConceptConstraints) {
       return (ConceptConstraints) root.getAdapter();
