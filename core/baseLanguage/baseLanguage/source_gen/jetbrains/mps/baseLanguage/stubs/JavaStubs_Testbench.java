@@ -19,7 +19,7 @@ public class JavaStubs_Testbench extends JavaStubs {
     super.updateModel(location, model);
     SNode exp = null;
     SPropertyOperations.set(SNodeOperations.cast((exp = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.ExportScopeNamespace", null)), "jetbrains.mps.lang.core.structure.ExportScopeNamespace"), "namespace", "jetbrains.mps");
-    for (SNode root : model) {
+    for (SNode root : model.roots()) {
       SLinkOperations.setTarget(root, AttributesRolesUtil.childRoleFromAttributeRole("export"), SNodeOperations.copyNode(exp), true);
     }
   }

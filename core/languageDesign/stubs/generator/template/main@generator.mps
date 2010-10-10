@@ -1180,8 +1180,13 @@
               </node>
             </node>
           </node>
-          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2856649189863832675">
-            <link role="variableDeclaration:3" targetNodeId="2856649189863698993" resolveInfo="model" />
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1921002875291127420">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2856649189863832675">
+              <link role="variableDeclaration:3" targetNodeId="2856649189863698993" resolveInfo="model" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1921002875291127425">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~SModel.roots():java.lang.Iterable" resolveInfo="roots" />
+            </node>
           </node>
         </node>
       </node>

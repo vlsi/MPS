@@ -18,7 +18,7 @@ public class JavaStubs_JDK extends JavaStubs {
     super.updateModel(location, model);
     SNode exp = null;
     exp = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.ExportScopePublic", null);
-    for (SNode root : model) {
+    for (SNode root : model.roots()) {
       SLinkOperations.setTarget(root, AttributesRolesUtil.childRoleFromAttributeRole("export"), SNodeOperations.copyNode(exp), true);
     }
   }

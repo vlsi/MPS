@@ -34,7 +34,7 @@ import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel implements Iterable<SNode> {
+public class SModel{
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
@@ -118,13 +118,6 @@ public class SModel implements Iterable<SNode> {
   }
 
   //---------nodes manipulation--------
-
-  @Deprecated
-  //use roots() instead
-  @NotNull
-  public Iterator<SNode> iterator() {
-    return rootsIterator();
-  }
 
   @Deprecated
   //use roots() instead
