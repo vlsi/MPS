@@ -19,6 +19,9 @@ import jetbrains.mps.newTypesystem.differences.mapPair.SubTypingAdded;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -34,12 +37,20 @@ public class Inequalities {
   private InequalityMapPair myWeakCheckInequalities;
   private InequalityMapPair myStrongCheckInequalities;
 
+  private List<InequalityMapPair> myInequalities;
+
   public Inequalities(State state) {
     myState = state;
     myWeakInequalities = new InequalityMapPair(myState, true, false);
     myWeakCheckInequalities = new InequalityMapPair(myState, true, true);
     myStrongInequalities = new InequalityMapPair(myState, false, false);
     myStrongCheckInequalities = new InequalityMapPair(myState, false, true);
+
+    myInequalities = new LinkedList<InequalityMapPair>();
+    myInequalities.add(myWeakInequalities);
+    myInequalities.add(myWeakCheckInequalities);
+    myInequalities.add(myStrongInequalities);
+    myInequalities.add(myStrongCheckInequalities);
   }
 
   public void substitute(SNode var, SNode type) {
@@ -76,7 +87,7 @@ public class Inequalities {
     }
   }
 
-  public void solveInequlities() {
+  public void solveInequalities() {
     
   }
 
@@ -85,9 +96,14 @@ public class Inequalities {
   }
 
   public void print() {
-    myWeakInequalities.print();
-    myWeakCheckInequalities.print();
-    myStrongInequalities.print();
-    myStrongCheckInequalities.print();
+    for (InequalityMapPair inequalityMapPair : myInequalities) {
+      inequalityMapPair.print();
+    }
+  }
+
+  public void clear() {
+    for (InequalityMapPair inequalityMapPair : myInequalities) {
+      inequalityMapPair.clear();
+    }
   }
 }

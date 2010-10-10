@@ -69,8 +69,8 @@ public class NodeTypesComponentNew {
     return isLoadedAnyLanguage;
   }
 
-  public void checkNode(SNode node) {
-    if (!checked) {
+  public void checkNode(SNode node, boolean refresh) {
+    if (!checked || refresh) {
       for (SNode desc : node.getDescendants()) {
         loadTypeSystemRules(desc);
         applyRulesToNode(desc);

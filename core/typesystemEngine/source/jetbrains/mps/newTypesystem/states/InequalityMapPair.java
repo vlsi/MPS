@@ -105,4 +105,16 @@ public class InequalityMapPair {
       }
     }
   }
+
+  public void clear() {
+    clearMap(mySubToSuper);
+    clearMap(mySuperToSub);
+  }
+
+  private void clearMap(Map<SNode, Map<SNode, EquationInfo>> map) {
+    for (SNode key : map.keySet()) {
+      map.get(key).clear();
+    }
+    map.clear();    
+  }
 }

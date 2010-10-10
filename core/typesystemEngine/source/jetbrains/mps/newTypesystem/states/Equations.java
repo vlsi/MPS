@@ -70,6 +70,10 @@ public class Equations {
     myRepresentatives.put(elem, current);
   }
 
+  public void remove(SNode elem) {
+    myRepresentatives.remove(elem);
+  }
+
   public void addEquation(SNode left, SNode right, EquationInfo info) {
     printEquation(left, right);
     SNode lRepresentative = getRepresentative(left);
@@ -106,22 +110,18 @@ public class Equations {
       parent = var;
       child = type;
     }
-    addRepresentative(child, parent);
+    addAndTrack(child, parent);
     myState.getInequalities().substitute(child, parent);
     myState.getNonConcrete().substitute(child, parent);
   }
-   
-  public void rollBack(EquationAdded diff) {
-    myRepresentatives.remove(diff.getChild());
-  }
 
-  public void rollBack(EquationRemoved diff) {
-    myRepresentatives.put(diff.getChild(), diff.getParent());
-  }
-
-  private void addRepresentative(SNode child, SNode parent) {
-    myRepresentatives.put(child, parent);
+  private void addAndTrack(SNode child, SNode parent) {
     myState.addDifference(new EquationAdded(child, this));
+    add(child, parent);
+  }
+
+  public void add(SNode child, SNode parent) {
+    myRepresentatives.put(child, parent);
   }
 
   public SNode expandNode(SNode node) {

@@ -37,7 +37,7 @@ public class EquationRemoved extends EquationDifference {
 
   @Override
   public void rollBack() {
-    myEquations.rollBack(this);
+    myEquations.add(myChild, myParent);
   }
 
   @Override

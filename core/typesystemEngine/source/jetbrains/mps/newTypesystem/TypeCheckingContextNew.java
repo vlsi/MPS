@@ -76,14 +76,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot() {
-    myNodeTypesComponent.checkNode(myRootNode);
+    myNodeTypesComponent.checkNode(myRootNode, false);
   }
 
   @Override
-  public void checkRoot(boolean refreshTypes) {
+  public void checkRoot(final boolean refreshTypes) {
     myState.clear();
     myDifferenceStack.clear();
-    
+    myNodeTypesComponent.checkNode(myRootNode, true);
   }
 
   @Override
