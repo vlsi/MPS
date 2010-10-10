@@ -3388,16 +3388,15 @@
                   <property name="name:3" value="evaluator" />
                   <property name="isFinal:3" value="true" />
                   <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6185141366360333776" />
-                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6185141366360333777">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360333778">
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7601609549977454880">
+                    <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelOperations.getRootByName(jetbrains.mps.smodel.SModel,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getRootByName" />
+                    <link role="classConcept:3" targetNodeId="9.~SModelOperations" resolveInfo="SModelOperations" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7601609549977454881">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360333764" resolveInfo="model" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6185141366360333779">
-                      <link role="baseMethodDeclaration:3" targetNodeId="9.~SModel.getRootByName(java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getRootByName" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="6185141366360333896">
-                        <link role="variableDeclaration:3" targetNodeId="6185141366360320945" resolveInfo="EVALUATOR_NAME" />
-                        <link role="classifier:3" targetNodeId="6185141366360269633" resolveInfo="EvaluationData" />
-                      </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7601609549977545906">
+                      <link role="classifier:3" targetNodeId="6185141366360269633" resolveInfo="AbstractEvaluationLogic" />
+                      <link role="variableDeclaration:3" targetNodeId="6185141366360320945" resolveInfo="EVALUATOR_NAME" />
                     </node>
                   </node>
                 </node>

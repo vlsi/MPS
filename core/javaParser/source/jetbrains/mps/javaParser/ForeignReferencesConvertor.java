@@ -23,13 +23,6 @@ import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.2009
- * Time: 16:22:02
- * To change this template use File | Settings | File Templates.
- */
 public class ForeignReferencesConvertor {
   private static Set<String> ourAllowedClassifierConcepts;
 
@@ -86,7 +79,7 @@ public class ForeignReferencesConvertor {
       idString = idString.substring(Foreign.ID_PREFIX.length());
     }
     String className = idString;    //todo inner classes
-    INodeAdapter nodeAdapter = BaseAdapter.fromNode(model.getRootByName(className));
+    INodeAdapter nodeAdapter = BaseAdapter.fromNode(SModelOperations.getRootByName(model,className));
     if (nodeAdapter == null) {
       return null;
     }

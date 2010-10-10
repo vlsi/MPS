@@ -127,8 +127,7 @@ public class BaseIntentionProvider implements IntentionProvider {
           if (model != null) {
             String shortName = NameUtil.shortNameFromLongName(myClassFQName);
             String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());
-            SNode node = model.getRootByName(rootName);
-            return node;
+            return SModelOperations.getRootByName(model,rootName);
           }
         }
         return null;

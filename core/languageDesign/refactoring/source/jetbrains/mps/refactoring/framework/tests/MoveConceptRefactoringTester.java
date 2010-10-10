@@ -40,7 +40,8 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
-        SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
+        SModel model = structureModelDescriptor.getSModel();
+        SNode concept = SModelOperations.getRootByName(model,conceptName);
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(CollectionUtil.list(concept));

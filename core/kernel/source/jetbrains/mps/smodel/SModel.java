@@ -231,7 +231,7 @@ public class SModel implements Iterable<SNode> {
 
   //---------nodes manipulation--------
 
-  public Iterable<SNode> roots(){
+  public Iterable<SNode> roots() {
     return new Iterable<SNode>() {
       public Iterator<SNode> iterator() {
         return rootsIterator();
@@ -280,12 +280,12 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @Nullable
-  public SNode getRootByName(@NotNull String name) {
-    for (SNode root : roots()) {
-      if (name.equals(root.getName())) return root;
-    }
-    return null;
+  public int registeredNodesCount() {
+    return myIdToNodeMap.size();
+  }
+
+  public int rootsCount() {
+    return myRoots.size();
   }
 
   public void clearAdaptersAndUserObjects() {
@@ -293,14 +293,6 @@ public class SModel implements Iterable<SNode> {
       node.clearAdapter();
       node.removeAllUserObjects();
     }
-  }
-
-  public int registeredNodesCount() {
-    return myIdToNodeMap.size();
-  }
-
-  public int rootsCount(){
-    return myRoots.size();
   }
 
   //---------imports manipulation--------

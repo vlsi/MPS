@@ -39,7 +39,8 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
       public void run() {
         final SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         refactoringContext.setParameter(STRMD, structureModelDescriptor);
-        SNode concept = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
+        SModel model = structureModelDescriptor.getSModel();
+        SNode concept = SModelOperations.getRootByName(model,"MyVeryGoodConcept1");
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedModel(structureModelDescriptor);

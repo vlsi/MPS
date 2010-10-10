@@ -126,7 +126,8 @@ public class JavaModelUtil_new {
       if (reportErrors) LOG.error("couldn't find model '" + modelUID + "'");
       return null;
     }
-    SNode rootByName = modelDescriptor.getSModel().getRootByName(shortClassName);
+    SModel model = modelDescriptor.getSModel();
+    SNode rootByName = SModelOperations.getRootByName(model,shortClassName);
     if (rootByName == null && reportErrors) {
       LOG.error("couldn't find root '" + shortClassName + "' in model '" + modelUID + "'");
     }

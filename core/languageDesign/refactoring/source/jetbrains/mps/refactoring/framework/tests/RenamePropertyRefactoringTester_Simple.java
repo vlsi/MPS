@@ -38,7 +38,8 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        SNode node = structureModelDescriptor.getSModel().getRootByName("YetAnotherGoodConcept");
+        SModel model = structureModelDescriptor.getSModel();
+        SNode node = SModelOperations.getRootByName(model,"YetAnotherGoodConcept");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode property = concept.getPropertyDeclarations().get(0).getNode();
         refactoringContext.setSelectedProject(project);

@@ -17,7 +17,9 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import org.junit.Assert;
 import org.junit.Test;
@@ -37,9 +39,9 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new Runnable() {
-        @Override
         public void run() {
-          SNode root = descr.getSModel().getRootByName("Generate");
+          SModel model = descr.getSModel();
+          SNode root = SModelOperations.getRootByName(model,"Generate");
           Assert.assertNotNull("No root in model", root);
           root.setName("GenerateIt");
         }
@@ -55,9 +57,9 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new Runnable() {
-        @Override
         public void run() {
-          SNode root = descr.getSModel().getRootByName("ActionGroupDeclaration");
+          SModel model = descr.getSModel();
+          SNode root = SModelOperations.getRootByName(model,"ActionGroupDeclaration");
           Assert.assertNotNull("No root in model", root);
           root.setName("ActionGroupRedeclaration");
         }
@@ -73,9 +75,9 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new Runnable() {
-        @Override
         public void run() {
-          SNode root = descr.getSModel().getRootByName("StatementList_Editor");
+          SModel model = descr.getSModel();
+          SNode root = SModelOperations.getRootByName(model,"StatementList_Editor");
           Assert.assertNotNull("No root in model", root);
           descr.getSModel().removeRoot(root);
         }

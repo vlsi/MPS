@@ -232,7 +232,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   private void addNodeIds(Set<SNodeId> ids, SModel model) {
-    SNode change1Node = model.getRootByName(myRoot.getName());
+    SNode change1Node = SModelOperations.getRootByName(model,myRoot.getName());
     if (change1Node != null) {
       ids.add(change1Node.getSNodeId());
       for (SNode node : change1Node.getDescendants()) {
