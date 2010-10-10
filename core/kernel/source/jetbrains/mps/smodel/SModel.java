@@ -132,24 +132,6 @@ public class SModel {
   }
 
   @Deprecated
-  public List<SNode> allNodes(Condition<SNode> condition) {
-    if (condition instanceof IsInstanceCondition) {
-      IsInstanceCondition c = (IsInstanceCondition) condition;
-      return getFastNodeFinder().getNodes(c.getConceptFqName(), true);
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-
-    for (SNode node : myRoots) {
-      for (SNode i : node.getDescendantsIterable(condition, true)) {
-        resultNodes.add(i);
-      }
-    }
-
-    return resultNodes;
-  }
-
-  @Deprecated
   public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(this);

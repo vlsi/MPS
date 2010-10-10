@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import java.util.ArrayList;
+import jetbrains.mps.util.ConditionalIterable;
 
 public class ModelNodesSearchScope extends AbstractSearchScope {
   private SModel myModel;
@@ -17,6 +19,11 @@ public class ModelNodesSearchScope extends AbstractSearchScope {
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    return myModel.allNodes(condition);
+    List<SNode> result = new ArrayList<SNode>();
+    Iterable<SNode> roots = new ConditionalIterable(myModel.roots(), condition);
+    for (SNode root : roots) {
+      result.add(root);
+    }
+    return result;
   }
 }

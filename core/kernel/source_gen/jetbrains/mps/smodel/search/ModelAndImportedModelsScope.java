@@ -61,7 +61,10 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(model.getSModel().getFastNodeFinder().getNodes(isInstance.getConceptFqName(), true));
           } else {
-            result.addAll(model.getSModel().allNodes(condition));
+            Iterable<SNode> iter = new ConditionalIterable(model.getSModel().nodes(), condition);
+            for (SNode node : iter) {
+              result.add(node);
+            }
           }
         } catch (Throwable t) {
           LOG.error("error collecting nodes form model " + model, t);
