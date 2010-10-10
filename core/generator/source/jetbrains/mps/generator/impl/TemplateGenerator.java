@@ -161,7 +161,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // root mapping rules
     ttrace.push("root mappings", false);
-    List<SNode> rootsToCopy = myInputModel.getRoots();
+    ArrayList<SNode> rootsToCopy = new ArrayList<SNode>();
+    for (SNode root : myInputModel.roots()) {
+      rootsToCopy.add(root);
+    }
     for (Root_MappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
       applyRootMappingRule(rule, rootsToCopy);
@@ -213,9 +216,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-      if (getGeneratorSessionContext().isCopiedRoot(inputNode)) {
-        continue;
-      }
+      if (getGeneratorSessionContext().isCopiedRoot(inputNode)) continue;
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null && executionContext.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {

@@ -23,17 +23,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 /**
  * Evgeny Gryaznov, Sep 23, 2010
  */
 public class TransientModelWithMetainfo {
-
   private static final int END_MARKER = '$' + ('M' << 24) + ('P' << 16) + ('S' << 8);
 
   public static final String CONDITIONALS_ID = "";
@@ -48,10 +44,6 @@ public class TransientModelWithMetainfo {
     myRoots = roots;
     myRootToOriginal = new HashMap<SNodeId, SNodeId>();
     myMappingsMemento = new HashMap<SNodeId, MappingsMemento>();
-  }
-
-  public TransientModelWithMetainfo(SModel model) {
-    this(model.getSModelReference(), model.getRoots());
   }
 
   public List<SNode> getRoots() {
@@ -141,7 +133,11 @@ public class TransientModelWithMetainfo {
   }
 
   public static TransientModelWithMetainfo create(SModel model, DependenciesBuilder builder) throws GenerationFailureException {
-    TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model);
+    ArrayList<SNode> roots = new ArrayList<SNode>();
+    for (SNode root1 : model.roots()) {
+      roots.add(root1);
+    }
+    TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model.getSModelReference(), roots);
     Iterator<SNode> it = model.rootsIterator();
     while (it.hasNext()) {
       SNode root = it.next();
