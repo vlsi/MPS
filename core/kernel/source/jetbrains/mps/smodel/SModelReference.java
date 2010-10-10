@@ -100,10 +100,6 @@ public final class SModelReference {
     return myModelFqName.getCompactPresentation();
   }
 
-  public String getNamespace() {
-    return NameUtil.namespaceFromLongName(myModelFqName.getLongName());
-  }
-
   public String getStereotype() {
     return myModelFqName.getStereotype();
   }

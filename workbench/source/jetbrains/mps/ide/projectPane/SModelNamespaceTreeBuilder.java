@@ -17,11 +17,12 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.NameUtil;
 
 public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SModelTreeNode> {
   protected String getNamespace(SModelTreeNode node) {
     SModelDescriptor d = node.getSModelDescriptor();
-    return d.getSModelReference().getNamespace();
+    return NameUtil.namespaceFromLongName(d.getSModelReference().myModelFqName.getLongName());
   }
 
   @Override

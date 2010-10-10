@@ -23,6 +23,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +124,7 @@ public class SModelsSubtree {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
         SModelDescriptor rootModelDescriptor = sortedModels.get(rootIndex);
-        int countNamePart = getCountNamePart(rootModelDescriptor, rootModelDescriptor.getSModelReference().getNamespace());
+        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(rootModelDescriptor.getSModelReference().myModelFqName.getLongName()));
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
         rootIndex = (isNeedBuildChildModels) ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
