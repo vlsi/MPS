@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 
 import java.util.UUID;
@@ -25,20 +26,20 @@ public class SNodeDescriptor {
   protected String myConceptFqName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
-  private int myNumberInModel;
+  private SNodeId myId;
   private SModelReference myModelReference;
 
-  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, int number) {
+  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, SNodeId id) {
     myNodeName = InternUtil.intern(nodeName);
     myConceptFqName = InternUtil.intern(fqName);
     myMostSignificantBits = mostSignificantBits;
     myLeastSignificantBits = leastSignificantBits;
-    myNumberInModel = number;
+    myId = id;
   }
 
-  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, int number) {
+  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, SNodeId id) {
     UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
-    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), number);
+    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), id);
   }
 
   public String getConceptFqName() {
@@ -60,8 +61,8 @@ public class SNodeDescriptor {
     return new SModelReference(null, SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits))).update();
   }
 
-  public int getNumberInModel() {
-    return myNumberInModel;
+  public SNodeId getId() {
+    return myId;
   }
 
   public long getLeastSignificantBits() {
@@ -73,10 +74,10 @@ public class SNodeDescriptor {
   }
 
   public SNode getNode(SModel model) {
-    if (getNumberInModel() != -1) {
-      return model.getRoots().get(getNumberInModel());
+    if (getId() != null) {
+      return model.getNodeById(getId());
     } else {
-      return SModelOperations.getRootByName(model,getNodeName());
+      return SModelOperations.getRootByName(model, getNodeName());
     }
   }
 
@@ -85,12 +86,11 @@ public class SNodeDescriptor {
     SNodeDescriptor sd = (SNodeDescriptor) obj;
     return sd.getConceptFqName().equals(getConceptFqName())
       && sd.myNodeName.equals(myNodeName)
-      && sd.myNumberInModel == myNumberInModel
+      && EqualUtil.equals(sd.myId, myId)
       && sd.getModelReference().equals(getModelReference());
   }
 
   public int hashCode() {
     return getNodeName().hashCode();
   }
-
 }

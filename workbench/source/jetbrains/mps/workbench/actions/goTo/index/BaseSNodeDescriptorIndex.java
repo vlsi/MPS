@@ -40,7 +40,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
-
   private static final Logger LOG = Logger.getLogger(BaseSNodeDescriptorIndex.class);
   public static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
@@ -70,7 +69,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
   }
 
   public int getVersion() {
-    return 5;
+    return 6;
   }
 
   public int getCacheSize() {
@@ -106,8 +105,8 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConceptFqName();
               SModelReference modelRef = model.getSModelReference();
-              int number = nodes.indexOf(node);
-              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, number);
+              SNodeId id = node.getSNodeId();
+              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
               descriptors.add(value);
             }
           } catch (JDOMException e) {
