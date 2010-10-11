@@ -24,6 +24,7 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class IoFile implements IFileEx {
@@ -65,6 +66,16 @@ public class IoFile implements IFileEx {
 
   public boolean createNewFile() {
     try {
+      File parentFile = myFile.getParentFile();
+      if (parentFile.exists()) {
+        if (!parentFile.isDirectory()) {
+          return false;
+        }
+      } else {
+        if (!parentFile.mkdirs()) {
+          return false;
+        }
+      }
       return myFile.createNewFile();
     } catch (IOException e) {
       throw new RuntimeException(e);
@@ -82,7 +93,7 @@ public class IoFile implements IFileEx {
   public List<IFile> list() {
     File[] files = myFile.listFiles();
     if (files == null) {
-      return null;
+      return Collections.emptyList();
     }
 
     List<IFile> result = new ArrayList<IFile>(files.length);
@@ -129,6 +140,7 @@ public class IoFile implements IFileEx {
       }
     }
 
+    createNewFile();
     return new FileOutputStream(myFile);
   }
 

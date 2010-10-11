@@ -16,8 +16,6 @@
 package jetbrains.mps.build.ant.generation;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
@@ -27,7 +25,6 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -47,7 +44,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -124,12 +120,7 @@ public class GeneratorWorker extends MpsWorker {
     List<Cycle> order = computeGenerationOrder(project, go);
 
     for (final Cycle cycle : order) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        @Override
-        public void run() {
-          generateModulesCycle(gm, cycle);
-        }
-      });
+      generateModulesCycle(gm, cycle);
     }
 
     gm.removeGenerationListener(generationListener);
@@ -140,8 +131,8 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void generateModulesCycle(final GeneratorManager gm, final Cycle cycle) {
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(@NotNull ProgressIndicator indicator) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
         info("Start " + cycle);
         cycle.generate(gm, new JavaGenerationHandler() {
           @Override
@@ -166,7 +157,7 @@ public class GeneratorWorker extends MpsWorker {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         info("Finished " + cycle);
       }
-    }, "", false, null);
+    });
   }
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {

@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.generator.generationTypes.java;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
@@ -65,37 +61,16 @@ class FileProcessor {
     myFilesToDelete.addAll(files);
   }
 
-  public void invoke() {
-    ModelAccess.instance().runReadInWriteAction(new Computable<Object>() {
-      @Override
-      public Object compute() {
-        Runnable task = new Runnable() {
-          @Override
-          public void run() {
-            ModelAccess.instance().runReadInWriteWorker(new Runnable() {
-              @Override
-              public void run() {
-                for (FileAndContent filesAndContent : myFilesAndContents) {
-                  filesAndContent.save();
-                }
+  public void saveGeneratedFiles() {
+    for (FileAndContent fileAndContent : myFilesAndContents) {
+      fileAndContent.save();
+    }
 
-                for (IFile file : myFilesToDelete) {
-                  file.delete();
-                }
+    for (IFile file : myFilesToDelete) {
+      file.delete();
+    }
 
-                ModelGenerationStatusManager.getInstance().invalidateData(myModels);
-              }
-            });
-          }
-        };
-        if (ApplicationManager.getApplication().isDispatchThread()) {
-          task.run();
-        } else {
-          ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
-        }
-        return null;
-      }
-    });
+    ModelGenerationStatusManager.getInstance().invalidateData(myModels);
   }
 
   private static class FileAndContent {

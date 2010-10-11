@@ -45,7 +45,9 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -70,6 +72,7 @@ public abstract class MpsWorker {
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
   private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MyMessageHandlerAppender();
+  private FileSystemProvider myWasFileSystemProvider;
 
   private MpsWorker() {
     this(null, (AntLogger) null);
@@ -138,6 +141,7 @@ public abstract class MpsWorker {
         e.printStackTrace();
       }
     }
+    FileSystem.getInstance().setFileSystemProvider(myWasFileSystemProvider);
     jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
   }
 
@@ -166,6 +170,9 @@ public abstract class MpsWorker {
     catch (Exception ex) {
       throw new RuntimeException(ex);
     }
+
+    myWasFileSystemProvider = FileSystem.getInstance().getFileSystemProvider();
+    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
 
     setMacro();
     loadLibraries();

@@ -7,7 +7,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
@@ -29,19 +28,15 @@ import java.util.List;
 class IdeaFile implements IFileEx {
   private static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
-  private IdeaFileSystemProvider myProvider;
-
-  // Class invariant: myVirtualFile and myPath cannot be both null/both not-null 
+  // Class invariant: myVirtualFile and myPath cannot be both null/both not-null
   private String myPath = null;
   private VirtualFile myVirtualFile = null;
 
-  IdeaFile(IdeaFileSystemProvider provider, @NotNull String path) {
-    myProvider = provider;
+  IdeaFile(@NotNull String path) {
     myPath = path;
   }
 
-  private IdeaFile(@NotNull IdeaFileSystemProvider provider, @NotNull VirtualFile virtualFile) {
-    myProvider = provider;
+  private IdeaFile(@NotNull VirtualFile virtualFile) {
     myVirtualFile = virtualFile;
   }
 
@@ -68,11 +63,11 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       VirtualFile parentVirtualFile = myVirtualFile.getParent();
       if (parentVirtualFile != null) {
-        return new IdeaFile(myProvider, parentVirtualFile);
+        return new IdeaFile(parentVirtualFile);
       }
       return null;
     } else {
-      return new IdeaFile(myProvider, truncDirPath(myPath));
+      return new IdeaFile(truncDirPath(myPath));
     }
   }
 
@@ -88,7 +83,7 @@ class IdeaFile implements IFileEx {
       ArrayList<IFile> result = new ArrayList<IFile>();
       for (VirtualFile child : children) {
         if (filter.accept(this, child.getName())) {
-          result.add(new IdeaFile(myProvider, child));
+          result.add(new IdeaFile(child));
         }
       }
       return Collections.unmodifiableList(result);
@@ -99,7 +94,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public IFile child(String suffix) {
-    return new IdeaFile(myProvider, getAbsolutePath() + File.separator + suffix);
+    return new IdeaFile(getAbsolutePath() + File.separator + suffix);
   }
 
   @Override
@@ -249,13 +244,13 @@ class IdeaFile implements IFileEx {
         if (fileForJar == null) {
           return null;
         }
-        return new IdeaFile(myProvider, fileForJar);
+        return new IdeaFile(fileForJar);
       } else {
         return getParent();
       }
     } else {
       if (myPath.contains("!")) {
-        return new IdeaFile(myProvider, myPath.substring(0, myPath.indexOf("!")));
+        return new IdeaFile(myPath.substring(0, myPath.indexOf("!")));
       } else {
         return getParent();
       }

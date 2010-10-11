@@ -207,10 +207,19 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   protected void writeFiles() {
-    if(myProcessor != null) {
-      myProcessor.invoke();
+    if (myProcessor != null) {
+      performWritingFilesTask(new Runnable() {
+        @Override
+        public void run() {
+          myProcessor.saveGeneratedFiles();
+        }
+      });
       myProcessor = null;
     }
+  }
+
+  protected void performWritingFilesTask(final Runnable writingTask) {
+    writingTask.run();
   }
 
   @Override

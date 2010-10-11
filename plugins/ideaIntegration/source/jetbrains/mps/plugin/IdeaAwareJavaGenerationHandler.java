@@ -15,22 +15,23 @@
  */
 package jetbrains.mps.plugin;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Evgeny Gryaznov, Aug 20, 2010
@@ -123,6 +124,27 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
     }
     return compiledSuccessfully;
   }
+
+  @Override
+  protected void performWritingFilesTask(final Runnable writingTask) {
+    ModelAccess.instance().runReadInWriteAction(new Computable<Object>() {
+      @Override
+      public Object compute() {
+        Runnable task = new Runnable() {
+          @Override
+          public void run() {
+            ModelAccess.instance().runReadInWriteWorker(writingTask);
+          }
+        };
+        if (ApplicationManager.getApplication().isDispatchThread()) {
+          task.run();
+        } else {
+          ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
+        }
+        return null;
+      }
+    });
+}
 
   protected boolean isIDEAPresent(IProjectHandler handler) {
     return !MPSCore.getInstance().isTestMode() && handler != null;

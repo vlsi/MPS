@@ -13,6 +13,6 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
 
   @Override
   public IFile getFile(@NotNull String path) {
-    return new IdeaFile(this, path);
+    return new IdeaFile(path);
   }
 }
