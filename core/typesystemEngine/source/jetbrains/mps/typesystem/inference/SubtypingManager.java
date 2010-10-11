@@ -643,13 +643,13 @@ System.out.println("alltypes = " + allTypes);*/
     Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
     if (comparisonRule_runtimes != null) {
       for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(term1, term2)) return true;
+        if (comparisonRule_runtime.o1.areComparable(term1, term2, comparisonRule_runtime.o2)) return true;
       }
     }
     comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term2, term1, isWeak);
     if (comparisonRule_runtimes != null) {
       for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(term2, term1)) return true;
+        if (comparisonRule_runtime.o1.areComparable(term2, term1, comparisonRule_runtime.o2)) return true;
       }
     }
 
