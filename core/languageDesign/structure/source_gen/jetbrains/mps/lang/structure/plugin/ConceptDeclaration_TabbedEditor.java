@@ -548,7 +548,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
           }
         }
         if (isNeedRootTemplate) {
-          for (ModuleReference moduleRef : SNodeOperations.getModel(node).getExplicitlyImportedLanguages()) {
+          for (ModuleReference moduleRef : SNodeOperations.getModel(node).importedLanguages()) {
             Language language = MPSModuleRepository.getInstance().getLanguage(moduleRef);
             if (language == null) {
               continue;

@@ -2623,7 +2623,7 @@
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848243">
-                        <link role="baseMethodDeclaration:3" targetNodeId="18.~SModel.getExplicitlyImportedLanguages():java.util.List" resolveInfo="getExplicitlyImportedLanguages" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="18.~SModel.importedLanguages():java.util.List" resolveInfo="importedLanguages" />
                       </node>
                     </node>
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848244">

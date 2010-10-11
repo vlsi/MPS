@@ -64,7 +64,7 @@ public class SModelOperations {
 
         usedLanguages.add(ref);
 
-        model.addLanguage(ref, firstVersion);
+        addLanguage(model, ref, firstVersion);
       }
 
       for (SReference reference : node.getReferencesIterable()) {
@@ -92,18 +92,18 @@ public class SModelOperations {
   }
 
   public static void addLanguage(SModel model, @NotNull Language language) {
-    model.addLanguage(language.getModuleReference(), false);
+    addLanguage(model, language.getModuleReference(), false);
   }
 
   public static void addLanguage(SModel model, @NotNull ModuleReference ref) {
-    model.addLanguage(ref, false);
+    addLanguage(model, ref, false);
   }
 
   @NotNull
   public static List<Language> getLanguages(SModel model, @NotNull IScope scope) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (ModuleReference lang : model.getExplicitlyImportedLanguages()) {
+    for (ModuleReference lang : model.importedLanguages()) {
       Language language = scope.getLanguage(lang);
 
       if (language != null) {
@@ -113,7 +113,7 @@ public class SModelOperations {
       }
     }
 
-    for (ModuleReference dk : model.getDevKitRefs()) {
+    for (ModuleReference dk : model.importedDevkits()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         //addDevkitModelsVersions(dk, devKit);
@@ -135,8 +135,8 @@ public class SModelOperations {
 
   @NotNull
   public static Set<ModuleReference> getLanguageRefs(SModel model, IScope scope) {
-    List<ModuleReference> langs = model.getExplicitlyImportedLanguages();
-    List<ModuleReference> devkits = model.getDevKitRefs();
+    List<ModuleReference> langs = model.importedLanguages();
+    List<ModuleReference> devkits = model.importedDevkits();
     Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
     for (ModuleReference dk : devkits) {
@@ -167,7 +167,7 @@ public class SModelOperations {
   @NotNull
   public static List<SModelDescriptor> importedModels(SModel model, @NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
-    for (ImportElement importElement : model.getImportElements()) {
+    for (ImportElement importElement : model.importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
       SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
 
@@ -218,7 +218,7 @@ public class SModelOperations {
 
   @Nullable
   public static ImportElement getImportElement(SModel model, @NotNull SModelReference modelReference) {
-    for (ImportElement importElement : model.getImportElements()) {
+    for (ImportElement importElement : model.importedModels()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
@@ -233,7 +233,7 @@ public class SModelOperations {
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
     List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : sModel.getImportElements()) {
+    for (ImportElement importElement : sModel.importedModels()) {
       references.add(importElement.getModelReference());
     }
     return Collections.unmodifiableList(references);
@@ -275,11 +275,42 @@ public class SModelOperations {
 
   @Nullable
   public static SModelReference getImportedModelUID(SModel sModel, int referenceID) {
-    for (ImportElement importElement : sModel.getImportElements()) {
+    for (ImportElement importElement : sModel.importedModels()) {
       if (importElement.getReferenceID() == referenceID) {
         return importElement.getModelReference();
       }
     }
     return null;
+  }
+
+  private static void addLanguage(SModel sModel, @NotNull ModuleReference ref, boolean firstVersion) {
+    sModel.addLanguage(ref);
+    Language language = GlobalScope.getInstance().getLanguage(ref);
+    if (language != null) {
+      sModel.addAspectModelsVersions(language, firstVersion);
+    }
+  }
+
+  public static void addNewlyImportedDevKit(SModel sModel, ModuleReference ref) {
+    sModel.addDevKit(ref);
+    addAspectModelsVersions(sModel, GlobalScope.getInstance().getDevKit(ref));
+  }
+
+  public static void addAspectModelsVersions(SModel sModel, DevKit devKit) {
+    for (Language language : devKit.getExportedLanguages()) {
+      sModel.addAspectModelsVersions(language, false);
+    }
+  }
+
+  public static int getUsedVersion(SModel sModel, SModelReference sModelReference) {
+    ImportElement importElement = getImportElement(sModel, sModelReference);
+    if (importElement == null) return getLanguageAspectModelVersion(sModel, sModelReference);
+    return importElement.getUsedVersion();
+  }
+
+  public static int getLanguageAspectModelVersion(SModel sModel, SModelReference sModelReference) {
+    ImportElement importElement = sModel.getAdditionalModelElement(sModelReference);
+    if (importElement == null) return -1;
+    return importElement.getUsedVersion();
   }
 }

@@ -274,7 +274,7 @@ public class NewLanguageDialogContentPane extends JPanel {
           for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
             SModelOperations.addLanguage(createdModel, extendedLanguage);
           }
-          for (ModuleReference addedLanguage : createdModel.getExplicitlyImportedLanguages()) {
+          for (ModuleReference addedLanguage : createdModel.importedLanguages()) {
             if (sandbox.getScope().getLanguage(addedLanguage) == null) {
               sandbox.addUsedLanguage(addedLanguage);
             }

@@ -78,7 +78,7 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
     if (langToDep != null) {
       SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(langToDep.getModuleReference(), false);
     }
-    for (ModuleReference eng : SNodeOperations.getModel(node).getEngagedOnGenerationLanguages()) {
+    for (ModuleReference eng : SNodeOperations.getModel(node).engagedOnGenerationLanguages()) {
       if (eng.equals(langRefToEng)) {
         langRefToEng = null;
         break;

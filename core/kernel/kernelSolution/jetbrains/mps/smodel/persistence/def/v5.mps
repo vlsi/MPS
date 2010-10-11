@@ -151,7 +151,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2286463592495498231">
                 <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2286463592495498230" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2286463592495498235">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~SModel.addLanguage_internal(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addLanguage_internal" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~SModel.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addLanguage" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2286463592495498237">
                     <link role="baseMethodDeclaration:3" targetNodeId="3.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
                     <link role="classConcept:3" targetNodeId="3.~ModuleReference" resolveInfo="ModuleReference" />

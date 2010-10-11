@@ -70,7 +70,7 @@ public class StructureModificationProcessor {
   // true if any refactoring was played
   private static boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
-    int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
+    int usedVersion = SModelOperations.getUsedVersion(model, usedModelDescriptor.getSModelReference());
 
     if (currentVersion > usedVersion) {
       boolean played = false;

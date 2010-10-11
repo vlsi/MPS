@@ -397,7 +397,7 @@ public class Merger {
       ModuleReference languageNamespace = ModuleReference.fromString("jetbrains.mps.core");
       SNode tmp = new SNode(myResultModel, NameUtil.conceptFQNameFromNamespaceAndShortName(languageNamespace.getModuleFqName(), "BaseConcept"));
       boolean notRemoveLanguage = false;
-      if (myResultModel.getExplicitlyImportedLanguages().contains(languageNamespace)) {
+      if (myResultModel.importedLanguages().contains(languageNamespace)) {
         notRemoveLanguage = true;
       }
       myResultModel.addRoot(tmp);

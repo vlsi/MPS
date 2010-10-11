@@ -226,7 +226,7 @@ public class ModelReader5Handler extends DefaultHandler {
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        result.addLanguage_internal(ModuleReference.fromString(child));
+        result.addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {

@@ -24,15 +24,15 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(myModel.getExplicitlyImportedLanguages());
-    langsToCheck.addAll(myModel.getEngagedOnGenerationLanguages());
+    langsToCheck.addAll(myModel.importedLanguages());
+    langsToCheck.addAll(myModel.engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : myModel.getDevKitRefs()) {
+    for (ModuleReference devKit : myModel.importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

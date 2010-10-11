@@ -114,7 +114,7 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
-    for (ModuleReference languageRef : modelDescriptor.getSModel().getExplicitlyImportedLanguages()) {
+    for (ModuleReference languageRef : modelDescriptor.getSModel().importedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, languageRef);
       if (ref != null) unusedLanguages.add(ref);
     }

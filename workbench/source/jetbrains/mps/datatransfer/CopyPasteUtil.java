@@ -221,14 +221,14 @@ public class CopyPasteUtil {
     SModelReference modelReference = model.getSModelReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
-    for (ModuleReference language : model.getExplicitlyImportedLanguages()) {
+    for (ModuleReference language : model.importedLanguages()) {
       SModelOperations.addLanguage(newModel, language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
       SModelOperations.addImportedModel(newModel, importedModel);
     }
 
-    for (ModuleReference devKit : model.getDevKitRefs()) {
+    for (ModuleReference devKit : model.importedDevkits()) {
       newModel.addDevKit(devKit);
     }
 

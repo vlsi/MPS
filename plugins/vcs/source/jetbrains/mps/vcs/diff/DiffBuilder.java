@@ -115,9 +115,9 @@ public class DiffBuilder {
   }
 
   private void collectLanguageAspects() {
-    List<ImportElement> oldImportElements = myOldModel.getLanguageAspectModelElements();
+    List<ImportElement> oldImportElements = myOldModel.getAdditionalModelVersions();
 
-    for (ImportElement importElement : myNewModel.getLanguageAspectModelElements()) {
+    for (ImportElement importElement : myNewModel.getAdditionalModelVersions()) {
       boolean alreadyPresent = false;
 
       for (ImportElement oldImportElement : oldImportElements) {
@@ -166,7 +166,7 @@ public class DiffBuilder {
   }
 
   private int getStructureImportVersion(SModel model, ModuleReference language) {
-    for (ImportElement el : model.getLanguageAspectModelElements()) {
+    for (ImportElement el : model.getAdditionalModelVersions()) {
       if ((language.getModuleFqName() + ".structure").equals(el.getModelReference().getLongName())) {
         return el.getUsedVersion();
       }
@@ -175,8 +175,8 @@ public class DiffBuilder {
   }
 
   private void collectAddedLanguageImports() {
-    List<ModuleReference> oldLanguages = myOldModel.getExplicitlyImportedLanguages();
-    List<ModuleReference> newLanguages = myNewModel.getExplicitlyImportedLanguages();
+    List<ModuleReference> oldLanguages = myOldModel.importedLanguages();
+    List<ModuleReference> newLanguages = myNewModel.importedLanguages();
 
     Set<ModuleReference> addedImports = getDiff(oldLanguages, newLanguages);
     Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);
@@ -191,8 +191,8 @@ public class DiffBuilder {
   }
 
   private void collectChangedUsedDevkits() {
-    List<ModuleReference> oldDevkits = myOldModel.getDevKitRefs();
-    List<ModuleReference> newDevkits = myNewModel.getDevKitRefs();
+    List<ModuleReference> oldDevkits = myOldModel.importedDevkits();
+    List<ModuleReference> newDevkits = myNewModel.importedDevkits();
 
     Set<ModuleReference> addedDevkits = getDiff(oldDevkits, newDevkits);
     Set<ModuleReference> deletedDevkits = getDiff(newDevkits, oldDevkits);
@@ -207,8 +207,8 @@ public class DiffBuilder {
   }
 
   private void collectEngagedOnGenerationLanguages() {
-    List<ModuleReference> oldLanguages = myOldModel.getEngagedOnGenerationLanguages();
-    List<ModuleReference> newLanguages = myNewModel.getEngagedOnGenerationLanguages();
+    List<ModuleReference> oldLanguages = myOldModel.engagedOnGenerationLanguages();
+    List<ModuleReference> newLanguages = myNewModel.engagedOnGenerationLanguages();
 
     Set<ModuleReference> addedImports = getDiff(oldLanguages, newLanguages);
     Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);

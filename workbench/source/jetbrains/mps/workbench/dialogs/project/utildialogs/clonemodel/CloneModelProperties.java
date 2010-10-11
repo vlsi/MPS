@@ -108,9 +108,9 @@ public class CloneModelProperties {
       myRoot.setPrefix(modelRoot.getPrefix());
     }
 
-    myImportedLanguages.addAll(model.getExplicitlyImportedLanguages());
+    myImportedLanguages.addAll(model.importedLanguages());
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myImportedDevkits.addAll(model.getDevKitRefs());
-    myLanguagesInGeneration.addAll(model.getEngagedOnGenerationLanguages());
+    myImportedDevkits.addAll(model.importedDevkits());
+    myLanguagesInGeneration.addAll(model.engagedOnGenerationLanguages());
   }
 }

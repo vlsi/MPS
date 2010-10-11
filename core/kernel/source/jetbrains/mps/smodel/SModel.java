@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -191,29 +190,6 @@ public class SModel {
 
   public int getPersistenceVersion() {
     return myPersistenceVersion;
-  }
-
-  public void addAspectModelsVersions(@NotNull Language language) {
-    addAspectModelsVersions(language, false);
-  }
-
-  public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
-    ModelChange.assertLegalChange(this);
-    if (myVersionedLanguages.contains(language.getModuleReference())) return;
-
-    for (EditableSModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-      addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
-    }
-    myVersionedLanguages.add(language.getModuleReference());
-    for (Language l : language.getExtendedLanguages()) {
-      addAspectModelsVersions(l);
-    }
-  }
-
-  private void addAspectModelsVersions(DevKit devKit) {
-    for (Language language : devKit.getExportedLanguages()) {
-      addAspectModelsVersions(language);
-    }
   }
 
   public void refreshRefactoringHistory() {
@@ -523,18 +499,8 @@ public class SModel {
 
   //language
 
-  @NotNull
-  //todo rewrite using iterators
-  public List<ModuleReference> getExplicitlyImportedLanguages() {
+  public List<ModuleReference> importedLanguages() {
     return Collections.unmodifiableList(myLanguages);
-  }
-
-  public void addLanguage(@NotNull ModuleReference ref, boolean firstVersion) {
-    addLanguage_internal(ref);
-    Language language = GlobalScope.getInstance().getLanguage(ref);
-    if (language != null) {
-      addAspectModelsVersions(language, firstVersion);
-    }
   }
 
   public void deleteLanguage(@NotNull ModuleReference ref) {
@@ -546,9 +512,7 @@ public class SModel {
     fireLanguageRemovedEvent(ref);
   }
 
-  //todo what is it? 0_0
-
-  public void addLanguage_internal(@NotNull ModuleReference ref) {
+  public void addLanguage(@NotNull ModuleReference ref) {
     ModelChange.assertLegalChange(this);
     if (SModelOperations.hasLanguage(this, ref)) return;
 
@@ -564,15 +528,8 @@ public class SModel {
 
   //devkit
 
-  @NotNull
-  //todo rewrite using iterators
-  public List<ModuleReference> getDevKitRefs() {
+  public List<ModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
-  }
-
-  public void addNewlyImportedDevKit(ModuleReference ref) {
-    addDevKit(ref);
-    addAspectModelsVersions(GlobalScope.getInstance().getDevKit(ref));
   }
 
   public void addDevKit(@NotNull ModuleReference ref) {
@@ -592,10 +549,9 @@ public class SModel {
   }
 
   //model
-  //todo rewrite using iterators
 
-  public Iterator<ImportElement> importElements() {
-    return myImports.iterator();
+  public List<ImportElement> importedModels() {
+    return Collections.unmodifiableList(myImports);
   }
 
   public void addModelImport(ImportElement importElement) {
@@ -615,35 +571,19 @@ public class SModel {
     }
   }
 
-  void addModelImport(@NotNull SModelReference modelReference, boolean firstVersion) {
+  //aspects / additional
+
+  public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
+    if (myVersionedLanguages.contains(language.getModuleReference())) return;
 
-    ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
-    if (importElement != null) return;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    int usedVersion = -1;
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
+    for (EditableSModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
+      addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
     }
-    importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
-    myImports.add(importElement);
-
-    fireImportAddedEvent(modelReference);
-  }
-
-  @Deprecated
-  public List<ImportElement> getImportElements() {
-    return new ArrayList<ImportElement>(myImports);
-  }
-
-  //other
-
-  public void setMaxImportIndex(int i) {
-    myMaxImportIndex = i;
-  }
-
-  public int getMaxImportIndex() {
-    return myMaxImportIndex;
+    myVersionedLanguages.add(language.getModuleReference());
+    for (Language l : language.getExtendedLanguages()) {
+      addAspectModelsVersions(l, false);
+    }
   }
 
   public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
@@ -654,7 +594,7 @@ public class SModel {
   }
 
   @Nullable
-  ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
+  public ImportElement getAdditionalModelElement(@NotNull SModelReference modelReference) {
     for (ImportElement importElement : myAdditionalModelsVersions) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
@@ -663,18 +603,14 @@ public class SModel {
     return null;
   }
 
-  public List<ImportElement> getLanguageAspectModelElements() {
-    return new ArrayList<ImportElement>(myAdditionalModelsVersions);
+  public List<ImportElement> getAdditionalModelVersions() {
+    return Collections.unmodifiableList(myAdditionalModelsVersions);
   }
 
-  public void removeUnusedLanguageAspectModelElements() {
-    Set<SModelReference> dependencies = SModelOperations.getDependenciesModelUIDs(this);
-    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
-      ImportElement elem = iter.next();
-      if (!dependencies.contains(elem.getModelReference())) {
-        iter.remove();
-      }
-    }
+  //engaged languages
+
+  public List<ModuleReference> engagedOnGenerationLanguages() {
+    return myLanguagesEngagedOnGeneration;
   }
 
   public void addEngagedOnGenerationLanguage(ModuleReference ref) {
@@ -701,23 +637,43 @@ public class SModel {
     }
   }
 
-  @NotNull
-  public List<ModuleReference> getEngagedOnGenerationLanguages() {
-    return new ArrayList<ModuleReference>(myLanguagesEngagedOnGeneration);
-  }
+  //other
 
-  public int getUsedVersion(SModelReference sModelReference) {
-    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement == null) {
-      return getLanguageAspectModelVersion(sModelReference);
+
+
+
+  void addModelImport(@NotNull SModelReference modelReference, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+
+    ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
+    if (importElement != null) return;
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    int usedVersion = -1;
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
+      usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
     }
-    return importElement.getUsedVersion();
+    importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
+
+    addModelImport(importElement);
   }
 
-  public int getLanguageAspectModelVersion(SModelReference sModelReference) {
-    ImportElement importElement = getAdditionalModelElement(sModelReference);
-    if (importElement == null) return -1;
-    return importElement.getUsedVersion();
+  public void setMaxImportIndex(int i) {
+    myMaxImportIndex = i;
+  }
+
+  public int getMaxImportIndex() {
+    return myMaxImportIndex;
+  }
+
+
+  public void removeUnusedLanguageAspectModelElements() {
+    Set<SModelReference> dependencies = SModelOperations.getDependenciesModelUIDs(this);
+    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
+      ImportElement elem = iter.next();
+      if (!dependencies.contains(elem.getModelReference())) {
+        iter.remove();
+      }
+    }
   }
 
   public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
@@ -997,7 +953,7 @@ public class SModel {
         available.add(namespace);
         Language lang = GlobalScope.getInstance().getLanguage(namespace);
         if (lang != null) {
-          addLanguage_internal(lang.getModuleReference());
+          addLanguage(lang.getModuleReference());
           // add language also to module if necessary
           IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
           if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {

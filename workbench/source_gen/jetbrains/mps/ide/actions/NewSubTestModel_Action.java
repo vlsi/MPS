@@ -104,13 +104,13 @@ public class NewSubTestModel_Action extends GeneratedAction {
           SModel createdModel = result.value.getSModel();
           SModel sourceModel = NewSubTestModel_Action.this.model.getSModel();
           SModelOperations.addImportedModel(createdModel, sourceModel.getSModelReference());
-          for (SModel.ImportElement importElement : sourceModel.getImportElements()) {
+          for (SModel.ImportElement importElement : sourceModel.importedModels()) {
             SModelOperations.addImportedModel(createdModel, importElement.getModelReference());
           }
-          for (ModuleReference importedLanguage : sourceModel.getExplicitlyImportedLanguages()) {
+          for (ModuleReference importedLanguage : sourceModel.importedLanguages()) {
             SModelOperations.addLanguage(createdModel, importedLanguage);
           }
-          for (ModuleReference devKit : sourceModel.getDevKitRefs()) {
+          for (ModuleReference devKit : sourceModel.importedDevkits()) {
             createdModel.addDevKit(devKit);
           }
         }
