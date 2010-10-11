@@ -16,6 +16,7 @@
 package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -34,9 +35,9 @@ public class ModelImportChange extends Change {
 
   public boolean apply(SModel m) {
     if (myIsDeleted) {
-      m.deleteImportedModel(mySModelReference);
+      m.deleteModelImport(mySModelReference);
     } else {
-      m.addImportedModel(mySModelReference);
+      SModelOperations.addImportedModel(m, mySModelReference);
     }
     return false;
   }

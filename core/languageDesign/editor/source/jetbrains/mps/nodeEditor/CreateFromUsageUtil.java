@@ -96,7 +96,7 @@ public final class CreateFromUsageUtil {
   private static BaseGroup getQuickCreateGroup(final SModel model, final IScope scope, Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
     BaseGroup group = new BaseGroup("");
 
-    List<Language> modelLanguages = model.getLanguages(scope);
+    List<Language> modelLanguages = SModelOperations.getLanguages(model, scope);
     Collections.sort(modelLanguages, new ToStringComparator());
     for (final Language language : modelLanguages) {
       boolean hasChildren = false;

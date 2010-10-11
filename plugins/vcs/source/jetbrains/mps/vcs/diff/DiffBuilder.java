@@ -99,8 +99,8 @@ public class DiffBuilder {
   }
 
   private void collectAddedModelImport() {
-    List<SModelReference> oldImportElements = myOldModel.getImportedModelUIDs();
-    List<SModelReference> newImportElements = myNewModel.getImportedModelUIDs();
+    List<SModelReference> oldImportElements = SModelOperations.getImportedModelUIDs(myOldModel);
+    List<SModelReference> newImportElements = SModelOperations.getImportedModelUIDs(myNewModel);
 
     Set<SModelReference> addedImports = getDiff(oldImportElements, newImportElements);
     Set<SModelReference> deletedImports = getDiff(newImportElements, oldImportElements);

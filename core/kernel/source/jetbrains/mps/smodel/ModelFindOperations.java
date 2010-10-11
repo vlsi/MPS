@@ -68,7 +68,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    for (SModelDescriptor modelDescriptor : model.allImportedModels(GlobalScope.getInstance())) {
+    for (SModelDescriptor modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
       if (models.contains(modelDescriptor.getSModelReference())) {
         return true;
       }
@@ -88,7 +88,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    return model.hasImportedModel(modelDescriptor.getSModelReference());
+    return SModelOperations.hasImportedModel(model, modelDescriptor.getSModelReference());
   }
 
   public boolean hasLanguage(Language language) {
@@ -100,7 +100,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    return model.hasLanguage(language.getModuleReference());
+    return SModelOperations.hasLanguage(model,language.getModuleReference());
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {

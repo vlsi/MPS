@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
@@ -108,7 +109,7 @@ public class CloneModelProperties {
     }
 
     myImportedLanguages.addAll(model.getExplicitlyImportedLanguages());
-    myImportedModels.addAll(model.getImportedModelUIDs());
+    myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myImportedDevkits.addAll(model.getDevKitRefs());
     myLanguagesInGeneration.addAll(model.getEngagedOnGenerationLanguages());
   }

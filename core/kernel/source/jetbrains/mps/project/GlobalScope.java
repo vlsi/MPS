@@ -64,13 +64,13 @@ public class GlobalScope extends BaseScope {
     return myMPSModuleRepository.getAllSolutions();
   }
 
+  //todo make return List or, better, a Collection
   public Set<IModule> getVisibleModules() {
     return new HashSet<IModule>(myMPSModuleRepository.getAllModules());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    SModelDescriptor modelDescriptor = myModelRepository.getModelDescriptor(modelReference);
-    return modelDescriptor;
+    return myModelRepository.getModelDescriptor(modelReference);
   }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName) {

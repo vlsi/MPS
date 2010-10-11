@@ -115,7 +115,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1220369573364040170(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (Language lang : SNodeOperations.getModel(_context.getNode()).getLanguages(GlobalScope.getInstance())) {
+    for (Language lang : jetbrains.mps.smodel.SModelOperations.getLanguages(SNodeOperations.getModel(_context.getNode()), GlobalScope.getInstance())) {
       for (IModule mod : ((LanguageDepsManager) lang.getDependenciesManager()).getRuntimeDependOnModules()) {
         for (SModelDescriptor smd : mod.getOwnModelDescriptors()) {
           SModel rtModel = smd.getSModel();

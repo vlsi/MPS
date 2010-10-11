@@ -5,16 +5,15 @@ package jetbrains.mps.debug.evaluation.ui;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -53,7 +52,6 @@ import jetbrains.mps.traceInfo.TraceInfoManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -63,9 +61,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
@@ -237,7 +233,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       LOG.error("Stub for " + fqName + " was not found.");
       return;
     }
-    myAuxModel.getSModel().addImportedModel(stubReference);
+    SModelOperations.addImportedModel(myAuxModel.getSModel(), stubReference);
   }
 
   private void createVars() {

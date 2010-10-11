@@ -16,7 +16,9 @@ import java.awt.HeadlessException;
 import java.awt.Dialog;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.ArrayList;
@@ -61,7 +63,8 @@ public abstract class BaseChooseNodeDialog extends BaseDialog {
     for (SModelDescriptor modelDescriptor : ListSequence.fromList(((AbstractModule) this.myContextModel.getModule()).getOwnModelDescriptors())) {
       this.myVisibleModels.add(modelDescriptor);
     }
-    for (SModelReference sm : this.myContextModel.getSModel().getImportedModelUIDs()) {
+    SModel model = this.myContextModel.getSModel();
+    for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {
       if (this.myContext.getScope().getModelDescriptor(sm) != null) {
         this.myVisibleModels.add(this.myContext.getScope().getModelDescriptor(sm));
       }

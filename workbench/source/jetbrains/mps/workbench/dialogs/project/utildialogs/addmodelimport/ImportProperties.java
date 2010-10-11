@@ -202,10 +202,10 @@ public class ImportProperties {
 
   public void saveTo(IModule targetModule, SModel targetModel, boolean all) {
     for (SModelReference imported : getModelsToImport(all)) {
-      targetModel.addImportedModel(imported);
+      SModelOperations.addImportedModel(targetModel, imported);
     }
     for (ModuleReference language : getLanguagesToImport(all)) {
-      targetModel.addLanguage(language);
+      SModelOperations.addLanguage(targetModel, language);
     }
     for (ModuleReference devkit : getDevkitsToImport(all)) {
       targetModel.addNewlyImportedDevKit(devkit);

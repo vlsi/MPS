@@ -158,7 +158,7 @@ public class ModelReader4 implements IModelReader {
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
       importedModelReference = upgradeModelUID(importedModelReference);
-      model.addImportElement(new ImportElement(importedModelReference, importIndex, usedModelVersion));
+      model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();

@@ -115,7 +115,7 @@ public class ReferencePersister4 implements IReferencePersister {
       if (myNotImported) {
         importedModelReference = visibleModelElements.getModelUID(getImportIndex());
       } else {
-        importedModelReference = model.getImportedModelUID(getImportIndex());
+        importedModelReference = SModelOperations.getImportedModelUID(model, getImportIndex());
       }
       if (importedModelReference == null) {
         LOG.error("couldn't create reference '" + this.getRole() + "' from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
@@ -164,7 +164,7 @@ public class ReferencePersister4 implements IReferencePersister {
       } else {
         SModelReference targetModelReference = reference.getTargetSModelReference();
         if (targetModelReference != null) {
-          SModel.ImportElement importElement = node.getModel().getImportElement(targetModelReference);
+          SModel.ImportElement importElement = SModelOperations.getImportElement(node.getModel(), targetModelReference);
           if (importElement != null) {
             int importIndex = importElement.getReferenceID();
             targetModelInfo = importIndex + ".";

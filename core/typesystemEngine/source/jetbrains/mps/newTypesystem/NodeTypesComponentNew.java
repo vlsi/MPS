@@ -20,8 +20,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -57,7 +57,7 @@ public class NodeTypesComponentNew {
     if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
       return true;
     }
-    List<Language> languages = model.getLanguages(GlobalScope.getInstance());
+    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
     boolean isLoadedAnyLanguage = false;
     for (Language language : languages) {
       boolean b = rulesManager.loadLanguage(language);

@@ -144,7 +144,7 @@ public class ChildSubstituteActionsHelper {
       link = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
     }
 
-    List<Language> languages = parentNode.getModel().getLanguages(scope);
+    List<Language> languages = SModelOperations.getLanguages(parentNode.getModel(), scope);
     for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
       AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
       if (applicableConcept == null) continue;
@@ -219,7 +219,7 @@ public class ChildSubstituteActionsHelper {
 
     String childConceptFqName = NameUtil.nodeFQName(childConcept);
     Set<String> concepts = new HashSet<String>();
-    for (Language l : parentNode.getModel().getLanguages(scope)) {
+    for (Language l : SModelOperations.getLanguages(parentNode.getModel(), scope)) {
       concepts.addAll(LanguageHierarchyCache.getInstance().getDefaultSubstitutableDescendantsOf(childConceptFqName, l));
     }
 

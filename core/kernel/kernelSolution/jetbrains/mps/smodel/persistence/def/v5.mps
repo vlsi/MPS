@@ -245,7 +245,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2286463592495513948">
                 <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2286463592495513947" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2286463592495515686">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~SModel.addImportElement(jetbrains.mps.smodel.SModel$ImportElement):void" resolveInfo="addImportElement" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~SModel.addModelImport(jetbrains.mps.smodel.SModel$ImportElement):void" resolveInfo="addModelImport" />
                   <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2286463592495515687" />
                 </node>
               </node>

@@ -248,12 +248,12 @@ public class NewGeneratorDialog extends BaseDialog {
         newGenerator.getSModelRoots().get(0));
 
       SModel templateModel = templateModelDescriptor.getSModel();
-      templateModel.addLanguage(Generator_Language.get());
-      templateModel.addLanguage(GenerationContext_Language.get());
-      templateModel.addDevKit(GeneralPurpose_DevKit.get());
+      SModelOperations.addLanguage(templateModel, Generator_Language.get());
+      SModelOperations.addLanguage(templateModel, GenerationContext_Language.get());
+      templateModel.addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
 
-      templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getSModelReference());
-      templateModel.addImportedModel(SModelReference.fromString("java.lang@java_stub"));
+      SModelOperations.addImportedModel(templateModel, sourceLanguage.getStructureModelDescriptor().getSModelReference());
+      SModelOperations.addImportedModel(templateModel, SModelReference.fromString("java.lang@java_stub"));
 
       MappingConfiguration mappingConfiguration = MappingConfiguration.newInstance(templateModel);
       mappingConfiguration.setName("main");

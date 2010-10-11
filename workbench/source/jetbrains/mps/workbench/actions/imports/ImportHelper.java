@@ -150,7 +150,7 @@ public class ImportHelper {
           if (!myContextModule.getScope().getVisibleLanguages().contains(lang)) {
             myContextModule.addUsedLanguage(lang.getModuleReference());
           }
-          myModel.getSModel().addLanguage(lang);
+          SModelOperations.addLanguage(myModel.getSModel(), lang);
         }
       });
     }
@@ -283,7 +283,7 @@ public class ImportHelper {
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myModel.getSModel().addImportedModel(getModelDescriptor().getSModelReference());
+          SModelOperations.addImportedModel(myModel.getSModel(), getModelDescriptor().getSModelReference());
         }
       });
     }

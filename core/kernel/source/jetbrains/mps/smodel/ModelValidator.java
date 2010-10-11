@@ -17,7 +17,7 @@ public class ModelValidator {
 
     List<String> errors = new ArrayList<String>();
 
-    for (SModelReference reference : myModel.getImportedModelUIDs()) {
+    for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (scope.getModelDescriptor(reference) == null) {
         errors.add("Can't find model: " + reference.getLongName());
       }

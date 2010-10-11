@@ -128,7 +128,7 @@ public class OptimizeImportsHelper {
 */
 
     Set<SModelReference> unusedModels = new HashSet<SModelReference>();
-    for (SModelReference model : modelDescriptor.getSModel().getImportedModelUIDs()) {
+    for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor.getSModel())) {
       if (!result.myUsedModels.contains(model)) {
         unusedModels.add(model);
       }
@@ -225,7 +225,7 @@ public class OptimizeImportsHelper {
     }
 
     for (SModelReference model : unusedModels) {
-      modelDescriptor.getSModel().deleteImportedModel(model);
+      modelDescriptor.getSModel().deleteModelImport(model);
       report.append("Model ").append(model.getSModelFqName()).append(" was removed from imports\n");
     }
 

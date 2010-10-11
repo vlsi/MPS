@@ -8,7 +8,8 @@ import javax.swing.JTextField;
 import jetbrains.mps.ide.common.PathField;
 import javax.swing.JCheckBox;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.*;
+
 import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,7 +22,6 @@ import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
@@ -29,11 +29,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -274,9 +270,9 @@ public class NewLanguageDialogContentPane extends JPanel {
         if (myThis.myNeedSandbox_g0.isSelected()) {
           Solution sandbox = myThis.createSandboxSolution();
           SModel createdModel = sandbox.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), sandbox.getSModelRoots().get(0)).getSModel();
-          createdModel.addLanguage(myThis.getResult());
+          SModelOperations.addLanguage(createdModel, myThis.getResult());
           for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
-            createdModel.addLanguage(extendedLanguage);
+            SModelOperations.addLanguage(createdModel, extendedLanguage);
           }
           for (ModuleReference addedLanguage : createdModel.getExplicitlyImportedLanguages()) {
             if (sandbox.getScope().getLanguage(addedLanguage) == null) {

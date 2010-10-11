@@ -47,8 +47,8 @@ public class ModelAssert {
   }
 
   private static void assertSameModelImports(SModel expectedModel, SModel actualModel) {
-    assertListsEqual(expectedModel.getImportedModelUIDs(),
-      actualModel.getImportedModelUIDs(),
+    assertListsEqual(SModelOperations.getImportedModelUIDs(expectedModel),
+      SModelOperations.getImportedModelUIDs(actualModel),
       "model import");
   }
 

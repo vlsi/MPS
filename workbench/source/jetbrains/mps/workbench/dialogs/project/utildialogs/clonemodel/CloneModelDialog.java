@@ -194,11 +194,11 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     model.runLoadingAction(new Runnable() {
       public void run() {
         for (SModelReference ref : myModelProperties.getImportedModels()) {
-          model.addImportedModel(ref);
+          SModelOperations.addImportedModel(model, ref);
         }
 
         for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
-          model.addLanguage(mr);
+          SModelOperations.addLanguage(model, mr);
         }
 
         for (ModuleReference mr : myModelProperties.getImportedDevkits()) {

@@ -784,7 +784,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1227605624926">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.addLanguage(jetbrains.mps.smodel.Language):void" resolveInfo="addLanguage" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference,boolean):void" resolveInfo="addLanguage" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1227605624927">
                       <link role="variableDeclaration:3" targetNodeId="1227605602243" resolveInfo="language" />
                     </node>
@@ -1100,10 +1100,10 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="199149364782675602">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.addDevKit(jetbrains.mps.project.DevKit):void" resolveInfo="addDevKit" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3357484187995672573">
-                <link role="baseMethodDeclaration:3" targetNodeId="29.~GeneralPurpose_DevKit.get():jetbrains.mps.project.DevKit" resolveInfo="get" />
-                <link role="classConcept:3" targetNodeId="29.~GeneralPurpose_DevKit" resolveInfo="GeneralPurpose_DevKit" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addDevKit" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7123761944774892370">
+                <link role="classifier:3" targetNodeId="29.~GeneralPurpose_DevKit" resolveInfo="GeneralPurpose_DevKit" />
+                <link role="variableDeclaration:3" targetNodeId="29.~GeneralPurpose_DevKit.MODULE_REFERENCE" resolveInfo="MODULE_REFERENCE" />
               </node>
             </node>
           </node>

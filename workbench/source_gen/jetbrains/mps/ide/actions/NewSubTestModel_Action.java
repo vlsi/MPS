@@ -6,22 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
+import jetbrains.mps.smodel.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+
 import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.ModelRootUtil;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.List;
@@ -108,12 +103,12 @@ public class NewSubTestModel_Action extends GeneratedAction {
           result.value = NewSubTestModel_Action.this.model.getModule().createModel(newModelFqName, ModelRootUtil.getSModelRoot(NewSubTestModel_Action.this.model));
           SModel createdModel = result.value.getSModel();
           SModel sourceModel = NewSubTestModel_Action.this.model.getSModel();
-          createdModel.addImportedModel(sourceModel.getSModelReference());
+          SModelOperations.addImportedModel(createdModel, sourceModel.getSModelReference());
           for (SModel.ImportElement importElement : sourceModel.getImportElements()) {
-            createdModel.addImportedModel(importElement.getModelReference());
+            SModelOperations.addImportedModel(createdModel, importElement.getModelReference());
           }
           for (ModuleReference importedLanguage : sourceModel.getExplicitlyImportedLanguages()) {
-            createdModel.addLanguage(importedLanguage);
+            SModelOperations.addLanguage(createdModel, importedLanguage);
           }
           for (ModuleReference devKit : sourceModel.getDevKitRefs()) {
             createdModel.addDevKit(devKit);

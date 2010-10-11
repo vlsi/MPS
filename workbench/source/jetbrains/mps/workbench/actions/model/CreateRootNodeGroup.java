@@ -98,7 +98,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       myPackage = node.getPackage();
     }
 
-    List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(scope);
+    List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
     if (modelLanguages.size() == 0) {
       add(ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide"));
     }

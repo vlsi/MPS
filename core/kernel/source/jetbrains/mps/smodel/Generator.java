@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -294,7 +293,7 @@ public class Generator extends AbstractModule {
       }
     }
 
-    for (Language language : sm.getSModel().getLanguages(getScope())) {
+    for (Language language : SModelOperations.getLanguages(sm.getSModel(), getScope())) {
       SModelDescriptor struc = language.getStructureModelDescriptor();
       if (struc != null) {
         result.add(struc);

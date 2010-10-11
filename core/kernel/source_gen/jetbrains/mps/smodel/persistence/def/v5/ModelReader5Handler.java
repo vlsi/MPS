@@ -244,7 +244,7 @@ public class ModelReader5Handler extends DefaultHandler {
         if (child.getReferenceID() > result.getMaxImportIndex()) {
           result.setMaxImportIndex(child.getReferenceID());
         }
-        result.addImportElement(child);
+        result.addModelImport(child);
         return;
       }
       if ("node".equals(tagName)) {

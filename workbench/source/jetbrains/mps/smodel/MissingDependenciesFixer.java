@@ -57,7 +57,7 @@ public class MissingDependenciesFixer {
         moduleScope[0] = module[0].getScope();
         md[0] = module[0].getModuleDescriptor();
 
-        for (SModelReference modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
+        for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(myModelDescriptor.getSModel())) {
           if (moduleScope[0].getModelDescriptor(modelImport) == null) {
             SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
             if (sm == null) continue;
