@@ -181,15 +181,6 @@ public class Solution extends AbstractModule {
     return myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "test_gen";
   }
 
-  protected void collectRuntimePackages(Set<String> result, String current) {
-    if (!"".equals(current) && !getClassPathItem().getAvailableClasses(current).isEmpty()) {
-      result.add(current);
-    }
-    for (String subpack : getClassPathItem().getSubpackages(current)) {
-      collectRuntimePackages(result, subpack);
-    }
-  }
-
   public boolean reloadClassesAfterGeneration() {
     return false;
   }

@@ -49,7 +49,6 @@ public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
-  public static final String CACHES_DIR = "caches";
 
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
