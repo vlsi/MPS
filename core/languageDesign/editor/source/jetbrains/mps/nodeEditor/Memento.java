@@ -198,6 +198,10 @@ class Memento {
   private static final String STACK_ELEMENT = "stackElement";
   private static final String FOLDED = "folded";
   private static final String FOLDED_ELEMENT = "foldedElement";
+  private static final String TEXT_LINE = "textLine";
+  private static final String CARET_POSITION = "caretPosition";
+  private static final String SEL_START = "selStart";
+  private static final String SEL_END = "selEnd";
 
   public void save(Element e) {
     if (mySelectedCellInfo instanceof DefaultCellInfo) {
@@ -235,6 +239,11 @@ class Memento {
     if (success) {
       e.addContent(folded);
     }
+    Element textLine = new Element(TEXT_LINE);
+    textLine.setAttribute(CARET_POSITION, myCaretX + "");
+    textLine.setAttribute(SEL_START, mySelectionStart + "");
+    textLine.setAttribute(SEL_END, mySelectionEnd + "");
+    e.addContent(textLine);
   }
 
   public static Memento load(Element e) {
@@ -255,6 +264,18 @@ class Memento {
       List children = folded.getChildren(FOLDED_ELEMENT);
       for (Object o : children) {
         memento.myFolded.add(DefaultCellInfo.loadFrom((Element) o));
+      }
+    }
+    Element textLine = e.getChild(TEXT_LINE);
+    if (textLine != null) {
+      try {
+        memento.myCaretX = Integer.parseInt(textLine.getAttributeValue(CARET_POSITION));
+        memento.mySelectionStart = Integer.parseInt(textLine.getAttributeValue(SEL_START));
+        memento.mySelectionEnd = Integer.parseInt(textLine.getAttributeValue(SEL_END));
+      } catch (NumberFormatException ex) {
+        memento.myCaretX = 0;
+        memento.mySelectionStart = 0;
+        memento.mySelectionEnd = 0;
       }
     }
     return memento;
