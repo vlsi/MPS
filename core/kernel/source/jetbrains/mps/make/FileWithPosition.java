@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.vfs.IFile;
+import java.io.File;
 
 public class FileWithPosition {
-  private IFile myFile;
+  private File myFile;
   private int myOffset;
 
-  public FileWithPosition(IFile file, int offset) {
+  public FileWithPosition(File file, int offset) {
     myFile = file;
     myOffset = offset;
   }
 
-  public IFile getFile() {
+  public File getFile() {
     return myFile;
   }
 

@@ -6,16 +6,12 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.make.FileWithPosition;
-
-import java.io.File;
 
 public class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPosition> {
   public void navigate(Project project, FileWithPosition pos, boolean focus, boolean select) {
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
+    VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
 
     if (vf == null) return;
 

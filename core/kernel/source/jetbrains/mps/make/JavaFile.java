@@ -16,21 +16,19 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.File;
 
 public class JavaFile {
-  private IFile myFile;
+  private File myFile;
   private String myClassName;
 
-  JavaFile(IFile file, String className) {
+  JavaFile(File file, String className) {
     myFile = file;
     myClassName = className;
   }
 
-  IFile getFile() {
+  File getFile() {
     return myFile;
   }
 
@@ -39,11 +37,7 @@ public class JavaFile {
   }
 
   String getContents() {
-    try {
-      return FileUtil.read(new InputStreamReader(myFile.openInputStream()));
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
+    return FileUtil.read(myFile);
   }
 
   public String toString() {

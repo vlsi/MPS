@@ -19,7 +19,6 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -66,15 +65,15 @@ public class ModuleSources {
 
   private void collectInputFilesInfo() {
     for (String source : myModule.getSourcePaths()) {
-      collectInput(FileSystem.getInstance().getFileByPath(source), "");
+      collectInput(new File(source), "");
     }
   }
 
-  private void collectInput(IFile dir, String path) {
-    List<IFile> list = dir.list();
+  private void collectInput(File dir, String path) {
+    File[] list = dir.listFiles();
     if (list == null) return;
 
-    for (IFile child : list) {
+    for (File child : list) {
       if (isIgnoredFileName(child.getName())) continue;
 
       if (isJavaFile(child)) {
@@ -168,14 +167,13 @@ public class ModuleSources {
     return path.replace('/', '.');
   }
 
-  private boolean isJavaFile(IFile file) {
+  private boolean isJavaFile(File file) {
     return !file.isDirectory() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
   }
 
   private boolean isResourceFileName(String fileName) {
     int extPos = fileName.lastIndexOf('.');
-    if (extPos == -1) return false;
-    return !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
+    return extPos != -1 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
       !fileName.endsWith(MPSExtentions.DOT_CLASSFILE) &&
       !AllCaches.getInstance().isCacheFile(fileName);
   }

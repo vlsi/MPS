@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.vfs.IFile;
+import java.io.File;
 
 public class ResourceFile {
   private String myPath;
-  private IFile myFile;
+  private File myFile;
 
-  ResourceFile(IFile file, String fqName) {
+  ResourceFile(File file, String fqName) {
     myPath = fqName;
     myFile = file;
   }
@@ -30,7 +30,7 @@ public class ResourceFile {
     return myPath;
   }
 
-  IFile getFile() {
+  File getFile() {
     return myFile;
   }
 
