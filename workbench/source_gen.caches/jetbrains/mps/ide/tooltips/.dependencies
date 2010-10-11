@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.tooltips.MPSToolTipManager" file="MPSToolTipManager.java">
+    <classNode dependClassName="com.intellij.ide.IdeTooltip" />
+    <classNode dependClassName="com.intellij.ide.IdeTooltipManager" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Frame" />
@@ -11,6 +13,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTipData" />

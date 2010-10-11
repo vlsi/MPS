@@ -52,6 +52,9 @@ public class ToolTip {
   }
 
   /*package*/ String getText() {
+    if (myHintInformation == null) {
+      return null;
+    }
     return myHintInformation.getText();
   }
 

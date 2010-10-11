@@ -5,6 +5,7 @@ package jetbrains.mps.ide.tooltips;
 import com.intellij.openapi.components.ApplicationComponent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import com.intellij.ide.IdeTooltip;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Component;
@@ -12,6 +13,8 @@ import javax.swing.JComponent;
 import java.awt.Point;
 import java.awt.Frame;
 import javax.swing.SwingUtilities;
+import javax.swing.JLabel;
+import com.intellij.ide.IdeTooltipManager;
 import com.intellij.openapi.application.ApplicationManager;
 
 public class MPSToolTipManager implements ApplicationComponent {
@@ -23,6 +26,8 @@ public class MPSToolTipManager implements ApplicationComponent {
   };
   private MouseAdapter myRightAlignedMouseListener;
   private ToolTip myToolTip;
+  private IdeTooltip myIdeTooltip;
+  private String myText = null;
 
   public MPSToolTipManager() {
   }
@@ -118,19 +123,22 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
 
   private void showToolTip(String text, JComponent component, Point point, boolean rightAligned) {
-    if (myToolTip != null) {
-      if (eq_k25xh9_a0a0a0n(myToolTip.getText(), text)) {
-        return;
-      }
-      hideToolTip();
-    }
     if (text == null) {
       return;
     }
-    myToolTip = new ToolTip(rightAligned);
-    Frame frame = getContainingFrame(component);
-    SwingUtilities.convertPointToScreen(point, component);
-    myToolTip.show(frame, point, new ToolTipData(text));
+    if (eq_k25xh9_a0b0n(myText, text)) {
+      return;
+    }
+    myText = text;
+    JLabel label = new JLabel(text);
+    label.setOpaque(false);
+    myIdeTooltip = new IdeTooltip(component, point, label) {
+      @Override
+      protected boolean canAutohideOn(MouseEvent event, boolean b) {
+        return false;
+      }
+    };
+    IdeTooltipManager.getInstance().showTipNow(myIdeTooltip);
   }
 
   public void hideToolTip() {
@@ -138,6 +146,11 @@ public class MPSToolTipManager implements ApplicationComponent {
       myToolTip.hide();
       myToolTip = null;
     }
+    if (myIdeTooltip != null) {
+      myIdeTooltip.hide();
+      myIdeTooltip = null;
+    }
+    myText = null;
   }
 
   public static MPSToolTipManager getInstance() {
@@ -151,7 +164,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     );
   }
 
-  private static boolean eq_k25xh9_a0a0a0n(Object a, Object b) {
+  private static boolean eq_k25xh9_a0b0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
