@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -33,6 +34,7 @@ import java.io.IOException;
 public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
+  @Ignore
   public void testIdeActions() throws IOException {
     final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.mpr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
@@ -51,6 +53,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   }
 
   @Test
+  @Ignore
   public void testPluginStructure() throws IOException {
     final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/languageDesign/plugin/plugin.mpr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.lang.plugin.structure");
@@ -69,6 +72,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   }
 
   @Test
+  @Ignore
   public void testBaseLanguageEditor() throws IOException {
     final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
