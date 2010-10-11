@@ -188,7 +188,6 @@ public class NodeEditor implements IEditor {
 
     private Object myMemento;
     private Object myInspectorMemento;
-    private boolean myIsExternal = false;
 
     public void save(Element e) {
       if (myMemento != null) {
@@ -212,7 +211,6 @@ public class NodeEditor implements IEditor {
       if (inspectorMementoElem != null) {
         myInspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
       }
-      myIsExternal = true;
     }
 
     public int hashCode() {

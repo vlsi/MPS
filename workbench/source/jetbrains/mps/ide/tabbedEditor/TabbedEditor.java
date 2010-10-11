@@ -27,10 +27,7 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
@@ -329,10 +326,6 @@ public class TabbedEditor implements IEditor {
             result.myInspectorMemento = inspectorContext.createMemento(full);
           }
         }
-        EditorCell selectedCell = editorComponent.getSelectedCell();
-        if (selectedCell != null) {
-          result.mySelectedCell = new DefaultCellInfo(selectedCell);
-        }
       }
     }
     result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
@@ -374,15 +367,6 @@ public class TabbedEditor implements IEditor {
       EditorComponent component = getCurrentEditorComponent();
       if (component != null) {
         ((NodeEditorComponent) component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
-      }
-    }
-    if (s.myIsExternal && s.mySelectedCell != null) {
-      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
-      if (editorComponent != null) {
-        EditorCell closestCell = s.mySelectedCell.findClosestCell(editorComponent);
-        if (closestCell != null) {
-          editorComponent.changeSelection(closestCell);
-        }
       }
     }
   }
@@ -427,21 +411,25 @@ public class TabbedEditor implements IEditor {
     private static final String TAB = "tab";
     private static final String TABS = "inner_tabs";
     private static final String INDEX = "index";
-    private static final String SELECTED_CELL = "selectedCell";
+    private static final String MEMENTO = "memento";
+    private static final String INSPECTOR_MEMENTO = "inspectorMemento";
 
     private Object myMemento;
     private Object myInspectorMemento;
     private List<Integer> myInnerCurrentTabs = new ArrayList<Integer>();
     private int myCurrentTab;
-    private boolean myIsExternal = false;
-    private DefaultCellInfo mySelectedCell;
 
     public void save(Element e) {
       e.setAttribute(TAB, "" + myCurrentTab);
-      if (mySelectedCell != null) {
-        Element cellElem = new Element(SELECTED_CELL);
-        mySelectedCell.saveTo(cellElem);
-        e.addContent(cellElem);
+      if (myMemento != null) {
+        Element mementoElem = new Element(MEMENTO);
+        MementoPersistence.saveMemento(myMemento, mementoElem);
+        e.addContent(mementoElem);
+      }
+      if (myInspectorMemento != null) {
+        Element mementoElem = new Element(INSPECTOR_MEMENTO);
+        MementoPersistence.saveMemento(myInspectorMemento, mementoElem);
+        e.addContent(mementoElem);
       }
       Element innerTabsIndexXML = new Element(TABS);
       for (int innerTabIndex : myInnerCurrentTabs) {
@@ -458,9 +446,13 @@ public class TabbedEditor implements IEditor {
       } catch (NumberFormatException ex) {
         myCurrentTab = 0;
       }
-      Element cellElem = e.getChild(SELECTED_CELL);
-      if (cellElem != null) {
-        mySelectedCell = DefaultCellInfo.loadFrom(cellElem);
+     Element mementoElem = e.getChild(MEMENTO);
+      if (mementoElem != null) {
+        myMemento = MementoPersistence.loadMemento(mementoElem);
+      }
+      Element inspectorMementoElem = e.getChild(MEMENTO);
+      if (inspectorMementoElem != null) {
+        myInspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
       }
       myInnerCurrentTabs.clear();
       Element innerTabsIndexXML = e.getChild(TABS);
@@ -470,7 +462,6 @@ public class TabbedEditor implements IEditor {
           myInnerCurrentTabs.add(Integer.parseInt(value));
         }
       }
-      myIsExternal = true;
     }
 
     public int hashCode() {
