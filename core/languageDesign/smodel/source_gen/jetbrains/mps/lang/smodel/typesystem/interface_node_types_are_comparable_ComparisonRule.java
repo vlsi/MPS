@@ -4,15 +4,17 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class interface_node_types_are_comparable_ComparisonRule extends ComparisonRule_Runtime {
   public interface_node_types_are_comparable_ComparisonRule() {
   }
 
-  public boolean areComparable(SNode node1, SNode node2) {
+  public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return true;
     }
@@ -23,12 +25,18 @@ public class interface_node_types_are_comparable_ComparisonRule extends Comparis
     return true;
   }
 
-  public boolean isApplicable1(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+  public IsApplicableStatus isApplicableFirst(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName1());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
-  public boolean isApplicable2(SNode node) {
-    return SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName2());
+  public IsApplicableStatus isApplicableSecond(SNode node) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), this.getApplicableConceptFQName2());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public String getApplicableConceptFQName1() {

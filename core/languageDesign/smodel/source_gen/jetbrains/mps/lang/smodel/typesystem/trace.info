@@ -143,7 +143,6 @@
   <unitInfo fileName="typeof_SemanticDowncastExpression_InferenceRule.java" startLine="145" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$QuotationClass_kyl6z5_a0a0a0a0d0a0a" />
   <unitInfo fileName="typeof_SemanticDowncastExpression_InferenceRule.java" startLine="176" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$QuotationClass_kyl6z5_a0a0a0a0a3a0a0" />
   <unitInfo fileName="typeof_SemanticDowncastExpression_InferenceRule.java" startLine="252" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SemanticDowncastExpression_InferenceRule$QuotationClass_kyl6z5_a0a0a0a0a0a3a0a0" />
-  <unitInfo fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" />
   <unitInfo fileName="typeof_SPropertyAccess_InferenceRule.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SPropertyAccess_InferenceRule" />
   <unitInfo fileName="typeof_PropertyRefQualifier_InferenceRule.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_PropertyRefQualifier_InferenceRule" />
   <unitInfo fileName="check_LinkRefExpression_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_LinkRefExpression_NonTypesystemRule" />
@@ -151,10 +150,11 @@
   <unitInfo fileName="check_SLinkListAccess_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SLinkListAccess_NonTypesystemRule" />
   <unitInfo fileName="check_SPropertyAccess_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_SPropertyAccess_NonTypesystemRule" />
   <unitInfo fileName="check_PropertyAttributeAccessQualifier_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_PropertyAttributeAccessQualifier_NonTypesystemRule" />
-  <unitInfo fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="45" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule$Pattern_vbthi0_a0a0a0a3" />
+  <unitInfo fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="54" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule$Pattern_vbthi0_a0a0a0a3" />
   <unitInfo fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="76" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$Pattern_6gcjzy_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.java" startLine="76" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule$Pattern_fggx2c_a0a0a0a2" />
   <unitInfo fileName="supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.java" startLine="76" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule$Pattern_qc0dd6_a0a0a0a2" />
+  <unitInfo fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.interface_node_types_are_comparable_ComparisonRule" />
   <unitInfo fileName="check_Node_GetReferentSearchScopeOperation_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.check_Node_GetReferentSearchScopeOperation_NonTypesystemRule" />
   <unitInfo fileName="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java" startLine="52" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ListType_ListType_elementSNode_SubtypingRule$QuotationClass_84rynv_a0a0a0c0a" />
   <unitInfo fileName="typeof_Node_GetChildrenOperation_InferenceRule.java" startLine="65" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetChildrenOperation_InferenceRule$QuotationClass_fpxkij_a0a0a0b0a" />
@@ -214,9 +214,9 @@
   <unitInfo fileName="supertypesOf_SNodeListType_ListType_SubtypingRule.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeListType_ListType_SubtypingRule" />
   <unitInfo fileName="typeof_Node_InsertPrevSiblingOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertPrevSiblingOperation_InferenceRule" />
   <unitInfo fileName="typeof_Node_InsertNextSiblingOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertNextSiblingOperation_InferenceRule" />
-  <unitInfo fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="12" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" />
   <unitInfo fileName="typeof_SLinkImplicitSelect_InferenceRule.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SLinkImplicitSelect_InferenceRule" />
   <unitInfo fileName="typeof_SEnum_MembersOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MembersOperation_InferenceRule" />
+  <unitInfo fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule" />
   <unitInfo fileName="typeof_SNodeCreator_InferenceRule.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_SNodeCreator_InferenceRule" />
   <unitInfo fileName="typeof_EnumMember_ValueOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_EnumMember_ValueOperation_InferenceRule" />
   <unitInfo fileName="typeOf_Node_GetAdapterOperation_InferenceRule.java" startLine="22" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeOf_Node_GetAdapterOperation_InferenceRule" />
@@ -2378,11 +2378,11 @@
     <scopeInfo nodeId="1215104292799" fileName="typeof_LinkList_RemoveAllChildrenOperation_InferenceRule.java" startLine="21" startPosition="115" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1219061894394">
-    <nodeInfo nodeId="1219062028838" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="16" startPosition="315" endLine="17" endPosition="18" />
-    <nodeInfo nodeId="1219062032873" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="18" startPosition="5" endLine="19" endPosition="17" />
-    <nodeInfo nodeId="1219061992350" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="15" startPosition="58" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1219061992351" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="16" startPosition="315" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="1219061894396" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="15" startPosition="58" endLine="19" endPosition="17" />
+    <nodeInfo nodeId="1219062028838" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="18" startPosition="315" endLine="19" endPosition="18" />
+    <nodeInfo nodeId="1219062032873" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="20" startPosition="5" endLine="21" endPosition="17" />
+    <nodeInfo nodeId="1219061992350" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="17" startPosition="86" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="1219061992351" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="18" startPosition="315" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="1219061894396" fileName="interface_node_types_are_comparable_ComparisonRule.java" startLine="17" startPosition="86" endLine="21" endPosition="17" />
   </root>
   <root nodeId="1219354452458">
     <nodeInfo nodeId="1219354515059" fileName="typeof_NodeRefExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="49" />
@@ -2787,8 +2787,8 @@
     <scopeInfo nodeId="1240321429320" fileName="typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule.java" startLine="22" startPosition="122" endLine="29" endPosition="5" />
   </root>
   <root nodeId="1240341822704">
-    <nodeInfo nodeId="1240341822709" fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="1240341822708" fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="20" startPosition="58" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1240341822709" fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1240341822708" fileName="comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.java" startLine="22" startPosition="86" endLine="23" endPosition="16" />
   </root>
   <root nodeId="1240934955678">
     <nodeInfo nodeId="1240934965174" fileName="typeof_SEnumOperationInvocation_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="52" />

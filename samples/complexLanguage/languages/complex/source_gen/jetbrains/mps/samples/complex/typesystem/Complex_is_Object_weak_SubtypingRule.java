@@ -19,7 +19,7 @@ public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime 
   public Complex_is_Object_weak_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new Complex_is_Object_weak_SubtypingRule.QuotationClass_f46hoj_a0a0a().createNode(typeCheckingContext);
   }
 

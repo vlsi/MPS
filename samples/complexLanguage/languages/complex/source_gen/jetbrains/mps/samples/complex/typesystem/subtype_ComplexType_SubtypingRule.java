@@ -16,7 +16,7 @@ public class subtype_ComplexType_SubtypingRule extends SubtypingRule_Runtime imp
   public subtype_ComplexType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return new subtype_ComplexType_SubtypingRule.QuotationClass_roewzw_a0a0a().createNode(typeCheckingContext);
   }
 

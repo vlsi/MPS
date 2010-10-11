@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ public class Complex_is_Numeric_SubtypingRule extends SubtypingRule_Runtime impl
   public Complex_is_Numeric_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext) {
+  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SLinkOperations.getTarget(new Complex_is_Numeric_SubtypingRule.QuotationClass_5kk67h_a0a0a0().createNode(typeCheckingContext), "descriptor", false);
   }
 

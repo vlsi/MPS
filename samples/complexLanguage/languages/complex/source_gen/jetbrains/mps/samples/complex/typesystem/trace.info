@@ -39,12 +39,12 @@
     <scopeInfo nodeId="1196422182399" fileName="typeof_DegreeComplexExpression_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196427128503">
-    <nodeInfo nodeId="1196427154993" fileName="subtype_ComplexType_SubtypingRule.java" startLine="19" startPosition="93" endLine="20" endPosition="111" />
-    <scopeInfo nodeId="1196427128504" fileName="subtype_ComplexType_SubtypingRule.java" startLine="19" startPosition="93" endLine="20" endPosition="111" />
+    <nodeInfo nodeId="1196427154993" fileName="subtype_ComplexType_SubtypingRule.java" startLine="19" startPosition="120" endLine="20" endPosition="111" />
+    <scopeInfo nodeId="1196427128504" fileName="subtype_ComplexType_SubtypingRule.java" startLine="19" startPosition="120" endLine="20" endPosition="111" />
   </root>
   <root nodeId="1196434481781">
-    <nodeInfo nodeId="1196434496770" fileName="Complex_is_Numeric_SubtypingRule.java" startLine="23" startPosition="94" endLine="24" endPosition="159" />
-    <scopeInfo nodeId="1196434481782" fileName="Complex_is_Numeric_SubtypingRule.java" startLine="23" startPosition="94" endLine="24" endPosition="159" />
+    <nodeInfo nodeId="1196434496770" fileName="Complex_is_Numeric_SubtypingRule.java" startLine="23" startPosition="121" endLine="24" endPosition="159" />
+    <scopeInfo nodeId="1196434481782" fileName="Complex_is_Numeric_SubtypingRule.java" startLine="23" startPosition="121" endLine="24" endPosition="159" />
   </root>
   <root nodeId="1196436222736">
     <nodeInfo nodeId="1196436242603" fileName="typeof_ImaginaryUnit_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="53" />
@@ -56,8 +56,8 @@
     <scopeInfo nodeId="1196436222737" fileName="typeof_ImaginaryUnit_InferenceRule.java" startLine="21" startPosition="124" endLine="27" endPosition="5" />
   </root>
   <root nodeId="7587029747152134035">
-    <nodeInfo nodeId="7587029747152134039" fileName="Complex_is_Object_weak_SubtypingRule.java" startLine="22" startPosition="94" endLine="23" endPosition="114" />
-    <scopeInfo nodeId="7587029747152134036" fileName="Complex_is_Object_weak_SubtypingRule.java" startLine="22" startPosition="94" endLine="23" endPosition="114" />
+    <nodeInfo nodeId="7587029747152134039" fileName="Complex_is_Object_weak_SubtypingRule.java" startLine="22" startPosition="121" endLine="23" endPosition="114" />
+    <scopeInfo nodeId="7587029747152134036" fileName="Complex_is_Object_weak_SubtypingRule.java" startLine="22" startPosition="121" endLine="23" endPosition="114" />
   </root>
 </debugInfo>
 
