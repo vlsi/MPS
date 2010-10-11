@@ -31,7 +31,7 @@ public class TemplateSwitchGraph {
   public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {
     for (SModelDescriptor templateModel : templateModels) {
       for (SNode root : templateModel.getSModel().roots()) {
-        if (!(root.getAdapter() instanceof TemplateSwitch)) return;
+        if (!(root.getAdapter() instanceof TemplateSwitch)) continue;
 
         TemplateSwitch adapter = (TemplateSwitch) root.getAdapter();
         if (myTemplateSwitchToGraphNodeMap.get(adapter) == null) {
