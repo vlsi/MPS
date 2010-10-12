@@ -16,9 +16,7 @@
 package jetbrains.mps.project.listener;
 
 import jetbrains.mps.baseLanguage.unitTest.structure.UnitTest_Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 
 public class TestsModelCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor model) {
@@ -29,6 +27,6 @@ public class TestsModelCreationListener extends ModelCreationListener {
     if (!model.getModule().getUsedLanguagesReferences().contains(UnitTest_Language.MODULE_REFERENCE)) {
       model.getModule().addUsedLanguage(UnitTest_Language.MODULE_REFERENCE);
     }
-    SModelOperations.addLanguage(model.getSModel(), UnitTest_Language.get());
+    SModelOperations.addLanguage(model.getSModel(), UnitTest_Language.get().getModuleReference());
   }
 }

@@ -150,7 +150,7 @@ public class ImportHelper {
           if (!myContextModule.getScope().getVisibleLanguages().contains(lang)) {
             myContextModule.addUsedLanguage(lang.getModuleReference());
           }
-          SModelOperations.addLanguage(myModel.getSModel(), lang);
+          SModelOperations.addLanguage(myModel.getSModel(), lang.getModuleReference());
         }
       });
     }

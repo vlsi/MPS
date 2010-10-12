@@ -248,8 +248,8 @@ public class NewGeneratorDialog extends BaseDialog {
         newGenerator.getSModelRoots().get(0));
 
       SModel templateModel = templateModelDescriptor.getSModel();
-      SModelOperations.addLanguage(templateModel, Generator_Language.get());
-      SModelOperations.addLanguage(templateModel, GenerationContext_Language.get());
+      SModelOperations.addLanguage(templateModel, Generator_Language.get().getModuleReference());
+      SModelOperations.addLanguage(templateModel, GenerationContext_Language.get().getModuleReference());
       templateModel.addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
 
       SModelOperations.addImportedModel(templateModel, sourceLanguage.getStructureModelDescriptor().getSModelReference());

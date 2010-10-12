@@ -12479,8 +12479,13 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5923576889075043299">
                       <link role="baseMethodDeclaration:3" targetNodeId="31.~SModel.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addLanguage" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075043300">
-                        <link role="variableDeclaration:3" targetNodeId="5923576889075043281" resolveInfo="language" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6853886991698909722">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075043300">
+                          <link role="variableDeclaration:3" targetNodeId="5923576889075043281" resolveInfo="language" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6853886991698909726">
+                          <link role="baseMethodDeclaration:3" targetNodeId="19.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                        </node>
                       </node>
                     </node>
                   </node>

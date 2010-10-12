@@ -35,7 +35,7 @@ public class LanguageModelCreationListener extends ModelCreationListener {
 
   public void onCreate(SModelDescriptor model) {
     Language language = (Language) model.getModule();
-    SModelOperations.addLanguage(model.getSModel(), language);
+    SModelOperations.addLanguage(model.getSModel(), language.getModuleReference());
 
     model.getSModel().addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
 

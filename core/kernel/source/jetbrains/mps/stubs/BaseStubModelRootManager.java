@@ -112,7 +112,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       }
 
       for (Language l : languages) {
-        SModelOperations.addLanguage(model, l);
+        SModelOperations.addLanguage(model, l.getModuleReference());
       }
     } catch (Throwable t) {
       LOG.error(t);

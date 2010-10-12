@@ -91,10 +91,6 @@ public class SModelOperations {
     return getAllImportedLanguages(model).contains(ref);
   }
 
-  public static void addLanguage(SModel model, @NotNull Language language) {
-    addLanguage(model, language.getModuleReference(), false);
-  }
-
   public static void addLanguage(SModel model, @NotNull ModuleReference ref) {
     addLanguage(model, ref, false);
   }

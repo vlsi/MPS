@@ -170,7 +170,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
           if (myOptions.getCreateModel()) {
             EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().get(0));
-            SModelOperations.addLanguage(model.getSModel(), myCreatedLanguage);
+            SModelOperations.addLanguage(model.getSModel(), myCreatedLanguage.getModuleReference());
             model.save();
           }
         }
