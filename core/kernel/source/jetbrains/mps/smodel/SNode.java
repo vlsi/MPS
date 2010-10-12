@@ -1797,6 +1797,10 @@ public final class SNode {
     return myNextSibling;
   }
 
+  public SModel getModelInternal() {
+    return myModel;
+  }
+
   private class MyReferencesWrapper extends ArrayWrapper<SReference> {
     protected SReference[] getArray() {
       return myReferences;
