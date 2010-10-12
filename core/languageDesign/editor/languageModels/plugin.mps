@@ -33,7 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="22" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.resolve(jetbrains.mps.resolve@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -47,6 +47,7 @@
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
+  <import index="22" modelUID="f:java_stub#jetbrains.mps.nodeEditor.leftHighlighter(jetbrains.mps.nodeEditor.leftHighlighter@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1207225803603">
     <property name="name:23" value="CopyThisDown" />
     <property name="caption:23" value="Duplicate Node" />
@@ -1485,6 +1486,52 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="98380422618925940" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="98380422618925941" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="98380422618925942" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="874703101685312668">
+    <property name="name:23" value="ShowTextColumn" />
+    <property name="caption:23" value="Show Text Column (internal)" />
+    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="874703101685312669">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="874703101685312670">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="874703101685331185">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685335006">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685332369">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685331186">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="874703101685331187" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="874703101685331188">
+                  <link role="member:23" targetNodeId="874703101685315657" resolveInfo="editor" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="874703101685335005">
+                <link role="baseMethodDeclaration:3" targetNodeId="10.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="874703101685336192">
+              <link role="baseMethodDeclaration:3" targetNodeId="22.~LeftEditorHighlighter.addTextColumn(jetbrains.mps.nodeEditor.leftHighlighter.LeftTextColumn):void" resolveInfo="addTextColumn" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="874703101685336193">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="874703101685450710">
+                  <link role="baseMethodDeclaration:3" targetNodeId="22.~DummyTextColumn.&lt;init&gt;()" resolveInfo="DummyTextColumn" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="874703101685315657">
+      <property name="name:23" value="editor" />
+      <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="874703101685450718">
+    <property name="name:23" value="EditorInt" />
+    <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="874703101685450722">
+      <link role="modifiedGroup:23" targetNodeId="15.1204991232446" resolveInfo="EditorInternal" />
+    </node>
+    <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="874703101685450720">
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="874703101685450721">
+        <link role="action:23" targetNodeId="874703101685312668" resolveInfo="ShowTextColumn" />
+      </node>
     </node>
   </node>
 </model>
