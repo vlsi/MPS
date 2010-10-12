@@ -614,7 +614,7 @@ public class SModel {
   }
 
   public void removeUnusedAdditionalModels() {
-    Set<SModelReference> dependencies = SModelOperations.getDependenciesModelUIDs(this);
+    Set<SModelReference> dependencies = SModelOperations.getDependenciesModelRefs(this);
     for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
       ImportElement elem = iter.next();
       if (!dependencies.contains(elem.getModelReference())) {
@@ -928,7 +928,7 @@ public class SModel {
 
   @Deprecated
   void validateLanguages(SNode node) {
-    Collection<ModuleReference> allrefs = SModelOperations.getLanguageRefs(this, GlobalScope.getInstance());
+    Collection<ModuleReference> allrefs = SModelOperations.getAllImportedLanguages(this);
     Set<String> available = new HashSet<String>(allrefs.size());
     for (ModuleReference ref : allrefs) {
       available.add(ref.getModuleFqName());

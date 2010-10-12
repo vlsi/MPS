@@ -88,7 +88,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    return SModelOperations.hasImportedModel(model, modelDescriptor.getSModelReference());
+    return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
   }
 
   public boolean hasLanguage(Language language) {
