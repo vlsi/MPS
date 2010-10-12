@@ -124,6 +124,11 @@ public final class SNode {
     return myModel;
   }
 
+  //MUST NOT be used,except from ModelAccess
+  /*package*/ SModel getModelInternal(){
+    return myModel;
+  }
+
   public boolean isFrozen() {
     return myIsFrozen;
   }
