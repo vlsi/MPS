@@ -42,7 +42,7 @@ import jetbrains.mps.workbench.action.ActionFactory;
 import javax.swing.BorderFactory;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.event.PopupMenuEvent;
-import jetbrains.mps.nodeEditor.LeftEditorHighlighter;
+import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 
 public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   private static final int AREA_WIDTH = 6;

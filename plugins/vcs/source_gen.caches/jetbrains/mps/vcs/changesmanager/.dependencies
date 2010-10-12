@@ -41,8 +41,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.Change" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />

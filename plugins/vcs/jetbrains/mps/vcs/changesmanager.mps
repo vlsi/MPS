@@ -16374,11 +16374,11 @@
                 <link role="variableDeclaration:3" targetNodeId="76450717690079688" resolveInfo="myEditorComponent" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2835519241762199195">
-                <link role="baseMethodDeclaration:3" targetNodeId="29.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
+                <link role="baseMethodDeclaration:3" targetNodeId="29.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2835519241762199196">
-              <link role="baseMethodDeclaration:3" targetNodeId="29.~LeftEditorHighlighter.removeFoldingAreaPainter(jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter):void" resolveInfo="removeFoldingAreaPainter" />
+              <link role="baseMethodDeclaration:3" targetNodeId="56.~LeftEditorHighlighter.removeFoldingAreaPainter(jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter):void" resolveInfo="removeFoldingAreaPainter" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639123">
                 <link role="variableDeclaration:3" targetNodeId="8274502957383614851" resolveInfo="myFoldingAreaPainter" />
               </node>
@@ -16575,11 +16575,11 @@
                 <link role="variableDeclaration:3" targetNodeId="76450717690079688" resolveInfo="myEditorComponent" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8274502957383622013">
-                <link role="baseMethodDeclaration:3" targetNodeId="29.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
+                <link role="baseMethodDeclaration:3" targetNodeId="29.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2835519241762193620">
-              <link role="baseMethodDeclaration:3" targetNodeId="29.~LeftEditorHighlighter.addFoldingAreaPainter(jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter):void" resolveInfo="addFoldingAreaPainter" />
+              <link role="baseMethodDeclaration:3" targetNodeId="56.~LeftEditorHighlighter.addFoldingAreaPainter(jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter):void" resolveInfo="addFoldingAreaPainter" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639391">
                 <link role="variableDeclaration:3" targetNodeId="8274502957383614851" resolveInfo="myFoldingAreaPainter" />
               </node>
@@ -26134,7 +26134,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9048291698849215503" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9048291698849215505">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="9048291698849215506">
-          <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.&lt;init&gt;(jetbrains.mps.nodeEditor.LeftEditorHighlighter)" resolveInfo="AbstractFoldingAreaPainter" />
+          <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.&lt;init&gt;(jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter)" resolveInfo="AbstractFoldingAreaPainter" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9048291698849215530">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9048291698849215525">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="9048291698849215524">
@@ -26145,7 +26145,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9048291698849221217">
-              <link role="baseMethodDeclaration:3" targetNodeId="29.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
+              <link role="baseMethodDeclaration:3" targetNodeId="29.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
             </node>
           </node>
         </node>
@@ -26771,10 +26771,10 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="7429456937243135811">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7429456937243135812">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1794625231785943938">
-                  <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.getLeftHighlighter():jetbrains.mps.nodeEditor.LeftEditorHighlighter" resolveInfo="getLeftHighlighter" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.getLeftHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftHighlighter" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7429456937243135816">
-                  <link role="baseMethodDeclaration:3" targetNodeId="29.~LeftEditorHighlighter.getFoldingLineX():int" resolveInfo="getFoldingLineX" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="56.~LeftEditorHighlighter.getFoldingLineX():int" resolveInfo="getFoldingLineX" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7429456937243135817">
@@ -28347,10 +28347,10 @@
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5749417294347100718">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7601193928418832783">
-                      <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.getLeftHighlighter():jetbrains.mps.nodeEditor.LeftEditorHighlighter" resolveInfo="getLeftHighlighter" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.getLeftHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftHighlighter" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5749417294347100852">
-                      <link role="baseMethodDeclaration:3" targetNodeId="29.~LeftEditorHighlighter.getFoldingLineX():int" resolveInfo="getFoldingLineX" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="56.~LeftEditorHighlighter.getFoldingLineX():int" resolveInfo="getFoldingLineX" />
                     </node>
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6208564103581787670">
@@ -28401,11 +28401,11 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6378762527268296967">
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6378762527268296968">
                   <property name="name:3" value="leftHighlighter" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6378762527268296969">
-                    <link role="classifier:3" targetNodeId="29.~LeftEditorHighlighter" resolveInfo="LeftEditorHighlighter" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2086131105048612374">
+                    <link role="classifier:3" targetNodeId="56.~LeftEditorHighlighter" resolveInfo="LeftEditorHighlighter" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7601193928418832787">
-                    <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.getLeftHighlighter():jetbrains.mps.nodeEditor.LeftEditorHighlighter" resolveInfo="getLeftHighlighter" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="56.~AbstractFoldingAreaPainter.getLeftHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftHighlighter" />
                   </node>
                 </node>
               </node>
@@ -28438,7 +28438,7 @@
                           <link role="variableDeclaration:3" targetNodeId="6378762527268296968" resolveInfo="leftHighlighter" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6378762527268297369">
-                          <link role="baseMethodDeclaration:3" targetNodeId="29.~LeftEditorHighlighter.getFoldingLineX():int" resolveInfo="getFoldingLineX" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="56.~LeftEditorHighlighter.getFoldingLineX():int" resolveInfo="getFoldingLineX" />
                         </node>
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6378762527268302227">

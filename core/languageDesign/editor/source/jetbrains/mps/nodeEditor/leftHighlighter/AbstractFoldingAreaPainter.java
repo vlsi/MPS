@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.LeftEditorHighlighter;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Graphics;
