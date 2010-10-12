@@ -309,8 +309,18 @@ public class SModelOperations {
   }
 
   public static int getLanguageAspectModelVersion(SModel sModel, SModelReference sModelReference) {
-    ImportElement importElement = sModel.getAdditionalModelElement(sModelReference);
+    ImportElement importElement = getAdditionalModelElement(sModel, sModelReference);
     if (importElement == null) return -1;
     return importElement.getUsedVersion();
+  }
+
+  @Nullable
+  public static ImportElement getAdditionalModelElement(SModel sModel, @NotNull SModelReference modelReference) {
+    for (ImportElement importElement : sModel.getAdditionalModelVersions()) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
   }
 }
