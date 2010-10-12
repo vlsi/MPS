@@ -225,7 +225,7 @@ public class CopyPasteUtil {
       SModelOperations.addLanguage(newModel, language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      SModelOperations.addImportedModel(newModel, importedModel);
+      newModel.addModelImport(importedModel, false);
     }
 
     for (ModuleReference devKit : model.importedDevkits()) {

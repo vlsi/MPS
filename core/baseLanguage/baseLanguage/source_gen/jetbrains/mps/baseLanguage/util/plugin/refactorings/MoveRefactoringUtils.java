@@ -32,7 +32,7 @@ public class MoveRefactoringUtils {
     if (model == toImport || SModelOperations.getImportedModelUIDs(model).contains(ref)) {
       return;
     }
-    SModelOperations.addImportedModel(model, ref);
+    model.addModelImport(ref, false);
   }
 
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {

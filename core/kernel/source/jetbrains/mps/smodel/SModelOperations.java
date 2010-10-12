@@ -155,10 +155,6 @@ public class SModelOperations {
     return result;
   }
 
-  public static void addImportedModel(SModel model, @NotNull SModelReference modelReference) {
-    model.addModelImport(modelReference, false);
-  }
-
   public static List<SModelDescriptor> allImportedModels(SModel model, IScope scope) {
     SModelDescriptor sourceModel = model.getModelDescriptor();
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();

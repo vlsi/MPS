@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class ExtractMethodDialog extends BaseDialog {
@@ -243,7 +242,7 @@ public class ExtractMethodDialog extends BaseDialog {
           ExtractMethodDialog.this.myContext.select(result.value);
           if (refactoringModel.value != null) {
             SModelReference ref = SNodeOperations.getModel(staticTarget.value).getSModelReference();
-            SModelOperations.addImportedModel(refactoringModel.value, ref);
+            refactoringModel.value.addModelImport(ref, false);
           }
         }
       });

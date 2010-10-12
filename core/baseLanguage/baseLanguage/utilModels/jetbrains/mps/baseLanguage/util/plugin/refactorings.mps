@@ -25559,15 +25559,19 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7123761944774720192">
-                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7123761944774720194">
-                            <link role="baseMethodDeclaration:3" targetNodeId="10.~SModelOperations.addImportedModel(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModelReference):void" resolveInfo="addImportedModel" />
-                            <link role="classConcept:3" targetNodeId="10.~SModelOperations" resolveInfo="SModelOperations" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7123761944774720195">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6853886991699140014">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6853886991699140016">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6853886991699140015">
                               <link role="variableDeclaration:3" targetNodeId="2859705395554885910" resolveInfo="refactoringModel" />
                             </node>
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7123761944774720197">
-                              <link role="variableDeclaration:3" targetNodeId="7123761944774720182" resolveInfo="ref" />
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6853886991699140020">
+                              <link role="baseMethodDeclaration:3" targetNodeId="10.~SModel.addModelImport(jetbrains.mps.smodel.SModelReference,boolean):void" resolveInfo="addModelImport" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6853886991699140021">
+                                <link role="variableDeclaration:3" targetNodeId="7123761944774720182" resolveInfo="ref" />
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6853886991699140023">
+                                <property name="value:3" value="false" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -34304,15 +34308,19 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4458227202731876784" />
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7123761944774720218">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7123761944774720220">
-            <link role="baseMethodDeclaration:3" targetNodeId="10.~SModelOperations.addImportedModel(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModelReference):void" resolveInfo="addImportedModel" />
-            <link role="classConcept:3" targetNodeId="10.~SModelOperations" resolveInfo="SModelOperations" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7123761944774720221">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6853886991699132817">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6853886991699132819">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6853886991699132818">
               <link role="variableDeclaration:3" targetNodeId="4458227202731875179" resolveInfo="model" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7123761944774720223">
-              <link role="variableDeclaration:3" targetNodeId="7123761944774720201" resolveInfo="ref" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6853886991699132823">
+              <link role="baseMethodDeclaration:3" targetNodeId="10.~SModel.addModelImport(jetbrains.mps.smodel.SModelReference,boolean):void" resolveInfo="addModelImport" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6853886991699132824">
+                <link role="variableDeclaration:3" targetNodeId="7123761944774720201" resolveInfo="ref" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6853886991699132826">
+                <property name="value:3" value="false" />
+              </node>
             </node>
           </node>
         </node>

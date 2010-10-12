@@ -165,7 +165,7 @@ public class ModelProperties extends BaseBean {
     SModel smodel = myModelDescriptor.getSModel();
     modelsInProps.removeAll(SModelOperations.getImportedModelUIDs(smodel));
     for (SModelReference modelReference : modelsInProps) {
-      SModelOperations.addImportedModel(smodel, modelReference);
+      smodel.addModelImport(modelReference, false);
     }
   }
 

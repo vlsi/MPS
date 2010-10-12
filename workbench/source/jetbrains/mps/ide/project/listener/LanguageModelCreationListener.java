@@ -40,9 +40,9 @@ public class LanguageModelCreationListener extends ModelCreationListener {
     model.getSModel().addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
 
     for (String modelUID : getModelsToImport(language)) {
-      SModelOperations.addImportedModel(model.getSModel(), SModelReference.fromString(modelUID));
+      model.getSModel().addModelImport(SModelReference.fromString(modelUID), false);
     }
 
-    SModelOperations.addImportedModel(model.getSModel(), language.getStructureModelDescriptor().getSModelReference());
+    model.getSModel().addModelImport(language.getStructureModelDescriptor().getSModelReference(), false);
   }
 }

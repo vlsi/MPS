@@ -283,7 +283,7 @@ public class ImportHelper {
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SModelOperations.addImportedModel(myModel.getSModel(), getModelDescriptor().getSModelReference());
+          myModel.getSModel().addModelImport(getModelDescriptor().getSModelReference(), false);
         }
       });
     }

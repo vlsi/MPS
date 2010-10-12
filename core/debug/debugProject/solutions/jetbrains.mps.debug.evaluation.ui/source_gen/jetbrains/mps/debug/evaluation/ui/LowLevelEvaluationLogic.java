@@ -233,7 +233,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       LOG.error("Stub for " + fqName + " was not found.");
       return;
     }
-    SModelOperations.addImportedModel(myAuxModel.getSModel(), stubReference);
+    myAuxModel.getSModel().addModelImport(stubReference, false);
   }
 
   private void createVars() {
