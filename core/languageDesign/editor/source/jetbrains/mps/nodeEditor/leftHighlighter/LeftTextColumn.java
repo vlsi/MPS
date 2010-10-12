@@ -87,7 +87,8 @@ public abstract class LeftTextColumn {
         });
       }
       if (menu.getSubElements().length > 0) {
-        menu.show(editorComponent, e.getX(), e.getY());
+        LeftEditorHighlighter editorHighlighter = editorComponent.getLeftEditorHighlighter();
+        menu.show(editorComponent, e.getX() - editorHighlighter.getWidth(), e.getY());
       }
     }
   }
