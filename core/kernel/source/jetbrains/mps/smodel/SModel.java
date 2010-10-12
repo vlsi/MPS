@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -830,26 +829,21 @@ public class SModel {
       if (module != null) {
         ModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
-        changed = changed || changed(ref, newRef);
+        changed = changed || ref.differs(newRef);
       }
     }
     return changed;
   }
 
-  private boolean changed(ModuleReference ref1, ModuleReference ref2) {
-    return !ObjectUtils.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
-      !ObjectUtils.equals(ref1.getModuleId(), ref2.getModuleId());
-  }
-
   private void checkNotDisposed() {
-    if (myDisposed) {
-      LOG.error(new IllegalModelAccessError("accessing disposed model"));
-    }
+    if (!myDisposed) return;
+    LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
   //---------deprecated--------
 
-  @Deprecated //to use in old persistence
+  @Deprecated
+  //to use in old persistence
   public void addModelImport(ImportElement importElement) {
     ModelChange.assertLegalChange(this);
 
@@ -857,12 +851,14 @@ public class SModel {
     fireImportAddedEvent(importElement.getModelReference());
   }
 
-  @Deprecated //to use in old persistence
+  @Deprecated
+  //to use in old persistence
   public void setMaxImportIndex(int i) {
     myMaxImportIndex = i;
   }
 
-  @Deprecated //to use in old persistence
+  @Deprecated
+  //to use in old persistence
   public int getMaxImportIndex() {
     return myMaxImportIndex;
   }
