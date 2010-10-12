@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.traceInfo.PositionInfo;
-import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -26,7 +23,10 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceInfoManager;
+import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -152,6 +152,7 @@ public class TextGenManager {
   }
 
   private Class loadTextGenClass(SNode cd) {
+    assert cd != null;
     SNode baseConcept = SModelUtil.getBaseConcept();
     while (cd != baseConcept) {
       Language l = SModelUtil.getDeclaringLanguage(cd, GlobalScope.getInstance());
@@ -173,10 +174,16 @@ public class TextGenManager {
   private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
     String nodeConcept = node.getConceptFqName();
 
-    Class<SNodeTextGen> textgenClass = myClassesCache == null ? loadTextGenClass(node.getConceptDeclarationNode()) : myClassesCache.get(nodeConcept);
-    if (textgenClass == null) {
-      textgenClass = loadTextGenClass(node.getConceptDeclarationNode());
-      myClassesCache.put(nodeConcept, textgenClass);
+    Class<SNodeTextGen> textgenClass;
+
+    if (myClassesCache != null) {
+      textgenClass = myClassesCache.get(nodeConcept);
+      if (textgenClass == null) {
+        textgenClass = textGenForNode(node);
+        myClassesCache.put(nodeConcept, textgenClass);
+      }
+    } else {
+      textgenClass = textGenForNode(node);
     }
 
     try {
@@ -192,6 +199,15 @@ public class TextGenManager {
     DefaultTextGen result = new DefaultTextGen();
     result.setContext(context);
     return result;
+  }
+
+  private Class textGenForNode(SNode node) {
+    SNode concept = node.getConceptDeclarationNode();
+    if (concept == null) {
+      LOG.error("Can't find concept node for concept: " + node.getConceptFqName());
+      return null;
+    }
+    return loadTextGenClass(concept);
   }
 
   private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {
