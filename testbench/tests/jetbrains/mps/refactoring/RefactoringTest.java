@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester;
 
 import java.io.File;
 
 public class RefactoringTest extends BaseMPSTest {
-  private static final String TEST_REFACTORING_PATH = "testMaterial/testRefactoring";
+  private static final String TEST_REFACTORING_PATH = "testbench/testMaterial/testRefactoring";
 
   public void testRefactoringEnvironment() {
     assertTrue(testRefactoringTestEnvironment(new File(TEST_REFACTORING_PATH)));

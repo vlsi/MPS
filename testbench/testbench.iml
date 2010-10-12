@@ -74,7 +74,6 @@
     <orderEntry type="module" module-name="structure" />
     <orderEntry type="module" module-name="stubs" />
     <orderEntry type="module" module-name="test" />
-    <orderEntry type="module" module-name="testRefactoring" />
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="typesystem" />

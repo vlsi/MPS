@@ -7,7 +7,7 @@
   <accessoryModels />
   <generators />
   <classPath>
-    <entry path="${mps_home}/testMaterial/testRefactoring/classes" include="false" />
+    <entry path="${mps_home}/testbench/testMaterial/testRefactoring/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
