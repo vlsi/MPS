@@ -49,7 +49,7 @@ public class ParallelPoolTest extends TestCase {
       while (fract < amountOfWork) {
         fract <<= 1;
       }
-      fract = (fract >> 8);
+      fract = (fract >> 6);
       long fractCounter;
       long start = System.currentTimeMillis();
       while(localCounter > 0) {
@@ -137,7 +137,7 @@ public class ParallelPoolTest extends TestCase {
     }
 
     LOG.info("Total " + (end-start)/1000. + " seconds to complete 4 x 2secs tasks");
-    Assert.assertTrue((end-start) < 4500); // at least 2 core cpu
+    Assert.assertTrue("too slow: "+(end-start), (end-start) < 4500); // at least 2 core cpu
     pool.dispose();
   }
 
