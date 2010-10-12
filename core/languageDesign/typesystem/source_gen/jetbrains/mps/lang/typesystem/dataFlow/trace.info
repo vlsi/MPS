@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TypeVarDeclaration_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.TypeVarDeclaration_DataFlow" />
+  <unitInfo fileName="ApplicableNodeCondition_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.ApplicableNodeCondition_DataFlow" />
+  <unitInfo fileName="TypeVarReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.TypeVarReference_DataFlow" />
+  <unitInfo fileName="ApplicableNodeReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.ApplicableNodeReference_DataFlow" />
+  <unitInfo fileName="TypesystemIntentionArgument_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.TypesystemIntentionArgument_DataFlow" />
+  <unitInfo fileName="ReferenceRoleTarget_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.ReferenceRoleTarget_DataFlow" />
+  <unitInfo fileName="PropertyNameTarget_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.PropertyNameTarget_DataFlow" />
+  <unitInfo fileName="AddDependencyStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AddDependencyStatement_DataFlow" />
+  <unitInfo fileName="CoerceExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.CoerceExpression_DataFlow" />
+  <unitInfo fileName="ImmediateSupertypesExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.ImmediateSupertypesExpression_DataFlow" />
+  <unitInfo fileName="NormalTypeClause_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.NormalTypeClause_DataFlow" />
+  <unitInfo fileName="TypeOfExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.TypeOfExpression_DataFlow" />
+  <unitInfo fileName="GivetypeStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.GivetypeStatement_DataFlow" />
+  <unitInfo fileName="PatternCondition_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.PatternCondition_DataFlow" />
+  <unitInfo fileName="IsSubtypeExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.IsSubtypeExpression_DataFlow" />
+  <unitInfo fileName="AbstractSubtypingRule_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AbstractSubtypingRule_DataFlow" />
+  <unitInfo fileName="AbstractCheckingRule_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AbstractCheckingRule_DataFlow" />
+  <unitInfo fileName="TypesystemIntention_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.TypesystemIntention_DataFlow" />
+  <unitInfo fileName="ComparisonRule_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.ComparisonRule_DataFlow" />
+  <unitInfo fileName="InequationReplacementRule_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.InequationReplacementRule_DataFlow" />
+  <unitInfo fileName="WhenConcreteStatement_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.WhenConcreteStatement_DataFlow" />
+  <unitInfo fileName="MatchStatement_DataFlow.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.MatchStatement_DataFlow" />
+  <unitInfo fileName="MatchStatementItem_DataFlow.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.MatchStatementItem_DataFlow" />
+  <unitInfo fileName="InfoStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.InfoStatement_DataFlow" />
+  <unitInfo fileName="WarningStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.WarningStatement_DataFlow" />
+  <unitInfo fileName="AbstractEquationStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AbstractEquationStatement_DataFlow" />
+  <unitInfo fileName="ReportErrorStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.ReportErrorStatement_DataFlow" />
+  <unitInfo fileName="AssertStatement_DataFlow.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.AssertStatement_DataFlow" />
+  <unitInfo fileName="MultipleForeachLoop_DataFlow.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.MultipleForeachLoop_DataFlow" />
+  <unitInfo fileName="CoerceStatement_DataFlow.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.CoerceStatement_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dataFlow.DFABuilders" />
   <root nodeId="1207234025211">
     <nodeInfo nodeId="1207235173521" fileName="AbstractCheckingRule_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" />
     <nodeInfo nodeId="1207234056451" fileName="AbstractCheckingRule_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="101" />

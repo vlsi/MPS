@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="107" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a2a7" />
+  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="69" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention$QuotationClass_nynfqi_a0a0a7" />
+  <unitInfo fileName="ConvertGivetypeToTypeOfIntention_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.ConvertGivetypeToTypeOfIntention_Intention" />
+  <unitInfo fileName="ConvertInferenceRuleToNonTypesystemRule_Intention.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
+  <unitInfo fileName="CreateTypesystemIntention_Intention.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
   <root nodeId="1195222030695">
     <nodeInfo nodeId="1195222104374" fileName="ConvertGivetypeToTypeOfIntention_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="33" />
     <nodeInfo nodeId="1195222154752" fileName="ConvertGivetypeToTypeOfIntention_Intention.java" startLine="37" startPosition="76" endLine="38" endPosition="166" />
