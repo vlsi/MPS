@@ -13,7 +13,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.io.File;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +32,7 @@ public class BrokenReferencesTest {
     {Type.EXCLUDE, "**/classes/**"},
     {Type.EXCLUDE, "**/classes_gen/**"},
     {Type.EXCLUDE, "**/lib/**"},
-    {Type.EXCLUDE, "**/testMaterial/**"},
+    {Type.EXCLUDE, "**/testRefactoring/**"},
     {Type.EXCLUDE, "**/**transformationTest**/**"},
     {Type.EXCLUDE, "**/**testLogger**/**"},
     {Type.EXCLUDE, "**/**sandbox**/**"},

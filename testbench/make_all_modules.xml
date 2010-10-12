@@ -34,7 +34,7 @@
     <exclude name="**/classes/**"/>
     <exclude name="**/classes_gen/**"/>
     <exclude name="**/lib/**"/>
-    <exclude name="**/testMaterial/**"/>
+    <exclude name="**/testRefactoring/**"/>
     <exclude name="**/*transformationTest*/**"/>
     <exclude name="**/*testLogger*/**"/>
     <exclude name="**/*sandbox*/**"/>

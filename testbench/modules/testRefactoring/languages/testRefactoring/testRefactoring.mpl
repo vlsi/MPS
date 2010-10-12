@@ -6,9 +6,6 @@
   </models>
   <accessoryModels />
   <generators />
-  <classPath>
-    <entry path="${mps_home}/testbench/testMaterial/testRefactoring/classes" include="false" />
-  </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
   <extendedLanguages>

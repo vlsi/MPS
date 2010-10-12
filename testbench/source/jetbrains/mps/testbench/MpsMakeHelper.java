@@ -27,7 +27,7 @@ public class MpsMakeHelper {
     {Type.EXCLUDE, "**/classes/**"},
     {Type.EXCLUDE, "**/classes_gen/**"},
     {Type.EXCLUDE, "**/lib/**"},
-    {Type.EXCLUDE, "**/testMaterial/**"},
+    {Type.EXCLUDE, "**/testRefactoring/**"},
     {Type.EXCLUDE, "**/**transformationTest**/**"},
     {Type.EXCLUDE, "**/**testLogger**/**"},
     {Type.EXCLUDE, "**/**sandbox**/**"},

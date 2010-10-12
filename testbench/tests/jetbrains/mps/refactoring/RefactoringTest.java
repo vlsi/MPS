@@ -20,7 +20,7 @@ import jetbrains.mps.BaseMPSTest;
 import java.io.File;
 
 public class RefactoringTest extends BaseMPSTest {
-  private static final String TEST_REFACTORING_PATH = "testbench/testMaterial/testRefactoring";
+  private static final String TEST_REFACTORING_PATH = "testbench/modules/testRefactoring";
 
   public void testRefactoringEnvironment() {
     assertTrue(testRefactoringTestEnvironment(new File(TEST_REFACTORING_PATH)));
