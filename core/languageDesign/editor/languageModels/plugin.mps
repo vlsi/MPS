@@ -1493,6 +1493,25 @@
     <property name="caption:23" value="Show Text Column (internal)" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="874703101685312669">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="874703101685312670">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4750582999575696696">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4750582999575696697">
+            <property name="name:3" value="root" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4750582999575696698">
+              <link role="classifier:3" targetNodeId="2.~SNode" resolveInfo="SNode" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4750582999575696699">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4750582999575696700">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4750582999575696701" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4750582999575696702">
+                  <link role="member:23" targetNodeId="4750582999575672590" resolveInfo="node" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4750582999575696703">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~SNode.getContainingRoot():jetbrains.mps.smodel.SNode" resolveInfo="getContainingRoot" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="874703101685331185">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685335006">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685332369">
@@ -1510,7 +1529,10 @@
               <link role="baseMethodDeclaration:3" targetNodeId="22.~LeftEditorHighlighter.addTextColumn(jetbrains.mps.nodeEditor.leftHighlighter.LeftTextColumn):void" resolveInfo="addTextColumn" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="874703101685336193">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="874703101685450710">
-                  <link role="baseMethodDeclaration:3" targetNodeId="22.~DummyTextColumn.&lt;init&gt;()" resolveInfo="DummyTextColumn" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="22.~DummyTextColumn2.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="DummyTextColumn2" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4750582999575696704">
+                    <link role="variableDeclaration:3" targetNodeId="4750582999575696697" resolveInfo="root" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1521,6 +1543,10 @@
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="874703101685315657">
       <property name="name:23" value="editor" />
       <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="4750582999575672590">
+      <property name="name:23" value="node" />
+      <link role="key:23" targetNodeId="13.~MPSDataKeys.NODE" resolveInfo="NODE" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="874703101685450718">

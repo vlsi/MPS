@@ -36,22 +36,22 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class LeftTextColumn {
-  private Map<SNode, String> myText = new HashMap<SNode, String>();
+  protected Map<SNode, NodeTextElement> myText = new HashMap<SNode, NodeTextElement>();
   protected int myWidth = 0;
   protected int myX = 0;
   protected boolean myIsCloseable = true;
 
-  public void paint(Graphics g, EditorComponent editorComponent) {
-    for (SNode node : myText.keySet()) {
-      paint(node, g, editorComponent);
-    }
-  }
+  public abstract void paint(Graphics g, EditorComponent editorComponent);
 
-  public void addEntry(SNode node, String text) {
-    myText.put(node, text);
+  public void addEntry(SNode node, NodeTextElement textElement) {
+    myText.put(node, textElement);
   }
 
   public String getText(SNode node) {
+    return myText.get(node).getText();
+  }
+
+  public NodeTextElement getTextElement(SNode node) {
     return myText.get(node);
   }
 
@@ -70,8 +70,6 @@ public abstract class LeftTextColumn {
   public String getTooltipText(MouseEvent e) {
     return null;
   }
-
-  public abstract void paint(SNode node, Graphics g, EditorComponent editorComponent);
 
   public abstract void relayout(EditorComponent editorComponent);
 

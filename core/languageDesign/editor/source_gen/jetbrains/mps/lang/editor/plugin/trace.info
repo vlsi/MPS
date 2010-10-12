@@ -5,7 +5,7 @@
   <unitInfo fileName="EditorInt_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorInt_ActionGroup" />
   <unitInfo fileName="EditorActions_ActionGroup.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup" />
   <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
-  <unitInfo fileName="ShowTextColumn_Action.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ShowTextColumn_Action" />
+  <unitInfo fileName="ShowTextColumn_Action.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ShowTextColumn_Action" />
   <unitInfo fileName="ExtractComponent_Action.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ExtractComponent_Action" />
   <unitInfo fileName="CopyThisDown_Action.java" startLine="20" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.CopyThisDown_Action" />
   <unitInfo fileName="DeleteLine_Action.java" startLine="24" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.DeleteLine_Action" />
@@ -172,8 +172,10 @@
     </scopeInfo>
   </root>
   <root nodeId="874703101685312668">
-    <nodeInfo nodeId="874703101685315657" fileName="ShowTextColumn_Action.java" startLine="17" startPosition="0" endLine="18" endPosition="33" />
-    <nodeInfo nodeId="874703101685331185" fileName="ShowTextColumn_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="104" />
+    <nodeInfo nodeId="874703101685315657" fileName="ShowTextColumn_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
+    <nodeInfo nodeId="4750582999575672590" fileName="ShowTextColumn_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="21" />
+    <nodeInfo nodeId="4750582999575696696" fileName="ShowTextColumn_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="71" />
+    <nodeInfo nodeId="874703101685331185" fileName="ShowTextColumn_Action.java" startLine="65" startPosition="71" endLine="66" endPosition="109" />
   </root>
   <root nodeId="874703101685450718">
     <nodeInfo nodeId="874703101685450721" fileName="EditorInt_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="130" />

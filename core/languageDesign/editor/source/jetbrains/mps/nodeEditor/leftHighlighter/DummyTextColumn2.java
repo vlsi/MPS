@@ -15,34 +15,26 @@
  */
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
-
-import java.awt.Color;
-import java.awt.Graphics;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
  * Date: 12.10.2010
- * Time: 18:59:29
+ * Time: 21:30:36
  * To change this template use File | Settings | File Templates.
  */
-public class DummyTextColumn extends LeftTextColumn {
-
-  @Override
-  public void paint(Graphics g, EditorComponent editorComponent) {
-    g.setColor(Color.BLUE);
-    g.fillRect(myX, 0, myWidth, editorComponent.getHeight());
-  }
-
-  @Override
-  public void relayout(EditorComponent editorComponent) {
-    myWidth = 70;
-  }
-
+public class DummyTextColumn2 extends SimpleLeftTextColumn {
   @Override
   public String getName() {
-    return "Dummy";
+    return "Names";
+  }
+
+  public DummyTextColumn2(SNode root) {
+    for (SNode node : root.getDescendants()) {
+      String name = node.getName();
+      if (name == null) name = "null";
+      addEntry(node, new DummyTextElement(name));
+    }
   }
 }

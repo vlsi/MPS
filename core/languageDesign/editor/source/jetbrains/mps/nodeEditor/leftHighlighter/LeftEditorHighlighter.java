@@ -207,13 +207,17 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public void addTextColumn(LeftTextColumn column) {
     myTextColumns.add(column);
-    relayout(false);
+    recalculateTextColumnWidth();
+    recalculateIconRenderersWidth();
+    updateSeparatorLinePosition();
     repaint();
   }
 
   public void removeTextColumn(LeftTextColumn column) {
     myTextColumns.remove(column);
-    relayout(false);
+    recalculateTextColumnWidth();
+    recalculateIconRenderersWidth();
+    updateSeparatorLinePosition();
     repaint();
   }
 
@@ -503,7 +507,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       lastRowLowerBound = rowUpperBoundY + maxIconHeight;
       lastRowWidth = offset;
  */
-      myIconRenderersWidth = Math.max(myIconRenderersWidth, offset);
+      myIconRenderersWidth = Math.max(myIconRenderersWidth, offset - myTextColumnWidth);
     }
   }
 
