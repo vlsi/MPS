@@ -77,6 +77,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
         public void unload() {
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
+              if (getProject().isDisposed()) return;
               myContentManager.removeAllContents(true);
             }
           });
