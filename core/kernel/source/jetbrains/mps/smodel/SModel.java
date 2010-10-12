@@ -182,28 +182,6 @@ public class SModel {
     }
   }
 
-  //---------persistance-related refactorings--------
-
-  public void setPersistenceVersion(int persistenceVersion) {
-    myPersistenceVersion = persistenceVersion;
-  }
-
-  public int getPersistenceVersion() {
-    return myPersistenceVersion;
-  }
-
-  public void refreshRefactoringHistory() {
-    ModelChange.assertLegalChange(this);
-
-    try {
-      Element e = myStructureModificationHistory.toElement();
-      myStructureModificationHistory = new StructureModificationHistory();
-      myStructureModificationHistory.fromElement(e);
-    } catch (Throwable t) {
-      LOG.error("refactoring history refresh failed " + this, t, this);
-    }
-  }
-
   //---------loading state--------
 
   public void runLoadingAction(@NotNull Runnable runnable) {
@@ -648,26 +626,6 @@ public class SModel {
 
   //other
 
-
-
-  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
-    ModelChange.assertLegalChange(this);
-
-    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    }
-
-    importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    } else {
-      addAdditionalModelVersion(sModelReference, currentVersion);
-    }
-    fireImportAddedEvent(myReference);
-  }
-
-
   public static class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;
@@ -724,6 +682,45 @@ public class SModel {
       result = 31 * result + myUsedVersion;
       return result;
     }
+  }
+
+  //---------persistance-related refactorings--------
+
+  public void setPersistenceVersion(int persistenceVersion) {
+    myPersistenceVersion = persistenceVersion;
+  }
+
+  public int getPersistenceVersion() {
+    return myPersistenceVersion;
+  }
+
+  public void refreshRefactoringHistory() {
+    ModelChange.assertLegalChange(this);
+
+    try {
+      Element e = myStructureModificationHistory.toElement();
+      myStructureModificationHistory = new StructureModificationHistory();
+      myStructureModificationHistory.fromElement(e);
+    } catch (Throwable t) {
+      LOG.error("refactoring history refresh failed " + this, t, this);
+    }
+  }
+
+  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+    ModelChange.assertLegalChange(this);
+
+    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    }
+
+    importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    } else {
+      addAdditionalModelVersion(sModelReference, currentVersion);
+    }
+    fireImportAddedEvent(myReference);
   }
 
   //--------- stuff --------
