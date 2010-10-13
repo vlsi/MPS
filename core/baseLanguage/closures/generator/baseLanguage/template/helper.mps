@@ -4530,6 +4530,23 @@
       <property name="name:3" value="getResultType" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="642108346586196511" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586196512">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7789098498783554202">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7789098498783554207">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7789098498783554206">
+              <link role="variableDeclaration:3" targetNodeId="642108346586201654" resolveInfo="functionTypeOrClassifier" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7789098498783554211">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7789098498783554213">
+                <link role="conceptDeclaration:16" targetNodeId="14.1109283449304:3" resolveInfo="TypeVariableReference" />
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7789098498783554214">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7789098498783554215">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7789098498783554217" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="642108346586201656">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586201658">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="642108346586201667">
@@ -4636,6 +4653,23 @@
       <property name="name:3" value="getParameterTypes" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="642108346586220319" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586220320">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7789098498783554218">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7789098498783554219">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7789098498783554220">
+              <link role="variableDeclaration:3" targetNodeId="642108346586220359" resolveInfo="functionTypeOrClassifier" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7789098498783554221">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7789098498783554222">
+                <link role="conceptDeclaration:16" targetNodeId="14.1109283449304:3" resolveInfo="TypeVariableReference" />
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7789098498783554223">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7789098498783554224">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7789098498783554225" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="642108346586220321">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586220322">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="642108346586220323">

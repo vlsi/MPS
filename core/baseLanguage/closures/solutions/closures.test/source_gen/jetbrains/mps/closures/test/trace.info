@@ -4139,6 +4139,19 @@
     <unitInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
     <unitInfo nodeId="7706726851185799228" fileName="MPS9760.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9760" />
   </root>
+  <root nodeId="7789098498783517693">
+    <nodeInfo nodeId="7789098498783522752" fileName="GenericFTAcceptor.java" startLine="11" startPosition="31" endLine="12" endPosition="18" />
+    <nodeInfo nodeId="31512844700171956" fileName="GenericFTAcceptor.java" startLine="12" startPosition="18" endLine="13" endPosition="18" />
+    <nodeInfo nodeId="7789098498783517695" fileName="GenericFTAcceptor.java" startLine="7" startPosition="109" endLine="9" endPosition="3" />
+    <nodeInfo nodeId="7789098498783517700" fileName="GenericFTAcceptor.java" startLine="10" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="7789098498783517698" fileName="GenericFTAcceptor.java" startLine="8" startPosition="30" endLine="8" endPosition="30" />
+    <scopeInfo nodeId="7789098498783517695" fileName="GenericFTAcceptor.java" startLine="7" startPosition="109" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="7789098498783517703" fileName="GenericFTAcceptor.java" startLine="11" startPosition="31" endLine="13" endPosition="18" />
+    <scopeInfo nodeId="7789098498783517700" fileName="GenericFTAcceptor.java" startLine="10" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7789098498783522749" varName="fun" />
+    </scopeInfo>
+    <unitInfo nodeId="7789098498783517693" fileName="GenericFTAcceptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.closures.test.GenericFTAcceptor" />
+  </root>
   <root nodeId="7854901761081544254">
     <nodeInfo nodeId="7854901761081544293" fileName="MPS9119.java" startLine="19" startPosition="43" endLine="20" endPosition="72" />
     <nodeInfo nodeId="7854901761081544301" fileName="MPS9119.java" startLine="20" startPosition="72" endLine="21" endPosition="22" />

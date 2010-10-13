@@ -10137,5 +10137,56 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5340426812923603356" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7789098498783517693">
+    <property name="name:3" value="GenericFTAcceptor" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7789098498783517700">
+      <property name="name:3" value="accept" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7789098498783522749">
+        <property name="name:3" value="fun" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="7789098498783522751">
+          <link role="typeVariableDeclaration:3" targetNodeId="7789098498783517699" resolveInfo="ZZZ" />
+        </node>
+      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7789098498783517701" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7789098498783517702" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7789098498783517703">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7789098498783522752">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="7789098498783522778">
+            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7789098498783532806">
+              <property name="value:3" value="1" />
+            </node>
+            <node role="function:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7789098498783522781">
+              <link role="variableDeclaration:3" targetNodeId="7789098498783522749" resolveInfo="fun" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="31512844700171956">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="31512844700177000">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation:3" id="31512844700177004">
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="31512844700177006">
+                <property name="value:3" value="1" />
+              </node>
+            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="31512844700177007">
+              <link role="variableDeclaration:3" targetNodeId="7789098498783522749" resolveInfo="fun" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7789098498783517694" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7789098498783517695">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7789098498783517696" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7789098498783517697" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7789098498783517698" />
+    </node>
+    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="7789098498783517699">
+      <property name="name:3" value="ZZZ" />
+      <node role="bound:3" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType:3" id="7789098498783522744">
+        <node role="parameterType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7789098498783522747" />
+        <node role="resultType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7789098498783522748" />
+      </node>
+    </node>
+  </node>
 </model>
 

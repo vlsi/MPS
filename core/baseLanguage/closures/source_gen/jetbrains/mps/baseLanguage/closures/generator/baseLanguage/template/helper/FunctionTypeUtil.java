@@ -40,6 +40,9 @@ public class FunctionTypeUtil {
   }
 
   public static SNode getResultType(SNode functionTypeOrClassifier) {
+    if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return null;
+    }
     if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
       return FunctionType_Behavior.call_getResultType_1230475757059(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     } else if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -51,6 +54,9 @@ public class FunctionTypeUtil {
   }
 
   public static List<SNode> getParameterTypes(SNode functionTypeOrClassifier) {
+    if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return null;
+    }
     if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
       return SLinkOperations.getTargets(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true);
     } else if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {

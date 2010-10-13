@@ -112,6 +112,11 @@
   <dependency className="jetbrains.mps.closures.test.Generator" file="Generator.java">
     <classNode dependClassName="java.lang.Iterable" />
   </dependency>
+  <dependency className="jetbrains.mps.closures.test.GenericFTAcceptor" file="GenericFTAcceptor.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+  </dependency>
   <dependency className="jetbrains.mps.closures.test.IFilter" file="IFilter.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
