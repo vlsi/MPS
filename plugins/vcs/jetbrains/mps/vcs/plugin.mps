@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <maxImportIndex value="34" />
+  <maxImportIndex value="35" />
   <import index="1" modelUID="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)" version="-1" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
@@ -58,6 +58,7 @@
   <import index="32" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#jetbrains.mps.vcs.annotate(jetbrains.mps.vcs.annotate@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="6763225944573363022">
     <property name="name:23" value="ChangesStrip" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="6763225944573363023">
@@ -2809,6 +2810,51 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1596063027222054295" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1596063027222054296" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596063027222054297" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="8807724076671132217">
+    <property name="name:23" value="Annotate" />
+    <property name="caption:23" value="Annotate (internal)" />
+    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="8807724076671132218">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8807724076671132219">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8807724076671140441">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8807724076671140443">
+            <link role="baseMethodDeclaration:3" targetNodeId="35.~AnnotateUtil.annotate(jetbrains.mps.nodeEditor.EditorComponent,com.intellij.openapi.project.Project):void" resolveInfo="annotate" />
+            <link role="classConcept:3" targetNodeId="35.~AnnotateUtil" resolveInfo="AnnotateUtil" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8807724076671140444">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8807724076671140445" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8807724076671140446">
+                <link role="member:23" targetNodeId="8807724076671132220" resolveInfo="editor" />
+              </node>
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8807724076671140450">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8807724076671140451" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8807724076671140452">
+                <link role="member:23" targetNodeId="8807724076671140448" resolveInfo="project" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8807724076671132220">
+      <property name="name:23" value="editor" />
+      <link role="key:23" targetNodeId="3.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8807724076671140448">
+      <property name="name:23" value="project" />
+      <link role="key:23" targetNodeId="2.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="8807724076671140453">
+    <property name="name:23" value="Internal" />
+    <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="8807724076671140458">
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="8807724076671140459">
+        <link role="action:23" targetNodeId="8807724076671132217" resolveInfo="AnnotateAction" />
+      </node>
+    </node>
+    <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="8807724076671140460">
+      <link role="modifiedGroup:23" targetNodeId="2v.1204991232446" resolveInfo="EditorInternal" />
     </node>
   </node>
 </model>

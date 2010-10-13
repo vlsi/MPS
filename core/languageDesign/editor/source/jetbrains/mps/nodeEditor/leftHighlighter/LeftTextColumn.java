@@ -33,6 +33,7 @@ import java.util.*;
  * Time: 16:46:30
  * To change this template use File | Settings | File Templates.
  */
+//todo look at com.intellij.openapi.editor.TextAnnotationGutterProvider
 public abstract class LeftTextColumn {
   protected Set<NodeTextElement> myText = new HashSet<NodeTextElement>();
   protected int myWidth = 0;

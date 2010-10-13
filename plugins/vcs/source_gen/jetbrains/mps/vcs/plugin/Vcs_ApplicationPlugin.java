@@ -17,6 +17,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.Internal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.VCS_ActionGroup");
