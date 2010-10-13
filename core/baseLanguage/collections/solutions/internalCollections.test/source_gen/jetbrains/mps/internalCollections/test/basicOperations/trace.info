@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LinkedMap_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.LinkedMap_Test" />
+  <unitInfo fileName="Distinct_Test.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test" />
+  <unitInfo fileName="SortedMap_Test.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.SortedMap_Test" />
+  <unitInfo fileName="SortedSet_Test.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.SortedSet_Test" />
+  <unitInfo fileName="Iterator_Test.java" startLine="18" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Iterator_Test" />
+  <unitInfo fileName="Chunks_Test.java" startLine="17" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test" />
+  <unitInfo fileName="QueueDequeStack_Test.java" startLine="14" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test" />
+  <unitInfo fileName="Set_Test.java" startLine="21" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Set_Test" />
+  <unitInfo fileName="Map_Test.java" startLine="29" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Map_Test" />
+  <unitInfo fileName="Array_Test.java" startLine="13" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Array_Test" />
+  <unitInfo fileName="List_Test.java" startLine="28" startPosition="0" endLine="375" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.List_Test" />
+  <unitInfo fileName="Sequence_Test.java" startLine="22" startPosition="0" endLine="579" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test" />
   <root nodeId="1204981976497">
     <nodeInfo nodeId="1206980058977" fileName="Sequence_Test.java" startLine="73" startPosition="27" endLine="73" endPosition="27" />
     <nodeInfo nodeId="1206980058977" fileName="Sequence_Test.java" startLine="76" startPosition="27" endLine="76" endPosition="27" />
@@ -772,6 +784,7 @@
     <nodeInfo nodeId="1205777784751" fileName="Distinct_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="31" startPosition="37" endLine="37" endPosition="5" />
     <nodeInfo nodeId="1241361090861" fileName="Distinct_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="35" startPosition="0" endLine="36" endPosition="28" />
     <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="28" />
     <scopeInfo nodeId="1205777720381" fileName="Distinct_Test.java" startLine="16" startPosition="54" endLine="18" endPosition="72">
       <varInfo nodeId="1205777729244" varName="input" />
@@ -1389,6 +1402,9 @@
     <nodeInfo nodeId="4498918741262375539" fileName="Map_Test.java" startLine="198" startPosition="0" endLine="216" endPosition="0" />
     <nodeInfo nodeId="1240854970516" fileName="Map_Test.java" startLine="131" startPosition="0" endLine="153" endPosition="0" />
     <scopeInfo nodeId="1237910262648" fileName="Map_Test.java" startLine="115" startPosition="48" endLine="115" endPosition="48" />
+    <scopeInfo nodeId="1115463791055973109" fileName="Map_Test.java" startLine="210" startPosition="0" endLine="210" endPosition="38">
+      <varInfo nodeId="1115463791055973110" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1115463791055973112" fileName="Map_Test.java" startLine="210" startPosition="38" endLine="210" endPosition="38" />
     <scopeInfo nodeId="1208429049859" fileName="Map_Test.java" startLine="55" startPosition="46" endLine="56" endPosition="44" />
     <scopeInfo nodeId="1227381759518" fileName="Map_Test.java" startLine="94" startPosition="47" endLine="95" endPosition="90" />
@@ -1603,6 +1619,9 @@
     <nodeInfo nodeId="1226857222105" fileName="Set_Test.java" startLine="47" startPosition="0" endLine="57" endPosition="0" />
     <nodeInfo nodeId="1240227090414" fileName="Set_Test.java" startLine="99" startPosition="0" endLine="110" endPosition="0" />
     <nodeInfo nodeId="4498918741262483012" fileName="Set_Test.java" startLine="133" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="1115463791055972111" fileName="Set_Test.java" startLine="145" startPosition="0" endLine="145" endPosition="38">
+      <varInfo nodeId="1115463791055972112" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1115463791055972114" fileName="Set_Test.java" startLine="145" startPosition="38" endLine="145" endPosition="38" />
     <scopeInfo nodeId="1115463791055972109" fileName="Set_Test.java" startLine="143" startPosition="9" endLine="144" endPosition="25" />
     <scopeInfo nodeId="1236250698510" fileName="Set_Test.java" startLine="95" startPosition="48" endLine="97" endPosition="61">
@@ -1984,9 +2003,13 @@
     <nodeInfo nodeId="1240152633169" fileName="Iterator_Test.java" startLine="76" startPosition="0" endLine="91" endPosition="0" />
     <nodeInfo nodeId="1237492318812" fileName="Iterator_Test.java" startLine="18" startPosition="46" endLine="37" endPosition="0" />
     <nodeInfo nodeId="1237492459870" fileName="Iterator_Test.java" startLine="37" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1237492432748" fileName="Iterator_Test.java" startLine="27" startPosition="0" endLine="28" endPosition="28" />
     <scopeInfo nodeId="1237492432748" fileName="Iterator_Test.java" startLine="27" startPosition="40" endLine="28" endPosition="28" />
+    <scopeInfo nodeId="1237492446884" fileName="Iterator_Test.java" startLine="33" startPosition="0" endLine="34" endPosition="28" />
     <scopeInfo nodeId="1237492446884" fileName="Iterator_Test.java" startLine="33" startPosition="40" endLine="34" endPosition="28" />
+    <scopeInfo nodeId="1237492592371" fileName="Iterator_Test.java" startLine="47" startPosition="0" endLine="48" endPosition="28" />
     <scopeInfo nodeId="1237492592371" fileName="Iterator_Test.java" startLine="47" startPosition="40" endLine="48" endPosition="28" />
+    <scopeInfo nodeId="1237492628728" fileName="Iterator_Test.java" startLine="57" startPosition="0" endLine="58" endPosition="28" />
     <scopeInfo nodeId="1237492628728" fileName="Iterator_Test.java" startLine="57" startPosition="40" endLine="58" endPosition="28" />
     <scopeInfo nodeId="1237492701381" fileName="Iterator_Test.java" startLine="65" startPosition="89" endLine="66" endPosition="29" />
     <scopeInfo nodeId="1237492432748" fileName="Iterator_Test.java" startLine="24" startPosition="9" endLine="26" endPosition="20" />
