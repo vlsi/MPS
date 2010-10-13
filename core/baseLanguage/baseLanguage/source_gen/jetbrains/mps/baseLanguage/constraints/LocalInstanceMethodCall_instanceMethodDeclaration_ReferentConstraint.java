@@ -42,12 +42,17 @@ public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstrain
     int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
     Set<String> names = SetSequence.fromSet(new HashSet<String>());
     while (classifier != null) {
-      for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
+      SNode context = ((_context.getReferenceNode() == null) ?
+        _context.getEnclosingNode() :
+        _context.getReferenceNode()
+      );
+      List<SNode> instanceMethodDeclarations = (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, context, constraint);
+      for (SNode method : instanceMethodDeclarations) {
         if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
           ListSequence.fromList(result).addElement(method);
         }
       }
-      for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
+      for (SNode method : instanceMethodDeclarations) {
         SetSequence.fromSet(names).addElement(SPropertyOperations.getString(method, "name"));
       }
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

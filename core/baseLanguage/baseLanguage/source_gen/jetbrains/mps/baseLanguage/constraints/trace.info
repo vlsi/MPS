@@ -56,8 +56,8 @@
   <unitInfo fileName="Classifier_DefaultSearchScope.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.Classifier_DefaultSearchScope" />
   <unitInfo fileName="ClassifierClassExpression_classifier_ReferentConstraint.java" startLine="16" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ClassifierClassExpression_classifier_ReferentConstraint" />
   <unitInfo fileName="ClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ClassCreator_constructorDeclaration_ReferentConstraint" />
-  <unitInfo fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="24" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint" />
   <unitInfo fileName="PropertyReference_property_ReferentConstraint.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.PropertyReference_property_ReferentConstraint" />
+  <unitInfo fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="24" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint" />
   <unitInfo fileName="SuperConstructorInvocation_constructorDeclaration_ReferentConstraint.java" startLine="22" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.SuperConstructorInvocation_constructorDeclaration_ReferentConstraint" />
   <unitInfo fileName="LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint.java" startLine="26" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint" />
   <unitInfo fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="26" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.StaticFieldReference_classifier_ReferentConstraint" />
@@ -449,27 +449,32 @@
     <nodeInfo nodeId="7785501532031511800" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="40" startPosition="5" endLine="41" endPosition="110" />
     <nodeInfo nodeId="7785501532031519839" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="41" startPosition="110" endLine="42" endPosition="61" />
     <nodeInfo nodeId="7785501532031519865" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="42" startPosition="61" endLine="43" endPosition="67" />
-    <nodeInfo nodeId="7785501532031519904" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="46" startPosition="100" endLine="47" endPosition="59" />
-    <nodeInfo nodeId="7543648522709207082" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="50" startPosition="152" endLine="51" endPosition="93" />
-    <nodeInfo nodeId="7785501532031519848" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="52" startPosition="7" endLine="53" endPosition="124" />
-    <nodeInfo nodeId="7785501532031511851" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="54" startPosition="5" endLine="55" endPosition="18" />
+    <nodeInfo nodeId="3156323259689957580" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="48" startPosition="8" endLine="49" endPosition="151" />
+    <nodeInfo nodeId="7785501532031519904" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="51" startPosition="100" endLine="52" endPosition="59" />
+    <nodeInfo nodeId="7543648522709207082" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="55" startPosition="55" endLine="56" endPosition="93" />
+    <nodeInfo nodeId="7785501532031519848" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="57" startPosition="7" endLine="58" endPosition="124" />
+    <nodeInfo nodeId="7785501532031511851" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="59" startPosition="5" endLine="60" endPosition="18" />
     <nodeInfo nodeId="4746038179140430726" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="37" startPosition="48" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="7785501532031519885" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="45" startPosition="152" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="7543648522709207057" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="49" startPosition="7" endLine="52" endPosition="7" />
-    <nodeInfo nodeId="7785501532031519859" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="44" startPosition="32" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="7785501532031511811" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="43" startPosition="67" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="7785501532031519885" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="50" startPosition="55" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="7543648522709207057" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="54" startPosition="7" endLine="57" endPosition="7" />
+    <nodeInfo nodeId="3156323259689957594" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="44" startPosition="32" endLine="48" endPosition="8" />
+    <nodeInfo nodeId="7785501532031519859" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="49" startPosition="151" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="7785501532031511811" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="43" startPosition="67" endLine="59" endPosition="5" />
     <scopeInfo nodeId="4746038179140430727" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="38" startPosition="153" endLine="39" endPosition="20" />
-    <scopeInfo nodeId="7785501532031519886" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="46" startPosition="100" endLine="47" endPosition="59" />
-    <scopeInfo nodeId="7543648522709207060" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="50" startPosition="152" endLine="51" endPosition="93" />
-    <scopeInfo nodeId="7785501532031519861" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="45" startPosition="152" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="7543648522709207057" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="49" startPosition="7" endLine="52" endPosition="7">
+    <scopeInfo nodeId="7785501532031519886" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="51" startPosition="100" endLine="52" endPosition="59" />
+    <scopeInfo nodeId="7543648522709207060" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="55" startPosition="55" endLine="56" endPosition="93" />
+    <scopeInfo nodeId="7785501532031519861" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="50" startPosition="55" endLine="53" endPosition="9" />
+    <scopeInfo nodeId="7543648522709207057" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="54" startPosition="7" endLine="57" endPosition="7">
       <varInfo nodeId="7543648522709207058" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7785501532031519859" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="44" startPosition="32" endLine="49" endPosition="7">
+    <scopeInfo nodeId="7785501532031519859" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="49" startPosition="151" endLine="54" endPosition="7">
       <varInfo nodeId="7785501532031519860" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7785501532031511815" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="44" startPosition="32" endLine="53" endPosition="124" />
-    <scopeInfo nodeId="3066917033203129870" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="36" startPosition="132" endLine="55" endPosition="18">
+    <scopeInfo nodeId="7785501532031511815" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="44" startPosition="32" endLine="58" endPosition="124">
+      <varInfo nodeId="3156323259689957581" varName="instanceMethodDeclarations" />
+      <varInfo nodeId="3156323259689957595" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="3066917033203129870" fileName="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="36" startPosition="132" endLine="60" endPosition="18">
       <varInfo nodeId="4746038179140430748" varName="result" />
       <varInfo nodeId="7785501532031519866" varName="names" />
       <varInfo nodeId="7785501532031519840" varName="constraint" />
