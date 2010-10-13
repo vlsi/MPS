@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
+import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.differences.mapPair.SubTypingAdded;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
@@ -76,12 +77,11 @@ public class Inequalities {
       addSubTyping(subType, superType, isWeak, check, info);
       return;
     }
-    if (isWeak) {
-      myState.addEquation(subType, superType, info);
+    SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+    if (subTyping.isSubType(subType, superType, info, isWeak, myState)) {
+      return;
     }
-
-
-    
+    reportError(subType, superType, info, isWeak);
   }
 
   public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {

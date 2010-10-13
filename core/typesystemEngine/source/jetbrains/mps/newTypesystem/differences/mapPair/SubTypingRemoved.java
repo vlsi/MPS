@@ -26,7 +26,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 6:14:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SubTypingRemoved extends MapPairDifference {
+public class SubTypingRemoved extends InequalityDifference {
   private EquationInfo myInfo;
 
   public SubTypingRemoved(SNode subType, SNode superType, EquationInfo info, InequalityMapPair mapPair) {

@@ -39,13 +39,18 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private SNode myRootNode;
   private Stack<Difference> myDifferenceStack = new Stack<Difference>();
   private NodeTypesComponentNew myNodeTypesComponent;
+  private TypeChecker myTypeChecker;
+  private SubTyping mySubTyping;
+  private int counter = 0;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    System.out.println("Started type checking");
+    System.out.println("Started type checking for node "+ rootNode);
     myState = new State(this);
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
+    myTypeChecker = typeChecker;
+    mySubTyping = new SubTyping(typeChecker);
   }
 
   public void rollBack() {
@@ -55,11 +60,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     Difference diff = myDifferenceStack.pop();
     System.out.println("Rolled back (" + diff.getPresentation()+")");
     diff.rollBack();
-  }
-
-  @Override
-  public void createEquation(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myState.addEquation(left.getNode(), right.getNode(), equationInfo);
   }
 
   public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
@@ -89,6 +89,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, true, checkOnly, equationInfo);
+    print();
   }
 
   public void addDifference(Difference diff) {
@@ -102,12 +103,20 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   public void print() {
-    System.out.println("---State-----");
+    System.out.println("---State---" + counter++);
     myState.print();
     System.out.println("--Difference-");
     for (Difference d : myDifferenceStack) {
       System.out.println(d.getPresentation());
     }
     System.out.println("---End-------");
+  }
+
+  public TypeChecker getTypeChecker() {
+    return myTypeChecker;
+  }
+
+  public SubTyping getSubTyping() {
+    return mySubTyping;
   }
 }

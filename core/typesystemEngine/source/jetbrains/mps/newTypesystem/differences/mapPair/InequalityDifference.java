@@ -26,12 +26,12 @@ import jetbrains.mps.smodel.SNode;
  * Time: 4:11:08 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class MapPairDifference extends Difference {
+public abstract class InequalityDifference extends Difference {
   InequalityMapPair myMapPair;
   SNode myKeyType;
   SNode myValueType;
 
-  public MapPairDifference(SNode keyType, SNode valueType, InequalityMapPair mapPair) {
+  public InequalityDifference(SNode keyType, SNode valueType, InequalityMapPair mapPair) {
     myKeyType = keyType;
     myValueType = valueType;
     myMapPair = mapPair;

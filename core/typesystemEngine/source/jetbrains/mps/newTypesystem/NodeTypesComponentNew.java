@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
@@ -28,6 +25,7 @@ import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Pair;
 
 import java.util.List;
 import java.util.Set;
@@ -80,29 +78,24 @@ public class NodeTypesComponentNew {
   }
 
   private boolean applyRulesToNode(SNode node) {
-    Set<InferenceRule_Runtime> newRules = null;//myTypeChecker.getRulesManager().getInferenceRules(node);
+    Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {
-      for (InferenceRule_Runtime rule : newRules) {
-        applyRuleToNode(node, rule);
+      for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
+        applyRuleToNode(node, rule.o1, rule.o2);
       }
     }
     return result;
   }
 
-  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule) {
+  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
     try {
-      if (rule instanceof AbstractInferenceRule_Runtime) {
-        ((AbstractInferenceRule_Runtime) rule).applyRule(node, myTypeCheckingContext);
-      } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
-        ((AbstractNonTypesystemRule_Runtime) rule).applyRule(node, myTypeCheckingContext);
-      } else {
-       // rule.applyRule(node);
-      }
+      rule.applyRule(node, myTypeCheckingContext, status);
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }
   }
+
 
 
 }
