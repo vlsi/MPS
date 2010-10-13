@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
+import jetbrains.mps.smodel.SNode;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -24,4 +26,5 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
  */
 public interface NodeTextElement extends Comparable<NodeTextElement> {
   public String getText();
+  public SNode getNode();
 }

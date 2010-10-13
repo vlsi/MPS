@@ -66,17 +66,16 @@ public abstract class SimpleLeftTextColumn extends LeftTextColumn {
   //--------------------------------------------------------------------------------------------
   private void calculateTextPositions(EditorComponent editorComponent) {
     this.myRows.clear();
-    for (SNode node : myText.keySet()) {
-      int yCoordinate = getYCoordinate(node, editorComponent);
+    for (NodeTextElement textElement : myText) {
+      int yCoordinate = getYCoordinate(textElement.getNode(), editorComponent);
       if (yCoordinate < 0) {
         continue;
       }
       NodeTextElement element = myRows.get(yCoordinate);
-      NodeTextElement textElement = myText.get(node);
       if (element == null) {
         myRows.put(yCoordinate, textElement);
       } else {
-        if (element.compareTo(textElement) < 0) {
+        if (textElement.compareTo(element) > 0) {
           myRows.put(yCoordinate, textElement);
         }
       }

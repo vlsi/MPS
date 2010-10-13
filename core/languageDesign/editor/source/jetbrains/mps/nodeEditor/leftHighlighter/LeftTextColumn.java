@@ -24,9 +24,7 @@ import javax.swing.JPopupMenu;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,23 +34,15 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class LeftTextColumn {
-  protected Map<SNode, NodeTextElement> myText = new HashMap<SNode, NodeTextElement>();
+  protected Set<NodeTextElement> myText = new HashSet<NodeTextElement>();
   protected int myWidth = 0;
   protected int myX = 0;
   protected boolean myIsCloseable = true;
 
   public abstract void paint(Graphics g, EditorComponent editorComponent);
 
-  public void addEntry(SNode node, NodeTextElement textElement) {
-    myText.put(node, textElement);
-  }
-
-  public String getText(SNode node) {
-    return myText.get(node).getText();
-  }
-
-  public NodeTextElement getTextElement(SNode node) {
-    return myText.get(node);
+  public void addEntry(NodeTextElement textElement) {
+    myText.add(textElement);
   }
 
   public int getWidth() {

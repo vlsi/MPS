@@ -34,7 +34,7 @@ public class DummyTextColumn2 extends SimpleLeftTextColumn {
     for (SNode node : root.getDescendants()) {
       String name = node.getName();
       if (name == null) name = "null";
-      addEntry(node, new DummyTextElement(name));
+      addEntry(new SimpleTextElement(name, node));
     }
   }
 }

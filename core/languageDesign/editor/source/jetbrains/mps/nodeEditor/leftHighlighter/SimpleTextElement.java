@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
+import jetbrains.mps.smodel.SNode;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -22,11 +24,13 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
  * Time: 20:40:04
  * To change this template use File | Settings | File Templates.
  */
-public class DummyTextElement implements NodeTextElement {
+public class SimpleTextElement implements NodeTextElement {
   private String myText;
+  private SNode myNode;
 
-  public DummyTextElement(String text) {
+  public SimpleTextElement(String text, SNode node) {
     myText = text;
+    myNode = node;
   }
 
   @Override
@@ -35,7 +39,19 @@ public class DummyTextElement implements NodeTextElement {
   }
 
   @Override
+  public SNode getNode() {
+    return myNode;
+  }
+
+  @Override
   public int compareTo(NodeTextElement o) {
-    return 1;
+    if (o == null) return 1;
+    if (o.getNode().isAncestorOf(myNode)) {
+      return -1;
+    }
+    if (myNode.isAncestorOf(o.getNode())) {
+      return 1;
+    }
+    return 0;
   }
 }
