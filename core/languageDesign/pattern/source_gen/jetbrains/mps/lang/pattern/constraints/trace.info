@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="PatternVariableReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints" />
-  <unitInfo fileName="ActionAsPattern_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ActionAsPattern_Constraints" />
+  <unitInfo fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ActionAsPattern_Constraints" />
   <unitInfo fileName="PatternVariableDeclaration_shortDescription_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableDeclaration_shortDescription_PropertyConstraint" />
   <unitInfo fileName="PropertyPatternVariableDeclaration_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_name_PropertyConstraint" />
   <unitInfo fileName="LinkPatternVariableDeclaration_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.LinkPatternVariableDeclaration_name_PropertyConstraint" />
@@ -41,8 +41,14 @@
     </scopeInfo>
   </root>
   <root nodeId="4217760266503599759">
-    <nodeInfo nodeId="1483902774837520828" fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="116" endLine="11" endPosition="129" />
-    <scopeInfo nodeId="1483902774837520156" fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="116" endLine="11" endPosition="129" />
+    <nodeInfo nodeId="24089196731067178" fileName="ActionAsPattern_Constraints.java" startLine="12" startPosition="134" endLine="13" endPosition="131" />
+    <nodeInfo nodeId="24089196731067191" fileName="ActionAsPattern_Constraints.java" startLine="15" startPosition="136" endLine="16" endPosition="130" />
+    <nodeInfo nodeId="24089196731067186" fileName="ActionAsPattern_Constraints.java" startLine="17" startPosition="5" endLine="18" endPosition="17" />
+    <nodeInfo nodeId="24089196731067165" fileName="ActionAsPattern_Constraints.java" startLine="11" startPosition="116" endLine="14" endPosition="5" />
+    <nodeInfo nodeId="24089196731067189" fileName="ActionAsPattern_Constraints.java" startLine="14" startPosition="5" endLine="17" endPosition="5" />
+    <scopeInfo nodeId="24089196731067166" fileName="ActionAsPattern_Constraints.java" startLine="12" startPosition="134" endLine="13" endPosition="131" />
+    <scopeInfo nodeId="24089196731067190" fileName="ActionAsPattern_Constraints.java" startLine="15" startPosition="136" endLine="16" endPosition="130" />
+    <scopeInfo nodeId="1483902774837520156" fileName="ActionAsPattern_Constraints.java" startLine="11" startPosition="116" endLine="18" endPosition="17" />
   </root>
   <root nodeId="5642650895629225737">
     <nodeInfo nodeId="5642650895629257350" fileName="OrPatternVariableReference_declaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="143" />

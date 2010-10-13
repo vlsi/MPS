@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Instruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Instruction_Behavior" />
+  <unitInfo fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.EmitInstruction_Behavior" />
+  <unitInfo fileName="AnalyzerInitialFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerInitialFunction_Behavior" />
+  <unitInfo fileName="AnalyzerMergeFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerMergeFunction_Behavior" />
+  <unitInfo fileName="AnalyzerFunFunction_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerFunFunction_Behavior" />
+  <unitInfo fileName="InstructionReference_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InstructionReference_Behavior" />
+  <unitInfo fileName="Rule_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Rule_Behavior" />
+  <unitInfo fileName="ApplicableCondition_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ApplicableCondition_Behavior" />
+  <unitInfo fileName="ConceptCondition_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ConceptCondition_Behavior" />
+  <unitInfo fileName="PatternCondition_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.PatternCondition_Behavior" />
+  <unitInfo fileName="Analyzer_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Analyzer_Behavior" />
   <root nodeId="178770917832626022">
     <nodeInfo nodeId="178770917832626030" fileName="Analyzer_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="78" />
     <nodeInfo nodeId="178770917832652120" fileName="Analyzer_Behavior.java" startLine="17" startPosition="88" endLine="18" endPosition="71" />
@@ -14,9 +25,6 @@
     <scopeInfo nodeId="178770917832652118" fileName="Analyzer_Behavior.java" startLine="17" startPosition="88" endLine="22" endPosition="102">
       <varInfo nodeId="178770917832652121" varName="longName" />
     </scopeInfo>
-  </root>
-  <root nodeId="4217760266503579797">
-    <scopeInfo nodeId="4217760266503579799" fileName="EmitInstruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="430844094082161345">
     <nodeInfo nodeId="430844094082161350" fileName="AnalyzerFunFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="164" />
@@ -45,6 +53,9 @@
     <nodeInfo nodeId="4943044633101742730" fileName="ConceptCondition_Behavior.java" startLine="16" startPosition="88" endLine="17" endPosition="65" />
     <scopeInfo nodeId="4943044633101739074" fileName="ConceptCondition_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="4943044633101739077" fileName="ConceptCondition_Behavior.java" startLine="16" startPosition="88" endLine="17" endPosition="65" />
+  </root>
+  <root nodeId="8424563347437838494">
+    <scopeInfo nodeId="8424563347437838496" fileName="EmitInstruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="8656002014371076002">
     <scopeInfo nodeId="8656002014371076004" fileName="Instruction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

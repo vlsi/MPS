@@ -25,7 +25,7 @@ public class RuleAssertNull extends DataFlowConstructor {
 
   public static class Pattern_ah97h0_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
-    /*package*/ SNode PatternVar_assertStatement;
+    /*package*/ SNode PatternVar_action_var_5730083271929368110;
     private GeneratedMatchingPattern myOrPattern_ah97h0_a0a0;
 
     public Pattern_ah97h0_a0a() {
@@ -35,7 +35,7 @@ public class RuleAssertNull extends DataFlowConstructor {
       {
         SNode nodeToMatch_ah97h0_a0a;
         nodeToMatch_ah97h0_a0a = nodeToMatch;
-        PatternVar_assertStatement = nodeToMatch_ah97h0_a0a;
+        PatternVar_action_var_5730083271929368110 = nodeToMatch_ah97h0_a0a;
         if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_ah97h0_a0a.getConceptFqName()))) {
           return false;
         }
@@ -80,7 +80,7 @@ public class RuleAssertNull extends DataFlowConstructor {
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        this.PatternVar_assertStatement = (SNode) pattern.getFieldValue("PatternVar_assertStatement");
+        this.PatternVar_action_var_5730083271929368110 = (SNode) pattern.getFieldValue("PatternVar_action_var_5730083271929368110");
       }
     }
 
@@ -88,8 +88,8 @@ public class RuleAssertNull extends DataFlowConstructor {
       if ("PatternVar_p".equals(fieldName)) {
         return myOrPattern_ah97h0_a0a0.getFieldValue(fieldName);
       }
-      if ("PatternVar_assertStatement".equals(fieldName)) {
-        return this.PatternVar_assertStatement;
+      if ("PatternVar_action_var_5730083271929368110".equals(fieldName)) {
+        return this.PatternVar_action_var_5730083271929368110;
       }
       return null;
     }
@@ -97,11 +97,11 @@ public class RuleAssertNull extends DataFlowConstructor {
     public void performActions(Object o) {
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_assertStatement");
+        Object object = getFieldValue("PatternVar_action_var_5730083271929368110");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_assertStatement"));
+          instruction.setSource(getFieldValue("PatternVar_action_var_5730083271929368110"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }

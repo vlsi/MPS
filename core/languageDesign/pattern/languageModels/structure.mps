@@ -185,6 +185,12 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4413230749907733332">
     <property name="name:0" value="ActionAsPattern" />
     <link role="extends:0" targetNodeId="1136720037773:0" resolveInfo="AsPattern" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8990057180226016446">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="position" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1649655856141352252:0" resolveInfo="InsertPos" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4413230749907733337">
       <property name="metaClass:0" value="aggregation" />
       <property name="sourceCardinality:0" value="1" />
@@ -252,6 +258,36 @@
       <property name="sourceCardinality:0" value="1" />
       <property name="role:0" value="declaration" />
       <link role="target:0" targetNodeId="1136720037779:0" resolveInfo="PatternVariableDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1649655856141352248">
+    <property name="name:0" value="InsertAfterPosition" />
+    <property name="package:0" value="Positions" />
+    <link role="extends:0" targetNodeId="1649655856141352252:0" resolveInfo="InsertPos" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="24089196730988504">
+      <property name="value:0" value="after" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1649655856141352249">
+      <property name="value:0" value="after" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1649655856141352250">
+    <property name="name:0" value="InsertBeforePosition" />
+    <property name="package:0" value="Positions" />
+    <link role="extends:0" targetNodeId="1649655856141352252:0" resolveInfo="InsertPos" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1649655856141352251">
+      <property name="value:0" value="before" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1649655856141352252">
+    <property name="name:0" value="InsertPosition" />
+    <property name="package:0" value="Positions" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1649655856141368304">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
 </model>

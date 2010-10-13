@@ -24,8 +24,8 @@ public class RuleForLoop extends DataFlowConstructor {
   }
 
   public static class Pattern_3nf4mg_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_body;
     /*package*/ SNode PatternVar_s;
+    /*package*/ SNode PatternVar_action_var_1508313647019626141;
     private GeneratedMatchingPattern myOrPattern_3nf4mg_a0a0;
 
     public Pattern_3nf4mg_a0a() {
@@ -52,7 +52,7 @@ public class RuleForLoop extends DataFlowConstructor {
                 return false;
               }
             }
-            this.PatternVar_body = childVar_3nf4mg_a0a0;
+            this.PatternVar_action_var_1508313647019626141 = childVar_3nf4mg_a0a0;
           }
         }
         {
@@ -104,17 +104,17 @@ public class RuleForLoop extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
         this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+        this.PatternVar_action_var_1508313647019626141 = (SNode) pattern.getFieldValue("PatternVar_action_var_1508313647019626141");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_body".equals(fieldName)) {
-        return this.PatternVar_body;
-      }
       if ("PatternVar_s".equals(fieldName)) {
         return myOrPattern_3nf4mg_a0a0.getFieldValue(fieldName);
+      }
+      if ("PatternVar_action_var_1508313647019626141".equals(fieldName)) {
+        return this.PatternVar_action_var_1508313647019626141;
       }
       return null;
     }
@@ -122,11 +122,11 @@ public class RuleForLoop extends DataFlowConstructor {
     public void performActions(Object o) {
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_body");
+        Object object = getFieldValue("PatternVar_action_var_1508313647019626141");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getStart(object);
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_s"));
-          instruction.setSource(getFieldValue("PatternVar_body"));
+          instruction.setSource(getFieldValue("PatternVar_action_var_1508313647019626141"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }

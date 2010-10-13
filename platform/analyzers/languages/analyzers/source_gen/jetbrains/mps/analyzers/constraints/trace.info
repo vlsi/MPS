@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IsOperation_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.IsOperation_Constraints" />
+  <unitInfo fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.AnalyzerRunnerAnalyzeOperation_Constraints" />
+  <unitInfo fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.AnalyzerRunnerCreator_analyzer_ReferentConstraint" />
+  <unitInfo fileName="IsOperation_instruction_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.IsOperation_instruction_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="InstructionReference_DefaultSearchScope.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.InstructionReference_DefaultSearchScope" />
+  <unitInfo fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ApplicableNodeReference_applicableNode_ReferentConstraint" />
   <root nodeId="178770917832460637">
     <nodeInfo nodeId="178770917832460641" fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="150" />
     <scopeInfo nodeId="178770917832460640" fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="150" />

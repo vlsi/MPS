@@ -718,32 +718,32 @@
     <scopeInfo nodeId="1239714962886" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
   </root>
   <root nodeId="5730083271929368106">
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="99" endPosition="25" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="99" startPosition="25" endLine="100" endPosition="68" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="102" endPosition="52" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="102" startPosition="52" endLine="103" endPosition="98" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="103" startPosition="98" endLine="104" endPosition="77" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="104" startPosition="77" endLine="105" endPosition="62" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="100" startPosition="68" endLine="106" endPosition="9" />
-    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="97" startPosition="42" endLine="107" endPosition="7" />
-    <scopeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="105" endPosition="62" />
-    <scopeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="106" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="99" endPosition="25" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="99" startPosition="25" endLine="100" endPosition="83" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="102" endPosition="52" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="102" startPosition="52" endLine="103" endPosition="98" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="103" startPosition="98" endLine="104" endPosition="92" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="104" startPosition="92" endLine="105" endPosition="62" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="100" startPosition="83" endLine="106" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="97" startPosition="42" endLine="107" endPosition="7" />
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="105" endPosition="62" />
+    <scopeInfo nodeId="1508313647019626155" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="106" endPosition="9" />
   </root>
   <root nodeId="6023428257643051553">
     <nodeInfo nodeId="6023428257643052113" fileName="AsExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="6023428257643051555" fileName="AsExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
   </root>
   <root nodeId="6689253151531890257">
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="123" startPosition="7" endLine="124" endPosition="25" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="124" startPosition="25" endLine="125" endPosition="57" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="126" startPosition="45" endLine="127" endPosition="54" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="127" startPosition="54" endLine="128" endPosition="98" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="128" startPosition="98" endLine="129" endPosition="66" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="129" startPosition="66" endLine="130" endPosition="62" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="125" startPosition="57" endLine="131" endPosition="9" />
-    <nodeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="122" startPosition="42" endLine="132" endPosition="7" />
-    <scopeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="126" startPosition="45" endLine="130" endPosition="62" />
-    <scopeInfo nodeId="6689253151531896529" fileName="RuleForLoop.java" startLine="123" startPosition="7" endLine="131" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="123" startPosition="7" endLine="124" endPosition="25" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="124" startPosition="25" endLine="125" endPosition="83" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="126" startPosition="45" endLine="127" endPosition="54" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="127" startPosition="54" endLine="128" endPosition="98" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="128" startPosition="98" endLine="129" endPosition="92" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="129" startPosition="92" endLine="130" endPosition="62" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="125" startPosition="83" endLine="131" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="122" startPosition="42" endLine="132" endPosition="7" />
+    <scopeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="126" startPosition="45" endLine="130" endPosition="62" />
+    <scopeInfo nodeId="1508313647019626146" fileName="RuleForLoop.java" startLine="123" startPosition="7" endLine="131" endPosition="9" />
   </root>
   <root nodeId="6868777471677432036">
     <nodeInfo nodeId="6868777471677432058" fileName="NullableAnalyzerRunner.java" startLine="45" startPosition="63" endLine="46" endPosition="77" />
@@ -886,36 +886,36 @@
     <scopeInfo nodeId="6868777471677432396" fileName="RuleCreator.java" startLine="25" startPosition="53" endLine="34" endPosition="5" />
   </root>
   <root nodeId="6868777471677432402">
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="159" endPosition="25" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="159" startPosition="25" endLine="160" endPosition="59" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="161" startPosition="45" endLine="162" endPosition="54" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="162" startPosition="54" endLine="163" endPosition="95" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="163" startPosition="95" endLine="164" endPosition="68" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="164" startPosition="68" endLine="165" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="168" startPosition="7" endLine="169" endPosition="25" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="169" startPosition="25" endLine="170" endPosition="61" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="171" startPosition="45" endLine="172" endPosition="54" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="172" startPosition="54" endLine="173" endPosition="98" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="173" startPosition="98" endLine="174" endPosition="70" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="174" startPosition="70" endLine="175" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="178" startPosition="7" endLine="179" endPosition="25" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="179" startPosition="25" endLine="180" endPosition="55" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="181" startPosition="45" endLine="182" endPosition="52" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="182" startPosition="52" endLine="183" endPosition="99" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="183" startPosition="99" endLine="184" endPosition="64" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="184" startPosition="64" endLine="185" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="160" startPosition="59" endLine="166" endPosition="9" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="170" startPosition="61" endLine="176" endPosition="9" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="180" startPosition="55" endLine="186" endPosition="9" />
-    <nodeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="157" startPosition="42" endLine="167" endPosition="7" />
-    <nodeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="167" startPosition="7" endLine="177" endPosition="7" />
-    <nodeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="177" startPosition="7" endLine="187" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="161" startPosition="45" endLine="165" endPosition="62" />
-    <scopeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="171" startPosition="45" endLine="175" endPosition="62" />
-    <scopeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="181" startPosition="45" endLine="185" endPosition="62" />
-    <scopeInfo nodeId="6868777471677432419" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="166" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432426" fileName="RuleEqualsNull.java" startLine="168" startPosition="7" endLine="176" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432431" fileName="RuleEqualsNull.java" startLine="178" startPosition="7" endLine="186" endPosition="9" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="159" endPosition="25" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="159" startPosition="25" endLine="160" endPosition="54" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="161" startPosition="45" endLine="162" endPosition="54" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="162" startPosition="54" endLine="163" endPosition="98" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="163" startPosition="98" endLine="164" endPosition="63" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="164" startPosition="63" endLine="165" endPosition="62" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="168" startPosition="7" endLine="169" endPosition="25" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="169" startPosition="25" endLine="170" endPosition="55" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="171" startPosition="45" endLine="172" endPosition="52" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="172" startPosition="52" endLine="173" endPosition="99" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="173" startPosition="99" endLine="174" endPosition="64" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="174" startPosition="64" endLine="175" endPosition="62" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="178" startPosition="7" endLine="179" endPosition="25" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="179" startPosition="25" endLine="180" endPosition="54" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="181" startPosition="45" endLine="182" endPosition="54" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="182" startPosition="54" endLine="183" endPosition="95" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="183" startPosition="95" endLine="184" endPosition="63" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="184" startPosition="63" endLine="185" endPosition="62" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="160" startPosition="54" endLine="166" endPosition="9" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="170" startPosition="55" endLine="176" endPosition="9" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="180" startPosition="54" endLine="186" endPosition="9" />
+    <nodeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="157" startPosition="42" endLine="167" endPosition="7" />
+    <nodeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="167" startPosition="7" endLine="177" endPosition="7" />
+    <nodeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="177" startPosition="7" endLine="187" endPosition="7" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="161" startPosition="45" endLine="165" endPosition="62" />
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="171" startPosition="45" endLine="175" endPosition="62" />
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="181" startPosition="45" endLine="185" endPosition="62" />
+    <scopeInfo nodeId="1508313647019559683" fileName="RuleEqualsNull.java" startLine="158" startPosition="7" endLine="166" endPosition="9" />
+    <scopeInfo nodeId="24089196731069966" fileName="RuleEqualsNull.java" startLine="168" startPosition="7" endLine="176" endPosition="9" />
+    <scopeInfo nodeId="1508313647019559673" fileName="RuleEqualsNull.java" startLine="178" startPosition="7" endLine="186" endPosition="9" />
   </root>
   <root nodeId="6868777471677432435">
     <nodeInfo nodeId="6868777471677432451" fileName="RuleFieldReference.java" startLine="29" startPosition="142" endLine="30" endPosition="120" />
@@ -1022,36 +1022,36 @@
     <scopeInfo nodeId="6868777471677432585" fileName="RuleNotEqualsNull.java" startLine="130" startPosition="7" endLine="138" endPosition="9" />
   </root>
   <root nodeId="6868777471677432589">
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="162" startPosition="7" endLine="163" endPosition="25" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="163" startPosition="25" endLine="164" endPosition="57" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="165" startPosition="45" endLine="166" endPosition="52" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="166" startPosition="52" endLine="167" endPosition="99" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="167" startPosition="99" endLine="168" endPosition="66" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="168" startPosition="66" endLine="169" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="172" startPosition="7" endLine="173" endPosition="25" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="173" startPosition="25" endLine="174" endPosition="59" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="175" startPosition="45" endLine="176" endPosition="54" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="176" startPosition="54" endLine="177" endPosition="98" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="177" startPosition="98" endLine="178" endPosition="68" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="178" startPosition="68" endLine="179" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="182" startPosition="7" endLine="183" endPosition="25" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="183" startPosition="25" endLine="184" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="185" startPosition="45" endLine="186" endPosition="52" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="186" startPosition="52" endLine="187" endPosition="98" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="187" startPosition="98" endLine="188" endPosition="71" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="188" startPosition="71" endLine="189" endPosition="62" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="164" startPosition="57" endLine="170" endPosition="9" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="174" startPosition="59" endLine="180" endPosition="9" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="184" startPosition="62" endLine="190" endPosition="9" />
-    <nodeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="161" startPosition="42" endLine="171" endPosition="7" />
-    <nodeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="171" startPosition="7" endLine="181" endPosition="7" />
-    <nodeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="181" startPosition="7" endLine="191" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="165" startPosition="45" endLine="169" endPosition="62" />
-    <scopeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="175" startPosition="45" endLine="179" endPosition="62" />
-    <scopeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="185" startPosition="45" endLine="189" endPosition="62" />
-    <scopeInfo nodeId="6868777471677432594" fileName="RuleNotEqualsNullAnd.java" startLine="162" startPosition="7" endLine="170" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432600" fileName="RuleNotEqualsNullAnd.java" startLine="172" startPosition="7" endLine="180" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432610" fileName="RuleNotEqualsNullAnd.java" startLine="182" startPosition="7" endLine="190" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="162" startPosition="7" endLine="163" endPosition="25" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="163" startPosition="25" endLine="164" endPosition="83" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="165" startPosition="45" endLine="166" endPosition="52" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="166" startPosition="52" endLine="167" endPosition="98" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="167" startPosition="98" endLine="168" endPosition="92" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="168" startPosition="92" endLine="169" endPosition="62" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="172" startPosition="7" endLine="173" endPosition="25" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="173" startPosition="25" endLine="174" endPosition="83" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="175" startPosition="45" endLine="176" endPosition="54" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="176" startPosition="54" endLine="177" endPosition="98" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="177" startPosition="98" endLine="178" endPosition="92" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="178" startPosition="92" endLine="179" endPosition="62" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="182" startPosition="7" endLine="183" endPosition="25" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="183" startPosition="25" endLine="184" endPosition="83" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="185" startPosition="45" endLine="186" endPosition="52" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="186" startPosition="52" endLine="187" endPosition="99" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="187" startPosition="99" endLine="188" endPosition="92" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="188" startPosition="92" endLine="189" endPosition="62" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="164" startPosition="83" endLine="170" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="174" startPosition="83" endLine="180" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="184" startPosition="83" endLine="190" endPosition="9" />
+    <nodeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="161" startPosition="42" endLine="171" endPosition="7" />
+    <nodeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="171" startPosition="7" endLine="181" endPosition="7" />
+    <nodeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="181" startPosition="7" endLine="191" endPosition="7" />
+    <scopeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="165" startPosition="45" endLine="169" endPosition="62" />
+    <scopeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="175" startPosition="45" endLine="179" endPosition="62" />
+    <scopeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="185" startPosition="45" endLine="189" endPosition="62" />
+    <scopeInfo nodeId="1508313647019626127" fileName="RuleNotEqualsNullAnd.java" startLine="162" startPosition="7" endLine="170" endPosition="9" />
+    <scopeInfo nodeId="1508313647019626118" fileName="RuleNotEqualsNullAnd.java" startLine="172" startPosition="7" endLine="180" endPosition="9" />
+    <scopeInfo nodeId="1508313647019626135" fileName="RuleNotEqualsNullAnd.java" startLine="182" startPosition="7" endLine="190" endPosition="9" />
   </root>
   <root nodeId="6868777471677432616">
     <nodeInfo nodeId="6868777471677432619" fileName="RuleNullLiteral.java" startLine="26" startPosition="5" endLine="27" endPosition="27" />

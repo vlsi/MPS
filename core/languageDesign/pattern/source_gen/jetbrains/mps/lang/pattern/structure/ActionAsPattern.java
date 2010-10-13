@@ -9,10 +9,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ActionAsPattern extends AsPattern {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.ActionAsPattern";
+  public static final String POSITION = "position";
   public static final String ACTION = "action";
 
   public ActionAsPattern(SNode node) {
     super(node);
+  }
+
+  public InsertPosition getPosition() {
+    return (InsertPosition) this.getChild(InsertPosition.class, ActionAsPattern.POSITION);
+  }
+
+  public void setPosition(InsertPosition node) {
+    super.setChild(ActionAsPattern.POSITION, node);
   }
 
   public ActionStatement getAction() {

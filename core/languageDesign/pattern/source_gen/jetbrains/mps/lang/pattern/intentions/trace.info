@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="CreatePatternVariable_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
-  <unitInfo fileName="CreateActionAsPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
   <unitInfo fileName="CreateAsPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
   <unitInfo fileName="CreateWildcardPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
+  <unitInfo fileName="CreateActionAsPattern_Intention.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
   <unitInfo fileName="CreatePropertyPatternVariable_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
   <unitInfo fileName="CreateOrPattern_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention" />
   <unitInfo fileName="CreateListPattern_Intention.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention" />
@@ -73,13 +73,14 @@
     </scopeInfo>
   </root>
   <root nodeId="4413230749907735528">
-    <nodeInfo nodeId="4413230749907743482" fileName="CreateActionAsPattern_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="35" />
-    <nodeInfo nodeId="4413230749907743504" fileName="CreateActionAsPattern_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="64" />
-    <nodeInfo nodeId="4413230749907743485" fileName="CreateActionAsPattern_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="56" />
-    <nodeInfo nodeId="4413230749907743491" fileName="CreateActionAsPattern_Intention.java" startLine="49" startPosition="56" endLine="50" endPosition="162" />
-    <scopeInfo nodeId="4413230749907735530" fileName="CreateActionAsPattern_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="35" />
-    <scopeInfo nodeId="4413230749907743503" fileName="CreateActionAsPattern_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="64" />
-    <scopeInfo nodeId="4413230749907735532" fileName="CreateActionAsPattern_Intention.java" startLine="48" startPosition="76" endLine="50" endPosition="162">
+    <nodeInfo nodeId="4413230749907743482" fileName="CreateActionAsPattern_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
+    <nodeInfo nodeId="4413230749907743504" fileName="CreateActionAsPattern_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="64" />
+    <nodeInfo nodeId="4413230749907743485" fileName="CreateActionAsPattern_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="56" />
+    <nodeInfo nodeId="4413230749907743491" fileName="CreateActionAsPattern_Intention.java" startLine="50" startPosition="56" endLine="51" endPosition="162" />
+    <nodeInfo nodeId="1508313647019622814" fileName="CreateActionAsPattern_Intention.java" startLine="51" startPosition="162" endLine="52" endPosition="183" />
+    <scopeInfo nodeId="4413230749907735530" fileName="CreateActionAsPattern_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="35" />
+    <scopeInfo nodeId="4413230749907743503" fileName="CreateActionAsPattern_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="64" />
+    <scopeInfo nodeId="4413230749907735532" fileName="CreateActionAsPattern_Intention.java" startLine="49" startPosition="76" endLine="52" endPosition="183">
       <varInfo nodeId="4413230749907743486" varName="currentNode" />
     </scopeInfo>
   </root>

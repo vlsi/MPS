@@ -25,9 +25,9 @@ public class RuleEqualsNull extends DataFlowConstructor {
 
   public static class Pattern_vwsftd_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
-    /*package*/ SNode PatternVar_ifBody;
-    /*package*/ SNode PatternVar_elseBody;
-    /*package*/ SNode PatternVar_if;
+    /*package*/ SNode PatternVar_f;
+    /*package*/ SNode PatternVar_fd;
+    /*package*/ SNode PatternVar_d;
     private GeneratedMatchingPattern myOrPattern_vwsftd_a0a0;
 
     public Pattern_vwsftd_a0a() {
@@ -37,7 +37,7 @@ public class RuleEqualsNull extends DataFlowConstructor {
       {
         SNode nodeToMatch_vwsftd_a0a;
         nodeToMatch_vwsftd_a0a = nodeToMatch;
-        PatternVar_if = nodeToMatch_vwsftd_a0a;
+        PatternVar_fd = nodeToMatch_vwsftd_a0a;
         if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_vwsftd_a0a.getConceptFqName()))) {
           return false;
         }
@@ -55,7 +55,7 @@ public class RuleEqualsNull extends DataFlowConstructor {
                 return false;
               }
             }
-            this.PatternVar_ifBody = childVar_vwsftd_a0a0;
+            this.PatternVar_d = childVar_vwsftd_a0a0;
           }
         }
         {
@@ -115,7 +115,7 @@ public class RuleEqualsNull extends DataFlowConstructor {
                       return false;
                     }
                   }
-                  this.PatternVar_elseBody = childVar_vwsftd_a0a0a;
+                  this.PatternVar_f = childVar_vwsftd_a0a0a;
                 }
               }
             }
@@ -132,9 +132,9 @@ public class RuleEqualsNull extends DataFlowConstructor {
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        this.PatternVar_ifBody = (SNode) pattern.getFieldValue("PatternVar_ifBody");
-        this.PatternVar_elseBody = (SNode) pattern.getFieldValue("PatternVar_elseBody");
-        this.PatternVar_if = (SNode) pattern.getFieldValue("PatternVar_if");
+        this.PatternVar_f = (SNode) pattern.getFieldValue("PatternVar_f");
+        this.PatternVar_fd = (SNode) pattern.getFieldValue("PatternVar_fd");
+        this.PatternVar_d = (SNode) pattern.getFieldValue("PatternVar_d");
       }
     }
 
@@ -142,14 +142,14 @@ public class RuleEqualsNull extends DataFlowConstructor {
       if ("PatternVar_p".equals(fieldName)) {
         return myOrPattern_vwsftd_a0a0.getFieldValue(fieldName);
       }
-      if ("PatternVar_ifBody".equals(fieldName)) {
-        return this.PatternVar_ifBody;
+      if ("PatternVar_f".equals(fieldName)) {
+        return this.PatternVar_f;
       }
-      if ("PatternVar_elseBody".equals(fieldName)) {
-        return this.PatternVar_elseBody;
+      if ("PatternVar_fd".equals(fieldName)) {
+        return this.PatternVar_fd;
       }
-      if ("PatternVar_if".equals(fieldName)) {
-        return this.PatternVar_if;
+      if ("PatternVar_d".equals(fieldName)) {
+        return this.PatternVar_d;
       }
       return null;
     }
@@ -157,31 +157,31 @@ public class RuleEqualsNull extends DataFlowConstructor {
     public void performActions(Object o) {
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_ifBody");
-        if (((Program) o).contains(object)) {
-          position = ((Program) (o)).getStart(object);
-          Instruction instruction = new nullInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_ifBody"));
-          ((Program) (o)).insert(instruction, position, true);
-        }
-      }
-      {
-        int position = 0;
-        Object object = getFieldValue("PatternVar_elseBody");
+        Object object = getFieldValue("PatternVar_f");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getStart(object);
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_elseBody"));
+          instruction.setSource(getFieldValue("PatternVar_f"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_if");
+        Object object = getFieldValue("PatternVar_fd");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
           Instruction instruction = new nullableInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_if"));
+          instruction.setSource(getFieldValue("PatternVar_fd"));
+          ((Program) (o)).insert(instruction, position, true);
+        }
+      }
+      {
+        int position = 0;
+        Object object = getFieldValue("PatternVar_d");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getStart(object);
+          Instruction instruction = new nullInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_d"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }

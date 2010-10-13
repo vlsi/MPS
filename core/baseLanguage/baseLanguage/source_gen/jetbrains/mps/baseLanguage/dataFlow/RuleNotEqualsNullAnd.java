@@ -24,10 +24,10 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
   }
 
   public static class Pattern_ehdml9_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_body;
-    /*package*/ SNode PatternVar_ifTrue;
     /*package*/ SNode PatternVar_p;
-    /*package*/ SNode PatternVar_notEquals;
+    /*package*/ SNode PatternVar_action_var_6868777471677432605;
+    /*package*/ SNode PatternVar_action_var_1508313647019624859;
+    /*package*/ SNode PatternVar_action_var_6868777471677432592;
 
     public Pattern_ehdml9_a0a() {
     }
@@ -36,7 +36,7 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
       {
         SNode nodeToMatch_ehdml9_a0a;
         nodeToMatch_ehdml9_a0a = nodeToMatch;
-        PatternVar_body = nodeToMatch_ehdml9_a0a;
+        PatternVar_action_var_6868777471677432592 = nodeToMatch_ehdml9_a0a;
         if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_ehdml9_a0a.getConceptFqName()))) {
           return false;
         }
@@ -54,7 +54,7 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
                 return false;
               }
             }
-            this.PatternVar_ifTrue = childVar_ehdml9_a0a0;
+            this.PatternVar_action_var_1508313647019624859 = childVar_ehdml9_a0a0;
           }
         }
         {
@@ -110,7 +110,7 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
                       }
                     }
                   }
-                  this.PatternVar_notEquals = childVar_ehdml9_a0a0a;
+                  this.PatternVar_action_var_6868777471677432605 = childVar_ehdml9_a0a0a;
                 }
               }
               {
@@ -135,25 +135,25 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
-        this.PatternVar_ifTrue = (SNode) pattern.getFieldValue("PatternVar_ifTrue");
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        this.PatternVar_notEquals = (SNode) pattern.getFieldValue("PatternVar_notEquals");
+        this.PatternVar_action_var_6868777471677432605 = (SNode) pattern.getFieldValue("PatternVar_action_var_6868777471677432605");
+        this.PatternVar_action_var_1508313647019624859 = (SNode) pattern.getFieldValue("PatternVar_action_var_1508313647019624859");
+        this.PatternVar_action_var_6868777471677432592 = (SNode) pattern.getFieldValue("PatternVar_action_var_6868777471677432592");
       }
     }
 
     public Object getFieldValue(String fieldName) {
-      if ("PatternVar_body".equals(fieldName)) {
-        return this.PatternVar_body;
-      }
-      if ("PatternVar_ifTrue".equals(fieldName)) {
-        return this.PatternVar_ifTrue;
-      }
       if ("PatternVar_p".equals(fieldName)) {
         return this.PatternVar_p;
       }
-      if ("PatternVar_notEquals".equals(fieldName)) {
-        return this.PatternVar_notEquals;
+      if ("PatternVar_action_var_6868777471677432605".equals(fieldName)) {
+        return this.PatternVar_action_var_6868777471677432605;
+      }
+      if ("PatternVar_action_var_1508313647019624859".equals(fieldName)) {
+        return this.PatternVar_action_var_1508313647019624859;
+      }
+      if ("PatternVar_action_var_6868777471677432592".equals(fieldName)) {
+        return this.PatternVar_action_var_6868777471677432592;
       }
       return null;
     }
@@ -161,31 +161,31 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
     public void performActions(Object o) {
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_body");
+        Object object = getFieldValue("PatternVar_action_var_6868777471677432605");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
-          Instruction instruction = new nullableInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_body"));
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_action_var_6868777471677432605"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_ifTrue");
+        Object object = getFieldValue("PatternVar_action_var_1508313647019624859");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getStart(object);
           Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_ifTrue"));
+          instruction.setSource(getFieldValue("PatternVar_action_var_1508313647019624859"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }
       {
         int position = 0;
-        Object object = getFieldValue("PatternVar_notEquals");
+        Object object = getFieldValue("PatternVar_action_var_6868777471677432592");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
-          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
-          instruction.setSource(getFieldValue("PatternVar_notEquals"));
+          Instruction instruction = new nullableInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_action_var_6868777471677432592"));
           ((Program) (o)).insert(instruction, position, true);
         }
       }

@@ -4,10 +4,17 @@ package jetbrains.mps.lang.pattern.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAParentContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ActionAsPattern_Constraints {
   public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    return SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.lang.pattern.structure.ActionStatement");
+    if (_context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "action")) {
+      return SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.lang.pattern.structure.ActionStatement");
+    }
+    if (_context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "position")) {
+      return SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.lang.pattern.structure.InsertPosition");
+    }
+    return false;
   }
 }

@@ -172,10 +172,10 @@
   </dependency>
   <dependency className="jetbrains.mps.analyzers.structure.EmitInstruction" file="EmitInstruction.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.structure.InsertPosition" />
     <classNode dependClassName="jetbrains.mps.analyzers.structure.InstructionReference" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.structure.ActionStatement" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.structure.InsertPosition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -193,7 +193,6 @@
   </dependency>
   <dependency className="jetbrains.mps.analyzers.structure.InsertAfterPosition" file="InsertAfterPosition.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.structure.InsertPosition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -202,7 +201,6 @@
   </dependency>
   <dependency className="jetbrains.mps.analyzers.structure.InsertBeforePosition" file="InsertBeforePosition.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.structure.InsertPosition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

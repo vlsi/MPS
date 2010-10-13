@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Pattern_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.Pattern_Editor" />
+  <unitInfo fileName="InsertAfterPosition_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.InsertAfterPosition_Editor" />
+  <unitInfo fileName="InsertBeforePosition_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.InsertBeforePosition_Editor" />
   <unitInfo fileName="WildcardPattern_Editor.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.WildcardPattern_Editor" />
-  <unitInfo fileName="PatternVariableReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor$_Inline_bm8m1i_a0a" />
-  <unitInfo fileName="OrPatternVariableReference_Editor.java" startLine="65" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor$_Inline_souhyd_a1a" />
+  <unitInfo fileName="PatternVariableReference_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor$_Inline_bm8m1i_a0a" />
+  <unitInfo fileName="OrPatternVariableReference_Editor.java" startLine="71" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor$_Inline_souhyd_a1a" />
   <unitInfo fileName="OrPatternClause_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternClause_Editor" />
   <unitInfo fileName="OrPattern_Editor.java" startLine="150" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor$variableListHandler_oeflkv_b0" />
   <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="45" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action0" />
@@ -19,12 +21,12 @@
   <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="322" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action6" />
   <unitInfo fileName="ListPattern_Editor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.ListPattern_Editor" />
   <unitInfo fileName="AsPattern_Editor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.AsPattern_Editor" />
-  <unitInfo fileName="PatternVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor" />
   <unitInfo fileName="PatternExpression_Editor.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternExpression_Editor" />
   <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="379" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap$_PatternExpression_KeyMap_Action7" />
-  <unitInfo fileName="OrPatternVariableReference_Editor.java" startLine="22" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor" />
-  <unitInfo fileName="ActionAsPattern_Editor.java" startLine="19" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.ActionAsPattern_Editor" />
+  <unitInfo fileName="PatternVariableReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternVariableReference_Editor" />
+  <unitInfo fileName="OrPatternVariableReference_Editor.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_Editor" />
   <unitInfo fileName="OrPattern_Editor.java" startLine="23" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPattern_Editor" />
+  <unitInfo fileName="ActionAsPattern_Editor.java" startLine="21" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.ActionAsPattern_Editor" />
   <unitInfo fileName="_PatternExpression_KeyMap.java" startLine="23" startPosition="0" endLine="447" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor._PatternExpression_KeyMap" />
   <root nodeId="1136721133135">
     <nodeInfo nodeId="1163601043079" fileName="_PatternExpression_KeyMap.java" startLine="75" startPosition="152" endLine="76" endPosition="66" />
@@ -144,6 +146,12 @@
       <varInfo nodeId="1176736750471" varName="role" />
       <varInfo nodeId="1176736750427" varName="selectedCell" />
     </scopeInfo>
+  </root>
+  <root nodeId="4413230749907733338">
+    <nodeInfo nodeId="8990057180226016477" fileName="ActionAsPattern_Editor.java" startLine="183" startPosition="111" endLine="184" endPosition="154" />
+    <nodeInfo nodeId="8990057180226016470" fileName="ActionAsPattern_Editor.java" startLine="187" startPosition="111" endLine="188" endPosition="151" />
+    <scopeInfo nodeId="8990057180225997313" fileName="ActionAsPattern_Editor.java" startLine="183" startPosition="111" endLine="184" endPosition="154" />
+    <scopeInfo nodeId="8990057180226003212" fileName="ActionAsPattern_Editor.java" startLine="187" startPosition="111" endLine="188" endPosition="151" />
   </root>
 </debugInfo>
 

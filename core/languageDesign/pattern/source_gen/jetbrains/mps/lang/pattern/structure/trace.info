@@ -3,15 +3,18 @@
   <unitInfo fileName="Pattern_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.Pattern_Language" />
   <unitInfo fileName="AsPattern_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.AsPattern_AnnotationLink" />
   <unitInfo fileName="Pattern_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.Pattern_AnnotationLink" />
+  <unitInfo fileName="InsertBeforePosition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.InsertBeforePosition" />
+  <unitInfo fileName="InsertAfterPosition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.InsertAfterPosition" />
   <unitInfo fileName="ListPattern.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.ListPattern" />
   <unitInfo fileName="WildcardPattern.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.WildcardPattern" />
   <unitInfo fileName="AsPattern.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.AsPattern" />
   <unitInfo fileName="ActionStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.ActionStatement" />
+  <unitInfo fileName="InsertPosition.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.InsertPosition" />
   <unitInfo fileName="Pattern.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.Pattern" />
   <unitInfo fileName="OrPatternClause.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.OrPatternClause" />
-  <unitInfo fileName="ActionAsPattern.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.ActionAsPattern" />
   <unitInfo fileName="OrPatternVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference" />
   <unitInfo fileName="PatternVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.PatternVariableReference" />
+  <unitInfo fileName="ActionAsPattern.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.ActionAsPattern" />
   <unitInfo fileName="PatternExpression.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.PatternExpression" />
   <unitInfo fileName="OrPattern.java" startLine="12" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.OrPattern" />
   <unitInfo fileName="PatternVariableDeclaration.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" />

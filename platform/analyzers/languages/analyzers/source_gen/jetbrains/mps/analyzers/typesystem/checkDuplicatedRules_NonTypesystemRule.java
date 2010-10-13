@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -21,7 +22,7 @@ public class checkDuplicatedRules_NonTypesystemRule extends AbstractNonTypesyste
   public checkDuplicatedRules_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode analyzer, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode analyzer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Set<String> names = SetSequence.fromSet(new HashSet());
     for (SNode ruleRef : SLinkOperations.getTargets(analyzer, "ruleReference", true)) {
       if (ruleRef == null || SLinkOperations.getTarget(ruleRef, "rule", false) == null) {
@@ -43,8 +44,11 @@ public class checkDuplicatedRules_NonTypesystemRule extends AbstractNonTypesyste
     return "jetbrains.mps.analyzers.structure.Analyzer";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

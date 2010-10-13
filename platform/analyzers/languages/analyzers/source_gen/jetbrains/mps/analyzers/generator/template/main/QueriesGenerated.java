@@ -169,11 +169,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7962250936070468118(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "position", true), "jetbrains.mps.analyzers.structure.InsertBeforePosition");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.pattern.structure.ActionAsPattern", false, false), "position", true), "jetbrains.mps.lang.pattern.structure.InsertBeforePosition");
   }
 
   public static boolean ifMacro_Condition_7962250936070467960(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "position", true), "jetbrains.mps.analyzers.structure.InsertBeforePosition");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "position", true), "jetbrains.mps.lang.pattern.structure.InsertBeforePosition");
   }
 
   public static boolean ifMacro_Condition_4352355327610857216(final IOperationContext operationContext, final IfMacroContext _context) {
