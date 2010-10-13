@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="631" startPosition="51" endLine="643" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="647" startPosition="51" endLine="659" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$2" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="663" startPosition="51" endLine="675" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$3" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="679" startPosition="51" endLine="691" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$4" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="695" startPosition="51" endLine="707" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$5" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="711" startPosition="51" endLine="723" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$6" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="639" startPosition="51" endLine="651" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="655" startPosition="51" endLine="667" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$2" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="671" startPosition="51" endLine="683" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$3" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="687" startPosition="51" endLine="699" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$4" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="703" startPosition="51" endLine="715" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$5" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="719" startPosition="51" endLine="731" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor$6" />
   <unitInfo fileName="typeof_DistinctOperation_InferenceRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_DistinctOperation_InferenceRule" />
   <unitInfo fileName="typeof_GetLastOperation_InferenceRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetLastOperation_InferenceRule" />
   <unitInfo fileName="typeof_GetFirstOperation_InferenceRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetFirstOperation_InferenceRule" />
@@ -74,6 +74,8 @@
   <unitInfo fileName="sequence_supertypeOf_set_SubtypingRule.java" startLine="103" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_supertypeOf_set_SubtypingRule$Pattern_5z9xz6_a0a0a0a2" />
   <unitInfo fileName="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" startLine="108" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.ClassifierType_Set_weakSupertypeOf_set_SubtypingRule$Pattern_jipg91_a0a0a0a2" />
   <unitInfo fileName="sequence_subtypeOf_sequence_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.sequence_subtypeOf_sequence_InequationReplacementRule" />
+  <unitInfo fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.set_covariant_with_extends_InequationReplacementRule" />
+  <unitInfo fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.list_covariant_with_extends_InequationReplacementRule" />
   <unitInfo fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.listType_with_vars_subtypeOf_listType_InequationReplacementRule" />
   <unitInfo fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule" />
   <unitInfo fileName="list_type_comparableWith_List_ComparisonRule.java" startLine="54" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.list_type_comparableWith_List_ComparisonRule$Pattern_ovtchh_a0a0a0a3" />
@@ -374,7 +376,7 @@
   <unitInfo fileName="typeof_MappingsSetOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MappingsSetOperation_InferenceRule" />
   <unitInfo fileName="typeof_ComparatorSortOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="312" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ComparatorSortOperation_InferenceRule" />
   <unitInfo fileName="typeof_GetIteratorOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_GetIteratorOperation_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="16" startPosition="0" endLine="728" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="16" startPosition="0" endLine="736" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
   <root nodeId="1115463791055875289">
     <nodeInfo nodeId="1115463791055875333" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
     <nodeInfo nodeId="1115463791055875308" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
@@ -774,9 +776,9 @@
     <nodeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="26" startPosition="222" endLine="27" endPosition="54" />
     <nodeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="368" />
     <nodeInfo nodeId="1184847124916" fileName="typeof_SkipOperation_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="81" />
-    <nodeInfo nodeId="1193828208997" fileName="TypesystemDescriptor.java" startLine="668" startPosition="54" endLine="669" endPosition="66" />
+    <nodeInfo nodeId="1193828208997" fileName="TypesystemDescriptor.java" startLine="676" startPosition="54" endLine="677" endPosition="66" />
     <nodeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="22" startPosition="115" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="1193828208996" fileName="TypesystemDescriptor.java" startLine="668" startPosition="54" endLine="669" endPosition="66" />
+    <scopeInfo nodeId="1193828208996" fileName="TypesystemDescriptor.java" startLine="676" startPosition="54" endLine="677" endPosition="66" />
     <scopeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="368" />
     <scopeInfo nodeId="1178725704936" fileName="typeof_SkipOperation_InferenceRule.java" startLine="22" startPosition="115" endLine="30" endPosition="81" />
   </root>
@@ -787,9 +789,9 @@
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="222" />
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="27" startPosition="222" endLine="28" endPosition="54" />
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="28" startPosition="54" endLine="29" endPosition="368" />
-    <nodeInfo nodeId="1193828223196" fileName="TypesystemDescriptor.java" startLine="700" startPosition="54" endLine="701" endPosition="66" />
+    <nodeInfo nodeId="1193828223196" fileName="TypesystemDescriptor.java" startLine="708" startPosition="54" endLine="709" endPosition="66" />
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="23" startPosition="81" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="1193828223195" fileName="TypesystemDescriptor.java" startLine="700" startPosition="54" endLine="701" endPosition="66" />
+    <scopeInfo nodeId="1193828223195" fileName="TypesystemDescriptor.java" startLine="708" startPosition="54" endLine="709" endPosition="66" />
     <scopeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="29" endPosition="368" />
     <scopeInfo nodeId="1178725704957" fileName="typeof_TakeOperation_InferenceRule.java" startLine="22" startPosition="115" endLine="30" endPosition="5" />
   </root>
@@ -805,10 +807,10 @@
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="33" startPosition="53" endLine="34" endPosition="222" />
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="34" startPosition="222" endLine="35" endPosition="54" />
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="35" startPosition="54" endLine="36" endPosition="368" />
-    <nodeInfo nodeId="1193828214768" fileName="TypesystemDescriptor.java" startLine="684" startPosition="54" endLine="685" endPosition="66" />
+    <nodeInfo nodeId="1193828214768" fileName="TypesystemDescriptor.java" startLine="692" startPosition="54" endLine="693" endPosition="66" />
     <nodeInfo nodeId="1184784238570" fileName="typeof_PageOperation_InferenceRule.java" startLine="23" startPosition="81" endLine="30" endPosition="5" />
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="30" startPosition="5" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1193828214767" fileName="TypesystemDescriptor.java" startLine="684" startPosition="54" endLine="685" endPosition="66" />
+    <scopeInfo nodeId="1193828214767" fileName="TypesystemDescriptor.java" startLine="692" startPosition="54" endLine="693" endPosition="66" />
     <scopeInfo nodeId="1184784238570" fileName="typeof_PageOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="29" endPosition="368" />
     <scopeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="31" startPosition="5" endLine="36" endPosition="368" />
     <scopeInfo nodeId="1178725704978" fileName="typeof_PageOperation_InferenceRule.java" startLine="22" startPosition="115" endLine="37" endPosition="5" />
@@ -825,10 +827,10 @@
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="34" startPosition="44" endLine="35" endPosition="53" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="35" startPosition="53" endLine="36" endPosition="222" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="36" startPosition="222" endLine="37" endPosition="447" />
-    <nodeInfo nodeId="1193827622269" fileName="TypesystemDescriptor.java" startLine="652" startPosition="54" endLine="653" endPosition="66" />
+    <nodeInfo nodeId="1193827622269" fileName="TypesystemDescriptor.java" startLine="660" startPosition="54" endLine="661" endPosition="66" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" />
     <nodeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="25" startPosition="104" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1193827557956" fileName="TypesystemDescriptor.java" startLine="652" startPosition="54" endLine="653" endPosition="66" />
+    <scopeInfo nodeId="1193827557956" fileName="TypesystemDescriptor.java" startLine="660" startPosition="54" endLine="661" endPosition="66" />
     <scopeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="33" startPosition="5" endLine="37" endPosition="447" />
     <scopeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="26" startPosition="5" endLine="31" endPosition="464" />
     <scopeInfo nodeId="1178725705103" fileName="typeof_ToListOperation_InferenceRule.java" startLine="23" startPosition="115" endLine="38" endPosition="5">
@@ -916,11 +918,11 @@
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="37" startPosition="52" endLine="38" endPosition="55" />
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="38" startPosition="55" endLine="39" endPosition="224" />
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="39" startPosition="224" endLine="40" endPosition="344" />
-    <nodeInfo nodeId="1193738075893" fileName="TypesystemDescriptor.java" startLine="636" startPosition="54" endLine="637" endPosition="55" />
+    <nodeInfo nodeId="1193738075893" fileName="TypesystemDescriptor.java" startLine="644" startPosition="54" endLine="645" endPosition="55" />
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="35" startPosition="7" endLine="41" endPosition="7" />
     <nodeInfo nodeId="1184772149777" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="28" startPosition="106" endLine="35" endPosition="7" />
     <nodeInfo nodeId="1178732133842" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="26" startPosition="93" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1193737368337" fileName="TypesystemDescriptor.java" startLine="636" startPosition="54" endLine="637" endPosition="55" />
+    <scopeInfo nodeId="1193737368337" fileName="TypesystemDescriptor.java" startLine="644" startPosition="54" endLine="645" endPosition="55" />
     <scopeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="36" startPosition="7" endLine="40" endPosition="344" />
     <scopeInfo nodeId="1184772149777" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="29" startPosition="7" endLine="34" endPosition="472" />
     <scopeInfo nodeId="1178732133843" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="27" startPosition="56" endLine="41" endPosition="7" />
@@ -1239,9 +1241,9 @@
   </root>
   <root nodeId="1178899814661">
     <nodeInfo nodeId="1184785386681" fileName="typeof_DistinctOperation_InferenceRule.java" startLine="16" startPosition="115" endLine="17" endPosition="81" />
-    <nodeInfo nodeId="1193828244817" fileName="TypesystemDescriptor.java" startLine="716" startPosition="54" endLine="717" endPosition="66" />
+    <nodeInfo nodeId="1193828244817" fileName="TypesystemDescriptor.java" startLine="724" startPosition="54" endLine="725" endPosition="66" />
     <scopeInfo nodeId="1178899814662" fileName="typeof_DistinctOperation_InferenceRule.java" startLine="16" startPosition="115" endLine="17" endPosition="81" />
-    <scopeInfo nodeId="1193828244816" fileName="TypesystemDescriptor.java" startLine="716" startPosition="54" endLine="717" endPosition="66" />
+    <scopeInfo nodeId="1193828244816" fileName="TypesystemDescriptor.java" startLine="724" startPosition="54" endLine="725" endPosition="66" />
   </root>
   <root nodeId="1179160244196">
     <nodeInfo nodeId="1179160424192" fileName="TypeUtil_Collections.java" startLine="23" startPosition="57" endLine="24" endPosition="200" />
@@ -3265,6 +3267,22 @@
     <nodeInfo nodeId="2976448425532787504" fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="28" startPosition="124" endLine="29" endPosition="207" />
     <scopeInfo nodeId="2976448425532787494" fileName="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" startLine="28" startPosition="124" endLine="29" endPosition="207" />
   </root>
+  <root nodeId="3031165383882167873">
+    <nodeInfo nodeId="5562883592575036744" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="22" endPosition="154" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="26" startPosition="5" endLine="27" endPosition="73" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="27" startPosition="73" endLine="28" endPosition="53" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="28" startPosition="53" endLine="29" endPosition="228" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="29" startPosition="228" endLine="30" endPosition="62" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="30" startPosition="62" endLine="31" endPosition="54" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="31" startPosition="54" endLine="32" endPosition="326" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="354" />
+    <nodeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="25" startPosition="185" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="3031165383882338569" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="22" endPosition="154" />
+    <scopeInfo nodeId="3031165383882167875" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="354" />
+    <scopeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="354" />
+    <scopeInfo nodeId="5562883592575036766" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="26" startPosition="5" endLine="32" endPosition="326" />
+    <scopeInfo nodeId="3031165383882167875" fileName="list_covariant_with_extends_InequationReplacementRule.java" startLine="25" startPosition="185" endLine="33" endPosition="5" />
+  </root>
   <root nodeId="3055999550620863368">
     <nodeInfo nodeId="3055999550620863371" fileName="typeof_RemoveWhereOperation_InferenceRule.java" startLine="26" startPosition="116" endLine="27" endPosition="109" />
     <nodeInfo nodeId="3055999550620867612" fileName="typeof_RemoveWhereOperation_InferenceRule.java" startLine="27" startPosition="109" endLine="28" endPosition="111" />
@@ -3558,6 +3576,22 @@
   <root nodeId="6801639034384806488">
     <nodeInfo nodeId="6801639034384806490" fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="174" />
     <scopeInfo nodeId="6801639034384806489" fileName="stack_supertypeOf_deque_SubtypingRule.java" startLine="22" startPosition="119" endLine="23" endPosition="174" />
+  </root>
+  <root nodeId="7707298106572005943">
+    <nodeInfo nodeId="7707298106572009282" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="22" endPosition="154" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="26" startPosition="5" endLine="27" endPosition="73" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="27" startPosition="73" endLine="28" endPosition="53" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="28" startPosition="53" endLine="29" endPosition="228" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="29" startPosition="228" endLine="30" endPosition="62" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="30" startPosition="62" endLine="31" endPosition="54" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="31" startPosition="54" endLine="32" endPosition="326" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="354" />
+    <nodeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="25" startPosition="185" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="7707298106572008027" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="22" endPosition="154" />
+    <scopeInfo nodeId="7707298106572005945" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="354" />
+    <scopeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="354" />
+    <scopeInfo nodeId="7707298106572041860" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="26" startPosition="5" endLine="32" endPosition="326" />
+    <scopeInfo nodeId="7707298106572005945" fileName="set_covariant_with_extends_InequationReplacementRule.java" startLine="25" startPosition="185" endLine="33" endPosition="5" />
   </root>
 </debugInfo>
 

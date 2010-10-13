@@ -2111,6 +2111,76 @@
     <unitInfo nodeId="3055999550621094373" fileName="RemoveWhereTest_Test.java" startLine="17" startPosition="46" endLine="21" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test$1" />
     <unitInfo nodeId="3055999550621124154" fileName="RemoveWhereTest_Test.java" startLine="28" startPosition="66" endLine="32" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test$2" />
   </root>
+  <root nodeId="31512844700222138">
+    <nodeInfo nodeId="31512844700222139" fileName="MPS10313.java" startLine="13" startPosition="26" endLine="14" endPosition="33" />
+    <nodeInfo nodeId="31512844700222157" fileName="MPS10313.java" startLine="20" startPosition="91" endLine="21" endPosition="19" />
+    <nodeInfo nodeId="31512844700222163" fileName="MPS10313.java" startLine="24" startPosition="326" endLine="25" endPosition="21" />
+    <nodeInfo nodeId="31512844700222193" fileName="MPS10313.java" startLine="27" startPosition="5" endLine="28" endPosition="16" />
+    <nodeInfo nodeId="5562883592575009925" fileName="MPS10313.java" startLine="33" startPosition="44" endLine="34" endPosition="69" />
+    <nodeInfo nodeId="5562883592574828339" fileName="MPS10313.java" startLine="42" startPosition="23" endLine="43" endPosition="128" />
+    <nodeInfo nodeId="3031165383882147767" fileName="MPS10313.java" startLine="49" startPosition="23" endLine="50" endPosition="141" />
+    <nodeInfo nodeId="5562883592574833595" fileName="MPS10313.java" startLine="56" startPosition="23" endLine="57" endPosition="128" />
+    <nodeInfo nodeId="31512844700222224" fileName="MPS10313.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
+    <nodeInfo nodeId="3031165383882147748" fileName="MPS10313.java" startLine="60" startPosition="27" endLine="62" endPosition="5" />
+    <nodeInfo nodeId="3031165383882147756" fileName="MPS10313.java" startLine="65" startPosition="48" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="31512844700222148" fileName="MPS10313.java" startLine="19" startPosition="65" endLine="22" endPosition="5" />
+    <nodeInfo nodeId="31512844700222161" fileName="MPS10313.java" startLine="23" startPosition="69" endLine="26" endPosition="7" />
+    <nodeInfo nodeId="5562883592574828325" fileName="MPS10313.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="3031165383882147115" fileName="MPS10313.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="5562883592574833575" fileName="MPS10313.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="98" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="5562883592574828335" fileName="MPS10313.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="3031165383882147763" fileName="MPS10313.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="5562883592574833587" fileName="MPS10313.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="31512844700222159" fileName="MPS10313.java" startLine="22" startPosition="5" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="31512844700222203" fileName="MPS10313.java" startLine="31" startPosition="48" endLine="36" endPosition="25" />
+    <nodeInfo nodeId="31512844700222200" fileName="MPS10313.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="31512844700222144" fileName="MPS10313.java" startLine="18" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="31512844700222227" fileName="MPS10313.java" startLine="16" startPosition="21" endLine="16" endPosition="21" />
+    <scopeInfo nodeId="5562883592574828328" fileName="MPS10313.java" startLine="39" startPosition="72" endLine="39" endPosition="72" />
+    <scopeInfo nodeId="3031165383882147118" fileName="MPS10313.java" startLine="46" startPosition="85" endLine="46" endPosition="85" />
+    <scopeInfo nodeId="5562883592574833578" fileName="MPS10313.java" startLine="53" startPosition="72" endLine="53" endPosition="72" />
+    <scopeInfo nodeId="3031165383882147751" fileName="MPS10313.java" startLine="61" startPosition="18" endLine="61" endPosition="18" />
+    <scopeInfo nodeId="3031165383882147759" fileName="MPS10313.java" startLine="66" startPosition="18" endLine="66" endPosition="18" />
+    <scopeInfo nodeId="31512844700222156" fileName="MPS10313.java" startLine="20" startPosition="91" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="31512844700222162" fileName="MPS10313.java" startLine="24" startPosition="326" endLine="25" endPosition="21" />
+    <scopeInfo nodeId="5562883592575009924" fileName="MPS10313.java" startLine="33" startPosition="44" endLine="34" endPosition="69" />
+    <scopeInfo nodeId="5562883592574828338" fileName="MPS10313.java" startLine="42" startPosition="23" endLine="43" endPosition="128" />
+    <scopeInfo nodeId="3031165383882147766" fileName="MPS10313.java" startLine="49" startPosition="23" endLine="50" endPosition="141" />
+    <scopeInfo nodeId="5562883592574833590" fileName="MPS10313.java" startLine="56" startPosition="23" endLine="57" endPosition="128" />
+    <scopeInfo nodeId="31512844700222224" fileName="MPS10313.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="3031165383882147748" fileName="MPS10313.java" startLine="60" startPosition="27" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="3031165383882147756" fileName="MPS10313.java" startLine="65" startPosition="48" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="31512844700222160" fileName="MPS10313.java" startLine="23" startPosition="69" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="5562883592574828325" fileName="MPS10313.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5562883592574828329" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="3031165383882147115" fileName="MPS10313.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="3031165383882147741" varName="foos" />
+    </scopeInfo>
+    <scopeInfo nodeId="5562883592574833575" fileName="MPS10313.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5562883592574833579" varName="foos" />
+    </scopeInfo>
+    <scopeInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="98" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5562883592574828335" fileName="MPS10313.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3031165383882147763" fileName="MPS10313.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5562883592574833587" fileName="MPS10313.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="31512844700222159" fileName="MPS10313.java" startLine="22" startPosition="5" endLine="27" endPosition="5">
+      <varInfo nodeId="31512844700222183" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="31512844700222202" fileName="MPS10313.java" startLine="31" startPosition="48" endLine="36" endPosition="25" />
+    <scopeInfo nodeId="31512844700222200" fileName="MPS10313.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="31512844700222220" varName="values" />
+    </scopeInfo>
+    <scopeInfo nodeId="31512844700222147" fileName="MPS10313.java" startLine="19" startPosition="65" endLine="28" endPosition="16" />
+    <scopeInfo nodeId="31512844700222144" fileName="MPS10313.java" startLine="18" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="31512844700222195" varName="values" />
+    </scopeInfo>
+    <unitInfo nodeId="5562883592575009923" fileName="MPS10313.java" startLine="32" startPosition="64" endLine="36" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.ISelector$anonymous" />
+    <unitInfo nodeId="3031165383882147746" fileName="MPS10313.java" startLine="60" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$Foo" />
+    <unitInfo nodeId="3031165383882147754" fileName="MPS10313.java" startLine="65" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313$Bar" />
+    <unitInfo nodeId="31512844700222138" fileName="MPS10313.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.MPS10313" />
+  </root>
   <root nodeId="5192201647735776239">
     <nodeInfo nodeId="5192201647735776424" fileName="Advanced_Test.java" startLine="62" startPosition="45" endLine="62" endPosition="45" />
     <nodeInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="92" startPosition="27" endLine="92" endPosition="27" />
@@ -2218,6 +2288,32 @@
     <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="16" startPosition="23" endLine="101" endPosition="13" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$3" />
     <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="14" startPosition="19" endLine="103" endPosition="9" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$2" />
     <unitInfo nodeId="5192201647735776407" fileName="Advanced_Test.java" startLine="12" startPosition="53" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test$1" />
+  </root>
+  <root nodeId="5562883592574833608">
+    <nodeInfo nodeId="5562883592574833652" fileName="TypesystemTest.java" startLine="16" startPosition="23" endLine="17" endPosition="143" />
+    <nodeInfo nodeId="5562883592574833641" fileName="TypesystemTest.java" startLine="17" startPosition="143" endLine="18" endPosition="32" />
+    <nodeInfo nodeId="5562883592574833610" fileName="TypesystemTest.java" startLine="9" startPosition="29" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="5562883592574833617" fileName="TypesystemTest.java" startLine="21" startPosition="27" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="5562883592574833623" fileName="TypesystemTest.java" startLine="26" startPosition="54" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="5562883592574833629" fileName="TypesystemTest.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
+    <nodeInfo nodeId="5562883592574833637" fileName="TypesystemTest.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="5562883592574833613" fileName="TypesystemTest.java" startLine="10" startPosition="27" endLine="10" endPosition="27" />
+    <scopeInfo nodeId="5562883592574833632" fileName="TypesystemTest.java" startLine="13" startPosition="78" endLine="13" endPosition="78" />
+    <scopeInfo nodeId="5562883592574833620" fileName="TypesystemTest.java" startLine="22" startPosition="18" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="5562883592574833626" fileName="TypesystemTest.java" startLine="27" startPosition="18" endLine="27" endPosition="18" />
+    <scopeInfo nodeId="5562883592574833610" fileName="TypesystemTest.java" startLine="9" startPosition="29" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="5562883592574833640" fileName="TypesystemTest.java" startLine="16" startPosition="23" endLine="18" endPosition="32">
+      <varInfo nodeId="5562883592574833653" varName="bars" />
+    </scopeInfo>
+    <scopeInfo nodeId="5562883592574833617" fileName="TypesystemTest.java" startLine="21" startPosition="27" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="5562883592574833623" fileName="TypesystemTest.java" startLine="26" startPosition="54" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="5562883592574833629" fileName="TypesystemTest.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="5562883592574833633" varName="foos" />
+    </scopeInfo>
+    <scopeInfo nodeId="5562883592574833637" fileName="TypesystemTest.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="5562883592574833615" fileName="TypesystemTest.java" startLine="21" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.TypesystemTest$Foo" />
+    <unitInfo nodeId="5562883592574833621" fileName="TypesystemTest.java" startLine="26" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.TypesystemTest$Bar" />
+    <unitInfo nodeId="5562883592574833608" fileName="TypesystemTest.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.TypesystemTest" />
   </root>
 </debugInfo>
 
