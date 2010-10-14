@@ -311,4 +311,28 @@ public class SModelOperations {
       sModel.addAspectModelsVersions(language, false);
     }
   }
+
+  @Deprecated
+  static void validateLanguages(SModel sModel, SNode node) {
+    Collection<ModuleReference> allrefs = getAllImportedLanguages(sModel);
+    Set<String> available = new HashSet<String>(allrefs.size());
+    for (ModuleReference ref : allrefs) {
+      available.add(ref.getModuleFqName());
+    }
+    for (SNode n : node.getDescendantsIterable(null, true)) {
+      String namespace = n.getLanguageNamespace();
+      if (!available.contains(namespace)) {
+        available.add(namespace);
+        Language lang = GlobalScope.getInstance().getLanguage(namespace);
+        if (lang != null) {
+          sModel.addLanguage(lang.getModuleReference());
+          // add language also to module if necessary
+          IModule module = sModel.getModelDescriptor() == null ? null : sModel.getModelDescriptor().getModule();
+          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+            module.addUsedLanguage(lang.getModuleReference());
+          }
+        }
+      }
+    }
+  }
 }

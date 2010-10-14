@@ -22,8 +22,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -889,29 +887,5 @@ public class SModel {
       }
     }
     return result;
-  }
-
-  @Deprecated
-  void validateLanguages(SNode node) {
-    Collection<ModuleReference> allrefs = SModelOperations.getAllImportedLanguages(this);
-    Set<String> available = new HashSet<String>(allrefs.size());
-    for (ModuleReference ref : allrefs) {
-      available.add(ref.getModuleFqName());
-    }
-    for (SNode n : node.getDescendantsIterable(null, true)) {
-      String namespace = n.getLanguageNamespace();
-      if (!available.contains(namespace)) {
-        available.add(namespace);
-        Language lang = GlobalScope.getInstance().getLanguage(namespace);
-        if (lang != null) {
-          addLanguage(lang.getModuleReference());
-          // add language also to module if necessary
-          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
-          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
-            module.addUsedLanguage(lang.getModuleReference());
-          }
-        }
-      }
-    }
   }
 }

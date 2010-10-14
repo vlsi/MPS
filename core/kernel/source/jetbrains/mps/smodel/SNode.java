@@ -1053,7 +1053,7 @@ public final class SNode {
 
     // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
-    model.validateLanguages(this);
+    SModelOperations.validateLanguages(model, this);
   }
 
   private void registerInModel_internal(SModel model) {
