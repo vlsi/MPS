@@ -16,6 +16,7 @@ public class NodeReferentConstraint extends BaseConcept {
   public static final String VALIDATOR = "validator";
   public static final String PRESENTATION = "presentation";
   public static final String REFERENT_SET_HANDLER = "referentSetHandler";
+  public static final String KEEPS_REFERENCE = "keepsReference";
 
   public NodeReferentConstraint(SNode node) {
     super(node);
@@ -59,6 +60,14 @@ public class NodeReferentConstraint extends BaseConcept {
 
   public void setReferentSetHandler(ConstraintFunction_ReferentSetHandler node) {
     super.setChild(NodeReferentConstraint.REFERENT_SET_HANDLER, node);
+  }
+
+  public ConstraintFunction_RefSetHandlerKeepsReference getKeepsReference() {
+    return (ConstraintFunction_RefSetHandlerKeepsReference) this.getChild(ConstraintFunction_RefSetHandlerKeepsReference.class, NodeReferentConstraint.KEEPS_REFERENCE);
+  }
+
+  public void setKeepsReference(ConstraintFunction_RefSetHandlerKeepsReference node) {
+    super.setChild(NodeReferentConstraint.KEEPS_REFERENCE, node);
   }
 
   public static NodeReferentConstraint newInstance(SModel sm, boolean init) {

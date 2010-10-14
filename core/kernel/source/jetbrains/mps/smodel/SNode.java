@@ -25,10 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.constraints.INodePropertyGetter;
-import jetbrains.mps.smodel.constraints.INodePropertySetter;
-import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -1159,6 +1156,52 @@ public final class SNode {
     if (toDelete.size() > 1) {
       LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
     }
+    SReference resultReference = null;
+    boolean referenceKept = true;
+    if (useHandler && !getModel().isLoading()) {
+      // invoke custom referent set event handler
+      Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
+      Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
+      if (!threadSet.contains(pair)) {
+        INodeReferentSetEventHandler handler = CONSTRAINTS_MANAGER.getNodeReferentSetEventHandler(this, role);
+        if (handler != null) {
+          threadSet.add(pair);
+          try {
+            if (handler instanceof INodeReferenceFullSetHandler) {
+              if (((INodeReferenceFullSetHandler)handler).keepsOriginalReference(this, oldReferent, newReferent, GlobalScope.getInstance())) {
+                resultReference = doSetReference(role, newReferent, toDelete);
+              } else {
+                referenceKept = false;
+              }
+            } else {
+              resultReference = doSetReference(role, newReferent, toDelete);
+            }
+            handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
+            if (!referenceKept) {
+              if (myReferences != null) {
+                for (SReference reference : myReferences) {
+                  if (reference.getRole().equals(role)) {
+                    resultReference = reference;
+                    break;
+                  }
+                }
+              }
+            }
+          } finally {
+            threadSet.remove(pair);
+          }
+        }
+      } else {
+        resultReference = doSetReference(role, newReferent, toDelete);
+      }
+    } else {
+      resultReference = doSetReference(role, newReferent, toDelete);
+    }
+
+    return resultReference;
+  }
+
+  private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
     for (SReference reference : toDelete) {
       int index = _reference().indexOf(reference);
       removeReferenceAt(index);
@@ -1169,24 +1212,6 @@ public final class SNode {
       resultReference = SReference.create(role, this, newReferent);
       insertReferenceAt(myReferences == null ? 0 : myReferences.length, resultReference);
     }
-
-    if (useHandler && !getModel().isLoading()) {
-      // invoke custom referent set event handler
-      Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
-      Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
-      if (!threadSet.contains(pair)) {
-        INodeReferentSetEventHandler handler = CONSTRAINTS_MANAGER.getNodeReferentSetEventHandler(this, role);
-        if (handler != null) {
-          threadSet.add(pair);
-          try {
-            handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
-          } finally {
-            threadSet.remove(pair);
-          }
-        }
-      }
-    }
-
     return resultReference;
   }
 

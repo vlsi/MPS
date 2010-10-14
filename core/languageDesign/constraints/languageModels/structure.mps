@@ -4112,6 +4112,11 @@
       <property name="role:0" value="referentSetHandler" />
       <link role="target:0" targetNodeId="1163200368514:8" resolveInfo="ConstraintFunction_ReferentSetHandler" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8830318409774605087">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="keepsReference" />
+      <link role="target:0" targetNodeId="4962705936936018688:8" resolveInfo="ConstraintFunction_RefSetHandlerKeepsReference" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1158954542247">
       <property name="value:0" value="link {&lt;{applicableLink}&gt;}" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
@@ -4738,6 +4743,35 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217021">
       <property name="value:0" value="node to be validated" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4962705936936018688">
+    <property name="package:0" value="Functions" />
+    <property name="name:0" value="ConstraintFunction_RefSetHandlerKeepsReference" />
+    <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4962705936936018693">
+      <property name="value:0" value="keeps reference" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4962705936936018694">
+      <property name="value:0" value="whether reference set handler keeps original reference" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4962705936936018689">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1163200647017:8" resolveInfo="ConstraintFunctionParameter_referenceNode" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4962705936936018690">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1163202694127:8" resolveInfo="ConstraintFunctionParameter_oldReferentNode" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4962705936936018691">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1163202640154:8" resolveInfo="ConstraintFunctionParameter_newReferentNode" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4962705936936018692">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="11.1161622878565:0" resolveInfo="ConceptFunctionParameter_scope" />
     </node>
   </node>
 </model>

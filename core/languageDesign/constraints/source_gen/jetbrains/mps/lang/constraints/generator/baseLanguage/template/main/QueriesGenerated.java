@@ -240,6 +240,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a7a54().createNode(), "baseMethodDeclaration", false);
   }
 
+  public static boolean ifMacro_Condition_8830318409774605085(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "keepsReference", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_8830318409774646802(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "keepsReference", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1213106765274(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true) != null;
   }
@@ -270,6 +278,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184609613810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "referentSetHandler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8830318409774646786(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "keepsReference", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1184609310103(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
