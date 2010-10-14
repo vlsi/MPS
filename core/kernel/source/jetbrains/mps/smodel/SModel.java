@@ -108,6 +108,12 @@ public class SModel {
     myModelDescriptor = modelDescriptor;
   }
 
+  //---------incremental load--------
+
+  private void enforceFullLoad(){
+
+  }
+
   //---------roots manipulation--------
 
   public final Iterable<SNode> roots() {
@@ -124,6 +130,7 @@ public class SModel {
 
   public void addRoot(@NotNull SNode node) {
     ModelChange.assertLegalNodeRegistration(this, node);
+    enforceFullLoad();
     if (myRoots.contains(node)) return;
     if (node.getModel() != this && node.isRoot()) {
       node.getModel().removeRoot(node);
@@ -144,6 +151,7 @@ public class SModel {
 
   public void removeRoot(@NotNull SNode node) {
     ModelChange.assertLegalNodeUnRegistration(this, node);
+    enforceFullLoad();
     if (myRoots.contains(node)) {
       myRoots.remove(node);
       node.unRegisterFromModel();
@@ -169,6 +177,7 @@ public class SModel {
   }
 
   public int registeredNodesCount() {
+    enforceFullLoad();
     return myIdToNodeMap.size();
   }
 
@@ -403,25 +412,6 @@ public class SModel {
 
   //---------node id--------
 
-  @Nullable
-  public SNode getNodeById(String idString) {
-    SNodeId nodeId = SNodeId.fromString(idString);
-    return getNodeById(nodeId);
-  }
-
-  @Nullable
-  public SNode getNodeById(SNodeId nodeId) {
-    checkNotDisposed();
-    if (myDisposed) return null;
-    return myIdToNodeMap.get(nodeId);
-  }
-
-  public Set<SNodeId> getNodeIds() {
-    checkNotDisposed();
-    if (myDisposed) return Collections.emptySet();
-    return new HashSet<SNodeId>(myIdToNodeMap.keySet());
-  }
-
   private static AtomicLong ourCounter = new AtomicLong();
 
   static {
@@ -437,11 +427,18 @@ public class SModel {
     return new SNodeId.Regular(id);
   }
 
-  @NotNull
-  public Collection<SNode> getAllNodesWithIds() {
+  public Map<SNodeId,SNode> getNodeIdToNodeMap(){
     checkNotDisposed();
-    if (myDisposed) return Collections.emptySet();
-    return Collections.unmodifiableCollection(myIdToNodeMap.values());
+    if (myDisposed) return Collections.emptyMap();
+    return Collections.unmodifiableMap(myIdToNodeMap);
+  }
+
+  @Nullable
+  public SNode getNodeById(SNodeId nodeId) {
+    enforceFullLoad();
+    checkNotDisposed();
+    if (myDisposed) return null;
+    return myIdToNodeMap.get(nodeId);
   }
 
   //---------node registration--------
@@ -840,6 +837,12 @@ public class SModel {
 
   //---------deprecated--------
 
+  @Nullable
+  public SNode getNodeById(String idString) {
+    SNodeId nodeId = SNodeId.fromString(idString);
+    return getNodeById(nodeId);
+  }
+
   @Deprecated
   //to use in old persistence
   public void addModelImport(ImportElement importElement) {
@@ -887,5 +890,13 @@ public class SModel {
       }
     }
     return result;
+  }
+
+  @Deprecated
+  @NotNull
+  public Collection<SNode> getAllNodesWithIds() {
+    checkNotDisposed();
+    if (myDisposed) return Collections.emptySet();
+    return Collections.unmodifiableCollection(myIdToNodeMap.values());
   }
 }
