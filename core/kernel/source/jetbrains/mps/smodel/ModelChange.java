@@ -17,6 +17,9 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ModelChange {
   private static final boolean FREEZE_CHECKS_ENABLED = true;
 
@@ -54,7 +57,7 @@ public class ModelChange {
 
   //----------frozen mode---------
 
-  private static final Object FROZEN_KEY = new Object();
+  private static final Set<SNode> myFrozenNodes = new HashSet<SNode>();
 
   public static <T> T freezeAndCompute(SNode node, Computable<T> computable) {
     if (isFrozen(node)) {
@@ -69,21 +72,20 @@ public class ModelChange {
   }
 
   private static void freeze(SNode node) {
-    node.putUserObject(FROZEN_KEY, FROZEN_KEY);
+    myFrozenNodes.add(node);
     for (SNode child : node.getChildrenIterable()) {
       freeze(child);
     }
   }
 
   private static void unfreeze(SNode node) {
-    node.removeUserObject(FROZEN_KEY);
+    myFrozenNodes.remove(node);
     for (SNode child : node.getChildrenIterable()) {
       unfreeze(child);
     }
   }
 
   private static boolean isFrozen(SNode node) {
-    return node.getUserObject(FROZEN_KEY) != null;
+    return myFrozenNodes.contains(node);
   }
-
 }
