@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.make.script.IMonitor" file="IMonitor.java" />
+  <dependency className="jetbrains.mps.make.script.IScript" file="IScript.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.script.IMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.Result" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.ITask" file="ITask.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.resources.ResourcePool" />
+    <classNode dependClassName="jetbrains.mps.make.script.IMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.Result" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.Result" file="Result.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+  </dependency>
+</dependenciesRoot>
+

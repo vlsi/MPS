@@ -12,7 +12,7 @@ import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.make.runtime.internal.util.GraphAnalyzer;
+import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
 public class Graph<V> {
   private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6168415856807659180">
+    <nodeInfo nodeId="6168415856807659181" fileName="WorkflowEngine.java" startLine="7" startPosition="29" endLine="8" endPosition="69" />
+    <nodeInfo nodeId="6168415856807659186" fileName="WorkflowEngine.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="6168415856807659189" fileName="WorkflowEngine.java" startLine="10" startPosition="27" endLine="10" endPosition="27" />
+    <scopeInfo nodeId="6168415856807659186" fileName="WorkflowEngine.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <unitInfo nodeId="6168415856807659180" fileName="WorkflowEngine.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.WorkflowEngine" />
+  </root>
+</debugInfo>
+

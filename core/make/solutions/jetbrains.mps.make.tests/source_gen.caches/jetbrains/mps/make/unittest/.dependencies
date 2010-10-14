@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Graph" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
@@ -22,8 +22,8 @@
   <dependency className="jetbrains.mps.make.unittest.FacetRegistry_Test" file="FacetRegistry_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.IFacet" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.internal.FacetRegistry" />
+    <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
@@ -42,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.MockTestCase" file="MockTestCase.java">
     <classNode dependClassName="java.lang.Override" />
@@ -54,8 +54,8 @@
   <dependency className="jetbrains.mps.make.unittest.Mockups" file="Mockups.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.IFacet" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="org.jmock.Mockery" />
   </dependency>
@@ -67,11 +67,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.IFacet" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.IScript" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.ITarget" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.internal.FacetRegistry" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.script.ScriptBuilder" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ScriptBuilder" />
+    <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jmock.Expectations" />
@@ -83,8 +83,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.ITarget" />
-    <classNode dependClassName="jetbrains.mps.make.runtime.script.TargetRange" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TargetRange" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jmock.Expectations" />
