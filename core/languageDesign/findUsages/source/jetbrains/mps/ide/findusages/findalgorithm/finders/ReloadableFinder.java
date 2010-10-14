@@ -48,11 +48,8 @@ public class ReloadableFinder implements IInterfacedFinder {
       GeneratedFinder finder = null;
       try {
         finder = finderClass.newInstance();
-      } catch (InstantiationException e) {
-        LOG.error(e);
-        return null;
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
+      } catch (Throwable t) {
+        LOG.error(t);
         return null;
       }
       myFinder = new WeakReference<GeneratedFinder>(finder);

@@ -91,10 +91,8 @@ public class DataFlowManager implements ApplicationComponent {
           try {
             builders = buildersClass.newInstance();
             builders.install(this);
-          } catch (InstantiationException e) {
-            LOG.error(e);
-          } catch (IllegalAccessException e) {
-            LOG.error(e);
+          } catch (Throwable t) {
+            LOG.error(t);
           }
         }
       }

@@ -138,8 +138,8 @@ public class FindersManager implements ApplicationComponent {
                   myFinders.put(conceptName, finders);
                   myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
                 }
-              } catch (Exception e) {
-                LOG.error(e, finderDeclaration);
+              } catch (Throwable t) {
+                LOG.error(t, finderDeclaration);
               }
             }
           }

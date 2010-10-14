@@ -138,10 +138,8 @@ public class StubReloadManager implements ApplicationComponent {
         try {
           BaseLibStubDescriptor descr = (BaseLibStubDescriptor) descrClass.newInstance();
           result.add(descr);
-        } catch (InstantiationException e) {
-          LOG.error(e);
-        } catch (IllegalAccessException e) {
-          LOG.error(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
     }

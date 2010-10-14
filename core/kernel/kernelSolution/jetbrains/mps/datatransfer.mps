@@ -961,9 +961,9 @@
                     </node>
                     <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1058093769519031431">
                       <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1058093769519031432">
-                        <property name="name:3" value="ex" />
-                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1058093769519031433">
-                          <link role="classifier:3" targetNodeId="12.~InstantiationException" resolveInfo="InstantiationException" />
+                        <property name="name:3" value="t" />
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7496710234044978326">
+                          <link role="classifier:3" targetNodeId="12.~Throwable" resolveInfo="Throwable" />
                         </node>
                       </node>
                       <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1058093769519031434">
@@ -976,29 +976,6 @@
                               <link role="baseMethodDeclaration:3" targetNodeId="7.~Logger.error(java.lang.Throwable):void" resolveInfo="error" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1058093769519031441">
                                 <link role="variableDeclaration:3" targetNodeId="1058093769519031432" resolveInfo="ex" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1058093769519031442">
-                      <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1058093769519031443">
-                        <property name="name:3" value="ex" />
-                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1058093769519031444">
-                          <link role="classifier:3" targetNodeId="12.~IllegalAccessException" resolveInfo="IllegalAccessException" />
-                        </node>
-                      </node>
-                      <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1058093769519031445">
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1058093769519031446">
-                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1058093769519031447">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639022">
-                              <link role="variableDeclaration:3" targetNodeId="1058093769519031491" resolveInfo="myLog" />
-                            </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1058093769519031451">
-                              <link role="baseMethodDeclaration:3" targetNodeId="7.~Logger.error(java.lang.Throwable):void" resolveInfo="error" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1058093769519031452">
-                                <link role="variableDeclaration:3" targetNodeId="1058093769519031443" resolveInfo="ex" />
                               </node>
                             </node>
                           </node>

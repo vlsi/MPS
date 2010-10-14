@@ -60,13 +60,9 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
       MPSEditorStateWrapper result = new MPSEditorStateWrapper();
       result.setEditorState(instance);
       return result;
-    } catch (ClassNotFoundException e) {
-      LOG.error(e);
-    } catch (IllegalAccessException e) {
-      LOG.error(e);
-    } catch (InstantiationException e) {
-      LOG.error(e);
-    }
+    } catch (Throwable t) {
+      LOG.error(t);
+    } 
 
     return FileEditorState.INSTANCE;
   }

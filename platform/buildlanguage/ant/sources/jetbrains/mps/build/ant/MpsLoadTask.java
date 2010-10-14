@@ -198,16 +198,8 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         Method method = generatorClass.getMethod("work");
         method.invoke(generator);
 
-      } catch (ClassNotFoundException e) {
-        throw new BuildException(e.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
-      } catch (NoSuchMethodException e) {
-        throw new BuildException(e);
-      } catch (InvocationTargetException e) {
-        throw new BuildException(e.getTargetException());
-      } catch (IllegalAccessException e) {
-        throw new BuildException(e);
-      } catch (InstantiationException e) {
-        throw new BuildException(e);
+      } catch (Throwable t) {
+        throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
       }
     }
   }

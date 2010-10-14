@@ -47,10 +47,8 @@ public abstract class AbstractManager {
         if (postProcessorClass != null) {
           try {
             myInstance = (T) postProcessorClass.newInstance();
-          } catch (InstantiationException ex) {
-            myLog.error(ex);
-          } catch (IllegalAccessException ex) {
-            myLog.error(ex);
+          } catch (Throwable t) {
+            myLog.error(t);
           }
         } else {
           myLog.warning("Class not found (probably code for corresponding model should be regenerated): " + myClassName);
