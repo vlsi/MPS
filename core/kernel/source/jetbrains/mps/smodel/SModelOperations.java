@@ -89,6 +89,7 @@ public class SModelOperations {
     importedModels.clear();
   }
 
+  //todo rewrite using iterators
   public static boolean hasLanguage(SModel model, @NotNull ModuleReference ref) {
     return getAllImportedLanguages(model).contains(ref);
   }
@@ -97,6 +98,7 @@ public class SModelOperations {
     addLanguage(model, ref, false);
   }
 
+  //todo rewrite using iterators
   @NotNull
   public static List<Language> getLanguages(SModel model, @NotNull IScope scope) {
     Set<Language> languages = new LinkedHashSet<Language>();
@@ -131,6 +133,7 @@ public class SModelOperations {
     return new ArrayList<Language>(languages);
   }
 
+  //todo rewrite using iterators
   @NotNull
   public static Set<ModuleReference> getAllImportedLanguages(SModel model) {
     List<ModuleReference> langs = model.importedLanguages();
@@ -147,6 +150,7 @@ public class SModelOperations {
     return result;
   }
 
+  //todo rewrite using iterators
   public static Set<ModuleReference> getUsedLanguages(SModel model) {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
     for (SNode node : model.nodes()) {
@@ -157,6 +161,7 @@ public class SModelOperations {
     return result;
   }
 
+  //todo rewrite using iterators
   public static List<SModelDescriptor> allImportedModels(SModel model, IScope scope) {
     SModelDescriptor sourceModel = model.getModelDescriptor();
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
@@ -194,6 +199,7 @@ public class SModelOperations {
     return null;
   }
 
+  //todo rewrite using iterators
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
     List<SModelReference> references = new ArrayList<SModelReference>();
@@ -203,6 +209,7 @@ public class SModelOperations {
     return Collections.unmodifiableList(references);
   }
 
+  //todo rewrite using iterators
   @NotNull
   public static Set<SModelDescriptor> getDependenciesModels(SModel sModel) {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(sModel, GlobalScope.getInstance()));
@@ -212,6 +219,7 @@ public class SModelOperations {
     return modelDescriptors;
   }
 
+  //todo rewrite using iterators
   @NotNull
   public static Set<SModelReference> getDependenciesModelRefs(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
@@ -221,6 +229,7 @@ public class SModelOperations {
     return result;
   }
 
+  //todo rewrite using iterators
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : sModel.nodes()) {
@@ -273,6 +282,7 @@ public class SModelOperations {
     return null;
   }
 
+  //todo rewrite using iterators
   @NotNull
   private static List<SModelDescriptor> importedModels(SModel model, @NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
@@ -312,7 +322,6 @@ public class SModelOperations {
     }
   }
 
-  @Deprecated
   static void validateLanguages(SModel sModel, SNode node) {
     Collection<ModuleReference> allrefs = getAllImportedLanguages(sModel);
     Set<String> available = new HashSet<String>(allrefs.size());
