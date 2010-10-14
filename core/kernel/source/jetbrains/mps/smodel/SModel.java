@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
@@ -110,7 +109,9 @@ public class SModel {
 
   //---------incremental load--------
 
-  private void enforceFullLoad(){
+  //todo try to remove as many usages as possible
+
+  private void enforceFullLoad() {
 
   }
 
@@ -222,6 +223,18 @@ public class SModel {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
   }
+
+  private void fireLoadingStateChanged() {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  //todo code in the fllowing methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;
@@ -380,16 +393,6 @@ public class SModel {
     }
   }
 
-  private void fireLoadingStateChanged() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   //---------fast node finder--------
 
   public final synchronized FastNodeFinder getFastNodeFinder() {
@@ -427,17 +430,20 @@ public class SModel {
     return new SNodeId.Regular(id);
   }
 
-  public Map<SNodeId,SNode> getNodeIdToNodeMap(){
+  public Map<SNodeId, SNode> getNodeIdToNodeMap() {
     checkNotDisposed();
     if (myDisposed) return Collections.emptyMap();
+
+    enforceFullLoad();
     return Collections.unmodifiableMap(myIdToNodeMap);
   }
 
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
-    enforceFullLoad();
     checkNotDisposed();
     if (myDisposed) return null;
+
+    enforceFullLoad();
     return myIdToNodeMap.get(nodeId);
   }
 
@@ -447,6 +453,7 @@ public class SModel {
     checkNotDisposed();
     if (myDisposed) return;
 
+    enforceFullLoad();
     SNodeId id = node.hasId() ? node.getSNodeId() : null;
     SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
     if (id == null || existingNode != null && existingNode != node) {
@@ -462,6 +469,8 @@ public class SModel {
 
   void unregisterNode(@NotNull SNode node) {
     checkNotDisposed();
+
+    enforceFullLoad();
     SNodeId id = node.getSNodeId();
     if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
@@ -739,6 +748,7 @@ public class SModel {
 
   public boolean updateSModelReferences() {
     ModelChange.assertLegalChange(this);
+    enforceFullLoad();
 
     boolean changed = false;
     for (SNode node : getAllNodesWithIds()) {
@@ -805,6 +815,7 @@ public class SModel {
   }
 
   void changeModelReference(SModelReference newModelReference) {
+    enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
     for (SNode node : getAllNodesWithIds()) {
@@ -836,12 +847,6 @@ public class SModel {
   }
 
   //---------deprecated--------
-
-  @Nullable
-  public SNode getNodeById(String idString) {
-    SNodeId nodeId = SNodeId.fromString(idString);
-    return getNodeById(nodeId);
-  }
 
   @Deprecated
   //to use in old persistence
@@ -897,6 +902,14 @@ public class SModel {
   public Collection<SNode> getAllNodesWithIds() {
     checkNotDisposed();
     if (myDisposed) return Collections.emptySet();
+
+    enforceFullLoad();
     return Collections.unmodifiableCollection(myIdToNodeMap.values());
+  }
+
+  @Nullable
+  public SNode getNodeById(String idString) {
+    SNodeId nodeId = SNodeId.fromString(idString);
+    return getNodeById(nodeId);
   }
 }
