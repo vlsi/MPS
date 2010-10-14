@@ -4,7 +4,4 @@ package jetbrains.mps.make.resources;
 
 
 public interface IResource {
-  public ResourceName getName();
-  public IResource catalog();
-  public Iterable<IResource> resources();
 }

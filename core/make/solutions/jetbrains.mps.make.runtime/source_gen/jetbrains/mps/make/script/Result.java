@@ -5,13 +5,13 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.make.resources.IResource;
 
 public class Result {
-  private Iterable<IResource> produced;
+  private Iterable<IResource> output;
 
-  public Result(Iterable<IResource> produced) {
-    this.produced = produced;
+  public Result(Iterable<IResource> output) {
+    this.output = output;
   }
 
-  public Iterable<IResource> produced() {
-    return produced;
+  public Iterable<IResource> output() {
+    return output;
   }
 }

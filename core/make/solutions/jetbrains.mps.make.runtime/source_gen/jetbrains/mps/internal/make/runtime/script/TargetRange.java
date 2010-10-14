@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.make.script.ITask;
+import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
@@ -255,7 +255,7 @@ __switch__:
       return first.getName();
     }
 
-    public ITask createTask() {
+    public IJob createJob() {
       return null;
     }
   }

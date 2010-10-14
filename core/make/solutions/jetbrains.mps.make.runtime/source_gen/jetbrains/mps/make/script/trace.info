@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="6168415856807657176">
-    <nodeInfo nodeId="6168415856807657198" fileName="Result.java" startLine="7" startPosition="21" endLine="8" endPosition="39" />
-    <nodeInfo nodeId="6168415856807657192" fileName="Result.java" startLine="10" startPosition="47" endLine="11" endPosition="29" />
-    <nodeInfo nodeId="6168415856807657180" fileName="Result.java" startLine="14" startPosition="41" endLine="15" endPosition="20" />
+    <nodeInfo nodeId="6168415856807657198" fileName="Result.java" startLine="7" startPosition="21" endLine="8" endPosition="37" />
+    <nodeInfo nodeId="6168415856807657192" fileName="Result.java" startLine="10" startPosition="45" endLine="11" endPosition="25" />
+    <nodeInfo nodeId="6168415856807657180" fileName="Result.java" startLine="14" startPosition="39" endLine="15" endPosition="18" />
     <nodeInfo nodeId="6168415856807657185" fileName="Result.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
     <nodeInfo nodeId="6168415856807657177" fileName="Result.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="6168415856807657191" fileName="Result.java" startLine="10" startPosition="47" endLine="11" endPosition="29" />
-    <scopeInfo nodeId="6168415856807657179" fileName="Result.java" startLine="14" startPosition="41" endLine="15" endPosition="20" />
+    <scopeInfo nodeId="6168415856807657191" fileName="Result.java" startLine="10" startPosition="45" endLine="11" endPosition="25" />
+    <scopeInfo nodeId="6168415856807657179" fileName="Result.java" startLine="14" startPosition="39" endLine="15" endPosition="18" />
     <scopeInfo nodeId="6168415856807657185" fileName="Result.java" startLine="9" startPosition="0" endLine="12" endPosition="3">
-      <varInfo nodeId="6168415856807657186" varName="produced" />
+      <varInfo nodeId="6168415856807657186" varName="output" />
     </scopeInfo>
     <scopeInfo nodeId="6168415856807657177" fileName="Result.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="6168415856807657176" fileName="Result.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.script.Result" />
   </root>
   <root nodeId="6168415856807657202">
-    <nodeInfo nodeId="6168415856807657203" fileName="ITask.java" startLine="8" startPosition="24" endLine="9" endPosition="57" />
-    <nodeInfo nodeId="6168415856807657210" fileName="ITask.java" startLine="9" startPosition="57" endLine="10" endPosition="57" />
-    <nodeInfo nodeId="6168415856807657218" fileName="ITask.java" startLine="10" startPosition="57" endLine="11" endPosition="31" />
-    <nodeInfo nodeId="6168415856807657222" fileName="ITask.java" startLine="11" startPosition="31" endLine="12" endPosition="28" />
-    <scopeInfo nodeId="6168415856807657203" fileName="ITask.java" startLine="8" startPosition="24" endLine="9" endPosition="57">
-      <varInfo nodeId="6168415856807657204" varName="pool" />
-    </scopeInfo>
-    <scopeInfo nodeId="6168415856807657210" fileName="ITask.java" startLine="9" startPosition="57" endLine="10" endPosition="57">
-      <varInfo nodeId="6168415856807657216" varName="pool" />
+    <nodeInfo nodeId="6168415856807657210" fileName="IJob.java" startLine="7" startPosition="23" endLine="8" endPosition="65" />
+    <scopeInfo nodeId="6168415856807657210" fileName="IJob.java" startLine="7" startPosition="23" endLine="8" endPosition="65">
+      <varInfo nodeId="8855841484790511536" varName="input" />
       <varInfo nodeId="6168415856807657214" varName="mon" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807657218" fileName="ITask.java" startLine="10" startPosition="57" endLine="11" endPosition="31" />
-    <scopeInfo nodeId="6168415856807657222" fileName="ITask.java" startLine="11" startPosition="31" endLine="12" endPosition="28" />
-    <unitInfo nodeId="6168415856807657202" fileName="ITask.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.make.script.ITask" />
+    <unitInfo nodeId="6168415856807657202" fileName="IJob.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.script.IJob" />
   </root>
   <root nodeId="6168415856807657227">
     <nodeInfo nodeId="6168415856807657228" fileName="IScript.java" startLine="7" startPosition="26" endLine="8" endPosition="27" />
