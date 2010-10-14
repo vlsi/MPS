@@ -21,6 +21,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

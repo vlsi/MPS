@@ -892,41 +892,6 @@ public class SModel {
   }
 
   @Deprecated
-  public List<SNode> allNodesIncludingImported(IScope scope, Condition<SNode> condition) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = SModelOperations.allImportedModels(this, scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    for (SModel aModel : modelsList) {
-      Iterable<SNode> iter = new ConditionalIterable<SNode>(aModel.nodes(), condition);
-      for (SNode node : iter) {
-        resultNodes.add(node);
-      }
-    }
-    return resultNodes;
-  }
-
-  @Deprecated
-  public List<SNode> allRootsIncludingImported(IScope scope) {
-    List<SModel> modelsList = new ArrayList<SModel>();
-    modelsList.add(this);
-    List<SModelDescriptor> modelDescriptors = SModelOperations.allImportedModels(this, scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
-    }
-
-    List<SNode> resultNodes = new ArrayList<SNode>();
-    for (SModel aModel : modelsList) {
-      resultNodes.addAll(aModel.myRoots);
-    }
-    return resultNodes;
-  }
-
-  @Deprecated
   void validateLanguages(SNode node) {
     Collection<ModuleReference> allrefs = SModelOperations.getAllImportedLanguages(this);
     Set<String> available = new HashSet<String>(allrefs.size());
