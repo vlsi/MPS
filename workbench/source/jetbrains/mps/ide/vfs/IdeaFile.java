@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2010 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
@@ -7,7 +22,6 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.vfs.ex.IFileEx;
@@ -15,8 +29,6 @@ import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -94,7 +106,9 @@ class IdeaFile implements IFileEx {
 
   @Override
   public IFile child(String suffix) {
-    return new IdeaFile(getAbsolutePath() + File.separator + suffix);
+    String path = getAbsolutePath();
+    String separator = path.contains("!") ? "/" : File.separator;
+    return new IdeaFile(path + separator + suffix);
   }
 
   @Override
@@ -193,29 +207,20 @@ class IdeaFile implements IFileEx {
   @Override
   public OutputStream openOutputStream() throws IOException {
     ApplicationManager.getApplication().assertWriteAccessAllowed();
-    if (findVirtualFile()) {
-      return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
-    } else {
-      if (createNewFile()) {
-        return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
+    if (findVirtualFile() || createNewFile()) {
+      if (myVirtualFile.getFileSystem() instanceof JarFileSystem) {
+        throw new UnsupportedOperationException("Cannot write to Jar files");
       } else {
-        throw new IOException("Could not create file: " + myPath);
+        return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
       }
+    } else {
+      throw new IOException("Could not create file: " + myPath);
     }
   }
 
   VirtualFile getVirtualFile() {
     findVirtualFile();
     return myVirtualFile;
-  }
-
-  @Override
-  public URL getURL() throws MalformedURLException {
-    if (findVirtualFile()) {
-      return new URL(myVirtualFile.getPresentableUrl());
-    } else {
-      return new File(myPath).toURI().toURL();
-    }
   }
 
   @Override
@@ -266,7 +271,7 @@ class IdeaFile implements IFileEx {
       if (myPath.contains("!")) {
         int index = myPath.indexOf("!");
         String jarPath = myPath.substring(0, index);
-        String entryPath = StringUtil.replace(myPath.substring(index + 1), "\\", "/");
+        String entryPath = myPath.substring(index + 1);
 
         if (entryPath.startsWith("/")) {
           entryPath = entryPath.substring(1);

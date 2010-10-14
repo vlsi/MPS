@@ -23,8 +23,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -54,7 +52,11 @@ public class JarEntryFile implements IFileEx {
   }
 
   public IFile getParent() {
-    return new JarEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath));
+    if (myEntryPath.isEmpty()) {
+      return null;
+    } else {
+      return new JarEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath));
+    }
   }
 
   public List<IFile> list() {
@@ -159,12 +161,27 @@ public class JarEntryFile implements IFileEx {
   }
 
   @Override
-  public URL getURL() throws MalformedURLException {
-    throw new UnsupportedOperationException("Not implemented yet"); 
+  public boolean setTimeStamp(long time) {
+    return false;
   }
 
   @Override
-  public boolean setTimeStamp(long time) {
-    return false;
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    JarEntryFile that = (JarEntryFile) o;
+
+    if (myEntryPath != null ? !myEntryPath.equals(that.myEntryPath) : that.myEntryPath != null) return false;
+    if (myJarFile != null ? !myJarFile.equals(that.myJarFile) : that.myJarFile != null) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myJarFile != null ? myJarFile.hashCode() : 0;
+    result = 31 * result + (myEntryPath != null ? myEntryPath.hashCode() : 0);
+    return result;
   }
 }

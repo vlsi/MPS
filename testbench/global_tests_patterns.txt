@@ -14,6 +14,7 @@
 +**/jetbrains/mps/makeTest/**/*Test.java
 +MPS:jetbrains/mps/bootstrap/helgins/**/*.Test.java
 +**/jetbrains/mps/vcs/**/*Test.java
++**/jetbrains/mps/vfs/**/*Test.java
 +workbench:**/*Test.java
 +baseLanguage-runtime:**/*Test.java
 +math-runtime:**/*Test.java

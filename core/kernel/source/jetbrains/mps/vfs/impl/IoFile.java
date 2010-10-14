@@ -21,8 +21,6 @@ import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -76,6 +74,9 @@ public class IoFile implements IFileEx {
           return false;
         }
       }
+      if (myFile.exists()) {
+        return myFile.isFile();
+      }
       return myFile.createNewFile();
     } catch (IOException e) {
       throw new RuntimeException(e);
@@ -87,6 +88,9 @@ public class IoFile implements IFileEx {
   }
 
   public boolean delete() {
+    for (IFile child : list()) {
+      child.delete();
+    }
     return myFile.delete();
   }
 
@@ -177,11 +181,6 @@ public class IoFile implements IFileEx {
   @Override
   public IFile getBundleHome() {
     return getParent();
-  }
-
-  @Override
-  public URL getURL() throws MalformedURLException {
-    return myFile.toURI().toURL();
   }
 
   @Override

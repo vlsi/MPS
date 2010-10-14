@@ -452,6 +452,10 @@ public class FileUtil {
     return relative.toString();
   }
 
+  public static String getAbsolutePath(String path) {
+    return new File(path).getAbsolutePath();
+  }
+
   static class PathResolutionException extends RuntimeException {
     PathResolutionException(String msg) {
       super(msg);

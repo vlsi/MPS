@@ -15,8 +15,6 @@
  */
 package jetbrains.mps;
 
-import java.io.File;
-
 public class VMVersionTest extends BaseMPSTest {
   public void testVMVersion() {
     String vmName = System.getProperty("java.vm.name");
