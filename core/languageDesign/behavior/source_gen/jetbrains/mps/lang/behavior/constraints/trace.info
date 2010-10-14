@@ -6,8 +6,8 @@
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_name_PropertyConstraint" />
   <unitInfo fileName="ConceptBehavior_defaultConcreteConcept_ReferentConstraint.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_defaultConcreteConcept_ReferentConstraint" />
-  <unitInfo fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="21" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint" />
   <unitInfo fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_superConcept_ReferentConstraint" />
+  <unitInfo fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint" />
   <root nodeId="1225194245328">
     <nodeInfo nodeId="1227088888256" fileName="ConceptBehavior_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" />
     <nodeInfo nodeId="1225194245332" fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="23" />
@@ -35,9 +35,9 @@
     <nodeInfo nodeId="1225194475729" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="40" startPosition="86" endLine="41" endPosition="132" />
     <nodeInfo nodeId="1225194475738" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="42" startPosition="7" endLine="43" endPosition="109" />
     <nodeInfo nodeId="1225194475747" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="43" startPosition="109" endLine="44" endPosition="157" />
-    <nodeInfo nodeId="1225194475682" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="48" startPosition="132" endLine="49" endPosition="192" />
-    <nodeInfo nodeId="1225194475691" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="49" startPosition="192" endLine="50" endPosition="144" />
-    <nodeInfo nodeId="1225194475698" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="50" startPosition="144" endLine="51" endPosition="19" />
+    <nodeInfo nodeId="1225194475682" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="52" startPosition="132" endLine="53" endPosition="192" />
+    <nodeInfo nodeId="1225194475691" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="53" startPosition="192" endLine="54" endPosition="144" />
+    <nodeInfo nodeId="1225194475698" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="54" startPosition="144" endLine="55" endPosition="19" />
     <nodeInfo nodeId="1225194475711" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="36" startPosition="59" endLine="39" endPosition="7" />
     <nodeInfo nodeId="1225194475722" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="39" startPosition="7" endLine="42" endPosition="7" />
     <nodeInfo nodeId="1225194475702" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="35" startPosition="138" endLine="45" endPosition="5" />
@@ -49,7 +49,7 @@
     <scopeInfo nodeId="1225194475722" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="39" startPosition="7" endLine="42" endPosition="7">
       <varInfo nodeId="1225194475726" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1225194475681" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="48" startPosition="132" endLine="51" endPosition="19">
+    <scopeInfo nodeId="1225194475681" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="52" startPosition="132" endLine="55" endPosition="19">
       <varInfo nodeId="1225194475692" varName="methods" />
       <varInfo nodeId="1225194475683" varName="concept" />
     </scopeInfo>

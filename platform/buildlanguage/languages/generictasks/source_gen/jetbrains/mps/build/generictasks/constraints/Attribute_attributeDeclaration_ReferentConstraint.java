@@ -4,7 +4,7 @@ package jetbrains.mps.build.generictasks.constraints;
 
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
-import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
+import jetbrains.mps.smodel.constraints.INodeReferenceFullSetHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.generictasks.behavior.ITaskDeclaration_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
+public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferenceFullSetHandler {
   public Attribute_attributeDeclaration_ReferentConstraint() {
   }
 
@@ -33,6 +33,10 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
 
   public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     SLinkOperations.setTarget(referenceNode, "value", SLinkOperations.getTarget(newReferentNode, "default", true), true);
+  }
+
+  public boolean keepsOriginalReference(SNode referenceNode, SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
+    return true;
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
