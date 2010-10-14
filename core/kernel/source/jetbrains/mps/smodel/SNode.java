@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -45,12 +46,15 @@ public final class SNode {
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
+  private static final Object FROZEN_KEY = new Object();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
+
+  //------static end-------
 
   private String myRoleInParent;
   private SNode myParent;
@@ -74,8 +78,6 @@ public final class SNode {
   private BaseAdapter myAdapter;
   private boolean myDisposed;
 
-  private boolean myIsFrozen = false;
-
   public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }
@@ -93,9 +95,15 @@ public final class SNode {
     this(model, conceptFqName, true);
   }
 
+  private void enforceModelLoad() {
+
+  }
+
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
+
+    enforceModelLoad();
     SModel wasModel = myModel;
     myModel = newModel;
     ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
@@ -125,37 +133,9 @@ public final class SNode {
   }
 
   //MUST NOT be used,except from ModelAccess
-  /*package*/
 
   SModel getModelInternal() {
     return myModel;
-  }
-
-  public boolean isFrozen() {
-    return myIsFrozen;
-  }
-
-  void freeze() {
-    myIsFrozen = true;
-
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.freeze();
-    }
-  }
-
-  void unfreeze() {
-    if (myParent != null && myParent.myIsFrozen) {
-      LOG.error("can not unfreeze a node under a frozen one");
-      return;
-    }
-    unfreezeRec();
-  }
-
-  private void unfreezeRec() {
-    myIsFrozen = false;
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.unfreezeRec();
-    }
   }
 
   public boolean isModelLoading() {
@@ -295,7 +275,6 @@ public final class SNode {
     removeChild(oldChild);
   }
 
-
   public Object getUserObject(Object key) {
     ModelAccess.assertLegalRead(this);
 
@@ -355,8 +334,11 @@ public final class SNode {
           System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
         }
         myUserObjects = newarr;
-        return;
+        break;
       }
+    }
+    if (myUserObjects.length == 0) {
+      myUserObjects = null;
     }
   }
 
@@ -391,11 +373,8 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  //
-  //----- attributes
-  //
-
-  //node attributes
+  // ---------- attributes -------------
+  //node
 
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
@@ -443,7 +422,7 @@ public final class SNode {
     addChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
   }
 
-  ///--property attributes
+  //property
 
   public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
     setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
@@ -474,7 +453,7 @@ public final class SNode {
     return result;
   }
 
-  // -- link attributes
+  //link
 
   public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
     setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
@@ -504,9 +483,7 @@ public final class SNode {
     return result;
   }
 
-  //
-  // ----- properties -----
-  //
+  // ---------- properties -------------
 
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
@@ -676,9 +653,7 @@ public final class SNode {
     }
   }
 
-  // ---------------------------------
-  // children
-  // ---------------------------------
+  // ---------- children -------------
 
   final public SNode getParent() {
     return myParent;
@@ -902,6 +877,7 @@ public final class SNode {
    * subtree of child node.
    * <p/>
    * Differs from {@link SNode#delete()}.
+   * @param wasChild
    */
   public void removeChild(SNode wasChild) {
     if (wasChild.myParent != this) return;
@@ -928,6 +904,8 @@ public final class SNode {
   }
 
   public void insertChild(final SNode anchor, String _role, final SNode child) {
+    enforceModelLoad();
+
     if (ourMemberAccessModifier != null) {
       _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
     }
@@ -1044,9 +1022,7 @@ public final class SNode {
     return myRegisteredInModelFlag;
   }
 
-  // ---------------------------------
-  //    references
-  // ---------------------------------
+  // ---------- references -------------
 
   public List<SReference> getReferences() {
     ModelAccess.assertLegalRead(this);
@@ -1301,9 +1277,39 @@ public final class SNode {
     return (_reference().size() == 0) && myParent == null && !getModel().isRoot(this);
   }
 
-  //
-  // -----------------------
-  //
+  // ----------frozen mode-------------
+
+  public boolean isFrozen() {
+    return getUserObject(FROZEN_KEY) != null;
+  }
+
+  public <T> T freezeAndCompute(Computable<T> computable) {
+    if (isFrozen()) {
+      return computable.compute();
+    }
+    try {
+      freeze();
+      return computable.compute();
+    } finally {
+      unfreeze();
+    }
+  }
+
+  private void freeze() {
+    putUserObject(FROZEN_KEY, FROZEN_KEY);
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      child.freeze();
+    }
+  }
+
+  private void unfreeze() {
+    removeUserObject(FROZEN_KEY);
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      child.unfreeze();
+    }
+  }
+
+  // ---------- -------------
 
   public String getDebugText() {
     String roleText = "";
@@ -1469,10 +1475,6 @@ public final class SNode {
     return myConceptFqName;
   }
 
-  public SConceptReference getConceptReference() {
-    return new SConceptReference(getConceptFqName());
-  }
-
   public ModuleReference getConceptLanguage() {
     return new ModuleReference(getLanguageNamespace());
   }
@@ -1500,7 +1502,6 @@ public final class SNode {
     return language == null || language.findConceptDeclaration(getConceptShortName()) == null;
   }
 
-
   @UseCarefully
   void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
@@ -1511,13 +1512,6 @@ public final class SNode {
 
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
-  }
-
-  /**
-   * @deprecated
-   */
-  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
-    return isInstanceOfConcept(conceptFqName);
   }
 
   public boolean isInstanceOfConcept(String conceptFqName) {
@@ -1694,13 +1688,6 @@ public final class SNode {
 
   void clearAdapter() {
     myAdapter = null;
-  }
-
-  void clearUserObjects() {
-    removeAllUserObjects();
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.clearUserObjects();
-    }
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
@@ -1975,4 +1962,10 @@ public final class SNode {
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     return concept;
   }
+
+  @Deprecated
+  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
+    return isInstanceOfConcept(conceptFqName);
+  }
+
 }
