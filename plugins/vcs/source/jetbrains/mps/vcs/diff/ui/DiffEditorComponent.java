@@ -270,7 +270,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     }
     SNode result = null;
     int resultY = Integer.MAX_VALUE;
-    for (SNode child : node.getChildrenArray()) {
+    for (SNode child : node.getChildrenIterable()) {
       SNode visibleForChild = getFirstVisibleNode(child);
       if (visibleForChild != null) {
         int thisY = findNodeCell(visibleForChild).getY();

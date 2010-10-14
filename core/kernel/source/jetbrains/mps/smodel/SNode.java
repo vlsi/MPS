@@ -46,6 +46,7 @@ public final class SNode {
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
+  private static final Object FROZEN_KEY = new Object();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
@@ -750,27 +751,6 @@ public final class SNode {
 
   private List<SReference> _reference() {
     return new MyReferencesWrapper();
-  }
-
-  /**
-   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
-   */
-  public SNode[] getChildrenArray() {
-    int len = getChildCount();
-    SNode[] nodes = new SNode[len];
-    int i = 0;
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      nodes[i++] = child;
-    }
-    return nodes;
-  }
-
-  /**
-   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
-   */
-  public SNode[] getChildrenArray(String role) {
-    List<SNode> children = getChildren(role);
-    return children.toArray(new SNode[children.size()]);
   }
 
   public Iterable<SNode> getChildrenIterable() {
