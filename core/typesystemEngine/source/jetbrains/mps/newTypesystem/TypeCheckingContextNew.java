@@ -37,7 +37,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   private State myState;
   private SNode myRootNode;
-  private Stack<Difference> myDifferenceStack = new Stack<Difference>();
   private NodeTypesComponentNew myNodeTypesComponent;
   private TypeChecker myTypeChecker;
   private SubTyping mySubTyping;
@@ -54,10 +53,10 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   public void rollBack() {
-    if (myDifferenceStack.isEmpty()) {
+    if (getDifferenceStack().isEmpty()) {
       return;
     }
-    Difference diff = myDifferenceStack.pop();
+    Difference diff = getDifferenceStack().pop();
     System.out.println("Rolled back (" + diff.getPresentation()+")");
     diff.rollBack();
   }
@@ -77,23 +76,20 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void checkRoot() {
     myNodeTypesComponent.checkNode(myRootNode, false);
+    myState.solveInequalities();
   }
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
     myState.clear();
-    myDifferenceStack.clear();
     myNodeTypesComponent.checkNode(myRootNode, true);
+    myState.solveInequalities();
   }
 
   @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, true, checkOnly, equationInfo);
     print();
-  }
-
-  public void addDifference(Difference diff) {
-    myDifferenceStack.add(diff);
   }
 
   @Override
@@ -106,7 +102,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     System.out.println("---State---" + counter++);
     myState.print();
     System.out.println("--Difference-");
-    for (Difference d : myDifferenceStack) {
+    for (Difference d : getDifferenceStack()) {
       System.out.println(d.getPresentation());
     }
     System.out.println("---End-------");
@@ -118,5 +114,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   public SubTyping getSubTyping() {
     return mySubTyping;
+  }
+
+  public Stack<Difference> getDifferenceStack() {
+    return myState.getDifferenceStack();
+  }
+  public Difference getDifference() {
+    return myState.getDifference();
   }
 }

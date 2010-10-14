@@ -4,7 +4,7 @@
   <unitInfo fileName="TypesystemToolsAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemToolsAddition_ActionGroup" />
   <unitInfo fileName="TypesystemNodeActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
   <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
-  <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
+  <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
   <unitInfo fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
   <unitInfo fileName="ShowTypechekerDebugger_Action.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypechekerDebugger_Action" />
@@ -15,6 +15,7 @@
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="21" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorRule_Action.java" startLine="17" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
   <unitInfo fileName="ShowInferredNodeType_Action.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
+  <unitInfo fileName="ShowTypeSystemTrace_Action.java" startLine="22" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action" />
   <unitInfo fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="15" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action" />
   <unitInfo fileName="ShowNodeType_Action.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action" />
   <root nodeId="1205244087094">
@@ -29,6 +30,7 @@
   <root nodeId="1205245331359">
     <nodeInfo nodeId="1228846932936" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="157" />
     <nodeInfo nodeId="1230216511092" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="18" startPosition="157" endLine="19" endPosition="166" />
+    <nodeInfo nodeId="8779663014757326684" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="19" startPosition="166" endLine="20" endPosition="163" />
   </root>
   <root nodeId="1206101816406">
     <nodeInfo nodeId="1217420647246" fileName="GoToTypeErrorRule_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="45" />
@@ -281,6 +283,26 @@
     <scopeInfo nodeId="7796696880649589048" fileName="ShowNodeType_Action.java" startLine="88" startPosition="59" endLine="93" endPosition="0" />
     <unitInfo nodeId="5501636852285516654" fileName="ShowNodeType_Action.java" startLine="100" startPosition="47" endLine="104" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action$2" />
     <unitInfo nodeId="7796696880649589048" fileName="ShowNodeType_Action.java" startLine="88" startPosition="47" endLine="93" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action$1" />
+  </root>
+  <root nodeId="8779663014757326680">
+    <nodeInfo nodeId="8779663014757355879" fileName="ShowTypeSystemTrace_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="36" />
+    <nodeInfo nodeId="8779663014757355880" fileName="ShowTypeSystemTrace_Action.java" startLine="26" startPosition="36" endLine="27" endPosition="21" />
+    <nodeInfo nodeId="8779663014757355883" fileName="ShowTypeSystemTrace_Action.java" startLine="27" startPosition="21" endLine="28" endPosition="22" />
+    <nodeInfo nodeId="4213432195536180217" fileName="ShowTypeSystemTrace_Action.java" startLine="28" startPosition="22" endLine="29" endPosition="42" />
+    <nodeInfo nodeId="4213432195536169031" fileName="ShowTypeSystemTrace_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="46" />
+    <nodeInfo nodeId="4213432195536180219" fileName="ShowTypeSystemTrace_Action.java" startLine="89" startPosition="46" endLine="90" endPosition="101" />
+    <nodeInfo nodeId="6867415733702648393" fileName="ShowTypeSystemTrace_Action.java" startLine="91" startPosition="66" endLine="92" endPosition="80" />
+    <nodeInfo nodeId="4213432195536185602" fileName="ShowTypeSystemTrace_Action.java" startLine="92" startPosition="80" endLine="93" endPosition="115" />
+    <nodeInfo nodeId="4213432195536185573" fileName="ShowTypeSystemTrace_Action.java" startLine="94" startPosition="14" endLine="95" endPosition="110" />
+    <nodeInfo nodeId="4213432195536185582" fileName="ShowTypeSystemTrace_Action.java" startLine="95" startPosition="110" endLine="96" endPosition="115" />
+    <nodeInfo nodeId="4213432195536185570" fileName="ShowTypeSystemTrace_Action.java" startLine="94" startPosition="12" endLine="97" endPosition="7" />
+    <nodeInfo nodeId="4213432195536180227" fileName="ShowTypeSystemTrace_Action.java" startLine="90" startPosition="101" endLine="97" endPosition="7" />
+    <scopeInfo nodeId="4213432195536180228" fileName="ShowTypeSystemTrace_Action.java" startLine="91" startPosition="66" endLine="93" endPosition="115">
+      <varInfo nodeId="6867415733702648394" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="4213432195536185571" fileName="ShowTypeSystemTrace_Action.java" startLine="94" startPosition="14" endLine="96" endPosition="115">
+      <varInfo nodeId="4213432195536185574" varName="program" />
+    </scopeInfo>
   </root>
 </debugInfo>
 

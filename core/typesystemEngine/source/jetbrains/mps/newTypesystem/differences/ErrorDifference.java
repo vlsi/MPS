@@ -15,21 +15,37 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SNode;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:17:32 PM
+ * Date: Oct 14, 2010
+ * Time: 12:41:21 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class EquationDifference extends Difference {
-  protected Equations myEquations;
+public class ErrorDifference extends Difference {
+  private SNode myNode;
+  private IErrorReporter myError;
+  private Map<SNode, List<IErrorReporter>> myMap;
 
-  public EquationDifference(Equations equations) {
-    myEquations = equations;
+  public ErrorDifference(SNode node, IErrorReporter error, Map<SNode, List<IErrorReporter>> map) {
+    myNode = node;
+    myError = error;
+    myMap = map;
   }
 
+  @Override
+  public String getPresentation() {
+    return "Error : " + myError.reportError();
+  }
 
+  @Override
+  public void rollBack() {
+    myMap.get(myNode).remove(myError);
+  }
 }

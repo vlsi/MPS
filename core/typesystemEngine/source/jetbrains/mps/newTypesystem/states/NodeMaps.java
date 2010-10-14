@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.newTypesystem.differences.ErrorDifference;
 import jetbrains.mps.newTypesystem.differences.NodeMapDifference;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
@@ -42,7 +43,7 @@ public class NodeMaps {
 
   public void addNodeToType(SNode node, SNode type) {
     myNodeToTypes.put(node, type);
-    myState.addDifference(new NodeMapDifference(node, myNodeToTypes));
+    myState.addDifference(new NodeMapDifference(node, myNodeToTypes), false);
   }
 
   public void addNodeToError(SNode node, IErrorReporter error) {
@@ -52,7 +53,7 @@ public class NodeMaps {
       myNodesToErrors.put(node, errors);
     }
     errors.add(error);
-    myState.addDifference(new NodeMapDifference(node, myNodesToErrors));
+    myState.addDifference(new ErrorDifference(node, error, myNodesToErrors), false);
   }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrors() {

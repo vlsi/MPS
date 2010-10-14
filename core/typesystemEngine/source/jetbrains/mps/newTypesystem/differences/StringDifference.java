@@ -15,28 +15,26 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
-
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:09:40 PM
+ * Date: Oct 14, 2010
+ * Time: 1:42:37 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CompositeDifference extends Difference {
-  List<Difference> myDifferenceList = new LinkedList<Difference>();
+public class StringDifference extends Difference {
+  private String myString;
 
-  public void add(Difference diff) {
-    myDifferenceList.add(diff);
+  public StringDifference(String string) {
+    myString = string;
+  }
+
+  @Override
+  public String getPresentation() {
+    return myString;
   }
 
   @Override
   public void rollBack() {
-    for (Difference difference : myDifferenceList) {
-      difference.rollBack();
-    }
   }
 }

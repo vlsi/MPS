@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
-import jetbrains.mps.newTypesystem.differences.mapPair.SubTypingRemoved;
-import jetbrains.mps.newTypesystem.test.TestWrapper;
+import jetbrains.mps.newTypesystem.differences.inequality.SubTypingRemoved;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -84,10 +83,10 @@ public class InequalityMapPair {
       Map<SNode, EquationInfo> map = pairMap.get(value);
       EquationInfo info = map.remove(var);
       if (reversed) {
-        myState.addDifference(new SubTypingRemoved(var, value, info, this));
+        myState.addDifference(new SubTypingRemoved(var, value, info, this), false);
         myState.addInequality(type, value, isWeak, checkOnly, info);
       } else {
-        myState.addDifference(new SubTypingRemoved(value, var, info, this));
+        myState.addDifference(new SubTypingRemoved(value, var, info, this), false);
         myState.addInequality(value, type, isWeak, checkOnly, info);
       }
     }
@@ -116,5 +115,9 @@ public class InequalityMapPair {
       map.get(key).clear();
     }
     map.clear();    
+  }
+
+  public boolean isWeak() {
+    return isWeak;
   }
 }

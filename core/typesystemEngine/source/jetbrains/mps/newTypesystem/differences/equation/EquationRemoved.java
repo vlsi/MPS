@@ -13,38 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.equation;
 
 import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 12:54:50 PM
+ * Date: Oct 8, 2010
+ * Time: 1:17:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationAdded extends EquationDifference {
+public class EquationRemoved extends EquationDifference {
   private SNode myChild;
+  private SNode myParent;
 
-  public EquationAdded(SNode prev, Equations equations) {
+  public EquationRemoved(SNode child, SNode parent, Equations equations) {
     super(equations);
-    myChild = prev;
+    myChild = child;
+    myParent = parent;
   }
 
   @Override
   public void rollBack() {
-    myEquations.remove(myChild);
+    myEquations.add(myChild, myParent);
+  }
+
+  @Override
+  public String getPresentation() {
+    return "Equation removed " + myChild + " = " + myParent;
   }
 
   public SNode getChild() {
     return myChild;
   }
 
-  @Override
-  public String getPresentation() {
-    return "Equation added " + myChild; 
+  public SNode getParent() {
+    return myParent;
   }
 }

@@ -18,9 +18,8 @@ package jetbrains.mps.newTypesystem.states;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.EquationAdded;
-import jetbrains.mps.newTypesystem.differences.EquationRemoved;
-import jetbrains.mps.newTypesystem.differences.EquationSubstituted;
+import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
+import jetbrains.mps.newTypesystem.differences.equation.EquationSubstituted;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
@@ -64,7 +63,7 @@ public class Equations {
   }
 
   private void substituteRepresentative(SNode elem, SNode current) {
-    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, this));
+    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, this), true);
     myRepresentatives.put(elem, current);
   }
 
@@ -108,10 +107,11 @@ public class Equations {
     addAndTrack(child, parent);
     myState.getInequalities().substitute(child, parent);
     myState.getNonConcrete().substitute(child, parent);
+    myState.popDifference();
   }
 
   private void addAndTrack(SNode child, SNode parent) {
-    myState.addDifference(new EquationAdded(child, this));
+    myState.addDifference(new EquationAdded(child, parent, this), true);
     add(child, parent);
   }
 

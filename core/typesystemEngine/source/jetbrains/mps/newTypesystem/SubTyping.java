@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.newTypesystem.states.State;
@@ -61,6 +62,7 @@ public class SubTyping {
     if (subType == null) {
       return false;
     }
+    // todo optimize!
     // to cache or not to cache? that is the question
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
@@ -72,12 +74,21 @@ public class SubTyping {
       //collecting a set of frontier's ancestors
       Set<SNode> ancestors = new HashSet<SNode>();
       for (SNode node : frontier) {
-        collectImmediateSuperTypes(node, isWeak, ancestors, state.getTypeCheckingContext(), superType.getConceptFqName());
+        Set<SNode> result = collectImmediateSuperTypes(node, isWeak, state.getTypeCheckingContext(), superType.getConceptFqName());
+        for (SNode test : result) {
+          boolean found = false;
+          for (SNode anc : yetPassed) {
+            if (MatchingUtil.matchNodes(anc, test)) {
+              found = true;
+            }
+          }
+          if (!found) {
+            ancestors.add(test);
+          }
+        }
         yetPassedRaw.add(node);
       }
-
-      ArrayList<SNode> ancestorsSorted;
-      ancestorsSorted = new ArrayList<SNode>(ancestors);
+      ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
           return o2.depth() - o1.depth();
@@ -85,9 +96,8 @@ public class SubTyping {
       });
       //searching the frontier's ancestors
 
-      boolean wasMatch = false;
+      //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        //performing a match with a "hack" parameter containing a "secret" map inside
         if (TypesUtil.match(ancestor,superType, null, info)) {
           return true;
         }
@@ -104,8 +114,8 @@ public class SubTyping {
         }
         return true;
       }
-
       //new:        */
+
       for (SNode passedNodeRaw : yetPassedRaw) {
         yetPassed.add(passedNodeRaw);
       }
@@ -122,9 +132,10 @@ public class SubTyping {
     return false;
   }
 
-  private void collectImmediateSuperTypes(final SNode term, boolean isWeak, Set<SNode> result, final TypeCheckingContext context,String superTypeConceptFQName) {
+  private Set<SNode> collectImmediateSuperTypes(final SNode term, boolean isWeak, final TypeCheckingContext context,String superTypeConceptFQName) {
+    Set<SNode> result = new HashSet<SNode>();
     if (term == null) {
-      return;
+      return result;
     }
     Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subTypingRules = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     boolean possiblyBlindAlley = false;
@@ -137,19 +148,22 @@ public class SubTyping {
           //skip a rule, it will give us nothing
           continue;
         }
+        List<SNode> superTypes = subTypingRule.o1.getSubOrSuperTypes(term, context, subTypingRule.o2);
+        /*
         List<SNode> superTypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
           public List<SNode> compute() {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
               public List<SNode> compute() {
-                return subTypingRule.o1.getSubOrSuperTypes(term, context, subTypingRule.o2);
+                return
               }
             });
           }
-        });
+        });*/
         result.addAll(superTypes);
       }
     }
+    return result;
   }
 
   public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {

@@ -13,38 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.equation;
 
-import jetbrains.mps.newTypesystem.states.State;
-
-import java.awt.Color;
-import java.util.LinkedList;
-import java.util.List;
+import jetbrains.mps.newTypesystem.differences.CompositeDifference;
+import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:11:49 PM
+ * Date: Oct 8, 2010
+ * Time: 1:19:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class Difference {
-  protected List<Difference> myChildren;
+public class EquationSubstituted extends CompositeDifference {
+  EquationAdded myAdded;
+  EquationRemoved myRemoved;
 
-  public void addChildDifference(Difference diff) {
-    if (myChildren == null) {
-      myChildren = new LinkedList<Difference>();
-    }
-    myChildren.add(diff);
+  public EquationSubstituted(SNode key, SNode prev, SNode cur, Equations equations) {
+    myAdded = new EquationAdded(key, cur, equations);
+    myRemoved = new EquationRemoved(key, prev, equations);
   }
 
-  public List<Difference> getChildren() {
-    return myChildren;
-  }
-
-  public abstract void rollBack();
-
+  @Override
   public String getPresentation() {
-    return "";
+    return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
+      myAdded.getChild() + " = " + myRemoved.getParent() ;
   }
 }

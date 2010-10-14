@@ -13,27 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.mapPair;
+package jetbrains.mps.newTypesystem.differences.inequality;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
 import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 16, 2010
- * Time: 4:11:08 PM
+ * Date: Sep 23, 2010
+ * Time: 6:13:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class InequalityDifference extends Difference {
-  InequalityMapPair myMapPair;
-  SNode myKeyType;
-  SNode myValueType;
+public class SubTypingAdded extends InequalityDifference {
+  public SubTypingAdded(SNode subType, SNode superType, InequalityMapPair mapPair) {
+    super(subType, superType, mapPair);
+  }
 
-  public InequalityDifference(SNode keyType, SNode valueType, InequalityMapPair mapPair) {
-    myKeyType = keyType;
-    myValueType = valueType;
-    myMapPair = mapPair;
+  @Override
+  public void rollBack() {
+    myMapPair.remove(myKeyType, myValueType);
+  }
+
+  public String getPresentation() {
+    return "SubTyping added " + myKeyType + (myMapPair.isWeak()?" <= " : " < ") + myValueType;
   }
 }

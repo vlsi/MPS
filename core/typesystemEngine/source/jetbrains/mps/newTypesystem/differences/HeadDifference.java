@@ -13,33 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.mapPair;
-
-import jetbrains.mps.newTypesystem.states.InequalityMapPair;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
+package jetbrains.mps.newTypesystem.differences;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 23, 2010
- * Time: 6:14:51 PM
+ * Date: Oct 14, 2010
+ * Time: 11:53:12 AM
  * To change this template use File | Settings | File Templates.
  */
-public class SubTypingRemoved extends InequalityDifference {
-  private EquationInfo myInfo;
+public class HeadDifference extends Difference {
 
-  public SubTypingRemoved(SNode subType, SNode superType, EquationInfo info, InequalityMapPair mapPair) {
-    super(subType, superType, mapPair);
-    myInfo = info;
+  @Override
+  public String getPresentation() {
+    return "Difference";
   }
 
   @Override
   public void rollBack() {
-    myMapPair.add(myKeyType, myValueType, myInfo);
-  }
-
-  public String getPresentation() {
-    return "SubTyping removed " + myKeyType + " " + myValueType;
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 }

@@ -13,30 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.inequality;
 
-import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.states.InequalityMapPair;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:19:19 PM
+ * Date: Sep 23, 2010
+ * Time: 6:14:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationSubstituted extends CompositeDifference {
-  EquationAdded myAdded;
-  EquationRemoved myRemoved;
+public class SubTypingRemoved extends InequalityDifference {
+  private EquationInfo myInfo;
 
-  public EquationSubstituted(SNode key, SNode prev, SNode cur, Equations equations) {
-    myAdded = new EquationAdded(key, equations);
-    myRemoved = new EquationRemoved(key, prev, equations);
+  public SubTypingRemoved(SNode subType, SNode superType, EquationInfo info, InequalityMapPair mapPair) {
+    super(subType, superType, mapPair);
+    myInfo = info;
   }
 
   @Override
+  public void rollBack() {
+    myMapPair.add(myKeyType, myValueType, myInfo);
+  }
+
   public String getPresentation() {
-    return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
-      myAdded.getChild() + " = " + myRemoved.getParent() ;
+    return "SubTyping removed " + myKeyType + (myMapPair.isWeak()?" <= " : " < ") + myValueType;
   }
 }

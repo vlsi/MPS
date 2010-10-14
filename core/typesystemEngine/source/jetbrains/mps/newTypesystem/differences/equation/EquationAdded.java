@@ -13,30 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.equation;
 
-
-import java.util.LinkedList;
-import java.util.List;
+import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 15, 2010
- * Time: 1:09:40 PM
+ * Time: 12:54:50 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CompositeDifference extends Difference {
-  List<Difference> myDifferenceList = new LinkedList<Difference>();
+public class EquationAdded extends EquationDifference {
+  private SNode myChild;
+  private SNode myParent;
 
-  public void add(Difference diff) {
-    myDifferenceList.add(diff);
+  public EquationAdded(SNode child, SNode parent, Equations equations) {
+    super(equations);
+    myChild = child;
+    myParent = parent;
   }
 
   @Override
   public void rollBack() {
-    for (Difference difference : myDifferenceList) {
-      difference.rollBack();
-    }
+    myEquations.remove(myChild);
+  }
+
+  public SNode getChild() {
+    return myChild;
+  }
+
+  @Override
+  public String getPresentation() {
+    return "Equation added " + myChild + " = " + myParent; 
   }
 }

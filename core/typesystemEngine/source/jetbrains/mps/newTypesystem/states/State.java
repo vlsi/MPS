@@ -18,9 +18,13 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.differences.HeadDifference;
+import jetbrains.mps.newTypesystem.differences.StringDifference;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,6 +40,9 @@ public class State {
   private Inequalities myInequalities;
   private NodeMaps myNodeMaps;
   private NonConcrete myNonConcrete;
+
+  private Stack<Difference> myDifferenceStack = new Stack<Difference>();
+  private Difference myDifference = new HeadDifference();
 
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
@@ -73,10 +80,20 @@ public class State {
     return myTypeCheckingContext;
   }
 
-  public void addDifference(Difference difference) {
-    if (difference != null) {
-      myTypeCheckingContext.addDifference(difference);
+  public void addDifference(Difference difference, boolean push) {
+    if (difference == null) {
+      return;
     }
+    if (!myDifferenceStack.empty()) {
+      myDifferenceStack.peek().addChildDifference(difference);
+    }
+    if (push || myDifferenceStack.empty()) {
+      myDifferenceStack.push(difference);
+    }
+  }
+
+  public void popDifference() {
+    myDifferenceStack.pop();
   }
 
   public boolean isConcrete(SNode wrapper) {
@@ -99,10 +116,31 @@ public class State {
 
     myEquations.clear();
     myInequalities.clear();
+    myDifferenceStack.clear();
+    myDifference = new HeadDifference();
+    myDifferenceStack.push(myDifference);
+  }
+
+  public void solveInequalities() {
+    addDifference(new StringDifference("Solving inequalities"),true);
+    myInequalities.solveInequalities();
+    popDifference();
   }
 
   public void print() {
     myEquations.printEquations();
     myInequalities.print();
+  }
+
+  public Stack<Difference> getDifferenceStack() {
+    return myDifferenceStack;
+  }
+
+  public Difference getDifference() {
+    return myDifference;
+  }
+
+  public void setDifferenceStack(Stack<Difference> differenceStack) {
+    myDifferenceStack = differenceStack;
   }
 }
