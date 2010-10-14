@@ -1157,7 +1157,7 @@ public final class SNode {
       LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
     }
     SReference resultReference = null;
-    boolean referenceKept = true;
+    boolean handlerFound = false;
     if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
@@ -1165,6 +1165,8 @@ public final class SNode {
       if (!threadSet.contains(pair)) {
         INodeReferentSetEventHandler handler = CONSTRAINTS_MANAGER.getNodeReferentSetEventHandler(this, role);
         if (handler != null) {
+          boolean referenceKept = true;
+          handlerFound = true;
           threadSet.add(pair);
           try {
             if (handler instanceof INodeReferenceFullSetHandler) {
@@ -1191,10 +1193,9 @@ public final class SNode {
             threadSet.remove(pair);
           }
         }
-      } else {
-        resultReference = doSetReference(role, newReferent, toDelete);
       }
-    } else {
+    }
+    if (!handlerFound) {
       resultReference = doSetReference(role, newReferent, toDelete);
     }
 
