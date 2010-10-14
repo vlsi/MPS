@@ -3719,6 +3719,9 @@
     <link role="conceptDeclaration:32" targetNodeId="17.1083245097125:3" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1085483277583">
       <property name="vertical:32" value="true" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="5310874912466348405">
+        <link role="editorComponent:32" targetNodeId="7113443356592971504" resolveInfo="HasAnnotation_AnnotationComponent" />
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4648889366614138330">
         <link role="editorComponent:32" targetNodeId="1178547675197" resolveInfo="_Component_Visibility" />
       </node>

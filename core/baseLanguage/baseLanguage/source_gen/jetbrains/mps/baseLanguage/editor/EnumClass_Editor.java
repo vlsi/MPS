@@ -40,75 +40,82 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y68cfu_a");
     editorCell.addEditorCell(this.createComponent_y68cfu_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y68cfu_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_y68cfu_c0(editorContext, node));
-    if (renderingCondition_y68cfu_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_y68cfu_d0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_y68cfu_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y68cfu_d0(editorContext, node));
+    if (renderingCondition_y68cfu_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createComponent_y68cfu_e0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_y68cfu_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_f0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_y68cfu_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_g0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_y68cfu_h0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_y68cfu_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_y68cfu_h0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_y68cfu_g0");
+    editorCell.setCellId("Collection_y68cfu_h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.setCanBeFolded(renderingCondition_y68cfu_a6a(node, editorContext, editorContext.getOperationContext().getScope()));
-    editorCell.setFoldedCell(this.createComponent_y68cfu_a6a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y68cfu_a6a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_y68cfu_b6a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y68cfu_c6a(editorContext, node));
+    editorCell.setCanBeFolded(renderingCondition_y68cfu_a7a(node, editorContext, editorContext.getOperationContext().getScope()));
+    editorCell.setFoldedCell(this.createComponent_y68cfu_a7a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_a7a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_y68cfu_b7a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_c7a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_y68cfu_b6a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_y68cfu_b7a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_y68cfu_b6a");
+    editorCell.setCellId("Collection_y68cfu_b7a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_a1g0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y68cfu_b1g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_c1g0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y68cfu_d1g0(editorContext, node));
-    if (renderingCondition_y68cfu_a4b6a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_y68cfu_e1g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_a1h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_b1h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_c1h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_d1h0(editorContext, node));
+    if (renderingCondition_y68cfu_a4b7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_y68cfu_e1h0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_f1g0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y68cfu_g1g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_h1g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_i1g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y68cfu_j1g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_f1h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y68cfu_g1h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_h1h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_i1h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y68cfu_j1h0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createComponent_y68cfu_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new HasAnnotation_AnnotationComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_y68cfu_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _Component_Visibility(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_y68cfu_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_y68cfu_e0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_y68cfu_a6a(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_y68cfu_a7a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enum");
-    editorCell.setCellId("Constant_y68cfu_b0");
+    editorCell.setCellId("Constant_y68cfu_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -119,9 +126,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implements");
-    editorCell.setCellId("Constant_y68cfu_e0");
+    editorCell.setCellId("Constant_y68cfu_f0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -132,9 +139,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_a6a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_y68cfu_a6a");
+    editorCell.setCellId("Constant_y68cfu_a7a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -144,9 +151,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_b1g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_b1h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_y68cfu_b1g0");
+    editorCell.setCellId("Constant_y68cfu_b1h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -155,9 +162,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_d1g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_d1h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_y68cfu_d1g0");
+    editorCell.setCellId("Constant_y68cfu_d1h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -166,9 +173,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_g1g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_g1h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_y68cfu_g1g0");
+    editorCell.setCellId("Constant_y68cfu_g1h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -177,16 +184,16 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_y68cfu_c6a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y68cfu_c7a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_y68cfu_c6a");
+    editorCell.setCellId("Constant_y68cfu_c7a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.implementedInterfaceListHandler_y68cfu_f0(node, "implementedInterface", editorContext);
+  private EditorCell createRefNodeList_y68cfu_g0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.implementedInterfaceListHandler_y68cfu_g0(node, "implementedInterface", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_implementedInterface");
     {
@@ -197,8 +204,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_a1g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.enumConstantListHandler_y68cfu_a1g0(node, "enumConstant", editorContext);
+  private EditorCell createRefNodeList_y68cfu_a1h0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.enumConstantListHandler_y68cfu_a1h0(node, "enumConstant", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_enumConstant");
     {
@@ -210,8 +217,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_c1g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.staticFieldListHandler_y68cfu_c1g0(node, "staticField", editorContext);
+  private EditorCell createRefNodeList_y68cfu_c1h0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.staticFieldListHandler_y68cfu_c1h0(node, "staticField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_staticField");
     {
@@ -222,8 +229,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_f1g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.fieldListHandler_y68cfu_f1g0(node, "field", editorContext);
+  private EditorCell createRefNodeList_y68cfu_f1h0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.fieldListHandler_y68cfu_f1h0(node, "field", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_field");
     {
@@ -234,8 +241,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_h1g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.constructorListHandler_y68cfu_h1g0(node, "constructor", editorContext);
+  private EditorCell createRefNodeList_y68cfu_h1h0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.constructorListHandler_y68cfu_h1h0(node, "constructor", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_constructor");
     {
@@ -246,8 +253,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_i1g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.methodListHandler_y68cfu_i1g0(node, "method", editorContext);
+  private EditorCell createRefNodeList_y68cfu_i1h0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.methodListHandler_y68cfu_i1h0(node, "method", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_method");
     {
@@ -258,8 +265,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_y68cfu_j1g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new EnumClass_Editor.staticMethodListHandler_y68cfu_j1g0(node, "staticMethod", editorContext);
+  private EditorCell createRefNodeList_y68cfu_j1h0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new EnumClass_Editor.staticMethodListHandler_y68cfu_j1h0(node, "staticMethod", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_staticMethod");
     {
@@ -270,7 +277,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_y68cfu_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_y68cfu_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -292,7 +299,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_y68cfu_e1g0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_y68cfu_e1h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("classInitializer");
     provider.setNoTargetText("<<static initializer>>");
@@ -313,20 +320,20 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_y68cfu_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_y68cfu_a4a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
-  private static boolean renderingCondition_y68cfu_a4b6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_y68cfu_a4b7a(SNode node, EditorContext editorContext, IScope scope) {
     return !(Classifier_Behavior.call_isInner_521412098689998677(node)) || Classifier_Behavior.call_isStatic_521412098689998668(node) || (SLinkOperations.getTarget(node, "classInitializer", true) != null);
   }
 
-  private static boolean renderingCondition_y68cfu_a6a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_y68cfu_a7a(SNode node, EditorContext editorContext, IScope scope) {
     return (SNodeOperations.getParent(node) != null);
   }
 
-  private static class implementedInterfaceListHandler_y68cfu_f0 extends RefNodeListHandler {
-    public implementedInterfaceListHandler_y68cfu_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class implementedInterfaceListHandler_y68cfu_g0 extends RefNodeListHandler {
+    public implementedInterfaceListHandler_y68cfu_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -349,7 +356,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a5a(editorContext, node);
+      return this.createConstant_y68cfu_a6a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -366,9 +373,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a5a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a6a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a5a");
+      editorCell.setCellId("Constant_y68cfu_a6a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
@@ -378,8 +385,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class enumConstantListHandler_y68cfu_a1g0 extends RefNodeListHandler {
-    public enumConstantListHandler_y68cfu_a1g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class enumConstantListHandler_y68cfu_a1h0 extends RefNodeListHandler {
+    public enumConstantListHandler_y68cfu_a1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -402,7 +409,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a0b6a(editorContext, node);
+      return this.createConstant_y68cfu_a0b7a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -419,9 +426,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a0b6a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a0b7a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a0b6a");
+      editorCell.setCellId("Constant_y68cfu_a0b7a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
@@ -431,8 +438,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class staticFieldListHandler_y68cfu_c1g0 extends RefNodeListHandler {
-    public staticFieldListHandler_y68cfu_c1g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class staticFieldListHandler_y68cfu_c1h0 extends RefNodeListHandler {
+    public staticFieldListHandler_y68cfu_c1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -455,7 +462,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a2b6a(editorContext, node);
+      return this.createConstant_y68cfu_a2b7a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -472,9 +479,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a2b6a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a2b7a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a2b6a");
+      editorCell.setCellId("Constant_y68cfu_a2b7a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
@@ -484,8 +491,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class fieldListHandler_y68cfu_f1g0 extends RefNodeListHandler {
-    public fieldListHandler_y68cfu_f1g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fieldListHandler_y68cfu_f1h0 extends RefNodeListHandler {
+    public fieldListHandler_y68cfu_f1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -508,7 +515,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a5b6a(editorContext, node);
+      return this.createConstant_y68cfu_a5b7a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -525,9 +532,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a5b6a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a5b7a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a5b6a");
+      editorCell.setCellId("Constant_y68cfu_a5b7a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
@@ -537,8 +544,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class constructorListHandler_y68cfu_h1g0 extends RefNodeListHandler {
-    public constructorListHandler_y68cfu_h1g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class constructorListHandler_y68cfu_h1h0 extends RefNodeListHandler {
+    public constructorListHandler_y68cfu_h1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -561,7 +568,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a7b6a(editorContext, node);
+      return this.createConstant_y68cfu_a7b7a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -578,9 +585,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a7b6a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a7b7a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a7b6a");
+      editorCell.setCellId("Constant_y68cfu_a7b7a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
@@ -590,8 +597,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class methodListHandler_y68cfu_i1g0 extends RefNodeListHandler {
-    public methodListHandler_y68cfu_i1g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class methodListHandler_y68cfu_i1h0 extends RefNodeListHandler {
+    public methodListHandler_y68cfu_i1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -614,7 +621,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a8b6a(editorContext, node);
+      return this.createConstant_y68cfu_a8b7a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -631,9 +638,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a8b6a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a8b7a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a8b6a");
+      editorCell.setCellId("Constant_y68cfu_a8b7a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
@@ -643,8 +650,8 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class staticMethodListHandler_y68cfu_j1g0 extends RefNodeListHandler {
-    public staticMethodListHandler_y68cfu_j1g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class staticMethodListHandler_y68cfu_j1h0 extends RefNodeListHandler {
+    public staticMethodListHandler_y68cfu_j1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -667,7 +674,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_y68cfu_a9b6a(editorContext, node);
+      return this.createConstant_y68cfu_a9b7a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -684,9 +691,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_y68cfu_a9b6a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_y68cfu_a9b7a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a9b6a");
+      editorCell.setCellId("Constant_y68cfu_a9b7a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
