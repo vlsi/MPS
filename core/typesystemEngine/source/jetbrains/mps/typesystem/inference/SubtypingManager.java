@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.ModelChange;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.typesystem.inference.util.*;
@@ -314,7 +315,7 @@ public class SubtypingManager {
           continue;
         }
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
-        List<SNode> supertypes = term.freezeAndCompute(new Computable<List<SNode>>() {
+        List<SNode> supertypes = ModelChange.freezeAndCompute(term,new Computable<List<SNode>>() {
           public List<SNode> compute() {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override

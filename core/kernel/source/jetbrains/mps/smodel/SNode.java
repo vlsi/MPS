@@ -46,7 +46,6 @@ public final class SNode {
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
-  private static final Object FROZEN_KEY = new Object();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
@@ -1275,38 +1274,6 @@ public final class SNode {
 
   public boolean isDeleted() {
     return (_reference().size() == 0) && myParent == null && !getModel().isRoot(this);
-  }
-
-  // ----------frozen mode-------------
-
-  public boolean isFrozen() {
-    return getUserObject(FROZEN_KEY) != null;
-  }
-
-  public <T> T freezeAndCompute(Computable<T> computable) {
-    if (isFrozen()) {
-      return computable.compute();
-    }
-    try {
-      freeze();
-      return computable.compute();
-    } finally {
-      unfreeze();
-    }
-  }
-
-  private void freeze() {
-    putUserObject(FROZEN_KEY, FROZEN_KEY);
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.freeze();
-    }
-  }
-
-  private void unfreeze() {
-    removeUserObject(FROZEN_KEY);
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.unfreeze();
-    }
   }
 
   // ---------- -------------
