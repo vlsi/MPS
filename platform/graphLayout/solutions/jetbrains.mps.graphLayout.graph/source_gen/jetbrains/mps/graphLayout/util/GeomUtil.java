@@ -142,4 +142,37 @@ public class GeomUtil {
     points[3] = new Point(rect.x + rect.width, rect.y);
     return points;
   }
+
+  public static int minCoord(Rectangle rect, Direction2D dir) {
+    if (dir == Direction2D.RIGHT) {
+      return rect.x;
+    }
+    if (dir == Direction2D.LEFT) {
+      return rect.x + rect.width;
+    }
+    if (dir == Direction2D.UP) {
+      return rect.y;
+    }
+    return rect.y + rect.height;
+  }
+
+  public static int maxCoord(Rectangle rect, Direction2D dir) {
+    return minCoord(rect, dir.opposite());
+  }
+
+  public static int width(Rectangle rect, Direction2D dir) {
+    if (dir.isHorizontal()) {
+      return rect.width;
+    } else {
+      return rect.height;
+    }
+  }
+
+  public static int height(Rectangle rect, Direction2D dir) {
+    if (dir.isHorizontal()) {
+      return rect.height;
+    } else {
+      return rect.width;
+    }
+  }
 }
