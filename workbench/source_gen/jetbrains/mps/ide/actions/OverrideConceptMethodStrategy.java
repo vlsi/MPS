@@ -4,11 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -27,14 +27,18 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
 
   public void updateMethod(SNode sourceMethod, SNode method) {
     super.updateMethod(sourceMethod, method);
+    SNode sourceMethodConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(sourceMethod, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
+    if (SNodeOperations.isInstanceOf(sourceMethodConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+      sourceMethodConcept = null;
+    }
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0a0b0a().createNode(it);
+        return new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0a0d0a().createNode(it);
       }
     });
-    SNode superCallExpr = new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a2a0().createNode(Sequence.fromIterable(paramList).toListSequence(), sourceMethod);
+    SNode superCallExpr = new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a4a0().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), sourceMethod);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0d0a().createNode(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0f0a().createNode(superCallExpr));
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(superCallExpr));
     }
@@ -52,8 +56,8 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     return optPanel;
   }
 
-  public static class QuotationClass_3gioqg_a0a0a0a0b0a {
-    public QuotationClass_3gioqg_a0a0a0a0b0a() {
+  public static class QuotationClass_3gioqg_a0a0a0a0d0a {
+    public QuotationClass_3gioqg_a0a0a0a0d0a() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -70,11 +74,11 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     }
   }
 
-  public static class QuotationClass_3gioqg_a0a2a0 {
-    public QuotationClass_3gioqg_a0a2a0() {
+  public static class QuotationClass_3gioqg_a0a4a0 {
+    public QuotationClass_3gioqg_a0a4a0() {
     }
 
-    public SNode createNode(Object parameter_8, Object parameter_9) {
+    public SNode createNode(Object parameter_8, Object parameter_9, Object parameter_10) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -87,14 +91,15 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
+          quotedNode1_6.setReferent("superConcept", (SNode) parameter_8);
           quotedNode_1.addChild("operand", quotedNode1_6);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_3;
-          quotedNode1_7.setReferent("baseMethodDeclaration", (SNode) parameter_9);
+          quotedNode1_7.setReferent("baseMethodDeclaration", (SNode) parameter_10);
           {
-            List<SNode> nodes = (List<SNode>) parameter_8;
+            List<SNode> nodes = (List<SNode>) parameter_9;
             for (SNode child : nodes) {
               quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(child));
             }
@@ -107,8 +112,8 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     }
   }
 
-  public static class QuotationClass_3gioqg_a0a0a0d0a {
-    public QuotationClass_3gioqg_a0a0a0d0a() {
+  public static class QuotationClass_3gioqg_a0a0a0f0a {
+    public QuotationClass_3gioqg_a0a0a0f0a() {
     }
 
     public SNode createNode(Object parameter_5) {

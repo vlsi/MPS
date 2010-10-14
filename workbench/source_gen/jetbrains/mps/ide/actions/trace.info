@@ -6084,140 +6084,146 @@
   <root nodeId="6276897598755404961">
     <nodeInfo nodeId="4393431345217255534" fileName="OverrideConceptMethodStrategy.java" startLine="24" startPosition="57" endLine="25" endPosition="19" />
     <nodeInfo nodeId="6359127068906225586" fileName="OverrideConceptMethodStrategy.java" startLine="28" startPosition="62" endLine="29" endPosition="45" />
-    <nodeInfo nodeId="6276897598755405001" fileName="OverrideConceptMethodStrategy.java" startLine="31" startPosition="37" endLine="32" endPosition="100" />
-    <nodeInfo nodeId="5817167241946142670" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="7" endLine="35" endPosition="167" />
-    <nodeInfo nodeId="6276897598755405022" fileName="OverrideConceptMethodStrategy.java" startLine="36" startPosition="143" endLine="37" endPosition="230" />
-    <nodeInfo nodeId="6276897598755405043" fileName="OverrideConceptMethodStrategy.java" startLine="38" startPosition="12" endLine="39" endPosition="170" />
-    <nodeInfo nodeId="6276897598755405064" fileName="OverrideConceptMethodStrategy.java" startLine="43" startPosition="28" endLine="44" endPosition="29" />
-    <nodeInfo nodeId="5394250374101438048" fileName="OverrideConceptMethodStrategy.java" startLine="47" startPosition="56" endLine="48" endPosition="35" />
-    <nodeInfo nodeId="5394250374101438053" fileName="OverrideConceptMethodStrategy.java" startLine="48" startPosition="35" endLine="49" endPosition="66" />
-    <nodeInfo nodeId="5394250374101438061" fileName="OverrideConceptMethodStrategy.java" startLine="49" startPosition="66" endLine="50" endPosition="38" />
-    <nodeInfo nodeId="5394250374101438068" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="38" endLine="51" endPosition="40" />
-    <nodeInfo nodeId="5394250374101438075" fileName="OverrideConceptMethodStrategy.java" startLine="51" startPosition="40" endLine="52" endPosition="20" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="49" endLine="60" endPosition="26" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="60" startPosition="26" endLine="61" endPosition="67" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="61" startPosition="67" endLine="62" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="7" endLine="64" endPosition="167" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="64" startPosition="167" endLine="65" endPosition="43" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="65" startPosition="43" endLine="66" endPosition="78" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="78" endLine="67" endPosition="31" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="68" startPosition="7" endLine="69" endPosition="20" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="69" endLine="78" endPosition="26" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="78" startPosition="26" endLine="79" endPosition="67" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="79" startPosition="67" endLine="80" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="32" endLine="81" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="81" startPosition="32" endLine="82" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="82" startPosition="32" endLine="83" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="84" startPosition="7" endLine="85" endPosition="162" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="85" startPosition="162" endLine="86" endPosition="43" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="9" endLine="88" endPosition="171" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="88" startPosition="171" endLine="89" endPosition="45" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="89" startPosition="45" endLine="90" endPosition="58" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="92" startPosition="9" endLine="93" endPosition="172" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="93" startPosition="172" endLine="94" endPosition="45" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="94" startPosition="45" endLine="95" endPosition="82" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="11" endLine="97" endPosition="58" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="98" startPosition="39" endLine="99" endPosition="84" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="11" endLine="102" endPosition="60" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="103" startPosition="9" endLine="104" endPosition="31" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="105" startPosition="7" endLine="106" endPosition="20" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="114" startPosition="49" endLine="115" endPosition="26" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="26" endLine="116" endPosition="67" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="116" startPosition="67" endLine="117" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="117" startPosition="32" endLine="118" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="7" endLine="120" endPosition="168" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="120" startPosition="168" endLine="121" endPosition="43" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="122" startPosition="9" endLine="123" endPosition="45" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="45" endLine="124" endPosition="30" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="125" startPosition="66" endLine="126" endPosition="56" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="18" endLine="128" endPosition="57" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="128" startPosition="57" endLine="129" endPosition="41" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="131" startPosition="38" endLine="132" endPosition="86" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="134" startPosition="9" endLine="135" endPosition="31" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="136" startPosition="7" endLine="137" endPosition="20" />
-    <nodeInfo nodeId="6276897598755405041" fileName="OverrideConceptMethodStrategy.java" startLine="38" startPosition="10" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="55" startPosition="57" endLine="57" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="73" startPosition="52" endLine="75" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="110" startPosition="55" endLine="112" endPosition="5" />
+    <nodeInfo nodeId="7907821417706853156" fileName="OverrideConceptMethodStrategy.java" startLine="29" startPosition="45" endLine="30" endPosition="190" />
+    <nodeInfo nodeId="7907821417706853179" fileName="OverrideConceptMethodStrategy.java" startLine="31" startPosition="121" endLine="32" endPosition="33" />
+    <nodeInfo nodeId="6276897598755405001" fileName="OverrideConceptMethodStrategy.java" startLine="35" startPosition="37" endLine="36" endPosition="100" />
+    <nodeInfo nodeId="5817167241946142670" fileName="OverrideConceptMethodStrategy.java" startLine="38" startPosition="7" endLine="39" endPosition="188" />
+    <nodeInfo nodeId="6276897598755405022" fileName="OverrideConceptMethodStrategy.java" startLine="40" startPosition="143" endLine="41" endPosition="230" />
+    <nodeInfo nodeId="6276897598755405043" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="12" endLine="43" endPosition="170" />
+    <nodeInfo nodeId="6276897598755405064" fileName="OverrideConceptMethodStrategy.java" startLine="47" startPosition="28" endLine="48" endPosition="29" />
+    <nodeInfo nodeId="5394250374101438048" fileName="OverrideConceptMethodStrategy.java" startLine="51" startPosition="56" endLine="52" endPosition="35" />
+    <nodeInfo nodeId="5394250374101438053" fileName="OverrideConceptMethodStrategy.java" startLine="52" startPosition="35" endLine="53" endPosition="66" />
+    <nodeInfo nodeId="5394250374101438061" fileName="OverrideConceptMethodStrategy.java" startLine="53" startPosition="66" endLine="54" endPosition="38" />
+    <nodeInfo nodeId="5394250374101438068" fileName="OverrideConceptMethodStrategy.java" startLine="54" startPosition="38" endLine="55" endPosition="40" />
+    <nodeInfo nodeId="5394250374101438075" fileName="OverrideConceptMethodStrategy.java" startLine="55" startPosition="40" endLine="56" endPosition="20" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="49" endLine="64" endPosition="26" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="64" startPosition="26" endLine="65" endPosition="67" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="65" startPosition="67" endLine="66" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="67" startPosition="7" endLine="68" endPosition="167" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="68" startPosition="167" endLine="69" endPosition="43" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="69" startPosition="43" endLine="70" endPosition="78" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="70" startPosition="78" endLine="71" endPosition="31" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="72" startPosition="7" endLine="73" endPosition="20" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="81" startPosition="90" endLine="82" endPosition="26" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="82" startPosition="26" endLine="83" endPosition="67" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="83" startPosition="67" endLine="84" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="84" startPosition="32" endLine="85" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="85" startPosition="32" endLine="86" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="86" startPosition="32" endLine="87" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="88" startPosition="7" endLine="89" endPosition="162" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="89" startPosition="162" endLine="90" endPosition="43" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="9" endLine="92" endPosition="171" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="92" startPosition="171" endLine="93" endPosition="45" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="93" startPosition="45" endLine="94" endPosition="73" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="94" startPosition="73" endLine="95" endPosition="58" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="9" endLine="98" endPosition="172" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="98" startPosition="172" endLine="99" endPosition="45" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="99" startPosition="45" endLine="100" endPosition="83" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="11" endLine="102" endPosition="58" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="103" startPosition="39" endLine="104" endPosition="84" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="106" startPosition="11" endLine="107" endPosition="60" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="108" startPosition="9" endLine="109" endPosition="31" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="110" startPosition="7" endLine="111" endPosition="20" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="49" endLine="120" endPosition="26" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="120" startPosition="26" endLine="121" endPosition="67" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="121" startPosition="67" endLine="122" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="122" startPosition="32" endLine="123" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="124" startPosition="7" endLine="125" endPosition="168" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="125" startPosition="168" endLine="126" endPosition="43" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="9" endLine="128" endPosition="45" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="128" startPosition="45" endLine="129" endPosition="30" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="130" startPosition="66" endLine="131" endPosition="56" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="18" endLine="133" endPosition="57" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="133" startPosition="57" endLine="134" endPosition="41" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="136" startPosition="38" endLine="137" endPosition="86" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="139" startPosition="9" endLine="140" endPosition="31" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="141" startPosition="7" endLine="142" endPosition="20" />
+    <nodeInfo nodeId="6276897598755405041" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="10" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="57" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="52" endLine="79" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="55" endLine="117" endPosition="5" />
     <nodeInfo nodeId="6276897598755404963" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="77" endLine="26" endPosition="3" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="58" endLine="100" endPosition="13" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="16" endLine="130" endPosition="11" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="130" startPosition="11" endLine="133" endPosition="11" />
-    <nodeInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="147" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="6276897598755405060" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404990" fileName="OverrideConceptMethodStrategy.java" startLine="29" startPosition="45" endLine="34" endPosition="7" />
-    <nodeInfo nodeId="6276897598755405020" fileName="OverrideConceptMethodStrategy.java" startLine="35" startPosition="167" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="86" startPosition="43" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="32" endLine="68" endPosition="7" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="95" startPosition="82" endLine="101" endPosition="11" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="124" startPosition="30" endLine="130" endPosition="11" />
-    <nodeInfo nodeId="6276897598755405066" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="9" endLine="103" endPosition="9" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="58" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="121" startPosition="43" endLine="134" endPosition="9" />
-    <nodeInfo nodeId="6276897598755404970" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="32" endLine="136" endPosition="7" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="83" startPosition="32" endLine="105" endPosition="7" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="113" startPosition="0" endLine="139" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="76" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="56" startPosition="48" endLine="56" endPosition="48" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="74" startPosition="43" endLine="74" endPosition="43" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="111" startPosition="46" endLine="111" endPosition="46" />
+    <nodeInfo nodeId="7907821417706853167" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="190" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="102" startPosition="58" endLine="105" endPosition="13" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="16" endLine="135" endPosition="11" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="135" startPosition="11" endLine="138" endPosition="11" />
+    <nodeInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="147" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="6276897598755405060" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404990" fileName="OverrideConceptMethodStrategy.java" startLine="33" startPosition="5" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="6276897598755405020" fileName="OverrideConceptMethodStrategy.java" startLine="39" startPosition="188" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="32" endLine="72" endPosition="7" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="90" startPosition="43" endLine="96" endPosition="9" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="100" startPosition="83" endLine="106" endPosition="11" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="129" startPosition="30" endLine="135" endPosition="11" />
+    <nodeInfo nodeId="6276897598755405066" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="9" endLine="108" endPosition="9" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="126" startPosition="43" endLine="139" endPosition="9" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="32" endLine="141" endPosition="7" />
+    <nodeInfo nodeId="6276897598755404970" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="0" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="32" endLine="110" endPosition="7" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="0" endLine="144" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="60" startPosition="48" endLine="60" endPosition="48" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="78" startPosition="43" endLine="78" endPosition="43" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="116" startPosition="46" endLine="116" endPosition="46" />
     <scopeInfo nodeId="6276897598755404966" fileName="OverrideConceptMethodStrategy.java" startLine="24" startPosition="57" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="6276897598755405000" fileName="OverrideConceptMethodStrategy.java" startLine="31" startPosition="37" endLine="32" endPosition="100" />
-    <scopeInfo nodeId="6276897598755405021" fileName="OverrideConceptMethodStrategy.java" startLine="36" startPosition="143" endLine="37" endPosition="230" />
-    <scopeInfo nodeId="6276897598755405042" fileName="OverrideConceptMethodStrategy.java" startLine="38" startPosition="12" endLine="39" endPosition="170" />
-    <scopeInfo nodeId="6276897598755405063" fileName="OverrideConceptMethodStrategy.java" startLine="43" startPosition="28" endLine="44" endPosition="29" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="98" startPosition="39" endLine="99" endPosition="84" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="125" startPosition="66" endLine="126" endPosition="56" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="131" startPosition="38" endLine="132" endPosition="86" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="55" startPosition="57" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="73" startPosition="52" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="110" startPosition="55" endLine="112" endPosition="5" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="18" endLine="129" endPosition="41" />
+    <scopeInfo nodeId="7907821417706853168" fileName="OverrideConceptMethodStrategy.java" startLine="31" startPosition="121" endLine="32" endPosition="33" />
+    <scopeInfo nodeId="6276897598755405000" fileName="OverrideConceptMethodStrategy.java" startLine="35" startPosition="37" endLine="36" endPosition="100" />
+    <scopeInfo nodeId="6276897598755405021" fileName="OverrideConceptMethodStrategy.java" startLine="40" startPosition="143" endLine="41" endPosition="230" />
+    <scopeInfo nodeId="6276897598755405042" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="12" endLine="43" endPosition="170" />
+    <scopeInfo nodeId="6276897598755405063" fileName="OverrideConceptMethodStrategy.java" startLine="47" startPosition="28" endLine="48" endPosition="29" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="103" startPosition="39" endLine="104" endPosition="84" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="130" startPosition="66" endLine="131" endPosition="56" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="136" startPosition="38" endLine="137" endPosition="86" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="57" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="52" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="55" endLine="117" endPosition="5" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="18" endLine="134" endPosition="41" />
     <scopeInfo nodeId="6276897598755404963" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="77" endLine="26" endPosition="3">
       <varInfo nodeId="4393431345217255532" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="9" endLine="90" endPosition="58" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="58" endLine="100" endPosition="13" />
-    <scopeInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="147" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="6276897598755405060" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="7" endLine="67" endPosition="31" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="11" endLine="100" endPosition="13" />
-    <scopeInfo nodeId="6276897598755405069" fileName="OverrideConceptMethodStrategy.java" startLine="47" startPosition="56" endLine="52" endPosition="20">
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="102" startPosition="58" endLine="105" endPosition="13" />
+    <scopeInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="147" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6276897598755405060" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="67" startPosition="7" endLine="71" endPosition="31" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="9" endLine="95" endPosition="58" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="11" endLine="105" endPosition="13" />
+    <scopeInfo nodeId="6276897598755405069" fileName="OverrideConceptMethodStrategy.java" startLine="51" startPosition="56" endLine="56" endPosition="20">
       <varInfo nodeId="5394250374101438049" varName="optPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="86" startPosition="43" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="32" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="95" startPosition="82" endLine="101" endPosition="11" />
-    <scopeInfo nodeId="6276897598755405066" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="49" endLine="69" endPosition="20" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="92" startPosition="9" endLine="102" endPosition="60" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="122" startPosition="9" endLine="133" endPosition="11" />
-    <scopeInfo nodeId="6276897598755404973" fileName="OverrideConceptMethodStrategy.java" startLine="28" startPosition="62" endLine="40" endPosition="5">
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="32" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="90" startPosition="43" endLine="96" endPosition="9" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="100" startPosition="83" endLine="106" endPosition="11" />
+    <scopeInfo nodeId="6276897598755405066" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="49" endLine="73" endPosition="20" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="9" endLine="107" endPosition="60" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="9" endLine="138" endPosition="11" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="9" endLine="108" endPosition="9" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="126" startPosition="43" endLine="139" endPosition="9" />
+    <scopeInfo nodeId="6276897598755404973" fileName="OverrideConceptMethodStrategy.java" startLine="28" startPosition="62" endLine="44" endPosition="5">
       <varInfo nodeId="5817167241946142671" varName="superCallExpr" />
+      <varInfo nodeId="7907821417706853157" varName="sourceMethodConcept" />
       <varInfo nodeId="6276897598755404991" varName="paramList" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="9" endLine="103" endPosition="9" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="58" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="121" startPosition="43" endLine="134" endPosition="9" />
-    <scopeInfo nodeId="6276897598755404970" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="124" startPosition="7" endLine="140" endPosition="31" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="32" endLine="141" endPosition="7" />
+    <scopeInfo nodeId="6276897598755404970" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="6276897598755405056" varName="sourceMethod" />
       <varInfo nodeId="6276897598755405058" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="7" endLine="135" endPosition="31" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="32" endLine="136" endPosition="7" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="84" startPosition="7" endLine="104" endPosition="31" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="83" startPosition="32" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="114" startPosition="49" endLine="137" endPosition="20" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="113" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="69" endLine="106" endPosition="20" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="76" startPosition="0" endLine="108" endPosition="0" />
-    <unitInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="120" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$1" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="55" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0a0b0a" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="110" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0d0a" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="73" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a2a0" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="88" startPosition="7" endLine="109" endPosition="31" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="32" endLine="110" endPosition="7" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="49" endLine="142" endPosition="20" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="81" startPosition="90" endLine="111" endPosition="20" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="0" endLine="113" endPosition="0" />
+    <unitInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="120" endLine="38" endPosition="5" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$1" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0a0d0a" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0f0a" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a4a0" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
   </root>
   <root nodeId="6351584993764480814">
     <nodeInfo nodeId="6351584993764485036" fileName="NewModelUtil.java" startLine="15" startPosition="104" endLine="16" endPosition="93" />
