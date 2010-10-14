@@ -125,7 +125,9 @@ public final class SNode {
   }
 
   //MUST NOT be used,except from ModelAccess
-  /*package*/ SModel getModelInternal(){
+  /*package*/
+
+  SModel getModelInternal() {
     return myModel;
   }
 
@@ -395,23 +397,6 @@ public final class SNode {
 
   //node attributes
 
-  @Deprecated
-  public SNode getAttribute() {
-    // default (?) attribute
-    SNode result = getAttribute(null);  // '_attr_$attribute'
-    if (result == null) {
-      // old way, just: '$attribute'
-      result = getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
-    }
-    return result;
-  }
-
-  @Deprecated
-  public void setAttribute(SNode attributeConcept) {
-    // default (?) attribute
-    setAttribute(null, attributeConcept);
-  }
-
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
     for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
@@ -460,30 +445,6 @@ public final class SNode {
 
   ///--property attributes
 
-  @Deprecated
-  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
-    // 'default' property attr
-    setPropertyAttribute(null, propertyName, propertyAttribute);
-  }
-
-  @Deprecated
-  public SNode getPropertyAttribute(String propertyName) {
-    // 'default' property attr
-    SNode result = getPropertyAttribute(null, propertyName);
-    if (result != null) return result;
-
-    // back compatibility with some obsolete property attributes?
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
-        return child;
-      }
-    }
-
-    // old - no attribute role.
-    result = getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
-    return result;
-  }
-
   public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
     setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
   }
@@ -514,29 +475,6 @@ public final class SNode {
   }
 
   // -- link attributes
-
-  @Deprecated
-  public void setLinkAttribute(String role, SNode linkAttribute) {
-    // 'default' link attr
-    setLinkAttribute(null, role, linkAttribute);
-  }
-
-  @Deprecated
-  public SNode getLinkAttribute(String role) {
-    // 'default' link attr
-    SNode result = getLinkAttribute(null, role);
-    if (result != null) return result;
-
-    // back compatibility with some obsolete link attributes?
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
-        return child;
-      }
-    }
-
-    result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
-    return result;
-  }
 
   public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
     setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
@@ -600,8 +538,6 @@ public final class SNode {
     return result;
   }
 
-  //new
-
   protected Set<String> getPropertyNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
@@ -610,8 +546,6 @@ public final class SNode {
     }
     return result;
   }
-
-  //new
 
   protected Set<String> getLinkNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
@@ -1590,13 +1524,6 @@ public final class SNode {
     return SModelUtil_new.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
-  @Deprecated
-  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    String conceptFQName = getConceptFqName();
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    return concept;
-  }
-
   public SNode getConceptDeclarationNode() {
     String conceptFQName = getConceptFqName();
     return SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
@@ -1974,5 +1901,78 @@ public final class SNode {
     public Iterator<SNode> iterator() {
       return this;
     }
+  }
+
+  //------------deprecated-------------
+
+  @Deprecated
+  public SNode getAttribute() {
+    // default (?) attribute
+    SNode result = getAttribute(null);  // '_attr_$attribute'
+    if (result == null) {
+      // old way, just: '$attribute'
+      result = getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
+    }
+    return result;
+  }
+
+  @Deprecated
+  public void setAttribute(SNode attributeConcept) {
+    // default (?) attribute
+    setAttribute(null, attributeConcept);
+  }
+
+  @Deprecated
+  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
+    // 'default' property attr
+    setPropertyAttribute(null, propertyName, propertyAttribute);
+  }
+
+  @Deprecated
+  public SNode getPropertyAttribute(String propertyName) {
+    // 'default' property attr
+    SNode result = getPropertyAttribute(null, propertyName);
+    if (result != null) return result;
+
+    // back compatibility with some obsolete property attributes?
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
+        return child;
+      }
+    }
+
+    // old - no attribute role.
+    result = getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
+    return result;
+  }
+
+  @Deprecated
+  public void setLinkAttribute(String role, SNode linkAttribute) {
+    // 'default' link attr
+    setLinkAttribute(null, role, linkAttribute);
+  }
+
+  @Deprecated
+  public SNode getLinkAttribute(String role) {
+    // 'default' link attr
+    SNode result = getLinkAttribute(null, role);
+    if (result != null) return result;
+
+    // back compatibility with some obsolete link attributes?
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
+        return child;
+      }
+    }
+
+    result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
+    return result;
+  }
+
+  @Deprecated
+  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
+    String conceptFQName = getConceptFqName();
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    return concept;
   }
 }

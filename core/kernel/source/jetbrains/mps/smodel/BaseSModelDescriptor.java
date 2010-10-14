@@ -50,11 +50,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public SModel getSModel() {
-    boolean fireInitialized;
+    boolean fileStateChanged;
     synchronized (myLoadingLock) {
-      fireInitialized = loadTo(ModelLoadingState.FULLY_LOADED);
+      fileStateChanged = loadTo(ModelLoadingState.FULLY_LOADED);
     }
-    if (fireInitialized) {
+    if (fileStateChanged) {
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
