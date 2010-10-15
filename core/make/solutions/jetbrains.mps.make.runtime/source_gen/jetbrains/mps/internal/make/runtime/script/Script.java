@@ -17,6 +17,7 @@ public class Script implements IScript {
   private ITarget.Name defaultTargetName;
   private TargetRange targetRange;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
+  private boolean validated = false;
 
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
@@ -33,10 +34,15 @@ public class Script implements IScript {
       LOG.error("cycle(s) detected: " + targetRange.cycles());
       error(this, "cycle(s) detected: " + targetRange.cycles());
     }
+    validated = true;
+  }
+
+  public void invalidate() {
+    this.validated = false;
   }
 
   public boolean isValid() {
-    return ListSequence.fromList(errors).isEmpty();
+    return validated && ListSequence.fromList(errors).isEmpty();
   }
 
   public Iterable<ITarget> allTargets() {

@@ -180,6 +180,14 @@ __switch__:
     });
   }
 
+  public Iterable<ITarget> precursors(ITarget target) {
+    return Sequence.fromIterable(new TargetRange.TargetsGraph().topologicalSort()).select(new ISelector<ITarget.Name, ITarget>() {
+      public ITarget select(ITarget.Name tn) {
+        return MapSequence.fromMap(targetsView).get(tn);
+      }
+    });
+  }
+
   public boolean hasCycles() {
     return ListSequence.fromList(new TargetRange.TargetsGraph().findCycles()).isNotEmpty();
   }

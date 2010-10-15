@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Iterator;
 
 public class Cycles_Test extends TestCase {
   public void test_primitive() throws Exception {
@@ -116,22 +117,40 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("I", "K", "J");
     List<List<String>> cycles = cd.findCycles();
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
-    final Queue<String> q = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
-    Sequence.fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
-      public void visit(String v) {
-        Assert.assertEquals(QueueSequence.fromQueue(q).removeFirstElement(), v);
-      }
-    });
-    final Queue<String> qq = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
+    assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
     graph.sort(new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String s) {
         return s;
       }
     }, false);
-    Sequence.fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
-      public void visit(String v) {
-        Assert.assertEquals(QueueSequence.fromQueue(qq).removeFirstElement(), v);
+    assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
+  }
+
+  public void test_precursors() throws Exception {
+    Graph<String> graph = new Graph<String>();
+    graph.addEdges("A", "B");
+    graph.addEdges("C", "D", "E");
+    graph.addEdges("D", "F");
+    GraphAnalyzer<String> cd = graph.getCycleDetector();
+    assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "C", "E"), cd.precursors("E"));
+    graph.addEdges("D", "E");
+    assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "C", "D", "E"), cd.precursors("E"));
+    graph.addEdges("B", "C");
+    graph.sort(new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String s) {
+        return s;
       }
-    });
+    }, false);
+    assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E"), cd.precursors("E"));
+  }
+
+  public void assertSameSequence(Iterable<String> exp, Iterable<String> test) {
+    Iterator<String> expIt = Sequence.fromIterable(exp).iterator();
+    Iterator<String> testIt = Sequence.fromIterable(test).iterator();
+    while (expIt.hasNext() && testIt.hasNext()) {
+      Assert.assertEquals(expIt.next(), testIt.next());
+    }
+    Assert.assertFalse(expIt.hasNext());
+    Assert.assertFalse(testIt.hasNext());
   }
 }

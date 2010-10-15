@@ -52,7 +52,16 @@ public abstract class GraphAnalyzer<V> {
 
   public Iterable<V> topologicalSort() {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    return Sequence.fromIterable(this.topoSort(ws)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+    return ListSequence.fromList(this.topoSort(ws)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+      public V select(GraphAnalyzer.Wrapper<V> w) {
+        return w.vertex;
+      }
+    });
+  }
+
+  public Iterable<V> precursors(V v) {
+    Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
+    return ListSequence.fromList(this.reachable(MapSequence.fromMap(wrapMap).get(v), ws, backward)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
       public V select(GraphAnalyzer.Wrapper<V> w) {
         return w.vertex;
       }
@@ -69,7 +78,7 @@ public abstract class GraphAnalyzer<V> {
     }).toListSequence();
   }
 
-  private Iterable<GraphAnalyzer.Wrapper<V>> topoSort(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
+  private List<GraphAnalyzer.Wrapper<V>> topoSort(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
     final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
     dfs(ws, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
       public void invoke(GraphAnalyzer.Wrapper<V> w, _FunctionTypes._void_P0_E0 cont) {
@@ -78,6 +87,22 @@ public abstract class GraphAnalyzer<V> {
       }
     }, forward);
     return ListSequence.fromList(res).reversedList();
+  }
+
+  public List<GraphAnalyzer.Wrapper<V>> reachable(GraphAnalyzer.Wrapper<V> from, Iterable<GraphAnalyzer.Wrapper<V>> ws, _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
+    final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
+    Sequence.fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
+      public void visit(GraphAnalyzer.Wrapper<V> w) {
+        w.clear();
+      }
+    });
+    dfsVisit(from, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
+      public void invoke(GraphAnalyzer.Wrapper<V> ww, _FunctionTypes._void_P0_E0 cont) {
+        cont.invoke();
+        ListSequence.fromList(res).addElement(ww);
+      }
+    }, edges);
+    return res;
   }
 
   private List<List<V>> collectCycles(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
@@ -121,7 +146,7 @@ public abstract class GraphAnalyzer<V> {
     return list;
   }
 
-  public void dfs(Iterable<GraphAnalyzer.Wrapper<V>> ws, final _FunctionTypes._void_P2_E0<? super GraphAnalyzer.Wrapper<V>, ? super _FunctionTypes._void_P0_E0> visitor, final _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
+  private void dfs(Iterable<GraphAnalyzer.Wrapper<V>> ws, final _FunctionTypes._void_P2_E0<? super GraphAnalyzer.Wrapper<V>, ? super _FunctionTypes._void_P0_E0> visitor, final _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
     Sequence.fromIterable(ws).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> w) {
         w.clear();
@@ -138,7 +163,7 @@ public abstract class GraphAnalyzer<V> {
     });
   }
 
-  public void dfsVisit(final GraphAnalyzer.Wrapper<V> w, final _FunctionTypes._void_P2_E0<? super GraphAnalyzer.Wrapper<V>, ? super _FunctionTypes._void_P0_E0> visitor, final _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
+  private void dfsVisit(final GraphAnalyzer.Wrapper<V> w, final _FunctionTypes._void_P2_E0<? super GraphAnalyzer.Wrapper<V>, ? super _FunctionTypes._void_P0_E0> visitor, final _FunctionTypes._return_P1_E0<? extends Iterable<GraphAnalyzer.Wrapper<V>>, ? super GraphAnalyzer.Wrapper<V>> edges) {
     w.enter();
     visitor.invoke(w, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
