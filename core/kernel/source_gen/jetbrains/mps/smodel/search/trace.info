@@ -56,96 +56,96 @@
     <unitInfo nodeId="4642948870877886449" fileName="SimpleSearchScope.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.smodel.search.SimpleSearchScope" />
   </root>
   <root nodeId="4642948870877886557">
-    <nodeInfo nodeId="4642948870877886560" fileName="ModelAndImportedModelsScope.java" startLine="16" startPosition="70" endLine="17" endPosition="88" />
-    <nodeInfo nodeId="4642948870877886565" fileName="ModelAndImportedModelsScope.java" startLine="18" startPosition="0" endLine="19" endPosition="25" />
-    <nodeInfo nodeId="4642948870877886568" fileName="ModelAndImportedModelsScope.java" startLine="19" startPosition="25" endLine="20" endPosition="30" />
-    <nodeInfo nodeId="4642948870877886571" fileName="ModelAndImportedModelsScope.java" startLine="20" startPosition="30" endLine="21" endPosition="25" />
-    <nodeInfo nodeId="4642948870877886574" fileName="ModelAndImportedModelsScope.java" startLine="21" startPosition="25" endLine="22" endPosition="42" />
-    <nodeInfo nodeId="4642948870877886588" fileName="ModelAndImportedModelsScope.java" startLine="24" startPosition="85" endLine="25" endPosition="20" />
-    <nodeInfo nodeId="4642948870877886592" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="20" endLine="26" endPosition="28" />
-    <nodeInfo nodeId="4642948870877886596" fileName="ModelAndImportedModelsScope.java" startLine="26" startPosition="28" endLine="27" endPosition="20" />
-    <nodeInfo nodeId="4642948870877886632" fileName="ModelAndImportedModelsScope.java" startLine="33" startPosition="28" endLine="34" endPosition="54" />
-    <nodeInfo nodeId="4642948870877886616" fileName="ModelAndImportedModelsScope.java" startLine="35" startPosition="14" endLine="36" endPosition="54" />
-    <nodeInfo nodeId="4642948870877886623" fileName="ModelAndImportedModelsScope.java" startLine="36" startPosition="54" endLine="37" endPosition="54" />
-    <nodeInfo nodeId="4642948870877886639" fileName="ModelAndImportedModelsScope.java" startLine="39" startPosition="5" endLine="40" endPosition="20" />
-    <nodeInfo nodeId="4642948870877886650" fileName="ModelAndImportedModelsScope.java" startLine="44" startPosition="59" endLine="45" endPosition="48" />
-    <nodeInfo nodeId="4642948870877886655" fileName="ModelAndImportedModelsScope.java" startLine="45" startPosition="48" endLine="46" endPosition="48" />
-    <nodeInfo nodeId="2197509460969560021" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="45" endLine="49" endPosition="94" />
-    <nodeInfo nodeId="2197509460969578529" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="34" endLine="51" endPosition="27" />
-    <nodeInfo nodeId="4642948870877886690" fileName="ModelAndImportedModelsScope.java" startLine="57" startPosition="30" endLine="58" endPosition="21" />
-    <nodeInfo nodeId="4642948870877886708" fileName="ModelAndImportedModelsScope.java" startLine="60" startPosition="57" endLine="61" endPosition="77" />
-    <nodeInfo nodeId="4642948870877886714" fileName="ModelAndImportedModelsScope.java" startLine="61" startPosition="77" endLine="62" endPosition="111" />
-    <nodeInfo nodeId="5871435193454872941" fileName="ModelAndImportedModelsScope.java" startLine="63" startPosition="18" endLine="64" endPosition="97" />
-    <nodeInfo nodeId="5871435193454873204" fileName="ModelAndImportedModelsScope.java" startLine="65" startPosition="37" endLine="66" endPosition="31" />
-    <nodeInfo nodeId="4642948870877886674" fileName="ModelAndImportedModelsScope.java" startLine="69" startPosition="31" endLine="70" endPosition="69" />
-    <nodeInfo nodeId="4642948870877886745" fileName="ModelAndImportedModelsScope.java" startLine="73" startPosition="5" endLine="74" endPosition="18" />
-    <nodeInfo nodeId="4642948870877886614" fileName="ModelAndImportedModelsScope.java" startLine="35" startPosition="12" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="2197509460969578522" fileName="ModelAndImportedModelsScope.java" startLine="49" startPosition="94" endLine="52" endPosition="9" />
-    <nodeInfo nodeId="4642948870877886685" fileName="ModelAndImportedModelsScope.java" startLine="56" startPosition="13" endLine="59" endPosition="11" />
-    <nodeInfo nodeId="5871435193454872970" fileName="ModelAndImportedModelsScope.java" startLine="64" startPosition="97" endLine="67" endPosition="13" />
-    <nodeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
-    <nodeInfo nodeId="4642948870877886695" fileName="ModelAndImportedModelsScope.java" startLine="63" startPosition="16" endLine="68" endPosition="11" />
-    <nodeInfo nodeId="4642948870877886610" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="27" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="47" startPosition="22" endLine="53" endPosition="7" />
-    <nodeInfo nodeId="4642948870877886605" fileName="ModelAndImportedModelsScope.java" startLine="31" startPosition="45" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="4642948870877886691" fileName="ModelAndImportedModelsScope.java" startLine="59" startPosition="11" endLine="68" endPosition="11" />
-    <nodeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="29" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="4642948870877886671" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="45" endLine="71" endPosition="9" />
-    <nodeInfo nodeId="4642948870877886666" fileName="ModelAndImportedModelsScope.java" startLine="54" startPosition="12" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="4642948870877886664" fileName="ModelAndImportedModelsScope.java" startLine="54" startPosition="10" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="4642948870877886662" fileName="ModelAndImportedModelsScope.java" startLine="46" startPosition="48" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="4642948870877886642" fileName="ModelAndImportedModelsScope.java" startLine="42" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="4642948870877886631" fileName="ModelAndImportedModelsScope.java" startLine="33" startPosition="28" endLine="34" endPosition="54" />
-    <scopeInfo nodeId="2197509460969578524" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="34" endLine="51" endPosition="27" />
-    <scopeInfo nodeId="4642948870877886689" fileName="ModelAndImportedModelsScope.java" startLine="57" startPosition="30" endLine="58" endPosition="21" />
-    <scopeInfo nodeId="5871435193454872972" fileName="ModelAndImportedModelsScope.java" startLine="65" startPosition="37" endLine="66" endPosition="31" />
-    <scopeInfo nodeId="4642948870877886672" fileName="ModelAndImportedModelsScope.java" startLine="69" startPosition="0" endLine="70" endPosition="69">
+    <nodeInfo nodeId="4642948870877886560" fileName="ModelAndImportedModelsScope.java" startLine="17" startPosition="70" endLine="18" endPosition="88" />
+    <nodeInfo nodeId="4642948870877886565" fileName="ModelAndImportedModelsScope.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886568" fileName="ModelAndImportedModelsScope.java" startLine="20" startPosition="25" endLine="21" endPosition="30" />
+    <nodeInfo nodeId="4642948870877886571" fileName="ModelAndImportedModelsScope.java" startLine="21" startPosition="30" endLine="22" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886574" fileName="ModelAndImportedModelsScope.java" startLine="22" startPosition="25" endLine="23" endPosition="42" />
+    <nodeInfo nodeId="4642948870877886588" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="85" endLine="26" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886592" fileName="ModelAndImportedModelsScope.java" startLine="26" startPosition="20" endLine="27" endPosition="28" />
+    <nodeInfo nodeId="4642948870877886596" fileName="ModelAndImportedModelsScope.java" startLine="27" startPosition="28" endLine="28" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886632" fileName="ModelAndImportedModelsScope.java" startLine="34" startPosition="28" endLine="35" endPosition="54" />
+    <nodeInfo nodeId="4642948870877886616" fileName="ModelAndImportedModelsScope.java" startLine="36" startPosition="14" endLine="37" endPosition="72" />
+    <nodeInfo nodeId="4642948870877886623" fileName="ModelAndImportedModelsScope.java" startLine="37" startPosition="72" endLine="38" endPosition="54" />
+    <nodeInfo nodeId="4642948870877886639" fileName="ModelAndImportedModelsScope.java" startLine="40" startPosition="5" endLine="41" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886650" fileName="ModelAndImportedModelsScope.java" startLine="45" startPosition="59" endLine="46" endPosition="48" />
+    <nodeInfo nodeId="4642948870877886655" fileName="ModelAndImportedModelsScope.java" startLine="46" startPosition="48" endLine="47" endPosition="48" />
+    <nodeInfo nodeId="2197509460969560021" fileName="ModelAndImportedModelsScope.java" startLine="49" startPosition="45" endLine="50" endPosition="94" />
+    <nodeInfo nodeId="2197509460969578529" fileName="ModelAndImportedModelsScope.java" startLine="51" startPosition="34" endLine="52" endPosition="27" />
+    <nodeInfo nodeId="4642948870877886690" fileName="ModelAndImportedModelsScope.java" startLine="58" startPosition="30" endLine="59" endPosition="21" />
+    <nodeInfo nodeId="4642948870877886708" fileName="ModelAndImportedModelsScope.java" startLine="61" startPosition="57" endLine="62" endPosition="77" />
+    <nodeInfo nodeId="4642948870877886714" fileName="ModelAndImportedModelsScope.java" startLine="62" startPosition="77" endLine="63" endPosition="111" />
+    <nodeInfo nodeId="5871435193454872941" fileName="ModelAndImportedModelsScope.java" startLine="64" startPosition="18" endLine="65" endPosition="97" />
+    <nodeInfo nodeId="5871435193454873204" fileName="ModelAndImportedModelsScope.java" startLine="66" startPosition="37" endLine="67" endPosition="31" />
+    <nodeInfo nodeId="4642948870877886674" fileName="ModelAndImportedModelsScope.java" startLine="70" startPosition="31" endLine="71" endPosition="69" />
+    <nodeInfo nodeId="4642948870877886745" fileName="ModelAndImportedModelsScope.java" startLine="74" startPosition="5" endLine="75" endPosition="18" />
+    <nodeInfo nodeId="4642948870877886614" fileName="ModelAndImportedModelsScope.java" startLine="36" startPosition="12" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="2197509460969578522" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="94" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="4642948870877886685" fileName="ModelAndImportedModelsScope.java" startLine="57" startPosition="13" endLine="60" endPosition="11" />
+    <nodeInfo nodeId="5871435193454872970" fileName="ModelAndImportedModelsScope.java" startLine="65" startPosition="97" endLine="68" endPosition="13" />
+    <nodeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886695" fileName="ModelAndImportedModelsScope.java" startLine="64" startPosition="16" endLine="69" endPosition="11" />
+    <nodeInfo nodeId="4642948870877886610" fileName="ModelAndImportedModelsScope.java" startLine="33" startPosition="27" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="22" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886605" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="45" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886691" fileName="ModelAndImportedModelsScope.java" startLine="60" startPosition="11" endLine="69" endPosition="11" />
+    <nodeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="30" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886671" fileName="ModelAndImportedModelsScope.java" startLine="56" startPosition="45" endLine="72" endPosition="9" />
+    <nodeInfo nodeId="4642948870877886666" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="12" endLine="73" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886664" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="10" endLine="74" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886662" fileName="ModelAndImportedModelsScope.java" startLine="47" startPosition="48" endLine="74" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886642" fileName="ModelAndImportedModelsScope.java" startLine="43" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886631" fileName="ModelAndImportedModelsScope.java" startLine="34" startPosition="28" endLine="35" endPosition="54" />
+    <scopeInfo nodeId="2197509460969578524" fileName="ModelAndImportedModelsScope.java" startLine="51" startPosition="34" endLine="52" endPosition="27" />
+    <scopeInfo nodeId="4642948870877886689" fileName="ModelAndImportedModelsScope.java" startLine="58" startPosition="30" endLine="59" endPosition="21" />
+    <scopeInfo nodeId="5871435193454872972" fileName="ModelAndImportedModelsScope.java" startLine="66" startPosition="37" endLine="67" endPosition="31" />
+    <scopeInfo nodeId="4642948870877886672" fileName="ModelAndImportedModelsScope.java" startLine="70" startPosition="0" endLine="71" endPosition="69">
       <varInfo nodeId="4642948870877886682" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886673" fileName="ModelAndImportedModelsScope.java" startLine="69" startPosition="31" endLine="70" endPosition="69" />
-    <scopeInfo nodeId="4642948870877886615" fileName="ModelAndImportedModelsScope.java" startLine="35" startPosition="14" endLine="37" endPosition="54" />
-    <scopeInfo nodeId="4642948870877886707" fileName="ModelAndImportedModelsScope.java" startLine="60" startPosition="57" endLine="62" endPosition="111">
+    <scopeInfo nodeId="4642948870877886673" fileName="ModelAndImportedModelsScope.java" startLine="70" startPosition="31" endLine="71" endPosition="69" />
+    <scopeInfo nodeId="4642948870877886615" fileName="ModelAndImportedModelsScope.java" startLine="36" startPosition="14" endLine="38" endPosition="54" />
+    <scopeInfo nodeId="4642948870877886707" fileName="ModelAndImportedModelsScope.java" startLine="61" startPosition="57" endLine="63" endPosition="111">
       <varInfo nodeId="4642948870877886709" varName="isInstance" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886587" fileName="ModelAndImportedModelsScope.java" startLine="24" startPosition="85" endLine="27" endPosition="20" />
-    <scopeInfo nodeId="2197509460969578522" fileName="ModelAndImportedModelsScope.java" startLine="49" startPosition="94" endLine="52" endPosition="9">
+    <scopeInfo nodeId="4642948870877886587" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="85" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="2197509460969578522" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="94" endLine="53" endPosition="9">
       <varInfo nodeId="2197509460969578523" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5871435193454872970" fileName="ModelAndImportedModelsScope.java" startLine="64" startPosition="97" endLine="67" endPosition="13">
+    <scopeInfo nodeId="5871435193454872970" fileName="ModelAndImportedModelsScope.java" startLine="65" startPosition="97" endLine="68" endPosition="13">
       <varInfo nodeId="5871435193454872971" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886734" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="45" endLine="52" endPosition="9">
+    <scopeInfo nodeId="4642948870877886734" fileName="ModelAndImportedModelsScope.java" startLine="49" startPosition="45" endLine="53" endPosition="9">
       <varInfo nodeId="2197509460969560022" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886696" fileName="ModelAndImportedModelsScope.java" startLine="63" startPosition="18" endLine="67" endPosition="13">
+    <scopeInfo nodeId="4642948870877886696" fileName="ModelAndImportedModelsScope.java" startLine="64" startPosition="18" endLine="68" endPosition="13">
       <varInfo nodeId="5871435193454872942" varName="iter" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="23" startPosition="0" endLine="28" endPosition="3">
+    <scopeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="24" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="4642948870877886581" varName="model" />
       <varInfo nodeId="4642948870877886585" varName="scope" />
       <varInfo nodeId="4642948870877886583" varName="rootsOnly" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886609" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="27" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="4642948870877886729" fileName="ModelAndImportedModelsScope.java" startLine="47" startPosition="22" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="47" startPosition="22" endLine="53" endPosition="7">
+    <scopeInfo nodeId="4642948870877886609" fileName="ModelAndImportedModelsScope.java" startLine="33" startPosition="27" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886729" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="22" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="48" startPosition="22" endLine="54" endPosition="7">
       <varInfo nodeId="4642948870877886732" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886604" fileName="ModelAndImportedModelsScope.java" startLine="31" startPosition="45" endLine="40" endPosition="20" />
-    <scopeInfo nodeId="4642948870877886684" fileName="ModelAndImportedModelsScope.java" startLine="56" startPosition="13" endLine="68" endPosition="11" />
-    <scopeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="29" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="4642948870877886670" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="45" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="4642948870877886665" fileName="ModelAndImportedModelsScope.java" startLine="54" startPosition="12" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="4642948870877886666" fileName="ModelAndImportedModelsScope.java" startLine="54" startPosition="12" endLine="72" endPosition="7">
+    <scopeInfo nodeId="4642948870877886604" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="45" endLine="41" endPosition="20" />
+    <scopeInfo nodeId="4642948870877886684" fileName="ModelAndImportedModelsScope.java" startLine="57" startPosition="13" endLine="69" endPosition="11" />
+    <scopeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="30" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886670" fileName="ModelAndImportedModelsScope.java" startLine="56" startPosition="45" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="4642948870877886665" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="12" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886666" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="12" endLine="73" endPosition="7">
       <varInfo nodeId="4642948870877886668" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886649" fileName="ModelAndImportedModelsScope.java" startLine="44" startPosition="59" endLine="74" endPosition="18">
+    <scopeInfo nodeId="4642948870877886649" fileName="ModelAndImportedModelsScope.java" startLine="45" startPosition="59" endLine="75" endPosition="18">
       <varInfo nodeId="4642948870877886651" varName="models" />
       <varInfo nodeId="4642948870877886656" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886642" fileName="ModelAndImportedModelsScope.java" startLine="42" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4642948870877886642" fileName="ModelAndImportedModelsScope.java" startLine="43" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="4642948870877886646" varName="condition" />
     </scopeInfo>
-    <unitInfo nodeId="4642948870877886557" fileName="ModelAndImportedModelsScope.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
+    <unitInfo nodeId="4642948870877886557" fileName="ModelAndImportedModelsScope.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
   </root>
   <root nodeId="4642948870877886748">
     <nodeInfo nodeId="4642948870877886763" fileName="UndefinedSearchScope.java" startLine="17" startPosition="59" endLine="18" endPosition="46" />

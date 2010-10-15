@@ -76,7 +76,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
                 for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
-                  jetbrains.mps.smodel.SModelOperations.addLanguage(descriptor.getSModel(), ref);
+                  descriptor.getSModel().addLanguage(ref);
                 }
                 runnable.value = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
               }

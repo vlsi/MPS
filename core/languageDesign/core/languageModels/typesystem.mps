@@ -349,17 +349,16 @@
         </node>
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4950342498455635290">
           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4950342498455635293">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4950342498455635301">
-              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="5476035322658130721">
-                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4950342498455635296">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4049502122675885882">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1563994968763759665">
+              <link role="baseMethodDeclaration:3" targetNodeId="4.~SNodeOperations.isUnknown(jetbrains.mps.smodel.SNode):boolean" resolveInfo="isUnknown" />
+              <link role="classConcept:3" targetNodeId="4.~SNodeOperations" resolveInfo="SNodeOperations" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1563994968763759666">
+                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1563994968763759667">
+                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1563994968763759668">
                     <link role="applicableNode:3" targetNodeId="4950342498455564876" resolveInfo="node" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4049502122675887229" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1563994968763759669" />
                 </node>
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4950342498455635305">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~SNode.isUnknown():boolean" resolveInfo="isUnknown" />
               </node>
             </node>
           </node>
