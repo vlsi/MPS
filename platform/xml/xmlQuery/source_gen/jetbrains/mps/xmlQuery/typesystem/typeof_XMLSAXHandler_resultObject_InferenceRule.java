@@ -18,12 +18,22 @@ public class typeof_XMLSAXHandler_resultObject_InferenceRule extends AbstractInf
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode parentMacro = SNodeOperations.getAncestor(node, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule", false, false);
-    {
-      SNode _nodeToCheck_1029348928467 = node;
-      BaseIntentionProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098117", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098119", true), (SNode) SLinkOperations.getTarget(parentMacro, "type", true), _info_12389875345);
+    SNode parent = SNodeOperations.getParent(SNodeOperations.getAncestor(node, "jetbrains.mps.xmlQuery.structure.XMLSAXTextRule", false, false));
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.xmlQuery.structure.XMLSAXParser")) {
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        BaseIntentionProvider intentionProvider = null;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4120841425052792152", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4120841425052792149", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.xmlQuery.structure.XMLSAXParser"), "root", false), "type", true), _info_12389875345);
+      }
+    } else {
+      SNode parentMacro = SNodeOperations.getAncestor(node, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule", false, false);
+      {
+        SNode _nodeToCheck_1029348928467 = node;
+        BaseIntentionProvider intentionProvider = null;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098117", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098119", true), (SNode) SLinkOperations.getTarget(parentMacro, "type", true), _info_12389875345);
+      }
     }
   }
 

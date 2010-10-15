@@ -18,6 +18,7 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ROOT = "root";
+  public static final String GLOBAL_TEXT = "globalText";
   public static final String NODES = "nodes";
   public static final String FIELDS = "fields";
 
@@ -63,6 +64,14 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
 
   public void setRoot(XMLSAXNodeRule node) {
     super.setReferent(XMLSAXParser.ROOT, node);
+  }
+
+  public XMLSAXTextRule getGlobalText() {
+    return (XMLSAXTextRule) this.getChild(XMLSAXTextRule.class, XMLSAXParser.GLOBAL_TEXT);
+  }
+
+  public void setGlobalText(XMLSAXTextRule node) {
+    super.setChild(XMLSAXParser.GLOBAL_TEXT, node);
   }
 
   public int getNodesesCount() {
