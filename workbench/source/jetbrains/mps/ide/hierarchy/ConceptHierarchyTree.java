@@ -68,6 +68,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
   @Override
   protected MPSTreeNode rebuild() {
     myVisitedDescendants.clear();
+    myVisitedParents.clear();
     return super.rebuild();
   }
 }
