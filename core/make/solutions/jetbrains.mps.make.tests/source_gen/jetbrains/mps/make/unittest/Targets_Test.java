@@ -9,12 +9,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Targets_Test extends MockTestCase {
   public void test_extended() throws Exception {
     TargetRange tr = new TargetRange();
-    final ITarget foo = Mockups.target(context, "foo", new ITarget.Name("foo"));
+    final ITarget foo = Mockups.target(context, "foo");
     context.checking(new Expectations() {
       {
         atLeast(1).of(foo).before();
@@ -44,12 +43,12 @@ public class Targets_Test extends MockTestCase {
 
   public void test_available() throws Exception {
     TargetRange tr = new TargetRange();
-    final ITarget make = Mockups.target(context, "make", new ITarget.Name("make"));
+    final ITarget make = Mockups.target(context, "make");
     Mockups.allowing(context, make);
     tr.addTarget(make);
 
-    final ITarget gen = Mockups.target(context, "gen", new ITarget.Name("gen"));
-    final ITarget text = Mockups.target(context, "text", new ITarget.Name("text"));
+    final ITarget gen = Mockups.target(context, "gen");
+    final ITarget text = Mockups.target(context, "text");
     context.checking(new Expectations() {
       {
         atLeast(1).of(text).after();
@@ -66,10 +65,7 @@ public class Targets_Test extends MockTestCase {
     tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
-    List<ITarget> expected = ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, make);
-    for (ITarget t : Sequence.fromIterable(tr.sortedTargets())) {
-      Assert.assertSame(ListSequence.fromList(expected).removeElementAt(0), t);
-    }
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, make), tr.sortedTargets());
   }
 
   public void test_cycles() throws Exception {
@@ -86,5 +82,39 @@ public class Targets_Test extends MockTestCase {
 
     Assert.assertTrue(tr.hasCycles());
     Assert.assertSame(make.getName(), ListSequence.fromList(ListSequence.fromList(tr.cycles()).first()).first());
+  }
+
+  public void test_precursors() throws Exception {
+    TargetRange tr = new TargetRange();
+    final ITarget make = Mockups.target(context, "make");
+    Mockups.allowing(context, make);
+    tr.addTarget(make);
+
+    final ITarget res = Mockups.target(context, "res");
+    final ITarget gen = Mockups.target(context, "gen");
+    final ITarget text = Mockups.target(context, "text");
+    context.checking(new Expectations() {
+      {
+        atLeast(1).of(text).after();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
+        atLeast(1).of(text).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        atLeast(1).of(gen).after();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
+        atLeast(1).of(gen).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+      }
+    });
+    Mockups.allowing(context, res);
+    Mockups.allowing(context, gen);
+    Mockups.allowing(context, text);
+
+    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("res")));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text, make), tr.targetAndSortedPrecursors(new ITarget.Name("make")));
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text), tr.targetAndSortedPrecursors(new ITarget.Name("text")));
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text), tr.immediatePrecursors(new ITarget.Name("make")));
   }
 }

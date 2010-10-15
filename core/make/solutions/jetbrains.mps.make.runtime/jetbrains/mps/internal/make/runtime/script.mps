@@ -3410,7 +3410,7 @@
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5566937012378944996">
-      <property name="name:3" value="precursors" />
+      <property name="name:3" value="targetAndSortedPrecursors" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5566937012378945016">
         <property name="name:3" value="target" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1291978361072220668">

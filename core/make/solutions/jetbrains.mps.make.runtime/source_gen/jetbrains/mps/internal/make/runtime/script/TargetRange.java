@@ -180,7 +180,7 @@ __switch__:
     });
   }
 
-  public Iterable<ITarget> precursors(ITarget.Name target) {
+  public Iterable<ITarget> targetAndSortedPrecursors(ITarget.Name target) {
     if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
       throw new IllegalArgumentException("unknown target");
     }

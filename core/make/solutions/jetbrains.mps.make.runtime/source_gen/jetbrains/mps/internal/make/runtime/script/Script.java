@@ -73,7 +73,7 @@ public class Script implements IScript {
       throw new IllegalStateException("invalid script");
     }
     final CompositeResult results = new CompositeResult();
-    Iterable<ITarget> toExecute = targetRange.precursors(defaultTargetName);
+    Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
     for (ITarget trg : Sequence.fromIterable(toExecute)) {
       Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).select(new ISelector<ITarget, IResult>() {
         public IResult select(ITarget t) {

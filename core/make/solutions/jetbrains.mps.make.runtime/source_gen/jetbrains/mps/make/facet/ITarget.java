@@ -12,7 +12,7 @@ public interface ITarget {
   public Iterable<ITarget.Name> after();
   public Iterable<ITarget.Name> notAfter();
   public IJob createJob();
-  public class Name extends SmartWrapper<String> {
+  public static class Name extends SmartWrapper<String> {
     public Name(String name) {
       super(name);
     }

@@ -15,6 +15,7 @@
   <maxImportIndex value="3" />
   <import index="2" modelUID="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" version="-1" />
   <import index="3" modelUID="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" version="-1" />
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="6168415856807657202">
     <property name="name:3" value="IJob" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6168415856807657210">
@@ -27,8 +28,9 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8855841484790511536">
         <property name="name:3" value="input" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="8855841484790511538">
-          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8855841484790511541">
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5039072078349919295">
+          <link role="classifier:3" targetNodeId="2v.~Iterable" resolveInfo="Iterable" />
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5039072078349919297">
             <link role="classifier:3" targetNodeId="3.6168415856807657256" resolveInfo="IResource" />
           </node>
         </node>

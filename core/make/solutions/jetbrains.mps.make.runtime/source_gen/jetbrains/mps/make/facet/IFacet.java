@@ -10,7 +10,7 @@ public interface IFacet {
   public Iterable<IFacet.Name> required();
   public Iterable<IFacet.Name> optional();
   public Iterable<ITarget> targets();
-  public class Name extends SmartWrapper<String> {
+  public static class Name extends SmartWrapper<String> {
     public Name(String name) {
       super(name);
     }
