@@ -8,5 +8,5 @@ public interface IScript {
   public boolean isValid();
   public ITarget defaultTarget();
   public Iterable<ITarget> allTargets();
-  public Result execute(ITarget trg, IMonitor monit);
+  public IResult execute(IMonitor monit);
 }

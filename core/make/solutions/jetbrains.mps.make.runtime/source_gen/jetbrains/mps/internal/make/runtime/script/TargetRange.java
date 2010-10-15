@@ -180,8 +180,26 @@ __switch__:
     });
   }
 
-  public Iterable<ITarget> precursors(ITarget target) {
-    return Sequence.fromIterable(new TargetRange.TargetsGraph().topologicalSort()).select(new ISelector<ITarget.Name, ITarget>() {
+  public Iterable<ITarget> precursors(ITarget.Name target) {
+    if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
+      throw new IllegalArgumentException("unknown target");
+    }
+    return Sequence.fromIterable(new TargetRange.TargetsGraph().precursors(target)).select(new ISelector<ITarget.Name, ITarget>() {
+      public ITarget select(ITarget.Name tn) {
+        return MapSequence.fromMap(targetsView).get(tn);
+      }
+    });
+  }
+
+  public Iterable<ITarget> immediatePrecursors(ITarget.Name target) {
+    if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
+      throw new IllegalArgumentException("unknown target");
+    }
+    return ListSequence.fromList(MapSequence.fromMap(allRefs).get(target).after).where(new IWhereFilter<ITarget.Name>() {
+      public boolean accept(ITarget.Name tn) {
+        return MapSequence.fromMap(allRefs).containsKey(tn);
+      }
+    }).select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
         return MapSequence.fromMap(targetsView).get(tn);
       }

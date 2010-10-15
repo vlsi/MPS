@@ -8,8 +8,13 @@ import jetbrains.mps.make.facet.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.make.script.Result;
+import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.make.script.IJob;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
@@ -26,7 +31,7 @@ public class Script implements IScript {
 
   public void validate() {
     ListSequence.fromList(errors).clear();
-    if (defaultTargetName != null && !(targetRange.hasTarget(defaultTargetName))) {
+    if (!(targetRange.hasTarget(defaultTargetName))) {
       LOG.error("unknown default target: " + defaultTargetName);
       error(defaultTargetName, "unknown default target: " + defaultTargetName);
     }
@@ -61,14 +66,31 @@ public class Script implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public Result execute(ITarget trg, IMonitor monit) {
-    if (!(targetRange.hasTarget(trg.getName()) || targetRange.getTarget(trg.getName()) != trg)) {
-      throw new IllegalArgumentException("unknown target: " + trg.getName());
-    }
+  public IResult execute(IMonitor monit) {
+    validate();
     if (!(isValid())) {
       LOG.error("attempt to execute invalid script");
       throw new IllegalStateException("invalid script");
     }
-    return null;
+    final CompositeResult results = new CompositeResult();
+    Iterable<ITarget> toExecute = targetRange.precursors(defaultTargetName);
+    for (ITarget trg : Sequence.fromIterable(toExecute)) {
+      Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).select(new ISelector<ITarget, IResult>() {
+        public IResult select(ITarget t) {
+          return results.getResult(t.getName());
+        }
+      }).translate(new ITranslator2<IResult, IResource>() {
+        public Iterable<IResource> translate(IResult r) {
+          return r.output();
+        }
+      });
+      IJob job = trg.createJob();
+      IResult jr = job.execute(input, monit);
+      results.addResult(trg.getName(), jr);
+      if (!(jr.isSucessful()) || monit.pleaseStop()) {
+        return results;
+      }
+    }
+    return results;
   }
 }

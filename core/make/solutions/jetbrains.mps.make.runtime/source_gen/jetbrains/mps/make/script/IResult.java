@@ -4,6 +4,7 @@ package jetbrains.mps.make.script;
 
 import jetbrains.mps.make.resources.IResource;
 
-public interface IJob {
-  public IResult execute(Iterable<IResource> input, IMonitor mon);
+public interface IResult {
+  public boolean isSucessful();
+  public Iterable<IResource> output();
 }
