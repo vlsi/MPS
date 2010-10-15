@@ -91,7 +91,20 @@ class IdeaFile implements IFileEx {
   @Override
   public List<IFile> list(IFileNameFilter filter) {
     if (findVirtualFile()) {
-      VirtualFile[] children = myVirtualFile.getChildren();
+      VirtualFile[] children = new VirtualFile[0];
+      try {
+        if (myVirtualFile.isValid()) {
+          children = myVirtualFile.getChildren();
+        }
+      } catch (NullPointerException e) {
+        if (Arrays.asList(e.getStackTrace()).toString().contains("disposeComponent(")) {
+          // TODO temporary workaround for MPS-10316
+          // Ignoring this exception
+          // this (to be fixed after platform update)
+        } else {
+          throw e;
+        }
+      }
       ArrayList<IFile> result = new ArrayList<IFile>();
       for (VirtualFile child : children) {
         if (filter.accept(this, child.getName())) {
@@ -118,7 +131,20 @@ class IdeaFile implements IFileEx {
 
   @Override
   public boolean isReadOnly() {
-    return exists() && !myVirtualFile.isWritable();
+    if (exists()) {
+      try {
+        return !myVirtualFile.isWritable();
+      } catch (NullPointerException e) {
+        if (Arrays.asList(e.getStackTrace()).toString().contains("disposeComponent(")) {
+          // TODO temporary workaround for MPS-10316
+          // Ignoring this exception
+          // this (to be fixed after platform update)
+        } else {
+          throw e;
+        }
+      }
+    }
+    return false;
   }
 
   @Override
