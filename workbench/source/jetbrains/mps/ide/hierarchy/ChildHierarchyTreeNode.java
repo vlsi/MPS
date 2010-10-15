@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.hierarchy;
 
+import jetbrains.mps.ide.messages.Icons;
+import jetbrains.mps.ide.ui.ErrorTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
@@ -43,16 +45,36 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
   protected void doInit() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
-        Collections.sort(descendants, new Comparator<T>() {
-          public int compare(T o1, T o2) {
-            return ("" + o1.toString()).compareTo(o2.toString());
-          }
-        });
+        try {
+          List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
+          Collections.sort(descendants, new Comparator<T>() {
+            public int compare(T o1, T o2) {
+              return ("" + o1.toString()).compareTo(o2.toString());
+            }
+          });
 
-        for (T descendant : descendants) {
-          ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
-          add(childHierarchyTreeNode);
+          for (T descendant : descendants) {
+            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
+            add(childHierarchyTreeNode);
+          }
+        } catch (CircularHierarchyException ex) {
+          T errorNode = (T) ex.getRepeatedObject();
+          final String message = ex.getMessage();
+          HierarchyTreeNode<T> errorTreeNode = new HierarchyTreeNode<T>(errorNode, getOperationContext(), myHierarchyTree) {
+            @Override
+            protected void doUpdatePresentation() {
+              super.doUpdatePresentation();
+              setIcon(Icons.ERROR_ICON);
+              setColor(Color.RED);
+            }
+
+            @Override
+            protected String calculateAdditionalText() {
+              return message;
+            }
+          };
+
+          add(errorTreeNode);
         }
 
         myInitialized = true;

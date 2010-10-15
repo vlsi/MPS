@@ -115,11 +115,11 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected abstract T getParent(T node);
 
-  protected abstract Set<T> getParents(T node);
+  protected abstract Set<T> getParents(T node) throws CircularHierarchyException;
 
-  protected abstract Set<T> getDescendants(T node);
+  protected abstract Set<T> getDescendants(T node) throws CircularHierarchyException;
 
-  protected Set<T> getAbstractChildren(final T node) {
+  protected Set<T> getAbstractChildren(final T node) throws CircularHierarchyException {
     Set<T> result;
     if (myIsParentHierarchy) {
       result = getParents(node);

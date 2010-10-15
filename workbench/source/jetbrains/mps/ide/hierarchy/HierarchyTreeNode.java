@@ -60,7 +60,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     setAutoExpandable(false);
   }
 
-  private String calculateAdditionalText() {
+  protected String calculateAdditionalText() {
     if (getNode() == null) return "null";
     return getNode().getModel().getSModelFqName().toString();
   }
