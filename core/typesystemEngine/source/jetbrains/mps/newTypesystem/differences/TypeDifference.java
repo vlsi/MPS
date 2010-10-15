@@ -15,32 +15,41 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.smodel.SNode;
+
 import java.awt.Color;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 1:42:37 PM
+ * Date: Sep 15, 2010
+ * Time: 1:04:39 PM
  * To change this template use File | Settings | File Templates.
  */
-public class StringDifference extends Difference {
-  private String myString;
+public class TypeDifference extends Difference{
+  private SNode myNode;
+  private SNode myType;
+  private Map myMap;
 
-  public StringDifference(String string) {
-    myString = string;
-  }
-
-  @Override
-  public String getPresentation() {
-    return myString;
+  public TypeDifference(SNode node, SNode type, Map map) {
+    myNode = node;
+    myType = type;
+    myMap = map;
   }
 
   @Override
   public void rollBack() {
+    myMap.remove(myNode);
   }
 
+  @Override
+  public String getPresentation() {
+    return "Type added (" + myNode + " : " + myType+")";
+  }
+
+  @Override
   public Color getColor() {
-    return new Color(0x111177);
+    return new Color(0x007700);
   }
 }

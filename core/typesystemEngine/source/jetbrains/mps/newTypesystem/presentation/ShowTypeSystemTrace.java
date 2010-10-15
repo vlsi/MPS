@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.presentation;
 
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.presentation.*;
@@ -35,26 +36,28 @@ import java.util.Stack;
 public class ShowTypeSystemTrace extends JDialog {
   private JScrollPane myScrollPane;
  // private ShowTypeSystemTrace.MyComponent myComponent;
-  private JTree myTree;
+  private MPSTree myTree;
+
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame) {
     super(frame);
     t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
+
  //   this.myComponent = new ShowTypeSystemTrace.MyComponent();
 
-    myTree = new JTree(createNode(t.getDifference()));
-
+    myTree = new TypeSystemTraceTree(operationContext, t.getDifference());
+   
     this.myScrollPane = new JScrollPane(myTree);
     this.myScrollPane.setBackground(this.getBackground());
     this.add(this.myScrollPane, BorderLayout.CENTER);
     myTree.setBackground(getBackground());
     myTree.setForeground(new Color(0x07025D));
-    this.setName("TypeSystem trace");
-    this.setSize(500,400);
-   // myTree.setFont(10.0f);
-   /* this.myControlFlowGraph = new ControlFlowGraph<InstructionWrapper>(new ProgramWrapper(p), new GraphCreator(), this.myComponent);
+    this.setSize(500,600);
+    this.setPreferredSize(new Dimension(500,700));
+    setTitle("TypeSystem trace");
+    /*
     this.myControlFlowGraph.addBlockListener(new IBlockListener<InstructionWrapper>() {
       public void mousePressed(MouseEvent event, IInstruction<InstructionWrapper> instruction) {
         InstructionWrapper instructionWrapper = (InstructionWrapper) instruction;
@@ -72,20 +75,11 @@ public class ShowTypeSystemTrace extends JDialog {
   }
 
   public Color getBackground() {
-    return new Color(0x8702DD);
+   return Color.WHITE;
+  //    return new Color(0x8702DD);
   }
 
 
-  private DefaultMutableTreeNode createNode(Difference diff) {
-    DefaultMutableTreeNode result = new DefaultMutableTreeNode(diff.getPresentation());
-    
-    if (diff.getChildren() != null) {
-      for (Difference child : diff.getChildren()) {
-        result.add(createNode(child));
-      }
-    }
-    return result;
-  }
 
 
 

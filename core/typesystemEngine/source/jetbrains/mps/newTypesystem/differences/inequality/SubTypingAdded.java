@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem.differences.inequality;
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
 import jetbrains.mps.smodel.SNode;
 
+import java.awt.Color;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -38,4 +40,10 @@ public class SubTypingAdded extends InequalityDifference {
   public String getPresentation() {
     return "SubTyping added " + myKeyType + (myMapPair.isWeak()?" <= " : " < ") + myValueType;
   }
+
+  public Color getColor() {
+    return new Color(0x000077);
+  }
+
+  
 }

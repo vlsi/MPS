@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.differences.ErrorDifference;
-import jetbrains.mps.newTypesystem.differences.NodeMapDifference;
+import jetbrains.mps.newTypesystem.differences.TypeDifference;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.HashMap;
@@ -36,14 +39,25 @@ public class NodeMaps {
   private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
   private Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
   private State myState;
+  private VariableIdentifier myVariableIdentifier;
 
   public NodeMaps(State state) {
     myState = state;
+    myVariableIdentifier = new VariableIdentifier();
   }
 
   public void addNodeToType(SNode node, SNode type) {
     myNodeToTypes.put(node, type);
-    myState.addDifference(new NodeMapDifference(node, myNodeToTypes), false);
+    myState.addDifference(new TypeDifference(node, type, myNodeToTypes), false);
+  }
+
+  public SNode typeOf(SNode node) {
+    SNode type = myNodeToTypes.get(node);
+    if (type == null) {
+      type = createNewRuntimeTypesVariable();
+      addNodeToType(node, type);
+    }
+    return type;
   }
 
   public void addNodeToError(SNode node, IErrorReporter error) {
@@ -63,4 +77,19 @@ public class NodeMaps {
   public Map<SNode, SNode> getNodeToTypes() {
     return myNodeToTypes;
   }
+
+  public void clear() {
+    myNodesToErrors.clear();
+    myNodeToTypes.clear();
+  }
+
+
+  public SNode createNewRuntimeTypesVariable() {
+    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
+      myState.getTypeCheckingContext().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+    typeVar.setName(myVariableIdentifier.getNewVarName());
+//  registerTypeVariable(typeVar);          todo ?
+    return typeVar;
+  }
+
 }

@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem.differences.equation;
 import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.smodel.SNode;
 
+import java.awt.Color;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -47,5 +49,10 @@ public class EquationAdded extends EquationDifference {
   @Override
   public String getPresentation() {
     return "Equation added " + myChild + " = " + myParent; 
+  }
+
+  @Override
+  public Color getColor() {
+    return new Color(0x670365);
   }
 }

@@ -40,7 +40,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private NodeTypesComponentNew myNodeTypesComponent;
   private TypeChecker myTypeChecker;
   private SubTyping mySubTyping;
-  private int counter = 0;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -50,6 +49,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
     mySubTyping = new SubTyping(typeChecker);
+
   }
 
   public void rollBack() {
@@ -80,6 +80,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
+    return myState.typeOf(node);
+  }
+
+  @Override
   public void checkRoot(final boolean refreshTypes) {
     myState.clear();
     myNodeTypesComponent.checkNode(myRootNode, true);
@@ -98,8 +103,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     print();
   }
 
+  @Override
+  public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
+    return myState.typeOf(node);
+  }
+
   public void print() {
-    System.out.println("---State---" + counter++);
+    System.out.println("---State---" );
     myState.print();
     System.out.println("--Difference-");
     for (Difference d : getDifferenceStack()) {

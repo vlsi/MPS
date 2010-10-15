@@ -108,6 +108,10 @@ public class State {
     return myNonConcrete;
   }
 
+  public SNode typeOf(SNode node) {
+    return myNodeMaps.typeOf(node);
+  }
+
   public void clear() {
     System.out.println("xxxxxxxxxxxxx");
     System.out.println("State cleared");
@@ -117,6 +121,7 @@ public class State {
     myEquations.clear();
     myInequalities.clear();
     myDifferenceStack.clear();
+    myNodeMaps.clear();
     myDifference = new HeadDifference();
     myDifferenceStack.push(myDifference);
   }

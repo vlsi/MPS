@@ -13,34 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.presentation;
+
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.smodel.IOperationContext;
 
 import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 1:42:37 PM
+ * Date: Oct 15, 2010
+ * Time: 11:44:26 AM
  * To change this template use File | Settings | File Templates.
  */
-public class StringDifference extends Difference {
-  private String myString;
-
-  public StringDifference(String string) {
-    myString = string;
+public class TypeSystemTraceTreeNode extends MPSTreeNode{
+  public TypeSystemTraceTreeNode(IOperationContext operationContext) {
+    super(operationContext);
   }
 
-  @Override
-  public String getPresentation() {
-    return myString;
-  }
-
-  @Override
-  public void rollBack() {
-  }
-
-  public Color getColor() {
-    return new Color(0x111177);
+  public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
+    super(userObject, operationContext);
+    Difference difference = (Difference) userObject;
+    setNodeIdentifier(difference.getPresentation());
+    setColor(difference.getColor());
+    this.setAutoExpandable(true);
+    this.setIcon(difference.getIcon());
   }
 }

@@ -19,6 +19,8 @@ import jetbrains.mps.newTypesystem.states.InequalityMapPair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.awt.Color;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -41,5 +43,9 @@ public class SubTypingRemoved extends InequalityDifference {
 
   public String getPresentation() {
     return "SubTyping removed " + myKeyType + (myMapPair.isWeak()?" <= " : " < ") + myValueType;
+  }
+
+  public Color getColor() {
+    return new Color(0x774400);
   }
 }

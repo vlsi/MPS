@@ -13,30 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
-
-import jetbrains.mps.smodel.SNode;
-
-import java.util.Map;
+package jetbrains.mps.newTypesystem;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Oct 15, 2010
+ * Time: 11:28:26 AM
  * To change this template use File | Settings | File Templates.
  */
-public class NodeMapDifference extends Difference{
-  private SNode myNode;
-  private Map myMap;
+public class VariableIdentifier {
+  private char myVariableChar;
+  private int myVariableIndex;
 
-  public NodeMapDifference(SNode node, Map map) {
-    myNode = node;
-    myMap = map;
+  public VariableIdentifier() {
+    myVariableChar = 'a';
+    myVariableIndex = 0;
   }
 
-  @Override
-  public void rollBack() {
-    myMap.remove(myNode);
+  public String getNewVarName() {
+    String result = myVariableChar + (myVariableIndex == 0 ? "" : "" + myVariableIndex);
+    if (myVariableChar == 'z') {
+      myVariableIndex++;
+      myVariableChar = 'a';
+    } else {
+      myVariableChar++;
+    }
+    return result;
   }
 }

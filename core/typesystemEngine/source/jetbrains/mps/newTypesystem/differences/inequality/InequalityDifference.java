@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.newTypesystem.differences.inequality;
 
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
 import jetbrains.mps.smodel.SNode;
+
+import javax.swing.Icon;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,5 +38,10 @@ public abstract class InequalityDifference extends Difference {
     myKeyType = keyType;
     myValueType = valueType;
     myMapPair = mapPair;
+  }
+
+  @Override
+  public Icon getIcon() {
+    return Icons.STRONG_SUBTYPE_ICON;
   }
 }

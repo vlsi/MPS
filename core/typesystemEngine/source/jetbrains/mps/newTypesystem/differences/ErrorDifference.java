@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.differences;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 
+import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 
@@ -47,5 +48,10 @@ public class ErrorDifference extends Difference {
   @Override
   public void rollBack() {
     myMap.get(myNode).remove(myError);
+  }
+
+  @Override
+  public Color getColor() {
+    return Color.RED;
   }
 }

@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.newTypesystem.states.State;
 
+import javax.swing.Icon;
 import java.awt.Color;
 import java.util.LinkedList;
 import java.util.List;
@@ -46,5 +48,13 @@ public abstract class Difference {
 
   public String getPresentation() {
     return "";
+  }
+
+  public Color getColor() {
+    return Color.BLACK;
+  }
+
+  public Icon getIcon() {
+    return Icons.DEFAULT_ICON;
   }
 }

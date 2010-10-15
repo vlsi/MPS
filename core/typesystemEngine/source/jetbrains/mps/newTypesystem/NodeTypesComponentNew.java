@@ -21,7 +21,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -41,6 +40,7 @@ public class NodeTypesComponentNew {
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
   private TypeCheckingContext myTypeCheckingContext;
+
   private static final Logger LOG = Logger.getLogger(NodeTypesComponentNew.class);
   boolean checked = false;
 
