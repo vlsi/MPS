@@ -92,10 +92,6 @@ public final class SNode {
     this(model, conceptFqName, true);
   }
 
-  private void enforceModelLoad() {
-
-  }
-
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
@@ -584,8 +580,13 @@ public final class SNode {
     return myParent;
   }
 
+  private void enforceModelLoad() {
+    if (myModel == null) return;
+    myModel.enforceFullLoad();
+  }
+
   //all access to myFirstChild should be via this method
-  private SNode getFirstChild(){
+  private SNode getFirstChild() {
     enforceModelLoad();
     return myFirstChild;
   }
@@ -790,6 +791,7 @@ public final class SNode {
    * subtree of child node.
    * <p/>
    * Differs from {@link SNode#delete()}.
+   *
    * @param wasChild
    */
   public void removeChild(SNode wasChild) {
@@ -1001,7 +1003,7 @@ public final class SNode {
           threadSet.add(pair);
           try {
             if (handler instanceof INodeReferenceFullSetHandler) {
-              if (((INodeReferenceFullSetHandler)handler).keepsOriginalReference(this, oldReferent, newReferent, GlobalScope.getInstance())) {
+              if (((INodeReferenceFullSetHandler) handler).keepsOriginalReference(this, oldReferent, newReferent, GlobalScope.getInstance())) {
                 resultReference = doSetReference(role, newReferent, toDelete);
               } else {
                 referenceKept = false;

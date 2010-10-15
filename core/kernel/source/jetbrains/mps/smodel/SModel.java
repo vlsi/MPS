@@ -111,7 +111,7 @@ public class SModel {
 
   //todo try to remove as many usages as possible
 
-  private void enforceFullLoad() {
+  void enforceFullLoad() {
 
   }
 
