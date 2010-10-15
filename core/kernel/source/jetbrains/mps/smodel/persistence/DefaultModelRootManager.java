@@ -38,10 +38,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -51,6 +48,24 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
     readModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, owner);
+  }
+
+  public SModel loadModel(DefaultSModelDescriptor descriptor, ModelLoadingState state) {
+    SModel model = loadModel(descriptor);
+
+    try {
+      model.setLoading(true);
+      if (state == ModelLoadingState.ROOTS_LOADED) {
+        for (SNode root : model.roots()) {
+          for (SNode child : new ArrayList<SNode>(root.getChildren())) {
+            root.removeChild(child);
+          }
+        }
+      }
+    } finally {
+      model.setLoading(false);
+    }
+    return model;
   }
 
   @NotNull

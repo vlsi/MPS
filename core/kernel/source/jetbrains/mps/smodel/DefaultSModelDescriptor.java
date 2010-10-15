@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
+import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -77,6 +78,48 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     });
   }
 
+  protected ModelLoadResult initialLoad() {
+    System.out.printf("initialLoad() called for model "+getLongName()+"\n");
+    ModelLoadingState state = ModelLoadingState.ROOTS_LOADED;
+    SModel model = load(state);
+    return new ModelLoadResult(model, state);
+  }
+
+  //updates model with loading state == ROOTS_LOADED
+  public void enforceFullLoad() {
+    boolean loading = mySModel.isLoading();
+    if (loading) return;
+
+    System.out.printf("enforceFullLoad() called for model "+getLongName()+"\n");
+
+    SModel fullModel = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, ModelLoadingState.FULLY_LOADED);
+
+    try{
+      mySModel.setLoading(true);
+      fullModel.setLoading(true);
+      new ModelLoader(mySModel,fullModel).update();
+      setLoadingState(ModelLoadingState.FULLY_LOADED);
+      fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
+    } finally {
+      mySModel.setLoading(loading);
+    }
+  }
+
+  //just loads model, w/o changing state of SModelDescriptor
+  private SModel load(ModelLoadingState loadingState) {
+    SModel result = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
+    if (StructureModificationProcessor.updateModelOnLoad(result)) {
+      IFile modelFile = getModelFile();
+      if (modelFile != null && !modelFile.isReadOnly()) {
+        SModelRepository.getInstance().markChanged(this, true);
+      }
+    }
+    tryFixingVersion();
+    myStructureModificationHistory = null;
+    updateDiskTimestamp();
+    return result;
+  }
+
   public IFile getModelFile() {
     return myModelFile;
   }
@@ -125,7 +168,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
-    SModel newModel = loadModel();
+    SModel newModel = load(getLoadingState());
     replaceModel(newModel);
     updateLastChange();
   }
@@ -325,20 +368,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       }
       LOG.error(message);
     }
-  }
-
-  protected SModel loadModel() {
-    SModel result = myModelRootManager.loadModel(this);
-    if (StructureModificationProcessor.updateModelOnLoad(result)) {
-      IFile modelFile = getModelFile();
-      if (modelFile != null && !modelFile.isReadOnly()) {
-        SModelRepository.getInstance().markChanged(this, true);
-      }
-    }
-    tryFixingVersion();
-    myStructureModificationHistory = null;
-    updateDiskTimestamp();
-    return result;
   }
 
   protected void updateDiskTimestamp() {

@@ -239,8 +239,9 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
       myLongName = longName;
     }
 
-    protected SModel loadModel() {
-      return new TransientSModel(getSModelReference());
+    protected ModelLoadResult initialLoad() {
+      TransientSModel model = new TransientSModel(getSModelReference());
+      return new ModelLoadResult(model,ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

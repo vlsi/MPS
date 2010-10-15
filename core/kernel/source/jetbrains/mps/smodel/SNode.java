@@ -42,7 +42,6 @@ public final class SNode {
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
-  private static final Object FROZEN_KEY = new Object();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 

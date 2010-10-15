@@ -15,5 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.SModel;
+
 public abstract class BaseMPSModelRootManager extends AbstractModelRootManager {
+  public SModel loadModel(DefaultSModelDescriptor descriptor, ModelLoadingState state){
+    throw new UnsupportedOperationException();
+  }
 }

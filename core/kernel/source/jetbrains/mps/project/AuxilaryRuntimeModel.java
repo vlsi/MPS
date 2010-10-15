@@ -33,7 +33,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
   public static SModelDescriptor getDescriptor() {
     AuxilaryRuntimeModel instance = getInstance();
     SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
-    if(descriptor != null) return descriptor;
+    if (descriptor != null) return descriptor;
     // use synchronized method
     return instance.getDescriptor_internal();
   }
@@ -56,10 +56,11 @@ public class AuxilaryRuntimeModel implements ModelOwner {
       super(IModelRootManager.NULL_MANAGER, AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
-    protected SModel loadModel() {
-      SModel result = new SModel(getSModelReference());
-      result.setLoading(true);
-      return result;
+    protected ModelLoadResult initialLoad() {
+      SModel model = new SModel(getSModelReference());
+      model.setLoading(true);
+
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
   }
 }
