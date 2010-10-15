@@ -206,32 +206,6 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return result;
   }
 
-  /**
-   * @deprecated
-   */
-  @Deprecated
-  public SModelDescriptor createTestModel(final String longName, String stereotype) {
-    while (!isValidName(longName, stereotype)) {
-      stereotype += "_";
-    }
-
-    SModelFqName fqName = new SModelFqName(longName, stereotype);
-    SModelDescriptor result = new TransientSModelDescriptor(fqName, longName) {
-      protected SModel loadModel() {
-        return new TransientSModel(getSModelReference()) {
-          @Override
-          public boolean isNotEditable() {
-            return false;
-          }
-        };
-      }
-    };
-    myModels.put(result.getSModelReference().getSModelFqName(), result);
-    invalidateCaches();
-    SModelRepository.getInstance().registerModelDescriptor(result, this);
-    return result;
-  }
-
   public String toString() {
     return "Transient models [" + myProject.getPresentableUrl() + "]";
   }
