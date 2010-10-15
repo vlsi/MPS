@@ -6,18 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.smodel.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.ModelRootUtil;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -105,7 +111,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
           SModel sourceModel = NewSubTestModel_Action.this.model.getSModel();
           createdModel.addModelImport(sourceModel.getSModelReference(), false);
           for (SModel.ImportElement importElement : sourceModel.importedModels()) {
-            createdModel.addModelImport(importElement.getModelReference(), false);
+            createdModel.addModelImport(sourceModel.getSModelReference(), false);
           }
           for (ModuleReference importedLanguage : sourceModel.importedLanguages()) {
             SModelOperations.addLanguage(createdModel, importedLanguage);

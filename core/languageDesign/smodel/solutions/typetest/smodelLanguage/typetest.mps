@@ -183,7 +183,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1206475933837">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.addLanguage(jetbrains.mps.smodel.Language):void" resolveInfo="addLanguage" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addLanguage" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1170377437090">
                 <property name="value:3" value="..." />
               </node>

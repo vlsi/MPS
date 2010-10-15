@@ -17,13 +17,13 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -115,11 +115,12 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1220369573364040170(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (Language lang : jetbrains.mps.smodel.SModelOperations.getLanguages(SNodeOperations.getModel(_context.getNode()), GlobalScope.getInstance())) {
+    List<Language> langs = SModelOperations.getLanguages(SNodeOperations.getModel(_context.getNode()), GlobalScope.getInstance());
+    for (Language lang : langs) {
       for (IModule mod : ((LanguageDepsManager) lang.getDependenciesManager()).getRuntimeDependOnModules()) {
         for (SModelDescriptor smd : mod.getOwnModelDescriptors()) {
           SModel rtModel = smd.getSModel();
-          for (SNode gwtmod : SModelOperations.getRoots(rtModel, "jetbrains.mps.gwt.client.structure.GWTModule")) {
+          for (SNode gwtmod : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(rtModel, "jetbrains.mps.gwt.client.structure.GWTModule")) {
             ListSequence.fromList(result).addElement(gwtmod);
           }
         }

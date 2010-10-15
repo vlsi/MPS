@@ -12,6 +12,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -74,7 +75,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
@@ -82,6 +83,7 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1572321421814275035">
     <property name="name:2" value="main" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="3852159904898379894">
@@ -616,6 +618,31 @@
                   </node>
                 </node>
               </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6148642440041937707">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6148642440041937708">
+                  <property name="name:3" value="langs" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6148642440041937709">
+                    <link role="classifier:3" targetNodeId="8.~List" resolveInfo="List" />
+                    <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6148642440041937710">
+                      <link role="classifier:3" targetNodeId="6.~Language" resolveInfo="Language" />
+                    </node>
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6148642440041937711">
+                    <link role="baseMethodDeclaration:3" targetNodeId="6.~SModelOperations.getLanguages(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):java.util.List" resolveInfo="getLanguages" />
+                    <link role="classConcept:3" targetNodeId="6.~SModelOperations" resolveInfo="SModelOperations" />
+                    <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="6148642440041937712">
+                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6148642440041937713">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="6148642440041937714" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="6148642440041937715" />
+                      </node>
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6148642440041937716">
+                      <link role="classConcept:3" targetNodeId="5.~GlobalScope" resolveInfo="GlobalScope" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="5.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1220369573364065741">
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220369573364065742">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1220369573364065762">
@@ -717,20 +744,8 @@
                     <link role="classifier:3" targetNodeId="6.~Language" resolveInfo="Language" />
                   </node>
                 </node>
-                <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1220369573364065745">
-                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1220369573364065746">
-                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1220369573364065747">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1220369573364065748" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1220369573364065749" />
-                    </node>
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1220369573364065750">
-                    <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.getLanguages(jetbrains.mps.smodel.IScope):java.util.List" resolveInfo="getLanguages" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1220369573364065751">
-                      <link role="baseMethodDeclaration:3" targetNodeId="5.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
-                      <link role="classConcept:3" targetNodeId="5.~GlobalScope" resolveInfo="GlobalScope" />
-                    </node>
-                  </node>
+                <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6148642440041937720">
+                  <link role="variableDeclaration:3" targetNodeId="6148642440041937708" resolveInfo="langs" />
                 </node>
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1220369573364066221">
