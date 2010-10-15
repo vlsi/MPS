@@ -1,5 +1,6 @@
 package jetbrains.mps.ide.hierarchy;
 
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -13,6 +14,8 @@ import java.util.Set;
 
 public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {
   private LanguageHierarchyCache myCache;
+  private Set<AbstractConceptDeclaration> myVisitedDescendants = new HashSet<AbstractConceptDeclaration>();
+  private Set<AbstractConceptDeclaration> myVisitedParents = new HashSet<AbstractConceptDeclaration>();
 
   public ConceptHierarchyTree(LanguageHierarchyCache cache, AbstractHierarchyView<AbstractConceptDeclaration> abstractHierarchyView, boolean isParentHierarchy) {
     super(abstractHierarchyView, AbstractConceptDeclaration.class, isParentHierarchy);
@@ -29,6 +32,10 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
   }
 
   protected AbstractConceptDeclaration getParent(AbstractConceptDeclaration node) {
+    if (myVisitedParents.contains(node)) {
+      return null; //todo report error
+    }
+    myVisitedParents.add(node);
     if (node instanceof ConceptDeclaration) {
       ConceptDeclaration concept = ((ConceptDeclaration) node);
       ConceptDeclaration extendsConcept = concept.getExtends();
@@ -42,18 +49,25 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
   }
 
   protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
+    if (myVisitedDescendants.contains(conceptDeclaration)) {
+      return new HashSet<AbstractConceptDeclaration>(); //todo report error
+    }
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     for (String s : myCache.getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
       AbstractConceptDeclaration abstractConceptDeclaration = SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
-      if (abstractConceptDeclaration == null) {
-        System.err.println("");
-      }
       result.add(abstractConceptDeclaration);
     }
+    myVisitedDescendants.add(conceptDeclaration);
     return result;
   }
 
   protected String noNodeString() {
     return "(no concept)";
+  }
+
+  @Override
+  protected MPSTreeNode rebuild() {
+    myVisitedDescendants.clear();
+    return super.rebuild();
   }
 }
