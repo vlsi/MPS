@@ -590,7 +590,7 @@
     <nodeInfo nodeId="4358493250249988887" fileName="MoveRefactoringUtils.java" startLine="28" startPosition="44" endLine="29" endPosition="13" />
     <nodeInfo nodeId="7123761944774720200" fileName="MoveRefactoringUtils.java" startLine="30" startPosition="5" endLine="31" endPosition="56" />
     <nodeInfo nodeId="4458227202731876784" fileName="MoveRefactoringUtils.java" startLine="32" startPosition="90" endLine="33" endPosition="13" />
-    <nodeInfo nodeId="7123761944774720218" fileName="MoveRefactoringUtils.java" startLine="34" startPosition="5" endLine="35" endPosition="50" />
+    <nodeInfo nodeId="6853886991699132817" fileName="MoveRefactoringUtils.java" startLine="34" startPosition="5" endLine="35" endPosition="37" />
     <nodeInfo nodeId="1603057458588773043" fileName="MoveRefactoringUtils.java" startLine="38" startPosition="75" endLine="39" endPosition="88" />
     <nodeInfo nodeId="1603057458589441370" fileName="MoveRefactoringUtils.java" startLine="44" startPosition="101" endLine="45" endPosition="81" />
     <nodeInfo nodeId="1300615610528459012" fileName="MoveRefactoringUtils.java" startLine="50" startPosition="49" endLine="51" endPosition="153" />
@@ -627,7 +627,7 @@
     <scopeInfo nodeId="4909369320863190496" fileName="MoveRefactoringUtils.java" startLine="18" startPosition="65" endLine="24" endPosition="5">
       <varInfo nodeId="4909369320863190498" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="4458227202731868589" fileName="MoveRefactoringUtils.java" startLine="27" startPosition="70" endLine="35" endPosition="50">
+    <scopeInfo nodeId="4458227202731868589" fileName="MoveRefactoringUtils.java" startLine="27" startPosition="70" endLine="35" endPosition="37">
       <varInfo nodeId="7123761944774720201" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1603057458589413160" fileName="MoveRefactoringUtils.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
@@ -5708,297 +5708,297 @@
     <unitInfo nodeId="8492459591399171824" fileName="ClassRefactoringUtils.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" />
   </root>
   <root nodeId="8492459591399171910">
-    <nodeInfo nodeId="8492459591399171911" fileName="ExtractMethodDialog.java" startLine="38" startPosition="53" endLine="39" endPosition="25" />
-    <nodeInfo nodeId="8492459591399171914" fileName="ExtractMethodDialog.java" startLine="39" startPosition="25" endLine="40" endPosition="32" />
-    <nodeInfo nodeId="8492459591399171917" fileName="ExtractMethodDialog.java" startLine="40" startPosition="32" endLine="41" endPosition="52" />
-    <nodeInfo nodeId="8492459591399171922" fileName="ExtractMethodDialog.java" startLine="41" startPosition="52" endLine="42" endPosition="53" />
-    <nodeInfo nodeId="4626240717634896325" fileName="ExtractMethodDialog.java" startLine="42" startPosition="53" endLine="43" endPosition="44" />
-    <nodeInfo nodeId="8492459591399171927" fileName="ExtractMethodDialog.java" startLine="43" startPosition="44" endLine="44" endPosition="58" />
-    <nodeInfo nodeId="8492459591399171930" fileName="ExtractMethodDialog.java" startLine="44" startPosition="58" endLine="45" endPosition="34" />
-    <nodeInfo nodeId="8492459591399171933" fileName="ExtractMethodDialog.java" startLine="45" startPosition="34" endLine="46" endPosition="49" />
-    <nodeInfo nodeId="8492459591399173013" fileName="ExtractMethodDialog.java" startLine="48" startPosition="147" endLine="49" endPosition="35" />
-    <nodeInfo nodeId="8271167595671729475" fileName="ExtractMethodDialog.java" startLine="49" startPosition="35" endLine="50" endPosition="49" />
-    <nodeInfo nodeId="8492459591399173016" fileName="ExtractMethodDialog.java" startLine="50" startPosition="49" endLine="51" endPosition="29" />
-    <nodeInfo nodeId="1334376219849324113" fileName="ExtractMethodDialog.java" startLine="51" startPosition="29" endLine="52" endPosition="31" />
-    <nodeInfo nodeId="1334376219849324122" fileName="ExtractMethodDialog.java" startLine="52" startPosition="31" endLine="53" endPosition="37" />
-    <nodeInfo nodeId="8492459591399173059" fileName="ExtractMethodDialog.java" startLine="55" startPosition="25" endLine="56" endPosition="45" />
-    <nodeInfo nodeId="8492459591399173063" fileName="ExtractMethodDialog.java" startLine="58" startPosition="7" endLine="59" endPosition="18" />
-    <nodeInfo nodeId="8492459591399171941" fileName="ExtractMethodDialog.java" startLine="64" startPosition="25" endLine="65" endPosition="100" />
-    <nodeInfo nodeId="8492459591399171950" fileName="ExtractMethodDialog.java" startLine="65" startPosition="100" endLine="66" endPosition="110" />
-    <nodeInfo nodeId="8492459591399171961" fileName="ExtractMethodDialog.java" startLine="68" startPosition="7" endLine="69" endPosition="19" />
-    <nodeInfo nodeId="8492459591399171969" fileName="ExtractMethodDialog.java" startLine="72" startPosition="36" endLine="73" endPosition="43" />
-    <nodeInfo nodeId="8492459591399171974" fileName="ExtractMethodDialog.java" startLine="73" startPosition="43" endLine="74" endPosition="52" />
-    <nodeInfo nodeId="8492459591399172030" fileName="ExtractMethodDialog.java" startLine="75" startPosition="35" endLine="76" endPosition="45" />
-    <nodeInfo nodeId="8492459591399171985" fileName="ExtractMethodDialog.java" startLine="77" startPosition="12" endLine="78" endPosition="81" />
-    <nodeInfo nodeId="8492459591399171995" fileName="ExtractMethodDialog.java" startLine="79" startPosition="53" endLine="80" endPosition="88" />
-    <nodeInfo nodeId="8492459591399172017" fileName="ExtractMethodDialog.java" startLine="82" startPosition="26" endLine="83" endPosition="49" />
-    <nodeInfo nodeId="8492459591399172035" fileName="ExtractMethodDialog.java" startLine="85" startPosition="5" endLine="86" endPosition="91" />
-    <nodeInfo nodeId="8492459591399172046" fileName="ExtractMethodDialog.java" startLine="87" startPosition="25" endLine="88" endPosition="26" />
-    <nodeInfo nodeId="8492459591399172051" fileName="ExtractMethodDialog.java" startLine="88" startPosition="26" endLine="89" endPosition="33" />
-    <nodeInfo nodeId="8492459591399172059" fileName="ExtractMethodDialog.java" startLine="90" startPosition="12" endLine="91" endPosition="32" />
-    <nodeInfo nodeId="8492459591399172068" fileName="ExtractMethodDialog.java" startLine="92" startPosition="5" endLine="93" endPosition="67" />
-    <nodeInfo nodeId="8492459591399172080" fileName="ExtractMethodDialog.java" startLine="95" startPosition="158" endLine="96" endPosition="53" />
-    <nodeInfo nodeId="8492459591399172098" fileName="ExtractMethodDialog.java" startLine="97" startPosition="14" endLine="98" endPosition="129" />
-    <nodeInfo nodeId="8492459591399172116" fileName="ExtractMethodDialog.java" startLine="101" startPosition="29" endLine="102" endPosition="24" />
-    <nodeInfo nodeId="8492459591399172126" fileName="ExtractMethodDialog.java" startLine="103" startPosition="5" endLine="104" endPosition="27" />
-    <nodeInfo nodeId="8492459591399172134" fileName="ExtractMethodDialog.java" startLine="107" startPosition="28" endLine="108" endPosition="51" />
-    <nodeInfo nodeId="6296924652370882773" fileName="ExtractMethodDialog.java" startLine="108" startPosition="51" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172154" fileName="ExtractMethodDialog.java" startLine="109" startPosition="0" endLine="110" endPosition="52" />
-    <nodeInfo nodeId="8492459591399172159" fileName="ExtractMethodDialog.java" startLine="110" startPosition="52" endLine="111" endPosition="37" />
-    <nodeInfo nodeId="6296924652370882732" fileName="ExtractMethodDialog.java" startLine="111" startPosition="37" endLine="112" endPosition="44" />
-    <nodeInfo nodeId="8492459591399172165" fileName="ExtractMethodDialog.java" startLine="112" startPosition="44" endLine="113" endPosition="38" />
-    <nodeInfo nodeId="6296924652370882763" fileName="ExtractMethodDialog.java" startLine="113" startPosition="38" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172171" fileName="ExtractMethodDialog.java" startLine="114" startPosition="0" endLine="115" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172177" fileName="ExtractMethodDialog.java" startLine="115" startPosition="16" endLine="116" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172183" fileName="ExtractMethodDialog.java" startLine="116" startPosition="16" endLine="117" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172189" fileName="ExtractMethodDialog.java" startLine="117" startPosition="18" endLine="118" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172195" fileName="ExtractMethodDialog.java" startLine="118" startPosition="18" endLine="119" endPosition="20" />
-    <nodeInfo nodeId="8492459591399172201" fileName="ExtractMethodDialog.java" startLine="119" startPosition="20" endLine="120" endPosition="50" />
-    <nodeInfo nodeId="6296924652370882761" fileName="ExtractMethodDialog.java" startLine="120" startPosition="50" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172230" fileName="ExtractMethodDialog.java" startLine="121" startPosition="0" endLine="122" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172236" fileName="ExtractMethodDialog.java" startLine="122" startPosition="16" endLine="123" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172242" fileName="ExtractMethodDialog.java" startLine="123" startPosition="16" endLine="124" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172248" fileName="ExtractMethodDialog.java" startLine="124" startPosition="18" endLine="125" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172254" fileName="ExtractMethodDialog.java" startLine="125" startPosition="18" endLine="126" endPosition="20" />
-    <nodeInfo nodeId="8492459591399172260" fileName="ExtractMethodDialog.java" startLine="126" startPosition="20" endLine="127" endPosition="54" />
-    <nodeInfo nodeId="6296924652370882758" fileName="ExtractMethodDialog.java" startLine="127" startPosition="54" endLine="128" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172289" fileName="ExtractMethodDialog.java" startLine="128" startPosition="0" endLine="129" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172295" fileName="ExtractMethodDialog.java" startLine="129" startPosition="16" endLine="130" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172301" fileName="ExtractMethodDialog.java" startLine="130" startPosition="16" endLine="131" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172307" fileName="ExtractMethodDialog.java" startLine="131" startPosition="18" endLine="132" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172313" fileName="ExtractMethodDialog.java" startLine="132" startPosition="18" endLine="133" endPosition="20" />
-    <nodeInfo nodeId="4626240717634896329" fileName="ExtractMethodDialog.java" startLine="133" startPosition="20" endLine="134" endPosition="51" />
-    <nodeInfo nodeId="4626240717634896340" fileName="ExtractMethodDialog.java" startLine="134" startPosition="51" endLine="135" endPosition="48" />
-    <nodeInfo nodeId="6296924652370882755" fileName="ExtractMethodDialog.java" startLine="135" startPosition="48" endLine="136" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172348" fileName="ExtractMethodDialog.java" startLine="136" startPosition="0" endLine="137" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172354" fileName="ExtractMethodDialog.java" startLine="137" startPosition="16" endLine="138" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172360" fileName="ExtractMethodDialog.java" startLine="138" startPosition="16" endLine="139" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172366" fileName="ExtractMethodDialog.java" startLine="139" startPosition="18" endLine="140" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172372" fileName="ExtractMethodDialog.java" startLine="140" startPosition="18" endLine="141" endPosition="20" />
-    <nodeInfo nodeId="8492459591399172378" fileName="ExtractMethodDialog.java" startLine="141" startPosition="20" endLine="142" endPosition="51" />
-    <nodeInfo nodeId="6296924652370882752" fileName="ExtractMethodDialog.java" startLine="142" startPosition="51" endLine="143" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172407" fileName="ExtractMethodDialog.java" startLine="143" startPosition="0" endLine="144" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172413" fileName="ExtractMethodDialog.java" startLine="144" startPosition="16" endLine="145" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172419" fileName="ExtractMethodDialog.java" startLine="145" startPosition="16" endLine="146" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172425" fileName="ExtractMethodDialog.java" startLine="146" startPosition="18" endLine="147" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172431" fileName="ExtractMethodDialog.java" startLine="147" startPosition="18" endLine="148" endPosition="20" />
-    <nodeInfo nodeId="8492459591399172437" fileName="ExtractMethodDialog.java" startLine="148" startPosition="20" endLine="149" endPosition="56" />
-    <nodeInfo nodeId="8492459591399172451" fileName="ExtractMethodDialog.java" startLine="152" startPosition="43" endLine="153" endPosition="42" />
-    <nodeInfo nodeId="5358105620800623045" fileName="ExtractMethodDialog.java" startLine="153" startPosition="42" endLine="154" endPosition="67" />
-    <nodeInfo nodeId="8492459591399172458" fileName="ExtractMethodDialog.java" startLine="154" startPosition="67" endLine="155" endPosition="73" />
-    <nodeInfo nodeId="8492459591399172468" fileName="ExtractMethodDialog.java" startLine="155" startPosition="73" endLine="156" endPosition="30" />
-    <nodeInfo nodeId="8492459591399172476" fileName="ExtractMethodDialog.java" startLine="159" startPosition="48" endLine="160" endPosition="43" />
-    <nodeInfo nodeId="5358105620800623678" fileName="ExtractMethodDialog.java" startLine="160" startPosition="43" endLine="161" endPosition="68" />
-    <nodeInfo nodeId="8492459591399172483" fileName="ExtractMethodDialog.java" startLine="161" startPosition="68" endLine="162" endPosition="65" />
-    <nodeInfo nodeId="8492459591399172493" fileName="ExtractMethodDialog.java" startLine="162" startPosition="65" endLine="163" endPosition="31" />
-    <nodeInfo nodeId="8492459591399172655" fileName="ExtractMethodDialog.java" startLine="166" startPosition="46" endLine="167" endPosition="77" />
-    <nodeInfo nodeId="6296924652370890826" fileName="ExtractMethodDialog.java" startLine="167" startPosition="77" endLine="168" endPosition="63" />
-    <nodeInfo nodeId="8492459591399172663" fileName="ExtractMethodDialog.java" startLine="168" startPosition="63" endLine="169" endPosition="70" />
-    <nodeInfo nodeId="8492459591399172680" fileName="ExtractMethodDialog.java" startLine="171" startPosition="52" endLine="172" endPosition="42" />
-    <nodeInfo nodeId="8492459591399172687" fileName="ExtractMethodDialog.java" startLine="174" startPosition="7" endLine="175" endPosition="27" />
-    <nodeInfo nodeId="8492459591399172693" fileName="ExtractMethodDialog.java" startLine="178" startPosition="42" endLine="179" endPosition="57" />
-    <nodeInfo nodeId="8492459591399172700" fileName="ExtractMethodDialog.java" startLine="179" startPosition="57" endLine="180" endPosition="55" />
-    <nodeInfo nodeId="8492459591399172708" fileName="ExtractMethodDialog.java" startLine="180" startPosition="55" endLine="181" endPosition="52" />
-    <nodeInfo nodeId="8492459591399172713" fileName="ExtractMethodDialog.java" startLine="181" startPosition="52" endLine="182" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172719" fileName="ExtractMethodDialog.java" startLine="182" startPosition="16" endLine="183" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172725" fileName="ExtractMethodDialog.java" startLine="183" startPosition="16" endLine="184" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172731" fileName="ExtractMethodDialog.java" startLine="184" startPosition="18" endLine="185" endPosition="51" />
-    <nodeInfo nodeId="8492459591399172737" fileName="ExtractMethodDialog.java" startLine="185" startPosition="51" endLine="186" endPosition="44" />
-    <nodeInfo nodeId="8492459591399172745" fileName="ExtractMethodDialog.java" startLine="186" startPosition="44" endLine="187" endPosition="33" />
-    <nodeInfo nodeId="8492459591399172750" fileName="ExtractMethodDialog.java" startLine="187" startPosition="33" endLine="188" endPosition="43" />
-    <nodeInfo nodeId="8492459591399172756" fileName="ExtractMethodDialog.java" startLine="188" startPosition="43" endLine="189" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172762" fileName="ExtractMethodDialog.java" startLine="189" startPosition="16" endLine="190" endPosition="16" />
-    <nodeInfo nodeId="8492459591399172768" fileName="ExtractMethodDialog.java" startLine="190" startPosition="16" endLine="191" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172774" fileName="ExtractMethodDialog.java" startLine="191" startPosition="18" endLine="192" endPosition="18" />
-    <nodeInfo nodeId="8492459591399172780" fileName="ExtractMethodDialog.java" startLine="192" startPosition="18" endLine="193" endPosition="51" />
-    <nodeInfo nodeId="8492459591399172786" fileName="ExtractMethodDialog.java" startLine="193" startPosition="51" endLine="194" endPosition="52" />
-    <nodeInfo nodeId="8492459591399172792" fileName="ExtractMethodDialog.java" startLine="194" startPosition="52" endLine="195" endPosition="34" />
-    <nodeInfo nodeId="8492459591399172808" fileName="ExtractMethodDialog.java" startLine="197" startPosition="52" endLine="198" endPosition="75" />
-    <nodeInfo nodeId="8492459591399172817" fileName="ExtractMethodDialog.java" startLine="198" startPosition="75" endLine="199" endPosition="42" />
-    <nodeInfo nodeId="8492459591399172827" fileName="ExtractMethodDialog.java" startLine="201" startPosition="7" endLine="202" endPosition="23" />
-    <nodeInfo nodeId="8492459591399172835" fileName="ExtractMethodDialog.java" startLine="205" startPosition="45" endLine="206" endPosition="84" />
-    <nodeInfo nodeId="8492459591399172862" fileName="ExtractMethodDialog.java" startLine="209" startPosition="40" endLine="210" endPosition="24" />
-    <nodeInfo nodeId="4626240717634896358" fileName="ExtractMethodDialog.java" startLine="214" startPosition="22" endLine="215" endPosition="77" />
-    <nodeInfo nodeId="5159544814168902932" fileName="ExtractMethodDialog.java" startLine="215" startPosition="77" endLine="216" endPosition="67" />
-    <nodeInfo nodeId="8492459591399172961" fileName="ExtractMethodDialog.java" startLine="217" startPosition="32" endLine="218" endPosition="129" />
-    <nodeInfo nodeId="2859705395554885700" fileName="ExtractMethodDialog.java" startLine="219" startPosition="12" endLine="220" endPosition="71" />
-    <nodeInfo nodeId="2859705395554885909" fileName="ExtractMethodDialog.java" startLine="220" startPosition="71" endLine="221" endPosition="81" />
-    <nodeInfo nodeId="8492459591399172884" fileName="ExtractMethodDialog.java" startLine="222" startPosition="146" endLine="223" endPosition="88" />
-    <nodeInfo nodeId="6175851236577579404" fileName="ExtractMethodDialog.java" startLine="225" startPosition="29" endLine="226" endPosition="153" />
-    <nodeInfo nodeId="8492459591399172890" fileName="ExtractMethodDialog.java" startLine="226" startPosition="153" endLine="227" endPosition="70" />
-    <nodeInfo nodeId="2859705395554885705" fileName="ExtractMethodDialog.java" startLine="229" startPosition="11" endLine="230" endPosition="117" />
-    <nodeInfo nodeId="8492459591399172917" fileName="ExtractMethodDialog.java" startLine="231" startPosition="41" endLine="232" endPosition="17" />
-    <nodeInfo nodeId="8492459591399172924" fileName="ExtractMethodDialog.java" startLine="235" startPosition="29" endLine="236" endPosition="90" />
-    <nodeInfo nodeId="5159544814168902913" fileName="ExtractMethodDialog.java" startLine="241" startPosition="27" endLine="242" endPosition="77" />
-    <nodeInfo nodeId="8492459591399172953" fileName="ExtractMethodDialog.java" startLine="242" startPosition="77" endLine="243" endPosition="66" />
-    <nodeInfo nodeId="7123761944774720181" fileName="ExtractMethodDialog.java" startLine="244" startPosition="47" endLine="245" endPosition="100" />
-    <nodeInfo nodeId="7123761944774720192" fileName="ExtractMethodDialog.java" startLine="245" startPosition="100" endLine="246" endPosition="75" />
-    <nodeInfo nodeId="8492459591399172971" fileName="ExtractMethodDialog.java" startLine="250" startPosition="5" endLine="251" endPosition="19" />
-    <nodeInfo nodeId="5159544814168932119" fileName="ExtractMethodDialog.java" startLine="252" startPosition="33" endLine="253" endPosition="129" />
-    <nodeInfo nodeId="8492459591399172988" fileName="ExtractMethodDialog.java" startLine="258" startPosition="26" endLine="259" endPosition="19" />
-    <nodeInfo nodeId="8492459591399172997" fileName="ExtractMethodDialog.java" startLine="262" startPosition="82" endLine="263" endPosition="77" />
-    <nodeInfo nodeId="5159544814168932086" fileName="ExtractMethodDialog.java" startLine="266" startPosition="78" endLine="267" endPosition="27" />
-    <nodeInfo nodeId="5159544814168932084" fileName="ExtractMethodDialog.java" startLine="269" startPosition="77" endLine="270" endPosition="21" />
-    <nodeInfo nodeId="5159544814168932091" fileName="ExtractMethodDialog.java" startLine="270" startPosition="21" endLine="271" endPosition="29" />
-    <nodeInfo nodeId="3546025902496650478" fileName="ExtractMethodDialog.java" startLine="274" startPosition="51" endLine="275" endPosition="72" />
-    <nodeInfo nodeId="8492459591399172057" fileName="ExtractMethodDialog.java" startLine="90" startPosition="10" endLine="92" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172096" fileName="ExtractMethodDialog.java" startLine="97" startPosition="12" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="8492459591399171993" fileName="ExtractMethodDialog.java" startLine="78" startPosition="81" endLine="81" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172015" fileName="ExtractMethodDialog.java" startLine="81" startPosition="7" endLine="84" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172114" fileName="ExtractMethodDialog.java" startLine="100" startPosition="5" endLine="103" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172915" fileName="ExtractMethodDialog.java" startLine="230" startPosition="117" endLine="233" endPosition="9" />
-    <nodeInfo nodeId="5159544814168902938" fileName="ExtractMethodDialog.java" startLine="251" startPosition="19" endLine="254" endPosition="5" />
-    <nodeInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="54" startPosition="57" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172675" fileName="ExtractMethodDialog.java" startLine="170" startPosition="63" endLine="174" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172831" fileName="ExtractMethodDialog.java" startLine="204" startPosition="0" endLine="208" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172860" fileName="ExtractMethodDialog.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172922" fileName="ExtractMethodDialog.java" startLine="234" startPosition="61" endLine="238" endPosition="0" />
-    <nodeInfo nodeId="2177628253336385810" fileName="ExtractMethodDialog.java" startLine="243" startPosition="66" endLine="247" endPosition="11" />
-    <nodeInfo nodeId="8492459591399172994" fileName="ExtractMethodDialog.java" startLine="261" startPosition="0" endLine="265" endPosition="0" />
-    <nodeInfo nodeId="5159544814168902955" fileName="ExtractMethodDialog.java" startLine="268" startPosition="0" endLine="272" endPosition="5" />
-    <nodeInfo nodeId="5159544814168932099" fileName="ExtractMethodDialog.java" startLine="273" startPosition="0" endLine="277" endPosition="0" />
-    <nodeInfo nodeId="8492459591399173056" fileName="ExtractMethodDialog.java" startLine="53" startPosition="37" endLine="58" endPosition="7" />
-    <nodeInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="63" startPosition="57" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172078" fileName="ExtractMethodDialog.java" startLine="94" startPosition="28" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172669" fileName="ExtractMethodDialog.java" startLine="169" startPosition="70" endLine="174" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172804" fileName="ExtractMethodDialog.java" startLine="196" startPosition="71" endLine="201" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172888" fileName="ExtractMethodDialog.java" startLine="224" startPosition="61" endLine="229" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172921" fileName="ExtractMethodDialog.java" startLine="233" startPosition="9" endLine="238" endPosition="11" />
-    <nodeInfo nodeId="8492459591399172977" fileName="ExtractMethodDialog.java" startLine="256" startPosition="0" endLine="261" endPosition="0" />
-    <nodeInfo nodeId="8492459591399171938" fileName="ExtractMethodDialog.java" startLine="62" startPosition="25" endLine="68" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172044" fileName="ExtractMethodDialog.java" startLine="86" startPosition="91" endLine="92" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172798" fileName="ExtractMethodDialog.java" startLine="195" startPosition="34" endLine="201" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172887" fileName="ExtractMethodDialog.java" startLine="223" startPosition="88" endLine="229" endPosition="11" />
-    <nodeInfo nodeId="8492459591399172076" fileName="ExtractMethodDialog.java" startLine="93" startPosition="67" endLine="100" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172449" fileName="ExtractMethodDialog.java" startLine="151" startPosition="0" endLine="158" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172474" fileName="ExtractMethodDialog.java" startLine="158" startPosition="0" endLine="165" endPosition="0" />
-    <nodeInfo nodeId="8492459591399171983" fileName="ExtractMethodDialog.java" startLine="77" startPosition="10" endLine="85" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="240" startPosition="69" endLine="249" endPosition="0" />
-    <nodeInfo nodeId="8492459591399171936" fileName="ExtractMethodDialog.java" startLine="61" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172942" fileName="ExtractMethodDialog.java" startLine="239" startPosition="7" endLine="249" endPosition="9" />
-    <nodeInfo nodeId="8492459591399171982" fileName="ExtractMethodDialog.java" startLine="74" startPosition="52" endLine="85" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172653" fileName="ExtractMethodDialog.java" startLine="165" startPosition="0" endLine="177" endPosition="0" />
-    <nodeInfo nodeId="8492459591399173005" fileName="ExtractMethodDialog.java" startLine="47" startPosition="0" endLine="60" endPosition="3" />
-    <nodeInfo nodeId="8492459591399172882" fileName="ExtractMethodDialog.java" startLine="221" startPosition="81" endLine="239" endPosition="7" />
-    <nodeInfo nodeId="8492459591399172691" fileName="ExtractMethodDialog.java" startLine="177" startPosition="0" endLine="204" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172880" fileName="ExtractMethodDialog.java" startLine="219" startPosition="10" endLine="250" endPosition="5" />
-    <nodeInfo nodeId="8492459591399172879" fileName="ExtractMethodDialog.java" startLine="216" startPosition="67" endLine="250" endPosition="5" />
-    <nodeInfo nodeId="8492459591399171967" fileName="ExtractMethodDialog.java" startLine="71" startPosition="0" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172868" fileName="ExtractMethodDialog.java" startLine="212" startPosition="0" endLine="256" endPosition="0" />
-    <nodeInfo nodeId="8492459591399172132" fileName="ExtractMethodDialog.java" startLine="106" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="8492459591399173058" fileName="ExtractMethodDialog.java" startLine="55" startPosition="25" endLine="56" endPosition="45" />
-    <scopeInfo nodeId="8492459591399172029" fileName="ExtractMethodDialog.java" startLine="75" startPosition="35" endLine="76" endPosition="45" />
-    <scopeInfo nodeId="8492459591399171994" fileName="ExtractMethodDialog.java" startLine="79" startPosition="53" endLine="80" endPosition="88" />
-    <scopeInfo nodeId="8492459591399172016" fileName="ExtractMethodDialog.java" startLine="82" startPosition="26" endLine="83" endPosition="49" />
-    <scopeInfo nodeId="8492459591399172058" fileName="ExtractMethodDialog.java" startLine="90" startPosition="12" endLine="91" endPosition="32" />
-    <scopeInfo nodeId="8492459591399172079" fileName="ExtractMethodDialog.java" startLine="95" startPosition="158" endLine="96" endPosition="53" />
-    <scopeInfo nodeId="8492459591399172097" fileName="ExtractMethodDialog.java" startLine="97" startPosition="14" endLine="98" endPosition="129" />
-    <scopeInfo nodeId="8492459591399172115" fileName="ExtractMethodDialog.java" startLine="101" startPosition="29" endLine="102" endPosition="24" />
-    <scopeInfo nodeId="8492459591399172679" fileName="ExtractMethodDialog.java" startLine="171" startPosition="52" endLine="172" endPosition="42" />
-    <scopeInfo nodeId="8492459591399172834" fileName="ExtractMethodDialog.java" startLine="205" startPosition="45" endLine="206" endPosition="84" />
-    <scopeInfo nodeId="8492459591399172861" fileName="ExtractMethodDialog.java" startLine="209" startPosition="40" endLine="210" endPosition="24" />
-    <scopeInfo nodeId="8492459591399172960" fileName="ExtractMethodDialog.java" startLine="217" startPosition="32" endLine="218" endPosition="129" />
-    <scopeInfo nodeId="8492459591399172916" fileName="ExtractMethodDialog.java" startLine="231" startPosition="41" endLine="232" endPosition="17" />
-    <scopeInfo nodeId="8492459591399172923" fileName="ExtractMethodDialog.java" startLine="235" startPosition="29" endLine="236" endPosition="90" />
-    <scopeInfo nodeId="5159544814168902939" fileName="ExtractMethodDialog.java" startLine="252" startPosition="33" endLine="253" endPosition="129" />
-    <scopeInfo nodeId="8492459591399172987" fileName="ExtractMethodDialog.java" startLine="258" startPosition="26" endLine="259" endPosition="19" />
-    <scopeInfo nodeId="8492459591399172996" fileName="ExtractMethodDialog.java" startLine="262" startPosition="82" endLine="263" endPosition="77" />
-    <scopeInfo nodeId="5159544814168932104" fileName="ExtractMethodDialog.java" startLine="274" startPosition="51" endLine="275" endPosition="72" />
-    <scopeInfo nodeId="8492459591399171940" fileName="ExtractMethodDialog.java" startLine="64" startPosition="25" endLine="66" endPosition="110" />
-    <scopeInfo nodeId="8492459591399172045" fileName="ExtractMethodDialog.java" startLine="87" startPosition="25" endLine="89" endPosition="33" />
-    <scopeInfo nodeId="8492459591399172807" fileName="ExtractMethodDialog.java" startLine="197" startPosition="52" endLine="199" endPosition="42" />
-    <scopeInfo nodeId="8492459591399172889" fileName="ExtractMethodDialog.java" startLine="225" startPosition="29" endLine="227" endPosition="70" />
-    <scopeInfo nodeId="2177628253336385812" fileName="ExtractMethodDialog.java" startLine="244" startPosition="47" endLine="246" endPosition="75">
+    <nodeInfo nodeId="8492459591399171911" fileName="ExtractMethodDialog.java" startLine="37" startPosition="53" endLine="38" endPosition="25" />
+    <nodeInfo nodeId="8492459591399171914" fileName="ExtractMethodDialog.java" startLine="38" startPosition="25" endLine="39" endPosition="32" />
+    <nodeInfo nodeId="8492459591399171917" fileName="ExtractMethodDialog.java" startLine="39" startPosition="32" endLine="40" endPosition="52" />
+    <nodeInfo nodeId="8492459591399171922" fileName="ExtractMethodDialog.java" startLine="40" startPosition="52" endLine="41" endPosition="53" />
+    <nodeInfo nodeId="4626240717634896325" fileName="ExtractMethodDialog.java" startLine="41" startPosition="53" endLine="42" endPosition="44" />
+    <nodeInfo nodeId="8492459591399171927" fileName="ExtractMethodDialog.java" startLine="42" startPosition="44" endLine="43" endPosition="58" />
+    <nodeInfo nodeId="8492459591399171930" fileName="ExtractMethodDialog.java" startLine="43" startPosition="58" endLine="44" endPosition="34" />
+    <nodeInfo nodeId="8492459591399171933" fileName="ExtractMethodDialog.java" startLine="44" startPosition="34" endLine="45" endPosition="49" />
+    <nodeInfo nodeId="8492459591399173013" fileName="ExtractMethodDialog.java" startLine="47" startPosition="147" endLine="48" endPosition="35" />
+    <nodeInfo nodeId="8271167595671729475" fileName="ExtractMethodDialog.java" startLine="48" startPosition="35" endLine="49" endPosition="49" />
+    <nodeInfo nodeId="8492459591399173016" fileName="ExtractMethodDialog.java" startLine="49" startPosition="49" endLine="50" endPosition="29" />
+    <nodeInfo nodeId="1334376219849324113" fileName="ExtractMethodDialog.java" startLine="50" startPosition="29" endLine="51" endPosition="31" />
+    <nodeInfo nodeId="1334376219849324122" fileName="ExtractMethodDialog.java" startLine="51" startPosition="31" endLine="52" endPosition="37" />
+    <nodeInfo nodeId="8492459591399173059" fileName="ExtractMethodDialog.java" startLine="54" startPosition="25" endLine="55" endPosition="45" />
+    <nodeInfo nodeId="8492459591399173063" fileName="ExtractMethodDialog.java" startLine="57" startPosition="7" endLine="58" endPosition="18" />
+    <nodeInfo nodeId="8492459591399171941" fileName="ExtractMethodDialog.java" startLine="63" startPosition="25" endLine="64" endPosition="100" />
+    <nodeInfo nodeId="8492459591399171950" fileName="ExtractMethodDialog.java" startLine="64" startPosition="100" endLine="65" endPosition="110" />
+    <nodeInfo nodeId="8492459591399171961" fileName="ExtractMethodDialog.java" startLine="67" startPosition="7" endLine="68" endPosition="19" />
+    <nodeInfo nodeId="8492459591399171969" fileName="ExtractMethodDialog.java" startLine="71" startPosition="36" endLine="72" endPosition="43" />
+    <nodeInfo nodeId="8492459591399171974" fileName="ExtractMethodDialog.java" startLine="72" startPosition="43" endLine="73" endPosition="52" />
+    <nodeInfo nodeId="8492459591399172030" fileName="ExtractMethodDialog.java" startLine="74" startPosition="35" endLine="75" endPosition="45" />
+    <nodeInfo nodeId="8492459591399171985" fileName="ExtractMethodDialog.java" startLine="76" startPosition="12" endLine="77" endPosition="81" />
+    <nodeInfo nodeId="8492459591399171995" fileName="ExtractMethodDialog.java" startLine="78" startPosition="53" endLine="79" endPosition="88" />
+    <nodeInfo nodeId="8492459591399172017" fileName="ExtractMethodDialog.java" startLine="81" startPosition="26" endLine="82" endPosition="49" />
+    <nodeInfo nodeId="8492459591399172035" fileName="ExtractMethodDialog.java" startLine="84" startPosition="5" endLine="85" endPosition="91" />
+    <nodeInfo nodeId="8492459591399172046" fileName="ExtractMethodDialog.java" startLine="86" startPosition="25" endLine="87" endPosition="26" />
+    <nodeInfo nodeId="8492459591399172051" fileName="ExtractMethodDialog.java" startLine="87" startPosition="26" endLine="88" endPosition="33" />
+    <nodeInfo nodeId="8492459591399172059" fileName="ExtractMethodDialog.java" startLine="89" startPosition="12" endLine="90" endPosition="32" />
+    <nodeInfo nodeId="8492459591399172068" fileName="ExtractMethodDialog.java" startLine="91" startPosition="5" endLine="92" endPosition="67" />
+    <nodeInfo nodeId="8492459591399172080" fileName="ExtractMethodDialog.java" startLine="94" startPosition="158" endLine="95" endPosition="53" />
+    <nodeInfo nodeId="8492459591399172098" fileName="ExtractMethodDialog.java" startLine="96" startPosition="14" endLine="97" endPosition="129" />
+    <nodeInfo nodeId="8492459591399172116" fileName="ExtractMethodDialog.java" startLine="100" startPosition="29" endLine="101" endPosition="24" />
+    <nodeInfo nodeId="8492459591399172126" fileName="ExtractMethodDialog.java" startLine="102" startPosition="5" endLine="103" endPosition="27" />
+    <nodeInfo nodeId="8492459591399172134" fileName="ExtractMethodDialog.java" startLine="106" startPosition="28" endLine="107" endPosition="51" />
+    <nodeInfo nodeId="6296924652370882773" fileName="ExtractMethodDialog.java" startLine="107" startPosition="51" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172154" fileName="ExtractMethodDialog.java" startLine="108" startPosition="0" endLine="109" endPosition="52" />
+    <nodeInfo nodeId="8492459591399172159" fileName="ExtractMethodDialog.java" startLine="109" startPosition="52" endLine="110" endPosition="37" />
+    <nodeInfo nodeId="6296924652370882732" fileName="ExtractMethodDialog.java" startLine="110" startPosition="37" endLine="111" endPosition="44" />
+    <nodeInfo nodeId="8492459591399172165" fileName="ExtractMethodDialog.java" startLine="111" startPosition="44" endLine="112" endPosition="38" />
+    <nodeInfo nodeId="6296924652370882763" fileName="ExtractMethodDialog.java" startLine="112" startPosition="38" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172171" fileName="ExtractMethodDialog.java" startLine="113" startPosition="0" endLine="114" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172177" fileName="ExtractMethodDialog.java" startLine="114" startPosition="16" endLine="115" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172183" fileName="ExtractMethodDialog.java" startLine="115" startPosition="16" endLine="116" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172189" fileName="ExtractMethodDialog.java" startLine="116" startPosition="18" endLine="117" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172195" fileName="ExtractMethodDialog.java" startLine="117" startPosition="18" endLine="118" endPosition="20" />
+    <nodeInfo nodeId="8492459591399172201" fileName="ExtractMethodDialog.java" startLine="118" startPosition="20" endLine="119" endPosition="50" />
+    <nodeInfo nodeId="6296924652370882761" fileName="ExtractMethodDialog.java" startLine="119" startPosition="50" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172230" fileName="ExtractMethodDialog.java" startLine="120" startPosition="0" endLine="121" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172236" fileName="ExtractMethodDialog.java" startLine="121" startPosition="16" endLine="122" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172242" fileName="ExtractMethodDialog.java" startLine="122" startPosition="16" endLine="123" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172248" fileName="ExtractMethodDialog.java" startLine="123" startPosition="18" endLine="124" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172254" fileName="ExtractMethodDialog.java" startLine="124" startPosition="18" endLine="125" endPosition="20" />
+    <nodeInfo nodeId="8492459591399172260" fileName="ExtractMethodDialog.java" startLine="125" startPosition="20" endLine="126" endPosition="54" />
+    <nodeInfo nodeId="6296924652370882758" fileName="ExtractMethodDialog.java" startLine="126" startPosition="54" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172289" fileName="ExtractMethodDialog.java" startLine="127" startPosition="0" endLine="128" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172295" fileName="ExtractMethodDialog.java" startLine="128" startPosition="16" endLine="129" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172301" fileName="ExtractMethodDialog.java" startLine="129" startPosition="16" endLine="130" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172307" fileName="ExtractMethodDialog.java" startLine="130" startPosition="18" endLine="131" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172313" fileName="ExtractMethodDialog.java" startLine="131" startPosition="18" endLine="132" endPosition="20" />
+    <nodeInfo nodeId="4626240717634896329" fileName="ExtractMethodDialog.java" startLine="132" startPosition="20" endLine="133" endPosition="51" />
+    <nodeInfo nodeId="4626240717634896340" fileName="ExtractMethodDialog.java" startLine="133" startPosition="51" endLine="134" endPosition="48" />
+    <nodeInfo nodeId="6296924652370882755" fileName="ExtractMethodDialog.java" startLine="134" startPosition="48" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172348" fileName="ExtractMethodDialog.java" startLine="135" startPosition="0" endLine="136" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172354" fileName="ExtractMethodDialog.java" startLine="136" startPosition="16" endLine="137" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172360" fileName="ExtractMethodDialog.java" startLine="137" startPosition="16" endLine="138" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172366" fileName="ExtractMethodDialog.java" startLine="138" startPosition="18" endLine="139" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172372" fileName="ExtractMethodDialog.java" startLine="139" startPosition="18" endLine="140" endPosition="20" />
+    <nodeInfo nodeId="8492459591399172378" fileName="ExtractMethodDialog.java" startLine="140" startPosition="20" endLine="141" endPosition="51" />
+    <nodeInfo nodeId="6296924652370882752" fileName="ExtractMethodDialog.java" startLine="141" startPosition="51" endLine="142" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172407" fileName="ExtractMethodDialog.java" startLine="142" startPosition="0" endLine="143" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172413" fileName="ExtractMethodDialog.java" startLine="143" startPosition="16" endLine="144" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172419" fileName="ExtractMethodDialog.java" startLine="144" startPosition="16" endLine="145" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172425" fileName="ExtractMethodDialog.java" startLine="145" startPosition="18" endLine="146" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172431" fileName="ExtractMethodDialog.java" startLine="146" startPosition="18" endLine="147" endPosition="20" />
+    <nodeInfo nodeId="8492459591399172437" fileName="ExtractMethodDialog.java" startLine="147" startPosition="20" endLine="148" endPosition="56" />
+    <nodeInfo nodeId="8492459591399172451" fileName="ExtractMethodDialog.java" startLine="151" startPosition="43" endLine="152" endPosition="42" />
+    <nodeInfo nodeId="5358105620800623045" fileName="ExtractMethodDialog.java" startLine="152" startPosition="42" endLine="153" endPosition="67" />
+    <nodeInfo nodeId="8492459591399172458" fileName="ExtractMethodDialog.java" startLine="153" startPosition="67" endLine="154" endPosition="73" />
+    <nodeInfo nodeId="8492459591399172468" fileName="ExtractMethodDialog.java" startLine="154" startPosition="73" endLine="155" endPosition="30" />
+    <nodeInfo nodeId="8492459591399172476" fileName="ExtractMethodDialog.java" startLine="158" startPosition="48" endLine="159" endPosition="43" />
+    <nodeInfo nodeId="5358105620800623678" fileName="ExtractMethodDialog.java" startLine="159" startPosition="43" endLine="160" endPosition="68" />
+    <nodeInfo nodeId="8492459591399172483" fileName="ExtractMethodDialog.java" startLine="160" startPosition="68" endLine="161" endPosition="65" />
+    <nodeInfo nodeId="8492459591399172493" fileName="ExtractMethodDialog.java" startLine="161" startPosition="65" endLine="162" endPosition="31" />
+    <nodeInfo nodeId="8492459591399172655" fileName="ExtractMethodDialog.java" startLine="165" startPosition="46" endLine="166" endPosition="77" />
+    <nodeInfo nodeId="6296924652370890826" fileName="ExtractMethodDialog.java" startLine="166" startPosition="77" endLine="167" endPosition="63" />
+    <nodeInfo nodeId="8492459591399172663" fileName="ExtractMethodDialog.java" startLine="167" startPosition="63" endLine="168" endPosition="70" />
+    <nodeInfo nodeId="8492459591399172680" fileName="ExtractMethodDialog.java" startLine="170" startPosition="52" endLine="171" endPosition="42" />
+    <nodeInfo nodeId="8492459591399172687" fileName="ExtractMethodDialog.java" startLine="173" startPosition="7" endLine="174" endPosition="27" />
+    <nodeInfo nodeId="8492459591399172693" fileName="ExtractMethodDialog.java" startLine="177" startPosition="42" endLine="178" endPosition="57" />
+    <nodeInfo nodeId="8492459591399172700" fileName="ExtractMethodDialog.java" startLine="178" startPosition="57" endLine="179" endPosition="55" />
+    <nodeInfo nodeId="8492459591399172708" fileName="ExtractMethodDialog.java" startLine="179" startPosition="55" endLine="180" endPosition="52" />
+    <nodeInfo nodeId="8492459591399172713" fileName="ExtractMethodDialog.java" startLine="180" startPosition="52" endLine="181" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172719" fileName="ExtractMethodDialog.java" startLine="181" startPosition="16" endLine="182" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172725" fileName="ExtractMethodDialog.java" startLine="182" startPosition="16" endLine="183" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172731" fileName="ExtractMethodDialog.java" startLine="183" startPosition="18" endLine="184" endPosition="51" />
+    <nodeInfo nodeId="8492459591399172737" fileName="ExtractMethodDialog.java" startLine="184" startPosition="51" endLine="185" endPosition="44" />
+    <nodeInfo nodeId="8492459591399172745" fileName="ExtractMethodDialog.java" startLine="185" startPosition="44" endLine="186" endPosition="33" />
+    <nodeInfo nodeId="8492459591399172750" fileName="ExtractMethodDialog.java" startLine="186" startPosition="33" endLine="187" endPosition="43" />
+    <nodeInfo nodeId="8492459591399172756" fileName="ExtractMethodDialog.java" startLine="187" startPosition="43" endLine="188" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172762" fileName="ExtractMethodDialog.java" startLine="188" startPosition="16" endLine="189" endPosition="16" />
+    <nodeInfo nodeId="8492459591399172768" fileName="ExtractMethodDialog.java" startLine="189" startPosition="16" endLine="190" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172774" fileName="ExtractMethodDialog.java" startLine="190" startPosition="18" endLine="191" endPosition="18" />
+    <nodeInfo nodeId="8492459591399172780" fileName="ExtractMethodDialog.java" startLine="191" startPosition="18" endLine="192" endPosition="51" />
+    <nodeInfo nodeId="8492459591399172786" fileName="ExtractMethodDialog.java" startLine="192" startPosition="51" endLine="193" endPosition="52" />
+    <nodeInfo nodeId="8492459591399172792" fileName="ExtractMethodDialog.java" startLine="193" startPosition="52" endLine="194" endPosition="34" />
+    <nodeInfo nodeId="8492459591399172808" fileName="ExtractMethodDialog.java" startLine="196" startPosition="52" endLine="197" endPosition="75" />
+    <nodeInfo nodeId="8492459591399172817" fileName="ExtractMethodDialog.java" startLine="197" startPosition="75" endLine="198" endPosition="42" />
+    <nodeInfo nodeId="8492459591399172827" fileName="ExtractMethodDialog.java" startLine="200" startPosition="7" endLine="201" endPosition="23" />
+    <nodeInfo nodeId="8492459591399172835" fileName="ExtractMethodDialog.java" startLine="204" startPosition="45" endLine="205" endPosition="84" />
+    <nodeInfo nodeId="8492459591399172862" fileName="ExtractMethodDialog.java" startLine="208" startPosition="40" endLine="209" endPosition="24" />
+    <nodeInfo nodeId="4626240717634896358" fileName="ExtractMethodDialog.java" startLine="213" startPosition="22" endLine="214" endPosition="77" />
+    <nodeInfo nodeId="5159544814168902932" fileName="ExtractMethodDialog.java" startLine="214" startPosition="77" endLine="215" endPosition="67" />
+    <nodeInfo nodeId="8492459591399172961" fileName="ExtractMethodDialog.java" startLine="216" startPosition="32" endLine="217" endPosition="129" />
+    <nodeInfo nodeId="2859705395554885700" fileName="ExtractMethodDialog.java" startLine="218" startPosition="12" endLine="219" endPosition="71" />
+    <nodeInfo nodeId="2859705395554885909" fileName="ExtractMethodDialog.java" startLine="219" startPosition="71" endLine="220" endPosition="81" />
+    <nodeInfo nodeId="8492459591399172884" fileName="ExtractMethodDialog.java" startLine="221" startPosition="146" endLine="222" endPosition="88" />
+    <nodeInfo nodeId="6175851236577579404" fileName="ExtractMethodDialog.java" startLine="224" startPosition="29" endLine="225" endPosition="153" />
+    <nodeInfo nodeId="8492459591399172890" fileName="ExtractMethodDialog.java" startLine="225" startPosition="153" endLine="226" endPosition="70" />
+    <nodeInfo nodeId="2859705395554885705" fileName="ExtractMethodDialog.java" startLine="228" startPosition="11" endLine="229" endPosition="117" />
+    <nodeInfo nodeId="8492459591399172917" fileName="ExtractMethodDialog.java" startLine="230" startPosition="41" endLine="231" endPosition="17" />
+    <nodeInfo nodeId="8492459591399172924" fileName="ExtractMethodDialog.java" startLine="234" startPosition="29" endLine="235" endPosition="90" />
+    <nodeInfo nodeId="5159544814168902913" fileName="ExtractMethodDialog.java" startLine="240" startPosition="27" endLine="241" endPosition="77" />
+    <nodeInfo nodeId="8492459591399172953" fileName="ExtractMethodDialog.java" startLine="241" startPosition="77" endLine="242" endPosition="66" />
+    <nodeInfo nodeId="7123761944774720181" fileName="ExtractMethodDialog.java" startLine="243" startPosition="47" endLine="244" endPosition="100" />
+    <nodeInfo nodeId="6853886991699140014" fileName="ExtractMethodDialog.java" startLine="244" startPosition="100" endLine="245" endPosition="62" />
+    <nodeInfo nodeId="8492459591399172971" fileName="ExtractMethodDialog.java" startLine="249" startPosition="5" endLine="250" endPosition="19" />
+    <nodeInfo nodeId="5159544814168932119" fileName="ExtractMethodDialog.java" startLine="251" startPosition="33" endLine="252" endPosition="129" />
+    <nodeInfo nodeId="8492459591399172988" fileName="ExtractMethodDialog.java" startLine="257" startPosition="26" endLine="258" endPosition="19" />
+    <nodeInfo nodeId="8492459591399172997" fileName="ExtractMethodDialog.java" startLine="261" startPosition="82" endLine="262" endPosition="77" />
+    <nodeInfo nodeId="5159544814168932086" fileName="ExtractMethodDialog.java" startLine="265" startPosition="78" endLine="266" endPosition="27" />
+    <nodeInfo nodeId="5159544814168932084" fileName="ExtractMethodDialog.java" startLine="268" startPosition="77" endLine="269" endPosition="21" />
+    <nodeInfo nodeId="5159544814168932091" fileName="ExtractMethodDialog.java" startLine="269" startPosition="21" endLine="270" endPosition="29" />
+    <nodeInfo nodeId="3546025902496650478" fileName="ExtractMethodDialog.java" startLine="273" startPosition="51" endLine="274" endPosition="72" />
+    <nodeInfo nodeId="8492459591399172057" fileName="ExtractMethodDialog.java" startLine="89" startPosition="10" endLine="91" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172096" fileName="ExtractMethodDialog.java" startLine="96" startPosition="12" endLine="98" endPosition="7" />
+    <nodeInfo nodeId="8492459591399171993" fileName="ExtractMethodDialog.java" startLine="77" startPosition="81" endLine="80" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172015" fileName="ExtractMethodDialog.java" startLine="80" startPosition="7" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172114" fileName="ExtractMethodDialog.java" startLine="99" startPosition="5" endLine="102" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172915" fileName="ExtractMethodDialog.java" startLine="229" startPosition="117" endLine="232" endPosition="9" />
+    <nodeInfo nodeId="5159544814168902938" fileName="ExtractMethodDialog.java" startLine="250" startPosition="19" endLine="253" endPosition="5" />
+    <nodeInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="53" startPosition="57" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172675" fileName="ExtractMethodDialog.java" startLine="169" startPosition="63" endLine="173" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172831" fileName="ExtractMethodDialog.java" startLine="203" startPosition="0" endLine="207" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172860" fileName="ExtractMethodDialog.java" startLine="207" startPosition="0" endLine="211" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172922" fileName="ExtractMethodDialog.java" startLine="233" startPosition="61" endLine="237" endPosition="0" />
+    <nodeInfo nodeId="2177628253336385810" fileName="ExtractMethodDialog.java" startLine="242" startPosition="66" endLine="246" endPosition="11" />
+    <nodeInfo nodeId="8492459591399172994" fileName="ExtractMethodDialog.java" startLine="260" startPosition="0" endLine="264" endPosition="0" />
+    <nodeInfo nodeId="5159544814168902955" fileName="ExtractMethodDialog.java" startLine="267" startPosition="0" endLine="271" endPosition="5" />
+    <nodeInfo nodeId="5159544814168932099" fileName="ExtractMethodDialog.java" startLine="272" startPosition="0" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="8492459591399173056" fileName="ExtractMethodDialog.java" startLine="52" startPosition="37" endLine="57" endPosition="7" />
+    <nodeInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="62" startPosition="57" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172078" fileName="ExtractMethodDialog.java" startLine="93" startPosition="28" endLine="98" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172669" fileName="ExtractMethodDialog.java" startLine="168" startPosition="70" endLine="173" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172804" fileName="ExtractMethodDialog.java" startLine="195" startPosition="71" endLine="200" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172888" fileName="ExtractMethodDialog.java" startLine="223" startPosition="61" endLine="228" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172921" fileName="ExtractMethodDialog.java" startLine="232" startPosition="9" endLine="237" endPosition="11" />
+    <nodeInfo nodeId="8492459591399172977" fileName="ExtractMethodDialog.java" startLine="255" startPosition="0" endLine="260" endPosition="0" />
+    <nodeInfo nodeId="8492459591399171938" fileName="ExtractMethodDialog.java" startLine="61" startPosition="25" endLine="67" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172044" fileName="ExtractMethodDialog.java" startLine="85" startPosition="91" endLine="91" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172798" fileName="ExtractMethodDialog.java" startLine="194" startPosition="34" endLine="200" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172887" fileName="ExtractMethodDialog.java" startLine="222" startPosition="88" endLine="228" endPosition="11" />
+    <nodeInfo nodeId="8492459591399172076" fileName="ExtractMethodDialog.java" startLine="92" startPosition="67" endLine="99" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172449" fileName="ExtractMethodDialog.java" startLine="150" startPosition="0" endLine="157" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172474" fileName="ExtractMethodDialog.java" startLine="157" startPosition="0" endLine="164" endPosition="0" />
+    <nodeInfo nodeId="8492459591399171983" fileName="ExtractMethodDialog.java" startLine="76" startPosition="10" endLine="84" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="239" startPosition="69" endLine="248" endPosition="0" />
+    <nodeInfo nodeId="8492459591399171936" fileName="ExtractMethodDialog.java" startLine="60" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172942" fileName="ExtractMethodDialog.java" startLine="238" startPosition="7" endLine="248" endPosition="9" />
+    <nodeInfo nodeId="8492459591399171982" fileName="ExtractMethodDialog.java" startLine="73" startPosition="52" endLine="84" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172653" fileName="ExtractMethodDialog.java" startLine="164" startPosition="0" endLine="176" endPosition="0" />
+    <nodeInfo nodeId="8492459591399173005" fileName="ExtractMethodDialog.java" startLine="46" startPosition="0" endLine="59" endPosition="3" />
+    <nodeInfo nodeId="8492459591399172882" fileName="ExtractMethodDialog.java" startLine="220" startPosition="81" endLine="238" endPosition="7" />
+    <nodeInfo nodeId="8492459591399172691" fileName="ExtractMethodDialog.java" startLine="176" startPosition="0" endLine="203" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172880" fileName="ExtractMethodDialog.java" startLine="218" startPosition="10" endLine="249" endPosition="5" />
+    <nodeInfo nodeId="8492459591399172879" fileName="ExtractMethodDialog.java" startLine="215" startPosition="67" endLine="249" endPosition="5" />
+    <nodeInfo nodeId="8492459591399171967" fileName="ExtractMethodDialog.java" startLine="70" startPosition="0" endLine="105" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172868" fileName="ExtractMethodDialog.java" startLine="211" startPosition="0" endLine="255" endPosition="0" />
+    <nodeInfo nodeId="8492459591399172132" fileName="ExtractMethodDialog.java" startLine="105" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="8492459591399173058" fileName="ExtractMethodDialog.java" startLine="54" startPosition="25" endLine="55" endPosition="45" />
+    <scopeInfo nodeId="8492459591399172029" fileName="ExtractMethodDialog.java" startLine="74" startPosition="35" endLine="75" endPosition="45" />
+    <scopeInfo nodeId="8492459591399171994" fileName="ExtractMethodDialog.java" startLine="78" startPosition="53" endLine="79" endPosition="88" />
+    <scopeInfo nodeId="8492459591399172016" fileName="ExtractMethodDialog.java" startLine="81" startPosition="26" endLine="82" endPosition="49" />
+    <scopeInfo nodeId="8492459591399172058" fileName="ExtractMethodDialog.java" startLine="89" startPosition="12" endLine="90" endPosition="32" />
+    <scopeInfo nodeId="8492459591399172079" fileName="ExtractMethodDialog.java" startLine="94" startPosition="158" endLine="95" endPosition="53" />
+    <scopeInfo nodeId="8492459591399172097" fileName="ExtractMethodDialog.java" startLine="96" startPosition="14" endLine="97" endPosition="129" />
+    <scopeInfo nodeId="8492459591399172115" fileName="ExtractMethodDialog.java" startLine="100" startPosition="29" endLine="101" endPosition="24" />
+    <scopeInfo nodeId="8492459591399172679" fileName="ExtractMethodDialog.java" startLine="170" startPosition="52" endLine="171" endPosition="42" />
+    <scopeInfo nodeId="8492459591399172834" fileName="ExtractMethodDialog.java" startLine="204" startPosition="45" endLine="205" endPosition="84" />
+    <scopeInfo nodeId="8492459591399172861" fileName="ExtractMethodDialog.java" startLine="208" startPosition="40" endLine="209" endPosition="24" />
+    <scopeInfo nodeId="8492459591399172960" fileName="ExtractMethodDialog.java" startLine="216" startPosition="32" endLine="217" endPosition="129" />
+    <scopeInfo nodeId="8492459591399172916" fileName="ExtractMethodDialog.java" startLine="230" startPosition="41" endLine="231" endPosition="17" />
+    <scopeInfo nodeId="8492459591399172923" fileName="ExtractMethodDialog.java" startLine="234" startPosition="29" endLine="235" endPosition="90" />
+    <scopeInfo nodeId="5159544814168902939" fileName="ExtractMethodDialog.java" startLine="251" startPosition="33" endLine="252" endPosition="129" />
+    <scopeInfo nodeId="8492459591399172987" fileName="ExtractMethodDialog.java" startLine="257" startPosition="26" endLine="258" endPosition="19" />
+    <scopeInfo nodeId="8492459591399172996" fileName="ExtractMethodDialog.java" startLine="261" startPosition="82" endLine="262" endPosition="77" />
+    <scopeInfo nodeId="5159544814168932104" fileName="ExtractMethodDialog.java" startLine="273" startPosition="51" endLine="274" endPosition="72" />
+    <scopeInfo nodeId="8492459591399171940" fileName="ExtractMethodDialog.java" startLine="63" startPosition="25" endLine="65" endPosition="110" />
+    <scopeInfo nodeId="8492459591399172045" fileName="ExtractMethodDialog.java" startLine="86" startPosition="25" endLine="88" endPosition="33" />
+    <scopeInfo nodeId="8492459591399172807" fileName="ExtractMethodDialog.java" startLine="196" startPosition="52" endLine="198" endPosition="42" />
+    <scopeInfo nodeId="8492459591399172889" fileName="ExtractMethodDialog.java" startLine="224" startPosition="29" endLine="226" endPosition="70" />
+    <scopeInfo nodeId="2177628253336385812" fileName="ExtractMethodDialog.java" startLine="243" startPosition="47" endLine="245" endPosition="62">
       <varInfo nodeId="7123761944774720182" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="5159544814168902958" fileName="ExtractMethodDialog.java" startLine="269" startPosition="77" endLine="271" endPosition="29" />
-    <scopeInfo nodeId="8492459591399171993" fileName="ExtractMethodDialog.java" startLine="78" startPosition="81" endLine="81" endPosition="7">
+    <scopeInfo nodeId="5159544814168902958" fileName="ExtractMethodDialog.java" startLine="268" startPosition="77" endLine="270" endPosition="29" />
+    <scopeInfo nodeId="8492459591399171993" fileName="ExtractMethodDialog.java" startLine="77" startPosition="81" endLine="80" endPosition="7">
       <varInfo nodeId="8492459591399172010" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="54" startPosition="57" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172450" fileName="ExtractMethodDialog.java" startLine="152" startPosition="43" endLine="156" endPosition="30" />
-    <scopeInfo nodeId="8492459591399172475" fileName="ExtractMethodDialog.java" startLine="159" startPosition="48" endLine="163" endPosition="31" />
-    <scopeInfo nodeId="8492459591399172675" fileName="ExtractMethodDialog.java" startLine="170" startPosition="63" endLine="174" endPosition="0">
+    <scopeInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="53" startPosition="57" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172450" fileName="ExtractMethodDialog.java" startLine="151" startPosition="43" endLine="155" endPosition="30" />
+    <scopeInfo nodeId="8492459591399172475" fileName="ExtractMethodDialog.java" startLine="158" startPosition="48" endLine="162" endPosition="31" />
+    <scopeInfo nodeId="8492459591399172675" fileName="ExtractMethodDialog.java" startLine="169" startPosition="63" endLine="173" endPosition="0">
       <varInfo nodeId="8492459591399172676" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172831" fileName="ExtractMethodDialog.java" startLine="204" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="8492459591399172831" fileName="ExtractMethodDialog.java" startLine="203" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="8492459591399172832" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172860" fileName="ExtractMethodDialog.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172922" fileName="ExtractMethodDialog.java" startLine="234" startPosition="61" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172994" fileName="ExtractMethodDialog.java" startLine="261" startPosition="0" endLine="265" endPosition="0" />
-    <scopeInfo nodeId="5159544814168902955" fileName="ExtractMethodDialog.java" startLine="268" startPosition="0" endLine="272" endPosition="5">
+    <scopeInfo nodeId="8492459591399172860" fileName="ExtractMethodDialog.java" startLine="207" startPosition="0" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172922" fileName="ExtractMethodDialog.java" startLine="233" startPosition="61" endLine="237" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172994" fileName="ExtractMethodDialog.java" startLine="260" startPosition="0" endLine="264" endPosition="0" />
+    <scopeInfo nodeId="5159544814168902955" fileName="ExtractMethodDialog.java" startLine="267" startPosition="0" endLine="271" endPosition="5">
       <varInfo nodeId="5159544814168932079" varName="context" />
       <varInfo nodeId="5159544814168932081" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5159544814168932099" fileName="ExtractMethodDialog.java" startLine="273" startPosition="0" endLine="277" endPosition="0">
+    <scopeInfo nodeId="5159544814168932099" fileName="ExtractMethodDialog.java" startLine="272" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="5159544814168932102" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="63" startPosition="57" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172077" fileName="ExtractMethodDialog.java" startLine="94" startPosition="28" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="8492459591399172804" fileName="ExtractMethodDialog.java" startLine="196" startPosition="71" endLine="201" endPosition="0">
+    <scopeInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="62" startPosition="57" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172077" fileName="ExtractMethodDialog.java" startLine="93" startPosition="28" endLine="98" endPosition="7" />
+    <scopeInfo nodeId="8492459591399172804" fileName="ExtractMethodDialog.java" startLine="195" startPosition="71" endLine="200" endPosition="0">
       <varInfo nodeId="8492459591399172805" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172888" fileName="ExtractMethodDialog.java" startLine="224" startPosition="61" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172977" fileName="ExtractMethodDialog.java" startLine="256" startPosition="0" endLine="261" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172944" fileName="ExtractMethodDialog.java" startLine="241" startPosition="27" endLine="247" endPosition="11" />
-    <scopeInfo nodeId="8492459591399171937" fileName="ExtractMethodDialog.java" startLine="62" startPosition="25" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="8492459591399171984" fileName="ExtractMethodDialog.java" startLine="77" startPosition="12" endLine="84" endPosition="7">
+    <scopeInfo nodeId="8492459591399172888" fileName="ExtractMethodDialog.java" startLine="223" startPosition="61" endLine="228" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172977" fileName="ExtractMethodDialog.java" startLine="255" startPosition="0" endLine="260" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172944" fileName="ExtractMethodDialog.java" startLine="240" startPosition="27" endLine="246" endPosition="11" />
+    <scopeInfo nodeId="8492459591399171937" fileName="ExtractMethodDialog.java" startLine="61" startPosition="25" endLine="68" endPosition="19" />
+    <scopeInfo nodeId="8492459591399171984" fileName="ExtractMethodDialog.java" startLine="76" startPosition="12" endLine="83" endPosition="7">
       <varInfo nodeId="8492459591399171986" varName="nameIsGood" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172449" fileName="ExtractMethodDialog.java" startLine="151" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172474" fileName="ExtractMethodDialog.java" startLine="158" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172654" fileName="ExtractMethodDialog.java" startLine="166" startPosition="46" endLine="175" endPosition="27">
+    <scopeInfo nodeId="8492459591399172449" fileName="ExtractMethodDialog.java" startLine="150" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172474" fileName="ExtractMethodDialog.java" startLine="157" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172654" fileName="ExtractMethodDialog.java" startLine="165" startPosition="46" endLine="174" endPosition="27">
       <varInfo nodeId="8492459591399172664" varName="tableModel" />
       <varInfo nodeId="8492459591399172656" varName="parametersPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="240" startPosition="69" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="8492459591399171936" fileName="ExtractMethodDialog.java" startLine="61" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="8492459591399173012" fileName="ExtractMethodDialog.java" startLine="48" startPosition="147" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="8492459591399172653" fileName="ExtractMethodDialog.java" startLine="165" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="8492459591399173005" fileName="ExtractMethodDialog.java" startLine="47" startPosition="0" endLine="60" endPosition="3">
+    <scopeInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="239" startPosition="69" endLine="248" endPosition="0" />
+    <scopeInfo nodeId="8492459591399171936" fileName="ExtractMethodDialog.java" startLine="60" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8492459591399173012" fileName="ExtractMethodDialog.java" startLine="47" startPosition="147" endLine="58" endPosition="18" />
+    <scopeInfo nodeId="8492459591399172653" fileName="ExtractMethodDialog.java" startLine="164" startPosition="0" endLine="176" endPosition="0" />
+    <scopeInfo nodeId="8492459591399173005" fileName="ExtractMethodDialog.java" startLine="46" startPosition="0" endLine="59" endPosition="3">
       <varInfo nodeId="1334376219849291744" varName="frame" />
       <varInfo nodeId="8492459591399173006" varName="context" />
       <varInfo nodeId="1334376219849291736" varName="params" />
       <varInfo nodeId="1334376219849291739" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172883" fileName="ExtractMethodDialog.java" startLine="222" startPosition="146" endLine="238" endPosition="11">
+    <scopeInfo nodeId="8492459591399172883" fileName="ExtractMethodDialog.java" startLine="221" startPosition="146" endLine="237" endPosition="11">
       <varInfo nodeId="8492459591399172885" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172692" fileName="ExtractMethodDialog.java" startLine="178" startPosition="42" endLine="202" endPosition="23">
+    <scopeInfo nodeId="8492459591399172692" fileName="ExtractMethodDialog.java" startLine="177" startPosition="42" endLine="201" endPosition="23">
       <varInfo nodeId="8492459591399172709" varName="c" />
       <varInfo nodeId="8492459591399172694" varName="methodPanel" />
       <varInfo nodeId="8492459591399172787" varName="nameField" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172691" fileName="ExtractMethodDialog.java" startLine="177" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172881" fileName="ExtractMethodDialog.java" startLine="219" startPosition="12" endLine="249" endPosition="9">
+    <scopeInfo nodeId="8492459591399172691" fileName="ExtractMethodDialog.java" startLine="176" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172881" fileName="ExtractMethodDialog.java" startLine="218" startPosition="12" endLine="248" endPosition="9">
       <varInfo nodeId="2859705395554885910" varName="refactoringModel" />
       <varInfo nodeId="2859705395554885701" varName="staticTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399171968" fileName="ExtractMethodDialog.java" startLine="72" startPosition="36" endLine="104" endPosition="27">
+    <scopeInfo nodeId="8492459591399171968" fileName="ExtractMethodDialog.java" startLine="71" startPosition="36" endLine="103" endPosition="27">
       <varInfo nodeId="8492459591399172036" varName="errors" />
       <varInfo nodeId="8492459591399172069" varName="overrides" />
       <varInfo nodeId="8492459591399171970" varName="buff" />
       <varInfo nodeId="8492459591399171975" varName="methodName" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399171967" fileName="ExtractMethodDialog.java" startLine="71" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172878" fileName="ExtractMethodDialog.java" startLine="214" startPosition="22" endLine="254" endPosition="5">
+    <scopeInfo nodeId="8492459591399171967" fileName="ExtractMethodDialog.java" startLine="70" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172878" fileName="ExtractMethodDialog.java" startLine="213" startPosition="22" endLine="253" endPosition="5">
       <varInfo nodeId="5159544814168902933" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172133" fileName="ExtractMethodDialog.java" startLine="107" startPosition="28" endLine="149" endPosition="56">
+    <scopeInfo nodeId="8492459591399172133" fileName="ExtractMethodDialog.java" startLine="106" startPosition="28" endLine="148" endPosition="56">
       <varInfo nodeId="8492459591399172155" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399172868" fileName="ExtractMethodDialog.java" startLine="212" startPosition="0" endLine="256" endPosition="0" />
-    <scopeInfo nodeId="8492459591399172132" fileName="ExtractMethodDialog.java" startLine="106" startPosition="0" endLine="151" endPosition="0" />
-    <unitInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="54" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$7" />
-    <unitInfo nodeId="8492459591399172674" fileName="ExtractMethodDialog.java" startLine="170" startPosition="41" endLine="174" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$2" />
-    <unitInfo nodeId="8492459591399172922" fileName="ExtractMethodDialog.java" startLine="234" startPosition="49" endLine="238" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$5" />
-    <unitInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="63" startPosition="45" endLine="68" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$1" />
-    <unitInfo nodeId="8492459591399172803" fileName="ExtractMethodDialog.java" startLine="196" startPosition="52" endLine="201" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$3" />
-    <unitInfo nodeId="8492459591399172888" fileName="ExtractMethodDialog.java" startLine="224" startPosition="49" endLine="229" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$4" />
-    <unitInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="240" startPosition="57" endLine="249" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$6" />
-    <unitInfo nodeId="5159544814168902953" fileName="ExtractMethodDialog.java" startLine="266" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$MyMethodDuplicatesProcessor" />
-    <unitInfo nodeId="8492459591399171910" fileName="ExtractMethodDialog.java" startLine="38" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog" />
+    <scopeInfo nodeId="8492459591399172868" fileName="ExtractMethodDialog.java" startLine="211" startPosition="0" endLine="255" endPosition="0" />
+    <scopeInfo nodeId="8492459591399172132" fileName="ExtractMethodDialog.java" startLine="105" startPosition="0" endLine="150" endPosition="0" />
+    <unitInfo nodeId="8492459591399173057" fileName="ExtractMethodDialog.java" startLine="53" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$7" />
+    <unitInfo nodeId="8492459591399172674" fileName="ExtractMethodDialog.java" startLine="169" startPosition="41" endLine="173" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$2" />
+    <unitInfo nodeId="8492459591399172922" fileName="ExtractMethodDialog.java" startLine="233" startPosition="49" endLine="237" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$5" />
+    <unitInfo nodeId="8492459591399171939" fileName="ExtractMethodDialog.java" startLine="62" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$1" />
+    <unitInfo nodeId="8492459591399172803" fileName="ExtractMethodDialog.java" startLine="195" startPosition="52" endLine="200" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$3" />
+    <unitInfo nodeId="8492459591399172888" fileName="ExtractMethodDialog.java" startLine="223" startPosition="49" endLine="228" endPosition="9" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$4" />
+    <unitInfo nodeId="8492459591399172943" fileName="ExtractMethodDialog.java" startLine="239" startPosition="57" endLine="248" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$6" />
+    <unitInfo nodeId="5159544814168902953" fileName="ExtractMethodDialog.java" startLine="265" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog$MyMethodDuplicatesProcessor" />
+    <unitInfo nodeId="8492459591399171910" fileName="ExtractMethodDialog.java" startLine="37" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog" />
   </root>
   <root nodeId="8492459591399173071">
     <nodeInfo nodeId="770811570424397040" fileName="InlineVariableRefactoring.java" startLine="25" startPosition="51" endLine="26" endPosition="100" />
