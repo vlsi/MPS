@@ -20,6 +20,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.Nls;
@@ -46,6 +47,16 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   @Nls
   public String getDisplayName() {
     return "Library Manager";
+  }
+
+  @Override
+  public void disposeComponent() {
+    LibraryInitializer.getInstance().removeContributor(this);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
   }
 
   public void projectOpened() {
