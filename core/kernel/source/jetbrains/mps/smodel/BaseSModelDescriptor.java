@@ -52,10 +52,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public SModel getSModel() {
     boolean fileStateChanged;
     synchronized (myLoadingLock) {
-      fileStateChanged = loadTo(ModelLoadingState.FULLY_LOADED);
+      fileStateChanged = loadTo(ModelLoadingState.ROOTS_LOADED);
     }
     if (fileStateChanged) {
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.ROOTS_LOADED);
     }
     return mySModel;
   }
