@@ -18,12 +18,16 @@ package jetbrains.mps.newTypesystem;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Pair;
 
+import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -106,16 +110,41 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     return myState.typeOf(node);
+  }@Override
+
+
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+    return myState.getNodeMaps().getNodesWithErrors();
+  }
+
+  @Override
+  public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
+    return myState.getNodeMaps().getNodeErrors(node);
+  }
+
+  @Override
+  public SNode getTypeDontCheck(SNode node) {
+    return myState.getNodeMaps().getType(node);
   }
 
   public void print() {
     System.out.println("---State---" );
     myState.print();
-    System.out.println("--Difference-");
-    for (Difference d : getDifferenceStack()) {
-      System.out.println(d.getPresentation());
-    }
-    System.out.println("---End-------");
+  }
+
+  @Override
+  public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
+    super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
+    super.whenConcrete(argument, r, nodeModel, nodeId, isShallow, skipError);    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public void whenConcrete(List<NodeInfo> arguments, Runnable r) {
+    super.whenConcrete(arguments, r);    //To change body of overridden methods use File | Settings | File Templates.
   }
 
   public TypeChecker getTypeChecker() {

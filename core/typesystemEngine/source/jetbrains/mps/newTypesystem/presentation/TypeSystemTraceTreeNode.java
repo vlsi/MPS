@@ -16,8 +16,14 @@
 package jetbrains.mps.newTypesystem.presentation;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.differences.TypeDifference;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.awt.Color;
 
@@ -40,5 +46,20 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode{
     setColor(difference.getColor());
     this.setAutoExpandable(true);
     this.setIcon(difference.getIcon());
+   
+  }
+
+  @Override
+  public void doubleClick() {
+    Difference difference = (Difference) getUserObject();
+    EquationInfo info = difference.getEquationInfo();
+    if (info == null) {
+      SNode source = difference.getSource();
+      if (source != null) {
+        getOperationContext().getComponent(MPSEditorOpener.class).editNode(source, getOperationContext());
+      }
+    } else {
+      GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(info.getRuleModel(), info.getRuleId()));
+    }
   }
 }

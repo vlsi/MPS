@@ -29,16 +29,15 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class SubTypingRemoved extends InequalityDifference {
-  private EquationInfo myInfo;
 
   public SubTypingRemoved(SNode subType, SNode superType, EquationInfo info, InequalityMapPair mapPair) {
     super(subType, superType, mapPair);
-    myInfo = info;
+    myEquationInfo = info;
   }
 
   @Override
   public void rollBack() {
-    myMapPair.add(myKeyType, myValueType, myInfo);
+    myMapPair.add(myKeyType, myValueType, myEquationInfo);
   }
 
   public String getPresentation() {

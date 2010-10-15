@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.differences.inequality;
 
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.awt.Color;
 
@@ -28,8 +29,9 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class SubTypingAdded extends InequalityDifference {
-  public SubTypingAdded(SNode subType, SNode superType, InequalityMapPair mapPair) {
+  public SubTypingAdded(SNode subType, SNode superType, InequalityMapPair mapPair, EquationInfo info) {
     super(subType, superType, mapPair);
+    myEquationInfo = info;
   }
 
   @Override

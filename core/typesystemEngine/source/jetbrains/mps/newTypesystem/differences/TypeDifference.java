@@ -36,6 +36,7 @@ public class TypeDifference extends Difference{
     myNode = node;
     myType = type;
     myMap = map;
+    mySource = node;
   }
 
   @Override

@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.differences.equation;
 
-import jetbrains.mps.newTypesystem.differences.CompositeDifference;
+import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,18 +27,24 @@ import jetbrains.mps.smodel.SNode;
  * Time: 1:19:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationSubstituted extends CompositeDifference {
+public class EquationSubstituted extends Difference {
   EquationAdded myAdded;
   EquationRemoved myRemoved;
 
   public EquationSubstituted(SNode key, SNode prev, SNode cur, Equations equations) {
-    myAdded = new EquationAdded(key, cur, equations);
+    myAdded = new EquationAdded(key, cur, equations, null);
     myRemoved = new EquationRemoved(key, prev, equations);
+  }
+
+  @Override
+  public void rollBack() {
+    myAdded.rollBack();
+    myRemoved.rollBack();
   }
 
   @Override
   public String getPresentation() {
     return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
-      myAdded.getChild() + " = " + myRemoved.getParent() ;
+      myAdded.getChild() + " = " + myAdded.getParent() ;
   }
 }

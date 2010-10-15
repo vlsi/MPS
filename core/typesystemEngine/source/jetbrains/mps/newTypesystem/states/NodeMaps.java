@@ -22,11 +22,9 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -74,6 +72,25 @@ public class NodeMaps {
     return myNodesToErrors;
   }
 
+  public List<IErrorReporter> getNodeErrors(SNode node) {
+    List<IErrorReporter> result = myNodesToErrors.get(node);
+    if (result == null) {
+      result = new LinkedList<IErrorReporter>();
+    }
+    return result;
+  }
+
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>();
+    for (SNode key : myNodesToErrors.keySet()) {
+      List<IErrorReporter> reporter = getNodeErrors(key);
+      if (!reporter.isEmpty()) {
+        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
+      }
+    }
+    return result;
+  }
+
   public Map<SNode, SNode> getNodeToTypes() {
     return myNodeToTypes;
   }
@@ -81,6 +98,11 @@ public class NodeMaps {
   public void clear() {
     myNodesToErrors.clear();
     myNodeToTypes.clear();
+  }
+
+  public SNode getType(SNode node) {
+    SNode type = myNodeToTypes.get(node);
+    return myState.getEquations().getRepresentative(type);
   }
 
 

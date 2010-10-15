@@ -20,6 +20,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.smodel.IOperationContext;
 
+import javax.swing.JPopupMenu;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -37,6 +39,7 @@ public class TypeSystemTraceTree extends MPSTree {
     myDifference = difference;
     this.rebuildNow();
     expandAll();
+
   }
 
   @Override
@@ -52,6 +55,9 @@ public class TypeSystemTraceTree extends MPSTree {
         result.add(createNode(child));
       }
     }
+    JPopupMenu popUpMenu = createPopupMenu(result);
+    
+
     return result;
   }
 

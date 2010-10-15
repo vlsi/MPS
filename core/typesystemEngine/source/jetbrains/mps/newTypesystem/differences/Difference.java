@@ -17,6 +17,8 @@ package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import javax.swing.Icon;
 import java.awt.Color;
@@ -32,6 +34,8 @@ import java.util.List;
  */
 public abstract class Difference {
   protected List<Difference> myChildren;
+  protected SNode mySource = null;
+  protected EquationInfo myEquationInfo = null;
 
   public void addChildDifference(Difference diff) {
     if (myChildren == null) {
@@ -56,5 +60,13 @@ public abstract class Difference {
 
   public Icon getIcon() {
     return Icons.DEFAULT_ICON;
+  }
+
+  public SNode getSource() {
+    return mySource;
+  }
+
+  public EquationInfo getEquationInfo() {
+    return myEquationInfo;
   }
 }

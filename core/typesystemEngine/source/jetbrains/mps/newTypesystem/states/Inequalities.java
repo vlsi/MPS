@@ -93,7 +93,7 @@ public class Inequalities {
     }
     if (!inequality.contains(subType, superType)) {
       inequality.add(subType, superType, info);
-      myState.addDifference(new SubTypingAdded(subType, superType, inequality), false);
+      myState.addDifference(new SubTypingAdded(subType, superType, inequality, info), false);
     }
   }
 
@@ -112,7 +112,7 @@ public class Inequalities {
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+   // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
     myState.addError(nodeWithError, errorReporter);
   }
 

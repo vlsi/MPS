@@ -63,7 +63,8 @@ public class Equations {
   }
 
   private void substituteRepresentative(SNode elem, SNode current) {
-    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, this), true);
+
+    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, this), false);
     myRepresentatives.put(elem, current);
   }
 
@@ -97,21 +98,21 @@ public class Equations {
     return TypesUtil.match(left, right, this, info);
   }
 
-  private void processEquation(SNode var, SNode type, EquationInfo errorInfo) {
+  private void processEquation(SNode var, SNode type, EquationInfo info) {
     SNode parent = type;
     SNode child = var;
     if (TypesUtil.getDegree(var) > TypesUtil.getDegree(type)) {
       parent = var;
       child = type;
     }
-    addAndTrack(child, parent);
+    addAndTrack(child, parent, info);
     myState.getInequalities().substitute(child, parent);
     myState.getNonConcrete().substitute(child, parent);
     myState.popDifference();
   }
 
-  private void addAndTrack(SNode child, SNode parent) {
-    myState.addDifference(new EquationAdded(child, parent, this), true);
+  private void addAndTrack(SNode child, SNode parent, EquationInfo info) {
+    myState.addDifference(new EquationAdded(child, parent, this, info), true);
     add(child, parent);
   }
 
@@ -153,7 +154,8 @@ public class Equations {
     if (info!=null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
-    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.addError(nodeWithError, errorReporter);
+   // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void addEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {

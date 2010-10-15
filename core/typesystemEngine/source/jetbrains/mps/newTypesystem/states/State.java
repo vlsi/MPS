@@ -113,11 +113,6 @@ public class State {
   }
 
   public void clear() {
-    System.out.println("xxxxxxxxxxxxx");
-    System.out.println("State cleared");
-    System.out.println("xxxxxxxxxxxxx");
-
-
     myEquations.clear();
     myInequalities.clear();
     myDifferenceStack.clear();
@@ -133,7 +128,7 @@ public class State {
   }
 
   public void print() {
-    myEquations.printEquations();
+    //myEquations.printEquations();
     myInequalities.print();
   }
 

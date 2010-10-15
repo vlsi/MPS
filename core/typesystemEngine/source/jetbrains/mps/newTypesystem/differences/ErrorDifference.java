@@ -38,6 +38,7 @@ public class ErrorDifference extends Difference {
     myNode = node;
     myError = error;
     myMap = map;
+    mySource = myNode;
   }
 
   @Override
