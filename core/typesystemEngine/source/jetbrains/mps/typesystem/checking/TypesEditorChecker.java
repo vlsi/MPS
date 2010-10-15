@@ -82,7 +82,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
           }
 
           // highlight nodes with errors
-          for (Pair<SNode, List<IErrorReporter>> errorNode : typesComponent.getNodesWithErrors()) {
+          for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors()) {
             List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
             Collections.sort(errors, new Comparator<IErrorReporter>() {
               public int compare(IErrorReporter o1, IErrorReporter o2) {

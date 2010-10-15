@@ -725,6 +725,10 @@ public class TypeCheckingContext {
       return errors;
     }
   }
+  
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+    return myNodeTypesComponent.getNodesWithErrors();
+  }
 
   public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
     return myNodeTypesComponent.isChecked(considerNonTypesystemRules);
