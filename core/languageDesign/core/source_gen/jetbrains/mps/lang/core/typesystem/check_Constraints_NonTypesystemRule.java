@@ -46,7 +46,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
 
     ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
 
-    if (SNodeOperations.getParent(node) != null && !(SNodeOperations.getParent(node).isUnknown())) {
+    if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.smodel.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
       SNode link = SNodeOperations.getContainingLinkDeclaration(node);
       if (link == null && !(node.isAttribute())) {
         {

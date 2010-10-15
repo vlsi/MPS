@@ -88,7 +88,7 @@ public class IconManager {
       public Icon compute() {
         Icon mainIcon = null;
 
-        if (node.isUnknown()) {
+        if (SNodeOperations.isUnknown(node)) {
           return Icons.UNKNOWN_ICON;
         }
 

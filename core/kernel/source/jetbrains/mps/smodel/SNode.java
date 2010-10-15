@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -74,7 +73,6 @@ public final class SNode {
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
 
   private String myConceptFqName;
-  private String myLanguageNamespace;
 
   private BaseAdapter myAdapter;
   private boolean myDisposed;
@@ -1275,7 +1273,7 @@ public final class SNode {
   }
 
   public String getPresentation(boolean detailed) {
-    if (isUnknown()) {
+    if (SNodeOperations.isUnknown(this)) {
       String persistentName = getPersistentProperty(INamedConcept.NAME);
       if (persistentName == null) {
         return "?" + getConceptShortName() + "?";
@@ -1393,21 +1391,12 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    if (myLanguageNamespace != null) {
-      return myLanguageNamespace;
-    }
-    return (myLanguageNamespace = InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName)));
-  }
-
-  public boolean isUnknown() {
-    Language language = GlobalScope.getInstance().getLanguage(getLanguageNamespace());
-    return language == null || language.findConceptDeclaration(getConceptShortName()) == null;
+    return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
   }
 
   @UseCarefully
   void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
-    myLanguageNamespace = null;
     myAdapter = null;
     SModelRepository.getInstance().markChanged(getModel());
   }
@@ -1445,124 +1434,6 @@ public final class SNode {
       parent = parent.getParent();
     }
     return null;
-  }
-
-  //------------user objects-------------
-
-  public Object getUserObject(Object key) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (myUserObjects == null) return null;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        return myUserObjects[i + 1];
-      }
-    }
-    return null;
-  }
-
-  public void putUserObject(Object key, Object value) {
-    if (value == null) {
-      removeUserObject(key);
-      return;
-    }
-    if (myUserObjects == null) {
-      myUserObjects = new Object[]{key, value};
-    } else {
-      for (int i = 0; i < myUserObjects.length; i += 2) {
-        if (myUserObjects[i].equals(key)) {
-          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
-          myUserObjects[i + 1] = value;
-          return;
-        }
-      }
-      Object[] newarr = new Object[myUserObjects.length + 2];
-      System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
-      newarr[0] = key;
-      newarr[1] = value;
-      myUserObjects = newarr;
-    }
-  }
-
-  public void putUserObjects(SNode fromNode) {
-    if (fromNode == null || fromNode.myUserObjects == null) return;
-    if (myUserObjects == null) {
-      myUserObjects = fromNode.myUserObjects;
-    } else {
-      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
-        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
-      }
-    }
-  }
-
-  public void removeUserObject(Object key) {
-    if (myUserObjects == null) return;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        Object[] newarr = new Object[myUserObjects.length - 2];
-        if (i > 0) {
-          System.arraycopy(myUserObjects, 0, newarr, 0, i);
-        }
-        if (i + 2 < myUserObjects.length) {
-          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
-        }
-        myUserObjects = newarr;
-        break;
-      }
-    }
-    if (myUserObjects.length == 0) {
-      myUserObjects = null;
-    }
-  }
-
-  public void removeAllUserObjects() {
-    myUserObjects = null;
-  }
-
-  //------------concept properties-------------
-
-  public boolean hasConceptProperty(String propertyName) {
-    if ("root".equals(propertyName)) {
-      if (getAdapter() instanceof ConceptDeclaration) {
-        return ((ConceptDeclaration) getAdapter()).getRootable();
-      } else {
-        AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-        if (conceptDeclaration instanceof ConceptDeclaration) {
-          return ((ConceptDeclaration) conceptDeclaration).getRootable();
-        }
-      }
-      return false;
-    }
-
-    ConceptProperty conceptProperty = findConceptProperty(propertyName);
-    return conceptProperty != null;
-  }
-
-  public String getConceptProperty(String propertyName) {
-    ConceptProperty conceptProperty = findConceptProperty(propertyName);
-    if (conceptProperty instanceof StringConceptProperty) {
-      return ((StringConceptProperty) conceptProperty).getValue();
-    }
-
-    if (conceptProperty instanceof IntegerConceptProperty) {
-      return "" + ((IntegerConceptProperty) conceptProperty).getValue();
-    }
-
-    if (conceptProperty instanceof BooleanConceptProperty) {
-      return "true";
-    }
-    return null;
-  }
-
-  public ConceptProperty findConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(ConceptDeclaration.concept) || myConceptFqName.equals(InterfaceConceptDeclaration.concept)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    return SModelSearchUtil.findConceptProperty((AbstractConceptDeclaration) conceptDeclaration.getAdapter(), propertyName);
   }
 
   public SNode findChildByPath(String path) {
@@ -1627,55 +1498,8 @@ public final class SNode {
     return scope.getLanguage(languageNamespace);
   }
 
-  public BaseAdapter getAdapter() {
-    ModelAccess.assertLegalRead(this);
-    BaseAdapter adapter = myAdapter;
-    if (adapter != null) return adapter;
-    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    if (c == null) return new BaseConcept(this);
-
-    synchronized (this) {
-      adapter = myAdapter;
-      if (adapter != null) return adapter;
-      try {
-        adapter = (BaseAdapter) c.newInstance(this);
-        assert adapter.getNode() == this;
-
-        if (!myRegisteredInModelFlag) {
-          UnregisteredNodesWithAdapters.getInstance().add(this);
-        }
-        myAdapter = adapter;
-        return adapter;
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    return new BaseConcept(this);
-  }
-
-  void clearAdapter() {
-    myAdapter = null;
-  }
-
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
-  }
-
-  public int depth() {
-    int childDepth = 0;
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      int depth = child.depth();
-      if (childDepth < depth) {
-        childDepth = depth;
-      }
-    }
-    return childDepth + 1;
   }
 
   public SNode prevSibling() {
@@ -1857,6 +1681,162 @@ public final class SNode {
     public Iterator<SNode> iterator() {
       return this;
     }
+  }
+
+  //------------adapters-------------
+
+  public BaseAdapter getAdapter() {
+    ModelAccess.assertLegalRead(this);
+    BaseAdapter adapter = myAdapter;
+    if (adapter != null) return adapter;
+    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+    if (c == null) return new BaseConcept(this);
+
+    synchronized (this) {
+      adapter = myAdapter;
+      if (adapter != null) return adapter;
+      try {
+        adapter = (BaseAdapter) c.newInstance(this);
+        assert adapter.getNode() == this;
+
+        if (!myRegisteredInModelFlag) {
+          UnregisteredNodesWithAdapters.getInstance().add(this);
+        }
+        myAdapter = adapter;
+        return adapter;
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      } catch (InstantiationException e) {
+        LOG.error(e);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+    return new BaseConcept(this);
+  }
+
+  void clearAdapter() {
+    myAdapter = null;
+  }
+
+  //------------user objects-------------
+
+  public Object getUserObject(Object key) {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    if (myUserObjects == null) return null;
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        return myUserObjects[i + 1];
+      }
+    }
+    return null;
+  }
+
+  public void putUserObject(Object key, Object value) {
+    if (value == null) {
+      removeUserObject(key);
+      return;
+    }
+    if (myUserObjects == null) {
+      myUserObjects = new Object[]{key, value};
+    } else {
+      for (int i = 0; i < myUserObjects.length; i += 2) {
+        if (myUserObjects[i].equals(key)) {
+          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
+          myUserObjects[i + 1] = value;
+          return;
+        }
+      }
+      Object[] newarr = new Object[myUserObjects.length + 2];
+      System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
+      newarr[0] = key;
+      newarr[1] = value;
+      myUserObjects = newarr;
+    }
+  }
+
+  public void putUserObjects(SNode fromNode) {
+    if (fromNode == null || fromNode.myUserObjects == null) return;
+    if (myUserObjects == null) {
+      myUserObjects = fromNode.myUserObjects;
+    } else {
+      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
+        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
+      }
+    }
+  }
+
+  public void removeUserObject(Object key) {
+    if (myUserObjects == null) return;
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        Object[] newarr = new Object[myUserObjects.length - 2];
+        if (i > 0) {
+          System.arraycopy(myUserObjects, 0, newarr, 0, i);
+        }
+        if (i + 2 < myUserObjects.length) {
+          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
+        }
+        myUserObjects = newarr;
+        break;
+      }
+    }
+    if (myUserObjects.length == 0) {
+      myUserObjects = null;
+    }
+  }
+
+  public void removeAllUserObjects() {
+    myUserObjects = null;
+  }
+
+  //------------concept properties-------------
+
+  public boolean hasConceptProperty(String propertyName) {
+    if ("root".equals(propertyName)) {
+      if (getAdapter() instanceof ConceptDeclaration) {
+        return ((ConceptDeclaration) getAdapter()).getRootable();
+      } else {
+        AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
+        if (conceptDeclaration instanceof ConceptDeclaration) {
+          return ((ConceptDeclaration) conceptDeclaration).getRootable();
+        }
+      }
+      return false;
+    }
+
+    ConceptProperty conceptProperty = findConceptProperty(propertyName);
+    return conceptProperty != null;
+  }
+
+  public String getConceptProperty(String propertyName) {
+    ConceptProperty conceptProperty = findConceptProperty(propertyName);
+    if (conceptProperty instanceof StringConceptProperty) {
+      return ((StringConceptProperty) conceptProperty).getValue();
+    }
+
+    if (conceptProperty instanceof IntegerConceptProperty) {
+      return "" + ((IntegerConceptProperty) conceptProperty).getValue();
+    }
+
+    if (conceptProperty instanceof BooleanConceptProperty) {
+      return "true";
+    }
+    return null;
+  }
+
+  public ConceptProperty findConceptProperty(String propertyName) {
+    SNode conceptDeclaration;
+    if (myConceptFqName.equals(ConceptDeclaration.concept) || myConceptFqName.equals(InterfaceConceptDeclaration.concept)) {
+      conceptDeclaration = this;
+    } else {
+      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+    }
+    return SModelSearchUtil.findConceptProperty((AbstractConceptDeclaration) conceptDeclaration.getAdapter(), propertyName);
   }
 
   //------------deprecated-------------

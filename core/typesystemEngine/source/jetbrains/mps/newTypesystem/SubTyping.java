@@ -20,6 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -80,7 +81,7 @@ public class SubTyping {
       ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
-          return o2.depth() - o1.depth();
+          return SNodeOperations.depth(o2) - SNodeOperations.depth(o1);
         }
       });
       //searching the frontier's ancestors

@@ -25,10 +25,7 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.ModelChange;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -201,7 +198,7 @@ public class SubtypingManager {
       ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
-          return o2.depth() - o1.depth();
+          return SNodeOperations.depth(o2) - SNodeOperations.depth(o1);
         }
       });
       //searching the frontier's ancestors

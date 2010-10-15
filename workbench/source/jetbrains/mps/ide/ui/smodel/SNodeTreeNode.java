@@ -24,10 +24,7 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -112,7 +109,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier(myNode.getId());
     }
 
-    if (myNode.isUnknown()) {
+    if (SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
     }
 

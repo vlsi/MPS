@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.*;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.util.InternUtil;
 import com.intellij.openapi.util.Computable;
 
@@ -44,7 +45,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
     if (myPropertyDeclaration == null) {
-      if (!getSNode().isUnknown()) {
+      if (!SNodeOperations.isUnknown(getSNode())) {
         LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);
       }
       myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
