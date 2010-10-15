@@ -384,7 +384,7 @@ __switch__:
     if (!(SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       SLinkOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     }
-    if ((_context.getEnclosingNode() != null)) {
+    if ((_context.getEnclosingNode() != null) && !(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SPropertyOperations.set(_context.getNewNode(), "nonStatic", "" + (true));
     }
   }

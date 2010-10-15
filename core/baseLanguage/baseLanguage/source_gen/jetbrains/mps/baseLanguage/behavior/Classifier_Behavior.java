@@ -115,7 +115,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean call_isStatic_521412098689998668(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic")) && !(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
+    return (!(SPropertyOperations.getBoolean(thisNode, "nonStatic")) && !(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) || SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface");
   }
 
   public static boolean call_isInner_521412098689998677(SNode thisNode) {

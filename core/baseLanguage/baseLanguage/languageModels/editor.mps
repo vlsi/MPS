@@ -142,17 +142,32 @@
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1224500205261">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224500205262">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1626829428755615654">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1626829428755615661">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1626829428755615665">
-                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1626829428755615664" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1626829428755615669">
-                    <link role="baseMethodDeclaration:16" targetNodeId="75.521412098689998668" resolveInfo="isStatic" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8334195062139722958">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8334195062139722961">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8334195062139722969">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8334195062139722964">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="8334195062139722963" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="8334195062139722968" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8334195062139722973">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8334195062139722975">
+                        <link role="conceptDeclaration:16" targetNodeId="17.1107796713796:3" resolveInfo="Interface" />
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1626829428755615656">
-                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1626829428755615655" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1626829428755615660">
-                    <link role="baseMethodDeclaration:16" targetNodeId="75.521412098689998677" resolveInfo="isInner" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1626829428755615661">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1626829428755615656">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1626829428755615655" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1626829428755615660">
+                      <link role="baseMethodDeclaration:16" targetNodeId="75.521412098689998677" resolveInfo="isInner" />
+                    </node>
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1626829428755615665">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1626829428755615664" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1626829428755615669">
+                      <link role="baseMethodDeclaration:16" targetNodeId="75.521412098689998668" resolveInfo="isStatic" />
+                    </node>
                   </node>
                 </node>
               </node>

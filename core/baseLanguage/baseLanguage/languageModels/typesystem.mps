@@ -26307,5 +26307,52 @@
       <link role="concept:3" targetNodeId="1.1081256982272:3" resolveInfo="InstanceOfExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="3511256318310404914">
+    <property name="name:3" value="check_NonStaticClassInInterface" />
+    <property name="package:3" value="classifier" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3511256318310404915">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3511256318310404917">
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="3511256318310404918">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="3511256318310443152">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3511256318310443153">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3511256318310443154">
+                <link role="applicableNode:3" targetNodeId="3511256318310404916" resolveInfo="innerClass" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3511256318310443155">
+                <link role="baseMethodDeclaration:16" targetNodeId="37.521412098689998668" resolveInfo="isStatic" />
+              </node>
+            </node>
+          </node>
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3511256318310404922">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3511256318310404923">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3511256318310443149">
+                <link role="applicableNode:3" targetNodeId="3511256318310404916" resolveInfo="innerClass" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="3511256318310404925" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="3511256318310404926">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3511256318310443150">
+                <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3511256318310404928">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="3511256318310404938">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3511256318310404939">
+              <property name="value:3" value="Interfaces can't have non-static inner classes" />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3511256318310443151">
+              <link role="applicableNode:3" targetNodeId="3511256318310404916" resolveInfo="innerClass" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3511256318310404916">
+      <property name="name:3" value="innerClass" />
+      <link role="concept:3" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+    </node>
+  </node>
 </model>
 

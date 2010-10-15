@@ -436,7 +436,7 @@
     <scopeInfo nodeId="6827006320070867542" fileName="StatementList_Editor.java" startLine="65" startPosition="109" endLine="66" endPosition="72" />
   </root>
   <root nodeId="1074794490343">
-    <nodeInfo nodeId="1626829428755615654" fileName="ClassConcept_Editor.java" startLine="706" startPosition="111" endLine="707" endPosition="131" />
+    <nodeInfo nodeId="1626829428755615654" fileName="ClassConcept_Editor.java" startLine="706" startPosition="111" endLine="707" endPosition="249" />
     <nodeInfo nodeId="1209065132973" fileName="ClassConcept_Editor.java" startLine="710" startPosition="111" endLine="711" endPosition="65" />
     <nodeInfo nodeId="1221565218374" fileName="ClassConcept_Editor.java" startLine="714" startPosition="111" endLine="715" endPosition="59" />
     <nodeInfo nodeId="1145916141539" fileName="ClassConcept_Editor.java" startLine="718" startPosition="111" endLine="719" endPosition="112" />
@@ -447,7 +447,7 @@
     <nodeInfo nodeId="2944474240501862426" fileName="ClassConcept_Editor.java" startLine="738" startPosition="112" endLine="739" endPosition="53" />
     <nodeInfo nodeId="8293668929055456994" fileName="ClassConcept_Editor.java" startLine="742" startPosition="112" endLine="743" endPosition="79" />
     <nodeInfo nodeId="8293668929055456977" fileName="ClassConcept_Editor.java" startLine="746" startPosition="113" endLine="747" endPosition="134" />
-    <scopeInfo nodeId="1224500205262" fileName="ClassConcept_Editor.java" startLine="706" startPosition="111" endLine="707" endPosition="131" />
+    <scopeInfo nodeId="1224500205262" fileName="ClassConcept_Editor.java" startLine="706" startPosition="111" endLine="707" endPosition="249" />
     <scopeInfo nodeId="1178610229482" fileName="ClassConcept_Editor.java" startLine="710" startPosition="111" endLine="711" endPosition="65" />
     <scopeInfo nodeId="1221565214716" fileName="ClassConcept_Editor.java" startLine="714" startPosition="111" endLine="715" endPosition="59" />
     <scopeInfo nodeId="1145916139209" fileName="ClassConcept_Editor.java" startLine="718" startPosition="111" endLine="719" endPosition="112" />

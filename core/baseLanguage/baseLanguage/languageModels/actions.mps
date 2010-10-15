@@ -412,9 +412,21 @@
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3073231036166369916">
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166369917">
-              <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode:23" id="3073231036166369918" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="3073231036166369919" />
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8334195062139508413">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8334195062139508416">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8334195062139508419">
+                  <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode:23" id="8334195062139508418" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8334195062139508423">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8334195062139508425">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3073231036166369917">
+                <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode:23" id="3073231036166369918" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="3073231036166369919" />
+              </node>
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3073231036166369920">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3073231036166369921">

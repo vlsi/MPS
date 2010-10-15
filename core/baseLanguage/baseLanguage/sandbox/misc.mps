@@ -240,9 +240,11 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7421501401451090849" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7421501401451090850" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7421501401451090851">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7421501401451090852">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7421501401451090853">
-            <link role="baseMethodDeclaration:3" targetNodeId="7421501401450980298" resolveInfo="bar" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3511256318310380844">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3511256318310380845">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3511256318310380852">
+              <link role="baseMethodDeclaration:3" targetNodeId="3511256318310380840" resolveInfo="IFoo.Name" />
+            </node>
           </node>
         </node>
       </node>
@@ -3071,6 +3073,20 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="3511256318310379099">
+    <property name="name:3" value="IFoo" />
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3511256318310380838">
+      <property name="nonStatic:3" value="false" />
+      <property name="name:3" value="Name" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3511256318310380839" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3511256318310380840">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3511256318310380841" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3511256318310380842" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3511256318310380843" />
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3511256318310379100" />
   </node>
 </model>
 
