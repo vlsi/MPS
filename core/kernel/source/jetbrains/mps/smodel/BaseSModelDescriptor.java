@@ -60,7 +60,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return mySModel;
   }
 
-  protected boolean loadTo(ModelLoadingState state) {
+  public boolean loadTo(ModelLoadingState state) {
     if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return false;
 
     SModel model = loadModel();

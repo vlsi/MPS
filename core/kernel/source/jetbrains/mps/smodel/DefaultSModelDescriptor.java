@@ -349,9 +349,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     ModelAccess.assertLegalWrite();
 
     IFile oldFile = myModelFile;
-    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
-      return;
-    }
+    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) return;
 
     SModel model = getSModel();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));

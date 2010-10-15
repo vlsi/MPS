@@ -112,7 +112,8 @@ public class SModel {
   //todo try to remove as many usages as possible
 
   void enforceFullLoad() {
-
+    if (!(myModelDescriptor instanceof BaseSModelDescriptor)) return;
+    ((BaseSModelDescriptor) myModelDescriptor).loadTo(ModelLoadingState.FULLY_LOADED);
   }
 
   //---------roots manipulation--------
