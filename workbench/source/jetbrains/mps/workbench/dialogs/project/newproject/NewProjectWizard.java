@@ -37,10 +37,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -173,7 +170,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
           if (myOptions.getCreateModel()) {
             EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().get(0));
-            model.getSModel().addLanguage(myCreatedLanguage);
+            SModelOperations.addLanguage(model.getSModel(), myCreatedLanguage.getModuleReference());
             model.save();
           }
         }

@@ -185,7 +185,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private List<Intention> getIntentionsFor(SNode node, IScope scope, Computable<Boolean> terminated) {
     String conceptFqName = node.getConceptFqName();
-    Set<Language> visibleLanguages = new HashSet<Language>(node.getModel().getLanguages(scope));
+    Set<Language> visibleLanguages = new HashSet<Language>(SModelOperations.getLanguages(node.getModel(), scope));
     List<Intention> result = new ArrayList<Intention>();
     for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFqName)) {
       Set<Intention> intentions = myIntentions.get(ancestor);

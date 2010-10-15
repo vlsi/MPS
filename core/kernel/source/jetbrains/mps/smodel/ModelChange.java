@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.util.Computable;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class ModelChange {
   private static final boolean FREEZE_CHECKS_ENABLED = true;
 
   static void assertLegalNodeChange(SNode node) {
     //noinspection PointlessBooleanExpression,ConstantConditions
-    if (FREEZE_CHECKS_ENABLED && node.isFrozen()) {
+    if (FREEZE_CHECKS_ENABLED && isFrozen(node)) {
       throw new IllegalModelChangeError("can't modify a frozen node" + node.getDebugText());
     }
     if (!node.getModel().isLoading() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
@@ -50,4 +55,37 @@ public class ModelChange {
     return node.isRegistered() && !(model.isLoading());
   }
 
+  //----------frozen mode---------
+
+  private static final Set<SNode> myFrozenNodes = new HashSet<SNode>();
+
+  public static <T> T freezeAndCompute(SNode node, Computable<T> computable) {
+    if (isFrozen(node)) {
+      return computable.compute();
+    }
+    try {
+      freeze(node);
+      return computable.compute();
+    } finally {
+      unfreeze(node);
+    }
+  }
+
+  private static void freeze(SNode node) {
+    myFrozenNodes.add(node);
+    for (SNode child : node.getChildrenIterable()) {
+      freeze(child);
+    }
+  }
+
+  private static void unfreeze(SNode node) {
+    myFrozenNodes.remove(node);
+    for (SNode child : node.getChildrenIterable()) {
+      unfreeze(child);
+    }
+  }
+
+  private static boolean isFrozen(SNode node) {
+    return myFrozenNodes.contains(node);
+  }
 }

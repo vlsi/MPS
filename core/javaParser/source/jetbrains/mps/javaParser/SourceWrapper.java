@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
@@ -100,7 +101,7 @@ public abstract class SourceWrapper {
 
   protected void imports(StringBuilder sb) {
     sb.append("\n");
-    for (SModelDescriptor modelDescriptor : myModel.allImportedModels(GlobalScope.getInstance())) {
+    for (SModelDescriptor modelDescriptor : SModelOperations.allImportedModels(myModel, GlobalScope.getInstance())) {
       sb.append("import " + modelDescriptor.getLongName() + ".*;\n");
     }
     sb.append("\n");

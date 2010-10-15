@@ -34,9 +34,9 @@ public class ModelImportChange extends Change {
 
   public boolean apply(SModel m) {
     if (myIsDeleted) {
-      m.deleteImportedModel(mySModelReference);
+      m.deleteModelImport(mySModelReference);
     } else {
-      m.addImportedModel(mySModelReference);
+      m.addModelImport(mySModelReference, false);
     }
     return false;
   }

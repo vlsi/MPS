@@ -101,7 +101,7 @@ public class LanguageUsagesFinder implements IFinder {
       if (!SModelStereotype.isUserModel(modelDescriptor)) {
         continue;
       }
-      if (modelDescriptor.getSModel().hasLanguage(searchedLanguage.getModuleReference())) {
+      if (SModelOperations.hasLanguage(modelDescriptor.getSModel(),searchedLanguage.getModuleReference())) {
         SModel model = modelDescriptor.getSModel();
         searchResults.getSearchResults().add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
       }

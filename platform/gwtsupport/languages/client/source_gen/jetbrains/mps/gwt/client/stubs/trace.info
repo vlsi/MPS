@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="GWTModuleStubs.java" startLine="50" startPosition="77" endLine="54" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs$1" />
+  <unitInfo fileName="GWTModuleStubs.java" startLine="41" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
   <root nodeId="1952954857169826366">
     <nodeInfo nodeId="1952954857169826372" fileName="PathItemsReloadableCache.java" startLine="11" startPosition="39" endLine="12" endPosition="52" />
     <nodeInfo nodeId="1952954857169826466" fileName="PathItemsReloadableCache.java" startLine="22" startPosition="59" endLine="23" endPosition="74" />
@@ -476,11 +478,11 @@
     <nodeInfo nodeId="6487379123666448008" fileName="GWTModuleReader.java" startLine="148" startPosition="82" endLine="149" endPosition="90" />
     <nodeInfo nodeId="6487379123666449467" fileName="GWTModuleReader.java" startLine="152" startPosition="45" endLine="153" endPosition="89" />
     <nodeInfo nodeId="6487379123666449484" fileName="GWTModuleReader.java" startLine="155" startPosition="9" endLine="156" endPosition="97" />
-    <nodeInfo nodeId="6487379123666888226" fileName="GWTModuleReader.java" startLine="157" startPosition="12" endLine="158" endPosition="63" />
-    <nodeInfo nodeId="6487379123666449336" fileName="GWTModuleReader.java" startLine="158" startPosition="63" endLine="159" endPosition="120" />
+    <nodeInfo nodeId="6853886991699140528" fileName="GWTModuleReader.java" startLine="157" startPosition="12" endLine="158" endPosition="68" />
+    <nodeInfo nodeId="6487379123666449336" fileName="GWTModuleReader.java" startLine="158" startPosition="68" endLine="159" endPosition="120" />
     <nodeInfo nodeId="6487379123666444437" fileName="GWTModuleReader.java" startLine="163" startPosition="82" endLine="164" endPosition="96" />
-    <nodeInfo nodeId="6487379123666888925" fileName="GWTModuleReader.java" startLine="164" startPosition="96" endLine="165" endPosition="61" />
-    <nodeInfo nodeId="6487379123666444502" fileName="GWTModuleReader.java" startLine="165" startPosition="61" endLine="166" endPosition="123" />
+    <nodeInfo nodeId="6853886991699141859" fileName="GWTModuleReader.java" startLine="164" startPosition="96" endLine="165" endPosition="66" />
+    <nodeInfo nodeId="6487379123666444502" fileName="GWTModuleReader.java" startLine="165" startPosition="66" endLine="166" endPosition="123" />
     <nodeInfo nodeId="6487379123666444306" fileName="GWTModuleReader.java" startLine="170" startPosition="25" endLine="171" endPosition="18" />
     <nodeInfo nodeId="6487379123666444311" fileName="GWTModuleReader.java" startLine="172" startPosition="5" endLine="173" endPosition="38" />
     <nodeInfo nodeId="6487379123666444332" fileName="GWTModuleReader.java" startLine="174" startPosition="18" endLine="175" endPosition="16" />

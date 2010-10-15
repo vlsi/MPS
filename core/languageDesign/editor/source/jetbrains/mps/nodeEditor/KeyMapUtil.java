@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMap.ActionKey;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -98,7 +97,7 @@ public class KeyMapUtil {
       SModel model = node.getModel();
 
       Set<ModuleReference> importedAndExtendedLanguages = new HashSet<ModuleReference>();
-      for (ModuleReference langRef : model.getLanguageRefs(GlobalScope.getInstance())) {
+      for (ModuleReference langRef : SModelOperations.getAllImportedLanguages(model)) {
         importedAndExtendedLanguages.add(langRef);
         Language l = MPSModuleRepository.getInstance().getLanguage(langRef);
         if (l != null) {

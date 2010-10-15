@@ -15,23 +15,25 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.ModelChange;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.typesystem.inference.util.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.core.structure.BaseConcept;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.util.Computable;
 
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
@@ -47,6 +49,7 @@ public class SubtypingManager {
   }
 
   //api
+
   public boolean isSubtype(SNode subtype, SNode supertype) {
     return isSubtype(subtype, supertype, true);
   }
@@ -57,6 +60,7 @@ public class SubtypingManager {
   }
 
   //api
+
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
@@ -84,7 +88,7 @@ public class SubtypingManager {
   /**
    * may produce side effects, such as creating new type equations
    */
-  public  boolean isSubtype(final IWrapper subtype, final IWrapper supertype, @Nullable final EquationManager equationManager, @Nullable final EquationInfo errorInfo, final boolean isWeak) {
+  public boolean isSubtype(final IWrapper subtype, final IWrapper supertype, @Nullable final EquationManager equationManager, @Nullable final EquationInfo errorInfo, final boolean isWeak) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
       public Boolean compute() {
         IWrapper subRepresentator = subtype;
@@ -311,7 +315,7 @@ public class SubtypingManager {
           continue;
         }
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
-        List<SNode> supertypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
+        List<SNode> supertypes = ModelChange.freezeAndCompute(term,new Computable<List<SNode>>() {
           public List<SNode> compute() {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override

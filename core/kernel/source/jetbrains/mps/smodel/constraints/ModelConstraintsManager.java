@@ -502,10 +502,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
       IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
       constraints.registerSelf(this);
       loadedConstraints.add(constraints);
-    } catch (InstantiationException e) {
-      LOG.error(e);
-    } catch (IllegalAccessException e) {
-      LOG.error(e);
     } catch (Throwable t) {
       LOG.error(t);
     }

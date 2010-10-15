@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -42,12 +43,15 @@ public final class SNode {
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
+  private static final Object FROZEN_KEY = new Object();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
+
+  //------static end-------
 
   private String myRoleInParent;
   private SNode myParent;
@@ -71,8 +75,6 @@ public final class SNode {
   private BaseAdapter myAdapter;
   private boolean myDisposed;
 
-  private boolean myIsFrozen = false;
-
   public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
   }
@@ -90,9 +92,15 @@ public final class SNode {
     this(model, conceptFqName, true);
   }
 
+  private void enforceModelLoad() {
+
+  }
+
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
+
+    enforceModelLoad();
     SModel wasModel = myModel;
     myModel = newModel;
     ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
@@ -121,31 +129,10 @@ public final class SNode {
     return myModel;
   }
 
-  public boolean isFrozen() {
-    return myIsFrozen;
-  }
+  //MUST NOT be used,except from ModelAccess
 
-  void freeze() {
-    myIsFrozen = true;
-
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.freeze();
-    }
-  }
-
-  void unfreeze() {
-    if (myParent != null && myParent.myIsFrozen) {
-      LOG.error("can not unfreeze a node under a frozen one");
-      return;
-    }
-    unfreezeRec();
-  }
-
-  private void unfreezeRec() {
-    myIsFrozen = false;
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.unfreezeRec();
-    }
+  SModel getModelInternal() {
+    return myModel;
   }
 
   public boolean isModelLoading() {
@@ -285,7 +272,6 @@ public final class SNode {
     removeChild(oldChild);
   }
 
-
   public Object getUserObject(Object key) {
     ModelAccess.assertLegalRead(this);
 
@@ -345,8 +331,11 @@ public final class SNode {
           System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
         }
         myUserObjects = newarr;
-        return;
+        break;
       }
+    }
+    if (myUserObjects.length == 0) {
+      myUserObjects = null;
     }
   }
 
@@ -381,28 +370,8 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  //
-  //----- attributes
-  //
-
-  //node attributes
-
-  @Deprecated
-  public SNode getAttribute() {
-    // default (?) attribute
-    SNode result = getAttribute(null);  // '_attr_$attribute'
-    if (result == null) {
-      // old way, just: '$attribute'
-      result = getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
-    }
-    return result;
-  }
-
-  @Deprecated
-  public void setAttribute(SNode attributeConcept) {
-    // default (?) attribute
-    setAttribute(null, attributeConcept);
-  }
+  // ---------- attributes -------------
+  //node
 
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
@@ -450,31 +419,7 @@ public final class SNode {
     addChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
   }
 
-  ///--property attributes
-
-  @Deprecated
-  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
-    // 'default' property attr
-    setPropertyAttribute(null, propertyName, propertyAttribute);
-  }
-
-  @Deprecated
-  public SNode getPropertyAttribute(String propertyName) {
-    // 'default' property attr
-    SNode result = getPropertyAttribute(null, propertyName);
-    if (result != null) return result;
-
-    // back compatibility with some obsolete property attributes?
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
-        return child;
-      }
-    }
-
-    // old - no attribute role.
-    result = getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
-    return result;
-  }
+  //property
 
   public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
     setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
@@ -505,30 +450,7 @@ public final class SNode {
     return result;
   }
 
-  // -- link attributes
-
-  @Deprecated
-  public void setLinkAttribute(String role, SNode linkAttribute) {
-    // 'default' link attr
-    setLinkAttribute(null, role, linkAttribute);
-  }
-
-  @Deprecated
-  public SNode getLinkAttribute(String role) {
-    // 'default' link attr
-    SNode result = getLinkAttribute(null, role);
-    if (result != null) return result;
-
-    // back compatibility with some obsolete link attributes?
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
-        return child;
-      }
-    }
-
-    result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
-    return result;
-  }
+  //link
 
   public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
     setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
@@ -558,9 +480,7 @@ public final class SNode {
     return result;
   }
 
-  //
-  // ----- properties -----
-  //
+  // ---------- properties -------------
 
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
@@ -592,8 +512,6 @@ public final class SNode {
     return result;
   }
 
-  //new
-
   protected Set<String> getPropertyNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
@@ -602,8 +520,6 @@ public final class SNode {
     }
     return result;
   }
-
-  //new
 
   protected Set<String> getLinkNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
@@ -734,9 +650,7 @@ public final class SNode {
     }
   }
 
-  // ---------------------------------
-  // children
-  // ---------------------------------
+  // ---------- children -------------
 
   final public SNode getParent() {
     return myParent;
@@ -834,27 +748,6 @@ public final class SNode {
 
   private List<SReference> _reference() {
     return new MyReferencesWrapper();
-  }
-
-  /**
-   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
-   */
-  public SNode[] getChildrenArray() {
-    int len = getChildCount();
-    SNode[] nodes = new SNode[len];
-    int i = 0;
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      nodes[i++] = child;
-    }
-    return nodes;
-  }
-
-  /**
-   * Array iteration with foreach is much faster than List iteration so use array in bottlenecks
-   */
-  public SNode[] getChildrenArray(String role) {
-    List<SNode> children = getChildren(role);
-    return children.toArray(new SNode[children.size()]);
   }
 
   public Iterable<SNode> getChildrenIterable() {
@@ -960,6 +853,7 @@ public final class SNode {
    * subtree of child node.
    * <p/>
    * Differs from {@link SNode#delete()}.
+   * @param wasChild
    */
   public void removeChild(SNode wasChild) {
     if (wasChild.myParent != this) return;
@@ -986,6 +880,8 @@ public final class SNode {
   }
 
   public void insertChild(final SNode anchor, String _role, final SNode child) {
+    enforceModelLoad();
+
     if (ourMemberAccessModifier != null) {
       _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
     }
@@ -1045,7 +941,7 @@ public final class SNode {
 
     // add language because typesystem needs it to invalidate/revalidate its caches
     //todo this is a hack
-    model.validateLanguages(this);
+    SModelOperations.validateLanguages(model, this);
   }
 
   private void registerInModel_internal(SModel model) {
@@ -1102,9 +998,7 @@ public final class SNode {
     return myRegisteredInModelFlag;
   }
 
-  // ---------------------------------
-  //    references
-  // ---------------------------------
+  // ---------- references -------------
 
   public List<SReference> getReferences() {
     ModelAccess.assertLegalRead(this);
@@ -1388,9 +1282,7 @@ public final class SNode {
     return (_reference().size() == 0) && myParent == null && !getModel().isRoot(this);
   }
 
-  //
-  // -----------------------
-  //
+  // ---------- -------------
 
   public String getDebugText() {
     String roleText = "";
@@ -1556,10 +1448,6 @@ public final class SNode {
     return myConceptFqName;
   }
 
-  public SConceptReference getConceptReference() {
-    return new SConceptReference(getConceptFqName());
-  }
-
   public ModuleReference getConceptLanguage() {
     return new ModuleReference(getLanguageNamespace());
   }
@@ -1587,7 +1475,6 @@ public final class SNode {
     return language == null || language.findConceptDeclaration(getConceptShortName()) == null;
   }
 
-
   @UseCarefully
   void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
@@ -1600,22 +1487,8 @@ public final class SNode {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
 
-  /**
-   * @deprecated
-   */
-  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
-    return isInstanceOfConcept(conceptFqName);
-  }
-
   public boolean isInstanceOfConcept(String conceptFqName) {
     return SModelUtil_new.isAssignableConcept(myConceptFqName, conceptFqName);
-  }
-
-  @Deprecated
-  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    String conceptFQName = getConceptFqName();
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    return concept;
   }
 
   public SNode getConceptDeclarationNode() {
@@ -1790,13 +1663,6 @@ public final class SNode {
     myAdapter = null;
   }
 
-  void clearUserObjects() {
-    removeAllUserObjects();
-    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.clearUserObjects();
-    }
-  }
-
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
@@ -1821,10 +1687,6 @@ public final class SNode {
 
   public SNode nextSibling() {
     return myNextSibling;
-  }
-
-  public SModel getModelInternal() {
-    return myModel;
   }
 
   private class MyReferencesWrapper extends ArrayWrapper<SReference> {
@@ -1996,4 +1858,83 @@ public final class SNode {
       return this;
     }
   }
+
+  //------------deprecated-------------
+
+  @Deprecated
+  public SNode getAttribute() {
+    // default (?) attribute
+    SNode result = getAttribute(null);  // '_attr_$attribute'
+    if (result == null) {
+      // old way, just: '$attribute'
+      result = getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
+    }
+    return result;
+  }
+
+  @Deprecated
+  public void setAttribute(SNode attributeConcept) {
+    // default (?) attribute
+    setAttribute(null, attributeConcept);
+  }
+
+  @Deprecated
+  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
+    // 'default' property attr
+    setPropertyAttribute(null, propertyName, propertyAttribute);
+  }
+
+  @Deprecated
+  public SNode getPropertyAttribute(String propertyName) {
+    // 'default' property attr
+    SNode result = getPropertyAttribute(null, propertyName);
+    if (result != null) return result;
+
+    // back compatibility with some obsolete property attributes?
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
+        return child;
+      }
+    }
+
+    // old - no attribute role.
+    result = getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
+    return result;
+  }
+
+  @Deprecated
+  public void setLinkAttribute(String role, SNode linkAttribute) {
+    // 'default' link attr
+    setLinkAttribute(null, role, linkAttribute);
+  }
+
+  @Deprecated
+  public SNode getLinkAttribute(String role) {
+    // 'default' link attr
+    SNode result = getLinkAttribute(null, role);
+    if (result != null) return result;
+
+    // back compatibility with some obsolete link attributes?
+    for (SNode child = myFirstChild; child != null; child = child.myNextSibling) {
+      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
+        return child;
+      }
+    }
+
+    result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
+    return result;
+  }
+
+  @Deprecated
+  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
+    String conceptFQName = getConceptFqName();
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    return concept;
+  }
+
+  @Deprecated
+  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
+    return isInstanceOfConcept(conceptFqName);
+  }
+
 }

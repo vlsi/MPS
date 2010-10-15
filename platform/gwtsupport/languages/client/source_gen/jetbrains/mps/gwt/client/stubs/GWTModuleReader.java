@@ -155,14 +155,14 @@ public class GWTModuleReader {
       });
       src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trg));
     } else {
-      SNodeOperations.getModel(src).addImportedModel(trgsmref);
+      SNodeOperations.getModel(src).addModelImport(trgsmref, false);
       src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqName)));
     }
   }
 
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
-    SNodeOperations.getModel(src).addImportedModel(trgsmref);
+    SNodeOperations.getModel(src).addModelImport(trgsmref, false);
     src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)));
   }
 

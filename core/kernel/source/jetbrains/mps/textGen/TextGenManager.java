@@ -190,10 +190,8 @@ public class TextGenManager {
       SNodeTextGen result = textgenClass.newInstance();
       result.setContext(context);
       return result;
-    } catch (InstantiationException e) {
-      LOG.error(e, node);
-    } catch (IllegalAccessException e) {
-      LOG.error(e, node);
+    } catch (Throwable t) {
+      LOG.error(t, node);
     }
 
     DefaultTextGen result = new DefaultTextGen();

@@ -120,7 +120,7 @@ import org.jdom.Element;
       if (myNotImported) {
         importedModelReference = visibleModelElements.getModelUID(getImportIndex());
       } else {
-        importedModelReference = model.getImportedModelUID(getImportIndex());
+        importedModelReference = SModelOperations.getImportedModelUID(model, getImportIndex());
       }
       if (importedModelReference == null) {
         LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");

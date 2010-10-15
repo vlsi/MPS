@@ -115,7 +115,7 @@ public class CustomViewersManager implements ApplicationComponent {
         continue;
       }
       SModel sourceModel = descriptor.getSModel();
-      for (ModuleReference moduleReference : sourceModel.getLanguageRefs(GlobalScope.getInstance())) {
+      for (ModuleReference moduleReference : SModelOperations.getAllImportedLanguages(sourceModel)) {
         loadLanguage(moduleReference.getModuleFqName());
       }
       break;

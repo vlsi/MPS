@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelVersionsInfo;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 
 public class VersionUtil {
@@ -104,12 +101,12 @@ public class VersionUtil {
   public static int getNodeLanguageVersion(SNode node) {
     SModelReference reference = LanguageAspect.STRUCTURE.get(node.getConceptLanguage());
     reference = reference.update();
-    return node.getModel().getUsedVersion(reference);
+    return SModelOperations.getUsedVersion(node.getModel(), reference);
   }
 
   public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
     if (targetModelReference == null) return -1;//target model reference is nullable in postponed references
-    return node.getModel().getUsedVersion(targetModelReference);
+    return SModelOperations.getUsedVersion(node.getModel(), targetModelReference);
   }
 
   //for children's roles version: finds a parent's concept, its version is a version of a role

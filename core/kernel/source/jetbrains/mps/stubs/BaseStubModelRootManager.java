@@ -112,7 +112,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       }
 
       for (Language l : languages) {
-        model.addLanguage(l);
+        SModelOperations.addLanguage(model, l.getModuleReference());
       }
     } catch (Throwable t) {
       LOG.error(t);
@@ -182,10 +182,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
     try {
       return (IModelRootManager) managerClass.newInstance();
-    } catch (InstantiationException e) {
-      throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
-    } catch (IllegalAccessException e) {
-      throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
+    } catch (Throwable t) {
+      throw new ManagerNotFoundException("Problems during instantiating manager " + className, t);
     }
   }
 }

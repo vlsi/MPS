@@ -18,10 +18,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
@@ -66,14 +63,14 @@ public class SModelOperations {
     if (model == null) return Collections.EMPTY_LIST;
 
     if (conceptFqName == null) {
-      return model.allRootsIncludingImported(scope);
+      return allRootsIncludingImported(model, scope);
     }
 
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return Collections.EMPTY_LIST;
 
     List<SNode> list = new ArrayList<SNode>();
-    for (SNode node : model.allRootsIncludingImported(scope)) {
+    for (SNode node : allRootsIncludingImported(model, scope)) {
       if (node.isInstanceOfConcept(concept)) {
         list.add(node);
       }
@@ -85,7 +82,7 @@ public class SModelOperations {
     if (model == null) return Collections.EMPTY_LIST;
 
     if (conceptFqName == null) {
-      return model.allNodesIncludingImported(scope, new Condition<SNode>() {
+      return allNodesIncludingImported(model, scope, new Condition<SNode>() {
         public boolean met(SNode n) {
           return true;
         }
@@ -95,8 +92,44 @@ public class SModelOperations {
     final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) return Collections.EMPTY_LIST;
 
-    return model.allNodesIncludingImported(scope, new IsInstanceCondition(concept));
+    return allNodesIncludingImported(model, scope, new IsInstanceCondition(concept));
   }
+
+  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, Condition<SNode> condition) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(sModel);
+    List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      Iterable<SNode> iter = new ConditionalIterable<SNode>(aModel.nodes(), condition);
+      for (SNode node : iter) {
+        resultNodes.add(node);
+      }
+    }
+    return resultNodes;
+  }
+
+  private static List<SNode> allRootsIncludingImported(SModel sModel, IScope scope) {
+    List<SModel> modelsList = new ArrayList<SModel>();
+    modelsList.add(sModel);
+    List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    for (SModelDescriptor descriptor : modelDescriptors) {
+      modelsList.add(descriptor.getSModel());
+    }
+
+    List<SNode> resultNodes = new ArrayList<SNode>();
+    for (SModel aModel : modelsList) {
+      for (SNode root : aModel.roots()) {
+        resultNodes.add(root);
+      }
+    }
+    return resultNodes;
+  }
+
 
   public static List<SNode> getNodes(SModel model, final String conceptFqName) {
     if (model == null) return new ArrayList<SNode>();

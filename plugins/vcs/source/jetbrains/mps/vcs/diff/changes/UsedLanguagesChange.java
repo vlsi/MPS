@@ -48,7 +48,7 @@ public class UsedLanguagesChange extends Change {
     if (myIsDeleted) {
       m.deleteLanguage(myReference);
     } else {
-      m.addLanguage_internal(myReference);
+      m.addLanguage(myReference);
     }
     return true;
   }

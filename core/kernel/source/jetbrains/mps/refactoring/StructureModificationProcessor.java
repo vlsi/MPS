@@ -16,10 +16,7 @@
 package jetbrains.mps.refactoring;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -57,7 +54,7 @@ public class StructureModificationProcessor {
       boolean played;
       do {
         played = false;
-        for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
+        for (SModelDescriptor usedModelDescriptor : SModelOperations.getDependenciesModels(model)) {
           if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
           if (playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) {
             result = played = true;
@@ -73,7 +70,7 @@ public class StructureModificationProcessor {
   // true if any refactoring was played
   private static boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
-    int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
+    int usedVersion = SModelOperations.getUsedVersion(model, usedModelDescriptor.getSModelReference());
 
     if (currentVersion > usedVersion) {
       boolean played = false;

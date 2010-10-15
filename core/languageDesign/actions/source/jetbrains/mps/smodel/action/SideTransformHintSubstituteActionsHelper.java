@@ -59,7 +59,7 @@ public class SideTransformHintSubstituteActionsHelper {
     try {
       IScope scope = myContext.getScope();
       final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
-      List<Language> languages = mySourceNode.getModel().getLanguages(scope);
+      List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
       for (Language language : languages) {
         SModelDescriptor actionsModel = language.getActionsModelDescriptor();
         if (actionsModel == null || actionsModel.getSModel() == null) continue;
@@ -145,7 +145,7 @@ public class SideTransformHintSubstituteActionsHelper {
     IScope scope = myContext.getScope();
     final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
 
-    List<Language> languages = mySourceNode.getModel().getLanguages(scope);
+    List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
       if (actionsModel == null || actionsModel.getSModel() == null) continue;

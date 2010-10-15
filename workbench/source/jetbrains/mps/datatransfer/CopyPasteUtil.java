@@ -221,14 +221,14 @@ public class CopyPasteUtil {
     SModelReference modelReference = model.getSModelReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
-    for (ModuleReference language : model.getExplicitlyImportedLanguages()) {
-      newModel.addLanguage(language);
+    for (ModuleReference language : model.importedLanguages()) {
+      SModelOperations.addLanguage(newModel, language);
     }
-    for (SModelReference importedModel : model.getImportedModelUIDs()) {
-      newModel.addImportedModel(importedModel);
+    for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
+      newModel.addModelImport(importedModel, false);
     }
 
-    for (ModuleReference devKit : model.getDevKitRefs()) {
+    for (ModuleReference devKit : model.importedDevkits()) {
       newModel.addDevKit(devKit);
     }
 
@@ -328,7 +328,7 @@ public class CopyPasteUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
-        for (SModelDescriptor sm : targetModel.allImportedModels(context.getScope())) {
+        for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
           allImportedModels.add(sm.getSModelReference());
         }
 
@@ -341,7 +341,7 @@ public class CopyPasteUtil {
         necessaryImports.retainAll(additionalModels);
 
         for (ModuleReference moduleReference : necessaryLanguages) {
-          if (!targetModel.hasLanguage(moduleReference)) {
+          if (!SModelOperations.hasLanguage(targetModel,moduleReference)) {
             additionalLanguages.add(moduleReference);
           }
         }

@@ -255,7 +255,7 @@ public class RefactoringFacade extends StructureModificationProcessor {
       if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
       SModel anotherModel = anotherDescriptor.getSModel();
 
-      Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
+      Set<SModelReference> dependenciesModels = SModelOperations.getDependenciesModelRefs(anotherModel);
       if (/*model != anotherDescriptor
         &&*/ !dependenciesModels.contains(initialModelReference)) continue;
       updateModel(anotherModel, model, refactoringContext);

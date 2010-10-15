@@ -10,6 +10,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -20,7 +22,6 @@ import javax.swing.JComponent;
 import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -56,7 +57,8 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        models.value = myPresenter.getModelDescriptor().getSModel().getUsedImportedModels();
+        SModel m = myPresenter.getModelDescriptor().getSModel();
+        models.value = SModelOperations.getUsedImportedModels(m);
       }
     });
     return new ModelPropertiesDialog.ModelsCondition(models.value);
@@ -66,7 +68,8 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        usedLanguages.value = myPresenter.getModelDescriptor().getSModel().getUsedLanguages();
+        SModel m = myPresenter.getModelDescriptor().getSModel();
+        usedLanguages.value = SModelOperations.getUsedLanguages(m);
       }
     });
     return new ModelPropertiesDialog.LanguagesCondition(usedLanguages.value);

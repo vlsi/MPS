@@ -421,15 +421,14 @@
                       <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4642948870877886618">
                         <link role="variableDeclaration:3" targetNodeId="4642948870877886574" resolveInfo="myModels" />
                       </node>
-                      <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4642948870877886619">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4642948870877886620">
+                      <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7123761944774787682">
+                        <link role="baseMethodDeclaration:3" targetNodeId="2.~SModelOperations.allImportedModels(jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):java.util.List" resolveInfo="allImportedModels" />
+                        <link role="classConcept:3" targetNodeId="2.~SModelOperations" resolveInfo="SModelOperations" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7123761944774787683">
                           <link role="variableDeclaration:3" targetNodeId="4642948870877886565" resolveInfo="myModel" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4642948870877886621">
-                          <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.allImportedModels(jetbrains.mps.smodel.IScope):java.util.List" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4642948870877886622">
-                            <link role="variableDeclaration:3" targetNodeId="4642948870877886571" resolveInfo="myScope" />
-                          </node>
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7123761944774787685">
+                          <link role="variableDeclaration:3" targetNodeId="4642948870877886571" resolveInfo="myScope" />
                         </node>
                       </node>
                     </node>

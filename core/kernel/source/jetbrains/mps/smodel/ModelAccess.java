@@ -137,7 +137,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     }
   }
 
-  static final void assertLegalRead(SNode node) {
+  static void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
       SModel model = node.getModelInternal();
       String modelName = model == null ? "<null>" : model.getLongName();

@@ -32,60 +32,6 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="UI tests" type="JUnit" factoryName="JUnit">
-      <MyState>
-        <option name="myJavaRunParameters">
-          <ConfigRunParameters>
-            <option name="VMParameters" value="" />
-            <option name="alternativeJRE" value="" />
-            <option name="make" value="false" />
-            <option name="programParameters" value="" />
-            <option name="useAlternativeJRE" value="false" />
-            <option name="workingDirectory" value="" />
-          </ConfigRunParameters>
-        </option>
-        <option name="node" />
-        <option name="nodes">
-          <list />
-        </option>
-        <option name="model" />
-        <option name="module" value="jetbrains.mps.ui.unittest" />
-        <option name="method" />
-        <option name="methods">
-          <list />
-        </option>
-        <option name="fullMethodNames">
-          <list />
-        </option>
-        <option name="type" value="MODULE" />
-      </MyState>
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Swing UI Demo" type="JavaApplication" factoryName="Java Application">
-      <MyState>
-        <option name="myJavaRunParameters">
-          <ConfigRunParameters>
-            <option name="VMParameters" value="" />
-            <option name="alternativeJRE" value="" />
-            <option name="make" value="false" />
-            <option name="programParameters" value="" />
-            <option name="useAlternativeJRE" value="false" />
-            <option name="workingDirectory" value="" />
-          </ConfigRunParameters>
-        </option>
-        <option name="nodeId" value="1880762541167901329" />
-        <option name="modelId" value="r:e1d5070f-d69f-450c-87c6-b8c61ca08d04(jetbrains.mps.ui.sandbox.swing)" />
-      </MyState>
-      <RunnerSettings RunnerId="Default Debug Runner" />
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Debug Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
-      <method />
-    </configuration>
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>

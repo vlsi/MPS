@@ -49,12 +49,12 @@ public class ModelWriter2 implements IModelWriter {
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
-    for (ModuleReference languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
-    for (ImportElement aspectElement : sourceModel.getLanguageAspectModelElements()) {
+    for (ImportElement aspectElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelReference = aspectElement.getModelReference();
       if (!writtenAspects.contains(modelReference.toString())) {
         writtenAspects.add(modelReference.toString());
@@ -63,14 +63,14 @@ public class ModelWriter2 implements IModelWriter {
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : sourceModel.getEngagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : sourceModel.getDevKitRefs()) {
+    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
@@ -81,7 +81,7 @@ public class ModelWriter2 implements IModelWriter {
     maxRefID.setAttribute(ModelPersistence.VALUE, "" + sourceModel.getMaxImportIndex());
     rootElement.addContent(maxRefID);
 
-    Iterator<ImportElement> imports = sourceModel.importElements();
+    Iterator<ImportElement> imports = sourceModel.importedModels().iterator();
     while (imports.hasNext()) {
       ImportElement importElement = imports.next();
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
@@ -115,7 +115,7 @@ public class ModelWriter2 implements IModelWriter {
   }
 
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {
-    int modelVersion = sourceModel.getLanguageAspectModelVersion(aspectReference);
+    int modelVersion = SModelOperations.getLanguageAspectModelVersion(sourceModel, aspectReference);
     if (modelVersion > -1) {
       Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
       aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());

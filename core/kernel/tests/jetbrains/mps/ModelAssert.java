@@ -47,14 +47,14 @@ public class ModelAssert {
   }
 
   private static void assertSameModelImports(SModel expectedModel, SModel actualModel) {
-    assertListsEqual(expectedModel.getImportedModelUIDs(),
-      actualModel.getImportedModelUIDs(),
+    assertListsEqual(SModelOperations.getImportedModelUIDs(expectedModel),
+      SModelOperations.getImportedModelUIDs(actualModel),
       "model import");
   }
 
   private static void assertSameLanguageAspects(SModel expectedModel, SModel actualModel) {
-    List<ImportElement> expectedLanguageAspects = expectedModel.getLanguageAspectModelElements();
-    List<ImportElement> actualLanguageAspects = actualModel.getLanguageAspectModelElements();
+    List<ImportElement> expectedLanguageAspects = expectedModel.getAdditionalModelVersions();
+    List<ImportElement> actualLanguageAspects = actualModel.getAdditionalModelVersions();
 
     for (ImportElement expectedEl : expectedLanguageAspects) {
       boolean found = false;
@@ -92,8 +92,8 @@ public class ModelAssert {
   }
 
   private static void assertSameImports(SModel expectedModel, SModel actualModel) {
-    assertListsEqual(expectedModel.getLanguageAspectModelElements(),
-      actualModel.getLanguageAspectModelElements(), new Comparator<ImportElement>() {
+    assertListsEqual(expectedModel.getAdditionalModelVersions(),
+      actualModel.getAdditionalModelVersions(), new Comparator<ImportElement>() {
         @Override
         public int compare(ImportElement import1, ImportElement import2) {
           if (import1.getModelReference().equals(import2.getModelReference())) {

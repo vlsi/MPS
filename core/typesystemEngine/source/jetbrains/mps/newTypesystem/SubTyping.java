@@ -15,30 +15,19 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.newTypesystem.states.State;
-import jetbrains.mps.smodel.FreezeUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 11, 2010
- * Time: 1:42:55 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SubTyping {
   private TypeChecker myTypeChecker;
 
@@ -98,23 +87,23 @@ public class SubTyping {
 
       //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        if (TypesUtil.match(ancestor,superType, null, info)) {
+        if (TypesUtil.match(ancestor, superType, null, info)) {
           return true;
         }
       }
-    /*  if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
-        // then we should equate them with a most specific type. if there's is no unique one then we choose a random one
-        Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
-        Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
-        for (SNode var : mapWithVars.keySet()) {
-          childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
-        }
-        if (state != null) {
-          state.getEquations().addEquations(childEqs, info);
-        }
-        return true;
-      }
-      //new:        */
+      /*  if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
+// then we should equate them with a most specific type. if there's is no unique one then we choose a random one
+Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
+Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
+for (SNode var : mapWithVars.keySet()) {
+  childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
+}
+if (state != null) {
+  state.getEquations().addEquations(childEqs, info);
+}
+return true;
+}
+//new:        */
 
       for (SNode passedNodeRaw : yetPassedRaw) {
         yetPassed.add(passedNodeRaw);
@@ -132,7 +121,7 @@ public class SubTyping {
     return false;
   }
 
-  private Set<SNode> collectImmediateSuperTypes(final SNode term, boolean isWeak, final TypeCheckingContext context,String superTypeConceptFQName) {
+  private Set<SNode> collectImmediateSuperTypes(final SNode term, boolean isWeak, final TypeCheckingContext context, String superTypeConceptFQName) {
     Set<SNode> result = new HashSet<SNode>();
     if (term == null) {
       return result;

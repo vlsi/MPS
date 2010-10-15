@@ -98,7 +98,7 @@ public class ModelReader1 implements IModelReader {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage_internal(ModuleReference.fromString(languageNamespace));
+      model.addLanguage(ModuleReference.fromString(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
@@ -160,7 +160,7 @@ public class ModelReader1 implements IModelReader {
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
       importedModelReference = upgradeModelUID(importedModelReference);
-      model.addImportElement(new ImportElement(importedModelReference, importIndex, usedModelVersion));
+      model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();

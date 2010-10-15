@@ -9,6 +9,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -26,10 +28,11 @@ public class MoveRefactoringUtils {
     if (model == null || toImport == null) {
       return;
     }
-    if (model == toImport || model.getImportedModelUIDs().contains(toImport.getSModelReference())) {
+    SModelReference ref = toImport.getSModelReference();
+    if (model == toImport || SModelOperations.getImportedModelUIDs(model).contains(ref)) {
       return;
     }
-    model.addImportedModel(toImport.getSModelReference());
+    model.addModelImport(ref, false);
   }
 
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {

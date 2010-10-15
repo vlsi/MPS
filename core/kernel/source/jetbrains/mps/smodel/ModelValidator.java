@@ -17,22 +17,22 @@ public class ModelValidator {
 
     List<String> errors = new ArrayList<String>();
 
-    for (SModelReference reference : myModel.getImportedModelUIDs()) {
+    for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (scope.getModelDescriptor(reference) == null) {
         errors.add("Can't find model: " + reference.getLongName());
       }
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(myModel.getExplicitlyImportedLanguages());
-    langsToCheck.addAll(myModel.getEngagedOnGenerationLanguages());
+    langsToCheck.addAll(myModel.importedLanguages());
+    langsToCheck.addAll(myModel.engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : myModel.getDevKitRefs()) {
+    for (ModuleReference devKit : myModel.importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

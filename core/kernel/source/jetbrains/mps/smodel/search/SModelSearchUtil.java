@@ -18,10 +18,7 @@ package jetbrains.mps.smodel.search;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -144,7 +141,7 @@ public class SModelSearchUtil {
     public List<SNode> getNodes(Condition<SNode> condition) {
       if (myConcepts == null) {
         myConcepts = new ArrayList<ConceptDeclaration>();
-        List<Language> languages = myModel.getLanguages(myScope);
+        List<Language> languages = SModelOperations.getLanguages(myModel, myScope);
         for (Language language : languages) {
           if (myRootsOnly) {
             SModel structureModel = language.getStructureModelDescriptor().getSModel();

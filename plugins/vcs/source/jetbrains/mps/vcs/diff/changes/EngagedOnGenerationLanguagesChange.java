@@ -46,9 +46,9 @@ public class EngagedOnGenerationLanguagesChange extends Change {
 
   public boolean apply(SModel m) {
     if (myIsDeleted) {
-      m.getEngagedOnGenerationLanguages().remove(myReference);
+      m.engagedOnGenerationLanguages().remove(myReference);
     } else {
-      m.getEngagedOnGenerationLanguages().add(myReference);
+      m.engagedOnGenerationLanguages().add(myReference);
     }
     return true;
   }

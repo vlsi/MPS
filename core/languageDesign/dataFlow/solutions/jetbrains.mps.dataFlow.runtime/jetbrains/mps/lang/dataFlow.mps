@@ -1908,32 +1908,9 @@
                           </node>
                         </node>
                         <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8204202203348315632">
-                          <property name="name:3" value="e" />
-                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8204202203348315694">
-                            <link role="classifier:3" targetNodeId="2v.~InstantiationException" resolveInfo="InstantiationException" />
-                          </node>
-                        </node>
-                      </node>
-                      <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="8204202203348315695">
-                        <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8204202203348315696">
-                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8204202203348315697">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8204202203348315698">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="8204202203348315699">
-                                <link role="variableDeclaration:3" targetNodeId="4282822416100099061" resolveInfo="LOG" />
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8204202203348315700">
-                                <link role="baseMethodDeclaration:3" targetNodeId="9.~Logger.error(java.lang.Throwable):void" resolveInfo="error" />
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8204202203348315701">
-                                  <link role="variableDeclaration:3" targetNodeId="8204202203348315633" resolveInfo="e" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8204202203348315633">
-                          <property name="name:3" value="e" />
-                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8204202203348315702">
-                            <link role="classifier:3" targetNodeId="2v.~IllegalAccessException" resolveInfo="IllegalAccessException" />
+                          <property name="name:3" value="t" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7496710234044976898">
+                            <link role="classifier:3" targetNodeId="2v.~Throwable" resolveInfo="Throwable" />
                           </node>
                         </node>
                       </node>

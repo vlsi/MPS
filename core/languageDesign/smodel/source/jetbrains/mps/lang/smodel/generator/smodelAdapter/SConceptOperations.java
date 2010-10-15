@@ -20,6 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.NameUtil;
 
@@ -115,7 +116,7 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) return new ArrayList<SNode>();
     Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
 
-    Set<Language> availableLanguages = new HashSet<Language>(model.getLanguages(scope));
+    Set<Language> availableLanguages = new HashSet<Language>(SModelOperations.getLanguages(model, scope));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());

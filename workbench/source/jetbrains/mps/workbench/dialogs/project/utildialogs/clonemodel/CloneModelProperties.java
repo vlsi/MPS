@@ -20,6 +20,7 @@ import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
@@ -107,9 +108,9 @@ public class CloneModelProperties {
       myRoot.setPrefix(modelRoot.getPrefix());
     }
 
-    myImportedLanguages.addAll(model.getExplicitlyImportedLanguages());
-    myImportedModels.addAll(model.getImportedModelUIDs());
-    myImportedDevkits.addAll(model.getDevKitRefs());
-    myLanguagesInGeneration.addAll(model.getEngagedOnGenerationLanguages());
+    myImportedLanguages.addAll(model.importedLanguages());
+    myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
+    myImportedDevkits.addAll(model.importedDevkits());
+    myLanguagesInGeneration.addAll(model.engagedOnGenerationLanguages());
   }
 }

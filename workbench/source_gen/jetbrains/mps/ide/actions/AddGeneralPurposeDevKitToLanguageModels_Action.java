@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -57,7 +58,7 @@ public class AddGeneralPurposeDevKitToLanguageModels_Action extends GeneratedAct
     try {
       for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
         for (EditableSModelDescriptor aspect : SetSequence.fromSet(l.getAspectModelDescriptors())) {
-          aspect.getSModel().addDevKit(GeneralPurpose_DevKit.get());
+          aspect.getSModel().addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
         }
       }
       SModelRepository.getInstance().saveAll();

@@ -360,7 +360,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
       return true;
     }
-    List<Language> languages = model.getLanguages(GlobalScope.getInstance());
+    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
     boolean isLoadedAnyLanguage = false;
     for (Language language : languages) {
       boolean b = rulesManager.loadLanguage(language);

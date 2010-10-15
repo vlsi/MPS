@@ -31,6 +31,7 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class ExtractMethodDialog extends BaseDialog {
@@ -240,7 +241,8 @@ public class ExtractMethodDialog extends BaseDialog {
           result.value = ExtractMethodDialog.this.myRefactoring.doRefactor();
           ExtractMethodDialog.this.myContext.select(result.value);
           if (refactoringModel.value != null) {
-            refactoringModel.value.addImportedModel(SNodeOperations.getModel(staticTarget.value).getSModelReference());
+            SModelReference ref = SNodeOperations.getModel(staticTarget.value).getSModelReference();
+            refactoringModel.value.addModelImport(ref, false);
           }
         }
       });

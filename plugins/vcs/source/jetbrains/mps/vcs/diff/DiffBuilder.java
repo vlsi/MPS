@@ -28,6 +28,7 @@ import jetbrains.mps.vcs.diff.changes.*;
 import org.apache.commons.lang.ObjectUtils;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class DiffBuilder {
   private static final Logger LOG = Logger.getLogger(DiffBuilder.class);
@@ -47,17 +48,38 @@ public class DiffBuilder {
   }
 
   private void collectChanges() {
+    Map<SNodeId, SNode> oldNodes = myOldModel.getNodeIdToNodeMap();
+    Map<SNodeId, SNode> newNodes = myNewModel.getNodeIdToNodeMap();
+
+    Set<SNodeId> intersect = new HashSet<SNodeId>();
+    Map<SNodeId, SNode> onlyOld = new HashMap<SNodeId, SNode>();
+    Map<SNodeId, SNode> onlyNew = new HashMap<SNodeId, SNode>();
+
+    for (Entry<SNodeId, SNode> entry : oldNodes.entrySet()) {
+      if (newNodes.containsKey(entry.getKey())) {
+        intersect.add(entry.getKey());
+      } else {
+        onlyOld.put(entry.getKey(), entry.getValue());
+      }
+    }
+
+    for (Entry<SNodeId, SNode> entry : newNodes.entrySet()) {
+      if (!oldNodes.containsKey(entry.getKey())) {
+        onlyNew.put(entry.getKey(), entry.getValue());
+      }
+    }
+
     collectAddedLanguageImports();
     collectChangedUsedDevkits();
     collectEngagedOnGenerationLanguages();
     collectAddedModelImport();
     collectLanguageAspects();
-    collectDeletedNodes();
-    collectAddedNodes();
-    collectMovedNodes();
-    collectPropertyChanges();
-    collectReferenceChanges();
-    collectConceptChanges();
+    collectDeletedNodes(onlyOld);
+    collectAddedNodes(onlyNew);
+    collectMovedNodes(intersect);
+    collectPropertyChanges(newNodes);
+    collectReferenceChanges(newNodes);
+    collectConceptChanges(intersect);
     makeChangeGroups();
   }
 
@@ -99,8 +121,8 @@ public class DiffBuilder {
   }
 
   private void collectAddedModelImport() {
-    List<SModelReference> oldImportElements = myOldModel.getImportedModelUIDs();
-    List<SModelReference> newImportElements = myNewModel.getImportedModelUIDs();
+    List<SModelReference> oldImportElements = SModelOperations.getImportedModelUIDs(myOldModel);
+    List<SModelReference> newImportElements = SModelOperations.getImportedModelUIDs(myNewModel);
 
     Set<SModelReference> addedImports = getDiff(oldImportElements, newImportElements);
     Set<SModelReference> deletedImports = getDiff(newImportElements, oldImportElements);
@@ -115,14 +137,14 @@ public class DiffBuilder {
   }
 
   private void collectLanguageAspects() {
-    List<ImportElement> oldImportElements = myOldModel.getLanguageAspectModelElements();
+    List<ImportElement> oldImportElements = myOldModel.getAdditionalModelVersions();
 
-    for (ImportElement importElement : myNewModel.getLanguageAspectModelElements()) {
+    for (ImportElement importElement : myNewModel.getAdditionalModelVersions()) {
       boolean alreadyPresent = false;
 
       for (ImportElement oldImportElement : oldImportElements) {
         if (oldImportElement.getModelReference().equals(importElement.getModelReference())
-            && oldImportElement.getReferenceID() == importElement.getReferenceID()) {
+          && oldImportElement.getReferenceID() == importElement.getReferenceID()) {
           alreadyPresent = true;
           break;
         }
@@ -134,13 +156,8 @@ public class DiffBuilder {
     }
   }
 
-  private void collectConceptChanges() {
-    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
-    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
-
-    oldNodes.retainAll(newNodeIds);
-
-    for (SNodeId id : oldNodes) {
+  private void collectConceptChanges(Set<SNodeId> intersected) {
+    for (SNodeId id : intersected) {
       SNode newNode = myNewModel.getNodeById(id);
       SNode oldNode = myOldModel.getNodeById(id);
 
@@ -166,7 +183,7 @@ public class DiffBuilder {
   }
 
   private int getStructureImportVersion(SModel model, ModuleReference language) {
-    for (ImportElement el : model.getLanguageAspectModelElements()) {
+    for (ImportElement el : model.getAdditionalModelVersions()) {
       if ((language.getModuleFqName() + ".structure").equals(el.getModelReference().getLongName())) {
         return el.getUsedVersion();
       }
@@ -175,8 +192,8 @@ public class DiffBuilder {
   }
 
   private void collectAddedLanguageImports() {
-    List<ModuleReference> oldLanguages = myOldModel.getExplicitlyImportedLanguages();
-    List<ModuleReference> newLanguages = myNewModel.getExplicitlyImportedLanguages();
+    List<ModuleReference> oldLanguages = myOldModel.importedLanguages();
+    List<ModuleReference> newLanguages = myNewModel.importedLanguages();
 
     Set<ModuleReference> addedImports = getDiff(oldLanguages, newLanguages);
     Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);
@@ -191,8 +208,8 @@ public class DiffBuilder {
   }
 
   private void collectChangedUsedDevkits() {
-    List<ModuleReference> oldDevkits = myOldModel.getDevKitRefs();
-    List<ModuleReference> newDevkits = myNewModel.getDevKitRefs();
+    List<ModuleReference> oldDevkits = myOldModel.importedDevkits();
+    List<ModuleReference> newDevkits = myNewModel.importedDevkits();
 
     Set<ModuleReference> addedDevkits = getDiff(oldDevkits, newDevkits);
     Set<ModuleReference> deletedDevkits = getDiff(newDevkits, oldDevkits);
@@ -207,8 +224,8 @@ public class DiffBuilder {
   }
 
   private void collectEngagedOnGenerationLanguages() {
-    List<ModuleReference> oldLanguages = myOldModel.getEngagedOnGenerationLanguages();
-    List<ModuleReference> newLanguages = myNewModel.getEngagedOnGenerationLanguages();
+    List<ModuleReference> oldLanguages = myOldModel.engagedOnGenerationLanguages();
+    List<ModuleReference> newLanguages = myNewModel.engagedOnGenerationLanguages();
 
     Set<ModuleReference> addedImports = getDiff(oldLanguages, newLanguages);
     Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);
@@ -228,28 +245,20 @@ public class DiffBuilder {
     return addedImports;
   }
 
-  private void collectDeletedNodes() {
-    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
-    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
-    oldNodes.removeAll(newNodeIds);
-
-    for (SNodeId id : oldNodes) {
+  private void collectDeletedNodes(Map<SNodeId, SNode> onlyOld) {
+    for (Entry<SNodeId, SNode> entry : onlyOld.entrySet()) {
       List<SNodeId> childrenIds = new ArrayList<SNodeId>();
-      for (SNode child : myOldModel.getNodeById(id).getChildren()) {
+      for (SNode child : entry.getValue().getChildren()) {
         childrenIds.add(child.getSNodeId());
       }
-      myChanges.add(new DeleteNodeChange(id, childrenIds));
+      myChanges.add(new DeleteNodeChange(entry.getKey(), childrenIds));
     }
   }
 
-  private void collectAddedNodes() {
-    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
-    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
-
-    newNodeIds.removeAll(oldNodes);
-
-    for (SNodeId id : newNodeIds) {
-      SNode node = myNewModel.getNodeById(id);
+  private void collectAddedNodes(Map<SNodeId, SNode> onlyNew) {
+    for (Entry<SNodeId, SNode> entry : onlyNew.entrySet()) {
+      SNode node = entry.getValue();
+      SNodeId id = entry.getKey();
       assert node != null;
       String role = node.getRole_();
 
@@ -291,13 +300,8 @@ public class DiffBuilder {
     }
   }
 
-  private void collectMovedNodes() {
-    Set<SNodeId> newNodes = myNewModel.getNodeIds();
-    Set<SNodeId> oldNodes = myOldModel.getNodeIds();
-
-    oldNodes.retainAll(newNodes);
-
-    for (SNodeId id : oldNodes) {
+  private void collectMovedNodes(Set<SNodeId> intersect) {
+    for (SNodeId id : intersect) {
       SNode n = myNewModel.getNodeById(id);
       SNode o = myOldModel.getNodeById(id);
 
@@ -309,22 +313,10 @@ public class DiffBuilder {
       SNode nPrevSibling = n.prevSibling();
       SNode oPrevSibling = o.prevSibling();
       if (ObjectUtils.equals(nid, oid)) {
-        if (nPrevSibling == oPrevSibling) {
-          continue;
-        }
-        if (nPrevSibling != null && oPrevSibling != null && nPrevSibling.getId().equals(oPrevSibling.getId())) {
-          continue;
-        }
-        if (nPrevSibling != null) {
-          if (getChangesFor(nPrevSibling.getSNodeId()).size() > 0) {
-            continue;
-          }
-        }
-        if (oPrevSibling != null) {
-          if (getChangesFor(oPrevSibling.getSNodeId()).size() > 0) {
-            continue;
-          }
-        }
+        if (nPrevSibling == oPrevSibling) continue;
+        if (nPrevSibling != null && oPrevSibling != null && nPrevSibling.getId().equals(oPrevSibling.getId())) continue;
+        if (nPrevSibling != null && getChangesFor(nPrevSibling.getSNodeId()).size() > 0) continue;
+        if (oPrevSibling != null && getChangesFor(oPrevSibling.getSNodeId()).size() > 0) continue;
       }
 
       if (nPrevSibling != null) {
@@ -346,16 +338,12 @@ public class DiffBuilder {
   }
 
   private SNodeId getParentId(SNode n) {
-    if (n.getParent() == null) {
-      return null;
-    }
+    if (n.getParent() == null) return null;
     return n.getParent().getSNodeId();
   }
 
-  private void collectPropertyChanges() {
-    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
-
-    for (SNodeId id : newNodeIds) {
+  private void collectPropertyChanges(Map<SNodeId, SNode> allNew) {
+    for (SNodeId id : allNew.keySet()) {
       SNode newNode = myNewModel.getNodeById(id);
       SNode oldNode = myOldModel.getNodeById(id);
 
@@ -392,10 +380,8 @@ public class DiffBuilder {
     return o1.equals(o2);
   }
 
-  private void collectReferenceChanges() {
-    Set<SNodeId> newNodeIds = myNewModel.getNodeIds();
-
-    for (SNodeId id : newNodeIds) {
+  private void collectReferenceChanges(Map<SNodeId, SNode> allNew) {
+    for (SNodeId id : allNew.keySet()) {
       SNode newNode = myNewModel.getNodeById(id);
       SNode oldNode = myOldModel.getNodeById(id);
 
@@ -437,14 +423,12 @@ public class DiffBuilder {
 
   private boolean isMultipleCardinality(String fqName, String role) {
     LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
-    if (ld == null) {
-      return false;
-    }
+    if (ld == null) return false;
     return ld.getSourceCardinality() != Cardinality._0__1 && ld.getSourceCardinality() != Cardinality._1;
   }
 
+  //todo get rid of copying 
   public List<Change> getChanges() {
     return new ArrayList<Change>(myChanges);
   }
-
 }

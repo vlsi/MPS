@@ -54,7 +54,7 @@ public class EmbeddableEditor {
     myContext = context;
     myIsEditable = editable;
     myModel = ProjectModels.createDescriptorFor(myOwner);
-    myModel.getSModel().addDevKit(GeneralPurpose_DevKit.get());
+    myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
     setNode(rootNode, targetNode);
   }
 
@@ -141,7 +141,8 @@ public class EmbeddableEditor {
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getSModelReference());
+        SModelReference ref = language.getStructureModelDescriptor().getSModelReference();
+        myModel.getSModel().addModelImport(ref, false);
       }
     });
   }
@@ -149,7 +150,7 @@ public class EmbeddableEditor {
   public void addLanguage(final Language language) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myModel.getSModel().addLanguage(language);
+        myModel.getSModel().addLanguage(language.getModuleReference());
       }
     });
   }
@@ -157,7 +158,7 @@ public class EmbeddableEditor {
   public void addModel(final SModelReference model) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myModel.getSModel().addImportedModel(model);
+        myModel.getSModel().addModelImport(model, false);
       }
     });
   }
