@@ -51,6 +51,10 @@ public final class SNode {
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
 
+  public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
+    ourMemberAccessModifier = modifier;
+  }
+
   //------static end-------
 
   private String myRoleInParent;
@@ -74,10 +78,6 @@ public final class SNode {
 
   private BaseAdapter myAdapter;
   private boolean myDisposed;
-
-  public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
-    ourMemberAccessModifier = modifier;
-  }
 
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
@@ -270,77 +270,6 @@ public final class SNode {
       prevChild = newChild;
     }
     removeChild(oldChild);
-  }
-
-  public Object getUserObject(Object key) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (myUserObjects == null) return null;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        return myUserObjects[i + 1];
-      }
-    }
-    return null;
-  }
-
-  public void putUserObject(Object key, Object value) {
-    if (value == null) {
-      removeUserObject(key);
-      return;
-    }
-    if (myUserObjects == null) {
-      myUserObjects = new Object[]{key, value};
-    } else {
-      for (int i = 0; i < myUserObjects.length; i += 2) {
-        if (myUserObjects[i].equals(key)) {
-          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
-          myUserObjects[i + 1] = value;
-          return;
-        }
-      }
-      Object[] newarr = new Object[myUserObjects.length + 2];
-      System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
-      newarr[0] = key;
-      newarr[1] = value;
-      myUserObjects = newarr;
-    }
-  }
-
-  public void putUserObjects(SNode fromNode) {
-    if (fromNode == null || fromNode.myUserObjects == null) return;
-    if (myUserObjects == null) {
-      myUserObjects = fromNode.myUserObjects;
-    } else {
-      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
-        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
-      }
-    }
-  }
-
-  public void removeUserObject(Object key) {
-    if (myUserObjects == null) return;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        Object[] newarr = new Object[myUserObjects.length - 2];
-        if (i > 0) {
-          System.arraycopy(myUserObjects, 0, newarr, 0, i);
-        }
-        if (i + 2 < myUserObjects.length) {
-          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
-        }
-        myUserObjects = newarr;
-        break;
-      }
-    }
-    if (myUserObjects.length == 0) {
-      myUserObjects = null;
-    }
-  }
-
-  public void removeAllUserObjects() {
-    myUserObjects = null;
   }
 
   public void setName(String name) {
@@ -1518,9 +1447,80 @@ public final class SNode {
     return null;
   }
 
-  // -----------------------------
-  // concept properties support
-  // -----------------------------
+  //------------user objects-------------
+
+  public Object getUserObject(Object key) {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    if (myUserObjects == null) return null;
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        return myUserObjects[i + 1];
+      }
+    }
+    return null;
+  }
+
+  public void putUserObject(Object key, Object value) {
+    if (value == null) {
+      removeUserObject(key);
+      return;
+    }
+    if (myUserObjects == null) {
+      myUserObjects = new Object[]{key, value};
+    } else {
+      for (int i = 0; i < myUserObjects.length; i += 2) {
+        if (myUserObjects[i].equals(key)) {
+          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
+          myUserObjects[i + 1] = value;
+          return;
+        }
+      }
+      Object[] newarr = new Object[myUserObjects.length + 2];
+      System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
+      newarr[0] = key;
+      newarr[1] = value;
+      myUserObjects = newarr;
+    }
+  }
+
+  public void putUserObjects(SNode fromNode) {
+    if (fromNode == null || fromNode.myUserObjects == null) return;
+    if (myUserObjects == null) {
+      myUserObjects = fromNode.myUserObjects;
+    } else {
+      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
+        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
+      }
+    }
+  }
+
+  public void removeUserObject(Object key) {
+    if (myUserObjects == null) return;
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        Object[] newarr = new Object[myUserObjects.length - 2];
+        if (i > 0) {
+          System.arraycopy(myUserObjects, 0, newarr, 0, i);
+        }
+        if (i + 2 < myUserObjects.length) {
+          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
+        }
+        myUserObjects = newarr;
+        break;
+      }
+    }
+    if (myUserObjects.length == 0) {
+      myUserObjects = null;
+    }
+  }
+
+  public void removeAllUserObjects() {
+    myUserObjects = null;
+  }
+
+  //------------concept properties-------------
 
   public boolean hasConceptProperty(String propertyName) {
     if ("root".equals(propertyName)) {
