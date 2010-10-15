@@ -7,9 +7,10 @@
   <unitInfo fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule" />
   <unitInfo fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule" />
   <unitInfo fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_DeprecatedReference_NonTypesystemRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="check_Export_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_Export_NonTypesystemRule" />
   <unitInfo fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule" />
+  <unitInfo fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_TargetConcepts_NonTypesystemRule" />
   <unitInfo fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_ReferencesScope_NonTypesystemRule" />
   <unitInfo fileName="check_Cardinalities_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_Cardinalities_NonTypesystemRule" />
   <unitInfo fileName="check_Constraints_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule" />
@@ -401,6 +402,49 @@
     <scopeInfo nodeId="7283836008113024216" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="23" startPosition="124" endLine="31" endPosition="5">
       <varInfo nodeId="7283836008113027562" varName="concept" />
     </scopeInfo>
+  </root>
+  <root nodeId="7815324287109263445">
+    <nodeInfo nodeId="7815324287109263447" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="29" startPosition="117" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="7815324287109263457" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="32" startPosition="39" endLine="33" endPosition="50" />
+    <nodeInfo nodeId="7815324287109263465" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="71" />
+    <nodeInfo nodeId="7815324287109263484" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="39" startPosition="11" endLine="40" endPosition="59" />
+    <nodeInfo nodeId="7815324287109263484" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="40" startPosition="59" endLine="41" endPosition="61" />
+    <nodeInfo nodeId="7815324287109263484" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="41" startPosition="61" endLine="42" endPosition="321" />
+    <nodeInfo nodeId="7815324287109263498" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="7815324287109263505" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="48" startPosition="93" endLine="49" endPosition="66" />
+    <nodeInfo nodeId="7815324287109290258" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="50" startPosition="102" endLine="51" endPosition="64" />
+    <nodeInfo nodeId="7815324287109290223" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="53" startPosition="11" endLine="54" endPosition="59" />
+    <nodeInfo nodeId="7815324287109290223" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="54" startPosition="59" endLine="55" endPosition="61" />
+    <nodeInfo nodeId="7815324287109290223" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="55" startPosition="61" endLine="56" endPosition="311" />
+    <nodeInfo nodeId="7815324287109263455" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="113" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="7815324287109263484" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="38" startPosition="170" endLine="43" endPosition="11" />
+    <nodeInfo nodeId="7815324287109290223" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="52" startPosition="171" endLine="57" endPosition="11" />
+    <nodeInfo nodeId="7815324287109270800" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="37" startPosition="104" endLine="44" endPosition="9" />
+    <nodeInfo nodeId="7815324287109290221" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="51" startPosition="64" endLine="58" endPosition="9" />
+    <nodeInfo nodeId="7815324287109263471" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="36" startPosition="71" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="7815324287109290209" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="49" startPosition="66" endLine="59" endPosition="7" />
+    <nodeInfo nodeId="7815324287109263499" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="7815324287109263448" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="7815324287109263456" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="32" startPosition="39" endLine="33" endPosition="50" />
+    <scopeInfo nodeId="7815324287109263484" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="39" startPosition="11" endLine="42" endPosition="321" />
+    <scopeInfo nodeId="7815324287109290223" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="53" startPosition="11" endLine="56" endPosition="311" />
+    <scopeInfo nodeId="7815324287109263455" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="113" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7815324287109270801" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="38" startPosition="170" endLine="43" endPosition="11" />
+    <scopeInfo nodeId="7815324287109290222" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="52" startPosition="171" endLine="57" endPosition="11" />
+    <scopeInfo nodeId="7815324287109263483" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="37" startPosition="104" endLine="44" endPosition="9" />
+    <scopeInfo nodeId="7815324287109290220" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="50" startPosition="102" endLine="58" endPosition="9">
+      <varInfo nodeId="7815324287109290259" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="7815324287109263464" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="45" endPosition="7">
+      <varInfo nodeId="7815324287109263466" varName="link" />
+    </scopeInfo>
+    <scopeInfo nodeId="7815324287109263504" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="48" startPosition="93" endLine="59" endPosition="7">
+      <varInfo nodeId="7815324287109263506" varName="link" />
+    </scopeInfo>
+    <scopeInfo nodeId="7815324287109263499" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="7815324287109263448" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="7815324287109263446" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="29" startPosition="117" endLine="60" endPosition="5" />
+    <unitInfo nodeId="7815324287109263455" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="90" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.check_TargetConcepts_NonTypesystemRule$1" />
   </root>
   <root nodeId="8524227390952646882">
     <nodeInfo nodeId="8524227390952646884" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="25" endPosition="22" />
