@@ -23,14 +23,16 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    String warningMessage = "Naming policies violated: all words except prepositions, articles and particles" + "should be capitalized";
     for (SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_1628770029971140562(node)) {
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, "value")))) {
+        String myWarning = warningMessage + ".";
         {
           BaseIntentionProvider intentionProvider = null;
           intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140725", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140725", intentionProvider, errorTarget);
         }
         {
           BaseIntentionProvider intentionProvider = null;
@@ -38,7 +40,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           intentionProvider.putArgument("caption", "Fix String");
           intentionProvider.putArgument("literal", s);
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140731", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140731", intentionProvider, errorTarget);
         }
       }
     }
@@ -47,13 +49,14 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
         continue;
       }
       if (!(NameUtil.satisfiesNamingPolicy(p.getValue()))) {
+        String myWarning = warningMessage + "; no leading and trailing whitespaces are allowed.";
         {
           BaseIntentionProvider intentionProvider = null;
           intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new PropertyErrorTarget(p.getProperty());
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140761", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140761", intentionProvider, errorTarget);
         }
         {
           BaseIntentionProvider intentionProvider = null;
@@ -62,7 +65,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           intentionProvider.putArgument("property", p);
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new PropertyErrorTarget(p.getProperty());
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140773", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140773", intentionProvider, errorTarget);
         }
       }
     }

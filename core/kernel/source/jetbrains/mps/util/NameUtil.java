@@ -21,6 +21,9 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import org.apache.commons.lang.ObjectUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.WordUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -56,15 +59,13 @@ public class NameUtil {
     PARTICLES = new HashSet<String>(Arrays.asList(particles));
   }
 
-
-  //todo make it return textual representation of an error
-
+  // ------ Naming policy methods --------
   public static boolean satisfiesNamingPolicy(String s) {
-    return EqualUtil.equals(captionWithNamingPolicy(s), s);
+    return ObjectUtils.equals(captionWithNamingPolicy(s), s);
   }
 
   public static boolean satisfiesPartNamingPolicy(String s) {
-    return EqualUtil.equals(captionPartWithNamingPolicy(s), s);
+    return ObjectUtils.equals(captionPartWithNamingPolicy(s), s);
   }
 
   public static String captionWithNamingPolicy(String s) {
@@ -117,7 +118,7 @@ public class NameUtil {
     return removeDoubleSpaces(result.toString());
   }
 
-  public static String removeDoubleSpaces(String s) {
+  private static String removeDoubleSpaces(String s) {
     char[] chars = new char[s.length()];
     int charNum = 0;
 
@@ -133,56 +134,31 @@ public class NameUtil {
     return new String(chars, 0, charNum);
   }
 
-  public static String wordWithNamingPolicy(@NotNull String s) {
+  private static String wordWithNamingPolicy(@NotNull String s) {
     if (s.length() == 0) return s;
     if (s.matches("'.*'")) return s;
-    if (isAuxiluaryWord(s)) return decapitalize(s);
+    if (isAuxiliaryWord(s)) return decapitalize(s);
     return capitalize(s);
   }
 
-  public static boolean isAuxiluaryWord(String s) {
-    return isPreposition(s) || isParticle(s) || isArticle(s);
+  private static boolean isAuxiliaryWord(String s) {
+    return PREPOSITIONS.contains(s.toLowerCase()) || PARTICLES.contains(s.toLowerCase()) || ARTICLES.contains(s.toLowerCase());
   }
 
-  public static boolean isPreposition(String s) {
-    return PREPOSITIONS.contains(s.toLowerCase());
-  }
 
-  public static boolean isParticle(String s) {
-    return PARTICLES.contains(s.toLowerCase());
-  }
-
-  public static boolean isArticle(String s) {
-    return ARTICLES.contains(s.toLowerCase());
-  }
-
+  // ------ Capitalization methods methods --------
   public static String capitalize(String s) {
-    if (isEmpty(s) || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {
-      return s;
-    }
-    return "" + Character.toUpperCase(s.charAt(0)) + s.substring(1);
-  }
-
-  private static boolean isEmpty(String s) {
-    return s == null || s.length() == 0;
+    return StringUtils.capitalize(s);
   }
 
   public static String multiWordCapitalize(String s) {
-    if (isEmpty(s)) {
-      return s;
-    }
-    StringBuilder result = new StringBuilder(s.length());
-    StringTokenizer st = new StringTokenizer(s);
-    while (st.hasMoreTokens()) {
-      result.append(capitalize(st.nextToken())).append(" ");
-    }
-    return result.substring(0, result.length() - 1);
+    return WordUtils.capitalize(s);
   }
 
   public static String decapitalize(String s) {
-    if (isEmpty(s) || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
+    if (StringUtils.isEmpty(s) || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
       return s;
-    } else if (s.length() == 1 || Character.isLowerCase(s.charAt(1))) {
+    } else if (s.length() == 1 || Character.isLowerCase(s.charAt(0))) {
       return "" + Character.toLowerCase(s.charAt(0)) + s.substring(1);
     } else {
       StringBuilder result = new StringBuilder(s.length());
@@ -199,7 +175,7 @@ public class NameUtil {
   }
 
   public static String multiWordDecapitalize(String s) {
-    if (isEmpty(s)) {
+    if (StringUtils.isEmpty(s)) {
       return s;
     }
     StringBuilder result = new StringBuilder(s.length());
@@ -210,15 +186,10 @@ public class NameUtil {
     return result.substring(0, result.length() - 1);
   }
 
-  private static boolean isConsonant(char ch) {
-    return "bcdfghjklmnpqrstvwxz".indexOf(ch) != -1;
-  }
-
+  // ----- Pluralize/singularize utils -----
   public static String pluralize(String singular) {
-    if (isEmpty(singular)) return singular;
-    // This condition may seem non-trivial
-    // It means that pluralized "berry" is "berries",
-    // but pluralized "array" is "arrays"
+    if (StringUtils.isEmpty(singular)) return singular;
+    // This condition is to distinguish "berry"->"berries" and "array"->"arrays"
     if (singular.endsWith("y") && singular.length() > 1
       && isConsonant(singular.charAt(singular.length() - 2))) {
       return singular.substring(0, singular.length() - 1) + "ies";
@@ -232,7 +203,7 @@ public class NameUtil {
   }
 
   public static String singularize(String plural) {
-    if (isEmpty(plural)) return plural;
+    if (StringUtils.isEmpty(plural)) return plural;
 
     if (plural.endsWith("ies")) {
       return plural.substring(0, plural.length() - 3) + "y";
@@ -249,6 +220,10 @@ public class NameUtil {
     return plural;
   }
 
+  private static boolean isConsonant(char ch) {
+    return "bcdfghjklmnpqrstvwxz".indexOf(ch) != -1;
+  }
+
   /**
    * Return numerical string for given quantity of objects and singular form of object name.
    * For example, for <code>(5, "issue")</code> returns <code>"5 issues"</code>.
@@ -261,9 +236,7 @@ public class NameUtil {
     return quantity + " " + (quantity == 1 ? singular : pluralize(singular));
   }
 
-  /**
-   * "aaaBBB" -> "AAA_BBB"
-   */
+  /* "aaaBBB" -> "AAA_BBB" */
   public static String toConstantName(String s) {
     if (s == null) {
       return s;
@@ -355,7 +328,7 @@ public class NameUtil {
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
-    if (isEmpty(namespace)) {
+    if (StringUtils.isEmpty(namespace)) {
       return name;
     }
     return namespace + '.' + name;
@@ -508,28 +481,24 @@ public class NameUtil {
   }
 
   public static String getGetterName(String property) {
-    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
-    return "get" + prop;
+    return "get" + StringUtils.capitalize(property);
   }
 
   public static String getSetterName(String property) {
-    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
-    return "set" + prop;
+    return "set" + StringUtils.capitalize(property);
   }
 
   public static String getAdderName(String property) {
-    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
-    return "add" + prop;
+    return "add" + StringUtils.capitalize(property);
   }
 
   public static String getRemoverName(String property) {
-    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
-    return "remove" + prop;
+    return "remove" + StringUtils.capitalize(property);
   }
 
   public static String getPropertyNameFromGetterOrSetter(String name) {
     assert name.startsWith("get") || name.startsWith("set");
     String propertyName = name.substring(3);
-    return Character.toLowerCase(propertyName.charAt(0)) + propertyName.substring(1);
+    return StringUtils.uncapitalize(propertyName);
   }
 }

@@ -114,7 +114,7 @@
   <unitInfo fileName="typeof_ProcessHandlerStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ProcessHandlerStatement_InferenceRule" />
   <unitInfo fileName="typeof_PreferencePage_InferenceRule.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PreferencePage_InferenceRule" />
   <unitInfo fileName="typeof_AddActionStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_AddActionStatement_InferenceRule" />
-  <unitInfo fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_NamingPolicy_NonTypesystemRule" />
+  <unitInfo fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_NamingPolicy_NonTypesystemRule" />
   <unitInfo fileName="typeof_ToolTab_InferenceRule.java" startLine="170" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ToolTab_InferenceRule$QuotationClass_6sqcaa_a0a5a0" />
   <unitInfo fileName="typeof_ActionsList_FunctionParameter_InferenceRule.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionsList_FunctionParameter_InferenceRule" />
   <unitInfo fileName="typeof_ActionListStatement_InferenceRule.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionListStatement_InferenceRule" />
@@ -411,56 +411,65 @@
     <scopeInfo nodeId="1628770029971140701" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" />
   </root>
   <root nodeId="1628770029971140714">
-    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="9" endLine="29" endPosition="57" />
-    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="29" startPosition="57" endLine="30" endPosition="128" />
-    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="30" startPosition="128" endLine="31" endPosition="59" />
-    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="31" startPosition="59" endLine="32" endPosition="59" />
-    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="32" startPosition="59" endLine="33" endPosition="263" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="57" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="36" startPosition="57" endLine="37" endPosition="141" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="37" startPosition="141" endLine="38" endPosition="65" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="38" startPosition="65" endLine="39" endPosition="54" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="39" startPosition="54" endLine="40" endPosition="59" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="40" startPosition="59" endLine="41" endPosition="263" />
-    <nodeInfo nodeId="1628770029971140748" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="46" startPosition="33" endLine="47" endPosition="17" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="50" startPosition="9" endLine="51" endPosition="57" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="51" startPosition="57" endLine="52" endPosition="128" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="128" endLine="53" endPosition="59" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="53" startPosition="59" endLine="54" endPosition="59" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="54" startPosition="59" endLine="55" endPosition="65" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="55" startPosition="65" endLine="56" endPosition="273" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="58" startPosition="9" endLine="59" endPosition="57" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="59" startPosition="57" endLine="60" endPosition="142" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="60" startPosition="142" endLine="61" endPosition="98" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="61" startPosition="98" endLine="62" endPosition="55" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="62" startPosition="55" endLine="63" endPosition="59" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="63" startPosition="59" endLine="64" endPosition="65" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="64" startPosition="65" endLine="65" endPosition="273" />
-    <nodeInfo nodeId="1628770029971140746" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="45" startPosition="113" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="93" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="42" endPosition="9" />
-    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="49" startPosition="60" endLine="57" endPosition="9" />
-    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="57" startPosition="9" endLine="66" endPosition="9" />
-    <nodeInfo nodeId="1628770029971140718" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="102" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="1628770029971140754" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="48" startPosition="7" endLine="67" endPosition="7" />
-    <nodeInfo nodeId="1628770029971140744" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="44" startPosition="5" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="1628770029971140747" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="46" startPosition="33" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="9" endLine="33" endPosition="263" />
-    <scopeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="41" endPosition="263" />
-    <scopeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="50" startPosition="9" endLine="56" endPosition="273" />
-    <scopeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="58" startPosition="9" endLine="65" endPosition="273" />
-    <scopeInfo nodeId="1628770029971140724" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="93" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="1628770029971140717" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="102" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1628770029971140760" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="49" startPosition="60" endLine="66" endPosition="9" />
-    <scopeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="44" endPosition="5">
+    <nodeInfo nodeId="1500939545021962989" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="26" endPosition="136" />
+    <nodeInfo nodeId="1500939545021979009" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="93" endLine="29" endPosition="48" />
+    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="31" endPosition="57" />
+    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="31" startPosition="57" endLine="32" endPosition="128" />
+    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="32" startPosition="128" endLine="33" endPosition="59" />
+    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="33" startPosition="59" endLine="34" endPosition="59" />
+    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="34" startPosition="59" endLine="35" endPosition="231" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="37" startPosition="9" endLine="38" endPosition="57" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="38" startPosition="57" endLine="39" endPosition="141" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="39" startPosition="141" endLine="40" endPosition="65" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="40" startPosition="65" endLine="41" endPosition="54" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="41" startPosition="54" endLine="42" endPosition="59" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="42" startPosition="59" endLine="43" endPosition="231" />
+    <nodeInfo nodeId="1628770029971140748" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="48" startPosition="33" endLine="49" endPosition="17" />
+    <nodeInfo nodeId="1500939545021979018" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="51" startPosition="60" endLine="52" endPosition="97" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="53" startPosition="9" endLine="54" endPosition="57" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="54" startPosition="57" endLine="55" endPosition="128" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="55" startPosition="128" endLine="56" endPosition="59" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="56" startPosition="59" endLine="57" endPosition="59" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="57" startPosition="59" endLine="58" endPosition="65" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="58" startPosition="65" endLine="59" endPosition="241" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="61" startPosition="9" endLine="62" endPosition="57" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="62" startPosition="57" endLine="63" endPosition="142" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="63" startPosition="142" endLine="64" endPosition="98" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="64" startPosition="98" endLine="65" endPosition="55" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="65" startPosition="55" endLine="66" endPosition="59" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="66" startPosition="59" endLine="67" endPosition="65" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="67" startPosition="65" endLine="68" endPosition="241" />
+    <nodeInfo nodeId="1628770029971140746" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="47" startPosition="113" endLine="50" endPosition="7" />
+    <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="29" startPosition="48" endLine="36" endPosition="9" />
+    <nodeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="36" startPosition="9" endLine="44" endPosition="9" />
+    <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="97" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="60" startPosition="9" endLine="69" endPosition="9" />
+    <nodeInfo nodeId="1628770029971140718" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="102" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="136" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="1628770029971140754" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="50" startPosition="7" endLine="70" endPosition="7" />
+    <nodeInfo nodeId="1628770029971140744" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="1628770029971140747" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="48" startPosition="33" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="35" endPosition="231" />
+    <scopeInfo nodeId="1628770029971140731" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="37" startPosition="9" endLine="43" endPosition="231" />
+    <scopeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="53" startPosition="9" endLine="59" endPosition="241" />
+    <scopeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="61" startPosition="9" endLine="68" endPosition="241" />
+    <scopeInfo nodeId="1628770029971140724" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="93" endLine="44" endPosition="9">
+      <varInfo nodeId="1500939545021979010" varName="myWarning" />
+    </scopeInfo>
+    <scopeInfo nodeId="1628770029971140717" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="102" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="1628770029971140760" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="51" startPosition="60" endLine="69" endPosition="9">
+      <varInfo nodeId="1500939545021979019" varName="myWarning" />
+    </scopeInfo>
+    <scopeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="136" endLine="46" endPosition="5">
       <varInfo nodeId="1628770029971140742" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1628770029971140745" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="45" startPosition="113" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1628770029971140744" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="44" startPosition="5" endLine="68" endPosition="5">
+    <scopeInfo nodeId="1628770029971140745" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="47" startPosition="113" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="1628770029971140744" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="71" endPosition="5">
       <varInfo nodeId="1628770029971140794" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1628770029971140715" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="1628770029971140715" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="71" endPosition="5">
+      <varInfo nodeId="1500939545021962990" varName="warningMessage" />
+    </scopeInfo>
   </root>
   <root nodeId="1628770029971140797">
     <nodeInfo nodeId="1628770029971140799" fileName="typeof_PropertyRefExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="97" />

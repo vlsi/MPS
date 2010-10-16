@@ -1441,6 +1441,20 @@
     <property name="name:3" value="check_NamingPolicy" />
     <property name="package:3" value="CheckedName" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1628770029971140715">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1500939545021962989">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1500939545021962990">
+          <property name="name:3" value="warningMessage" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1500939545021962991" />
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1500939545021962998">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1500939545021963001">
+              <property name="value:3" value="Naming policies violated: all words except prepositions, articles and particles" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1500939545021963002">
+              <property name="value:3" value="should be capitalized" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1628770029971140716">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1628770029971140717">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1628770029971140718">
@@ -1459,12 +1473,26 @@
               </node>
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1628770029971140724">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1500939545021979009">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1500939545021979010">
+                  <property name="name:3" value="myWarning" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1500939545021979011" />
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1500939545021979012">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1500939545021979013">
+                      <property name="value:3" value="." />
+                    </node>
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1500939545021979014">
+                      <link role="variableDeclaration:3" targetNodeId="1500939545021962990" resolveInfo="warningMessage" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="1628770029971140725">
                 <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1628770029971140726">
                   <link role="variableDeclaration:3" targetNodeId="1628770029971140742" resolveInfo="s" />
                 </node>
-                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1628770029971140727">
-                  <property name="value:3" value="String does not satisfy naming policies" />
+                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1500939545021979015">
+                  <link role="variableDeclaration:3" targetNodeId="1500939545021979010" resolveInfo="myWarning" />
                 </node>
                 <node role="helginsIntention:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention:3" id="1628770029971140728">
                   <link role="quickFix:3" targetNodeId="1628770029971140613" resolveInfo="FixNamingPolicy" />
@@ -1480,8 +1508,8 @@
                 <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1628770029971140732">
                   <link role="variableDeclaration:3" targetNodeId="1628770029971140742" resolveInfo="s" />
                 </node>
-                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1628770029971140733">
-                  <property name="value:3" value="String does not satisfy naming policies" />
+                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1500939545021979016">
+                  <link role="variableDeclaration:3" targetNodeId="1500939545021979010" resolveInfo="myWarning" />
                 </node>
                 <node role="helginsIntention:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention:3" id="1628770029971140734">
                   <link role="quickFix:3" targetNodeId="1628770029971140674" resolveInfo="FixNamingPolicy_literal_once" />
@@ -1551,6 +1579,20 @@
               </node>
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1628770029971140760">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1500939545021979018">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1500939545021979019">
+                  <property name="name:3" value="myWarning" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1500939545021979020" />
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1500939545021979021">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1500939545021979022">
+                      <property name="value:3" value="; no leading and trailing whitespaces are allowed." />
+                    </node>
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1500939545021979023">
+                      <link role="variableDeclaration:3" targetNodeId="1500939545021962990" resolveInfo="warningMessage" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="1628770029971140761">
                 <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1628770029971140762">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1628770029971140763">
@@ -1560,8 +1602,8 @@
                     <link role="baseMethodDeclaration:3" targetNodeId="33.~PropertyReference.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
                   </node>
                 </node>
-                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1628770029971140765">
-                  <property name="value:3" value="String does not satisfy naming policies" />
+                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1500939545021979024">
+                  <link role="variableDeclaration:3" targetNodeId="1500939545021979019" resolveInfo="myWarning" />
                 </node>
                 <node role="helginsIntention:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention:3" id="1628770029971140766">
                   <link role="quickFix:3" targetNodeId="1628770029971140613" resolveInfo="FixNamingPolicy" />
@@ -1584,13 +1626,13 @@
                 </node>
               </node>
               <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="1628770029971140773">
-                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1628770029971140774">
-                  <property name="value:3" value="String does not satisfy naming policies" />
+                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1500939545021979054">
+                  <link role="variableDeclaration:3" targetNodeId="1500939545021979019" resolveInfo="myWarning" />
                 </node>
                 <node role="helginsIntention:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention:3" id="1628770029971140775">
                   <link role="quickFix:3" targetNodeId="1628770029971140695" resolveInfo="FixNamingPolicy_property_once" />
                   <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument:3" id="1628770029971140776">
-                    <link role="quickFixArgument:3" targetNodeId="1628770029971140675" resolveInfo="caption" />
+                    <link role="quickFixArgument:3" targetNodeId="1628770029971140696" resolveInfo="caption" />
                     <node role="value:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1628770029971140777">
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5003188907305524097">
                         <link role="baseMethodDeclaration:3" targetNodeId="32.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
