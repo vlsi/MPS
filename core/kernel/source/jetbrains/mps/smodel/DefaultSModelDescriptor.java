@@ -99,6 +99,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       fullModel.setLoading(true);
       new ModelLoader(mySModel,fullModel).update();
       setLoadingState(ModelLoadingState.FULLY_LOADED);
+      updateOnLoad(mySModel);
       fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
     } finally {
       mySModel.setLoading(loading);
@@ -108,6 +109,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   //just loads model, w/o changing state of SModelDescriptor
   private SModel load(ModelLoadingState loadingState) {
     SModel result = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
+    updateOnLoad(result);
+    return result;
+  }
+
+  private void updateOnLoad(SModel result) {
     if (StructureModificationProcessor.updateModelOnLoad(result)) {
       IFile modelFile = getModelFile();
       if (modelFile != null && !modelFile.isReadOnly()) {
@@ -117,7 +123,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     tryFixingVersion();
     myStructureModificationHistory = null;
     updateDiskTimestamp();
-    return result;
   }
 
   public IFile getModelFile() {
