@@ -237,7 +237,7 @@ public class SModel {
     }
   }
 
-  //todo code in the fllowing methods should be written w/o duplication
+  //todo code in the following methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;

@@ -580,7 +580,7 @@ public final class SNode {
   }
 
   private void enforceModelLoad() {
-    if (myModel == null) return;
+    if (!isRoot()) return;
     myModel.enforceFullLoad();
   }
 
