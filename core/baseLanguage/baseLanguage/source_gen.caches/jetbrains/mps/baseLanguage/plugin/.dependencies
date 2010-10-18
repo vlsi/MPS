@@ -581,6 +581,7 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" file="OverrideMethodsChecker.java">
+    <classNode dependClassName="com.intellij.openapi.project.IndexNotReadyException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

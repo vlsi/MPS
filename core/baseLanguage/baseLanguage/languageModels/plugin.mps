@@ -7707,14 +7707,48 @@
                 <property name="text:3" value="each classifier here is instance of ClassConcept or Interface" />
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2326364852992438505">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="8006413418889171346">
-                <link role="baseMethodDeclaration:3" targetNodeId="2326364852992438480" resolveInfo="collectOverridenMethods" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2326364852992438512">
-                  <link role="variable:7" targetNodeId="2326364852992438472" resolveInfo="containedClass" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="1447667470348977854">
+              <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470348977855">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2326364852992438505">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="8006413418889171346">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2326364852992438480" resolveInfo="collectOverridenMethods" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2326364852992438512">
+                      <link role="variable:7" targetNodeId="2326364852992438472" resolveInfo="containedClass" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2326364852992438519">
+                      <link role="variableDeclaration:3" targetNodeId="5002400195358075953" resolveInfo="result" />
+                    </node>
+                  </node>
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2326364852992438519">
-                  <link role="variableDeclaration:3" targetNodeId="5002400195358075953" resolveInfo="result" />
+              </node>
+              <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1447667470348977857">
+                <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1447667470348977858">
+                  <property name="name:3" value="indexNotReady" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1447667470348977861">
+                    <link role="classifier:3" targetNodeId="178.~IndexNotReadyException" resolveInfo="IndexNotReadyException" />
+                  </node>
+                </node>
+                <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470348977860">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1447667470348977869">
+                    <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="1447667470348977870">
+                      <property name="text:3" value="Catching IndexNotReadyException for now. In general suggestion of IDEA developers was to start using" />
+                    </node>
+                  </node>
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1447667470348977878">
+                    <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="1447667470348977879">
+                      <property name="text:3" value="DaemonCodeAnalyzer for background highlighting processes execution" />
+                    </node>
+                  </node>
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447667470348977862">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1447667470348977864">
+                      <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1447667470348977867">
+                        <property name="value:3" value="true" />
+                      </node>
+                      <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="1447667470348977863">
+                        <link role="variableDeclaration:3" targetNodeId="2374396819863263340" resolveInfo="myIndexWasNotReady" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

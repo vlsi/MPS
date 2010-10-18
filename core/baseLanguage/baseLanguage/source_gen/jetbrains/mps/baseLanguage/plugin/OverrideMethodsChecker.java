@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
@@ -59,7 +60,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
       // each classifier here is instance of ClassConcept or Interface 
-      collectOverridenMethods(containedClassifier, result);
+      try {
+        collectOverridenMethods(containedClassifier, result);
+      } catch (IndexNotReadyException indexNotReady) {
+        // Catching IndexNotReadyException for now. In general suggestion of IDEA developers was to start using 
+        // DaemonCodeAnalyzer for background highlighting processes execution 
+        myIndexWasNotReady = true;
+      }
       collectOverridingMethods(containedClassifier, result);
     }
     return result;
