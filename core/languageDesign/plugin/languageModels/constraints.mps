@@ -1024,7 +1024,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5857416866788535172">
-    <property name="package:8" value="Custom.DebugInfo" />
+    <property name="package:8" value="Custom.TraceInfo" />
     <link role="concept:8" targetNodeId="7.5857416866788535167:23" resolveInfo="VariableNodeExpression" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="5857416866788535173">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5857416866788535174">

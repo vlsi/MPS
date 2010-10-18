@@ -45,7 +45,6 @@
   <unitInfo fileName="ActionAccessOperation_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionAccessOperation_Editor$_Inline_nefofj_a2a" />
   <unitInfo fileName="ScopeNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ScopeNodeItem_Editor$_Inline_nb4jcx_a0a" />
   <unitInfo fileName="VariableNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.VariableNodeItem_Editor$_Inline_7rkevh_a0a" />
-  <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor$_Inline_dx7uys_a0a" />
   <unitInfo fileName="NodesCreatorTarget_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodesCreatorTarget_Editor$_Inline_rvtiuo_a2a" />
   <unitInfo fileName="NodeCreatorTarget_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodeCreatorTarget_Editor$_Inline_zf58oo_a2a" />
   <unitInfo fileName="GetGroupOperation_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetGroupOperation_Editor$_Inline_wwk5yv_a2a" />
@@ -55,6 +54,7 @@
   <unitInfo fileName="GetPreferencesComponentOperation_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentOperation_Editor$_Inline_dhbgio_a2a" />
   <unitInfo fileName="ApplicationPluginType_Editor.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginType_Editor$_Inline_w3h4nr_a2a" />
   <unitInfo fileName="ProjectPluginType_Editor.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginType_Editor$_Inline_1zp5kz_a2a" />
+  <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="97" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor$_Inline_dx7uys_a0a" />
   <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="97" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$_Inline_ecw4ny_a0a" />
   <unitInfo fileName="RunConfigurationHeader.java" startLine="99" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationHeader$_Inline_bqmo2k_a3a" />
   <unitInfo fileName="RunConfigExecutionParameterDeclaration_Editor.java" startLine="104" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigExecutionParameterDeclaration_Editor$_Inline_ystr20_a3a" />
@@ -145,7 +145,6 @@
   <unitInfo fileName="ActionAccessOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionAccessOperation_Editor" />
   <unitInfo fileName="ScopeNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ScopeNodeItem_Editor" />
   <unitInfo fileName="VariableNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.VariableNodeItem_Editor" />
-  <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor" />
   <unitInfo fileName="NodesCreatorTarget_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodesCreatorTarget_Editor" />
   <unitInfo fileName="NodeCreatorTarget_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodeCreatorTarget_Editor" />
   <unitInfo fileName="GetGroupOperation_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetGroupOperation_Editor" />
@@ -162,6 +161,7 @@
   <unitInfo fileName="ApplicationPluginType_Editor.java" startLine="21" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginType_Editor" />
   <unitInfo fileName="ProjectPluginType_Editor.java" startLine="21" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginType_Editor" />
   <unitInfo fileName="ExecuteParameterQuery_Editor.java" startLine="21" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ExecuteParameterQuery_Editor" />
+  <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor" />
   <unitInfo fileName="RunConfigType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigType_Editor" />
   <unitInfo fileName="PreferencesComponentType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencesComponentType_Editor" />
   <unitInfo fileName="ToolType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolType_Editor" />
@@ -400,6 +400,10 @@
     <nodeInfo nodeId="8859288484512506801" fileName="AbstractEditorTabShortcut.java" startLine="100" startPosition="111" endLine="101" endPosition="87" />
     <scopeInfo nodeId="3618415754251518829" fileName="AbstractEditorTabShortcut.java" startLine="64" startPosition="31" endLine="65" endPosition="103" />
     <scopeInfo nodeId="8859288484512501439" fileName="AbstractEditorTabShortcut.java" startLine="100" startPosition="111" endLine="101" endPosition="87" />
+  </root>
+  <root nodeId="5124230653299542675">
+    <nodeInfo nodeId="2947985314240669147" fileName="DebuggableNodeItem_Editor.java" startLine="93" startPosition="111" endLine="94" endPosition="79" />
+    <scopeInfo nodeId="2947985314240667892" fileName="DebuggableNodeItem_Editor.java" startLine="93" startPosition="111" endLine="94" endPosition="79" />
   </root>
   <root nodeId="5881611836527729320">
     <nodeInfo nodeId="8290602066471960018" fileName="ActionParameter_IsOptional.java" startLine="73" startPosition="105" endLine="74" endPosition="75" />

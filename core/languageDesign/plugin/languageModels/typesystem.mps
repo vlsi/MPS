@@ -2472,7 +2472,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5857416866788538754">
     <property name="name:3" value="typeof_VariableNodeExpression" />
-    <property name="package:3" value="Custom.DebugInfo" />
+    <property name="package:3" value="Custom.TraceInfo" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5857416866788538755">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5857416866788541935">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5857416866788541936">
@@ -2527,7 +2527,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5857416866788541964">
     <property name="name:3" value="typeof_VariableNodeItem" />
-    <property name="package:3" value="Custom.DebugInfo" />
+    <property name="package:3" value="Custom.TraceInfo" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5857416866788541965">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5857416866788541976">
         <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5857416866788541977" />
@@ -2615,7 +2615,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="936299881288561887">
     <property name="name:3" value="typeof_ConceptFunctionParameter_ScopeNode" />
-    <property name="package:3" value="Custom.DebugInfo" />
+    <property name="package:3" value="Custom.TraceInfo" />
     <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="936299881288561888">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="936299881288572325">

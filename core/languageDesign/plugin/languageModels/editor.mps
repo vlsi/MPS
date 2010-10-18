@@ -5225,7 +5225,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5124230653299542675">
-    <property name="package:32" value="Custom.DebugInfo" />
+    <property name="package:32" value="Custom.TraceInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.5124230653299542673:23" resolveInfo="ConceptReference" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6516056543317150529">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="6516056543317150530">
@@ -5237,17 +5237,41 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6516056543317150535">
-        <property name="text:32" value="create breakpoint:" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6516056543317150537">
-        <link role="relationDeclaration:32" targetNodeId="1.6516056543317148534:23" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2947985314240667883">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="2947985314240667884">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem:32" id="2947985314240667889">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2947985314240667887">
+          <property name="text:32" value="create breakpoint:" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2947985314240667888">
+          <link role="relationDeclaration:32" targetNodeId="1.6516056543317148534:23" />
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2947985314240667890" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="2947985314240667891">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2947985314240667892">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2947985314240669147">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2947985314240669154">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2947985314240669149">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="2947985314240669148" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2947985314240669153">
+                    <link role="link:16" targetNodeId="1.6516056543317148534:23" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="2947985314240669158" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6516056543317150533" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5124230653299630702">
-    <property name="package:32" value="Custom.DebugInfo" />
+    <property name="package:32" value="Custom.TraceInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.5124230653299345208:23" resolveInfo="DebugInfoInitializer" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5124230653299630704">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5124230653299630707">
@@ -5541,7 +5565,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5857416866788529839">
-    <property name="package:32" value="Custom.DebugInfo" />
+    <property name="package:32" value="Custom.TraceInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.5857416866788524756:23" resolveInfo="VariableNodeItem" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5857416866788535156">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="5857416866788535159">
@@ -5563,7 +5587,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5857416866788535169">
-    <property name="package:32" value="Custom.DebugInfo" />
+    <property name="package:32" value="Custom.TraceInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.5857416866788535167:23" resolveInfo="VariableNodeExpression" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="5857416866788535171">
       <link role="relationDeclaration:32" targetNodeId="14.1137473891462:0" resolveInfo="alias" />
@@ -5599,7 +5623,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="936299881288560420">
-    <property name="package:32" value="Custom.DebugInfo" />
+    <property name="package:32" value="Custom.TraceInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.936299881288560358:23" resolveInfo="ScopeNodeItem" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="936299881288561734">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="936299881288561735">
