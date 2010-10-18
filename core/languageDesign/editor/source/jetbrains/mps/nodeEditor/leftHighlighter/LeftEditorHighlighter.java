@@ -87,8 +87,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
 
-  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet();
-  private TIntObjectHashMap<List<IconRendererLayoutConstraint>> myLineToRenderersMap = new TIntObjectHashMap();
+  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet<EditorMessageIconRenderer>();
+  private TIntObjectHashMap<List<IconRendererLayoutConstraint>> myLineToRenderersMap = new TIntObjectHashMap<List<IconRendererLayoutConstraint>>();
   private Comparator myIconRenderersComparator = new IconRendererLayoutConstraintComparator();
   private EditorMessageIconRenderer myRendererUnderMouse;
   private int myMaxIconHeight = 0;
@@ -561,6 +561,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return renderer.getAnchorCell(nodeCell);
   }
 
+  @Override
   public String getMPSTooltipText(MouseEvent e) {
     if (isInFoldingArea(e)) {
       for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
