@@ -36,7 +36,8 @@ public class ThreadWatcher implements Output {
         "(Java2D.*)|" +
         "(LowMemoryWatcher)|" +
         "(Timer\\-.*)|" +
-        "(FS Sync.*)");
+        "(FS Sync.*)|" +
+        "(timed reference disposer)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();
