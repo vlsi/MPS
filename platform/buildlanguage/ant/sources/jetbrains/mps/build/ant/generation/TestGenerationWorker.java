@@ -103,13 +103,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       final MPSProject p = TestMain.loadProject(file);
       info("Loaded project " + p);
 
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          // plugin reloader reloads plugins asynchronously and we need to be sure
-          p.getComponent(ProjectPluginManager.class).loadPlugins();
-        }
-      }, ModalityState.NON_MODAL);
+      loadPluginsForProject(p);
       executeTask(p, new ObjectsToProcess(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
 
       disposeProject(p);
@@ -124,6 +118,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     MpsWorker.ObjectsToProcess go = new ObjectsToProcess(Collections.EMPTY_SET, modules, models);
     if (go.hasAnythingToGenerate()) {
       MPSProject project = createDummyProject();
+      loadPluginsForProject(project);
       executeTask(project, go);
     }
 
@@ -132,6 +127,16 @@ public class TestGenerationWorker extends GeneratorWorker {
     dispose();
 
     showStatistic();
+  }
+
+  private void loadPluginsForProject(final MPSProject p) {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        // plugin reloader reloads plugins asynchronously and we need to be sure
+        p.getComponent(ProjectPluginManager.class).loadPlugins();
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   private void generatePerformanceReport() {
