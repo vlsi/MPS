@@ -251,7 +251,7 @@ class EDTExecutor {
 
         try {
           final Project project = peekToExecuteProject();
-          if (project != null) {
+          if (project != null && !project.isDisposed()) {
             myModelAccess.tryWriteInCommand(new Runnable() {
               public void run() {
                 Runnable command;
@@ -260,6 +260,9 @@ class EDTExecutor {
                 }
               }
             }, project);
+          } else if (project != null) {
+            LOG.error("disposed project, command dropped "+project);
+            getToExecuteCommand(project);
           }
         } finally {
           synchronized (myLock) {
