@@ -15,8 +15,8 @@
   <unitInfo fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.PropertyAttributeAccessQualifier_Behavior" />
   <unitInfo fileName="SNodeTypeCastExpression_Behavior.java" startLine="42" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior$QuotationClass_cjhknp_a1a0a0b0b" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="45" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior$QuotationClass_bquv25_a0a0a0c" />
-  <unitInfo fileName="SNodeListType_Behavior.java" startLine="57" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_Behavior$QuotationClass_r176b6_a0a0e" />
   <unitInfo fileName="SNodeType_Behavior.java" startLine="61" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_Behavior$QuotationClass_4ouf01_a0a0e" />
+  <unitInfo fileName="SNodeListType_Behavior.java" startLine="61" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_Behavior$QuotationClass_r176b6_a0a0f" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="63" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior$QuotationClass_bquv25_a0b0c" />
   <unitInfo fileName="SLinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkAccess_Behavior" />
   <unitInfo fileName="SLinkListAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkListAccess_Behavior" />
@@ -28,9 +28,9 @@
   <unitInfo fileName="AttributeAccessOperation_Behavior.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeAccessOperation_Behavior" />
   <unitInfo fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LinkAttributeAccessQualifier_Behavior" />
   <unitInfo fileName="SNodeTypeCastExpression_Behavior.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior" />
-  <unitInfo fileName="SNodeListType_Behavior.java" startLine="22" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_Behavior" />
   <unitInfo fileName="SNodeOperation_Behavior.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />
   <unitInfo fileName="SNodeType_Behavior.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_Behavior" />
+  <unitInfo fileName="SNodeListType_Behavior.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_Behavior" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="15" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior" />
   <root nodeId="1213877246679">
     <scopeInfo nodeId="1213877246681" fileName="PropertyRefQualifier_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -57,20 +57,22 @@
     <nodeInfo nodeId="1213877274378" fileName="SNodeListType_Behavior.java" startLine="36" startPosition="81" endLine="37" endPosition="163" />
     <nodeInfo nodeId="1213877274388" fileName="SNodeListType_Behavior.java" startLine="37" startPosition="163" endLine="38" endPosition="111" />
     <nodeInfo nodeId="1213877274399" fileName="SNodeListType_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="28" />
-    <nodeInfo nodeId="1213877274405" fileName="SNodeListType_Behavior.java" startLine="43" startPosition="80" endLine="44" endPosition="115" />
-    <nodeInfo nodeId="1213877274411" fileName="SNodeListType_Behavior.java" startLine="44" startPosition="115" endLine="45" endPosition="96" />
-    <nodeInfo nodeId="1213877274420" fileName="SNodeListType_Behavior.java" startLine="45" startPosition="96" endLine="46" endPosition="19" />
-    <nodeInfo nodeId="1213877274425" fileName="SNodeListType_Behavior.java" startLine="49" startPosition="80" endLine="50" endPosition="81" />
-    <nodeInfo nodeId="3508583411998065042" fileName="SNodeListType_Behavior.java" startLine="53" startPosition="90" endLine="54" endPosition="82" />
+    <nodeInfo nodeId="1447667470349158022" fileName="SNodeListType_Behavior.java" startLine="43" startPosition="95" endLine="44" endPosition="16" />
+    <nodeInfo nodeId="1213877274405" fileName="SNodeListType_Behavior.java" startLine="47" startPosition="80" endLine="48" endPosition="115" />
+    <nodeInfo nodeId="1213877274411" fileName="SNodeListType_Behavior.java" startLine="48" startPosition="115" endLine="49" endPosition="96" />
+    <nodeInfo nodeId="1213877274420" fileName="SNodeListType_Behavior.java" startLine="49" startPosition="96" endLine="50" endPosition="19" />
+    <nodeInfo nodeId="1213877274425" fileName="SNodeListType_Behavior.java" startLine="53" startPosition="80" endLine="54" endPosition="81" />
+    <nodeInfo nodeId="3508583411998065042" fileName="SNodeListType_Behavior.java" startLine="57" startPosition="90" endLine="58" endPosition="82" />
     <nodeInfo nodeId="1213877274352" fileName="SNodeListType_Behavior.java" startLine="27" startPosition="92" endLine="31" endPosition="6" />
     <nodeInfo nodeId="1213877274376" fileName="SNodeListType_Behavior.java" startLine="35" startPosition="100" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1213877274435" fileName="SNodeListType_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
-    <scopeInfo nodeId="1213877274424" fileName="SNodeListType_Behavior.java" startLine="49" startPosition="80" endLine="50" endPosition="81" />
-    <scopeInfo nodeId="3508583411998065037" fileName="SNodeListType_Behavior.java" startLine="53" startPosition="90" endLine="54" endPosition="82" />
+    <scopeInfo nodeId="1447667470349158016" fileName="SNodeListType_Behavior.java" startLine="43" startPosition="95" endLine="44" endPosition="16" />
+    <scopeInfo nodeId="1213877274424" fileName="SNodeListType_Behavior.java" startLine="53" startPosition="80" endLine="54" endPosition="81" />
+    <scopeInfo nodeId="3508583411998065037" fileName="SNodeListType_Behavior.java" startLine="57" startPosition="90" endLine="58" endPosition="82" />
     <scopeInfo nodeId="1213877274377" fileName="SNodeListType_Behavior.java" startLine="36" startPosition="81" endLine="38" endPosition="111">
       <varInfo nodeId="1213877274379" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877274404" fileName="SNodeListType_Behavior.java" startLine="43" startPosition="80" endLine="46" endPosition="19">
+    <scopeInfo nodeId="1213877274404" fileName="SNodeListType_Behavior.java" startLine="47" startPosition="80" endLine="50" endPosition="19">
       <varInfo nodeId="1213877274406" varName="creator" />
     </scopeInfo>
     <scopeInfo nodeId="1213877274345" fileName="SNodeListType_Behavior.java" startLine="26" startPosition="78" endLine="31" endPosition="6">

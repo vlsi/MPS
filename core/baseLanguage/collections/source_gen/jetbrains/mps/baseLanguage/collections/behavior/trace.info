@@ -6,19 +6,19 @@
   <unitInfo fileName="SkipStatement_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SkipStatement_Behavior" />
   <unitInfo fileName="MappingType_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MappingType_Behavior" />
   <unitInfo fileName="SequenceOperation_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_Behavior" />
-  <unitInfo fileName="IteratorType_Behavior.java" startLine="44" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IteratorType_Behavior$QuotationClass_cgg16c_a0a0d" />
-  <unitInfo fileName="SequenceType_Behavior.java" startLine="56" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_Behavior$QuotationClass_hzlnln_a0a0e" />
-  <unitInfo fileName="ListType_Behavior.java" startLine="77" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_Behavior$QuotationClass_ywnljw_a0a0f" />
+  <unitInfo fileName="IteratorType_Behavior.java" startLine="56" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IteratorType_Behavior$QuotationClass_cgg16c_a0a0e" />
+  <unitInfo fileName="SequenceType_Behavior.java" startLine="68" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_Behavior$QuotationClass_hzlnln_a0a0f" />
   <unitInfo fileName="SortedSetType_Behavior.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_Behavior$QuotationClass_7p913d_a0a0c" />
+  <unitInfo fileName="ListType_Behavior.java" startLine="89" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_Behavior$QuotationClass_ywnljw_a0a0g" />
   <unitInfo fileName="SortedMapType_Behavior.java" startLine="94" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_Behavior$QuotationClass_zek8do_a0a0c" />
-  <unitInfo fileName="SetType_Behavior.java" startLine="134" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior$QuotationClass_q66uze_a0a0f" />
+  <unitInfo fileName="SetType_Behavior.java" startLine="146" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior$QuotationClass_q66uze_a0a0g" />
   <unitInfo fileName="MapType_Behavior.java" startLine="146" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_Behavior$QuotationClass_icy1a5_a0a0d" />
   <unitInfo fileName="SortOperation_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortOperation_Behavior" />
-  <unitInfo fileName="AbstractContainerType_Behavior.java" startLine="15" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_Behavior" />
-  <unitInfo fileName="EnumeratorType_Behavior.java" startLine="15" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.EnumeratorType_Behavior" />
   <unitInfo fileName="IContainerOperation_Behavior.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behavior" />
   <unitInfo fileName="AbstractContainerCreator_Behavior.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior" />
   <unitInfo fileName="CustomContainerCreator_Behavior.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerCreator_Behavior" />
+  <unitInfo fileName="AbstractContainerType_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_Behavior" />
+  <unitInfo fileName="EnumeratorType_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.EnumeratorType_Behavior" />
   <unitInfo fileName="PriorityQueueCreator_Behavior.java" startLine="22" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_Behavior$QuotationClass_ag90u1_a0a0b" />
   <unitInfo fileName="LinkedListCreator_Behavior.java" startLine="22" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior$QuotationClass_rsqk7y_a0a0b" />
   <unitInfo fileName="HashSetCreator_Behavior.java" startLine="22" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.HashSetCreator_Behavior$QuotationClass_4sjjrg_a0a0b" />
@@ -28,57 +28,69 @@
   <unitInfo fileName="DequeType_Behavior.java" startLine="42" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DequeType_Behavior$QuotationClass_kzauu3_a0a0b0b" />
   <unitInfo fileName="QueueType_Behavior.java" startLine="43" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior$QuotationClass_1g15wz_a0a0b0b" />
   <unitInfo fileName="SortedSetType_Behavior.java" startLine="49" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_Behavior$QuotationClass_7p913d_a0a0b0b" />
-  <unitInfo fileName="SetType_Behavior.java" startLine="72" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior$QuotationClass_q66uze_a0a0b0e" />
   <unitInfo fileName="QueueType_Behavior.java" startLine="74" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior$QuotationClass_1g15wz_a0a0c0b" />
-  <unitInfo fileName="SetType_Behavior.java" startLine="103" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior$QuotationClass_q66uze_a0a0c0e" />
+  <unitInfo fileName="SetType_Behavior.java" startLine="84" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior$QuotationClass_q66uze_a0a0b0f" />
+  <unitInfo fileName="SetType_Behavior.java" startLine="115" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior$QuotationClass_q66uze_a0a0c0f" />
   <unitInfo fileName="CustomMapCreator_Behavior.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomMapCreator_Behavior" />
   <unitInfo fileName="PriorityQueueCreator_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_Behavior" />
   <unitInfo fileName="LinkedListCreator_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior" />
   <unitInfo fileName="HashSetCreator_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.HashSetCreator_Behavior" />
   <unitInfo fileName="ListCreatorWithInit_Behavior.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_Behavior" />
-  <unitInfo fileName="IteratorType_Behavior.java" startLine="22" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IteratorType_Behavior" />
   <unitInfo fileName="SortedMapType_Behavior.java" startLine="49" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_Behavior$QuotationClass_zek8do_a0a0b0b" />
   <unitInfo fileName="MapType_Behavior.java" startLine="56" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_Behavior$QuotationClass_icy1a5_a0a0b0c" />
   <unitInfo fileName="MapType_Behavior.java" startLine="101" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_Behavior$QuotationClass_icy1a5_a0a0c0c" />
-  <unitInfo fileName="SequenceType_Behavior.java" startLine="23" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_Behavior" />
   <unitInfo fileName="StackType_Behavior.java" startLine="21" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_Behavior" />
   <unitInfo fileName="DequeType_Behavior.java" startLine="21" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DequeType_Behavior" />
+  <unitInfo fileName="IteratorType_Behavior.java" startLine="22" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IteratorType_Behavior" />
   <unitInfo fileName="TreeSetCreator_Behavior.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.TreeSetCreator_Behavior" />
-  <unitInfo fileName="ListType_Behavior.java" startLine="27" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_Behavior" />
+  <unitInfo fileName="SequenceType_Behavior.java" startLine="23" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_Behavior" />
   <unitInfo fileName="SortedSetType_Behavior.java" startLine="24" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_Behavior" />
+  <unitInfo fileName="ListType_Behavior.java" startLine="27" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_Behavior" />
   <unitInfo fileName="QueueType_Behavior.java" startLine="21" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior" />
   <unitInfo fileName="SortedMapType_Behavior.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_Behavior" />
-  <unitInfo fileName="SetType_Behavior.java" startLine="28" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior" />
+  <unitInfo fileName="SetType_Behavior.java" startLine="28" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_Behavior" />
   <unitInfo fileName="MapType_Behavior.java" startLine="26" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_Behavior" />
   <root nodeId="1213877245174">
     <nodeInfo nodeId="1213877245179" fileName="SequenceType_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="145" />
     <nodeInfo nodeId="1213877245192" fileName="SequenceType_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="98" />
-    <nodeInfo nodeId="1213877245210" fileName="SequenceType_Behavior.java" startLine="34" startPosition="163" endLine="35" endPosition="87" />
-    <nodeInfo nodeId="1213877245221" fileName="SequenceType_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="28" />
-    <nodeInfo nodeId="1235575368807" fileName="SequenceType_Behavior.java" startLine="41" startPosition="87" endLine="42" endPosition="48" />
-    <nodeInfo nodeId="1235575391411" fileName="SequenceType_Behavior.java" startLine="42" startPosition="48" endLine="43" endPosition="130" />
-    <nodeInfo nodeId="1235575391417" fileName="SequenceType_Behavior.java" startLine="43" startPosition="130" endLine="44" endPosition="147" />
-    <nodeInfo nodeId="1235575397086" fileName="SequenceType_Behavior.java" startLine="44" startPosition="147" endLine="45" endPosition="57" />
-    <nodeInfo nodeId="1235575416914" fileName="SequenceType_Behavior.java" startLine="45" startPosition="57" endLine="46" endPosition="140" />
-    <nodeInfo nodeId="1235575416921" fileName="SequenceType_Behavior.java" startLine="46" startPosition="140" endLine="47" endPosition="148" />
-    <nodeInfo nodeId="1235575432703" fileName="SequenceType_Behavior.java" startLine="47" startPosition="148" endLine="48" endPosition="58" />
-    <nodeInfo nodeId="1235575439927" fileName="SequenceType_Behavior.java" startLine="48" startPosition="58" endLine="49" endPosition="18" />
-    <nodeInfo nodeId="3078742637637080246" fileName="SequenceType_Behavior.java" startLine="52" startPosition="80" endLine="53" endPosition="80" />
-    <nodeInfo nodeId="1213877245202" fileName="SequenceType_Behavior.java" startLine="33" startPosition="77" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="1213877245200" fileName="SequenceType_Behavior.java" startLine="32" startPosition="98" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1447667470349200727" fileName="SequenceType_Behavior.java" startLine="36" startPosition="76" endLine="37" endPosition="71" />
+    <nodeInfo nodeId="1213877245210" fileName="SequenceType_Behavior.java" startLine="41" startPosition="165" endLine="42" endPosition="89" />
+    <nodeInfo nodeId="1213877245221" fileName="SequenceType_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="28" />
+    <nodeInfo nodeId="1447667470349161954" fileName="SequenceType_Behavior.java" startLine="49" startPosition="95" endLine="50" endPosition="16" />
+    <nodeInfo nodeId="1235575368807" fileName="SequenceType_Behavior.java" startLine="53" startPosition="87" endLine="54" endPosition="48" />
+    <nodeInfo nodeId="1235575391411" fileName="SequenceType_Behavior.java" startLine="54" startPosition="48" endLine="55" endPosition="130" />
+    <nodeInfo nodeId="1235575391417" fileName="SequenceType_Behavior.java" startLine="55" startPosition="130" endLine="56" endPosition="147" />
+    <nodeInfo nodeId="1235575397086" fileName="SequenceType_Behavior.java" startLine="56" startPosition="147" endLine="57" endPosition="57" />
+    <nodeInfo nodeId="1235575416914" fileName="SequenceType_Behavior.java" startLine="57" startPosition="57" endLine="58" endPosition="140" />
+    <nodeInfo nodeId="1235575416921" fileName="SequenceType_Behavior.java" startLine="58" startPosition="140" endLine="59" endPosition="148" />
+    <nodeInfo nodeId="1235575432703" fileName="SequenceType_Behavior.java" startLine="59" startPosition="148" endLine="60" endPosition="58" />
+    <nodeInfo nodeId="1235575439927" fileName="SequenceType_Behavior.java" startLine="60" startPosition="58" endLine="61" endPosition="18" />
+    <nodeInfo nodeId="3078742637637080246" fileName="SequenceType_Behavior.java" startLine="64" startPosition="80" endLine="65" endPosition="80" />
+    <nodeInfo nodeId="1447667470349200725" fileName="SequenceType_Behavior.java" startLine="35" startPosition="165" endLine="38" endPosition="11" />
+    <nodeInfo nodeId="1213877245202" fileName="SequenceType_Behavior.java" startLine="40" startPosition="14" endLine="43" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161991" fileName="SequenceType_Behavior.java" startLine="40" startPosition="12" endLine="44" endPosition="7" />
+    <nodeInfo nodeId="1447667470349200717" fileName="SequenceType_Behavior.java" startLine="34" startPosition="135" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161983" fileName="SequenceType_Behavior.java" startLine="33" startPosition="77" endLine="44" endPosition="7" />
+    <nodeInfo nodeId="1213877245200" fileName="SequenceType_Behavior.java" startLine="32" startPosition="98" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1213877245176" fileName="SequenceType_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
     <scopeInfo nodeId="1213877245178" fileName="SequenceType_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="145" />
-    <scopeInfo nodeId="1213877245209" fileName="SequenceType_Behavior.java" startLine="34" startPosition="163" endLine="35" endPosition="87" />
-    <scopeInfo nodeId="3078742637637080245" fileName="SequenceType_Behavior.java" startLine="52" startPosition="80" endLine="53" endPosition="80" />
-    <scopeInfo nodeId="1213877245201" fileName="SequenceType_Behavior.java" startLine="33" startPosition="77" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1213877245202" fileName="SequenceType_Behavior.java" startLine="33" startPosition="77" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1213877245191" fileName="SequenceType_Behavior.java" startLine="31" startPosition="88" endLine="38" endPosition="28">
-      <varInfo nodeId="1213877245193" varName="variableSuffixes" />
-    </scopeInfo>
-    <scopeInfo nodeId="1235575347100" fileName="SequenceType_Behavior.java" startLine="41" startPosition="87" endLine="49" endPosition="18">
+    <scopeInfo nodeId="1447667470349200726" fileName="SequenceType_Behavior.java" startLine="36" startPosition="76" endLine="37" endPosition="71" />
+    <scopeInfo nodeId="1213877245209" fileName="SequenceType_Behavior.java" startLine="41" startPosition="165" endLine="42" endPosition="89" />
+    <scopeInfo nodeId="1447667470349161953" fileName="SequenceType_Behavior.java" startLine="49" startPosition="95" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="3078742637637080245" fileName="SequenceType_Behavior.java" startLine="64" startPosition="80" endLine="65" endPosition="80" />
+    <scopeInfo nodeId="1447667470349200724" fileName="SequenceType_Behavior.java" startLine="35" startPosition="165" endLine="38" endPosition="11" />
+    <scopeInfo nodeId="1213877245202" fileName="SequenceType_Behavior.java" startLine="40" startPosition="14" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161992" fileName="SequenceType_Behavior.java" startLine="40" startPosition="14" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161984" fileName="SequenceType_Behavior.java" startLine="34" startPosition="135" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200717" fileName="SequenceType_Behavior.java" startLine="34" startPosition="135" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1235575347100" fileName="SequenceType_Behavior.java" startLine="53" startPosition="87" endLine="61" endPosition="18">
       <varInfo nodeId="1235575416915" varName="singCreator" />
       <varInfo nodeId="1235575368808" varName="result" />
       <varInfo nodeId="1235575391412" varName="seqCreator" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877245201" fileName="SequenceType_Behavior.java" startLine="33" startPosition="77" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="1213877245191" fileName="SequenceType_Behavior.java" startLine="31" startPosition="88" endLine="46" endPosition="28">
+      <varInfo nodeId="1213877245193" varName="variableSuffixes" />
     </scopeInfo>
   </root>
   <root nodeId="1213877497462">
@@ -92,39 +104,51 @@
   <root nodeId="1213877511286">
     <nodeInfo nodeId="1213877511291" fileName="ListType_Behavior.java" startLine="33" startPosition="78" endLine="34" endPosition="195" />
     <nodeInfo nodeId="1213877511304" fileName="ListType_Behavior.java" startLine="37" startPosition="88" endLine="38" endPosition="99" />
-    <nodeInfo nodeId="1213877511322" fileName="ListType_Behavior.java" startLine="40" startPosition="163" endLine="41" endPosition="87" />
-    <nodeInfo nodeId="1213877511333" fileName="ListType_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="28" />
-    <nodeInfo nodeId="1213877511339" fileName="ListType_Behavior.java" startLine="47" startPosition="80" endLine="48" endPosition="131" />
-    <nodeInfo nodeId="1213877511345" fileName="ListType_Behavior.java" startLine="48" startPosition="131" endLine="49" endPosition="144" />
-    <nodeInfo nodeId="1213877511356" fileName="ListType_Behavior.java" startLine="49" startPosition="144" endLine="50" endPosition="19" />
-    <nodeInfo nodeId="1227009867418" fileName="ListType_Behavior.java" startLine="53" startPosition="113" endLine="54" endPosition="45" />
-    <nodeInfo nodeId="1227009884961" fileName="ListType_Behavior.java" startLine="54" startPosition="45" endLine="55" endPosition="126" />
-    <nodeInfo nodeId="1227009884967" fileName="ListType_Behavior.java" startLine="55" startPosition="126" endLine="56" endPosition="139" />
-    <nodeInfo nodeId="1227009893452" fileName="ListType_Behavior.java" startLine="56" startPosition="139" endLine="57" endPosition="46" />
-    <nodeInfo nodeId="1227009917853" fileName="ListType_Behavior.java" startLine="57" startPosition="46" endLine="58" endPosition="125" />
-    <nodeInfo nodeId="1227009917859" fileName="ListType_Behavior.java" startLine="58" startPosition="125" endLine="59" endPosition="140" />
-    <nodeInfo nodeId="1227009937823" fileName="ListType_Behavior.java" startLine="59" startPosition="140" endLine="60" endPosition="47" />
-    <nodeInfo nodeId="1331913329176292169" fileName="ListType_Behavior.java" startLine="60" startPosition="47" endLine="61" endPosition="129" />
-    <nodeInfo nodeId="1227009962009" fileName="ListType_Behavior.java" startLine="61" startPosition="129" endLine="62" endPosition="15" />
-    <nodeInfo nodeId="3078742637637080211" fileName="ListType_Behavior.java" startLine="65" startPosition="80" endLine="66" endPosition="76" />
-    <nodeInfo nodeId="1213877511314" fileName="ListType_Behavior.java" startLine="39" startPosition="77" endLine="42" endPosition="7" />
-    <nodeInfo nodeId="1213877511312" fileName="ListType_Behavior.java" startLine="38" startPosition="99" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="1447667470349200701" fileName="ListType_Behavior.java" startLine="42" startPosition="76" endLine="43" endPosition="71" />
+    <nodeInfo nodeId="1213877511322" fileName="ListType_Behavior.java" startLine="47" startPosition="165" endLine="48" endPosition="89" />
+    <nodeInfo nodeId="1213877511333" fileName="ListType_Behavior.java" startLine="51" startPosition="5" endLine="52" endPosition="28" />
+    <nodeInfo nodeId="1447667470349161948" fileName="ListType_Behavior.java" startLine="55" startPosition="95" endLine="56" endPosition="16" />
+    <nodeInfo nodeId="1213877511339" fileName="ListType_Behavior.java" startLine="59" startPosition="80" endLine="60" endPosition="131" />
+    <nodeInfo nodeId="1213877511345" fileName="ListType_Behavior.java" startLine="60" startPosition="131" endLine="61" endPosition="144" />
+    <nodeInfo nodeId="1213877511356" fileName="ListType_Behavior.java" startLine="61" startPosition="144" endLine="62" endPosition="19" />
+    <nodeInfo nodeId="1227009867418" fileName="ListType_Behavior.java" startLine="65" startPosition="113" endLine="66" endPosition="45" />
+    <nodeInfo nodeId="1227009884961" fileName="ListType_Behavior.java" startLine="66" startPosition="45" endLine="67" endPosition="126" />
+    <nodeInfo nodeId="1227009884967" fileName="ListType_Behavior.java" startLine="67" startPosition="126" endLine="68" endPosition="139" />
+    <nodeInfo nodeId="1227009893452" fileName="ListType_Behavior.java" startLine="68" startPosition="139" endLine="69" endPosition="46" />
+    <nodeInfo nodeId="1227009917853" fileName="ListType_Behavior.java" startLine="69" startPosition="46" endLine="70" endPosition="125" />
+    <nodeInfo nodeId="1227009917859" fileName="ListType_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="140" />
+    <nodeInfo nodeId="1227009937823" fileName="ListType_Behavior.java" startLine="71" startPosition="140" endLine="72" endPosition="47" />
+    <nodeInfo nodeId="1331913329176292169" fileName="ListType_Behavior.java" startLine="72" startPosition="47" endLine="73" endPosition="129" />
+    <nodeInfo nodeId="1227009962009" fileName="ListType_Behavior.java" startLine="73" startPosition="129" endLine="74" endPosition="15" />
+    <nodeInfo nodeId="3078742637637080211" fileName="ListType_Behavior.java" startLine="77" startPosition="80" endLine="78" endPosition="76" />
+    <nodeInfo nodeId="1447667470349200699" fileName="ListType_Behavior.java" startLine="41" startPosition="165" endLine="44" endPosition="11" />
+    <nodeInfo nodeId="1213877511314" fileName="ListType_Behavior.java" startLine="46" startPosition="14" endLine="49" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161980" fileName="ListType_Behavior.java" startLine="46" startPosition="12" endLine="50" endPosition="7" />
+    <nodeInfo nodeId="1447667470349200691" fileName="ListType_Behavior.java" startLine="40" startPosition="135" endLine="45" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161965" fileName="ListType_Behavior.java" startLine="39" startPosition="77" endLine="50" endPosition="7" />
+    <nodeInfo nodeId="1213877511312" fileName="ListType_Behavior.java" startLine="38" startPosition="99" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1213877511288" fileName="ListType_Behavior.java" startLine="30" startPosition="43" endLine="30" endPosition="43" />
     <scopeInfo nodeId="1213877511290" fileName="ListType_Behavior.java" startLine="33" startPosition="78" endLine="34" endPosition="195" />
-    <scopeInfo nodeId="1213877511321" fileName="ListType_Behavior.java" startLine="40" startPosition="163" endLine="41" endPosition="87" />
-    <scopeInfo nodeId="3078742637637080210" fileName="ListType_Behavior.java" startLine="65" startPosition="80" endLine="66" endPosition="76" />
-    <scopeInfo nodeId="1213877511313" fileName="ListType_Behavior.java" startLine="39" startPosition="77" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1213877511314" fileName="ListType_Behavior.java" startLine="39" startPosition="77" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1213877511338" fileName="ListType_Behavior.java" startLine="47" startPosition="80" endLine="50" endPosition="19">
+    <scopeInfo nodeId="1447667470349200700" fileName="ListType_Behavior.java" startLine="42" startPosition="76" endLine="43" endPosition="71" />
+    <scopeInfo nodeId="1213877511321" fileName="ListType_Behavior.java" startLine="47" startPosition="165" endLine="48" endPosition="89" />
+    <scopeInfo nodeId="1447667470349161947" fileName="ListType_Behavior.java" startLine="55" startPosition="95" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="3078742637637080210" fileName="ListType_Behavior.java" startLine="77" startPosition="80" endLine="78" endPosition="76" />
+    <scopeInfo nodeId="1447667470349200698" fileName="ListType_Behavior.java" startLine="41" startPosition="165" endLine="44" endPosition="11" />
+    <scopeInfo nodeId="1213877511314" fileName="ListType_Behavior.java" startLine="46" startPosition="14" endLine="49" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161981" fileName="ListType_Behavior.java" startLine="46" startPosition="14" endLine="49" endPosition="9" />
+    <scopeInfo nodeId="1213877511338" fileName="ListType_Behavior.java" startLine="59" startPosition="80" endLine="62" endPosition="19">
       <varInfo nodeId="1213877511340" varName="creator" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877511303" fileName="ListType_Behavior.java" startLine="37" startPosition="88" endLine="44" endPosition="28">
-      <varInfo nodeId="1213877511305" varName="variableSuffixes" />
-    </scopeInfo>
-    <scopeInfo nodeId="7602110602933345722" fileName="ListType_Behavior.java" startLine="53" startPosition="113" endLine="62" endPosition="15">
+    <scopeInfo nodeId="1447667470349161966" fileName="ListType_Behavior.java" startLine="40" startPosition="135" endLine="45" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200691" fileName="ListType_Behavior.java" startLine="40" startPosition="135" endLine="45" endPosition="9" />
+    <scopeInfo nodeId="7602110602933345722" fileName="ListType_Behavior.java" startLine="65" startPosition="113" endLine="74" endPosition="15">
       <varInfo nodeId="1227009867419" varName="res" />
       <varInfo nodeId="1227009917854" varName="llc" />
       <varInfo nodeId="1227009884962" varName="lc" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877511313" fileName="ListType_Behavior.java" startLine="39" startPosition="77" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="1213877511303" fileName="ListType_Behavior.java" startLine="37" startPosition="88" endLine="52" endPosition="28">
+      <varInfo nodeId="1213877511305" varName="variableSuffixes" />
     </scopeInfo>
   </root>
   <root nodeId="1213877520358">
@@ -148,62 +172,98 @@
   <root nodeId="1226515539540">
     <nodeInfo nodeId="1226515541882" fileName="SetType_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="195" />
     <nodeInfo nodeId="1226515541896" fileName="SetType_Behavior.java" startLine="38" startPosition="88" endLine="39" endPosition="98" />
-    <nodeInfo nodeId="1226515541914" fileName="SetType_Behavior.java" startLine="41" startPosition="163" endLine="42" endPosition="87" />
-    <nodeInfo nodeId="1226515541925" fileName="SetType_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="28" />
-    <nodeInfo nodeId="1240217589371" fileName="SetType_Behavior.java" startLine="48" startPosition="80" endLine="49" endPosition="16" />
-    <nodeInfo nodeId="1240217449792" fileName="SetType_Behavior.java" startLine="52" startPosition="113" endLine="53" endPosition="48" />
-    <nodeInfo nodeId="1240217480466" fileName="SetType_Behavior.java" startLine="53" startPosition="48" endLine="54" endPosition="168" />
-    <nodeInfo nodeId="1240217564740" fileName="SetType_Behavior.java" startLine="54" startPosition="168" endLine="55" endPosition="168" />
-    <nodeInfo nodeId="1576845966386920530" fileName="SetType_Behavior.java" startLine="55" startPosition="168" endLine="56" endPosition="132" />
-    <nodeInfo nodeId="1240217585270" fileName="SetType_Behavior.java" startLine="56" startPosition="132" endLine="57" endPosition="18" />
-    <nodeInfo nodeId="3078742637637080166" fileName="SetType_Behavior.java" startLine="60" startPosition="80" endLine="61" endPosition="75" />
-    <nodeInfo nodeId="1226515541906" fileName="SetType_Behavior.java" startLine="40" startPosition="77" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="1226515541904" fileName="SetType_Behavior.java" startLine="39" startPosition="98" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="1447667470349200749" fileName="SetType_Behavior.java" startLine="43" startPosition="76" endLine="44" endPosition="71" />
+    <nodeInfo nodeId="1226515541914" fileName="SetType_Behavior.java" startLine="48" startPosition="165" endLine="49" endPosition="89" />
+    <nodeInfo nodeId="1226515541925" fileName="SetType_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="28" />
+    <nodeInfo nodeId="1447667470349161960" fileName="SetType_Behavior.java" startLine="56" startPosition="95" endLine="57" endPosition="16" />
+    <nodeInfo nodeId="1240217589371" fileName="SetType_Behavior.java" startLine="60" startPosition="80" endLine="61" endPosition="16" />
+    <nodeInfo nodeId="1240217449792" fileName="SetType_Behavior.java" startLine="64" startPosition="113" endLine="65" endPosition="48" />
+    <nodeInfo nodeId="1240217480466" fileName="SetType_Behavior.java" startLine="65" startPosition="48" endLine="66" endPosition="168" />
+    <nodeInfo nodeId="1240217564740" fileName="SetType_Behavior.java" startLine="66" startPosition="168" endLine="67" endPosition="168" />
+    <nodeInfo nodeId="1576845966386920530" fileName="SetType_Behavior.java" startLine="67" startPosition="168" endLine="68" endPosition="132" />
+    <nodeInfo nodeId="1240217585270" fileName="SetType_Behavior.java" startLine="68" startPosition="132" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="3078742637637080166" fileName="SetType_Behavior.java" startLine="72" startPosition="80" endLine="73" endPosition="75" />
+    <nodeInfo nodeId="1447667470349200747" fileName="SetType_Behavior.java" startLine="42" startPosition="165" endLine="45" endPosition="11" />
+    <nodeInfo nodeId="1226515541906" fileName="SetType_Behavior.java" startLine="47" startPosition="14" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="1447667470349162002" fileName="SetType_Behavior.java" startLine="47" startPosition="12" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="1447667470349200739" fileName="SetType_Behavior.java" startLine="41" startPosition="135" endLine="46" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161994" fileName="SetType_Behavior.java" startLine="40" startPosition="77" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="1226515541904" fileName="SetType_Behavior.java" startLine="39" startPosition="98" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1226515539542" fileName="SetType_Behavior.java" startLine="31" startPosition="43" endLine="31" endPosition="43" />
     <scopeInfo nodeId="1226515541881" fileName="SetType_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="195" />
-    <scopeInfo nodeId="1226515541913" fileName="SetType_Behavior.java" startLine="41" startPosition="163" endLine="42" endPosition="87" />
-    <scopeInfo nodeId="1226515541931" fileName="SetType_Behavior.java" startLine="48" startPosition="80" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="3078742637637080147" fileName="SetType_Behavior.java" startLine="60" startPosition="80" endLine="61" endPosition="75" />
-    <scopeInfo nodeId="1226515541905" fileName="SetType_Behavior.java" startLine="40" startPosition="77" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1226515541906" fileName="SetType_Behavior.java" startLine="40" startPosition="77" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="7602110602933345895" fileName="SetType_Behavior.java" startLine="52" startPosition="113" endLine="57" endPosition="18">
+    <scopeInfo nodeId="1447667470349200748" fileName="SetType_Behavior.java" startLine="43" startPosition="76" endLine="44" endPosition="71" />
+    <scopeInfo nodeId="1226515541913" fileName="SetType_Behavior.java" startLine="48" startPosition="165" endLine="49" endPosition="89" />
+    <scopeInfo nodeId="1447667470349161959" fileName="SetType_Behavior.java" startLine="56" startPosition="95" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="1226515541931" fileName="SetType_Behavior.java" startLine="60" startPosition="80" endLine="61" endPosition="16" />
+    <scopeInfo nodeId="3078742637637080147" fileName="SetType_Behavior.java" startLine="72" startPosition="80" endLine="73" endPosition="75" />
+    <scopeInfo nodeId="1447667470349200746" fileName="SetType_Behavior.java" startLine="42" startPosition="165" endLine="45" endPosition="11" />
+    <scopeInfo nodeId="1226515541906" fileName="SetType_Behavior.java" startLine="47" startPosition="14" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="1447667470349162003" fileName="SetType_Behavior.java" startLine="47" startPosition="14" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161995" fileName="SetType_Behavior.java" startLine="41" startPosition="135" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200739" fileName="SetType_Behavior.java" startLine="41" startPosition="135" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="7602110602933345895" fileName="SetType_Behavior.java" startLine="64" startPosition="113" endLine="69" endPosition="18">
       <varInfo nodeId="1240217449793" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1226515541895" fileName="SetType_Behavior.java" startLine="38" startPosition="88" endLine="45" endPosition="28">
+    <scopeInfo nodeId="1226515541905" fileName="SetType_Behavior.java" startLine="40" startPosition="77" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="1226515541895" fileName="SetType_Behavior.java" startLine="38" startPosition="88" endLine="53" endPosition="28">
       <varInfo nodeId="1226515541897" varName="variableSuffixes" />
     </scopeInfo>
   </root>
   <root nodeId="1237468611264">
     <nodeInfo nodeId="1237468613398" fileName="IteratorType_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="195" />
     <nodeInfo nodeId="1237468719545" fileName="IteratorType_Behavior.java" startLine="30" startPosition="88" endLine="31" endPosition="98" />
-    <nodeInfo nodeId="1237468719563" fileName="IteratorType_Behavior.java" startLine="33" startPosition="163" endLine="34" endPosition="87" />
-    <nodeInfo nodeId="1237468719574" fileName="IteratorType_Behavior.java" startLine="36" startPosition="5" endLine="37" endPosition="28" />
-    <nodeInfo nodeId="3078742637637080221" fileName="IteratorType_Behavior.java" startLine="40" startPosition="80" endLine="41" endPosition="80" />
-    <nodeInfo nodeId="1237468719555" fileName="IteratorType_Behavior.java" startLine="32" startPosition="77" endLine="35" endPosition="7" />
-    <nodeInfo nodeId="1237468719553" fileName="IteratorType_Behavior.java" startLine="31" startPosition="98" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="1447667470349200673" fileName="IteratorType_Behavior.java" startLine="35" startPosition="76" endLine="36" endPosition="71" />
+    <nodeInfo nodeId="1237468719563" fileName="IteratorType_Behavior.java" startLine="40" startPosition="165" endLine="41" endPosition="89" />
+    <nodeInfo nodeId="1237468719574" fileName="IteratorType_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="28" />
+    <nodeInfo nodeId="1447667470349161903" fileName="IteratorType_Behavior.java" startLine="48" startPosition="95" endLine="49" endPosition="16" />
+    <nodeInfo nodeId="3078742637637080221" fileName="IteratorType_Behavior.java" startLine="52" startPosition="80" endLine="53" endPosition="80" />
+    <nodeInfo nodeId="1447667470349200671" fileName="IteratorType_Behavior.java" startLine="34" startPosition="165" endLine="37" endPosition="11" />
+    <nodeInfo nodeId="1237468719555" fileName="IteratorType_Behavior.java" startLine="39" startPosition="14" endLine="42" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161921" fileName="IteratorType_Behavior.java" startLine="39" startPosition="12" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1447667470349200663" fileName="IteratorType_Behavior.java" startLine="33" startPosition="135" endLine="38" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161906" fileName="IteratorType_Behavior.java" startLine="32" startPosition="77" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1237468719553" fileName="IteratorType_Behavior.java" startLine="31" startPosition="98" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1237468611266" fileName="IteratorType_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
     <scopeInfo nodeId="1237468613397" fileName="IteratorType_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="195" />
-    <scopeInfo nodeId="1237468719562" fileName="IteratorType_Behavior.java" startLine="33" startPosition="163" endLine="34" endPosition="87" />
-    <scopeInfo nodeId="3078742637637080220" fileName="IteratorType_Behavior.java" startLine="40" startPosition="80" endLine="41" endPosition="80" />
-    <scopeInfo nodeId="1237468719554" fileName="IteratorType_Behavior.java" startLine="32" startPosition="77" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="1237468719555" fileName="IteratorType_Behavior.java" startLine="32" startPosition="77" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="1237468719544" fileName="IteratorType_Behavior.java" startLine="30" startPosition="88" endLine="37" endPosition="28">
+    <scopeInfo nodeId="1447667470349200672" fileName="IteratorType_Behavior.java" startLine="35" startPosition="76" endLine="36" endPosition="71" />
+    <scopeInfo nodeId="1237468719562" fileName="IteratorType_Behavior.java" startLine="40" startPosition="165" endLine="41" endPosition="89" />
+    <scopeInfo nodeId="1447667470349161900" fileName="IteratorType_Behavior.java" startLine="48" startPosition="95" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="3078742637637080220" fileName="IteratorType_Behavior.java" startLine="52" startPosition="80" endLine="53" endPosition="80" />
+    <scopeInfo nodeId="1447667470349200670" fileName="IteratorType_Behavior.java" startLine="34" startPosition="165" endLine="37" endPosition="11" />
+    <scopeInfo nodeId="1237468719555" fileName="IteratorType_Behavior.java" startLine="39" startPosition="14" endLine="42" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161922" fileName="IteratorType_Behavior.java" startLine="39" startPosition="14" endLine="42" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161907" fileName="IteratorType_Behavior.java" startLine="33" startPosition="135" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200663" fileName="IteratorType_Behavior.java" startLine="33" startPosition="135" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="1237468719554" fileName="IteratorType_Behavior.java" startLine="32" startPosition="77" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="1237468719544" fileName="IteratorType_Behavior.java" startLine="30" startPosition="88" endLine="45" endPosition="28">
       <varInfo nodeId="1237468719546" varName="variableSuffixes" />
     </scopeInfo>
   </root>
   <root nodeId="1237496376141">
     <nodeInfo nodeId="1237496377903" fileName="EnumeratorType_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="195" />
     <nodeInfo nodeId="1237496377921" fileName="EnumeratorType_Behavior.java" startLine="23" startPosition="88" endLine="24" endPosition="98" />
-    <nodeInfo nodeId="1237496377939" fileName="EnumeratorType_Behavior.java" startLine="26" startPosition="163" endLine="27" endPosition="87" />
-    <nodeInfo nodeId="1237496377950" fileName="EnumeratorType_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="28" />
-    <nodeInfo nodeId="1237496377931" fileName="EnumeratorType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="7" />
-    <nodeInfo nodeId="1237496377929" fileName="EnumeratorType_Behavior.java" startLine="24" startPosition="98" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1447667470349200651" fileName="EnumeratorType_Behavior.java" startLine="28" startPosition="76" endLine="29" endPosition="71" />
+    <nodeInfo nodeId="1237496377939" fileName="EnumeratorType_Behavior.java" startLine="33" startPosition="165" endLine="34" endPosition="89" />
+    <nodeInfo nodeId="1237496377950" fileName="EnumeratorType_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="28" />
+    <nodeInfo nodeId="1447667470349161864" fileName="EnumeratorType_Behavior.java" startLine="41" startPosition="95" endLine="42" endPosition="16" />
+    <nodeInfo nodeId="1447667470349200649" fileName="EnumeratorType_Behavior.java" startLine="27" startPosition="165" endLine="30" endPosition="11" />
+    <nodeInfo nodeId="1237496377931" fileName="EnumeratorType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161882" fileName="EnumeratorType_Behavior.java" startLine="32" startPosition="12" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="1447667470349200641" fileName="EnumeratorType_Behavior.java" startLine="26" startPosition="135" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161867" fileName="EnumeratorType_Behavior.java" startLine="25" startPosition="77" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="1237496377929" fileName="EnumeratorType_Behavior.java" startLine="24" startPosition="98" endLine="37" endPosition="5" />
     <scopeInfo nodeId="1237496376143" fileName="EnumeratorType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="1237496377902" fileName="EnumeratorType_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="195" />
-    <scopeInfo nodeId="1237496377938" fileName="EnumeratorType_Behavior.java" startLine="26" startPosition="163" endLine="27" endPosition="87" />
-    <scopeInfo nodeId="1237496377930" fileName="EnumeratorType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="1237496377931" fileName="EnumeratorType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="1237496377920" fileName="EnumeratorType_Behavior.java" startLine="23" startPosition="88" endLine="30" endPosition="28">
+    <scopeInfo nodeId="1447667470349200650" fileName="EnumeratorType_Behavior.java" startLine="28" startPosition="76" endLine="29" endPosition="71" />
+    <scopeInfo nodeId="1237496377938" fileName="EnumeratorType_Behavior.java" startLine="33" startPosition="165" endLine="34" endPosition="89" />
+    <scopeInfo nodeId="1447667470349161861" fileName="EnumeratorType_Behavior.java" startLine="41" startPosition="95" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="1447667470349200648" fileName="EnumeratorType_Behavior.java" startLine="27" startPosition="165" endLine="30" endPosition="11" />
+    <scopeInfo nodeId="1237496377931" fileName="EnumeratorType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161883" fileName="EnumeratorType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161868" fileName="EnumeratorType_Behavior.java" startLine="26" startPosition="135" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200641" fileName="EnumeratorType_Behavior.java" startLine="26" startPosition="135" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="1237496377930" fileName="EnumeratorType_Behavior.java" startLine="25" startPosition="77" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="1237496377920" fileName="EnumeratorType_Behavior.java" startLine="23" startPosition="88" endLine="38" endPosition="28">
       <varInfo nodeId="1237496377922" varName="variableSuffixes" />
     </scopeInfo>
   </root>
@@ -473,16 +533,28 @@
   <root nodeId="5686963296372576518">
     <nodeInfo nodeId="5686963296372576523" fileName="AbstractContainerType_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="195" />
     <nodeInfo nodeId="5686963296372577660" fileName="AbstractContainerType_Behavior.java" startLine="23" startPosition="88" endLine="24" endPosition="148" />
-    <nodeInfo nodeId="5686963296372577678" fileName="AbstractContainerType_Behavior.java" startLine="26" startPosition="163" endLine="27" endPosition="87" />
-    <nodeInfo nodeId="5686963296372577689" fileName="AbstractContainerType_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="28" />
-    <nodeInfo nodeId="5686963296372577670" fileName="AbstractContainerType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="7" />
-    <nodeInfo nodeId="5686963296372577668" fileName="AbstractContainerType_Behavior.java" startLine="24" startPosition="148" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1447667470349200628" fileName="AbstractContainerType_Behavior.java" startLine="28" startPosition="76" endLine="29" endPosition="71" />
+    <nodeInfo nodeId="5686963296372577678" fileName="AbstractContainerType_Behavior.java" startLine="33" startPosition="165" endLine="34" endPosition="89" />
+    <nodeInfo nodeId="5686963296372577689" fileName="AbstractContainerType_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="28" />
+    <nodeInfo nodeId="1447667470349161856" fileName="AbstractContainerType_Behavior.java" startLine="41" startPosition="95" endLine="42" endPosition="16" />
+    <nodeInfo nodeId="1447667470349200626" fileName="AbstractContainerType_Behavior.java" startLine="27" startPosition="165" endLine="30" endPosition="11" />
+    <nodeInfo nodeId="5686963296372577670" fileName="AbstractContainerType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161834" fileName="AbstractContainerType_Behavior.java" startLine="32" startPosition="12" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="1447667470349200618" fileName="AbstractContainerType_Behavior.java" startLine="26" startPosition="135" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="1447667470349161819" fileName="AbstractContainerType_Behavior.java" startLine="25" startPosition="77" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="5686963296372577668" fileName="AbstractContainerType_Behavior.java" startLine="24" startPosition="148" endLine="37" endPosition="5" />
     <scopeInfo nodeId="5686963296372576520" fileName="AbstractContainerType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="5686963296372576522" fileName="AbstractContainerType_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="195" />
-    <scopeInfo nodeId="5686963296372577677" fileName="AbstractContainerType_Behavior.java" startLine="26" startPosition="163" endLine="27" endPosition="87" />
-    <scopeInfo nodeId="5686963296372577669" fileName="AbstractContainerType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="5686963296372577670" fileName="AbstractContainerType_Behavior.java" startLine="25" startPosition="77" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="5686963296372577659" fileName="AbstractContainerType_Behavior.java" startLine="23" startPosition="88" endLine="30" endPosition="28">
+    <scopeInfo nodeId="1447667470349200627" fileName="AbstractContainerType_Behavior.java" startLine="28" startPosition="76" endLine="29" endPosition="71" />
+    <scopeInfo nodeId="5686963296372577677" fileName="AbstractContainerType_Behavior.java" startLine="33" startPosition="165" endLine="34" endPosition="89" />
+    <scopeInfo nodeId="1447667470349161852" fileName="AbstractContainerType_Behavior.java" startLine="41" startPosition="95" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="1447667470349200625" fileName="AbstractContainerType_Behavior.java" startLine="27" startPosition="165" endLine="30" endPosition="11" />
+    <scopeInfo nodeId="1447667470349161835" fileName="AbstractContainerType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="5686963296372577670" fileName="AbstractContainerType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="1447667470349161820" fileName="AbstractContainerType_Behavior.java" startLine="26" startPosition="135" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200618" fileName="AbstractContainerType_Behavior.java" startLine="26" startPosition="135" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="5686963296372577669" fileName="AbstractContainerType_Behavior.java" startLine="25" startPosition="77" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="5686963296372577659" fileName="AbstractContainerType_Behavior.java" startLine="23" startPosition="88" endLine="38" endPosition="28">
       <varInfo nodeId="5686963296372577661" varName="variableSuffixes" />
     </scopeInfo>
   </root>

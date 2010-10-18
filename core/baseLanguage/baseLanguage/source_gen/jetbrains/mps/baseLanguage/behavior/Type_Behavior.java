@@ -25,6 +25,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337304 = {SNode.class};
+  private static Class[] PARAMETERS_1447667470349154499 = {SNode.class};
   private static Class[] PARAMETERS_1213877337313 = {SNode.class};
   private static Class[] PARAMETERS_702942408396803226 = {SNode.class};
   private static Class[] PARAMETERS_1213877337320 = {SNode.class};
@@ -45,6 +46,10 @@ public class Type_Behavior {
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return NameUtil.splitByCamels(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode));
+  }
+
+  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return false;
   }
 
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
@@ -90,10 +95,10 @@ public class Type_Behavior {
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     {
-      IMatchingPattern pattern_smb55n_a0k = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode coercedNode_smb55n_a0k = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0k);
-      if (coercedNode_smb55n_a0k != null) {
-        return new Type_Behavior.QuotationClass_smb55n_a0a0c0a0l().createNode(SLinkOperations.getTarget(coercedNode_smb55n_a0k, "classifier", false));
+      IMatchingPattern pattern_smb55n_a0l = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode coercedNode_smb55n_a0l = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0l);
+      if (coercedNode_smb55n_a0l != null) {
+        return new Type_Behavior.QuotationClass_smb55n_a0a0c0a0m().createNode(SLinkOperations.getTarget(coercedNode_smb55n_a0l, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -102,9 +107,9 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      GeneratedMatchingPattern pattern_smb55n_a0l = new Type_Behavior.Pattern_smb55n_a0a0a0a21(thisNode);
-      SNode coercedNode_smb55n_a0l = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0l);
-      if (coercedNode_smb55n_a0l != null) {
+      GeneratedMatchingPattern pattern_smb55n_a0m = new Type_Behavior.Pattern_smb55n_a0a0a0a31(thisNode);
+      SNode coercedNode_smb55n_a0m = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0m);
+      if (coercedNode_smb55n_a0m != null) {
         return true;
       } else {
       }
@@ -134,6 +139,10 @@ public class Type_Behavior {
 
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
     return (List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
+  }
+
+  public static boolean call_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_hasPluralVariableSuffixes_1447667470349154499", PARAMETERS_1447667470349154499);
   }
 
   public static String call_getErasureSignature_1213877337313(SNode thisNode) {
@@ -196,6 +205,10 @@ public class Type_Behavior {
     return (List<String>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
 
+  public static boolean callSuper_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_hasPluralVariableSuffixes_1447667470349154499", PARAMETERS_1447667470349154499);
+  }
+
   public static String callSuper_getErasureSignature_1213877337313(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getErasureSignature_1213877337313", PARAMETERS_1213877337313);
   }
@@ -252,8 +265,8 @@ public class Type_Behavior {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_jniSignature_8847328628797633411", PARAMETERS_8847328628797633411);
   }
 
-  public static class QuotationClass_smb55n_a0a0c0a0l {
-    public QuotationClass_smb55n_a0a0c0a0l() {
+  public static class QuotationClass_smb55n_a0a0c0a0m {
+    public QuotationClass_smb55n_a0a0c0a0m() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -270,18 +283,18 @@ public class Type_Behavior {
     }
   }
 
-  public static class Pattern_smb55n_a0a0a0a21 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField_smb55n_a0a0a0a11;
+  public static class Pattern_smb55n_a0a0a0a31 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField_smb55n_a0a0a0a21;
 
-    public Pattern_smb55n_a0a0a0a21(Object parameter_smb55n_a0a0a0a11) {
-      this.AntiquotationField_smb55n_a0a0a0a11 = parameter_smb55n_a0a0a0a11;
+    public Pattern_smb55n_a0a0a0a31(Object parameter_smb55n_a0a0a0a21) {
+      this.AntiquotationField_smb55n_a0a0a0a21 = parameter_smb55n_a0a0a0a21;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_smb55n_a0a0a11;
-        nodeToMatch_smb55n_a0a0a11 = nodeToMatch;
-        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_smb55n_a0a0a11.getConceptFqName()))) {
+        SNode nodeToMatch_smb55n_a0a0a21;
+        nodeToMatch_smb55n_a0a0a21 = nodeToMatch;
+        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_smb55n_a0a0a21.getConceptFqName()))) {
           return false;
         }
       }

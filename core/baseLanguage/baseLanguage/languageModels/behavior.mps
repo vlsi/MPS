@@ -5816,6 +5816,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155723836" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1447667470349154499">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="hasPluralVariableSuffixes" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1447667470349158010" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1447667470349154505" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349154502">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447667470349154506">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1447667470349154507">
+            <property name="value:3" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877337313">
       <property name="name" value="getErasureSignature" />
       <property name="isVirtual" value="true" />
@@ -9027,33 +9040,98 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1213877352298">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877352299">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1213877352300">
-              <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1213877352301">
-                <property name="name:7" value="suffix" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1447667470349157985">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349157986">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1447667470349200578">
+                  <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1447667470349200579">
+                    <property name="name:7" value="suffix" />
+                  </node>
+                  <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447667470349200580">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447667470349200581">
+                      <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1447667470349200582" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1447667470349200583">
+                        <link role="link:16" targetNodeId="1.1070534760952:3" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1447667470349200584">
+                      <link role="baseMethodDeclaration:16" targetNodeId="1213877337304" resolveInfo="getVariableSuffixes" />
+                    </node>
+                  </node>
+                  <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349200585">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1447667470349200593">
+                      <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349200594">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447667470349200607">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447667470349200608">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1447667470349200609">
+                              <link role="variableDeclaration:3" targetNodeId="1213877352291" resolveInfo="variableSuffixes" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1447667470349200610">
+                              <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1447667470349200613">
+                                <link role="variable:7" targetNodeId="1447667470349200579" resolveInfo="suffix" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1447667470349200605">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447667470349200598">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1447667470349200597">
+                            <link role="variableDeclaration:3" targetNodeId="1213877352291" resolveInfo="variableSuffixes" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation:7" id="1447667470349200602">
+                            <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1447667470349200604">
+                              <link role="variable:7" targetNodeId="1447667470349200579" resolveInfo="suffix" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877352302">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877352303">
-                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877352304" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1213877352305">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447667470349157989">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1447667470349157990">
+                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1447667470349157991" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1447667470349157992">
                     <link role="link:16" targetNodeId="1.1070534760952:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1213877352306">
-                  <link role="baseMethodDeclaration:16" targetNodeId="1213877337304" resolveInfo="getVariableSuffixes" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1447667470349157993">
+                  <link role="baseMethodDeclaration:16" targetNodeId="1447667470349154499" resolveInfo="hasPluralVariableSuffixes" />
                 </node>
               </node>
-              <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877352307">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1213877352308">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877352309">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213877352310">
-                      <link role="variableDeclaration:3" targetNodeId="1213877352291" resolveInfo="variableSuffixes" />
+              <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1447667470349157994">
+                <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349157995">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1213877352300">
+                    <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1213877352301">
+                      <property name="name:7" value="suffix" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1213877352311">
-                      <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1213877352312">
-                        <link role="baseMethodDeclaration:3" targetNodeId="5.~NameUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
-                        <link role="classConcept:3" targetNodeId="5.~NameUtil" resolveInfo="NameUtil" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1213877352313">
-                          <link role="variable:7" targetNodeId="1213877352301" resolveInfo="suffix" />
+                    <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877352302">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877352303">
+                        <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877352304" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1213877352305">
+                          <link role="link:16" targetNodeId="1.1070534760952:3" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1213877352306">
+                        <link role="baseMethodDeclaration:16" targetNodeId="1213877337304" resolveInfo="getVariableSuffixes" />
+                      </node>
+                    </node>
+                    <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877352307">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1213877352308">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877352309">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213877352310">
+                            <link role="variableDeclaration:3" targetNodeId="1213877352291" resolveInfo="variableSuffixes" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1213877352311">
+                            <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1213877352312">
+                              <link role="baseMethodDeclaration:3" targetNodeId="5.~NameUtil.pluralize(java.lang.String):java.lang.String" resolveInfo="pluralize" />
+                              <link role="classConcept:3" targetNodeId="5.~NameUtil" resolveInfo="NameUtil" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1213877352313">
+                                <link role="variable:7" targetNodeId="1213877352301" resolveInfo="suffix" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -9082,6 +9160,19 @@
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4859441577819369038" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724270" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1447667470349154515">
+      <property name="name" value="hasPluralVariableSuffixes" />
+      <link role="overriddenMethod" targetNodeId="1447667470349154499" resolveInfo="hasPluralVariableSuffixes" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349154518">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447667470349154522">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1447667470349154523">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1447667470349154520" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1447667470349158009" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877352323">
       <property name="name" value="getAbstractCreator" />

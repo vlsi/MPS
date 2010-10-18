@@ -40,6 +40,10 @@ public class SNodeListType_Behavior {
     return variableSuffixes;
   }
 
+  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return true;
+  }
+
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     SNode creator = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeListCreator", null);
     SLinkOperations.setTarget(creator, "createdType", SNodeOperations.copyNode(thisNode), true);
@@ -47,15 +51,15 @@ public class SNodeListType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new SNodeListType_Behavior.QuotationClass_r176b6_a0a0e().createNode();
+    return new SNodeListType_Behavior.QuotationClass_r176b6_a0a0f().createNode();
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "elementConcept", false) == null);
   }
 
-  public static class QuotationClass_r176b6_a0a0e {
-    public QuotationClass_r176b6_a0a0e() {
+  public static class QuotationClass_r176b6_a0a0f {
+    public QuotationClass_r176b6_a0a0f() {
     }
 
     public SNode createNode() {

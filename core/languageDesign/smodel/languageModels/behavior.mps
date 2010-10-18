@@ -312,6 +312,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155725015" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1447667470349158013">
+      <property name="name" value="hasPluralVariableSuffixes" />
+      <link role="overriddenMethod" targetNodeId="12.1447667470349154499" resolveInfo="hasPluralVariableSuffixes" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1447667470349158016">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1447667470349158022">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1447667470349158023">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1447667470349158020" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1447667470349158021" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877274403">
       <property name="name" value="getAbstractCreator" />
       <property name="isPrivate" value="false" />

@@ -37,11 +37,23 @@ public class ListType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "list");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
-      for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
-        ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
+      if (Type_Behavior.call_hasPluralVariableSuffixes_1447667470349154499(SLinkOperations.getTarget(thisNode, "elementType", true))) {
+        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+          if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
+            ListSequence.fromList(variableSuffixes).addElement(suffix);
+          }
+        }
+      } else {
+        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+          ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
+        }
       }
     }
     return variableSuffixes;
+  }
+
+  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return true;
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
@@ -63,7 +75,7 @@ public class ListType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new ListType_Behavior.QuotationClass_ywnljw_a0a0f().createNode();
+    return new ListType_Behavior.QuotationClass_ywnljw_a0a0g().createNode();
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345720(SNode thisNode, SModel targetModel) {
@@ -74,8 +86,8 @@ public class ListType_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ListType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345720, targetModel);
   }
 
-  public static class QuotationClass_ywnljw_a0a0f {
-    public QuotationClass_ywnljw_a0a0f() {
+  public static class QuotationClass_ywnljw_a0a0g {
+    public QuotationClass_ywnljw_a0a0g() {
     }
 
     public SNode createNode() {

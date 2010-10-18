@@ -31,11 +31,23 @@ public class SequenceType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "seq");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
-      for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
-        ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
+      if (Type_Behavior.call_hasPluralVariableSuffixes_1447667470349154499(SLinkOperations.getTarget(thisNode, "elementType", true))) {
+        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+          if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
+            ListSequence.fromList(variableSuffixes).addElement(suffix);
+          }
+        }
+      } else {
+        for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+          ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
+        }
       }
     }
     return variableSuffixes;
+  }
+
+  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return true;
   }
 
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
@@ -50,11 +62,11 @@ public class SequenceType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new SequenceType_Behavior.QuotationClass_hzlnln_a0a0e().createNode();
+    return new SequenceType_Behavior.QuotationClass_hzlnln_a0a0f().createNode();
   }
 
-  public static class QuotationClass_hzlnln_a0a0e {
-    public QuotationClass_hzlnln_a0a0e() {
+  public static class QuotationClass_hzlnln_a0a0f {
+    public QuotationClass_hzlnln_a0a0f() {
     }
 
     public SNode createNode() {
