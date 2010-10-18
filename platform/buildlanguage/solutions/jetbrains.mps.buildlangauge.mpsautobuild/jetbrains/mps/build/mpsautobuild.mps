@@ -1458,6 +1458,10 @@
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472901">
       <property name="id:7" value="80208897-4572-437d-b50e-8f050cba9566" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="2947985314240598889">
+      <property name="id:7" value="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" />
+      <property name="name:7" value="jetbrains.mps.debug.apiLang" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472902">
     <property name="name:7" value="core.devkits" />

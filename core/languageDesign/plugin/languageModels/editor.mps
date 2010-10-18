@@ -5251,13 +5251,13 @@
     <link role="conceptDeclaration:32" targetNodeId="1.5124230653299345208:23" resolveInfo="DebugInfoInitializer" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5124230653299630704">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5124230653299630707">
-        <property name="text:32" value="Debug info initializer" />
+        <property name="text:32" value="Trace info initializer" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="5124230653299630708">
           <property name="flag:32" value="true" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5124230653299630723">
-        <property name="text:32" value="concepts to add debug info:" />
+        <property name="text:32" value="concepts to trace:" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="5124230653299630724">
           <property name="flag:32" value="true" />
         </node>

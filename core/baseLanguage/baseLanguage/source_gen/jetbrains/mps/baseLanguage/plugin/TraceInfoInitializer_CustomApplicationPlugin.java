@@ -4,14 +4,9 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.debug.api.DebugInfoManager;
-import jetbrains.mps.util.Mapper2;
-import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
-import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
@@ -21,35 +16,13 @@ import jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
-public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
-  private static Logger LOG = Logger.getLogger(DebugInfoInitializer_CustomApplicationPlugin.class);
+public class TraceInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
+  private static Logger LOG = Logger.getLogger(TraceInfoInitializer_CustomApplicationPlugin.class);
 
-  public DebugInfoInitializer_CustomApplicationPlugin() {
+  public TraceInfoInitializer_CustomApplicationPlugin() {
   }
 
   public void doInit() {
-    DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
     traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
     traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
@@ -121,12 +94,6 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
   }
 
   public void doDispose() {
-    DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement");
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
     traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
     traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");

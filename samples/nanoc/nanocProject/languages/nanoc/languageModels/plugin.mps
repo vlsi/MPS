@@ -8,6 +8,8 @@
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
@@ -268,24 +270,6 @@
   <node type="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer:23" id="4211204866430906520">
     <node role="conceptsToDebug:23" type="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem:23" id="4211204866430906521">
       <link role="declaration:23" targetNodeId="28.7211731935130582982" resolveInfo="CStatement" />
-      <node role="createBreakpoint:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint:23" id="4211204866430906522">
-        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4211204866430906523">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4211204866430939956">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4211204866430939958">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4211204866431007103">
-                <link role="baseMethodDeclaration:3" targetNodeId="29.3990508698139426936" resolveInfo="GDBBreakpoint" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4211204866431007104">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4211204866431007106">
-                    <link role="baseMethodDeclaration:3" targetNodeId="22.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
-                    <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode:23" id="4211204866431007107" />
-                  </node>
-                </node>
-                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project:23" id="4211204866431007109" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration:23" id="3434145137065387923">
@@ -882,6 +866,29 @@
                   </node>
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1752598729520628401" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.debug.apiLang.structure.DebugInfoProvider" id="2566194812863155791">
+    <node role="breakpointableConcepts" type="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem" id="2566194812863155792">
+      <link role="declaration" targetNodeId="28.7211731935130582982" resolveInfo="CStatement" />
+      <node role="createBreakpoint" type="jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint" id="2566194812863155793">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566194812863155794">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2566194812863155795">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2566194812863155796">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2566194812863155797">
+                <link role="baseMethodDeclaration:3" targetNodeId="29.3990508698139426936" resolveInfo="GDBBreakpoint" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2566194812863155798">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2566194812863155799">
+                    <link role="baseMethodDeclaration:3" targetNodeId="22.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
+                    <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode" id="2566194812863155803" />
+                  </node>
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project" id="2566194812863155802" />
               </node>
             </node>
           </node>

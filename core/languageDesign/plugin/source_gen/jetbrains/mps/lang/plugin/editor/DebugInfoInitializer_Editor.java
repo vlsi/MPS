@@ -76,7 +76,7 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dqg0vp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Debug info initializer");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Trace info initializer");
     editorCell.setCellId("Constant_dqg0vp_a0");
     {
       Style style = editorCell.getStyle();
@@ -87,7 +87,7 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dqg0vp_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts to add debug info:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts to trace:");
     editorCell.setCellId("Constant_dqg0vp_b0");
     {
       Style style = editorCell.getStyle();

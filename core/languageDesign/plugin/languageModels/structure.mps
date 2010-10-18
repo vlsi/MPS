@@ -3739,7 +3739,7 @@
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6516056543317148534">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="createBreakpoint" />
-      <property name="sourceCardinality:0" value="1" />
+      <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="6516056543316792926:23" resolveInfo="ConceptFunction_CreateBreakpoint" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5124230653299542674">
@@ -4318,6 +4318,7 @@
       <property name="value:0" value="debuggableNode" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1270798772176070200" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6516056543316809582">
     <property name="package:0" value="Custom.DebugInfo" />
@@ -4333,6 +4334,7 @@
         <link role="classifier:3" targetNodeId="23.~Project" resolveInfo="Project" />
       </node>
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1270798772176070199" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3205675194086589964">
     <property name="package:0" value="Actions.Action" />

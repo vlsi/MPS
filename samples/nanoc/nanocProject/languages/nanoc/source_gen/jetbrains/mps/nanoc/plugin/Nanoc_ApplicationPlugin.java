@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class Nanoc_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new DebugInfoInitializer_CustomApplicationPlugin());
+    this.addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
+    this.addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
     return res;
   }
 
