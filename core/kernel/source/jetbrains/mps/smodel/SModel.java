@@ -444,8 +444,6 @@ public class SModel {
     checkNotDisposed();
     if (myDisposed) return null;
 
-    SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
     enforceFullLoad();
     return myIdToNodeMap.get(nodeId);
   }
