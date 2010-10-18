@@ -52,11 +52,13 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
+    if (!myProject.isDefault()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          LibraryInitializer.getInstance().update();
+        }
+      });
+    }
   }
 
   public void projectOpened() {

@@ -19,6 +19,7 @@
     <orderEntry type="library" name="Commons-codec" level="project" />
     <orderEntry type="module" module-name="javaParser" />
     <orderEntry type="module" module-name="structure" />
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
   </component>
 </module>
 
