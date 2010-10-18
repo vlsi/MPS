@@ -561,7 +561,6 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return renderer.getAnchorCell(nodeCell);
   }
 
-  @Override
   public String getMPSTooltipText(MouseEvent e) {
     if (isInFoldingArea(e)) {
       for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
