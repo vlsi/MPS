@@ -90,7 +90,7 @@ public class GenerationSession {
       // throw new GenerationCanceledException();
     }
 
-    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature());
+    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), null);
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
     if (filter.canOptimize()) {

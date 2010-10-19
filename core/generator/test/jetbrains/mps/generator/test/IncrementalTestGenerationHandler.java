@@ -17,13 +17,17 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.generator.impl.GenerationFilter;
+import jetbrains.mps.generator.impl.GenerationFilter.IncrementalReporter;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.messages.IMessageHandler;
@@ -57,11 +61,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private Map<String,String> generatedContent = new HashMap<String,String>();
   private Map<String,String> existingContent;
-  private Map<String,String> replaceMap = new HashMap<String, String>();
   private IFile myFilesDir;
   private int timesCalled = 0;
   private boolean myCheckIncremental = false;
   private GenerationDependencies myLastDependencies;
+
+  private GenerationOptions myGenOptions;
 
   public IncrementalTestGenerationHandler() {
   }
@@ -70,7 +75,8 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     this.existingContent = existingContent;
   }
 
-  public void checkIncremental() {
+  public void checkIncremental(GenerationOptions op) {
+    myGenOptions = op;
     myCheckIncremental = true;
   }
 
@@ -127,7 +133,18 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     if(myCheckIncremental) {
       GenerationDependencies dep = status.getDependencies();
-      Assert.assertTrue("was not optimized", dep.getFromCacheCount() + dep.getSkippedCount() > 0);
+      if(dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
+        final StringBuilder sb = new StringBuilder("Not optimized:\n");
+        new GenerationFilter(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel()).getSignature(), new IncrementalReporter() {
+          @Override
+          public void report(String message) {
+            sb.append(message);
+            sb.append('\n');
+          }
+        });
+        sb.append('\n');
+        Assert.fail(sb.toString());
+      }
     }
 
     if (status.isOk()) {

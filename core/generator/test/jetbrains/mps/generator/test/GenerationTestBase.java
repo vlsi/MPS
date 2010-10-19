@@ -202,7 +202,7 @@ public class GenerationTestBase {
         options = GenerationOptions.getDefaults()
           .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
         generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
-        generationHandler.checkIncremental();
+        generationHandler.checkIncremental(options);
         long start = System.nanoTime();
         gm.generateModels(
           Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
