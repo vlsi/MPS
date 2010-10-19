@@ -100,7 +100,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
 
             if (model == null) return;
 
-            for (final SNode node : (List<SNode>) getNodesToIterate(model)) {
+            for (final SNode node : getNodesToIterate(model)) {
               String persistentName = node.getPersistentProperty(INamedConcept.NAME);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConceptFqName();
