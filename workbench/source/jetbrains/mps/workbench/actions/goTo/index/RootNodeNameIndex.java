@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
+import com.intellij.util.containers.EmptyIterable;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
@@ -35,25 +36,14 @@ public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
     return NAME;
   }
 
-  public List<SNode> getNodesToIterate(SModel model) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : model.roots()) {
-      if (!(node.getSNodeId() instanceof Foreign)) {
-        ArrayList<SNode> res = new ArrayList<SNode>();
-        for (SNode root : model.roots()) {
-          res.add(root);
-        }
-        return res;
-      }
-      if (!node.getSNodeId().toString().contains("$")) {
-        result.add(node);
-      }
+  public Iterable<SNode> getNodesToIterate(SModel model) {
+    if (SModelStereotype.isStubModelStereotype(model.getStereotype())) return new EmptyIterable<SNode>();
+    return new ConditionalIterable<SNode>(model.roots(), new MyCondition());
+  }
+
+  private static class MyCondition implements Condition<SNode> {
+    public boolean met(SNode node) {
+      return !node.getSNodeId().toString().contains("$");
     }
-    Collections.sort(result, new Comparator<SNode>() {
-      public int compare(SNode o1, SNode o2) {
-        return o1.getName().compareTo(o2.getName());
-      }
-    });
-    return result;
   }
 }

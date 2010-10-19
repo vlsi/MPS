@@ -54,7 +54,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
 
-
     Set<SModelDescriptor> findDirectly = new HashSet<SModelDescriptor>();
 
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
@@ -75,28 +74,26 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       int fileId = FileBasedIndex.getFileId(vf);
 
       List<List<BaseSNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));
+      if (descriptors.isEmpty()) continue;
 
-      if (!descriptors.isEmpty()) {
-        boolean needToLoad = false;
-        for (BaseSNodeDescriptor snd : descriptors.get(0)) {
-          if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
-            needToLoad = true;
-            break;
-          }
+      boolean needToLoad = false;
+      for (BaseSNodeDescriptor snd : descriptors.get(0)) {
+        //System.out.printf(snd.getConceptFqName()+"\n");
+        if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
+          needToLoad = true;
+          break;
         }
+      }
 
-        if (needToLoad) {
-          findDirectly.add(sm);
-        } else {
-          keys.addAll(descriptors.get(0));
-        }
+      if (needToLoad) {
+        findDirectly.add(sm);
+      } else {
+        keys.addAll(descriptors.get(0));
       }
     }
 
     for (SModelDescriptor sm : findDirectly) {
-      List<SNode> nodes = myIndex.getNodesToIterate(sm.getSModel());
-
-      for (SNode root : nodes) {
+      for (SNode root : myIndex.getNodesToIterate(sm.getSModel())) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         BaseSNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
           nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), root.getSNodeId());

@@ -49,8 +49,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
   private final MyIndexer myIndexer = new MyIndexer();
   private DataExternalizer<List<BaseSNodeDescriptor>> myValueExternalizer = new ListEnumerator<BaseSNodeDescriptor>(new EnumeratorSNodeDescriptor());
 
-  public abstract List<SNode> getNodesToIterate(SModel model);
-
+  public abstract Iterable<SNode> getNodesToIterate(SModel model);
 
   @Override
   public DataExternalizer<List<BaseSNodeDescriptor>> getValueExternalizer() {
@@ -101,8 +100,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
 
             if (model == null) return;
 
-            List<SNode> nodes = getNodesToIterate(model);
-            for (final SNode node : nodes) {
+            for (final SNode node : (List<SNode>) getNodesToIterate(model)) {
               String persistentName = node.getPersistentProperty(INamedConcept.NAME);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConceptFqName();

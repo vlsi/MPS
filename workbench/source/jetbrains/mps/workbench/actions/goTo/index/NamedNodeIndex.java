@@ -35,14 +35,8 @@ public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
     return NAME;
   }
 
-  public List<SNode> getNodesToIterate(SModel model) {
-    List<SNode> result = new ArrayList<SNode>();
-    Condition<SNode> cond = new SNodeCondition();
-    Iterable<SNode> iter = new ConditionalIterable<SNode>(model.nodes(), cond);
-    for (SNode node : iter) {
-      result.add(node);
-    }
-    return result;
+  public Iterable<SNode> getNodesToIterate(SModel model) {
+    return new ConditionalIterable<SNode>(model.nodes(), new SNodeCondition());
   }
 
   private static class SNodeCondition implements Condition<SNode> {
