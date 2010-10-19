@@ -2053,6 +2053,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2925336694746234973">
       <link role="intfc:0" targetNodeId="1204053956946:3" resolveInfo="IMethodCall" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8972672481958096488">
+      <link role="intfc:0" targetNodeId="8972672481958095232:3" resolveInfo="IControlFlowInterrupter" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1171903607971">
     <property name="name:0" value="WildCardType" />
@@ -2738,6 +2741,9 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1231268448397">
       <link role="intfc:0" targetNodeId="1178285077437:3" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1934412383769689217">
+      <link role="intfc:0" targetNodeId="1199653749349:3" resolveInfo="IStatementListContainer" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1207665819089">
@@ -3704,6 +3710,9 @@
     <property name="package:0" value="assignments" />
     <property name="name:0" value="OperationAssignmentExpression" />
     <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="8972672481958095232">
+    <property name="name:0" value="IControlFlowInterrupter" />
   </node>
 </model>
 

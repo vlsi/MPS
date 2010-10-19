@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InstanceInitializer extends BaseConcept implements ClassifierMember {
+public class InstanceInitializer extends BaseConcept implements ClassifierMember, IStatementListContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceInitializer";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

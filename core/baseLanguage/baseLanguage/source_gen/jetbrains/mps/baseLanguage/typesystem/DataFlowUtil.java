@@ -108,13 +108,13 @@ public class DataFlowUtil {
         localReference = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.structure.ILocalReference");
       }
       if (localReference != null && !(ILocalDeclaration_Behavior.call_isReferencedInClosure_3262277503800823422(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference)))) {
-        if (SNodeOperations.getAncestor(read, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == null) {
+        if (SNodeOperations.getAncestor(read, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == null) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", intentionProvider, errorTarget);
           }
-        } else if (localReference != null && ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null) {
+        } else if (localReference != null && ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) != null) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
@@ -136,14 +136,14 @@ public class DataFlowUtil {
           declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         }
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
-          if (SNodeOperations.getAncestor(write, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == null) {
+          if (SNodeOperations.getAncestor(write, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == null) {
             {
               BaseIntentionProvider intentionProvider = null;
               intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7567158975344997930", intentionProvider, errorTarget);
             }
-          } else if (declaration != null && SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null) {
+          } else if (declaration != null && SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) != null) {
             {
               BaseIntentionProvider intentionProvider = null;
               intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
@@ -165,6 +165,11 @@ public class DataFlowUtil {
       }
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
         SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
+        if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+          if (ILocalDeclaration_Behavior.call_isReferencedInControlFlowInterrupter_1644061362849513751(SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+            continue;
+          }
+        }
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
             BaseIntentionProvider intentionProvider = null;

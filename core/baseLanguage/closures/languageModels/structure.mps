@@ -116,6 +116,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1239707713724">
       <link role="intfc:0" targetNodeId="2.1239354281271:3" resolveInfo="IMethodLike" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6242191076941169537">
+      <link role="intfc:0" targetNodeId="2.8972672481958095232:3" resolveInfo="IControlFlowInterrupter" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="890797661671409019">
       <property name="name:0" value="forceMultiLine" />
       <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />

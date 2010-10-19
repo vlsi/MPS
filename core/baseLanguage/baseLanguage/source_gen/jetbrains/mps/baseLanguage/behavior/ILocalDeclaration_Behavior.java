@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ILocalDeclaration_Behavior {
   private static Class[] PARAMETERS_3262277503800823422 = {SNode.class};
+  private static Class[] PARAMETERS_1644061362849513751 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -41,11 +42,40 @@ public class ILocalDeclaration_Behavior {
     return false;
   }
 
+  public static boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
+    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    {
+      SNode ref;
+      Iterator<SNode> ref_iterator = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.ILocalReference", false, new String[]{})).iterator();
+      while (true) {
+        if (!(ref_iterator.hasNext())) {
+          break;
+        }
+        ref = ref_iterator.next();
+        if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref) == thisNode) {
+          SNode interrupter = SNodeOperations.getAncestor(ref, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
+          if (interrupter == container || ListSequence.fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   public static boolean call_isReferencedInClosure_3262277503800823422(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422);
   }
 
+  public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751);
+  }
+
   public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", PARAMETERS_3262277503800823422);
+  }
+
+  public static boolean callSuper_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", PARAMETERS_1644061362849513751);
   }
 }

@@ -20,6 +20,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IContainsStatementList" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodLike" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IStatementListContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />

@@ -129,7 +129,6 @@
   <unitInfo fileName="IContainsStatementList_Behavior.java" startLine="11" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
   <unitInfo fileName="InstanceMethodCallOperation_Behavior.java" startLine="25" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior" />
   <unitInfo fileName="IMemberContainer_Behavior.java" startLine="11" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
-  <unitInfo fileName="ILocalDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior" />
   <unitInfo fileName="AnnotationMethodDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationMethodDeclaration_Behavior" />
   <unitInfo fileName="ArrayType_Behavior.java" startLine="15" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayType_Behavior" />
   <unitInfo fileName="Statement_Behavior.java" startLine="13" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" />
@@ -156,6 +155,7 @@
   <unitInfo fileName="BreakStatement_Behavior.java" startLine="10" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior" />
   <unitInfo fileName="StringLiteral_Behavior.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringLiteral_Behavior" />
   <unitInfo fileName="StatementList_Behavior.java" startLine="15" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
+  <unitInfo fileName="ILocalDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior" />
   <unitInfo fileName="EnumConstantDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" />
   <unitInfo fileName="LocalVariableDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior" />
   <unitInfo fileName="InstanceMethodDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_Behavior" />
@@ -3095,38 +3095,65 @@
     <scopeInfo nodeId="8847328628797640280" fileName="VoidType_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="15" />
   </root>
   <root nodeId="3262277503800823419">
-    <nodeInfo nodeId="3262277503800831885" fileName="ILocalDeclaration_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="128" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="20" startPosition="16" endLine="21" endPosition="192" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="23" startPosition="40" endLine="24" endPosition="16" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="25" startPosition="9" endLine="26" endPosition="34" />
-    <nodeInfo nodeId="3262277503800831910" fileName="ILocalDeclaration_Behavior.java" startLine="27" startPosition="96" endLine="28" endPosition="138" />
-    <nodeInfo nodeId="231886080583827796" fileName="ILocalDeclaration_Behavior.java" startLine="30" startPosition="50" endLine="31" endPosition="27" />
-    <nodeInfo nodeId="231886080583827811" fileName="ILocalDeclaration_Behavior.java" startLine="33" startPosition="213" endLine="34" endPosition="26" />
-    <nodeInfo nodeId="231886080583827813" fileName="ILocalDeclaration_Behavior.java" startLine="35" startPosition="13" endLine="36" endPosition="149" />
-    <nodeInfo nodeId="3262277503800831930" fileName="ILocalDeclaration_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="17" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="22" startPosition="20" endLine="25" endPosition="9" />
-    <nodeInfo nodeId="231886080583827794" fileName="ILocalDeclaration_Behavior.java" startLine="29" startPosition="46" endLine="32" endPosition="13" />
-    <nodeInfo nodeId="231886080583827802" fileName="ILocalDeclaration_Behavior.java" startLine="32" startPosition="13" endLine="35" endPosition="13" />
-    <nodeInfo nodeId="231886080583827778" fileName="ILocalDeclaration_Behavior.java" startLine="28" startPosition="138" endLine="37" endPosition="11" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="26" startPosition="34" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="3262277503800831903" fileName="ILocalDeclaration_Behavior.java" startLine="26" startPosition="34" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="21" startPosition="192" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="18" startPosition="128" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="3262277503800823421" fileName="ILocalDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="23" startPosition="40" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="231886080583827795" fileName="ILocalDeclaration_Behavior.java" startLine="30" startPosition="50" endLine="31" endPosition="27" />
-    <scopeInfo nodeId="231886080583827810" fileName="ILocalDeclaration_Behavior.java" startLine="33" startPosition="213" endLine="34" endPosition="26" />
-    <scopeInfo nodeId="231886080583827780" fileName="ILocalDeclaration_Behavior.java" startLine="29" startPosition="46" endLine="36" endPosition="149" />
-    <scopeInfo nodeId="3262277503800831909" fileName="ILocalDeclaration_Behavior.java" startLine="27" startPosition="96" endLine="37" endPosition="11">
+    <nodeInfo nodeId="3262277503800831885" fileName="ILocalDeclaration_Behavior.java" startLine="18" startPosition="91" endLine="19" endPosition="128" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="21" startPosition="16" endLine="22" endPosition="192" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="24" startPosition="40" endLine="25" endPosition="16" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="26" startPosition="9" endLine="27" endPosition="34" />
+    <nodeInfo nodeId="3262277503800831910" fileName="ILocalDeclaration_Behavior.java" startLine="28" startPosition="96" endLine="29" endPosition="138" />
+    <nodeInfo nodeId="231886080583827796" fileName="ILocalDeclaration_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="27" />
+    <nodeInfo nodeId="231886080583827811" fileName="ILocalDeclaration_Behavior.java" startLine="34" startPosition="213" endLine="35" endPosition="26" />
+    <nodeInfo nodeId="231886080583827813" fileName="ILocalDeclaration_Behavior.java" startLine="36" startPosition="13" endLine="37" endPosition="149" />
+    <nodeInfo nodeId="3262277503800831930" fileName="ILocalDeclaration_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="17" />
+    <nodeInfo nodeId="1644061362849513755" fileName="ILocalDeclaration_Behavior.java" startLine="45" startPosition="106" endLine="46" endPosition="128" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="16" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="48" startPosition="16" endLine="49" endPosition="192" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="51" startPosition="40" endLine="52" endPosition="16" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="53" startPosition="9" endLine="54" endPosition="34" />
+    <nodeInfo nodeId="1644061362849513780" fileName="ILocalDeclaration_Behavior.java" startLine="55" startPosition="96" endLine="56" endPosition="141" />
+    <nodeInfo nodeId="1644061362849513790" fileName="ILocalDeclaration_Behavior.java" startLine="57" startPosition="142" endLine="58" endPosition="24" />
+    <nodeInfo nodeId="1644061362849513802" fileName="ILocalDeclaration_Behavior.java" startLine="62" startPosition="5" endLine="63" endPosition="17" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="23" startPosition="20" endLine="26" endPosition="9" />
+    <nodeInfo nodeId="231886080583827794" fileName="ILocalDeclaration_Behavior.java" startLine="30" startPosition="46" endLine="33" endPosition="13" />
+    <nodeInfo nodeId="231886080583827802" fileName="ILocalDeclaration_Behavior.java" startLine="33" startPosition="13" endLine="36" endPosition="13" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="50" startPosition="20" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="1644061362849513788" fileName="ILocalDeclaration_Behavior.java" startLine="56" startPosition="141" endLine="59" endPosition="11" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="54" startPosition="34" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="1644061362849513773" fileName="ILocalDeclaration_Behavior.java" startLine="54" startPosition="34" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="231886080583827778" fileName="ILocalDeclaration_Behavior.java" startLine="29" startPosition="138" endLine="38" endPosition="11" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="27" startPosition="34" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="3262277503800831903" fileName="ILocalDeclaration_Behavior.java" startLine="27" startPosition="34" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="49" startPosition="192" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="46" startPosition="128" endLine="62" endPosition="5" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="22" startPosition="192" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="19" startPosition="128" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="3262277503800823421" fileName="ILocalDeclaration_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="24" startPosition="40" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="231886080583827795" fileName="ILocalDeclaration_Behavior.java" startLine="31" startPosition="50" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="231886080583827810" fileName="ILocalDeclaration_Behavior.java" startLine="34" startPosition="213" endLine="35" endPosition="26" />
+    <scopeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="51" startPosition="40" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="1644061362849513789" fileName="ILocalDeclaration_Behavior.java" startLine="57" startPosition="142" endLine="58" endPosition="24" />
+    <scopeInfo nodeId="1644061362849513779" fileName="ILocalDeclaration_Behavior.java" startLine="55" startPosition="96" endLine="59" endPosition="11">
+      <varInfo nodeId="1644061362849513781" varName="interrupter" />
+    </scopeInfo>
+    <scopeInfo nodeId="1644061362849513772" fileName="ILocalDeclaration_Behavior.java" startLine="54" startPosition="34" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="231886080583827780" fileName="ILocalDeclaration_Behavior.java" startLine="30" startPosition="46" endLine="37" endPosition="149" />
+    <scopeInfo nodeId="3262277503800831909" fileName="ILocalDeclaration_Behavior.java" startLine="28" startPosition="96" endLine="38" endPosition="11">
       <varInfo nodeId="3262277503800831911" varName="referenceContainer" />
     </scopeInfo>
-    <scopeInfo nodeId="3262277503800831902" fileName="ILocalDeclaration_Behavior.java" startLine="26" startPosition="34" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="22" startPosition="20" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="19" startPosition="5" endLine="39" endPosition="7">
+    <scopeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="50" startPosition="20" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="3262277503800831902" fileName="ILocalDeclaration_Behavior.java" startLine="27" startPosition="34" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1644061362849513763" fileName="ILocalDeclaration_Behavior.java" startLine="47" startPosition="5" endLine="61" endPosition="7">
+      <varInfo nodeId="1644061362849513765" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="23" startPosition="20" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1644061362849513754" fileName="ILocalDeclaration_Behavior.java" startLine="45" startPosition="106" endLine="63" endPosition="17">
+      <varInfo nodeId="1644061362849513756" varName="container" />
+    </scopeInfo>
+    <scopeInfo nodeId="3262277503800831893" fileName="ILocalDeclaration_Behavior.java" startLine="20" startPosition="5" endLine="40" endPosition="7">
       <varInfo nodeId="3262277503800831895" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="3262277503800823425" fileName="ILocalDeclaration_Behavior.java" startLine="17" startPosition="91" endLine="41" endPosition="17">
+    <scopeInfo nodeId="3262277503800823425" fileName="ILocalDeclaration_Behavior.java" startLine="18" startPosition="91" endLine="42" endPosition="17">
       <varInfo nodeId="3262277503800831886" varName="container" />
     </scopeInfo>
   </root>
