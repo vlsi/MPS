@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -95,8 +96,6 @@ public class ModelPersistence {
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
   private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
 
-  private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"(.*?)\"");
-
   private static PersistenceSettings ourPersistenceSettings;
 
   static {
@@ -129,7 +128,6 @@ public class ModelPersistence {
 
   @NotNull
   public static SModel readModel(@NotNull IFile file) {
-    // the model FQ name ...
     String modelName = extractModelName(file.getName());
     String modelStereotype = extractModelStereotype(file.getName());
     int version = getModelPersistenceVersion(file);
@@ -156,6 +154,21 @@ public class ModelPersistence {
     return reader.readModel(document, modelName, modelStereotype);
   }
 
+  @NotNull
+  public static SModel readModel(@NotNull Document document, @NotNull String modelName, @NotNull String stereotype) {
+    int version = getModelPersistenceVersion(document);
+    IModelReader modelReader = modelReaders.get(version);
+    if (modelReader == null) {
+      return handleNullReaderForPersistence(modelName);
+    }
+    return modelReader.readModel(document, modelName, stereotype);
+  }
+
+  @Hack
+  //this is a hack because it work only using some conventions about model file format
+  //todo get rid of this method
+  //todo BTW, indexing can be made faster by loading models up to roots only
+  private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"(.*?)\"");
   public static SModel readModel(CharSequence data) throws JDOMException, IOException {
     final char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
     Reader reader = charsArray != null ? new CharArrayReader(charsArray, 0, data.length()) : new CharSequenceReader(data);
@@ -172,16 +185,6 @@ public class ModelPersistence {
       return handleNullReaderForPersistence(modelReference.getLongName());
     }
     return modelReader.readModel(doc, modelShortName, modelStereotype);
-  }
-
-  @NotNull
-  public static SModel readModel(@NotNull Document document, @NotNull String modelName, @NotNull String stereotype) {
-    int version = getModelPersistenceVersion(document);
-    IModelReader modelReader = modelReaders.get(version);
-    if (modelReader == null) {
-      return handleNullReaderForPersistence(modelName);
-    }
-    return modelReader.readModel(document, modelName, stereotype);
   }
 
   //--------write--------
@@ -290,7 +293,6 @@ public class ModelPersistence {
     try {
       SAXParser parser = JDOMUtil.createSAXParser();
       parser.parse(JDOMUtil.loadSource(file), new DefaultHandler() {
-        @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
           if (version[0] == -1 && MODEL.equals(qName)) {
             version[0] = 0;
@@ -307,7 +309,6 @@ public class ModelPersistence {
           }
         }
 
-        @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
           throw new SAXException();
         }
@@ -332,6 +333,8 @@ public class ModelPersistence {
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
     return modelReaders.get(getCurrentPersistenceVersion()).upgradeModelUID(modelReference);
   }
+
+  //-------- --------
 
   @NotNull
   private static Document loadModelDocument(@NotNull IFile file) {
