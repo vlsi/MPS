@@ -4,9 +4,11 @@ package jetbrains.mps.lang.structure.generator_new.baseLanguage;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
-import jetbrains.mps.lang.structure.generator_new.util.QueriesUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.structure.generator_new.util.QueriesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
@@ -19,7 +21,6 @@ import jetbrains.mps.lang.structure.generator_new.util.LinkDeclarationUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -35,7 +36,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -43,32 +43,32 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1226343664102(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()) != null;
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930170217(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    return inputLanguage != null && inputLanguage.isGenerateAdapters();
+    return inputLanguage == null || inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    return inputLanguage != null && inputLanguage.isGenerateAdapters();
+    return inputLanguage == null || inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171391(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    return inputLanguage != null && inputLanguage.isGenerateAdapters();
+    return inputLanguage == null || inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171400(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    return inputLanguage != null && inputLanguage.isGenerateAdapters();
+    return inputLanguage == null || inputLanguage.isGenerateAdapters();
   }
 
   public static boolean baseMappingRule_Condition_1167266219124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    if (inputLanguage == null || !(inputLanguage.isGenerateAdapters())) {
+    if (inputLanguage != null && !(inputLanguage.isGenerateAdapters())) {
       return false;
     }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
@@ -77,7 +77,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1167266685049(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    if (inputLanguage == null || !(inputLanguage.isGenerateAdapters())) {
+    if (inputLanguage != null && !(inputLanguage.isGenerateAdapters())) {
       return false;
     }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
@@ -86,7 +86,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1167266687532(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    if (inputLanguage == null || !(inputLanguage.isGenerateAdapters())) {
+    if (inputLanguage != null && !(inputLanguage.isGenerateAdapters())) {
       return false;
     }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
@@ -622,12 +622,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225099631046(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).getModuleReference().toString();
+    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1225099518029(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Language lang = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(lang.getModuleFqName()));
+    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName()));
     return capitalizedName + "_Language";
   }
 
