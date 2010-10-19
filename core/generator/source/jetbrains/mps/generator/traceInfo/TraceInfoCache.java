@@ -48,7 +48,11 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
 
   @Nullable
   protected DebugInfo readCache(SModelDescriptor descriptor) {
-    ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(descriptor.getModule());
+    ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(descriptor.getModule(), false);
+    if(classLoader == null) {
+      return null;
+    }
+
     InputStream stream = check_4fn2v4_a0b0e(classLoader, descriptor, TRACE_FILE_NAME);
     if (stream == null) {
       return null;

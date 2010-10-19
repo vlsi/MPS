@@ -76,12 +76,14 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
   }
 
-  public ClassLoader getClassLoaderFor(IModule module) {
+  public ClassLoader getClassLoaderFor(IModule module, boolean reportError) {
     synchronized (myLock) {
       RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
 
       if (bundle == null) {
-        LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName());
+        if (reportError) {
+          LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName());
+        }
         return null;
       }
 
