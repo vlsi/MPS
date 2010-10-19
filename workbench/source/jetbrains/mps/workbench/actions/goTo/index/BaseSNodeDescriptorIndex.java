@@ -80,6 +80,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     SModel model = inputData.getUserData(PARSED_MODEL);
 
     if (model == null) {
+      //todo only roots loading
       model = ModelPersistence.readModel(new IdeaFileSystemProvider().getFile(inputData.getFile()));
       model.setLoading(true);
       inputData.putUserData(PARSED_MODEL, model);
@@ -111,19 +112,6 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
         }
       });
       return descriptors;
-    }
-
-
-    private void handleException(Exception e, FileContent inputData) {
-      VirtualFile file = inputData.getFile();
-      if (MPSFileTypesManager.instance().isModelFile(file)) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
-        if (modelDescriptor == null) return;
-        VcsMigrationUtil.getHandler().addSuspiciousModel(((EditableSModelDescriptor) modelDescriptor), false);
-        LOG.error(e.getMessage());
-      } else {
-        LOG.warning("Can't index file " + file.getPresentableUrl());
-      }
     }
   }
 
