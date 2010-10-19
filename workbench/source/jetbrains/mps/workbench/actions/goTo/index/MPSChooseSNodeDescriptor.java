@@ -29,6 +29,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -37,7 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
+public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescriptor> {
   public BaseSNodeDescriptorIndex myIndex;
 
   public MPSChooseSNodeDescriptor(Project project, BaseSNodeDescriptorIndex index) {
@@ -45,10 +47,10 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     myIndex = index;
   }
 
-  public SNodeDescriptor[] find(final IScope scope) {
-    final List<SNodeDescriptor> keys = new ArrayList<SNodeDescriptor>();
+  public BaseSNodeDescriptor[] find(final IScope scope) {
+    final List<BaseSNodeDescriptor> keys = new ArrayList<BaseSNodeDescriptor>();
 
-    final ID<Integer, List<SNodeDescriptor>> indexName = myIndex.getName();
+    final ID<Integer, List<BaseSNodeDescriptor>> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
 
@@ -72,11 +74,11 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
       int fileId = FileBasedIndex.getFileId(vf);
 
-      List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));
+      List<List<BaseSNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));
 
       if (!descriptors.isEmpty()) {
         boolean needToLoad = false;
-        for (SNodeDescriptor snd : descriptors.get(0)) {
+        for (BaseSNodeDescriptor snd : descriptors.get(0)) {
           if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
             needToLoad = true;
             break;
@@ -96,7 +98,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
       for (SNode root : nodes) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
-        SNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
+        BaseSNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
           nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), root.getSNodeId());
         keys.add(nodeDescriptor);
       }
@@ -104,16 +106,16 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
     addJavaStubs(keys, scope);
 
-    return keys.toArray(new SNodeDescriptor[keys.size()]);
+    return keys.toArray(new BaseSNodeDescriptor[keys.size()]);
   }
 
-  private void addJavaStubs(List<SNodeDescriptor> result, IScope scope) {
+  private void addJavaStubs(List<BaseSNodeDescriptor> result, IScope scope) {
     for (IModule m : scope.getVisibleModules()) {
       result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
     }
   }
 
-  public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
+  public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
     return new RootNodeElement(object) {
       private Project myProject = getProject();
 
@@ -130,7 +132,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     };
   }
 
-  public String doGetObjectName(SNodeDescriptor object) {
+  public String doGetObjectName(BaseSNodeDescriptor object) {
     return object.getNodeName();
   }
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.index;
+package jetbrains.mps.workbench.actions.goTo.index.descriptor;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
@@ -21,30 +21,21 @@ import jetbrains.mps.util.InternUtil;
 
 import java.util.UUID;
 
-public class SNodeDescriptor {
+public abstract class BaseSNodeDescriptor {
   private String myNodeName;
-  protected String myConceptFqName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
   private SNodeId myId;
   private SModelReference myModelReference;
 
-  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, SNodeId id) {
+  public BaseSNodeDescriptor(String nodeName, long mostSignificantBits, long leastSignificantBits, SNodeId id) {
     myNodeName = InternUtil.intern(nodeName);
-    myConceptFqName = InternUtil.intern(fqName);
     myMostSignificantBits = mostSignificantBits;
     myLeastSignificantBits = leastSignificantBits;
     myId = id;
   }
 
-  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, SNodeId id) {
-    UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
-    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), id);
-  }
-
-  public String getConceptFqName() {
-    return myConceptFqName;
-  }
+  public abstract String getConceptFqName();
 
   public String getNodeName() {
     return myNodeName;
@@ -82,10 +73,9 @@ public class SNodeDescriptor {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof SNodeDescriptor)) return false;
-    SNodeDescriptor sd = (SNodeDescriptor) obj;
-    return sd.getConceptFqName().equals(getConceptFqName())
-      && sd.myNodeName.equals(myNodeName)
+    if (!(obj instanceof BaseSNodeDescriptor)) return false;
+    BaseSNodeDescriptor sd = (BaseSNodeDescriptor) obj;
+    return sd.myNodeName.equals(myNodeName)
       && EqualUtil.equals(sd.myId, myId)
       && sd.getModelReference().equals(getModelReference());
   }

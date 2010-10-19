@@ -19,6 +19,7 @@ import com.intellij.util.indexing.ID;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.ArrayList;
@@ -28,9 +29,9 @@ import java.util.List;
 
 public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
   @NonNls
-  public static final ID<Integer, List<SNodeDescriptor>> NAME = ID.create("RootNodeNameIndex");
+  public static final ID<Integer, List<BaseSNodeDescriptor>> NAME = ID.create("RootNodeNameIndex");
 
-  public ID<Integer, List<SNodeDescriptor>> getName() {
+  public ID<Integer, List<BaseSNodeDescriptor>> getName() {
     return NAME;
   }
 

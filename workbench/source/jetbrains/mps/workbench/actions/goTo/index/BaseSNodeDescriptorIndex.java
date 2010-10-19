@@ -32,6 +32,8 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,24 +41,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
+public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndexExtension<List<BaseSNodeDescriptor>> {
   private static final Logger LOG = Logger.getLogger(BaseSNodeDescriptorIndex.class);
   public static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final MyIndexer myIndexer = new MyIndexer();
-  private DataExternalizer<List<SNodeDescriptor>> myValueExternalizer = new ListEnumerator<SNodeDescriptor>(new EnumeratorSNodeDescriptor());
+  private DataExternalizer<List<BaseSNodeDescriptor>> myValueExternalizer = new ListEnumerator<BaseSNodeDescriptor>(new EnumeratorSNodeDescriptor());
 
   public abstract List<SNode> getNodesToIterate(SModel model);
 
 
   @Override
-  public DataExternalizer<List<SNodeDescriptor>> getValueExternalizer() {
+  public DataExternalizer<List<BaseSNodeDescriptor>> getValueExternalizer() {
     return myValueExternalizer;
   }
 
   @Override
-  public SingleEntryIndexer<List<SNodeDescriptor>> getIndexer() {
+  public SingleEntryIndexer<List<BaseSNodeDescriptor>> getIndexer() {
     return myIndexer;
   }
 
@@ -76,14 +78,14 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     return DEFAULT_CACHE_SIZE;
   }
 
-  private class MyIndexer extends SingleEntryIndexer<List<SNodeDescriptor>> {
+  private class MyIndexer extends SingleEntryIndexer<List<BaseSNodeDescriptor>> {
     private MyIndexer() {
       super(false);
     }
 
     @Override
-    protected List<SNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
-      final List<SNodeDescriptor> descriptors = new ArrayList<SNodeDescriptor>();
+    protected List<BaseSNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
+      final List<BaseSNodeDescriptor> descriptors = new ArrayList<BaseSNodeDescriptor>();
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           try {
@@ -106,7 +108,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
               String conceptFqName = node.getConceptFqName();
               SModelReference modelRef = model.getSModelReference();
               SNodeId id = node.getSNodeId();
-              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
+              BaseSNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
               descriptors.add(value);
             }
           } catch (JDOMException e) {

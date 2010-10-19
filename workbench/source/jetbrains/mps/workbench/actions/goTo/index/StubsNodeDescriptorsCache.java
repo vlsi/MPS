@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.stubs.StubDescriptor;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -19,47 +20,45 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
   }
 
   private SModelRepositoryListener myListener = new SModelRepositoryAdapter() {
-    @Override
     public void modelAdded(SModelDescriptor modelDescriptor) {
       if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
         clearCache();
       }
     }
 
-    @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
         clearCache();
       }
     }
   };
-  private Map<IModule, List<SNodeDescriptor>> myCache = new HashMap<IModule, List<SNodeDescriptor>>();
+  private Map<IModule, List<BaseSNodeDescriptor>> myCache = new HashMap<IModule, List<BaseSNodeDescriptor>>();
 
   @NotNull
-  @Override
   public String getComponentName() {
     return "Java Stub Node Descriptors Cache";
   }
 
-  @Override
   public void initComponent() {
     SModelRepository.getInstance().addModelRepositoryListener(myListener);
   }
 
-  @Override
   public void disposeComponent() {
     SModelRepository.getInstance().removeModelRepositoryListener(myListener);
   }
 
-  public List<SNodeDescriptor> getSNodeDescriptors(IModule m) {
+  public List<BaseSNodeDescriptor> getSNodeDescriptors(IModule m) {
     if (!myCache.containsKey(m)) {
       List<StubDescriptor> list = StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
-      List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>(list.size());
+      List<BaseSNodeDescriptor> result = new ArrayList<BaseSNodeDescriptor>(list.size());
       for (final StubDescriptor sd : list) {
-        result.add(new SNodeDescriptor(sd.getClassName(), sd.getConceptFqName(), 0, 0, null) {
-          @Override
+        result.add(new BaseSNodeDescriptor(sd.getClassName(),  0, 0, null) {
           protected SModelReference calculateModelReference() {
             return StubHelper.uidForPackageInStubs(sd.getPackage());
+          }
+
+          public String getConceptFqName() {
+            return sd.getConceptFqName();
           }
         });
       }

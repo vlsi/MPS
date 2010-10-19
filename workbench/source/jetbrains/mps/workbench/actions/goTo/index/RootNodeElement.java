@@ -19,11 +19,12 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 
 public class RootNodeElement implements NavigationItem {
-  private SNodeDescriptor myNodeResult;
+  private BaseSNodeDescriptor myNodeResult;
 
-  public RootNodeElement(SNodeDescriptor nodeResult) {
+  public RootNodeElement(BaseSNodeDescriptor nodeResult) {
     myNodeResult = nodeResult;
   }
 

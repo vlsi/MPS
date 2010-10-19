@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.ArrayList;
@@ -28,9 +29,9 @@ import java.util.List;
 
 public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
   @NonNls
-  public static final ID<Integer, List<SNodeDescriptor>> NAME = ID.create("NamedNodeIndex");
+  public static final ID<Integer, List<BaseSNodeDescriptor>> NAME = ID.create("NamedNodeIndex");
 
-  public ID<Integer, List<SNodeDescriptor>> getName() {
+  public ID<Integer, List<BaseSNodeDescriptor>> getName() {
     return NAME;
   }
 

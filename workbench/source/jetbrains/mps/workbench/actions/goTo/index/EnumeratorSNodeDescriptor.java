@@ -19,12 +19,14 @@ import com.intellij.util.io.KeyDescriptor;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
+class EnumeratorSNodeDescriptor implements KeyDescriptor<BaseSNodeDescriptor> {
   private byte[] myBytes = new byte[1024];
 
   private String getString(byte[] b, int off, int len) {
@@ -33,15 +35,15 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     return new String(bytes);
   }
 
-  public int getHashCode(SNodeDescriptor value) {
+  public int getHashCode(BaseSNodeDescriptor value) {
     return value.getNodeName().hashCode();
   }
 
-  public boolean isEqual(SNodeDescriptor val1, SNodeDescriptor val2) {
+  public boolean isEqual(BaseSNodeDescriptor val1, BaseSNodeDescriptor val2) {
     return EqualUtil.equals(val1, val2);
   }
 
-  public void save(DataOutput out, SNodeDescriptor value) throws IOException {
+  public void save(DataOutput out, BaseSNodeDescriptor value) throws IOException {
     out.writeLong(value.getMostSignificantBits());
     out.writeLong(value.getLeastSignificantBits());
     SNodeId id = value.getId();
@@ -65,7 +67,7 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
     out.write(nodeName.getBytes(), 0, nodeNameLength);
   }
 
-  public SNodeDescriptor read(DataInput in) throws IOException {
+  public BaseSNodeDescriptor read(DataInput in) throws IOException {
     long mostSignificantBits = in.readLong();
     long leastSignificantBits = in.readLong();
     long id = in.readLong();

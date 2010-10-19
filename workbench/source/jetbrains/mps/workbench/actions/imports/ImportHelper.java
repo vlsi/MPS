@@ -30,10 +30,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
-import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -204,7 +204,7 @@ public class ImportHelper {
       };
     } else {
       goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
-        public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
+        public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
           return new RootNodeElement(object) {
             public void navigate(boolean requestFocus) {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
