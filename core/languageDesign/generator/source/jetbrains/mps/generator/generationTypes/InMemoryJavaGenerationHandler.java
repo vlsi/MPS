@@ -144,7 +144,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       Set<File> additionalFiles = FileGenerationManager.getInstance().fireFileGenerated(tmpFile);
       if (additionalFiles != null) {
         for (File additionalFile : additionalFiles) {
-          String additionalContents = FileUtil.read(additionalFile);
+          String additionalContents = FileUtil.read(additionalFile, true);
           myFileGeneratorSources.put(additionalFile.getName(), additionalContents);
         }
       }

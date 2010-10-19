@@ -257,8 +257,21 @@ public class FileUtil {
     }
   }
 
+  public static String read(File file, boolean useNativeSeparators) {
+    try {
+      return read(new FileReader(file), useNativeSeparators);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
   public static String read(Reader reader) {
+    return read(reader, false);  
+  }
+
+  public static String read(Reader reader, boolean nativeSeparators) {
     BufferedReader r = null;
+    String separator = nativeSeparators ? System.getProperty("line.separator") : "\n";
     try {
       r = new BufferedReader(reader);
 
@@ -266,7 +279,7 @@ public class FileUtil {
 
       String line = null;
       while ((line = r.readLine()) != null) {
-        result.append(line).append("\n");
+        result.append(line).append(separator);
       }
 
       return result.toString();

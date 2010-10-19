@@ -81,7 +81,7 @@ public class DiffReporter {
         String newContent = sources.get(fileName);
 
         if (newContent != null) {
-          addDiffReport(genHandler, outputModel, null, fileName, newContent, result);
+          addDiffReport(genHandler, outputModel, fileName, fileName, newContent, result);
         } else {
           String title = getDiffReportTitle((SNode) null, fileName, false, true);
           File file = new File(genHandler.getOutputDir(outputModel) + File.separator + fileName);
