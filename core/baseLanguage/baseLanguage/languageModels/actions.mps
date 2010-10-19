@@ -3160,6 +3160,9 @@
                     <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="1177400765745">
                       <link role="concept:16" targetNodeId="1.1152728232947:3" />
                     </node>
+                    <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="4805924279717597440">
+                      <link role="concept:16" targetNodeId="1.1199653749349:3" resolveInfo="IStatementListContainer" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3195,6 +3198,12 @@
                   <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList:16" id="1177400765760">
                     <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="1177400765761">
                       <link role="concept:16" targetNodeId="1.1163670490218:3" />
+                    </node>
+                    <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="4805924279717597442">
+                      <link role="concept:16" targetNodeId="1.1152728232947:3" resolveInfo="Closure" />
+                    </node>
+                    <node role="concept:16" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="4805924279717597444">
+                      <link role="concept:16" targetNodeId="1.1199653749349:3" resolveInfo="IStatementListContainer" />
                     </node>
                   </node>
                 </node>
