@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.util.text.CharArrayUtil;
-import com.intellij.util.text.CharSequenceReader;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -40,7 +38,6 @@ import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -52,13 +49,9 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
-import java.io.CharArrayReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class ModelPersistence {
@@ -145,13 +138,7 @@ public class ModelPersistence {
         e.printStackTrace();
       }
     }
-    Document document = loadModelDocument(file);
-    int modelPersistenceVersion = getModelPersistenceVersion(document);
-    IModelReader reader = modelReaders.get(modelPersistenceVersion);
-    if (reader == null) {
-      return handleNullReaderForPersistence(" file " + file.getAbsolutePath());
-    }
-    return reader.readModel(document, modelName, modelStereotype);
+    return readModel(loadModelDocument(file), modelName, modelStereotype);
   }
 
   @NotNull
