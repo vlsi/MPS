@@ -28,6 +28,7 @@ public class ModelLoader {
 
   public void update() {
     UnregisteredNodes.instance().clear();
+    assert myModel.getModelDescriptor().getLoadingState() == ModelLoadingState.ROOTS_LOADED;
     for (SNode root : myModel.roots()) {
       SNode fullRoot = myFullModel.getNodeById(root.getSNodeId());
       assert fullRoot != null;
