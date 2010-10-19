@@ -11,15 +11,20 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 public class DeleteLine_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -80,26 +85,23 @@ public class DeleteLine_Action extends GeneratedAction {
     try {
       if (DeleteLine_Action.this.currentCell instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) DeleteLine_Action.this.currentCell;
-        List<EditorCell_Collection> cells = ListSequence.fromList(new ArrayList<EditorCell_Collection>());
-        List<EditorCell_Collection> newFrontier = ListSequence.fromList(new ArrayList<EditorCell_Collection>());
-        ListSequence.fromList(cells).addElement(collection);
-        while (!(ListSequence.fromList(cells).isEmpty())) {
-          for (EditorCell_Collection cellCollection : cells) {
-            if (cellCollection.getCellLayout() instanceof CellLayout_Vertical) {
-              return;
-            }
-            for (EditorCell cell : cellCollection) {
-              if (cell instanceof EditorCell_Collection) {
-                ListSequence.fromList(newFrontier).addElement((EditorCell_Collection) cell);
-              }
+        Queue<EditorCell_Collection> collections = QueueSequence.fromQueue(new LinkedList<EditorCell_Collection>());
+        QueueSequence.fromQueue(collections).addLastElement(collection);
+        while (QueueSequence.fromQueue(collections).isNotEmpty()) {
+          EditorCell_Collection nextCollection = QueueSequence.fromQueue(collections).removeFirstElement();
+          if (nextCollection.getCellLayout() instanceof CellLayout_Vertical) {
+            return;
+          }
+          for (EditorCell childCell : Sequence.fromIterable(nextCollection)) {
+            if (childCell instanceof EditorCell_Collection) {
+              QueueSequence.fromQueue(collections).addLastElement((EditorCell_Collection) childCell);
             }
           }
-          cells = newFrontier;
-          newFrontier = ListSequence.fromList(new ArrayList<EditorCell_Collection>());
         }
       }
       EditorCell current = DeleteLine_Action.this.currentCell;
       List<SNode> nodesToDelete = new ArrayList<SNode>();
+      EditorCell cellToSelect = null;
       while (true) {
         if (current.getParent() == null) {
           break;
@@ -114,14 +116,19 @@ public class DeleteLine_Action extends GeneratedAction {
               EditorCell sibling = siblings[i];
               ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
               if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
+                cellToSelect = sibling.getNextLeaf(CellConditions.SELECTABLE);
                 break;
               }
+            }
+            if (cellToSelect == null) {
+              cellToSelect = current.getNextLeaf(CellConditions.SELECTABLE);
             }
             break;
           }
         } else if (layout instanceof CellLayout_Vertical) {
           if (current.isBigCell()) {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
+            cellToSelect = current.getNextLeaf(CellConditions.SELECTABLE);
             break;
           }
         }
@@ -131,6 +138,10 @@ public class DeleteLine_Action extends GeneratedAction {
         if ((nodeToDelete != null) && SNodeOperations.getParent(nodeToDelete) != null) {
           SNodeOperations.deleteNode(nodeToDelete);
         }
+      }
+      if (cellToSelect != null) {
+        DeleteLine_Action.this.editorComponent.changeSelection(cellToSelect);
+        cellToSelect.home();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "DeleteLine", t);
