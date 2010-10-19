@@ -81,8 +81,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   protected ModelLoadResult initialLoad() {
     System.out.printf("initialLoad() called for model " + getLongName() + "\n");
     ModelLoadingState state = ModelLoadingState.ROOTS_LOADED;
-    SModel model = load(state);
-    return new ModelLoadResult(model, state);
+    return load(state);
   }
 
   //updates model with loading state == ROOTS_LOADED
@@ -92,7 +91,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     System.out.printf("enforceFullLoad() called for model " + getLongName() + "\n");
 
-    SModel fullModel = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, ModelLoadingState.FULLY_LOADED);
+    BaseMPSModelRootManager manager = (BaseMPSModelRootManager) myModelRootManager;
+    SModel fullModel = manager.loadModel(this, ModelLoadingState.FULLY_LOADED).getModel();
 
     try {
       mySModel.setLoading(true);
@@ -107,9 +107,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   //just loads model, w/o changing state of SModelDescriptor
-  private SModel load(ModelLoadingState loadingState) {
-    SModel result = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
-    updateOnLoad(result, loadingState != ModelLoadingState.FULLY_LOADED);
+  private ModelLoadResult load(ModelLoadingState loadingState) {
+    BaseMPSModelRootManager manager = (BaseMPSModelRootManager) myModelRootManager;
+    ModelLoadResult result = manager.loadModel(this, loadingState);
+    SModel model = result.getModel();
+    updateOnLoad(model, loadingState != ModelLoadingState.FULLY_LOADED);
     return result;
   }
 
@@ -175,8 +177,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
-    SModel newModel = load(getLoadingState());
-    replaceModel(newModel);
+    ModelLoadResult result = load(getLoadingState());
+    replaceModel(result.getModel());
     updateLastChange();
   }
 

@@ -15,10 +15,16 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class DefaultMPSHandler extends DefaultHandler{
+  //return true is supports
+  public boolean setPartialLoading(ModelLoadingState state){
+    return state == ModelLoadingState.FULLY_LOADED;
+  }
+
   public SModel getResult(){
     return null;
   }

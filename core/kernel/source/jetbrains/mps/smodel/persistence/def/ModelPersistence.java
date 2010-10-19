@@ -20,10 +20,8 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationHistory;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.StubModel;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -126,36 +124,52 @@ public class ModelPersistence {
 
   //--------read--------
 
-  @NotNull
   public static SModel readModel(@NotNull IFile file) {
+    return readModel(file, ModelLoadingState.FULLY_LOADED).getModel();
+  }
+
+  @NotNull
+  public static ModelLoadResult readModel(@NotNull IFile file, ModelLoadingState state) {
     String name = file.getName();
     String modelName = extractModelName(name);
     String modelStereotype = extractModelStereotype(name);
     try {
-      return readModel(JDOMUtil.loadSource(file), modelName, modelStereotype);
+      return readModel(JDOMUtil.loadSource(file), modelName, modelStereotype, state);
     } catch (Throwable t) {
       LOG.error("Error while loading model from file: " + file.getAbsolutePath(), t);
-      return new StubModel(new SModelReference(modelName, modelStereotype));
+      StubModel model = new StubModel(new SModelReference(modelName, modelStereotype));
+      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
   }
 
   public static SModel readModel(InputSource source, String name, String stereotype) {
+    return readModel(source, name, stereotype, ModelLoadingState.FULLY_LOADED).getModel();
+  }
+
+  public static ModelLoadResult readModel(InputSource source, String name, String stereotype, ModelLoadingState state) {
     int version = getModelPersistenceVersion(source);
     if (version >= 5) {
       try {
         SAXParser parser = JDOMUtil.createSAXParser();
         DefaultMPSHandler handler = modelReadHandlers.get(version);
+        boolean partial = handler.setPartialLoading(state);
         parser.parse(source, handler);
-        return handler.getResult();
+        ModelLoadingState loadingState = partial ? state : ModelLoadingState.FULLY_LOADED;
+        return new ModelLoadResult(handler.getResult(), loadingState);
       } catch (Throwable t) {
         LOG.error(t);
-        return new StubModel(new SModelReference(name, stereotype));
+        StubModel model = new StubModel(new SModelReference(name, stereotype));
+        return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
       }
     } else {
       Document document = loadModelDocument(source);
       IModelReader modelReader = modelReaders.get(version);
-      if (modelReader == null) return handleNullReaderForPersistence(name);
-      return modelReader.readModel(document, name, stereotype);
+      if (modelReader == null) {
+        SModel model = handleNullReaderForPersistence(name);
+        return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+      }
+      SModel model = modelReader.readModel(document, name, stereotype);
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
   }
 

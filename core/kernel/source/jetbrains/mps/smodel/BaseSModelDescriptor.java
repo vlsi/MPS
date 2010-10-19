@@ -70,13 +70,21 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected abstract ModelLoadResult initialLoad();
 
-  protected static class ModelLoadResult {
-    ModelLoadingState state;
-    SModel model;
+  public static class ModelLoadResult {
+    private ModelLoadingState state;
+    private SModel model;
 
     public ModelLoadResult(SModel model, ModelLoadingState state) {
       this.model = model;
       this.state = state;
+    }
+
+    public ModelLoadingState getState() {
+      return state;
+    }
+
+    public SModel getModel() {
+      return model;
     }
   }
 

@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -81,7 +82,8 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
 
     if (model == null) {
       //todo only roots loading
-      model = ModelPersistence.readModel(new IdeaFileSystemProvider().getFile(inputData.getFile()));
+      IFile file = new IdeaFileSystemProvider().getFile(inputData.getFile());
+      model = ModelPersistence.readModel(file, ModelLoadingState.ROOTS_LOADED).getModel();
       model.setLoading(true);
       inputData.putUserData(PARSED_MODEL, model);
     }
