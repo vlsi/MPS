@@ -79,7 +79,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   protected ModelLoadResult initialLoad() {
-    System.out.printf("initialLoad() called for model "+getLongName()+"\n");
+    System.out.printf("initialLoad() called for model " + getLongName() + "\n");
     ModelLoadingState state = ModelLoadingState.ROOTS_LOADED;
     SModel model = load(state);
     return new ModelLoadResult(model, state);
@@ -90,16 +90,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     boolean loading = mySModel.isLoading();
     if (loading) return;
 
-    System.out.printf("enforceFullLoad() called for model "+getLongName()+"\n");
+    System.out.printf("enforceFullLoad() called for model " + getLongName() + "\n");
 
     SModel fullModel = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, ModelLoadingState.FULLY_LOADED);
 
-    try{
+    try {
       mySModel.setLoading(true);
       fullModel.setLoading(true);
-      new ModelLoader(mySModel,fullModel).update();
+      new ModelLoader(mySModel, fullModel).update();
       setLoadingState(ModelLoadingState.FULLY_LOADED);
-      updateOnLoad(mySModel);
+      updateOnLoad(mySModel, false);
       fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
     } finally {
       mySModel.setLoading(loading);
@@ -109,18 +109,20 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   //just loads model, w/o changing state of SModelDescriptor
   private SModel load(ModelLoadingState loadingState) {
     SModel result = ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
-    updateOnLoad(result);
+    updateOnLoad(result, loadingState != ModelLoadingState.FULLY_LOADED);
     return result;
   }
 
-  private void updateOnLoad(SModel result) {
+  private void updateOnLoad(SModel result, boolean quick) {
     if (StructureModificationProcessor.updateModelOnLoad(result)) {
       IFile modelFile = getModelFile();
       if (modelFile != null && !modelFile.isReadOnly()) {
         SModelRepository.getInstance().markChanged(this, true);
       }
     }
-    tryFixingVersion();
+    if (!quick) {
+      tryFixingVersion();
+    }
     myStructureModificationHistory = null;
     updateDiskTimestamp();
   }
