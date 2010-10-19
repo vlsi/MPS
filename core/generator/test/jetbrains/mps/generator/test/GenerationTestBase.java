@@ -67,7 +67,6 @@ public class GenerationTestBase {
     Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    System.setProperty("mps.vfs.useIoFile", "true");
     TestMain.configureMPS();
 
     Testbench.initLibs();
