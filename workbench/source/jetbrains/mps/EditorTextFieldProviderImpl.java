@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.actionSystem.EditorAction;
 import com.intellij.openapi.editor.actions.TextComponentEditorAction;
+import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.EditorCustomization;
@@ -27,6 +28,7 @@ import com.intellij.ui.EditorTextField;
 import com.intellij.ui.EditorTextFieldProvider;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.ScrollPaneConstants;
 import java.util.Comparator;
 
 /**
@@ -72,6 +74,14 @@ public class EditorTextFieldProviderImpl implements EditorTextFieldProvider {
                                         @NotNull final Project project,
                                         @NotNull final EditorCustomization.Feature... features) {
     return new EditorTextField("", project, FileTypes.PLAIN_TEXT) {
+      @Override
+      protected EditorEx createEditor() {
+        EditorEx editor = super.createEditor();
+        editor.setOneLineMode(false);
+        editor.getScrollPane().setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        return editor;
+      }
+
       @Override
       public Object getData(String dataId) {
         if (PlatformDataKeys.ACTIONS_SORTER.is(dataId)) {
