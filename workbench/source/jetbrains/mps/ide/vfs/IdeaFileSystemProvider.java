@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.vfs;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
@@ -29,5 +30,9 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
   @Override
   public IFile getFile(@NotNull String path) {
     return new IdeaFile(path);
+  }
+
+  public IFile getFile(@NotNull VirtualFile file) {
+    return new IdeaFile(file);
   }
 }

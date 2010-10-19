@@ -48,7 +48,7 @@ class IdeaFile implements IFileEx {
     myPath = path;
   }
 
-  private IdeaFile(@NotNull VirtualFile virtualFile) {
+  IdeaFile(@NotNull VirtualFile virtualFile) {
     myVirtualFile = virtualFile;
   }
 
