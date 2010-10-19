@@ -62,10 +62,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-/**
- * Author: Sergey Dmitriev
- * Created Oct 28, 2003
- */
 public class ModelPersistence {
   private static final Logger LOG = Logger.getLogger(ModelPersistence.class);
 
@@ -78,9 +74,7 @@ public class ModelPersistence {
   public static final String NODE = "node";
   public static final String TYPE = "type";
   public static final String ID = "id";
-  public static final String NO_ID = "noId";
   public static final String RESOLVE_INFO = "resolveInfo";
-  public static final String TARGET_CLASS_RESOLVE_INFO = "targetClassResolveInfo"; //v0
   public static final String MODEL = "model";
   public static final String PROPERTY = "property";
   public static final String VALUE = "value";
@@ -95,7 +89,6 @@ public class ModelPersistence {
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
-  public static final String REFACTORING_LOG = "refactoringLog";
 
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
@@ -110,7 +103,6 @@ public class ModelPersistence {
 
   static {
     modelReaders.put(0, new ModelReader0());
-//    modelWriters.put(0, new ModelWriter0());
 
     modelReaders.put(1, new ModelReader1());
     modelWriters.put(1, new ModelWriter1());
