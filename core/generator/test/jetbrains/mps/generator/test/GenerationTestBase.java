@@ -301,6 +301,14 @@ public class GenerationTestBase {
     return ModelDigestUtil.getDigestMap(os.toByteArray());
   }
 
+  private static Map<String,String> getEmptyDigest() {
+    Map<String, String> result = new HashMap<String, String>();
+    result.put(ModelDigestHelper.FILE, ModelDigestUtil.hash(""));
+    result.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(""));
+    return result;
+
+  }
+
   private static String buildDiff(Map<String, String> expected, Map<String, String> actual) {
     Set<String> keys = new HashSet<String>();
     keys.addAll(expected.keySet());
@@ -380,7 +388,7 @@ public class GenerationTestBase {
       if (sm == myModel) {
         return myHash;
       }
-      return ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
+      return getEmptyDigest(); // ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
     }
 
     @Override
