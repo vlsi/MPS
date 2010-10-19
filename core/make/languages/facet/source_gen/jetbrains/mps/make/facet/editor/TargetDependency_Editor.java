@@ -9,12 +9,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class TargetDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -24,18 +27,11 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x08tk8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x08tk8_a");
-    editorCell.addEditorCell(this.createConstant_x08tk8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_x08tk8_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_x08tk8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x08tk8_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x08tk8_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x08tk8_e0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_x08tk8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependsOn");
-    editorCell.setCellId("Constant_x08tk8_a0");
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -50,6 +46,24 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_x08tk8_e0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_x08tk8_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_type");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TargetDependency_Editor.TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -118,6 +132,15 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+
+  public static class TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.make.facet.structure.TargetDependency";
     }
   }
 }

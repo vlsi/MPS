@@ -10,11 +10,21 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TargetDependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.make.facet.structure.TargetDependency";
+  public static final String TYPE = "type";
   public static final String DEPENDS_ON = "dependsOn";
   public static final String CONFIGURATION = "configuration";
 
   public TargetDependency(SNode node) {
     super(node);
+  }
+
+  public TargetDependencyType getType() {
+    String value = super.getProperty(TargetDependency.TYPE);
+    return TargetDependencyType.parseValue(value);
+  }
+
+  public void setType(TargetDependencyType value) {
+    super.setProperty(TargetDependency.TYPE, value.getValueAsString());
   }
 
   public TargetDeclaration getDependsOn() {

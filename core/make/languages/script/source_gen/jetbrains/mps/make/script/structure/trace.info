@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Script_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.structure.Script_Language" />
+  <unitInfo fileName="TaskDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.script.structure.TaskDeclaration" />
+  <unitInfo fileName="ResultStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.script.structure.ResultStatement" />
+  <unitInfo fileName="Task.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.script.structure.Task" />
+  <unitInfo fileName="Dependency.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.make.script.structure.Dependency" />
+  <unitInfo fileName="TaskList.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.script.structure.TaskList" />
+  <unitInfo fileName="DependencyQualifier_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.DependencyQualifier_PropertySupport" />
+  <unitInfo fileName="Target.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.script.structure.Target" />
+  <unitInfo fileName="DependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.script.structure.DependencyQualifier" />
+</debugInfo>
+

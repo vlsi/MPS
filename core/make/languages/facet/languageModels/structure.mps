@@ -109,17 +109,29 @@
     <property name="name:0" value="FacetDeclaration" />
     <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422654">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="extended" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="6447445394688555033:1" resolveInfo="ExtendsFacetReference" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422656">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="required" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="8351679702044320297:1" resolveInfo="RelatedFacetReference" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422657">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="optional" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="8351679702044320297:1" resolveInfo="RelatedFacetReference" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763146558">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="targetDeclaration" />
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="6418371274763029565:1" resolveInfo="TargetDeclaration" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763029537">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="extends" />
-      <property name="sourceCardinality:0" value="0..1" />
-      <link role="target:0" targetNodeId="6418371274763029523:1" resolveInfo="FacetDeclaration" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6418371274763029524">
       <link role="intfc:0" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
@@ -159,6 +171,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6418371274763029600">
     <property name="name:0" value="TargetDependency" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8351679702044326377">
+      <property name="name:0" value="type" />
+      <link role="dataType:0" targetNodeId="8351679702044326370:1" resolveInfo="TargetDependencyType" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763029603">
       <property name="metaClass:0" value="reference" />
       <property name="role:0" value="dependsOn" />
@@ -169,6 +185,47 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="configuration" />
       <link role="target:0" targetNodeId="6418371274763029596:1" resolveInfo="TargetConfiguration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6447445394688422642">
+    <property name="name:0" value="FacetReference" />
+    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422643">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="facet" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="6418371274763029523:1" resolveInfo="FacetDeclaration" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="8351679702044320296">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6447445394688555033">
+    <property name="name:0" value="ExtendsFacetReference" />
+    <link role="extends:0" targetNodeId="6447445394688422642:1" resolveInfo="FacetReference" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8351679702044320297">
+    <property name="name:0" value="RelatedFacetReference" />
+    <link role="extends:0" targetNodeId="6447445394688422642:1" resolveInfo="FacetReference" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="8351679702044326370">
+    <property name="name:0" value="TargetDependencyType" />
+    <link role="memberDataType:0" targetNodeId="2v.1082983041843:0" resolveInfo="string" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="8351679702044326371">
+      <property name="internalValue:0" value="BEFORE" />
+      <property name="externalValue:0" value="before" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="8351679702044326373">
+      <property name="internalValue:0" value="NOT_BEFORE" />
+      <property name="externalValue:0" value="not before" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="8351679702044326374">
+      <property name="internalValue:0" value="AFTER" />
+      <property name="externalValue:0" value="after" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="8351679702044326375">
+      <property name="internalValue:0" value="NOT_AFTER" />
+      <property name="externalValue:0" value="not after" />
     </node>
   </node>
 </model>

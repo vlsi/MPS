@@ -1,64 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TargetDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_Behavior" />
-  <unitInfo fileName="FacetDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
+  <unitInfo fileName="FacetDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
   <root nodeId="7854369758457864777">
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="48" startPosition="27" endLine="48" endPosition="27" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="21" startPosition="50" endLine="22" endPosition="37" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="22" startPosition="37" endLine="23" endPosition="34" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="30" startPosition="28" endLine="31" endPosition="54" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="31" startPosition="54" endLine="32" endPosition="35" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="34" startPosition="44" endLine="35" endPosition="40" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="35" startPosition="40" endLine="36" endPosition="30" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="37" startPosition="23" endLine="38" endPosition="38" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="38" startPosition="38" endLine="39" endPosition="28" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="40" startPosition="27" endLine="41" endPosition="38" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="41" startPosition="38" endLine="42" endPosition="40" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="42" startPosition="40" endLine="43" endPosition="34" />
-    <nodeInfo nodeId="7854369758457903665" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="27" endLine="45" endPosition="44" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="27" endLine="45" endPosition="44" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="45" startPosition="44" endLine="46" endPosition="38" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="46" startPosition="38" endLine="47" endPosition="28" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="48" startPosition="27" endLine="49" endPosition="38" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="49" startPosition="38" endLine="50" endPosition="28" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="27" endLine="52" endPosition="81" />
-    <nodeInfo nodeId="7854369758457971288" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="27" endLine="52" endPosition="81" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="52" startPosition="81" endLine="53" endPosition="38" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="53" startPosition="38" endLine="54" endPosition="28" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="58" startPosition="31" endLine="59" endPosition="29" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="33" startPosition="27" endLine="37" endPosition="23" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="27" startPosition="20" endLine="57" endPosition="19" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="25" startPosition="46" endLine="58" endPosition="31" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="20" startPosition="45" endLine="61" endPosition="14" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="19" startPosition="38" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="18" startPosition="41" endLine="63" endPosition="10" />
-    <nodeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="17" startPosition="63" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="7854369758457903683" fileName="FacetDeclaration_Behavior.java" startLine="16" startPosition="91" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="7854369758457864779" fileName="FacetDeclaration_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="48" startPosition="27" endLine="48" endPosition="27" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="27" endLine="45" endPosition="44" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="27" endLine="52" endPosition="81" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="30" startPosition="28" endLine="32" endPosition="35" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="34" startPosition="44" endLine="36" endPosition="30" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="48" startPosition="27" endLine="50" endPosition="28" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="40" startPosition="27" endLine="43" endPosition="34" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="27" endLine="47" endPosition="28" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="27" endLine="54" endPosition="28" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="33" startPosition="27" endLine="39" endPosition="28" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="27" startPosition="20" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="25" startPosition="46" endLine="59" endPosition="29" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="20" startPosition="45" endLine="61" endPosition="14" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="19" startPosition="38" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="18" startPosition="41" endLine="63" endPosition="10" />
-    <scopeInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="17" startPosition="63" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="7854369758457864783" fileName="FacetDeclaration_Behavior.java" startLine="16" startPosition="91" endLine="65" endPosition="7" />
-    <unitInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="21" startPosition="23" endLine="61" endPosition="13" unitName="Anonymous in iterator() in Anonymous in iterable() in jetbrains.mps.make.facet.behavior.ISequenceClosure$anonymous" />
-    <unitInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="19" startPosition="19" endLine="63" endPosition="9" unitName="Anonymous in iterable() in jetbrains.mps.make.facet.behavior.ISequenceClosure$anonymous" />
-    <unitInfo nodeId="7854369758457971282" fileName="FacetDeclaration_Behavior.java" startLine="17" startPosition="36" endLine="65" endPosition="5" unitName="jetbrains.mps.make.facet.behavior.ISequenceClosure$anonymous" />
+    <nodeInfo nodeId="6447445394688471871" fileName="FacetDeclaration_Behavior.java" startLine="20" startPosition="85" endLine="21" endPosition="72" />
+    <nodeInfo nodeId="6447445394688511208" fileName="FacetDeclaration_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="92" />
+    <nodeInfo nodeId="6447445394688511257" fileName="FacetDeclaration_Behavior.java" startLine="23" startPosition="57" endLine="24" endPosition="69" />
+    <nodeInfo nodeId="6447445394688511279" fileName="FacetDeclaration_Behavior.java" startLine="25" startPosition="56" endLine="26" endPosition="51" />
+    <nodeInfo nodeId="6447445394688520457" fileName="FacetDeclaration_Behavior.java" startLine="28" startPosition="41" endLine="29" endPosition="65" />
+    <nodeInfo nodeId="6447445394688520467" fileName="FacetDeclaration_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="18" />
+    <nodeInfo nodeId="8351679702044331829" fileName="FacetDeclaration_Behavior.java" startLine="37" startPosition="85" endLine="38" endPosition="72" />
+    <nodeInfo nodeId="8351679702044331836" fileName="FacetDeclaration_Behavior.java" startLine="38" startPosition="72" endLine="39" endPosition="92" />
+    <nodeInfo nodeId="8351679702044331849" fileName="FacetDeclaration_Behavior.java" startLine="40" startPosition="57" endLine="41" endPosition="69" />
+    <nodeInfo nodeId="8351679702044331857" fileName="FacetDeclaration_Behavior.java" startLine="42" startPosition="56" endLine="43" endPosition="51" />
+    <nodeInfo nodeId="8351679702044331873" fileName="FacetDeclaration_Behavior.java" startLine="45" startPosition="41" endLine="46" endPosition="65" />
+    <nodeInfo nodeId="8351679702044365631" fileName="FacetDeclaration_Behavior.java" startLine="50" startPosition="41" endLine="51" endPosition="65" />
+    <nodeInfo nodeId="8351679702044331884" fileName="FacetDeclaration_Behavior.java" startLine="55" startPosition="5" endLine="56" endPosition="18" />
+    <nodeInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="27" startPosition="161" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="161" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="49" startPosition="161" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="6447445394688511289" fileName="FacetDeclaration_Behavior.java" startLine="26" startPosition="51" endLine="31" endPosition="12" />
+    <nodeInfo nodeId="8351679702044331862" fileName="FacetDeclaration_Behavior.java" startLine="43" startPosition="51" endLine="48" endPosition="12" />
+    <nodeInfo nodeId="8351679702044365620" fileName="FacetDeclaration_Behavior.java" startLine="48" startPosition="12" endLine="53" endPosition="12" />
+    <nodeInfo nodeId="6447445394688511264" fileName="FacetDeclaration_Behavior.java" startLine="24" startPosition="69" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="6447445394688511240" fileName="FacetDeclaration_Behavior.java" startLine="22" startPosition="92" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="8351679702044331855" fileName="FacetDeclaration_Behavior.java" startLine="41" startPosition="69" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="8351679702044331844" fileName="FacetDeclaration_Behavior.java" startLine="39" startPosition="92" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="7854369758457864779" fileName="FacetDeclaration_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="6447445394688520454" fileName="FacetDeclaration_Behavior.java" startLine="28" startPosition="41" endLine="29" endPosition="65" />
+    <scopeInfo nodeId="8351679702044331872" fileName="FacetDeclaration_Behavior.java" startLine="45" startPosition="41" endLine="46" endPosition="65" />
+    <scopeInfo nodeId="8351679702044365630" fileName="FacetDeclaration_Behavior.java" startLine="50" startPosition="41" endLine="51" endPosition="65" />
+    <scopeInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="27" startPosition="161" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="161" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="49" startPosition="161" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="6447445394688511265" fileName="FacetDeclaration_Behavior.java" startLine="25" startPosition="56" endLine="31" endPosition="12" />
+    <scopeInfo nodeId="6447445394688511249" fileName="FacetDeclaration_Behavior.java" startLine="23" startPosition="57" endLine="32" endPosition="7">
+      <varInfo nodeId="6447445394688511258" varName="fd" />
+    </scopeInfo>
+    <scopeInfo nodeId="8351679702044331856" fileName="FacetDeclaration_Behavior.java" startLine="42" startPosition="56" endLine="53" endPosition="12" />
+    <scopeInfo nodeId="7854369758457864783" fileName="FacetDeclaration_Behavior.java" startLine="20" startPosition="85" endLine="34" endPosition="18">
+      <varInfo nodeId="6447445394688511209" varName="queue" />
+      <varInfo nodeId="6447445394688471872" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8351679702044331848" fileName="FacetDeclaration_Behavior.java" startLine="40" startPosition="57" endLine="54" endPosition="7">
+      <varInfo nodeId="8351679702044331850" varName="fd" />
+    </scopeInfo>
+    <scopeInfo nodeId="8351679702044331821" fileName="FacetDeclaration_Behavior.java" startLine="37" startPosition="85" endLine="56" endPosition="18">
+      <varInfo nodeId="8351679702044331837" varName="queue" />
+      <varInfo nodeId="8351679702044331830" varName="result" />
+    </scopeInfo>
+    <unitInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="27" startPosition="134" endLine="31" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$1" />
+    <unitInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="44" startPosition="134" endLine="48" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$2" />
+    <unitInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="49" startPosition="134" endLine="53" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$3" />
   </root>
   <root nodeId="7854369758457971843">
     <nodeInfo nodeId="7854369758457974823" fileName="TargetDeclaration_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="122" />

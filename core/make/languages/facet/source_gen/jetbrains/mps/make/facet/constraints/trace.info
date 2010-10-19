@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.RelatedFacetReference_facet_ReferentConstraint" />
   <unitInfo fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.TargetDeclaration_overrides_ReferentConstraint" />
+  <unitInfo fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.ExtendsFacetReference_facet_ReferentConstraint" />
+  <unitInfo fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="19" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.make.facet.constraints.TargetDependency_dependsOn_ReferentConstraint" />
+  <root nodeId="6447445394688555034">
+    <nodeInfo nodeId="8351679702044270535" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="32" startPosition="39" endLine="33" endPosition="145" />
+    <nodeInfo nodeId="8351679702044270525" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="35" startPosition="7" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="8351679702044270533" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="31" startPosition="215" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="8351679702044270526" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="8351679702044270534" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="32" startPosition="39" endLine="33" endPosition="145" />
+    <scopeInfo nodeId="8351679702044270533" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="31" startPosition="215" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="6447445394688555037" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="0" />
+    <unitInfo nodeId="8351679702044270533" fileName="ExtendsFacetReference_facet_ReferentConstraint.java" startLine="31" startPosition="192" endLine="35" endPosition="5" unitName="jetbrains.mps.make.facet.constraints.IWhereFilter$anonymous" />
+  </root>
   <root nodeId="7854369758457864776">
     <nodeInfo nodeId="7854369758457974864" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="32" startPosition="50" endLine="33" endPosition="73" />
     <nodeInfo nodeId="7854369758457974860" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="31" startPosition="252" endLine="35" endPosition="0" />
@@ -10,6 +23,27 @@
     <scopeInfo nodeId="7854369758457974860" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="31" startPosition="252" endLine="35" endPosition="0" />
     <scopeInfo nodeId="7854369758457974835" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="7" />
     <unitInfo nodeId="7854369758457974860" fileName="TargetDeclaration_overrides_ReferentConstraint.java" startLine="31" startPosition="222" endLine="35" endPosition="5" unitName="jetbrains.mps.make.facet.constraints.ITranslator2$anonymous" />
+  </root>
+  <root nodeId="8351679702044320298">
+    <nodeInfo nodeId="8351679702044320312" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="52" />
+    <nodeInfo nodeId="8351679702044320310" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="29" startPosition="215" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="8351679702044320303" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="8351679702044320311" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="52" />
+    <scopeInfo nodeId="8351679702044320310" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="29" startPosition="215" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8351679702044320302" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="7" />
+    <unitInfo nodeId="8351679702044320310" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="29" startPosition="192" endLine="33" endPosition="5" unitName="jetbrains.mps.make.facet.constraints.IWhereFilter$anonymous" />
+  </root>
+  <root nodeId="8351679702044331811">
+    <nodeInfo nodeId="8351679702044365861" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="262" />
+    <nodeInfo nodeId="8351679702044365872" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="34" startPosition="39" endLine="35" endPosition="163" />
+    <nodeInfo nodeId="8351679702044365840" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="33" startPosition="216" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="8351679702044365826" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="32" startPosition="262" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="8351679702044365841" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="34" startPosition="39" endLine="35" endPosition="163" />
+    <scopeInfo nodeId="8351679702044365840" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="33" startPosition="216" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8351679702044331814" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="31" startPosition="132" endLine="37" endPosition="7">
+      <varInfo nodeId="8351679702044365862" varName="relatedFacets" />
+    </scopeInfo>
+    <unitInfo nodeId="8351679702044365840" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="33" startPosition="193" endLine="37" endPosition="5" unitName="jetbrains.mps.make.facet.constraints.IWhereFilter$anonymous" />
   </root>
 </debugInfo>
 

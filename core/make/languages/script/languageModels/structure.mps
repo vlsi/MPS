@@ -130,5 +130,14 @@
       <link role="target:0" targetNodeId="6746335715434529364" resolveInfo="Task" />
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7077360340906447917">
+    <property name="name:0" value="ResultStatement" />
+    <link role="extends:0" targetNodeId="3v.1068581242878:3" resolveInfo="ReturnStatement" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7077360340906447918">
+      <property name="name:0" value="ok" />
+      <link role="dataType:0" targetNodeId="2v.1082983657063:0" resolveInfo="boolean" />
+    </node>
+  </node>
 </model>
 

@@ -12,7 +12,10 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new ExtendsFacetReference_facet_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TargetDeclaration_overrides_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new RelatedFacetReference_facet_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TargetDependency_dependsOn_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

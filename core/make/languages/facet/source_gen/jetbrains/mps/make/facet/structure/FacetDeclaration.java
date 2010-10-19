@@ -17,7 +17,9 @@ public class FacetDeclaration extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String EXTENDS = "extends";
+  public static final String EXTENDED = "extended";
+  public static final String REQUIRED = "required";
+  public static final String OPTIONAL = "optional";
   public static final String TARGET_DECLARATION = "targetDeclaration";
 
   public FacetDeclaration(SNode node) {
@@ -56,12 +58,64 @@ public class FacetDeclaration extends BaseConcept implements INamedConcept {
     this.setProperty(FacetDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public FacetDeclaration getExtends() {
-    return (FacetDeclaration) this.getReferent(FacetDeclaration.class, FacetDeclaration.EXTENDS);
+  public int getExtendedsCount() {
+    return this.getChildCount(FacetDeclaration.EXTENDED);
   }
 
-  public void setExtends(FacetDeclaration node) {
-    super.setReferent(FacetDeclaration.EXTENDS, node);
+  public Iterator<ExtendsFacetReference> extendeds() {
+    return this.children(ExtendsFacetReference.class, FacetDeclaration.EXTENDED);
+  }
+
+  public List<ExtendsFacetReference> getExtendeds() {
+    return this.getChildren(ExtendsFacetReference.class, FacetDeclaration.EXTENDED);
+  }
+
+  public void addExtended(ExtendsFacetReference node) {
+    this.addChild(FacetDeclaration.EXTENDED, node);
+  }
+
+  public void insertExtended(ExtendsFacetReference prev, ExtendsFacetReference node) {
+    this.insertChild(prev, FacetDeclaration.EXTENDED, node);
+  }
+
+  public int getRequiredsCount() {
+    return this.getChildCount(FacetDeclaration.REQUIRED);
+  }
+
+  public Iterator<RelatedFacetReference> requireds() {
+    return this.children(RelatedFacetReference.class, FacetDeclaration.REQUIRED);
+  }
+
+  public List<RelatedFacetReference> getRequireds() {
+    return this.getChildren(RelatedFacetReference.class, FacetDeclaration.REQUIRED);
+  }
+
+  public void addRequired(RelatedFacetReference node) {
+    this.addChild(FacetDeclaration.REQUIRED, node);
+  }
+
+  public void insertRequired(RelatedFacetReference prev, RelatedFacetReference node) {
+    this.insertChild(prev, FacetDeclaration.REQUIRED, node);
+  }
+
+  public int getOptionalsCount() {
+    return this.getChildCount(FacetDeclaration.OPTIONAL);
+  }
+
+  public Iterator<RelatedFacetReference> optionals() {
+    return this.children(RelatedFacetReference.class, FacetDeclaration.OPTIONAL);
+  }
+
+  public List<RelatedFacetReference> getOptionals() {
+    return this.getChildren(RelatedFacetReference.class, FacetDeclaration.OPTIONAL);
+  }
+
+  public void addOptional(RelatedFacetReference node) {
+    this.addChild(FacetDeclaration.OPTIONAL, node);
+  }
+
+  public void insertOptional(RelatedFacetReference prev, RelatedFacetReference node) {
+    this.insertChild(prev, FacetDeclaration.OPTIONAL, node);
   }
 
   public int getTargetDeclarationsCount() {
