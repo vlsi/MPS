@@ -76,23 +76,28 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     return DEFAULT_CACHE_SIZE;
   }
 
+  public static SModel doModelParsing(FileContent inputData) {
+    SModel model = inputData.getUserData(PARSED_MODEL);
+
+    if (model == null) {
+      model = ModelPersistence.readModel(new IdeaFileSystemProvider().getFile(inputData.getFile()));
+      model.setLoading(true);
+      inputData.putUserData(PARSED_MODEL, model);
+    }
+    return model;
+  }
+
+
   private class MyIndexer extends SingleEntryIndexer<List<BaseSNodeDescriptor>> {
     private MyIndexer() {
       super(false);
     }
 
-    @Override
     protected List<BaseSNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
       final List<BaseSNodeDescriptor> descriptors = new ArrayList<BaseSNodeDescriptor>();
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
-          SModel model = inputData.getUserData(PARSED_MODEL);
-
-          if (model == null) {
-            model = ModelPersistence.readModel(new IdeaFileSystemProvider().getFile(inputData.getFile()));
-            model.setLoading(true);
-            inputData.putUserData(PARSED_MODEL, model);
-          }
+          SModel model = doModelParsing(inputData);
 
           for (final SNode node : getRootsToIterate(model)) {
             String persistentName = node.getPersistentProperty(INamedConcept.NAME);
@@ -107,6 +112,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       });
       return descriptors;
     }
+
 
     private void handleException(Exception e, FileContent inputData) {
       VirtualFile file = inputData.getFile();

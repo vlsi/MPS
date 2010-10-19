@@ -88,19 +88,9 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
       final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
-          try {
-            SModel sModel = inputData.getUserData(BaseSNodeDescriptorIndex.PARSED_MODEL);
-            if (sModel == null) {
-              sModel = ModelPersistence.readModel(inputData.getContentAsText());
-              if (sModel != null) {
-                sModel.setLoading(true);
-                inputData.putUserData(BaseSNodeDescriptorIndex.PARSED_MODEL, sModel);
-              }
-            }
-            if (sModel == null) {
-              return;
-            }
-            for (final SNode nextNode : SModelOperations.getNodes(sModel, null)) {
+            SModel model = BaseSNodeDescriptorIndex.doModelParsing(inputData);
+
+            for (final SNode nextNode : SModelOperations.getNodes(model, null)) {
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
                   if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -123,9 +113,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
                 }
               });
             }
-          } catch (IOException ex) {
-          } catch (JDOMException ex) {
-          }
+
         }
 
         private void safeMap(SNode classifierType, SNode node) {
