@@ -23,6 +23,7 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.StubModel;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -33,9 +34,9 @@ import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
 import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
-import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
+import jetbrains.mps.smodel.persistence.def.v6.ModelWriter6;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
@@ -44,12 +45,14 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.xml.sax.Attributes;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -87,6 +90,7 @@ public class ModelPersistence {
 
   private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
+  private static final Map<Integer, DefaultMPSHandler> modelReadHandlers = new HashMap<Integer, DefaultMPSHandler>();
   private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
 
   private static PersistenceSettings ourPersistenceSettings;
@@ -106,8 +110,11 @@ public class ModelPersistence {
     modelReaders.put(4, new ModelReader4());
     modelWriters.put(4, new ModelWriter4());
 
-    modelReaders.put(5, new ModelReader5());
+    modelReadHandlers.put(5, new ModelReader5Handler());
     modelWriters.put(5, new ModelWriter5());
+
+    modelReadHandlers.put(6, new ModelReader6Handler());
+    modelWriters.put(6, new ModelWriter6());
   }
 
   private static PersistenceSettings getPersistenceSettings() {
@@ -121,30 +128,35 @@ public class ModelPersistence {
 
   @NotNull
   public static SModel readModel(@NotNull IFile file) {
-    String modelName = extractModelName(file.getName());
-    String modelStereotype = extractModelStereotype(file.getName());
-    int version = getModelPersistenceVersion(file);
-    if (version == 5) {
+    String name = file.getName();
+    String modelName = extractModelName(name);
+    String modelStereotype = extractModelStereotype(name);
+    try {
+      return readModel(JDOMUtil.loadSource(file), modelName, modelStereotype);
+    } catch (Throwable t) {
+      LOG.error("Error while loading model from file: " + file.getAbsolutePath(), t);
+      return new StubModel(new SModelReference(modelName, modelStereotype));
+    }
+  }
+
+  public static SModel readModel(InputSource source, String name, String stereotype) {
+    int version = getModelPersistenceVersion(source);
+    if (version >= 5) {
       try {
         SAXParser parser = JDOMUtil.createSAXParser();
-        ModelReader5Handler handler = new ModelReader5Handler();
-        parser.parse(JDOMUtil.loadSource(file), handler);
+        DefaultMPSHandler handler = modelReadHandlers.get(version);
+        parser.parse(source, handler);
         return handler.getResult();
       } catch (Throwable t) {
         LOG.error(t);
+        return new StubModel(new SModelReference(name, stereotype));
       }
+    } else {
+      Document document = loadModelDocument(source);
+      IModelReader modelReader = modelReaders.get(version);
+      if (modelReader == null) return handleNullReaderForPersistence(name);
+      return modelReader.readModel(document, name, stereotype);
     }
-    return readModel(loadModelDocument(file), modelName, modelStereotype);
-  }
-
-  @NotNull
-  public static SModel readModel(@NotNull Document document, @NotNull String modelName, @NotNull String stereotype) {
-    int version = getModelPersistenceVersion(document);
-    IModelReader modelReader = modelReaders.get(version);
-    if (modelReader == null) {
-      return handleNullReaderForPersistence(modelName);
-    }
-    return modelReader.readModel(document, modelName, stereotype);
   }
 
   //--------write--------
@@ -249,10 +261,19 @@ public class ModelPersistence {
   }
 
   public static int getModelPersistenceVersion(IFile file) {
+    try {
+      return getModelPersistenceVersion(JDOMUtil.loadSource(file));
+    } catch (IOException e) {
+      LOG.error("Exception on getting version. " + file.getAbsolutePath());
+      return -1;
+    }
+  }
+
+  public static int getModelPersistenceVersion(InputSource source) {
     final int[] version = new int[]{-1};
     try {
       SAXParser parser = JDOMUtil.createSAXParser();
-      parser.parse(JDOMUtil.loadSource(file), new DefaultHandler() {
+      parser.parse(source, new DefaultHandler() {
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
           if (version[0] == -1 && MODEL.equals(qName)) {
             version[0] = 0;
@@ -281,11 +302,6 @@ public class ModelPersistence {
     return version[0] == -1 ? getCurrentPersistenceVersion() : version[0];
   }
 
-  @NotNull
-  public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
-  }
-
   public static boolean needsRecreating(IFile file) {
     return modelReaders.get(getCurrentPersistenceVersion()).needsRecreating(file);
   }
@@ -297,14 +313,14 @@ public class ModelPersistence {
   //-------- --------
 
   @NotNull
-  private static Document loadModelDocument(@NotNull IFile file) {
+  private static Document loadModelDocument(@NotNull InputSource source) {
     Document document;
     try {
-      document = JDOMUtil.loadDocument(file);
+      document = JDOMUtil.loadDocument(source);
     } catch (JDOMException e) {
-      throw new ModelFileReadException("Exception in file " + file, e);
+      throw new ModelFileReadException("Exception in file " + source, e);
     } catch (IOException e) {
-      throw new ModelFileReadException("Exception in file " + file, e);
+      throw new ModelFileReadException("Exception in file " + source, e);
     }
     return document;
   }
@@ -359,4 +375,22 @@ public class ModelPersistence {
     return 0;
   }
 
+  //--------deprecated--------
+
+  @NotNull
+  @Deprecated //very slow
+  public static SModel copyModel(@NotNull SModel model) {
+    return readModel(saveModel(model), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
+  }
+
+  @Deprecated //very slow
+  public static SModel readModel(@NotNull Document d, String name, String stereotype) {
+    try {
+      InputSource source = new InputSource(new StringReader(JDOMUtil.asString(d)));
+      return readModel(source, name, stereotype);
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
 }
