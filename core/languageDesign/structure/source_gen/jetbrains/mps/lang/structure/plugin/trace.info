@@ -294,7 +294,7 @@
     <nodeInfo nodeId="6388164970935848209" fileName="ConceptDeclaration_TabbedEditor.java" startLine="542" startPosition="36" endLine="543" endPosition="42" />
     <nodeInfo nodeId="6388164970935848217" fileName="ConceptDeclaration_TabbedEditor.java" startLine="545" startPosition="145" endLine="546" endPosition="39" />
     <nodeInfo nodeId="6388164970935848221" fileName="ConceptDeclaration_TabbedEditor.java" startLine="546" startPosition="39" endLine="547" endPosition="18" />
-    <nodeInfo nodeId="6388164970935848245" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="109" endLine="552" endPosition="89" />
+    <nodeInfo nodeId="6388164970935848245" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="96" endLine="552" endPosition="89" />
     <nodeInfo nodeId="6388164970935848254" fileName="ConceptDeclaration_TabbedEditor.java" startLine="553" startPosition="35" endLine="554" endPosition="23" />
     <nodeInfo nodeId="6388164970935848258" fileName="ConceptDeclaration_TabbedEditor.java" startLine="555" startPosition="13" endLine="556" endPosition="87" />
     <nodeInfo nodeId="6388164970935848268" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="140" endLine="558" endPosition="53" />
@@ -522,7 +522,7 @@
       <varInfo nodeId="2165772098013669489" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
-    <scopeInfo nodeId="6388164970935848244" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="109" endLine="562" endPosition="13">
+    <scopeInfo nodeId="6388164970935848244" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="96" endLine="562" endPosition="13">
       <varInfo nodeId="6388164970935848246" varName="language" />
       <varInfo nodeId="6388164970935848259" varName="structureModel" />
     </scopeInfo>

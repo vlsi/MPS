@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="4v4kx6s312aqjs7vgihgvvcy3b6vtl5">
+  <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ubnuov1kf43waig305o8fw1ay435a0" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-eibb4k0gskt4mcnrr29x1zlac7qxwxf" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="fpsx42yjiof0oq14edmp0m01ocy8mk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="-aof2tj9ueiiok540q80rqv63zyspkuh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-aw2culdpzxmm7q9xn76kkfde2ex42eu" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="au0hub6lyj81d9t7fcb6iev4sbua7m6" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="2v8ad5zs063snh13s6nd3wfc9e3vz4e" />
+  <common hash="9plsjdm3ila0fymg9bkpv8px6k32w2l">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="Mpslite_Language.java" />
+  </common>
+  <source id="1182511208797" name="Line" hash="c50qnq158e8x8ityje66hng9m8sqflu">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Line.java" />
+  </source>
+  <source id="1182511214735" name="LinePart" hash="-7ql915321fswi3rcthlgex6tnb1vppj">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="LinePart.java" />
+  </source>
+  <source id="1182511276754" name="ConstantLinePart" hash="8t12w3i5e7jckyfhjytyu5hg6ybl1v8">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConstantLinePart.java" />
+  </source>
+  <source id="1182512705570" name="IndentLinePart" hash="60t1bc1ecrsjgyidji4v6t19bvonkls">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IndentLinePart.java" />
+  </source>
+  <source id="1182845659293" name="ConcreteReferencePart" hash="8c7yx3ix66avhyqt7pjb6xyye5g735q">
+    <dep root="1237207375100" />
+    <dep root="1237896192386" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConcreteReferencePart.java" />
+  </source>
+  <source id="1183015764815" name="ChildPart" hash="2m5e1py0irckvxrtl5wss4ig2dbarwh">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ChildPart.java" />
+  </source>
+  <source id="1197379421676" name="OptionalPart" hash="-6ul4xtsd5rcbzi2w8cfktl93450xtbc">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="OptionalPart.java" />
+  </source>
+  <source id="1237207272689" name="ConcreteChildPart" hash="4pad4lpuanej3z63fr2x522akt5049r">
+    <dep root="1183015764815" />
+    <dep root="1237896192386" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConcreteChildPart.java" />
+  </source>
+  <source id="1237207375100" name="ReferencePart" hash="-dxx5t19xeych9zp8zzu8tyu3oyfc8ny">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ReferencePart.java" />
+  </source>
+  <source id="1237216850308" name="ConstantText" hash="-c5ravnxo14v8xk5hk5to5uuow96jayk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConstantText_PropertySupport.java" />
+  </source>
+  <source id="1182510906722" name="MPSLiteConceptDeclaration" hash="e46pfff1salrzzyb7m8y44757e2sn1d">
+    <dep root="1237380500632" />
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MPSLiteConceptDeclaration.java" />
+  </source>
+  <source id="1237380500632" name="LineList" hash="7jhi6927u9ni62kg4elk1dpjse8k8u0">
+    <dep root="1182511208797" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="LineList.java" />
+  </source>
+  <source id="1237383701619" name="PropertyPart" hash="92ldebx474dpxv2s32qd4gq06f4kj0v">
+    <dep root="1182511214735" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="PropertyPart.java" />
+  </source>
+  <source id="1237383915698" name="ConcretePropertyPart" hash="7w499izexz49wo0k15cdg3i0my7foct" dependsOnCreated="true">
+    <dep root="1182510906722" />
+    <dep root="1182511208797" />
+    <dep root="1182511214735" />
+    <dep root="1182511276754" />
+    <dep root="1182512705570" />
+    <dep root="1182845659293" />
+    <dep root="1183015764815" />
+    <dep root="1197379421676" />
+    <dep root="1237207272689" />
+    <dep root="1237207375100" />
+    <dep root="1237216850308" />
+    <dep root="1237380500632" />
+    <dep root="1237383701619" />
+    <dep root="1237383987373" />
+    <dep root="1237896192386" />
+    <dep root="1237897531822" />
+    <dep root="1237897770221" />
+    <dep root="1237993244422" />
+    <dep root="1239193335240" />
+    <dep root="1239353382348" />
+    <dep root="1239372399122" />
+    <dep root="1239372558422" />
+    <dep root="1239373436410" />
+    <dep root="1239714446829" />
+    <dep root="1239714568512" />
+    <dep root="1239714642032" />
+    <dep root="1239939522701" />
+    <dep root="1239939853119" />
+    <dep root="1239944428553" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConcretePropertyPart.java" />
+  </source>
+  <source id="1237383987373" name="MPSLitePropertyType_Enum" hash="3649eatbau7p0cnoj6rfmhghaez0l5d">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <file name="MPSLitePropertyType_Enum.java" />
+    <file name="MPSLitePropertyType_Enum_PropertySupport.java" />
+  </source>
+  <source id="1237896192386" name="AbstractConceptReference" hash="6crg7x4f2wv0fihcqfnqjm6gt35ncaf">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AbstractConceptReference.java" />
+  </source>
+  <source id="1237897531822" name="MPSLiteConceptReference" hash="-9by5mptkjudqclgnq4rqrs918qswso4">
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MPSLiteConceptReference.java" />
+  </source>
+  <source id="1237897770221" name="RegularConceptReference" hash="-4o3q2i0em5wjgspoatde7bb9tgixk8a">
+    <dep root="1237896192386" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="RegularConceptReference.java" />
+  </source>
+  <source id="1237993244422" name="IMPSLiteConcept" hash="-5rs7tj5wlgote0pgol8iyjnke8r1xfc">
+    <dep root="1237896192386" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="IMPSLiteConcept.java" />
+  </source>
+  <source id="1239193335240" name="BinaryOperationConcept" hash="6jyd0f40yor6obss9ixjyit515ln6yx">
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BinaryOperationConcept.java" />
+  </source>
+  <source id="1239353382348" name="FeatureAccessConcept" hash="-8z6o2ecematdb2qrsk3y18dydgvflfd">
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FeatureAccessConcept.java" />
+  </source>
+  <source id="1239372399122" name="VariableConcept" hash="9w13ldtrb3uja0dyyuhi8huxt6zf8z5">
+    <dep root="1237380500632" />
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep root="1239939522701" />
+    <dep root="1239944428553" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="VariableConcept.java" />
+  </source>
+  <source id="1239372558422" name="NamePropertyNamePart" hash="-77lqyd5v5nus55c715av09uqtwvhqqe">
+    <dep root="1237383701619" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="NamePropertyNamePart.java" />
+  </source>
+  <source id="1239373436410" name="TypePart" hash="acssh5xzdcp3jt364lp3zgirns2wui7">
+    <dep root="1183015764815" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TypePart.java" />
+  </source>
+  <source id="1239714446829" name="ConceptContainer" hash="bsq0xrjdh8nqfy2wsr3d1b4mc1j6km8">
+    <dep root="1237993244422" />
+    <dep root="1239714568512" />
+    <dep root="1239714642032" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConceptContainer.java" />
+  </source>
+  <source id="1239714568512" name="StatementConcept" hash="-exn7idkk2wwogyh31e8eib39ay0l984">
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="StatementConcept.java" />
+  </source>
+  <source id="1239714642032" name="ExpressionConcept" hash="80h44xqxm1zmcydkd6j10oh8y5tysk">
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep root="1239939522701" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExpressionConcept.java" />
+  </source>
+  <source id="1239939522701" name="BlockConcept" hash="-dwj4vxoqe7cq61ho01og8qio9c3pdjl">
+    <dep root="1237380500632" />
+    <dep root="1237896192386" />
+    <dep root="1237993244422" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BlockConcept.java" />
+  </source>
+  <source id="1239939853119" name="BlockBodyPart" hash="7789djpzurp32ziz19n0in87g7813gk">
+    <dep root="1183015764815" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BlockBodyPart.java" />
+  </source>
+  <source id="1239944428553" name="BlockReference" hash="11fjchrh2a4nd7sxnvdrc3m031w2fmd">
+    <dep root="1237896192386" />
+    <dep root="1237897531822" />
+    <dep root="1239939522701" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BlockReference.java" />
+  </source>
+</dependencies>
+

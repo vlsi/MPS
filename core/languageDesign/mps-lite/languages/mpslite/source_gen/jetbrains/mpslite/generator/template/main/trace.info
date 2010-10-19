@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mpslite.generator.template.main.QueriesGenerated" />
   <root nodeId="1238589718395">
     <nodeInfo nodeId="1238590226431" fileName="QueriesGenerated.java" startLine="30" startPosition="139" endLine="31" endPosition="103" />
     <nodeInfo nodeId="1238590226443" fileName="QueriesGenerated.java" startLine="32" startPosition="27" endLine="33" endPosition="13" />
