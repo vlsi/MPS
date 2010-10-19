@@ -130,12 +130,8 @@ public class ModelPersistence {
         ModelReader5Handler handler = new ModelReader5Handler();
         parser.parse(JDOMUtil.loadSource(file), handler);
         return handler.getResult();
-      } catch (SAXException e) {
-        e.printStackTrace();
-      } catch (ParserConfigurationException e) {
-        e.printStackTrace();
-      } catch (IOException e) {
-        e.printStackTrace();
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
     return readModel(loadModelDocument(file), modelName, modelStereotype);
