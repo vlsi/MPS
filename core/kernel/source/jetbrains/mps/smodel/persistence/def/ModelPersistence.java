@@ -25,7 +25,6 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -46,7 +45,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -127,48 +125,7 @@ public class ModelPersistence {
     return ourPersistenceSettings;
   }
 
-  @NotNull
-  private static Document loadModelDocument(@NotNull IFile file) {
-    Document document;
-    try {
-      document = JDOMUtil.loadDocument(file);
-    } catch (JDOMException e) {
-      throw new ModelFileReadException("Exception in file " + file, e);
-    } catch (IOException e) {
-      throw new ModelFileReadException("Exception in file " + file, e);
-    }
-    return document;
-  }
-
-  private static int getCurrentPersistenceVersion() {
-    int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
-    if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
-
-      // TODO "return currentApplicationPersistenceVersion;"
-      // TEMPORARY: 2.0 milestone builds should be "backward compatible" with 1.5
-      // (new models are created in persistence version 4)
-      // internally we use the latest persistence
-
-      return InternalFlag.isInternalMode() ? currentApplicationPersistenceVersion : 4;
-    } else if (persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {
-      return currentApplicationPersistenceVersion;
-    }
-    return persistenceVersion;
-  }
-
-  private static boolean needsUpgrade(int modelPersistenceVersion) {
-    if (MPSCore.getInstance().isTestMode()) {
-      return false;
-    }
-    if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
-      if (getPersistenceSettings().isUserPersistenceVersionDefined()) {
-        return true; //user already decided to convert models now
-      } else {
-        return false; //do not show dialog, for it causes deadlock
-      }
-    }
-    return false;
-  }
+  //--------read--------
 
   @NotNull
   public static SModel readModel(@NotNull IFile file) {
@@ -199,10 +156,77 @@ public class ModelPersistence {
     return reader.readModel(document, modelName, modelStereotype);
   }
 
-  private static SModel handleNullReaderForPersistence(String modelTitle) {
-    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + modelTitle + "\n" +
-      " Use newer version of JetBrains MPS to load this model.");
+  public static SModel readModel(CharSequence data) throws JDOMException, IOException {
+    final char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
+    Reader reader = charsArray != null ? new CharArrayReader(charsArray, 0, data.length()) : new CharSequenceReader(data);
+
+    Document doc = JDOMUtil.loadDocument(reader);
+    int modelPersistenceVersion = getModelPersistenceVersion(doc);
+    Matcher matcher = myModelPattern.matcher(data);
+    if (!matcher.find()) return null;
+    SModelReference modelReference = SModelReference.fromString(matcher.group(1));
+    String modelStereotype = modelReference.getStereotype();
+    String modelShortName = NameUtil.shortNameFromLongName(modelReference.getLongName());
+    IModelReader modelReader = modelReaders.get(modelPersistenceVersion);
+    if (modelReader == null) {
+      return handleNullReaderForPersistence(modelReference.getLongName());
+    }
+    return modelReader.readModel(doc, modelShortName, modelStereotype);
   }
+
+  @NotNull
+  public static SModel readModel(@NotNull Document document, @NotNull String modelName, @NotNull String stereotype) {
+    int version = getModelPersistenceVersion(document);
+    IModelReader modelReader = modelReaders.get(version);
+    if (modelReader == null) {
+      return handleNullReaderForPersistence(modelName);
+    }
+    return modelReader.readModel(document, modelName, stereotype);
+  }
+
+  //--------write--------
+
+  // returns upgraded model, or null if the model doesn't require update or canUpgrade is false
+  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade) {
+    LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
+
+    if (file.isReadOnly()) {
+      LOG.error("Can't write to " + file.getAbsolutePath());
+      return null;
+    }
+
+    // upgrade?
+    if (canUpgrade) {
+      int modelPersistenceVersion = model.getPersistenceVersion();
+      if (modelPersistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelPersistenceVersion)) {
+        return upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
+      }
+    }
+
+    // no, save
+    Document document = saveModel(model);
+    try {
+      JDOMUtil.writeDocument(document, file);
+      SModelRepository.getInstance().markUnchanged(model);
+    } catch (IOException e) {
+      LOG.error("Error in file " + file, e);
+    }
+    return null;
+  }
+
+  @NotNull
+  public static Document saveModel(@NotNull SModel sourceModel) {
+    //model persistence level update is performed on startup;
+    // here model's persistence level is used, if a model has persistence level bigger than user-selected
+    // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
+    if (sourceModel.getPersistenceVersion() == -1) {
+      sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
+    }
+
+    return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel);
+  }
+
+  //-------- --------
 
   @NotNull
   public static String extractModelStereotype(String fileName) {
@@ -226,33 +250,7 @@ public class ModelPersistence {
     return modelName;
   }
 
-  @NotNull
-  private static String extractRawModelName(String fileName) {
-    int index = fileName.indexOf('.');
-    return (index >= 0) ? fileName.substring(0, index) : fileName;
-  }
-
-  public static SModel readModel(CharSequence data) throws JDOMException, IOException {
-    final char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
-    Reader reader = charsArray != null ? new CharArrayReader(charsArray, 0, data.length()) : new CharSequenceReader(data);
-
-    Document doc = JDOMUtil.loadDocument(reader);
-    int modelPersistenceVersion = getModelPersistenceVersion(doc);
-    Matcher matcher = myModelPattern.matcher(data);
-    if (!matcher.find()) return null;
-    SModelReference modelReference = SModelReference.fromString(matcher.group(1));
-    String modelStereotype = modelReference.getStereotype();
-    String modelShortName = NameUtil.shortNameFromLongName(modelReference.getLongName());
-    IModelReader modelReader = modelReaders.get(modelPersistenceVersion);
-    if (modelReader == null) {
-      return handleNullReaderForPersistence(modelReference.getLongName());
-    }
-    return modelReader.readModel(doc, modelShortName, modelStereotype);
-  }
-
-  /**
-   * upgrades model persistence and saves model
-   */
+  // upgrades model persistence and saves model
   public static SModel upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
     SModelReference reference = model.getSModelReference();
     StructureModificationHistory refactorings = null;
@@ -322,84 +320,9 @@ public class ModelPersistence {
     return version[0] == -1 ? getCurrentPersistenceVersion() : version[0];
   }
 
-  private static int getModelPersistenceVersion(Document document) {
-    Element modelElement = document.getRootElement();
-    Element persistence = modelElement.getChild(PERSISTENCE);
-    if (persistence != null) {
-      return DocUtil.readIntAttributeValue(persistence, PERSISTENCE_VERSION);
-    }
-    return 0;
-  }
-
   @NotNull
   public static SModel copyModel(@NotNull SModel model) {
     return readModel(saveModel(model), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
-  }
-
-  @NotNull
-  public static SModel readModel(
-    @NotNull Document document,
-    @NotNull String modelName,
-    @NotNull String stereotype) {
-    int version = getModelPersistenceVersion(document);
-    IModelReader modelReader = modelReaders.get(version);
-    if (modelReader == null) {
-      return handleNullReaderForPersistence(modelName);
-    }
-    return modelReader.readModel(document, modelName, stereotype);
-  }
-
-  @Nullable
-  public static SNode readNode(
-    @NotNull Element nodeElement,
-    @NotNull SModel model) {
-    return modelReaders.get(getCurrentPersistenceVersion()).readNode(nodeElement, model);
-  }
-
-  /**
-   * returns upgraded model, or null if the model doesn't require update or canUpgrade is false
-   */
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade) {
-    LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
-
-    if (file.isReadOnly()) {
-      LOG.error("Can't write to " + file.getAbsolutePath());
-      return null;
-    }
-
-    // upgrade?
-    if (canUpgrade) {
-      int modelPersistenceVersion = model.getPersistenceVersion();
-      if (modelPersistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelPersistenceVersion)) {
-        return upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
-      }
-    }
-
-    // no, save
-    Document document = saveModel(model);
-    try {
-      JDOMUtil.writeDocument(document, file);
-      SModelRepository.getInstance().markUnchanged(model);
-    } catch (IOException e) {
-      LOG.error("Error in file " + file, e);
-    }
-    return null;
-  }
-
-  @NotNull
-  public static Document saveModel(@NotNull SModel sourceModel) {
-    //model persistence level update is performed on startup;
-    // here model's persistence level is used, if a model has persistence level bigger than user-selected
-    // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    if (sourceModel.getPersistenceVersion() == -1) {
-      sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
-    }
-
-    return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel);
-  }
-
-  public static void saveNode(Element container, SNode node) {
-    modelWriters.get(node.getModel().getPersistenceVersion()).saveNode(container, node);
   }
 
   public static boolean needsRecreating(IFile file) {
@@ -409,4 +332,68 @@ public class ModelPersistence {
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
     return modelReaders.get(getCurrentPersistenceVersion()).upgradeModelUID(modelReference);
   }
+
+  @NotNull
+  private static Document loadModelDocument(@NotNull IFile file) {
+    Document document;
+    try {
+      document = JDOMUtil.loadDocument(file);
+    } catch (JDOMException e) {
+      throw new ModelFileReadException("Exception in file " + file, e);
+    } catch (IOException e) {
+      throw new ModelFileReadException("Exception in file " + file, e);
+    }
+    return document;
+  }
+
+  private static int getCurrentPersistenceVersion() {
+    int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
+    if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
+
+      // TODO "return currentApplicationPersistenceVersion;"
+      // TEMPORARY: 2.0 milestone builds should be "backward compatible" with 1.5
+      // (new models are created in persistence version 4)
+      // internally we use the latest persistence
+
+      return InternalFlag.isInternalMode() ? currentApplicationPersistenceVersion : 4;
+    } else if (persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {
+      return currentApplicationPersistenceVersion;
+    }
+    return persistenceVersion;
+  }
+
+  private static boolean needsUpgrade(int modelPersistenceVersion) {
+    if (MPSCore.getInstance().isTestMode()) {
+      return false;
+    }
+    if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
+      if (getPersistenceSettings().isUserPersistenceVersionDefined()) {
+        return true; //user already decided to convert models now
+      } else {
+        return false; //do not show dialog, for it causes deadlock
+      }
+    }
+    return false;
+  }
+
+  private static SModel handleNullReaderForPersistence(String modelTitle) {
+    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + modelTitle + "\n" +
+      " Use newer version of JetBrains MPS to load this model.");
+  }
+
+  @NotNull
+  private static String extractRawModelName(String fileName) {
+    int index = fileName.indexOf('.');
+    return (index >= 0) ? fileName.substring(0, index) : fileName;
+  }
+
+  private static int getModelPersistenceVersion(Document document) {
+    Element modelElement = document.getRootElement();
+    Element persistence = modelElement.getChild(PERSISTENCE);
+    if (persistence != null) {
+      return DocUtil.readIntAttributeValue(persistence, PERSISTENCE_VERSION);
+    }
+    return 0;
+  }
+
 }
