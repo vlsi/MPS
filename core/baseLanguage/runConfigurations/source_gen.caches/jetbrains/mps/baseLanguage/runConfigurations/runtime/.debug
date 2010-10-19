@@ -182,85 +182,91 @@
     <nodeInfo nodeId="7094400837991817014" fileName="BaseFieldWithButtonComponent.java" startLine="25" startPosition="61" endLine="26" endPosition="68" />
     <nodeInfo nodeId="7094400837991816839" fileName="BaseFieldWithButtonComponent.java" startLine="29" startPosition="73" endLine="30" endPosition="65" />
     <nodeInfo nodeId="1447676209063504069" fileName="BaseFieldWithButtonComponent.java" startLine="33" startPosition="44" endLine="34" endPosition="53" />
-    <nodeInfo nodeId="1447676209063504080" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="36" endLine="40" endPosition="23" />
-    <nodeInfo nodeId="1447676209063504086" fileName="BaseFieldWithButtonComponent.java" startLine="40" startPosition="23" endLine="41" endPosition="20" />
-    <nodeInfo nodeId="1447676209063504098" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="30" endLine="46" endPosition="43" />
-    <nodeInfo nodeId="1447676209063504109" fileName="BaseFieldWithButtonComponent.java" startLine="47" startPosition="5" endLine="48" endPosition="23" />
-    <nodeInfo nodeId="7094400837991817222" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="44" endLine="54" endPosition="33" />
-    <nodeInfo nodeId="6820300573416479207" fileName="BaseFieldWithButtonComponent.java" startLine="56" startPosition="7" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="6820300573416479211" fileName="BaseFieldWithButtonComponent.java" startLine="57" startPosition="0" endLine="58" endPosition="57" />
-    <nodeInfo nodeId="6820300573416479209" fileName="BaseFieldWithButtonComponent.java" startLine="58" startPosition="57" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504131" fileName="BaseFieldWithButtonComponent.java" startLine="59" startPosition="0" endLine="60" endPosition="52" />
-    <nodeInfo nodeId="6820300573416479157" fileName="BaseFieldWithButtonComponent.java" startLine="60" startPosition="52" endLine="61" endPosition="59" />
-    <nodeInfo nodeId="6820300573416479166" fileName="BaseFieldWithButtonComponent.java" startLine="61" startPosition="59" endLine="62" endPosition="55" />
-    <nodeInfo nodeId="6820300573416479206" fileName="BaseFieldWithButtonComponent.java" startLine="62" startPosition="55" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504139" fileName="BaseFieldWithButtonComponent.java" startLine="63" startPosition="0" endLine="64" endPosition="48" />
-    <nodeInfo nodeId="1447676209063504148" fileName="BaseFieldWithButtonComponent.java" startLine="64" startPosition="48" endLine="65" endPosition="45" />
-    <nodeInfo nodeId="8118615065191452077" fileName="BaseFieldWithButtonComponent.java" startLine="65" startPosition="45" endLine="66" endPosition="75" />
-    <nodeInfo nodeId="6820300573416479176" fileName="BaseFieldWithButtonComponent.java" startLine="66" startPosition="75" endLine="67" endPosition="52" />
-    <nodeInfo nodeId="6820300573416479193" fileName="BaseFieldWithButtonComponent.java" startLine="67" startPosition="52" endLine="68" endPosition="48" />
-    <nodeInfo nodeId="6820300573416479208" fileName="BaseFieldWithButtonComponent.java" startLine="68" startPosition="48" endLine="69" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504155" fileName="BaseFieldWithButtonComponent.java" startLine="69" startPosition="0" endLine="70" endPosition="23" />
-    <nodeInfo nodeId="1447676209063504165" fileName="BaseFieldWithButtonComponent.java" startLine="73" startPosition="25" endLine="74" endPosition="58" />
-    <nodeInfo nodeId="1447676209063504173" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="29" endLine="76" endPosition="13" />
-    <nodeInfo nodeId="1447676209063504177" fileName="BaseFieldWithButtonComponent.java" startLine="77" startPosition="5" endLine="78" endPosition="33" />
-    <nodeInfo nodeId="1447676209063504184" fileName="BaseFieldWithButtonComponent.java" startLine="81" startPosition="36" endLine="82" endPosition="28" />
+    <nodeInfo nodeId="5102932407711981627" fileName="BaseFieldWithButtonComponent.java" startLine="40" startPosition="46" endLine="41" endPosition="25" />
+    <nodeInfo nodeId="5102932407711981633" fileName="BaseFieldWithButtonComponent.java" startLine="41" startPosition="25" endLine="42" endPosition="22" />
+    <nodeInfo nodeId="1447676209063504098" fileName="BaseFieldWithButtonComponent.java" startLine="47" startPosition="30" endLine="48" endPosition="43" />
+    <nodeInfo nodeId="1447676209063504109" fileName="BaseFieldWithButtonComponent.java" startLine="49" startPosition="5" endLine="50" endPosition="23" />
+    <nodeInfo nodeId="7094400837991817222" fileName="BaseFieldWithButtonComponent.java" startLine="55" startPosition="44" endLine="56" endPosition="33" />
+    <nodeInfo nodeId="6820300573416479207" fileName="BaseFieldWithButtonComponent.java" startLine="58" startPosition="7" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="6820300573416479211" fileName="BaseFieldWithButtonComponent.java" startLine="59" startPosition="0" endLine="60" endPosition="57" />
+    <nodeInfo nodeId="6820300573416479209" fileName="BaseFieldWithButtonComponent.java" startLine="60" startPosition="57" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504131" fileName="BaseFieldWithButtonComponent.java" startLine="61" startPosition="0" endLine="62" endPosition="52" />
+    <nodeInfo nodeId="6820300573416479157" fileName="BaseFieldWithButtonComponent.java" startLine="62" startPosition="52" endLine="63" endPosition="59" />
+    <nodeInfo nodeId="6820300573416479166" fileName="BaseFieldWithButtonComponent.java" startLine="63" startPosition="59" endLine="64" endPosition="55" />
+    <nodeInfo nodeId="6820300573416479206" fileName="BaseFieldWithButtonComponent.java" startLine="64" startPosition="55" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504139" fileName="BaseFieldWithButtonComponent.java" startLine="65" startPosition="0" endLine="66" endPosition="48" />
+    <nodeInfo nodeId="1447676209063504148" fileName="BaseFieldWithButtonComponent.java" startLine="66" startPosition="48" endLine="67" endPosition="45" />
+    <nodeInfo nodeId="8118615065191452077" fileName="BaseFieldWithButtonComponent.java" startLine="67" startPosition="45" endLine="68" endPosition="75" />
+    <nodeInfo nodeId="6820300573416479176" fileName="BaseFieldWithButtonComponent.java" startLine="68" startPosition="75" endLine="69" endPosition="52" />
+    <nodeInfo nodeId="6820300573416479193" fileName="BaseFieldWithButtonComponent.java" startLine="69" startPosition="52" endLine="70" endPosition="48" />
+    <nodeInfo nodeId="6820300573416479208" fileName="BaseFieldWithButtonComponent.java" startLine="70" startPosition="48" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504155" fileName="BaseFieldWithButtonComponent.java" startLine="71" startPosition="0" endLine="72" endPosition="23" />
+    <nodeInfo nodeId="1447676209063504165" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="25" endLine="76" endPosition="58" />
+    <nodeInfo nodeId="1447676209063504173" fileName="BaseFieldWithButtonComponent.java" startLine="77" startPosition="29" endLine="78" endPosition="13" />
+    <nodeInfo nodeId="1447676209063504177" fileName="BaseFieldWithButtonComponent.java" startLine="79" startPosition="5" endLine="80" endPosition="33" />
+    <nodeInfo nodeId="1447676209063504184" fileName="BaseFieldWithButtonComponent.java" startLine="83" startPosition="36" endLine="84" endPosition="28" />
     <nodeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <nodeInfo nodeId="1447676209063504096" fileName="BaseFieldWithButtonComponent.java" startLine="44" startPosition="27" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="1447676209063504171" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="58" endLine="77" endPosition="5" />
+    <nodeInfo nodeId="1447676209063504096" fileName="BaseFieldWithButtonComponent.java" startLine="46" startPosition="27" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="1447676209063504171" fileName="BaseFieldWithButtonComponent.java" startLine="76" startPosition="58" endLine="79" endPosition="5" />
     <nodeInfo nodeId="7094400837991816878" fileName="BaseFieldWithButtonComponent.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="85" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="5102932407711981612" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="36" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="85" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" />
     <nodeInfo nodeId="1447676209063504063" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="57" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="7094400837991817169" fileName="BaseFieldWithButtonComponent.java" startLine="51" startPosition="29" endLine="56" endPosition="7" />
+    <nodeInfo nodeId="7094400837991817169" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="29" endLine="58" endPosition="7" />
     <nodeInfo nodeId="1447676209063504053" fileName="BaseFieldWithButtonComponent.java" startLine="30" startPosition="65" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="72" startPosition="0" endLine="80" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
     <nodeInfo nodeId="1447676209063504043" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="50" startPosition="0" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1447676209063504203" fileName="BaseFieldWithButtonComponent.java" startLine="22" startPosition="41" endLine="22" endPosition="41" />
     <scopeInfo nodeId="7094400837991816881" fileName="BaseFieldWithButtonComponent.java" startLine="25" startPosition="61" endLine="26" endPosition="68" />
     <scopeInfo nodeId="1447676209063504068" fileName="BaseFieldWithButtonComponent.java" startLine="33" startPosition="44" endLine="34" endPosition="53" />
-    <scopeInfo nodeId="1447676209063504097" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="30" endLine="46" endPosition="43" />
-    <scopeInfo nodeId="7094400837991817203" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="44" endLine="54" endPosition="33" />
-    <scopeInfo nodeId="1447676209063504172" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="29" endLine="76" endPosition="13" />
-    <scopeInfo nodeId="1447676209063504183" fileName="BaseFieldWithButtonComponent.java" startLine="81" startPosition="36" endLine="82" endPosition="28" />
-    <scopeInfo nodeId="1447676209063504190" fileName="BaseFieldWithButtonComponent.java" startLine="85" startPosition="46" endLine="86" endPosition="16" />
+    <scopeInfo nodeId="1447676209063504097" fileName="BaseFieldWithButtonComponent.java" startLine="47" startPosition="30" endLine="48" endPosition="43" />
+    <scopeInfo nodeId="7094400837991817203" fileName="BaseFieldWithButtonComponent.java" startLine="55" startPosition="44" endLine="56" endPosition="33" />
+    <scopeInfo nodeId="1447676209063504172" fileName="BaseFieldWithButtonComponent.java" startLine="77" startPosition="29" endLine="78" endPosition="13" />
+    <scopeInfo nodeId="1447676209063504183" fileName="BaseFieldWithButtonComponent.java" startLine="83" startPosition="36" endLine="84" endPosition="28" />
+    <scopeInfo nodeId="1447676209063504190" fileName="BaseFieldWithButtonComponent.java" startLine="87" startPosition="46" endLine="88" endPosition="16" />
     <scopeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1447676209063504079" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="36" endLine="41" endPosition="20" />
+    <scopeInfo nodeId="5102932407711981613" fileName="BaseFieldWithButtonComponent.java" startLine="40" startPosition="46" endLine="42" endPosition="22" />
     <scopeInfo nodeId="7094400837991816878" fileName="BaseFieldWithButtonComponent.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="7094400837991816956" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504095" fileName="BaseFieldWithButtonComponent.java" startLine="44" startPosition="27" endLine="48" endPosition="23" />
-    <scopeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="85" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504079" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="36" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1447676209063504095" fileName="BaseFieldWithButtonComponent.java" startLine="46" startPosition="27" endLine="50" endPosition="23" />
+    <scopeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="85" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" />
     <scopeInfo nodeId="1447676209063504063" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="57" endLine="36" endPosition="0">
       <varInfo nodeId="1447676209063504066" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1447676209063504090" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="1447676209063504164" fileName="BaseFieldWithButtonComponent.java" startLine="73" startPosition="25" endLine="78" endPosition="33">
+    <scopeInfo nodeId="1447676209063504164" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="25" endLine="80" endPosition="33">
       <varInfo nodeId="1447676209063504166" varName="disposable" />
     </scopeInfo>
     <scopeInfo nodeId="1447676209063504046" fileName="BaseFieldWithButtonComponent.java" startLine="29" startPosition="73" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="72" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1447676209063504090" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="1447676209063504043" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1447676209063504074" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504116" fileName="BaseFieldWithButtonComponent.java" startLine="51" startPosition="29" endLine="70" endPosition="23">
+    <scopeInfo nodeId="1447676209063504116" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="29" endLine="72" endPosition="23">
       <varInfo nodeId="1447676209063504132" varName="cp" />
       <varInfo nodeId="6820300573416479158" varName="selStart" />
       <varInfo nodeId="6820300573416479167" varName="selEnd" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="50" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="57" endLine="56" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$2" />
+    <scopeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="0" endLine="74" endPosition="0" />
+    <unitInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="57" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$2" />
     <unitInfo nodeId="1447676209063504061" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="43" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$1" />
-    <unitInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent" />
+    <unitInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent" />
   </root>
   <root nodeId="2178855608171213717">
     <nodeInfo nodeId="2178855608171213719" fileName="IJavaNodeChangeListener.java" startLine="7" startPosition="42" endLine="8" endPosition="38" />
@@ -529,22 +535,16 @@
     <unitInfo nodeId="6937689104170748691" fileName="MainNodeChooser.java" startLine="31" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
   </root>
   <root nodeId="8255351389869681567">
-    <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="15" startPosition="81" endLine="16" endPosition="34" />
-    <nodeInfo nodeId="339708350960886837" fileName="JavaRunProfileState.java" startLine="19" startPosition="52" endLine="20" endPosition="16" />
-    <nodeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
-    <nodeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <nodeInfo nodeId="339708350960860574" fileName="JavaRunProfileState.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8255351389869681572" fileName="JavaRunProfileState.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
-    <scopeInfo nodeId="8255351389869712696" fileName="JavaRunProfileState.java" startLine="15" startPosition="81" endLine="16" endPosition="34" />
-    <scopeInfo nodeId="339708350960860577" fileName="JavaRunProfileState.java" startLine="19" startPosition="52" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" />
+    <nodeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="10" startPosition="71" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="8255351389869681572" fileName="JavaRunProfileState.java" startLine="11" startPosition="32" endLine="11" endPosition="32" />
+    <scopeInfo nodeId="8255351389869712696" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" />
+    <scopeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="10" startPosition="71" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8255351389869715940" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="339708350960860574" fileName="JavaRunProfileState.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="339708350960886835" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="8255351389869681567" fileName="JavaRunProfileState.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" />
+    <unitInfo nodeId="8255351389869681567" fileName="JavaRunProfileState.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" />
   </root>
 </debugInfo>
 

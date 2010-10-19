@@ -37,8 +37,10 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
   }
 
   public void setText(String text) {
-    this.myText = text;
-    this.onChange();
+    if (neq_bit6ym_a0a0c(this.myText, text)) {
+      this.myText = text;
+      this.onChange();
+    }
   }
 
   public String getText() {
@@ -84,5 +86,12 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
 
   public Disposable getDisposableComponent() {
     return null;
+  }
+
+  private static boolean neq_bit6ym_a0a0c(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }
