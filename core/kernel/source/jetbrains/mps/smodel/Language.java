@@ -61,6 +61,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private List<Generator> myGenerators = new ArrayList<Generator>();
 
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
+  private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
+
   private IClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
@@ -490,18 +492,28 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
-    if (myNameToConceptCache.isEmpty()) {
-      SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+    if (myNamesLoadingState == ModelLoadingState.FULLY_LOADED) return myNameToConceptCache.get(conceptName);
+    if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
 
-      if (structureModelDescriptor == null) return null;
+    SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+    if (structureModelDescriptor == null) return null;
+    SModel structureModel = structureModelDescriptor.getSModel();
 
-      SModel structureModel = structureModelDescriptor.getSModel();
-      for (SNode node:structureModel.nodes()){
-        if (node.getAdapter() instanceof AbstractConceptDeclaration) {
-          myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
+    if (myNamesLoadingState.compareTo(ModelLoadingState.ROOTS_LOADED) < 0) {
+      for (SNode root : structureModel.roots()) {
+        if (root.getAdapter() instanceof AbstractConceptDeclaration) {
+          myNameToConceptCache.put(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
         }
       }
+      if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     }
+
+    myNameToConceptCache.put(conceptName, null);
+    for (SNode node : structureModel.getFastNodeFinder().getNodes(AbstractConceptDeclaration.concept, true)) {
+      myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
+    }
+    if (!myNameToConceptCache.containsKey(conceptName)) myNameToConceptCache.get(conceptName);
+
     return myNameToConceptCache.get(conceptName);
   }
 
