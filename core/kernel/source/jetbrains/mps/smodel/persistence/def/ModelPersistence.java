@@ -164,29 +164,6 @@ public class ModelPersistence {
     return modelReader.readModel(document, modelName, stereotype);
   }
 
-  @Hack
-  //this is a hack because it work only using some conventions about model file format
-  //todo get rid of this method
-  //todo BTW, indexing can be made faster by loading models up to roots only
-  private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"(.*?)\"");
-  public static SModel readModel(CharSequence data) throws JDOMException, IOException {
-    final char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
-    Reader reader = charsArray != null ? new CharArrayReader(charsArray, 0, data.length()) : new CharSequenceReader(data);
-
-    Document doc = JDOMUtil.loadDocument(reader);
-    int modelPersistenceVersion = getModelPersistenceVersion(doc);
-    Matcher matcher = myModelPattern.matcher(data);
-    if (!matcher.find()) return null;
-    SModelReference modelReference = SModelReference.fromString(matcher.group(1));
-    String modelStereotype = modelReference.getStereotype();
-    String modelShortName = NameUtil.shortNameFromLongName(modelReference.getLongName());
-    IModelReader modelReader = modelReaders.get(modelPersistenceVersion);
-    if (modelReader == null) {
-      return handleNullReaderForPersistence(modelReference.getLongName());
-    }
-    return modelReader.readModel(doc, modelShortName, modelStereotype);
-  }
-
   //--------write--------
 
   // returns upgraded model, or null if the model doesn't require update or canUpgrade is false
