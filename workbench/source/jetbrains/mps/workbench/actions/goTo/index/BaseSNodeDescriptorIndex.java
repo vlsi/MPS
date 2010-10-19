@@ -25,19 +25,18 @@ import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +48,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
   private final MyIndexer myIndexer = new MyIndexer();
   private DataExternalizer<List<BaseSNodeDescriptor>> myValueExternalizer = new ListEnumerator<BaseSNodeDescriptor>(new EnumeratorSNodeDescriptor());
 
-  public abstract Iterable<SNode> getNodesToIterate(SModel model);
+  public abstract Iterable<SNode> getRootsToIterate(SModel model);
 
   @Override
   public DataExternalizer<List<BaseSNodeDescriptor>> getValueExternalizer() {
@@ -87,32 +86,22 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       final List<BaseSNodeDescriptor> descriptors = new ArrayList<BaseSNodeDescriptor>();
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
-          try {
-            SModel model = inputData.getUserData(PARSED_MODEL);
+          SModel model = inputData.getUserData(PARSED_MODEL);
 
-            if (model == null) {
-              model = ModelPersistence.readModel(inputData.getContentAsText());
-              if (model != null) {
-                model.setLoading(true);
-              }
-              inputData.putUserData(PARSED_MODEL, model);
-            }
+          if (model == null) {
+            model = ModelPersistence.readModel(new IdeaFileSystemProvider().getFile(inputData.getFile()));
+            model.setLoading(true);
+            inputData.putUserData(PARSED_MODEL, model);
+          }
 
-            if (model == null) return;
-
-            for (final SNode node : getNodesToIterate(model)) {
-              String persistentName = node.getPersistentProperty(INamedConcept.NAME);
-              String nodeName = (persistentName == null) ? "null" : persistentName;
-              String conceptFqName = node.getConceptFqName();
-              SModelReference modelRef = model.getSModelReference();
-              SNodeId id = node.getSNodeId();
-              BaseSNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
-              descriptors.add(value);
-            }
-          } catch (JDOMException e) {
-            handleException(e, inputData);
-          } catch (IOException e) {
-            handleException(e, inputData);
+          for (final SNode node : getRootsToIterate(model)) {
+            String persistentName = node.getPersistentProperty(INamedConcept.NAME);
+            String nodeName = (persistentName == null) ? "null" : persistentName;
+            String conceptFqName = node.getConceptFqName();
+            SModelReference modelRef = model.getSModelReference();
+            SNodeId id = node.getSNodeId();
+            BaseSNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
+            descriptors.add(value);
           }
         }
       });

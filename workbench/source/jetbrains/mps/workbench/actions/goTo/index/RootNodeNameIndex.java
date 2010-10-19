@@ -36,7 +36,7 @@ public class RootNodeNameIndex extends BaseSNodeDescriptorIndex {
     return NAME;
   }
 
-  public Iterable<SNode> getNodesToIterate(SModel model) {
+  public Iterable<SNode> getRootsToIterate(SModel model) {
     if (SModelStereotype.isStubModelStereotype(model.getStereotype())) return new EmptyIterable<SNode>();
     return new ConditionalIterable<SNode>(model.roots(), new MyCondition());
   }
