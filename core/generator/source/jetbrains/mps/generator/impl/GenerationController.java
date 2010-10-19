@@ -127,7 +127,7 @@ public class GenerationController {
     } catch (GenerationFailureException e) {
       myLogger.error(e.getMessage());
       return false;
-    } catch (Throwable t) {
+    } catch (Exception t) {
       myLogger.handleException(t);
       return false;
     } finally {

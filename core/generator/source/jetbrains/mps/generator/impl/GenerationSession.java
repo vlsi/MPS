@@ -165,7 +165,7 @@ public class GenerationSession {
       myLogger.error(gfe.getMessage());
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
-    } catch (Throwable e) {
+    } catch (Exception e) {
       myLogger.handleException(e);
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + e);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());

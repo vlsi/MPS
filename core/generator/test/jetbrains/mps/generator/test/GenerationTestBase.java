@@ -41,7 +41,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.util.textdiff.TextDiffBuilder;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -49,8 +48,11 @@ import org.jdom.Document;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Evgeny Gryaznov, Oct 6, 2010
@@ -117,70 +119,108 @@ public class GenerationTestBase {
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
-    PerformanceMessenger.getInstance().reportPercent("parallelGeneration", singleThread/1000000, severalThreads/1000000);
+    PerformanceMessenger.getInstance().reportPercent("parallelGeneration", singleThread / 1000000, severalThreads / 1000000);
 
-    if(DEBUG) {
-      System.out.println("Single thread: " + singleThread/1000000/1000. + ", 4 threads: " + severalThreads/1000000/1000.);
+    if (DEBUG) {
+      System.out.println("Single thread: " + singleThread / 1000000 / 1000. + ", 4 threads: " + severalThreads / 1000000 / 1000.);
     }
   }
 
-  protected void doTestIncrementalGeneration(final MPSProject p, final SModelDescriptor descr, final Runnable ...changeModel) throws IOException {
-    GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
-
-    File generatorCaches = new File(PathManager.getSystemPath(), "mps-generator-test");
-    if(generatorCaches.exists()) {
-      Assert.assertTrue(FileUtil.delete(generatorCaches));
-    }
-    Assert.assertTrue(generatorCaches.mkdir());
-
-    final MyIncrementalGenerationStrategy incrementalStrategy = new MyIncrementalGenerationStrategy(descr, new FileBasedGenerationCacheContainer(generatorCaches));
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        incrementalStrategy.buildHash();
-      }
-    });
-
-    // Stage 1. Regenerate
-
-    GenerationOptions options = GenerationOptions.getDefaults()
-      .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-    IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
-    gm.generateModels(
-      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
-      generationHandler,
-      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
-
-    assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
-
-    // Stage 2. Modify model
-    Map<String, String> incrementalGenerationResults = null;
-    List<Long> time = new ArrayList<Long>();
-    Assert.assertTrue(changeModel.length > 0);
-    for(final Runnable r : changeModel) {
-
-      ThreadUtils.runInUIThreadAndWait(new Runnable(){
+  protected void doTestIncrementalGeneration(final MPSProject p, final SModelDescriptor originalModel, final ModelChangeRunnable... changeModel) throws IOException {
+    String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
+    String randomId = UUID.randomUUID().toString();
+    final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
+    final SModelDescriptor[] descr1 = new SModelDescriptor[] { null };
+    try {
+      ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          ModelAccess.instance().runWriteActionInCommand(r, p.getProject());
+          descr1[0] = tm.createModel(originalModel);
+          tm.publish(descr1[0]);
         }
       });
+      final SModelDescriptor descr = descr1[0];
 
+      GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
+
+      File generatorCaches = new File(PathManager.getSystemPath(), "mps-generator-test");
+      if (generatorCaches.exists()) {
+        Assert.assertTrue(FileUtil.delete(generatorCaches));
+      }
+      Assert.assertTrue("cannot create caches folder", generatorCaches.mkdir());
+
+      final MyIncrementalGenerationStrategy incrementalStrategy = new MyIncrementalGenerationStrategy(descr, new FileBasedGenerationCacheContainer(generatorCaches));
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
           incrementalStrategy.buildHash();
         }
       });
-      Assert.assertNotNull(generationHandler.getLastDependencies());
-      incrementalStrategy.setDependencies(generationHandler.getLastDependencies());
 
-      // Stage 3. Generate incrementally
+      // Stage 1. Regenerate
 
+      GenerationOptions options = GenerationOptions.getDefaults()
+        .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
+      IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
+      gm.generateModels(
+        Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+        generationHandler,
+        new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+
+      Map<String,String> generated = replaceInContent(generationHandler.getGeneratedContent(), new String[] { randomName, originalModel.getModule().getModuleFqName() }, new String[] { randomId, originalModel.getModule().getModuleReference().getModuleId().toString() });
+      assertNoDiff(generationHandler.getExistingContent(), generated);
+
+      // Stage 2. Modify model
+
+      Map<String, String> incrementalGenerationResults = generationHandler.getGeneratedContent();
+      List<Long> time = new ArrayList<Long>();
+      Assert.assertTrue(changeModel.length > 0);
+      for (final ModelChangeRunnable r : changeModel) {
+
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          @Override
+          public void run() {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable(){
+              @Override
+              public void run() {
+                r.run(descr);
+              }
+            }, p.getProject());
+          }
+        });
+
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            incrementalStrategy.buildHash();
+          }
+        });
+        Assert.assertNotNull(generationHandler.getLastDependencies());
+        incrementalStrategy.setDependencies(generationHandler.getLastDependencies());
+
+        // Stage 3. Generate incrementally
+
+        options = GenerationOptions.getDefaults()
+          .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
+        generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+        generationHandler.checkIncremental();
+        long start = System.nanoTime();
+        gm.generateModels(
+          Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+          generationHandler,
+          new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+        time.add(System.nanoTime() - start);
+
+        incrementalGenerationResults = generationHandler.getGeneratedContent();
+        assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults,1);
+      }
+
+      // Stage 4. Regenerate. Check incremental results.
+
+      incrementalStrategy.setDependencies(null);
       options = GenerationOptions.getDefaults()
-        .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
+        .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
-      generationHandler.checkIncremental();
       long start = System.nanoTime();
       gm.generateModels(
         Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
@@ -188,45 +228,43 @@ public class GenerationTestBase {
         new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
       time.add(System.nanoTime() - start);
 
-      incrementalGenerationResults = generationHandler.getGeneratedContent();
-      assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults, 1);
-    }
+      assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
 
-    // Stage 4. Regenerate. Check incremental results.
+      PerformanceMessenger.getInstance().reportPercent("incrementalGeneration", (time.get(time.size() - 2)) / 1000000, (time.get(time.size() - 1)) / 1000000);
 
-    incrementalStrategy.setDependencies(null);
-    options = GenerationOptions.getDefaults()
-        .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-    generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
-    long start = System.nanoTime();
-    gm.generateModels(
-      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
-      generationHandler,
-      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
-    time.add(System.nanoTime() - start);
-
-    assertNoDiff(generationHandler.getGeneratedContent(), incrementalGenerationResults);
-
-    PerformanceMessenger.getInstance().reportPercent("incrementalGeneration", (time.get(time.size() - 2))/1000000, (time.get(time.size() - 1))/1000000);
-
-    if(DEBUG) {
-      long regen = time.remove(time.size() - 1);
-      System.out.print("Full cycle: " + regen/1000000/1000.);
-      for(long l : time) {
-        System.out.print(", incremental: " + l/1000000/1000.);
+      if (DEBUG) {
+        long regen = time.remove(time.size() - 1);
+        System.out.print("Full cycle: " + regen / 1000000 / 1000.);
+        for (long l : time) {
+          System.out.print(", incremental: " + l / 1000000 / 1000.);
+        }
+        System.out.println();
       }
-      System.out.println();
+    } finally {
+      tm.dispose();
     }
   }
 
+  private Map<String, String> replaceInContent(Map<String, String> content, String[] ...pairs) {
+    Map<String,String> result = new HashMap<String, String>(content.size());
+    for(Entry<String,String> e : content.entrySet()) {
+      String s = e.getValue();
+      for(String[] p : pairs) {
+        s = s.replaceAll(p[0], p[1]);
+      }
+      result.put(e.getKey(), s);
+    }
+    return result;
+  }
+
   protected static SModelDescriptor findModel(MPSProject project, String fqName) {
-    for(IModule m : project.getModules()) {
-      for(SModelDescriptor descr : m.getOwnModelDescriptors()) {
-        if(!(descr instanceof EditableSModelDescriptor)) {
+    for (IModule m : project.getModules()) {
+      for (SModelDescriptor descr : m.getOwnModelDescriptors()) {
+        if (!(descr instanceof EditableSModelDescriptor)) {
           continue;
         }
         String longName = descr.getSModelReference().getLongName();
-        if(longName.equals(fqName)) {
+        if (longName.equals(fqName)) {
           return descr;
         }
       }
@@ -246,14 +284,14 @@ public class GenerationTestBase {
     });
   }
 
-  protected static void assertNoDiff(Map<String,String> expected, Map<String,String> actual) {
+  protected static void assertNoDiff(Map<String, String> expected, Map<String, String> actual) {
     String errors = buildDiff(expected, actual);
-    if(errors.length() > 0) {
+    if (errors.length() > 0) {
       Assert.fail("Diff:\n" + errors);
     }
   }
 
-  private static Map<String,String> getHashes(SModel model) {
+  private static Map<String, String> getHashes(SModel model) {
     Document m = ModelPersistence.saveModel(model);
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
@@ -271,22 +309,22 @@ public class GenerationTestBase {
 
     StringBuilder errors = new StringBuilder();
 
-    for(String name : keys) {
+    for (String name : keys) {
       String content = actual.get(name);
-      if(content == null) {
+      if (content == null) {
         errors.append("File is not generated: " + name + "\n");
         continue;
       }
       String existing = expected.get(name);
-      if(existing == null) {
+      if (existing == null) {
         errors.append("Non-existing file generated: " + name + /* "\nContent: " + content + */ "\n");
         continue;
       }
-      if(!existing.equals(content)) {
+      if (!existing.equals(content)) {
         TextDiffBuilder tbuilder = new TextDiffBuilder(existing.split("\n|\r\n"), content.split("\n|\r\n"));
         tbuilder.compare();
-        if(tbuilder.hasDifference()) {
-          for(String s : tbuilder.getResult()) {
+        if (tbuilder.hasDifference()) {
+          for (String s : tbuilder.getResult()) {
             errors.append(s).append('\n');
           }
         }
@@ -295,8 +333,8 @@ public class GenerationTestBase {
     return errors.toString();
   }
 
-  protected void assertDiff(Map<String,String> expected, Map<String,String> actual, int numberOfChanges) {
-    if(DEBUG) {
+  protected void assertDiff(Map<String, String> expected, Map<String, String> actual, int numberOfChanges) {
+    if (DEBUG) {
       System.out.println("Diff (debug):\n" + buildDiff(expected, actual));
     }
 
@@ -305,18 +343,18 @@ public class GenerationTestBase {
     keys.addAll(actual.keySet());
     int changes = 0;
 
-    for(String name : keys) {
+    for (String name : keys) {
       String content = actual.get(name);
-      if(content == null) {
+      if (content == null) {
         changes++;
         continue;
       }
       String existing = expected.get(name);
-      if(existing == null) {
+      if (existing == null) {
         changes++;
         continue;
       }
-      if(!existing.equals(content)) {
+      if (!existing.equals(content)) {
         changes++;
       }
     }
@@ -326,7 +364,7 @@ public class GenerationTestBase {
   private static class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
     private final SModelDescriptor myModel;
     private final FileBasedGenerationCacheContainer myGenerationCacheContainer;
-    private Map<String,String> myHash;
+    private Map<String, String> myHash;
     private GenerationDependencies myDependencies;
 
     public MyIncrementalGenerationStrategy(SModelDescriptor descr, FileBasedGenerationCacheContainer generationCacheContainer) {
@@ -340,7 +378,7 @@ public class GenerationTestBase {
 
     @Override
     public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-      if(sm == myModel) {
+      if (sm == myModel) {
         return myHash;
       }
       return ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
@@ -353,7 +391,7 @@ public class GenerationTestBase {
 
     @Override
     public GenerationDependencies getDependencies(SModelDescriptor sm) {
-      if(myModel != sm) {
+      if (myModel != sm) {
         return null;
       }
       return myDependencies;
@@ -362,5 +400,9 @@ public class GenerationTestBase {
     public void setDependencies(GenerationDependencies dependencies) {
       myDependencies = dependencies;
     }
+  }
+
+  protected interface ModelChangeRunnable {
+    void run(SModelDescriptor model);
   }
 }
