@@ -20,12 +20,6 @@ import jetbrains.mps.smodel.SNode;
 import org.jdom.Document;
 import org.jdom.Element;
 
-/**
- * Igor Alshannikov
- * Oct 9, 2007
- */
 public interface IModelWriter {
   Document saveModel(SModel sourceModel);
-
-  void saveNode(Element container, SNode node);
 }
