@@ -113,7 +113,7 @@ public class TestModule extends AbstractModule {
   }
 
   public SModelDescriptor createModel(SModelDescriptor originalModel) {
-    String stereotype = "1";
+    String stereotype = "999";
     while (!isValidName(originalModel.getLongName(), stereotype)) {
       stereotype += "_";
     }

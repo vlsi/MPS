@@ -61,6 +61,7 @@ public interface GenerationCacheContainer {
         return null;
       }
 
+      modelId = modelId.replaceAll(":", "-");
       File modelCacheDir = new File(myGeneratorCaches, modelId);
       if(!modelCacheDir.exists()) {
         if(!create) {
