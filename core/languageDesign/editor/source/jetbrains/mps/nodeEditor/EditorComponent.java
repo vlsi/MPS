@@ -2888,6 +2888,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
   private void commitAll() {
+    if (getOperationContext() == null) {
+      return;
+    }
     Project project = getOperationContext().getProject();
     if(project == null) {
       return;
