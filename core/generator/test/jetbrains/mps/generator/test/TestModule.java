@@ -166,18 +166,19 @@ public class TestModule extends AbstractModule {
       myToCopy = toCopy;
     }
 
-    protected SModel loadModel() {
+    @Override
+    public IModule getModule() {
+      return TestModule.this;
+    }
+
+    @Override
+    protected ModelLoadResult initialLoad() {
       Document document = ModelPersistence.saveModel(myToCopy);
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       SModel result = ModelPersistence.readModel(document, NameUtil.shortNameFromLongName(myToCopy.getLongName()), myToCopy.getStereotype());
       result.setLoading(true);
-      return result;
-    }
-
-    @Override
-    public IModule getModule() {
-      return TestModule.this;
+      return new ModelLoadResult(result,ModelLoadingState.FULLY_LOADED);
     }
 
     @Override
