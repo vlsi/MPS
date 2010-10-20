@@ -109,12 +109,11 @@ class GenerationSettingsPreferencesPage {
     c.ipady = 2;
     optionsPanel.add(myIncremental, c);
     c.insets.left = 16;
-    myIncrementalCache.setEnabled(false);
     optionsPanel.add(myIncrementalCache, c);
     final ChangeListener listener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         myIncremental.setEnabled(myStrictMode.isSelected());
-        //myIncrementalCache.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
+        myIncrementalCache.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
       }
     };
     myStrictMode.addChangeListener(listener);
@@ -276,7 +275,7 @@ class GenerationSettingsPreferencesPage {
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());
     myIncremental.setEnabled(myGenerationSettings.isStrictMode());
-    //myIncrementalCache.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
+    myIncrementalCache.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
     myNumberOfParallelThreads.setEditable(myGenerationSettings.isParallelGenerator() && myGenerationSettings.isStrictMode());
     myNumberOfParallelThreads.setValue(myGenerationSettings.getNumberOfParallelThreads());
 
