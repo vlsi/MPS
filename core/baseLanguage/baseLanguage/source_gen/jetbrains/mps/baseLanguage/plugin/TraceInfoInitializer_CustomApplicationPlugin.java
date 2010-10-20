@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class TraceInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(TraceInfoInitializer_CustomApplicationPlugin.class);
@@ -90,7 +89,6 @@ public class TraceInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
       }
     });
-    BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
   public void doDispose() {

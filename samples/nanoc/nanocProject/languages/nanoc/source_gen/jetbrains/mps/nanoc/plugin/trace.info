@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="88" endLine="27" endPosition="5" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="88" endLine="28" endPosition="5" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="138" startPosition="42" endLine="142" endPosition="13" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$2" />
   <unitInfo fileName="Nanoc_ProjectPlugin.java" startLine="12" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Nanoc_ProjectPlugin" />
   <unitInfo fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="59" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.ProgramsLocationComponent_PreferencesComponent$MyState" />
@@ -8,8 +8,8 @@
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="292" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$MyState" />
   <unitInfo fileName="SourceNanocConfiguration_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Factory" />
   <unitInfo fileName="Nanoc_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Nanoc_ApplicationPlugin" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.TraceInfoInitializer_CustomApplicationPlugin" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin" />
+  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.TraceInfoInitializer_CustomApplicationPlugin" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="16" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="146" startPosition="52" endLine="169" endPosition="13" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$2" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="305" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$MyExecutionResult" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="329" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$MyExecutionConsole" />
@@ -20,8 +20,8 @@
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="112" startPosition="15" endLine="200" endPosition="5" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$1" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="61" startPosition="0" endLine="355" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration" />
   <root nodeId="2566194812863155791">
-    <nodeInfo nodeId="2566194812863155795" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="81" endLine="25" endPosition="76" />
-    <scopeInfo nodeId="2566194812863155794" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="81" endLine="25" endPosition="76" />
+    <nodeInfo nodeId="2566194812863155795" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="81" endLine="26" endPosition="76" />
+    <scopeInfo nodeId="2566194812863155794" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="81" endLine="26" endPosition="76" />
   </root>
   <root nodeId="2617013732192775193">
     <nodeInfo nodeId="2617013732192820118" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="41" startPosition="74" endLine="42" endPosition="221" />

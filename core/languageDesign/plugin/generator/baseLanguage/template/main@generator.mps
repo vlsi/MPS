@@ -13375,12 +13375,6 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2605550903360945979">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2605550903360945987">
-            <link role="baseMethodDeclaration:3" targetNodeId="94.~BreakpointManagerComponent.notifyDebuggableConceptsAdded():void" resolveInfo="notifyDebuggableConceptsAdded" />
-            <link role="classConcept:3" targetNodeId="94.~BreakpointManagerComponent" resolveInfo="BreakpointManagerComponent" />
-          </node>
-        </node>
       </node>
     </node>
     <node role="disposeBlock:23" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock:23" id="1229033840771608259">

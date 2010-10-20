@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
@@ -25,6 +26,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
         return new GDBBreakpoint(new SNodePointer(debuggableNode), project);
       }
     });
+    BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
   public void doDispose() {

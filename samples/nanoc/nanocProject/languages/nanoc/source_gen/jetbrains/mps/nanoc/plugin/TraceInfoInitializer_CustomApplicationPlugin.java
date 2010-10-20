@@ -5,7 +5,6 @@ package jetbrains.mps.nanoc.plugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.traceInfo.TraceInfoManager;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class TraceInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(TraceInfoInitializer_CustomApplicationPlugin.class);
@@ -16,7 +15,6 @@ public class TraceInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
   public void doInit() {
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
     traceInfoManager.addTraceableConcept("jetbrains.mps.nanoc.structure.CStatement");
-    BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
   public void doDispose() {
