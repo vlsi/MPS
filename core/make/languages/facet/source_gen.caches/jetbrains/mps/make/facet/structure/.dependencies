@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetConfiguration" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependency" />
+    <classNode dependClassName="jetbrains.mps.make.script.structure.JobDefinition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -75,24 +76,24 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetConfiguration" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
-    <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependencyType" />
+    <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.TargetDependencyType" file="TargetDependencyType.java">
+  <dependency className="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" file="TargetDependencyQualifier.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.TargetDependencyType_PropertySupport" file="TargetDependencyType_PropertySupport.java">
+  <dependency className="jetbrains.mps.make.facet.structure.TargetDependencyQualifier_PropertySupport" file="TargetDependencyQualifier_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependencyType" />
+    <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
 </dependenciesRoot>

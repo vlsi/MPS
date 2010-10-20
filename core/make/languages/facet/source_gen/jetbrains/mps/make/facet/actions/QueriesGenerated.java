@@ -60,7 +60,7 @@ __switch__:
                               assert false : "Internal error";
                               return false;
                             case 2:
-                              this._2_em_it = SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyType")).iterator();
+                              this._2_em_it = SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "TargetDependencyQualifier")).iterator();
                             case 3:
                               if (!(this._2_em_it.hasNext())) {
                                 this.__CP__ = 1;

@@ -10,18 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ResultStatement extends ReturnStatement {
   public static final String concept = "jetbrains.mps.make.script.structure.ResultStatement";
-  public static final String OK = "ok";
+  public static final String RESULT = "result";
 
   public ResultStatement(SNode node) {
     super(node);
   }
 
-  public boolean getOk() {
-    return this.getBooleanProperty(ResultStatement.OK);
+  public Result getResult() {
+    String value = super.getProperty(ResultStatement.RESULT);
+    return Result.parseValue(value);
   }
 
-  public void setOk(boolean value) {
-    this.setBooleanProperty(ResultStatement.OK, value);
+  public void setResult(Result value) {
+    super.setProperty(ResultStatement.RESULT, value.getValueAsString());
   }
 
   public static ResultStatement newInstance(SModel sm, boolean init) {

@@ -58,36 +58,48 @@
   <import index="1" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7077360340906447919">
+    <property name="package:32" value="job" />
     <link role="conceptDeclaration:32" targetNodeId="1.7077360340906447917" resolveInfo="ResultStatement" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7077360340906447921">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation:32" id="7077360340906447926">
-        <property name="vertical:32" value="true" />
-        <node role="alternationCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="7077360340906447928">
-          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7077360340906447929">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7077360340906465842">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7077360340906465844">
-                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7077360340906465843" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7077360340906499505">
-                  <link role="property:16" targetNodeId="1.7077360340906447918" resolveInfo="ok" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="ifFalseCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7077360340906499509">
-          <property name="text:32" value="fail" />
-          <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
-        </node>
-        <node role="ifTrueCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7077360340906499513">
-          <property name="text:32" value="success" />
-          <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
-        </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="2360002718792446687">
+        <link role="relationDeclaration:32" targetNodeId="1.7077360340906447918" resolveInfo="ok" />
+        <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7077360340906499519">
         <property name="text:32" value=";" />
         <link role="styleClass:32" targetNodeId="2v.1215094139260" resolveInfo="Semicolon" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="7077360340906447923" />
+    </node>
+  </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2360002718792535565">
+    <property name="package:32" value="job" />
+    <link role="conceptDeclaration:32" targetNodeId="1.2360002718792446594" resolveInfo="ResourceType" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2360002718792535567">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="2360002718792535570">
+        <link role="relationDeclaration:32" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="2360002718792535569" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2360002718792622187">
+    <property name="package:32" value="job" />
+    <link role="conceptDeclaration:32" targetNodeId="1.2360002718792622184" resolveInfo="OutputResources" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2360002718792622189">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="2360002718792622192">
+        <link role="relationDeclaration:32" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2360002718792622196">
+        <link role="relationDeclaration:32" targetNodeId="1.2360002718792622193" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2360002718792622200">
+        <property name="text:32" value=";" />
+        <link role="styleClass:32" targetNodeId="2v.1215094139260" resolveInfo="Semicolon" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="2360002718792622191" />
     </node>
   </node>
 </model>

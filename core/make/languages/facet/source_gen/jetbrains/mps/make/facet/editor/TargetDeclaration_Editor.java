@@ -77,6 +77,8 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_xfdsch_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xfdsch_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xfdsch_c1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xfdsch_d1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_xfdsch_e1b0(editorContext, node));
     return editorCell;
   }
 
@@ -102,6 +104,17 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_xfdsch_e1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_xfdsch_e1b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createRefNode_xfdsch_a4b1a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_xfdsch_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "overrides");
     editorCell.setCellId("Constant_xfdsch_b0a");
@@ -119,6 +132,13 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xfdsch_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_xfdsch_b1b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xfdsch_d1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    editorCell.setCellId("Constant_xfdsch_d1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -165,6 +185,23 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("config");
     provider.setNoTargetText("<no config>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_xfdsch_a4b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("job");
+    provider.setNoTargetText("<no job>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

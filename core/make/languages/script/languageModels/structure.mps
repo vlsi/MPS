@@ -55,88 +55,79 @@
   <devkit namespace="e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6746335715434529364">
-    <property name="name:0" value="Task" />
-    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6746335715434555000">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="declaration" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="6746335715434554999" resolveInfo="TaskDeclaration" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6746335715434554998">
-    <property name="name:0" value="Target" />
-    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6746335715434555010">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="dependency" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6746335715434555001" resolveInfo="Dependency" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6746335715434555013">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="taskList" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6746335715434555011" resolveInfo="TaskList" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6746335715434554999">
-    <property name="name:0" value="TaskDeclaration" />
-    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6746335715434555001">
-    <property name="name:0" value="Dependency" />
-    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6746335715434555002">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="target" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="6746335715434554998" resolveInfo="Target" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="6746335715434555009">
-      <property name="name:0" value="qualifier" />
-      <link role="dataType:0" targetNodeId="6746335715434555004" resolveInfo="DependencyQualifier" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="6746335715434555004">
-    <property name="name:0" value="DependencyQualifier" />
-    <link role="memberDataType:0" targetNodeId="2v.1082983041843:0" resolveInfo="string" />
-    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="6746335715434555005">
-      <property name="externalValue:0" value="after" />
-      <property name="internalValue:0" value="STRONGLY_AFTER" />
-    </node>
-    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="6746335715434555006">
-      <property name="internalValue:0" value="NOT_BEFORE" />
-      <property name="externalValue:0" value="not before" />
-    </node>
-    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="6746335715434555007">
-      <property name="internalValue:0" value="NOT_AFTER" />
-      <property name="externalValue:0" value="not after" />
-    </node>
-    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="6746335715434555008">
-      <property name="internalValue:0" value="STRONGLY_BEFORE" />
-      <property name="externalValue:0" value="before" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6746335715434555011">
-    <property name="name:0" value="TaskList" />
-    <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6746335715434555012">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value=" " />
-      <property name="sourceCardinality:0" value="1..n" />
-      <link role="target:0" targetNodeId="6746335715434529364" resolveInfo="Task" />
-    </node>
-  </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7077360340906447917">
     <property name="name:0" value="ResultStatement" />
-    <link role="extends:0" targetNodeId="3v.1068581242878:3" resolveInfo="ReturnStatement" />
+    <property name="package:0" value="job" />
+    <link role="extends:0" targetNodeId="2v.1068581242878:3" resolveInfo="ReturnStatement" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2360002718792652024">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7077360340906447918">
-      <property name="name:0" value="ok" />
-      <link role="dataType:0" targetNodeId="2v.1082983657063:0" resolveInfo="boolean" />
+      <property name="name:0" value="result" />
+      <link role="dataType:0" targetNodeId="2360002718792446682" resolveInfo="ResultType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2360002718792446594">
+    <property name="package:0" value="job" />
+    <property name="name:0" value="ResourceType" />
+    <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2360002718792446595">
+      <property name="value:0" value="resource" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="2360002718792446682">
+    <property name="package:0" value="job" />
+    <property name="name:0" value="Result" />
+    <link role="memberDataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="2360002718792446683">
+      <property name="internalValue:0" value="OK" />
+      <property name="externalValue:0" value="success" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="2360002718792446684">
+      <property name="internalValue:0" value="FAIL" />
+      <property name="externalValue:0" value="failure" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2360002718792622184">
+    <property name="package:0" value="job" />
+    <property name="name:0" value="OutputResources" />
+    <link role="extends:0" targetNodeId="2v.1068580123157:3" resolveInfo="Statement" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2360002718792622193">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="resource" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2360002718792622186">
+      <property name="value:0" value="output" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2360002718792652026">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2360002718792625579">
+    <property name="package:0" value="job" />
+    <property name="name:0" value="JobDefinition" />
+    <link role="extends:0" targetNodeId="2v.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="2360002718792625587">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="2360002718792625580" resolveInfo="ResourcesParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2360002718792625580">
+    <property name="package:0" value="job" />
+    <property name="name:0" value="ResourcesParameter" />
+    <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2360002718792651363">
+      <property name="value:0" value="input" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2360002718792651365">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

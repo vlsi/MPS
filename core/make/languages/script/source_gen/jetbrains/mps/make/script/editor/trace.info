@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ResultStatement_Editor.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResultStatement_Editor" />
-  <root nodeId="7077360340906447919">
-    <nodeInfo nodeId="7077360340906465842" fileName="ResultStatement_Editor.java" startLine="64" startPosition="111" endLine="65" endPosition="54" />
-    <scopeInfo nodeId="7077360340906447929" fileName="ResultStatement_Editor.java" startLine="64" startPosition="111" endLine="65" endPosition="54" />
-  </root>
+  <unitInfo fileName="ResourceType_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResourceType_Editor" />
+  <unitInfo fileName="ResultStatement_Editor.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResultStatement_Editor" />
+  <unitInfo fileName="OutputResources_Editor.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.make.script.editor.OutputResources_Editor" />
 </debugInfo>
 

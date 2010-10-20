@@ -18,12 +18,12 @@ public class TargetDependency extends BaseConcept {
     super(node);
   }
 
-  public TargetDependencyType getType() {
+  public TargetDependencyQualifier getType() {
     String value = super.getProperty(TargetDependency.TYPE);
-    return TargetDependencyType.parseValue(value);
+    return TargetDependencyQualifier.parseValue(value);
   }
 
-  public void setType(TargetDependencyType value) {
+  public void setType(TargetDependencyQualifier value) {
     super.setProperty(TargetDependency.TYPE, value.getValueAsString());
   }
 

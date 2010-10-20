@@ -236,6 +236,18 @@
               <link role="relationDeclaration:32" targetNodeId="1.6418371274763029599:1" />
             </node>
           </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2360002718792633292">
+            <property name="text:32" value=" " />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2360002718792633294">
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="2360002718792633295">
+              <property name="flag:32" value="false" />
+            </node>
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2360002718792633298">
+              <link role="relationDeclaration:32" targetNodeId="1.2360002718792633290:1" />
+            </node>
+            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="2360002718792633297" />
+          </node>
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="3130298387011953734" />
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="6418371274763029587" />
@@ -255,6 +267,9 @@
           <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept:32" id="3130298387012000727">
             <link role="replacementConcept:32" targetNodeId="1.6418371274763029600:1" resolveInfo="TargetDependency" />
           </node>
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="2360002718792654716">
+          <property name="style:32" value="BOLD" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="6418371274763141122">

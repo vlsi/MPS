@@ -5,6 +5,7 @@ package jetbrains.mps.make.facet.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.make.script.structure.JobDefinition;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -19,6 +20,7 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OVERRIDES = "overrides";
   public static final String CONFIG = "config";
+  public static final String JOB = "job";
   public static final String DEPENDENCY = "dependency";
 
   public TargetDeclaration(SNode node) {
@@ -71,6 +73,14 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
 
   public void setConfig(TargetConfiguration node) {
     super.setChild(TargetDeclaration.CONFIG, node);
+  }
+
+  public JobDefinition getJob() {
+    return (JobDefinition) this.getChild(JobDefinition.class, TargetDeclaration.JOB);
+  }
+
+  public void setJob(JobDefinition node) {
+    super.setChild(TargetDeclaration.JOB, node);
   }
 
   public int getDependenciesCount() {

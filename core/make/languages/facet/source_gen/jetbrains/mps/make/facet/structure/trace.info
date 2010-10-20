@@ -6,10 +6,10 @@
   <unitInfo fileName="ExtendsFacetReference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ExtendsFacetReference" />
   <unitInfo fileName="TargetConfiguration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetConfiguration" />
   <unitInfo fileName="FacetReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetReference" />
-  <unitInfo fileName="TargetDependencyType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyType_PropertySupport" />
+  <unitInfo fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier_PropertySupport" />
   <unitInfo fileName="TargetDependency.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependency" />
-  <unitInfo fileName="TargetDependencyType.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyType" />
-  <unitInfo fileName="TargetDeclaration.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
+  <unitInfo fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
+  <unitInfo fileName="TargetDeclaration.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
   <unitInfo fileName="FacetDeclaration.java" startLine="14" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetDeclaration" />
 </debugInfo>
 

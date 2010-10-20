@@ -6,14 +6,14 @@ import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class TargetDependencyType_PropertySupport extends PropertySupport {
+public class TargetDependencyQualifier_PropertySupport extends PropertySupport {
   public boolean canSetValue(String value) {
     if (value == null) {
       return true;
     }
-    Iterator<TargetDependencyType> constants = ListSequence.fromList(TargetDependencyType.getConstants()).iterator();
+    Iterator<TargetDependencyQualifier> constants = ListSequence.fromList(TargetDependencyQualifier.getConstants()).iterator();
     while (constants.hasNext()) {
-      TargetDependencyType constant = constants.next();
+      TargetDependencyQualifier constant = constants.next();
       if (value.equals(constant.getName())) {
         return true;
       }
@@ -25,9 +25,9 @@ public class TargetDependencyType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<TargetDependencyType> constants = ListSequence.fromList(TargetDependencyType.getConstants()).iterator();
+    Iterator<TargetDependencyQualifier> constants = ListSequence.fromList(TargetDependencyQualifier.getConstants()).iterator();
     while (constants.hasNext()) {
-      TargetDependencyType constant = constants.next();
+      TargetDependencyQualifier constant = constants.next();
       if (value.equals(constant.getName())) {
         return constant.getValueAsString();
       }
@@ -36,7 +36,7 @@ public class TargetDependencyType_PropertySupport extends PropertySupport {
   }
 
   public String fromInternalValue(String value) {
-    TargetDependencyType constant = TargetDependencyType.parseValue(value);
+    TargetDependencyQualifier constant = TargetDependencyQualifier.parseValue(value);
     if (constant != null) {
       return constant.getName();
     }
