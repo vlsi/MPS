@@ -330,6 +330,9 @@ public class MPSEditorOpener {
   private void selectNodeParentInEditor(IEditor nodeEditor, SNode node) {
     SNode currentSelectionTarget = node;
     EditorComponent component = nodeEditor.getCurrentEditorComponent();
+    if (component == null) {
+      return;
+    }
 
     while (currentSelectionTarget != null) {
       EditorCell cell = component.findNodeCell(currentSelectionTarget);
