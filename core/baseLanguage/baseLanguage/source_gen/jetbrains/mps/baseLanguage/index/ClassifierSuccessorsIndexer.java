@@ -19,15 +19,11 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.actions.goTo.index.BaseSNodeDescriptorIndex;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.io.IOException;
-import org.jdom.JDOMException;
 import jetbrains.mps.smodel.SReference;
 import java.util.ArrayList;
 
@@ -88,32 +84,30 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
       final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
-            SModel model = BaseSNodeDescriptorIndex.doModelParsing(inputData);
-
-            for (final SNode nextNode : SModelOperations.getNodes(model, null)) {
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-                    SNode classNode = (SNode) nextNode;
-                    if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
-                      safeMap(SLinkOperations.getTarget(classNode, "superclass", true), classNode);
-                    }
-                    for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
-                      safeMap(implementedInterface, classNode);
-                    }
-                    if (SNodeOperations.isInstanceOf(classNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                      safeMap(classNode.getReference(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier"), "role")), classNode);
-                    }
-                  } else if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.Interface")) {
-                    SNode interfaceNode = SNodeOperations.cast(nextNode, "jetbrains.mps.baseLanguage.structure.Interface");
-                    for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
-                      safeMap(extendedInterface, interfaceNode);
-                    }
+          SModel sModel = BaseSNodeDescriptorIndex.doModelParsing(inputData);
+          for (final SNode nextNode : sModel.nodes()) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+                  SNode classNode = (SNode) nextNode;
+                  if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
+                    safeMap(SLinkOperations.getTarget(classNode, "superclass", true), classNode);
+                  }
+                  for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
+                    safeMap(implementedInterface, classNode);
+                  }
+                  if (SNodeOperations.isInstanceOf(classNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+                    safeMap(classNode.getReference(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier"), "role")), classNode);
+                  }
+                } else if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.Interface")) {
+                  SNode interfaceNode = SNodeOperations.cast(nextNode, "jetbrains.mps.baseLanguage.structure.Interface");
+                  for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
+                    safeMap(extendedInterface, interfaceNode);
                   }
                 }
-              });
-            }
-
+              }
+            });
+          }
         }
 
         private void safeMap(SNode classifierType, SNode node) {
