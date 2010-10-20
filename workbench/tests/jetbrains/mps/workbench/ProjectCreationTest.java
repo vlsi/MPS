@@ -19,7 +19,6 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -32,6 +31,7 @@ import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.*;
@@ -82,11 +82,13 @@ public class ProjectCreationTest {
   }
 
   @Test
+  @Ignore
   public void emptyProject() {
     invokeTest(new EmptyProjectProvider(), EMPTY_PROJECT_PATH_LIST);
   }
 
   @Test
+  @Ignore
   public void projectWithModules() {
     invokeTest(new ProjectWithModulesProvider(), PROJECT_WITH_MODULES_PATH_LIST);
   }
