@@ -120,7 +120,7 @@ public class GenerationFilter {
     String oldHash = dependencies.getModelHash();
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
     if(cacheContainer == null) {
-      if(myTracer != null) myTracer.report("No cache for " + oldHash);
+      if(myTracer != null) myTracer.report("No cache for " + myModel.getSModelReference().toString() + " (" + oldHash + ")");
       return;
     }
 

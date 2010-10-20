@@ -155,6 +155,8 @@ public class GenerationTestBase {
           incrementalStrategy.buildHash();
         }
       });
+      List<String> hashes = new ArrayList<String>();
+      hashes.add(incrementalStrategy.getHash().get(ModelDigestHelper.FILE));
 
       // Stage 1. Regenerate
 
@@ -194,6 +196,7 @@ public class GenerationTestBase {
             incrementalStrategy.buildHash();
           }
         });
+        hashes.add(incrementalStrategy.getHash().get(ModelDigestHelper.FILE));
         Assert.assertNotNull(generationHandler.getLastDependencies());
         incrementalStrategy.setDependencies(generationHandler.getLastDependencies());
 
@@ -386,6 +389,10 @@ public class GenerationTestBase {
         Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(ModelDigestHelper.FILE), hashes.get(ModelDigestHelper.FILE));
       }
       myHash = hashes;
+    }
+
+    public Map<String, String> getHash() {
+      return myHash;
     }
 
     @Override

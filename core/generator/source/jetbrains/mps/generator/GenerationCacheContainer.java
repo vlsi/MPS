@@ -44,6 +44,8 @@ public interface GenerationCacheContainer {
 
   public static class FileBasedGenerationCacheContainer implements GenerationCacheContainer {
 
+    private static final Logger LOG = Logger.getLogger(FileBasedGenerationCacheContainer.class);
+
     File myGeneratorCaches;
 
     public FileBasedGenerationCacheContainer(File generatorCaches) {
@@ -67,6 +69,7 @@ public interface GenerationCacheContainer {
           return null;
         }
         if(!modelCacheDir.mkdirs()) {
+          LOG.error("generator cache: cannot create " + modelCacheDir.getAbsolutePath());
           return null;
         }
       }
@@ -77,6 +80,7 @@ public interface GenerationCacheContainer {
           return null;
         }
         if(!hashDir.mkdirs()) {
+          LOG.error("generator cache: cannot create " + hashDir.getAbsolutePath());
           return null;
         }
       }

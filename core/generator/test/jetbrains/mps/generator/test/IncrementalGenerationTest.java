@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
