@@ -16,6 +16,10 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.newTypesystem.differences.whenConcrete.BecameConcrete;
+import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
+import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyAdded;
+import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyRemoved;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 import jetbrains.mps.util.CollectionUtil;
@@ -34,14 +38,21 @@ public class NonConcreteMapPair {
   private boolean isShallow;
   private Map<WhenConcreteEntity, Set<SNode>> myDependencies;
   private Map<SNode, Set<WhenConcreteEntity>> myDependents;
+  private State myState;
 
-  public NonConcreteMapPair(boolean shallow) {
+  public NonConcreteMapPair(boolean shallow, State state) {
     isShallow = shallow;
+    myState = state;
     myDependencies = new HashMap<WhenConcreteEntity, Set<SNode>>();
     myDependents = new HashMap<SNode, Set<WhenConcreteEntity>>();
   }
 
-  private void addDependency(WhenConcreteEntity e, SNode var) {
+  private void addAndTrack(WhenConcreteEntity e, SNode var) {
+    myState.addDifference(new WhenConcreteDependencyAdded(e, var, this), false);
+    addDependency(e,var);
+  }
+
+  public void addDependency(WhenConcreteEntity e, SNode var) {
     Set<SNode> dependencies = myDependencies.get(e);
     if (dependencies == null) {
       dependencies = new HashSet<SNode>();
@@ -57,26 +68,55 @@ public class NonConcreteMapPair {
     dependents.add(e);    
   }
 
-  private void removeDependency(WhenConcreteEntity e, SNode var) {
-    myDependencies.get(e);
+  private void becameConcrete(WhenConcreteEntity entity) {
+    myState.addDifference(new BecameConcrete(), true);
+    entity.run();
+    myState.popDifference();
   }
 
+  private void testConcrete(WhenConcreteEntity entity) {
+    if (myDependencies.get(entity).isEmpty()) {
+      becameConcrete(entity);
+      myDependencies.remove(entity);
+    }
+  }
 
+  private void removeAndTrack(WhenConcreteEntity e, SNode var) {
+    myState.addDifference(new WhenConcreteDependencyRemoved(e,var,this),false);
+    removeDependency(e,var);
+  }
+
+  public void removeDependency(WhenConcreteEntity e, SNode var) {
+    myDependencies.get(e).remove(var);
+    myDependents.get(var).remove(e);
+
+  }
 
   public void addWhenConcrete(WhenConcreteEntity e, SNode node) {
-    for (SNode var : getChildAndReferentVariables(node)) {
-      addDependency(e, var);
+    myState.addDifference(new WhenConcreteAdded(e, node, this), true);
+    List<SNode> variables = getChildAndReferentVariables(node);
+    if (variables.isEmpty()) {
+      becameConcrete(e);
     }
+    for (SNode var : variables) {
+      addAndTrack(e, myState.getEquations().getRepresentative(var));
+    }
+    myState.popDifference();
   }
 
-  public void substitute(SNode var, SNode type) {
-    Set<WhenConcreteEntity> entities = myDependents.get(var);
-    for (SNode variable : getChildAndReferentVariables(type)) {
-      for (WhenConcreteEntity entity : entities) {
-        addDependency(entity, var);
-      }
+  public void substitute(SNode oldVar, SNode type) {
+    Set<WhenConcreteEntity> entities = myDependents.get(oldVar);
+    if (entities == null) {
+      return;
     }
-    myDependents.remove(var);
+    for (WhenConcreteEntity entity : entities) {
+      for (SNode variable : getChildAndReferentVariables(type)) {
+         addDependency(entity, variable);
+      }
+      removeAndTrack(entity, oldVar);
+      testConcrete(entity);
+    }
+    myDependents.remove(oldVar);
   }
 
   private List<SNode> getChildAndReferentVariables(SNode node) {
@@ -84,6 +124,9 @@ public class NonConcreteMapPair {
       return CollectionUtil.list(node);
     }
     List<SNode> result = new ArrayList<SNode>();
+    if (isShallow) {
+      return result;
+    }
     for (SNode referent : node.getReferents()) {
       if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
         result.add(referent);

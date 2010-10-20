@@ -43,9 +43,9 @@ public class Equations {
     myState = state;
   }
 
-  public SNode getRepresentative(SNode wrapper) {
-    SNode parent = myRepresentatives.get(wrapper);
-    SNode current = wrapper;
+  public SNode getRepresentative(SNode node) {
+    SNode parent = myRepresentatives.get(node);
+    SNode current = node;
     if (parent != null) {
       List<SNode> path = new LinkedList<SNode>();
       while (parent != null) {

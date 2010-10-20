@@ -133,14 +133,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
 
-    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId));
+    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId), argument, false);
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
     super.whenConcrete(argument, r, nodeModel, nodeId, isShallow, skipError);    //To change body of overridden methods use File | Settings | File Templates.
 
-    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId, skipError));
+    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId, skipError), argument, isShallow);
   }
 
 

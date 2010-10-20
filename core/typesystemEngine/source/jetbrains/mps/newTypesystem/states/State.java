@@ -66,10 +66,6 @@ public class State {
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addNonConcrete(SNode left, SNode right) {
-    myNonConcrete.addNonConcrete(left, right);
-  }
-
   public NodeMaps getNodeMaps() {
     return myNodeMaps;
   }
@@ -142,7 +138,8 @@ public class State {
     return myDifference;
   }
 
-  public void addWhenConcrete(WhenConcreteEntity wce) {
-    addDifference(new WhenConcreteAdded(), false);
+  public void addWhenConcrete(WhenConcreteEntity entity, SNode node, boolean shallow) {
+    myNonConcrete.addNonConcrete(entity, node, shallow);
+
   }
 }

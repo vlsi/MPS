@@ -37,36 +37,47 @@ import java.util.Set;
  */
 public class NonConcrete {
   private State myState;
-  private Equations myEquations;
   private NonConcreteMapPair myShallow;
   private NonConcreteMapPair myDeep;
 
   public NonConcrete(State state) {
     myState = state;
-    myEquations = myState.getEquations();
+    myShallow = new NonConcreteMapPair(true, state);
+    myDeep = new NonConcreteMapPair(false, state);
   }
 
   public void substitute(SNode var, SNode type) {
+    myShallow.substitute(var, type);
+    myDeep.substitute(var, type);
   }
 
-  public void addNonConcrete(SNode left, SNode right) {
+  public void addNonConcrete(WhenConcreteEntity entity, SNode node, boolean shallow) {
+    node = myState.getEquations().getRepresentative(node);
+    if (shallow) {
+      myShallow.addWhenConcrete(entity, node);
+    } else {
+      myDeep.addWhenConcrete(entity, node);
+    }
   }
 
   public boolean isConcrete(SNode node) {
-    if (true) {
-      return false;
+    return !hasVariablesInside(node);
+  }
+
+  private boolean hasVariablesInside(SNode node) {
+    if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+      return true;
     }
-    return true;
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+        return true;
+      }
+    }
+    for (SNode child : node.getChildren(false)) {
+      if(hasVariablesInside(child)) {
+        return true;
+      }
+    }
+    return false;
   }
-
-  
-
-
-
-
-  public void fillVariableDependencies(SNode node) {
-    
-  }
-
-  //----------------DEBUG
 }

@@ -16,42 +16,22 @@
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 4:37:46 PM
+ * Date: Oct 20, 2010
+ * Time: 5:16:25 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WhenConcreteAdded extends Difference {
-  private NonConcreteMapPair myMap;
-  private SNode myNode;
-  private WhenConcreteEntity myEntity;
-
-  public WhenConcreteAdded(WhenConcreteEntity entity, SNode node, NonConcreteMapPair map) {
-    myNode = node;
-    myEntity = entity;
-    myMap = map;
+public class BecameConcrete extends Difference {
+  @Override
+  public void rollBack() {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public String getPresentation() {
-    return "When Concrete added " + myNode;
-  }
-
-  @Override
-  public Color getColor() {
-    return new Color(0x1111BB);
-  }
-
-  @Override
-  public void rollBack() {
-    myMap.removeDependency(myEntity, myNode);
+    return "Became concrete";
   }
 }

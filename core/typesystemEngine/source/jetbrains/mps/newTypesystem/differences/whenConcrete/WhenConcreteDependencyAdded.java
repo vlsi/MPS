@@ -25,16 +25,16 @@ import java.awt.Color;
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 4:37:46 PM
+ * Date: Oct 20, 2010
+ * Time: 5:01:04 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WhenConcreteAdded extends Difference {
+public class WhenConcreteDependencyAdded extends Difference {
   private NonConcreteMapPair myMap;
   private SNode myNode;
   private WhenConcreteEntity myEntity;
 
-  public WhenConcreteAdded(WhenConcreteEntity entity, SNode node, NonConcreteMapPair map) {
+  public WhenConcreteDependencyAdded(WhenConcreteEntity entity, SNode node, NonConcreteMapPair map) {
     myNode = node;
     myEntity = entity;
     myMap = map;
@@ -42,7 +42,7 @@ public class WhenConcreteAdded extends Difference {
 
   @Override
   public String getPresentation() {
-    return "When Concrete added " + myNode;
+    return "When concrete dependency added: " + myNode + "";
   }
 
   @Override
