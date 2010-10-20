@@ -31,7 +31,6 @@ import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.*;
@@ -82,13 +81,11 @@ public class ProjectCreationTest {
   }
 
   @Test
-  @Ignore
   public void emptyProject() {
     invokeTest(new EmptyProjectProvider(), EMPTY_PROJECT_PATH_LIST);
   }
 
   @Test
-  @Ignore
   public void projectWithModules() {
     invokeTest(new ProjectWithModulesProvider(), PROJECT_WITH_MODULES_PATH_LIST);
   }
