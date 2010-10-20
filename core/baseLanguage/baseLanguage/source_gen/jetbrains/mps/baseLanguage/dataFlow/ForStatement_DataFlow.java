@@ -38,6 +38,10 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
         }
       });
     }
-    _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "start"));
+    _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+      public void run() {
+        _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "start"));
+      }
+    });
   }
 }

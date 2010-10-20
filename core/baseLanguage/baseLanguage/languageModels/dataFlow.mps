@@ -847,9 +847,11 @@
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1032195626824969359" />
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement:0" id="1214992621851">
-          <node role="jumpTo:0" type="jetbrains.mps.lang.dataFlow.structure.LabelPosition:0" id="1214992626065">
-            <link role="label:0" targetNodeId="1207063213423" resolveInfo="start" />
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable:0" id="9092976468699818453">
+          <node role="emitStatement:0" type="jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement:0" id="9092976468699818459">
+            <node role="jumpTo:0" type="jetbrains.mps.lang.dataFlow.structure.LabelPosition:0" id="9092976468699818463">
+              <link role="label:0" targetNodeId="1207063213423" resolveInfo="start" />
+            </node>
           </node>
         </node>
       </node>

@@ -7,6 +7,7 @@
   <unitInfo fileName="UnusedAssignment_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody" />
   <unitInfo fileName="MethodParametersTest_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody" />
   <unitInfo fileName="ForLoop_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
+  <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody" />
   <unitInfo fileName="CommandDataflowWithReturn_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test$TestBody" />
   <unitInfo fileName="CommentCanBeUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody" />
   <unitInfo fileName="ListWithConceptFunction_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test$TestBody" />
@@ -27,6 +28,7 @@
   <unitInfo fileName="UnusedAssignment_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test" />
   <unitInfo fileName="MethodParametersTest_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test" />
   <unitInfo fileName="ForLoop_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test" />
+  <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test" />
   <unitInfo fileName="CommandDataflowWithReturn_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test" />
   <unitInfo fileName="CommentCanBeUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test" />
   <unitInfo fileName="ListWithConceptFunction_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test" />

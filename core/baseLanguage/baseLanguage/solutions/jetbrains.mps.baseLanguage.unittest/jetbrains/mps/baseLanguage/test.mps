@@ -3117,5 +3117,57 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="9092976468699800028">
+    <property name="package:4" value="dataFlow.unreachable" />
+    <property name="name:4" value="ForBreakUnreachable" />
+    <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="9092976468699800029">
+      <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="9092976468699800030">
+        <property name="name:3" value="Class1" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9092976468699800031" />
+        <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="9092976468699800032">
+          <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="9092976468699800033" />
+          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9092976468699800034" />
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9092976468699800035">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="9092976468699817059">
+              <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9092976468699817060">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BreakStatement:3" id="9092976468699817074" />
+              </node>
+              <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="9092976468699817062">
+                <property name="name:3" value="i" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="9092976468699817063" />
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="9092976468699817065">
+                  <property name="value:3" value="1" />
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="9092976468699817067">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="9092976468699817070">
+                  <property name="value:3" value="10" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9092976468699817066">
+                  <link role="variableDeclaration:3" targetNodeId="9092976468699817062" resolveInfo="i" />
+                </node>
+              </node>
+              <node role="iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="9092976468699817072">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9092976468699817073">
+                  <link role="variableDeclaration:3" targetNodeId="9092976468699817062" resolveInfo="i" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="9092976468699800066">
+            <property name="name:3" value="a" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="9092976468699800067" />
+          </node>
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="9092976468699800068">
+            <property name="name:3" value="b" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="9092976468699800069" />
+          </node>
+          <node role="nodeOpraretionsMark$attribute:3" type="jetbrains.mps.lang.test.structure.NodeOperationsContainer:4" id="9092976468699800070">
+            <node role="operations:4" type="jetbrains.mps.lang.test.structure.TypesCheckOperation:4" id="9092976468699800071" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
