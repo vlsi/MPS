@@ -20,26 +20,17 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
-    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new MPSBreakpoint(debuggableNode, project);
-      }
-    });
+    {
+      Mapper2<SNode, Project, AbstractMPSBreakpoint> creator = new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+        public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+          return new MPSBreakpoint(debuggableNode, project);
+        }
+      };
+      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", creator);
+      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", creator);
+      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", creator);
+      manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", creator);
+    }
     BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 

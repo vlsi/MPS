@@ -13,9 +13,11 @@ public class PositionInfo implements Comparable<PositionInfo> {
   private static String END_LINE = "endLine";
   private static String END_POSITION = "endPosition";
   private static String NODE_ID = "nodeId";
+  private static String CONCEPT_FQ_NAME = "conceptFqName";
 
   private String myFileName;
   private String myNodeId;
+  private String myConceptFqName;
   private int myStartLine;
   private int myStartPosition;
   private int myEndLine;
@@ -25,11 +27,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public PositionInfo(Element element) throws DataConversionException {
-    Attribute attribute = element.getAttribute(PositionInfo.NODE_ID);
-    if (attribute != null) {
-      this.myNodeId = attribute.getValue();
-    }
-    this.myFileName = element.getAttribute(PositionInfo.FILE_NAME).getValue();
+    this.myNodeId = check_1myh1n_a0a0b(element.getAttribute(PositionInfo.NODE_ID));
+    this.myConceptFqName = check_1myh1n_a0b0b(element.getAttribute(PositionInfo.CONCEPT_FQ_NAME));
+    this.myFileName = check_1myh1n_a0c0b(element.getAttribute(PositionInfo.FILE_NAME));
     this.myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
     this.myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
     this.myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
@@ -96,6 +96,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
     if (myNodeId != null) {
       element.setAttribute(PositionInfo.NODE_ID, this.myNodeId);
     }
+    if (myConceptFqName != null) {
+      element.setAttribute(PositionInfo.CONCEPT_FQ_NAME, this.myConceptFqName);
+    }
     element.setAttribute(PositionInfo.FILE_NAME, this.myFileName);
     element.setAttribute(PositionInfo.START_LINE, Integer.toString(this.myStartLine));
     element.setAttribute(PositionInfo.START_POSITION, Integer.toString(this.myStartPosition));
@@ -140,6 +143,35 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myStartPosition = position.myStartPosition;
     this.myEndLine = position.myEndLine;
     this.myEndPosition = position.myEndPosition;
+  }
+
+  public String getConceptFqName() {
+    return myConceptFqName;
+  }
+
+  public void setConceptFqName(String conceptFqName) {
+    myConceptFqName = conceptFqName;
+  }
+
+  private static String check_1myh1n_a0a0b(Attribute p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getValue();
+  }
+
+  private static String check_1myh1n_a0b0b(Attribute p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getValue();
+  }
+
+  private static String check_1myh1n_a0c0b(Attribute p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getValue();
   }
 
   private static boolean eq_1myh1n_a0a0q(Object a, Object b) {

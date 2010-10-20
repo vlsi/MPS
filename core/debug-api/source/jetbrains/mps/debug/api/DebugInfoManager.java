@@ -18,24 +18,33 @@ package jetbrains.mps.debug.api;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DebugInfoManager implements ApplicationComponent {
+  private static Logger LOG = Logger.getLogger(DebugInfoManager.class);
+
   private final TraceInfoManager myTraceInfoManager;
 
   public static DebugInfoManager getInstance() {
     return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
   }
 
-  private final Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts =  new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
+  private final Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts = new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
 
   @NotNull
   public String getComponentName() {
@@ -86,13 +95,34 @@ public class DebugInfoManager implements ApplicationComponent {
     return false;
   }
 
+  private AbstractMPSBreakpoint createBreakpoint(String concept, SNode node, Project project) {
+    Mapper2<SNode, Project, AbstractMPSBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
+    if (mapper2 == null) {
+      LOG.warning("Could not create breakpoint for node " + node);
+      return null;
+    }
+    return mapper2.value(node, project);
+  }
+
   @Nullable
-  public AbstractMPSBreakpoint createBreakpoint(SNode debuggableNode, Project project) {
+  public AbstractMPSBreakpoint createBreakpoint(SNode node, Project project) {
     for (String concept : myDebuggableConcepts.keySet()) {
-      if (SNodeOperations.isInstanceOf(debuggableNode, concept)) {
-        Mapper2<SNode, Project, AbstractMPSBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
-        if (mapper2 == null) return null; //TODO wtf? how about telling someone something is wrong?
-        return mapper2.value(debuggableNode, project);
+      if (SNodeOperations.isInstanceOf(node, concept)) {
+        return createBreakpoint(concept, node, project);
+      }
+    }
+
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(node.getModel().getModelDescriptor());
+    if (debugInfo != null) {
+      PositionInfo position = debugInfo.getPositionForNode(node.getId());
+      if (position != null) {
+        String conceptFqName = position.getConceptFqName();
+        List<SNode> superConcepts = SConceptOperations.getAllSuperConcepts(SConceptOperations.findConceptDeclaration(conceptFqName), true);
+        for (SNode concept : superConcepts) {
+          if (myDebuggableConcepts.keySet().contains(concept.getConceptFqName())) {
+            return createBreakpoint(conceptFqName, node, project);
+          }
+        }
       }
     }
     return null;

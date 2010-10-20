@@ -21,11 +21,14 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
-        return new GDBBreakpoint(new SNodePointer(debuggableNode), project);
-      }
-    });
+    {
+      Mapper2<SNode, Project, AbstractMPSBreakpoint> creator = new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+        public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+          return new GDBBreakpoint(new SNodePointer(debuggableNode), project);
+        }
+      };
+      manager.addConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement", creator);
+    }
     BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 

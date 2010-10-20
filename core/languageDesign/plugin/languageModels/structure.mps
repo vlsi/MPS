@@ -3755,7 +3755,7 @@
     <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2947985314240879946">
-      <property name="value:0" value="Trace Info Initializer" />
+      <property name="value:0" value="TraceInfoInitializer" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5124230653299370499">

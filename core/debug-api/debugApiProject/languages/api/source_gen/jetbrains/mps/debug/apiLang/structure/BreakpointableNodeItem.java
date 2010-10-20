@@ -5,6 +5,8 @@ package jetbrains.mps.debug.apiLang.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,6 +15,7 @@ public class BreakpointableNodeItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem";
   public static final String DECLARATION = "declaration";
   public static final String CREATE_BREAKPOINT = "createBreakpoint";
+  public static final String CONCEPTS_TO_CREATE_BREAKPOINT = "conceptsToCreateBreakpoint";
 
   public BreakpointableNodeItem(SNode node) {
     super(node);
@@ -32,6 +35,26 @@ public class BreakpointableNodeItem extends BaseConcept {
 
   public void setCreateBreakpoint(ConceptFunction_CreateBreakpoint node) {
     super.setChild(BreakpointableNodeItem.CREATE_BREAKPOINT, node);
+  }
+
+  public int getConceptsToCreateBreakpointsCount() {
+    return this.getChildCount(BreakpointableNodeItem.CONCEPTS_TO_CREATE_BREAKPOINT);
+  }
+
+  public Iterator<ConceptDeclarationReference> conceptsToCreateBreakpoints() {
+    return this.children(ConceptDeclarationReference.class, BreakpointableNodeItem.CONCEPTS_TO_CREATE_BREAKPOINT);
+  }
+
+  public List<ConceptDeclarationReference> getConceptsToCreateBreakpoints() {
+    return this.getChildren(ConceptDeclarationReference.class, BreakpointableNodeItem.CONCEPTS_TO_CREATE_BREAKPOINT);
+  }
+
+  public void addConceptsToCreateBreakpoint(ConceptDeclarationReference node) {
+    this.addChild(BreakpointableNodeItem.CONCEPTS_TO_CREATE_BREAKPOINT, node);
+  }
+
+  public void insertConceptsToCreateBreakpoint(ConceptDeclarationReference prev, ConceptDeclarationReference node) {
+    this.insertChild(prev, BreakpointableNodeItem.CONCEPTS_TO_CREATE_BREAKPOINT, node);
   }
 
   public static BreakpointableNodeItem newInstance(SModel sm, boolean init) {

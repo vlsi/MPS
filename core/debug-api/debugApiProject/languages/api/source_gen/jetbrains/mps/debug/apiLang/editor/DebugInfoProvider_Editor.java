@@ -49,7 +49,7 @@ public class DebugInfoProvider_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ozay25_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create breakpoints for concepts:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Breakpoints Creators");
     editorCell.setCellId("Constant_ozay25_c0");
     editorCell.setDefaultText("");
     return editorCell;

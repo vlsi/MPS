@@ -11,23 +11,31 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1270798772176197324(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
+  public static Object propertyMacro_GetPropertyValue_933053558709993778(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1270798772176197397(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
+  public static Object propertyMacro_GetPropertyValue_933053558709995184(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
-  public static SNode sourceNodeQuery_1270798772176197345(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_933053558709993746(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
   }
 
-  public static Iterable sourceNodesQuery_1270798772176197357(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_933053558709993764(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
+  }
+
+  public static Iterable sourceNodesQuery_933053558709992545(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "breakpointableConcepts", true);
   }
 
   public static Iterable sourceNodesQuery_1270798772176197406(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "breakpointableConcepts", true);
+  }
+
+  public static Iterable sourceNodesQuery_933053558709995176(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
   }
 }

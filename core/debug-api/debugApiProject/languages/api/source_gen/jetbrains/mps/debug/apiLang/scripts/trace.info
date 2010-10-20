@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.debug.apiLang.scripts.SplitTraceInfoAndDebugInfo_MigrationScript$1" />
-  <unitInfo fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="63" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.debug.apiLang.scripts.SplitTraceInfoAndDebugInfo_MigrationScript$QuotationClass_f4zljy_a0a0a0c0e0a0a0b0a" />
-  <unitInfo fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="21" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.debug.apiLang.scripts.SplitTraceInfoAndDebugInfo_MigrationScript" />
+  <unitInfo fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="63" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.debug.apiLang.scripts.SplitTraceInfoAndDebugInfo_MigrationScript$QuotationClass_f4zljy_a0a0a0c0e0a0a0b0a" />
+  <unitInfo fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="21" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debug.apiLang.scripts.SplitTraceInfoAndDebugInfo_MigrationScript" />
   <root nodeId="1270798772176197705">
-    <nodeInfo nodeId="1270798772176197711" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="109" />
-    <nodeInfo nodeId="1270798772176209957" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="132" />
-    <nodeInfo nodeId="1270798772176197735" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="42" startPosition="132" endLine="43" endPosition="88" />
-    <nodeInfo nodeId="1270798772176209973" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="44" startPosition="119" endLine="45" endPosition="398" />
-    <nodeInfo nodeId="2566194812862872380" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="45" startPosition="398" endLine="46" endPosition="106" />
-    <nodeInfo nodeId="2566194812862974463" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="48" startPosition="208" endLine="49" endPosition="177" />
-    <nodeInfo nodeId="2566194812862974482" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="51" startPosition="206" endLine="52" endPosition="175" />
-    <nodeInfo nodeId="2566194812862974476" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="53" startPosition="9" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="2566194812862974458" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="47" startPosition="9" endLine="50" endPosition="9" />
-    <nodeInfo nodeId="2566194812862974478" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="50" startPosition="9" endLine="53" endPosition="9" />
-    <nodeInfo nodeId="1270798772176197730" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="43" startPosition="88" endLine="47" endPosition="9" />
+    <nodeInfo nodeId="1270798772176197711" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="109" />
+    <nodeInfo nodeId="1270798772176209957" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="132" />
+    <nodeInfo nodeId="1270798772176197735" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="42" startPosition="132" endLine="43" endPosition="88" />
+    <nodeInfo nodeId="1270798772176209973" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="44" startPosition="119" endLine="45" endPosition="463" />
+    <nodeInfo nodeId="2566194812862872380" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="45" startPosition="463" endLine="46" endPosition="106" />
+    <nodeInfo nodeId="2566194812862974463" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="48" startPosition="208" endLine="49" endPosition="177" />
+    <nodeInfo nodeId="2566194812862974482" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="51" startPosition="206" endLine="52" endPosition="175" />
+    <nodeInfo nodeId="2566194812862974476" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="53" startPosition="9" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="2566194812862974458" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="47" startPosition="9" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="2566194812862974478" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="50" startPosition="9" endLine="53" endPosition="9" />
+    <nodeInfo nodeId="1270798772176197730" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="43" startPosition="88" endLine="47" endPosition="9" />
     <scopeInfo nodeId="1270798772176197710" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="109" />
     <scopeInfo nodeId="2566194812862974461" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="48" startPosition="208" endLine="49" endPosition="177" />
     <scopeInfo nodeId="2566194812862974481" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="51" startPosition="206" endLine="52" endPosition="175" />

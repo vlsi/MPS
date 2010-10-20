@@ -121,7 +121,6 @@
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1270798772176209984">
                     <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2566194812862845922">
                       <node role="quotedNode:0" type="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem:0" id="2566194812862845924">
-                        <link role="declaration:0" targetNodeId="1.1270798772176052876:0" resolveInfo="ConceptFunctionParameter_Debug_Project" />
                         <node role="createBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint:0" id="2566194812862845925">
                           <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566194812862845926">
                             <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="2566194812862872363">
@@ -148,6 +147,20 @@
                             </node>
                             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2566194812862872360">
                               <link role="link:16" targetNodeId="2.5124230653299542674:23" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="conceptsToCreateBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference:0" id="933053558710027756">
+                          <link role="conceptDeclaration:0" targetNodeId="3.1068580123157:3" resolveInfo="Statement" />
+                          <node role="referenceAntiquotation$link_attribute$conceptDeclaration:0" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="2074335300786174446">
+                            <property name="label:0" value="ConceptDeclarationReference" />
+                            <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2074335300786190941">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2074335300786223500">
+                                <link role="variable:7" targetNodeId="1270798772176197731" resolveInfo="conceptToDebug" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2074335300786223501">
+                                <link role="link:16" targetNodeId="2.5124230653299542674:23" />
+                              </node>
                             </node>
                           </node>
                         </node>

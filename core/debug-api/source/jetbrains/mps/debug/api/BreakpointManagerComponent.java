@@ -25,6 +25,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.MyState;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.MPSBreakpointPainter;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -33,6 +34,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -123,13 +125,16 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   public boolean isDebuggable(EditorCell cell) {
-    return findDebuggableCell(cell) != null;
+    return findDebuggableCell(cell) != null || findTraceableCell(cell) != null;
   }
 
   private SNode findDebuggableNode(EditorComponent editorComponent, int x, int y) {
     EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y);
     if (foundCell == null) return null;
     EditorCell cell = findDebuggableCell(foundCell);
+    if (cell == null) {
+      cell = findTraceableCell(foundCell);
+    }
     if (cell == null) return null;
     SNode sNode = cell.getSNode();
     EditorCell iconAnchorCell = BreakpointIconRenderer.getBreakpointIconAnchorCell(editorComponent.findNodeCell(sNode));
@@ -153,14 +158,26 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     return null;
   }
 
+  private EditorCell findTraceableCell(EditorCell foundCell) {
+    final TraceInfoCache traceInfoCache = TraceInfoCache.getInstance();
+    EditorCell cell = foundCell;
+    while (cell != null) {
+      SNode node = cell.getSNode();
+      DebugInfo debugInfo = traceInfoCache.get(node.getModel().getModelDescriptor());
+      if (debugInfo != null && debugInfo.getPositionForNode(node.getId()) != null) {
+        break;
+      }
+      cell = cell.getParent();
+    }
+    return cell;
+  }
+
   @Override
   public void projectOpened() {
-
   }
 
   @Override
   public void projectClosed() {
-
   }
 
   @NotNull
@@ -171,12 +188,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   @Override
   public void initComponent() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void disposeComponent() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   private void editorComponentOpened(@Nullable EditorComponent editorComponent) {

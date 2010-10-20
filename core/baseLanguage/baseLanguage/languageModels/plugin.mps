@@ -13425,7 +13425,6 @@
   </node>
   <node type="jetbrains.mps.debug.apiLang.structure.DebugInfoProvider:0" id="2566194812863059400">
     <node role="breakpointableConcepts:0" type="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem:0" id="2566194812863059401">
-      <link role="declaration:0" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
       <node role="createBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint:0" id="2566194812863059402">
         <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566194812863059403">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2566194812863059404">
@@ -13439,53 +13438,17 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="breakpointableConcepts:0" type="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem:0" id="2566194812863059409">
-      <link role="declaration:0" targetNodeId="1.1068390468200:3" resolveInfo="FieldDeclaration" />
-      <node role="createBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint:0" id="2566194812863059410">
-        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566194812863059411">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2566194812863059412">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2566194812863059413">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2566194812863059414">
-                <link role="baseMethodDeclaration:3" targetNodeId="183.~MPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNode,com.intellij.openapi.project.Project)" resolveInfo="MPSBreakpoint" />
-                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode:0" id="2566194812863059438" />
-                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project:0" id="2566194812863059434" />
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="conceptsToCreateBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference:0" id="5789575999243063764">
+        <link role="conceptDeclaration:0" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
       </node>
-    </node>
-    <node role="breakpointableConcepts:0" type="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem:0" id="2566194812863059417">
-      <link role="declaration:0" targetNodeId="1.1070462154015:3" resolveInfo="StaticFieldDeclaration" />
-      <node role="createBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint:0" id="2566194812863059418">
-        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566194812863059419">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2566194812863059420">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2566194812863059421">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2566194812863059422">
-                <link role="baseMethodDeclaration:3" targetNodeId="183.~MPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNode,com.intellij.openapi.project.Project)" resolveInfo="MPSBreakpoint" />
-                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode:0" id="2566194812863059439" />
-                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project:0" id="2566194812863059435" />
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="conceptsToCreateBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference:0" id="5789575999243063766">
+        <link role="conceptDeclaration:0" targetNodeId="1.1068390468200:3" resolveInfo="FieldDeclaration" />
       </node>
-    </node>
-    <node role="breakpointableConcepts:0" type="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem:0" id="2566194812863059425">
-      <link role="declaration:0" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
-      <node role="createBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint:0" id="2566194812863059426">
-        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566194812863059427">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2566194812863059428">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2566194812863059429">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2566194812863059430">
-                <link role="baseMethodDeclaration:3" targetNodeId="183.~MPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNode,com.intellij.openapi.project.Project)" resolveInfo="MPSBreakpoint" />
-                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode:0" id="2566194812863059440" />
-                <node role="actualArgument:3" type="jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project:0" id="2566194812863059436" />
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="conceptsToCreateBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference:0" id="5789575999243063768">
+        <link role="conceptDeclaration:0" targetNodeId="1.1070462154015:3" resolveInfo="StaticFieldDeclaration" />
+      </node>
+      <node role="conceptsToCreateBreakpoint:0" type="jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference:0" id="5789575999243063770">
+        <link role="conceptDeclaration:0" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
       </node>
     </node>
   </node>

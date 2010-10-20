@@ -8,6 +8,7 @@ import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -106,13 +107,13 @@ public abstract class AbstractMPSBreakpoint {
   @ToDebugAPI
   public static AbstractMPSBreakpoint fromPointer(SNodePointer pointer, Project project) {
     SNode node = pointer.getNode();
+    if (node == null) return null;
     return fromNode(node, project);
   }
 
   @ToDebugAPI
-  public static AbstractMPSBreakpoint fromNode(SNode node, Project project) {
-    AbstractMPSBreakpoint breakpoint = DebugInfoManager.getInstance().createBreakpoint(node, project);
-    return breakpoint;
+  public static AbstractMPSBreakpoint fromNode(@NotNull SNode node, Project project) {
+    return DebugInfoManager.getInstance().createBreakpoint(node, project);
   }
 
   public PositionInfo getTargetCodePosition() {
