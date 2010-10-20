@@ -79,7 +79,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   protected ModelLoadResult initialLoad() {
-    System.out.printf("initialLoad() called for model " + getLongName() + "\n");
+    //System.out.printf("initialLoad() called for model " + getLongName() + "\n");
     ModelLoadingState state = ModelLoadingState.ROOTS_LOADED;
     return load(state);
   }
@@ -89,7 +89,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     boolean loading = mySModel.isLoading();
     if (loading) return;
 
-    System.out.printf("enforceFullLoad() called for model " + getLongName() + "\n");
+    //System.out.printf("enforceFullLoad() called for model " + getLongName() + "\n");
 
     BaseMPSModelRootManager manager = (BaseMPSModelRootManager) myModelRootManager;
     SModel fullModel = manager.loadModel(this, ModelLoadingState.FULLY_LOADED).getModel();
