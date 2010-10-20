@@ -19,9 +19,12 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
+      <solutionPath path="${project}/languages/table/runtime/jetbrains.mps.table.runtime.msd" />
+      <solutionPath path="${project}/languages/table/sandbox/jetbrains.mps.table.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/editor.mpl" />
+      <languagePath path="${project}/languages/table/table.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
