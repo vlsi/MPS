@@ -53,12 +53,12 @@ public final class SNode {
     ourMemberAccessModifier = modifier;
   }
 
-  //------static end-------
-
   private String myRoleInParent;
   private SNode myParent;
 
-  @Deprecated //use getFirstChild()
+  /**
+   * access only in getFirstChild()
+   */
   private SNode myFirstChild;
 
   private SNode myNextSibling;  // == null only for the last child in the list
@@ -293,9 +293,6 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  // ---------- attributes -------------
-  //node
-
   public List<SNode> getNodeAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
@@ -402,8 +399,6 @@ public final class SNode {
     }
     return result;
   }
-
-  // ---------- properties -------------
 
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
@@ -572,8 +567,6 @@ public final class SNode {
       getModel().firePropertyChangedEvent(this, propertyName_, oldValue, propertyValue);
     }
   }
-
-  // ---------- children -------------
 
   final public SNode getParent() {
     return myParent;
@@ -936,8 +929,6 @@ public final class SNode {
     return myRegisteredInModelFlag;
   }
 
-  // ---------- references -------------
-
   public List<SReference> getReferences() {
     ModelAccess.assertLegalRead(this);
 
@@ -1219,8 +1210,6 @@ public final class SNode {
   public boolean isDeleted() {
     return (_reference().size() == 0) && myParent == null && !getModel().isRoot(this);
   }
-
-  // ---------- -------------
 
   public String getDebugText() {
     String roleText = "";
