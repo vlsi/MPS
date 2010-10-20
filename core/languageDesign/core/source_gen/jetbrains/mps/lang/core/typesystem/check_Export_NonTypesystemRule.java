@@ -34,7 +34,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616197", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954469", intentionProvider, errorTarget);
       }
     }
     // check references 
@@ -44,7 +44,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616261", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954475", intentionProvider, errorTarget);
         }
       }
     }
