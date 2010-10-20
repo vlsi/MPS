@@ -86,7 +86,7 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.addKeyMap(new CastExpression_KeyMap());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new EqualsStructurallyExpression_Editor.EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new EqualsStructurallyExpression_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -97,8 +97,8 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0() {
+  public static class ReplaceWith_BinaryOperation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BinaryOperation_cellMenu_a0b0() {
     }
 
     public String getReplacementConceptName() {

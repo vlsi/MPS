@@ -96,7 +96,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new JoinOperation_Editor.JoinOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new JoinOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_18()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -111,8 +111,8 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "delimiter", true) != null);
   }
 
-  public static class JoinOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public JoinOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_18 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a0_18() {
     }
 
     public String getReplacementConceptName() {

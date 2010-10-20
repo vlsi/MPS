@@ -163,7 +163,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CreateEquationStatement_Editor.CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -174,8 +174,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu_a0b0() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_0() {
     }
 
     public String getReplacementConceptName() {

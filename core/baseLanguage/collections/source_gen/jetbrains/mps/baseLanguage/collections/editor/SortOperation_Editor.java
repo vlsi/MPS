@@ -109,7 +109,7 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SortOperation_Editor.SortOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SortOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_3()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -120,8 +120,8 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SortOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SortOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_3 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a0_3() {
     }
 
     public String getReplacementConceptName() {

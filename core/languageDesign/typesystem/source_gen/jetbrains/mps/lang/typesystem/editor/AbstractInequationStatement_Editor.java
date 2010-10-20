@@ -358,7 +358,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
         }
       });
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractInequationStatement_Editor.AbstractInequationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractInequationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_1()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -573,8 +573,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class AbstractInequationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public AbstractInequationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu_a0b0() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_1() {
     }
 
     public String getReplacementConceptName() {

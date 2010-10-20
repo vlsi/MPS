@@ -38,7 +38,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rla3h2_a0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TakeOperation_Editor.TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TakeOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_0()}));
     return editorCell;
   }
 
@@ -75,8 +75,8 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a0_0() {
     }
 
     public String getReplacementConceptName() {

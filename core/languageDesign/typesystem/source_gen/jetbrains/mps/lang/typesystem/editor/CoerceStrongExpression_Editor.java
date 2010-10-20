@@ -39,7 +39,7 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "coerceStrong");
     editorCell.setCellId("Constant_rc408h_a0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CoerceStrongExpression_Editor.CoerceStrongExpression_Editor_replaceWith_CoerceExpression_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CoerceStrongExpression_Editor.ReplaceWith_CoerceExpression_cellMenu_a0a0_0()}));
     return editorCell;
   }
 
@@ -100,8 +100,8 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class CoerceStrongExpression_Editor_replaceWith_CoerceExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public CoerceStrongExpression_Editor_replaceWith_CoerceExpression_cellMenu_a0a0() {
+  public static class ReplaceWith_CoerceExpression_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_CoerceExpression_cellMenu_a0a0_0() {
     }
 
     public String getReplacementConceptName() {

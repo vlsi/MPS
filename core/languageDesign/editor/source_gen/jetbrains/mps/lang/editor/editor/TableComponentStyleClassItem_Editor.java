@@ -36,7 +36,7 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_gkkov5_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TableComponentStyleClassItem_Editor.TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TableComponentStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_13()}));
     return editorCell;
   }
 
@@ -65,8 +65,8 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_13 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_a0a0_13() {
     }
 
     public String getReplacementConceptName() {

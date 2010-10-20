@@ -42,7 +42,7 @@ public class LessThanOperation_Editor extends DefaultNodeEditor {
     }
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new LessThanOperation_Editor.LessThanOperation_Editor_replaceWith_Operation_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new LessThanOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_2()}));
     return editorCell;
   }
 
@@ -82,8 +82,8 @@ public class LessThanOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class LessThanOperation_Editor_replaceWith_Operation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public LessThanOperation_Editor_replaceWith_Operation_cellMenu_a0b0() {
+  public static class ReplaceWith_Operation_cellMenu_a0b0_2 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_Operation_cellMenu_a0b0_2() {
     }
 
     public String getReplacementConceptName() {

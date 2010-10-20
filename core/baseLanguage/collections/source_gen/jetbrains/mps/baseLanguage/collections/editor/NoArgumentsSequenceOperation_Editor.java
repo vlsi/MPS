@@ -33,7 +33,7 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new NoArgumentsSequenceOperation_Editor.NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new NoArgumentsSequenceOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -44,8 +44,8 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a() {
     }
 
     public String getReplacementConceptName() {

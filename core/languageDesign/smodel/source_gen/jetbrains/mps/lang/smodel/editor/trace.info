@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AliasComponent.java" startLine="81" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.AliasComponent$AliasComponent_replaceWith_SNodeOperation_cellMenu_a0a0" />
-  <unitInfo fileName="ReplaceableAlias_Comp.java" startLine="81" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp$ReplaceableAlias_Comp_replaceWith_SNodeOperation_cellMenu_a0a0" />
-  <unitInfo fileName="EqualsStructurallyExpression_Editor.java" startLine="100" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.EqualsStructurallyExpression_Editor$EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0" />
-  <unitInfo fileName="ReplaceableAliasAndParms_Comp.java" startLine="203" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp$ReplaceableAliasAndParms_Comp_replaceWith_SNodeOperation_cellMenu_a0a0" />
+  <unitInfo fileName="AliasComponent.java" startLine="81" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.AliasComponent$ReplaceWith_SNodeOperation_cellMenu_a0a0_1" />
+  <unitInfo fileName="ReplaceableAlias_Comp.java" startLine="81" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp$ReplaceWith_SNodeOperation_cellMenu_a0a0" />
+  <unitInfo fileName="EqualsStructurallyExpression_Editor.java" startLine="100" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.EqualsStructurallyExpression_Editor$ReplaceWith_BinaryOperation_cellMenu_a0b0" />
+  <unitInfo fileName="ReplaceableAliasAndParms_Comp.java" startLine="203" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp$ReplaceWith_SNodeOperation_cellMenu_a0a0_0" />
   <unitInfo fileName="Node_GetAncestorsOperation_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_GetAncestorsOperation_Editor" />
   <unitInfo fileName="Node_GetDescendantsOperation_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_GetDescendantsOperation_Editor" />
   <unitInfo fileName="Node_GetAllSiblingsOperation_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_GetAllSiblingsOperation_Editor" />

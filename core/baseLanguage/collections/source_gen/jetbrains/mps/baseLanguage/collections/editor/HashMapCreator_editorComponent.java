@@ -159,7 +159,7 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HashMapCreator_editorComponent.HashMapCreator_editorComponent_replaceWith_HashMapCreator_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HashMapCreator_editorComponent.ReplaceWith_HashMapCreator_cellMenu_a0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_s4nv53_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -262,8 +262,8 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
     return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 
-  public static class HashMapCreator_editorComponent_replaceWith_HashMapCreator_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public HashMapCreator_editorComponent_replaceWith_HashMapCreator_cellMenu_a0a0() {
+  public static class ReplaceWith_HashMapCreator_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_HashMapCreator_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

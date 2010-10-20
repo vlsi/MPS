@@ -39,7 +39,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isSubtype");
     editorCell.setCellId("Constant_ryfqc2_a0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsSubtypeExpression_Editor.IsSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsSubtypeExpression_Editor.ReplaceWith_IsSubtypeExpression_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -100,8 +100,8 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class IsSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public IsSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu_a0a0() {
+  public static class ReplaceWith_IsSubtypeExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_IsSubtypeExpression_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

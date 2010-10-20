@@ -38,7 +38,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_tp3vyq_a0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SkipOperation_Editor.SkipOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SkipOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0()}));
     return editorCell;
   }
 
@@ -75,8 +75,8 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SkipOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SkipOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

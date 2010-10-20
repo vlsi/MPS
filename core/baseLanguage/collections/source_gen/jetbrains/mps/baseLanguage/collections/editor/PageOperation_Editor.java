@@ -40,7 +40,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_328ize_a0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new PageOperation_Editor.PageOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new PageOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_1()}));
     return editorCell;
   }
 
@@ -101,8 +101,8 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class PageOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public PageOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a0_1() {
     }
 
     public String getReplacementConceptName() {

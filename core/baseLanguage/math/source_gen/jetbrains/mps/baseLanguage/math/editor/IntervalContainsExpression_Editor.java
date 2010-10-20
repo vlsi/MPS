@@ -37,7 +37,7 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contains");
     editorCell.setCellId("Constant_8gz0ko_b0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalContainsExpression_Editor.IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalContainsExpression_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0_0()}));
     return editorCell;
   }
 
@@ -77,8 +77,8 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0() {
+  public static class ReplaceWith_BinaryOperation_cellMenu_a0b0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BinaryOperation_cellMenu_a0b0_0() {
     }
 
     public String getReplacementConceptName() {

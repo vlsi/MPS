@@ -42,7 +42,7 @@ public class PlusOperation_Editor extends DefaultNodeEditor {
     }
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new PlusOperation_Editor.PlusOperation_Editor_replaceWith_Operation_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new PlusOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_0()}));
     return editorCell;
   }
 
@@ -82,8 +82,8 @@ public class PlusOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class PlusOperation_Editor_replaceWith_Operation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public PlusOperation_Editor_replaceWith_Operation_cellMenu_a0b0() {
+  public static class ReplaceWith_Operation_cellMenu_a0b0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_Operation_cellMenu_a0b0_0() {
     }
 
     public String getReplacementConceptName() {

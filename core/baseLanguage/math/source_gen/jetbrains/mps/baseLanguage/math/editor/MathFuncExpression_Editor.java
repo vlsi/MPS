@@ -89,7 +89,7 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MathFuncExpression_Editor.MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MathFuncExpression_Editor.ReplaceWith_MathFuncExpression_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -100,8 +100,8 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu_a0a0() {
+  public static class ReplaceWith_MathFuncExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_MathFuncExpression_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

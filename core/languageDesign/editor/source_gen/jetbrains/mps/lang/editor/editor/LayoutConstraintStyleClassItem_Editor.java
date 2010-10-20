@@ -64,7 +64,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LayoutConstraintStyleClassItem_Editor.LayoutConstraintStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LayoutConstraintStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_4()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,8 +75,8 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class LayoutConstraintStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public LayoutConstraintStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_4 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_a0a0_4() {
     }
 
     public String getReplacementConceptName() {

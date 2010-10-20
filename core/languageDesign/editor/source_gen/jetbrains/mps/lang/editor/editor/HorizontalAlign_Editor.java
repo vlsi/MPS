@@ -36,7 +36,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_nmsmyd_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlign_Editor.HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlign_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_10()}));
     return editorCell;
   }
 
@@ -65,8 +65,8 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu_a0a0() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_10 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_a0a0_10() {
     }
 
     public String getReplacementConceptName() {
