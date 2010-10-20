@@ -112,8 +112,10 @@ public class SModel {
   //todo try to remove as many usages as possible
 
   void enforceFullLoad() {
-    if (!(myModelDescriptor instanceof BaseSModelDescriptor)) return;
-    ((BaseSModelDescriptor) myModelDescriptor).loadTo(ModelLoadingState.FULLY_LOADED);
+    if (!(myModelDescriptor instanceof DefaultSModelDescriptor)) return;
+    DefaultSModelDescriptor dmd = (DefaultSModelDescriptor) myModelDescriptor;
+    if (dmd.getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
+    dmd.enforceFullLoad();
   }
 
   //---------roots manipulation--------
@@ -235,7 +237,7 @@ public class SModel {
     }
   }
 
-  //todo code in the fllowing methods should be written w/o duplication
+  //todo code in the following methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;

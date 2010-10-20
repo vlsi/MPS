@@ -23,10 +23,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     this(manager, modelReference, true);
   }
 
-  public BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference) {
-    this(manager, modelReference, true);
-  }
-
   protected BaseStubModelDescriptor(IModelRootManager manager, SModelReference modelReference, boolean checkDup) {
     super(manager, modelReference, checkDup);
     updateManagerId();
@@ -106,13 +102,13 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     super.setLoadingState(state);
   }
 
-  protected SModel loadModel() {
+  protected ModelLoadResult initialLoad() {
     SModel model = myModelRootManager.loadModel(this);
     try {
       updateAfterLoad(model);
     } catch (Throwable t) {
       LOG.error("Error on model load. Model: " + model.getLongName(), t);
     }
-    return model;
+    return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 }

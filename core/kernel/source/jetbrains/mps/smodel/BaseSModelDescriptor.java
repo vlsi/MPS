@@ -49,31 +49,44 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public SModel getSModel() {
-    boolean fileStateChanged;
+  public final SModel getSModel() {
+    ModelLoadingState oldState;
+
     synchronized (myLoadingLock) {
-      fileStateChanged = loadTo(ModelLoadingState.FULLY_LOADED);
+      if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;
+
+      oldState = myLoadingState;
+      ModelLoadResult result = initialLoad();
+      mySModel = result.model;
+      mySModel.setModelDescriptor(this);
+      myLoadingState = result.state;
     }
-    if (fileStateChanged) {
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+
+    if (oldState != myLoadingState) {
+      fireModelStateChanged(oldState, myLoadingState);
     }
     return mySModel;
   }
 
-  public boolean loadTo(ModelLoadingState state) {
-    if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return false;
+  protected abstract ModelLoadResult initialLoad();
 
-    SModel model = loadModel();
-    model.setModelDescriptor(this);
-    mySModel = model;
-    setLoadingState(ModelLoadingState.FULLY_LOADED);
-    return true;
+  public static class ModelLoadResult {
+    private ModelLoadingState state;
+    private SModel model;
+
+    public ModelLoadResult(SModel model, ModelLoadingState state) {
+      this.model = model;
+      this.state = state;
+    }
+
+    public ModelLoadingState getState() {
+      return state;
+    }
+
+    public SModel getModel() {
+      return model;
+    }
   }
-
-  /**
-   * @return loaded model that is not connected to SModelDescriptor (getSModelDescriptor() returns null)
-   */
-  protected abstract SModel loadModel();
 
   public void refresh() {
     ModelAccess.assertLegalWrite();

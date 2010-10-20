@@ -22,6 +22,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -38,10 +39,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -54,23 +52,33 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @NotNull
-  public SModel loadModel(final @NotNull SModelDescriptor sm) {
+  @Override
+  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
+    return loadModel(modelDescriptor, ModelLoadingState.FULLY_LOADED).getModel();
+  }
+
+  @NotNull
+  public ModelLoadResult loadModel(final @NotNull SModelDescriptor sm, ModelLoadingState state) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    SModelReference dsmRef = dsm.getSModelReference();
 
     if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
-      return new SModel(dsm.getSModelReference());
+      SModel model = new SModel(dsmRef);
+      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
 
-    SModel model;
+    ModelLoadResult result;
     try {
-      model = ModelPersistence.readModel(dsm.getModelFile());
+      result = ModelPersistence.readModel(dsm.getModelFile(),state);
     } catch (ModelFileReadException t) {
       return handleExceptionDuringModelRead(dsm, t, false);
     } catch (PersistenceVersionNotFoundException e) {
       LOG.error(e);
-      return new StubModel(dsm.getSModelReference());
+      StubModel model = new StubModel(dsmRef);
+      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
 
+    SModel model = result.getModel();
     try {
       model.setLoading(true);
       boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
@@ -82,13 +90,13 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       model.setLoading(false);
     }
 
-    LOG.assertLog(model.getSModelReference().equals(dsm.getSModelReference()),
+    LOG.assertLog(model.getSModelReference().equals(dsmRef),
       "\nError loading model from file: \"" + dsm.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + dsm.getSModelReference() + "\"\n" +
+        "expected model UID     : \"" + dsmRef + "\"\n" +
         "but was UID            : \"" + model.getSModelReference() + "\"\n" +
         "the model will not be available.\n" +
         "Make sure that all project's roots and/or the model namespace is correct");
-    return model;
+    return result;
   }
 
   @Override
@@ -116,11 +124,11 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return null;
   }
 
-  private SModel handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
+  private ModelLoadResult handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
     VcsMigrationUtil.getHandler().addSuspiciousModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
-    return newModel;
+    return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
   }
 
   public boolean isFindUsagesSupported() {

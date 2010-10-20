@@ -61,6 +61,19 @@ public class JDOMUtil {
     }
   }
 
+  public static Document loadDocument(InputSource source) throws JDOMException, IOException {
+    SAXBuilder saxBuilder = createBuilder();
+    try {
+      return saxBuilder.build(source);
+    } catch (JDOMException e) {
+      LOG.error("FAILED TO LOAD FILE : " + source.toString());
+      throw e;
+    } catch (IOException e) {
+      LOG.error("FAILED TO LOAD FILE : " + source.toString());
+      throw e;
+    }
+  }
+
   public static Document loadDocument(File file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
     try {

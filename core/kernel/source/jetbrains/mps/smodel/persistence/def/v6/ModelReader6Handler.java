@@ -13,26 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.vfs;
+package jetbrains.mps.smodel.persistence.def.v6;
 
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.FileSystemProvider;
-import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
+import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 
-/**
- * @author Evgeny Gerashchenko
- */
-public class IdeaFileSystemProvider implements FileSystemProvider {
-  static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
+public class ModelReader6Handler extends ModelReader5Handler {
 
-  @Override
-  public IFile getFile(@NotNull String path) {
-    return new IdeaFile(path);
-  }
-
-  public IFile getFile(@NotNull VirtualFile file) {
-    return new IdeaFile(file);
-  }
 }

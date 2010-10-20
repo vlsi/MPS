@@ -173,7 +173,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public boolean loadInitialCheckBoxState() {
-    return true;
+    return false;
   }
 
   public void saveInitialCheckBoxState(boolean state) {

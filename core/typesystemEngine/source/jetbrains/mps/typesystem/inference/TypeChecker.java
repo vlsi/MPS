@@ -15,28 +15,30 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
-
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Computable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TypeChecker implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TypeChecker.class);
@@ -258,7 +260,7 @@ public class TypeChecker implements ApplicationComponent {
     if (isGenerationMode()) {
       if (myPerformanceTracer == null) {
         context = TypeContextManager.getInstance().createTypeCheckingContext(node);
-    } else {
+      } else {
         context = TypeContextManager.getInstance().createTracingTypeCheckingContext(node);
       }
     } else {
@@ -266,8 +268,8 @@ public class TypeChecker implements ApplicationComponent {
       //todo provide owner
     }
     if (context == null) return null;
-      return context.getTypeOf(node, this);
-    }
+    return context.getTypeOf(node, this);
+  }
 
 
   public SModelFqName getRuntimeTypesModelUID() {
@@ -341,10 +343,11 @@ public class TypeChecker implements ApplicationComponent {
       super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
     }
 
-    protected SModel loadModel() {
-      SModel result = new SModel(getSModelReference());
-      result.setLoading(true);
-      return result;
+    protected ModelLoadResult initialLoad() {
+      SModel model = new SModel(getSModelReference());
+      model.setLoading(true);
+
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
   }
 }

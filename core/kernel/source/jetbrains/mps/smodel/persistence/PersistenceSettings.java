@@ -29,13 +29,6 @@ import javax.swing.*;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 22.12.2009
- * Time: 15:10:39
- * To change this template use File | Settings | File Templates.
- */
 @State(
   name = "PersistenceSettings",
   storages = {
@@ -47,7 +40,7 @@ import java.awt.GridBagLayout;
 public class PersistenceSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
   public static final int VERSION_UNDEFINED = -1;
   public static final int MIN_VERSION = 3;
-  public static final int MAX_VERSION = 5;
+  public static final int MAX_VERSION = 6;
   public static final int VERSION_UPDATE_TO_THE_LATEST = 9999;
 
 
