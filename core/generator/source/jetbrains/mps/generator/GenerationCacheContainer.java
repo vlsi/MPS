@@ -46,20 +46,18 @@ public interface GenerationCacheContainer {
 
     private static final Logger LOG = Logger.getLogger(FileBasedGenerationCacheContainer.class);
 
-    File myGeneratorCaches;
+    @NotNull
+    private File myGeneratorCaches;
 
-    public FileBasedGenerationCacheContainer(File generatorCaches) {
+    public FileBasedGenerationCacheContainer(@NotNull File generatorCaches) {
       this.myGeneratorCaches = generatorCaches;
     }
 
     @Override
     public ModelCacheContainer getCache(@NotNull SModelDescriptor descriptor, String hash, boolean create) {
-      if(myGeneratorCaches == null) {
-        return null;
-      }
-
       String modelId = descriptor.getSModelReference().getSModelId().toString();
       if(modelId == null || modelId.isEmpty()) {
+        LOG.error("bad model id: " + modelId);
         return null;
       }
 
@@ -136,7 +134,9 @@ public interface GenerationCacheContainer {
           }
         }
 
-        myHashDir.renameTo(new File(myFolder, myHash));
+        if(!myHashDir.renameTo(new File(myFolder, myHash))) {
+          LOG.error("cannot rename " + myHashDir.getAbsolutePath() + " to " + myHash);
+        }
       } catch(SecurityException ex) {
         LOG.error(ex);
       }

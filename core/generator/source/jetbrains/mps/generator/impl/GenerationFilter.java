@@ -6,10 +6,14 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
-import jetbrains.mps.generator.impl.dependencies.*;
+import jetbrains.mps.generator.impl.dependencies.DefaultDependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.textdiff.TextDiffBuilder;
@@ -22,6 +26,8 @@ import java.util.Map.Entry;
  * Evgeny Gryaznov, Jun 3, 2010
  */
 public class GenerationFilter {
+
+  private static final Logger LOG = Logger.getLogger(GenerationFilter.class);
 
   private static final String CONDITIONALS_ID = "";
 
@@ -104,6 +110,7 @@ public class GenerationFilter {
     String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
     if(cacheContainer == null) {
+      LOG.error("cannot create cache for " + currentHash + ", " + myModel.getSModelReference().toString());
       return null;
     }
 
