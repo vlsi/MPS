@@ -102,6 +102,11 @@ public class ModelWriter4 implements IModelWriter {
 
     VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 
+    Element rstub = saveRootStubs(sourceModel,visibleModelElements);
+    if (rstub != null) {
+      rootElement.addContent(rstub);
+    }
+
     for (SNode root : sourceModel.roots()) {
       saveNode(rootElement, root, visibleModelElements);
     }
@@ -109,6 +114,10 @@ public class ModelWriter4 implements IModelWriter {
     Document document = new Document();
     document.setRootElement(rootElement);
     return document;
+  }
+
+  protected Element saveRootStubs(SModel sourceModel, VisibleModelElements visibleModelElements) {
+    return null;
   }
 
   protected void saveRefactorings(Element rootElement, SModel sourceModel) {
@@ -128,14 +137,14 @@ public class ModelWriter4 implements IModelWriter {
   }
 
   public void saveNode(Element container, SNode node) {
-    saveNode(container, null, node, true, null);
+    saveNode(container, null, node, true, null, true);
   }
 
   private void saveNode(Element parentElement, SNode node, VisibleModelElements visibleModelElements) {
-    saveNode(parentElement, null, node, false, visibleModelElements);
+    saveNode(parentElement, null, node, false, visibleModelElements, true);
   }
 
-  private void saveNode(Element parentElement, String elementName, SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
+  protected void saveNode(Element parentElement, String elementName, SNode node, boolean useUIDs, VisibleModelElements visibleModelElements, boolean saveChildren) {
     String theElementName = elementName;
     if (theElementName == null) {
       theElementName = ModelPersistence.NODE;
@@ -166,10 +175,12 @@ public class ModelWriter4 implements IModelWriter {
       referencePersister.saveReference(element, reference, useUIDs, visibleModelElements);
     }
 
-    // children ...
-    List<SNode> children = node.getChildren();
-    for (SNode childNode : children) {
-      saveNode(element, null, childNode, useUIDs, visibleModelElements);
+    if (saveChildren) {
+      // children ...
+      List<SNode> children = node.getChildren();
+      for (SNode childNode : children) {
+        saveNode(element, null, childNode, useUIDs, visibleModelElements, true);
+      }
     }
 
     parentElement.addContent(element);
