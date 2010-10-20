@@ -1,5 +1,8 @@
 package jetbrains.mps.smodel;
 
+/**
+ * TODO replace with boolean
+ */
 public enum ModelLoadingState {
   NOT_LOADED("not loaded"),
   ROOTS_LOADED("partially loaded"),
