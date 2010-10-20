@@ -36,7 +36,7 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode role = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.Role", null);
-                SPropertyOperations.set(role, "name", "" + ((item)));
+                SPropertyOperations.set(role, "name", (item));
                 return role;
               }
             });
