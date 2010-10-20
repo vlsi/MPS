@@ -397,10 +397,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210378721572(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
-    String name = SPropertyOperations.getString(SNodeOperations.cast(component, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     String replacementName = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "replacementConcept", false), "name");
-    String result = name + "_replaceWith_" + replacementName + "_cellMenu";
+    String result = "ReplaceWith_" + replacementName + "_cellMenu";
     return _context.createUniqueName(result, null);
   }
 
