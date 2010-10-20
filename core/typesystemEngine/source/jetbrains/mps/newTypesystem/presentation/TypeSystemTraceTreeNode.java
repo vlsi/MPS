@@ -34,7 +34,7 @@ import java.awt.Color;
  * Time: 11:44:26 AM
  * To change this template use File | Settings | File Templates.
  */
-public class TypeSystemTraceTreeNode extends MPSTreeNode{
+public class TypeSystemTraceTreeNode extends MPSTreeNode {
   public TypeSystemTraceTreeNode(IOperationContext operationContext) {
     super(operationContext);
   }
@@ -49,17 +49,19 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode{
    
   }
 
-  @Override
-  public void doubleClick() {
+  public void goToRule() {
     Difference difference = (Difference) getUserObject();
     EquationInfo info = difference.getEquationInfo();
-    if (info == null) {
-      SNode source = difference.getSource();
-      if (source != null) {
-        getOperationContext().getComponent(MPSEditorOpener.class).editNode(source, getOperationContext());
-      }
-    } else {
+    if (info != null) {
       GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(info.getRuleModel(), info.getRuleId()));
+    }
+  }
+
+  public void goToNode() {
+    Difference difference = (Difference) getUserObject();
+    SNode source = difference.getSource();
+    if (source != null) {
+      getOperationContext().getComponent(MPSEditorOpener.class).editNode(source, getOperationContext());
     }
   }
 }

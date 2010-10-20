@@ -20,10 +20,13 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.typesystem.inference.NodeWrapper;
+import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,6 +38,8 @@ import java.util.List;
 public class NonConcrete {
   private State myState;
   private Equations myEquations;
+  private NonConcreteMapPair myShallow;
+  private NonConcreteMapPair myDeep;
 
   public NonConcrete(State state) {
     myState = state;
@@ -48,27 +53,13 @@ public class NonConcrete {
   }
 
   public boolean isConcrete(SNode node) {
-    if (getChildAndReferentVariables(node).size() > 0) {
+    if (true) {
       return false;
     }
     return true;
   }
 
-  private List<SNode> getChildAndReferentVariables(SNode node) {
-    if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-      return CollectionUtil.list(node);
-    }
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode referent : node.getReferents()) {
-      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-        result.add(referent);
-      }
-    }
-    for (SNode child : node.getChildren(false)) {
-      result.addAll(getChildAndReferentVariables(child));
-    }
-    return result;
-  }
+  
 
 
 

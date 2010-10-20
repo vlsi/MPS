@@ -15,10 +15,28 @@
  */
 package jetbrains.mps.newTypesystem.presentation;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.ide.actions.DevkitProperties_Action;
+import jetbrains.mps.ide.actions.GeneratorProperties_Action;
+import jetbrains.mps.ide.actions.LanguageProperties_Action;
+import jetbrains.mps.ide.actions.SolutionProperties_Action;
+import jetbrains.mps.ide.dependency.ModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JPopupMenu;
 
@@ -55,10 +73,29 @@ public class TypeSystemTraceTree extends MPSTree {
         result.add(createNode(child));
       }
     }
-    JPopupMenu popUpMenu = createPopupMenu(result);
+
     
 
     return result;
   }
+
+  @Override
+  protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
+    BaseAction goToRule = new BaseAction("Go to rule") {
+      public void doExecute(AnActionEvent e) {
+        ((TypeSystemTraceTreeNode) treeNode ).goToRule();
+      }
+    };
+    BaseAction goToNode = new BaseAction("Go to node") {
+      public void doExecute(AnActionEvent e) {
+        ((TypeSystemTraceTreeNode) treeNode ).goToNode();
+      }
+    };
+    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode);
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+  }
+
+
+  
 
 }

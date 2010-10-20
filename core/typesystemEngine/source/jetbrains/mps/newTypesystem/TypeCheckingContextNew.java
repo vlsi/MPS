@@ -20,10 +20,7 @@ import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -135,17 +132,18 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
+
+    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
     super.whenConcrete(argument, r, nodeModel, nodeId, isShallow, skipError);    //To change body of overridden methods use File | Settings | File Templates.
+
+    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId, skipError));
   }
 
-  @Override
-  public void whenConcrete(List<NodeInfo> arguments, Runnable r) {
-    super.whenConcrete(arguments, r);    //To change body of overridden methods use File | Settings | File Templates.
-  }
+
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;

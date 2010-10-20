@@ -113,7 +113,7 @@ public class Inequalities {
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
-    myState.addError(nodeWithError, errorReporter);
+    myState.addError(nodeWithError, errorReporter, equationInfo);
   }
 
   public void solveInequalities() {

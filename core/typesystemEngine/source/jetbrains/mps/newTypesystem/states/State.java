@@ -20,9 +20,11 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.HeadDifference;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
+import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 
 import java.util.Stack;
 
@@ -100,8 +102,8 @@ public class State {
     return myNonConcrete.isConcrete(wrapper);
   }
 
-  public void addError(SNode node, IErrorReporter error) {
-    myNodeMaps.addNodeToError(node, error);
+  public void addError(SNode node, IErrorReporter error, EquationInfo info) {
+    myNodeMaps.addNodeToError(node, error, info);
   }
 
   public NonConcrete getNonConcrete() {
@@ -140,7 +142,7 @@ public class State {
     return myDifference;
   }
 
-  public void setDifferenceStack(Stack<Difference> differenceStack) {
-    myDifferenceStack = differenceStack;
+  public void addWhenConcrete(WhenConcreteEntity wce) {
+    addDifference(new WhenConcreteAdded(), false);
   }
 }

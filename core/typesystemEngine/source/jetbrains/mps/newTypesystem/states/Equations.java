@@ -154,7 +154,7 @@ public class Equations {
     if (info!=null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
-    myState.addError(nodeWithError, errorReporter);
+    myState.addError(nodeWithError, errorReporter, info);
    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 

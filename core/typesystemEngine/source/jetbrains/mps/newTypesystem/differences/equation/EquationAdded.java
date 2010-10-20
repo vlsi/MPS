@@ -35,6 +35,7 @@ public class EquationAdded extends EquationDifference {
   public EquationAdded(SNode child, SNode parent, Equations equations, EquationInfo info) {
     super(equations);
     myChild = child;
+    mySource = child;
     myParent = parent;
     myEquationInfo = info;
   }

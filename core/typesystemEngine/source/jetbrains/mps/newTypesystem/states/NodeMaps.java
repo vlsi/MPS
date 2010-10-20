@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -58,14 +59,14 @@ public class NodeMaps {
     return type;
   }
 
-  public void addNodeToError(SNode node, IErrorReporter error) {
+  public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
     List<IErrorReporter> errors = myNodesToErrors.get(node);
     if (errors == null) {
       errors = new LinkedList<IErrorReporter>();
       myNodesToErrors.put(node, errors);
     }
     errors.add(error);
-    myState.addDifference(new ErrorDifference(node, error, myNodesToErrors), false);
+    myState.addDifference(new ErrorDifference(node, error, myNodesToErrors, info), false);
   }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrors() {

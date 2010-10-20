@@ -13,48 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
-import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.newTypesystem.differences.Difference;
 
 import java.awt.Color;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 12:41:21 PM
+ * Date: Oct 15, 2010
+ * Time: 4:37:46 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ErrorDifference extends Difference {
-  private SNode myNode;
-  private IErrorReporter myError;
-  private Map<SNode, List<IErrorReporter>> myMap;
-
-  public ErrorDifference(SNode node, IErrorReporter error, Map<SNode, List<IErrorReporter>> map, EquationInfo info) {
-    myNode = node;
-    myError = error;
-    myMap = map;
-    mySource = myNode;
-    myEquationInfo = info;
-  }
-
+public class WhenConcreteAdded extends Difference {
   @Override
   public String getPresentation() {
-    return "Error : " + myError.reportError();
-  }
-
-  @Override
-  public void rollBack() {
-    myMap.get(myNode).remove(myError);
+    return "When Concrete added";
   }
 
   @Override
   public Color getColor() {
-    return Color.RED;
+    return new Color(0x1111BB);
+  }
+
+  @Override
+  public void rollBack() {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 }
