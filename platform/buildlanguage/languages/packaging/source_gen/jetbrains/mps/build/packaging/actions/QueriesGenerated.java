@@ -110,7 +110,7 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
-                SPropertyOperations.set(pathComponent, "path", "" + ((item)));
+                SPropertyOperations.set(pathComponent, "path", (item));
                 return pathComponent;
               }
             });
@@ -152,7 +152,7 @@ public class QueriesGenerated {
                 if ((item).equals(no_macro)) {
                   SPropertyOperations.set(macro, "name", "");
                 } else {
-                  SPropertyOperations.set(macro, "name", "" + ((item)));
+                  SPropertyOperations.set(macro, "name", (item));
                 }
                 return macro;
               }
