@@ -2664,5 +2664,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1510949579266902211" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="650531548511609558">
+    <property name="package" value="parameter" />
+    <link role="concept" targetNodeId="1.650531548511609556:2" resolveInfo="IGeneratorParameter" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="650531548511609559">
+      <property name="isAbstract" value="true" />
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getUniqueId" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="650531548511609560" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="650531548511609561" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="650531548511609562" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="650531548511609563">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="650531548511609564" />
+    </node>
+  </node>
 </model>
 

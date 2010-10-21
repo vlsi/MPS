@@ -60,6 +60,7 @@
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_Editor$_Inline_z0z5f6_a0a" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_Editor$_Inline_f8ef2o_a0a" />
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="51" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor$_Inline_a5awwn_a0a" />
+  <unitInfo fileName="GeneratorDescriptor_Editor.java" startLine="59" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorDescriptor_Editor$requiresListHandler_jxarjp_b0" />
   <unitInfo fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="106" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor$caseListHandler_yn898b_a0" />
   <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="258" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor$parameterListHandler_pyph5i_e0a" />
   <unitInfo fileName="CreateRootRule_Editor.java" startLine="282" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CreateRootRule_Editor$_Inline_7t32xl_a4a" />
@@ -97,6 +98,7 @@
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_Editor" />
   <unitInfo fileName="GeneratorMessage_Editor.java" startLine="20" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorMessage_Editor" />
   <unitInfo fileName="TemplateDeclarationReference_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_Editor" />
+  <unitInfo fileName="GeneratorDescriptor_Editor.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorDescriptor_Editor" />
   <unitInfo fileName="InlineSwitch_Case_Editor.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_Case_Editor" />
   <unitInfo fileName="DropRootRule_Editor.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor" />
   <unitInfo fileName="InlineSwitch_RuleConsequence_Editor.java" startLine="27" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.InlineSwitch_RuleConsequence_Editor" />

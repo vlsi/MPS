@@ -1741,5 +1741,38 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="650531548511609556">
+    <property name="package:0" value="parameter" />
+    <property name="name:0" value="IGeneratorParameter" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="650531548511609557">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="type" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="650531548511911817">
+    <property name="name:0" value="GeneratorDescriptor" />
+    <property name="rootable:0" value="true" />
+    <property name="package:0" value="descriptor" />
+    <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="650531548511911821">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="requires" />
+      <link role="target:0" targetNodeId="650531548511911818:2" resolveInfo="GeneratorParameterReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="650531548511911818">
+    <property name="package:0" value="parameter" />
+    <property name="name:0" value="GeneratorParameterReference" />
+    <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="650531548511911820">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="declaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="650531548511609556:2" resolveInfo="IGeneratorParameter" />
+    </node>
+  </node>
 </model>
 

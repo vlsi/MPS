@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ReductionRule.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.ReductionRule" />
+  <unitInfo fileName="IGeneratorParameter.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.IGeneratorParameter" />
   <unitInfo fileName="Generator_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Generator_Language" />
   <unitInfo fileName="RootTemplateAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink" />
   <unitInfo fileName="TemplateFragment_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateFragment_AnnotationLink" />
@@ -40,6 +41,7 @@
   <unitInfo fileName="ReferenceMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.ReferenceMacro" />
   <unitInfo fileName="NodeMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.NodeMacro" />
   <unitInfo fileName="PropertyMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.PropertyMacro" />
+  <unitInfo fileName="GeneratorParameterReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorParameterReference" />
   <unitInfo fileName="InlineTemplateWithContext_RuleConsequence.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression" />
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression" />
@@ -60,6 +62,7 @@
   <unitInfo fileName="DropRootRule.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.DropRootRule" />
   <unitInfo fileName="GeneratorMessage.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessage" />
   <unitInfo fileName="Root_MappingRule.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Root_MappingRule" />
+  <unitInfo fileName="GeneratorDescriptor.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorDescriptor" />
   <unitInfo fileName="MappingScriptKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind_PropertySupport" />
   <unitInfo fileName="GeneratorMessageType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType_PropertySupport" />
   <unitInfo fileName="MapSrcListMacro.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MapSrcListMacro" />
