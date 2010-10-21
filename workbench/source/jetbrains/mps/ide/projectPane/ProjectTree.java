@@ -31,8 +31,11 @@ public class ProjectTree extends MPSTree {
     }
 
     MPSProject project = myProject.getComponent(MPSProject.class);
-    ProjectTreeNode root = new ProjectTreeNode(project);
+    MPSTreeNode root = new TextTreeNode("Empty");
+    ProjectTreeNode projectRoot = new ProjectTreeNode(project);
 
+    root.add(projectRoot);
+    setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
     List<Solution> solutions = project.getProjectSolutions();
@@ -57,7 +60,7 @@ public class ProjectTree extends MPSTree {
     for (MPSTreeNode mtn : moduleNodes) {
       builder.addNode(mtn);
     }
-    builder.fillNode(root);
+    builder.fillNode(projectRoot);
 
     myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(project);
     root.add(myModulesPoolTreeNode);
