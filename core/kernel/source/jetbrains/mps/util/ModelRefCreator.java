@@ -27,11 +27,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ModelRefCreator {
-  public static final Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
-
   public static SModelReference createModelReference(IFile modelFile, IFile root, String namespacePrefix) {
-    SModelReference fromFile = getFileUID(modelFile);
-    if (fromFile != null) return fromFile;
     String rawLongName = getModelReferenceString(modelFile, root, namespacePrefix);
     return SModelReference.fromString(rawLongName);
   }
@@ -47,24 +43,6 @@ public class ModelRefCreator {
       namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");
     }
     return namespace;
-  }
-
-  private static SModelReference getFileUID(IFile modelFile) {
-    try {
-      String secondLine = FileUtil.readLine(new InputStreamReader(modelFile.openInputStream()), 1);
-      if (secondLine == null) {
-        return null;
-      }
-
-      Matcher m = MODEL_UID_PATTERN.matcher(secondLine);
-      if (m.find()) {
-        return SModelReference.fromString(m.group(1));
-      }
-
-      return null;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
   }
 
   private static String cropModelPath(IFile modelFile, IFile root) {

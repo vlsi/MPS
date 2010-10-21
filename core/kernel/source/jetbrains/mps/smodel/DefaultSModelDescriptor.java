@@ -28,27 +28,26 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
+  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   private static final String VERSION = "version";
 
-  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
-
-  private Map<String, String> myMetadata;
-  private boolean myMetadataLoaded;
+  private final Map<String, String> myMetadata;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationHistory myStructureModificationHistory;
-
+  private int myPersistenceVersion = -1;
 
   private long myLastChange;
 
@@ -57,14 +56,19 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private IFile myModelFile;
   private boolean myIsChanged = false;
 
-
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
-    this(manager, modelFile, modelReference, true);
+    this(manager, modelFile, modelReference,new DescriptorLoadResult(), true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
+  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference,DescriptorLoadResult d) {
+    this(manager, modelFile, modelReference,d, true);
+  }
+
+  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference,DescriptorLoadResult d, boolean checkDup) {
     super(manager, modelReference, checkDup);
     myModelFile = modelFile;
+    myPersistenceVersion = d.getPersistenceVersion();
+    myMetadata = d.getMetadata();
     updateLastChange();
   }
 
@@ -184,10 +188,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public int getPersistenceVersion() {
     SModel model = mySModel; // do not use getSModel() to avoid lock
-    if (model != null) {
-      return model.getPersistenceVersion();
-    }
-    return ModelPersistence.getModelPersistenceVersion(getModelFile());
+    if (model == null) return myPersistenceVersion;
+    return model.getPersistenceVersion();
   }
 
   @NotNull
@@ -319,40 +321,26 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public String getAttribute(String key) {
-    if (getMetaData_internal() == null) {
-      return null;
-    }
-    return getMetaData_internal().get(key);
+    return myMetadata.get(key);
   }
 
   public void setAttribute(String key, String value) {
     ModelAccess.assertLegalWrite();
 
-    if (getMetaData_internal() == null) {
-      throw new UnsupportedOperationException();
-    }
-
     if (value == null) {
-      getMetaData_internal().remove(key);
+      myMetadata.remove(key);
     } else {
-      getMetaData_internal().put(key, value);
+      myMetadata.put(key, value);
     }
-
-    myModelRootManager.saveMetadata(this);
   }
 
   public Map<String, String> getMetaData() {
-    if (getMetaData_internal() == null) {
-      return null;
-    }
-    return Collections.unmodifiableMap(getMetaData_internal());
+    return Collections.unmodifiableMap(myMetadata);
   }
 
   public int getVersion() {
     String attributeValue = getAttribute(VERSION);
-    if (attributeValue == null) {
-      return -1;
-    }
+    if (attributeValue == null) return -1;
     try {
       return Integer.parseInt(attributeValue);
     } catch (NumberFormatException e) {
@@ -420,20 +408,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return getSModelReference().toString();
   }
 
-  private synchronized Map<String, String> getMetaData_internal() {
-    if (myMetadataLoaded) {
-      return myMetadata;
-    }
-    myMetadata = myModelRootManager.loadMetadata(this);
-    myMetadataLoaded = true;
-    return myMetadata;
-  }
-
   private void updateLastChange() {
-    if (myModelFile != null) {
-      myLastChange = myModelFile.lastModified();
-    } else {
-      myLastChange = System.currentTimeMillis();
-    }
+    myLastChange = myModelFile != null ? myModelFile.lastModified() : System.currentTimeMillis();
   }
 }

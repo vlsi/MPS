@@ -38,11 +38,6 @@ public interface IModelRootManager {
 
   SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade);
 
-  @Nullable
-  Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor);
-
-  void saveMetadata(@NotNull SModelDescriptor modelDescriptor);
-
   StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
 
   void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationHistory history);
@@ -59,7 +54,7 @@ public interface IModelRootManager {
 
   boolean isNewModelsSupported();
 
-  /**
+  /*
    * If you will implement this method do not forget
    * 1. Register new model in SModelRepository
    * 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);

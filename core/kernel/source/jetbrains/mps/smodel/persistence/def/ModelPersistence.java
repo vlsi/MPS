@@ -19,10 +19,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import jetbrains.mps.smodel.persistence.def.v5.Handler5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
+import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelReader6;
 import jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler;
@@ -43,11 +44,13 @@ import jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler;
 import jetbrains.mps.smodel.persistence.def.v7.ModelWriter7;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -137,18 +140,57 @@ public class ModelPersistence {
 
   //--------read--------
 
-  public static SModel readModel(@NotNull IFile file) {
-    return readModel(file, ModelLoadingState.FULLY_LOADED).getModel();
+  public static DescriptorLoadResult loadDescriptor(IFile file) {
+    final DescriptorLoadResult result = new DescriptorLoadResult();
+    Map<String, String> metadata = loadMetadata(file);
+    if (metadata != null) {
+      result.setMetadata(metadata);
+    }
+
+    DefaultHandler handler = new DefaultHandler() {
+      public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        if (MODEL.equals(qName)) {
+          String uid = attributes.getValue(MODEL_UID);
+          if (uid != null) {
+            result.setUID(uid);
+          }
+        } else if (PERSISTENCE.equals(qName)) {
+          String s = attributes.getValue(PERSISTENCE_VERSION);
+          if (s != null) {
+            try {
+              result.setPersistenceVersion(Integer.parseInt(s));
+            } catch (NumberFormatException ex) {
+            }
+          }
+        } else {
+          throw new SAXException();
+        }
+      }
+
+      public void endElement(String uri, String localName, String qName) throws SAXException {
+        throw new SAXException();
+      }
+    };
+
+    try {
+      InputSource source = JDOMUtil.loadSource(file);
+      SAXParser parser = JDOMUtil.createSAXParser();
+      parser.parse(source, handler);
+    } catch (SAXException ex) {
+      /* used to break SAX parsing flow */
+    } catch (ParserConfigurationException e) {
+    } catch (Throwable t) {
+    }
+
+    return result;
   }
 
   @NotNull
-  public static ModelLoadResult readModel(@NotNull IFile file, ModelLoadingState state) {
+  public static ModelLoadResult readModel(int version, @NotNull IFile file, ModelLoadingState state) {
     String name = file.getName();
     String modelName = extractModelName(name);
     String modelStereotype = extractModelStereotype(name);
     try {
-      InputSource source = JDOMUtil.loadSource(file);
-      int version = getModelPersistenceVersion(source);
       return readModel(version, JDOMUtil.loadSource(file), modelName, modelStereotype, state);
     } catch (Throwable t) {
       LOG.error("Error while loading model from file: " + file.getAbsolutePath(), t);
@@ -202,12 +244,17 @@ public class ModelPersistence {
       return null;
     }
 
+
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if (modelDescriptor != null) {
+      saveMetadata(modelDescriptor);
+    }
+
     // upgrade?
     if (canUpgrade) {
       int modelPersistenceVersion = model.getPersistenceVersion();
       if (modelPersistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelPersistenceVersion)) {
-        upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
-        return model;
+        return upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
       }
     }
 
@@ -259,65 +306,38 @@ public class ModelPersistence {
   }
 
   // upgrades model persistence and saves model
-  public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-    if (fromVersion < 5 && toVersion >= 5) {
-      StructureModificationHistory refactorings = model.getRefactoringHistory();
-      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
+  public static SModel upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
+    SModelReference reference = model.getSModelReference();
+    StructureModificationHistory refactorings = null;
+    int version = fromVersion;
+    while (version < toVersion) {
+      IModelWriter writer = modelWriters.get(++version);
+      if (version == 5) {
+        //noinspection deprecation
+        refactorings = model.getRefactoringHistory();
+        if (refactorings != null && refactorings.getDataList().isEmpty()) {
+          refactorings = null;
+        }
+      }
+      Document document = writer.saveModel(model);
+      model.dispose();
+      LOG.assertLog(modelReaders.get(version) != null);
+      model = modelReaders.get(version).readModel(document, NameUtil.shortNameFromLongName(reference.getLongName()), reference.getStereotype());
+    }
+    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
+    model.setPersistenceVersion(toVersion);
+
+    try {
+      Document document = saveModel(model);
+      JDOMUtil.writeDocument(document, file);
+
+      if (refactorings != null) {
         RefactoringsPersistence.save(file, refactorings);
       }
-      model.setRefactoringHistory(null);
-    }
-
-    model.setPersistenceVersion(toVersion);
-    Document document = saveModel(model);
-    try {
-      JDOMUtil.writeDocument(document, file);
     } catch (IOException e) {
       LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
     }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + model.getSModelReference());
-  }
-
-  public static int getModelPersistenceVersion(IFile file) {
-    try {
-      return getModelPersistenceVersion(JDOMUtil.loadSource(file));
-    } catch (IOException e) {
-      LOG.error("Exception on getting version. " + file.getAbsolutePath());
-      return -1;
-    }
-  }
-
-  public static int getModelPersistenceVersion(InputSource source) {
-    final int[] version = new int[]{-1};
-    try {
-      SAXParser parser = JDOMUtil.createSAXParser();
-      parser.parse(source, new DefaultHandler() {
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-          if (version[0] == -1 && MODEL.equals(qName)) {
-            version[0] = 0;
-          } else if (version[0] == 0 && PERSISTENCE.equals(qName)) {
-            String s = attributes.getValue(PERSISTENCE_VERSION);
-            if (s != null) {
-              try {
-                version[0] = Integer.parseInt(s);
-              } catch (NumberFormatException ex) {
-              }
-            }
-          } else {
-            throw new SAXException();
-          }
-        }
-
-        public void endElement(String uri, String localName, String qName) throws SAXException {
-          throw new SAXException();
-        }
-      });
-    } catch (SAXException ex) {
-      /* used to break SAX parsing flow */
-    } catch (ParserConfigurationException e) {
-    } catch (IOException e) {
-    }
-    return version[0] == -1 ? getCurrentPersistenceVersion() : version[0];
+    return model;
   }
 
   public static boolean needsRecreating(IFile file) {
@@ -343,7 +363,7 @@ public class ModelPersistence {
     return document;
   }
 
-  private static int getCurrentPersistenceVersion() {
+  public static int getCurrentPersistenceVersion() {
     int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
     if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
 
@@ -411,5 +431,90 @@ public class ModelPersistence {
       e.printStackTrace();
       return null;
     }
+  }
+
+  @Deprecated //very slow
+  public static SModel readModel(@NotNull IFile file) {
+    return readModel(file, ModelLoadingState.FULLY_LOADED).getModel();
+  }
+
+  @Deprecated //very slow
+  public static ModelLoadResult readModel(@NotNull IFile file, ModelLoadingState state) {
+    try {
+      return readModel(getModelPersistenceVersion(JDOMUtil.loadSource(file)), file, state);
+    } catch (IOException e) {
+      LOG.error(e);
+      String name = file.getName();
+      String modelName = extractModelName(name);
+      String modelStereotype = extractModelStereotype(name);
+      StubModel model = new StubModel(new SModelReference(modelName, modelStereotype));
+      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+    }
+  }
+
+  @Deprecated
+  public static void saveMetadata(@NotNull SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+
+    Map<String, String> metadata = dsm.getMetaData();
+    if (metadata.isEmpty()) return;
+
+    IFile metadataFile = getMetadataFile(dsm.getModelFile());
+    if (!metadataFile.exists()) {
+      metadataFile.createNewFile();
+    }
+
+    DefaultMetadataPersistence.save(metadataFile, metadata);
+  }
+
+  @Nullable
+  @Deprecated
+  private static Map<String, String> loadMetadata(IFile modelFile) {
+    IFile metadataFile = getMetadataFile(modelFile);
+    if (!metadataFile.exists()) {
+      return new HashMap<String, String>();
+    }
+    return DefaultMetadataPersistence.load(metadataFile);
+  }
+
+  @Deprecated
+  private static IFile getMetadataFile(IFile modelFile) {
+    String modelPath = modelFile.getAbsolutePath();
+    String versionPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".metadata";
+    return FileSystem.getInstance().getFileByPath(versionPath);
+  }
+
+  @Deprecated
+  private static int getModelPersistenceVersion(InputSource source) {
+    final int[] version = new int[]{-1};
+    try {
+      SAXParser parser = JDOMUtil.createSAXParser();
+      parser.parse(source, new DefaultHandler() {
+        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+          if (version[0] == -1 && MODEL.equals(qName)) {
+            version[0] = 0;
+          } else if (version[0] == 0 && PERSISTENCE.equals(qName)) {
+            String s = attributes.getValue(PERSISTENCE_VERSION);
+            if (s != null) {
+              try {
+                version[0] = Integer.parseInt(s);
+              } catch (NumberFormatException ex) {
+              }
+            }
+          } else {
+            throw new SAXException();
+          }
+        }
+
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+          throw new SAXException();
+        }
+      });
+    } catch (SAXException ex) {
+      /* used to break SAX parsing flow */
+    } catch (ParserConfigurationException e) {
+    } catch (IOException e) {
+    }
+    return version[0] == -1 ? getCurrentPersistenceVersion() : version[0];
   }
 }

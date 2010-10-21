@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence;
+package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.JDOMUtil;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 
-class DefaultMetadataPersistence {
+public class DefaultMetadataPersistence {
   private static final Logger LOG = Logger.getLogger(DefaultMetadataPersistence.class);
 
   private static final String ENTRY = "entry";

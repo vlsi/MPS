@@ -76,7 +76,7 @@ public class PersistenceUpdater {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
           if (file != null) {
-            version = ModelPersistence.getModelPersistenceVersion(file);
+            version = ModelPersistence.loadDescriptor(file).getPersistenceVersion();
           }
         }
       }

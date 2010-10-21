@@ -58,16 +58,6 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 
-
-  @Nullable
-  public Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor) {
-    return null;
-  }
-
-  public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
-    throw new UnsupportedOperationException();
-  }
-
   @Override
   public StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
     return null;

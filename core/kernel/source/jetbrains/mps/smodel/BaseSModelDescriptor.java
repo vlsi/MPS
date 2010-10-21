@@ -74,7 +74,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     private ModelLoadingState state;
     private SModel model;
 
-    public ModelLoadResult(SModel model, ModelLoadingState state) {
+    public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
       this.model = model;
       this.state = state;
     }
