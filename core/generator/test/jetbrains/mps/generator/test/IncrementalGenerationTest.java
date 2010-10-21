@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -31,6 +33,32 @@ import java.io.IOException;
  * Evgeny Gryaznov, Oct 4, 2010
  */
 public class IncrementalGenerationTest extends GenerationTestBase {
+
+  @Test
+  public void testIncSolution1() throws IOException {
+    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/languageDesign/generator/generator.mpr"));
+    SModelDescriptor descr = findModel(p, "test_Closure");
+
+    doTestIncrementalGeneration(p, descr,
+      new ModelChangeRunnable() {
+        public void run(SModelDescriptor descr) {
+          SModel model = descr.getSModel();
+          SNode root = SModelOperations.getRootByName(model,"User");
+          Assert.assertNotNull("No root in model", root);
+
+          InstanceMethodDeclaration found = null;
+          for(InstanceMethodDeclaration md : ((ClassConcept) root.getAdapter()).getMethods()) {
+            if(md.getName().equals("testRename2")) {
+              found = md;
+            }
+          }
+          Assert.assertNotNull("no method in class", found);
+          found.setName("testRename3");
+        }
+      });
+
+    cleanup(p);
+  }
 
   @Test
   public void testIdeActions() throws IOException {

@@ -180,10 +180,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   public class CollectingStreamHandler implements StreamHandler {
 
-    private final IFile myCaches;
-
     public CollectingStreamHandler(IFile caches) {
-      myCaches = caches;
     }
 
     @Override
