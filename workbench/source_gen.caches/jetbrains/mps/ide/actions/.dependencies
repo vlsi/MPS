@@ -720,6 +720,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.DebugActionsUtil" file="DebugActionsUtil.java">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.ui.RunContentDescriptor" />
     <classNode dependClassName="com.intellij.execution.ui.RunContentManager" />

@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionManager;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 
 public class DebugActionsUtil {
@@ -28,6 +29,12 @@ public class DebugActionsUtil {
     } else {
       // main menu 
       RunContentDescriptor selected = ExecutionManager.getInstance(project).getContentManager().getSelectedContent();
+      if (selected == null) {
+        // when Debug is first started for the first time, the debug tool window is shown but not activated 
+        // here we deal with this situation 
+        selected = ExecutionManager.getInstance(project).getContentManager().getSelectedContent(DefaultDebugExecutor.getDebugExecutorInstance());
+      }
+
       processHandler = (selected == null ?
         null :
         selected.getProcessHandler()
