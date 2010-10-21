@@ -70,6 +70,12 @@ public class ComponentsUtil {
     return modelDescriptor.getSModel().getNodeById(id);
   }
 
+  public static SNodePointer nodePointerFromElement(Element nodeElement) {
+    String modelUID = nodeElement.getAttributeValue(MODEL);
+    String id = nodeElement.getAttributeValue(ID);
+    return new SNodePointer(modelUID, id);
+  }
+
   public static Element nodeToElement(SNode node, @NotNull IModule module) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();

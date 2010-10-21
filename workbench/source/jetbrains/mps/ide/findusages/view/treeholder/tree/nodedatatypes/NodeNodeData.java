@@ -104,11 +104,10 @@ public class NodeNodeData extends BaseNodeData {
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
-    SNode node = null;
+    myNodePointer = new SNodePointer((SNode)null);
     if (!children.isEmpty()) {
-      node = ComponentsUtil.nodeFromElement((Element) children.get(0));
+      myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
     }
-    myNodePointer = new SNodePointer(node);
   }
 
   public static String snodeRepresentation(final SNode node) {
