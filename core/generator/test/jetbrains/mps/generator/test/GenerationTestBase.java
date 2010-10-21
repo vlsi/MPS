@@ -118,7 +118,7 @@ public class GenerationTestBase {
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
-    PerformanceMessenger.getInstance().reportPercent("parallelGeneration", singleThread / 1000000, severalThreads / 1000000);
+    PerformanceMessenger.getInstance().reportPercent("parallelGeneration", severalThreads / 1000000, singleThread / 1000000);
 
     if (DEBUG) {
       System.out.println("Single thread: " + singleThread / 1000000 / 1000. + ", 4 threads: " + severalThreads / 1000000 / 1000.);
