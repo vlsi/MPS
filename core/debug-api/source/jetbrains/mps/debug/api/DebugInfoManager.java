@@ -28,6 +28,7 @@ import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -118,9 +119,10 @@ public class DebugInfoManager implements ApplicationComponent {
       if (position != null) {
         String conceptFqName = position.getConceptFqName();
         List<SNode> superConcepts = SConceptOperations.getAllSuperConcepts(SConceptOperations.findConceptDeclaration(conceptFqName), true);
-        for (SNode concept : superConcepts) {
-          if (myDebuggableConcepts.keySet().contains(concept.getConceptFqName())) {
-            return createBreakpoint(conceptFqName, node, project);
+        for (SNode superConcept : superConcepts) {
+          String superConceptFqName = NameUtil.nodeFQName(superConcept);
+          if (myDebuggableConcepts.keySet().contains(superConceptFqName)) {
+            return createBreakpoint(superConceptFqName, node, project);
           }
         }
       }
