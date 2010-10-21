@@ -32,8 +32,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
-  private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
-
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
 
@@ -499,8 +497,7 @@ public class SModel {
     ModelChange.assertLegalChange(this);
 
     myLanguages.remove(ref);
-    myVersionedLanguages.remove(ref);
-    removeUnusedAdditionalModels();
+    //calculateImplicitImports();
     fireLanguageRemovedEvent(ref);
   }
 
@@ -551,12 +548,15 @@ public class SModel {
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) return;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    int usedVersion = -1;
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
+    importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
+    if (importElement == null) {
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+      int usedVersion = -1;
+      if (modelDescriptor instanceof EditableSModelDescriptor) {
+        usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
+      }
+      importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
     }
-    importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
@@ -568,11 +568,54 @@ public class SModel {
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
+      myAdditionalModelsVersions.add(importElement);  // to save version and ID if model was imported implicitly
       fireImportRemovedEvent(modelReference);
     }
   }
 
-  //engaged languages
+  @NotNull
+  private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
+    for (SNode node : model.nodes()) {
+      result.add(node.getConceptDeclarationNode().getModel().getSModelReference());
+      for (String propname : node.getProperties().keySet()) {
+        result.add(node.getPropertyDeclaration(propname).getModel().getSModelReference());
+      }
+      for (SReference ref : node.getReferencesIterable()) {
+        result.add(ref.getTargetSModelReference());
+        result.add(node.getLinkDeclaration(ref.getRole()).getModel().getSModelReference());
+      }
+//      for (String child : node.getChildRoles(true)) {
+//        result.add(node.getLinkDeclaration(child).getModel().getSModelReference());
+//      }
+      for (SNode child : node.getChildren()) {
+        result.add(child.getRoleLink().getModel().getSModelReference());
+      }
+    }
+    return result;
+  }
+
+  // create new implicit import list based on used models, explicit import and old implicit import list
+  public void calculateImplicitImports() {
+    Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
+    for (ImportElement elem : myImports) {  // ??? explicit imports should become implicit on deletion till new recalculation
+      usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
+    }
+    List<ImportElement> implicitImport = new ArrayList<ImportElement>(usedModels.size());
+    for (ImportElement elem : myAdditionalModelsVersions) {
+      if (usedModels.remove(elem.getModelReference())) { // already added elements save their version and id
+        if (elem.myReferenceID < 0) {   // fix ID after upgrading from the old persistence
+          elem.myReferenceID = ++myMaxImportIndex;
+        }
+        implicitImport.add(elem);
+      }
+    }
+    for (SModelReference ref : usedModels) {
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
+      int version = modelDescriptor instanceof EditableSModelDescriptor ? ((EditableSModelDescriptor) modelDescriptor).getVersion() : -1;
+      implicitImport.add(new ImportElement(ref, ++myMaxImportIndex, version));
+    }
+    myAdditionalModelsVersions = implicitImport;
+  }
 
   public List<ModuleReference> engagedOnGenerationLanguages() {
     return myLanguagesEngagedOnGeneration;
@@ -609,33 +652,17 @@ public class SModel {
   }
 
   public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    ModelChange.assertLegalChange(this);
+    addAdditionalModelVersion(new ImportElement(modelReference, -1, usedVersion));
+  }
 
-    ImportElement importElement = new ImportElement(modelReference, -1, usedVersion);
-    myAdditionalModelsVersions.add(importElement);
+  public void addAdditionalModelVersion(@NotNull ImportElement element) {
+    ModelChange.assertLegalChange(this);
+    myAdditionalModelsVersions.add(element);
   }
 
   public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
-    if (myVersionedLanguages.contains(language.getModuleReference())) return;
-
-    for (EditableSModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-      addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
-    }
-    myVersionedLanguages.add(language.getModuleReference());
-    for (Language l : language.getExtendedLanguages()) {
-      addAspectModelsVersions(l, false);
-    }
-  }
-
-  public void removeUnusedAdditionalModels() {
-    Set<SModelReference> dependencies = SModelOperations.getDependenciesModelRefs(this);
-    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
-      ImportElement elem = iter.next();
-      if (!dependencies.contains(elem.getModelReference())) {
-        iter.remove();
-      }
-    }
+    //calculateImplicitImports();
   }
 
   //other
@@ -810,10 +837,6 @@ public class SModel {
     }
 
     if (updateRefs(myLanguagesEngagedOnGeneration)) {
-      changed = true;
-    }
-
-    if (updateRefs(myVersionedLanguages)) {
       changed = true;
     }
 

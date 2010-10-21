@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v4;
+package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
@@ -45,7 +45,7 @@ public class VersionUtil {
     return NO_VERSION;
   }
 
-  public static String getBeforeSeparator(String s) {
+  private static String getBeforeSeparator(String s) {
     if (parseVersionedString(s) == NO_VERSION) return s;
     int index = s.lastIndexOf(VERSION_SEPARATOR_CHAR);
     if (index == -1) return s;

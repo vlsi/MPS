@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.persistence.def.v5.Handler5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler;
+import jetbrains.mps.smodel.persistence.def.v6.ModelReader6;
 import jetbrains.mps.smodel.persistence.def.v6.ModelWriter6;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
@@ -85,6 +86,7 @@ public class ModelPersistence {
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
+  public static final String IMPLICIT = "implicit";
 
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
@@ -116,7 +118,7 @@ public class ModelPersistence {
     modelWriters.put(5, new ModelWriter5());
 
     modelReadHandlers.put(6, new ModelReader6Handler());
-    modelReaders.put(6, new ModelReader5());
+    modelReaders.put(6, new ModelReader6());
     modelWriters.put(6, new ModelWriter6());
   }
 

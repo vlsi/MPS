@@ -31,8 +31,6 @@ public interface IModelReader {
 
   SModel readModel(Document document, String modelShortName, String stereotype);
 
-  SNode readNode(Element nodeElement, SModel model);
-
   SModelReference upgradeModelUID(SModelReference modelReference);
 
   boolean needsRecreating(IFile file);
