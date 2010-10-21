@@ -64,7 +64,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
       SModel model = new SModel(dsmRef);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
     ModelLoadResult result;
