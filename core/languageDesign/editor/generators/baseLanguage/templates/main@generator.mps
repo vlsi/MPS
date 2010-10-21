@@ -5337,38 +5337,11 @@
                         <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1139768629785">
                           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1210377056316">
                             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210377056317">
-                              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1210377148864">
-                                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1210377148865">
-                                  <property name="name:3" value="imageFile" />
-                                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225191502000" />
-                                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1210377148867">
-                                    <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1210377148868" />
-                                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1210377148869">
-                                      <link role="property:16" targetNodeId="38.1139746504291:32" resolveInfo="imageFile" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1210377157137">
-                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1210377159530">
-                                  <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1210377168694">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="20.~NameUtil.toSystemDependentPath(java.lang.String):java.lang.String" resolveInfo="toSystemDependentPath" />
-                                    <link role="classConcept:3" targetNodeId="20.~NameUtil" resolveInfo="NameUtil" />
-                                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1210377173023">
-                                      <link role="variableDeclaration:3" targetNodeId="1210377148865" resolveInfo="imageFile" />
-                                    </node>
-                                  </node>
-                                  <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1210377157138">
-                                    <link role="variableDeclaration:3" targetNodeId="1210377148865" resolveInfo="imageFile" />
-                                  </node>
-                                </node>
-                              </node>
                               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1210377179525">
-                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1210377191278">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="20.~NameUtil.convertToMetaString(java.lang.String):java.lang.String" resolveInfo="convertToMetaString" />
-                                  <link role="classConcept:3" targetNodeId="20.~NameUtil" resolveInfo="NameUtil" />
-                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1210377194248">
-                                    <link role="variableDeclaration:3" targetNodeId="1210377148865" resolveInfo="imageFile" />
+                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4205251996281555484">
+                                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4205251996281555485" />
+                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4205251996281555486">
+                                    <link role="property:16" targetNodeId="38.1139746504291:32" resolveInfo="imageFile" />
                                   </node>
                                 </node>
                               </node>

@@ -265,9 +265,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210377056316(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String imageFile = SPropertyOperations.getString(_context.getNode(), "imageFile");
-    imageFile = NameUtil.toSystemDependentPath(imageFile);
-    return NameUtil.convertToMetaString(imageFile);
+    return SPropertyOperations.getString(_context.getNode(), "imageFile");
   }
 
   public static Object propertyMacro_GetPropertyValue_1182996894663(final IOperationContext operationContext, final PropertyMacroContext _context) {
