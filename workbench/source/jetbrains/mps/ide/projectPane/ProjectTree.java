@@ -10,6 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 
+import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +32,10 @@ public class ProjectTree extends MPSTree {
     }
 
     MPSProject project = myProject.getComponent(MPSProject.class);
-    MPSTreeNode root = new TextTreeNode("Empty");
-    ProjectTreeNode projectRoot = new ProjectTreeNode(project);
+    //MPSTreeNode root = new TextTreeNode("Empty");
+    ProjectTreeNode root = new ProjectTreeNode(project);
 
-    root.add(projectRoot);
-    setRootVisible(false);
+   // setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
     List<Solution> solutions = project.getProjectSolutions();
@@ -60,7 +60,7 @@ public class ProjectTree extends MPSTree {
     for (MPSTreeNode mtn : moduleNodes) {
       builder.addNode(mtn);
     }
-    builder.fillNode(projectRoot);
+    builder.fillNode(root);
 
     myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(project);
     root.add(myModulesPoolTreeNode);
@@ -69,6 +69,7 @@ public class ProjectTree extends MPSTree {
       TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(myProject);
       root.add(transientModelsNode);
     }
+
     return root;
   }
 
