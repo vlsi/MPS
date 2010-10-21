@@ -185,5 +185,16 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer" id="1646518082434540593">
+    <property name="name" value="GlobalParameters" />
+    <node role="parameters" type="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter" id="1646518082434722004">
+      <property name="name" value="os" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1646518082434723262" />
+    </node>
+    <node role="parameters" type="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter" id="1646518082434723264">
+      <property name="name" value="arch" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1646518082434723266" />
+    </node>
+  </node>
 </model>
 

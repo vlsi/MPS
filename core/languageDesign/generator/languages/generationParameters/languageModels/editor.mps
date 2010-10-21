@@ -74,9 +74,37 @@
         <property name="text:32" value=":" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8484425748929510082">
-        <link role="relationDeclaration:32" targetNodeId="2.650531548511609557" />
+        <link role="relationDeclaration:32" targetNodeId="2.650531548511609557:2" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8484425748929510083" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1646518082434566195">
+    <property name="package:32" value="parameter" />
+    <link role="conceptDeclaration:32" targetNodeId="1.8484425748929510072" resolveInfo="DefaultGeneratorParameterContainer" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1646518082434566197">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1646518082434566200">
+        <property name="text:32" value="namespace" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1646518082434566202">
+        <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1646518082434566695">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1646518082434566207">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1646518082434566696">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1646518082434566204">
+        <link role="relationDeclaration:32" targetNodeId="1.8484425748929510073" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1646518082434566205" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="1646518082434566697">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1646518082434566199" />
     </node>
   </node>
 </model>

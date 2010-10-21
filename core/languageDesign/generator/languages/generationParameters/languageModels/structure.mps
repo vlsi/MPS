@@ -64,7 +64,7 @@
     <property name="package:0" value="parameter" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8484425748929510069">
-      <link role="intfc:0" targetNodeId="3.650531548511609556" resolveInfo="IGeneratorParameter" />
+      <link role="intfc:0" targetNodeId="3.650531548511609556:2" resolveInfo="IGeneratorParameter" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8484425748929510070">
       <link role="intfc:0" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
@@ -78,6 +78,7 @@
     <property name="package:0" value="parameter" />
     <property name="name:0" value="DefaultGeneratorParameterContainer" />
     <property name="rootable:0" value="true" />
+    <property name="iconPath:0" value="${language_descriptor}/icons/parameters.png" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="650531548512004879">
       <property name="value:0" value="generator parameters" />
