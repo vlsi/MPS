@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -64,7 +65,7 @@ public final class SConceptOperations {
   }
 
 
-  public static SNode findConceptDeclaration(String conceptFqName) {
+  public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
     return SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
   }
 

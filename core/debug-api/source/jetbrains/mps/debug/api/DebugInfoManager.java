@@ -118,6 +118,7 @@ public class DebugInfoManager implements ApplicationComponent {
       PositionInfo position = debugInfo.getPositionForNode(node.getId());
       if (position != null) {
         String conceptFqName = position.getConceptFqName();
+        if (conceptFqName == null) return null;
         List<SNode> superConcepts = SConceptOperations.getAllSuperConcepts(SConceptOperations.findConceptDeclaration(conceptFqName), true);
         for (SNode superConcept : superConcepts) {
           String superConceptFqName = NameUtil.nodeFQName(superConcept);

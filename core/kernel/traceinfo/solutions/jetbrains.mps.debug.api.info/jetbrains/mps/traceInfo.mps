@@ -1305,6 +1305,9 @@
           </node>
         </node>
       </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="798904813263404910">
+        <link role="annotation:3" targetNodeId="8.~Nullable" resolveInfo="Nullable" />
+      </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2897370900776710963">
       <property name="name:3" value="getNodeId" />
@@ -1319,6 +1322,9 @@
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="2897370900776710970" />
           </node>
         </node>
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="798904813263406841">
+        <link role="annotation:3" targetNodeId="8.~Nullable" resolveInfo="Nullable" />
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2897370900776710971">
@@ -2502,6 +2508,9 @@
             <link role="variableDeclaration:3" targetNodeId="2464336405782102575" resolveInfo="myConceptFqName" />
           </node>
         </node>
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="798904813263406842">
+        <link role="annotation:3" targetNodeId="8.~Nullable" resolveInfo="Nullable" />
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2464336405782131470">

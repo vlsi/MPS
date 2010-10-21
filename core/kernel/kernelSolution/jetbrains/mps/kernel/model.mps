@@ -827,6 +827,9 @@
         <property name="name:3" value="conceptFQName" />
         <property name="isFinal:3" value="true" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8477036312981778510" />
+        <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="798904813263385763">
+          <link role="annotation:3" targetNodeId="4.~NotNull" resolveInfo="NotNull" />
+        </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1237995590800">
         <property name="name:3" value="scope" />

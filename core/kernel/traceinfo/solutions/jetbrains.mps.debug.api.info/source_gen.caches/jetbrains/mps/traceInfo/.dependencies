@@ -51,6 +51,7 @@
     <classNode dependClassName="org.jdom.Attribute" />
     <classNode dependClassName="org.jdom.DataConversionException" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.ScopePositionInfo" file="ScopePositionInfo.java">

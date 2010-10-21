@@ -4,6 +4,7 @@ package jetbrains.mps.traceInfo;
 
 import org.jdom.Element;
 import org.jdom.DataConversionException;
+import org.jetbrains.annotations.Nullable;
 import org.jdom.Attribute;
 
 public class PositionInfo implements Comparable<PositionInfo> {
@@ -36,10 +37,12 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myEndPosition = element.getAttribute(PositionInfo.END_POSITION).getIntValue();
   }
 
+  @Nullable
   public String getFileName() {
     return this.myFileName;
   }
 
+  @Nullable
   public String getNodeId() {
     return this.myNodeId;
   }
@@ -145,6 +148,7 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myEndPosition = position.myEndPosition;
   }
 
+  @Nullable
   public String getConceptFqName() {
     return myConceptFqName;
   }
