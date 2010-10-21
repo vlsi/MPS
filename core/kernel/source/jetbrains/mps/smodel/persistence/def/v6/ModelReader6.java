@@ -232,7 +232,7 @@ public class ModelReader6 extends ModelReader4 {
     String importedModelInfo = "-1";
     String targetId = null;
     if (attTargetNodeId != null) {
-      int i = useUIDs ? i = attTargetNodeId.indexOf('#') : attTargetNodeId.indexOf('.');
+      int i = attTargetNodeId.indexOf(useUIDs ? '#' : '.');
       importedModelInfo = i > 0 ? attTargetNodeId.substring(0, i) : "-1";
       targetId = attTargetNodeId.substring(i + 1);
     }
