@@ -8,6 +8,7 @@
     <projectSolutions>
       <solutionPath path="${project}/TLBase_sandbox/sandbox.msd" />
       <solutionPath path="${project}/test/inputModels/inputModels.msd" />
+      <solutionPath path="${project}/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/templateLanguage/templateLanguage.mpl" />
