@@ -6,7 +6,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import java.util.UUID;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 
 public class NewModuleUtil {
@@ -14,16 +16,20 @@ public class NewModuleUtil {
   }
 
   public static Solution createNewSolution(final IFile solutionFile, MPSProject project) {
-    solutionFile.createNewFile();
-    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
+    final SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
     solutionDescriptor.setExternallyVisible(true);
     String fileName = solutionFile.getName();
     solutionDescriptor.setNamespace(fileName.substring(0, fileName.length() - 4));
+    solutionDescriptor.setUUID(UUID.randomUUID().toString());
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPrefix("");
     modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
     solutionDescriptor.getModelRoots().add(modelRoot);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
+    ModelAccess.instance().writeFilesInEDT(new Runnable() {
+      public void run() {
+        SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
+      }
+    });
     return project.addProjectSolution(solutionFile);
   }
 }

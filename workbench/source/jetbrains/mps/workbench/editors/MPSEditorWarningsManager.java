@@ -23,6 +23,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
@@ -92,11 +93,21 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
     DumbService.getInstance(project).smartInvokeLater(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        final Runnable task = new Runnable() {
           public void run() {
             doUpdateWarnings(editor, project);
           }
+        };
+        Boolean aBoolean = ModelAccess.instance().tryRead(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            task.run();
+            return Boolean.TRUE;
+          }
         });
+        if (aBoolean == null) {
+          ModelAccess.instance().runReadInEDT(task);
+        }
       }
     });
   }

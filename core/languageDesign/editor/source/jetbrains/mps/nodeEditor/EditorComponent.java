@@ -63,7 +63,10 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.NodesParetoFrontier;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SystemInfo;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -162,15 +165,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   };
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onAfterReload() {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              if (isProjectDisposed() || isNodeDisposed()) return;
-              rebuildEditorContent();
-              myNodeSubstituteChooser.clearContent();
-            }
-          });
+          if (isProjectDisposed() || isNodeDisposed()) return;
+          rebuildEditorContent();
+          myNodeSubstituteChooser.clearContent();
         }
       });
     }

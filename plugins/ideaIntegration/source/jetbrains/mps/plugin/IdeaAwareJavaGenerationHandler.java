@@ -127,24 +127,8 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
 
   @Override
   protected void performWritingFilesTask(final Runnable writingTask) {
-    ModelAccess.instance().runReadInWriteAction(new Computable<Object>() {
-      @Override
-      public Object compute() {
-        Runnable task = new Runnable() {
-          @Override
-          public void run() {
-            ModelAccess.instance().runReadInWriteWorker(writingTask);
-          }
-        };
-        if (ApplicationManager.getApplication().isDispatchThread()) {
-          task.run();
-        } else {
-          ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
-        }
-        return null;
-      }
-    });
-}
+    ModelAccess.instance().writeFilesInEDT(writingTask);
+  }
 
   protected boolean isIDEAPresent(IProjectHandler handler) {
     return !MPSCore.getInstance().isTestMode() && handler != null;

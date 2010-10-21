@@ -25,11 +25,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.progress.Progressive;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
@@ -248,16 +246,12 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
     Project project = myThis.getProject().getProject();
-    ProgressManager.getInstance().run(new Task.Modal(project, "Creating", false) {
-      public void run(@NotNull ProgressIndicator indicator) {
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
+      public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            language.value = myThis.createNewLanguage();
-          }
-        });
+        language.value = myThis.createNewLanguage();
       }
-    });
+    }, "Creating", false, project);
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
         if (!(language.value.getSModelRoots().isEmpty())) {
@@ -304,7 +298,11 @@ public class NewLanguageDialogContentPane extends JPanel {
     languageDescriptor.getUsedDevkits().add(devkitRef);
     languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
     language.setLanguageDescriptor(languageDescriptor, true);
-    language.save();
+    ModelAccess.instance().writeFilesInEDT(new Runnable() {
+      public void run() {
+        language.save();
+      }
+    });
     myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
     return language;

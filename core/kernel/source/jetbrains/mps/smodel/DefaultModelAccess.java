@@ -190,6 +190,11 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
+  public void writeFilesInEDT(@NotNull Runnable action) {
+    throw new UnsupportedOperationException("cannot invoke write files in EDT");
+  }
+
+  @Override
   public void runWriteActionWithProgressSynchronously(@NotNull Progressive process, String progressTitle, boolean canBeCanceled,
                                                       Project project) {
     throw new UnsupportedOperationException("cannot run with progress");

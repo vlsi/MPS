@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -93,6 +94,27 @@ public class WorkbenchModelAccess extends ModelAccess {
     } else {
       ApplicationManager.getApplication().runReadAction(runnable);
     }
+  }
+
+  public void writeFilesInEDT(@NotNull final Runnable action) {
+    // EDT should have IDEA write lock
+    runReadInWriteAction(new Computable<Object>() {
+      @Override
+      public Object compute() {
+        Runnable task = new Runnable() {
+          @Override
+          public void run() {
+            runReadInWriteWorker(action);
+          }
+        };
+        if (ApplicationManager.getApplication().isDispatchThread()) {
+          task.run();
+        } else {
+          ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
+        }
+        return null;
+      }
+    });
   }
 
   @Override

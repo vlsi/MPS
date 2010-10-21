@@ -28,8 +28,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
-
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
 
@@ -95,28 +93,22 @@ public class PluginReloader implements ApplicationComponent {
 
   private class MyReloadAdapter extends ReloadAdapter {
     public void unload() {
-      writeLater(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
+          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
           disposePlugins();
         }
       });
     }
 
     public void load() {
-      writeLater(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
+          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
           loadPlugins();
         }
       });
     }
   }
 
-  private void writeLater(final Runnable runnable) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        //write action is needed the because user can acquire write action inside of this [see MPS-9139]
-        ModelAccess.instance().runWriteAction(runnable);
-      }
-    });
-  }
 }

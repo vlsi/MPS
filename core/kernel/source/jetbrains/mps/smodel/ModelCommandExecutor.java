@@ -42,6 +42,8 @@ public interface ModelCommandExecutor {
 
   void runWriteAction(Runnable r);
 
+  void writeFilesInEDT(@NotNull final Runnable action);
+
   void runWriteActionWithProgressSynchronously(@NotNull Progressive process, String progressTitle, boolean canBeCanceled,
                                                Project project);
 

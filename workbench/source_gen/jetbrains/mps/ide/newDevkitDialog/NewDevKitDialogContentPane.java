@@ -21,14 +21,14 @@ import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.progress.Progressive;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import java.util.UUID;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 
 public class NewDevKitDialogContentPane extends JPanel {
@@ -210,16 +210,13 @@ public class NewDevKitDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     Project ideaProject = myThis.getProject().getProject();
     final DevKit[] localResult = new DevKit[1];
-    ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Creating", false) {
-      public void run(@NotNull ProgressIndicator indicator) {
+    final Wrappers._T<DevKit> localResult2 = new Wrappers._T<DevKit>();
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
+      public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            localResult[0] = myThis.createNewDevKit(FileSystem.getInstance().getFileByPath(devkitPath));
-          }
-        });
+        localResult2.value = myThis.createNewDevKit(FileSystem.getInstance().getFileByPath(devkitPath));
       }
-    });
+    }, "Creating", false, ideaProject);
     myThis.setResult(localResult[0]);
   }
 
@@ -239,10 +236,14 @@ public class NewDevKitDialogContentPane extends JPanel {
   }
 
   /*package*/ DevKit createNewDevKit(final IFile devkitFile) {
-    DevkitDescriptor descriptor = new DevkitDescriptor();
+    final DevkitDescriptor descriptor = new DevkitDescriptor();
     descriptor.setNamespace(myThis.getDevkitName());
-    devkitFile.createNewFile();
-    DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
+    descriptor.setUUID(UUID.randomUUID().toString());
+    ModelAccess.instance().writeFilesInEDT(new Runnable() {
+      public void run() {
+        DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
+      }
+    });
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     return devkit;
   }

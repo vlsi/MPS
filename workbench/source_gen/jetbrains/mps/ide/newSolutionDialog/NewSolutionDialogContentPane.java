@@ -21,11 +21,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.NewModuleCheckUtil;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.progress.Progressive;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -222,16 +220,13 @@ public class NewSolutionDialogContentPane extends JPanel {
       return;
     }
     myThis.getDialog().dispose();
-    ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getProject(), "Creating", false) {
-      public void run(@NotNull ProgressIndicator indicator) {
+
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
+      public void run(ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            myThis.setResult(myThis.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath())));
-          }
-        });
+        myThis.setResult(myThis.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath())));
       }
-    });
+    }, "Creating", false, myThis.getProject().getProject());
   }
 
   /*package*/ void onCancel() {
