@@ -98,7 +98,7 @@ __switch__:
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode dep = SModelOperations.createNewNode(model, "jetbrains.mps.make.facet.structure.TargetDependency", null);
-                SPropertyOperations.set(dep, "type", "" + SEnumOperations.getEnumMemberValue((item)._0()));
+                SPropertyOperations.set(dep, "qualifier", "" + SEnumOperations.getEnumMemberValue((item)._0()));
                 SLinkOperations.setTarget(dep, "dependsOn", (item)._1(), false);
                 return dep;
               }

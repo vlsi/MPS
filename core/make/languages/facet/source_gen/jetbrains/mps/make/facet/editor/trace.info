@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TargetDependency_Editor.java" startLine="145" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0" />
+  <unitInfo fileName="TargetDependency_Editor.java" startLine="145" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$ReplaceWith_TargetDependency_cellMenu_a0a0" />
   <unitInfo fileName="FacetReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetReference_Editor$_Inline_7rmqfw_a0a" />
   <unitInfo fileName="TargetDependency_Editor.java" startLine="112" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$_Inline_x08tk8_a1a" />
   <unitInfo fileName="TargetDeclaration_Editor.java" startLine="236" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$_Inline_xfdsch_a2a0" />

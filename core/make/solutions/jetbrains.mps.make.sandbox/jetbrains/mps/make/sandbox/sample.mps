@@ -26,8 +26,8 @@
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="8351679702044371556">
       <property name="name:1" value="QQQ" />
       <link role="overrides:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="694641402828067289">
-        <property name="type:1" value="AFTER" />
+      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="395692171604530851">
+        <property name="qualifier:1" value="NOT_AFTER" />
         <link role="dependsOn:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
       </node>
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792650924">
@@ -43,27 +43,12 @@
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="3130298387011951907">
       <property name="name:1" value="qweqwe" />
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="7077360340906439465">
-        <property name="type:1" value="AFTER" />
-        <link role="dependsOn:1" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
-      </node>
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="7077360340906439467">
-        <property name="type:1" value="NOT_BEFORE" />
-        <link role="dependsOn:1" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
-      </node>
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792654705">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2360002718792654706" />
       </node>
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="3130298387011990041">
       <property name="name:1" value="Nanana" />
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="3130298387011990043">
-        <link role="dependsOn:1" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
-      </node>
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="3130298387012004285">
-        <property name="type:1" value="NOT_AFTER" />
-        <link role="dependsOn:1" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
-      </node>
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792654707">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2360002718792654708" />
       </node>
@@ -92,6 +77,9 @@
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="8351679702044326369">
       <property name="name:1" value="GenerateSpecialTarget" />
       <link role="overrides:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="395692171604716254">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="395692171604716255" />
+      </node>
     </node>
   </node>
 </model>

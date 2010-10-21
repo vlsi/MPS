@@ -54,16 +54,16 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_x08tk8_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("type");
-    provider.setNoTargetText("<no type>");
+    provider.setRole("qualifier");
+    provider.setNoTargetText("<no qualifier>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_type");
+    editorCell.setCellId("property_qualifier");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TargetDependency_Editor.TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TargetDependency_Editor.ReplaceWith_TargetDependency_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -142,8 +142,8 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public TargetDependency_Editor_replaceWith_TargetDependency_cellMenu_a0a0() {
+  public static class ReplaceWith_TargetDependency_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_TargetDependency_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

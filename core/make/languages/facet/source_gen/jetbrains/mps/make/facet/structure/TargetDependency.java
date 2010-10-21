@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TargetDependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.make.facet.structure.TargetDependency";
-  public static final String TYPE = "type";
+  public static final String QUALIFIER = "qualifier";
   public static final String DEPENDS_ON = "dependsOn";
   public static final String CONFIGURATION = "configuration";
 
@@ -18,13 +18,13 @@ public class TargetDependency extends BaseConcept {
     super(node);
   }
 
-  public TargetDependencyQualifier getType() {
-    String value = super.getProperty(TargetDependency.TYPE);
+  public TargetDependencyQualifier getQualifier() {
+    String value = super.getProperty(TargetDependency.QUALIFIER);
     return TargetDependencyQualifier.parseValue(value);
   }
 
-  public void setType(TargetDependencyQualifier value) {
-    super.setProperty(TargetDependency.TYPE, value.getValueAsString());
+  public void setQualifier(TargetDependencyQualifier value) {
+    super.setProperty(TargetDependency.QUALIFIER, value.getValueAsString());
   }
 
   public TargetDeclaration getDependsOn() {

@@ -179,7 +179,7 @@
     <property name="name:0" value="TargetDependency" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8351679702044326377">
-      <property name="name:0" value="type" />
+      <property name="name:0" value="qualifier" />
       <link role="dataType:0" targetNodeId="8351679702044326370:1" resolveInfo="TargetDependencyType" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763029603">
