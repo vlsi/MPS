@@ -209,7 +209,7 @@ public class ModelPersistence {
   }
 
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
-    if (version >= 5) {
+    if (version > 5) {
       try {
         SAXParser parser = JDOMUtil.createSAXParser();
         DefaultMPSHandler handler = modelReadHandlers.get(version);
