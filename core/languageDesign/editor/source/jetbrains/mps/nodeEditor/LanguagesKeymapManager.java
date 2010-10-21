@@ -28,7 +28,6 @@ import jetbrains.mps.library.LibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
@@ -40,7 +39,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   private Map<Language, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<Language, List<EditorCellKeyMap>>();
   private Set<Language> myRegisteredLanguages = new HashSet<Language>();
-  private List<Language> myLanguagesToRegister = new LinkedList<Language>();
+  private Set<Language> myLanguagesToRegister = new HashSet<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
   private MPSModuleRepository myRepository;
@@ -53,11 +52,8 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   public List<EditorCellKeyMap> getKeyMapsForLanguage(Language l) {
     if (!myLanguagesToKeyMaps.containsKey(l) && !myRegisteredLanguages.contains(l)) {
-      for (Language lang : myLanguagesToRegister) {
-        if (lang == l) {
+      if (myLanguagesToRegister.contains(l)) {
           registerLanguageKeyMaps(l);
-          break;
-        }
       }
     }
     return myLanguagesToKeyMaps.get(l);
@@ -71,6 +67,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     });
 
     myRepository.addModuleRepositoryListener(myListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myLanguagesToRegister.addAll(myRepository.getAllLanguages());
+      }
+    });
   }
 
   @NonNls
