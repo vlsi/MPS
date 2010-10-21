@@ -116,6 +116,12 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8250748122682269699">
+      <property name="name:3" value="testRename2" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682269700" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682269701" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8250748122682269702" />
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682152732" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8250748122682152733">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682152734" />
@@ -198,6 +204,12 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8250748122682270049">
+      <property name="name:3" value="test1" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682270050" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682270051" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8250748122682270052" />
+    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8250748122682163172">
       <property name="name:3" value="user" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8250748122682163175">
@@ -225,6 +237,27 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682163166" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682163167" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8250748122682163168" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8250748122682269925">
+    <property name="name:3" value="Singleton" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8250748122682269931">
+      <property name="name:3" value="default" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682269932" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682269933" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8250748122682269934" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682269926" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8250748122682269927">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682269928" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682269929" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8250748122682269930">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8250748122682269935">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8250748122682269937">
+            <property name="text:3" value="class without dependencies, can be regenerated separately" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

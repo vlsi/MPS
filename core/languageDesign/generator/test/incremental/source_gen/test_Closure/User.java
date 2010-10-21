@@ -26,4 +26,7 @@ public class User {
     l.invoke();
     Tuples._2<Boolean, String> s = l.getFirst();
   }
+
+  public void testRename2() {
+  }
 }

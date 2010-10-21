@@ -24,4 +24,7 @@ public class Library {
   public Tuples._2<Boolean, String> getFirst() {
     return ListSequence.fromList(user).first().invoke();
   }
+
+  public void test1() {
+  }
 }

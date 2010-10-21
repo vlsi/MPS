@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
   </dependency>
+  <dependency className="test_Closure.Singleton" file="Singleton.java" />
   <dependency className="test_Closure.User" file="User.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
