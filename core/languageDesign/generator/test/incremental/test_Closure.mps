@@ -242,7 +242,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8250748122682269925">
     <property name="name:3" value="Singleton" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8250748122682269931">
-      <property name="name:3" value="default" />
+      <property name="name:3" value="defaultMeth" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8250748122682269932" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8250748122682269933" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8250748122682269934" />

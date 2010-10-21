@@ -8,6 +8,6 @@ public class Singleton {
     // class without dependencies, can be regenerated separately 
   }
 
-  public void default() {
+  public void defaultMeth() {
   }
 }

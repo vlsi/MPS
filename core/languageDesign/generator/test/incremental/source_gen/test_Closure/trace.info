@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Library.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="test_Closure.Library" />
   <root nodeId="8250748122682152731">
     <nodeInfo nodeId="8250748122682269369" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="User.java" startLine="14" startPosition="27" endLine="15" endPosition="19" />
     <nodeInfo nodeId="8250748122682269201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="User.java" startLine="18" startPosition="22" endLine="19" endPosition="30" />
@@ -59,7 +58,7 @@
     <nodeInfo nodeId="8250748122682269935" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Singleton.java" startLine="7" startPosition="22" endLine="8" endPosition="65" />
     <nodeInfo nodeId="8250748122682269927" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="Singleton.java" startLine="6" startPosition="24" endLine="9" endPosition="3" />
     <nodeInfo nodeId="8250748122682269931" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Singleton.java" startLine="10" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="8250748122682269934" fileName="Singleton.java" startLine="11" startPosition="25" endLine="11" endPosition="25" />
+    <scopeInfo nodeId="8250748122682269934" fileName="Singleton.java" startLine="11" startPosition="29" endLine="11" endPosition="29" />
     <scopeInfo nodeId="8250748122682269930" fileName="Singleton.java" startLine="7" startPosition="22" endLine="8" endPosition="65" />
     <scopeInfo nodeId="8250748122682269927" fileName="Singleton.java" startLine="6" startPosition="24" endLine="9" endPosition="3" />
     <scopeInfo nodeId="8250748122682269931" fileName="Singleton.java" startLine="10" startPosition="0" endLine="13" endPosition="0" />
