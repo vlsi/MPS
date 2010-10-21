@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.sun.tools.javac.resources.version;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -190,13 +191,17 @@ public class ModelPersistence {
     String name = file.getName();
     String modelName = extractModelName(name);
     String modelStereotype = extractModelStereotype(name);
+
+    InputSource source;
     try {
-      return readModel(version, JDOMUtil.loadSource(file), modelName, modelStereotype, state);
+      source = JDOMUtil.loadSource(file);
     } catch (Throwable t) {
       LOG.error("Error while loading model from file: " + file.getAbsolutePath(), t);
       StubModel model = new StubModel(new SModelReference(modelName, modelStereotype));
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
+
+    return readModel(version, source, modelName, modelStereotype, state);
   }
 
   public static SModel readModel(int version, InputSource source, String name, String stereotype) {
@@ -423,14 +428,16 @@ public class ModelPersistence {
 
   @Deprecated //very slow
   public static SModel readModel(@NotNull Document d, String name, String stereotype) {
+    InputSource source;
     try {
-      InputSource source = new InputSource(new StringReader(JDOMUtil.asString(d)));
-      int version = getModelPersistenceVersion(d);
-      return readModel(version, source, name, stereotype);
+      source = new InputSource(new StringReader(JDOMUtil.asString(d)));
     } catch (IOException e) {
-      e.printStackTrace();
-      return null;
+      LOG.error(e);
+      return new StubModel(new SModelReference(name, stereotype));
     }
+
+    int version = getModelPersistenceVersion(d);
+    return readModel(version, source, name, stereotype);
   }
 
   @Deprecated //very slow
@@ -440,8 +447,9 @@ public class ModelPersistence {
 
   @Deprecated //very slow
   public static ModelLoadResult readModel(@NotNull IFile file, ModelLoadingState state) {
+    int version;
     try {
-      return readModel(getModelPersistenceVersion(JDOMUtil.loadSource(file)), file, state);
+      version = getModelPersistenceVersion(JDOMUtil.loadSource(file));
     } catch (IOException e) {
       LOG.error(e);
       String name = file.getName();
@@ -450,6 +458,7 @@ public class ModelPersistence {
       StubModel model = new StubModel(new SModelReference(modelName, modelStereotype));
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }
+    return readModel(version, file, state);
   }
 
   @Deprecated

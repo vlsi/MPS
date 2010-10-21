@@ -21,8 +21,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.StructureModificationHistory;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -33,10 +33,10 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.util.*;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -66,7 +66,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     ModelLoadResult result;
     try {
-      result = ModelPersistence.readModel(dsm.getPersistenceVersion(),dsm.getModelFile(),state);
+      result = ModelPersistence.readModel(dsm.getPersistenceVersion(), dsm.getModelFile(), state);
+      if (result.getState() == ModelLoadingState.NOT_LOADED) return result;
     } catch (ModelFileReadException t) {
       return handleExceptionDuringModelRead(dsm, t, false);
     } catch (PersistenceVersionNotFoundException e) {
@@ -76,15 +77,17 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     }
 
     SModel model = result.getModel();
-    try {
-      model.setLoading(true);
-      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
+    if (result.getState() == ModelLoadingState.FULLY_LOADED) {
+      try {
+        model.setLoading(true);
+        boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
 
-      if (needToSave && !dsm.getModelFile().isReadOnly()) {
-        SModelRepository.getInstance().markChanged(model);
+        if (needToSave && !dsm.getModelFile().isReadOnly()) {
+          SModelRepository.getInstance().markChanged(model);
+        }
+      } finally {
+        model.setLoading(false);
       }
-    } finally {
-      model.setLoading(false);
     }
 
     LOG.assertLog(model.getSModelReference().equals(dsmRef),
@@ -225,9 +228,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       DescriptorLoadResult dr = ModelPersistence.loadDescriptor(file);
 
       SModelReference modelReference = null;
-      if (dr.getUID()!=null){
+      if (dr.getUID() != null) {
         modelReference = SModelReference.fromString(dr.getUID());
-      } else{
+      } else {
         modelReference = ModelRefCreator.createModelReference(file, FileSystem.getInstance().getFileByPath(modelRoot.getPath()), modelRoot.getPrefix());
       }
 
@@ -239,10 +242,10 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
       SModelDescriptor modelDescriptor;
       if (ModelPersistence.needsRecreating(file)) {
-        modelDescriptor = recreateFileAndGetInstance(this, file.getAbsolutePath(), modelReference, owner, modelRoot,dr);
+        modelDescriptor = recreateFileAndGetInstance(this, file.getAbsolutePath(), modelReference, owner, modelRoot, dr);
         LOG.debug("Recreated file and read model descriptor" + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       } else {
-        modelDescriptor = getInstance(this, file.getAbsolutePath(), modelReference,dr, owner, false);
+        modelDescriptor = getInstance(this, file.getAbsolutePath(), modelReference, dr, owner, false);
         LOG.debug("Read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       }
     }
@@ -262,7 +265,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     assert root.getPrefix().length() <= 0 || fqName.getLongName().startsWith(root.getPrefix()) : "Model name should start with model root prefix";
 
     IFile modelFile = createFileForModelUID(root, fqName);
-    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getAbsolutePath(), fqName,new DescriptorLoadResult(), owner);
+    SModelDescriptor result = DefaultModelRootManager.createModel(this, modelFile.getAbsolutePath(), fqName, new DescriptorLoadResult(), owner);
 
     return result;
   }
@@ -284,12 +287,12 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
   }
 
-  private SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, String fileName, SModelReference modelReference, ModelOwner owner, SModelRoot root,DescriptorLoadResult d) {
+  private SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, String fileName, SModelReference modelReference, ModelOwner owner, SModelRoot root, DescriptorLoadResult d) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
     if (modelDescriptor != null) {
       LOG.error("can't recreate file for already loaded descriptor " + modelReference);
-      return getInstance(manager, fileName, modelReference,d, owner, false);
+      return getInstance(manager, fileName, modelReference, d, owner, false);
     }
     IFile modelFile = FileSystem.getInstance().getFileByPath(fileName);
     SModelReference newModelReference = ModelPersistence.upgradeModelUID(modelReference);
@@ -298,7 +301,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     IFileUtils.copyFileContent(modelFile, newFile);
     modelFile.delete();
 
-    return getInstance(manager, newFile.getAbsolutePath(), newModelReference, d,owner, true);
+    return getInstance(manager, newFile.getAbsolutePath(), newModelReference, d, owner, true);
   }
 
   private static SModelDescriptor getInstance(IModelRootManager manager, String fileName, SModelReference modelReference, DescriptorLoadResult d, ModelOwner owner, boolean fireModelCreated) {
@@ -308,7 +311,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
     if (modelDescriptor == null) {
       IFile modelFile = FileSystem.getInstance().getFileByPath(fileName);
-      DefaultSModelDescriptor md = new DefaultSModelDescriptor(manager, modelFile, modelReference,d);
+      DefaultSModelDescriptor md = new DefaultSModelDescriptor(manager, modelFile, modelReference, d);
       if (fireModelCreated) {
         modelRepository.createNewModel(md, owner);
       } else {
@@ -335,7 +338,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       LOG.error("Couldn't create new model \"" + modelUID.getLongName() + "\" because such model exists");
     }
 
-    DefaultSModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getInstance().getFileByPath(fileName), new SModelReference(modelUID, SModelId.generate()),d);
+    DefaultSModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getInstance().getFileByPath(fileName), new SModelReference(modelUID, SModelId.generate()), d);
     SModelRepository.getInstance().createNewModel(modelDescriptor, owner);
     modelDescriptor.getSModel();
     return modelDescriptor;
