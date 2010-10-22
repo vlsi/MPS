@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
 import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
+import jetbrains.mps.smodel.persistence.def.v5.Handler5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
@@ -110,7 +111,7 @@ public class ModelPersistence {
     modelReaders.put(4, new ModelReader4());
     modelWriters.put(4, new ModelWriter4());
 
-    modelReadHandlers.put(5, new ModelReader5Handler());
+    modelReadHandlers.put(5, new Handler5());
     modelReaders.put(5, new ModelReader5());
     modelWriters.put(5, new ModelWriter5());
 
@@ -158,7 +159,7 @@ public class ModelPersistence {
         SAXParser parser = JDOMUtil.createSAXParser();
         DefaultMPSHandler handler = modelReadHandlers.get(version);
         boolean partial = handler.setPartialLoading(state);
-        parser.parse(source, handler);
+        parser.parse(source, (DefaultHandler)handler);
         ModelLoadingState loadingState = partial ? state : ModelLoadingState.FULLY_LOADED;
         return new ModelLoadResult(handler.getResult(), loadingState);
       } catch (Throwable t) {

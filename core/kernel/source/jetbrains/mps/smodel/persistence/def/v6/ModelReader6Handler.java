@@ -16,8 +16,9 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
+import jetbrains.mps.smodel.persistence.def.v5.Handler5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 
-public class ModelReader6Handler extends ModelReader5Handler {
+public class ModelReader6Handler extends Handler5 {
 
 }

@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
-public class ModelReader5Handler extends DefaultMPSHandler {
+public class ModelReader5Handler extends DefaultHandler {
   private static String[] EMPTY_ARRAY = new String[0];
 
   private ModelReader5Handler.modelElementHandler modelhandler = new ModelReader5Handler.modelElementHandler();

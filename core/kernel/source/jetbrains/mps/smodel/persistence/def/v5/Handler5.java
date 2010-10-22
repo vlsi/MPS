@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v6;
+package jetbrains.mps.smodel.persistence.def.v5;
 
-import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
+import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 
-public class ModelWriter6 extends ModelWriter5 {
-  protected int getModelPersistenceVersion() {
-    return 5;
+public class Handler5 extends ModelReader5Handler implements DefaultMPSHandler{
+  public boolean setPartialLoading(ModelLoadingState state){
+    return state == ModelLoadingState.FULLY_LOADED;
   }
 }

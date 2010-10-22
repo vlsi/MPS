@@ -19,13 +19,9 @@ import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class DefaultMPSHandler extends DefaultHandler{
+public interface DefaultMPSHandler{
   //return true is supports
-  public boolean setPartialLoading(ModelLoadingState state){
-    return state == ModelLoadingState.FULLY_LOADED;
-  }
+  public boolean setPartialLoading(ModelLoadingState state);
 
-  public SModel getResult(){
-    return null;
-  }
+  public SModel getResult();
 }
