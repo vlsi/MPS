@@ -2514,27 +2514,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.MethodHierarchy_KeyMap" file="MethodHierarchy_KeyMap.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.awt.event.KeyEvent" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddClassMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToImplementStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMap" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMapAction" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.NotExpression_Editor" file="NotExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />

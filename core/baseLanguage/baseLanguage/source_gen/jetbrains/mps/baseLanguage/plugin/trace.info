@@ -31,7 +31,7 @@
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="362" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
   <unitInfo fileName="RefactoringAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="386" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
-  <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
+  <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
@@ -48,6 +48,8 @@
   <unitInfo fileName="UncommentStatements_Action.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action" />
   <unitInfo fileName="CommentLine_Action.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
   <unitInfo fileName="UncommentLine_Action.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.UncommentLine_Action" />
+  <unitInfo fileName="ImplementMethod_Action.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action" />
+  <unitInfo fileName="OverrideMethod_Action.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethod_Action" />
   <unitInfo fileName="CommentStatements_Action.java" startLine="19" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentStatements_Action" />
   <unitInfo fileName="RenameVariable_Action.java" startLine="20" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
   <unitInfo fileName="ShowMembers_Action.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
@@ -202,6 +204,8 @@
     <nodeInfo nodeId="1108208212555695964" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="24" startPosition="271" endLine="25" endPosition="151" />
     <nodeInfo nodeId="6556826051425195671" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="25" startPosition="151" endLine="26" endPosition="155" />
     <nodeInfo nodeId="4237366088441178402" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="26" startPosition="155" endLine="27" endPosition="143" />
+    <nodeInfo nodeId="4670094048336778394" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="27" startPosition="143" endLine="28" endPosition="146" />
+    <nodeInfo nodeId="4670094048336778396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="28" startPosition="146" endLine="29" endPosition="147" />
   </root>
   <root nodeId="1205248417575">
     <nodeInfo nodeId="1206096366578" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="CommentStatements_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="28" />
@@ -1069,6 +1073,26 @@
       <varInfo nodeId="4606119813988120968" varName="classifier" />
     </scopeInfo>
     <unitInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="44" startPosition="57" endLine="44" endPosition="218" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod$1" />
+  </root>
+  <root nodeId="4670094048336708063">
+    <nodeInfo nodeId="4670094048336776370" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
+    <nodeInfo nodeId="4670094048336778296" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
+    <nodeInfo nodeId="4670094048336778301" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="4670094048336776355" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="156" />
+    <nodeInfo nodeId="4670094048336776389" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethod_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="81" />
+    <nodeInfo nodeId="4670094048336776397" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethod_Action.java" startLine="91" startPosition="81" endLine="92" endPosition="79" />
+    <nodeInfo nodeId="4670094048336776405" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethod_Action.java" startLine="92" startPosition="79" endLine="93" endPosition="241" />
+    <scopeInfo nodeId="4670094048336776354" fileName="OverrideMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="156" />
+  </root>
+  <root nodeId="4670094048336778317">
+    <nodeInfo nodeId="4670094048336778321" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
+    <nodeInfo nodeId="4670094048336778324" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
+    <nodeInfo nodeId="4670094048336778325" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="4670094048336778328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ImplementMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="157" />
+    <nodeInfo nodeId="4670094048336778342" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementMethod_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="82" />
+    <nodeInfo nodeId="4670094048336778350" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementMethod_Action.java" startLine="91" startPosition="82" endLine="92" endPosition="80" />
+    <nodeInfo nodeId="4670094048336778358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ImplementMethod_Action.java" startLine="92" startPosition="80" endLine="93" endPosition="240" />
+    <scopeInfo nodeId="4670094048336778327" fileName="ImplementMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="157" />
   </root>
   <root nodeId="5002400195357779994">
     <nodeInfo nodeId="6268328477151491179" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="66" endLine="41" endPosition="50" />

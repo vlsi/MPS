@@ -25,6 +25,8 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowMembers_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.OverrideMethod_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
