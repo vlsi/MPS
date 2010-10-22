@@ -39,7 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="53" />
+  <maxImportIndex value="54" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
@@ -70,7 +70,7 @@
   <import index="50" modelUID="r:00000000-0000-4000-0000-011c8959037c(jetbrains.mps.lang.dataFlow.plugin)" version="-1" />
   <import index="51" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.presentation(jetbrains.mps.lang.dataFlow.presentation@java_stub)" version="-1" />
   <import index="52" modelUID="f:java_stub#jetbrains.mps.newTypesystem(jetbrains.mps.newTypesystem@java_stub)" version="-1" />
-  <import index="53" modelUID="f:java_stub#jetbrains.mps.newTypesystem.presentation(jetbrains.mps.newTypesystem.presentation@java_stub)" version="-1" />
+  <import index="54" modelUID="f:java_stub#jetbrains.mps.newTypesystem.presentation.difference(jetbrains.mps.newTypesystem.presentation.difference@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205244087094">
     <property name="name:23" value="TypesystemActions" />
     <property name="caption:23" value="Type System" />
@@ -2287,7 +2287,7 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4213432195536185602">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4213432195536185603">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4213432195536185604">
-                  <link role="baseMethodDeclaration:3" targetNodeId="53.~ShowTypeSystemTrace.&lt;init&gt;(jetbrains.mps.newTypesystem.TypeCheckingContextNew,jetbrains.mps.smodel.IOperationContext,java.awt.Frame)" resolveInfo="ShowTypeSystemTrace" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="54.~ShowTypeSystemTrace.&lt;init&gt;(jetbrains.mps.newTypesystem.TypeCheckingContextNew,jetbrains.mps.smodel.IOperationContext,java.awt.Frame)" resolveInfo="ShowTypeSystemTrace" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6867415733702651125">
                     <link role="variableDeclaration:3" targetNodeId="6867415733702648394" resolveInfo="t" />
                   </node>
