@@ -195,7 +195,7 @@ public class Logger {
   }
 
   public void errorWithTrace(String message) {
-    error(message, new Throwable());
+    error(message, new Throwable(message));
   }
 
   public void fatal(String message) {
