@@ -283,6 +283,8 @@ public class ModelPersistence {
       sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
     }
 
+    sourceModel.calculateImplicitImports();
+
     return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel);
   }
 

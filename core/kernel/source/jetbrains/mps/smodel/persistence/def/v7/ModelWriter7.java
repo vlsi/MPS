@@ -33,11 +33,11 @@ public class ModelWriter7 extends ModelWriter6 {
     return 7;
   }
 
-  protected Element saveRootStubs(SModel model,  Map<SModelReference, ImportElement> imports ) {
+  protected void saveRootStubs(Element parent, SModel model,  Map<SModelReference, ImportElement> imports ) {
     Element roots = new Element(ROOTS);
     for (SNode root : model.roots()) {
-      saveNode(roots, root, false, imports, false);
+      saveNode(roots, root, imports, false);
     }
-    return roots;
+    parent.addContent(roots);
   }
 }

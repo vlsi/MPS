@@ -36,9 +36,6 @@ public class ModelWriter6 implements IModelWriter {
   }
 
   public Document saveModel(SModel sourceModel) {
-    // temporary here but should be somewhere on higher level:
-    sourceModel.calculateImplicitImports();
-
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
@@ -85,25 +82,16 @@ public class ModelWriter6 implements IModelWriter {
 
     Map<SModelReference, ImportElement> imports = createImportMap(sourceModel);
 
-    Element rs = saveRootStubs(sourceModel, imports);
-    if (rs != null) {
-      rootElement.addContent(rs);
-    }
-
     // roots
+    saveRootStubs(rootElement, sourceModel, imports);   // only for quick roots access
     for (SNode root : sourceModel.roots()) {
-      saveNode(rootElement, root, false, imports,true);
+      saveNode(rootElement, root, imports, true);
     }
 
     return new Document(rootElement);
   }
 
-  protected Element saveRootStubs(SModel model, Map<SModelReference, ImportElement> imports) {
-    return null;
-  }
-
-  public void saveNode(Element container, SNode node) {
-    saveNode(container, node, true, createImportMap(node.getModel()),true);
+  protected void saveRootStubs(Element parent, SModel model, Map<SModelReference, ImportElement> imports) {
   }
 
   private Map<SModelReference, ImportElement> createImportMap(SModel model) {
@@ -117,7 +105,7 @@ public class ModelWriter6 implements IModelWriter {
     return imports;
   }
 
-  protected void saveNode(Element parentElement, SNode node, boolean useUIDs, Map<SModelReference, ImportElement> imports, boolean saveChildren) {
+  protected void saveNode(Element parentElement, SNode node, Map<SModelReference, ImportElement> imports, boolean saveChildren) {
     Element element = new Element(ModelPersistence.NODE);
 
     final String role = node.getRole_();
@@ -138,19 +126,19 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     for (SReference reference : node.getReferencesIterable()) {
-      saveReference(element, reference, useUIDs, imports);
+      saveReference(element, reference, imports);
     }
 
     if (saveChildren) {
       for (SNode childNode : node.getChildren()) {
-        saveNode(element, childNode, useUIDs, imports, true);
+        saveNode(element, childNode, imports, true);
       }
     }
 
     parentElement.addContent(element);
   }
 
-  private void saveReference(Element parentElement, SReference reference, boolean useUIDs, Map<SModelReference, ImportElement> imports) {
+  private void saveReference(Element parentElement, SReference reference, Map<SModelReference, ImportElement> imports) {
     Element linkElement = new Element(ModelPersistence.LINK);
     parentElement.addContent(linkElement);
     SModelReference mr = reference.getSourceNode().getLinkDeclaration(reference.getRole()).getModel().getSModelReference();
@@ -159,20 +147,15 @@ public class ModelWriter6 implements IModelWriter {
     SModelReference targetModelReference = reference.getTargetSModelReference();
     String targetModelInfo = "";
     if (reference.isExternal()) {
-      if (useUIDs) {
-        targetModelInfo = reference.getTargetSModelReference().toString() + "#";
+      if (targetModelReference != null) {
+        targetModelInfo = imports.get(targetModelReference).getReferenceID() + ".";
       } else {
-        if (targetModelReference != null) {
-          SModel.ImportElement importElement = imports.get(targetModelReference);
-          targetModelInfo = importElement.getReferenceID() + ".";
-        } else {
-          LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
-          LOG.error("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
-        }
+        LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
+        LOG.error("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
       }
     }
 
-    String targetNodeId = reference instanceof StaticReference ? String.valueOf((reference).getTargetNodeId()) : "^";
+    String targetNodeId = reference instanceof StaticReference ? String.valueOf(reference.getTargetNodeId()) : "^";
     targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, imports.get(targetModelReference).getUsedVersion());
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
     String resolveInfo = reference.getResolveInfo();
