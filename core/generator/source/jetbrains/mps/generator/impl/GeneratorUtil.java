@@ -21,6 +21,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
@@ -261,7 +262,7 @@ public class GeneratorUtil {
     if (consequence instanceof ITemplateCall) {
       return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall) consequence, newInputNode, generator);
     }
-    return outerContext != null ? outerContext : new TemplateContext(newInputNode);
+    return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);
   }
 
   @NotNull
@@ -270,11 +271,11 @@ public class GeneratorUtil {
     final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
 
     if (arguments == null && parameters == null) {
-      return new TemplateContext(newInputNode);
+      return new DefaultTemplateContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
-      return new TemplateContext(newInputNode);
+      return new DefaultTemplateContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
@@ -307,7 +308,7 @@ public class GeneratorUtil {
 
       vars.put(name, value);
     }
-    return new TemplateContext(null, vars, newInputNode);
+    return new DefaultTemplateContext(null, vars, newInputNode);
   }
 
   /**

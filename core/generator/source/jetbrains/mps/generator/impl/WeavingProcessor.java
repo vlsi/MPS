@@ -5,6 +5,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -190,7 +191,7 @@ public class WeavingProcessor {
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new TemplateContext(applicableNode));
+              List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new DefaultTemplateContext(applicableNode));
               if (queryNodes.isEmpty()) {
                 someOutputGenerated = false;
               }

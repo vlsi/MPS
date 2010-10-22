@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;

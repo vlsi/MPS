@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 
@@ -16,6 +16,6 @@ public class PatternRuleContext extends BaseMappingRuleContext {
   }
 
   public void createPatternContext(GeneratedMatchingPattern pattern) {
-    myContext = new TemplateContext(pattern, null, getInputNode());
+    myContext = new DefaultTemplateContext(pattern, null, getInputNode());
   }
 }

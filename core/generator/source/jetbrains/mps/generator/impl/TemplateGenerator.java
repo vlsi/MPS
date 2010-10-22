@@ -27,6 +27,7 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -245,7 +246,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     throws GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this, new ReductionContext(executionContext)).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
+      List<SNode> outputNodes = new TemplateProcessor(this, new ReductionContext(executionContext)).processTemplateNode(mappingName, templateNode, new DefaultTemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, templateNode, false);
         setChanged();
@@ -431,7 +432,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, pattern == null ? null : new TemplateContext(pattern, null, inputNode), reductionContext, ruleConsequence, inputNode, this);
+    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, pattern == null ? null : new DefaultTemplateContext(pattern, null, inputNode), reductionContext, ruleConsequence, inputNode, this);
 
     List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), reductionContext, this);
     if (nodeAndMappingNamePairs == null) {
