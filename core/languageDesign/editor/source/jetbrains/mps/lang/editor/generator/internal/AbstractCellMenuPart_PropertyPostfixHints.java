@@ -37,6 +37,9 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
   public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     final PropertyDeclaration property = (PropertyDeclaration) BaseAdapter.fromNode((SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION));
+    if (property == null) {
+      return Collections.emptyList();
+    }
     final IOperationContext context = editorContext.getOperationContext();
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     List<String> postfixes = getPostfixes(node, context.getScope(), context);

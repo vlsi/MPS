@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.LinkedList;
 
@@ -39,6 +40,9 @@ public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteI
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     PropertyDeclaration property = (PropertyDeclaration) BaseAdapter.fromNode((SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION));
+    if (property == null) {
+      return Collections.emptyList();
+    }
     IOperationContext context = editorContext.getOperationContext();
     List<String> values = this.getPropertyValues(node, context.getScope(), context);
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();

@@ -98,7 +98,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
   }
 
   public CellContext getCellContext() {
-    return new PropertyCellContext(getSNode(), myPropertyDeclaration);
+    return myPropertyDeclaration != null ? new PropertyCellContext(getSNode(), myPropertyDeclaration) : super.getCellContext();
   }
 
   public String getPropertyName() {
