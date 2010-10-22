@@ -9,16 +9,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class LinkDeclaration_role_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
-  public LinkDeclaration_role_PropertyConstraint() {
+public class AbstractConceptDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
+  public AbstractConceptDeclaration_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyValidator("jetbrains.mps.lang.structure.structure.LinkDeclaration", "role", this);
+    manager.registerNodePropertyValidator("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyValidator("jetbrains.mps.lang.structure.structure.LinkDeclaration", "role");
+    manager.unRegisterNodePropertyValidator("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "name");
   }
 
   public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {

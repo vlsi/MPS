@@ -150,9 +150,14 @@
       <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="4049502122675870325">
         <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4049502122675870326">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4049502122675876454">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4049502122675876456">
-              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="4049502122675876455" />
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="4049502122675876460" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5115399642005557380">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="5115399642005557381" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5115399642005557382">
+                <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5115399642005557383">
+                  <property name="value:3" value="[a-zA-Z[_]][a-zA-Z0-9$[_]]*" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -644,6 +649,48 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4049502122675881781">
               <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="4049502122675881780" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="4049502122675881785" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5115399642005556319">
+    <link role="concept:8" targetNodeId="1.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="5115399642005557359">
+      <link role="applicableProperty:8" targetNodeId="8.1169194664001:0" resolveInfo="name" />
+      <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="5115399642005557360">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5115399642005557361">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5115399642005557362">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5115399642005557363">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="5115399642005557364" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5115399642005557365">
+                <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5115399642005557366">
+                  <property name="value:3" value="[a-zA-Z[_]][a-zA-Z0-9$[_]]*" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5115399642005557369">
+    <link role="concept:8" targetNodeId="1.1071489288299:0" resolveInfo="PropertyDeclaration" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="5115399642005557370">
+      <link role="applicableProperty:8" targetNodeId="8.1169194664001:0" resolveInfo="name" />
+      <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="5115399642005557371">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5115399642005557372">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5115399642005557373">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5115399642005557374">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="5115399642005557375" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5115399642005557376">
+                <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5115399642005557377">
+                  <property name="value:3" value="[a-zA-Z[_]][a-zA-Z0-9$[_]]*" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
