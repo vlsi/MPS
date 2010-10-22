@@ -16,22 +16,27 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
+import jetbrains.mps.smodel.persistence.def.v6.ModelWriter6;
 import org.jdom.Element;
 
-public class ModelWriter7 extends ModelWriter5 {
+import java.util.Map;
+
+public class ModelWriter7 extends ModelWriter6 {
   public static final String ROOTS = "root_stubs";
 
   protected int getModelPersistenceVersion() {
     return 7;
   }
 
-  public Element saveRootStubs(SModel model, VisibleModelElements visibleModelElements) {
+  protected Element saveRootStubs(SModel model,  Map<SModelReference, ImportElement> imports ) {
     Element roots = new Element(ROOTS);
     for (SNode root : model.roots()) {
-      saveNode(roots, null, root, false, visibleModelElements, false);
+      saveNode(roots, root, false, imports, false);
     }
     return roots;
   }

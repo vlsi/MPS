@@ -17,10 +17,11 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
+import jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
-public class ModelReader7Handler extends ModelReader5Handler {
+public class ModelReader7Handler extends ModelReader6Handler {
   private ModelLoadingState myState;
   private boolean myIgnoreState = false;
 

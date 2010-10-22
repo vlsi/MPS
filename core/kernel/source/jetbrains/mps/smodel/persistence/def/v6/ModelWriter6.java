@@ -19,20 +19,15 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.DocUtil;
+import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jdom.Element;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Oct 12, 2010
- * Time: 3:06:59 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelWriter6 implements IModelWriter {
   private static final Logger LOG = Logger.getLogger(ModelWriter6.class);
 
@@ -88,17 +83,27 @@ public class ModelWriter6 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
-    // roots
     Map<SModelReference, ImportElement> imports = createImportMap(sourceModel);
+
+    Element rs = saveRootStubs(sourceModel, imports);
+    if (rs != null) {
+      rootElement.addContent(rs);
+    }
+
+    // roots
     for (SNode root : sourceModel.roots()) {
-      saveNode(rootElement, root, false, imports);
+      saveNode(rootElement, root, false, imports,true);
     }
 
     return new Document(rootElement);
   }
 
+  protected Element saveRootStubs(SModel model, Map<SModelReference, ImportElement> imports) {
+    return null;
+  }
+
   public void saveNode(Element container, SNode node) {
-    saveNode(container, node, true, createImportMap(node.getModel()));
+    saveNode(container, node, true, createImportMap(node.getModel()),true);
   }
 
   private Map<SModelReference, ImportElement> createImportMap(SModel model) {
@@ -112,7 +117,7 @@ public class ModelWriter6 implements IModelWriter {
     return imports;
   }
 
-  private void saveNode(Element parentElement, SNode node, boolean useUIDs, Map<SModelReference, ImportElement> imports) {
+  protected void saveNode(Element parentElement, SNode node, boolean useUIDs, Map<SModelReference, ImportElement> imports, boolean saveChildren) {
     Element element = new Element(ModelPersistence.NODE);
 
     final String role = node.getRole_();
@@ -136,14 +141,16 @@ public class ModelWriter6 implements IModelWriter {
       saveReference(element, reference, useUIDs, imports);
     }
 
-    for (SNode childNode : node.getChildren()) {
-      saveNode(element, childNode, useUIDs, imports);
+    if (saveChildren) {
+      for (SNode childNode : node.getChildren()) {
+        saveNode(element, childNode, useUIDs, imports, true);
+      }
     }
 
     parentElement.addContent(element);
   }
 
-  private void saveReference(Element parentElement, SReference reference,  boolean useUIDs, Map<SModelReference, ImportElement> imports) {
+  private void saveReference(Element parentElement, SReference reference, boolean useUIDs, Map<SModelReference, ImportElement> imports) {
     Element linkElement = new Element(ModelPersistence.LINK);
     parentElement.addContent(linkElement);
     SModelReference mr = reference.getSourceNode().getLinkDeclaration(reference.getRole()).getModel().getSModelReference();
