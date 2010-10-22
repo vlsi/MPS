@@ -38,8 +38,6 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private Map<Language, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<Language, List<EditorCellKeyMap>>();
-  private Set<Language> myRegisteredLanguages = new HashSet<Language>();
-  private Set<Language> myLanguagesToRegister = new HashSet<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
   private MPSModuleRepository myRepository;
@@ -51,10 +49,8 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   public List<EditorCellKeyMap> getKeyMapsForLanguage(Language l) {
-    if (!myLanguagesToKeyMaps.containsKey(l) && !myRegisteredLanguages.contains(l)) {
-      if (myLanguagesToRegister.contains(l)) {
-          registerLanguageKeyMaps(l);
-      }
+    if (!myLanguagesToKeyMaps.containsKey(l)) {
+      registerLanguageKeyMaps(l);
     }
     return myLanguagesToKeyMaps.get(l);
   }
@@ -67,11 +63,6 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     });
 
     myRepository.addModuleRepositoryListener(myListener);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myLanguagesToRegister.addAll(myRepository.getAllLanguages());
-      }
-    });
   }
 
   @NonNls
@@ -81,42 +72,35 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
   }
 
   private void clearCaches() {
     myLanguagesToKeyMaps.clear();
-    myRegisteredLanguages.clear();
-  }
-
-  private void registerKeyMap(EditorCellKeyMap keyMap, Language l) {
-    if (keyMap.isApplicableToEveryModel()) {
-      List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(l);
-      if (keyMaps == null) {
-        keyMaps = new ArrayList<EditorCellKeyMap>();
-        myLanguagesToKeyMaps.put(l, keyMaps);
-      }
-      keyMaps.add(keyMap);
-    }
   }
 
   private void registerLanguageKeyMaps(Language language) {
-    if (myRegisteredLanguages.contains(language)) return;
-    myRegisteredLanguages.add(language);
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
-    if (editorModelDescriptor == null) return;
-    SModel editorModel = editorModelDescriptor.getSModel();
-    if (editorModel == null) return;
-    for (CellKeyMapDeclaration node : editorModel.getRootsAdapters(CellKeyMapDeclaration.class)) {
-      try {
-        Class<EditorCellKeyMap> keyMapClass = findKeyMapClassByDeclaration(node);
-        if (keyMapClass != null) {
-          registerKeyMap(keyMapClass.newInstance(), language);
+    SModel editorModel = editorModelDescriptor != null ? editorModelDescriptor.getSModel() : null;
+    List<EditorCellKeyMap> keyMaps;
+    if (editorModel != null) {
+      keyMaps = new ArrayList<EditorCellKeyMap>();
+      for (CellKeyMapDeclaration node : editorModel.getRootsAdapters(CellKeyMapDeclaration.class)) {
+        try {
+          Class<EditorCellKeyMap> keyMapClass = findKeyMapClassByDeclaration(node);
+          if (keyMapClass != null) {
+            EditorCellKeyMap keyMap = keyMapClass.newInstance();
+            if (keyMap.isApplicableToEveryModel()) {
+              keyMaps.add(keyMap);
+            }
+          }
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-      } catch (Throwable t) {
-        LOG.error(t);
       }
+    } else {
+      keyMaps = Collections.emptyList();
     }
+    myLanguagesToKeyMaps.put(language, keyMaps);
   }
 
   private Class<EditorCellKeyMap> findKeyMapClassByDeclaration(CellKeyMapDeclaration declaration) {
@@ -135,27 +119,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private void unregisterLanguageKeyMaps(Language language) {
-    myRegisteredLanguages.remove(language);
-    myLanguagesToRegister.remove(language);
-    SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
-    if (editorModelDescriptor == null) return;
-    String modelName = editorModelDescriptor.getLongName();
-    for (Language l : myLanguagesToKeyMaps.keySet()) {
-      List<EditorCellKeyMap> keyMaps = myLanguagesToKeyMaps.get(l);
-      if (keyMaps == null) continue;
-      for (EditorCellKeyMap keyMap : new ArrayList<EditorCellKeyMap>(keyMaps)) {
-        if (keyMap.getClass().getPackage().getName().equals(modelName)) {
-          keyMaps.remove(keyMap);
-        }
-      }
-    }
+    myLanguagesToKeyMaps.remove(language);
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     public void moduleInitialized(IModule module) {
-      if (module instanceof Language) {
-        myLanguagesToRegister.add((Language) module);
-      }
     }
 
     public void beforeModuleRemoved(IModule module) {
