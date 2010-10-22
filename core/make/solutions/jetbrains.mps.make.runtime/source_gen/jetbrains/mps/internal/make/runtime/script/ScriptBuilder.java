@@ -15,8 +15,8 @@ import jetbrains.mps.make.resources.ResourcePool;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.facet.FacetRegistry;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -33,6 +33,18 @@ public class ScriptBuilder {
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
 
   public ScriptBuilder() {
+  }
+
+  public ScriptBuilder withFacet(IFacet.Name facetName) {
+    IFacet fct = FacetRegistry.getInstance().lookup(facetName);
+    if (fct != null) {
+      MapSequence.fromMap(facetsView).put(facetName, fct);
+    } else {
+      String msg = "facet not found: " + facetName;
+      LOG.error(msg);
+      error(facetName, msg);
+    }
+    return this;
   }
 
   public ScriptBuilder withFacets(Iterable<IFacet.Name> facetNames) {
