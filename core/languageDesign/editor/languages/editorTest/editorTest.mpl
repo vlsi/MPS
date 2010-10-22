@@ -5,8 +5,6 @@
   </models>
   <accessoryModels />
   <generators />
-  <classPath />
-  <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>

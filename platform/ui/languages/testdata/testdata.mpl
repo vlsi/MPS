@@ -55,8 +55,6 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath />
-  <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>

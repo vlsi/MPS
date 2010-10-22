@@ -20,8 +20,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
-  <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)</dependency>

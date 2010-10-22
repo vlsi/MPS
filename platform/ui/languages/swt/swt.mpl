@@ -84,11 +84,14 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath />
-  <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/lib/macosx/64/swt.jar" include="false" />
-    <entry path="${language_descriptor}/runtime/classes_gen" include="false" />
-  </languageRuntimeClassPath>
+  <runtimeStubModels>
+    <stubModelEntry path="${language_descriptor}/lib/macosx/64/swt.jar" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/runtime/classes_gen" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </runtimeStubModels>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>
