@@ -40,7 +40,7 @@ public class SModelRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(SModelRepository.class);
   }
 
-  private final Map<String, SModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModelDescriptor>();
+  private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
   private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModelDescriptor>();
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
@@ -90,7 +90,7 @@ public class SModelRepository implements ApplicationComponent {
     return findModel(modelFile) != null;
   }
 
-  public SModelDescriptor findModel(IFile modelFile) {
+  public EditableSModelDescriptor findModel(IFile modelFile) {
     String canonicalPath = IFileUtils.getCanonicalPath(modelFile);
     return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
   }

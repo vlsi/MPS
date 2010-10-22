@@ -43,14 +43,12 @@ public class Generator extends AbstractModule {
     String uid = myGeneratorDescriptor.getGeneratorUID();
     if (uid == null) {
       myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
-      mySourceLanguage.save();
     }
 
     String uuid = myGeneratorDescriptor.getUUID();
     if (uuid == null) {
       uuid = UUID.randomUUID().toString();
       myGeneratorDescriptor.setUUID(uuid);
-      save();
     }
     ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
     setModuleReference(mp);
@@ -60,19 +58,13 @@ public class Generator extends AbstractModule {
   }
 
   private void upgradeGeneratorDescriptor() {
-    boolean descriptorChanged = false;
     for (MappingPriorityRule mappingPriorityRule : myGeneratorDescriptor.getPriorityRules()) {
       MappingConfig_AbstractRef lesser = mappingPriorityRule.getRight();
       MappingConfig_AbstractRef greater = mappingPriorityRule.getLeft();
       if (upgradeMappingConfigRef(lesser)) {
-        descriptorChanged = true;
       }
       if (upgradeMappingConfigRef(greater)) {
-        descriptorChanged = true;
       }
-    }
-    if (descriptorChanged) {
-      save();
     }
   }
 

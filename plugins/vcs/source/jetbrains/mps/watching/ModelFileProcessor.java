@@ -40,7 +40,7 @@ class ModelFileProcessor extends EventProcessor {
     if (!event.isFromRefresh()) {
       return;
     }
-    EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
+    EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
     LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
     if ((model != null) && (model.needsReloading())) {
       reloadSession.addChangedModel(model);

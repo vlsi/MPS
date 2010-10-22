@@ -170,6 +170,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     updatePackagedDescriptorClasspath();
     updateClassPath();
     revalidateGenerators();
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        save();
+      }
+    });
   }
 
   IFile newDescriptorFileByNewName(String newNamespace) {
@@ -283,8 +289,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private void revalidateGenerators() {
     myGenerators.clear();
-    for (GeneratorDescriptor generatorDescriptor1 : getModuleDescriptor().getGenerators()) {
-      GeneratorDescriptor generatorDescriptor = generatorDescriptor1;
+    for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
       MPSModuleRepository.getInstance().addModule(generator, this);
       myGenerators.add(generator);

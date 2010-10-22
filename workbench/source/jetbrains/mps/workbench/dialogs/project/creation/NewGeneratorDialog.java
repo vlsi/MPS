@@ -18,8 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.creation;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.util.Disposer;
@@ -35,7 +34,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -167,20 +165,16 @@ public class NewGeneratorDialog extends BaseDialog {
 
     dispose();
 
-    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    assert p != null;
+    Project project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    assert project != null;
     final Generator[] newGenerator = new Generator[]{null};
-    ProgressManager.getInstance().run(new Modal(p, "Creating...", false) {
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            newGenerator[0] = createNewGenerator(mySourceLanguage, dir, name);
-          }
-        });
+        newGenerator[0] = createNewGenerator(mySourceLanguage, dir, name);
       }
-    });
+    }, "Creating", false, project);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         adjustTemplateModel(mySourceLanguage, newGenerator[0]);
@@ -199,14 +193,14 @@ public class NewGeneratorDialog extends BaseDialog {
     Disposer.dispose(myTemplateModelsDir);
   }
 
-  protected Generator createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
-    LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
-    GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
-    generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
+  protected Generator createNewGenerator(final Language language, File templateModelsDir, String name) {
+    final LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
+    final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
+    generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
 
     // add "template models" model root
-    String templateModelNamePrefix = getTemplateModelPrefix(sourceLanguage);
+    String templateModelNamePrefix = getTemplateModelPrefix(language);
     ModelRoot templateModelsRoot = new ModelRoot();
     templateModelsRoot.setPrefix(templateModelNamePrefix);
 
@@ -222,11 +216,16 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add new generator to language
     languageDescriptor.getGenerators().add(generatorDescriptor);
-    sourceLanguage.setLanguageDescriptor(languageDescriptor, true);
-    sourceLanguage.save();
+    language.setLanguageDescriptor(languageDescriptor, true);
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        language.save();
+      }
+    });
 
     // add <default> templates model (if root is empty)
-    List<Generator> generators = sourceLanguage.getGenerators();
+    List<Generator> generators = language.getGenerators();
     return generators.get(generators.size() - 1);
   }
 

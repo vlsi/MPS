@@ -375,7 +375,12 @@ public abstract class AbstractModule implements IModule {
     }
 
     if (needToSave && !isPackaged()) {
-      save();
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          save();
+        }
+      });
     }
   }
 

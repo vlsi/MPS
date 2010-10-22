@@ -46,7 +46,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
-  private Object myRefactoringHistoryLock = new Object();
+  private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationHistory myStructureModificationHistory;
 
 
