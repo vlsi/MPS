@@ -6049,18 +6049,6 @@
       <link role="modifiedGroup:23" targetNodeId="3.1204991231476" resolveInfo="EditorPopup" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1207148319290">
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1205254813928">
-        <link role="action:23" targetNodeId="1205248417575" resolveInfo="CommentStatements" />
-      </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1205605318439">
-        <link role="action:23" targetNodeId="1205604975727" resolveInfo="UncommentStatements" />
-      </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="401697226377724249">
-        <link role="action:23" targetNodeId="401697226377603546" resolveInfo="CommentLine" />
-      </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="401697226377761457">
-        <link role="action:23" targetNodeId="401697226377761084" resolveInfo="UncommentLine" />
-      </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="8596238429278845809">
         <link role="action:23" targetNodeId="8596238429278788966" resolveInfo="GoToOverriddenMethod" />
         <node role="actualParameter:23" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6198841441434470979">
@@ -6080,12 +6068,6 @@
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="4237366088441178402">
         <link role="action:23" targetNodeId="6049742529940611647" resolveInfo="ShowMembers" />
-      </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="4670094048336778394">
-        <link role="action:23" targetNodeId="4670094048336708063" resolveInfo="OverrideMethod" />
-      </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="4670094048336778396">
-        <link role="action:23" targetNodeId="4670094048336778317" resolveInfo="ImplementMethod" />
       </node>
     </node>
   </node>
@@ -13728,6 +13710,44 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="3331861101285339078">
+    <property name="package:23" value="Actions.Groups" />
+    <property name="name:23" value="BaseLangugeCodeOverrideImplementMenuGroup" />
+    <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="3331861101285428312">
+      <link role="modifiedGroup:23" targetNodeId="3.796800879946376627" resolveInfo="Code" />
+      <link role="point:23" targetNodeId="3.796800879946376637" resolveInfo="overrideImplement" />
+    </node>
+    <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="3331861101285339080">
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3331861101285428311">
+        <link role="action:23" targetNodeId="4670094048336708063" resolveInfo="OverrideMethod" />
+      </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3331861101285428309">
+        <link role="action:23" targetNodeId="4670094048336778317" resolveInfo="ImplementMethod" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="3331861101285428313">
+    <property name="package:23" value="Actions.Groups" />
+    <property name="name:23" value="BaseLangaugeCodeCommentsMenuGroup" />
+    <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="3331861101285428318">
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3331861101285428319">
+        <link role="action:23" targetNodeId="1205248417575" resolveInfo="CommentStatements" />
+      </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3331861101285428320">
+        <link role="action:23" targetNodeId="1205604975727" resolveInfo="UncommentStatements" />
+      </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3331861101285428321">
+        <link role="action:23" targetNodeId="401697226377603546" resolveInfo="CommentLine" />
+      </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3331861101285428322">
+        <link role="action:23" targetNodeId="401697226377761084" resolveInfo="UncommentLine" />
+      </node>
+    </node>
+    <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="3331861101285428315">
+      <link role="modifiedGroup:23" targetNodeId="3.796800879946376627" resolveInfo="Code" />
+      <link role="point:23" targetNodeId="3.796800879946376641" resolveInfo="comment" />
     </node>
   </node>
 </model>

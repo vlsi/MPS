@@ -26,15 +26,17 @@
   <unitInfo fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="AnalyzersActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup" />
+  <unitInfo fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup" />
   <unitInfo fileName="BaseLanguageToolsAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup" />
   <unitInfo fileName="TodoViewer_Tool.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
+  <unitInfo fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" />
+  <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="362" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
   <unitInfo fileName="RefactoringAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="386" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
-  <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
-  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
   <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="301" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
@@ -196,16 +198,10 @@
     <unitInfo nodeId="1177224257042828196" fileName="TodoFinder.java" startLine="16" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoFinder" />
   </root>
   <root nodeId="1205247197267">
-    <nodeInfo nodeId="1205254813928" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="149" />
-    <nodeInfo nodeId="1205605318439" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="20" startPosition="149" endLine="21" endPosition="151" />
-    <nodeInfo nodeId="401697226377724249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="21" startPosition="151" endLine="22" endPosition="143" />
-    <nodeInfo nodeId="401697226377761457" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="22" startPosition="143" endLine="23" endPosition="145" />
-    <nodeInfo nodeId="8596238429278845809" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="23" startPosition="145" endLine="24" endPosition="271" />
-    <nodeInfo nodeId="1108208212555695964" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="24" startPosition="271" endLine="25" endPosition="151" />
-    <nodeInfo nodeId="6556826051425195671" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="25" startPosition="151" endLine="26" endPosition="155" />
-    <nodeInfo nodeId="4237366088441178402" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="26" startPosition="155" endLine="27" endPosition="143" />
-    <nodeInfo nodeId="4670094048336778394" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="27" startPosition="143" endLine="28" endPosition="146" />
-    <nodeInfo nodeId="4670094048336778396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="28" startPosition="146" endLine="29" endPosition="147" />
+    <nodeInfo nodeId="8596238429278845809" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="271" />
+    <nodeInfo nodeId="1108208212555695964" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="20" startPosition="271" endLine="21" endPosition="151" />
+    <nodeInfo nodeId="6556826051425195671" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="21" startPosition="151" endLine="22" endPosition="155" />
+    <nodeInfo nodeId="4237366088441178402" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="22" startPosition="155" endLine="23" endPosition="143" />
   </root>
   <root nodeId="1205248417575">
     <nodeInfo nodeId="1206096366578" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="CommentStatements_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="28" />
@@ -831,6 +827,16 @@
   <root nodeId="2566194812863059400">
     <nodeInfo nodeId="2566194812863059404" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="83" endLine="26" endPosition="60" />
     <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="83" endLine="26" endPosition="60" />
+  </root>
+  <root nodeId="3331861101285339078">
+    <nodeInfo nodeId="3331861101285428311" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="164" />
+    <nodeInfo nodeId="3331861101285428309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="18" startPosition="164" endLine="19" endPosition="165" />
+  </root>
+  <root nodeId="3331861101285428313">
+    <nodeInfo nodeId="3331861101285428319" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="159" />
+    <nodeInfo nodeId="3331861101285428320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="18" startPosition="159" endLine="19" endPosition="161" />
+    <nodeInfo nodeId="3331861101285428321" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="19" startPosition="161" endLine="20" endPosition="153" />
+    <nodeInfo nodeId="3331861101285428322" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="20" startPosition="153" endLine="21" endPosition="155" />
   </root>
   <root nodeId="3607966867310228609">
     <nodeInfo nodeId="4462513030605202743" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DefaultJavaApplication_Editor.java" startLine="33" startPosition="11" endLine="34" endPosition="72" />

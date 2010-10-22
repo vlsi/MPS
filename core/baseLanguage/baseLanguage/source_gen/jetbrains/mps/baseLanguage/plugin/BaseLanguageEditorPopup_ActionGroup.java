@@ -17,16 +17,10 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.CommentStatements_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.CommentLine_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentLine_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", "jetbrains.mps.baseLanguage", ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action", "jetbrains.mps.baseLanguage");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowMembers_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.OverrideMethod_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

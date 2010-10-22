@@ -83,6 +83,13 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" file="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" file="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" />
@@ -153,6 +160,13 @@
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup" file="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" file="CommentLine_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
