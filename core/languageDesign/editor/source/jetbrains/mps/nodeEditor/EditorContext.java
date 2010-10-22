@@ -66,7 +66,7 @@ public class EditorContext {
   }
 
   public SNode getSelectedNode() {
-    return getSelectedCell().getSNode();
+    return myNodeEditorComponent.getSelectedNode();
   }
 
   public SModel getModel() {
