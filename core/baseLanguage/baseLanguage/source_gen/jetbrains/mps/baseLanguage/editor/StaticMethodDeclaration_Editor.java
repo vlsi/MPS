@@ -83,7 +83,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_j4vm40_a11a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_j4vm40_b11a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_j4vm40_c11a(editorContext, node));
     return editorCell;
   }
 
@@ -181,14 +180,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_j4vm40_c11a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_j4vm40_c11a");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

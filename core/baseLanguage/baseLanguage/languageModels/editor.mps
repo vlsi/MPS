@@ -1404,10 +1404,6 @@
           <link role="relationDeclaration:32" targetNodeId="17.1164879685961:3" />
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4139785272311776396" />
         </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4139785272311776397">
-          <property name="text:32" value="{" />
-          <link role="styleClass:32" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-        </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4139785272311776398">
           <property name="flag:32" value="false" />
         </node>
