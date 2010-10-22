@@ -40,6 +40,11 @@ public class StringDifference extends Difference {
   public void rollBack() {
   }
 
+  @Override
+  public void play() {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public Color getColor() {
     return new Color(0x111177);
   }

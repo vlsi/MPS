@@ -45,6 +45,11 @@ public class EquationAdded extends EquationDifference {
     myEquations.remove(myChild);
   }
 
+  @Override
+  public void play() {
+    myEquations.add(myChild, myParent);
+  }
+
   public SNode getChild() {
     return myChild;
   }

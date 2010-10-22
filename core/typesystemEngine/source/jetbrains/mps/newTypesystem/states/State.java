@@ -20,11 +20,9 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.HeadDifference;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
-import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
+import jetbrains.mps.typesystem.inference.*;
 
 import java.util.Stack;
 
@@ -110,24 +108,22 @@ public class State {
     return myNodeMaps.typeOf(node);
   }
 
-  public void clear() {
+  public void clear(boolean clearDiff) {
     myEquations.clear();
     myInequalities.clear();
-    myDifferenceStack.clear();
     myNodeMaps.clear();
-    myDifference = new HeadDifference();
-    myDifferenceStack.push(myDifference);
+    myNonConcrete.clear();
+    if (clearDiff) {
+      myDifferenceStack.clear();
+      myDifference = new HeadDifference();
+      myDifferenceStack.push(myDifference);
+    }
   }
 
   public void solveInequalities() {
     addDifference(new StringDifference("Solving inequalities"),true);
     myInequalities.solveInequalities();
     popDifference();
-  }
-
-  public void print() {
-    //myEquations.printEquations();
-    myInequalities.print();
   }
 
   public Stack<Difference> getDifferenceStack() {
@@ -138,8 +134,29 @@ public class State {
     return myDifference;
   }
 
-  public void addWhenConcrete(WhenConcreteEntity entity, SNode node, boolean shallow) {
+  public void addWhenConcrete(WhenConcreteEntry entity, SNode node, boolean shallow) {
     myNonConcrete.addNonConcrete(entity, node, shallow);
 
+  }
+
+  public boolean applyDifferenceBefore(Difference diff, Object toCompare) {
+    diff.play();
+    if (diff.equals(toCompare)) {
+      return true;
+    }
+    if (diff.getChildren() == null) {
+      return false;
+    }
+    for (Difference child : diff.getChildren()) {
+      if (applyDifferenceBefore(child, toCompare)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void reset() {
+    clear(false);
+    myDifference.playRecursively();
   }
 }

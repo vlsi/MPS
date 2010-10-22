@@ -13,35 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.inequality;
+package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.InequalityMapPair;
+import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-
-import javax.swing.Icon;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 16, 2010
- * Time: 4:11:08 PM
+ * Date: Oct 15, 2010
+ * Time: 11:44:26 AM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class InequalityDifference extends Difference {
-  InequalityMapPair myMapPair;
-  SNode myKeyType;
-  SNode myValueType;
-
-  public InequalityDifference(SNode keyType, SNode valueType, InequalityMapPair mapPair) {
-    myKeyType = keyType;
-    myValueType = valueType;
-    myMapPair = mapPair;
+public class TypeSystemStateTreeNode extends MPSTreeNode {
+  public TypeSystemStateTreeNode(IOperationContext operationContext) {
+    super(operationContext);
   }
-  /*
-  @Override
-  public Icon getIcon() {
-    return Icons.STRONG_SUBTYPE_ICON;
-  } */
+
+  public TypeSystemStateTreeNode(Object userObject, IOperationContext operationContext) {
+    super(userObject, operationContext);
+    setNodeIdentifier(userObject.toString());
+    setIcon(Icons.DEFAULT_ICON);
+    this.setAutoExpandable(true);
+  }
 }

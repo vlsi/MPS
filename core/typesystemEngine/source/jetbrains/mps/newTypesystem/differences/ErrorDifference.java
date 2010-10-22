@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.awt.Color;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -51,6 +52,16 @@ public class ErrorDifference extends Difference {
   @Override
   public void rollBack() {
     myMap.get(myNode).remove(myError);
+  }
+
+  @Override
+  public void play() {
+    List<IErrorReporter> errors = myMap.get(myNode);
+    if (errors == null) {
+      errors = new LinkedList<IErrorReporter>();
+      myMap.put(myNode, errors);
+    }
+    errors.add(myError);
   }
 
   @Override

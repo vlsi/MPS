@@ -19,8 +19,7 @@ import jetbrains.mps.newTypesystem.differences.inequality.SubTypingRemoved;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -100,9 +99,15 @@ public class InequalityMapPair {
   public void print() {
     for (SNode key : mySubToSuper.keySet()) {
       for (SNode value : mySubToSuper.get(key).keySet()) {
-        System.out.println(key +(isWeak ? " <= " : " < ")+ value);
+        System.out.println(key +(isWeak ? " <= " : " < ")+ value + (checkOnly ? " check only" : ""));
       }
     }
+  }
+
+  public Set<SNode> getVariables() {
+    Set<SNode> result = new HashSet<SNode>(mySubToSuper.keySet());
+    result.addAll(mySuperToSub.keySet());
+    return result;
   }
 
   public void clear() {
@@ -120,4 +125,23 @@ public class InequalityMapPair {
   public boolean isWeak() {
     return isWeak;
   }
+
+  public Map<SNode, EquationInfo> getSubTypes(SNode node) {
+    return mySuperToSub.get(node);
+  }
+
+  public Map<SNode, EquationInfo> getSuperTypes(SNode node) {
+    return mySubToSuper.get(node);
+  }
+
+  public List<String> getListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (SNode key : mySubToSuper.keySet()) {
+      for (SNode value : mySubToSuper.get(key).keySet()) {
+        result.add(key +(isWeak ? " <= " : " < ")+ value + (checkOnly ? " check only" : ""));
+      }
+    }
+    return result;
+  }
+
 }

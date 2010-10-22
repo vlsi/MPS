@@ -16,17 +16,10 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.typesystem.inference.NodeWrapper;
 import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
-import jetbrains.mps.util.CollectionUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,12 +44,12 @@ public class NonConcrete {
     myDeep.substitute(var, type);
   }
 
-  public void addNonConcrete(WhenConcreteEntity entity, SNode node, boolean shallow) {
+  public void addNonConcrete(WhenConcreteEntry entry, SNode node, boolean shallow) {
     node = myState.getEquations().getRepresentative(node);
     if (shallow) {
-      myShallow.addWhenConcrete(entity, node);
+      myShallow.addWhenConcrete(entry, node);
     } else {
-      myDeep.addWhenConcrete(entity, node);
+      myDeep.addWhenConcrete(entry, node);
     }
   }
 
@@ -79,5 +72,16 @@ public class NonConcrete {
       }
     }
     return false;
+  }
+
+  public List<String> getListPresentation() {
+    List<String> result = myDeep.getListPresentation();
+    result.addAll(myShallow.getListPresentation());
+    return result;
+  }
+
+  public void clear() {
+    myShallow.clear();
+    myDeep.clear();
   }
 }

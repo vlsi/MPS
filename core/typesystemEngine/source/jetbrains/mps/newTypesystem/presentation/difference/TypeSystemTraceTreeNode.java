@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.presentation;
+package jetbrains.mps.newTypesystem.presentation.difference;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;

@@ -50,6 +50,8 @@ public abstract class Difference {
 
   public abstract void rollBack();
 
+  public abstract void play();
+
   public String getPresentation() {
     return "";
   }
@@ -69,4 +71,14 @@ public abstract class Difference {
   public EquationInfo getEquationInfo() {
     return myEquationInfo;
   }
+
+  public void playRecursively() {
+    play();
+    if (myChildren != null) {
+      for (Difference child : myChildren) {
+        child.playRecursively();
+      }
+    }
+  }
+
 }

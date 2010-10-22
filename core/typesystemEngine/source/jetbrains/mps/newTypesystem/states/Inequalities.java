@@ -26,6 +26,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -66,7 +68,6 @@ public class Inequalities {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    printInequality(subType, superType, isWeak);
     Equations equations = myState.getEquations();
     subType = equations.getRepresentative(subType);
     superType = equations.getRepresentative(superType);
@@ -117,22 +118,55 @@ public class Inequalities {
   }
 
   public void solveInequalities() {
-   
-  }
-
-  public void printInequality(SNode subType, SNode superType, boolean isWeak) {
-    System.out.println(subType + (isWeak ? " <= " : " < ") + superType);
-  }
-
-  public void print() {
-    for (InequalityMapPair inequalityMapPair : myInequalities) {
-      inequalityMapPair.print();
+    for (SNode var : getAllVariables()) {
+      solveInequality(var);
     }
+  }
+
+  public void solveInequality(SNode var) {
+    Map<SNode, EquationInfo> subTypes = myWeakInequalities.getSubTypes(var);
+    Map<SNode, EquationInfo> strongSubTypes = myStrongInequalities.getSubTypes(var);
+    Map<SNode, EquationInfo> superTypes = myWeakInequalities.getSuperTypes(var);
+    Map<SNode, EquationInfo> strongSuperTypes = myStrongInequalities.getSuperTypes(var);
+    if (emptyOrNull(subTypes) && emptyOrNull(strongSubTypes)) {
+      if (emptyOrNull(strongSuperTypes)) {
+        if (superTypes != null && superTypes.size() == 1 ) {
+          SNode type = superTypes.keySet().iterator().next();
+          myState.addEquation(var, superTypes.keySet().iterator().next(),superTypes.get(type));
+        }
+      }
+    }
+    if (emptyOrNull(superTypes) && emptyOrNull(strongSuperTypes)) {
+      if (emptyOrNull(strongSubTypes)) {
+        if (subTypes != null && subTypes.size() ==1 ) {
+          SNode type = subTypes.keySet().iterator().next();
+          myState.addEquation(var, type, subTypes.get(type) );
+        }
+      }
+    }
+  }
+
+  private boolean emptyOrNull(Map<SNode, EquationInfo> map) {
+    return (map == null) || map.isEmpty();
+  }
+
+  public List<String> getListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (InequalityMapPair inequalityMapPair : myInequalities) {
+      result.addAll(inequalityMapPair.getListPresentation());
+    }
+    return result;
   }
 
   public void clear() {
     for (InequalityMapPair inequalityMapPair : myInequalities) {
       inequalityMapPair.clear();
     }
+  }
+
+  private Set<SNode> getAllVariables() {
+    Set<SNode> result = myWeakInequalities.getVariables();
+    result.addAll(myStrongInequalities.getVariables());
+    return result;
   }
 }

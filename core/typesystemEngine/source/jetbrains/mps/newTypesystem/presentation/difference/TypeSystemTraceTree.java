@@ -13,32 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.presentation;
+package jetbrains.mps.newTypesystem.presentation.difference;
 
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.actions.DevkitProperties_Action;
-import jetbrains.mps.ide.actions.GeneratorProperties_Action;
-import jetbrains.mps.ide.actions.LanguageProperties_Action;
-import jetbrains.mps.ide.actions.SolutionProperties_Action;
-import jetbrains.mps.ide.dependency.ModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JPopupMenu;
+import java.awt.Frame;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,11 +42,14 @@ import javax.swing.JPopupMenu;
 public class TypeSystemTraceTree extends MPSTree {
   IOperationContext myOperationContext;
   private Difference myDifference;
+  private Frame myFrame;
+  private TypeCheckingContextNew myTypeCheckingContextNew;
 
-
-  public TypeSystemTraceTree(IOperationContext operationContext, Difference difference) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame) {
     myOperationContext = operationContext;
-    myDifference = difference;
+    myTypeCheckingContextNew = tcc;
+    myDifference = tcc.getDifference();
+    myFrame = frame;
     this.rebuildNow();
     expandAll();
 
@@ -62,7 +57,7 @@ public class TypeSystemTraceTree extends MPSTree {
 
   @Override
   protected MPSTreeNode rebuild() {
-
+    setRootVisible(false);
     return createNode(myDifference);
   }
 
@@ -73,9 +68,6 @@ public class TypeSystemTraceTree extends MPSTree {
         result.add(createNode(child));
       }
     }
-
-    
-
     return result;
   }
 
@@ -91,11 +83,25 @@ public class TypeSystemTraceTree extends MPSTree {
         ((TypeSystemTraceTreeNode) treeNode ).goToNode();
       }
     };
-    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode);
+    BaseAction showState = new BaseAction("Show state") {
+      public void doExecute(AnActionEvent e) {
+        showState(treeNode);
+      }
+    };
+
+    DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode, showState);
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
+  private void showState(MPSTreeNode node) {
+    State state = myTypeCheckingContextNew.getState();
+    Difference rootDifference = myTypeCheckingContextNew.getDifference();
+    Object difference = node.getUserObject();
+    state.clear(false);
+    state.applyDifferenceBefore(rootDifference,difference);
+    new ShowTypeSystemState(state, myOperationContext, myFrame);
+    state.reset();
+  }
 
-  
 
 }

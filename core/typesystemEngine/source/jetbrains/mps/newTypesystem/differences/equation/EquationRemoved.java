@@ -41,6 +41,11 @@ public class EquationRemoved extends EquationDifference {
   }
 
   @Override
+  public void play() {
+    myEquations.remove(myChild);
+  }
+
+  @Override
   public String getPresentation() {
     return "Equation removed " + myChild + " = " + myParent;
   }

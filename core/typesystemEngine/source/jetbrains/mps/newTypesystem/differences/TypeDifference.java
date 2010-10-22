@@ -30,7 +30,7 @@ import java.util.Map;
 public class TypeDifference extends Difference{
   private SNode myNode;
   private SNode myType;
-  private Map myMap;
+  private Map<SNode, SNode> myMap;
 
   public TypeDifference(SNode node, SNode type, Map map) {
     myNode = node;
@@ -42,6 +42,11 @@ public class TypeDifference extends Difference{
   @Override
   public void rollBack() {
     myMap.remove(myNode);
+  }
+
+  @Override
+  public void play() {
+    myMap.put(myNode, myType);
   }
 
   @Override

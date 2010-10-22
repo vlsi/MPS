@@ -49,7 +49,9 @@ public class Equations {
     if (parent != null) {
       List<SNode> path = new LinkedList<SNode>();
       while (parent != null) {
-        path.add(current);
+        if (current != node) {
+          path.add(current);
+        }
         current = parent;
         parent = myRepresentatives.get(parent);
       }
@@ -73,7 +75,6 @@ public class Equations {
   }
 
   public void addEquation(SNode left, SNode right, EquationInfo info) {
-    printEquation(left, right);
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
     if (lRepresentative == null || rRepresentative == null || lRepresentative.equals(rRepresentative)) {
@@ -155,7 +156,6 @@ public class Equations {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
     myState.addError(nodeWithError, errorReporter, info);
-   // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void addEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
@@ -164,18 +164,15 @@ public class Equations {
     }
   }
 
-
   public void clear() {
     myRepresentatives.clear();
   }
 
-  public void printEquation(SNode left, SNode right) {
-    System.out.println(left + " = " + right);
-  }
-
-  public void printEquations() {
-    for (SNode child : myRepresentatives.keySet()) {
-      printEquation(child, myRepresentatives.get(child));
+  public List<String> getListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (Map.Entry<SNode, SNode> entry : myRepresentatives.entrySet()) {
+      result.add(entry.getKey() + " = " + entry.getValue());
     }
+    return result;
   }
 }

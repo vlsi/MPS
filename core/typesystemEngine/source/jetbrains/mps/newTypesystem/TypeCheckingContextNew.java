@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
@@ -44,7 +45,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    System.out.println("Started type checking for node "+ rootNode);
     myState = new State(this);
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
@@ -77,7 +77,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void checkRoot() {
     myNodeTypesComponent.checkNode(myRootNode, false);
-    myState.solveInequalities();
+   // myState.solveInequalities();
   }
 
   @Override
@@ -87,21 +87,26 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
-    myState.clear();
-    myNodeTypesComponent.checkNode(myRootNode, true);
-    myState.solveInequalities();
+    if (refreshTypes) {
+      myState.clear(true);
+      myNodeTypesComponent.checkNode(myRootNode, true);
+      myState.solveInequalities();
+    }
   }
 
   @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, true, checkOnly, equationInfo);
-    print();
+  }
+  
+  @Override
+   public void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
+    myState.addInequality(node1, node2, false, checkOnly, equationInfo);
   }
 
   @Override
   public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
     myState.addEquation(node1, node2, equationInfo);
-    print();
   }
 
   @Override
@@ -124,26 +129,22 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return myState.getNodeMaps().getType(node);
   }
 
-  public void print() {
-    System.out.println("---State---" );
-    myState.print();
-  }
-
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
-    super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
+    //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
 
-    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId), argument, false);
+    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId,argument), argument, false);
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-    super.whenConcrete(argument, r, nodeModel, nodeId, isShallow, skipError);    //To change body of overridden methods use File | Settings | File Templates.
-
-    myState.addWhenConcrete(new WhenConcreteEntity(r, nodeModel, nodeId, skipError), argument, isShallow);
+   
+    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, skipError,argument), argument, isShallow);
   }
 
-
+  public State getState() {
+    return myState;
+  }
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;

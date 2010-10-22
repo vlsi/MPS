@@ -75,6 +75,7 @@ public class NodeTypesComponentNew {
         applyRulesToNode(desc);
       }
       checked = true;
+      
     }
   }
 

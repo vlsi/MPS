@@ -40,6 +40,11 @@ public class SubTypingRemoved extends InequalityDifference {
     myMapPair.add(myKeyType, myValueType, myEquationInfo);
   }
 
+  @Override
+  public void play() {
+    myMapPair.remove(myKeyType, myValueType);
+  }
+
   public String getPresentation() {
     return "SubTyping removed " + myKeyType + (myMapPair.isWeak()?" <= " : " < ") + myValueType;
   }

@@ -47,5 +47,8 @@ public class SubTypingAdded extends InequalityDifference {
     return new Color(0x000077);
   }
 
-  
+  @Override
+  public void play() {
+    myMapPair.add(myKeyType, myValueType, myEquationInfo);
+  }
 }

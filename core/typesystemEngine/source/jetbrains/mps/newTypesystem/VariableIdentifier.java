@@ -31,6 +31,11 @@ public class VariableIdentifier {
     myVariableIndex = 0;
   }
 
+  public void clear() {
+    myVariableChar = 'a';
+    myVariableIndex = 0;
+  }
+
   public String getNewVarName() {
     String result = myVariableChar + (myVariableIndex == 0 ? "" : "" + myVariableIndex);
     if (myVariableChar == 'z') {

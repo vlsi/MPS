@@ -26,6 +26,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Created by IntelliJ IDEA.
@@ -99,6 +100,7 @@ public class NodeMaps {
   public void clear() {
     myNodesToErrors.clear();
     myNodeToTypes.clear();
+    myVariableIdentifier.clear();
   }
 
   public SNode getType(SNode node) {
@@ -114,5 +116,27 @@ public class NodeMaps {
 //  registerTypeVariable(typeVar);          todo ?
     return typeVar;
   }
+
+  public List<String> getErrorListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (Map.Entry<SNode, List<IErrorReporter>> entry: myNodesToErrors.entrySet()) {
+      for (IErrorReporter error : entry.getValue()) {
+        result.add(entry.getKey() + " " + error.reportError());
+      }
+    }
+    return result;
+  }
+
+  public List<String> getTypeListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (Map.Entry<SNode, SNode> entry: myNodeToTypes.entrySet()) {
+
+      result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getEquations().getRepresentative(entry.getValue()));
+    }
+    return result;
+  }
+
+
+
 
 }

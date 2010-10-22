@@ -43,6 +43,12 @@ public class EquationSubstituted extends Difference {
   }
 
   @Override
+  public void play() {
+    myRemoved.play();
+    myAdded.play();
+  }
+
+  @Override
   public String getPresentation() {
     return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
       myAdded.getChild() + " = " + myAdded.getParent() ;

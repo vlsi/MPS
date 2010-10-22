@@ -16,6 +16,12 @@
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
+import jetbrains.mps.smodel.SNode;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,6 +31,14 @@ import jetbrains.mps.newTypesystem.differences.Difference;
  * To change this template use File | Settings | File Templates.
  */
 public class BecameConcrete extends Difference {
+  private Map<WhenConcreteEntry, Set<SNode>> myMap;
+  private WhenConcreteEntry myEntry;
+
+  public BecameConcrete(Map<WhenConcreteEntry, Set<SNode>> map, WhenConcreteEntry entry) {
+    myMap = map;
+    myEntry = entry;
+  }
+
   @Override
   public void rollBack() {
     //To change body of implemented methods use File | Settings | File Templates.
@@ -33,5 +47,10 @@ public class BecameConcrete extends Difference {
   @Override
   public String getPresentation() {
     return "Became concrete";
+  }
+
+  @Override
+  public void play() {
+   myMap.remove(myEntry);
   }
 }

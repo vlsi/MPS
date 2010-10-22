@@ -14,7 +14,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.presentation.ShowTypeSystemTrace;
+import jetbrains.mps.newTypesystem.presentation.difference.ShowTypeSystemTrace;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog;

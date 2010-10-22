@@ -21,7 +21,6 @@ import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyRemoved;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 
@@ -36,23 +35,23 @@ import java.util.*;
  */
 public class NonConcreteMapPair {
   private boolean isShallow;
-  private Map<WhenConcreteEntity, Set<SNode>> myDependencies;
-  private Map<SNode, Set<WhenConcreteEntity>> myDependents;
+  private Map<WhenConcreteEntry, Set<SNode>> myDependencies;
+  private Map<SNode, Set<WhenConcreteEntry>> myDependents;
   private State myState;
 
   public NonConcreteMapPair(boolean shallow, State state) {
     isShallow = shallow;
     myState = state;
-    myDependencies = new HashMap<WhenConcreteEntity, Set<SNode>>();
-    myDependents = new HashMap<SNode, Set<WhenConcreteEntity>>();
+    myDependencies = new HashMap<WhenConcreteEntry, Set<SNode>>();
+    myDependents = new HashMap<SNode, Set<WhenConcreteEntry>>();
   }
 
-  private void addAndTrack(WhenConcreteEntity e, SNode var) {
+  private void addAndTrack(WhenConcreteEntry e, SNode var) {
     myState.addDifference(new WhenConcreteDependencyAdded(e, var, this), false);
     addDependency(e,var);
   }
 
-  public void addDependency(WhenConcreteEntity e, SNode var) {
+  public void addDependency(WhenConcreteEntry e, SNode var) {
     Set<SNode> dependencies = myDependencies.get(e);
     if (dependencies == null) {
       dependencies = new HashSet<SNode>();
@@ -60,39 +59,39 @@ public class NonConcreteMapPair {
     }
     dependencies.add(var);
 
-    Set<WhenConcreteEntity> dependents = myDependents.get(var);
+    Set<WhenConcreteEntry> dependents = myDependents.get(var);
     if (dependents == null) {
-      dependents = new HashSet<WhenConcreteEntity>();
+      dependents = new HashSet<WhenConcreteEntry>();
       myDependents.put(var, dependents);
     }
     dependents.add(e);    
   }
 
-  private void becameConcrete(WhenConcreteEntity entity) {
-    myState.addDifference(new BecameConcrete(), true);
-    entity.run();
+  private void becameConcrete(WhenConcreteEntry entry) {
+    myState.addDifference(new BecameConcrete(myDependencies, entry), true);
+    entry.run();
     myState.popDifference();
   }
 
-  private void testConcrete(WhenConcreteEntity entity) {
+  private void testConcrete(WhenConcreteEntry entity) {
     if (myDependencies.get(entity).isEmpty()) {
       becameConcrete(entity);
       myDependencies.remove(entity);
     }
   }
 
-  private void removeAndTrack(WhenConcreteEntity e, SNode var) {
+  private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
     myState.addDifference(new WhenConcreteDependencyRemoved(e,var,this),false);
     removeDependency(e,var);
   }
 
-  public void removeDependency(WhenConcreteEntity e, SNode var) {
+  public void removeDependency(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
     myDependencies.get(e).remove(var);
     myDependents.get(var).remove(e);
 
   }
 
-  public void addWhenConcrete(WhenConcreteEntity e, SNode node) {
+  public void addWhenConcrete(WhenConcreteEntry e, SNode node) {
     myState.addDifference(new WhenConcreteAdded(e, node, this), true);
     List<SNode> variables = getChildAndReferentVariables(node);
     if (variables.isEmpty()) {
@@ -105,11 +104,11 @@ public class NonConcreteMapPair {
   }
 
   public void substitute(SNode oldVar, SNode type) {
-    Set<WhenConcreteEntity> entities = myDependents.get(oldVar);
+    Set<WhenConcreteEntry> entities = myDependents.get(oldVar);
     if (entities == null) {
       return;
     }
-    for (WhenConcreteEntity entity : entities) {
+    for (WhenConcreteEntry entity : entities) {
       for (SNode variable : getChildAndReferentVariables(type)) {
          addDependency(entity, variable);
       }
@@ -136,5 +135,18 @@ public class NonConcreteMapPair {
       result.addAll(getChildAndReferentVariables(child));
     }
     return result;
+  }
+
+  public List<String> getListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (WhenConcreteEntry key : myDependencies.keySet()) {
+      result.add(key + " -:- "+  myDependencies.get(key) + (isShallow ? " shallow" : " deep"));
+    }
+    return result;
+  }
+
+  public void clear() {
+    myDependencies.clear();
+    myDependents.clear();
   }
 }

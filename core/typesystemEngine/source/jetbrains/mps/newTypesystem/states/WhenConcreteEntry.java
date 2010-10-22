@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.smodel.SNode;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -23,4 +25,45 @@ package jetbrains.mps.newTypesystem.states;
  * To change this template use File | Settings | File Templates.
  */
 public class WhenConcreteEntry {
+  private Runnable myRunnable;
+  private String myNodeModel;
+  private String myNodeId;
+  private boolean mySkipError = false;
+  private SNode myArgument;
+
+  public WhenConcreteEntry(Runnable runnable, String nodeModel, String nodeId, boolean skipError, SNode argument) {
+    this(runnable, nodeModel, nodeId, argument);
+    mySkipError = skipError;
+  }
+
+  public WhenConcreteEntry(Runnable runnable, String nodeModel, String nodeId, SNode argument) {
+    myRunnable = runnable;
+    myNodeModel = nodeModel;
+    myNodeId = nodeId;
+    myArgument = argument;
+  }
+
+  public Runnable getRunnable() {
+    return myRunnable;
+  }
+
+  public String toString() {
+    return myArgument.toString();
+  }
+
+  public void run() {
+    myRunnable.run();
+  }
+
+  public String getNodeModel() {
+    return myNodeModel;
+  }
+
+  public String getNodeId() {
+    return myNodeId;
+  }
+
+  public boolean skipsError() {
+    return mySkipError;
+  }
 }

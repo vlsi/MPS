@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 
@@ -32,11 +33,11 @@ import java.awt.Color;
 public class WhenConcreteDependencyRemoved extends Difference {
   private NonConcreteMapPair myMap;
   private SNode myNode;
-  private WhenConcreteEntity myEntity;
+  private WhenConcreteEntry myEntry;
 
-  public WhenConcreteDependencyRemoved(WhenConcreteEntity entity, SNode node, NonConcreteMapPair map) {
+  public WhenConcreteDependencyRemoved(WhenConcreteEntry entry, SNode node, NonConcreteMapPair map) {
     myNode = node;
-    myEntity = entity;
+    myEntry = entry;
     myMap = map;
   }
 
@@ -52,7 +53,11 @@ public class WhenConcreteDependencyRemoved extends Difference {
 
   @Override
   public void rollBack() {
-    myMap.addDependency(myEntity, myNode);
+    myMap.addDependency(myEntry, myNode);
   }
 
+  @Override
+  public void play() {
+    myMap.removeDependency(myEntry, myNode);
+  }
 }
