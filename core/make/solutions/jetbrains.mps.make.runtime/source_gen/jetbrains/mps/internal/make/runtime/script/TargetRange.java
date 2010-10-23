@@ -11,9 +11,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -40,108 +39,8 @@ public class TargetRange {
 
   public void addRelated(Iterable<ITarget> availableTargets) {
     Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).translate(new ITranslator2<ITarget, ITarget.Name>() {
-      public Iterable<ITarget.Name> translate(final ITarget trg) {
-        return new Iterable<ITarget.Name>() {
-          public Iterator<ITarget.Name> iterator() {
-            return new YieldingIterator<ITarget.Name>() {
-              private int __CP__ = 0;
-              private ITarget.Name _2__yield_vyrmkm_a0a0b0a0a1;
-              private Iterator<ITarget.Name> _2__yield_vyrmkm_a0a0b0a0a1_it;
-              private ITarget.Name _6__yield_vyrmkm_b0a0b0a0a1;
-              private Iterator<ITarget.Name> _6__yield_vyrmkm_b0a0b0a0a1_it;
-              private ITarget.Name _10__yield_vyrmkm_c0a0b0a0a1;
-              private Iterator<ITarget.Name> _10__yield_vyrmkm_c0a0b0a0a1_it;
-              private ITarget.Name _14__yield_vyrmkm_d0a0b0a0a1;
-              private Iterator<ITarget.Name> _14__yield_vyrmkm_d0a0b0a0a1_it;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 2:
-                      this._2__yield_vyrmkm_a0a0b0a0a1_it = trg.before().iterator();
-                    case 3:
-                      if (!(this._2__yield_vyrmkm_a0a0b0a0a1_it.hasNext())) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this._2__yield_vyrmkm_a0a0b0a0a1 = this._2__yield_vyrmkm_a0a0b0a0a1_it.next();
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      this._6__yield_vyrmkm_b0a0b0a0a1_it = trg.notBefore().iterator();
-                    case 7:
-                      if (!(this._6__yield_vyrmkm_b0a0b0a0a1_it.hasNext())) {
-                        this.__CP__ = 9;
-                        break;
-                      }
-                      this._6__yield_vyrmkm_b0a0b0a0a1 = this._6__yield_vyrmkm_b0a0b0a0a1_it.next();
-                      this.__CP__ = 8;
-                      break;
-                    case 9:
-                      this._10__yield_vyrmkm_c0a0b0a0a1_it = trg.after().iterator();
-                    case 11:
-                      if (!(this._10__yield_vyrmkm_c0a0b0a0a1_it.hasNext())) {
-                        this.__CP__ = 13;
-                        break;
-                      }
-                      this._10__yield_vyrmkm_c0a0b0a0a1 = this._10__yield_vyrmkm_c0a0b0a0a1_it.next();
-                      this.__CP__ = 12;
-                      break;
-                    case 13:
-                      this._14__yield_vyrmkm_d0a0b0a0a1_it = trg.notAfter().iterator();
-                    case 15:
-                      if (!(this._14__yield_vyrmkm_d0a0b0a0a1_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._14__yield_vyrmkm_d0a0b0a0a1 = this._14__yield_vyrmkm_d0a0b0a0a1_it.next();
-                      this.__CP__ = 16;
-                      break;
-                    case 6:
-                      this.__CP__ = 3;
-                      this.yield(_2__yield_vyrmkm_a0a0b0a0a1);
-                      return true;
-                    case 10:
-                      this.__CP__ = 7;
-                      this.yield(_6__yield_vyrmkm_b0a0b0a0a1);
-                      return true;
-                    case 14:
-                      this.__CP__ = 11;
-                      this.yield(_10__yield_vyrmkm_c0a0b0a0a1);
-                      return true;
-                    case 17:
-                      this.__CP__ = 15;
-                      this.yield(_14__yield_vyrmkm_d0a0b0a0a1);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    case 4:
-                      this.__CP__ = 6;
-                      break;
-                    case 8:
-                      this.__CP__ = 10;
-                      break;
-                    case 12:
-                      this.__CP__ = 14;
-                      break;
-                    case 16:
-                      this.__CP__ = 17;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
+      public Iterable<ITarget.Name> translate(ITarget trg) {
+        return Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notBefore())).concat(Sequence.fromIterable(trg.after())).concat(Sequence.fromIterable(trg.notAfter()));
       }
     }));
     List<ITarget> available = Sequence.fromIterable(availableTargets).toListSequence();
