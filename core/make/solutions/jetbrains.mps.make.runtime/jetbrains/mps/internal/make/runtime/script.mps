@@ -1092,7 +1092,7 @@
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6168415856807657767">
-      <property name="name:3" value="withTarget" />
+      <property name="name:3" value="withAuxTarget" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6168415856807657768">
         <property name="name:3" value="targetName" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6168415856807657769">
@@ -1122,7 +1122,7 @@
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6168415856807657780">
-      <property name="name:3" value="withDefault" />
+      <property name="name:3" value="withTarget" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6168415856807657781">
         <property name="name:3" value="targetName" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6168415856807657782">

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.foobar.FacetManifest" file="FacetManifest.java">
+  <dependency className="jetbrains.mps.make.generator.FacetManifest" file="FacetManifest.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
-    <classNode dependClassName="jetbrains.mps.make.foobar.Facet_" />
-    <classNode dependClassName="jetbrains.mps.make.foobar.Facet__0" />
+    <classNode dependClassName="jetbrains.mps.make.generator.Facet_" />
+    <classNode dependClassName="jetbrains.mps.make.generator.Facet__0" />
   </dependency>
-  <dependency className="jetbrains.mps.make.foobar.Facet_" file="Facet_.java">
+  <dependency className="jetbrains.mps.make.generator.Facet_" file="Facet_.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -18,7 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
-  <dependency className="jetbrains.mps.make.foobar.Facet__0" file="Facet__0.java">
+  <dependency className="jetbrains.mps.make.generator.Facet__0" file="Facet__0.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -28,7 +28,7 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
-  <dependency className="jetbrains.mps.make.foobar.Foo_Test" file="Foo_Test.java">
+  <dependency className="jetbrains.mps.make.generator.Generator_Test" file="Generator_Test.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />

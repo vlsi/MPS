@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.foobar)">
+<model modelUID="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)">
   <persistence version="5" />
   <language namespace="696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)" />
   <language namespace="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b(jetbrains.mps.make.script)" />
@@ -38,7 +38,12 @@
         <link role="dependsOn:1" targetNodeId="671853460608595938" resolveInfo="Make" />
       </node>
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="671853460608595944">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="671853460608595945" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="671853460608595945">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3155650615182215718">
+            <node role="expression:3" type="jetbrains.mps.make.script.structure.ResourcesParameter" id="3155650615182215719" />
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3155650615182215720" />
+        </node>
       </node>
     </node>
     <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="671853460608595942">
@@ -46,7 +51,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="671853460608703866">
-    <property name="testCaseName" value="Foo" />
+    <property name="testCaseName" value="Generator" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="671853460608825978">
       <property name="name:3" value="manifest" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="671853460608825979" />
@@ -62,7 +67,7 @@
     </node>
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="671853460608703872">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="671853460608703873">
-        <property name="methodName" value="bar" />
+        <property name="methodName" value="buildScript" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="671853460608703874" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="671853460608703875" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="671853460608703876">
@@ -117,7 +122,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="671853460608828986">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.6168415856807657767" resolveInfo="withTarget" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.6168415856807657780" resolveInfo="withTarget" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="671853460608828987">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="671853460608828988">
                         <link role="baseMethodDeclaration:3" targetNodeId="2.6168415856807657137" resolveInfo="ITarget.Name" />
@@ -178,7 +183,7 @@
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="671853460608829038">
                 <link role="baseMethodDeclaration:3" targetNodeId="2.6168415856807657137" resolveInfo="ITarget.Name" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="671853460608829039">
-                  <property name="value:3" value="make" />
+                  <property name="value:3" value="Make" />
                 </node>
               </node>
             </node>

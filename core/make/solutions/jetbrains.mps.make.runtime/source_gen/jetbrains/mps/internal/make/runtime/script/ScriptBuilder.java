@@ -61,12 +61,12 @@ public class ScriptBuilder {
     return this;
   }
 
-  public ScriptBuilder withTarget(ITarget.Name targetName) {
+  public ScriptBuilder withAuxTarget(ITarget.Name targetName) {
     SetSequence.fromSet(requestedTargets).addElement(targetName);
     return this;
   }
 
-  public ScriptBuilder withDefault(ITarget.Name targetName) {
+  public ScriptBuilder withTarget(ITarget.Name targetName) {
     SetSequence.fromSet(requestedTargets).addElement(targetName);
     this.defaultTarget = targetName;
     return this;
