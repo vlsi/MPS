@@ -66,5 +66,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="4629164904928073861">
+    <property name="package:0" value="job" />
+    <link role="conceptDeclaration:0" targetNodeId="1.2360002718792622184" resolveInfo="OutputResources" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="4629164904928073862">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4629164904928073863">
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="4629164904928091775">
+          <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4629164904928162583">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="4629164904928162582" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4629164904928163689">
+              <link role="link:16" targetNodeId="1.2360002718792622193" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

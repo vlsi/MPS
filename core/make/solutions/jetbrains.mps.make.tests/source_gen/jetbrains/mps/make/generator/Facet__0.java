@@ -9,6 +9,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.script.IMonitor;
 
 public class Facet__0 implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -45,7 +48,22 @@ public class Facet__0 implements IFacet {
     }
 
     public IJob createJob() {
-      return null;
+      return new IJob() {
+        public IResult execute(Iterable<IResource> input, IMonitor mon) {
+          Iterable<IResource> _output_ixz87t_a0 = null;
+          switch (0) {
+            case 0:
+              for (IResource resource : input) {
+                System.out.println("Input: " + resource);
+                _output_ixz87t_a0 = Sequence.fromIterable(_output_ixz87t_a0).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+              }
+              _output_ixz87t_a0 = Sequence.fromIterable(_output_ixz87t_a0).concat(Sequence.fromIterable(input));
+              return new IResult.FAILURE(_output_ixz87t_a0);
+            default:
+              return new IResult.SUCCESS(_output_ixz87t_a0);
+          }
+        }
+      };
     }
 
     public Iterable<ITarget.Name> notAfter() {

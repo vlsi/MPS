@@ -7,8 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Result {
-  success("success", "OK"),
-  failure("failure", "FAIL");
+  success("success", "SUCCESS"),
+  failure("failure", "FAILURE");
 
   private String myName;
   private String myValue;

@@ -2,6 +2,9 @@
 <model modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)">
   <persistence version="5" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b(jetbrains.mps.make.script)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -60,7 +63,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7077360340906447917">
     <property name="name:0" value="ResultStatement" />
     <property name="package:0" value="job" />
-    <link role="extends:0" targetNodeId="2v.1068581242878:3" resolveInfo="ReturnStatement" />
+    <link role="extends:0" targetNodeId="2v.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2360002718792652024">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
@@ -83,11 +86,11 @@
     <property name="name:0" value="Result" />
     <link role="memberDataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="2360002718792446683">
-      <property name="internalValue:0" value="OK" />
+      <property name="internalValue:0" value="SUCCESS" />
       <property name="externalValue:0" value="success" />
     </node>
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="2360002718792446684">
-      <property name="internalValue:0" value="FAIL" />
+      <property name="internalValue:0" value="FAILURE" />
       <property name="externalValue:0" value="failure" />
     </node>
   </node>
@@ -122,6 +125,12 @@
     <property name="package:0" value="job" />
     <property name="name:0" value="ResourcesParameter" />
     <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3155650615182230903">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="3155650615182319393">
+        <node role="elementType:7" type="jetbrains.mps.make.script.structure.ResourceType" id="3155650615182319396" />
+      </node>
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2360002718792651363">
       <property name="value:0" value="input" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />

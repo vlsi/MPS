@@ -43,7 +43,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5189627237350267984(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration"), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_5189627237350270310(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -72,6 +72,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5189627237350272581(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_3916013743093752820(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "job", true);
   }
 
   public static Object templateArgumentQuery_5189627237350270329(final IOperationContext operationContext, final TemplateQueryContext _context) {
