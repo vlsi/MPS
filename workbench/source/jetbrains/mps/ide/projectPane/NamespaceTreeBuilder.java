@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 
 import java.util.*;
@@ -54,8 +53,11 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     compactNodes(myRootNamespace);
 
     Enumeration children = myRootNamespace.children();
-    while (children.hasMoreElements()){
-      MPSTreeNode node = (MPSTreeNode) children.nextElement();
+    List<MPSTreeNode> oldChildren = new ArrayList<MPSTreeNode>();
+    while (children.hasMoreElements()) {
+      oldChildren.add((MPSTreeNode) children.nextElement());
+    }
+    for (MPSTreeNode node : oldChildren) {
       myRootNamespace.remove(node);
       root.add(node);
     }
@@ -103,8 +105,11 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       myBuilder.setName(node, myBuilder.getName(node) + "." + myBuilder.getName(child));
 
       Enumeration children = child.children();
-      while (children.hasMoreElements()){
-        MPSTreeNode c = (MPSTreeNode) children.nextElement();
+      List<MPSTreeNode> oldChildren = new ArrayList<MPSTreeNode>();
+      while (children.hasMoreElements()) {
+        oldChildren.add((MPSTreeNode) children.nextElement());
+      }
+      for (MPSTreeNode c : oldChildren) {
         child.remove(c);
         node.add(c);
       }

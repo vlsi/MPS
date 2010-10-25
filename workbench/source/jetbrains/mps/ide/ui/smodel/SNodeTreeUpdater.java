@@ -59,6 +59,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
       treeModel.removeNodeFromParent(node);
     }
 
+    outer:
     for (SNode added : addedNodes) {
       if (added.isDeleted()) continue;
       if (added.getParent() == null) continue;
@@ -68,17 +69,17 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
       SNode parentNode = parent.getSNode();
       int indexof = parentNode.getChildren().indexOf(added);
       Enumeration children = parent.children();
+
       while(children.hasMoreElements()){
-        Object childO = children.nextElement();
-        if (!(childO instanceof SNodeTreeNode)) continue;
-        SNodeTreeNode child = (SNodeTreeNode) childO;
-        SNode childNode = child.getSNode();
-        int index = parentNode.getChildren().indexOf(childNode);
+        Object child = children.nextElement();
+        if (!(child instanceof SNodeTreeNode)) continue;
+        SNodeTreeNode childNode = (SNodeTreeNode) child;
+        int index = parentNode.getChildren().indexOf(childNode.getSNode());
         if (index <= indexof) continue;
         SNodeTreeNode newTreeNode = new SNodeTreeNode(added, added.getRole_(), getOperationContext());
         treeModel.insertNodeInto(newTreeNode,
-          parent, treeModel.getIndexOfChild(parent, child));
-        break;
+          parent, treeModel.getIndexOfChild(parent, childNode));
+        continue outer;
       }
       treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
     }
