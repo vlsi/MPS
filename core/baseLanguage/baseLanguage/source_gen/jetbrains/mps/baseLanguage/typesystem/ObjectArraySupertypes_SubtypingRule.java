@@ -6,11 +6,13 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+
+import java.util.Arrays;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.util.CollectionUtil;
+
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,7 +32,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // see JLS 3.0 
-    return CollectionUtil.list(new ObjectArraySupertypes_SubtypingRule.QuotationClass_gqfgxi_a0a1a0().createNode(typeCheckingContext), new ObjectArraySupertypes_SubtypingRule.QuotationClass_gqfgxi_a1a1a0().createNode(typeCheckingContext), new ObjectArraySupertypes_SubtypingRule.QuotationClass_gqfgxi_a2a1a0().createNode(typeCheckingContext));
+    return Arrays.asList(new QuotationClass_gqfgxi_a0a1a0().createNode(typeCheckingContext), new QuotationClass_gqfgxi_a1a1a0().createNode(typeCheckingContext), new QuotationClass_gqfgxi_a2a1a0().createNode(typeCheckingContext));
   }
 
   public String getApplicableConceptFQName() {

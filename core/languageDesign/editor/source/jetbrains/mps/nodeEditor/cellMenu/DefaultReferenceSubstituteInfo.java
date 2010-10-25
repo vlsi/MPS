@@ -27,17 +27,16 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Collections;
 
@@ -79,7 +78,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   public InequationSystem getInequationSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
-    SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(mySourceNode.getContainingRoot()), mapping).get(0);
+    SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(mySourceNode.getContainingRoot()), mapping).get(0);
     boolean wasLoading = auxModel.isLoading();
     auxModel.setLoading(true);
     try {

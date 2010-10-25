@@ -21,7 +21,6 @@ import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyRemoved;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.util.*;
@@ -120,7 +119,7 @@ public class NonConcreteMapPair {
 
   private List<SNode> getChildAndReferentVariables(SNode node) {
     if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-      return CollectionUtil.list(node);
+      return Arrays.asList(node);
     }
     List<SNode> result = new ArrayList<SNode>();
     if (isShallow) {

@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.make.dependencies;
 
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.make.dependencies.IntGraph;
 import jetbrains.mps.make.dependencies.IntGraph.IntVertex;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Set;
+import java.util.*;
 
 import org.junit.Test;
 import org.junit.Assert;
@@ -35,10 +30,7 @@ public class FindStronglyConnectedComponentsTestCase {
     IntGraph g = new IntGraph(2);
     List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
-      CollectionUtil.list(
-        CollectionUtil.list(new IntVertex(1)),
-        CollectionUtil.list(new IntVertex(0))
-      ),
+      Arrays.asList(Arrays.asList(new IntVertex(1)), Arrays.asList(new IntVertex(0))),
       condensation);
   }
 
@@ -49,10 +41,7 @@ public class FindStronglyConnectedComponentsTestCase {
 
     List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
-      CollectionUtil.list(
-        CollectionUtil.list(new IntVertex(1)),
-        CollectionUtil.list(new IntVertex(0))
-      ),
+      Arrays.asList(Arrays.asList(new IntVertex(1)), Arrays.asList(new IntVertex(0))),
       condensation);
   }
 
@@ -63,10 +52,7 @@ public class FindStronglyConnectedComponentsTestCase {
 
     List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
-      CollectionUtil.list(
-        CollectionUtil.list(new IntVertex(0)),
-        CollectionUtil.list(new IntVertex(1))
-      ),
+      Arrays.asList(Arrays.asList(new IntVertex(0)), Arrays.asList(new IntVertex(1))),
       condensation);
   }
 
@@ -78,9 +64,7 @@ public class FindStronglyConnectedComponentsTestCase {
 
     List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
-      CollectionUtil.list(
-        CollectionUtil.list(new IntVertex(0), new IntVertex(1))
-      ),
+      Arrays.asList(Arrays.asList(new IntVertex(0), new IntVertex(1))),
       condensation);
   }
 
@@ -92,11 +76,7 @@ public class FindStronglyConnectedComponentsTestCase {
 
     List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
-      CollectionUtil.list(
-        CollectionUtil.list(new IntVertex(2)),
-        CollectionUtil.list(new IntVertex(1)),
-        CollectionUtil.list(new IntVertex(0))
-      ),
+      Arrays.asList(Arrays.asList(new IntVertex(2)), Arrays.asList(new IntVertex(1)), Arrays.asList(new IntVertex(0))),
       condensation);
   }
 
@@ -111,9 +91,7 @@ public class FindStronglyConnectedComponentsTestCase {
 
     List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
-      CollectionUtil.list(
-        CollectionUtil.list(new IntVertex(0), new IntVertex(1), new IntVertex(2))
-      ),
+      Arrays.asList(Arrays.asList(new IntVertex(0), new IntVertex(1), new IntVertex(2))),
       condensation);
   }
 }

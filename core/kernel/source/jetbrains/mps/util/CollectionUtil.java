@@ -87,12 +87,6 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> List<T> list(T... ts) {
-    List<T> result = new ArrayList<T>();
-    result.addAll(Arrays.asList(ts));
-    return result;
-  }
-
   public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
       public boolean myFirstActive = true;

@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.util.LatticeUtil;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.apache.commons.lang.ObjectUtils;
@@ -581,7 +580,7 @@ public class EquationManager {
 
   private List<SNode> getChildAndReferentVariables(SNode node) {
     if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-      return CollectionUtil.list(node);
+      return Arrays.asList(node);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode referent : node.getReferents()) {

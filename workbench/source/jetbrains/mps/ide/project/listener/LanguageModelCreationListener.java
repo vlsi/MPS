@@ -18,15 +18,13 @@ package jetbrains.mps.ide.project.listener;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class LanguageModelCreationListener extends ModelCreationListener {
   private List<String> getModelsToImport(Language language) {
-    return CollectionUtil.list(
-      language.getStructureModelDescriptor().getSModelReference().toString()
-    );
+    return Arrays.asList(language.getStructureModelDescriptor().getSModelReference().toString());
   }
 
   public boolean isApplicable(SModelDescriptor m) {

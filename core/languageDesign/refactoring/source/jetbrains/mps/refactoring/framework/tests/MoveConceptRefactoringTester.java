@@ -22,7 +22,8 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
+
+import java.util.Arrays;
 
 public class MoveConceptRefactoringTester implements IRefactoringTester {
   public boolean testRefactoring(final Project project,
@@ -44,7 +45,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         SNode concept = SModelOperations.getRootByName(model,conceptName);
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
-        refactoringContext.setSelectedNodes(CollectionUtil.list(concept));
+        refactoringContext.setSelectedNodes(Arrays.asList(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(MoveConcepts.targetModel, targetStructureModelDescriptor[0]);
       }

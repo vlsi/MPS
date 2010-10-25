@@ -19,16 +19,15 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.nodeEditor.Highlighter;
 
 import javax.swing.Icon;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -227,7 +226,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public List<SNodePointer> getAllNumberedBookmarks() {
-    return CollectionUtil.list(myBookmarks);
+    return Arrays.asList(myBookmarks);
   }
 
   public List<SNodePointer> getAllUnnumberedBookmarks() {

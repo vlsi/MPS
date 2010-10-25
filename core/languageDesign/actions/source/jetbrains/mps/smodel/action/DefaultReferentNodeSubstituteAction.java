@@ -27,9 +27,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
+import java.util.Arrays;
 
 /**
  * Igor Alshannikov
@@ -100,7 +100,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     SNode sourceNodePeer = getSourceNode();
-    SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(sourceNodePeer.getContainingRoot()), mapping).get(0);
+    SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(sourceNodePeer.getContainingRoot()), mapping).get(0);
     boolean wasLoading = auxModel.isLoading();
     auxModel.setLoading(true);
     try {

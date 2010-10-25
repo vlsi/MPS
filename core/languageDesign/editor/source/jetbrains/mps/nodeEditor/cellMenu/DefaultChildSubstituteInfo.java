@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -34,10 +33,10 @@ import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.intellij.util.containers.HashMap;
@@ -100,7 +99,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     boolean wasLoading = auxModel.isLoading();
     auxModel.setLoading(true);
     try {
-      SNode nodeCopyRoot = CopyUtil.copy(CollectionUtil.list(myParentNode.getContainingRoot()), mapping).get(0);
+      SNode nodeCopyRoot = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
       if (!nodeCopyRoot.isRoot()) {
         auxModel.addRoot(nodeCopyRoot);
       }

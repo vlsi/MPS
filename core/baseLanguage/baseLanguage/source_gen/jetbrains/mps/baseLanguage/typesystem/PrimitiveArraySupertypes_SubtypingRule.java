@@ -4,18 +4,16 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import java.util.List;
+
+import java.util.*;
+
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -28,7 +26,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // see JLS 3.0 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      return CollectionUtil.list(new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a0a0a1a0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a1a0a1a0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a2a0a1a0().createNode(typeCheckingContext));
+      return Arrays.asList(new QuotationClass_l6pagy_a0a0a1a0().createNode(typeCheckingContext), new QuotationClass_l6pagy_a1a0a1a0().createNode(typeCheckingContext), new QuotationClass_l6pagy_a2a0a1a0().createNode(typeCheckingContext));
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }

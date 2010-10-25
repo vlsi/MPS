@@ -10026,21 +10026,21 @@
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1208356012455">
-        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1227782685028">
-          <link role="baseMethodDeclaration:3" targetNodeId="29.~CollectionUtil.list(java.lang.Object...):java.util.List" resolveInfo="list" />
-          <link role="classConcept:3" targetNodeId="29.~CollectionUtil" resolveInfo="CollectionUtil" />
-          <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227782685029">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227782685030">
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="189281416259366741">
+          <link role="baseMethodDeclaration:3" targetNodeId="18.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
+          <link role="classConcept:3" targetNodeId="18.~Arrays" resolveInfo="Arrays" />
+          <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="189281416259366742">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="189281416259366743">
               <link role="classifier:3" targetNodeId="4.~Object" resolveInfo="Object" />
             </node>
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227782685031">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227782685032">
+          <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="189281416259366744">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="189281416259366745">
               <link role="classifier:3" targetNodeId="30.~Serializable" resolveInfo="Serializable" />
             </node>
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227782685033">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227782685034">
+          <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="189281416259366746">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="189281416259366747">
               <link role="classifier:3" targetNodeId="4.~Cloneable" resolveInfo="Cloneable" />
             </node>
           </node>
@@ -10084,21 +10084,21 @@
         </node>
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208356136568">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1208356158522">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1227782691350">
-              <link role="baseMethodDeclaration:3" targetNodeId="29.~CollectionUtil.list(java.lang.Object...):java.util.List" resolveInfo="list" />
-              <link role="classConcept:3" targetNodeId="29.~CollectionUtil" resolveInfo="CollectionUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227782691351">
-                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227782691352">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="189281416259366748">
+              <link role="baseMethodDeclaration:3" targetNodeId="18.~Arrays.asList(java.lang.Object...):java.util.List" resolveInfo="asList" />
+              <link role="classConcept:3" targetNodeId="18.~Arrays" resolveInfo="Arrays" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="189281416259366749">
+                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="189281416259366750">
                   <link role="classifier:3" targetNodeId="4.~Object" resolveInfo="Object" />
                 </node>
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227782691353">
-                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227782691354">
+              <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="189281416259366751">
+                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="189281416259366752">
                   <link role="classifier:3" targetNodeId="30.~Serializable" resolveInfo="Serializable" />
                 </node>
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1227782691355">
-                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227782691356">
+              <node role="actualArgument:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="189281416259366753">
+                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="189281416259366754">
                   <link role="classifier:3" targetNodeId="4.~Cloneable" resolveInfo="Cloneable" />
                 </node>
               </node>

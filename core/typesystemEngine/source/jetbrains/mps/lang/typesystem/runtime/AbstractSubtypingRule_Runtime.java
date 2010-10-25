@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -32,7 +30,7 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext, status);
     if (subOrSuperType != null) {
-      return CollectionUtil.list(subOrSuperType);
+      return Arrays.asList(subOrSuperType);
     }
     return getSubOrSuperTypes(type, typeCheckingContext);
   }
@@ -40,7 +38,7 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
   public List<SNode> getSubOrSuperTypes(SNode type, @Nullable TypeCheckingContext typeCheckingContext) {
     SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext);
     if (subOrSuperType != null) {
-      return CollectionUtil.list(subOrSuperType); 
+      return Arrays.asList(subOrSuperType);
     }
     return getSubOrSuperTypes(type);
   }
@@ -60,7 +58,7 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     if (subOrSuperType == null) {
       return new ArrayList<SNode>(0);
     }
-    return CollectionUtil.list(subOrSuperType);
+    return Arrays.asList(subOrSuperType);
   }
 
   @Deprecated
