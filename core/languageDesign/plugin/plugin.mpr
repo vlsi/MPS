@@ -31,7 +31,7 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$APPLICATION_HOME_DIR$">
+        <entry key="$mps_home$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchMap">

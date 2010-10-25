@@ -21,6 +21,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.IScope;
@@ -36,13 +37,15 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
+  private static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
+
   private Project myProject;
 
   private T[] myObjectsInProjectScope = null;
   private T[] myObjectsInGlobalScope = null;
 
-  private Map<String, List<NavigationItem>> myProjectNamesCache = new HashMap<String, List<NavigationItem>>();
-  private Map<String, List<NavigationItem>> myGlobalNamesCache = new HashMap<String, List<NavigationItem>>();
+  private final Map<String, List<NavigationItem>> myProjectNamesCache = new HashMap<String, List<NavigationItem>>();
+  private final Map<String, List<NavigationItem>> myGlobalNamesCache = new HashMap<String, List<NavigationItem>>();
 
   private String myEntityName = "";
 
@@ -100,7 +103,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return ModelAccess.instance().runReadAction(new Computable<String[]>() {
       public String[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
-        return namesMap.keySet().toArray(new String[0]);
+        return namesMap.keySet().toArray(new String[namesMap.keySet().size()]);
       }
     });
   }
@@ -109,7 +112,13 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return ModelAccess.instance().runReadAction(new Computable<Object[]>() {
       public Object[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
-        return namesMap.get(name).toArray();
+        List<NavigationItem> navigationItems = namesMap.get(name);
+
+        //this normally should not happen, this code is here because of MPS-10408
+        if (navigationItems != null) return navigationItems.toArray();
+
+        LOG.error("No navigation items for element with name: " + name);
+        return new Object[0];
       }
     });
   }
