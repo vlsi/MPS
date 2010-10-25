@@ -30,11 +30,6 @@ public class IterableUtil {
     return result;
   }
 
-  public static <T> T[] asArray(Iterable<T> iter){
-    Collection<T> res = asCollection(iter);
-    return (T[]) res.toArray(new Object[res.size()]);
-  }
-
   public static <T> Iterable<T> asIterable(final Iterator<T> i) {
     return new Iterable<T>() {
       public Iterator<T> iterator() {

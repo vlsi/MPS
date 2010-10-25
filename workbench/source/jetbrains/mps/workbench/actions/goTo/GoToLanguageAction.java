@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
@@ -32,7 +33,6 @@ import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 public class GoToLanguageAction extends BaseAction {
@@ -55,7 +55,8 @@ public class GoToLanguageAction extends BaseAction {
       }
 
       public Language[] find(IScope scope) {
-        return IterableUtil.asArray(scope.getVisibleLanguages());
+        Collection<Language> res = IterableUtil.asCollection(scope.getVisibleLanguages());
+        return res.toArray(new Language[res.size()]);
       }
 
       public String getPromptText() {

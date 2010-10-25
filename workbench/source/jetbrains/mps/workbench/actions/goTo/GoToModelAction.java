@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
@@ -35,6 +36,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
+
+import java.util.ArrayList;
 
 public class GoToModelAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -63,7 +66,9 @@ public class GoToModelAction extends BaseAction {
             return rightStereotype && hasModule;
           }
         };
-        return IterableUtil.asArray(new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond));
+        ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+        ArrayList<SModelDescriptor> res = new ArrayList<SModelDescriptor>(IterableUtil.asCollection(iter));
+        return res.toArray(new SModelDescriptor[res.size()]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));

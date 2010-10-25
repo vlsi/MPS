@@ -79,7 +79,8 @@ public class ImportHelper {
           }
         };
         ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
-        return IterableUtil.asArray(iter);
+        ArrayList<SModelDescriptor> res = new ArrayList<SModelDescriptor>(IterableUtil.asCollection(iter));
+        return res.toArray(new SModelDescriptor[res.size()]);
       }
 
       @Nullable
@@ -113,7 +114,8 @@ public class ImportHelper {
       }
 
       public Language[] find(IScope scope) {
-        return IterableUtil.asArray(scope.getVisibleLanguages());
+        ArrayList<Language> res = new ArrayList<Language>(IterableUtil.asCollection(scope.getVisibleLanguages()));
+        return res.toArray(new Language[res.size()]);
       }
 
       @Nullable

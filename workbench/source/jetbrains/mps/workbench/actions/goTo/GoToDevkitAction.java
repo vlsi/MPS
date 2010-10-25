@@ -29,9 +29,10 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseDevkitModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+
+import java.util.Collection;
 
 public class GoToDevkitAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -53,7 +54,8 @@ public class GoToDevkitAction extends BaseAction {
       }
 
       public DevKit[] find(IScope scope) {
-        return IterableUtil.asArray(scope.getVisibleDevkits());
+        Collection<DevKit> res = IterableUtil.asCollection(scope.getVisibleDevkits());
+        return res.toArray(new DevKit[res.size()]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, DefaultMatcherFactory.createAllMatcher(goToDevkitModel));
