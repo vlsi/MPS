@@ -59,6 +59,7 @@
     <orderEntry type="module" module-name="generator-engine" exported="" />
     <orderEntry type="module" module-name="typesystemEngine" exported="" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="module" module-name="typesystemIntegration" exported="" />
   </component>
   <component name="copyright">
     <Base>
