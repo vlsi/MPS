@@ -40,6 +40,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.IterableUtil;
+import org.apache.commons.collections.IteratorUtils;
 
 import java.util.*;
 
@@ -211,7 +213,8 @@ public class Resolver {
           }
         }
         if (cell instanceof EditorCell_Collection) {
-          newFrontier.addAll(CollectionUtil.asList(((EditorCell_Collection) cell).cells()));
+          Iterator<EditorCell> cells = ((EditorCell_Collection) cell).cells();
+          newFrontier.addAll(IterableUtil.asCollection(IterableUtil.asIterable(cells)));
         }
       }
       frontier = newFrontier;

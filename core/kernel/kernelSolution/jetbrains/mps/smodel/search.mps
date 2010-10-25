@@ -42,8 +42,8 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4642948870877886458" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4642948870877886459">
         <property name="name:3" value="nodes" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4642948870877886460">
-          <link role="classifier:3" targetNodeId="1.~List" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3191365157666156749">
+          <link role="classifier:3" targetNodeId="1.~Collection" resolveInfo="Collection" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4642948870877886461">

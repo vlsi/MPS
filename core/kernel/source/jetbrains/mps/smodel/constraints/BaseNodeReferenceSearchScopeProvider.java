@@ -22,7 +22,10 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider {
@@ -44,7 +47,8 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     }
     if (searchScopeOrListOfNodes instanceof Iterable) {
       CollectionUtil.checkForNulls((Iterable) searchScopeOrListOfNodes, "" + this);
-      return new SimpleSearchScope(CollectionUtil.asList((Iterable) searchScopeOrListOfNodes));
+      Collection nodes = IterableUtil.asCollection((Iterable) searchScopeOrListOfNodes);
+      return new SimpleSearchScope(nodes);
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }

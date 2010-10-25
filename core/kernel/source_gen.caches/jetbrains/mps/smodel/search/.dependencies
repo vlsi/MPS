@@ -91,6 +91,7 @@
   <dependency className="jetbrains.mps.smodel.search.SimpleSearchScope" file="SimpleSearchScope.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
