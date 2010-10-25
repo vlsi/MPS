@@ -18,7 +18,6 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
 
 import java.io.File;
@@ -56,7 +55,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   public String getAbsolutePath() {
     checkValidity();
-    return myFile.getAbsolutePath(); 
+    return myFile.getAbsolutePath();
   }
 
   public File getFile() {
@@ -179,9 +178,10 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
 
   private void buildCaches() {
-    Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
+    Enumeration<? extends ZipEntry> entries = myZipFile.entries();
 
-    for (ZipEntry entry : entries) {
+    while (entries.hasMoreElements()) {
+      ZipEntry entry = entries.nextElement();
       if (entry.isDirectory()) {
         String name = entry.getName();
         if (name.endsWith("/")) {

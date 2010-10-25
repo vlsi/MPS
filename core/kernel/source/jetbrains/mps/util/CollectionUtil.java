@@ -21,6 +21,8 @@ import java.util.*;
  * @author Kostik
  */
 public class CollectionUtil {
+  @Deprecated
+  //use Iterable & ConditionalIterable instead
   public static <T, F extends T> List<F> filter(Class<F> cls, List<T> l) {
     List<F> result = new ArrayList<F>();
     for (T t : l) {
@@ -29,6 +31,8 @@ public class CollectionUtil {
     return result;
   }
 
+  @Deprecated
+  //use Iterable & ConditionalIterable instead
   public static <T, F extends T> Set<F> filter(Class<F> cls, Set<T> s) {
     Set<F> result = new HashSet<F>();
     for (T t : s) {
@@ -37,6 +41,8 @@ public class CollectionUtil {
     return result;
   }
 
+  @Deprecated
+  //use Iterable & ConditionalIterable instead
   public static <T> List<T> filter(List<? extends T> ts, Condition<T> f) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
@@ -47,6 +53,8 @@ public class CollectionUtil {
     return result;
   }
 
+  @Deprecated
+  //use Iterable & ConditionalIterable instead
   public static <T> Set<T> filter(Set<T> ts, Condition<T> f) {
     Set<T> result = new HashSet<T>();
     for (T t : ts) {
@@ -55,26 +63,6 @@ public class CollectionUtil {
       }
     }
     return result;
-  }
-
-  public static <T> Iterable<T> asIterable(final Enumeration<T> e) {
-    return new Iterable<T>() {
-      public Iterator<T> iterator() {
-        return new Iterator<T>() {
-          public boolean hasNext() {
-            return e.hasMoreElements();
-          }
-
-          public T next() {
-            return e.nextElement();
-          }
-
-          public void remove() {
-            throw new RuntimeException();
-          }
-        };
-      }
-    };
   }
 
   public static <T> Set<T> union(Set<T>... sets) {

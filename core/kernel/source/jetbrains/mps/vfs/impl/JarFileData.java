@@ -71,9 +71,10 @@ class JarFileData {
   }
 
   private void buildCaches() {
-    Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
+    Enumeration<? extends ZipEntry> entries = myZipFile.entries();
 
-    for (ZipEntry entry : entries) {
+    while (entries.hasMoreElements()){
+      ZipEntry entry = entries.nextElement();
       if (entry.isDirectory()) {
         String name = entry.getName();
         if (name.endsWith("/")) {
