@@ -20150,7 +20150,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="8761302831112881471">
           <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8761302831112881472">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8761302831112881473">
-              <link role="baseMethodDeclaration:3" targetNodeId="8.~GlobalScope.getVisibleModules():java.util.Set" resolveInfo="getVisibleModules" />
+              <link role="baseMethodDeclaration:3" targetNodeId="8.~GlobalScope.getVisibleModules():java.lang.Iterable" resolveInfo="getVisibleModules" />
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8761302831112881474">
               <link role="baseMethodDeclaration:3" targetNodeId="8.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
