@@ -34,54 +34,70 @@ public abstract class DefaultScope extends BaseScope {
   private boolean myInitializationInProgress;
 
   private Set<IModule> myVisibleModules;
-  private Map<String, Language> myFqNameToLanguage = new HashMap<String, Language>();
-  private Map<ModuleId, Language> myIdToLanguage = new HashMap<ModuleId, Language>();
 
-  private Map<String, DevKit> myFqNameToDevKit = new HashMap<String, DevKit>();
-  private Map<ModuleId, DevKit> myIdToDevKit = new HashMap<ModuleId, DevKit>();
+  private Map<String, Language> myUsedLanguagesByFqName = new HashMap<String, Language>();
+  private Map<ModuleId, Language> myUsedLanguagesById = new HashMap<ModuleId, Language>();
 
-  private Map<SModelFqName, SModelDescriptor> myFqNameToDescriptor = new HashMap<SModelFqName, SModelDescriptor>();
-  private Map<SModelId, SModelDescriptor> myIdToDescriptor = new HashMap<SModelId, SModelDescriptor>();
-  private Set<SModelDescriptor> myOwnModelDescriptors = new HashSet<SModelDescriptor>();
+  private Map<String, DevKit> myUsedDevKitsByFqName = new HashMap<String, DevKit>();
+  private Map<ModuleId, DevKit> myUsedDevKitsById = new HashMap<ModuleId, DevKit>();
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    if (modelReference == null) {
-      return null;
-    }
-    initialize();
-    if (modelReference.getSModelId() != null) {
-      return myIdToDescriptor.get(modelReference.getSModelId());
-    }
-    return myFqNameToDescriptor.get(modelReference.getSModelFqName());
+    if (modelReference == null) return null;
+
+    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    if (model ==null) return null;
+
+    if (!getModelDescriptors().contains(model)) return null;
+
+    return model;
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
     initialize();
-    return new ArrayList<SModelDescriptor>(myFqNameToDescriptor.values());
+
+    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+
+    for (IModule module : myVisibleModules) {
+      for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
+        result.add(sm);
+      }
+    }
+
+    for (Language l : myUsedLanguagesByFqName.values()) {
+      for (SModelDescriptor accessory : l.getAccessoryModels()) {
+        result.add(accessory);
+      }
+    }
+
+    return result;
   }
 
   @Override
+  //todo replace with iterable
   public List<SModelDescriptor> getOwnModelDescriptors() {
-    initialize();
-    return new ArrayList<SModelDescriptor>(myOwnModelDescriptors);
+    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (IModule module:getInitialModules()){
+      result.addAll(module.getOwnModelDescriptors());
+    }
+    return result;
   }
 
   public List<Language> getVisibleLanguages() {
     initialize();
-    return new ArrayList<Language>(myFqNameToLanguage.values());
+    return new ArrayList<Language>(myUsedLanguagesByFqName.values());
   }
 
   public Language getLanguage(ModuleReference moduleReference) {
     initialize();
     if (moduleReference.getModuleId() != null) {
-      return myIdToLanguage.get(moduleReference.getModuleId());
+      return myUsedLanguagesById.get(moduleReference.getModuleId());
     }
-    return myFqNameToLanguage.get(moduleReference.getModuleFqName());
+    return myUsedLanguagesByFqName.get(moduleReference.getModuleFqName());
   }
 
   public List<DevKit> getVisibleDevkits() {
     initialize();
-    return new ArrayList<DevKit>(myFqNameToDevKit.values());
+    return new ArrayList<DevKit>(myUsedDevKitsByFqName.values());
   }
 
   public Set<IModule> getVisibleModules() {
@@ -92,9 +108,9 @@ public abstract class DefaultScope extends BaseScope {
   public DevKit getDevKit(ModuleReference ref) {
     initialize();
     if (ref.getModuleId() != null) {
-      return myIdToDevKit.get(ref.getModuleId());
+      return myUsedDevKitsById.get(ref.getModuleId());
     }
-    return myFqNameToDevKit.get(ref.getModuleFqName());
+    return myUsedDevKitsByFqName.get(ref.getModuleFqName());
   }
 
   protected abstract Set<IModule> getInitialModules();
@@ -105,13 +121,10 @@ public abstract class DefaultScope extends BaseScope {
 
   public void invalidateCaches() {
     myVisibleModules = null;
-    myFqNameToLanguage.clear();
-    myIdToLanguage.clear();
-    myFqNameToDevKit.clear();
-    myIdToDevKit.clear();
-    myFqNameToDescriptor.clear();
-    myIdToDescriptor.clear();
-    myOwnModelDescriptors.clear();
+    myUsedLanguagesByFqName.clear();
+    myUsedLanguagesById.clear();
+    myUsedDevKitsByFqName.clear();
+    myUsedDevKitsById.clear();
     myInitialized = false;
   }
 
@@ -122,9 +135,9 @@ public abstract class DefaultScope extends BaseScope {
     myInitializationInProgress = true;
 
     Set<IModule> visibleModules = new HashSet<IModule>();
-    visibleModules.addAll(getInitialModules());
-    for (IModule module : getInitialModules()) {
-      myOwnModelDescriptors.addAll(module.getOwnModelDescriptors());
+    Set<IModule> initialModules = getInitialModules();
+    visibleModules.addAll(initialModules);
+    for (IModule module : initialModules) {
       for (Dependency d : module.getDependOn()) {
         IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
         if (dependency != null) {
@@ -140,7 +153,7 @@ public abstract class DefaultScope extends BaseScope {
 
     usedDevkits.addAll(LibraryInitializer.getInstance().getBootstrapModules(DevKit.class));
 
-    for (IModule m : getInitialModules()) {
+    for (IModule m : initialModules) {
       if (m instanceof DevKit) {
         DevKit dk = (DevKit) m;
         usedDevkits.add(dk);
@@ -208,40 +221,23 @@ public abstract class DefaultScope extends BaseScope {
 
     myVisibleModules = visibleModules;
 
-    myFqNameToDevKit = new HashMap<String, DevKit>();
+    myUsedDevKitsByFqName = new HashMap<String, DevKit>();
     for (DevKit dk : usedDevkits) {
-      myFqNameToDevKit.put(dk.getModuleFqName(), dk);
+      myUsedDevKitsByFqName.put(dk.getModuleFqName(), dk);
       if (dk.getModuleReference().getModuleId() != null) {
-        myIdToDevKit.put(dk.getModuleReference().getModuleId(), dk);
+        myUsedDevKitsById.put(dk.getModuleReference().getModuleId(), dk);
       }
     }
 
-    myFqNameToLanguage = new HashMap<String, Language>();
+    myUsedLanguagesByFqName = new HashMap<String, Language>();
     for (Language l : usedLanguages) {
-      myFqNameToLanguage.put(l.getModuleFqName(), l);
+      myUsedLanguagesByFqName.put(l.getModuleFqName(), l);
       if (l.getModuleReference().getModuleId() != null) {
-        myIdToLanguage.put(l.getModuleReference().getModuleId(), l);
-      }
-    }
-
-    for (IModule module : visibleModules) {
-      for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
-        addDescriptor(sm);
-      }
-    }
-
-    for (Language l : usedLanguages) {
-      for (SModelDescriptor accessory : l.getAccessoryModels()) {
-        addDescriptor(accessory);
+        myUsedLanguagesById.put(l.getModuleReference().getModuleId(), l);
       }
     }
 
     myInitializationInProgress = false;
     myInitialized = true;
-  }
-
-  private void addDescriptor(SModelDescriptor sm) {
-    myFqNameToDescriptor.put(sm.getSModelReference().getSModelFqName(), sm);
-    myIdToDescriptor.put(sm.getSModelReference().getSModelId(), sm);
   }
 }
