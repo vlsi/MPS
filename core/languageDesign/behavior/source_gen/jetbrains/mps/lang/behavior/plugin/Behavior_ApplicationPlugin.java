@@ -13,6 +13,7 @@ public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.behavior";
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup");
     return groups;
   }

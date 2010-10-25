@@ -129,27 +129,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuComponent" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.editor.ConceptMethodHierarchy_KeyMap" file="ConceptMethodHierarchy_KeyMap.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.awt.event.KeyEvent" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.AddConceptMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ImplementMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToImplementStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMap" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMapAction" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.behavior.editor.StaticConceptMethodDeclaration_Editor" file="StaticConceptMethodDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
