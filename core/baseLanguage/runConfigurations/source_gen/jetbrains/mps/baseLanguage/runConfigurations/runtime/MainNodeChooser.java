@@ -23,11 +23,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   @NotNull
@@ -98,31 +98,30 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
           return;
         }
 
-        List<SModelDescriptor> descriptors = myScope.getModelDescriptors(text.substring(0, lastDot));
-        ListSequence.fromList(descriptors).visitAll(new IVisitor<SModelDescriptor>() {
-          public void visit(final SModelDescriptor descriptor) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                SModel smodel = descriptor.getSModel();
-                Iterable<SNode> nodes = ListSequence.fromList(SModelOperations.getNodes(smodel, null)).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    if (!(it.isInstanceOfConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept))))) {
-                      return false;
-                    }
-                    if (myAcceptor == null) {
-                      return getFqName(it).equals(text);
-                    } else {
-                      return myAcceptor.invoke(it) && getFqName(it).equals(text);
-                    }
+        final List<SModelDescriptor> descriptors = myScope.getModelDescriptors(text.substring(0, lastDot));
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode foundNode = null;
+            for (SModelDescriptor descriptor : ListSequence.fromList(descriptors)) {
+              SModel smodel = descriptor.getSModel();
+              Iterable<SNode> nodes = ListSequence.fromList(SModelOperations.getNodes(smodel, null)).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  if (!(it.isInstanceOfConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept))))) {
+                    return false;
                   }
-                });
-                if (Sequence.fromIterable(nodes).isEmpty()) {
-                  setNode(null);
-                } else {
-                  setNode(Sequence.fromIterable(nodes).first());
+                  if (myAcceptor == null) {
+                    return getFqName(it).equals(text);
+                  } else {
+                    return myAcceptor.invoke(it) && getFqName(it).equals(text);
+                  }
                 }
+              });
+              if (!(Sequence.fromIterable(nodes).isEmpty())) {
+                foundNode = Sequence.fromIterable(nodes).first();
+                break;
               }
-            });
+            }
+            setNode(foundNode);
           }
         });
       }
