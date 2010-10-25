@@ -30,6 +30,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
@@ -69,17 +70,16 @@ public class ImportHelper {
       }
 
       public SModelDescriptor[] find(IScope scope) {
-        List<SModelDescriptor> modelDescriptors =
-          CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-                || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
-            }
-          });
-
-        return modelDescriptors.toArray(new SModelDescriptor[modelDescriptors.size()]);
+        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          public boolean met(SModelDescriptor modelDescriptor) {
+            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
+              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+            boolean hasModule = modelDescriptor.getModule() != null;
+            return rightStereotype && hasModule;
+          }
+        };
+        ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+        return IterableUtil.asArray(iter);
       }
 
       @Nullable
@@ -148,7 +148,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           Language lang = (Language) getModule();
-          if (!myContextModule.getScope().getVisibleLanguages().contains(lang)) {
+          if (myContextModule.getScope().getLanguage(lang.getModuleReference())==null) {
             myContextModule.addUsedLanguage(lang.getModuleReference());
           }
           SModelOperations.addLanguage(myModel.getSModel(), lang.getModuleReference());
@@ -177,25 +177,22 @@ public class ImportHelper {
         }
 
         public SNode[] find(IScope scope) {
-          List<SModelDescriptor> modelDescriptors =
-            CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
-              public boolean met(SModelDescriptor modelDescriptor) {
-                boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor);
-                boolean hasModule = modelDescriptor.getModule() != null;
-                return rightStereotype && hasModule;
-              }
-            });
-
+          Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+            public boolean met(SModelDescriptor modelDescriptor) {
+              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor);
+              boolean hasModule = modelDescriptor.getModule() != null;
+              return rightStereotype && hasModule;
+            }
+          };
+          ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
 
           final List<SNode> nodes = new ArrayList<SNode>();
-          for (SModelDescriptor modelDescriptor : modelDescriptors) {
+          for (SModelDescriptor modelDescriptor : iter) {
             SModel model = modelDescriptor.getSModel();
             if (model == null) continue;
-            for (SNode node : model.roots()) {
-              nodes.add(node);
-            }
+            nodes.addAll(IterableUtil.asCollection(model.roots()));
           }
-          return nodes.toArray(new SNode[0]);
+          return nodes.toArray(new SNode[nodes.size()]);
         }
 
         @Nullable

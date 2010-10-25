@@ -33,13 +33,13 @@ public interface IScope {
 
   DevKit getDevKit(ModuleReference ref);
 
-  List<SModelDescriptor> getModelDescriptors();
+  Iterable<SModelDescriptor> getModelDescriptors();
 
   Iterable<SModelDescriptor> getOwnModelDescriptors();
 
-  List<Language> getVisibleLanguages();
+  Iterable<Language> getVisibleLanguages();
 
-  List<DevKit> getVisibleDevkits();
+  Iterable<DevKit> getVisibleDevkits();
 
   Iterable<IModule> getVisibleModules();
 

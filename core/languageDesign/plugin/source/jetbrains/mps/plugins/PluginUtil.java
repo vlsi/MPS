@@ -28,6 +28,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,8 +45,8 @@ public class PluginUtil {
     Set<IModule> modules = new HashSet<IModule>();
 
     for (Solution s : mpsProject.getProjectSolutions()) {
-      modules.addAll(s.getScope().getVisibleLanguages());
-      modules.addAll(s.getScope().getVisibleDevkits());
+      modules.addAll(IterableUtil.asCollection(s.getScope().getVisibleLanguages()));
+      modules.addAll(IterableUtil.asCollection(s.getScope().getVisibleDevkits()));
     }
 
     for (Language l : mpsProject.getProjectLanguages()) {

@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex;
@@ -68,7 +69,7 @@ public class GoToNamedNodeAction extends BaseAction {
       BaseNodeModel baseNodeModel = new BaseNodeModel(project, "symbol") {
         public SNode[] find(IScope scope) {
           final List<SNode> nodes = new ArrayList<SNode>();
-          List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+          Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
 
           Condition<SNode> cond = new Condition<SNode>() {
             public boolean met(SNode node) {
@@ -81,9 +82,7 @@ public class GoToNamedNodeAction extends BaseAction {
             if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
             Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().nodes(), cond);
-            for (SNode node : iter) {
-              nodes.add(node);
-            }
+            nodes.addAll(IterableUtil.asCollection(iter));
           }
           return nodes.toArray(new SNode[nodes.size()]);
         }

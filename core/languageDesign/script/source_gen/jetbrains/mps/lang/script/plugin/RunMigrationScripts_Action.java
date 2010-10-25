@@ -85,7 +85,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IScope scope = AbstractMigrationScriptHelper.createMigrationScope(RunMigrationScripts_Action.this.models, RunMigrationScripts_Action.this.modules, RunMigrationScripts_Action.this.selectionOnly);
-      if (scope.getModelDescriptors().isEmpty()) {
+      if (!scope.getModelDescriptors().iterator().hasNext()) {
         return;
       }
       ScriptsActionGroupHelper.sortScripts(RunMigrationScripts_Action.this.scripts);

@@ -31,19 +31,15 @@ public class ModelsProgressUtil {
 
   public static final String TASK_KIND_GENERATION = "tk_generation";
   public static final String TASK_KIND_FIND_NODE_USAGES = "tk_findNodeUsages";
-  public static final String TASK_KIND_FIND_USAGES = "tk_findUsages";
   public static final String TASK_KIND_FIND_INSTANCES = "tk_findInstances";
   public static final String TASK_KIND_FIND_EXACT_INSTANCES = "tk_findExactInstances";
 
-  public static final String TASK_NAME_COMPILE_ON_GENERATION = "tn_compileOnGeneration";
   public static final String TASK_NAME_RELOAD_ALL = "tn_reloadAll";
   public static final String TASK_NAME_REFRESH_FS = "tn_refreshFs";
-  public static final String TASK_KIND_CHECK_MODELS = "tk_checkModels";
   public static final String TASK_NAME_COMPILE_IN_IDEA = "tn_compileInIDEA";
   public static final String TASK_NAME_COMPILE_IN_MPS = "tn_compileInMPS";
 
   //generic utilities:
-
   public static ModelsProgressUtil getInstance() {
     return ourInstance;
   }
@@ -63,7 +59,7 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(modelDescriptor);
   }
 
-  public static long estimateGenerationTimeMillis(Collection<SModelDescriptor> models) {
+  public static long estimateGenerationTimeMillis(Iterable<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).estimateModelsTaskTimeMillis(models);
   }
 
@@ -71,11 +67,7 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_NODE_USAGES).modelTaskName(modelDescriptor);
   }
 
-  public static String checkModelTaskName(SModelDescriptor modelDescriptor) {
-    return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).modelTaskName(modelDescriptor);
-  }
-
-  public static long estimateFindNodeUsagesTimeMillis(Collection<SModelDescriptor> models) {
+  public static long estimateFindNodeUsagesTimeMillis(Iterable<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_NODE_USAGES).estimateModelsTaskTimeMillis(models);
   }
 
@@ -87,16 +79,12 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_EXACT_INSTANCES).modelTaskName(modelDescriptor);
   }
 
-  public static long estimateFindInstancesTimeMillis(Collection<SModelDescriptor> models) {
+  public static long estimateFindInstancesTimeMillis(Iterable<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).estimateModelsTaskTimeMillis(models);
   }
 
-  public static long estimateFindExactInstancesTimeMillis(Collection<SModelDescriptor> models) {
+  public static long estimateFindExactInstancesTimeMillis(Iterable<SModelDescriptor> models) {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_EXACT_INSTANCES).estimateModelsTaskTimeMillis(models);
-  }
-
-  public static long estimateCheckModelsTimeMillis(Collection<SModelDescriptor> models) {
-    return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).estimateModelsTaskTimeMillis(models);
   }
 
   public static long estimateCompilationMillis(boolean inIDEA) {
@@ -128,17 +116,5 @@ public class ModelsProgressUtil {
   public static long estimateRefreshIDEAFileSystemTimeMillis() {
     TaskProgressSettings settings = TaskProgressSettings.getInstance();
     return settings.getEstimatedTimeMillis(TASK_NAME_REFRESH_FS);
-  }
-
-  public static long estimateNodeBuildingTimeMillis(SModel model, int iterations, boolean isPrimaryMapping) {
-    long modelTimeMillis = estimateModelGenerationTimeMillis(model, isPrimaryMapping);
-    return (long) ((double) modelTimeMillis / (double) iterations);
-  }
-
-  public static long estimateModelGenerationTimeMillis(SModel model, boolean isPrimaryMapping) {
-    String taskName = getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(model.getSModelReference());
-    double koef = isPrimaryMapping ? 1 / 3 : 2 / 3;
-    long modelTimeMillis = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
-    return (long) (((double) modelTimeMillis) * koef);
   }
 }

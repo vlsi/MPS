@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
 
 public class ModelProperties extends BaseBean {
@@ -98,7 +98,7 @@ public class ModelProperties extends BaseBean {
     Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
     for (ModuleReference dk : devKitsInProperties) {
-      DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+      DevKit devKit = MPSModuleRepository.getInstance().getDevKit(dk);
       assert devKit != null;
       SModel model = myModelDescriptor.getSModel();
       SModelOperations.addNewlyImportedDevKit(model, dk);
@@ -122,14 +122,15 @@ public class ModelProperties extends BaseBean {
     Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().importedLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInProps.removeAll(languagesInModel);
-    for (ModuleReference namespace : languagesInProps) {
-      Language language = GlobalScope.getInstance().getLanguage(namespace);
-      if (language != null) {
-        if (!(myModelDescriptor.getModule().getScope().getVisibleLanguages().contains(language))) {
-          myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
-        }
-        myModelDescriptor.getSModel().addLanguage(language.getModuleReference());
+    for (ModuleReference ref : languagesInProps) {
+      Language language = MPSModuleRepository.getInstance().getLanguage(ref);
+      if (language == null) {
+        continue;
       }
+      if (myModelDescriptor.getModule().getScope().getLanguage(language.getModuleReference()) == null) {
+        myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
+      }
+      myModelDescriptor.getSModel().addLanguage(language.getModuleReference());
     }
   }
 

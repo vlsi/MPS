@@ -36,11 +36,7 @@ public class ModelsProgressHelper {
     return modelReference.getLongName() + "_" + myTaskKind;
   }
 
-  public String modelTaskKind() {
-    return myTaskKind;
-  }
-
-  public long estimateModelsTaskTimeMillis(Collection<SModelDescriptor> models) {
+  public long estimateModelsTaskTimeMillis(Iterable<SModelDescriptor> models) {
     long timeMillis = 0;
     TaskProgressSettings settings = TaskProgressSettings.getInstance();
     for (SModelDescriptor model : models) {
@@ -48,5 +44,4 @@ public class ModelsProgressHelper {
     }
     return timeMillis;
   }
-
 }

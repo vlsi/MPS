@@ -830,17 +830,24 @@
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8476129223775269883">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8476129223775270144" />
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8476129223775270139">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8476129223775269887">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8476129223775269886">
-                <link role="variableDeclaration:3" targetNodeId="8476129223775269862" resolveInfo="scope" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="5141009151578468721">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5141009151578468723">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5141009151578468724">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5141009151578468725">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5141009151578468726">
+                    <link role="variableDeclaration:3" targetNodeId="8476129223775269862" resolveInfo="scope" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5141009151578468727">
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~IScope.getModelDescriptors():java.lang.Iterable" resolveInfo="getModelDescriptors" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5141009151578468728">
+                  <link role="baseMethodDeclaration:3" targetNodeId="8.~Iterable.iterator():java.util.Iterator" resolveInfo="iterator" />
+                </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8476129223775270138">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~IScope.getModelDescriptors():java.util.List" resolveInfo="getModelDescriptors" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5141009151578468729">
+                <link role="baseMethodDeclaration:3" targetNodeId="18.~Iterator.hasNext():boolean" resolveInfo="hasNext" />
               </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8476129223775270143">
-              <link role="baseMethodDeclaration:3" targetNodeId="18.~List.isEmpty():boolean" resolveInfo="isEmpty" />
             </node>
           </node>
         </node>

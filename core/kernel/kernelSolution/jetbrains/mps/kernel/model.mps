@@ -502,7 +502,7 @@
               <link role="variableDeclaration:3" targetNodeId="1238267561966" resolveInfo="scope" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238267630928">
-              <link role="baseMethodDeclaration:3" targetNodeId="11.~IScope.getModelDescriptors():java.util.List" resolveInfo="getModelDescriptors" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.~IScope.getModelDescriptors():java.lang.Iterable" resolveInfo="getModelDescriptors" />
             </node>
           </node>
           <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238267621442">
@@ -700,7 +700,7 @@
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5540842959600300388">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5540842959600300389">
                         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5540842959600300390">
-                          <property name="name:3" value="languageNamespace" />
+                          <property name="name:3" value="languageFqName" />
                           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5540842959600300391" />
                           <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5540842959600300392">
                             <link role="baseMethodDeclaration:3" targetNodeId="3.~NameUtil.namespaceFromConceptFQName(java.lang.String):java.lang.String" resolveInfo="namespaceFromConceptFQName" />
@@ -722,9 +722,14 @@
                               <link role="variableDeclaration:3" targetNodeId="1237995590800" resolveInfo="scope" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5540842959600300399">
-                              <link role="baseMethodDeclaration:3" targetNodeId="11.~IScope.getLanguage(java.lang.String):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5540842959600300400">
-                                <link role="variableDeclaration:3" targetNodeId="5540842959600300390" resolveInfo="languageNamespace" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="11.~IScope.getLanguage(jetbrains.mps.project.structure.modules.ModuleReference):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5759597392385031309">
+                                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5759597392385031311">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="22.~ModuleReference.&lt;init&gt;(java.lang.String)" resolveInfo="ModuleReference" />
+                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5759597392385031312">
+                                    <link role="variableDeclaration:3" targetNodeId="5540842959600300390" resolveInfo="languageFqName" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -945,7 +950,7 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1237995590853">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1237995590854">
-            <property name="name:3" value="languageNamespace" />
+            <property name="name:3" value="languageFqName" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8477036312981907139" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1239493152263">
               <link role="baseMethodDeclaration:3" targetNodeId="3.~NameUtil.namespaceFromConcept(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):java.lang.String" resolveInfo="namespaceFromConcept" />
@@ -979,9 +984,14 @@
                 <link role="variableDeclaration:3" targetNodeId="1237995590887" resolveInfo="scope" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1237995590869">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.~IScope.getLanguage(java.lang.String):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237995590870">
-                  <link role="variableDeclaration:3" targetNodeId="1237995590854" resolveInfo="languageNamespace" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.~IScope.getLanguage(jetbrains.mps.project.structure.modules.ModuleReference):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5730129325002547967">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5730129325002547969">
+                    <link role="baseMethodDeclaration:3" targetNodeId="22.~ModuleReference.&lt;init&gt;(java.lang.String)" resolveInfo="ModuleReference" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5730129325002547970">
+                      <link role="variableDeclaration:3" targetNodeId="1237995590854" resolveInfo="languageNamespace" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

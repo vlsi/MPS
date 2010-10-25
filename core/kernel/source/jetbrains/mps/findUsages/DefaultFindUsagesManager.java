@@ -64,8 +64,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
       myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
     }
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
-    List<SModelDescriptor> models = scope.getModelDescriptors();
-    for (SModelDescriptor model : models) {
+    for (SModelDescriptor model : scope.getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(model.getStereotype())) continue;
       HashSet<AbstractConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
       if (descendantsKnownInModel == null) {
@@ -104,7 +103,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     //noinspection EmptyFinallyBlock
     try {
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
-      List<SModelDescriptor> models = scope.getModelDescriptors();
+      Iterable<SModelDescriptor> models = scope.getModelDescriptors();
 
       if (manageTasks) {
         long estimatedTime = ModelsProgressUtil.estimateFindNodeUsagesTimeMillis(models);
@@ -112,7 +111,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
         progress.addText("Finding usages...");
       }
 
-      for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
+      for (SModelDescriptor model : models) {
         String taskName = ModelsProgressUtil.findNodeUsagesModelTaskName(model);
         if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_NODE_USAGES);
         result.addAll(new ModelFindOperations(model).findUsages(nodes));
@@ -166,7 +165,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     //noinspection EmptyFinallyBlock
     try {
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
-      List<SModelDescriptor> models = scope.getModelDescriptors();
+      Iterable<SModelDescriptor> models = scope.getModelDescriptors();
 
       if (manageTasks) {
         long estimatedTime = ModelsProgressUtil.estimateFindInstancesTimeMillis(models);
@@ -198,7 +197,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     //noinspection EmptyFinallyBlock
     try {
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
-      List<SModelDescriptor> models = scope.getModelDescriptors();
+      Iterable<SModelDescriptor> models = scope.getModelDescriptors();
 
       if (manageTasks) {
         long estimatedTime = ModelsProgressUtil.estimateFindExactInstancesTimeMillis(models);

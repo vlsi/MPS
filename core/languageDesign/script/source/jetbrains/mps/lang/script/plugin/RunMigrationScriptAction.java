@@ -28,14 +28,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Igor Alshannikov
- * Date: Apr 24, 2007
- */
 public class RunMigrationScriptAction extends BaseAction {
   private MigrationScript myScript;
   private boolean myApplyToSelection;
-  private Project myProject;
   private IOperationContext myContext;
   private List<SModelDescriptor> myModels;
   private List<IModule> myModules;
@@ -48,10 +43,7 @@ public class RunMigrationScriptAction extends BaseAction {
 
   protected void doExecute(AnActionEvent e) {
     IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules, myApplyToSelection);
-    if (migrationScope.getModelDescriptors().isEmpty()) {
-      return;
-    }
-
+    if (!migrationScope.getModelDescriptors().iterator().hasNext()) return;
     List<MigrationScript> scripts = new ArrayList<MigrationScript>();
     scripts.add(myScript);
     AbstractMigrationScriptHelper.doRunScripts(scripts, migrationScope, myContext);
@@ -62,8 +54,8 @@ public class RunMigrationScriptAction extends BaseAction {
 
     myContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myContext == null) return false;
-    myProject = e.getData(MPSDataKeys.PROJECT);
-    if (myProject == null) return false;
+    Project project = e.getData(MPSDataKeys.PROJECT);
+    if (project == null) return false;
     myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
     myModules = e.getData(MPSDataKeys.MODULES);

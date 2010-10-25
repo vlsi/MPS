@@ -52,7 +52,7 @@ public class GoToRootNodeAction extends BaseAction {
       BaseNodeModel baseNodeModel = new BaseNodeModel(project) {
         public SNode[] find(IScope scope) {
           final List<SNode> nodes = new ArrayList<SNode>();
-          List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+          Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
           for (SModelDescriptor modelDescriptor : modelDescriptors) {
             if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
             for (SNode node : modelDescriptor.getSModel().roots()) {

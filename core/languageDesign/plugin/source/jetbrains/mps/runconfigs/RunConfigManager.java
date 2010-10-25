@@ -207,21 +207,9 @@ public class RunConfigManager implements ProjectComponent {
   }
 
   private List<ConfigurationType> createConfigs(Project project) {
-
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
-    Set<Language> languages = new HashSet<Language>();
-    for (Solution s : myMpsProject.getProjectSolutions()) {
-      languages.addAll(s.getScope().getVisibleLanguages());
-    }
-
-    for (Language l : myMpsProject.getProjectLanguages()) {
-      languages.add(l);
-    }
-
-    languages.addAll(MPSModuleRepository.getInstance().getAllLanguages());
-
-    for (Language language : languages) {
+    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       if (LanguageAspect.PLUGIN.get(language) != null) {
         SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
         for (RunConfigurationTypeDeclaration rcTypeDecl : model.getRootsAdapters(RunConfigurationTypeDeclaration.class)) {
@@ -246,22 +234,8 @@ public class RunConfigManager implements ProjectComponent {
   }
 
   private List<ConfigurationType> createCreators(Project project) {
-    final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
-
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
-
-    Set<Language> languages = new HashSet<Language>();
-    for (Solution s : mpsProject.getProjectSolutions()) {
-      languages.addAll(s.getScope().getVisibleLanguages());
-    }
-
-    for (Language l : mpsProject.getProjectLanguages()) {
-      languages.add(l);
-    }
-
-    languages.addAll(MPSModuleRepository.getInstance().getAllLanguages());
-
-    for (Language language : languages) {
+    for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       if (LanguageAspect.PLUGIN.get(language) != null) {
         SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
 

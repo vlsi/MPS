@@ -21,12 +21,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -97,7 +99,7 @@ public class SModelUtil {
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModelDescriptor descriptor : ListSequence.fromList(scope.getModelDescriptors())) {
+    for (SModelDescriptor descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
       if (!(modelName.equals(descriptor.getLongName()))) {
         continue;
       }
@@ -124,8 +126,8 @@ public class SModelUtil {
     }
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
-        String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFQName);
-        Language language = scope.getLanguage(languageNamespace);
+        String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
+        Language language = scope.getLanguage(new ModuleReference(languageFqName));
         if (language == null) {
           return null;
         }
@@ -154,11 +156,11 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
-    if (languageNamespace == null) {
+    String languageFqName = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+    if (languageFqName == null) {
       return null;
     }
-    l = scope.getLanguage(languageNamespace);
+    l = scope.getLanguage(new ModuleReference(languageFqName));
     if (l != null) {
       MapSequence.fromMap(myConceptToLanguage).put(concept, l);
     }

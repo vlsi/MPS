@@ -11,10 +11,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -36,7 +36,7 @@ public class BinaryOperationReference_binaryOperation_ReferentConstraint extends
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
 
-    for (Language language : ListSequence.fromList(operationContext.getScope().getVisibleLanguages())) {
+    for (Language language : operationContext.getScope().getVisibleLanguages()) {
       SModelDescriptor strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
       SModel strucModel = strucModelDescriptor.getSModel();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(strucModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {

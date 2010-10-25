@@ -15,11 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-
-import java.util.List;
 
 public abstract class BaseScope implements IScope {
   public final SModelDescriptor getModelDescriptor(SModelFqName fqName) {
@@ -30,7 +26,7 @@ public abstract class BaseScope implements IScope {
     return getLanguage(new ModuleReference(fqName));
   }
 
-  public List<SModelDescriptor> getOwnModelDescriptors() {
+  public Iterable<SModelDescriptor> getOwnModelDescriptors() {
     return getModelDescriptors();
   }
 }

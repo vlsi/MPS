@@ -28,15 +28,13 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-
-import java.util.List;
 
 public class GoToModelAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -57,17 +55,15 @@ public class GoToModelAction extends BaseAction {
       }
 
       public SModelDescriptor[] find(IScope scope) {
-        List<SModelDescriptor> modelDescriptors =
-          CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-                || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
-            }
-          });
-
-        return modelDescriptors.toArray(new SModelDescriptor[0]);
+        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          public boolean met(SModelDescriptor modelDescriptor) {
+            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
+              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+            boolean hasModule = modelDescriptor.getModule() != null;
+            return rightStereotype && hasModule;
+          }
+        };
+        return IterableUtil.asArray(new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond));
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
