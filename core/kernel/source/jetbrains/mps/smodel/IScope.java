@@ -65,5 +65,5 @@ public interface IScope {
 
   List<DevKit> getVisibleDevkits();
 
-  Set<IModule> getVisibleModules();
+  Iterable<IModule> getVisibleModules();
 }

@@ -20,6 +20,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 
 import java.util.*;
 
@@ -34,10 +36,11 @@ public class GlobalScopeMinusTransient extends GlobalScope {
   }
 
   protected GlobalScopeMinusTransient() {
+
   }
 
-  public Set<IModule> getVisibleModules() {
-    return filterOutTransient(MPSModuleRepository.getInstance().getAllModules());
+  public Iterable<IModule> getVisibleModules() {
+    return new ConditionalIterable<IModule>(MPSModuleRepository.getInstance().getAllModules(), new NonTransientModuleCondition());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
@@ -52,18 +55,6 @@ public class GlobalScopeMinusTransient extends GlobalScope {
 
   public List<SModelDescriptor> getModelDescriptors() {
     return filterOutTransient(SModelRepository.getInstance().getModelDescriptors());
-  }
-
-  private Set<IModule> filterOutTransient(Collection<IModule> modules) {
-    Set<IModule> result = new HashSet<IModule>();
-
-    for (IModule module : modules) {
-      if (!(module instanceof TransientModelsModule)) {
-        result.add(module);
-      }
-    }
-
-    return result;
   }
 
   private List<SModelDescriptor> filterOutTransient(List<SModelDescriptor> models) {
@@ -88,4 +79,9 @@ public class GlobalScopeMinusTransient extends GlobalScope {
     return false;
   }
 
+  private static class NonTransientModuleCondition implements Condition<IModule> {
+    public boolean met(IModule module) {
+      return !(module instanceof TransientModelsModule);
+    }
+  }
 }

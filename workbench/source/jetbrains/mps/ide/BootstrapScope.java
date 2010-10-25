@@ -24,10 +24,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BootstrapScope extends BaseScope {
   private static BootstrapScope myInstance;
@@ -58,8 +55,8 @@ public class BootstrapScope extends BaseScope {
     return getModules(DevKit.class);
   }
 
-  public Set<IModule> getVisibleModules() {
-    return new HashSet(getModules(null));
+  public Iterable<IModule> getVisibleModules() {
+    return Collections.unmodifiableList(getModules(null));
   }
 
   public Language getLanguage(ModuleReference moduleReference) {

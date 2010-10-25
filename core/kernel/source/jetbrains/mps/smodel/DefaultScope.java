@@ -131,16 +131,14 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
-  //todo replace with iterable
-  public Set<IModule> getVisibleModules() {
+  public Iterable<IModule> getVisibleModules() {
     synchronized (LOCK) {
       initialize();
       return Collections.unmodifiableSet(myVisibleModules);
     }
   }
 
-  //todo replace with iterable
-  protected Set<Language> getInitialUsedLanguages() {
+  protected Collection<Language> getInitialUsedLanguages() {
     return CollectionUtil.filter(Language.class, getInitialModules());
   }
 

@@ -46,7 +46,8 @@ public class TestModule extends AbstractModule {
     setModuleReference(reference);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().addModule(TestModule.this, new MPSModuleOwner() {});
+        MPSModuleRepository.getInstance().addModule(TestModule.this, new MPSModuleOwner() {
+        });
       }
     });
   }
@@ -60,9 +61,9 @@ public class TestModule extends AbstractModule {
     });
     super.dispose();
   }
-  
+
   public String getOutputFor(SModelDescriptor model) {
-    if(myOriginalModels.containsKey(model)) {
+    if (myOriginalModels.containsKey(model)) {
       model = myOriginalModels.get(model);
       return model.getModule().getOutputFor(model);
     }
@@ -147,7 +148,9 @@ public class TestModule extends AbstractModule {
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TestModule.this);
-      result.addAll(GlobalScope.getInstance().getVisibleModules());
+      for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
+        result.add(m);
+      }
       return result;
     }
 
@@ -178,7 +181,7 @@ public class TestModule extends AbstractModule {
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       SModel result = ModelPersistence.readModel(document, NameUtil.shortNameFromLongName(myToCopy.getLongName()), myToCopy.getStereotype());
       result.setLoading(true);
-      return new ModelLoadResult(result,ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult(result, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

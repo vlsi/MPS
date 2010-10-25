@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -64,9 +65,8 @@ public class GlobalScope extends BaseScope {
     return myMPSModuleRepository.getAllSolutions();
   }
 
-  //todo make return List or, better, a Collection
-  public Set<IModule> getVisibleModules() {
-    return new HashSet<IModule>(myMPSModuleRepository.getAllModules());
+  public Iterable<IModule> getVisibleModules() {
+    return Collections.unmodifiableList(myMPSModuleRepository.getAllModules());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {

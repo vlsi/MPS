@@ -56,6 +56,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public void projectOpened() {
+
   }
 
   public void projectClosed() {
@@ -222,7 +223,9 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TransientModelsModule.this);
-      result.addAll(GlobalScope.getInstance().getVisibleModules());
+      for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
+        result.add(m);
+      }
       return result;
     }
 
