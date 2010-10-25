@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.refactoring;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
@@ -83,7 +84,12 @@ public class RenameModelDialog extends BaseDialog {
     }
 
     if (!(fqName.equals(myModelDescriptor.getSModelReference().getSModelFqName()))) {
-      DeleteModelHelper.deleteGeneratedFiles(myModelDescriptor);
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          DeleteModelHelper.deleteGeneratedFiles(myModelDescriptor);
+        }
+      });
 
       final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
