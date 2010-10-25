@@ -30,14 +30,14 @@ import java.util.*;
 public abstract class DefaultScope extends BaseScope {
   private static final Logger LOG = Logger.getLogger(DefaultScope.class);
 
+  private final Object LOCK = new Object();
+
   private boolean myInitialized;
   private boolean myInitializationInProgress;
 
   private Set<IModule> myVisibleModules;
-
   private Map<String, Language> myUsedLanguagesByFqName = new HashMap<String, Language>();
   private Map<ModuleId, Language> myUsedLanguagesById = new HashMap<ModuleId, Language>();
-
   private Map<String, DevKit> myUsedDevKitsByFqName = new HashMap<String, DevKit>();
   private Map<ModuleId, DevKit> myUsedDevKitsById = new HashMap<ModuleId, DevKit>();
 
@@ -47,15 +47,17 @@ public abstract class DefaultScope extends BaseScope {
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) return null;
 
-    initialize();
+    synchronized (LOCK) {
+      initialize();
 
-    for (IModule module : model.getModules()) {
-      if (myVisibleModules.contains(module)) return model;
-    }
+      for (IModule module : model.getModules()) {
+        if (myVisibleModules.contains(module)) return model;
+      }
 
-    for (Language l : myUsedLanguagesByFqName.values()) {
-      for (SModelDescriptor accessory : l.getAccessoryModels()) {
-        if (accessory == model) return model;
+      for (Language l : myUsedLanguagesByFqName.values()) {
+        for (SModelDescriptor accessory : l.getAccessoryModels()) {
+          if (accessory == model) return model;
+        }
       }
     }
 
@@ -63,23 +65,22 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
-    initialize();
-
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    synchronized (LOCK) {
+      initialize();
 
+      for (IModule module : myVisibleModules) {
+        for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
+          result.add(sm);
+        }
+      }
 
-    for (IModule module : myVisibleModules) {
-      for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
-        result.add(sm);
+      for (Language l : myUsedLanguagesByFqName.values()) {
+        for (SModelDescriptor accessory : l.getAccessoryModels()) {
+          result.add(accessory);
+        }
       }
     }
-
-    for (Language l : myUsedLanguagesByFqName.values()) {
-      for (SModelDescriptor accessory : l.getAccessoryModels()) {
-        result.add(accessory);
-      }
-    }
-
     return result;
   }
 
@@ -87,41 +88,54 @@ public abstract class DefaultScope extends BaseScope {
   //todo replace with iterable
   public List<SModelDescriptor> getOwnModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (IModule module : getInitialModules()) {
-      result.addAll(module.getOwnModelDescriptors());
+    synchronized (LOCK) {
+      for (IModule module : getInitialModules()) {
+        result.addAll(module.getOwnModelDescriptors());
+      }
     }
     return result;
   }
 
+  //todo replace with iterable
   public List<Language> getVisibleLanguages() {
-    initialize();
-    return new ArrayList<Language>(myUsedLanguagesByFqName.values());
+    synchronized (LOCK) {
+      initialize();
+      return new ArrayList<Language>(myUsedLanguagesByFqName.values());
+    }
   }
 
   public Language getLanguage(ModuleReference moduleReference) {
-    initialize();
-    if (moduleReference.getModuleId() != null) {
-      return myUsedLanguagesById.get(moduleReference.getModuleId());
+    synchronized (LOCK) {
+      initialize();
+      if (moduleReference.getModuleId() != null) {
+        return myUsedLanguagesById.get(moduleReference.getModuleId());
+      }
+      return myUsedLanguagesByFqName.get(moduleReference.getModuleFqName());
     }
-    return myUsedLanguagesByFqName.get(moduleReference.getModuleFqName());
   }
 
   public List<DevKit> getVisibleDevkits() {
-    initialize();
-    return new ArrayList<DevKit>(myUsedDevKitsByFqName.values());
+    synchronized (LOCK) {
+      initialize();
+      return new ArrayList<DevKit>(myUsedDevKitsByFqName.values());
+    }
   }
 
   public Set<IModule> getVisibleModules() {
-    initialize();
-    return Collections.unmodifiableSet(myVisibleModules);
+    synchronized (LOCK) {
+      initialize();
+      return Collections.unmodifiableSet(myVisibleModules);
+    }
   }
 
   public DevKit getDevKit(ModuleReference ref) {
-    initialize();
-    if (ref.getModuleId() != null) {
-      return myUsedDevKitsById.get(ref.getModuleId());
+    synchronized (LOCK) {
+      initialize();
+      if (ref.getModuleId() != null) {
+        return myUsedDevKitsById.get(ref.getModuleId());
+      }
+      return myUsedDevKitsByFqName.get(ref.getModuleFqName());
     }
-    return myUsedDevKitsByFqName.get(ref.getModuleFqName());
   }
 
   protected abstract Set<IModule> getInitialModules();
@@ -131,124 +145,128 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   public void invalidateCaches() {
-    myVisibleModules = null;
-    myUsedLanguagesByFqName.clear();
-    myUsedLanguagesById.clear();
-    myUsedDevKitsByFqName.clear();
-    myUsedDevKitsById.clear();
-    myInitialized = false;
+    synchronized (LOCK) {
+      myVisibleModules = null;
+      myUsedLanguagesByFqName.clear();
+      myUsedLanguagesById.clear();
+      myUsedDevKitsByFqName.clear();
+      myUsedDevKitsById.clear();
+      myInitialized = false;
+    }
   }
 
   private void initialize() {
-    if (myInitialized) return;
-    if (myInitializationInProgress) return;
+    synchronized (LOCK) {
+      if (myInitialized) return;
+      if (myInitializationInProgress) return;
 
-    myInitializationInProgress = true;
+      myInitializationInProgress = true;
 
-    Set<IModule> visibleModules = new HashSet<IModule>();
-    Set<IModule> initialModules = getInitialModules();
-    visibleModules.addAll(initialModules);
-    for (IModule module : initialModules) {
-      for (Dependency d : module.getDependOn()) {
-        IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
-        if (dependency != null) {
-          visibleModules.add(dependency);
+      Set<IModule> visibleModules = new HashSet<IModule>();
+      Set<IModule> initialModules = getInitialModules();
+      visibleModules.addAll(initialModules);
+      for (IModule module : initialModules) {
+        for (Dependency d : module.getDependOn()) {
+          IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
+          if (dependency != null) {
+            visibleModules.add(dependency);
+          }
         }
       }
-    }
 
-    Set<Language> usedLanguages = new HashSet<Language>();
-    usedLanguages.addAll(getInitialUsedLanguages());
+      Set<Language> usedLanguages = new HashSet<Language>();
+      usedLanguages.addAll(getInitialUsedLanguages());
 
-    Set<DevKit> usedDevkits = new HashSet<DevKit>();
+      Set<DevKit> usedDevkits = new HashSet<DevKit>();
 
-    usedDevkits.addAll(LibraryInitializer.getInstance().getBootstrapModules(DevKit.class));
+      usedDevkits.addAll(LibraryInitializer.getInstance().getBootstrapModules(DevKit.class));
 
-    for (IModule m : initialModules) {
-      if (m instanceof DevKit) {
-        DevKit dk = (DevKit) m;
-        usedDevkits.add(dk);
+      for (IModule m : initialModules) {
+        if (m instanceof DevKit) {
+          DevKit dk = (DevKit) m;
+          usedDevkits.add(dk);
+        }
+
+        usedDevkits.addAll(ModuleUtil.refsToDevkits(m.getUsedDevkitReferences()));
       }
 
-      usedDevkits.addAll(ModuleUtil.refsToDevkits(m.getUsedDevkitReferences()));
-    }
+      for (DevKit dk : usedDevkits) {
+        usedLanguages.addAll(dk.getAllExportedLanguages());
+        visibleModules.addAll(dk.getAllExportedSolutions());
+      }
 
-    for (DevKit dk : usedDevkits) {
-      usedLanguages.addAll(dk.getAllExportedLanguages());
-      visibleModules.addAll(dk.getAllExportedSolutions());
-    }
+      boolean changed = true;
+      while (changed) {
+        changed = false;
 
-    boolean changed = true;
-    while (changed) {
-      changed = false;
+        for (IModule module : new HashSet<IModule>(visibleModules)) {
+          if (module instanceof Language) {
+            Language language = (Language) module;
+            for (Language l : language.getExtendedLanguages()) {
+              if (!visibleModules.contains(l)) {
+                visibleModules.add(l);
+                changed = true;
+              }
+            }
+          }
 
-      for (IModule module : new HashSet<IModule>(visibleModules)) {
-        if (module instanceof Language) {
-          Language language = (Language) module;
-          for (Language l : language.getExtendedLanguages()) {
-            if (!visibleModules.contains(l)) {
-              visibleModules.add(l);
-              changed = true;
+          for (Dependency dep : module.getDependOn()) {
+            if (dep.isReexport()) {
+              IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+              if (dependency != null) {
+                if (!visibleModules.contains(dependency)) {
+                  visibleModules.add(dependency);
+                  changed = true;
+                }
+              } else {
+                LOG.error("Can't find module " + dep.getModuleRef().getModuleFqName() + " in " + this);
+              }
             }
           }
         }
 
-        for (Dependency dep : module.getDependOn()) {
-          if (dep.isReexport()) {
+        for (Language language : new ArrayList<Language>(usedLanguages)) {
+          for (Language extendedLanguage : language.getExtendedLanguages()) {
+            if (extendedLanguage == null) {
+              LOG.error("One of extended language of " + language.getModuleFqName() + " in " + this + " is null.");
+            } else if (!usedLanguages.contains(extendedLanguage)) {
+              usedLanguages.add(extendedLanguage);
+              changed = true;
+            }
+          }
+
+          for (Dependency dep : language.getDependOn()) {
             IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
             if (dependency != null) {
-              if (!visibleModules.contains(dependency)) {
+              if (dep.isReexport() && !visibleModules.contains(dependency)) {
                 visibleModules.add(dependency);
                 changed = true;
               }
-            } else {
-              LOG.error("Can't find module " + dep.getModuleRef().getModuleFqName() + " in " + this);
             }
           }
         }
       }
 
-      for (Language language : new ArrayList<Language>(usedLanguages)) {
-        for (Language extendedLanguage : language.getExtendedLanguages()) {
-          if (extendedLanguage == null) {
-            LOG.error("One of extended language of " + language.getModuleFqName() + " in " + this + " is null.");
-          } else if (!usedLanguages.contains(extendedLanguage)) {
-            usedLanguages.add(extendedLanguage);
-            changed = true;
-          }
-        }
+      myVisibleModules = visibleModules;
 
-        for (Dependency dep : language.getDependOn()) {
-          IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-          if (dependency != null) {
-            if (dep.isReexport() && !visibleModules.contains(dependency)) {
-              visibleModules.add(dependency);
-              changed = true;
-            }
-          }
+      myUsedDevKitsByFqName = new HashMap<String, DevKit>();
+      for (DevKit dk : usedDevkits) {
+        myUsedDevKitsByFqName.put(dk.getModuleFqName(), dk);
+        if (dk.getModuleReference().getModuleId() != null) {
+          myUsedDevKitsById.put(dk.getModuleReference().getModuleId(), dk);
         }
       }
-    }
 
-    myVisibleModules = visibleModules;
-
-    myUsedDevKitsByFqName = new HashMap<String, DevKit>();
-    for (DevKit dk : usedDevkits) {
-      myUsedDevKitsByFqName.put(dk.getModuleFqName(), dk);
-      if (dk.getModuleReference().getModuleId() != null) {
-        myUsedDevKitsById.put(dk.getModuleReference().getModuleId(), dk);
+      myUsedLanguagesByFqName = new HashMap<String, Language>();
+      for (Language l : usedLanguages) {
+        myUsedLanguagesByFqName.put(l.getModuleFqName(), l);
+        if (l.getModuleReference().getModuleId() != null) {
+          myUsedLanguagesById.put(l.getModuleReference().getModuleId(), l);
+        }
       }
-    }
 
-    myUsedLanguagesByFqName = new HashMap<String, Language>();
-    for (Language l : usedLanguages) {
-      myUsedLanguagesByFqName.put(l.getModuleFqName(), l);
-      if (l.getModuleReference().getModuleId() != null) {
-        myUsedLanguagesById.put(l.getModuleReference().getModuleId(), l);
-      }
+      myInitializationInProgress = false;
+      myInitialized = true;
     }
-
-    myInitializationInProgress = false;
-    myInitialized = true;
   }
 }
