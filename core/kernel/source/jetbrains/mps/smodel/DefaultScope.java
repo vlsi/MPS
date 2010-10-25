@@ -19,7 +19,6 @@ import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -36,10 +35,8 @@ public abstract class DefaultScope extends BaseScope {
   private boolean myInitializationInProgress;
 
   private Set<IModule> myVisibleModules;
-  private Map<String, Language> myUsedLanguagesByFqName = new HashMap<String, Language>();
-  private Map<ModuleId, Language> myUsedLanguagesById = new HashMap<ModuleId, Language>();
-  private Map<String, DevKit> myUsedDevKitsByFqName = new HashMap<String, DevKit>();
-  private Map<ModuleId, DevKit> myUsedDevKitsById = new HashMap<ModuleId, DevKit>();
+  private Set<Language> myUsedLanguages;
+  private Set<DevKit> myUsedDevkits;
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
@@ -54,7 +51,7 @@ public abstract class DefaultScope extends BaseScope {
         if (myVisibleModules.contains(module)) return model;
       }
 
-      for (Language l : myUsedLanguagesByFqName.values()) {
+      for (Language l : myUsedLanguages) {
         for (SModelDescriptor accessory : l.getAccessoryModels()) {
           if (accessory == model) return model;
         }
@@ -64,6 +61,29 @@ public abstract class DefaultScope extends BaseScope {
     return null;
   }
 
+  public Language getLanguage(ModuleReference moduleReference) {
+    Language l = MPSModuleRepository.getInstance().getLanguage(moduleReference);
+    if (l == null) return null;
+
+    synchronized (LOCK) {
+      initialize();
+      if (!myUsedLanguages.contains(l)) return null;
+      return l;
+    }
+  }
+
+  public DevKit getDevKit(ModuleReference ref) {
+    DevKit d = MPSModuleRepository.getInstance().getDevKit(ref);
+    if (d == null) return null;
+
+    synchronized (LOCK) {
+      initialize();
+      if (!myUsedDevkits.contains(d)) return null;
+      return d;
+    }
+  }
+
+  //todo replace with iterable
   public List<SModelDescriptor> getModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     synchronized (LOCK) {
@@ -75,7 +95,7 @@ public abstract class DefaultScope extends BaseScope {
         }
       }
 
-      for (Language l : myUsedLanguagesByFqName.values()) {
+      for (Language l : myUsedLanguages) {
         for (SModelDescriptor accessory : l.getAccessoryModels()) {
           result.add(accessory);
         }
@@ -84,7 +104,6 @@ public abstract class DefaultScope extends BaseScope {
     return result;
   }
 
-  @Override
   //todo replace with iterable
   public List<SModelDescriptor> getOwnModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
@@ -100,27 +119,19 @@ public abstract class DefaultScope extends BaseScope {
   public List<Language> getVisibleLanguages() {
     synchronized (LOCK) {
       initialize();
-      return new ArrayList<Language>(myUsedLanguagesByFqName.values());
+      return new ArrayList<Language>(myUsedLanguages);
     }
   }
 
-  public Language getLanguage(ModuleReference moduleReference) {
-    synchronized (LOCK) {
-      initialize();
-      if (moduleReference.getModuleId() != null) {
-        return myUsedLanguagesById.get(moduleReference.getModuleId());
-      }
-      return myUsedLanguagesByFqName.get(moduleReference.getModuleFqName());
-    }
-  }
-
+  //todo replace with iterable
   public List<DevKit> getVisibleDevkits() {
     synchronized (LOCK) {
       initialize();
-      return new ArrayList<DevKit>(myUsedDevKitsByFqName.values());
+      return new ArrayList<DevKit>(myUsedDevkits);
     }
   }
 
+  //todo replace with iterable
   public Set<IModule> getVisibleModules() {
     synchronized (LOCK) {
       initialize();
@@ -128,18 +139,7 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
-  public DevKit getDevKit(ModuleReference ref) {
-    synchronized (LOCK) {
-      initialize();
-      if (ref.getModuleId() != null) {
-        return myUsedDevKitsById.get(ref.getModuleId());
-      }
-      return myUsedDevKitsByFqName.get(ref.getModuleFqName());
-    }
-  }
-
-  protected abstract Set<IModule> getInitialModules();
-
+  //todo replace with iterable
   protected Set<Language> getInitialUsedLanguages() {
     return CollectionUtil.filter(Language.class, getInitialModules());
   }
@@ -147,10 +147,8 @@ public abstract class DefaultScope extends BaseScope {
   public void invalidateCaches() {
     synchronized (LOCK) {
       myVisibleModules = null;
-      myUsedLanguagesByFqName.clear();
-      myUsedLanguagesById.clear();
-      myUsedDevKitsByFqName.clear();
-      myUsedDevKitsById.clear();
+      myUsedLanguages = null;
+      myUsedDevkits = null;
       myInitialized = false;
     }
   }
@@ -162,49 +160,50 @@ public abstract class DefaultScope extends BaseScope {
 
       myInitializationInProgress = true;
 
-      Set<IModule> visibleModules = new HashSet<IModule>();
+      myVisibleModules = new HashSet<IModule>();
+      myUsedLanguages = new HashSet<Language>();
+      myUsedDevkits = new HashSet<DevKit>();
+
       Set<IModule> initialModules = getInitialModules();
-      visibleModules.addAll(initialModules);
+      myVisibleModules.addAll(initialModules);
       for (IModule module : initialModules) {
         for (Dependency d : module.getDependOn()) {
           IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
           if (dependency != null) {
-            visibleModules.add(dependency);
+            myVisibleModules.add(dependency);
           }
         }
       }
 
-      Set<Language> usedLanguages = new HashSet<Language>();
-      usedLanguages.addAll(getInitialUsedLanguages());
+      myUsedLanguages.addAll(getInitialUsedLanguages());
 
-      Set<DevKit> usedDevkits = new HashSet<DevKit>();
 
-      usedDevkits.addAll(LibraryInitializer.getInstance().getBootstrapModules(DevKit.class));
+      myUsedDevkits.addAll(LibraryInitializer.getInstance().getBootstrapModules(DevKit.class));
 
       for (IModule m : initialModules) {
         if (m instanceof DevKit) {
           DevKit dk = (DevKit) m;
-          usedDevkits.add(dk);
+          myUsedDevkits.add(dk);
         }
 
-        usedDevkits.addAll(ModuleUtil.refsToDevkits(m.getUsedDevkitReferences()));
+        myUsedDevkits.addAll(ModuleUtil.refsToDevkits(m.getUsedDevkitReferences()));
       }
 
-      for (DevKit dk : usedDevkits) {
-        usedLanguages.addAll(dk.getAllExportedLanguages());
-        visibleModules.addAll(dk.getAllExportedSolutions());
+      for (DevKit dk : myUsedDevkits) {
+        myUsedLanguages.addAll(dk.getAllExportedLanguages());
+        myVisibleModules.addAll(dk.getAllExportedSolutions());
       }
 
       boolean changed = true;
       while (changed) {
         changed = false;
 
-        for (IModule module : new HashSet<IModule>(visibleModules)) {
+        for (IModule module : new HashSet<IModule>(myVisibleModules)) {
           if (module instanceof Language) {
             Language language = (Language) module;
             for (Language l : language.getExtendedLanguages()) {
-              if (!visibleModules.contains(l)) {
-                visibleModules.add(l);
+              if (!myVisibleModules.contains(l)) {
+                myVisibleModules.add(l);
                 changed = true;
               }
             }
@@ -214,8 +213,8 @@ public abstract class DefaultScope extends BaseScope {
             if (dep.isReexport()) {
               IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
               if (dependency != null) {
-                if (!visibleModules.contains(dependency)) {
-                  visibleModules.add(dependency);
+                if (!myVisibleModules.contains(dependency)) {
+                  myVisibleModules.add(dependency);
                   changed = true;
                 }
               } else {
@@ -225,12 +224,12 @@ public abstract class DefaultScope extends BaseScope {
           }
         }
 
-        for (Language language : new ArrayList<Language>(usedLanguages)) {
+        for (Language language : new ArrayList<Language>(myUsedLanguages)) {
           for (Language extendedLanguage : language.getExtendedLanguages()) {
             if (extendedLanguage == null) {
               LOG.error("One of extended language of " + language.getModuleFqName() + " in " + this + " is null.");
-            } else if (!usedLanguages.contains(extendedLanguage)) {
-              usedLanguages.add(extendedLanguage);
+            } else if (!myUsedLanguages.contains(extendedLanguage)) {
+              myUsedLanguages.add(extendedLanguage);
               changed = true;
             }
           }
@@ -238,8 +237,8 @@ public abstract class DefaultScope extends BaseScope {
           for (Dependency dep : language.getDependOn()) {
             IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
             if (dependency != null) {
-              if (dep.isReexport() && !visibleModules.contains(dependency)) {
-                visibleModules.add(dependency);
+              if (dep.isReexport() && !myVisibleModules.contains(dependency)) {
+                myVisibleModules.add(dependency);
                 changed = true;
               }
             }
@@ -247,26 +246,10 @@ public abstract class DefaultScope extends BaseScope {
         }
       }
 
-      myVisibleModules = visibleModules;
-
-      myUsedDevKitsByFqName = new HashMap<String, DevKit>();
-      for (DevKit dk : usedDevkits) {
-        myUsedDevKitsByFqName.put(dk.getModuleFqName(), dk);
-        if (dk.getModuleReference().getModuleId() != null) {
-          myUsedDevKitsById.put(dk.getModuleReference().getModuleId(), dk);
-        }
-      }
-
-      myUsedLanguagesByFqName = new HashMap<String, Language>();
-      for (Language l : usedLanguages) {
-        myUsedLanguagesByFqName.put(l.getModuleFqName(), l);
-        if (l.getModuleReference().getModuleId() != null) {
-          myUsedLanguagesById.put(l.getModuleReference().getModuleId(), l);
-        }
-      }
-
       myInitializationInProgress = false;
       myInitialized = true;
     }
   }
+
+  protected abstract Set<IModule> getInitialModules();
 }
