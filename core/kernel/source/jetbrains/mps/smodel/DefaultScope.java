@@ -119,19 +119,17 @@ public abstract class DefaultScope extends BaseScope {
     return result;
   }
 
-  //todo replace with iterable
-  public List<Language> getVisibleLanguages() {
+  public Iterable<Language> getVisibleLanguages() {
     synchronized (LOCK) {
       initialize();
-      return new ArrayList<Language>(myUsedLanguages);
+      return Collections.unmodifiableSet(myUsedLanguages);
     }
   }
 
-  //todo replace with iterable
-  public List<DevKit> getVisibleDevkits() {
+  public Iterable<DevKit> getVisibleDevkits() {
     synchronized (LOCK) {
       initialize();
-      return new ArrayList<DevKit>(myUsedDevkits);
+      return Collections.unmodifiableSet(myUsedDevkits);
     }
   }
 
