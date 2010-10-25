@@ -43,12 +43,6 @@ public interface IScope {
 
   Language getLanguage(String fqName);
 
-  boolean isVisibleLanguage(ModuleReference ref);
-
-  boolean isVisibleLanguage(ModuleId moduleId);
-
-  boolean isVisibleLanguage(String fqName);
-
   List<Language> getVisibleLanguages();
 
   DevKit getDevKit(ModuleReference ref);
@@ -56,12 +50,6 @@ public interface IScope {
   DevKit getDevKit(ModuleId moduleId);
 
   DevKit getDevKit(String fqName);
-
-  boolean isVisibleDevKit(ModuleReference ref);
-
-  boolean isVisibleDevKit(String fqName);
-
-  boolean isVisibleDevKit(ModuleId moduleId);
 
   List<DevKit> getVisibleDevkits();
 

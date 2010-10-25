@@ -38,18 +38,6 @@ public abstract class BaseScope implements IScope {
     return getLanguage(new ModuleReference(fqName));
   }
 
-  public final boolean isVisibleLanguage(ModuleReference ref) {
-    return getLanguage(ref) != null;
-  }
-
-  public final boolean isVisibleLanguage(ModuleId moduleId) {
-    return isVisibleLanguage(new ModuleReference(null, moduleId));
-  }
-
-  public final boolean isVisibleLanguage(String fqName) {
-    return isVisibleLanguage(new ModuleReference(fqName));
-  }
-
   public final DevKit getDevKit(ModuleId moduleId) {
     return getDevKit(new ModuleReference(null, moduleId));
   }
@@ -58,19 +46,6 @@ public abstract class BaseScope implements IScope {
     return getDevKit(new ModuleReference(fqName));
   }
 
-  public boolean isVisibleDevKit(ModuleReference ref) {
-    return getDevKit(ref) != null;
-  }
-
-  public final boolean isVisibleDevKit(String fqName) {
-    return isVisibleDevKit(new ModuleReference(fqName));
-  }
-
-  public final boolean isVisibleDevKit(ModuleId moduleId) {
-    return isVisibleDevKit(new ModuleReference(null, moduleId));
-  }
-
-  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return getModelDescriptors();
   }
