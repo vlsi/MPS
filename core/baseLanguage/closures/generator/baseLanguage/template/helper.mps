@@ -8893,6 +8893,7 @@
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3143009324072703199">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3143009324072703200">
                           <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="3143009324072703201">
+                            <property name="asCast:16" value="true" />
                             <link role="concept:16" targetNodeId="14.1107535904670:3" resolveInfo="ClassifierType" />
                             <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3143009324072703202">
                               <link role="baseMethodDeclaration:3" targetNodeId="1544005601051263326" resolveInfo="unbound" />
