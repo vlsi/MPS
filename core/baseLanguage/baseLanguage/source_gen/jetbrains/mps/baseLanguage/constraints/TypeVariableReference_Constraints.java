@@ -14,6 +14,9 @@ import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 public class TypeVariableReference_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     List<SNode> members = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassifierMember", true);
+    if (ListSequence.fromList(members).isEmpty()) {
+      return true;
+    }
     return ListSequence.fromList(members).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(ClassifierMember_Behavior.call_isStatic_8986964027630462944(it));
