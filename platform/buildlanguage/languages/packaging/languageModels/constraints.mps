@@ -526,7 +526,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1224178454279">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224178456232">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1224178525674">
-                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~SimpleSearchScope.&lt;init&gt;(java.util.Collection)" resolveInfo="SimpleSearchScope" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224178529945">
                       <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="1224178555506">
                         <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1224178555507" />

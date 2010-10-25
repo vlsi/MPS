@@ -4,15 +4,19 @@ package jetbrains.mps.smodel.search;
 
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import java.util.Collection;
 import jetbrains.mps.smodel.INodeAdapter;
 import org.jetbrains.annotations.NotNull;
-import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 
 public class SimpleSearchScope extends AbstractSearchScope {
   private LinkedHashSet<SNode> myNodes;
+
+  public SimpleSearchScope(List nodes) {
+    this(((Collection) nodes));
+  }
 
   public SimpleSearchScope(Collection nodes) {
     myNodes = new LinkedHashSet<SNode>();

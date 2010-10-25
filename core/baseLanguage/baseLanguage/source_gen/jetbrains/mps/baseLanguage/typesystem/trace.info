@@ -2978,15 +2978,15 @@
   </root>
   <root nodeId="1208355936702">
     <nodeInfo nodeId="7376433222636453407" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="31" startPosition="132" endLine="32" endPosition="19" />
-    <nodeInfo nodeId="1208356012455" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="32" startPosition="19" endLine="33" endPosition="343" />
-    <scopeInfo nodeId="1208355936703" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="31" startPosition="132" endLine="33" endPosition="343" />
+    <nodeInfo nodeId="1208356012455" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="32" startPosition="19" endLine="33" endPosition="337" />
+    <scopeInfo nodeId="1208355936703" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="31" startPosition="132" endLine="33" endPosition="337" />
   </root>
   <root nodeId="1208356118874">
     <nodeInfo nodeId="7376433222636453741" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="28" startPosition="126" endLine="29" endPosition="19" />
-    <nodeInfo nodeId="1208356158522" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="30" startPosition="154" endLine="31" endPosition="360" />
+    <nodeInfo nodeId="1208356158522" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="30" startPosition="154" endLine="31" endPosition="354" />
     <nodeInfo nodeId="1208356170302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="32" startPosition="5" endLine="33" endPosition="57" />
     <nodeInfo nodeId="1208356136566" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="29" startPosition="19" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1208356136568" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="30" startPosition="154" endLine="31" endPosition="360" />
+    <scopeInfo nodeId="1208356136568" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="30" startPosition="154" endLine="31" endPosition="354" />
     <scopeInfo nodeId="1208356118875" fileName="PrimitiveArraySupertypes_SubtypingRule.java" startLine="28" startPosition="126" endLine="33" endPosition="57" />
   </root>
   <root nodeId="1208891036449">
@@ -3489,7 +3489,7 @@
     <nodeInfo nodeId="1220523357876" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="136" startPosition="15" endLine="137" endPosition="55" />
     <nodeInfo nodeId="1220535076789" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="137" startPosition="55" endLine="138" endPosition="158" />
     <nodeInfo nodeId="1220523357880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="139" startPosition="17" endLine="140" endPosition="54" />
-    <nodeInfo nodeId="1220523357903" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="141" startPosition="328" endLine="142" endPosition="128" />
+    <nodeInfo nodeId="1220523357903" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="141" startPosition="328" endLine="142" endPosition="128" />
     <nodeInfo nodeId="1227258840880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="148" startPosition="16" endLine="149" endPosition="64" />
     <nodeInfo nodeId="1227258925906" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="149" startPosition="64" endLine="150" endPosition="34" />
     <nodeInfo nodeId="1233155321686" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="151" startPosition="139" endLine="152" endPosition="140" />
@@ -5316,7 +5316,7 @@
     <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="36" startPosition="64" endLine="37" endPosition="56" />
     <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="37" startPosition="56" endLine="38" endPosition="160" />
     <nodeInfo nodeId="4691618959158120669" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="45" startPosition="103" endLine="46" endPosition="262" />
-    <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="47" startPosition="12" endLine="48" endPosition="185" />
+    <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="47" startPosition="12" endLine="48" endPosition="185" />
     <nodeInfo nodeId="4691618959158120663" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="47" startPosition="10" endLine="49" endPosition="5" />
     <nodeInfo nodeId="4691618959158120651" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="49" endPosition="5" />
     <nodeInfo nodeId="4691618959158120669" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="22" startPosition="103" endLine="30" endPosition="7" />

@@ -557,7 +557,7 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1213104858828">
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888379249">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888379251">
-                      <link role="baseMethodDeclaration:3" targetNodeId="11.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="11.~SimpleSearchScope.&lt;init&gt;(java.util.Collection)" resolveInfo="SimpleSearchScope" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104858830">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104858831">
                           <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="1213104858832" />

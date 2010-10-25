@@ -263,7 +263,7 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1213104840612">
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888335448">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888335450">
-                      <link role="baseMethodDeclaration:3" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.Collection)" resolveInfo="SimpleSearchScope" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213104840614">
                         <link role="variableDeclaration:3" targetNodeId="1213104840604:21" resolveInfo="methods" />
                       </node>
@@ -936,7 +936,7 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213104858426">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888397733">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888397735">
-                        <link role="baseMethodDeclaration:3" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="4.~SimpleSearchScope.&lt;init&gt;(java.util.Collection)" resolveInfo="SimpleSearchScope" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104858428">
                           <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1213104858429">
                             <link role="concept:16" targetNodeId="2.1082978164219:0" resolveInfo="EnumerationDataTypeDeclaration" />

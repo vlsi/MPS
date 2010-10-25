@@ -1333,7 +1333,7 @@
               <link role="variableDeclaration:3" targetNodeId="4575917870415846166" resolveInfo="scope" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4575917870415846190">
-              <link role="baseMethodDeclaration:3" targetNodeId="17.~IScope.getModelDescriptors():java.util.List" />
+              <link role="baseMethodDeclaration:3" targetNodeId="17.~IScope.getModelDescriptors():java.lang.Iterable" resolveInfo="getModelDescriptors" />
             </node>
           </node>
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4575917870415846191">

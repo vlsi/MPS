@@ -37,6 +37,31 @@
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4642948870877886455" />
     </node>
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7451562887563385707">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7451562887563385708" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7451562887563385709" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7451562887563385710">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation:3" id="7451562887563390746">
+          <link role="baseMethodDeclaration:3" targetNodeId="4642948870877886456" resolveInfo="SimpleSearchScope" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7451562887563390748">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7451562887563390749">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7451562887563390750">
+                <link role="variableDeclaration:3" targetNodeId="7451562887563385711" resolveInfo="nodes" />
+              </node>
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7451562887563390752">
+                <link role="classifier:3" targetNodeId="1.~Collection" resolveInfo="Collection" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7451562887563385711">
+        <property name="name:3" value="nodes" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7451562887563385712">
+          <link role="classifier:3" targetNodeId="1.~List" resolveInfo="List" />
+        </node>
+      </node>
+    </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4642948870877886456">
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4642948870877886457" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4642948870877886458" />

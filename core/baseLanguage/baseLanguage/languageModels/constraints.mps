@@ -1576,7 +1576,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3944301644568957179">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3944301644568957182">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3944301644568963786">
-                    <link role="baseMethodDeclaration:3" targetNodeId="52.~SimpleSearchScope.&lt;init&gt;(java.util.List)" resolveInfo="SimpleSearchScope" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="52.~SimpleSearchScope.&lt;init&gt;(java.util.Collection)" resolveInfo="SimpleSearchScope" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3944301644568963812">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3944301644568964495">
                         <link role="baseMethodDeclaration:3" targetNodeId="53.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
