@@ -29,29 +29,25 @@ import java.util.Set;
 public interface IScope {
   SModelDescriptor getModelDescriptor(SModelReference modelReference);
 
-  SModelDescriptor getModelDescriptor(SModelId modelId);
-
-  SModelDescriptor getModelDescriptor(SModelFqName fqName);
-
   List<SModelDescriptor> getModelDescriptors();
 
   List<SModelDescriptor> getOwnModelDescriptors();
 
   Language getLanguage(ModuleReference moduleReference);
 
-  Language getLanguage(ModuleId moduleId);
-
-  Language getLanguage(String fqName);
-
-  List<Language> getVisibleLanguages();
-
   DevKit getDevKit(ModuleReference ref);
 
-  DevKit getDevKit(ModuleId moduleId);
-
-  DevKit getDevKit(String fqName);
+  List<Language> getVisibleLanguages();
 
   List<DevKit> getVisibleDevkits();
 
   Iterable<IModule> getVisibleModules();
+
+  //-----------deprecated------------
+
+  @Deprecated
+  SModelDescriptor getModelDescriptor(SModelFqName fqName);
+
+  @Deprecated
+  Language getLanguage(String fqName);
 }

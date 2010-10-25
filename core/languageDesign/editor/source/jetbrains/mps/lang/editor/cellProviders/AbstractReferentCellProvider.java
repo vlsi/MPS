@@ -114,7 +114,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
         referentNode = reference.getTargetNode();
-        if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getSModelId()) == null) {
+        if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getSModelReference()) == null) {
           String rinfo = reference.getResolveInfo();
           myErrorText = rinfo != null ? rinfo : "?" + myLinkDeclaration.getRole() + "?";
           return createErrorCell(myErrorText, node, context);

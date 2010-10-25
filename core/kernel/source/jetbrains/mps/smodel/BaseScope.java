@@ -22,28 +22,12 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.List;
 
 public abstract class BaseScope implements IScope {
-  public final SModelDescriptor getModelDescriptor(SModelId modelId) {
-    return getModelDescriptor(new SModelReference(null, modelId));
-  }
-
   public final SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     return getModelDescriptor(new SModelReference(fqName, null));
   }
 
-  public final Language getLanguage(ModuleId moduleId) {
-    return getLanguage(new ModuleReference(null, moduleId));
-  }
-
   public final Language getLanguage(String fqName) {
     return getLanguage(new ModuleReference(fqName));
-  }
-
-  public final DevKit getDevKit(ModuleId moduleId) {
-    return getDevKit(new ModuleReference(null, moduleId));
-  }
-
-  public final DevKit getDevKit(String fqName) {
-    return getDevKit(new ModuleReference(fqName));
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {

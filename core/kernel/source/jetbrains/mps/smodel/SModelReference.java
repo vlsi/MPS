@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.apache.commons.lang.ObjectUtils;
 
@@ -109,12 +107,7 @@ public final class SModelReference {
   }
 
   public SModelReference update() {
-    SModelDescriptor sm;
-    if (myModelId != null) {
-      sm = GlobalScope.getInstance().getModelDescriptor(myModelId);
-    } else {
-      sm = GlobalScope.getInstance().getModelDescriptor(myModelFqName);
-    }
+    SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
     return sm.getSModelReference();
   }
