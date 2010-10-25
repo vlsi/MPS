@@ -69,15 +69,6 @@ public class CollectionUtil {
     return asList(i.iterator());
   }
 
-
-  public static <T> Iterable<T> asIterable(final Iterator<T> i) {
-    return new Iterable<T>() {
-      public Iterator<T> iterator() {
-        return i;
-      }
-    };
-  }
-
   public static <T> Iterable<T> asIterable(final Enumeration<T> e) {
     return new Iterable<T>() {
       public Iterator<T> iterator() {
@@ -120,20 +111,8 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> Set<T> stableSet(T... ts) {
-    Set<T> result = new LinkedHashSet<T>();
-    result.addAll(Arrays.asList(ts));
-    return result;
-  }
-
   public static <T> List<T> list(T... ts) {
     List<T> result = new ArrayList<T>();
-    result.addAll(Arrays.asList(ts));
-    return result;
-  }
-
-  public static <T> Vector<T> asVector(T... ts) {
-    Vector<T> result = new Vector<T>();
     result.addAll(Arrays.asList(ts));
     return result;
   }
@@ -172,18 +151,6 @@ public class CollectionUtil {
         throw new UnsupportedOperationException();
       }
     };
-  }
-
-  public static <T> List<T> asList(Set<T> set) {
-    List<T> result = new ArrayList<T>();
-    result.addAll(set);
-    return result;
-  }
-
-  public static <T> Set<T> asSet(List<T> list) {
-    Set<T> result = new LinkedHashSet<T>();
-    result.addAll(list);
-    return result;
   }
 
   public static <T> void addMissing(Collection<T> fromCollection, Collection<T> toCollection) {
@@ -226,7 +193,6 @@ public class CollectionUtil {
   public static <T> void checkForNulls(Iterable<T> resultList) {
     checkForNulls(resultList, "");
   }
-
 
   public static <T> void checkForNulls(Iterable<T> resultList, String message) {
     for (T node : resultList) {

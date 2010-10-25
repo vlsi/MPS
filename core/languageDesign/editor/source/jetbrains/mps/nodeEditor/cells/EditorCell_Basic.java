@@ -22,15 +22,11 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.*;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -921,7 +917,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorCell_Collection getFoldedAbove() {
-    for (EditorCell_Collection parent : CollectionUtil.asIterable(parents())) {
+    for (EditorCell_Collection parent : IterableUtil.asIterable(parents())) {
       if (parent.isFolded()) return parent;
     }
     return null;
@@ -931,7 +927,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
       return (EditorCell_Collection) this;
     }
-    for (EditorCell_Collection collection : CollectionUtil.asIterable(parents())) {
+    for (EditorCell_Collection collection : IterableUtil.asIterable(parents())) {
       if (condition.met(collection)) {
         return collection;
       }

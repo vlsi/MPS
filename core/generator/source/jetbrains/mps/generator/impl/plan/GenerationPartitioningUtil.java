@@ -115,7 +115,7 @@ public class GenerationPartitioningUtil {
     for (SNode root : model.roots()) {
       collectLanguageNamespaces(root, namespaces, excludeTLBase);
     }
-    return CollectionUtil.asList(namespaces);
+    return new ArrayList<String>(namespaces);
   }
 
   private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean excludeTLBase) {

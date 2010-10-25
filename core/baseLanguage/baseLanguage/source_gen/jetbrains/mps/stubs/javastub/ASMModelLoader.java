@@ -27,7 +27,7 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.structure.GenericDeclaration;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.baseLanguage.structure.TypeVariableReference;
 import jetbrains.mps.baseLanguage.structure.PublicVisibility;
 import jetbrains.mps.stubs.javastub.asm.ASMAnnotation;
@@ -207,7 +207,7 @@ public abstract class ASMModelLoader {
   }
 
   private TypeVariableDeclaration findTypeVariableDeclaration(GenericDeclaration genDecl, String name) {
-    for (TypeVariableDeclaration tvd : CollectionUtil.asIterable(genDecl.typeVariableDeclarations())) {
+    for (TypeVariableDeclaration tvd : IterableUtil.asIterable(genDecl.typeVariableDeclarations())) {
       if (name.equals(tvd.getName())) {
         return tvd;
       }

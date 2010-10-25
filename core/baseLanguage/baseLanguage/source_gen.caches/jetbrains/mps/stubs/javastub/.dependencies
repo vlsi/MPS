@@ -98,7 +98,7 @@
     <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMUnboundedType" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMVarArgType" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.NodeNameUtil" />
     <classNode dependClassName="org.objectweb.asm.ClassReader" />

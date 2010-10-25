@@ -23,12 +23,7 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
-/**
- * Igor Alshannikov
- * Date: Apr 17, 2007
- */
-/*package*/ class PriorityMapUtil {
-
+class PriorityMapUtil {
   public static List<CoherentSetData> joinIntersectingCoherentMappings(List<CoherentSetData> coherentMappings) {
     List<CoherentSetData> input = coherentMappings;
     List<CoherentSetData> result = joinIntersectingCoherentMappings_internal(input);

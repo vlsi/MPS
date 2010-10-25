@@ -1290,18 +1290,6 @@
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7241381882860002771">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="7241381882860002772">
-          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860002773">
-            <link role="classConcept:3" targetNodeId="6.~CollectionUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="6.~CollectionUtil.asIterable(java.util.Iterator):java.lang.Iterable" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7241381882860002774">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860002775">
-                <link role="variableDeclaration:3" targetNodeId="7241381882860002767" resolveInfo="genDecl" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7241381882860002776">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~GenericDeclaration.typeVariableDeclarations():java.util.Iterator" />
-              </node>
-            </node>
-          </node>
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7241381882860002777">
             <property name="name:3" value="tvd" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860002778">
@@ -1332,6 +1320,18 @@
                     <link role="variableDeclaration:3" targetNodeId="7241381882860002777" resolveInfo="tvd" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5213449277536352493">
+            <link role="baseMethodDeclaration:3" targetNodeId="6.~IterableUtil.asIterable(java.util.Iterator):java.lang.Iterable" resolveInfo="asIterable" />
+            <link role="classConcept:3" targetNodeId="6.~IterableUtil" resolveInfo="IterableUtil" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5213449277536352494">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5213449277536352495">
+                <link role="variableDeclaration:3" targetNodeId="7241381882860002767" resolveInfo="genDecl" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5213449277536352496">
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~GenericDeclaration.typeVariableDeclarations():java.util.Iterator" resolveInfo="typeVariableDeclarations" />
               </node>
             </node>
           </node>
