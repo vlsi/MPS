@@ -58,7 +58,7 @@ public class Facet__0 implements IFacet {
                 _output_ixz87t_a0 = Sequence.fromIterable(_output_ixz87t_a0).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
               _output_ixz87t_a0 = Sequence.fromIterable(_output_ixz87t_a0).concat(Sequence.fromIterable(input));
-              return new IResult.FAILURE(_output_ixz87t_a0);
+              return new IResult.SUCCESS(_output_ixz87t_a0);
             default:
               return new IResult.SUCCESS(_output_ixz87t_a0);
           }

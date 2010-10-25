@@ -35,8 +35,8 @@
           <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="2360002718792654710">
             <node role="resource" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2360002718792654712" />
           </node>
-          <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="2360002718792654388">
-            <property name="result" value="OK" />
+          <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="3916013743093941205">
+            <property name="result" value="SUCCESS" />
           </node>
         </node>
       </node>

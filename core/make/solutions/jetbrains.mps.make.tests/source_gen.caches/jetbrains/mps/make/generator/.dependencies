@@ -42,14 +42,17 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.reflect.Constructor" />
     <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
+    <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
-    <classNode extendsClassName="junit.framework.TestCase" />
+    <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
 </dependenciesRoot>
 
