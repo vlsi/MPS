@@ -21,10 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
@@ -56,7 +53,9 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     sortTree(myRootNamespace);
     compactNodes(myRootNamespace);
 
-    for (MPSTreeNode node : (List<MPSTreeNode>) CollectionUtil.asList(CollectionUtil.asIterable(myRootNamespace.children()))) {
+    Enumeration children = myRootNamespace.children();
+    while (children.hasMoreElements()){
+      MPSTreeNode node = (MPSTreeNode) children.nextElement();
       myRootNamespace.remove(node);
       root.add(node);
     }
@@ -103,7 +102,9 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       T child = (T) node.getChildAt(0);
       myBuilder.setName(node, myBuilder.getName(node) + "." + myBuilder.getName(child));
 
-      for (MPSTreeNode c : (List<MPSTreeNode>) CollectionUtil.asList(CollectionUtil.asIterable(child.children()))) {
+      Enumeration children = child.children();
+      while (children.hasMoreElements()){
+        MPSTreeNode c = (MPSTreeNode) children.nextElement();
         child.remove(c);
         node.add(c);
       }

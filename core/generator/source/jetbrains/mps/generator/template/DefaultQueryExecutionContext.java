@@ -9,6 +9,7 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -303,7 +304,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       if (result instanceof List) {
         resultList = (List<SNode>) result;
       } else {
-        resultList = CollectionUtil.asList((Iterable<SNode>) result);
+        resultList = new ArrayList<SNode>(IterableUtil.asCollection((Iterable<SNode>) result));
       }
 
       CollectionUtil.checkForNulls(resultList);

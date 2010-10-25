@@ -57,15 +57,6 @@ public class CollectionUtil {
     return result;
   }
 
-  public static <T> List<T> asList(Iterable<T> i) {
-    Iterator<T> i1 = i.iterator();
-    List<T> result = new ArrayList<T>();
-    while (i1.hasNext()) {
-      result.add(i1.next());
-    }
-    return result;
-  }
-
   public static <T> Iterable<T> asIterable(final Enumeration<T> e) {
     return new Iterable<T>() {
       public Iterator<T> iterator() {
