@@ -62,7 +62,6 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.text.DefaultEditorKit;
 import java.awt.*;
 import java.awt.event.*;
-import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.List;
 
@@ -1004,7 +1003,8 @@ public abstract class ChooseByNameBase {
 
     private void fillInCommonPrefix(final String pattern) {
       final ArrayList<String> list = new ArrayList<String>();
-      myMatcher.getNamesByPattern(list, pattern, getNames(), new Computable<Boolean>() {
+      String[] names = myCheckBox.isSelected() ? myNames[1] : myNames[0];
+      myMatcher.getNamesByPattern(list, pattern, names, new Computable<Boolean>() {
         public Boolean compute() {
           return false;
         }
@@ -1161,7 +1161,7 @@ public abstract class ChooseByNameBase {
 
     private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
       boolean overflow = myMatcher
-        .addElementsByPattern(elementsArray, pattern, getNames(), myCheckboxState, myMaximumListSizeLimit, new Computable<Boolean>() {
+        .addElementsByPattern(elementsArray, pattern, myCheckboxState ? myNames[1] : myNames[0], myCheckboxState, myMaximumListSizeLimit, new Computable<Boolean>() {
           public Boolean compute() {
             return myCancelled;
           }
@@ -1176,10 +1176,6 @@ public abstract class ChooseByNameBase {
         myCancelled = true;
       }
     }
-  }
-
-  private String[] getNames() {
-    return myCheckBox.isSelected() ? myNames[1] : myNames[0];
   }
 
   private boolean canShowListForEmptyPattern() {

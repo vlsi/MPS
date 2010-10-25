@@ -24,11 +24,9 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModuleItem implements NavigationItem {
   private IModule myModule;
-  private String myShortName;
 
   public BaseModuleItem(IModule module) {
     myModule = module;
-    myShortName = NameUtil.shortNameFromLongName(myModule.getModuleFqName());
   }
 
   public IModule getModule() {
@@ -36,7 +34,7 @@ public abstract class BaseModuleItem implements NavigationItem {
   }
 
   public String getName() {
-    return null;
+    return myModule.getModuleFqName();
   }
 
   @Nullable
