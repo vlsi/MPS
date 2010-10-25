@@ -45,17 +45,28 @@ public abstract class DefaultScope extends BaseScope {
     if (modelReference == null) return null;
 
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (model ==null) return null;
+    if (model == null) return null;
 
-    if (!getModelDescriptors().contains(model)) return null;
+    initialize();
 
-    return model;
+    for (IModule module : model.getModules()) {
+      if (myVisibleModules.contains(module)) return model;
+    }
+
+    for (Language l : myUsedLanguagesByFqName.values()) {
+      for (SModelDescriptor accessory : l.getAccessoryModels()) {
+        if (accessory == model) return model;
+      }
+    }
+
+    return null;
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
     initialize();
 
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+
 
     for (IModule module : myVisibleModules) {
       for (SModelDescriptor sm : module.getOwnModelDescriptors()) {
@@ -76,7 +87,7 @@ public abstract class DefaultScope extends BaseScope {
   //todo replace with iterable
   public List<SModelDescriptor> getOwnModelDescriptors() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (IModule module:getInitialModules()){
+    for (IModule module : getInitialModules()) {
       result.addAll(module.getOwnModelDescriptors());
     }
     return result;
