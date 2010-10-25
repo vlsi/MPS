@@ -504,7 +504,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (structureModelDescriptor == null) return null;
     SModel structureModel = structureModelDescriptor.getSModel();
 
-    if (myNamesLoadingState.compareTo(ModelLoadingState.ROOTS_LOADED) < 0) {
+    if (myNamesLoadingState.compareTo(ModelLoadingState.ROOTS_LOADED) <= 0) {
       for (SNode root : structureModel.roots()) {
         if (root.getAdapter() instanceof AbstractConceptDeclaration) {
           myNameToConceptCache.put(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
