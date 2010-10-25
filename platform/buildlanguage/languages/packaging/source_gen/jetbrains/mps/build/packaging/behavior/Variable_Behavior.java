@@ -54,7 +54,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._5__yield_4cy34q_a0a0a0a0b0c_it = SNodeOperations.getDescendants(_2_node, "jetbrains.mps.build.packaging.structure.Variable", true, new String[]{}).iterator();
+                      this._5__yield_4cy34q_a0a0a0a0b0c_it = Sequence.fromIterable(SNodeOperations.getDescendants(_2_node, "jetbrains.mps.build.packaging.structure.Variable", true, new String[]{})).iterator();
                     case 6:
                       if (!(this._5__yield_4cy34q_a0a0a0a0b0c_it.hasNext())) {
                         this.__CP__ = 3;
