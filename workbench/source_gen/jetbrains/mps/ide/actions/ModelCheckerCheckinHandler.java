@@ -19,6 +19,7 @@ import java.io.File;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -66,15 +67,19 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     return myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(ProjectOperationContext.get(myProject), getModelDescriptorsByFiles(myPanel.getFiles()));
   }
 
-  public static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
+  private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
     final SModelRepository repository = SModelRepository.getInstance();
-    return Sequence.fromIterable(files).select(new ISelector<File, SModelDescriptor>() {
-      public SModelDescriptor select(File file) {
+    return Sequence.fromIterable(files).select(new ISelector<File, EditableSModelDescriptor>() {
+      public EditableSModelDescriptor select(File file) {
         return repository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
-    }).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor modelDescriptor) {
+    }).where(new IWhereFilter<EditableSModelDescriptor>() {
+      public boolean accept(EditableSModelDescriptor modelDescriptor) {
         return modelDescriptor != null;
+      }
+    }).select(new ISelector<EditableSModelDescriptor, SModelDescriptor>() {
+      public SModelDescriptor select(EditableSModelDescriptor it) {
+        return (SModelDescriptor) it;
       }
     }).toListSequence();
   }
