@@ -18,8 +18,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.xml.sax.Attributes" />

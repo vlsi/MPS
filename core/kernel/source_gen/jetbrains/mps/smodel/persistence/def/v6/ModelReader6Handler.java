@@ -18,7 +18,6 @@ import java.util.HashMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
-import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;

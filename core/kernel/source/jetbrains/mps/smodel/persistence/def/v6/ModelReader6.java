@@ -17,14 +17,10 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
-import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
-import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4.ReferenceTargetDescriptor;
-import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -140,7 +136,7 @@ public class ModelReader6 extends ModelReader4 {
       imports.put(elem.getReferenceID(), elem);
     }
     for (Element child : (List<Element>) rootElement.getChildren(ModelPersistence.NODE)) {
-      SNode snode = readNode(child, model, false, versionsInfo, imports);
+      SNode snode = readNode(child, model, versionsInfo, imports);
       if (snode != null) {
         model.addRoot(snode);
       }
@@ -172,7 +168,7 @@ public class ModelReader6 extends ModelReader4 {
   protected SNode readNode(
     Element nodeElement,
     SModel model,
-    boolean useUIDs, SModelVersionsInfo versionsInfo, Map<Integer, ImportElement> imports
+    SModelVersionsInfo versionsInfo, Map<Integer, ImportElement> imports
   ) {
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
@@ -204,7 +200,7 @@ public class ModelReader6 extends ModelReader4 {
     List links = nodeElement.getChildren(ModelPersistence.LINK);
     for (Object link : links) {
       Element linkElement = (Element) link;
-      SReference reference = readReference(linkElement, model, node, useUIDs, imports);
+      SReference reference = readReference(linkElement, model, node, imports);
       if (reference != null) node.addReference(reference);
     }
 
@@ -213,7 +209,7 @@ public class ModelReader6 extends ModelReader4 {
       Element childNodeElement = (Element) childNode1;
       String rawRole = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
       String role = VersionUtil.getRole(rawRole);
-      SNode childNode = readNode(childNodeElement, model, useUIDs, versionsInfo, imports);
+      SNode childNode = readNode(childNodeElement, model, versionsInfo, imports);
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {
@@ -225,35 +221,29 @@ public class ModelReader6 extends ModelReader4 {
     return node;
   }
 
-  private SReference readReference(Element element, SModel model, SNode node, boolean useUIDs, Map<Integer, ImportElement> imports) {
+  private SReference readReference(Element element, SModel model, SNode node, Map<Integer, ImportElement> imports) {
     String role = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.ROLE));
     String attTargetNodeId = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID));
     String resolveInfo = element.getAttributeValue(ModelPersistence.RESOLVE_INFO);
     String importedModelInfo = "-1";
     String targetId = null;
     if (attTargetNodeId != null) {
-      int i = attTargetNodeId.indexOf(useUIDs ? '#' : '.');
+      int i = attTargetNodeId.indexOf('.');
       importedModelInfo = i > 0 ? attTargetNodeId.substring(0, i) : "-1";
       targetId = attTargetNodeId.substring(i + 1);
     }
 
     SModelReference importedModelReference = model.getSModelReference();
-    if (useUIDs) {
-      if (!importedModelInfo.equals("-1")) {
-        importedModelReference = SModelReference.fromString(importedModelInfo);
-      }
-    } else {
-      int ix = -1;
-      try {
-        ix = Integer.parseInt(importedModelInfo);
-      } catch (NumberFormatException e) { }
-      if (ix > -1) {
-        ImportElement impElem = imports.get(ix);
-        importedModelReference = impElem == null ? null : imports.get(ix).getModelReference();
-        if (importedModelReference == null) {
-          LOG.error("couldn't create reference '" + role + "' : import for index [" + ix + "] not found");
-          return null;
-      }
+    int ix = -1;
+    try {
+      ix = Integer.parseInt(importedModelInfo);
+    } catch (NumberFormatException e) { }
+    if (ix > -1) {
+      ImportElement impElem = imports.get(ix);
+      importedModelReference = impElem == null ? null : imports.get(ix).getModelReference();
+      if (importedModelReference == null) {
+        LOG.error("couldn't create reference '" + role + "' : import for index [" + ix + "] not found");
+        return null;
       }
     }
 

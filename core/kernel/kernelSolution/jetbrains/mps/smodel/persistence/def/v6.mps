@@ -5,27 +5,20 @@
   <language namespace="a8fdde77-2e6c-41f6-ac79-8e9b6449c271(jetbrains.mps.xmlQuery)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v4(jetbrains.mps.smodel.persistence.def.v4@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="5" modelUID="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#org.xml.sax(org.xml.sax@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v6(jetbrains.mps.smodel.persistence.def.v6@java_stub)" version="-1" />
   <node type="jetbrains.mps.xmlQuery.structure.XMLSAXParser:4" id="7319439566871678351">
     <property name="name:4" value="ModelReader6" />
     <link role="root:4" targetNodeId="7319439566871678361" resolveInfo="model" />
@@ -576,8 +569,8 @@
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7319439566871678592">
                       <link role="baseMethodDeclaration:3" targetNodeId="8.~SNode.setProperty(java.lang.String,java.lang.String):void" resolveInfo="setProperty" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7319439566871683199">
-                        <link role="baseMethodDeclaration:3" targetNodeId="2.~VersionUtil.getBeforeSeparator(java.lang.String):java.lang.String" resolveInfo="getBeforeSeparator" />
-                        <link role="classConcept:3" targetNodeId="2.~VersionUtil" resolveInfo="VersionUtil" />
+                        <link role="classConcept:3" targetNodeId="15.~VersionUtil" resolveInfo="VersionUtil" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="15.~VersionUtil.getBeforeSeparator(java.lang.String):java.lang.String" resolveInfo="getBeforeSeparator" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="7319439566871683200">
                           <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7319439566871683201">
                             <property name="value:3" value="0" />
@@ -984,8 +977,8 @@
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7319439566871678654">
                   <link role="baseMethodDeclaration:3" targetNodeId="8.~SNode.setRoleInParent(java.lang.String):void" resolveInfo="setRoleInParent" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7319439566871678655">
-                    <link role="classConcept:3" targetNodeId="2.~VersionUtil" resolveInfo="VersionUtil" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~VersionUtil.getRole(java.lang.String):java.lang.String" resolveInfo="getRole" />
+                    <link role="classConcept:3" targetNodeId="15.~VersionUtil" resolveInfo="VersionUtil" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="15.~VersionUtil.getRole(java.lang.String):java.lang.String" resolveInfo="getRole" />
                     <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="7319439566871678656" />
                   </node>
                 </node>
@@ -1067,8 +1060,8 @@
                 <link role="classifier:3" targetNodeId="3.~String" resolveInfo="String" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7319439566871678695">
-                <link role="classConcept:3" targetNodeId="2.~VersionUtil" resolveInfo="VersionUtil" />
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~VersionUtil.getConceptFQName(java.lang.String):java.lang.String" resolveInfo="getConceptFQName" />
+                <link role="classConcept:3" targetNodeId="15.~VersionUtil" resolveInfo="VersionUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="15.~VersionUtil.getConceptFQName(java.lang.String):java.lang.String" resolveInfo="getConceptFQName" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7319439566871678696">
                   <link role="variableDeclaration:3" targetNodeId="7319439566871678689" resolveInfo="rawFqName" />
                 </node>
@@ -1147,8 +1140,8 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7319439566871678736">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7319439566871678737">
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1408137219337274877">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~VersionUtil.getBeforeSeparator(java.lang.String):java.lang.String" resolveInfo="getBeforeSeparator" />
-                  <link role="classConcept:3" targetNodeId="2.~VersionUtil" resolveInfo="VersionUtil" />
+                  <link role="classConcept:3" targetNodeId="15.~VersionUtil" resolveInfo="VersionUtil" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="15.~VersionUtil.getBeforeSeparator(java.lang.String):java.lang.String" resolveInfo="getBeforeSeparator" />
                   <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="1408137219337274878" />
                 </node>
                 <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="7319439566871678739">
@@ -1193,8 +1186,8 @@
                   <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="7319439566871678758" />
                 </node>
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1408137219337274880">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~VersionUtil.getBeforeSeparator(java.lang.String):java.lang.String" resolveInfo="getBeforeSeparator" />
-                  <link role="classConcept:3" targetNodeId="2.~VersionUtil" resolveInfo="VersionUtil" />
+                  <link role="classConcept:3" targetNodeId="15.~VersionUtil" resolveInfo="VersionUtil" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="15.~VersionUtil.getBeforeSeparator(java.lang.String):java.lang.String" resolveInfo="getBeforeSeparator" />
                   <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="1408137219337274881" />
                 </node>
               </node>

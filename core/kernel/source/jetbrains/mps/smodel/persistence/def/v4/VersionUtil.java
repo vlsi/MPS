@@ -45,7 +45,7 @@ public class VersionUtil {
     return NO_VERSION;
   }
 
-  public static String getBeforeSeparator(String s) {
+  private static String getBeforeSeparator(String s) {
     if (parseVersionedString(s) == NO_VERSION) return s;
     int index = s.lastIndexOf(VERSION_SEPARATOR_CHAR);
     if (index == -1) return s;

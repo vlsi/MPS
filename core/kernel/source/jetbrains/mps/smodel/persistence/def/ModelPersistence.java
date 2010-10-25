@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.sun.tools.javac.resources.version;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -128,7 +127,7 @@ public class ModelPersistence {
     modelWriters.put(6, new ModelWriter6());
 
     modelReadHandlers.put(7, new ModelReader7Handler());
-    modelReaders.put(7, new ModelReader5());
+    modelReaders.put(7, new ModelReader6());
     modelWriters.put(7, new ModelWriter7());
   }
 
