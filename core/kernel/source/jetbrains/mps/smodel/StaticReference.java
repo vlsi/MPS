@@ -82,7 +82,9 @@ public class StaticReference extends SReferenceBase {
       log.error("source node is: name = " + sourceNode.getPersistentProperty(INamedConcept.NAME) +
         ", model = " + sourceNode.getModel() +
         ", id = " + sourceNode.getId());
-      log.errorWithTrace("target node id = " + targetNodeId);
+      log.error("target node id = " + targetNodeId);
+      log.error("stacktrace of model disposing is: ");
+      log.error(targetModel.getDisposedStacktrace());
       return null;
     }
 

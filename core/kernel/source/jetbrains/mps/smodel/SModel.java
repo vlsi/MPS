@@ -57,6 +57,8 @@ public class SModel {
 
   private SModelDescriptor myModelDescriptor;
 
+  private Throwable myDisposedStacktrace = null;
+
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
   }
@@ -97,6 +99,10 @@ public class SModel {
 
   public boolean isDisposed() {
     return myDisposed;
+  }
+
+  public Throwable getDisposedStacktrace() {
+    return myDisposedStacktrace;
   }
 
   public SModelDescriptor getModelDescriptor() {
@@ -743,6 +749,7 @@ public class SModel {
     if (myDisposed) return;
 
     myDisposed = true;
+    myDisposedStacktrace = new Throwable();
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }
