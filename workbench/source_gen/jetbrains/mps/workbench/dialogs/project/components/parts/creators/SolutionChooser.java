@@ -8,10 +8,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
-import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import java.util.ArrayList;
 
 public class SolutionChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
@@ -23,13 +22,7 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
   public List<ModuleReference> compute() {
     List<Solution> solutions = ModelAccess.instance().runReadAction(new Computable<List<Solution>>() {
       public List<Solution> compute() {
-        ArrayList<Solution> result = new ArrayList<Solution>();
-        for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
-          if (m instanceof Solution) {
-            result.add((Solution) m);
-          }
-        }
-        return result;
+        return MPSModuleRepository.getInstance().getAllSolutions();
       }
     });
     List<Solution> solution = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "solution", solutions, null);

@@ -8,10 +8,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
-import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import java.util.ArrayList;
 
 public class GeneratorChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
@@ -23,13 +22,7 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
   public List<ModuleReference> compute() {
     List<Generator> generators = ModelAccess.instance().runReadAction(new Computable<List<Generator>>() {
       public List<Generator> compute() {
-        List<Generator> result = new ArrayList<Generator>();
-        for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
-          if (m instanceof Generator) {
-            result.add((Generator) m);
-          }
-        }
-        return result;
+        return MPSModuleRepository.getInstance().getAllGenerators();
       }
     });
     List<Generator> generator = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "generator", generators, null);
