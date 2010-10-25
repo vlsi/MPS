@@ -915,7 +915,7 @@
                 <link role="classConcept:3" targetNodeId="7.~SModelRepository" resolveInfo="SModelRepository" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="891158202133120919">
-                <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelRepository.findModel(jetbrains.mps.vfs.IFile):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="findModel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelRepository.findModel(jetbrains.mps.vfs.IFile):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="findModel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="891158202133120920">
                   <link role="variableDeclaration:3" targetNodeId="891158202133120889" resolveInfo="iFile" />
                 </node>

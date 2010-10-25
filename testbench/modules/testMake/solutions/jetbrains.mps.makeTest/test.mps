@@ -2217,7 +2217,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolveInfo="getInstance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382811">
-              <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelRepository.findModel(jetbrains.mps.vfs.IFile):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="findModel" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelRepository.findModel(jetbrains.mps.vfs.IFile):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="findModel" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382812">
                 <link role="variableDeclaration:3" targetNodeId="7196776143116382804" resolveInfo="file" />
               </node>
