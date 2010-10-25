@@ -533,7 +533,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      SModelDescriptor modelDescriptor = getScope().getModelDescriptor(model);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }

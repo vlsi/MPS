@@ -42,7 +42,13 @@ public abstract class DefaultScope extends BaseScope {
     if (modelReference == null) return null;
 
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (model == null) return null;
+    if (model == null) {
+      //this is because we have modules (such as TransientModelsModule) not publishing their models
+      for (SModelDescriptor md:getModelDescriptors()){
+        if (md.getSModelReference().equals(modelReference)) return md;
+      }
+      return null;
+    }
 
     synchronized (LOCK) {
       initialize();
@@ -52,9 +58,7 @@ public abstract class DefaultScope extends BaseScope {
       }
 
       for (Language l : myUsedLanguages) {
-        for (SModelDescriptor accessory : l.getAccessoryModels()) {
-          if (accessory == model) return model;
-        }
+        if (l.getAccessoryModels().contains(model)) return model;
       }
     }
 
