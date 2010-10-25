@@ -44,6 +44,7 @@ public abstract class DefaultScope extends BaseScope {
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
       //this is because we have modules (such as TransientModelsModule) not publishing their models
+      //todo move this logic to corresponding scopes
       for (SModelDescriptor md:getModelDescriptors()){
         if (md.getSModelReference().equals(modelReference)) return md;
       }
