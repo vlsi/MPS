@@ -9,12 +9,13 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Arrays;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.NoSuchElementException;
 import jetbrains.mps.baseLanguage.closures.runtime.DelayedException;
 
@@ -914,7 +915,7 @@ __switch__:
                       this.__CP__ = 15;
                       break;
                     case 16:
-                      this._16__yield_75e5vq_a0c0a0a1a0c0i0_it = ListSequence.fromList(_7_ll).subListSequence(ListSequence.fromList(_7_ll).indexOf(_13_ii), ListSequence.fromList(_7_ll).count()).iterator();
+                      this._16__yield_75e5vq_a0c0a0a1a0c0i0_it = Sequence.fromIterable(ListSequence.fromList(_7_ll).subListSequence(ListSequence.fromList(_7_ll).indexOf(_13_ii), ListSequence.fromList(_7_ll).count())).iterator();
                     case 17:
                       if (!(this._16__yield_75e5vq_a0c0a0a1a0c0i0_it.hasNext())) {
                         this.__CP__ = 14;
@@ -1263,7 +1264,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yield_75e5vq_a0b0a0a21a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3).iterator();
+                      this._2__yield_75e5vq_a0b0a0a21a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).iterator();
                     case 3:
                       if (!(this._2__yield_75e5vq_a0b0a0a21a_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1322,7 +1323,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      this._3__yield_75e5vq_b0b0a0a31a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3).iterator();
+                      this._3__yield_75e5vq_b0b0a0a31a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3)).iterator();
                     case 4:
                       if (!(this._3__yield_75e5vq_b0b0a0a31a_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1383,7 +1384,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yield_75e5vq_a0b0a0a41a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2).iterator();
+                      this._2__yield_75e5vq_a0b0a0a41a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2)).iterator();
                     case 3:
                       if (!(this._2__yield_75e5vq_a0b0a0a41a_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1393,7 +1394,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._6__yield_75e5vq_b0b0a0a41a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4).iterator();
+                      this._6__yield_75e5vq_b0b0a0a41a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4)).iterator();
                     case 7:
                       if (!(this._6__yield_75e5vq_b0b0a0a41a_it.hasNext())) {
                         this.__CP__ = 1;
@@ -1469,7 +1470,7 @@ __switch__:
                       this.__CP__ = 3;
                       break;
                     case 6:
-                      this._6__yield_75e5vq_a0a0b0a0a51a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i).iterator();
+                      this._6__yield_75e5vq_a0a0b0a0a51a_it = Sequence.fromIterable(ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i)).iterator();
                     case 7:
                       if (!(this._6__yield_75e5vq_a0a0b0a0a51a_it.hasNext())) {
                         this.__CP__ = 5;
@@ -1671,6 +1672,131 @@ __switch__:
       ListSequence.fromList(res).addElement(k);
     }
     Assert.assertEquals(exp, res);
+  }
+
+  public void test_mps10427() throws Exception {
+    final Iterable<String> s1 = Sequence.fromClosure(new ISequenceClosure<String>() {
+      public Iterable<String> iterable() {
+        return new Iterable<String>() {
+          public Iterator<String> iterator() {
+            return new YieldingIterator<String>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield("foo");
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    final Iterable<String> s2 = null;
+    final Iterable<String> s3 = Sequence.<String>singleton("bar");
+    String s = IterableUtils.join(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<String>() {
+      public Iterable<String> iterable() {
+        return new Iterable<String>() {
+          public Iterator<String> iterator() {
+            return new YieldingIterator<String>() {
+              private int __CP__ = 0;
+              private String _2__yield_75e5vq_a0a0a0a3a91a;
+              private Iterator<String> _2__yield_75e5vq_a0a0a0a3a91a_it;
+              private String _6__yield_75e5vq_b0a0a0a3a91a;
+              private Iterator<String> _6__yield_75e5vq_b0a0a0a3a91a_it;
+              private String _10__yield_75e5vq_c0a0a0a3a91a;
+              private Iterator<String> _10__yield_75e5vq_c0a0a0a3a91a_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2__yield_75e5vq_a0a0a0a3a91a_it = Sequence.fromIterable(s1).iterator();
+                    case 3:
+                      if (!(this._2__yield_75e5vq_a0a0a0a3a91a_it.hasNext())) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this._2__yield_75e5vq_a0a0a0a3a91a = this._2__yield_75e5vq_a0a0a0a3a91a_it.next();
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._6__yield_75e5vq_b0a0a0a3a91a_it = Sequence.fromIterable(s2).iterator();
+                    case 7:
+                      if (!(this._6__yield_75e5vq_b0a0a0a3a91a_it.hasNext())) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this._6__yield_75e5vq_b0a0a0a3a91a = this._6__yield_75e5vq_b0a0a0a3a91a_it.next();
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
+                      this._10__yield_75e5vq_c0a0a0a3a91a_it = Sequence.fromIterable(s3).iterator();
+                    case 11:
+                      if (!(this._10__yield_75e5vq_c0a0a0a3a91a_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._10__yield_75e5vq_c0a0a0a3a91a = this._10__yield_75e5vq_c0a0a0a3a91a_it.next();
+                      this.__CP__ = 12;
+                      break;
+                    case 6:
+                      this.__CP__ = 3;
+                      this.yield(_2__yield_75e5vq_a0a0a0a3a91a);
+                      return true;
+                    case 10:
+                      this.__CP__ = 7;
+                      this.yield(_6__yield_75e5vq_b0a0a0a3a91a);
+                      return true;
+                    case 13:
+                      this.__CP__ = 11;
+                      this.yield(_10__yield_75e5vq_c0a0a0a3a91a);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      this.__CP__ = 10;
+                      break;
+                    case 12:
+                      this.__CP__ = 13;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    })), ", ");
+    Assert.assertEquals("foo, bar", s);
   }
 
   public void test_yieldNext() throws Exception {
