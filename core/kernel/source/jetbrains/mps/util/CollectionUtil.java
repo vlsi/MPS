@@ -87,6 +87,11 @@ public class CollectionUtil {
     return result;
   }
 
+  @Deprecated //was used by constructors language
+  public static <T> List<T> list(T... ts) {
+    return Arrays.asList(ts);
+  }
+
   public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
     return new Iterator<T>() {
       public boolean myFirstActive = true;
