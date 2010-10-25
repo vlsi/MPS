@@ -18,7 +18,6 @@ public class BaseLangaugeCodeCommentsMenuGroup_ActionGroup extends GeneratedActi
       BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.CommentStatements_Action", "jetbrains.mps.baseLanguage");
       BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action", "jetbrains.mps.baseLanguage");
       BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.CommentLine_Action", "jetbrains.mps.baseLanguage");
-      BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.UncommentLine_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

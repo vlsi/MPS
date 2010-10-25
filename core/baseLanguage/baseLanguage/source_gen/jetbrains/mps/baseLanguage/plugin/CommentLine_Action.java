@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentLine_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -22,7 +23,7 @@ public class CommentLine_Action extends GeneratedAction {
 
   public CommentLine_Action() {
     super("Comment Line", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
@@ -32,8 +33,18 @@ public class CommentLine_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
+    if (CommentLine_Action.this.editorComponent.isReadOnly()) {
+      return false;
+    }
+    SNode singleLineComment = CommentLine_Action.this.getSingleLineComment();
+    if (singleLineComment != null) {
+      return ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+    }
     SNode statement = CommentLine_Action.this.getStatement();
-    return statement != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList") && !(CommentLine_Action.this.editorComponent.isReadOnly());
+    if (statement == null) {
+      return false;
+    }
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList");
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -76,16 +87,30 @@ public class CommentLine_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      SNode statement = CommentLine_Action.this.getStatement();
-      SNode comment = SNodeOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
-      SNode commentPart = SLinkOperations.addNewChild(comment, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
-      SLinkOperations.setTarget(commentPart, "commentedStatement", statement, true);
+      SNode singleLineComment = CommentLine_Action.this.getSingleLineComment();
+      if (singleLineComment != null) {
+        // uncommenting 
+        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true);
+        SNodeOperations.replaceWithAnother(singleLineComment, innerStatement);
+        SNodeOperations.deleteNode(singleLineComment);
+      } else {
+        SNode statement = CommentLine_Action.this.getStatement();
+        assert statement != null : "Statement should not be null due to the isApplicable() constraints";
+        // commenting 
+        SNode comment = SNodeOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+        SNode commentPart = SLinkOperations.addNewChild(comment, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+        SLinkOperations.setTarget(commentPart, "commentedStatement", statement, true);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CommentLine", t);
     }
   }
 
-  /*package*/ SNode getStatement() {
+  private SNode getStatement() {
     return SNodeOperations.getAncestor(CommentLine_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
+  }
+
+  private SNode getSingleLineComment() {
+    return SNodeOperations.getAncestor(CommentLine_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.SingleLineComment", true, false);
   }
 }
