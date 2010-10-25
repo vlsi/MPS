@@ -63,7 +63,9 @@ public class PersistenceUpdater {
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        scopeModelDescriptors.addAll(scope.getOwnModelDescriptors());
+        for (SModelDescriptor d : scope.getOwnModelDescriptors()) {
+          scopeModelDescriptors.add(d);
+        }
       }
     });
 

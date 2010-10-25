@@ -29,13 +29,13 @@ import java.util.Set;
 public interface IScope {
   SModelDescriptor getModelDescriptor(SModelReference modelReference);
 
-  List<SModelDescriptor> getModelDescriptors();
-
-  List<SModelDescriptor> getOwnModelDescriptors();
-
   Language getLanguage(ModuleReference moduleReference);
 
   DevKit getDevKit(ModuleReference ref);
+
+  List<SModelDescriptor> getModelDescriptors();
+
+  Iterable<SModelDescriptor> getOwnModelDescriptors();
 
   List<Language> getVisibleLanguages();
 

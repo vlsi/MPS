@@ -30,6 +30,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
@@ -112,7 +113,7 @@ public class ImportHelper {
       }
 
       public Language[] find(IScope scope) {
-        return scope.getVisibleLanguages().toArray(new Language[0]);
+        return IterableUtil.asArray(scope.getVisibleLanguages());
       }
 
       @Nullable

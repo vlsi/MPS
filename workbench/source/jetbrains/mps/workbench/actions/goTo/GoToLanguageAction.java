@@ -26,11 +26,14 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class GoToLanguageAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -52,7 +55,7 @@ public class GoToLanguageAction extends BaseAction {
       }
 
       public Language[] find(IScope scope) {
-        return scope.getVisibleLanguages().toArray(new Language[0]);
+        return IterableUtil.asArray(scope.getVisibleLanguages());
       }
 
       public String getPromptText() {
