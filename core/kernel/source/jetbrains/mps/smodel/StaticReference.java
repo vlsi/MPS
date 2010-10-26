@@ -83,6 +83,8 @@ public class StaticReference extends SReferenceBase {
         ", model = " + sourceNode.getModel() +
         ", id = " + sourceNode.getId());
       log.error("target node id = " + targetNodeId);
+      String canRead = ModelAccess.instance().canRead() ? "can read" : "can not read";
+      log.error("current thread " + canRead);
       log.error("stacktrace of model disposing is: ");
       log.error(targetModel.getDisposedStacktrace());
       log.errorWithTrace("=============current trace:=============");
