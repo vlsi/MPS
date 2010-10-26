@@ -23562,5 +23562,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4609636120081351394">
+    <link role="concept" targetNodeId="1.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4609636120081351397">
+      <property name="isAbstract" value="true" />
+      <property name="isVirtual" value="true" />
+      <property name="name" value="classifierName" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4609636120081351398" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4609636120081469955" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4609636120081351400" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4609636120081469956">
+      <property name="isAbstract" value="true" />
+      <property name="isVirtual" value="true" />
+      <property name="name" value="resolve" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4609636120081469957" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4609636120081469959" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4609636120081469960">
+        <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4609636120081469961">
+        <property name="name:3" value="targetModel" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="4609636120081469962" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4609636120081351395">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4609636120081351396" />
+    </node>
+  </node>
 </model>
 

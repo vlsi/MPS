@@ -3714,5 +3714,8 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="8972672481958095232">
     <property name="name:0" value="IControlFlowInterrupter" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="4609636120081351393">
+    <property name="name:0" value="IWillBeClassifier" />
+  </node>
 </model>
 

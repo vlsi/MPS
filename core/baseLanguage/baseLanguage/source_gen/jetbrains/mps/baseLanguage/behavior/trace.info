@@ -102,6 +102,7 @@
   <unitInfo fileName="BaseAssignmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior" />
   <unitInfo fileName="StaticMethodDeclaration_Behavior.java" startLine="91" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior$QuotationClass_qyxuoz_a1a0a0a3" />
   <unitInfo fileName="IParameter_Behavior.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IParameter_Behavior" />
+  <unitInfo fileName="IWillBeClassifier_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior" />
   <unitInfo fileName="ThisExpression_Behavior.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior" />
   <unitInfo fileName="EnumClass_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumClass_Behavior" />
   <unitInfo fileName="Interface_Behavior.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Interface_Behavior" />
@@ -3307,6 +3308,9 @@
     <scopeInfo nodeId="4581730695772276354" fileName="CommentPart_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="201537367881181081" fileName="CommentPart_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="29" />
     <scopeInfo nodeId="7236590470026152834" fileName="CommentPart_Behavior.java" startLine="19" startPosition="76" endLine="20" endPosition="17" />
+  </root>
+  <root nodeId="4609636120081351394">
+    <scopeInfo nodeId="4609636120081351396" fileName="IWillBeClassifier_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
   </root>
   <root nodeId="5017341185733869578">
     <nodeInfo nodeId="5017341185733869604" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IVisible_Behavior.java" startLine="15" startPosition="81" endLine="16" endPosition="48" />
