@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.typesystem.debug.ISlicer;
@@ -43,7 +42,7 @@ import java.lang.ref.WeakReference;
 
 import org.jetbrains.annotations.NotNull;
 
-public class NodeTypesComponent implements EditorMessageOwner {
+public class NodeTypesComponent {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
