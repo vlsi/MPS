@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
-import org.xml.sax.helpers.DefaultHandler;
 
 public interface DefaultMPSHandler{
   //return true is supports

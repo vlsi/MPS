@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
-import jetbrains.mps.smodel.persistence.def.v5.Handler5;
-import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 
-public class ModelReader6Handler extends Handler5 {
-
+public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
+  public boolean setPartialLoading(ModelLoadingState state){
+    return state == ModelLoadingState.FULLY_LOADED;
+  }
 }

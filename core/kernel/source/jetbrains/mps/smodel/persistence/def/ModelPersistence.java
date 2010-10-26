@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.persistence.def.v5.Handler5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
+import jetbrains.mps.smodel.persistence.def.v6.Handler6;
 import jetbrains.mps.smodel.persistence.def.v6.ModelReader6;
 import jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler;
 import jetbrains.mps.smodel.persistence.def.v6.ModelWriter6;
@@ -122,13 +123,13 @@ public class ModelPersistence {
     modelReaders.put(5, new ModelReader5());
     modelWriters.put(5, new ModelWriter5());
 
-    modelReadHandlers.put(6, new ModelReader6Handler());
+    modelReadHandlers.put(6, new Handler6());
     modelReaders.put(6, new ModelReader6());
     modelWriters.put(6, new ModelWriter6());
 
-    modelReadHandlers.put(7, new ModelReader7Handler());
-    modelReaders.put(7, new ModelReader6());
-    modelWriters.put(7, new ModelWriter7());
+//    modelReadHandlers.put(7, new ModelReader7Handler());
+//    modelReaders.put(7, new ModelReader6());
+//    modelWriters.put(7, new ModelWriter7());
   }
 
   private static PersistenceSettings getPersistenceSettings() {
@@ -214,7 +215,7 @@ public class ModelPersistence {
         DefaultMPSHandler handler = modelReadHandlers.get(version);
         boolean partial = handler.setPartialLoading(state);
         try {
-          parser.parse(source, handler);
+          parser.parse(source, (DefaultHandler) handler);
         } catch (SAXException e) {
           //this is normal
         }

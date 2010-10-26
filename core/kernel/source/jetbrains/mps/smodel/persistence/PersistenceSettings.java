@@ -40,7 +40,7 @@ import java.awt.GridBagLayout;
 public class PersistenceSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
   public static final int VERSION_UNDEFINED = -1;
   public static final int MIN_VERSION = 3;
-  public static final int MAX_VERSION = 7;
+  public static final int MAX_VERSION = 6;
   public static final int VERSION_UPDATE_TO_THE_LATEST = 9999;
 
 
