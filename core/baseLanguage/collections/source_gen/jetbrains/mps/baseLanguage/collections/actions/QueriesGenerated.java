@@ -107,48 +107,68 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_SelectOperation_1225118817882(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((sel == null)) {
-      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((sel == null)) {
+        sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_TranslateOperation_1225119174307(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((sel == null)) {
-      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((sel == null)) {
+        sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_VisitAllOperation_1225119188771(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((sel == null)) {
-      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((sel == null)) {
+        sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_WhereOperation_1225119083461(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((sel == null)) {
-      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((sel == null)) {
+        sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_SortOperation_1225119114839(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((sel == null)) {
-      sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((sel == null)) {
+        sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(sel, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_ComparatorSortOperation_1225110009889(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -163,48 +183,68 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_FindFirstOperation_1225728791328(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((filter == null)) {
-      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((filter == null)) {
+        filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_FindLastOperation_1225730740848(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((filter == null)) {
-      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((filter == null)) {
+        filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_AllOperation_1235567398002(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((filter == null)) {
-      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((filter == null)) {
+        filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_AnyOperation_1235567424421(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((filter == null)) {
-      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((filter == null)) {
+        filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_RemoveWhereOperation_3055999550620994086(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
-    if ((filter == null)) {
-      filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "closure", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"), "closure", true)), true);
+    } else {
+      SNode filter = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
+      if ((filter == null)) {
+        filter = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      }
+      SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SPropertyOperations.set(pd, "name", "it");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(filter, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
-    SPropertyOperations.set(pd, "name", "it");
   }
 
   public static void nodeFactory_NodeSetup_ReduceLeftOperation_1522217801069385378(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -366,6 +406,72 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CustomContainerDeclaration_1279588871815312988(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setTarget(_context.getNewNode(), "visibility", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null), true);
+  }
+
+  public static void nodeFactory_NodeSetup_AddAllElementsOperation_7212626807240862099(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_AddElementOperation_7212626807240862102(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_AddFirstElementOperation_7212626807240862105(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_AddLastElementOperation_7212626807240862108(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_ContainsAllOperation_7212626807240862111(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_ContainsOperation_7212626807240862114(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GetElementOperation_7212626807240862117(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GetIndexOfOperation_7212626807240862120(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_PushOperation_7212626807240862123(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_RemoveAllElementsOperation_7212626807240862126(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_RemoveElementOperation_7212626807240862129(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "argument", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation"), "argument", true)), true);
+    }
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -765,7 +871,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0jc().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0uc().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
         }
 
         public String getMatchingText(String pattern) {
@@ -784,8 +890,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0jc {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0jc() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0uc {
+    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0uc() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {
