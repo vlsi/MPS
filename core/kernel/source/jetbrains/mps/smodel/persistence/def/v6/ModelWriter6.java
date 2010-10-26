@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -25,12 +24,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ModelWriter6 implements IModelWriter {
-  private static final Logger LOG = Logger.getLogger(ModelWriter6.class);
-
   protected int getModelPersistenceVersion() {
     return 5;
   }
@@ -80,85 +74,48 @@ public class ModelWriter6 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
-    Map<SModelReference, ImportElement> imports = createImportMap(sourceModel);
+    VersionUtil helper = new VersionUtil(sourceModel);
 
     // roots
-    saveRootStubs(rootElement, sourceModel, imports);   // only for quick roots access
+    saveRootStubs(rootElement, sourceModel, helper);   // only for quick roots access
     for (SNode root : sourceModel.roots()) {
-      saveNode(rootElement, root, imports, true);
+      saveNode(rootElement, root, helper, true);
     }
 
     return new Document(rootElement);
   }
 
-  protected void saveRootStubs(Element parent, SModel model, Map<SModelReference, ImportElement> imports) {
+  protected void saveRootStubs(Element parent, SModel model, VersionUtil helper) {
   }
 
-  private Map<SModelReference, ImportElement> createImportMap(SModel model) {
-    Map<SModelReference, ImportElement> imports = new HashMap<SModelReference, ImportElement>();
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
-      imports.put(elem.getModelReference(), elem);
-    }
-    for (ImportElement elem : model.importedModels()) {
-      imports.put(elem.getModelReference(), elem);
-    }
-    return imports;
-  }
-
-  protected void saveNode(Element parentElement, SNode node, Map<SModelReference, ImportElement> imports, boolean saveChildren) {
+  protected void saveNode(Element parentElement, SNode node, VersionUtil helper, boolean saveChildren) {
     Element element = new Element(ModelPersistence.NODE);
 
-    final String role = node.getRole_();
-    if (role != null) {
-      SModelReference mr = node.getRoleLink().getModel().getSModelReference();
-      element.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(role, imports.get(mr).getUsedVersion()));
-    }
-    SModelReference cmr = node.getConceptDeclarationNode().getModel().getSModelReference();
-    element.setAttribute(ModelPersistence.TYPE, VersionUtil.formVersionedString(node.getConceptFqName(), imports.get(cmr).getUsedVersion()));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, helper.genRole(node));
+    element.setAttribute(ModelPersistence.TYPE, helper.genType(node));
     element.setAttribute(ModelPersistence.ID, node.getId());
 
     for (String propertyName : node.getProperties().keySet()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
-      SModelReference mr = node.getPropertyDeclaration(propertyName).getModel().getSModelReference();
-      propertyElement.setAttribute(ModelPersistence.NAME, VersionUtil.formVersionedString(propertyName, imports.get(mr).getUsedVersion()));
+      propertyElement.setAttribute(ModelPersistence.NAME, helper.genName(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
       element.addContent(propertyElement);
     }
 
     for (SReference reference : node.getReferencesIterable()) {
-      saveReference(element, reference, imports);
+      Element linkElement = new Element(ModelPersistence.LINK);
+      linkElement.setAttribute(ModelPersistence.ROLE, helper.genRole(reference));
+      linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, helper.genTarget(reference));
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
+      parentElement.addContent(linkElement);
     }
 
     if (saveChildren) {
       for (SNode childNode : node.getChildren()) {
-        saveNode(element, childNode, imports, true);
+        saveNode(element, childNode, helper, true);
       }
     }
 
     parentElement.addContent(element);
-  }
-
-  private void saveReference(Element parentElement, SReference reference, Map<SModelReference, ImportElement> imports) {
-    Element linkElement = new Element(ModelPersistence.LINK);
-    parentElement.addContent(linkElement);
-    SModelReference mr = reference.getSourceNode().getLinkDeclaration(reference.getRole()).getModel().getSModelReference();
-    linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), imports.get(mr).getUsedVersion()));
-
-    SModelReference targetModelReference = reference.getTargetSModelReference();
-    String targetModelInfo = "";
-    if (reference.isExternal()) {
-      if (targetModelReference != null) {
-        targetModelInfo = imports.get(targetModelReference).getReferenceID() + ".";
-      } else {
-        LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
-        LOG.error("-- was reference " + reference + " in " + reference.getSourceNode().getDebugText());
-      }
-    }
-
-    String targetNodeId = reference instanceof StaticReference ? String.valueOf(reference.getTargetNodeId()) : "^";
-    targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, imports.get(targetModelReference).getUsedVersion());
-    linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
-    String resolveInfo = reference.getResolveInfo();
-    if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
   }
 }

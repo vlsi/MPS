@@ -20,16 +20,13 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
+import jetbrains.mps.smodel.persistence.def.v6.VersionUtil.ParseResult;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,7 +35,7 @@ import java.util.Map;
  * Time: 3:08:42 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ModelReader6 extends ModelReader4 {
+public class ModelReader6 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader6.class);
 
   @Override
@@ -67,7 +64,7 @@ public class ModelReader6 extends ModelReader4 {
 
 
   public SModel readModel(Document document, String modelShortName, String stereotype) {
-    SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
+    //SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
@@ -128,15 +125,9 @@ public class ModelReader6 extends ModelReader4 {
     model.setMaxImportIndex(maxImportIndex);
 
     // nodes
-    final Map<Integer, ImportElement> imports = new HashMap<Integer, ImportElement>();
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
-      imports.put(elem.getReferenceID(), elem);
-    }
-    for (ImportElement elem : model.importedModels()) {
-      imports.put(elem.getReferenceID(), elem);
-    }
+    VersionUtil helper = new VersionUtil(model);
     for (Element child : (List<Element>) rootElement.getChildren(ModelPersistence.NODE)) {
-      SNode snode = readNode(child, model, versionsInfo, imports);
+      SNode snode = readNode(child, model, helper);
       if (snode != null) {
         model.addRoot(snode);
       }
@@ -151,30 +142,9 @@ public class ModelReader6 extends ModelReader4 {
   }
 
   @Nullable
-  protected SNode readNode(
-    Element nodeElement,
-    SModel model,
-    boolean useUIDs,
-    VisibleModelElements visibleModelElements, SModelVersionsInfo versionsInfo) {
-    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
-    for (IReferencePersister referencePersister : referenceDescriptors) {
-      referencePersister.createReferenceInModel(model, visibleModelElements);
-    }
-    return result;
-  }
-
-  @Nullable
-  protected SNode readNode(
-    Element nodeElement,
-    SModel model,
-    SModelVersionsInfo versionsInfo, Map<Integer, ImportElement> imports
-  ) {
-
-    String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
-    String conceptFqName = VersionUtil.getConceptFQName(rawFqName);
+  protected SNode readNode(Element nodeElement, SModel model, VersionUtil helper) {
+    String conceptFqName = helper.parse(nodeElement.getAttributeValue(ModelPersistence.TYPE), false).text;
     SNode node = new SNode(model, conceptFqName);
-    VersionUtil.fetchConceptVersion(rawFqName, node, versionsInfo);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {
@@ -186,75 +156,80 @@ public class ModelReader6 extends ModelReader4 {
       node.setId(id);
     }
 
-    List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
-    for (Object property : properties) {
-      Element propertyElement = (Element) property;
-      String raw = propertyElement.getAttributeValue(ModelPersistence.NAME);
-      String propertyName = VersionUtil.getPropertyName(raw, node, versionsInfo);
-      String propertyValue = propertyElement.getAttributeValue(ModelPersistence.VALUE);
+    for (Element element : (List<Element>) nodeElement.getChildren(ModelPersistence.PROPERTY)) {
+      String propertyName = helper.parse(element.getAttributeValue(ModelPersistence.NAME), true).text;
+      String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
         node.setProperty(propertyName, propertyValue);
       }
     }
 
-    List links = nodeElement.getChildren(ModelPersistence.LINK);
-    for (Object link : links) {
-      Element linkElement = (Element) link;
-      SReference reference = readReference(linkElement, model, node, imports);
+    for (Element link : (List<Element>) nodeElement.getChildren(ModelPersistence.LINK)) {
+      SReference reference = readReference(link, node, helper);
       if (reference != null) node.addReference(reference);
     }
 
-    List childNodes = nodeElement.getChildren(ModelPersistence.NODE);
-    for (Object childNode1 : childNodes) {
-      Element childNodeElement = (Element) childNode1;
-      String rawRole = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
-      String role = VersionUtil.getRole(rawRole);
-      SNode childNode = readNode(childNodeElement, model, versionsInfo, imports);
+    for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
+      String role = helper.parse(child.getAttributeValue(ModelPersistence.ROLE), true).text;
+      SNode childNode = readNode(child, model, helper);
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {
         node.addChild(role, childNode);
-        VersionUtil.fetchChildNodeRoleVersion(rawRole, childNode, versionsInfo);
       }
     }
 
     return node;
   }
 
-  private SReference readReference(Element element, SModel model, SNode node, Map<Integer, ImportElement> imports) {
-    String role = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.ROLE));
-    String attTargetNodeId = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID));
+  private SReference readReference(Element element, SNode node, VersionUtil helper) {
+    String role = helper.parse(element.getAttributeValue(ModelPersistence.ROLE), true).text;
+    ParseResult target = helper.parse(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID), true);
     String resolveInfo = element.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    String importedModelInfo = "-1";
-    String targetId = null;
-    if (attTargetNodeId != null) {
-      int i = attTargetNodeId.indexOf('.');
-      importedModelInfo = i > 0 ? attTargetNodeId.substring(0, i) : "-1";
-      targetId = attTargetNodeId.substring(i + 1);
-    }
-
-    SModelReference importedModelReference = model.getSModelReference();
-    int ix = -1;
-    try {
-      ix = Integer.parseInt(importedModelInfo);
-    } catch (NumberFormatException e) { }
-    if (ix > -1) {
-      ImportElement impElem = imports.get(ix);
-      importedModelReference = impElem == null ? null : imports.get(ix).getModelReference();
-      if (importedModelReference == null) {
-        LOG.error("couldn't create reference '" + role + "' : import for index [" + ix + "] not found");
-        return null;
-      }
-    }
-
-    if (targetId == null) {
-      LOG.error("couldn't create reference '" + role + "' : target node id is null");
+    SModelReference modelRef = helper.getSModelReference(target.modelID);
+    if (modelRef == null) {
+      LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
       return null;
+    } else if (target.text.equals("^")) {
+      return new DynamicReference(role, node, modelRef, resolveInfo);
+    } else {
+      return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
     }
 
-    if (targetId.equals("^")) {
-      return new DynamicReference(role, node, importedModelReference, resolveInfo);
-    }
-    return new StaticReference(role, node, importedModelReference, SNodeId.fromString(targetId), resolveInfo);
+
+//    String role = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.ROLE));
+//    String attTargetNodeId = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID));
+//    String resolveInfo = element.getAttributeValue(ModelPersistence.RESOLVE_INFO);
+//    String importedModelInfo = "-1";
+//    String targetId = null;
+//    if (attTargetNodeId != null) {
+//      int i = attTargetNodeId.indexOf('.');
+//      importedModelInfo = i > 0 ? attTargetNodeId.substring(0, i) : "-1";
+//      targetId = attTargetNodeId.substring(i + 1);
+//    }
+//
+//    SModelReference importedModelReference = model.getSModelReference();
+//    int ix = -1;
+//    try {
+//      ix = Integer.parseInt(importedModelInfo);
+//    } catch (NumberFormatException e) { }
+//    if (ix > -1) {
+//      ImportElement impElem = imports.get(ix);
+//      importedModelReference = impElem == null ? null : imports.get(ix).getModelReference();
+//      if (importedModelReference == null) {
+//        LOG.error("couldn't create reference '" + role + "' : import for index [" + ix + "] not found");
+//        return null;
+//      }
+//    }
+//
+//    if (targetId == null) {
+//      LOG.error("couldn't create reference '" + role + "' : target node id is null");
+//      return null;
+//    }
+//
+//    if (targetId.equals("^")) {
+//      return new DynamicReference(role, node, importedModelReference, resolveInfo);
+//    }
+//    return new StaticReference(role, node, importedModelReference, SNodeId.fromString(targetId), resolveInfo);
   }
 }

@@ -569,6 +569,7 @@ public class SModel {
     if (importElement != null) {
       myImports.remove(importElement);
       myAdditionalModelsVersions.add(importElement);  // to save version and ID if model was imported implicitly
+//      importElement.setImplicit(true);
       fireImportRemovedEvent(modelReference);
     }
   }
@@ -669,8 +670,9 @@ public class SModel {
 
   public static class ImportElement {
     private SModelReference myModelReference;
-    private int myReferenceID;
+    private int myReferenceID;  // persistence related index
     private int myUsedVersion;
+    private boolean myImplicit; // true - this element is just to keep version of implicit import
 
     public ImportElement(SModelReference modelReference, int referenceID) {
       this(modelReference, referenceID, -1);
@@ -694,6 +696,14 @@ public class SModel {
       return myUsedVersion;
     }
 
+    public boolean isImplicit() {
+      return myImplicit;
+    }
+
+    public void setImplicit(boolean implicit) {
+      myImplicit = implicit;
+    }
+
     public String toString() {
       return "ImportElement(" +
         "uid=" + myModelReference + ", " +
@@ -710,6 +720,7 @@ public class SModel {
 
       if (myReferenceID != that.myReferenceID) return false;
       if (myUsedVersion != that.myUsedVersion) return false;
+      if (myImplicit != that.myImplicit) return false;
       if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
         return false;
 

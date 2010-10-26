@@ -15,10 +15,19 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SNodeId.Foreign;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class VersionUtil {
+  private static final Logger LOG = Logger.getLogger(VersionUtil.class);
+
   private static final char VERSION_SEPARATOR_CHAR = ':';
   private static final char MODEL_SEPARATOR_CHAR = '.';
   private static final String VERSION_SEPARATOR = "" + VERSION_SEPARATOR_CHAR;
@@ -125,5 +134,106 @@ public class VersionUtil {
       versionsInfo.addLinkTargetIdVersion(node, role, version);
     }
     return linkRole;
+  }
+
+
+  // temporary here (while VersionUtil exists)
+
+  private SModelReference myModelRef;
+  private Map<SModelReference, ImportElement> myImports;
+  public VersionUtil(SModel model) {
+    myModelRef = model.getSModelReference();
+    myImports = new HashMap<SModelReference, ImportElement>();
+    myImportByIx = new HashMap<Integer, ImportElement>();
+    for (ImportElement elem : model.importedModels()) {
+      myImports.put(elem.getModelReference(), elem);
+      myImportByIx.put(elem.getReferenceID(), elem);
+    }
+    for (ImportElement elem : model.getAdditionalModelVersions()) {
+      myImports.put(elem.getModelReference(), elem);
+      myImportByIx.put(elem.getReferenceID(), elem);
+    }
+  }
+
+  @NotNull
+  public String genReferenceString(@NotNull SModelReference ref, @NotNull String text, boolean usemodel) {
+    ImportElement impElem = myImports.get(ref);
+    if (impElem == null) {
+      LOG.error("model " + ref + " not found in imports");
+      return text;
+    }
+    StringBuilder result = new StringBuilder();
+    if (usemodel && !(myModelRef.equals(ref)))  result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
+    result.append(text);
+    if (impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
+    return result.toString();
+  }
+  @NotNull
+  public String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
+    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
+  }
+  @NotNull
+  public String genReferenceString(@Nullable BaseAdapter node, @NotNull String text, boolean usemodel) {
+    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
+  }
+
+  public String genType(@NotNull SNode node) {
+    return genReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName(), false);
+  }
+  public String genRole(@NotNull SNode node) {
+    return node.getRole_() == null ? null : genReferenceString(node.getRoleLink(), node.getRole_(), true);
+  }
+  public String genRole(@NotNull SReference ref) {
+    return genReferenceString(ref.getSourceNode().getLinkDeclaration(ref.getRole()), ref.getRole(), true);
+  }
+  public String genName(@NotNull SNode node, @NotNull String prop) {
+    return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
+  }
+  public String genTarget(@NotNull SReference ref) {
+    return genReferenceString(ref.getTargetSModelReference(), ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^", true);
+  }
+
+
+  private Map<Integer, ImportElement> myImportByIx;
+
+  public class ParseResult {  // [modelID.]text[:version]
+    int modelID;
+    String text;
+    int version;
+  }
+
+  public SModelReference getSModelReference(int ix) {
+    return ix == -1 ? myModelRef : myImportByIx.get(ix).getModelReference();
+  }
+  
+  public ParseResult parse(String src, boolean hasmodel) {
+    ParseResult res = new ParseResult();
+
+    char[] chars = src.toCharArray();
+    int i0 = -1, i1 = chars.length;
+    if (hasmodel)  while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
+    if (chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
+    while (--i1 > i0)  if (!Character.isDigit(chars[i1]))  break;
+    if (chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
+    res.text = src.substring(i0+1, i1);
+    res.modelID = i0>0 ? Integer.parseInt(src.substring(0, i0)) : -1;
+    res.version = i1<chars.length-1 ? Integer.parseInt(src.substring(i1)) : -1;
+
+    // check integrity
+
+    return res;
+  }
+
+  public String readType(String s) {
+    return parse(s, false).text;
+  }
+  public String readRole(String s) {
+    return parse(s, true).text;
+  }
+  public String readName(String s) {
+    return parse(s, true).text;
+  }
+  public String readTarget(String s) {
+    return parse(s, true).text;
   }
 }
