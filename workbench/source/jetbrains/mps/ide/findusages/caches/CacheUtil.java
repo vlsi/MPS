@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
@@ -46,7 +47,9 @@ class CacheUtil {
     return files;
   }
 
-  public static boolean checkFile(VirtualFile file) {
-    return !FileTypeManager.getInstance().isFileIgnored(file.getName());
+  public static boolean checkFile(VirtualFile file,ProjectRootManagerEx manager) {
+    if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
+    if (manager.getFileIndex().isIgnored(file)) return false;
+    return true;
   }
 }
