@@ -36,6 +36,8 @@ public abstract class FileSystem {
 
   public abstract boolean setTimeStamp(IFile file, long time);
 
+  public abstract void refresh(IFile file); 
+
   public static FileSystem getInstance() {
     return INSTANCE;
   }
