@@ -821,7 +821,9 @@
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="1238162665849">
         <property name="labelName:32" value="AngleBracket" />
       </node>
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1215709619790" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem:32" id="6401408473544197535">
+        <property name="flag:32" value="true" />
+      </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215709345400">
       <property name="name:32" value="LeftAngleBracket" />

@@ -17,7 +17,7 @@ public class Collections_Style_StyleSheet {
   public static Style getAngleBracket(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     return style;
   }
 
