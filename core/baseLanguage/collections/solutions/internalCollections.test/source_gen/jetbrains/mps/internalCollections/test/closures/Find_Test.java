@@ -87,6 +87,14 @@ __switch__:
     Assert.assertSame(2, Sequence.fromIterable(test).findFirst(cl2));
   }
 
+  public void test_mps10458() throws Exception {
+    Assert.assertNull(Sequence.fromIterable(this.interfaces()).findFirst(new IWhereFilter<IInterface>() {
+      public boolean accept(IInterface it) {
+        return it != null;
+      }
+    }));
+  }
+
   public void test_anyAll() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -224,5 +232,9 @@ __switch__:
         return false;
       }
     }));
+  }
+
+  public Iterable<IInterface> interfaces() {
+    return null;
   }
 }
