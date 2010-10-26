@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 
 import java.util.Stack;
 
@@ -36,10 +35,20 @@ public class NodeReadAccessCasterInEditor {
     }
   }
 
-  public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
-    EditorCellPropertyAccessAction propertyAccessAction = new EditorCellPropertyAccessAction(accessor);
+  public static String runCleanPropertyAccessAction(Computable<String> propertyAccess) {
     ListenersContainer listenersContainer = ourListenersContainer.get();
-    return listenersContainer != null ? listenersContainer.runEditorCellPropertyAccessAction(propertyAccessAction) : propertyAccessAction.getPropertyValue();
+    boolean wasCleanAccessMode = false;
+    if (listenersContainer != null) {
+      wasCleanAccessMode = listenersContainer.isCleanPropertyAccessMode();
+      listenersContainer.setCleanPropertyAccessMode(true);
+    }
+    try {
+      return propertyAccess.compute();
+    } finally {
+      if (listenersContainer != null) {
+        listenersContainer.setCleanPropertyAccessMode(wasCleanAccessMode);
+      }
+    }
   }
 
   public static void fireNodeReadAccessed(SNode node) {
@@ -124,31 +133,10 @@ public class NodeReadAccessCasterInEditor {
     return listeners;
   }
 
-  static class EditorCellPropertyAccessAction {
-    private PropertyAccessor myPropertyAccessor;
-
-    EditorCellPropertyAccessAction(PropertyAccessor accessor) {
-      myPropertyAccessor = accessor;
-    }
-
-    public PropertyAccessor getPropertyAccessor() {
-      return myPropertyAccessor;
-    }
-
-    public String getPropertyValue() {
-      String propertyName = myPropertyAccessor.getPropertyName();
-      SNode node = myPropertyAccessor.getNode();
-      if (node == null) {
-        return null;
-      }
-      return node.getProperty(propertyName);
-    }
-  }
-
   static class ListenersContainer {
     private Stack<NodeReadAccessInEditorListener> myListenersStack = new Stack<NodeReadAccessInEditorListener>();
     private boolean myEventsBlocked;
-    private PropertyAccessor myPropertyAccessor;
+    private boolean myCleanPropertyAccessMode;
     private boolean myPropertyReadEventsSuppressed;
 
     public void addListener(NodeReadAccessInEditorListener listener) {
@@ -181,13 +169,12 @@ public class NodeReadAccessCasterInEditor {
       myEventsBlocked = eventsBlocked;
     }
 
-    public String runEditorCellPropertyAccessAction(EditorCellPropertyAccessAction propertyAccessAction) {
-      myPropertyAccessor = propertyAccessAction.getPropertyAccessor();
-      try {
-        return propertyAccessAction.getPropertyValue();
-      } finally {
-        myPropertyAccessor = null;
-      }
+    public boolean isCleanPropertyAccessMode() {
+      return myCleanPropertyAccessMode;
+    }
+
+    public void setCleanPropertyAccessMode(boolean cleanPropertyAccess) {
+      myCleanPropertyAccessMode = cleanPropertyAccess;
     }
 
     public void fireNodeReadAccessed(SNode node) {
@@ -205,7 +192,7 @@ public class NodeReadAccessCasterInEditor {
       NodeReadAccessInEditorListener listener = myListenersStack.peek();
       myPropertyReadEventsSuppressed = true;
       try {
-        if (myPropertyAccessor != null) {
+        if (myCleanPropertyAccessMode) {
           listener.propertyCleanReadAccess(node, propertyName);
         } else if (propertyExistenceCheck) {
           listener.propertyExistenceAccess(node, propertyName);

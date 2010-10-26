@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
@@ -71,7 +72,15 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   protected String doGetValue() {
-    return NodeReadAccessCasterInEditor.runEditorCellPropertyAccessAction(this);
+    return NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        if (myNode == null) {
+          return null;
+        }
+        return myNode.getProperty(myPropertyName);
+      }
+    });
   }
 
   protected void doSetValue(String newText) {
