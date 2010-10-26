@@ -17,10 +17,12 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
   }
 
   @NotNull
+  @Override
   protected Set<VirtualFile> getAllExcludeRoots() {
     final Set<VirtualFile> roots = new HashSet<VirtualFile>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
           IFile classesGen = module.getClassesGen();
