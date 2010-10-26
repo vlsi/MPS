@@ -60,11 +60,11 @@ public class TypeSystemStateTree extends MPSTree {
 
   private TypeSystemStateTreeNode createNode(State state) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
-   // result.add(createNode("Equations",myState.getEquations().getListPresentation()));
-    result.add(createNode("Inequalities",myState.getInequalities().getListPresentation(), Color.BLUE));
-    result.add(createNode("When concrete",myState.getNonConcrete().getListPresentation(), Color.GREEN));
-    result.add(createNode("Types",myState.getNodeMaps().getTypeListPresentation(), null));
-    result.add(createNode("Errors",myState.getNodeMaps().getErrorListPresentation(), Color.RED));
+    result.add(createNode("Inequalities",myState.getInequalities().getListPresentation(), null));
+    result.add(createNode("When concrete",myState.getNonConcrete().getListPresentation(), null));
+    result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
+    result.add(createNode("Types", myState.getNodeMaps().getTypeListPresentation(), null));
+    result.add(createNode("Equations",myState.getEquations().getListPresentation(), null));
 
     return result;
   }

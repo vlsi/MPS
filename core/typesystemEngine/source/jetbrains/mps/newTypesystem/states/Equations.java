@@ -16,14 +16,18 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
 import jetbrains.mps.newTypesystem.differences.equation.EquationSubstituted;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.NodeWrapper;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -33,7 +37,6 @@ import java.util.*;
  * User: Ilya.Lintsbah
  * Date: Sep 10, 2010
  * Time: 4:33:42 PM
- * To change this template use File | Settings | File Templates.
  */
 public class Equations {
   private Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
@@ -122,13 +125,60 @@ public class Equations {
   }
 
   public SNode expandNode(SNode node) {
+    return expandNode(node, new HashSet<SNode>());
+  }
+
+  private SNode expandNode(SNode node, Set<SNode> variablesMet) {
     if (node == null) {
       return null;
     }
-    if (TypesUtil.isVariable(node)) {
-      SNode type = getRepresentative(node);
+    SNode type = getRepresentative(node);
+    if (TypesUtil.isVariable(type)) {
+      if (variablesMet.contains(type)) {
+        reportRecursiveType(type);
+      }
+      variablesMet.add(type);
     }
-    return null;
+    if (type != node) {
+      SNode result = expandNode(type, variablesMet);
+      variablesMet.remove(type);
+      return result;
+    } else {
+      replaceChildren(node, variablesMet);
+      replaceReferences(node, variablesMet);
+      return node;
+    }
+  }
+
+  private void replaceChildren(SNode node, Set<SNode> variablesMet) {
+    Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
+    for (SNode child : node.getChildren()) {
+      SNode newChild = expandNode(child, variablesMet);
+      if (newChild != child) {
+        childrenReplacement.put(child, newChild);
+      }
+    }
+    for (SNode child : childrenReplacement.keySet()) {
+      SNode parent = child.getParent();
+      assert parent != null;
+      SNode childReplacement = CopyUtil.copy(childrenReplacement.get(child));
+      parent.replaceChild(child, childReplacement);
+    }
+  }
+
+  private void replaceReferences(SNode node, Set<SNode> variablesMet) {
+    List<SReference> references = new ArrayList<SReference>(node.getReferences());
+    for (SReference reference : references) {
+      SNode oldNode = reference.getTargetNode();
+      if (TypesUtil.isVariable(oldNode)) {
+        SNode newNode = expandNode(oldNode, variablesMet);
+        if (newNode != oldNode) {
+          String role = reference.getRole();
+          node.removeReference(reference);
+          node.setReferent(role, newNode);
+        }
+      }
+    }
   }
 
   private void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
@@ -156,6 +206,10 @@ public class Equations {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
     myState.addError(nodeWithError, errorReporter, info);
+  }
+
+  public void reportRecursiveType(SNode node) {
+    IErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed", null, null);
   }
 
   public void addEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {

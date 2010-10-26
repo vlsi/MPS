@@ -104,8 +104,8 @@ public class State {
     return myNonConcrete;
   }
 
-  public SNode typeOf(SNode node) {
-    return myNodeMaps.typeOf(node);
+  public SNode typeOf(SNode node, EquationInfo info) {
+    return myNodeMaps.typeOf(node, info);
   }
 
   public void clear(boolean clearDiff) {
@@ -136,7 +136,12 @@ public class State {
 
   public void addWhenConcrete(WhenConcreteEntry entity, SNode node, boolean shallow) {
     myNonConcrete.addNonConcrete(entity, node, shallow);
+  }
 
+  public void expandAll() {
+    addDifference(new StringDifference("Types Expansion"), true);
+    myNodeMaps.expandAll();
+    popDifference();    
   }
 
   public boolean applyDifferenceBefore(Difference diff, Object toCompare) {

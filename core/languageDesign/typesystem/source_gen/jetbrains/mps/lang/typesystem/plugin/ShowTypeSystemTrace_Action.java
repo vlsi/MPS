@@ -15,9 +15,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.presentation.difference.ShowTypeSystemTrace;
-import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog;
 
 public class ShowTypeSystemTrace_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -91,9 +88,6 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
         new ShowTypeSystemTrace(t, ShowTypeSystemTrace_Action.this.context, ShowTypeSystemTrace_Action.this.frame);
-      } else {
-        Program program = DataFlowManager.getInstance().buildProgramFor(ShowTypeSystemTrace_Action.this.node);
-        new ShowCFGDialog(program, ShowTypeSystemTrace_Action.this.context, ShowTypeSystemTrace_Action.this.frame);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);

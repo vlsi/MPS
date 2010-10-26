@@ -52,7 +52,6 @@ public class TypeSystemTraceTree extends MPSTree {
     myFrame = frame;
     this.rebuildNow();
     expandAll();
-
   }
 
   @Override

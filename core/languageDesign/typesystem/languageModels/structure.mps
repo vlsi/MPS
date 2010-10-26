@@ -1037,10 +1037,6 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1185281562364">
       <link role="intfc:0" targetNodeId="1.1169194658468:0" />
     </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1185281562365">
-      <property name="name:0" value="nullable" />
-      <link role="dataType:0" targetNodeId="1.1082983657063:0" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1185788561607">
     <property name="name:0" value="TypeClause" />

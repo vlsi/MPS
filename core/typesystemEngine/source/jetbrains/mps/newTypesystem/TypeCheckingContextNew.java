@@ -82,7 +82,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    return myState.typeOf(node);
+    return myState.typeOf(node, null);
   }
 
   @Override
@@ -91,6 +91,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       myState.clear(true);
       myNodeTypesComponent.checkNode(myRootNode, true);
       myState.solveInequalities();
+      myState.expandAll();
     }
   }
 
@@ -111,10 +112,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    return myState.typeOf(node);
-  }@Override
+    EquationInfo info = new EquationInfo(node, "typeOf",  ruleModel, ruleId);
+    return myState.typeOf(node, info);
+  }
 
-
+  @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
     return myState.getNodeMaps().getNodesWithErrors();
   }

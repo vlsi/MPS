@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.awt.Color;
 import java.util.Map;
@@ -32,11 +33,12 @@ public class TypeDifference extends Difference{
   private SNode myType;
   private Map<SNode, SNode> myMap;
 
-  public TypeDifference(SNode node, SNode type, Map map) {
+  public TypeDifference(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info) {
     myNode = node;
     myType = type;
     myMap = map;
     mySource = node;
+    myEquationInfo = info;
   }
 
   @Override

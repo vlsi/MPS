@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
@@ -23,6 +26,9 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.NodeWrapper;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -74,14 +80,29 @@ public class Inequalities {
     if (subType == null || superType == null || subType == superType) {
       return;
     }
+    //Variables inside
     if (!myState.isConcrete(subType) || !myState.isConcrete(superType)) {
       addSubTyping(subType, superType, isWeak, check, info);
       return;
     }
+    //replacement rules
+    TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
+    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+      InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
+      IsApplicable2Status status = inequalityReplacementRule.o2;
+      ((AbstractInequationReplacementRule_Runtime)rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
+      myState.addDifference(new StringDifference("Replacement rule:" + subType + " <: "+ superType), false);
+      return;
+    }
+    // todo kill for
+    // //    comparison rules?
+
+    //subType
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     if (subTyping.isSubType(subType, superType, info, isWeak, myState)) {
       return;
     }
+    //error
     reportError(subType, superType, info, isWeak);
   }
 

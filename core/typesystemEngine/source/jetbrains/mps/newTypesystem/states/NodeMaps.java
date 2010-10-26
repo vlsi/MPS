@@ -46,16 +46,16 @@ public class NodeMaps {
     myVariableIdentifier = new VariableIdentifier();
   }
 
-  public void addNodeToType(SNode node, SNode type) {
+  public void addNodeToType(SNode node, SNode type, EquationInfo info) {
     myNodeToTypes.put(node, type);
-    myState.addDifference(new TypeDifference(node, type, myNodeToTypes), false);
+    myState.addDifference(new TypeDifference(node, type, myNodeToTypes, info), false);
   }
 
-  public SNode typeOf(SNode node) {
+  public SNode typeOf(SNode node, EquationInfo info) {
     SNode type = myNodeToTypes.get(node);
     if (type == null) {
       type = createNewRuntimeTypesVariable();
-      addNodeToType(node, type);
+      addNodeToType(node, type, info);
     }
     return type;
   }
@@ -130,10 +130,18 @@ public class NodeMaps {
   public List<String> getTypeListPresentation() {
     List<String> result = new LinkedList<String>();
     for (Map.Entry<SNode, SNode> entry: myNodeToTypes.entrySet()) {
-
       result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getEquations().getRepresentative(entry.getValue()));
     }
     return result;
+  }
+
+  public void expandAll() {
+    for (SNode node : myNodeToTypes.keySet()) {
+      SNode var = myNodeToTypes.get(node);
+      SNode type = myState.getEquations().expandNode(var);
+
+      addNodeToType(node, type, null);
+    }
   }
 
 
