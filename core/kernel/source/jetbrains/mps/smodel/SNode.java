@@ -22,7 +22,6 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.constraints.*;

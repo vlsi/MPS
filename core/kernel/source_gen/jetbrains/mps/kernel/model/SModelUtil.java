@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;

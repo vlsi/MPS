@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.smodel.*;
 
 import java.util.Stack;
 
 public class NodeReadAccessCasterInEditor {
   private static ThreadLocal<ListenersContainer> ourListenersContainer = new ThreadLocal<ListenersContainer>();
 
-  public static void setCellBuildNodeReadAccessListener(CellBuildNodeAccessListener listener) {
+  public static void setCellBuildNodeReadAccessListener(NodeReadAccessInEditorListener listener) {
     getListenersContainer().addListener(listener);
   }
 
@@ -64,7 +63,7 @@ public class NodeReadAccessCasterInEditor {
     }
   }
 
-  public static CellBuildNodeAccessListener getReadAccessListener() {
+  public static NodeReadAccessInEditorListener getReadAccessListener() {
     ListenersContainer listenersContainer = ourListenersContainer.get();
     return listenersContainer == null ? null : listenersContainer.getActiveListener();
   }
@@ -147,19 +146,19 @@ public class NodeReadAccessCasterInEditor {
   }
 
   static class ListenersContainer {
-    private Stack<CellBuildNodeAccessListener> myListenersStack = new Stack<CellBuildNodeAccessListener>();
+    private Stack<NodeReadAccessInEditorListener> myListenersStack = new Stack<NodeReadAccessInEditorListener>();
     private boolean myEventsBlocked;
     private PropertyAccessor myPropertyAccessor;
     private boolean myPropertyReadEventsSuppressed;
 
-    public void addListener(CellBuildNodeAccessListener listener) {
+    public void addListener(NodeReadAccessInEditorListener listener) {
       assert listener != null : "Trying to add null as a listener";
       myListenersStack.push(listener);
     }
 
     public void removeListener() {
       assert !myListenersStack.isEmpty() : "Trying to remove listener from an empty Listeners stack";
-      CellBuildNodeAccessListener listener = myListenersStack.pop();
+      NodeReadAccessInEditorListener listener = myListenersStack.pop();
       if (!myListenersStack.isEmpty()) {
         myListenersStack.peek().addNodesToDependOn(listener.getNodesToDependOn());
         myListenersStack.peek().addRefTargetsToDependOn(listener.getRefTargetsToDependOn());
@@ -170,7 +169,7 @@ public class NodeReadAccessCasterInEditor {
       return !myEventsBlocked && myListenersStack.isEmpty();
     }
 
-    public CellBuildNodeAccessListener getActiveListener() {
+    public NodeReadAccessInEditorListener getActiveListener() {
       return myListenersStack.isEmpty() ? null : myListenersStack.peek();
     }
 
@@ -203,7 +202,7 @@ public class NodeReadAccessCasterInEditor {
         return;
       }
 
-      CellBuildNodeAccessListener listener = myListenersStack.peek();
+      NodeReadAccessInEditorListener listener = myListenersStack.peek();
       myPropertyReadEventsSuppressed = true;
       try {
         if (myPropertyAccessor != null) {

@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.nodeEditor.cellMenu.*;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeOperations;

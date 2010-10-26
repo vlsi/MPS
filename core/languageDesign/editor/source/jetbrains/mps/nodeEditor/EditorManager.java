@@ -177,7 +177,7 @@ public class EditorManager {
             //voodoo for editor incremental rebuild support:
             // add listen-nothing listener, fill it up,
             // remove listener to report recorded nodes to parent listener
-            CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
+            NodeReadAccessInEditorListener listensNothingListener = new NodeReadAccessInEditorListener();
             NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listensNothingListener);
             if (nodesOldCellDependsOn != null) listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
             if (refTargetsOldCellDependsOn != null)
@@ -230,7 +230,7 @@ public class EditorManager {
     INodeEditor editor = getEditor(context, node);
     EditorComponent editorComponent = context.getNodeEditorComponent();
     EditorCell nodeCell = null;
-    CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(editorComponent);
+    NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
     nodeAccessListener.addNodesToDependOn(new HashSet<SNode>(node.getAncestors(false)));
     try {
       //voodoo for editor incremental rebuild support
@@ -264,13 +264,13 @@ public class EditorManager {
     return nodeCell;
   }
 
-  private void addNodeDependenciesToEditor(EditorCell cell, CellBuildNodeAccessListener listener, EditorContext editorContext) {
+  private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, EditorContext editorContext) {
     EditorComponent editor = editorContext.getNodeEditorComponent();
-    editor.putCellAndNodesToDependOn(cell, listener.myNodesToDependOn, listener.myReferentTargetsToDependOn);
-    for (Pair<SNodePointer, String> pair : listener.myDirtilyReadAccessedProperties) {
+    editor.putCellAndNodesToDependOn(cell, listener.getNodesToDependOn(), listener.getRefTargetsToDependOn());
+    for (Pair<SNodePointer, String> pair : listener.getDirtilyReadAccessedProperties()) {
       editor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
     }
-    for (Pair<SNodePointer, String> pair : listener.myExistenceReadAccessProperties) {
+    for (Pair<SNodePointer, String> pair : listener.getExistenceReadAccessProperties()) {
       editor.addCellDependentOnNodePropertyWhichExistenceWasChecked(cell, pair);
     }
   }

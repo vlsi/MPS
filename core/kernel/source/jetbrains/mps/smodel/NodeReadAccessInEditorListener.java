@@ -13,20 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.INodesReadListener;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class CellBuildNodeAccessListener implements INodesReadListener {
-  protected EditorComponent myEditor;
-
+public class NodeReadAccessInEditorListener implements INodesReadListener {
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
   protected HashSet<Pair<SNodePointer, String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
@@ -34,11 +29,7 @@ public class CellBuildNodeAccessListener implements INodesReadListener {
 
   private Set<Pair<SNodePointer, String>> myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
 
-  private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
-
-  public CellBuildNodeAccessListener(EditorComponent editor) {
-    myEditor = editor;
-  }
+  private static final Logger LOG = Logger.getLogger(NodeReadAccessInEditorListener.class);
 
   public Set<SNode> getNodesToDependOn() {
     return myNodesToDependOn;
