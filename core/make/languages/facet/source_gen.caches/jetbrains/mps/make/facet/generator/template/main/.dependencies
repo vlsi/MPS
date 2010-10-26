@@ -4,6 +4,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />

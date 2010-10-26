@@ -6,7 +6,10 @@
     <classNode dependClassName="jetbrains.mps.make.script.IMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
-  <dependency className="jetbrains.mps.make.script.IMonitor" file="IMonitor.java" />
+  <dependency className="jetbrains.mps.make.script.IMonitor" file="IMonitor.java">
+    <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.IQuery" file="IQuery.java" />
   <dependency className="jetbrains.mps.make.script.IResult" file="IResult.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />

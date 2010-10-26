@@ -99,8 +99,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
+  <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="6418371274763029521">
     <property name="name:0" value="IFacet" />
     <property name="package:0" value="facet" />
@@ -111,6 +112,10 @@
     <property name="rootable:0" value="true" />
     <property name="package:0" value="facet" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8853708281362095877">
+      <property name="value:0" value="Facet" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422654">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="extended" />
@@ -137,6 +142,9 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6418371274763029524">
       <link role="intfc:0" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8853708281361928947">
+      <link role="intfc:0" targetNodeId="2.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
     </node>
   </node>
   <visible index="3" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" />

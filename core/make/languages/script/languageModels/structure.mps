@@ -162,6 +162,13 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="505095865854384082">
       <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8486446835277382809">
+      <link role="intfc:0" targetNodeId="2v.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8486446835277382831">
+      <property name="value:0" value="Query" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854369479">
     <property name="package:0" value="query" />
@@ -289,6 +296,13 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="505095865854521220">
       <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8853708281362145848">
+      <link role="intfc:0" targetNodeId="2v.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8853708281362147127">
+      <property name="value:0" value="Option" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854384066">

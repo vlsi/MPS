@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +28,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5086995156117240631(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName(_context.getTemplateValue(), null);
+    return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_5189627237350277729(final IOperationContext operationContext, final PropertyMacroContext _context) {

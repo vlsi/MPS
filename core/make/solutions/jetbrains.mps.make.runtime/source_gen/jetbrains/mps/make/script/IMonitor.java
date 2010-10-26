@@ -5,4 +5,5 @@ package jetbrains.mps.make.script;
 
 public interface IMonitor {
   public boolean pleaseStop();
+  public <T> T relayQuery(IQuery<T> query);
 }

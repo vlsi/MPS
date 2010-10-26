@@ -4,6 +4,7 @@ package jetbrains.mps.make.facet.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.baseLanguage.structure.IWillBeClassifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FacetDeclaration extends BaseConcept implements INamedConcept {
+public class FacetDeclaration extends BaseConcept implements INamedConcept, IWillBeClassifier {
   public static final String concept = "jetbrains.mps.make.facet.structure.FacetDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

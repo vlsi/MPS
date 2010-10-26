@@ -7,17 +7,18 @@ import java.util.List;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
 
-public class Facet_ implements IFacet {
+public class Generator_facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Maker");
+  private IFacet.Name name = new IFacet.Name("Generator");
 
-  public Facet_() {
-    ListSequence.fromList(targets).addElement(new Facet_.Target_m26mq_a());
+  public Generator_facet() {
+    ListSequence.fromList(targets).addElement(new Generator_facet.Target_ixz87t_a());
   }
 
   public Iterable<ITarget> targets() {
@@ -29,7 +30,7 @@ public class Facet_ implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return null;
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Maker")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -40,20 +41,26 @@ public class Facet_ implements IFacet {
     return this.name;
   }
 
-  public static class Target_m26mq_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("Make");
+  public static class Target_ixz87t_a implements ITarget {
+    private ITarget.Name name = new ITarget.Name("Generate");
 
-    public Target_m26mq_a() {
+    public Target_ixz87t_a() {
     }
 
     public IJob createJob() {
       return new IJob() {
         public IResult execute(Iterable<IResource> input, IMonitor mon) {
-          Iterable<IResource> _output_m26mq_a0a = null;
+          Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
+              for (IResource resource : input) {
+                System.out.println("Input: " + resource);
+                _output_ixz87t_a0a = Sequence.fromIterable(_output_ixz87t_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+              }
+              _output_ixz87t_a0a = Sequence.fromIterable(_output_ixz87t_a0a).concat(Sequence.fromIterable(input));
+              return new IResult.SUCCESS(_output_ixz87t_a0a);
             default:
-              return new IResult.SUCCESS(_output_m26mq_a0a);
+              return new IResult.SUCCESS(_output_ixz87t_a0a);
           }
         }
       };
@@ -72,7 +79,7 @@ public class Facet_ implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make")});
     }
 
     public ITarget.Name getName() {

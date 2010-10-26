@@ -99,6 +99,27 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6168415856807657253" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6168415856807657254" />
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8486446835277348225">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="relayQuery" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8486446835277348230">
+        <property name="name:3" value="query" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8486446835277348320">
+          <link role="classifier:3" targetNodeId="8486446835277348318" resolveInfo="IQuery" />
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="8486446835277348323">
+            <link role="typeVariableDeclaration:3" targetNodeId="8486446835277348229" resolveInfo="T" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8486446835277348227" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8486446835277348228" />
+      <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="8486446835277348229">
+        <property name="name:3" value="T" />
+      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="8486446835277348324">
+        <link role="typeVariableDeclaration:3" targetNodeId="8486446835277348229" resolveInfo="T" />
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6168415856807657255" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="1291978361072214397">
@@ -261,6 +282,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="8486446835277348318">
+    <property name="name:3" value="IQuery" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8486446835277348319" />
+    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="8486446835277348321">
+      <property name="name:3" value="T" />
     </node>
   </node>
 </model>

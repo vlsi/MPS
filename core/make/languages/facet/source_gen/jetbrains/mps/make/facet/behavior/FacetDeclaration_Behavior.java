@@ -12,8 +12,15 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FacetDeclaration_Behavior {
+  private static Class[] PARAMETERS_8853708281362019178 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -54,5 +61,17 @@ public class FacetDeclaration_Behavior {
       }
     }
     return result;
+  }
+
+  public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
+  }
+
+  public static String call_classifierName_8853708281362019178(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178);
+  }
+
+  public static String callSuper_classifierName_8853708281362019178(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178);
   }
 }

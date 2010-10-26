@@ -108,7 +108,7 @@
             <node role="option" type="jetbrains.mps.make.script.structure.Option" id="505095865854484762">
               <property name="name" value="IGNORE" />
               <node role="presentation" type="jetbrains.mps.make.script.structure.Text" id="505095865854484763">
-                <property name="text" value="Ignore" />
+                <property name="text" value="A xy..." />
               </node>
             </node>
           </node>
