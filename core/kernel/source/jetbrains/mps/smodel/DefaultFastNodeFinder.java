@@ -108,7 +108,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private void removeFromCache(final SNode root) {
     boolean wereBlocked = NodeReadAccessCasterInEditor.areEventsBlocked();
     try {
-      NodeReadAccessCasterInEditor.blockEvents();
+      NodeReadAccessCasterInEditor.setEventsBlocked(true);
 
       for (SNode child : root.getChildren()) {
         removeFromCache(child);

@@ -74,14 +74,6 @@ public class NodeReadAccessCasterInEditor {
     }
   }
 
-  public static void blockEvents() {
-    setEventsBlocked(true);
-  }
-
-  public static void unblockEvents() {
-    setEventsBlocked(false);
-  }
-
   public static void runReadTransparentAction(Runnable r) {
     boolean wereBlocked = areEventsBlocked();
     boolean wereBlockedNonEditor = NodeReadEventsCaster.areEventsBlocked();
