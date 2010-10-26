@@ -35,22 +35,6 @@ public class NodeReadAccessCasterInEditor {
     }
   }
 
-  public static String runCleanPropertyAccessAction(Computable<String> propertyAccess) {
-    ListenersContainer listenersContainer = ourListenersContainer.get();
-    boolean wasCleanAccessMode = false;
-    if (listenersContainer != null) {
-      wasCleanAccessMode = listenersContainer.isCleanPropertyAccessMode();
-      listenersContainer.setCleanPropertyAccessMode(true);
-    }
-    try {
-      return propertyAccess.compute();
-    } finally {
-      if (listenersContainer != null) {
-        listenersContainer.setCleanPropertyAccessMode(wasCleanAccessMode);
-      }
-    }
-  }
-
   public static void fireNodeReadAccessed(SNode node) {
     ListenersContainer listenersContainer = ourListenersContainer.get();
     if (listenersContainer != null) {
@@ -121,6 +105,22 @@ public class NodeReadAccessCasterInEditor {
     } finally {
       setEventsBlocked(wereBlocked);
       NodeReadEventsCaster.setEventsBlocked(wereBlockedNonEditor);
+    }
+  }
+
+  public static String runCleanPropertyAccessAction(Computable<String> propertyAccess) {
+    ListenersContainer listenersContainer = ourListenersContainer.get();
+    boolean wasCleanAccessMode = false;
+    if (listenersContainer != null) {
+      wasCleanAccessMode = listenersContainer.isCleanPropertyAccessMode();
+      listenersContainer.setCleanPropertyAccessMode(true);
+    }
+    try {
+      return propertyAccess.compute();
+    } finally {
+      if (listenersContainer != null) {
+        listenersContainer.setCleanPropertyAccessMode(wasCleanAccessMode);
+      }
     }
   }
 
