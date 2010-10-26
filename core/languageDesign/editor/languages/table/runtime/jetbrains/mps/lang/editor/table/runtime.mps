@@ -171,12 +171,20 @@
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3031432740458868243">
             <link role="variableDeclaration:3" targetNodeId="3031432740458868240" resolveInfo="node" />
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8514238689685497042">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8514238689685497043">
-              <link role="baseMethodDeclaration:3" targetNodeId="7.~CellLayout_Table.&lt;init&gt;()" resolveInfo="CellLayout_Table" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3380777353757943232">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3380777353757943233">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~CellLayout_Vertical.&lt;init&gt;()" resolveInfo="CellLayout_Vertical" />
             </node>
           </node>
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8514238689685495176" />
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3380777353757943235">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3380777353757943236">
+            <link role="baseMethodDeclaration:3" targetNodeId="1.~EditorCell_Collection.setGridLayout(boolean):void" resolveInfo="setGridLayout" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3380777353757943237">
+              <property name="value:3" value="true" />
+            </node>
+          </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8514238689685497099">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="8514238689685497101">
@@ -1035,7 +1043,7 @@
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2317844423961239066">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2317844423961239067">
-                  <link role="baseMethodDeclaration:3" targetNodeId="7.~CellLayout_Table.&lt;init&gt;()" resolveInfo="CellLayout_Table" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="7.~CellLayout_Horizontal.&lt;init&gt;()" resolveInfo="CellLayout_Horizontal" />
                 </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2317844423961239068" />

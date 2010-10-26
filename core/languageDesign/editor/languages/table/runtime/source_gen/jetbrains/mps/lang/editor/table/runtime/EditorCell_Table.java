@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.TableComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -18,12 +18,15 @@ import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 
 public class EditorCell_Table extends EditorCell_Collection {
   private TableModel myModel;
 
   public EditorCell_Table(EditorContext editorContext, SNode node, CellLayout cellLayout, TableModel model) {
-    super(editorContext, node, new CellLayout_Table(), null);
+    super(editorContext, node, new CellLayout_Vertical(), null);
+    setGridLayout(true);
     myModel = model;
     this.setSelectable(false);
     this.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
@@ -96,7 +99,7 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
 
   private EditorCell_Collection createRowCell(final int row) {
-    EditorCell_Collection rowCell = EditorCell_Collection.create(getEditorContext(), getSNode(), new CellLayout_Table(), null);
+    EditorCell_Collection rowCell = EditorCell_Collection.create(getEditorContext(), getSNode(), new CellLayout_Horizontal(), null);
     rowCell.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
     rowCell.setAction(CellActionType.DELETE, new EditorCellAction() {
       public void execute(EditorContext p0) {
