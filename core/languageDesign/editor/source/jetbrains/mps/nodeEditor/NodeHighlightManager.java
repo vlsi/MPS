@@ -180,8 +180,11 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   private void getMessagesFromDescendants(SNode nodeWithoutCell, List<EditorMessage> messages) {
     messages.addAll(myMessagesToNodes.getBySecond(nodeWithoutCell));
-    for (SNode descendant : nodeWithoutCell.getDescendants()) {
-      messages.addAll(myMessagesToNodes.getBySecond(descendant));
+    for (SNode child : nodeWithoutCell.getChildren()) {
+      EditorCell cellForChild = myEditor.findNodeCell(child);
+      if (cellForChild == null) {
+        getMessagesFromDescendants(child, messages);        
+      }      
     }
   }
 
