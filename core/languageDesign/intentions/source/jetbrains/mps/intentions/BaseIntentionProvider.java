@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
+@Deprecated
 public class BaseIntentionProvider implements IntentionProvider {
   private static final Logger LOG = Logger.getLogger(IntentionProvider.class);
 
@@ -104,7 +105,7 @@ public class BaseIntentionProvider implements IntentionProvider {
         }
         Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
         quickFix.execute(node);
-        quickFix.setSelection(node, editorContext, wasSelected);
+        // quickFix.setSelection(node, editorContext, wasSelected);
       }
 
       public IntentionType getType() {
@@ -165,5 +166,10 @@ public class BaseIntentionProvider implements IntentionProvider {
       myQuickFixTaken = true;
       return null;
     }
+  }
+
+  @Override
+  public boolean isError() {
+    return myIsError;
   }
 }

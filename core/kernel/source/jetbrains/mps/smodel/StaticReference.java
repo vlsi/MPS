@@ -85,6 +85,7 @@ public class StaticReference extends SReferenceBase {
       log.error("target node id = " + targetNodeId);
       log.error("stacktrace of model disposing is: ");
       log.error(targetModel.getDisposedStacktrace());
+      log.errorWithTrace("=============current trace:=============");
       return null;
     }
 

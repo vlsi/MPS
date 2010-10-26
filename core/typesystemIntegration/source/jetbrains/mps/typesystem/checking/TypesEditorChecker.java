@@ -129,7 +129,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                             }
                           });
                           editorContext.flushEvents();
-                          intention.setSelection(node, editorContext, wasSelected);
+                          // intention.setSelection(node, editorContext, wasSelected);
                         }
                       }, ModalityState.NON_MODAL);
                     }

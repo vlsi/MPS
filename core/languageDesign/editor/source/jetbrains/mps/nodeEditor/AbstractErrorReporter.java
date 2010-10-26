@@ -53,7 +53,7 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     return result;
   }
 
-    public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo) {
+  public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo) {
     if (myAdditionalRuleIds == null) {
       myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
     }

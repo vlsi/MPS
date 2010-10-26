@@ -15,14 +15,18 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Pair;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class HUtil {
 
@@ -71,6 +75,14 @@ public class HUtil {
     String conceptFqName = node.getConceptFqName();
     return RuntimeTypeVariable.concept.equals(conceptFqName)
       || RuntimeErrorType.concept.equals(conceptFqName);
+  }
+
+  public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {
+    List<Pair<String,String>> list = equationInfo.getAdditionalRulesIds();
+    for (Pair<String, String> additionalIds : list) {
+      errorReporter.addAdditionalRuleId(additionalIds.o1, additionalIds.o2);
+    }
+    errorReporter.addAdditionalRuleId(equationInfo.getRuleModel(), equationInfo.getRuleId());
   }
 
 }

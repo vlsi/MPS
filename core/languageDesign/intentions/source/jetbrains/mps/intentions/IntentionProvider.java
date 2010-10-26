@@ -17,12 +17,14 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
+//todo rename to quickfix provider and move to core along with base intention provider
 public interface IntentionProvider {
-  public BaseIntention getIntention();
 
   public QuickFix_Runtime getQuickFix();
 
   public boolean isExecutedImmediately();
 
   void setIsError(boolean isError);
+
+  boolean isError();
 }
