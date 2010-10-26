@@ -31,8 +31,10 @@
     <property name="name:1" value="Maker" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="671853460608595938">
       <property name="name:1" value="Make" />
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="671853460608595939">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="671853460608595940" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424976">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424977">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424978" />
+        </node>
       </node>
     </node>
   </node>
@@ -41,52 +43,54 @@
     <property name="name:1" value="Generator" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="671853460608595943">
       <property name="name:1" value="Generate" />
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="671853460608595944">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="671853460608595945">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="4629164904928070498">
-            <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4629164904928070499">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4629164904928070589">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4629164904928070590">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4629164904928070591">
-                    <link role="classifier:3" targetNodeId="3.~System" />
-                    <link role="variableDeclaration:3" targetNodeId="3.~System.out" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4629164904928070592">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2v.~PrintStream.println(java.lang.String):void" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4629164904928070594">
-                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4629164904928070597">
-                        <link role="variableDeclaration:3" targetNodeId="4629164904928070500" resolveInfo="resource" />
-                      </node>
-                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4629164904928070593">
-                        <property name="value:3" value="Input: " />
+      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="3916013743093734815">
+        <property name="qualifier:1" value="BEFORE" />
+        <link role="dependsOn:1" targetNodeId="671853460608595938" resolveInfo="Make" />
+      </node>
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424954">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424957">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424958">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="505095865854424959">
+              <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424960">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="505095865854424961">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="505095865854424962">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="505095865854424963">
+                      <link role="classifier:3" targetNodeId="3.~System" resolveInfo="System" />
+                      <link role="variableDeclaration:3" targetNodeId="3.~System.out" resolveInfo="out" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="505095865854424964">
+                      <link role="baseMethodDeclaration:3" targetNodeId="2v.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="505095865854424965">
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="505095865854424966">
+                          <link role="variableDeclaration:3" targetNodeId="505095865854424970" resolveInfo="resource" />
+                        </node>
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="505095865854424967">
+                          <property name="value:3" value="Input: " />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="4629164904928216253">
-                <node role="resource" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4629164904928216255">
-                  <link role="variableDeclaration:3" targetNodeId="4629164904928070500" resolveInfo="resource" />
+                <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="505095865854424968">
+                  <node role="resource" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="505095865854424969">
+                    <link role="variableDeclaration:3" targetNodeId="505095865854424970" resolveInfo="resource" />
+                  </node>
                 </node>
               </node>
+              <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="505095865854424970">
+                <property name="name:3" value="resource" />
+                <node role="type:3" type="jetbrains.mps.make.script.structure.ResourceType" id="505095865854424971" />
+              </node>
+              <node role="iterable:3" type="jetbrains.mps.make.script.structure.ResourcesParameter" id="505095865854424972" />
             </node>
-            <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4629164904928070500">
-              <property name="name:3" value="resource" />
-              <node role="type:3" type="jetbrains.mps.make.script.structure.ResourceType" id="4629164904928070501" />
+            <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="505095865854424973">
+              <node role="resource" type="jetbrains.mps.make.script.structure.ResourcesParameter" id="505095865854424974" />
             </node>
-            <node role="iterable:3" type="jetbrains.mps.make.script.structure.ResourcesParameter" id="4629164904928070502" />
-          </node>
-          <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="4629164904928216257">
-            <node role="resource" type="jetbrains.mps.make.script.structure.ResourcesParameter" id="4629164904928216259" />
-          </node>
-          <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="3916013743093941201">
-            <property name="result" value="SUCCESS" />
+            <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="505095865854424975">
+              <property name="result" value="SUCCESS" />
+            </node>
           </node>
         </node>
-      </node>
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="3916013743093734815">
-        <property name="qualifier:1" value="BEFORE" />
-        <link role="dependsOn:1" targetNodeId="671853460608595938" resolveInfo="Make" />
       </node>
     </node>
     <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="671853460608595942">

@@ -5,7 +5,7 @@ package jetbrains.mps.make.facet.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.make.script.structure.JobDefinition;
+import jetbrains.mps.make.script.structure.JobDeclaration;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -75,11 +75,11 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
     super.setChild(TargetDeclaration.CONFIG, node);
   }
 
-  public JobDefinition getJob() {
-    return (JobDefinition) this.getChild(JobDefinition.class, TargetDeclaration.JOB);
+  public JobDeclaration getJob() {
+    return (JobDeclaration) this.getChild(JobDeclaration.class, TargetDeclaration.JOB);
   }
 
-  public void setJob(JobDefinition node) {
+  public void setJob(JobDeclaration node) {
     super.setChild(TargetDeclaration.JOB, node);
   }
 

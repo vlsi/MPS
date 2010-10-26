@@ -61,6 +61,10 @@ public class QueriesGenerated {
     return true;
   }
 
+  public static SNode sourceNodeQuery_505095865854384140(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "job", true);
+  }
+
   public static SNode sourceNodeQuery_4629164904928210894(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "resource", true);
   }

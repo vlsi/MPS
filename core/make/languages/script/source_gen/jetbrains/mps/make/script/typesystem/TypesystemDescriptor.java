@@ -10,7 +10,15 @@ import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_OptionExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_OutputResources_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_RelayQueryOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

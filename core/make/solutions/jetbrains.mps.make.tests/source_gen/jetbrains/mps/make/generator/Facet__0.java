@@ -50,17 +50,17 @@ public class Facet__0 implements IFacet {
     public IJob createJob() {
       return new IJob() {
         public IResult execute(Iterable<IResource> input, IMonitor mon) {
-          Iterable<IResource> _output_ixz87t_a0 = null;
+          Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
               for (IResource resource : input) {
                 System.out.println("Input: " + resource);
-                _output_ixz87t_a0 = Sequence.fromIterable(_output_ixz87t_a0).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                _output_ixz87t_a0a = Sequence.fromIterable(_output_ixz87t_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
-              _output_ixz87t_a0 = Sequence.fromIterable(_output_ixz87t_a0).concat(Sequence.fromIterable(input));
-              return new IResult.SUCCESS(_output_ixz87t_a0);
+              _output_ixz87t_a0a = Sequence.fromIterable(_output_ixz87t_a0a).concat(Sequence.fromIterable(input));
+              return new IResult.SUCCESS(_output_ixz87t_a0a);
             default:
-              return new IResult.SUCCESS(_output_ixz87t_a0);
+              return new IResult.SUCCESS(_output_ixz87t_a0a);
           }
         }
       };

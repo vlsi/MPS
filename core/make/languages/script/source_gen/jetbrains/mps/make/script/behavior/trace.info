@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="RelayQueryOperation_Behavior.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.script.behavior.RelayQueryOperation_Behavior" />
+  <root nodeId="505095865854377517">
+    <nodeInfo nodeId="505095865854377558" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryOperation_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="16" />
+    <nodeInfo nodeId="505095865854377552" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryOperation_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="20" />
+    <nodeInfo nodeId="505095865854377556" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryOperation_Behavior.java" startLine="25" startPosition="72" endLine="26" endPosition="17" />
+    <scopeInfo nodeId="505095865854377519" fileName="RelayQueryOperation_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="505095865854377522" fileName="RelayQueryOperation_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="505095865854377526" fileName="RelayQueryOperation_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="20" />
+    <scopeInfo nodeId="505095865854377534" fileName="RelayQueryOperation_Behavior.java" startLine="25" startPosition="72" endLine="26" endPosition="17" />
+  </root>
+</debugInfo>
+

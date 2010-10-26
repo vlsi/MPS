@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="RelayQueryOperation_Constraints.java" startLine="21" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.make.script.constraints.RelayQueryOperation_Constraints$QuotationClass_l9thlf_a1a0a0a" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="RelayQueryOperation_Constraints.java" startLine="16" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.script.constraints.RelayQueryOperation_Constraints" />
+  <root nodeId="505095865854377560">
+    <nodeInfo nodeId="505095865854377578" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryOperation_Constraints.java" startLine="17" startPosition="114" endLine="18" endPosition="332" />
+    <scopeInfo nodeId="505095865854377562" fileName="RelayQueryOperation_Constraints.java" startLine="17" startPosition="114" endLine="18" endPosition="332" />
+  </root>
+</debugInfo>
 

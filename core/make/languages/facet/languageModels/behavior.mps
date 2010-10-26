@@ -68,6 +68,7 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7854369758457864777">
+    <property name="package" value="facet" />
     <link role="concept" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7854369758457864780">
       <property name="name" value="allExtends" />
@@ -397,6 +398,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7854369758457971843">
+    <property name="package" value="target" />
     <link role="concept" targetNodeId="1.6418371274763029565:1" resolveInfo="TargetDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7854369758457971846">
       <property name="name" value="facetDeclaration" />

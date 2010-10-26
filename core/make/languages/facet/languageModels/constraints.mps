@@ -73,6 +73,7 @@
   <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="5" modelUID="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7854369758457864776">
+    <property name="package:8" value="target" />
     <link role="concept:8" targetNodeId="1.6418371274763029565:1" resolveInfo="TargetDeclaration" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="7854369758457971299">
       <link role="applicableLink:8" targetNodeId="1.6418371274763029589:1" />
@@ -124,9 +125,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5393853227999858805">
+    <property name="package:8" value="facet" />
     <link role="concept:8" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6447445394688555034">
+    <property name="package:8" value="facet" />
     <link role="concept:8" targetNodeId="1.6447445394688555033:1" resolveInfo="ExtendsFacetReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="6447445394688555035">
       <link role="applicableLink:8" targetNodeId="1.6447445394688422643:1" />
@@ -176,9 +179,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8351679702044270545">
+    <property name="package:8" value="facet" />
     <link role="concept:8" targetNodeId="1.6447445394688422642:1" resolveInfo="FacetReference" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8351679702044320298">
+    <property name="package:8" value="facet" />
     <link role="concept:8" targetNodeId="1.8351679702044320297:1" resolveInfo="RelatedFacetReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="8351679702044320300">
       <link role="applicableLink:8" targetNodeId="1.6447445394688422643:1" />
@@ -220,6 +225,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8351679702044331811">
+    <property name="package:8" value="target" />
     <link role="concept:8" targetNodeId="1.6418371274763029600:1" resolveInfo="TargetDependency" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="8351679702044331812">
       <link role="applicableLink:8" targetNodeId="1.6418371274763029603:1" />

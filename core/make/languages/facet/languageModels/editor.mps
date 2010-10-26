@@ -66,6 +66,7 @@
   <import index="1" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6418371274763029525">
+    <property name="package:32" value="facet" />
     <link role="conceptDeclaration:32" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6418371274763029528">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="6418371274763029529" />
@@ -174,6 +175,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6418371274763029567">
+    <property name="package:32" value="target" />
     <link role="conceptDeclaration:32" targetNodeId="1.6418371274763029565:1" resolveInfo="TargetDeclaration" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6418371274763029569">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="6418371274763029570" />
@@ -258,6 +260,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6418371274763141115">
+    <property name="package:32" value="target" />
     <link role="conceptDeclaration:32" targetNodeId="1.6418371274763029600:1" resolveInfo="TargetDependency" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6418371274763141118">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6418371274763141119" />
@@ -293,6 +296,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6447445394688422644">
+    <property name="package:32" value="facet" />
     <link role="conceptDeclaration:32" targetNodeId="1.6447445394688422642:1" resolveInfo="FacetReference" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6447445394688422646">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="6447445394688422649">

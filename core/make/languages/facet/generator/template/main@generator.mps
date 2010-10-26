@@ -100,6 +100,7 @@
       <link role="targetConcept:2" targetNodeId="5.1068390468198:3" resolveInfo="ClassConcept" />
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="5189627237350200052">
+      <property name="package:2" value="target" />
       <link role="applicableConcept:2" targetNodeId="1.6418371274763029565:1" resolveInfo="TargetDeclaration" />
       <link role="labelDeclaration:2" targetNodeId="5189627237350270401" resolveInfo="TargetDeclaration_class" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="5189627237350200054">
@@ -107,6 +108,7 @@
       </node>
     </node>
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="5189627237350200051">
+      <property name="package:2" value="facet" />
       <link role="applicableConcept:2" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
       <link role="template:2" targetNodeId="5086995156117142503" resolveInfo="Facet_" />
       <link role="labelDeclaration:2" targetNodeId="671853460608813112" resolveInfo="FacetDeclaration_class" />
@@ -115,6 +117,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5086995156117142503">
     <property name="name:3" value="Facet_" />
+    <property name="package:3" value="facet" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5189627237350270373">
       <property name="name:3" value="targets" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5189627237350270374" />
@@ -400,6 +403,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="5086995156117328657">
     <property name="name:2" value="TargetDeclaration_class" />
+    <property name="package:2" value="target" />
     <link role="applicableConcept:2" targetNodeId="1.6418371274763029565:1" resolveInfo="TargetDeclaration" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5086995156117328659">
       <property name="nonStatic:3" value="true" />
@@ -640,6 +644,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="5189627237350267834">
     <property name="name:2" value="frag_TargetDeclaration_dependencies" />
+    <property name="package:2" value="target" />
     <link role="applicableConcept:2" targetNodeId="1.6418371274763029565:1" resolveInfo="TargetDeclaration" />
     <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="5189627237350267836">
       <property name="name:2" value="qualifier" />
@@ -820,6 +825,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="5189627237350270233">
     <property name="name:2" value="frag_FacetDeclaration_related" />
+    <property name="package:2" value="facet" />
     <link role="applicableConcept:2" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
     <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="5189627237350270276">
       <property name="name:2" value="related" />

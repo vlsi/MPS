@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="44" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule$QuotationClass_9rsqz7_a1a0a0" />
+  <unitInfo fileName="typeof_OptionExpression_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule$QuotationClass_2d0o4o_a0a0a0" />
+  <unitInfo fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_RelayQueryOperation_InferenceRule$QuotationClass_8u8huk_a0a0a0" />
   <unitInfo fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="54" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule$Pattern_v5k8je_a0a0a0a3" />
   <unitInfo fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule" />
+  <unitInfo fileName="typeof_OptionExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule" />
+  <unitInfo fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_RelayQueryOperation_InferenceRule" />
   <unitInfo fileName="typeof_OutputResources_InferenceRule.java" startLine="47" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OutputResources_InferenceRule$QuotationClass_rptc1i_a0a0a0" />
   <unitInfo fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule" />
   <unitInfo fileName="typeof_OutputResources_InferenceRule.java" startLine="18" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OutputResources_InferenceRule" />
@@ -24,6 +28,24 @@
     <nodeInfo nodeId="2360002718792622216" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_OutputResources_InferenceRule.java" startLine="22" startPosition="115" endLine="29" endPosition="5" />
     <scopeInfo nodeId="2360002718792622216" fileName="typeof_OutputResources_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="363" />
     <scopeInfo nodeId="2360002718792622205" fileName="typeof_OutputResources_InferenceRule.java" startLine="22" startPosition="115" endLine="29" endPosition="5" />
+  </root>
+  <root nodeId="505095865854545152">
+    <nodeInfo nodeId="505095865854545162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="45" />
+    <nodeInfo nodeId="505095865854545162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="25" startPosition="45" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="505095865854545162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="214" />
+    <nodeInfo nodeId="505095865854545162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="27" startPosition="214" endLine="28" endPosition="516" />
+    <nodeInfo nodeId="505095865854545162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="23" startPosition="116" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="505095865854545162" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="516" />
+    <scopeInfo nodeId="505095865854545153" fileName="typeof_RelayQueryOperation_InferenceRule.java" startLine="23" startPosition="116" endLine="29" endPosition="5" />
+  </root>
+  <root nodeId="505095865854557931">
+    <nodeInfo nodeId="505095865854557938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_OptionExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="44" />
+    <nodeInfo nodeId="505095865854557938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_OptionExpression_InferenceRule.java" startLine="25" startPosition="44" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="505095865854557938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_OptionExpression_InferenceRule.java" startLine="26" startPosition="53" endLine="27" endPosition="214" />
+    <nodeInfo nodeId="505095865854557938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_OptionExpression_InferenceRule.java" startLine="27" startPosition="214" endLine="28" endPosition="497" />
+    <nodeInfo nodeId="505095865854557938" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_OptionExpression_InferenceRule.java" startLine="23" startPosition="115" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="505095865854557938" fileName="typeof_OptionExpression_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="497" />
+    <scopeInfo nodeId="505095865854557932" fileName="typeof_OptionExpression_InferenceRule.java" startLine="23" startPosition="115" endLine="29" endPosition="5" />
   </root>
 </debugInfo>
 

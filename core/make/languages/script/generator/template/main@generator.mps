@@ -77,6 +77,27 @@
       <link role="sourceConcept:2" targetNodeId="1.2360002718792625579" resolveInfo="JobDefinition" />
       <link role="targetConcept:2" targetNodeId="5.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
     </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="505095865854384132">
+      <link role="applicableConcept:2" targetNodeId="1.505095865854384109" resolveInfo="JobDeclaration" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="505095865854384136">
+        <node role="templateNode:2" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="505095865854384137">
+          <node role="nodeMacro$attribute:0" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="505095865854384139">
+            <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="505095865854384140">
+              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854384141">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="505095865854384142">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="505095865854384144">
+                    <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="505095865854384143" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="505095865854384148">
+                      <link role="link:16" targetNodeId="1.505095865854384110" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4629164904928166571">
       <link role="applicableConcept:2" targetNodeId="1.2360002718792625579" resolveInfo="JobDefinition" />
       <link role="labelDeclaration:2" targetNodeId="4629164904928188116" resolveInfo="JobDefinition_class" />

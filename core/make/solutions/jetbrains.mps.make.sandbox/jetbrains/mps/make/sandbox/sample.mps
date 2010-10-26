@@ -30,27 +30,33 @@
         <property name="qualifier:1" value="NOT_AFTER" />
         <link role="dependsOn:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
       </node>
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792650924">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2360002718792650925">
-          <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="2360002718792654710">
-            <node role="resource" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2360002718792654712" />
-          </node>
-          <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="3916013743093941205">
-            <property name="result" value="SUCCESS" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424933">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424936">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424937">
+            <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="505095865854424938">
+              <node role="resource" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="505095865854424939" />
+            </node>
+            <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="505095865854424940">
+              <property name="result" value="SUCCESS" />
+            </node>
           </node>
         </node>
       </node>
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="3130298387011951907">
       <property name="name:1" value="qweqwe" />
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792654705">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2360002718792654706" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424941">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424942">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424943" />
+        </node>
       </node>
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="3130298387011990041">
       <property name="name:1" value="Nanana" />
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792654707">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2360002718792654708" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424944">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424945">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424946" />
+        </node>
       </node>
     </node>
     <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="3130298387011791759">
@@ -64,8 +70,10 @@
     <property name="name:1" value="Generate" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="8351679702044320281">
       <property name="name:1" value="GenerateTarget" />
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="2360002718792654713">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2360002718792654714" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424947">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424948">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424949" />
+        </node>
       </node>
     </node>
   </node>
@@ -77,8 +85,65 @@
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="8351679702044326369">
       <property name="name:1" value="GenerateSpecialTarget" />
       <link role="overrides:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDefinition" id="395692171604716254">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="395692171604716255" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424950">
+        <node role="query" type="jetbrains.mps.make.script.structure.QueryDefinition" id="505095865854436832">
+          <property name="name" value="DOH" />
+          <node role="presentation" type="jetbrains.mps.make.script.structure.Text" id="505095865854442191">
+            <property name="text" value="Whoops..." />
+          </node>
+          <node role="expected" type="jetbrains.mps.make.script.structure.ExpectedOption" id="505095865854462544">
+            <property name="name" value="what" />
+            <node role="option" type="jetbrains.mps.make.script.structure.Option" id="505095865854484768">
+              <property name="name" value="ABORT" />
+              <node role="presentation" type="jetbrains.mps.make.script.structure.Text" id="505095865854484769">
+                <property name="text" value="Hax..." />
+              </node>
+            </node>
+            <node role="option" type="jetbrains.mps.make.script.structure.Option" id="505095865854484770">
+              <property name="name" value="RETRY" />
+              <node role="presentation" type="jetbrains.mps.make.script.structure.Text" id="505095865854484771">
+                <property name="text" value="Hex..." />
+              </node>
+            </node>
+            <node role="option" type="jetbrains.mps.make.script.structure.Option" id="505095865854484762">
+              <property name="name" value="IGNORE" />
+              <node role="presentation" type="jetbrains.mps.make.script.structure.Text" id="505095865854484763">
+                <property name="text" value="Ignore" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424951">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424952">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SwitchStatement:3" id="505095865854557914">
+              <node role="case:3" type="jetbrains.mps.baseLanguage.structure.SwitchCase:3" id="505095865854557918">
+                <node role="expression:3" type="jetbrains.mps.make.script.structure.OptionExpression" id="505095865854564277">
+                  <link role="option" targetNodeId="505095865854484768" resolveInfo="ABORT" />
+                </node>
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854557920" />
+              </node>
+              <node role="case:3" type="jetbrains.mps.baseLanguage.structure.SwitchCase:3" id="505095865854564278">
+                <node role="expression:3" type="jetbrains.mps.make.script.structure.OptionExpression" id="505095865854564281">
+                  <link role="option" targetNodeId="505095865854484762" resolveInfo="IGNORE" />
+                </node>
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854564280" />
+              </node>
+              <node role="case:3" type="jetbrains.mps.baseLanguage.structure.SwitchCase:3" id="505095865854564282">
+                <node role="expression:3" type="jetbrains.mps.make.script.structure.OptionExpression" id="505095865854564285">
+                  <link role="option" targetNodeId="505095865854484770" resolveInfo="RETRY" />
+                </node>
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854564284" />
+              </node>
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="505095865854564286">
+                <node role="operand:3" type="jetbrains.mps.make.script.structure.MonitorParameter" id="505095865854564287" />
+                <node role="operation:3" type="jetbrains.mps.make.script.structure.RelayQueryOperation" id="505095865854564288">
+                  <link role="query" targetNodeId="505095865854436832" resolveInfo="DOH" />
+                </node>
+              </node>
+              <node role="defaultBlock:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854557916" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

@@ -49,11 +49,11 @@ public class Facet_ implements IFacet {
     public IJob createJob() {
       return new IJob() {
         public IResult execute(Iterable<IResource> input, IMonitor mon) {
-          Iterable<IResource> _output_m26mq_a0 = null;
+          Iterable<IResource> _output_m26mq_a0a = null;
           switch (0) {
             case 0:
             default:
-              return new IResult.SUCCESS(_output_m26mq_a0);
+              return new IResult.SUCCESS(_output_m26mq_a0a);
           }
         }
       };

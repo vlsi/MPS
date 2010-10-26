@@ -103,11 +103,13 @@
   <import index="1" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="6418371274763029521">
     <property name="name:0" value="IFacet" />
+    <property name="package:0" value="facet" />
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6418371274763029523">
     <property name="name:0" value="FacetDeclaration" />
     <property name="rootable:0" value="true" />
+    <property name="package:0" value="facet" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422654">
       <property name="metaClass:0" value="aggregation" />
@@ -140,6 +142,7 @@
   <visible index="3" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6418371274763029565">
     <property name="name:0" value="TargetDeclaration" />
+    <property name="package:0" value="target" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763029599">
       <property name="metaClass:0" value="aggregation" />
@@ -157,7 +160,7 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="job" />
       <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="3v.2360002718792625579" resolveInfo="JobDefinition" />
+      <link role="target:0" targetNodeId="3v.505095865854384109" resolveInfo="JobDeclaration" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763029589">
       <property name="metaClass:0" value="reference" />
@@ -170,6 +173,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6418371274763029596">
     <property name="name:0" value="TargetConfiguration" />
+    <property name="package:0" value="target" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="6418371274763029598">
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473854053:0" resolveInfo="abstract" />
@@ -177,6 +181,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6418371274763029600">
     <property name="name:0" value="TargetDependency" />
+    <property name="package:0" value="target" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8351679702044326377">
       <property name="name:0" value="qualifier" />
@@ -196,6 +201,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6447445394688422642">
     <property name="name:0" value="FacetReference" />
+    <property name="package:0" value="facet" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6447445394688422643">
       <property name="metaClass:0" value="reference" />
@@ -209,14 +215,17 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6447445394688555033">
     <property name="name:0" value="ExtendsFacetReference" />
+    <property name="package:0" value="facet" />
     <link role="extends:0" targetNodeId="6447445394688422642:1" resolveInfo="FacetReference" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8351679702044320297">
     <property name="name:0" value="RelatedFacetReference" />
+    <property name="package:0" value="facet" />
     <link role="extends:0" targetNodeId="6447445394688422642:1" resolveInfo="FacetReference" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="8351679702044326370">
     <property name="name:0" value="TargetDependencyQualifier" />
+    <property name="package:0" value="target" />
     <link role="memberDataType:0" targetNodeId="2v.1082983041843:0" resolveInfo="string" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="8351679702044326371">
       <property name="internalValue:0" value="BEFORE" />
