@@ -15,31 +15,26 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import com.intellij.util.containers.HashMap;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 
 import java.util.Arrays;
 import java.util.List;
-
-import com.intellij.util.containers.HashMap;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(DefaultChildSubstituteInfo.class);

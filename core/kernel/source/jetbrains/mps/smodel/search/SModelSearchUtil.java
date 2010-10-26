@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.search;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.*;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;

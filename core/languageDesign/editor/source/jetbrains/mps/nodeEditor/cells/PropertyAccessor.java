@@ -16,10 +16,9 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 
 public class PropertyAccessor implements ModelAccessor {
   private SNode myNode;

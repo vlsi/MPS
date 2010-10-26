@@ -24,7 +24,6 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;

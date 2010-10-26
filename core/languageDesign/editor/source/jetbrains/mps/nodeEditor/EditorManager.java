@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ui.LightColors;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -27,16 +31,11 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
-
-import org.jetbrains.annotations.Nullable;
-import com.intellij.ui.LightColors;
 
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);

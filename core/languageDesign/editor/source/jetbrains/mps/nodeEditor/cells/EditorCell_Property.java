@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.SwingUtilities;
-
-import com.intellij.openapi.util.Computable;
 
 /**
  * Author: Sergey Dmitriev

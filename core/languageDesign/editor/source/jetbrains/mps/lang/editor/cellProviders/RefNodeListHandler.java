@@ -15,21 +15,24 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
 

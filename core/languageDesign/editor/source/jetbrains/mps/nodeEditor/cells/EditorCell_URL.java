@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.SNode;
-import java.awt.Color;
-import java.awt.event.MouseEvent;
-import java.awt.event.InputEvent;
 import com.intellij.ide.BrowserUtil;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Pair;
+
+import java.awt.Color;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
 
 public class EditorCell_URL extends EditorCell_Property {
   protected EditorCell_URL(EditorContext editorContext, ModelAccessor accessor, SNode node) {

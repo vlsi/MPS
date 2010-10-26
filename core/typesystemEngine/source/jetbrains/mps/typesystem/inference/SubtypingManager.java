@@ -23,7 +23,6 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.util.*;
@@ -506,12 +505,12 @@ System.out.println("alltypes = " + allTypes);*/
     }
 
     StructuralWrapperSet<?> superTypesA = subTypesToSuperTypes.get(a) != null ?
-      new StructuralWrapperSet(subTypesToSuperTypes.get(a)) :
+      new StructuralWrapperSet<StructuralWrapperSet<Integer>>(subTypesToSuperTypes.get(a)) :
       new StructuralWrapperSet();
     superTypesA.add(a);
 
     StructuralWrapperSet<?> superTypesB = subTypesToSuperTypes.get(b) != null ?
-      new StructuralWrapperSet(subTypesToSuperTypes.get(b)) :
+      new StructuralWrapperSet<StructuralWrapperSet<Integer>>(subTypesToSuperTypes.get(b)) :
       new StructuralWrapperSet();
     superTypesB.add(b);
     for (IWrapper superTypeA : new HashSet<IWrapper>(superTypesA)) {
