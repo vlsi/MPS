@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Deprecated
+//todo 1. use BaseQuickFixProvider in types generator 2. re-generate all typesystem models 3. move Intentionprovider to j.m.errors package
 public class BaseIntentionProvider implements IntentionProvider {
   private static final Logger LOG = Logger.getLogger(IntentionProvider.class);
 
