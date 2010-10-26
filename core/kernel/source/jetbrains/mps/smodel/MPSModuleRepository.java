@@ -18,9 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.generator.cache.BaseModelCache;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.RootReference;
@@ -435,8 +433,6 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes) {
     assertCanWrite();
-
-    FileSystem.getInstance().refresh(dir);
 
     List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();

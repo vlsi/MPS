@@ -60,11 +60,4 @@ public class FileSystemImpl extends FileSystem {
   public boolean setTimeStamp(IFile file, long time) {
     return file instanceof IFileEx && ((IFileEx) file).setTimeStamp(time);
   }
-
-  @Override
-  public void refresh(IFile file) {
-    if (file instanceof IFileEx) {
-      ((IFileEx) file).refresh();
-    }
-  }
 }

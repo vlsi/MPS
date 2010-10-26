@@ -187,8 +187,4 @@ public class IoFile implements IFileEx {
   public boolean setTimeStamp(long time) {
     return myFile.setLastModified(time);
   }
-
-  @Override
-  public void refresh() {
-  }
 }
