@@ -70,6 +70,7 @@ public class ModelReader6 implements IModelReader {
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference);
     model.setPersistenceVersion(getVersion());
+    VersionUtil helper = new VersionUtil(modelReference);
 
     model.setLoading(true);
 
@@ -94,15 +95,13 @@ public class ModelReader6 implements IModelReader {
     // imports
     int maxImportIndex = -1;
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.IMPORT_ELEMENT)) {
-      String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
+      String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
       int importIndex = Integer.parseInt(indexValue);
 
-      String usedModelVersionString = element.getAttributeValue(ModelPersistence.VERSION);
+      String usedModelVersionString = element.getAttributeValue(ModelPersistence.VERSION, "-1");
       int usedModelVersion = -1;
       try {
-        if (usedModelVersionString != null) {
-          usedModelVersion = Integer.parseInt(usedModelVersionString);
-        }
+        usedModelVersion = Integer.parseInt(usedModelVersionString);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -114,18 +113,18 @@ public class ModelReader6 implements IModelReader {
         continue;
       }
 
-      SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
-      importedModelReference = upgradeModelUID(importedModelReference);
+      SModelReference importedModelReference = upgradeModelUID(SModelReference.fromString(importedModelUIDString));
+      ImportElement impElem = new ImportElement(importedModelReference, importIndex, usedModelVersion);
+      helper.addImport(impElem);
       if (element.getAttributeValue(ModelPersistence.IMPLICIT) == null)
-        model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
+        model.addModelImport(impElem);
       else
-        model.addAdditionalModelVersion(new ImportElement(importedModelReference, importIndex, usedModelVersion));
-      maxImportIndex = Math.max(maxImportIndex, importIndex);
+        model.addAdditionalModelVersion(impElem);
+      if (maxImportIndex < importIndex)  maxImportIndex = importIndex;
     }
     model.setMaxImportIndex(maxImportIndex);
 
     // nodes
-    VersionUtil helper = new VersionUtil(model);
     for (Element child : (List<Element>) rootElement.getChildren(ModelPersistence.NODE)) {
       SNode snode = readNode(child, model, helper);
       if (snode != null) {

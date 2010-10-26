@@ -144,14 +144,11 @@ public class VersionUtil {
   public VersionUtil(SModel model) {
     myModelRef = model.getSModelReference();
     myImports = new HashMap<SModelReference, ImportElement>();
-    myImportByIx = new HashMap<Integer, ImportElement>();
     for (ImportElement elem : model.importedModels()) {
       myImports.put(elem.getModelReference(), elem);
-      myImportByIx.put(elem.getReferenceID(), elem);
     }
     for (ImportElement elem : model.getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
-      myImportByIx.put(elem.getReferenceID(), elem);
     }
   }
 
@@ -196,6 +193,16 @@ public class VersionUtil {
 
   private Map<Integer, ImportElement> myImportByIx;
 
+  public VersionUtil(SModelReference modelRef) {
+    myModelRef = modelRef;
+    myImports = new HashMap<SModelReference, ImportElement>();
+    myImportByIx = new HashMap<Integer, ImportElement>();
+  }
+  public void addImport(ImportElement elem) {
+    myImports.put(elem.getModelReference(), elem);
+    myImportByIx.put(elem.getReferenceID(), elem);
+  }
+
   public class ParseResult {  // [modelID.]text[:version]
     int modelID;
     String text;
@@ -208,16 +215,17 @@ public class VersionUtil {
   
   public ParseResult parse(String src, boolean hasmodel) {
     ParseResult res = new ParseResult();
-
     char[] chars = src.toCharArray();
     int i0 = -1, i1 = chars.length;
-    if (hasmodel)  while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
-    if (chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
-    while (--i1 > i0)  if (!Character.isDigit(chars[i1]))  break;
-    if (chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
-    res.text = src.substring(i0+1, i1);
-    res.modelID = i0>0 ? Integer.parseInt(src.substring(0, i0)) : -1;
-    res.version = i1<chars.length-1 ? Integer.parseInt(src.substring(i1)) : -1;
+    if (hasmodel) { // false means we shouldn't try to parse model id
+      while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
+      if (i0 == i1 || chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
+    }
+    while (i0 < --i1)  if (!Character.isDigit(chars[i1]))  break;
+    if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
+    res.text = src.substring(i0 + 1, i1);
+    res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
+    res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
 
     // check integrity
 

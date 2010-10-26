@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -577,19 +579,40 @@ public class SModel {
   @NotNull
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (SNode node : model.nodes()) {
-      result.add(node.getConceptDeclarationNode().getModel().getSModelReference());
+      //result.add(node.getConceptDeclarationNode().getModel().getSModelReference());
+      SNode concept = node.getConceptDeclarationNode();
+      if (concept == null) {
+        LOG.error("concept not found for node " + node);
+      } else {
+        result.add(concept.getModel().getSModelReference());
+      }
       for (String propname : node.getProperties().keySet()) {
-        result.add(node.getPropertyDeclaration(propname).getModel().getSModelReference());
+        //result.add(node.getPropertyDeclaration(propname).getModel().getSModelReference());
+        PropertyDeclaration decl = node.getPropertyDeclaration(propname);
+        if (decl == null) {
+          LOG.error("property declaration " + propname + " not found for node " + node);
+        } else {
+          result.add(decl.getModel().getSModelReference());
+        }
       }
       for (SReference ref : node.getReferencesIterable()) {
         result.add(ref.getTargetSModelReference());
-        result.add(node.getLinkDeclaration(ref.getRole()).getModel().getSModelReference());
+        //result.add(node.getLinkDeclaration(ref.getRole()).getModel().getSModelReference());
+        LinkDeclaration decl = node.getLinkDeclaration(ref.getRole());
+        if (decl == null) {
+          LOG.error("link declaration " + ref.getRole() + " not found for node " + node);
+        } else {
+          result.add(decl.getModel().getSModelReference());
+        }
       }
-//      for (String child : node.getChildRoles(true)) {
-//        result.add(node.getLinkDeclaration(child).getModel().getSModelReference());
-//      }
       for (SNode child : node.getChildren()) {
-        result.add(child.getRoleLink().getModel().getSModelReference());
+        //result.add(child.getRoleLink().getModel().getSModelReference());
+        LinkDeclaration decl = child.getRoleLink();
+        if (decl == null) {
+          LOG.error("link declaration " + child.getRole_() + " not found for node " + node);
+        } else {
+          result.add(decl.getModel().getSModelReference());
+        }
       }
     }
     return result;

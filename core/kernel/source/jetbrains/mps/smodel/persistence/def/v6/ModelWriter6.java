@@ -26,7 +26,7 @@ import org.jdom.Element;
 
 public class ModelWriter6 implements IModelWriter {
   protected int getModelPersistenceVersion() {
-    return 5;
+    return 6;
   }
 
   public Document saveModel(SModel sourceModel) {
@@ -107,7 +107,7 @@ public class ModelWriter6 implements IModelWriter {
       linkElement.setAttribute(ModelPersistence.ROLE, helper.genRole(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, helper.genTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
-      parentElement.addContent(linkElement);
+      element.addContent(linkElement);
     }
 
     if (saveChildren) {

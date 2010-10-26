@@ -7,13 +7,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.Stack;
 import jetbrains.mps.smodel.SModel;
-import java.util.Map;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
@@ -38,7 +35,7 @@ public class ModelReader6Handler extends DefaultHandler {
   private Stack<Object> values = new Stack<Object>();
   private SModel result;
   private SModel fieldmodel;
-  private Map<Integer, SModel.ImportElement> fieldimports;
+  private VersionUtil fieldhelper;
 
   public ModelReader6Handler() {
   }
@@ -153,7 +150,7 @@ public class ModelReader6Handler extends DefaultHandler {
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.setLoading(true);
-      fieldimports = MapSequence.fromMap(new HashMap<Integer, SModel.ImportElement>());
+      fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
       return fieldmodel;
     }
 
@@ -219,7 +216,7 @@ public class ModelReader6Handler extends DefaultHandler {
         SModel.ImportElement[] child = (SModel.ImportElement[]) value;
         int ix = child[0].getReferenceID();
         boolean implicit = child[1] != null;
-        MapSequence.fromMap(fieldimports).put(ix, child[0]);
+        fieldhelper.addImport(child[0]);
         if (ix > result.getMaxImportIndex()) {
           result.setMaxImportIndex(ix);
         }
@@ -380,9 +377,7 @@ public class ModelReader6Handler extends DefaultHandler {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      String rawFqName = attrs.getValue("type");
-      String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      return new SNode(fieldmodel, conceptFQName);
+      return new SNode(fieldmodel, fieldhelper.parse(attrs.getValue("type"), false).text);
     }
 
     @Override
@@ -397,7 +392,7 @@ public class ModelReader6Handler extends DefaultHandler {
         return;
       }
       if ("role".equals(name)) {
-        result.setRoleInParent(VersionUtil.getRole(value));
+        result.setRoleInParent(fieldhelper.parse(value, true).text);
         return;
       }
       if ("id".equals(name)) {
@@ -431,7 +426,7 @@ public class ModelReader6Handler extends DefaultHandler {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(VersionUtil.getBeforeSeparator(child[0]), child[1]);
+          result.setProperty(fieldhelper.parse(child[0], true).text, child[1]);
         }
         return;
       }
@@ -443,30 +438,18 @@ public class ModelReader6Handler extends DefaultHandler {
           }
           return;
         }
-        int i = child[2].indexOf('.');
-        String importedModelInfo = (i > 0 ?
-          child[2].substring(0, i) :
-          "-1"
-        );
-        String targetId = child[2].substring(i + 1);
-        SModelReference importedModelReference = fieldmodel.getSModelReference();
-        int ix = -1;
-        try {
-          ix = Integer.parseInt(importedModelInfo);
-        } catch (NumberFormatException e) {
-        }
-        if (ix > -1) {
-          importedModelReference = MapSequence.fromMap(fieldimports).get(ix).getModelReference();
-          if (importedModelReference == null) {
-            if (log.isErrorEnabled()) {
-              log.error("couldn't create reference '" + child[0] + "' : import for index [" + ix + "] not found");
-            }
-            return;
+        VersionUtil.ParseResult target = fieldhelper.parse(child[2], true);
+
+        SModelReference modelRef = fieldhelper.getSModelReference(target.modelID);
+        if (modelRef == null) {
+          if (log.isErrorEnabled()) {
+            log.error("couldn't create reference '" + child[0] + "' : import for index [" + target.modelID + "] not found");
           }
+          return;
         }
-        SReference ref = (targetId.equals("^") ?
-          new DynamicReference(child[0], result, importedModelReference, child[1]) :
-          new StaticReference(child[0], result, importedModelReference, SNodeId.fromString(targetId), child[1])
+        SReference ref = (target.text.equals("^") ?
+          new DynamicReference(child[0], result, modelRef, child[1]) :
+          new StaticReference(child[0], result, modelRef, SNodeId.fromString(target.text), child[1])
         );
         if (ref != null) {
           result.addReference(ref);
@@ -527,7 +510,7 @@ public class ModelReader6Handler extends DefaultHandler {
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
       String[] result = (String[]) resultObject;
       if ("role".equals(name)) {
-        result[0] = VersionUtil.getBeforeSeparator(value);
+        result[0] = fieldhelper.parse(value, true).text;
         return;
       }
       if ("resolveInfo".equals(name)) {
