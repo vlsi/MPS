@@ -41,6 +41,7 @@ import java.util.Set;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
+  private ProjectRootManagerEx myRootManager;
   private ProjectManager myProjectManager;
   private final FileBasedIndex myIndex;
   private Set<VirtualFile> myRootFiles = null;
@@ -57,10 +58,11 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, ProjectManager projectManager, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
+    myRootManager = rootManager;
     myProjectManager = projectManager;
     myIndex = index;
 
-    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex);
+    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex, myRootManager);
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager == null) return;
@@ -69,7 +71,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
       public void run() {
         startupManager.registerCacheUpdater(updater);
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this, myProject);
-        DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
+        DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(updater));
       }
     });
   }
@@ -84,19 +86,13 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
   }
 
-  private Set<VirtualFile> getRootFiles() {
-    if (myRootFiles == null) {
-      myRootFiles = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
-        public Set<VirtualFile> compute() {
-          return CacheUtil.getIndexableRoots();
-        }
-      });
-    }
-    return myRootFiles;
-  }
-
   public boolean isInSet(VirtualFile file) {
-    return (CacheUtil.checkFile(file) && checkUnderModule(file));
+    if (!CacheUtil.checkFile(file, myRootManager)) return false;
+
+    for (VirtualFile vf : getRootFiles()) {
+      if (VfsUtil.isAncestor(vf, file, true)) return true;
+    }
+    return false;
   }
 
   public void iterateIndexableFilesIn(VirtualFile file, ContentIterator iterator) {
@@ -104,8 +100,8 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     iterateIndexableFilesIn_internal(file, iterator);
   }
 
-  public void iterateIndexableFilesIn_internal(VirtualFile file, ContentIterator iterator) {
-    if (!CacheUtil.checkFile(file)) return;
+  private void iterateIndexableFilesIn_internal(VirtualFile file, ContentIterator iterator) {
+    if (!CacheUtil.checkFile(file, myRootManager)) return;
 
     if (file.isDirectory()) {
       for (VirtualFile child : file.getChildren()) {
@@ -116,10 +112,14 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     }
   }
 
-  private boolean checkUnderModule(VirtualFile file) {
-    for (VirtualFile vf : getRootFiles()) {
-      if (VfsUtil.isAncestor(vf, file, true)) return true;
+  private Set<VirtualFile> getRootFiles() {
+    if (myRootFiles == null) {
+      myRootFiles = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
+        public Set<VirtualFile> compute() {
+          return CacheUtil.getIndexableRoots();
+        }
+      });
     }
-    return false;
+    return myRootFiles;
   }
 }

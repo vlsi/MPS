@@ -19,8 +19,10 @@ import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CollectingContentIterator;
 import com.intellij.openapi.roots.ContentIterator;
+import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
@@ -32,9 +34,11 @@ import java.util.Set;
 
 public class MPSUnindexedFilesUpdater implements CacheUpdater {
   private final FileBasedIndex myIndex;
+  private ProjectRootManagerEx myManager;
 
-  public MPSUnindexedFilesUpdater(FileBasedIndex index) {
+  public MPSUnindexedFilesUpdater(FileBasedIndex index, ProjectRootManagerEx manager) {
     myIndex = index;
+    myManager = manager;
   }
 
   public int getNumberOfPendingUpdateJobs() {
@@ -60,6 +64,9 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   private void iterateIndexableFiles(final ContentIterator processor) {
     ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
+    if (indicator != null) {
+      indicator.setText("Scanning files to index");
+    }
 
     Set<VirtualFile> visitedRoots = new HashSet<VirtualFile>();
     for (VirtualFile root : CacheUtil.getIndexableRoots()) {
@@ -69,12 +76,11 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     }
   }
 
-  private static void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator) {
+  private void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator) {
     if (root == null) return;
-    if (!CacheUtil.checkFile(root)) return;
+    if (!CacheUtil.checkFile(root,myManager)) return;
 
     if (indicator != null) {
-      indicator.setText("Scanning files to index");
       indicator.setText2(root.getPresentableUrl());
     }
 
