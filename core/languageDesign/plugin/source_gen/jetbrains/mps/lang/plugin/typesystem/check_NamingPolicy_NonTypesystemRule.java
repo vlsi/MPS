@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -28,15 +28,15 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, "value")))) {
         String myWarning = warningMessage + ".";
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140725", intentionProvider, errorTarget);
         }
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_literal_once_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_literal_once_QuickFix", false);
           intentionProvider.putArgument("caption", "Fix String");
           intentionProvider.putArgument("literal", s);
           IErrorTarget errorTarget = new NodeErrorTarget();
@@ -51,16 +51,16 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
       if (!(NameUtil.satisfiesNamingPolicy(p.getValue()))) {
         String myWarning = warningMessage + "; no leading and trailing whitespaces are allowed.";
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new PropertyErrorTarget(p.getProperty());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140761", intentionProvider, errorTarget);
         }
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_property_once_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_property_once_QuickFix", false);
           intentionProvider.putArgument("caption", "Fix " + NameUtil.capitalize(p.getProperty()));
           intentionProvider.putArgument("property", p);
           IErrorTarget errorTarget = new NodeErrorTarget();
