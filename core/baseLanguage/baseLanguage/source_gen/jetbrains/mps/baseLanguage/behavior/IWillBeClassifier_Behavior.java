@@ -4,6 +4,10 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -12,6 +16,15 @@ public class IWillBeClassifier_Behavior {
   private static Class[] PARAMETERS_4609636120081469956 = {SNode.class ,SModel.class};
 
   public static void init(SNode thisNode) {
+  }
+
+  public static SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
+    final String clsName = IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(thisNode);
+    return ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.baseLanguage.structure.Classifier")).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode cls) {
+        return clsName.equals(SPropertyOperations.getString(cls, "name"));
+      }
+    });
   }
 
   public static String call_classifierName_4609636120081351397(SNode thisNode) {
