@@ -124,12 +124,9 @@
           <property name="style:32" value="BOLD" />
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="505095865854492350">
-        <property name="text:32" value="&lt;" />
-        <link role="styleClass:32" targetNodeId="2v.8171260302110651849" resolveInfo="LeftAngleBracket" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="505095865854510885">
-          <property name="flag:32" value="true" />
-        </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="207168565401719429">
+        <property name="text:32" value="[" />
+        <link role="styleClass:32" targetNodeId="2v.1233923571622" resolveInfo="LeftBracket" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="505095865854492353">
         <link role="relationDeclaration:32" targetNodeId="1.505095865854383697" />
@@ -140,14 +137,6 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="505095865854492351">
-        <property name="text:32" value="&gt;" />
-        <link role="styleClass:32" targetNodeId="2v.8171260302110651850" resolveInfo="RightAngleBracket" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="505095865854377514">
-        <property name="text:32" value="(" />
-        <link role="styleClass:32" targetNodeId="2v.1234958090348" resolveInfo="LeftParenAfterName" />
-      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="505095865854498415">
         <property name="separatorText:32" value="," />
         <link role="relationDeclaration:32" targetNodeId="1.505095865854498413" />
@@ -156,9 +145,9 @@
           <property name="nullText:32" value=".." />
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="505095865854377516">
-        <property name="text:32" value=")" />
-        <link role="styleClass:32" targetNodeId="2v.1215088010675" resolveInfo="RightParen" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="207168565401719431">
+        <property name="text:32" value="]" />
+        <link role="styleClass:32" targetNodeId="2v.1233923584313" resolveInfo="RightBracket" />
       </node>
     </node>
   </node>

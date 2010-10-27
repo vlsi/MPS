@@ -9,8 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -18,6 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -40,51 +40,29 @@ public class RelayQueryOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptProperty_9hjxv2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9hjxv2_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9hjxv2_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9hjxv2_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9hjxv2_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9hjxv2_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9hjxv2_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9hjxv2_g0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_9hjxv2_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_9hjxv2_b0");
-    BaseLanguageStyle_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_9hjxv2_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9hjxv2_d0");
-    BaseLanguageStyle_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9hjxv2_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_9hjxv2_e0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9hjxv2_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9hjxv2_g0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_9hjxv2_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new RelayQueryOperation_Editor.parameterListHandler_9hjxv2_f0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_9hjxv2_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new RelayQueryOperation_Editor.parameterListHandler_9hjxv2_d0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
@@ -164,8 +142,8 @@ public class RelayQueryOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class parameterListHandler_9hjxv2_f0 extends RefNodeListHandler {
-    public parameterListHandler_9hjxv2_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_9hjxv2_d0 extends RefNodeListHandler {
+    public parameterListHandler_9hjxv2_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -188,7 +166,7 @@ public class RelayQueryOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_9hjxv2_a5a(editorContext, node);
+      return this.createConstant_9hjxv2_a3a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -215,9 +193,9 @@ public class RelayQueryOperation_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private EditorCell createConstant_9hjxv2_a5a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_9hjxv2_a3a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_9hjxv2_a5a");
+      editorCell.setCellId("Constant_9hjxv2_a3a");
       editorCell.setDefaultText("..");
       return editorCell;
     }
