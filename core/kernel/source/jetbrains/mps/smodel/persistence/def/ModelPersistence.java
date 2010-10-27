@@ -241,7 +241,7 @@ public class ModelPersistence {
   //--------write--------
 
   // returns upgraded model, or null if the model doesn't require update or canUpgrade is false
-  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade) {
+  public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean canUpgrade, int modelVersion) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
 
     if (file.isReadOnly()) {
@@ -256,15 +256,16 @@ public class ModelPersistence {
     }
 
     // upgrade?
+    int newVersion = modelVersion;
     if (canUpgrade) {
-      int modelPersistenceVersion = model.getPersistenceVersion();
-      if (modelPersistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelPersistenceVersion)) {
-        return upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
+      if (modelVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelVersion)) {
+        newVersion = getCurrentPersistenceVersion();
+        return upgradePersistence(file, model, modelVersion, newVersion);
       }
     }
 
     // no, save
-    Document document = saveModel(model, model.getPersistenceVersion());
+    Document document = saveModel(model, newVersion);
     try {
       JDOMUtil.writeDocument(document, file);
       SModelRepository.getInstance().markUnchanged(model);
