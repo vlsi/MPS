@@ -66,6 +66,10 @@ public abstract class Macros {
 
   public final String shrinkPath(String absolutePath, IFile anchorFile) {
     if (absolutePath == null) return null;
+
+    //this is to support undefined path vars
+    if (absolutePath.startsWith("${")) return absolutePath;
+
     String fileName = shrinkPath_internal(absolutePath, anchorFile);
     return fileName.replace(File.separatorChar, SEPARATOR_CHAR);
   }
