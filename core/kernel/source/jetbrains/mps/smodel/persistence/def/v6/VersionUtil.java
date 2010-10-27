@@ -144,11 +144,30 @@ public class VersionUtil {
   public VersionUtil(SModel model) {
     myModelRef = model.getSModelReference();
     myImports = new HashMap<SModelReference, ImportElement>();
+    fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
     for (ImportElement elem : model.importedModels()) {
       myImports.put(elem.getModelReference(), elem);
     }
     for (ImportElement elem : model.getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
+    }
+  }
+
+  // when upgrading to 6 persistence some of IDs can be -1 and need to be fixed
+  static void fillReferenceIDs(SModel model) {
+    for (ImportElement elem : model.importedModels()) {
+      fixReferenceID(model, elem);
+    }
+    for (ImportElement elem : model.getAdditionalModelVersions()) {
+      fixReferenceID(model, elem);
+    }
+  }
+
+  static void fixReferenceID(SModel model, ImportElement elem) {
+    if (elem.getReferenceID() < 0) {
+      int id = model.getMaxImportIndex();
+      model.setMaxImportIndex(++id);
+      elem.setReferenceID(id);
     }
   }
 
@@ -203,10 +222,11 @@ public class VersionUtil {
     myImportByIx.put(elem.getReferenceID(), elem);
   }
 
+
   public class ParseResult {  // [modelID.]text[:version]
-    int modelID;
-    String text;
-    int version;
+    public int modelID;
+    public String text;
+    public int version;
   }
 
   public SModelReference getSModelReference(int ix) {

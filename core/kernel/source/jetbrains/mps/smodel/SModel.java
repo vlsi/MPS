@@ -626,17 +626,14 @@ public class SModel {
     }
     List<ImportElement> implicitImport = new ArrayList<ImportElement>(usedModels.size());
     for (ImportElement elem : myAdditionalModelsVersions) {
-      if (usedModels.remove(elem.getModelReference())) { // already added elements save their version and id
-        if (elem.myReferenceID < 0) {   // fix ID after upgrading from the old persistence
-          elem.myReferenceID = ++myMaxImportIndex;
-        }
-        implicitImport.add(elem);
+      if (usedModels.remove(elem.getModelReference())) {
+        implicitImport.add(elem);   // already added elements save their version and id
       }
     }
     for (SModelReference ref : usedModels) {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
       int version = modelDescriptor instanceof EditableSModelDescriptor ? ((EditableSModelDescriptor) modelDescriptor).getVersion() : -1;
-      implicitImport.add(new ImportElement(ref, ++myMaxImportIndex, version));
+      implicitImport.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
     }
     myAdditionalModelsVersions = implicitImport;
   }
@@ -713,6 +710,10 @@ public class SModel {
 
     public int getReferenceID() {
       return myReferenceID;
+    }
+
+    public void setReferenceID(int referenceID) {
+      myReferenceID = referenceID;
     }
 
     public int getUsedVersion() {

@@ -58,6 +58,8 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     // imports
+    VersionUtil helper = new VersionUtil(sourceModel);
+
     for (ImportElement importElement : sourceModel.importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
@@ -74,7 +76,6 @@ public class ModelWriter6 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
-    VersionUtil helper = new VersionUtil(sourceModel);
 
     // roots
     saveRootStubs(rootElement, sourceModel, helper);   // only for quick roots access
