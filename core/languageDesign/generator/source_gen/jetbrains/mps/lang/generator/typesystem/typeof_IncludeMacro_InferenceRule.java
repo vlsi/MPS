@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -31,14 +31,14 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
 
     if ((includedTemplate == null)) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154465925404", intentionProvider, errorTarget);
       }
     } else if ((containingTemplate == null)) {
       if (!(ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true)).isEmpty())) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "Cannot include template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466064615", intentionProvider, errorTarget);
         }
@@ -51,13 +51,13 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
       for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true))) {
         if (!(MapSequence.fromMap(available).containsKey(SPropertyOperations.getString(p, "name")))) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "no `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207801", intentionProvider, errorTarget);
           }
         } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MapSequence.fromMap(available).get(SPropertyOperations.getString(p, "name")), SLinkOperations.getTarget(p, "type", true)))) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "bad type of `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207820", intentionProvider, errorTarget);
           }

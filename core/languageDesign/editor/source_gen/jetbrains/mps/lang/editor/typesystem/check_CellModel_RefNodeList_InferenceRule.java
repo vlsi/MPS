@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -22,12 +22,12 @@ public class check_CellModel_RefNodeList_InferenceRule extends AbstractInference
   public void applyRule(final SNode refNodeList, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode lnk = SLinkOperations.getTarget(refNodeList, "relationDeclaration", false);
     if (!(SPropertyOperations.hasValue(lnk, "metaClass", "aggregation", "reference"))) {
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(refNodeList, "aggregation link expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180295464579", intentionProvider, errorTarget);
     }
     if (!(SPropertyOperations.hasValue(lnk, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(lnk, "sourceCardinality", "1..n", "0..1"))) {
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(refNodeList, "multiple cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180295464588", intentionProvider, errorTarget);
     }
