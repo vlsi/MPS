@@ -23,4 +23,6 @@ public interface IFileEx extends IFile {
   IFile getBundleHome();
 
   boolean setTimeStamp(long time);
+  
+  void refresh();
 }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.library;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -75,6 +77,16 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   protected String removeMacros(String path) {
     return Macros.projectDescriptor().expandPath(path, getAnchorFile());
+  }
+
+  @Override
+  public void initComponent() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ProjectLibraryManager.super.initComponent();
+      }
+    }, ModalityState.defaultModalityState());
   }
 
   private File getAnchorFile() {

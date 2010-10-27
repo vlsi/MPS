@@ -84,19 +84,19 @@ public class MPSModuleRepository implements ApplicationComponent {
     return new HashSet<String>(myExtensionsToModuleTypes.keySet());
   }
 
-  public void addRepositoryListener(MPSModuleRepositoryListener l) {
-    myListeners.add(l);
+  public void addRepositoryListener(MPSModuleRepositoryListener listener) {
+    myListeners.add(listener);
   }
 
-  public void removeRepositoryListener(MPSModuleRepositoryListener l) {
-    myListeners.remove(l);
+  public void removeRepositoryListener(MPSModuleRepositoryListener listener) {
+    myListeners.remove(listener);
   }
 
   private void fireRepositoryChanged() {
     invalidateCaches();
 
-    for (MPSModuleRepositoryListener l : myListeners) {
-      l.repositoryChanged();
+    for (MPSModuleRepositoryListener listener : myListeners) {
+      listener.repositoryChanged();
     }
   }
 
@@ -118,18 +118,18 @@ public class MPSModuleRepository implements ApplicationComponent {
     });
   }
 
-  public void addModuleRepositoryListener(ModuleRepositoryListener l) {
-    myModuleListeners.add(l);
+  public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
+    myModuleListeners.add(listener);
   }
 
-  public void removeModuleRepositoryListener(ModuleRepositoryListener l) {
-    myModuleListeners.remove(l);
+  public void removeModuleRepositoryListener(ModuleRepositoryListener listener) {
+    myModuleListeners.remove(listener);
   }
 
   private void fireModuleAdded(IModule module) {
-    for (ModuleRepositoryListener l : myModuleListeners) {
+    for (ModuleRepositoryListener listener : myModuleListeners) {
       try {
-        l.moduleAdded(module);
+        listener.moduleAdded(module);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -137,9 +137,9 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void fireBeforeModuleRemoved(IModule module) {
-    for (ModuleRepositoryListener l : myModuleListeners) {
+    for (ModuleRepositoryListener listener : myModuleListeners) {
       try {
-        l.beforeModuleRemoved(module);
+        listener.beforeModuleRemoved(module);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -147,9 +147,9 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void fireModuleRemoved(IModule module) {
-    for (ModuleRepositoryListener l : myModuleListeners) {
+    for (ModuleRepositoryListener listener : myModuleListeners) {
       try {
-        l.moduleRemoved(module);
+        listener.moduleRemoved(module);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -175,8 +175,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   public void fireModuleInitialized(IModule module) {
     assertCanRead();
 
-    for (ModuleRepositoryListener l : myModuleListeners) {
-      l.moduleInitialized(module);
+    for (ModuleRepositoryListener listener : myModuleListeners) {
+      listener.moduleInitialized(module);
     }
   }
 
@@ -433,6 +433,8 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes) {
     assertCanWrite();
+
+    FileSystem.getInstance().refresh(dir);
 
     List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();

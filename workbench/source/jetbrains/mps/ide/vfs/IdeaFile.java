@@ -240,6 +240,17 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
+  public void refresh() {
+    ApplicationManager.getApplication().assertWriteAccessAllowed();
+    if (findVirtualFile()) {
+      myVirtualFile.getChildren(); // This was added to force refresh
+      myVirtualFile.refresh(false, false);
+    } else {
+      findVirtualFile(true);
+    }
+  }
+
+  @Override
   public boolean isPackaged() {
     return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
   }
@@ -266,11 +277,16 @@ class IdeaFile implements IFileEx {
   }
 
   private boolean findVirtualFile() {
+    return findVirtualFile(false);
+  }
+
+  private boolean findVirtualFile(boolean withRefresh) {
     if (myVirtualFile != null && !myVirtualFile.isValid()) {
       myPath = myVirtualFile.getPath();
       myVirtualFile = null;
     }
     if (myVirtualFile == null) {
+      LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
       if (myPath.contains("!")) {
         int index = myPath.indexOf("!");
         String jarPath = myPath.substring(0, index);
@@ -281,8 +297,12 @@ class IdeaFile implements IFileEx {
         }
 
         JarFileSystem jarFileSystem = JarFileSystem.getInstance();
-        LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
-        VirtualFile jarFile = localFileSystem.findFileByPath(jarPath);
+        VirtualFile jarFile;
+        if (withRefresh) {
+          jarFile = localFileSystem.refreshAndFindFileByPath(jarPath);
+        } else {
+          jarFile = localFileSystem.findFileByPath(jarPath);
+        }
         if (jarFile != null) {
           VirtualFile jarRootFile = jarFileSystem.getJarRootForLocalFile(jarFile);
           if (jarRootFile != null) {
@@ -290,7 +310,11 @@ class IdeaFile implements IFileEx {
           }
         }
       } else {
-        myVirtualFile = LocalFileSystem.getInstance().findFileByPath(myPath);
+        if (withRefresh) {
+          myVirtualFile = localFileSystem.refreshAndFindFileByPath(myPath);
+        } else {
+          myVirtualFile = localFileSystem.findFileByPath(myPath);
+        }
       }
     }
     if (myVirtualFile != null) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
@@ -59,5 +60,12 @@ public class FileSystemImpl extends FileSystem {
   @Override
   public boolean setTimeStamp(IFile file, long time) {
     return file instanceof IFileEx && ((IFileEx) file).setTimeStamp(time);
+  }
+
+  @Override
+  public void refresh(IFile file) {
+    if (file instanceof IFileEx) {
+      ((IFileEx) file).refresh();
+    }
   }
 }
