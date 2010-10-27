@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.analyzers.behavior.Rule_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -30,7 +30,7 @@ public class checkDuplicatedRules_NonTypesystemRule extends AbstractNonTypesyste
       }
       if (SetSequence.fromSet(names).contains(Rule_Behavior.call_getFqName_8716397433969716516(SLinkOperations.getTarget(ruleRef, "rule", false)))) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ruleRef, "Data flow constructor name duplication", "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.analyzers.typesystem)", "1483902774837535780", intentionProvider, errorTarget);
         }

@@ -11,7 +11,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil;
@@ -29,7 +29,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
       ListSequence.fromList(ptypes).addElement(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_3143009324072631653));
       {
         SNode _nodeToCheck_1029348928467 = p;
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033303", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033305", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_3143009324072631653), _info_12389875345);
       }
@@ -37,14 +37,14 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
     final SNode ret_typevar_3143009324072631671 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = invoke;
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3143009324072631672", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3143009324072631676", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_3143009324072631671), _info_12389875345);
     }
     final SNode ftype_typevar_3143009324072631678 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(invoke);
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3143009324072631679", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(ftype_typevar_3143009324072631678), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3143009324072631681", true), _info_12389875345);
     }
@@ -54,7 +54,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
         public void run() {
           {
             SNode _nodeToCheck_1029348928467 = invoke;
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033261", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
             typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_3143009324072631671), (SNode) FunctionTypeUtil.getResultType(typeCheckingContext.getEquationManager().getRepresentator(ftype_typevar_3143009324072631678)), false, _info_12389875345);
@@ -75,7 +75,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
               fpt = fpt_iterator.next();
               {
                 SNode _nodeToCheck_1029348928467 = pt;
-                BaseIntentionProvider intentionProvider = null;
+                BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033268", 0, intentionProvider);
                 _info_12389875345.setInequationGroup("default");
                 typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033270", true), (SNode) fpt, false, _info_12389875345);

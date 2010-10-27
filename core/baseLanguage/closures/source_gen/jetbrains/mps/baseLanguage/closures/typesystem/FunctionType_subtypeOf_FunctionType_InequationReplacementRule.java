@@ -8,7 +8,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -35,7 +35,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
     if (SNodeOperations.getConceptDeclaration(subtype) != SNodeOperations.getConceptDeclaration(supertype)) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "incompatible types", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229719015332", intentionProvider, errorTarget);
         _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
@@ -44,7 +44,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).count()) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201618945543", intentionProvider, errorTarget);
         _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
@@ -54,7 +54,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     // priority should be less than priority of typeof_ClosureLiteral type-creating inequations 
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", 0, intentionProvider);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
       _info_12389875345.setInequationGroup("priority_1_1759628044690732298");
@@ -69,7 +69,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
             if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(superTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                BaseIntentionProvider intentionProvider = null;
+                BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814209725", 0, intentionProvider);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                 _info_12389875345.setInequationGroup("default");
@@ -96,7 +96,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         paramType2 = paramType2_iterator.next();
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201614990748", 0, intentionProvider);
           _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
           _info_12389875345.setInequationGroup("default");
@@ -112,7 +112,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     for (SNode subThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1214834519072", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
         _info_12389875345.setInequationGroup("default");

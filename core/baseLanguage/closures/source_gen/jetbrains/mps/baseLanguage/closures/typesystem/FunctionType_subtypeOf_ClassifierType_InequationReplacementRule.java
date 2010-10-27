@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -67,7 +67,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-              BaseIntentionProvider intentionProvider = null;
+              BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, intentionProvider);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
               _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
@@ -94,7 +94,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               mpt = mpt_iterator.next();
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                BaseIntentionProvider intentionProvider = null;
+                BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", 0, intentionProvider);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                 _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
@@ -117,7 +117,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       errorMsg = ": not an interface or an abstract class";
     }
     {
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype) + errorMsg, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742336483", intentionProvider, errorTarget);
       _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);

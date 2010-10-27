@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -21,8 +21,8 @@ public class check_ConceptMethodDeclaration_NonTypesystemRule extends AbstractNo
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(ConceptMethodDeclaration_Behavior.call_isCorrectlyOverriden_1227262347923(method))) {
       {
-        BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix", false);
+        BaseQuickFixProvider intentionProvider = null;
+        intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix", false);
         intentionProvider.putArgument("conceptMethod", method);
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "Method signature doesn't match signature in the base concept", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1227262769261", intentionProvider, errorTarget);
