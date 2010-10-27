@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.*;
@@ -542,6 +543,6 @@ public class TemplateProcessor {
     return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, context, 0);
   }
 
-  public static class TemplateProcessingFailureException extends Exception {
+  public static class TemplateProcessingFailureException extends GenerationException {
   }
 }

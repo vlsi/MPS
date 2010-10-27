@@ -11,19 +11,19 @@ public interface TemplateContext {
 
   SNode getInput();
 
-  Iterable<SNode> getInputHistory();
-
-  boolean hasVariable(String name);
-
   String getInputName();
 
-  TemplateContext subContext(String inputName, SNode inputNode);
-
-  TemplateContext subContext(String inputName);
+  Iterable<SNode> getInputHistory();
 
   SNode getNamedInput(String name);
+
+  boolean hasVariable(String name);
 
   Object getVariable(String name);
 
   Object getPatternVariable(String name);
+
+  TemplateContext subContext(String inputName, SNode inputNode);
+
+  TemplateContext subContext(String inputName);
 }

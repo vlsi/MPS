@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 
-public class GenerationFailureException extends Exception {
+public class GenerationFailureException extends GenerationException {
   private static final Logger LOG = Logger.getLogger(GenerationFailureException.class);
 
   public GenerationFailureException(String message) {

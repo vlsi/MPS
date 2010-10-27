@@ -13,28 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
-
-import jetbrains.mps.generator.runtime.GenerationException;
+package jetbrains.mps.generator.runtime;
 
 /**
- * @author Kostik
+ * Evgeny Gryaznov, 10/22/10
  */
-@SuppressWarnings({"serial"})
-public class GenerationCanceledException extends GenerationException {
+public abstract class GenerationException extends Exception {
 
-  public GenerationCanceledException() {
+  protected GenerationException() {
   }
 
-  public GenerationCanceledException(String message) {
-    super(message);
+  protected GenerationException(String s) {
+    super(s);
   }
 
-  public GenerationCanceledException(String message, Throwable cause) {
-    super(message, cause);
+  protected GenerationException(String s, Throwable throwable) {
+    super(s, throwable);
   }
 
-  public GenerationCanceledException(Throwable cause) {
-    super(cause);
+  protected GenerationException(Throwable throwable) {
+    super(throwable);
   }
 }

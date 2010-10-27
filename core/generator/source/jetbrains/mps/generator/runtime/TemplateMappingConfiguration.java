@@ -13,28 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.generator.runtime.GenerationException;
+import java.util.Collection;
 
 /**
- * @author Kostik
+ * Evgeny Gryaznov, 10/27/10
  */
-@SuppressWarnings({"serial"})
-public class GenerationCanceledException extends GenerationException {
+public interface TemplateMappingConfiguration {
 
-  public GenerationCanceledException() {
-  }
+  Collection<TemplateRootMappingRule> getRootRules();
 
-  public GenerationCanceledException(String message) {
-    super(message);
-  }
+  Collection<TemplateCreateRootRule> getCreateRules();
 
-  public GenerationCanceledException(String message, Throwable cause) {
-    super(message, cause);
-  }
-
-  public GenerationCanceledException(Throwable cause) {
-    super(cause);
-  }
+  Collection<TemplateReductionRule> getReductionRules();
 }

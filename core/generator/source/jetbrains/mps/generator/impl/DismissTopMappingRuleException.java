@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.lang.generator.structure.GeneratorMessageType;
 
-public class DismissTopMappingRuleException extends Exception {
+public class DismissTopMappingRuleException extends GenerationException {
   private GeneratorMessageType myMessageType;
 
   public DismissTopMappingRuleException(GeneratorMessageType messageType) {
