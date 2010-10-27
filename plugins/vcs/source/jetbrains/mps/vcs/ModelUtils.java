@@ -33,13 +33,16 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 
 import java.io.*;
-import java.util.Calendar;
 
 public class ModelUtils {
   private static final Logger LOG = Logger.getLogger(ModelUtils.class);
 
   public static byte[] modelToBytes(final SModel result) {
-    Document document = modelToDom(result);
+    Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
+      public Document compute() {
+        return ModelPersistence.saveModel(result,result.getPersistenceVersion());
+      }
+    });
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     try {
       JDOMUtil.writeDocument(document, baos);
@@ -198,14 +201,4 @@ public class ModelUtils {
       }
     });
   }
-
-  private static Document modelToDom(final SModel model) {
-    Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
-      public Document compute() {
-        return ModelPersistence.saveModel(model);
-      }
-    });
-    return document;
-  }
-
 }

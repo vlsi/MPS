@@ -264,7 +264,7 @@ public class ModelPersistence {
     }
 
     // no, save
-    Document document = saveModel(model);
+    Document document = saveModel(model, model.getPersistenceVersion());
     try {
       JDOMUtil.writeDocument(document, file);
       SModelRepository.getInstance().markUnchanged(model);
@@ -275,17 +275,17 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static Document saveModel(@NotNull SModel sourceModel) {
+  public static Document saveModel(@NotNull SModel sourceModel, int version) {
     //model persistence level update is performed on startup;
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    if (sourceModel.getPersistenceVersion() == -1) {
+    if (version == -1) {
       sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
     }
 
     sourceModel.calculateImplicitImports();
 
-    return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel);
+    return modelWriters.get(version).saveModel(sourceModel);
   }
 
   //-------- --------
@@ -335,7 +335,7 @@ public class ModelPersistence {
     model.setPersistenceVersion(toVersion);
 
     try {
-      Document document = saveModel(model);
+      Document document = saveModel(model,toVersion);
       JDOMUtil.writeDocument(document, file);
 
       if (refactorings != null) {
@@ -425,7 +425,7 @@ public class ModelPersistence {
   @NotNull
   @Deprecated //very slow
   public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
+    return readModel(saveModel(model,model.getPersistenceVersion()), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
   }
 
   @Deprecated //very slow

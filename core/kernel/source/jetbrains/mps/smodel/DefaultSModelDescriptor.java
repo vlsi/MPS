@@ -191,9 +191,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public int getPersistenceVersion() {
-    SModel model = mySModel; // do not use getSModel() to avoid lock
-    if (model == null) return myPersistenceVersion;
-    return model.getPersistenceVersion();
+    return myPersistenceVersion;
   }
 
   @NotNull
@@ -201,7 +199,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     synchronized (myRefactoringHistoryLock) {
       if (myStructureModificationHistory == null) {
         SModel model = mySModel;
-        if (model != null && model.getPersistenceVersion() >= 0 && model.getPersistenceVersion() < 5) {
+        if (model != null && myPersistenceVersion >= 0 && myPersistenceVersion < 5) {
           //noinspection deprecation
           myStructureModificationHistory = model.getRefactoringHistory();
         }

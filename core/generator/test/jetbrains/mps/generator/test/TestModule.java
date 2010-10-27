@@ -176,7 +176,7 @@ public class TestModule extends AbstractModule {
 
     @Override
     protected ModelLoadResult initialLoad() {
-      Document document = ModelPersistence.saveModel(myToCopy);
+      Document document = ModelPersistence.saveModel(myToCopy, ModelPersistence.getCurrentPersistenceVersion());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       SModel result = ModelPersistence.readModel(document, NameUtil.shortNameFromLongName(myToCopy.getLongName()), myToCopy.getStereotype());
