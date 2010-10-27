@@ -26,7 +26,6 @@ import javax.swing.JTable;
 import java.awt.GridLayout;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -35,8 +34,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import com.intellij.openapi.actionSystem.DataProvider;
 import java.awt.LayoutManager;
-
-import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.execution.Location;
@@ -125,7 +122,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   public Icon getIcon(String iconName) {
     Language language = getLanguage();
-    String pathToIcon = MacrosFactory.languageDescriptor().expandPath(Macros.LANGUAGE_DESCRIPTOR + "\\icons\\" + iconName, language.getDescriptorFile());
+    String pathToIcon = language.getDescriptorFile().getParent().getAbsolutePath() + "\\icons\\" + iconName;
     return IconManager.loadIcon(pathToIcon, true);
   }
 

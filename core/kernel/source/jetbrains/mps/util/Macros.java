@@ -17,10 +17,6 @@ package jetbrains.mps.util;
 
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -31,12 +27,9 @@ import java.util.Set;
 
 public abstract class Macros {
   private static final Logger LOG = Logger.getLogger(Macros.class);
-  public static final char SEPARATOR_CHAR = '/';
+  static final char SEPARATOR_CHAR = '/';
 
-  public static final String MPS_HOME_NAKED = "mps_home";
-  public static final String MPS_HOME = "${" + MPS_HOME_NAKED + "}";
-
-  public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
+  public static final String MPS_HOME = "${mps_home}";
 
   public final String expandPath(String path, IFile anchorFile) {
     if (path == null) return null;
