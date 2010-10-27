@@ -11,10 +11,11 @@ import jetbrains.mps.vfs.IFileUtils;
 public class MacrosFactory {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
+  public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String PROJECT = "${project}";
 
   public static Macros languageDescriptor() {
-    return new DescriptorMacros(Macros.LANGUAGE_DESCRIPTOR);
+    return new DescriptorMacros(LANGUAGE_DESCRIPTOR);
   }
 
   public static Macros solutionDescriptor() {
@@ -46,7 +47,7 @@ public class MacrosFactory {
 
   public static String getMacroString(IModule module) {
     if (module instanceof Language) {
-      return Macros.LANGUAGE_DESCRIPTOR;
+      return LANGUAGE_DESCRIPTOR;
     } else if (module instanceof Solution) {
       return SOLUTION_DESCRIPTOR;
     } else if (module instanceof DevKit) {
