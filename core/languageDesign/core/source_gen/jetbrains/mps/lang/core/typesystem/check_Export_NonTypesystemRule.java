@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.core.behavior.ExportScope_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -32,7 +32,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     // check concept of the node 
     if (!(ExportScope_Behavior.checkExport_2565736246230031479(true, SNodeOperations.getConceptDeclaration(node), namespace))) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954469", intentionProvider, errorTarget);
       }
@@ -41,7 +41,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       if (!(ExportScope_Behavior.checkExport_2565736246230031479(false, SLinkOperations.getTargetNode(ref), namespace))) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954475", intentionProvider, errorTarget);

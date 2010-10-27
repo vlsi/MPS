@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
@@ -26,7 +26,7 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
       SNode node = ref.getTargetNode();
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IDeprecatable"))) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(ref.getRole());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(baseConcept, IDeprecatable_Behavior.call_getMessage_1225207468592(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IDeprecatable")), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1225207423729", intentionProvider, errorTarget);

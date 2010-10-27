@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -24,7 +24,7 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
   public void applyRule(final SNode mpsBuild, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true) == null)) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mpsBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238771106116", intentionProvider, errorTarget);
       }
@@ -33,7 +33,7 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
     File file = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true));
     if (file != null && (!(file.exists()) || !(file.isFile()))) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true), "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not valid.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "512310472859159199", intentionProvider, errorTarget);
       }

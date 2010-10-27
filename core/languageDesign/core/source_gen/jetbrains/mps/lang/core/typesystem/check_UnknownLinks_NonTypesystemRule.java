@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -34,8 +34,8 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       SNode link = SNodeOperations.getContainingLinkDeclaration(child);
       if (link == null || !(SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference"))) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix", false);
           intentionProvider.putArgument("role", SNodeOperations.getContainingLinkRole(child));
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Child of undeclared role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253868925", intentionProvider, errorTarget);
@@ -47,8 +47,8 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       SNode link = SLinkOperations.findLinkDeclaration(reference);
       if (link == null || !(SPropertyOperations.hasValue(link, "metaClass", "reference", "reference"))) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix", false);
           intentionProvider.putArgument("role", SLinkOperations.getRole(reference));
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Reference of undeclared role \"" + SLinkOperations.getRole(reference) + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253870183", intentionProvider, errorTarget);

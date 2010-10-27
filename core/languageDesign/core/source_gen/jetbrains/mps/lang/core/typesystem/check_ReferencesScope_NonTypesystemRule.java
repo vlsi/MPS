@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
@@ -43,7 +43,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, linkDeclaration, context);
       if (sss.isError()) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752368615", intentionProvider, errorTarget);
@@ -51,7 +51,7 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
         String name = target.getName();
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
