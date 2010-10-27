@@ -293,8 +293,8 @@ public class GenerationTestBase {
     }
   }
 
-  private static Map<String, String> getHashes(SModel model) {
-    Document m = ModelPersistence.saveModel(model,model.getPersistenceVersion());
+  private static Map<String, String> getHashes(SModel model, int version) {
+    Document m = ModelPersistence.saveModel(model,version);
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
       JDOMUtil.writeDocument(m, os);
@@ -383,7 +383,13 @@ public class GenerationTestBase {
     }
 
     void buildHash() {
-      Map<String, String> hashes = getHashes(myModel.getSModel());
+      int ver;
+      if (myModel instanceof EditableSModelDescriptor){
+        ver = ((EditableSModelDescriptor) myModel).getPersistenceVersion();
+      }else{
+        ver = ModelPersistence.getCurrentPersistenceVersion();
+      }
+      Map<String, String> hashes = getHashes(myModel.getSModel(), ver);
       if(myHash != null) {
         Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(ModelDigestHelper.HEADER), hashes.get(ModelDigestHelper.HEADER));
         Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(ModelDigestHelper.FILE), hashes.get(ModelDigestHelper.FILE));
