@@ -513,16 +513,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     return module;
   }
 
-  public Language getLanguageSafe(String namespace) {
-    assertCanRead();
-
-    Language result = getLanguage(namespace);
-    if (result == null) {
-      throw new NullPointerException();
-    }
-    return result;
-  }
-
   public Language getLanguage(String namespace) {
     return (Language) myFqNameToModulesMap.get(namespace);
   }
