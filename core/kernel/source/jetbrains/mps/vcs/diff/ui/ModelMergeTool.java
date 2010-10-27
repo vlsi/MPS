@@ -51,6 +51,9 @@ public class ModelMergeTool implements DiffTool {
       final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
         public MergeModelsDialog compute() {
           SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());
+          if (modelDescriptor == null) {
+            modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mineModel.getSModelFqName());
+          }
           IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
           return new MergeModelsDialog(context, baseModel, mineModel, newModel);
         }
