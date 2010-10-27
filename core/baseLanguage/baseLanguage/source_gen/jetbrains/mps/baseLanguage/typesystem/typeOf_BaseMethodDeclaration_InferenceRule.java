@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -34,7 +34,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     for (SNode throwsItem : SLinkOperations.getTargets(bmd, "throwsItem", true)) {
       {
         SNode _nodeToCheck_1029348928467 = bmd;
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) throwsItem, (SNode) new typeOf_BaseMethodDeclaration_InferenceRule.QuotationClass_ifzhbs_a0a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
@@ -59,7 +59,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "no return value expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765152925", intentionProvider, errorTarget);
           }
@@ -70,7 +70,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765314800", intentionProvider, errorTarget);
           }
@@ -78,7 +78,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765405776", true);
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363921400", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
             typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
@@ -94,7 +94,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765601477", true);
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363855090", 0, intentionProvider);
           _info_12389875345.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);

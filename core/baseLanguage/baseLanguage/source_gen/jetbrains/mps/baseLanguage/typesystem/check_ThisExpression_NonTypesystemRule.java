@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -21,7 +21,7 @@ public class check_ThisExpression_NonTypesystemRule extends AbstractNonTypesyste
 
   public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(ClassifierMember_Behavior.call_isStatic_8986964027630462944(ThisExpression_Behavior.call_getContextClassifierMember_6516287307421538194(thisExpression))))) {
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisExpression, "this-expression is not allowed in a static context ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201700958007", intentionProvider, errorTarget);
     }

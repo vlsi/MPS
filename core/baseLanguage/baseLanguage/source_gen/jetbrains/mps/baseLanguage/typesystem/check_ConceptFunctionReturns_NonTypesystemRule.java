@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -36,7 +36,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "no return value expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7243599812675828728", intentionProvider, errorTarget);
           }
@@ -57,7 +57,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
             "" + expectedRetType
           );
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(func, "function should return " + whatExpected, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7243599812675828620", intentionProvider, errorTarget);
           }

@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -32,7 +32,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
         if (matches_x4f43m_a0a) {
           if ((SNodeOperations.getNextSibling(matchedNode_x4f43m_a0) != null)) {
             {
-              BaseIntentionProvider intentionProvider = null;
+              BaseQuickFixProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(matchedNode_x4f43m_a0, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider, errorTarget);
             }
@@ -41,7 +41,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
         }
       }
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921506083", intentionProvider, errorTarget);
       }

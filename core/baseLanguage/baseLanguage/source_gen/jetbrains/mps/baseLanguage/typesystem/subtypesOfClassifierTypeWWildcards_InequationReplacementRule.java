@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -56,7 +56,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     final SNode finalTypeParam = typeParam;
                     {
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                      BaseIntentionProvider intentionProvider = null;
+                      BaseQuickFixProvider intentionProvider = null;
                       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220535076789", 0, intentionProvider);
                       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                       _info_12389875345.setInequationGroup("default");
@@ -69,7 +69,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                           if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-                              BaseIntentionProvider intentionProvider = null;
+                              BaseQuickFixProvider intentionProvider = null;
                               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, intentionProvider);
                               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                               typeCheckingContext.createEquation((SNode) finalTypeParam, (SNode) typeCheckingContext.getEquationManager().getRepresentator(concreteParam), _info_12389875345);
@@ -91,14 +91,14 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               }
               if (methodCall != null) {
                 {
-                  BaseIntentionProvider intentionProvider = null;
+                  BaseQuickFixProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
                   _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
                 }
               } else {
                 {
-                  BaseIntentionProvider intentionProvider = null;
+                  BaseQuickFixProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
                   _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);

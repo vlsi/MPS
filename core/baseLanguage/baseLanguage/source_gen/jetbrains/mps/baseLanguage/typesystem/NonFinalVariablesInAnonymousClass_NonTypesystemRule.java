@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -27,8 +27,8 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
     if (!(SPropertyOperations.getBoolean(SLinkOperations.getTarget(localVariableReference, "variableDeclaration", false), "isFinal"))) {
       if (!(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix", false);
           intentionProvider.putArgument("varRef", localVariableReference);
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localVariableReference, "Variable must be final", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239123004897", intentionProvider, errorTarget);

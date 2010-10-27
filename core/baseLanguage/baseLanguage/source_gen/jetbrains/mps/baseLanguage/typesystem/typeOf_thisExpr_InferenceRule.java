@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -37,7 +37,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), (SNode) new typeOf_thisExpr_InferenceRule.QuotationClass_ausror_a0a4a0().createNode(typeVarRefs, classifier, typeCheckingContext), _info_12389875345);
     }

@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -25,8 +25,8 @@ public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesyste
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), "jetbrains.mps.baseLanguage.structure.Type")) {
       if (Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(expr, "type", true), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"))) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveExcessTypeCast_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveExcessTypeCast_QuickFix", false);
           intentionProvider.putArgument("castExpr", expr);
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(expr, "Typecast expression is superflous", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3637195266923171603", intentionProvider, errorTarget);

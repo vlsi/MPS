@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -36,7 +36,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
             if (matches_qfxa59_a0a1a0a) {
               if ((matchedNode_qfxa59_a0b0a0 != null) && !(SPropertyOperations.getBoolean(matchedNode_qfxa59_a0b0a0, "abstractClass"))) {
                 {
-                  BaseIntentionProvider intentionProvider = null;
+                  BaseQuickFixProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract method in a non-abstract class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "840197573389262456", intentionProvider, errorTarget);
                 }

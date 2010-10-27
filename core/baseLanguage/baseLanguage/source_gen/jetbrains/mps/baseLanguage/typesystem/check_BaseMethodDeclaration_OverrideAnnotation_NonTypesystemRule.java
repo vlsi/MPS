@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -34,7 +34,7 @@ public class check_BaseMethodDeclaration_OverrideAnnotation_NonTypesystemRule ex
     if (ListSequence.fromList(overrideAnnotation).isNotEmpty() && (BaseMethodDeclaration_Behavior.call_getNearestOverriddenMethod_5358895268254685434(baseMethodDeclaration) == null)) {
       for (SNode nodeToReport : overrideAnnotation) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToReport, "Method does not override method from its superclass", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5418393554804023989", intentionProvider, errorTarget);
         }

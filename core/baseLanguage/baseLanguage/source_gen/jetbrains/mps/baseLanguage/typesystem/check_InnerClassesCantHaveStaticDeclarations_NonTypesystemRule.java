@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
@@ -24,8 +24,8 @@ public class check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule exte
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept)) && (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticField", true)).isNotEmpty() || (SLinkOperations.getTarget(classConcept, "classInitializer", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).isNotEmpty())) {
       {
-        BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.MakeInnerClassStatic_QuickFix", false);
+        BaseQuickFixProvider intentionProvider = null;
+        intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeInnerClassStatic_QuickFix", false);
         intentionProvider.putArgument("innerClass", classConcept);
         IErrorTarget errorTarget = new NodeErrorTarget();
         errorTarget = new PropertyErrorTarget("name");

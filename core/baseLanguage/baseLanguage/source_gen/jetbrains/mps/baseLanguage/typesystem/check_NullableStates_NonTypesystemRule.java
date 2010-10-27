@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -49,7 +49,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         if (SLinkOperations.getTarget(dot, "operand", true) == source && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true)))) {
           if (NullableState.canBeNull(varState)) {
             {
-              BaseIntentionProvider intentionProvider = null;
+              BaseQuickFixProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(dot, "This operation can produce 'java.lang.NullPointerException'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577277", intentionProvider, errorTarget);
             }
@@ -72,14 +72,14 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           if (inCondition) {
             if (equals && isNotNull || !(equals) && isNull) {
               {
-                BaseIntentionProvider intentionProvider = null;
+                BaseQuickFixProvider intentionProvider = null;
                 IErrorTarget errorTarget = new NodeErrorTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parent, "This condition is always false", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577391", intentionProvider, errorTarget);
               }
             }
             if (equals && isNull || !(equals) && isNotNull) {
               {
-                BaseIntentionProvider intentionProvider = null;
+                BaseQuickFixProvider intentionProvider = null;
                 IErrorTarget errorTarget = new NodeErrorTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parent, "This condition is always true", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577404", intentionProvider, errorTarget);
               }
@@ -105,7 +105,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           }
           if (NullableState.canBeNull(result.get(instruction).get(value))) {
             {
-              BaseIntentionProvider intentionProvider = null;
+              BaseQuickFixProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((SNode) write.getValue(), "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577483", intentionProvider, errorTarget);
             }

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -37,7 +37,7 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
     }
     if (!(SetSequence.fromSet(containersAndParentClasses).contains(SNodeOperations.getParent(SLinkOperations.getTarget(call, "baseMethodDeclaration", false))))) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "This method can't be called from the current context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228992682236", intentionProvider, errorTarget);
       }

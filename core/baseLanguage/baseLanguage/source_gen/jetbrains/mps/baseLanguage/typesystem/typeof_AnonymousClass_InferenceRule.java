@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +37,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(SLinkOperations.getTargets(anonymousClass, "typeParameter", true), anonymousClass, typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = anonymousClass;
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296920", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296924", true), (SNode) constructedType, _info_12389875345);
     }
@@ -47,14 +47,14 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     final SNode methodClassifier = SNodeOperations.cast(SLinkOperations.getTarget(anonymousClass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     if (!(ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == 0 || ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration", true)).count())) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(anonymousClass, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296749", intentionProvider, errorTarget);
       }
     }
     for (SNode parameter : SLinkOperations.getTargets(anonymousClass, "typeParameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0b0a0a0f0a().createNode(typeCheckingContext), "descriptor", false), false)))) {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296785", intentionProvider, errorTarget);
       }
@@ -63,7 +63,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     final SNode instanceType_typevar_2925336694746296814 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = anonymousClass;
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296815", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_2925336694746296814), (SNode) constructedType, _info_12389875345);
     }

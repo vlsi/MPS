@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -31,8 +31,8 @@ public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonT
       }
       if (ParenthesisUtil.isBadPriority(binaryOperation, parent, isRigth)) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.BinaryExpressionPriority_QuickFix", true);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.BinaryExpressionPriority_QuickFix", true);
           intentionProvider.putArgument("child", binaryOperation);
           intentionProvider.putArgument("parent", parent);
           IErrorTarget errorTarget = new NodeErrorTarget();

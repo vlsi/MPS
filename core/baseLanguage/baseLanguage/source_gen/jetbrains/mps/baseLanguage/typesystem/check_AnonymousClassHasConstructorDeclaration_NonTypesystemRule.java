@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -22,8 +22,8 @@ public class check_AnonymousClassHasConstructorDeclaration_NonTypesystemRule ext
     SNode constructorDeclaration = SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false);
     if ((constructorDeclaration == null)) {
       {
-        BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
+        BaseQuickFixProvider intentionProvider = null;
+        intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
         intentionProvider.putArgument("classifier", SLinkOperations.getTarget(anonymousClass, "classifier", false));
         intentionProvider.putArgument("methodCall", anonymousClass);
         IErrorTarget errorTarget = new NodeErrorTarget();

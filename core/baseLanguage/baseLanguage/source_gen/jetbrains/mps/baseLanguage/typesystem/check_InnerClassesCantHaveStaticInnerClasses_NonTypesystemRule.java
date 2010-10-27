@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -24,7 +24,7 @@ public class check_InnerClassesCantHaveStaticInnerClasses_NonTypesystemRule exte
       SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier");
       if (Classifier_Behavior.call_isInner_521412098689998677(classifier) && !(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
         {
-          BaseIntentionProvider intentionProvider = null;
+          BaseQuickFixProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "Inner classes can't have static declarations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6935810692634700346", intentionProvider, errorTarget);
         }

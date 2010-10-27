@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -25,8 +25,8 @@ public class check_InnerClassesCantHaveStaticInitializer_NonTypesystemRule exten
       SNode classConcept = (SNode) SNodeOperations.getParent(staticInitializer);
       if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept))) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.MakeStaticInitializerNotStatic_QuickFix", false);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeStaticInitializerNotStatic_QuickFix", false);
           intentionProvider.putArgument("staticInitializer", staticInitializer);
           intentionProvider.putArgument("containingClass", classConcept);
           IErrorTarget errorTarget = new NodeErrorTarget();

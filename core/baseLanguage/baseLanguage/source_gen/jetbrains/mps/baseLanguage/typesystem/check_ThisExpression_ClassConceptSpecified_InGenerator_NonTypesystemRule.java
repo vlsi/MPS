@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -51,7 +51,7 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
     }).isNotEmpty() || (SNodeOperations.getAncestor(SLinkOperations.getTarget(expression, "classConcept", false), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
     if (expressionInTemplate && !(classifierInTemplate)) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Classifier is not specified for ThisExpression that is not within the same template with corresponding classifier. This may lead to incorrect code generated in some cases.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6495695326613151358", intentionProvider, errorTarget);
       }

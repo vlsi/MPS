@@ -12,7 +12,7 @@ import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -64,13 +64,13 @@ public class DataFlowUtil {
         }
         if (nodeToSelect != null) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToSelect, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343628", intentionProvider, errorTarget);
           }
         } else {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(n, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343636", intentionProvider, errorTarget);
           }
@@ -89,7 +89,7 @@ public class DataFlowUtil {
     Set<SNode> unreachable = DataFlow.getUnreachableNodes(program);
     for (SNode n : unreachable) {
       {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(n, "Unreachable node", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640538234", intentionProvider, errorTarget);
       }
@@ -110,13 +110,13 @@ public class DataFlowUtil {
       if (localReference != null && !(ILocalDeclaration_Behavior.call_isReferencedInClosure_3262277503800823422(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference)))) {
         if (SNodeOperations.getAncestor(read, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == null) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", intentionProvider, errorTarget);
           }
         } else if (localReference != null && ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) != null) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907718", intentionProvider, errorTarget);
           }
@@ -138,15 +138,15 @@ public class DataFlowUtil {
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
           if (SNodeOperations.getAncestor(write, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == null) {
             {
-              BaseIntentionProvider intentionProvider = null;
-              intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
+              BaseQuickFixProvider intentionProvider = null;
+              intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7567158975344997930", intentionProvider, errorTarget);
             }
           } else if (declaration != null && SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) != null) {
             {
-              BaseIntentionProvider intentionProvider = null;
-              intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
+              BaseQuickFixProvider intentionProvider = null;
+              intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
               IErrorTarget errorTarget = new NodeErrorTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7567158975345062849", intentionProvider, errorTarget);
             }
@@ -157,7 +157,7 @@ public class DataFlowUtil {
         SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278748067", intentionProvider, errorTarget);
           }
@@ -172,7 +172,7 @@ public class DataFlowUtil {
         }
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", intentionProvider, errorTarget);
           }
@@ -191,7 +191,7 @@ public class DataFlowUtil {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
         if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.fromSet(usedVariables).contains(var))) {
           {
-            BaseIntentionProvider intentionProvider = null;
+            BaseQuickFixProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8937659523942275424", intentionProvider, errorTarget);
           }
