@@ -1526,8 +1526,8 @@
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192521612" />
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204740201548">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1161166203371">
-                    <link role="baseMethodDeclaration:3" targetNodeId="14.~Macros.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
-                    <link role="classConcept:3" targetNodeId="14.~Macros" resolveInfo="Macros" />
+                    <link role="classConcept:3" targetNodeId="14.~MacrosFactory" resolveInfo="MacrosFactory" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="14.~MacrosFactory.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204740201549">
                     <link role="baseMethodDeclaration:3" targetNodeId="14.~Macros.expandPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="expandPath" />

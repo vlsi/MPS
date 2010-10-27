@@ -23,7 +23,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.Nls;
 
@@ -72,11 +72,11 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   }
 
   protected String addMacros(String path) {
-    return Macros.projectDescriptor().shrinkPath(path, getAnchorFile());
+    return MacrosFactory.projectDescriptor().shrinkPath(path, getAnchorFile());
   }
 
   protected String removeMacros(String path) {
-    return Macros.projectDescriptor().expandPath(path, getAnchorFile());
+    return MacrosFactory.projectDescriptor().expandPath(path, getAnchorFile());
   }
 
   @Override

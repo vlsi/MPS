@@ -23,7 +23,7 @@ import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -94,11 +94,11 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   protected String addMacros(String path) {
-    return Macros.mpsHomeMacros().shrinkPath(path, (IFile) null);
+    return MacrosFactory.mpsHomeMacros().shrinkPath(path, (IFile) null);
   }
 
   protected String removeMacros(String path) {
-    return Macros.mpsHomeMacros().expandPath(path, (IFile) null);
+    return MacrosFactory.mpsHomeMacros().expandPath(path, (IFile) null);
   }
 
   //-------configurable stuff

@@ -7,6 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
@@ -29,7 +30,7 @@ public class LanguageDescriptorPersistence {
   protected static Log log = LogFactory.getLog(LanguageDescriptorPersistence.class);
 
   public static LanguageDescriptor loadLanguageDescriptor(final IFile file) {
-    final Macros macros = Macros.languageDescriptor();
+    final Macros macros = MacrosFactory.languageDescriptor();
     LanguageDescriptor descriptor;
 
     try {
@@ -159,7 +160,7 @@ public class LanguageDescriptorPersistence {
       return;
     }
 
-    final Macros macros = Macros.languageDescriptor();
+    final Macros macros = MacrosFactory.languageDescriptor();
     Element languageElement = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         final Element result_v3r4p8_a0a0d0c = new Element("language");

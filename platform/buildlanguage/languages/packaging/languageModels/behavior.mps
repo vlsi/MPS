@@ -4380,8 +4380,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877515160">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1219146659682">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1219146672924">
-            <link role="baseMethodDeclaration:3" targetNodeId="2.~Macros.moduleDescriptor(jetbrains.mps.project.IModule):jetbrains.mps.util.Macros" resolveInfo="moduleDescriptor" />
-            <link role="classConcept:3" targetNodeId="2.~Macros" resolveInfo="Macros" />
+            <link role="classConcept:3" targetNodeId="2.~MacrosFactory" resolveInfo="MacrosFactory" />
+            <link role="baseMethodDeclaration:3" targetNodeId="2.~MacrosFactory.moduleDescriptor(jetbrains.mps.project.IModule):jetbrains.mps.util.Macros" resolveInfo="moduleDescriptor" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219146675544">
               <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1219146674687" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1219146679886">

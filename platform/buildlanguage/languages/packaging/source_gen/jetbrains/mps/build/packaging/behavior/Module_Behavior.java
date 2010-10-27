@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
 import java.util.List;
@@ -157,7 +158,7 @@ public class Module_Behavior {
   }
 
   public static Macros call_getMacros_1213877515158(SNode thisNode) {
-    return Macros.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode));
+    return MacrosFactory.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode));
   }
 
   public static String call_getClassesGen_1216909316753(SNode thisNode) {

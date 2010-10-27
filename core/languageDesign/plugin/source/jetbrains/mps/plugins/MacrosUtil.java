@@ -17,7 +17,7 @@ package jetbrains.mps.plugins;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 
 public class MacrosUtil {
@@ -31,6 +31,6 @@ public class MacrosUtil {
         moduleDescriptorFile = module.getDescriptorFile();
       }
     }
-    return Macros.moduleDescriptor(module).expandPath(path, moduleDescriptorFile);
+    return MacrosFactory.moduleDescriptor(module).expandPath(path, moduleDescriptorFile);
   }
 }

@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.LanguageID;
 import java.io.OutputStream;
 
@@ -51,7 +51,7 @@ public class DevkitDescriptorPersistence {
             // runtimeClassPath is left for compatibility 
             StubModelsEntry entry = new StubModelsEntry();
             entry.setIncludedInVCS(AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false));
-            entry.setPath(Macros.devkitMacros().expandPath(entryElement.getAttributeValue("path"), file));
+            entry.setPath(MacrosFactory.devkitMacros().expandPath(entryElement.getAttributeValue("path"), file));
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_raojav_a0a0c0a0a.getStubModelEntries().add(entry);
           }

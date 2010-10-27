@@ -96,7 +96,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode extendsClassName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl" />
   </dependency>

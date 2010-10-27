@@ -8933,8 +8933,8 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4853609160933269558" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239461664739">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1239461662770">
-                <link role="baseMethodDeclaration:3" targetNodeId="38.~Macros.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
-                <link role="classConcept:3" targetNodeId="38.~Macros" resolveInfo="Macros" />
+                <link role="classConcept:3" targetNodeId="38.~MacrosFactory" resolveInfo="MacrosFactory" />
+                <link role="baseMethodDeclaration:3" targetNodeId="38.~MacrosFactory.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239461674502">
                 <link role="baseMethodDeclaration:3" targetNodeId="38.~Macros.expandPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="expandPath" />
@@ -9142,8 +9142,8 @@
                                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4853609160933269579" />
                                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239462414508">
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1239462407036">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="38.~Macros.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
-                                    <link role="classConcept:3" targetNodeId="38.~Macros" resolveInfo="Macros" />
+                                    <link role="classConcept:3" targetNodeId="38.~MacrosFactory" resolveInfo="MacrosFactory" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="38.~MacrosFactory.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239462419045">
                                     <link role="baseMethodDeclaration:3" targetNodeId="38.~Macros.shrinkPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="shrinkPath" />

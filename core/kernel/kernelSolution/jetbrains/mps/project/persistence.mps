@@ -1523,8 +1523,8 @@
                                 <link role="baseMethodDeclaration:3" targetNodeId="11.~StubModelsEntry.setPath(java.lang.String):void" resolveInfo="setPath" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7168227884262543406">
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7168227884262543407">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.devkitMacros():jetbrains.mps.util.Macros" resolveInfo="devkitMacros" />
-                                    <link role="classConcept:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
+                                    <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.devkitMacros():jetbrains.mps.util.Macros" resolveInfo="devkitMacros" />
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7168227884262543408">
                                     <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.expandPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="expandPath" />
@@ -3623,9 +3623,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883031174">
               <link role="classifier:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="842994667883031175">
-              <link role="classConcept:3" targetNodeId="1.~Macros" />
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.languageDescriptor():jetbrains.mps.util.Macros" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1511970355012210365">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
+              <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
             </node>
           </node>
         </node>
@@ -4825,9 +4825,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883031510">
               <link role="classifier:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="842994667883031511">
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.languageDescriptor():jetbrains.mps.util.Macros" />
-              <link role="classConcept:3" targetNodeId="1.~Macros" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1511970355012361863">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
+              <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
             </node>
           </node>
         </node>
@@ -7224,9 +7224,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883032225">
               <link role="classifier:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="842994667883032226">
-              <link role="classConcept:3" targetNodeId="1.~Macros" />
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.projectDescriptor():jetbrains.mps.util.Macros" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1511970355012210366">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.projectDescriptor():jetbrains.mps.util.Macros" resolveInfo="projectDescriptor" />
+              <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
             </node>
           </node>
         </node>
@@ -7895,9 +7895,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883032511">
               <link role="classifier:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="842994667883032512">
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.projectDescriptor():jetbrains.mps.util.Macros" />
-              <link role="classConcept:3" targetNodeId="1.~Macros" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1511970355012210367">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.projectDescriptor():jetbrains.mps.util.Macros" resolveInfo="projectDescriptor" />
+              <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
             </node>
           </node>
         </node>
@@ -8777,9 +8777,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883032849">
               <link role="classifier:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="842994667883032850">
-              <link role="classConcept:3" targetNodeId="1.~Macros" />
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.solutionDescriptor():jetbrains.mps.util.Macros" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1511970355012210368">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.solutionDescriptor():jetbrains.mps.util.Macros" resolveInfo="solutionDescriptor" />
+              <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
             </node>
           </node>
         </node>
@@ -9391,9 +9391,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883033062">
               <link role="classifier:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="842994667883033063">
-              <link role="classConcept:3" targetNodeId="1.~Macros" />
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.solutionDescriptor():jetbrains.mps.util.Macros" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1511970355012210369">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.solutionDescriptor():jetbrains.mps.util.Macros" resolveInfo="solutionDescriptor" />
+              <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
             </node>
           </node>
         </node>

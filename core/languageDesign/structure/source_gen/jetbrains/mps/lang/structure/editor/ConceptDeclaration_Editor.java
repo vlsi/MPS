@@ -30,7 +30,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -669,7 +669,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if (l == null) {
       return false;
     }
-    String s = Macros.languageDescriptor().expandPath(SPropertyOperations.getString(node, "iconPath"), l.getDescriptorFile());
+    String s = MacrosFactory.languageDescriptor().expandPath(SPropertyOperations.getString(node, "iconPath"), l.getDescriptorFile());
     if (s == null) {
       return false;
     }

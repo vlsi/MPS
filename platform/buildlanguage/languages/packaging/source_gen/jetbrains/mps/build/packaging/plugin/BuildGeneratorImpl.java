@@ -6,6 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSExtentions;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -27,7 +28,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import java.util.Map;
@@ -156,7 +156,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SPropertyOperations.set(mpsLayout, "name", name);
     // create basedir path 
     SNode basedirPath;
-    String result = Macros.mpsHomeMacros().shrinkPath(basedir, new File("")).replace("\\", File.separator);
+    String result = MacrosFactory.mpsHomeMacros().shrinkPath(basedir, new File("")).replace("\\", File.separator);
     int index = result.lastIndexOf("}");
     if (index > -1) {
       String macro = result.substring(result.indexOf("{") + 1, index);

@@ -20,7 +20,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import junit.framework.Assert;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class TransformationTests {
   @Test
   public void equalNodeTest() throws Throwable {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(Macros.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
+    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -53,7 +53,7 @@ public class TransformationTests {
   @Test
   public void conceptDiffernse() {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(Macros.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
+    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -69,7 +69,7 @@ public class TransformationTests {
   @Test
   public void propertyDiffernce() {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(Macros.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
+    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -88,7 +88,7 @@ public class TransformationTests {
 
   @Test
   public void childrenDiffernce() {
-    MPSProject project = TestMain.loadProject(new File(Macros.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
+    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -108,7 +108,7 @@ public class TransformationTests {
   @Test
   public void referenceDiffernce() {
     TestMain.configureMPS();
-    MPSProject project = TestMain.loadProject(new File(Macros.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
+    MPSProject project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}platform/transformationTest/transformationTest.mpr", ((IFile)null))));
 
     runCommand(new Runnable() {
       public void run() {

@@ -8,6 +8,7 @@ import org.jdom.Element;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import java.io.File;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,7 +29,7 @@ public class ProjectDescriptorPersistence {
   protected static Log log = LogFactory.getLog(ProjectDescriptorPersistence.class);
 
   public static Element saveProjectDescriptorToElement(final ProjectDescriptor descriptor, final File file) {
-    final Macros macros = Macros.projectDescriptor();
+    final Macros macros = MacrosFactory.projectDescriptor();
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         final Element result_jnk9az_a0a1a0 = new Element("project");
@@ -132,7 +133,7 @@ public class ProjectDescriptorPersistence {
   }
 
   public static void loadProjectDescriptorFromElement(ProjectDescriptor descriptor, File file, Element root) {
-    Macros macros = Macros.projectDescriptor();
+    Macros macros = MacrosFactory.projectDescriptor();
     ProjectDescriptor result_jnk9az_a1a2 = descriptor;
     final String result_jnk9az_a0a1a2 = file.getName();
     result_jnk9az_a1a2.setName(result_jnk9az_a0a1a2);

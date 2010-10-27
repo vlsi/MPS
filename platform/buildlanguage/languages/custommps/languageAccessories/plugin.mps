@@ -1429,8 +1429,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241528703989">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241528703990">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1241528703991">
-                  <link role="baseMethodDeclaration:3" targetNodeId="24.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
-                  <link role="classConcept:3" targetNodeId="24.~Macros" resolveInfo="Macros" />
+                  <link role="classConcept:3" targetNodeId="24.~MacrosFactory" resolveInfo="MacrosFactory" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="24.~MacrosFactory.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1241528703992">
                   <link role="baseMethodDeclaration:3" targetNodeId="24.~Macros.shrinkPath(java.lang.String,java.io.File):java.lang.String" resolveInfo="shrinkPath" />

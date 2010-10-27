@@ -3361,8 +3361,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6547237850567463507">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6547237850567463508">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6547237850567463509">
-              <link role="baseMethodDeclaration:3" targetNodeId="4.~Macros.moduleDescriptor(jetbrains.mps.project.IModule):jetbrains.mps.util.Macros" resolveInfo="moduleDescriptor" />
-              <link role="classConcept:3" targetNodeId="4.~Macros" resolveInfo="Macros" />
+              <link role="classConcept:3" targetNodeId="4.~MacrosFactory" resolveInfo="MacrosFactory" />
+              <link role="baseMethodDeclaration:3" targetNodeId="4.~MacrosFactory.moduleDescriptor(jetbrains.mps.project.IModule):jetbrains.mps.util.Macros" resolveInfo="moduleDescriptor" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6547237850567463510">
                 <link role="variableDeclaration:3" targetNodeId="6547237850567463496" resolveInfo="module" />
               </node>

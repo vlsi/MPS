@@ -5,6 +5,7 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -128,8 +129,8 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="882854394069504775">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="882854394069504776">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="882854394069504777">
-                  <link role="classConcept:3" targetNodeId="1.~Macros" resolveInfo="Macros" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
+                  <link role="classConcept:3" targetNodeId="1.~MacrosFactory" resolveInfo="MacrosFactory" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~MacrosFactory.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="882854394069504778">
                   <link role="baseMethodDeclaration:3" targetNodeId="1.~Macros.shrinkPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="shrinkPath" />

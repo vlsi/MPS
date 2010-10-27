@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 
 import javax.swing.SwingUtilities;
@@ -131,7 +132,7 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   private static String expandIconPath(String path, SNode sourceNode) {
     IModule module = findAnchorModule(sourceNode.getModel());
-    final Macros macros = Macros.moduleDescriptor(module);
+    final Macros macros = MacrosFactory.moduleDescriptor(module);
     String filename = module == null ? null : macros.expandPath(path, module.getDescriptorFile());
     return filename;
   }

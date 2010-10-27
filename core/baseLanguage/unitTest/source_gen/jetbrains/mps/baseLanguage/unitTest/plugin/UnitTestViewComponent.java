@@ -35,6 +35,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import com.intellij.openapi.actionSystem.DataProvider;
 import java.awt.LayoutManager;
+
+import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.execution.Location;
@@ -123,7 +125,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   public Icon getIcon(String iconName) {
     Language language = getLanguage();
-    String pathToIcon = Macros.languageDescriptor().expandPath(Macros.LANGUAGE_DESCRIPTOR + "\\icons\\" + iconName, language.getDescriptorFile());
+    String pathToIcon = MacrosFactory.languageDescriptor().expandPath(Macros.LANGUAGE_DESCRIPTOR + "\\icons\\" + iconName, language.getDescriptorFile());
     return IconManager.loadIcon(pathToIcon, true);
   }
 

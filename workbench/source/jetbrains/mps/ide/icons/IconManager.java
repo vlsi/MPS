@@ -26,7 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -166,7 +166,7 @@ public class IconManager {
     IScope scope = GlobalScope.getInstance();
     Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
     if (language != null) {
-      String iconPath = Macros.languageDescriptor().expandPath(path, language.getDescriptorFile());
+      String iconPath = MacrosFactory.languageDescriptor().expandPath(path, language.getDescriptorFile());
       if (iconPath != null) {
         Icon icon = loadIcon(iconPath, true);
         if (icon != null) {

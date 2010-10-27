@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import javax.swing.plaf.metal.MetalBorders;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import javax.swing.AbstractAction;
@@ -29,7 +29,7 @@ public class SelectImageFileButton extends JButton {
     this.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     this.setBorder(new MetalBorders.ButtonBorder());
     final Language language = Language.getLanguageFor(SNodeOperations.getModel(this.myNode).getModelDescriptor());
-    String filename = Macros.languageDescriptor().expandPath(SPropertyOperations.getString(node, "imageFile"), language.getDescriptorFile());
+    String filename = MacrosFactory.languageDescriptor().expandPath(SPropertyOperations.getString(node, "imageFile"), language.getDescriptorFile());
     final File baseFile = (filename == null ?
       null :
       new File(filename)
@@ -48,7 +48,7 @@ public class SelectImageFileButton extends JButton {
             return;
           }
           String selectedPath = result.getAbsolutePath();
-          final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
+          final String pathToShow = MacrosFactory.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               SPropertyOperations.set(SelectImageFileButton.this.myNode, "imageFile", pathToShow);

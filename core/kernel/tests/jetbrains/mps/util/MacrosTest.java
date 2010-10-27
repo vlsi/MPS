@@ -19,7 +19,6 @@ import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import junit.framework.TestCase;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class MacrosTest extends BaseMPSTest {
   public void testExpand() {
     List<String> tests = generateExpandTests();
     for (String test : tests) {
-      String result = Macros.mpsHomeMacros().expandPath(test, new File(PathManager.getHomePath()));
+      String result = MacrosFactory.mpsHomeMacros().expandPath(test, new File(PathManager.getHomePath()));
       if (!checkExpandSeperatorsCorrectness(result)) {
         fail(getFailMessgae("Expand separators:", test, result));
       }
@@ -49,7 +48,7 @@ public class MacrosTest extends BaseMPSTest {
   public void testShrink() {
     List<String> tests = generateShrinkTests();
     for (String test : tests) {
-      String result = Macros.mpsHomeMacros().shrinkPath(test, new File(PathManager.getHomePath()));
+      String result = MacrosFactory.mpsHomeMacros().shrinkPath(test, new File(PathManager.getHomePath()));
       if (!checkShrinkSeperatorsCorrectness(result)) {
         fail(getFailMessgae("Shrink separators:", test, result));
       }

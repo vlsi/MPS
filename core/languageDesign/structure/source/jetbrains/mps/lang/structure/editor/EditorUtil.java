@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -40,7 +41,7 @@ public class EditorUtil {
 
     IModule module = findAnchorModule(sourceNode);
 
-    final Macros macros = Macros.moduleDescriptor(module);
+    final Macros macros = MacrosFactory.moduleDescriptor(module);
 
     String path = sourceNode.getProperty(propertyName);
     final IModule finalModule = module;
@@ -82,7 +83,7 @@ public class EditorUtil {
 
   public static String expandIconPath(String path, SNode sourceNode) {
     IModule module = findAnchorModule(sourceNode);
-    final Macros macros = Macros.moduleDescriptor(module);
+    final Macros macros = MacrosFactory.moduleDescriptor(module);
     String filename = module == null ? null : macros.expandPath(path, module.getDescriptorFile());
     return filename;
   }

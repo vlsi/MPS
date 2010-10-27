@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.build.packaging.plugin.PackagingLanguageGenerator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -73,7 +73,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
 
     //  setting buildtools.zip path 
     SNode buildToolsPath = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Path", null);
-    String result = Macros.mpsHomeMacros().shrinkPath(this.myPathToBuildTools, new File("")).replace("\\", File.separator);
+    String result = MacrosFactory.mpsHomeMacros().shrinkPath(this.myPathToBuildTools, new File("")).replace("\\", File.separator);
     int index = result.lastIndexOf("}");
     if (index > -1) {
       String macro = result.substring(result.indexOf("{") + 1, index);
