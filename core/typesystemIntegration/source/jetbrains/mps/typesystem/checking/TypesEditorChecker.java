@@ -18,7 +18,7 @@ package jetbrains.mps.typesystem.checking;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.command.CommandProcessor;
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
@@ -100,7 +100,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                 TypesEditorChecker.this,
                 editorContext
               );
-              IntentionProvider intentionProvider = errorReporter.getIntentionProvider();
+              QuickFixProvider intentionProvider = errorReporter.getIntentionProvider();
 
               if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
                 if (!instantIntentionApplied) {

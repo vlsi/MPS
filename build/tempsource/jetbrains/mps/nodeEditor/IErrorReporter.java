@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -42,13 +42,13 @@ public interface IErrorReporter {
 
   public MessageStatus getMessageStatus();
 
-  public IntentionProvider getIntentionProvider();
+  public QuickFixProvider getIntentionProvider();
 
-  public List<IntentionProvider> getIntentionProviders();
+  public List<QuickFixProvider> getIntentionProviders();
 
-  public void addIntentionProvider(IntentionProvider intentionProvider);
+  public void addIntentionProvider(QuickFixProvider intentionProvider);
 
-  public void setIntentionProvider(IntentionProvider intentionProvider);
+  public void setIntentionProvider(QuickFixProvider intentionProvider);
 
   public IErrorTarget getErrorTarget();
 

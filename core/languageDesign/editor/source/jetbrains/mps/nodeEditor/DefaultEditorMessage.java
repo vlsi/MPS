@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Color;
@@ -39,7 +38,7 @@ public class DefaultEditorMessage implements EditorMessage {
   private String myMessage;
   private EditorMessageOwner myOwner;
   private SNode myNode;
-  private IntentionProvider myIntentionProvider;
+  private QuickFixProvider myIntentionProvider;
   private MessageStatus myStatus = MessageStatus.OK;
 
   private Map<Object, Object> myUserObjects;
@@ -166,11 +165,11 @@ public class DefaultEditorMessage implements EditorMessage {
     return false;
   }
 
-  public IntentionProvider getIntentionProvider() {
+  public QuickFixProvider getIntentionProvider() {
     return myIntentionProvider;
   }
 
-  public void setIntentionProvider(IntentionProvider intentionProvider) {
+  public void setIntentionProvider(QuickFixProvider intentionProvider) {
     myIntentionProvider = intentionProvider;
   }
 

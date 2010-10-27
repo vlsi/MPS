@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;
@@ -52,7 +52,7 @@ public interface EditorMessage {
 
   boolean sameAs(EditorMessage message);
 
-  IntentionProvider getIntentionProvider();
+  QuickFixProvider getIntentionProvider();
 
   public void putUserObject(Object key, Object value);
   public Object getUserObject(Object key);

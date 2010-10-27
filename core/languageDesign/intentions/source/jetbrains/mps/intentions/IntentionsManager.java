@@ -23,6 +23,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior;
 import jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration;
 import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
@@ -169,7 +170,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     List<EditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
     for (EditorMessage message : messages) {
-      IntentionProvider intentionProvider = message.getIntentionProvider();
+      QuickFixProvider intentionProvider = message.getIntentionProvider();
       if (intentionProvider != null) {
         Intention intention = new QuickFixAdapter(intentionProvider.getQuickFix(), intentionProvider.isError());
         if (intention != null) {

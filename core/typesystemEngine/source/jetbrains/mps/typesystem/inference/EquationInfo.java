@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -38,7 +38,7 @@ public class EquationInfo {
   private Set<String> myInequationGroupsBefore = null;
   private Set<String> myInequationGroupsAfter = null;
 
-  private IntentionProvider myIntentionProvider;
+  private QuickFixProvider myIntentionProvider;
 
   private int myInequationPriority;
   private boolean myIsStrong = false;
@@ -49,7 +49,7 @@ public class EquationInfo {
     myNodeWithError = nodeWithError;
   }
 
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, IntentionProvider intentionProvider) {
+  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRuleModel = ruleModel;
@@ -104,7 +104,7 @@ public class EquationInfo {
     return myInequationPriority;
   }
 
-  public IntentionProvider getIntentionProvider() {
+  public QuickFixProvider getIntentionProvider() {
     return myIntentionProvider;
   }
 

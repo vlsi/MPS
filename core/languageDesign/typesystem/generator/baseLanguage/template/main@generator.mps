@@ -7166,7 +7166,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5360587928437811211">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportTypeError(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportTypeError" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportTypeError(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportTypeError" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5360587928437811212">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5360587928437811213">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="5360587928437811214">
@@ -8224,7 +8224,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5360587928437811168">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportTypeError(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportTypeError" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportTypeError(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportTypeError" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5360587928437811169">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5360587928437811170">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="5360587928437811171">
@@ -15047,7 +15047,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5360587928437811127">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportWarning(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportWarning" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportWarning(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportWarning" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5360587928437811128">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5360587928437811129">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="5360587928437811130">
@@ -15760,7 +15760,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6663831120772293295">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6663831120772322924">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~EquationInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,int,jetbrains.mps.intentions.IntentionProvider)" resolveInfo="EquationInfo" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~EquationInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,int,jetbrains.mps.errors.QuickFixProvider)" resolveInfo="EquationInfo" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6663831120772322925">
                   <link role="variableDeclaration:3" targetNodeId="1214925042956" resolveInfo="_nodeToCheck_1029348928467" />
                 </node>
@@ -21225,7 +21225,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5360587928437811086">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportInfo(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.intentions.IntentionProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportInfo" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.reportInfo(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.typesystem.inference.IErrorTarget):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="reportInfo" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5360587928437811087">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5360587928437811088">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="5360587928437811089">

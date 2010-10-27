@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
-import jetbrains.mps.intentions.IntentionProvider;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
@@ -27,7 +26,6 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.NodeWrapper;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -184,7 +182,7 @@ public class Equations {
   private void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
     IErrorReporter errorReporter;
     SNode nodeWithError = null;
-    IntentionProvider intentionProvider = null;
+    QuickFixProvider intentionProvider = null;
     String errorString = null;
     String ruleModel = null;
     String ruleId = null;

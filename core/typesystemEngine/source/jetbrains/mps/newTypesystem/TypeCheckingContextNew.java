@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
@@ -68,7 +68,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   public void createLessThanInequationStrong(SNode node1,SNode node2, SNode nodeToCheck,
                                              String errorString,String ruleModel, String ruleId, boolean checkOnly,
-                                             int inequationPriority, IntentionProvider intentionProvider) {
+                                             int inequationPriority, QuickFixProvider intentionProvider) {
       myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel, 
                             ruleId, inequationPriority, intentionProvider));
   }

@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.errors;
 
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
 //todo rename to quickfix provider and move to core along with base intention provider
-public interface IntentionProvider {
+public interface QuickFixProvider {
 
   public QuickFix_Runtime getQuickFix();
 

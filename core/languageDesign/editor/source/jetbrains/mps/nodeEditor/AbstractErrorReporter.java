@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -17,7 +17,7 @@ import java.util.Collections;
  */
 public abstract class AbstractErrorReporter implements IErrorReporter {
   private List<Pair<String, String>> myAdditionalRuleIds = null;
-  private List<IntentionProvider> myIntentionProviders;
+  private List<QuickFixProvider> myIntentionProviders;
   private String myRuleModel;
   private String myRuleId;
 
@@ -26,27 +26,27 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     myRuleModel = model;
   }
 
-  public void setIntentionProvider(IntentionProvider intentionProvider) {
+  public void setIntentionProvider(QuickFixProvider intentionProvider) {
     addIntentionProvider(intentionProvider);
   }
 
   @Override
-  public void addIntentionProvider(IntentionProvider intentionProvider) {
+  public void addIntentionProvider(QuickFixProvider intentionProvider) {
     if (myIntentionProviders == null) {
-      myIntentionProviders = new ArrayList<IntentionProvider>(1);
+      myIntentionProviders = new ArrayList<QuickFixProvider>(1);
     }
     myIntentionProviders.add(intentionProvider);
   }
 
-  public IntentionProvider getIntentionProvider() {
+  public QuickFixProvider getIntentionProvider() {
     if (myIntentionProviders == null) return null;
     if (myIntentionProviders.isEmpty()) return null;
     return myIntentionProviders.get(0);
   }
 
   @Override
-  public List<IntentionProvider> getIntentionProviders() {
-    ArrayList<IntentionProvider> result = new ArrayList<IntentionProvider>(1);
+  public List<QuickFixProvider> getIntentionProviders() {
+    ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
     if (myIntentionProviders != null) {
       result.addAll(myIntentionProviders);
     }

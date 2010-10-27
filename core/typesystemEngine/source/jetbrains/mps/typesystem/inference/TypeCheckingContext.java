@@ -16,7 +16,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -107,41 +107,41 @@ public class TypeCheckingContext {
   //errors reporting
 
   @Deprecated
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, new NodeErrorTarget());
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
   }
 
   @Deprecated
-  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, new NodeErrorTarget());
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
   }
 
   @Deprecated
-  public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, IntentionProvider intentionProvider) {
+  public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, new NodeErrorTarget());
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithInfo, reporter);
   }
 
-  public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider, IErrorTarget errorTarget) {
+  public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, IErrorTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
     return reporter;
   }
 
-  public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, IntentionProvider intentionProvider, IErrorTarget errorTarget) {
+  public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, IErrorTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
     return reporter;
   }
 
-  public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, IntentionProvider intentionProvider, IErrorTarget errorTarget) {
+  public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, IErrorTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithInfo, reporter);
@@ -230,7 +230,7 @@ public class TypeCheckingContext {
                              String errorString,
                              String ruleModel,
                              String ruleId,
-                             IntentionProvider intentionProvider) {
+                             QuickFixProvider intentionProvider) {
     EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
     getCurrentSlicer().beforeUserEquationAdded(node1, node2, equationInfo);
     getNodeTypesComponent().getEquationManager().addEquation(
@@ -246,7 +246,7 @@ public class TypeCheckingContext {
                              String errorString,
                              String ruleModel,
                              String ruleId,
-                             IntentionProvider intentionProvider) {
+                             QuickFixProvider intentionProvider) {
     EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
     getCurrentSlicer().beforeUserEquationAdded(node1, wrapper2.getNode(), equationInfo);
     EquationManager equationManager = getNodeTypesComponent().getEquationManager();
@@ -263,7 +263,7 @@ public class TypeCheckingContext {
                              String errorString,
                              String ruleModel,
                              String ruleId,
-                             IntentionProvider intentionProvider) {
+                             QuickFixProvider intentionProvider) {
     EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
     getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), node2, equationInfo);
     EquationManager equationManager = getNodeTypesComponent().getEquationManager();
@@ -280,7 +280,7 @@ public class TypeCheckingContext {
                              String errorString,
                              String ruleModel,
                              String ruleId,
-                             IntentionProvider intentionProvider) {
+                             QuickFixProvider intentionProvider) {
     EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
     getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
     getNodeTypesComponent().getEquationManager().addEquation(
@@ -298,7 +298,7 @@ public class TypeCheckingContext {
                                        String ruleId,
                                        boolean checkOnly,
                                        int inequationPriority,
-                                       IntentionProvider intentionProvider) {
+                                       QuickFixProvider intentionProvider) {
     getNodeTypesComponent().getEquationManager().addInequation(
       node1,
       node2,
@@ -316,7 +316,7 @@ public class TypeCheckingContext {
                                              String ruleId,
                                              boolean checkOnly,
                                              int inequationPriority,
-                                             IntentionProvider intentionProvider) {
+                                             QuickFixProvider intentionProvider) {
     getNodeTypesComponent().getEquationManager().addInequation(
       node1,
       node2,
@@ -334,7 +334,7 @@ public class TypeCheckingContext {
                                           String ruleId,
                                           boolean checkOnly,
                                           int inequationPriority,
-                                          IntentionProvider intentionProvider) {
+                                          QuickFixProvider intentionProvider) {
     getNodeTypesComponent().getEquationManager().addInequation(
       node2,
       node1,
@@ -350,7 +350,7 @@ public class TypeCheckingContext {
                                        String errorString,
                                        String ruleModel,
                                        String ruleId,
-                                       IntentionProvider intentionProvider) {
+                                       QuickFixProvider intentionProvider) {
     getNodeTypesComponent().getEquationManager().addInequationComparable(
       node1,
       node2,
@@ -364,7 +364,7 @@ public class TypeCheckingContext {
                                              String errorString,
                                              String ruleModel,
                                              String ruleId,
-                                             IntentionProvider intentionProvider) {
+                                             QuickFixProvider intentionProvider) {
     getNodeTypesComponent().getEquationManager().addInequationComparable(
       node1,
       node2,

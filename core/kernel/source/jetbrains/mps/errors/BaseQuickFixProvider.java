@@ -1,6 +1,5 @@
 package jetbrains.mps.errors;
 
-import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -16,7 +15,7 @@ import java.util.Map;
  * Time: 16:41:58
  * To change this template use File | Settings | File Templates.
  */
-public class BaseQuickFixProvider implements IntentionProvider {
+public class BaseQuickFixProvider implements QuickFixProvider {
   private static final Logger LOG = Logger.getLogger(BaseQuickFixProvider.class);
 
 

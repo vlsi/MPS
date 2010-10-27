@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
@@ -702,7 +702,7 @@ public class EquationManager {
   private void reportEquationBroken(EquationInfo errorInfo, IWrapper lhsRepresentator, IWrapper rhsRepresentator) {
     IErrorReporter errorReporter;
     SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
-    IntentionProvider intentionProvider = errorInfo == null ? null : errorInfo.getIntentionProvider();
+    QuickFixProvider intentionProvider = errorInfo == null ? null : errorInfo.getIntentionProvider();
     String errorString = errorInfo == null ? null : errorInfo.getErrorString();
     String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
     String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
