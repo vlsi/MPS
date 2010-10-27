@@ -18,6 +18,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +36,22 @@ public class BrokenReferencesTestHelper {
   public BrokenReferencesTestHelper() {
   }
 
-  public void load(Iterable<File> files) {
-    myModelsExtractor.loadModels(files);
+  public void load(final Iterable<File> files) {
+    try {
+    SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            myModelsExtractor.loadModels(files);
+          }
+        });
+      }
+    });
+    }
+    catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public List<String> check(Token token, List<File> files) {

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.LinkedHashSet;
 
@@ -59,11 +60,21 @@ public class Testbench {
   public static void initLibs() {
     MyState state = LibraryManager.getInstance().getState();
     LibraryManager.getInstance().loadState(state);
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    try {
+    SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
-        LibraryInitializer.getInstance().update();
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            LibraryInitializer.getInstance().update();
+          }
+        });
       }
     });
+    }
+    catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public static void initLogging() {
