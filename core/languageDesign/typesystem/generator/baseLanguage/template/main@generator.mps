@@ -44,7 +44,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="52" />
+  <maxImportIndex value="53" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -70,6 +70,7 @@
   <import index="50" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="51" modelUID="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" version="-1" />
   <import index="52" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="53" modelUID="f:java_stub#jetbrains.mps.errors(jetbrains.mps.errors@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1174411222995">
     <property name="name:2" value="main" />
     <property name="topPriorityGroup:2" value="true" />
@@ -6486,8 +6487,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1223996377273">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1223996377274">
             <property name="name:3" value="intentionProvider" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223996377275">
-              <link role="classifier:3" targetNodeId="36.~BaseIntentionProvider" resolveInfo="BaseIntentionProvider" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5746014068764631388">
+              <link role="classifier:3" targetNodeId="53.~BaseQuickFixProvider" resolveInfo="BaseQuickFixProvider" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1223996377276" />
           </node>
@@ -6496,7 +6497,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1223996377278">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1223996377279">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1223996377280">
-                <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseIntentionProvider" />
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseQuickFixProvider" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1223996377281">
                   <property name="value:3" value="" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1223996377282">
@@ -6675,7 +6676,7 @@
               <link role="variableDeclaration:3" targetNodeId="1223996377274" resolveInfo="intentionProvider" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223996377329">
-              <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
+              <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1223996377330">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1223996377331">
@@ -7544,8 +7545,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1210837920084">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1210837920085">
             <property name="name:3" value="intentionProvider" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1210839401011">
-              <link role="classifier:3" targetNodeId="36.~BaseIntentionProvider" resolveInfo="BaseIntentionProvider" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5746014068764631394">
+              <link role="classifier:3" targetNodeId="53.~BaseQuickFixProvider" resolveInfo="BaseQuickFixProvider" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1210837933558" />
           </node>
@@ -7554,7 +7555,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1210837955849">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1216130066781">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1216130066783">
-                <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseIntentionProvider" />
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseQuickFixProvider" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210837999172">
                   <property name="value:3" value="" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1210838058220">
@@ -7733,7 +7734,7 @@
               <link role="variableDeclaration:3" targetNodeId="1210837920085" resolveInfo="intentionProvider" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1210838203791">
-              <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
+              <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210838208480">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1210838268823">
@@ -14367,8 +14368,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1210840022612">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1210840022613">
             <property name="name:3" value="intentionProvider" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1210840022614">
-              <link role="classifier:3" targetNodeId="36.~BaseIntentionProvider" resolveInfo="BaseIntentionProvider" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5746014068764631397">
+              <link role="classifier:3" targetNodeId="53.~BaseQuickFixProvider" resolveInfo="BaseQuickFixProvider" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1210840022615" />
           </node>
@@ -14377,7 +14378,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1210840022617">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1216651173405">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1216651173407">
-                <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseIntentionProvider" />
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseQuickFixProvider" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210840022619">
                   <property name="value:3" value="" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1210840022620">
@@ -14556,7 +14557,7 @@
               <link role="variableDeclaration:3" targetNodeId="1210840022613" resolveInfo="intentionProvider" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1210840022657">
-              <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
+              <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210840022658">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1210840022659">
@@ -15484,8 +15485,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1216206633074">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1216206633075">
             <property name="name:3" value="intentionProvider" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1216206633076">
-              <link role="classifier:3" targetNodeId="36.~BaseIntentionProvider" resolveInfo="BaseIntentionProvider" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5746014068764631385">
+              <link role="classifier:3" targetNodeId="53.~BaseQuickFixProvider" resolveInfo="BaseQuickFixProvider" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216206633077" />
           </node>
@@ -15494,7 +15495,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1216206633079">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1216206633080">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1216206633081">
-                <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseIntentionProvider" />
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseQuickFixProvider" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1216206633082">
                   <property name="value:3" value="" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1216206633083">
@@ -15673,7 +15674,7 @@
               <link role="variableDeclaration:3" targetNodeId="1216206633075" resolveInfo="intentionProvider" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216206633130">
-              <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
+              <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1216206633131">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1216206633132">
@@ -20545,8 +20546,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1224761479276">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1224761479277">
             <property name="name:3" value="intentionProvider" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1224761479278">
-              <link role="classifier:3" targetNodeId="36.~BaseIntentionProvider" resolveInfo="BaseIntentionProvider" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5746014068764631391">
+              <link role="classifier:3" targetNodeId="53.~BaseQuickFixProvider" resolveInfo="BaseQuickFixProvider" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1224761479279" />
           </node>
@@ -20555,7 +20556,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1224761479281">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224761479282">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1224761479283">
-                <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseIntentionProvider" />
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.&lt;init&gt;(java.lang.String,boolean)" resolveInfo="BaseQuickFixProvider" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1224761479284">
                   <property name="value:3" value="" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1224761479285">
@@ -20734,7 +20735,7 @@
               <link role="variableDeclaration:3" targetNodeId="1224761479277" resolveInfo="intentionProvider" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224761479322">
-              <link role="baseMethodDeclaration:3" targetNodeId="36.~BaseIntentionProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
+              <link role="baseMethodDeclaration:3" targetNodeId="53.~BaseQuickFixProvider.putArgument(java.lang.String,java.lang.Object):void" resolveInfo="putArgument" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1224761479323">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1224761479324">

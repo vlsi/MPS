@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -20,7 +20,7 @@ public class check_ErrorInfoExpression_NonTypesystemRule extends AbstractNonType
 
   public void applyRule(final SNode errorInfoExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!((SNodeOperations.getAncestor(errorInfoExpression, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null))) {
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(errorInfoExpression, "error info expression allowed only inside replacement rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1201618438931", intentionProvider, errorTarget);
     }

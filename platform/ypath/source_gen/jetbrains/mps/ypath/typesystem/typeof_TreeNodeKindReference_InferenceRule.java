@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,7 +28,7 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
   public void applyRule(final SNode treeNodeKindReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = treeNodeKindReference;
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179740556071", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179740518224", true), (SNode) new typeof_TreeNodeKindReference_InferenceRule.QuotationClass_by9s2n_a0a0a0().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false)), typeCheckingContext), _info_12389875345);
     }

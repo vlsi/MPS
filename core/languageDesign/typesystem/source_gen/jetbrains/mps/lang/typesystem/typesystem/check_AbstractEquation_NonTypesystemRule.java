@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -19,7 +19,7 @@ public class check_AbstractEquation_NonTypesystemRule extends AbstractNonTypesys
 
   public void applyRule(final SNode abstractEquationStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(RulesUtil.withinInferenceItem(abstractEquationStatement))) {
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractEquationStatement, "type equations should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195217401619", intentionProvider, errorTarget);
     }

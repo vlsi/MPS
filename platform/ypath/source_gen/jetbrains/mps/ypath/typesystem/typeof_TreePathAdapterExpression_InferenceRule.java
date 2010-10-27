@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -25,7 +25,7 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
     final SNode ExpType_typevar_1190288659521 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(exp, "expression", true);
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288669877", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288685890", true), _info_12389875345);
     }
@@ -33,14 +33,14 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
     if ((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = exp;
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595290", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), (SNode) new typeof_TreePathAdapterExpression_InferenceRule.QuotationClass_4r2z3q_a0a0a3a0().createNode(SLinkOperations.getTarget(treePathType, "nodeType", true), typeCheckingContext), _info_12389875345);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(exp, "expression", true);
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1225552004404", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), (SNode) SLinkOperations.getTarget(treePathType, "nodeType", true), true, _info_12389875345);
