@@ -42,38 +42,6 @@ public abstract class Macros {
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String PROJECT = "${project}";
 
-  public static Macros languageDescriptor() {
-    return new DescriptorMacros(LANGUAGE_DESCRIPTOR);
-  }
-
-  public static Macros solutionDescriptor() {
-    return new DescriptorMacros(SOLUTION_DESCRIPTOR);
-  }
-
-  public static Macros devkitMacros() {
-    return new DescriptorMacros(DEVKIT_DESCRIPTOR);
-  }
-
-  public static Macros projectDescriptor() {
-    return new ProjectDescriptorMacros();
-  }
-
-  public static Macros mpsHomeMacros() {
-    return new Macros() { };
-  }
-
-  public static Macros moduleDescriptor(IModule module) {
-    if (module instanceof Language) {
-      return Macros.languageDescriptor();
-    } else if (module instanceof Solution) {
-      return Macros.solutionDescriptor();
-    } else if (module instanceof DevKit) {
-      return Macros.devkitMacros();
-    }
-    return new Macros() {
-    };
-  }
-
   public static String getMacroString(IModule module) {
     if (module instanceof Language) {
       return LANGUAGE_DESCRIPTOR;
@@ -85,10 +53,6 @@ public abstract class Macros {
     return MPS_HOME;
   }
 
-  public final String expandPath(String path, File anchorFile) {
-    return expandPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
-  }
-
   public final String expandPath(String path, IFile anchorFile) {
     if (path == null) return null;
 
@@ -98,6 +62,12 @@ public abstract class Macros {
 
     path = path.replace(SEPARATOR_CHAR, File.separatorChar);
     return expandPath_internal(path, anchorFile);
+  }
+
+  public final String shrinkPath(String absolutePath, IFile anchorFile) {
+    if (absolutePath == null) return null;
+    String fileName = shrinkPath_internal(absolutePath, anchorFile);
+    return fileName.replace(File.separatorChar, SEPARATOR_CHAR);
   }
 
   protected String expandPath_internal(String path, IFile anchorFile) {
@@ -130,24 +100,6 @@ public abstract class Macros {
     return path;
   }
 
-  private IFile tryToExpandWith(String path, String macroName, String macroValue) {
-    if (path.startsWith(macroName)) {
-      String relativePath = removePrefix(path, macroName);
-      return FileSystem.getInstance().getFileByPath(macroValue).child(relativePath);
-    }
-    return null;
-  }
-
-  public final String shrinkPath(String path, File anchorFile) {
-    return shrinkPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
-  }
-
-  public final String shrinkPath(String absolutePath, IFile anchorFile) {
-    if (absolutePath == null) return null;
-    String fileName = shrinkPath_internal(absolutePath, anchorFile);
-    return fileName.replace(File.separatorChar, SEPARATOR_CHAR);
-  }
-
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
     String fileName;
     if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
@@ -169,6 +121,14 @@ public abstract class Macros {
       fileName = absolutePath;
     }
     return fileName;
+  }
+
+  private IFile tryToExpandWith(String path, String macroName, String macroValue) {
+    if (path.startsWith(macroName)) {
+      String relativePath = removePrefix(path, macroName);
+      return FileSystem.getInstance().getFileByPath(macroValue).child(relativePath);
+    }
+    return null;
   }
 
   private static String shrink(String path, String prefix) {
@@ -224,7 +184,6 @@ public abstract class Macros {
     }
   }
 
-
   private static class ProjectDescriptorMacros extends DescriptorMacros {
     private ProjectDescriptorMacros() {
       super(PROJECT);
@@ -250,4 +209,49 @@ public abstract class Macros {
     }
   }
 
+  //----------factory-------------
+
+  public static Macros languageDescriptor() {
+    return new DescriptorMacros(LANGUAGE_DESCRIPTOR);
+  }
+
+  public static Macros solutionDescriptor() {
+    return new DescriptorMacros(SOLUTION_DESCRIPTOR);
+  }
+
+  public static Macros devkitMacros() {
+    return new DescriptorMacros(DEVKIT_DESCRIPTOR);
+  }
+
+  public static Macros projectDescriptor() {
+    return new ProjectDescriptorMacros();
+  }
+
+  public static Macros mpsHomeMacros() {
+    return new Macros() { };
+  }
+
+  public static Macros moduleDescriptor(IModule module) {
+    if (module instanceof Language) {
+      return Macros.languageDescriptor();
+    } else if (module instanceof Solution) {
+      return Macros.solutionDescriptor();
+    } else if (module instanceof DevKit) {
+      return Macros.devkitMacros();
+    }
+    return new Macros() {
+    };
+  }
+
+  //----------deprecated-------------
+
+  @Deprecated
+  public final String expandPath(String path, File anchorFile) {
+    return expandPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
+  }
+
+  @Deprecated
+  public final String shrinkPath(String path, File anchorFile) {
+    return shrinkPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
+  }
 }
