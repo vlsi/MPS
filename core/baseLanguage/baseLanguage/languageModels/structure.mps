@@ -103,6 +103,10 @@
       <property name="name:0" value="isFinal" />
       <link role="dataType:0" targetNodeId="4.1082983657063:0" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4980874121082273661">
+      <property name="name:0" value="isStatic" />
+      <link role="dataType:0" targetNodeId="4.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1068390468199">
       <property name="sourceCardinality:0" value="0..n" />
       <property name="role:0" value="field" />

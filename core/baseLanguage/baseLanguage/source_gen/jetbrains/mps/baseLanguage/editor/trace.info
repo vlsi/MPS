@@ -218,7 +218,7 @@
   <unitInfo fileName="StaticMethodDeclaration_Editor.java" startLine="385" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticMethodDeclaration_Editor$annotationListHandler_j4vm40_b0" />
   <unitInfo fileName="InstanceMethodDeclaration_Editor.java" startLine="476" startPosition="0" endLine="513" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Editor$annotationListHandler_359zr8_b0" />
   <unitInfo fileName="Interface_Editor.java" startLine="532" startPosition="0" endLine="569" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor$annotationListHandler_4hcgjd_b0" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="1194" startPosition="0" endLine="1231" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$annotationListHandler_uj0cpq_h0" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="1238" startPosition="0" endLine="1275" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$annotationListHandler_uj0cpq_i0" />
   <unitInfo fileName="LocalVariableDeclarationStatement_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclarationStatement_Editor" />
   <unitInfo fileName="BinaryOperation_Symbol_Actions.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BinaryOperation_Symbol_Actions" />
   <unitInfo fileName="ExpressionStatement_Editor.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ExpressionStatement_Editor" />
@@ -278,12 +278,12 @@
   <unitInfo fileName="EnumClass_Editor.java" startLine="547" startPosition="0" endLine="599" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$constructorListHandler_y68cfu_h1h0" />
   <unitInfo fileName="EnumClass_Editor.java" startLine="600" startPosition="0" endLine="652" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$methodListHandler_y68cfu_i1h0" />
   <unitInfo fileName="EnumClass_Editor.java" startLine="653" startPosition="0" endLine="705" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$staticMethodListHandler_y68cfu_j1h0" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="813" startPosition="0" endLine="865" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticFieldListHandler_uj0cpq_b31a" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="866" startPosition="0" endLine="918" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$fieldListHandler_uj0cpq_f31a" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="919" startPosition="0" endLine="971" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$propertyListHandler_uj0cpq_g31a" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="972" startPosition="0" endLine="1024" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$constructorListHandler_uj0cpq_i31a" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="1025" startPosition="0" endLine="1077" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$methodListHandler_uj0cpq_j31a" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="1078" startPosition="0" endLine="1130" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticMethodListHandler_uj0cpq_k31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="857" startPosition="0" endLine="909" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticFieldListHandler_uj0cpq_b31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="910" startPosition="0" endLine="962" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$fieldListHandler_uj0cpq_f31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="963" startPosition="0" endLine="1015" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$propertyListHandler_uj0cpq_g31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="1016" startPosition="0" endLine="1068" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$constructorListHandler_uj0cpq_i31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="1069" startPosition="0" endLine="1121" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$methodListHandler_uj0cpq_j31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="1122" startPosition="0" endLine="1174" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticMethodListHandler_uj0cpq_k31a" />
   <unitInfo fileName="RemarkStatement_KeyMap.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.RemarkStatement_KeyMap" />
   <unitInfo fileName="AnonymousClass_Editor.java" startLine="603" startPosition="0" endLine="656" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_Editor$fieldListHandler_msf9u8_a3b0" />
   <unitInfo fileName="AnonymousClass_Editor.java" startLine="657" startPosition="0" endLine="710" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_Editor$methodListHandler_msf9u8_a5b0" />
@@ -305,8 +305,8 @@
   <unitInfo fileName="Interface_Editor.java" startLine="300" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor$extendedInterfaceListHandler_4hcgjd_h0" />
   <unitInfo fileName="ForStatement_Editor.java" startLine="439" startPosition="0" endLine="501" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ForStatement_Editor$iterationListHandler_l9yc2b_j0" />
   <unitInfo fileName="Interface_Editor.java" startLine="469" startPosition="0" endLine="531" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor$staticInnerClassifiersListHandler_4hcgjd_f8a" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="750" startPosition="0" endLine="812" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$implementedInterfaceListHandler_uj0cpq_m0" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="1131" startPosition="0" endLine="1193" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticInnerClassifiersListHandler_uj0cpq_m31a" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="794" startPosition="0" endLine="856" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$implementedInterfaceListHandler_uj0cpq_m0" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="1175" startPosition="0" endLine="1237" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor$staticInnerClassifiersListHandler_uj0cpq_m31a" />
   <unitInfo fileName="BaseVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BaseVariableReference_Editor" />
   <unitInfo fileName="VarVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VarVariableReference_Editor" />
   <unitInfo fileName="TypeVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableReference_Editor" />
@@ -427,34 +427,36 @@
   <unitInfo fileName="Interface_Editor.java" startLine="33" startPosition="0" endLine="570" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor" />
   <unitInfo fileName="EnumClass_Editor.java" startLine="34" startPosition="0" endLine="706" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor" />
   <unitInfo fileName="AnonymousClass_Editor.java" startLine="41" startPosition="0" endLine="750" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_Editor" />
-  <unitInfo fileName="ClassConcept_Editor.java" startLine="36" startPosition="0" endLine="1232" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor" />
+  <unitInfo fileName="ClassConcept_Editor.java" startLine="36" startPosition="0" endLine="1276" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor" />
   <root nodeId="1073416106125">
     <nodeInfo nodeId="6827006320070868538" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StatementList_Editor.java" startLine="65" startPosition="109" endLine="66" endPosition="72" />
     <scopeInfo nodeId="6827006320070867542" fileName="StatementList_Editor.java" startLine="65" startPosition="109" endLine="66" endPosition="72" />
   </root>
   <root nodeId="1074794490343">
-    <nodeInfo nodeId="1626829428755615654" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="706" startPosition="111" endLine="707" endPosition="249" />
-    <nodeInfo nodeId="1209065132973" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="710" startPosition="111" endLine="711" endPosition="65" />
-    <nodeInfo nodeId="1221565218374" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="714" startPosition="111" endLine="715" endPosition="59" />
-    <nodeInfo nodeId="1145916141539" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="718" startPosition="111" endLine="719" endPosition="112" />
-    <nodeInfo nodeId="8293668929054821307" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="722" startPosition="112" endLine="723" endPosition="227" />
-    <nodeInfo nodeId="1221562999730" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="726" startPosition="112" endLine="727" endPosition="78" />
-    <nodeInfo nodeId="8293668929055456930" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="730" startPosition="112" endLine="731" endPosition="205" />
-    <nodeInfo nodeId="8293668929055456939" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="734" startPosition="113" endLine="735" endPosition="228" />
-    <nodeInfo nodeId="2944474240501862426" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="738" startPosition="112" endLine="739" endPosition="53" />
-    <nodeInfo nodeId="8293668929055456994" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="742" startPosition="112" endLine="743" endPosition="79" />
-    <nodeInfo nodeId="8293668929055456977" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="746" startPosition="113" endLine="747" endPosition="134" />
-    <scopeInfo nodeId="1224500205262" fileName="ClassConcept_Editor.java" startLine="706" startPosition="111" endLine="707" endPosition="249" />
-    <scopeInfo nodeId="1178610229482" fileName="ClassConcept_Editor.java" startLine="710" startPosition="111" endLine="711" endPosition="65" />
-    <scopeInfo nodeId="1221565214716" fileName="ClassConcept_Editor.java" startLine="714" startPosition="111" endLine="715" endPosition="59" />
-    <scopeInfo nodeId="1145916139209" fileName="ClassConcept_Editor.java" startLine="718" startPosition="111" endLine="719" endPosition="112" />
-    <scopeInfo nodeId="8293668929054810896" fileName="ClassConcept_Editor.java" startLine="722" startPosition="112" endLine="723" endPosition="227" />
-    <scopeInfo nodeId="1221562999729" fileName="ClassConcept_Editor.java" startLine="726" startPosition="112" endLine="727" endPosition="78" />
-    <scopeInfo nodeId="8293668929054821326" fileName="ClassConcept_Editor.java" startLine="730" startPosition="112" endLine="731" endPosition="205" />
-    <scopeInfo nodeId="8293668929054821335" fileName="ClassConcept_Editor.java" startLine="734" startPosition="113" endLine="735" endPosition="228" />
-    <scopeInfo nodeId="2944474240501862425" fileName="ClassConcept_Editor.java" startLine="738" startPosition="112" endLine="739" endPosition="53" />
-    <scopeInfo nodeId="8293668929055456993" fileName="ClassConcept_Editor.java" startLine="742" startPosition="112" endLine="743" endPosition="79" />
-    <scopeInfo nodeId="8293668929055456976" fileName="ClassConcept_Editor.java" startLine="746" startPosition="113" endLine="747" endPosition="134" />
+    <nodeInfo nodeId="1626829428755615654" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="746" startPosition="111" endLine="747" endPosition="249" />
+    <nodeInfo nodeId="1209065132973" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="750" startPosition="111" endLine="751" endPosition="65" />
+    <nodeInfo nodeId="1221565218374" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="754" startPosition="111" endLine="755" endPosition="59" />
+    <nodeInfo nodeId="1145916141539" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="758" startPosition="111" endLine="759" endPosition="112" />
+    <nodeInfo nodeId="8293668929054821307" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="762" startPosition="112" endLine="763" endPosition="227" />
+    <nodeInfo nodeId="1221562999730" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="766" startPosition="112" endLine="767" endPosition="78" />
+    <nodeInfo nodeId="8293668929055456930" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="770" startPosition="112" endLine="771" endPosition="205" />
+    <nodeInfo nodeId="8293668929055456939" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="774" startPosition="113" endLine="775" endPosition="228" />
+    <nodeInfo nodeId="2944474240501862426" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="778" startPosition="112" endLine="779" endPosition="53" />
+    <nodeInfo nodeId="4980874121082451995" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="782" startPosition="113" endLine="783" endPosition="187" />
+    <nodeInfo nodeId="8293668929055456994" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="786" startPosition="112" endLine="787" endPosition="79" />
+    <nodeInfo nodeId="8293668929055456977" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_Editor.java" startLine="790" startPosition="111" endLine="791" endPosition="134" />
+    <scopeInfo nodeId="1224500205262" fileName="ClassConcept_Editor.java" startLine="746" startPosition="111" endLine="747" endPosition="249" />
+    <scopeInfo nodeId="1178610229482" fileName="ClassConcept_Editor.java" startLine="750" startPosition="111" endLine="751" endPosition="65" />
+    <scopeInfo nodeId="1221565214716" fileName="ClassConcept_Editor.java" startLine="754" startPosition="111" endLine="755" endPosition="59" />
+    <scopeInfo nodeId="1145916139209" fileName="ClassConcept_Editor.java" startLine="758" startPosition="111" endLine="759" endPosition="112" />
+    <scopeInfo nodeId="8293668929054810896" fileName="ClassConcept_Editor.java" startLine="762" startPosition="112" endLine="763" endPosition="227" />
+    <scopeInfo nodeId="1221562999729" fileName="ClassConcept_Editor.java" startLine="766" startPosition="112" endLine="767" endPosition="78" />
+    <scopeInfo nodeId="8293668929054821326" fileName="ClassConcept_Editor.java" startLine="770" startPosition="112" endLine="771" endPosition="205" />
+    <scopeInfo nodeId="8293668929054821335" fileName="ClassConcept_Editor.java" startLine="774" startPosition="113" endLine="775" endPosition="228" />
+    <scopeInfo nodeId="2944474240501862425" fileName="ClassConcept_Editor.java" startLine="778" startPosition="112" endLine="779" endPosition="53" />
+    <scopeInfo nodeId="4980874121082451994" fileName="ClassConcept_Editor.java" startLine="782" startPosition="113" endLine="783" endPosition="187" />
+    <scopeInfo nodeId="8293668929055456993" fileName="ClassConcept_Editor.java" startLine="786" startPosition="112" endLine="787" endPosition="79" />
+    <scopeInfo nodeId="8293668929055456976" fileName="ClassConcept_Editor.java" startLine="790" startPosition="111" endLine="791" endPosition="134" />
   </root>
   <root nodeId="1075139052656">
     <nodeInfo nodeId="1203413371736" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConstructorDeclaration_Editor.java" startLine="226" startPosition="111" endLine="227" endPosition="112" />

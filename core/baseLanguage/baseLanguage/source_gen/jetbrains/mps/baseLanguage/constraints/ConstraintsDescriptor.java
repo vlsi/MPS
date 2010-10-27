@@ -18,6 +18,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new Classifier_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Property_alias_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Property_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ClassConcept_isStatic_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LocalVariableDeclaration_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConstructorDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConstructorDeclaration_nestedName_PropertyConstraint());

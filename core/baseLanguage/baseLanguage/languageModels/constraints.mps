@@ -1096,6 +1096,40 @@
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104847625">
     <property name="package:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="4980874121082275158">
+      <link role="applicableProperty:8" targetNodeId="1.4980874121082273661:3" resolveInfo="static" />
+      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="4980874121082275159">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4980874121082275160">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4980874121082275161">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4980874121082275168">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4980874121082275163">
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="4980874121082275162" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4980874121082275167">
+                  <link role="property:16" targetNodeId="1.521412098689998745:3" resolveInfo="nonStatic" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertySetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter:8" id="4980874121082275170">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4980874121082275171">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4980874121082275172">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4980874121082275179">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4980874121082275182">
+                <node role="expression:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="4980874121082275184" />
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4980874121082275174">
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="4980874121082275173" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4980874121082275178">
+                  <link role="property:16" targetNodeId="1.521412098689998745:3" resolveInfo="nonStatic" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="defaultScope:8" type="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope:8" id="1213104847626">
       <property name="description:8" value="visible classes from model and imported models" />
       <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="1213104847627">

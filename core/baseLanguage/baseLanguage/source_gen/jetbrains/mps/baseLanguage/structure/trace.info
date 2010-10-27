@@ -247,6 +247,6 @@
   <unitInfo fileName="EnumConstantDeclaration.java" startLine="14" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" />
   <unitInfo fileName="BaseMethodDeclaration.java" startLine="13" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
   <unitInfo fileName="Classifier.java" startLine="14" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Classifier" />
-  <unitInfo fileName="ClassConcept.java" startLine="12" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+  <unitInfo fileName="ClassConcept.java" startLine="12" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
 </debugInfo>
 
