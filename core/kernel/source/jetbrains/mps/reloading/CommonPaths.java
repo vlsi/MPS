@@ -148,7 +148,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
-    addIfExists(result, "/lib/junit-4.7.jar");
+    addIfExists(result, "/lib/junit-4.8.2.jar");
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/picocontainer.jar");
