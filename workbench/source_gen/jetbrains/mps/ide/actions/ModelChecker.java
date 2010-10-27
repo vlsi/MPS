@@ -4,8 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,13 +17,13 @@ public class ModelChecker {
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
 
-  private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
+  private SearchResults<ModelCheckerIssue> myResults;
   private IOperationContext myOperationContext;
   private ProgressContext myProgressContext;
+  private List<SpecificChecker> mySpecificCheckers;
 
   public ModelChecker(IOperationContext operationContext, ProgressContext progressContext) {
-    myOperationContext = operationContext;
-    myProgressContext = progressContext;
+    this(operationContext, progressContext, new SearchResults<ModelCheckerIssue>());
   }
 
   public ModelChecker(IOperationContext operationContext, ProgressContext progressContext, SearchResults<ModelCheckerIssue> results) {
@@ -32,13 +33,16 @@ public class ModelChecker {
   }
 
   public void checkModel(final SModelDescriptor modelDescriptor) {
-    final List<SpecificChecker> specificCheckers = ModelCheckerSettings.getInstance().getSpecificCheckers();
+    final Wrappers._T<List<SpecificChecker>> specificCheckers = new Wrappers._T<List<SpecificChecker>>(mySpecificCheckers);
+    if (specificCheckers.value == null) {
+      specificCheckers.value = ModelCheckerSettings.getInstance().getSpecificCheckers();
+    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = modelDescriptor.getSModel();
 
-        for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
+        for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
           List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, myProgressContext, myOperationContext);
           myResults.getSearchResults().addAll(specificCheckerResults);
           if (isCancelled()) {
@@ -59,5 +63,9 @@ public class ModelChecker {
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
+  }
+
+  public void setSpecificCheckers(List<SpecificChecker> specificCheckers) {
+    mySpecificCheckers = specificCheckers;
   }
 }

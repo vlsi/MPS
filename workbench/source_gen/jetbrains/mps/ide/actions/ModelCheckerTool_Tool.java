@@ -107,6 +107,14 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     return ModelCheckerTool_Tool.this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), Icons.MODEL_ICON, operationContext, showTab);
   }
 
+  public ModelCheckerViewer checkReferencesInModels(final List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
+    return ModelCheckerTool_Tool.this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
+      public void invoke(ModelCheckerViewer newViewer) {
+        newViewer.prepareAndCheckModels(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + "models", Icons.MODEL_ICON, new BrokenReferencesFinder());
+      }
+    }, operationContext, showTab);
+  }
+
   public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
     return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
   }

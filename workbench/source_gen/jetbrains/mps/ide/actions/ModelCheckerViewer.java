@@ -181,8 +181,8 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     runCheck();
   }
 
-  public void prepareAndCheckModels(List<SModelDescriptor> modelDescriptors, String taskTargetTitle, Icon taskIcon) {
-    IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
+  public void prepareAndCheckModels(List<SModelDescriptor> modelDescriptors, String taskTargetTitle, Icon taskIcon, ModelCheckerIssueFinder issueFinder) {
+    IResultProvider resultProvider = FindUtils.makeProvider(issueFinder);
     SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, myOperationContext), myProject.getComponent(ProjectScope.class));
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
 
@@ -190,6 +190,10 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     setTabProperties(taskTargetTitle, taskIcon);
 
     runCheck();
+  }
+
+  public void prepareAndCheckModels(List<SModelDescriptor> modelDescriptors, String taskTargetTitle, Icon taskIcon) {
+    prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon, new ModelCheckerIssueFinder());
   }
 
   public void setTabProperties(String title, Icon icon) {
