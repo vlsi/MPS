@@ -17,16 +17,16 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
-public class BaseIntentionProvider implements IntentionProvider {
+public class BaseQuickFixProvider implements IntentionProvider {
 
-  public BaseIntentionProvider(String classFQName) {
+  public BaseQuickFixProvider(String classFQName) {
     myClassFQName = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
       "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
     myQuickFix = null;
     myQuickFixTaken = false;
   }
 
-  public BaseIntentionProvider(String classFQName, boolean executeImmediately) {
+  public BaseQuickFixProvider(String classFQName, boolean executeImmediately) {
     this(classFQName);
     myExecuteImmediately = executeImmediately;
   }

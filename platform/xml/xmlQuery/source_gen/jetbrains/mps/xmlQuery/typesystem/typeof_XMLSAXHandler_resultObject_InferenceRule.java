@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,7 +22,7 @@ public class typeof_XMLSAXHandler_resultObject_InferenceRule extends AbstractInf
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.xmlQuery.structure.XMLSAXParser")) {
       {
         SNode _nodeToCheck_1029348928467 = node;
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4120841425052792152", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4120841425052792149", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.xmlQuery.structure.XMLSAXParser"), "root", false), "type", true), _info_12389875345);
       }
@@ -30,7 +30,7 @@ public class typeof_XMLSAXHandler_resultObject_InferenceRule extends AbstractInf
       SNode parentMacro = SNodeOperations.getAncestor(node, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule", false, false);
       {
         SNode _nodeToCheck_1029348928467 = node;
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098117", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "4635390255048098119", true), (SNode) SLinkOperations.getTarget(parentMacro, "type", true), _info_12389875345);
       }

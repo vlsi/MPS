@@ -11,7 +11,7 @@ import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ui.behavior.UIObjectStatement_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -27,19 +27,19 @@ public class typeof_UIObjectStatement_InferenceRule extends AbstractInferenceRul
     SNode abt = UIObject_Behavior.call_actuallyBelongsTo_1719339442171687163(SLinkOperations.getTarget(uios, "uiObject", false));
     if (UIObjectStatement_Behavior.call_hasOwner_8923564134258699721(uios)) {
       if (!(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(UIObjectStatement_Behavior.call_getContext_8923564134258876765(uios), "uiObject", false))).contains(abt))) {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(uios, "Wrong context", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134259416738", intentionProvider, errorTarget);
       }
     } else {
       if (!((IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios)) != null))) {
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(uios, "No context", "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8923564134259658269", intentionProvider, errorTarget);
       }
       {
         SNode _nodeToCheck_1029348928467 = IUIObjectContextProvider_Behavior.call_getContextExpression_8923564134258345446(UIObjectStatement_Behavior.call_getContextProvider_8923564134258524082(uios));
-        BaseIntentionProvider intentionProvider = null;
+        BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413336", 0, intentionProvider);
         _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1642651187740413328", true), (SNode) UIObjectStatement_Behavior.call_expectedContextType_5197527271413889619(uios, abt), false, _info_12389875345);

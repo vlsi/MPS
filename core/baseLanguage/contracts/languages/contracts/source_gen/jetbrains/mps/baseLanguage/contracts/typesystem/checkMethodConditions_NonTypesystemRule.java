@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -20,8 +20,8 @@ public class checkMethodConditions_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode methodConditions, final TypeCheckingContext typeCheckingContext) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(methodConditions, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       {
-        BaseIntentionProvider intentionProvider = null;
-        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.contracts.typesystem.fixMethodConditions_QuickFix", true);
+        BaseQuickFixProvider intentionProvider = null;
+        intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.contracts.typesystem.fixMethodConditions_QuickFix", true);
         intentionProvider.putArgument("methodConditions", methodConditions);
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(methodConditions, "conditions outside interface", "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "8892289062514009099", intentionProvider, errorTarget);

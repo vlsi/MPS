@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class RulesFunctions_Extension {
@@ -21,7 +21,7 @@ public class RulesFunctions_Extension {
     SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extensionMethod), mmap);
     {
       SNode _nodeToCheck_1029348928467 = null;
-      BaseIntentionProvider intentionProvider = null;
+      BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973447913", 0, intentionProvider);
       _info_12389875345.setInequationGroup("priority_2_1759628044690732299");
       _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");

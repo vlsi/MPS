@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -24,8 +24,8 @@ public class check_FooVariableInternalReference_NonTypesystemRule extends Abstra
     for (SNode fooVariable : SNodeOperations.getDescendants(methodLike, "jetbrains.mps.samples.quickFixTest.structure.FooVariable", false, new String[]{})) {
       if (ObjectUtils.equals(SPropertyOperations.getString(fooVariable, "name"), SPropertyOperations.getString(varReference, "varName"))) {
         {
-          BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.samples.quickFixTest.typesystem.setVarRef_QuickFix", true);
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.samples.quickFixTest.typesystem.setVarRef_QuickFix", true);
           intentionProvider.putArgument("oldVar", varReference);
           intentionProvider.putArgument("target", fooVariable);
           IErrorTarget errorTarget = new NodeErrorTarget();
