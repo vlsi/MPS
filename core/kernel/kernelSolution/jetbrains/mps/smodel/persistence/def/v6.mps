@@ -824,24 +824,14 @@
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1408137219337285364">
-              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1408137219337285365">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1408137219337285373">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1408137219337285375">
-                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="1408137219337285374" />
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1408137219337285379">
-                      <link role="baseMethodDeclaration:3" targetNodeId="8.~SNode.addReference(jetbrains.mps.smodel.SReference):void" resolveInfo="addReference" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1408137219337285380">
-                        <link role="variableDeclaration:3" targetNodeId="1408137219337284569" resolveInfo="ref" />
-                      </node>
-                    </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1408137219337285373">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1408137219337285375">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="1408137219337285374" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1408137219337285379">
+                  <link role="baseMethodDeclaration:3" targetNodeId="8.~SNode.addReference(jetbrains.mps.smodel.SReference):void" resolveInfo="addReference" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1408137219337285380">
+                    <link role="variableDeclaration:3" targetNodeId="1408137219337284569" resolveInfo="ref" />
                   </node>
-                </node>
-              </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1408137219337285369">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1408137219337285372" />
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1408137219337285368">
-                  <link role="variableDeclaration:3" targetNodeId="1408137219337284569" resolveInfo="ref" />
                 </node>
               </node>
             </node>

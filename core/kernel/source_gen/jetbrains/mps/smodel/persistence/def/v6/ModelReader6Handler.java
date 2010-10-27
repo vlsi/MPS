@@ -451,9 +451,7 @@ public class ModelReader6Handler extends DefaultHandler {
           new DynamicReference(child[0], result, modelRef, child[1]) :
           new StaticReference(child[0], result, modelRef, SNodeId.fromString(target.text), child[1])
         );
-        if (ref != null) {
-          result.addReference(ref);
-        }
+        result.addReference(ref);
         return;
       }
       if ("node".equals(tagName)) {
@@ -518,7 +516,7 @@ public class ModelReader6Handler extends DefaultHandler {
         return;
       }
       if ("targetNodeId".equals(name)) {
-        result[2] = VersionUtil.getBeforeSeparator(value);
+        result[2] = value;
         return;
       }
       super.handleAttribute(resultObject, name, value);

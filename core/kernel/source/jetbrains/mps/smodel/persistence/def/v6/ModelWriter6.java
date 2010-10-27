@@ -76,7 +76,6 @@ public class ModelWriter6 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
-
     // roots
     saveRootStubs(rootElement, sourceModel, helper);   // only for quick roots access
     for (SNode root : sourceModel.roots()) {

@@ -194,41 +194,5 @@ public class ModelReader6 implements IModelReader {
     } else {
       return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
     }
-
-
-//    String role = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.ROLE));
-//    String attTargetNodeId = VersionUtil.getBeforeSeparator(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID));
-//    String resolveInfo = element.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-//    String importedModelInfo = "-1";
-//    String targetId = null;
-//    if (attTargetNodeId != null) {
-//      int i = attTargetNodeId.indexOf('.');
-//      importedModelInfo = i > 0 ? attTargetNodeId.substring(0, i) : "-1";
-//      targetId = attTargetNodeId.substring(i + 1);
-//    }
-//
-//    SModelReference importedModelReference = model.getSModelReference();
-//    int ix = -1;
-//    try {
-//      ix = Integer.parseInt(importedModelInfo);
-//    } catch (NumberFormatException e) { }
-//    if (ix > -1) {
-//      ImportElement impElem = imports.get(ix);
-//      importedModelReference = impElem == null ? null : imports.get(ix).getModelReference();
-//      if (importedModelReference == null) {
-//        LOG.error("couldn't create reference '" + role + "' : import for index [" + ix + "] not found");
-//        return null;
-//      }
-//    }
-//
-//    if (targetId == null) {
-//      LOG.error("couldn't create reference '" + role + "' : target node id is null");
-//      return null;
-//    }
-//
-//    if (targetId.equals("^")) {
-//      return new DynamicReference(role, node, importedModelReference, resolveInfo);
-//    }
-//    return new StaticReference(role, node, importedModelReference, SNodeId.fromString(targetId), resolveInfo);
   }
 }

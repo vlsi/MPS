@@ -63,8 +63,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-
-        addLanguage(model, ref, firstVersion);
+        addLanguage(model, ref);
       }
 
       for (SReference reference : node.getReferencesIterable()) {
@@ -93,7 +92,7 @@ public class SModelOperations {
   }
 
   public static void addLanguage(SModel model, @NotNull ModuleReference ref) {
-    addLanguage(model, ref, false);
+    model.addLanguage(ref);
   }
 
   //todo rewrite using iterators
@@ -107,14 +106,12 @@ public class SModelOperations {
       if (language != null) {
         languages.add(language);
         languages.addAll(language.getAllExtendedLanguages());
-        //addAspectModelsVersions(languageNamespace, language);
       }
     }
 
     for (ModuleReference dk : model.importedDevkits()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
-        //addDevkitModelsVersions(dk, devKit);
         for (Language l : devKit.getAllExportedLanguages()) {
           if (languages.add(l)) {
             languages.addAll(l.getAllExtendedLanguages());
@@ -255,7 +252,6 @@ public class SModelOperations {
 
   public static void addNewlyImportedDevKit(SModel sModel, ModuleReference ref) {
     sModel.addDevKit(ref);
-    addAspectModelsVersions(sModel, GlobalScope.getInstance().getDevKit(ref));
   }
 
   public static int getUsedVersion(SModel sModel, SModelReference sModelReference) {
@@ -304,20 +300,6 @@ public class SModelOperations {
       }
     }
     return modelsList;
-  }
-
-  private static void addLanguage(SModel sModel, @NotNull ModuleReference ref, boolean firstVersion) {
-    sModel.addLanguage(ref);
-    Language language = GlobalScope.getInstance().getLanguage(ref);
-    if (language != null) {
-      sModel.addAspectModelsVersions(language, firstVersion);
-    }
-  }
-
-  private static void addAspectModelsVersions(SModel sModel, DevKit devKit) {
-    for (Language language : devKit.getExportedLanguages()) {
-      sModel.addAspectModelsVersions(language, false);
-    }
   }
 
   static void validateLanguages(SModel sModel, SNode node) {
