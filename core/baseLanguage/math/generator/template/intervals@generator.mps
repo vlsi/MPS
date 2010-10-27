@@ -30,7 +30,6 @@
   <maxImportIndex value="7" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" version="-1" />
   <import index="7" modelUID="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" version="-1" />
   <visible index="2" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -213,14 +212,17 @@
       <link role="applicableConcept:2" targetNodeId="2v.1235747354980" resolveInfo="InIntervalExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1236432114256">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236432114257">
-          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1236432114258">
-            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1236432114259">
-              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1236432114260">
-                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236432114261">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1236432114262">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236432114263">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1236432114264" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1236432114265">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4615859720716233382">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4615859720716233384">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702866694" resolveInfo="Interval" />
+            </node>
+            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4615859720716233386">
+              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4615859720716233387">
+                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4615859720716233388">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4615859720716233389">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4615859720716233390">
+                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4615859720716233391" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4615859720716233392">
                         <link role="link:16" targetNodeId="3v.1081773367579:3" />
                       </node>
                     </node>
@@ -230,7 +232,7 @@
             </node>
           </node>
           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1236432114266">
-            <link role="baseMethodDeclaration:3" targetNodeId="6.~Interval.contains(java.lang.Comparable):boolean" resolveInfo="contains" />
+            <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702866735" resolveInfo="contains" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1236432114267">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1236432114268">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1236432114269">
@@ -255,14 +257,17 @@
       <link role="applicableConcept:2" targetNodeId="2v.1235747354984" resolveInfo="IntervalContainsExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1236432114276">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236432114277">
-          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1236432114278">
-            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1236432114279">
-              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1236432114280">
-                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236432114281">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1236432114282">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236432114283">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1236432114284" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1236432114285">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4615859720716233403">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4615859720716233405">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702866694" resolveInfo="Interval" />
+            </node>
+            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4615859720716233407">
+              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4615859720716233408">
+                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4615859720716233409">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4615859720716233410">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4615859720716233412">
+                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4615859720716233411" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4615859720716268073">
                         <link role="link:16" targetNodeId="3v.1081773367580:3" />
                       </node>
                     </node>
@@ -272,7 +277,7 @@
             </node>
           </node>
           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1236432114286">
-            <link role="baseMethodDeclaration:3" targetNodeId="6.~Interval.contains(java.lang.Comparable):boolean" resolveInfo="contains" />
+            <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702866735" resolveInfo="contains" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1236432114287">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1236432114288">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1236432114289">
