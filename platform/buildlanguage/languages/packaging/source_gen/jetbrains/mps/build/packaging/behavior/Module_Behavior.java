@@ -50,7 +50,7 @@ public class Module_Behavior {
 
   public static String call_getBasedir_1213877514794(SNode thisNode) {
     IFile descriptor = Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile();
-    String str = Module_Behavior.call_getMacros_1213877515158(thisNode).expandPath(Macros.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), descriptor);
+    String str = Module_Behavior.call_getMacros_1213877515158(thisNode).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), descriptor);
     return ModuleUtil.getRelativePath(str, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath());
   }
 

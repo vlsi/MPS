@@ -3330,8 +3330,8 @@
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1219235231666">
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~Macros.expandPath(java.lang.String,jetbrains.mps.vfs.IFile):java.lang.String" resolveInfo="expandPath" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1219235231667">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Macros.getMacroString(jetbrains.mps.project.IModule):java.lang.String" resolveInfo="getMacroString" />
-                  <link role="classConcept:3" targetNodeId="2.~Macros" resolveInfo="Macros" />
+                  <link role="classConcept:3" targetNodeId="2.~MacrosFactory" resolveInfo="MacrosFactory" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~MacrosFactory.getMacroString(jetbrains.mps.project.IModule):java.lang.String" resolveInfo="getMacroString" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219235231668">
                     <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1219235231669" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1219235231670">

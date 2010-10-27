@@ -38,17 +38,6 @@ public abstract class Macros {
 
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
 
-  public static String getMacroString(IModule module) {
-    if (module instanceof Language) {
-      return LANGUAGE_DESCRIPTOR;
-    } else if (module instanceof Solution) {
-      return MacrosFactory.SOLUTION_DESCRIPTOR;
-    } else if (module instanceof DevKit) {
-      return MacrosFactory.DEVKIT_DESCRIPTOR;
-    }
-    return MPS_HOME;
-  }
-
   public final String expandPath(String path, IFile anchorFile) {
     if (path == null) return null;
 

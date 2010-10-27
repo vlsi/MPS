@@ -44,6 +44,17 @@ public class MacrosFactory {
     return mpsHomeMacros();
   }
 
+  public static String getMacroString(IModule module) {
+    if (module instanceof Language) {
+      return Macros.LANGUAGE_DESCRIPTOR;
+    } else if (module instanceof Solution) {
+      return SOLUTION_DESCRIPTOR;
+    } else if (module instanceof DevKit) {
+      return DEVKIT_DESCRIPTOR;
+    }
+    return Macros.MPS_HOME;
+  }
+
   private static class DescriptorMacros extends Macros {
     private final String myMacroString;
 
