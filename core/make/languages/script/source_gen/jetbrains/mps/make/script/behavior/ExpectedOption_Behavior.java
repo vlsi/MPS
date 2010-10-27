@@ -16,7 +16,7 @@ public class ExpectedOption_Behavior {
   }
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
+    return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
   }
 
   public static String call_classifierName_8853708281362145858(SNode thisNode) {

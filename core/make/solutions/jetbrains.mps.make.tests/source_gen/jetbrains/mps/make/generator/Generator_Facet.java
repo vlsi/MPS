@@ -13,12 +13,12 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
 
-public class Generator_facet implements IFacet {
+public class Generator_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("Generator");
 
-  public Generator_facet() {
-    ListSequence.fromList(targets).addElement(new Generator_facet.Target_ixz87t_a());
+  public Generator_Facet() {
+    ListSequence.fromList(targets).addElement(new Generator_Facet.Target_ixz87t_a());
   }
 
   public Iterable<ITarget> targets() {
@@ -49,7 +49,7 @@ public class Generator_facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor mon) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
           Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:

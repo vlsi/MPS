@@ -11,6 +11,13 @@ import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.unittest.Mockups;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.script.IMonitor;
+import org.jmock.Expectations;
+import jetbrains.mps.make.script.IQuery;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
+import org.jmock.api.Action;
+import org.jmock.api.Invocation;
 import org.apache.log4j.BasicConfigurator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -29,6 +36,84 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute(Mockups.monitor(context, "mon"));
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+  }
+
+  public void test_queryOk() throws Exception {
+    ScriptBuilder scb = new ScriptBuilder();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).toScript();
+    Assert.assertTrue(scr.isValid());
+    ITarget dt = scr.defaultTarget();
+    Assert.assertNotNull(dt);
+    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    final IMonitor mon = Mockups.monitor(context, "mon");
+    context.checking(new Expectations() {
+      {
+        final IQuery[] query = new IQuery[1];
+        exactly(1).of(mon).relayQuery(with(new BaseMatcher<IQuery>() {
+          public boolean matches(Object o) {
+            if (o instanceof IQuery) {
+              query[0] = (IQuery) o;
+              return true;
+            }
+            return false;
+          }
+
+          public void describeTo(Description p0) {
+          }
+        }));
+        will(new Action() {
+          public Object invoke(Invocation invocation) throws Throwable {
+            return Sequence.fromIterable(query[0].options()).first();
+          }
+
+          public void describeTo(Description description) {
+          }
+        });
+      }
+    });
+    IResult res = scr.execute(mon);
+    Assert.assertNotNull(res);
+    Assert.assertTrue(res.isSucessful());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+  }
+
+  public void test_queryStop() throws Exception {
+    ScriptBuilder scb = new ScriptBuilder();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).toScript();
+    Assert.assertTrue(scr.isValid());
+    ITarget dt = scr.defaultTarget();
+    Assert.assertNotNull(dt);
+    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    final IMonitor mon = Mockups.monitor(context, "mon");
+    context.checking(new Expectations() {
+      {
+        final IQuery[] query = new IQuery[1];
+        exactly(1).of(mon).relayQuery(with(new BaseMatcher<IQuery>() {
+          public boolean matches(Object o) {
+            if (o instanceof IQuery) {
+              query[0] = (IQuery) o;
+              return true;
+            }
+            return false;
+          }
+
+          public void describeTo(Description p0) {
+          }
+        }));
+        will(new Action() {
+          public Object invoke(Invocation invocation) throws Throwable {
+            return Sequence.fromIterable(query[0].options()).last();
+          }
+
+          public void describeTo(Description description) {
+          }
+        });
+      }
+    });
+    IResult res = scr.execute(mon);
+    Assert.assertNotNull(res);
+    Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 

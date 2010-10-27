@@ -13,14 +13,14 @@
     <scopeInfo nodeId="505095865854377534" fileName="RelayQueryOperation_Behavior.java" startLine="25" startPosition="72" endLine="26" endPosition="17" />
   </root>
   <root nodeId="8486446835277382810">
-    <nodeInfo nodeId="8486446835277382823" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueryDefinition_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="151" />
+    <nodeInfo nodeId="8486446835277382823" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueryDefinition_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" />
     <scopeInfo nodeId="8486446835277382812" fileName="QueryDefinition_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="8486446835277382821" fileName="QueryDefinition_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="151" />
+    <scopeInfo nodeId="8486446835277382821" fileName="QueryDefinition_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" />
   </root>
   <root nodeId="8853708281362145849">
-    <nodeInfo nodeId="8853708281362147139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExpectedOption_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="151" />
+    <nodeInfo nodeId="8853708281362147139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExpectedOption_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" />
     <scopeInfo nodeId="8853708281362145851" fileName="ExpectedOption_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="8853708281362145860" fileName="ExpectedOption_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="151" />
+    <scopeInfo nodeId="8853708281362145860" fileName="ExpectedOption_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" />
   </root>
 </debugInfo>
 

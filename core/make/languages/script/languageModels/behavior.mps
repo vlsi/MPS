@@ -127,12 +127,12 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8853708281362147139">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8853708281362147140">
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8853708281362147141">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8853708281362147142">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2551169102352989615">
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidCamelIdentifier" />
                 <link role="classConcept:3" targetNodeId="3.~NameUtil" resolveInfo="NameUtil" />
-                <link role="baseMethodDeclaration:3" targetNodeId="3.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8853708281362147143">
-                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8853708281362147144" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8853708281362147145">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2551169102352989616">
+                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2551169102352989617" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2551169102352989618">
                     <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                   </node>
                 </node>
@@ -174,12 +174,12 @@
               </node>
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8486446835277382828">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8486446835277384651">
-                <link role="baseMethodDeclaration:3" targetNodeId="3.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2551169102352989619">
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidCamelIdentifier" />
                 <link role="classConcept:3" targetNodeId="3.~NameUtil" resolveInfo="NameUtil" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8486446835277384653">
-                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8486446835277384652" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8486446835277384657">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2551169102352989620">
+                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2551169102352989621" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2551169102352989622">
                     <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                   </node>
                 </node>

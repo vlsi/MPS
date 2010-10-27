@@ -47,8 +47,16 @@ public class QueriesGenerated {
     return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_2551169102353009752(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8486446835277382806(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2551169102353050546(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "presentation", true), "text");
   }
 
   public static Object referenceMacro_GetReferent_4629164904928210751(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -95,6 +103,14 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
   }
 
+  public static Object referenceMacro_GetReferent_2551169102353050563(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
+  }
+
+  public static Object referenceMacro_GetReferent_2551169102353058061(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
+  }
+
   public static boolean ifMacro_Condition_3916013743093752785(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
   }
@@ -104,6 +120,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8486446835277407067(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
+  }
+
+  public static boolean ifMacro_Condition_2551169102353050574(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
+  }
+
+  public static boolean ifMacro_Condition_2551169102353058074(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
   }
 

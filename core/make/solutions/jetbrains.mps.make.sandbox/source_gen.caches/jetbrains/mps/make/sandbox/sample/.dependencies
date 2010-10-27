@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.sandbox.sample.DOH_Query" file="DOH_Query.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.what_Option" />
     <classNode extendsClassName="jetbrains.mps.make.script.IQuery" />
   </dependency>
@@ -56,6 +59,7 @@
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.what_Option" file="what_Option.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.make.script.IOption" />
   </dependency>
 </dependenciesRoot>
 
