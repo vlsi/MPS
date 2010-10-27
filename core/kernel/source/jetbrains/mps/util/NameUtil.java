@@ -159,13 +159,13 @@ public class NameUtil {
     if (s == null || s.isEmpty() || Character.isLowerCase(s.charAt(0))) {
       return s;
     }
-    StringBuilder result = new StringBuilder(s.length());
-    int charIndex = 0;
-    for (; charIndex < s.length() && Character.isUpperCase(s.charAt(charIndex)); charIndex++) {
-      result.append(Character.toLowerCase(s.charAt(charIndex)));
-    }
-    if (charIndex < s.length()) {
-      result.append(s.substring(charIndex));
+    StringBuilder result = new StringBuilder(s);
+    for (int i = 0; i < result.length() && Character.isUpperCase(result.charAt(i)); i++) {
+      // decapitalizing first/last characters and any other if next one is capital character
+      // desired behavior: EDTExecutor -> edtExecutor
+      if (i == 0 || i == result.length() || Character.isUpperCase(result.charAt(i + 1))) {
+        result.setCharAt(i, Character.toLowerCase(result.charAt(i)));
+      }
     }
     return result.toString();
   }
