@@ -16,7 +16,6 @@
     <orderEntry type="module" module-name="dataFlow-runtime" />
     <orderEntry type="module" module-name="generator" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="math-runtime" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="regexp" />
     <orderEntry type="module" module-name="runtime" />
@@ -53,9 +52,6 @@
     <orderEntry type="module" module-name="javadoc" />
     <orderEntry type="module" module-name="javaParser" />
     <orderEntry type="module" module-name="logging" />
-    <orderEntry type="module" module-name="math" />
-    <orderEntry type="module" module-name="money" />
-    <orderEntry type="module" module-name="moneyRuntime" />
     <orderEntry type="module" module-name="mps-lite" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="overloadedOperators" />

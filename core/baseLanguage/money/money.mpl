@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.money" uuid="f43135f9-b833-4685-8d26-ffb6c8215f72" java-stubs-enabled="false" compileInMPS="false" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.money" uuid="f43135f9-b833-4685-8d26-ffb6c8215f72" java-stubs-enabled="false" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.money" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.baseLanguage.money" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.money" />
   </models>
   <accessoryModels />
   <generators>
@@ -45,9 +45,12 @@
     </stubModelEntry>
   </runtimeStubModels>
   <sourcePath />
+  <runtime>
+    <dependency reexport="false">4df1d09b-d6ae-453e-8622-14c0d6e4c038(jetbrains.mps.baseLanguage.money.runtime)</dependency>
+  </runtime>
   <extendedLanguages>
-    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</extendedLanguage>
   </extendedLanguages>
 </language>
 
