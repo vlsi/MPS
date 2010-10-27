@@ -27,10 +27,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" version="-1" />
+  <import index="7" modelUID="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" version="-1" />
   <visible index="2" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1235747506420">
@@ -39,7 +40,7 @@
       <link role="applicableConcept:2" targetNodeId="2v.1235747354994" resolveInfo="IntervalType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1236432114185">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1236432114186">
-          <link role="classifier:3" targetNodeId="6.~Interval" resolveInfo="Interval" />
+          <link role="classifier:3" targetNodeId="7.877422884702866569" resolveInfo="Interval" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1236432114187">
             <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1236432114188">
@@ -70,7 +71,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1236432114198">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1236432114199">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1236432114200">
-            <link role="baseMethodDeclaration:3" targetNodeId="6.~Interval.&lt;init&gt;(java.lang.Comparable,boolean,java.lang.Comparable,boolean)" resolveInfo="Interval" />
+            <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702866610" resolveInfo="Interval" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1236432114201">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1236432114202">
                 <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="1236432114203">

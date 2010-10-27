@@ -66,13 +66,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.math(java.math@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <import index="7" modelUID="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1236440389435">
     <property name="package" value="bigSymbols" />
     <link role="concept" targetNodeId="1.1236426954905" resolveInfo="MathSymbol" />
@@ -221,7 +222,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238405584081" />
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1238406290274">
     <property name="name:3" value="MathUtil" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2705856473428695571">
@@ -238,56 +238,56 @@
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695578">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695579">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soShort" resolveInfo="soShort" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861416" resolveInfo="soShort" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695580">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695581">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soInt" resolveInfo="soInt" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861463" resolveInfo="soInt" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695582">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695583">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soLong" resolveInfo="soLong" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861510" resolveInfo="soLong" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695584">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695585">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soFloat" resolveInfo="soFloat" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861557" resolveInfo="soFloat" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695586">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695587">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soDouble" resolveInfo="soDouble" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861604" resolveInfo="soDouble" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695588">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695589">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soBigInteger" resolveInfo="soBigInteger" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861651" resolveInfo="soBigInteger" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695590">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695591">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soBigDecimal" resolveInfo="soBigDecimal" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861698" resolveInfo="soBigDecimal" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695592">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695593">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soComplex" resolveInfo="soComplex" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861745" resolveInfo="soComplex" />
           </node>
         </node>
         <node role="item:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428695594">
           <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2705856473428695595">
-            <link role="classifier:3" targetNodeId="2v.~Matrix" resolveInfo="Matrix" />
-            <link role="variableDeclaration:3" targetNodeId="2v.~Matrix.soBigComplex" resolveInfo="soBigComplex" />
+            <link role="classifier:3" targetNodeId="7.877422884702861367" resolveInfo="Matrix" />
+            <link role="variableDeclaration:3" targetNodeId="7.877422884702861792" resolveInfo="soBigComplex" />
           </node>
         </node>
       </node>
@@ -1512,7 +1512,7 @@
                 <node role="rValue:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428697889">
                   <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2705856473428697890">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2705856473428697891">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2v.~BigDecimalScalarOperations.&lt;init&gt;(java.math.MathContext)" resolveInfo="BigDecimalScalarOperations" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702867448" resolveInfo="BigDecimalScalarOperations" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="2705856473428697892">
                         <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="2705856473428697893">
                           <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2705856473428697894">
@@ -1544,7 +1544,7 @@
                 <node role="rValue:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2705856473428697902">
                   <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2705856473428697903">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2705856473428697904">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2v.~BigComplexScalarOperations.&lt;init&gt;(java.math.MathContext)" resolveInfo="BigComplexScalarOperations" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="7.877422884702866036" resolveInfo="BigComplexScalarOperations" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="2705856473428697905">
                         <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="2705856473428697906">
                           <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2705856473428697907">
