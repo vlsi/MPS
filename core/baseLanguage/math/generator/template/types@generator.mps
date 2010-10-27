@@ -37,13 +37,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.math(java.math@java_stub)" version="-1" />
   <import index="4" modelUID="r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="9" modelUID="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" version="-1" />
+  <import index="13" modelUID="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -76,7 +77,7 @@
       <link role="applicableConcept:2" targetNodeId="3v.1237107700024" resolveInfo="ComplexType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238410844836">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238410844837">
-          <link role="classifier:3" targetNodeId="10.~Complex" resolveInfo="Complex" />
+          <link role="classifier:3" targetNodeId="13.877422884702771039" resolveInfo="Complex" />
         </node>
       </node>
     </node>
@@ -84,7 +85,7 @@
       <link role="applicableConcept:2" targetNodeId="3v.1237108887116" resolveInfo="BigComplexType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238421388962">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238421393262">
-          <link role="classifier:3" targetNodeId="10.~BigComplex" resolveInfo="BigComplex" />
+          <link role="classifier:3" targetNodeId="13.877422884702771040" resolveInfo="BigComplex" />
         </node>
       </node>
     </node>
@@ -92,7 +93,7 @@
       <link role="applicableConcept:2" targetNodeId="3v.4815887568697030518" resolveInfo="MatrixType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="4411518219012359961">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4411518219012359964">
-          <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
+          <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="4411518219012594578">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4411518219012594580">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4411518219012594581">
@@ -121,7 +122,7 @@
       <link role="applicableConcept:2" targetNodeId="3v.4815887568697030517" resolveInfo="VectorType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="6389121991275245085">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6389121991275245086">
-          <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
+          <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="6389121991275245087">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6389121991275245088">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6389121991275245089">
@@ -274,7 +275,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238314139156">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310096232">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310096233">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Complex.&lt;init&gt;(double,double)" resolveInfo="Complex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702865529" resolveInfo="Complex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6217769856310096234">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6217769856310096235">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6217769856310096236">
@@ -412,7 +413,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238420087192">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310096210">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310096211">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~BigComplex.&lt;init&gt;(double,double)" resolveInfo="BigComplex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702866054" resolveInfo="BigComplex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6217769856310096212">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6217769856310096213">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6217769856310096214">
@@ -457,7 +458,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238420088122">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310096174">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310096175">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~BigComplex.&lt;init&gt;(java.math.BigDecimal,java.math.BigDecimal)" resolveInfo="BigComplex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702866074" resolveInfo="BigComplex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310096176">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310096177">
                     <link role="baseMethodDeclaration:3" targetNodeId="2.~BigDecimal.&lt;init&gt;(java.math.BigInteger)" resolveInfo="BigDecimal" />
@@ -513,7 +514,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238420088928">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310094045">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310094046">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~BigComplex.&lt;init&gt;(java.math.BigDecimal,java.math.BigDecimal)" resolveInfo="BigComplex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702866054" resolveInfo="BigComplex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6217769856310094047">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6217769856310094048">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6217769856310094049">
@@ -564,7 +565,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238420089703">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310096195">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310096196">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~BigComplex.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Complex)" resolveInfo="BigComplex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702866054" resolveInfo="BigComplex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6217769856310096197">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6217769856310096198">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6217769856310096199">
@@ -619,7 +620,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="5217243589490821870">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2501921206810777250">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9161574939227683939">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862867" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="9161574939227683940">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="9161574939227683947">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="9161574939227683948">
@@ -1852,8 +1853,8 @@
       <link role="applicableConcept:2" targetNodeId="3v.1238326494701" resolveInfo="ILiteral" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238326967085">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1238326974541">
-          <link role="classifier:3" targetNodeId="10.~Complex" resolveInfo="Complex" />
-          <link role="variableDeclaration:3" targetNodeId="10.~Complex.I" resolveInfo="I" />
+          <link role="classifier:3" targetNodeId="13.877422884702771039" resolveInfo="Complex" />
+          <link role="variableDeclaration:3" targetNodeId="13.877422884702865400" resolveInfo="I" />
         </node>
       </node>
     </node>
@@ -1881,7 +1882,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238420157299">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1238420157300">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1238420157301">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Complex.&lt;init&gt;(double,double)" resolveInfo="Complex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702865529" resolveInfo="Complex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1238420157302">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1238420157303">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1238420157304">
@@ -1963,7 +1964,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1238420764695">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1238420770463">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1238420776122">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~BigComplex.&lt;init&gt;(java.math.BigDecimal,java.math.BigDecimal)" resolveInfo="BigComplex" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702866054" resolveInfo="BigComplex" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1238420778998">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1238420781938">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1238420781939">
@@ -2835,7 +2836,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="6217769856310494647">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310494649">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310494650">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(java.lang.Object[][],jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702861889" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310494651">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="6217769856310494652">
                     <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral:3" id="6217769856310494653">
@@ -3201,7 +3202,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="6217769856310494706">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310494708">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310494709">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(java.lang.Object[][],jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702861889" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310494710">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="6217769856310494711">
                     <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral:3" id="6217769856310494712">
@@ -3466,7 +3467,7 @@
         <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="6217769856310494760">
           <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310494762">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310494763">
-              <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(boolean,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations,java.lang.Object...)" resolveInfo="Matrix" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702861967" resolveInfo="Matrix" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6217769856310494764">
                 <property name="value:3" value="true" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="6217769856310494765">
@@ -3634,8 +3635,8 @@
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6217769856310586288">
                             <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6217769856310586289">
                               <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6217769856310586290">
-                                <link role="enumClass:3" targetNodeId="10.~NormKind" resolveInfo="NormKind" />
-                                <link role="enumConstantDeclaration:3" targetNodeId="10.~NormKind.Norm1" resolveInfo="Norm1" />
+                                <link role="enumClass:3" targetNodeId="13.877422884702867284" resolveInfo="NormKind" />
+                                <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702867286" resolveInfo="Norm1" />
                               </node>
                             </node>
                           </node>
@@ -3649,8 +3650,8 @@
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6217769856310586294">
                             <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6217769856310586295">
                               <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6217769856310586296">
-                                <link role="enumClass:3" targetNodeId="10.~NormKind" resolveInfo="NormKind" />
-                                <link role="enumConstantDeclaration:3" targetNodeId="10.~NormKind.NormInfty" resolveInfo="NormInfty" />
+                                <link role="enumClass:3" targetNodeId="13.877422884702867284" resolveInfo="NormKind" />
+                                <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702867287" resolveInfo="NormInfty" />
                               </node>
                             </node>
                           </node>
@@ -3664,8 +3665,8 @@
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6217769856310586300">
                             <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6217769856310586301">
                               <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6217769856310586302">
-                                <link role="enumClass:3" targetNodeId="10.~NormKind" resolveInfo="NormKind" />
-                                <link role="enumConstantDeclaration:3" targetNodeId="10.~NormKind.Norm2F" resolveInfo="Norm2F" />
+                                <link role="enumClass:3" targetNodeId="13.877422884702867284" resolveInfo="NormKind" />
+                                <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702867288" resolveInfo="Norm2F" />
                               </node>
                             </node>
                           </node>
@@ -3679,8 +3680,8 @@
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6217769856310586306">
                             <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6217769856310586307">
                               <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6217769856310586308">
-                                <link role="enumClass:3" targetNodeId="10.~NormKind" resolveInfo="NormKind" />
-                                <link role="enumConstantDeclaration:3" targetNodeId="10.~NormKind.NormMax" resolveInfo="NormMax" />
+                                <link role="enumClass:3" targetNodeId="13.877422884702867284" resolveInfo="NormKind" />
+                                <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702867289" resolveInfo="NormMax" />
                               </node>
                             </node>
                           </node>
@@ -3760,7 +3761,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="4107669262321384568">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4107669262321384569">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4107669262321384570">
-            <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(int,jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes$_return_P2_E0,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+            <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702861889" resolveInfo="Matrix" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4107669262321384571">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4107669262321384572">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4107669262321384573">
@@ -3778,12 +3779,12 @@
               </node>
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4107669262321384579">
-              <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
-              <link role="variableDeclaration:3" targetNodeId="10.~Matrix.deltaFunc" resolveInfo="deltaFunc" />
+              <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
+              <link role="variableDeclaration:3" targetNodeId="13.877422884702861855" resolveInfo="deltaFunc" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4107669262321384580">
-              <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
-              <link role="variableDeclaration:3" targetNodeId="10.~Matrix.soInt" resolveInfo="soInt" />
+              <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
+              <link role="variableDeclaration:3" targetNodeId="13.877422884702861463" resolveInfo="soInt" />
             </node>
             <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4107669262321384581">
               <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
@@ -3838,7 +3839,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="4107669262321384593">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4107669262321384594">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4107669262321384595">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(int,jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes$_return_P2_E0,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702861889" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4107669262321384596">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4107669262321384597">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4107669262321384598">
@@ -3856,12 +3857,12 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4107669262321384604">
-                  <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
-                  <link role="variableDeclaration:3" targetNodeId="10.~Matrix.zeroFunc" resolveInfo="zeroFunc" />
+                  <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
+                  <link role="variableDeclaration:3" targetNodeId="13.877422884702861839" resolveInfo="zeroFunc" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4107669262321384605">
-                  <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
-                  <link role="variableDeclaration:3" targetNodeId="10.~Matrix.soInt" resolveInfo="soInt" />
+                  <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
+                  <link role="variableDeclaration:3" targetNodeId="13.877422884702861463" resolveInfo="soInt" />
                 </node>
                 <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4107669262321384606">
                   <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
@@ -3873,7 +3874,7 @@
         <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="4107669262321384607">
           <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4107669262321384608">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4107669262321384609">
-              <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(int,int,jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes$_return_P2_E0,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4107669262321384610">
                 <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4107669262321384611">
                   <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4107669262321384612">
@@ -3907,12 +3908,12 @@
                 </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4107669262321384626">
-                <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
-                <link role="variableDeclaration:3" targetNodeId="10.~Matrix.zeroFunc" resolveInfo="zeroFunc" />
+                <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
+                <link role="variableDeclaration:3" targetNodeId="13.877422884702861839" resolveInfo="zeroFunc" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4107669262321384627">
-                <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
-                <link role="variableDeclaration:3" targetNodeId="10.~Matrix.soInt" resolveInfo="soInt" />
+                <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
+                <link role="variableDeclaration:3" targetNodeId="13.877422884702861463" resolveInfo="soInt" />
               </node>
               <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4107669262321384628">
                 <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
@@ -3927,7 +3928,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="6217769856310651604">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310651606">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310651607">
-            <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(int,int,jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes$_return_P2_E0,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+            <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6217769856310651608">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6217769856310651609">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6217769856310651610">
@@ -4156,7 +4157,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="6217769856310651649">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6217769856310651651">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6217769856310651652">
-            <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(int,int,jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes$_return_P2_E0,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+            <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6217769856310651653">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="6217769856310651654">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="6217769856310651655">
@@ -4581,7 +4582,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="7372691256923736186">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7372691256923736190">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7372691256923747390">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixOperation,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923747391">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923747507">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="7372691256923747508">
@@ -4615,8 +4616,8 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="8097507428199283383">
-                  <link role="enumConstantDeclaration:3" targetNodeId="10.~MatrixOperation.MatrixAdd" resolveInfo="MatrixAdd" />
-                  <link role="enumClass:3" targetNodeId="10.~MatrixOperation" resolveInfo="MatrixOperation" />
+                  <link role="enumClass:3" targetNodeId="13.877422884702866560" resolveInfo="MatrixOperation" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702866562" resolveInfo="MatrixAdd" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923747394">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923747515">
@@ -4911,7 +4912,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="7372691256923748672">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7372691256923748673">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7372691256923748674">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixOperation,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923748675">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923748676">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="7372691256923748677">
@@ -4945,8 +4946,8 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="8097507428199293910">
-                  <link role="enumConstantDeclaration:3" targetNodeId="10.~MatrixOperation.MatrixSub" resolveInfo="MatrixSub" />
-                  <link role="enumClass:3" targetNodeId="10.~MatrixOperation" resolveInfo="MatrixOperation" />
+                  <link role="enumClass:3" targetNodeId="13.877422884702866560" resolveInfo="MatrixOperation" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702866563" resolveInfo="MatrixSub" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923748692">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923748693">
@@ -5264,7 +5265,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="7372691256923748721">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7372691256923748722">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7372691256923748723">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixOperation,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923748724">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923748725">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="7372691256923748726">
@@ -5298,8 +5299,8 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="8097507428199293912">
-                  <link role="enumConstantDeclaration:3" targetNodeId="10.~MatrixOperation.MatrixMul" resolveInfo="MatrixMul" />
-                  <link role="enumClass:3" targetNodeId="10.~MatrixOperation" resolveInfo="MatrixOperation" />
+                  <link role="enumClass:3" targetNodeId="13.877422884702866560" resolveInfo="MatrixOperation" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702866564" resolveInfo="MatrixMul" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923748741">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923748742">
@@ -5390,7 +5391,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="7372691256923748775">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7372691256923748778">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7372691256923748780">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,java.lang.Object,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations,boolean)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7372691256923748781">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="7372691256923748793">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="7372691256923748794">
@@ -5842,7 +5843,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="8613885519962134216">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8613885519962134217">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8613885519962134218">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,java.lang.Object,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations,boolean)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8613885519962134219">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="8613885519962134220">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="8613885519962134221">
@@ -6853,7 +6854,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1300076822026734585">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1300076822026734586">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1300076822026734587">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixOperation,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734588">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734589">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1300076822026734590">
@@ -6887,8 +6888,8 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="8097507428199293914">
-                  <link role="enumConstantDeclaration:3" targetNodeId="10.~MatrixOperation.MatrixAdd" resolveInfo="MatrixAdd" />
-                  <link role="enumClass:3" targetNodeId="10.~MatrixOperation" resolveInfo="MatrixOperation" />
+                  <link role="enumClass:3" targetNodeId="13.877422884702866560" resolveInfo="MatrixOperation" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702866562" resolveInfo="MatrixAdd" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734605">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734606">
@@ -7077,7 +7078,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1300076822026734630">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1300076822026734631">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1300076822026734632">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixOperation,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734633">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734634">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1300076822026734635">
@@ -7111,8 +7112,8 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="8097507428199293923">
-                  <link role="enumConstantDeclaration:3" targetNodeId="10.~MatrixOperation.MatrixSub" resolveInfo="MatrixSub" />
-                  <link role="enumClass:3" targetNodeId="10.~MatrixOperation" resolveInfo="MatrixOperation" />
+                  <link role="enumClass:3" targetNodeId="13.877422884702866560" resolveInfo="MatrixOperation" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702866563" resolveInfo="MatrixSub" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734650">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734651">
@@ -7324,7 +7325,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1300076822026734687">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1300076822026734688">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1300076822026734689">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixOperation,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734690">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734691">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1300076822026734692">
@@ -7358,8 +7359,8 @@
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="8097507428199293920">
-                  <link role="enumConstantDeclaration:3" targetNodeId="10.~MatrixOperation.MatrixMul" resolveInfo="MatrixMul" />
-                  <link role="enumClass:3" targetNodeId="10.~MatrixOperation" resolveInfo="MatrixOperation" />
+                  <link role="enumClass:3" targetNodeId="13.877422884702866560" resolveInfo="MatrixOperation" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="13.877422884702866564" resolveInfo="MatrixMul" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734707">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734708">
@@ -7450,7 +7451,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1300076822026734751">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1300076822026734752">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1300076822026734753">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,java.lang.Object,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations,boolean)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734754">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734755">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1300076822026734756">
@@ -7796,7 +7797,7 @@
           <node role="caseConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1300076822026734864">
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1300076822026734865">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1300076822026734866">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.&lt;init&gt;(jetbrains.mps.baseLanguage.math.runtime.Matrix,java.lang.Object,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations,boolean)" resolveInfo="Matrix" />
+                <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702862768" resolveInfo="Matrix" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1300076822026734867">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1300076822026734868">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1300076822026734869">
@@ -10721,7 +10722,7 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1418611629042732002">
               <property name="name:3" value="m" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1418611629042732003">
-                <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
+                <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1418611629042732011" />
             </node>
@@ -10730,7 +10731,7 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1418611629042732006">
               <property name="name:3" value="v" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1418611629042732007">
-                <link role="classifier:3" targetNodeId="10.~Matrix" resolveInfo="Matrix" />
+                <link role="classifier:3" targetNodeId="13.877422884702861367" resolveInfo="Matrix" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1418611629042732009" />
             </node>
@@ -10774,7 +10775,7 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1418611629042732034">
-                  <link role="baseMethodDeclaration:3" targetNodeId="10.~Matrix.linearsolve(jetbrains.mps.baseLanguage.math.runtime.Matrix,jetbrains.mps.baseLanguage.math.runtime.MatrixScalarOperations):jetbrains.mps.baseLanguage.math.runtime.Matrix" resolveInfo="linearsolve" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="13.877422884702863845" resolveInfo="linearsolve" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1418611629042732048">
                     <link role="variableDeclaration:3" targetNodeId="1418611629042732006" resolveInfo="v" />
                     <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1418611629042732084">
