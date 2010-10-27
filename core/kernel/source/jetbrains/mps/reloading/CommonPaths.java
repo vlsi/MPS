@@ -100,6 +100,11 @@ public class CommonPaths {
       result.add(typesystemEngineClassPath);
     }
 
+    IClassPathItem typesystemIntegrationClassPath = getTypesystemIntegrationClasspath();
+    if (typesystemIntegrationClassPath != null) {
+      result.add(typesystemIntegrationClassPath);
+    }
+
     IClassPathItem debugClassPath = getMPSDebugClassPath();
     if (debugClassPath != null) {
       result.add(debugClassPath);
@@ -288,6 +293,17 @@ public class CommonPaths {
   private static IClassPathItem getTypesystemEngineClasspath() {
     String generatorClasses = PathManager.getHomePath() + File.separator + "core"
       + File.separator + "typesystemEngine"
+      + File.separator + "classes";
+    if (new File(generatorClasses).exists()) {
+      return ClassPathFactory.getInstance().createFromPath(generatorClasses);
+    }
+
+    return null;
+  }
+
+  private static IClassPathItem getTypesystemIntegrationClasspath() {
+    String generatorClasses = PathManager.getHomePath() + File.separator + "core"
+      + File.separator + "typesystemIntegration"
       + File.separator + "classes";
     if (new File(generatorClasses).exists()) {
       return ClassPathFactory.getInstance().createFromPath(generatorClasses);
