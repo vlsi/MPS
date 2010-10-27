@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="MigrationScript" conceptFQName="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" featureKind="CONCEPT" />

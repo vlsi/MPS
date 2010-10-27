@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="member" conceptFQName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" featureKind="CHILD" />
@@ -15,6 +16,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="memberType" conceptFQName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" featureKind="CHILD" />

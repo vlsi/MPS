@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractFinderDeclaration" conceptFQName="jetbrains.mps.bootstrap.findUsagesLanguage.structure.AbstractFinderDeclaration" featureKind="CONCEPT" />

@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="Cycle" conceptFQName="jetbrains.mps.build.moduleDependencyLanguage.structure.Cycle" featureKind="CONCEPT" />

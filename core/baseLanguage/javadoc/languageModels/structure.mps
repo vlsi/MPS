@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="IDocComment" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.IDocComment" featureKind="CONCEPT" />
@@ -15,6 +16,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="BaseDocBlockTag" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocBlockTag" featureKind="CONCEPT" />
@@ -25,6 +27,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SinceBlockTag" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockTag" featureKind="CONCEPT" />
@@ -35,6 +38,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameProperty" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="comment" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" featureKind="PROPERTY" />
@@ -45,6 +49,7 @@
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="exceptionClass" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" featureKind="REFERENCE" />
@@ -55,6 +60,7 @@
     <refactoringContext modelVersion="5">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="CodeSnippet" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet" featureKind="CONCEPT" />

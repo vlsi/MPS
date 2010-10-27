@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="expression" conceptFQName="jetbrains.mps.ypath.structure.TreePathOperationExpression" featureKind="CHILD" />

@@ -190,6 +190,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c895905df(jetbrains.mps.nanoj.structure)" nodeId="1237223882522" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="MPSLiteConceptDeclaration" conceptFQName="jetbrains.mpslite.structure.MPSLiteConceptDeclaration" featureKind="CONCEPT" />

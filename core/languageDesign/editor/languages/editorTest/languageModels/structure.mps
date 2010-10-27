@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="TestStatement" conceptFQName="jetbrains.mps.lang.editor.editorTest.structure.TestStatement" featureKind="CONCEPT" />
@@ -15,6 +16,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="TestStatenetList" conceptFQName="jetbrains.mps.lang.editor.editorTest.structure.TestStatenetList" featureKind="CONCEPT" />
@@ -25,6 +27,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="VerticalLayoutStatementList" conceptFQName="jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutStatementList" featureKind="CONCEPT" />
@@ -35,6 +38,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="StubStatement" conceptFQName="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" featureKind="CONCEPT" />
@@ -45,6 +49,7 @@
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="BracesStatement" conceptFQName="jetbrains.mps.lang.editor.editorTest.structure.BracesStatement" featureKind="CONCEPT" />
@@ -55,6 +60,7 @@
     <refactoringContext modelVersion="5">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="BaseTestBlock" conceptFQName="jetbrains.mps.lang.editor.editorTest.structure.BaseTestBlock" featureKind="CONCEPT" />

@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="23">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AddMenuPart" conceptFQName="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" featureKind="CONCEPT" />
