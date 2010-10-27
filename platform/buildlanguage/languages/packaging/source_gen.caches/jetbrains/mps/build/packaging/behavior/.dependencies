@@ -305,6 +305,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Macros" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.NonExistingPath_Behavior" file="NonExistingPath_Behavior.java">
