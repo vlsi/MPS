@@ -14,6 +14,7 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -28,7 +29,7 @@ public class iterator_subtypeOf_iterator_InequationReplacementRule extends Abstr
       BaseQuickFixProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Incompatible types", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240153585729", intentionProvider, errorTarget);
-      _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
+      HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
     }
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();

@@ -528,7 +528,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "nodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3018762098980872068(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7697924942183518276(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
       if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
@@ -577,7 +577,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "nodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3018762098980872163(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7697924942183518185(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
       if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
@@ -804,7 +804,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "nodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3018762098980872429(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7697924942183518457(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
       if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
@@ -1039,7 +1039,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "nodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3018762098980872296(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7697924942183518366(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
       if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
@@ -1673,7 +1673,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3018762098980868455(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7697924942183518315(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (method == null) {
       return false;
@@ -1712,7 +1712,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3018762098980872237(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7697924942183518225(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (method == null) {
       return false;
@@ -1939,7 +1939,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3018762098980872503(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7697924942183518497(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (method == null) {
       return false;
@@ -2024,7 +2024,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "messageTarget", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3018762098980872370(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7697924942183518406(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (method == null) {
       return false;

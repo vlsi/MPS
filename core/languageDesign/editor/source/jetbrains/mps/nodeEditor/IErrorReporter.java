@@ -32,8 +32,6 @@ public interface IErrorReporter {
 
   public void addAdditionalRuleId(String ruleModel, String ruleId);
 
-  public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo);
-
   public List<Pair<String, String>> getAdditionalRulesIds();
 
   public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder();

@@ -18,6 +18,7 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -94,14 +95,14 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                   BaseQuickFixProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
-                  _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
+                  HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
                 }
               } else {
                 {
                   BaseQuickFixProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
-                  _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
+                  HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
                 }
               }
             }

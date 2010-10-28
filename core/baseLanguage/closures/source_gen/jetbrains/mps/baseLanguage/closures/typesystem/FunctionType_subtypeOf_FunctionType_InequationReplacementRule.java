@@ -12,6 +12,7 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
@@ -23,7 +24,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -38,7 +38,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "incompatible types", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229719015332", intentionProvider, errorTarget);
-        _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
+        HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
       }
       return;
     }
@@ -47,7 +47,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         BaseQuickFixProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201618945543", intentionProvider, errorTarget);
-        _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
+        HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
       }
       return;
     }

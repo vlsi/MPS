@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,14 +50,6 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
       result.addAll(myIntentionProviders);
     }
     return result;
-  }
-
-  public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo) {
-    if (myAdditionalRuleIds == null) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
-    }
-    myAdditionalRuleIds.addAll(equationInfo.getAdditionalRulesIds());
-    myAdditionalRuleIds.add(new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId()));
   }
 
   public void addAdditionalRuleId(String ruleModel, String ruleId) {
