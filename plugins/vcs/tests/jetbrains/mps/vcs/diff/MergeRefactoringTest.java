@@ -15,26 +15,8 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-
-import java.io.IOException;
-
 public class MergeRefactoringTest extends MergeTestCase{
   public void testRenameConcept() throws Throwable {
-    TestOutputFilter filter = new TestOutputFilter() {
-      @Override protected boolean isLineOK(String line) {
-        return !line.endsWith("Can't find language Project1");
-      }
-    };
-    try {
-      filter.start();
-
-      testZip("resources/model10.mps.zip", false);
-
-    } catch (Throwable e) {
-      throw e;
-    } finally {
-      filter.stop();
-    }
+    testZip("resources/mergeRefactoringTest.mps.zip", false);
   }
 }
