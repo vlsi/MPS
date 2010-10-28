@@ -18,6 +18,7 @@ package jetbrains.mps.generator.runtime;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ import java.util.List;
  */
 public interface TemplateDeclaration {
 
-  List<SNode> apply(@NotNull TemplateExecutionEnvironment environment,
+  Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment,
                     @NotNull TemplateContext context,
                     String mappingName) throws GenerationException;
 }

@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class TemplateExecutionEnvironment {
     this.operationContext = operationContext;
   }
 
-  public List<SNode> copyNodes(List<SNode> inputNodes, String mappingName) {
+  public Collection<SNode> copyNodes(List<SNode> inputNodes, String mappingName) {
     // TODO
     return Collections.emptyList();
   }
