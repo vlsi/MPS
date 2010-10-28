@@ -23,6 +23,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
@@ -43,7 +44,7 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSModuleRepository repo) {
+  public ProjectLibraryManager(Project project, MPSModuleRepository repo, ProjectScope projectScope) {
     super(repo);
     myProject = project;
   }
@@ -85,6 +86,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public void initComponent() {
+    myProject.getComponent(ProjectScope.class);
     if (!ThreadUtils.isEventDispatchThread()) {
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override

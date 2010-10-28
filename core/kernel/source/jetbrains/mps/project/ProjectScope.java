@@ -16,14 +16,16 @@
 
 package jetbrains.mps.project;
 
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class ProjectScope extends DefaultScope {
+public class ProjectScope extends DefaultScope implements ProjectComponent {
   private Project myProject;
 
   public ProjectScope(Project project) {
@@ -42,5 +44,27 @@ public class ProjectScope extends DefaultScope {
 
     result.addAll(mpsProject.getProjectDevKits());
     return result;
+  }
+
+  @Override
+  public void projectOpened() {
+  }
+
+  @Override
+  public void projectClosed() {
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return getClass().getName();
+  }
+
+  @Override
+  public void initComponent() {
+  }
+
+  @Override
+  public void disposeComponent() {
   }
 }
