@@ -19,7 +19,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;

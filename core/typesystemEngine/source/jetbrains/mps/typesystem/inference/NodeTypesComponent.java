@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
@@ -31,7 +32,6 @@ import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.NullSlicer;
 

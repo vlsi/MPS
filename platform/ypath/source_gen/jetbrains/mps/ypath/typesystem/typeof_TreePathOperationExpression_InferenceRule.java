@@ -16,7 +16,7 @@ import jetbrains.mps.ypath.behavior.FeatureUtil;
 import jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;

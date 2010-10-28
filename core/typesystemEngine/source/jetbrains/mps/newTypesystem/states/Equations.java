@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
 import jetbrains.mps.newTypesystem.differences.equation.EquationSubstituted;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;

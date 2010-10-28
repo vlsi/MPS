@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 

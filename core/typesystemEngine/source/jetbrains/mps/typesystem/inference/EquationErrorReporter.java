@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.typesystem.uiActions.PresentationManager;
 import jetbrains.mps.nodeEditor.MessageStatus;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.AbstractErrorReporter;
 import jetbrains.mps.smodel.SNode;
 

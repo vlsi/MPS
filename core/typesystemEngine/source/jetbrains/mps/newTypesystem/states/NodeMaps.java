@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.differences.ErrorDifference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -26,7 +26,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * Created by IntelliJ IDEA.

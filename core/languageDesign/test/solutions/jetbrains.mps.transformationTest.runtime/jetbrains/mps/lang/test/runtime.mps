@@ -43,7 +43,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="52" />
+  <maxImportIndex value="53" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
@@ -89,6 +89,7 @@
   <import index="49" modelUID="f:java_stub#com.intellij.ide.impl(com.intellij.ide.impl@java_stub)" version="-1" />
   <import index="51" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="52" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
+  <import index="53" modelUID="f:java_stub#jetbrains.mps.errors(jetbrains.mps.errors@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215078243118">
     <property name="name:3" value="SubtreeChecker" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8042441407353530942">
@@ -404,7 +405,7 @@
                                 <link role="variableDeclaration:3" targetNodeId="8042441407353529722" resolveInfo="typeCheckingContext" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7938028138875693038">
-                                <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.errors.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7938028138875693039">
                                   <link role="variableDeclaration:3" targetNodeId="1215607026378" resolveInfo="child" />
                                 </node>
@@ -420,14 +421,14 @@
                             </node>
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1215607026436">
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224766631996">
-                                <link role="baseMethodDeclaration:3" targetNodeId="27.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7938028138875693049">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8042441407353530930">
                                   <link role="variableDeclaration:3" targetNodeId="8042441407353529722" resolveInfo="typeCheckingContext" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7938028138875693051">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.errors.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7938028138875693052">
                                     <link role="variableDeclaration:3" targetNodeId="1215607026378" resolveInfo="child" />
                                   </node>
@@ -468,7 +469,7 @@
                                 <link role="variableDeclaration:3" targetNodeId="8042441407353529722" resolveInfo="typeCheckingContext" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7938028138875693053">
-                                <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.errors.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7938028138875693054">
                                   <link role="variableDeclaration:3" targetNodeId="1215607026378" resolveInfo="child" />
                                 </node>
@@ -488,14 +489,14 @@
                                   <link role="variableDeclaration:3" targetNodeId="8042441407353529722" resolveInfo="typeCheckingContext" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7938028138875693055">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.errors.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7938028138875693056">
                                     <link role="variableDeclaration:3" targetNodeId="1215607026378" resolveInfo="child" />
                                   </node>
                                 </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224766783515">
-                                <link role="baseMethodDeclaration:3" targetNodeId="27.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -544,15 +545,15 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7938028138875678860">
                   <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7938028138875678861">
                     <property name="name:3" value="reporter" />
-                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7938028138875678862">
-                      <link role="classifier:3" targetNodeId="27.~IErrorReporter" resolveInfo="IErrorReporter" />
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3817304287385042956">
+                      <link role="classifier:3" targetNodeId="53.~IErrorReporter" resolveInfo="IErrorReporter" />
                     </node>
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7938028138875678863">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8042441407353530933">
                         <link role="variableDeclaration:3" targetNodeId="8042441407353529722" resolveInfo="typeCheckingContext" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7938028138875678865">
-                        <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeCheckingContext.getTypeMessageDontCheck(jetbrains.mps.smodel.SNode):jetbrains.mps.errors.IErrorReporter" resolveInfo="getTypeMessageDontCheck" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7938028138875678866">
                           <link role="variableDeclaration:3" targetNodeId="1215607026378" resolveInfo="child" />
                         </node>
@@ -571,7 +572,7 @@
                                 <link role="variableDeclaration:3" targetNodeId="7938028138875678861" resolveInfo="reporter" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3996711022540418650">
-                                <link role="baseMethodDeclaration:3" targetNodeId="27.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3996711022540418652">
@@ -596,7 +597,7 @@
                                 <link role="variableDeclaration:3" targetNodeId="7938028138875678861" resolveInfo="reporter" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3996711022540418665">
-                                <link role="baseMethodDeclaration:3" targetNodeId="27.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3996711022540418667">

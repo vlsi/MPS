@@ -16,11 +16,11 @@
 package jetbrains.mps.newTypesystem.states;
 
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.HeadDifference;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 

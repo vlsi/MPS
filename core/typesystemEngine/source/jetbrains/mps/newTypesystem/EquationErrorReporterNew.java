@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.errors.AbstractErrorReporter;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;

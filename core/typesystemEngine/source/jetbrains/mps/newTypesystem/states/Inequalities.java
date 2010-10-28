@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
@@ -22,7 +23,6 @@ import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
 import jetbrains.mps.newTypesystem.differences.inequality.SubTypingAdded;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;

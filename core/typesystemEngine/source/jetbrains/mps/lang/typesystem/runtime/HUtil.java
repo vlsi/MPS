@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
