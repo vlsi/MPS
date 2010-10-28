@@ -19,12 +19,6 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
   }
 
   @Test
-  public void testAnnotationField() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
-    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testAnnotationField", true);
-  }
-
-  @Test
   public void testWhile() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testWhile", true);
@@ -53,11 +47,6 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
     public void testDot() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6011730950863071516"), "jetbrains.mps.lang.test.structure.NodeOperation");
       NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("6011730950863071458"));
-    }
-
-    public void testAnnotationField() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6011730950863071582"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("6011730950863071517"));
     }
 
     public void testWhile() throws Exception {
