@@ -428,13 +428,19 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
-    return readModuleDescriptors(dir, owner, new HashSet<IFile>());
+    return readModuleDescriptors(dir, owner, new HashSet<IFile>(), false);
   }
 
-  private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes) {
+  public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, boolean refreshFiles) {
+    return readModuleDescriptors(dir, owner, new HashSet<IFile>(), refreshFiles);
+  }
+
+  private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes, boolean refreshFiles) {
     assertCanWrite();
 
-    FileSystem.getInstance().refresh(dir);
+    if (refreshFiles) {
+      FileSystem.getInstance().refresh(dir);
+    }
 
     List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();
@@ -462,10 +468,10 @@ public class MPSModuleRepository implements ApplicationComponent {
 
       if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
         IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
-        result.addAll(readModuleDescriptors(dirInJar, owner, excludes));
+        result.addAll(readModuleDescriptors(dirInJar, owner, excludes, refreshFiles));
       }
 
-      result.addAll(readModuleDescriptors(childDir, owner, excludes));
+      result.addAll(readModuleDescriptors(childDir, owner, excludes, refreshFiles));
     }
     return result;
   }

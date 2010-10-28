@@ -36,6 +36,10 @@ public class LibraryInitializer {
   private boolean myFirstLoad = true;
 
   public void update() {
+    update(false);
+  }
+
+  public void update(boolean refreshFiles) {
     Set<String> newLibs = new HashSet<String>();
     newLibs.add(PathManager.getBootstrapPath());
 
@@ -45,12 +49,12 @@ public class LibraryInitializer {
       }
     }
 
-    reload(myLoadedLibs, newLibs);
+    reload(myLoadedLibs, newLibs, refreshFiles);
 
     myLoadedLibs = newLibs;
   }
 
-  private void reload(Set<String> loadedLibs, Set<String> newLibs) {
+  private void reload(Set<String> loadedLibs, Set<String> newLibs, boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
     //unload
@@ -67,7 +71,7 @@ public class LibraryInitializer {
       MPSModuleOwner owner = new MPSModuleOwner() {
       };
       myLibsToOwners.put(loadLib, owner);
-      myRepo.readModuleDescriptors(FileSystem.getInstance().getFileByPath(loadLib), owner);
+      myRepo.readModuleDescriptors(FileSystem.getInstance().getFileByPath(loadLib), owner, refreshFiles);
       fireOnLoad(owner);
     }
 

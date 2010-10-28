@@ -151,7 +151,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     LibraryInitializer.getInstance().addContributor(this);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        LibraryInitializer.getInstance().update();
+        LibraryInitializer.getInstance().update(true);
       }
     });
   }
