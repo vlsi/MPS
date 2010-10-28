@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.library;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
@@ -55,13 +56,15 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
-    if (!myProject.isDefault()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          LibraryInitializer.getInstance().update();
-        }
-      });
+    Application application = ApplicationManager.getApplication();
+    if (myProject.isDefault() || application.isUnitTestMode() && application.isDisposeInProgress()) {
+      return;
     }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
   }
 
   public void projectOpened() {
