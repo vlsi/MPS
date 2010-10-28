@@ -317,6 +317,15 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3294363946766303614">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="voidOption" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3294363946766303616" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3294363946766303617" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="3294363946766303618">
+        <link role="typeVariableDeclaration:3" targetNodeId="8486446835277348321" resolveInfo="T" />
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8486446835277348319" />
     <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="8486446835277348321">
       <property name="name:3" value="T" />

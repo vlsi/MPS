@@ -78,17 +78,19 @@
     <nodeInfo nodeId="2551169102352991965" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IQuery.java" startLine="7" startPosition="44" endLine="8" endPosition="31" />
     <nodeInfo nodeId="2551169102353050445" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IQuery.java" startLine="8" startPosition="31" endLine="9" endPosition="26" />
     <nodeInfo nodeId="2551169102353050438" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IQuery.java" startLine="9" startPosition="26" endLine="10" endPosition="31" />
-    <nodeInfo nodeId="2551169102352991963" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="IQuery.java" startLine="12" startPosition="30" endLine="13" endPosition="18" />
-    <nodeInfo nodeId="2551169102352991954" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="IQuery.java" startLine="11" startPosition="57" endLine="14" endPosition="5" />
+    <nodeInfo nodeId="3294363946766303614" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IQuery.java" startLine="10" startPosition="31" endLine="11" endPosition="24" />
+    <nodeInfo nodeId="2551169102352991963" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="IQuery.java" startLine="13" startPosition="30" endLine="14" endPosition="18" />
+    <nodeInfo nodeId="2551169102352991954" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="IQuery.java" startLine="12" startPosition="57" endLine="15" endPosition="5" />
     <scopeInfo nodeId="2551169102352991965" fileName="IQuery.java" startLine="7" startPosition="44" endLine="8" endPosition="31" />
     <scopeInfo nodeId="2551169102353050445" fileName="IQuery.java" startLine="8" startPosition="31" endLine="9" endPosition="26" />
     <scopeInfo nodeId="2551169102353050438" fileName="IQuery.java" startLine="9" startPosition="26" endLine="10" endPosition="31" />
-    <scopeInfo nodeId="2551169102352991957" fileName="IQuery.java" startLine="12" startPosition="30" endLine="13" endPosition="18" />
-    <scopeInfo nodeId="2551169102352991954" fileName="IQuery.java" startLine="11" startPosition="57" endLine="14" endPosition="5">
+    <scopeInfo nodeId="3294363946766303614" fileName="IQuery.java" startLine="10" startPosition="31" endLine="11" endPosition="24" />
+    <scopeInfo nodeId="2551169102352991957" fileName="IQuery.java" startLine="13" startPosition="30" endLine="14" endPosition="18" />
+    <scopeInfo nodeId="2551169102352991954" fileName="IQuery.java" startLine="12" startPosition="57" endLine="15" endPosition="5">
       <varInfo nodeId="2551169102352991961" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="2551169102352991952" fileName="IQuery.java" startLine="11" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.IQuery$Name" />
-    <unitInfo nodeId="8486446835277348318" fileName="IQuery.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.script.IQuery" />
+    <unitInfo nodeId="2551169102352991952" fileName="IQuery.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.make.script.IQuery$Name" />
+    <unitInfo nodeId="8486446835277348318" fileName="IQuery.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.make.script.IQuery" />
   </root>
 </debugInfo>
 

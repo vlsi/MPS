@@ -72,9 +72,11 @@ public class Script implements IScript {
       LOG.error("attempt to execute invalid script");
       throw new IllegalStateException("invalid script");
     }
+    LOG.info("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
     Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
     for (ITarget trg : Sequence.fromIterable(toExecute)) {
+      LOG.info("Executing " + trg.getName());
       Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).select(new ISelector<ITarget, IResult>() {
         public IResult select(ITarget t) {
           return results.getResult(t.getName());
@@ -88,9 +90,14 @@ public class Script implements IScript {
       IResult jr = job.execute(input, monit);
       results.addResult(trg.getName(), jr);
       if (!(jr.isSucessful()) || monit.pleaseStop()) {
-        return results;
+        LOG.info((jr.isSucessful() ?
+          "Stop requested" :
+          "Execution failed"
+        ));
+        break;
       }
     }
+    LOG.info("Finished executing script");
     return results;
   }
 }

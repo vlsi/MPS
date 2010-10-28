@@ -57,6 +57,7 @@ public class Generator_Facet implements IFacet {
             case 0:
               GenerationSettings settings = GenerationSettings.getInstance();
               if (settings.isSaveTransientModels()) {
+                System.out.println("Configuring...");
                 switch (monitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
                   case SAVE_ixz87t_a0a0a:
                     System.out.println("Yes");

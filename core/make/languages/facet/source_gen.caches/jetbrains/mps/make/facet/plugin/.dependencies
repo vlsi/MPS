@@ -23,13 +23,14 @@
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" file="Facets_CustomApplicationPlugin.java">
-    <classNode dependClassName="FacetManifest" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.FacetManifest" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Generator_Facet" file="Generator_Facet.java">

@@ -8,6 +8,7 @@ public interface IQuery<T extends IOption> {
   public IQuery.Name getName();
   public String getText();
   public Iterable<T> options();
+  public T voidOption();
   public static class Name extends SmartWrapper<String> {
     public Name(String name) {
       super(name);

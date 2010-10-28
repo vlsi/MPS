@@ -20,6 +20,10 @@ public class SaveTransientModels_Query implements IQuery<SaveTransient_Option> {
   }
 
   public Iterable<SaveTransient_Option> options() {
-    return Sequence.fromArray(SaveTransient_Option.class.getEnumConstants());
+    return Sequence.fromIterable(Sequence.fromArray(SaveTransient_Option.class.getEnumConstants())).cut(1);
+  }
+
+  public SaveTransient_Option voidOption() {
+    return Sequence.fromIterable(Sequence.fromArray(SaveTransient_Option.class.getEnumConstants())).last();
   }
 }

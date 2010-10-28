@@ -7,7 +7,8 @@ import jetbrains.mps.make.script.IOption;
 public enum SaveTransient_Option implements IOption {
   SAVE_ixz87t_a0a0a("Save"),
   DONT_SAVE_ixz87t_b0a0a("Don't save"),
-  BUGGER_OFF_ixz87t_c0a0a("Don't save and stop asking");
+  BUGGER_OFF_ixz87t_c0a0a("Don't save and stop asking"),
+  __VOID__("__VOID__");
 
   private String text;
 

@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
   <import index="2" modelUID="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -30,6 +30,7 @@
   <import index="9" modelUID="f:java_stub#org.jmock(org.jmock@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#org.hamcrest(org.hamcrest@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#org.jmock.api(org.jmock.api@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="671853460608595937">
     <property name="name:1" value="Maker" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="671853460608595938">
@@ -41,7 +42,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" />
   <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="671853460608595941">
     <property name="name:1" value="Generator" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="671853460608595943">
@@ -62,7 +62,7 @@
                       <link role="variableDeclaration:3" targetNodeId="3.~System.out" resolveInfo="out" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="505095865854424964">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2v.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="12.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="505095865854424965">
                         <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="505095865854424966">
                           <link role="variableDeclaration:3" targetNodeId="505095865854424970" resolveInfo="resource" />
@@ -100,7 +100,7 @@
       <link role="facet:1" targetNodeId="671853460608595937" resolveInfo="Maker" />
     </node>
   </node>
-  <visible index="3" modelUID="f:java_stub#org.jmock.syntax(org.jmock.syntax@java_stub)" />
+  <visible index="2" modelUID="f:java_stub#org.jmock.syntax(org.jmock.syntax@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="671853460608703866">
     <property name="testCaseName" value="Generator" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="671853460608825978">
@@ -498,7 +498,7 @@
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2551169102353074023">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="3v.~ReceiverClause.of(java.lang.Object):java.lang.Object" resolveInfo="of" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="2v.~ReceiverClause.of(java.lang.Object):java.lang.Object" resolveInfo="of" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2551169102353074024">
                                     <link role="variableDeclaration:3" targetNodeId="2551169102353074009" resolveInfo="mon" />
                                   </node>
@@ -917,7 +917,7 @@
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2551169102353647706">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="3v.~ReceiverClause.of(java.lang.Object):java.lang.Object" resolveInfo="of" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="2v.~ReceiverClause.of(java.lang.Object):java.lang.Object" resolveInfo="of" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2551169102353647707">
                                     <link role="variableDeclaration:3" targetNodeId="2551169102353647677" resolveInfo="mon" />
                                   </node>

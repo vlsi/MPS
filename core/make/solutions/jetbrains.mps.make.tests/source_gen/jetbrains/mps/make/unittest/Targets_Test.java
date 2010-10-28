@@ -84,6 +84,28 @@ public class Targets_Test extends MockTestCase {
     Assert.assertSame(make.getName(), ListSequence.fromList(ListSequence.fromList(tr.cycles()).first()).first());
   }
 
+  public void test_config() throws Exception {
+    TargetRange tr = new TargetRange();
+
+    final ITarget cfg = Mockups.target(context, "cfg");
+    final ITarget gen = Mockups.target(context, "gen");
+    context.checking(new Expectations() {
+      {
+        atLeast(1).of(gen).after();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cfg")})));
+      }
+    });
+    Mockups.allowing(context, cfg);
+    Mockups.allowing(context, gen);
+
+    tr.addTarget(gen);
+    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg, gen));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("cfg")));
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg, gen), tr.targetAndSortedPrecursors(new ITarget.Name("gen")));
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg), tr.immediatePrecursors(new ITarget.Name("gen")));
+  }
+
   public void test_precursors() throws Exception {
     TargetRange tr = new TargetRange();
     final ITarget make = Mockups.target(context, "make");

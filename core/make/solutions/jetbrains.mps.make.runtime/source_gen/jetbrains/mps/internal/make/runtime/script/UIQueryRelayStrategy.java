@@ -22,7 +22,7 @@ public class UIQueryRelayStrategy {
     }).toGenericArray(String.class);
     int res = JOptionPane.showOptionDialog(context.getMainFrame(), query.getText(), query.getName().toString(), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
     if (res == JOptionPane.CLOSED_OPTION) {
-      return null;
+      return query.voidOption();
     }
     return ListSequence.fromList(Sequence.fromIterable(query.options()).toListSequence()).getElement(res);
   }
