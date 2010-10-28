@@ -6,20 +6,21 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UIObject_consistent_belongsTo_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UIObject_consistent_belongsTo_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode uio, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode uio, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode mbt = UIObject_Behavior.call_mustBelongTo_1719339442171055203(uio);
     if ((SLinkOperations.getTarget(uio, "belongsTo", false) != null) && (mbt != null)) {
       if (!(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(uio, "belongsTo", false))).contains(mbt))) {
@@ -34,8 +35,11 @@ public class check_UIObject_consistent_belongsTo_NonTypesystemRule extends Abstr
     return "jetbrains.mps.ui.modeling.structure.UIObject";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

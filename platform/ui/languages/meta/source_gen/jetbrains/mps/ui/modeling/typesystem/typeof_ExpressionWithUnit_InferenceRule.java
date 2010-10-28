@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
@@ -16,7 +17,7 @@ public class typeof_ExpressionWithUnit_InferenceRule extends AbstractInferenceRu
   public typeof_ExpressionWithUnit_InferenceRule() {
   }
 
-  public void applyRule(final SNode ewu, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode ewu, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode ut = SConceptOperations.createNewNode("jetbrains.mps.ui.modeling.structure.UnitType", null);
     SPropertyOperations.set(ut, "unit", SPropertyOperations.getString_def(ewu, "unit", "PIXEL"));
     {
@@ -31,8 +32,11 @@ public class typeof_ExpressionWithUnit_InferenceRule extends AbstractInferenceRu
     return "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

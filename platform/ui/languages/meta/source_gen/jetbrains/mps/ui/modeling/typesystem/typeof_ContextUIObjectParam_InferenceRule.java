@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
@@ -14,14 +15,14 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ContextUIObjectParam_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ContextUIObjectParam_InferenceRule() {
   }
 
-  public void applyRule(final SNode param, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode param, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode ctx = SLinkOperations.getTarget(SNodeOperations.getAncestor(param, "jetbrains.mps.ui.modeling.structure.UIObjectFactory", false, false), "context", true);
     if ((SLinkOperations.getTarget(ctx, "uiObject", false) != null)) {
       SNode ctpl = HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(ctx, "uiObject", false), SNodeOperations.getModel(ctx), GlobalScope.getInstance());
@@ -46,8 +47,11 @@ public class typeof_ContextUIObjectParam_InferenceRule extends AbstractInference
     return "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

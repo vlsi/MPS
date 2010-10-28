@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class typeof_ContractThisExpression_InferenceRule extends AbstractInferen
   public typeof_ContractThisExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode contractThisExpression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode contractThisExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SNodeOperations.getAncestor(contractThisExpression, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
@@ -41,8 +42,11 @@ public class typeof_ContractThisExpression_InferenceRule extends AbstractInferen
     return "jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

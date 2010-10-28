@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,7 +22,7 @@ public class typeof_EventHandlerParam_InferenceRule extends AbstractInferenceRul
   public typeof_EventHandlerParam_InferenceRule() {
   }
 
-  public void applyRule(final SNode ehp, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode ehp, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode EVENT_TYPE_typevar_8115675450774809684 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = ehp;
@@ -41,8 +42,11 @@ public class typeof_EventHandlerParam_InferenceRule extends AbstractInferenceRul
     return "jetbrains.mps.ui.modeling.structure.EventHandlerParam";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {
