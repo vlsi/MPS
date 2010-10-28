@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 
 import java.awt.Color;

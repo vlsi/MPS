@@ -11,7 +11,7 @@ import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearch
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
