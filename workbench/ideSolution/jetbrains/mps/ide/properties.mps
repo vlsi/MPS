@@ -12186,15 +12186,16 @@
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5291947543963099827">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5291947543963099829">
-                <link role="baseMethodDeclaration:3" targetNodeId="31.~SModelOperations.addNewlyImportedDevKit(jetbrains.mps.smodel.SModel,jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addNewlyImportedDevKit" />
-                <link role="classConcept:3" targetNodeId="31.~SModelOperations" resolveInfo="SModelOperations" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5291947543963099830">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="809995939383224233">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="809995939383224235">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="809995939383224234">
                   <link role="variableDeclaration:3" targetNodeId="5923576889075043183" resolveInfo="model" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5291947543963099832">
-                  <link role="variableDeclaration:3" targetNodeId="5923576889075043168" resolveInfo="dk" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="809995939383224239">
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.~SModel.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addDevKit" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="809995939383224240">
+                    <link role="variableDeclaration:3" targetNodeId="5923576889075043168" resolveInfo="dk" />
+                  </node>
                 </node>
               </node>
             </node>

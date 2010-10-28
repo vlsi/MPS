@@ -1683,7 +1683,7 @@
     <nodeInfo nodeId="5923576889075043171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelProperties.java" startLine="100" startPosition="52" endLine="101" endPosition="70" />
     <nodeInfo nodeId="5923576889075043178" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="ModelProperties.java" startLine="101" startPosition="70" endLine="102" endPosition="28" />
     <nodeInfo nodeId="5923576889075043182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelProperties.java" startLine="102" startPosition="28" endLine="103" endPosition="51" />
-    <nodeInfo nodeId="5291947543963099827" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelProperties.java" startLine="103" startPosition="51" endLine="104" endPosition="57" />
+    <nodeInfo nodeId="809995939383224233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelProperties.java" startLine="103" startPosition="51" endLine="104" endPosition="26" />
     <nodeInfo nodeId="5923576889075043199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelProperties.java" startLine="108" startPosition="38" endLine="109" endPosition="87" />
     <nodeInfo nodeId="5923576889075043227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelProperties.java" startLine="111" startPosition="41" endLine="112" endPosition="55" />
     <nodeInfo nodeId="5923576889075043240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelProperties.java" startLine="117" startPosition="37" endLine="118" endPosition="16" />
@@ -1790,7 +1790,7 @@
     <scopeInfo nodeId="5923576889075043046" fileName="ModelProperties.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="5923576889075043049" varName="doNotGenerate" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075043170" fileName="ModelProperties.java" startLine="100" startPosition="52" endLine="104" endPosition="57">
+    <scopeInfo nodeId="5923576889075043170" fileName="ModelProperties.java" startLine="100" startPosition="52" endLine="104" endPosition="26">
       <varInfo nodeId="5923576889075043183" varName="model" />
       <varInfo nodeId="5923576889075043172" varName="devKit" />
     </scopeInfo>
