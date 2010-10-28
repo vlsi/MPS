@@ -10,19 +10,19 @@
   <unitInfo fileName="ExportScopePublic_Editor.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor" />
   <unitInfo fileName="ExportScopeNamespace_Editor.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
   <root nodeId="2565736246230036155">
-    <nodeInfo nodeId="2638080004385076811" fileName="ExportScopePublic_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
+    <nodeInfo nodeId="2638080004385076811" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExportScopePublic_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
     <scopeInfo nodeId="2638080004385076810" fileName="ExportScopePublic_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
   </root>
   <root nodeId="2565736246230036164">
-    <nodeInfo nodeId="2638080004385077964" fileName="ExportScopeModule_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
+    <nodeInfo nodeId="2638080004385077964" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExportScopeModule_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
     <scopeInfo nodeId="2638080004385077963" fileName="ExportScopeModule_Editor.java" startLine="71" startPosition="109" endLine="72" endPosition="97" />
   </root>
   <root nodeId="2565736246230036172">
-    <nodeInfo nodeId="2638080004385070308" fileName="ExportScopeNamespace_Editor.java" startLine="90" startPosition="109" endLine="91" endPosition="97" />
+    <nodeInfo nodeId="2638080004385070308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExportScopeNamespace_Editor.java" startLine="90" startPosition="109" endLine="91" endPosition="97" />
     <scopeInfo nodeId="2638080004385070307" fileName="ExportScopeNamespace_Editor.java" startLine="90" startPosition="109" endLine="91" endPosition="97" />
   </root>
   <root nodeId="2565736246230068875">
-    <nodeInfo nodeId="2565736246230071401" fileName="DeleteExportScope.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
+    <nodeInfo nodeId="2565736246230071401" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DeleteExportScope.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
     <scopeInfo nodeId="2565736246230068878" fileName="DeleteExportScope.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
   </root>
 </debugInfo>

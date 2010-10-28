@@ -37,7 +37,8 @@ import java.util.*;
 public final class SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
-  public static final String PACK = "package";
+  @Deprecated
+  public static final String PACK = BaseConcept.VIRTUAL_PACKAGE;
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];

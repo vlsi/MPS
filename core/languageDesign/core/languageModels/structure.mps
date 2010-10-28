@@ -32,22 +32,8 @@
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="27" />
   <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration:0" id="1082983041843">
     <property name="name:0" value="string" />
@@ -127,14 +113,14 @@
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="376024488709664661">
     <property name="role:0" value="export" />
     <property name="stereotype:0" value="node" />
-    <property name="package:0" value="export" />
+    <property name="virtualPackage:0" value="export" />
     <link role="source:0" targetNodeId="1133920641626:0" resolveInfo="BaseConcept" />
     <link role="target:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="9136532523118437100" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5425021671150136555">
     <property name="name:0" value="ExportScope" />
-    <property name="package:0" value="export" />
+    <property name="virtualPackage:0" value="export" />
     <link role="extends:0" targetNodeId="1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="4075196924244385128">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1137473854053:0" resolveInfo="abstract" />
@@ -142,7 +128,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2565736246230036150">
     <property name="name:0" value="ExportScopePublic" />
-    <property name="package:0" value="export" />
+    <property name="virtualPackage:0" value="export" />
     <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376958">
       <property name="value:0" value="@export(public)" />
@@ -152,7 +138,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2565736246230036151">
     <property name="name:0" value="ExportScopeNamespace" />
-    <property name="package:0" value="export" />
+    <property name="virtualPackage:0" value="export" />
     <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376960">
       <property name="value:0" value="@export(namespace)" />
@@ -166,7 +152,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2565736246230036154">
     <property name="name:0" value="ExportScopeModule" />
-    <property name="package:0" value="export" />
+    <property name="virtualPackage:0" value="export" />
     <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376956">
       <property name="value:0" value="@export(module)" />

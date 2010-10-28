@@ -9,17 +9,10 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -467,7 +460,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="2565736246230026577">
-    <property name="package" value="export" />
+    <property name="virtualPackage" value="export" />
     <link role="concept" targetNodeId="1.5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2565736246230026578">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2565736246230026579" />
@@ -906,7 +899,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="402007580867586248">
-    <property name="package" value="export" />
+    <property name="virtualPackage" value="export" />
     <link role="concept" targetNodeId="1.2565736246230036150:0" resolveInfo="ExportScopePublic" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="402007580867586249">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="402007580867586250" />
@@ -935,7 +928,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="402007580867586260">
-    <property name="package" value="export" />
+    <property name="virtualPackage" value="export" />
     <link role="concept" targetNodeId="1.2565736246230036154:0" resolveInfo="ExportScopeModule" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="402007580867586261">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="402007580867586262" />
@@ -976,7 +969,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="402007580867615875">
-    <property name="package" value="export" />
+    <property name="virtualPackage" value="export" />
     <link role="concept" targetNodeId="1.2565736246230036151:0" resolveInfo="ExportScopeNamespace" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="402007580867615876">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="402007580867615877" />

@@ -12,7 +12,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new BaseConcept_virtualPackage_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new IResolveInfo_resolveInfo_PropertyConstraint());
   }
 
