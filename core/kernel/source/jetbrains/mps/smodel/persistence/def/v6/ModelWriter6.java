@@ -85,7 +85,12 @@ public class ModelWriter6 implements IModelWriter {
     return new Document(rootElement);
   }
 
-  protected void saveRootStubs(Element parent, SModel model, VersionUtil helper) {
+  protected void saveRootStubs(Element parent, SModel model,  VersionUtil helper) {
+    Element roots = new Element(ModelPersistence.ROOTS);
+    for (SNode root : model.roots()) {
+      saveNode(roots, root, helper, false);
+    }
+    parent.addContent(roots);
   }
 
   protected void saveNode(Element parentElement, SNode node, VersionUtil helper, boolean saveChildren) {
