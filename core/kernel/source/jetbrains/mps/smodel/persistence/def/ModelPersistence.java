@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -34,7 +35,6 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import jetbrains.mps.smodel.persistence.def.v5.Handler5;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
-import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler;
 import jetbrains.mps.smodel.persistence.def.v6.ModelWriter6;
@@ -194,7 +194,8 @@ public class ModelPersistence {
     if (canUpgrade) {
       int modelPersistenceVersion = model.getPersistenceVersion();
       if (modelPersistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelPersistenceVersion)) {
-        return upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
+        upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
+        return model;
       }
     }
 
@@ -246,38 +247,23 @@ public class ModelPersistence {
   }
 
   // upgrades model persistence and saves model
-  public static SModel upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-    SModelReference reference = model.getSModelReference();
-    StructureModificationHistory refactorings = null;
-    int version = fromVersion;
-    while (version < toVersion) {
-      IModelWriter writer = modelWriters.get(++version);
-      if (version == 5) {
-        //noinspection deprecation
-        refactorings = model.getRefactoringHistory();
-        if (refactorings != null && refactorings.getDataList().isEmpty()) {
-          refactorings = null;
-        }
-      }
-      Document document = writer.saveModel(model);
-      model.dispose();
-      LOG.assertLog(modelReaders.get(version) != null);
-      model = modelReaders.get(version).readModel(document, NameUtil.shortNameFromLongName(reference.getLongName()), reference.getStereotype());
-    }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
-    model.setPersistenceVersion(toVersion);
-
-    try {
-      Document document = saveModel(model);
-      JDOMUtil.writeDocument(document, file);
-
-      if (refactorings != null) {
+  public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
+    if (fromVersion < 5 && toVersion >= 5) {
+      StructureModificationHistory refactorings = model.getRefactoringHistory();
+      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
         RefactoringsPersistence.save(file, refactorings);
       }
+      model.setRefactoringHistory(null);
+    }
+
+    model.setPersistenceVersion(toVersion);
+    Document document = saveModel(model);
+    try {
+      JDOMUtil.writeDocument(document, file);
     } catch (IOException e) {
       LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
     }
-    return model;
+    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + model.getSModelReference());
   }
 
   public static int getModelPersistenceVersion(IFile file) {

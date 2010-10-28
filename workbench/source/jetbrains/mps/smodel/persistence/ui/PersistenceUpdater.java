@@ -52,9 +52,6 @@ public class PersistenceUpdater {
       if (model.getPersistenceVersion() >= toVersion) continue;
 
       ModelPersistence.upgradePersistence(file, model, model.getPersistenceVersion(), toVersion);
-      if (!wasInitialized) continue;
-
-      modelDescriptor.reloadFromDisk();
     }
   }
 
