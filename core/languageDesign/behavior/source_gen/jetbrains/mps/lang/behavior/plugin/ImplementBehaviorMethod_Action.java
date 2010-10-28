@@ -40,7 +40,7 @@ public class ImplementBehaviorMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(ImplementBehaviorMethod_Action.this.selectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) != null);
+    return !(ImplementBehaviorMethod_Action.this.editorContext.isInspector()) && (SNodeOperations.getAncestor(ImplementBehaviorMethod_Action.this.selectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) != null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

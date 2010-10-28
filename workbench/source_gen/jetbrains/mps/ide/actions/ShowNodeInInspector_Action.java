@@ -28,7 +28,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "";
+    return "ctrl I";
   }
 
   public boolean isApplicable(AnActionEvent event) {

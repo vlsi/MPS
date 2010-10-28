@@ -1107,11 +1107,11 @@
     <nodeInfo nodeId="4670094048336778321" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
     <nodeInfo nodeId="4670094048336778324" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
     <nodeInfo nodeId="4670094048336778325" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
-    <nodeInfo nodeId="4670094048336778328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ImplementMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="157" />
+    <nodeInfo nodeId="4670094048336778328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ImplementMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="219" />
     <nodeInfo nodeId="4670094048336778342" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementMethod_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="82" />
     <nodeInfo nodeId="4670094048336778350" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementMethod_Action.java" startLine="91" startPosition="82" endLine="92" endPosition="80" />
     <nodeInfo nodeId="4670094048336778358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ImplementMethod_Action.java" startLine="92" startPosition="80" endLine="93" endPosition="240" />
-    <scopeInfo nodeId="4670094048336778327" fileName="ImplementMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="157" />
+    <scopeInfo nodeId="4670094048336778327" fileName="ImplementMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="219" />
   </root>
   <root nodeId="5002400195357779994">
     <nodeInfo nodeId="6268328477151491179" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="66" endLine="41" endPosition="50" />

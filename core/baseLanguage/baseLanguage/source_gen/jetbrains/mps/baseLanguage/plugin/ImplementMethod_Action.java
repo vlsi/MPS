@@ -40,7 +40,7 @@ public class ImplementMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(ImplementMethod_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
+    return !(ImplementMethod_Action.this.editorContext.isInspector()) && (SNodeOperations.getAncestor(ImplementMethod_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
