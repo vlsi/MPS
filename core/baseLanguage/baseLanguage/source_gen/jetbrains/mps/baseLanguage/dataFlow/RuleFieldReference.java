@@ -28,17 +28,6 @@ public class RuleFieldReference extends DataFlowConstructor {
     if (SLinkOperations.getTargets(SLinkOperations.getTarget(node, "variableDeclaration", false), "annotation", true) != null) {
       for (SNode annotation : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "variableDeclaration", false), "annotation", true)) {
         String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
-        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")) {
-          {
-            Object object = node;
-            if (((Program) o).contains(object)) {
-              int position = ((Program) (o)).getEnd(object);
-              Instruction instruction = new nullableInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
-              instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true);
-            }
-          }
-        }
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
             Object object = node;
