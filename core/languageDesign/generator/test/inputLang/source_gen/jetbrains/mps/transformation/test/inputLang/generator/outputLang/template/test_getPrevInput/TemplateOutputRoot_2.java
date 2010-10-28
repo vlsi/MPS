@@ -12,7 +12,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_2 implements TemplateDeclaration {
   public TemplateOutputRoot_2() {
@@ -25,39 +25,48 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
     tnode1.setProperty("text", "'getPrevInputTest' output root (2)");
     {
       final Iterable<SNode> sourcelist2 = QueriesGenerated.sourceNodesQuery_1202338467105(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-      final List<SNode> tlist3 = new ArrayList();
-      for (SNode itnode4 : sourcelist2) {
-        TemplateContext context5 = context.subContext(null, itnode4);
-        final Iterable<SNode> sourcelist6 = QueriesGenerated.sourceNodesQuery_1202338467112(null, new SourceSubstituteMacroNodesContext(context5.getInput(), null, null, context5, null));
-        final List<SNode> tlist7 = new ArrayList();
-        for (SNode itnode8 : sourcelist6) {
-          TemplateContext context9 = context5.subContext(null, itnode8);
-          final Iterable<SNode> sourcelist10 = QueriesGenerated.sourceNodesQuery_1202338467119(null, new SourceSubstituteMacroNodesContext(context9.getInput(), null, null, context9, null));
-          final List<SNode> tlist11 = new ArrayList();
-          for (SNode itnode12 : sourcelist10) {
-            TemplateContext context13 = context9.subContext(null, itnode12);
-            SNode tnode14 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+      final List<SNode> tlist2 = new ArrayList();
+      for (SNode itnode2 : sourcelist2) {
+        if (itnode2 == null) {
+          continue;
+        }
+        TemplateContext context2 = context.subContext("LEVEL 1", itnode2);
+        final Iterable<SNode> sourcelist3 = QueriesGenerated.sourceNodesQuery_1202338467112(null, new SourceSubstituteMacroNodesContext(context2.getInput(), null, null, context2, null));
+        final List<SNode> tlist3 = new ArrayList();
+        for (SNode itnode3 : sourcelist3) {
+          if (itnode3 == null) {
+            continue;
+          }
+          TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
+          final Iterable<SNode> sourcelist4 = QueriesGenerated.sourceNodesQuery_1202338467119(null, new SourceSubstituteMacroNodesContext(context3.getInput(), null, null, context3, null));
+          final List<SNode> tlist4 = new ArrayList();
+          for (SNode itnode4 : sourcelist4) {
+            if (itnode4 == null) {
+              continue;
+            }
+            TemplateContext context4 = context3.subContext(null, itnode4);
+            SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
             // TODO notify environment 
             // MAP-SRC 
             // MAP-SRC 
             // MAP-SRC 
-            if (tnode14 != null) {
-              tlist11.add(tnode14);
+            if (tnode5 != null) {
+              tlist4.add(tnode5);
             }
           }
-          if (tlist11 != null) {
-            tlist7.addAll(tlist11);
+          if (tlist4 != null) {
+            tlist3.addAll(tlist4);
           }
         }
-        if (tlist7 != null) {
-          tlist3.addAll(tlist7);
+        if (tlist3 != null) {
+          tlist2.addAll(tlist3);
         }
       }
-      for (SNode child15 : tlist3) {
-        tnode1.addChild("outputChild", child15);
+      for (SNode child6 : tlist2) {
+        tnode1.addChild("outputChild", child6);
       }
     }
-    return Collections.singletonList(tnode1);
+    return TemplateUtil.singletonList(tnode1);
 
   }
 }

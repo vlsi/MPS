@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="18rahnerfugg2zx5qglx2ahxo68d9bu">
+<dependencies version="2" modelHash="1eb2mw5y4olppiz3kgyfs5h5idisric">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
@@ -16,9 +16,10 @@
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="8vahp5vl1dfub37ec0dx13nrzy9ovky" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6m9ys4qo8mx9tt8ia3tepmd0dbb5sew" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="77rn04hub6f8gk30071gb1d591vj9n4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" hash="4347dbq9hlhtv4ku5bnushdfpegeznm" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="-9m043zztcohmco0o6rgqcg0cykcopbk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-46oycxh7vfqw1kvsemxtmo0oa4y6zzn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="18rahnerfugg2zx5qglx2ahxo68d9bu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="1eb2mw5y4olppiz3kgyfs5h5idisric" />
   <dep model="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" hash="8cauciuq677n7308aq6d2cx6ocl8qp4" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-da6kx3fdfpn0u46qfvj1352580h8nze" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="8c9uzrjhqtw5vqls14yy3z3tjr5aqcm" />
@@ -80,6 +81,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
@@ -96,7 +98,7 @@
     <file name="QueriesGenerated.java" />
   </common>
   <source id="1167163214015" name="insert_CreateRootRule_Condition" hash="-1nmrwdal745os4vunsranpkxm0hbdlp" />
-  <source id="1167163229003" name="QueriesGenerated" hash="1vvgg81x9rka51vrcx3y22skxux2f1b" />
+  <source id="1167163229003" name="QueriesGenerated" hash="3r3v9wh9jcb8qws1md5k1ffap7im3pt" />
   <source id="1167163238171" name="TLB_main" hash="aggataje4ihvun9900sseyqjoj5aj54" />
   <source id="1167172794967" name="insert_BaseMappingRule_Condition" hash="-bznetex645fo948ndrvxqffpcsaca7j" />
   <source id="1167763406918" name="insert_PropertyMacro_GetPropertyValue" hash="-b6p6noun5z2o2ygfgp1qq4vjx0ofscr" />
@@ -118,17 +120,17 @@
   <source id="6342833957791858285" name="checkGenerator" hash="as1wbn30zczf9ie5ykthwrvefwo9k9c" />
   <source id="3084749922879516635" name="map_TemplateDeclaration" hash="8azp2desydw9erv4g0jyt425lfve7k4" />
   <source id="2478203504267210458" name="reduce_Node" hash="4a86deouc7zxznwfe0awynhh4mjrfn" />
-  <source id="6304885153124990546" name="reduce_TemplateFragment" hash="-5vfvk1raahf1wrap8zfa792ejt5hwvt" />
+  <source id="6304885153124990546" name="reduce_TemplateFragment" hash="3nyvxbrhxspuftmav7lzc9x3van6s5z" />
   <source id="6304885153124996632" name="reduce_TemplateDeclaration" hash="-4dsjmcrb0jrgbrziyduzgxdi67ic8jb" />
-  <source id="5301578252490218394" name="reduce_LoopMacro" hash="ewogdjlxcxav3pj19x71kc31wrggo6i" />
-  <source id="8285036680620207023" name="reduce_TemplateNode" hash="8ngbiygek7z3q0zhlfmtvhd3rj0swnu" />
-  <source id="8285036680620300245" name="reduce_IncludeMacro" hash="-9fupob2buc2jbb8fnd1448jq5d5ifx9" />
+  <source id="5301578252490218394" name="reduce_LoopMacro" hash="5u9xnlazy1a3tjum7l8vsifzz0yarn4" />
+  <source id="8285036680620207023" name="reduce_TemplateNode" hash="-40ibhw6m7zyhemy03c53vckl5s4v02x" />
+  <source id="8285036680620300245" name="reduce_IncludeMacro" hash="-86llve40gm2tq6j2sfu5pfgscqju1bd" />
   <source id="8285036680620300247" name="reduce_Macro" hash="ebml7ezlndo5w73m9z479skm0778ctw" />
-  <source id="747214206848642841" name="reduce_CopySrc" hash="-5b79py536a472m9a4ax2fcd18w2yzxc" />
-  <source id="747214206848656631" name="map_Template" hash="-6lijdko3l99enn964usdyby4zggqdeu" />
+  <source id="747214206848642841" name="reduce_CopySrc" hash="-3kae9kp3zzf62el0o2g4f5wdbbh8d0r" />
+  <source id="747214206848656631" name="map_Template" hash="4fimtsrv08ilfi2bcot4losnc79ankt" />
   <source id="4429320018138031253" name="map_MappingConfiguration" hash="-ech9690umg6am7eb6joni128rpfosd3" />
   <source id="344761564571002658" name="reduce_CopyList" hash="dsk06q2v4gunvhwiccifia8kqicnb04" />
-  <source id="344761564571002674" name="reduce_If" hash="-lx30cb5kjlcgr3q3sw8kpfnrxmeypf" />
+  <source id="344761564571002674" name="reduce_If" hash="4yaysro1wpt6hstgkwexzgekpu75gl0" />
   <source id="344761564571002687" name="reduce_MapSrc" hash="3jr82t1bquz0gsaf7xdq2aexs08r3is" />
   <source id="344761564571002698" name="reduce_Call" hash="a9zfjxgeiy3ssrait8q420j9icosiq5" />
   <source id="344761564571002709" name="reduce_MapSrcL" hash="-1gtoimugel9p28ahn3v46g10inqtv2d" />

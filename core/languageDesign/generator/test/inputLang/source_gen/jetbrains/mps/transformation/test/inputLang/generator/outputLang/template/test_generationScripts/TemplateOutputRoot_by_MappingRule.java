@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
   public TemplateOutputRoot_by_MappingRule() {
@@ -20,7 +20,7 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot_by_MappingRule");
     // COPY-SRCL 
-    return Collections.singletonList(tnode1);
+    return TemplateUtil.singletonList(tnode1);
 
   }
 }

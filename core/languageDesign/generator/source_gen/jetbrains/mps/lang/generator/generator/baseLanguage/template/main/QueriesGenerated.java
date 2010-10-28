@@ -123,19 +123,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7370359082718109162(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return GenUtil.saveVar(_context, _context.getNode(), "tlist" + ++((int[]) _context.getVariable("varindex"))[0]);
+    return GenUtil.saveVar(_context, _context.getNode(), "tlist" + ((int[]) _context.getVariable("varindex"))[0]);
   }
 
   public static Object propertyMacro_GetPropertyValue_7370359082718109181(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "itnode" + ++((int[]) _context.getVariable("varindex"))[0];
+    return "itnode" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_7370359082718109219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_7370359082718109229(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "context" + ++((int[]) _context.getVariable("varindex"))[0];
+    return "context" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_8285036680620207080(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -231,36 +231,12 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_7370359082718142084(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object referenceMacro_GetReferent_7370359082718142105(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object referenceMacro_GetReferent_6304885153124996359(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.templateFragment_ContextNodeQuery(_context.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_7370359082718142063(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object referenceMacro_GetReferent_7370359082718109103(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object referenceMacro_GetReferent_7370359082718142009(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object referenceMacro_GetReferent_7370359082718109132(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true));
-  }
-
-  public static Object referenceMacro_GetReferent_7370359082718142032(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object referenceMacro_GetReferent_3038523907450732653(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -285,36 +261,12 @@ public class QueriesGenerated {
     return innervar;
   }
 
-  public static Object referenceMacro_GetReferent_7370359082718152239(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object referenceMacro_GetReferent_7370359082718152261(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object referenceMacro_GetReferent_7370359082718152110(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_7370359082718152218(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object referenceMacro_GetReferent_747214206848599863(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "includeTemplate", false), "templDeclarationClass"), "constructor", true)).first();
-  }
-
-  public static Object referenceMacro_GetReferent_7370359082718152305(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object referenceMacro_GetReferent_747214206848643195(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object referenceMacro_GetReferent_747214206848643219(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object referenceMacro_GetReferent_747214206848643240(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -393,40 +345,16 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
   }
 
-  public static boolean ifMacro_Condition_7370359082718142091(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
-  public static boolean ifMacro_Condition_7370359082718142112(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
   public static boolean ifMacro_Condition_6304885153124996365(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "contextNodeQuery", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_7370359082718142070(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
   }
 
   public static boolean ifMacro_Condition_6304885153124996297(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "contextNodeQuery", true) != null);
   }
 
-  public static boolean ifMacro_Condition_7370359082718109110(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
-  public static boolean ifMacro_Condition_7370359082718142016(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
   public static boolean ifMacro_Condition_7370359082718109208(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
-  }
-
-  public static boolean ifMacro_Condition_7370359082718142039(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null);
   }
 
   public static boolean ifMacro_Condition_3038523907450732665(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -448,32 +376,16 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null);
   }
 
-  public static boolean ifMacro_Condition_7370359082718152246(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
-  public static boolean ifMacro_Condition_7370359082718152268(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
   public static boolean ifMacro_Condition_7370359082718152118(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "contextNodeQuery", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_7370359082718152225(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
+    return (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
   }
 
   public static boolean ifMacro_Condition_7370359082718152140(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
   }
 
-  public static boolean ifMacro_Condition_7370359082718152312(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null));
-  }
-
-  public static boolean ifMacro_Condition_7370359082718152326(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
+  public static boolean ifMacro_Condition_2895393989835578154(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null);
   }
 
   public static boolean ifMacro_Condition_8285036680620300266(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -510,14 +422,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_344761564571002748(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateCallMacro");
-  }
-
-  public static boolean ifMacro_Condition_747214206848643202(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
-  }
-
-  public static boolean ifMacro_Condition_747214206848643226(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !("context".equals(((String) _context.getVariable("contextVar"))));
   }
 
   public static boolean ifMacro_Condition_747214206848667615(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -715,6 +619,18 @@ public class QueriesGenerated {
     return ((int[]) _context.getVariable("varindex"));
   }
 
+  public static Object templateArgumentQuery_3818613486877140021(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_3818613486877140033(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_3818613486877139978(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
   public static Object templateArgumentQuery_6304885153124996475(final IOperationContext operationContext, final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "contextNodeQuery", true) != null)) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
@@ -745,6 +661,18 @@ public class QueriesGenerated {
     });
   }
 
+  public static Object templateArgumentQuery_2895393989835578190(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_2895393989835578204(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_2895393989835578225(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
   public static Object templateArgumentQuery_7370359082718109243(final IOperationContext operationContext, final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true) != null)) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
@@ -773,6 +701,22 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_8285036680620207389(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((int[]) _context.getVariable("varindex"));
+  }
+
+  public static Object templateArgumentQuery_2895393989835545528(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_2895393989835545516(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_2895393989835545500(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_2895393989835578164(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object templateArgumentQuery_8285036680620300298(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -917,6 +861,14 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_344761564571002778(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((Integer) _context.getVariable("macrosToSkip"));
+  }
+
+  public static Object templateArgumentQuery_3818613486877149179(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_3818613486877149167(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object templateArgumentQuery_747214206848667636(final IOperationContext operationContext, final TemplateQueryContext _context) {

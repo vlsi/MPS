@@ -20,21 +20,24 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
 
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
     final Iterable<SNode> sourcelist1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-    final List<SNode> tlist2 = new ArrayList();
-    for (SNode itnode3 : sourcelist1) {
-      TemplateContext context4 = context.subContext(null, itnode3);
-      SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+    final List<SNode> tlist1 = new ArrayList();
+    for (SNode itnode1 : sourcelist1) {
+      if (itnode1 == null) {
+        continue;
+      }
+      TemplateContext context1 = context.subContext(null, itnode1);
+      SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       // TODO notify environment 
-      tnode5.setProperty("text", "child #1");
-      if (tnode5 != null) {
-        tlist2.add(tnode5);
+      tnode2.setProperty("text", "child #1");
+      if (tnode2 != null) {
+        tlist1.add(tnode2);
       }
     }
-    SNode tnode6 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+    SNode tnode3 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
-    tnode6.setProperty("text", "child #2");
-    Collection<SNode> tlist7 = new Templatereduce_InputNode_A_included().apply(environment, context, null);
+    tnode3.setProperty("text", "child #2");
+    Collection<SNode> tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context, null);
     // SWITCH 
-    return TemplateUtil.asList(tlist2, tnode6, tlist7);
+    return TemplateUtil.asList(tlist1, tnode3, tlist4);
   }
 }

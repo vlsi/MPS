@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_1 implements TemplateDeclaration {
   public TemplateOutputRoot_1() {
@@ -21,7 +21,7 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
     tnode1.setProperty("name", "OutputRoot_1");
     tnode1.setProperty("text", "'getPrevInputTest' output root (1)");
     // MAPS-SRCL 
-    return Collections.singletonList(tnode1);
+    return TemplateUtil.singletonList(tnode1);
 
   }
 }

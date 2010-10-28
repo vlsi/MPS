@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templateout_class implements TemplateDeclaration {
   public Templateout_class() {
@@ -48,7 +49,7 @@ public class Templateout_class implements TemplateDeclaration {
       // TODO notify environment 
       tnode1.addChild("visibility", tnode8);
     }
-    return Collections.singletonList(tnode1);
+    return TemplateUtil.singletonList(tnode1);
 
   }
 }

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
   public TemplateOutputRoot() {
@@ -21,7 +21,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     tnode1.setProperty("name", "OutputRoot");
     tnode1.setProperty("text", "chilren were generated from a single child in input node.");
     // COPY-SRCL 
-    return Collections.singletonList(tnode1);
+    return TemplateUtil.singletonList(tnode1);
 
   }
 }

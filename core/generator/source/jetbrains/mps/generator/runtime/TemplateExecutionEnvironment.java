@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, 10/22/10
@@ -39,7 +38,7 @@ public class TemplateExecutionEnvironment {
     this.operationContext = operationContext;
   }
 
-  public Collection<SNode> copyNodes(List<SNode> inputNodes, String mappingName) {
+  public Collection<SNode> copyNodes(Collection<SNode> inputNodes, String mappingName) {
     // TODO
     return Collections.emptyList();
   }

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateoutputRoot implements TemplateDeclaration {
   public TemplateoutputRoot() {
@@ -26,7 +26,7 @@ public class TemplateoutputRoot implements TemplateDeclaration {
       tnode2.setProperty("text", "this is OutputNode_forDontApplyReductionTwice_test actually");
       tnode1.addChild("outputChild", tnode2);
     }
-    return Collections.singletonList(tnode1);
+    return TemplateUtil.singletonList(tnode1);
 
   }
 }
