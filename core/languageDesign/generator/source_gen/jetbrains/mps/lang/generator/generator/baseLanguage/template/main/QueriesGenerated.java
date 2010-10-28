@@ -325,6 +325,16 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
+  public static Object referenceMacro_GetReferent_2895393989835683978(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    if (SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "generatorMessage", true), "messageType", "error", "info")) {
+      return "error";
+    }
+    if (SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "generatorMessage", true), "messageType", "warning", "info")) {
+      return "warning";
+    }
+    return "info";
+  }
+
   public static boolean ifMacro_Condition_4112907264514926008(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
@@ -493,6 +503,34 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8961331321403206165(final IOperationContext operationContext, final IfMacroContext _context) {
     return !("context".equals(((String) _context.getVariable("contextVar"))));
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680682(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence");
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680724(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.DismissTopMappingRule");
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680764(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680758(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680752(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680746(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+  }
+
+  public static boolean ifMacro_Condition_2895393989835680740(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence");
   }
 
   public static SNode sourceNodeQuery_1168025917226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
