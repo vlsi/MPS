@@ -19,7 +19,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.actions.nodes.MyBaseNodeDialog;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 
 public class ShowNodeType_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/types.png", "jetbrains.mps.lang.typesystem"), true);

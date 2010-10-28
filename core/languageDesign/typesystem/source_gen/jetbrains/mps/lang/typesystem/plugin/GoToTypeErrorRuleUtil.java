@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.util.Pair;
 import java.util.List;
 import javax.swing.JPopupMenu;
@@ -20,6 +20,9 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToTypeErrorRuleUtil {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
+
+  public GoToTypeErrorRuleUtil() {
+  }
 
   public static void goToTypeErrorRule(final IOperationContext context, IErrorReporter error) {
     final Pair<String, String> ruleModelAndId = new Pair<String, String>(error.getRuleModel(), error.getRuleId());

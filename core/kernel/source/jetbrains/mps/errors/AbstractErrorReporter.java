@@ -1,7 +1,5 @@
 package jetbrains.mps.errors;
 
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;

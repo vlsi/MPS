@@ -17,7 +17,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.annotations.Nullable;
 
 public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
