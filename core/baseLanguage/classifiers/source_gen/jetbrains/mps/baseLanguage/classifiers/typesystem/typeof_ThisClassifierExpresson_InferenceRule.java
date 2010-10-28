@@ -6,20 +6,21 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ThisClassifierExpresson_InferenceRule() {
   }
 
-  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(nodeToCheck);
     if (classifier != null) {
       {
@@ -41,8 +42,11 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
     return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

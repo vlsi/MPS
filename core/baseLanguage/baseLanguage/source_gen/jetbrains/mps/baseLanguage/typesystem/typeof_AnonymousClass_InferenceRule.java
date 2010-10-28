@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Map;
 import java.util.List;

@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.behavior.ParameterReference_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NonFinalParametersInAnonymousClass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {

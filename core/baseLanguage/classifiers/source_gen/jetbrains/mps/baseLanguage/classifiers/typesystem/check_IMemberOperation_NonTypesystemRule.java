@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -16,14 +17,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_IMemberOperation_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode operandType = TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck));
     {
       IMatchingPattern pattern_hm5x7h_b0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
@@ -45,8 +46,11 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
     return "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -27,7 +27,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;

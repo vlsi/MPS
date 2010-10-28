@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
