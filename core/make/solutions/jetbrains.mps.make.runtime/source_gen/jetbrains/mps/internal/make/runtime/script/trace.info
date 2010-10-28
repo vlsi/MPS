@@ -38,10 +38,36 @@
     <unitInfo nodeId="1291978361072214485" fileName="CompositeResult.java" startLine="38" startPosition="86" endLine="42" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.ITranslator2$anonymous" />
     <unitInfo nodeId="1291978361072214390" fileName="CompositeResult.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
   </root>
+  <root nodeId="2798840071352747003">
+    <nodeInfo nodeId="2798840071352939447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIQueryRelayStrategy.java" startLine="19" startPosition="33" endLine="20" endPosition="27" />
+    <nodeInfo nodeId="2798840071352952348" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UIQueryRelayStrategy.java" startLine="22" startPosition="36" endLine="23" endPosition="191" />
+    <nodeInfo nodeId="2798840071352952406" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIQueryRelayStrategy.java" startLine="24" startPosition="43" endLine="25" endPosition="18" />
+    <nodeInfo nodeId="2798840071352952373" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIQueryRelayStrategy.java" startLine="26" startPosition="5" endLine="27" endPosition="106" />
+    <nodeInfo nodeId="2798840071352747005" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="UIQueryRelayStrategy.java" startLine="13" startPosition="35" endLine="15" endPosition="3" />
+    <nodeInfo nodeId="2798840071352952397" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UIQueryRelayStrategy.java" startLine="23" startPosition="191" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="2798840071352939443" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="UIQueryRelayStrategy.java" startLine="18" startPosition="97" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="2798840071352939428" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="87" endLine="22" endPosition="36" />
+    <nodeInfo nodeId="2798840071352747441" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="UIQueryRelayStrategy.java" startLine="16" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2798840071352747008" fileName="UIQueryRelayStrategy.java" startLine="14" startPosition="33" endLine="14" endPosition="33" />
+    <scopeInfo nodeId="2798840071352939444" fileName="UIQueryRelayStrategy.java" startLine="19" startPosition="33" endLine="20" endPosition="27" />
+    <scopeInfo nodeId="2798840071352952398" fileName="UIQueryRelayStrategy.java" startLine="24" startPosition="43" endLine="25" endPosition="18" />
+    <scopeInfo nodeId="2798840071352747005" fileName="UIQueryRelayStrategy.java" startLine="13" startPosition="35" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="2798840071352939443" fileName="UIQueryRelayStrategy.java" startLine="18" startPosition="97" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2798840071352747446" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="87" endLine="27" endPosition="106">
+      <varInfo nodeId="2798840071352952349" varName="res" />
+      <varInfo nodeId="2798840071352939429" varName="options" />
+    </scopeInfo>
+    <scopeInfo nodeId="2798840071352747441" fileName="UIQueryRelayStrategy.java" startLine="16" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="2798840071352747442" varName="query" />
+      <varInfo nodeId="2798840071352952313" varName="context" />
+    </scopeInfo>
+    <unitInfo nodeId="2798840071352939443" fileName="UIQueryRelayStrategy.java" startLine="18" startPosition="73" endLine="22" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy$1" />
+    <unitInfo nodeId="2798840071352747003" fileName="UIQueryRelayStrategy.java" startLine="13" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy" />
+  </root>
   <root nodeId="6168415856807657427">
     <nodeInfo nodeId="6168415856807657476" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="InvalidScript.java" startLine="10" startPosition="47" endLine="11" endPosition="43" />
     <nodeInfo nodeId="6168415856807657433" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InvalidScript.java" startLine="13" startPosition="58" endLine="14" endPosition="25" />
-    <nodeInfo nodeId="6168415856807657451" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InvalidScript.java" startLine="17" startPosition="42" endLine="18" endPosition="16" />
+    <nodeInfo nodeId="5409216892672495314" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="InvalidScript.java" startLine="17" startPosition="42" endLine="18" endPosition="54" />
     <nodeInfo nodeId="6168415856807657457" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InvalidScript.java" startLine="21" startPosition="34" endLine="22" endPosition="16" />
     <nodeInfo nodeId="6168415856807657464" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InvalidScript.java" startLine="25" startPosition="41" endLine="26" endPosition="16" />
     <nodeInfo nodeId="6168415856807657474" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InvalidScript.java" startLine="32" startPosition="28" endLine="33" endPosition="17" />
@@ -53,7 +79,7 @@
     <nodeInfo nodeId="6168415856807657470" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="InvalidScript.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="6168415856807657469" fileName="InvalidScript.java" startLine="29" startPosition="26" endLine="29" endPosition="26" />
     <scopeInfo nodeId="6168415856807657432" fileName="InvalidScript.java" startLine="13" startPosition="58" endLine="14" endPosition="25" />
-    <scopeInfo nodeId="6168415856807657450" fileName="InvalidScript.java" startLine="17" startPosition="42" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="6168415856807657450" fileName="InvalidScript.java" startLine="17" startPosition="42" endLine="18" endPosition="54" />
     <scopeInfo nodeId="6168415856807657456" fileName="InvalidScript.java" startLine="21" startPosition="34" endLine="22" endPosition="16" />
     <scopeInfo nodeId="6168415856807657463" fileName="InvalidScript.java" startLine="25" startPosition="41" endLine="26" endPosition="16" />
     <scopeInfo nodeId="6168415856807657473" fileName="InvalidScript.java" startLine="32" startPosition="28" endLine="33" endPosition="17" />

@@ -8,12 +8,12 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TargetDependency_dependsOn_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -29,7 +29,7 @@ public class TargetDependency_dependsOn_ReferentConstraint extends BaseNodeRefer
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    final Iterable<SNode> relatedFacets = Sequence.fromIterable(FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false))).skip(1);
+    final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(it, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));

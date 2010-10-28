@@ -4,12 +4,12 @@
     <unitInfo nodeId="6168415856807657256" fileName="IResource.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.resources.IResource" />
   </root>
   <root nodeId="6168415856807657388">
-    <nodeInfo nodeId="8855841484790524430" fileName="ResourcePool.java" startLine="9" startPosition="27" endLine="10" endPosition="36" />
-    <nodeInfo nodeId="8855841484790529468" fileName="ResourcePool.java" startLine="15" startPosition="42" endLine="16" endPosition="51" />
-    <nodeInfo nodeId="8855841484790529472" fileName="ResourcePool.java" startLine="19" startPosition="34" endLine="20" endPosition="53" />
-    <nodeInfo nodeId="6168415856807657423" fileName="ResourcePool.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
-    <nodeInfo nodeId="8855841484790524423" fileName="ResourcePool.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <nodeInfo nodeId="6168415856807657398" fileName="ResourcePool.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="8855841484790524430" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ResourcePool.java" startLine="9" startPosition="27" endLine="10" endPosition="36" />
+    <nodeInfo nodeId="8855841484790529468" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ResourcePool.java" startLine="15" startPosition="42" endLine="16" endPosition="51" />
+    <nodeInfo nodeId="8855841484790529472" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ResourcePool.java" startLine="19" startPosition="34" endLine="20" endPosition="53" />
+    <nodeInfo nodeId="6168415856807657423" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ResourcePool.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <nodeInfo nodeId="8855841484790524423" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ResourcePool.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <nodeInfo nodeId="6168415856807657398" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ResourcePool.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="6168415856807657426" fileName="ResourcePool.java" startLine="12" startPosition="25" endLine="12" endPosition="25" />
     <scopeInfo nodeId="8855841484790524426" fileName="ResourcePool.java" startLine="15" startPosition="42" endLine="16" endPosition="51" />
     <scopeInfo nodeId="6168415856807657401" fileName="ResourcePool.java" startLine="19" startPosition="34" endLine="20" endPosition="53" />

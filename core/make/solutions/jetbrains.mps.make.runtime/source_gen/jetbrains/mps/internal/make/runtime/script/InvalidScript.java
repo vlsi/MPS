@@ -15,7 +15,7 @@ public class InvalidScript implements IScript {
   }
 
   public IResult execute(IMonitor monit) {
-    return null;
+    throw new IllegalStateException("Invalid script");
   }
 
   public ITarget defaultTarget() {

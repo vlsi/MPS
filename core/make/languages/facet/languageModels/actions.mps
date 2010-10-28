@@ -82,26 +82,19 @@
                       <link role="concept:16" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
                     </node>
                   </node>
-                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8351679702044391338">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8351679702044391339">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8351679702044391340">
-                        <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="8351679702044391368" />
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8351679702044391342">
-                          <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="8351679702044391343">
-                            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8351679702044391344">
-                              <link role="conceptDeclaration:16" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
-                            </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8351679702044391339">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8351679702044391340">
+                      <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="8351679702044391368" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8351679702044391342">
+                        <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="8351679702044391343">
+                          <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8351679702044391344">
+                            <link role="conceptDeclaration:16" targetNodeId="1.6418371274763029523:1" resolveInfo="FacetDeclaration" />
                           </node>
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8351679702044391345">
-                        <link role="baseMethodDeclaration:16" targetNodeId="2.8351679702044331818" resolveInfo="allRelated" />
-                      </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.SkipOperation:7" id="8351679702044391346">
-                      <node role="elementsToSkip:7" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8351679702044391347">
-                        <property name="value:3" value="1" />
-                      </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8351679702044391345">
+                      <link role="baseMethodDeclaration:16" targetNodeId="2.8351679702044331818" resolveInfo="allRelated" />
                     </node>
                   </node>
                 </node>

@@ -34,10 +34,10 @@
     <unitInfo nodeId="8351679702044320310" fileName="RelatedFacetReference_facet_ReferentConstraint.java" startLine="29" startPosition="192" endLine="33" endPosition="5" unitName="jetbrains.mps.make.facet.constraints.IWhereFilter$anonymous" />
   </root>
   <root nodeId="8351679702044331811">
-    <nodeInfo nodeId="8351679702044365861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="262" />
+    <nodeInfo nodeId="8351679702044365861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="231" />
     <nodeInfo nodeId="8351679702044365872" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="34" startPosition="39" endLine="35" endPosition="163" />
     <nodeInfo nodeId="8351679702044365840" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="33" startPosition="216" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="8351679702044365826" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="32" startPosition="262" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="8351679702044365826" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="32" startPosition="231" endLine="37" endPosition="7" />
     <scopeInfo nodeId="8351679702044365841" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="34" startPosition="39" endLine="35" endPosition="163" />
     <scopeInfo nodeId="8351679702044365840" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="33" startPosition="216" endLine="37" endPosition="0" />
     <scopeInfo nodeId="8351679702044331814" fileName="TargetDependency_dependsOn_ReferentConstraint.java" startLine="31" startPosition="132" endLine="37" endPosition="7">
