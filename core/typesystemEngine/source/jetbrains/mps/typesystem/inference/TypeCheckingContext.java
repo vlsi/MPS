@@ -17,11 +17,11 @@ package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.MessageStatus;
-import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.ISlicer;

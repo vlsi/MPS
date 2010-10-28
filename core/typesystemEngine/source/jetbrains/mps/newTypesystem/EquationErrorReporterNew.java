@@ -16,13 +16,12 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.newTypesystem.states.State;
-import jetbrains.mps.nodeEditor.AbstractErrorReporter;
+import jetbrains.mps.errors.AbstractErrorReporter;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.uiActions.PresentationManager;
 

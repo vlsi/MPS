@@ -23,10 +23,9 @@ import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
 import jetbrains.mps.newTypesystem.differences.inequality.SubTypingAdded;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.nodeEditor.SimpleErrorReporter;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.NodeWrapper;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 

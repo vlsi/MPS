@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.errors;
 
+import jetbrains.mps.errors.AbstractErrorReporter;
+import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;

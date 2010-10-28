@@ -18,14 +18,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.nodeEditor.SimpleErrorReporter;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
-import java.awt.Color;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Comparator;
 import java.util.Set;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
