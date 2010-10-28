@@ -63,7 +63,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        addLanguage(model, ref);
+        model.addLanguage(ref);
       }
 
       for (SReference reference : node.getReferencesIterable()) {
@@ -89,10 +89,6 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static boolean hasLanguage(SModel model, @NotNull ModuleReference ref) {
     return getAllImportedLanguages(model).contains(ref);
-  }
-
-  public static void addLanguage(SModel model, @NotNull ModuleReference ref) {
-    model.addLanguage(ref);
   }
 
   //todo rewrite using iterators
@@ -248,10 +244,6 @@ public class SModelOperations {
       }
     }
     return null;
-  }
-
-  public static void addNewlyImportedDevKit(SModel sModel, ModuleReference ref) {
-    sModel.addDevKit(ref);
   }
 
   public static int getUsedVersion(SModel sModel, SModelReference sModelReference) {

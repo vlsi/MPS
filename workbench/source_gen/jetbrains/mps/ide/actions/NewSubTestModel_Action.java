@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -114,7 +113,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
             createdModel.addModelImport(sourceModel.getSModelReference(), false);
           }
           for (ModuleReference importedLanguage : sourceModel.importedLanguages()) {
-            SModelOperations.addLanguage(createdModel, importedLanguage);
+            createdModel.addLanguage(importedLanguage);
           }
           for (ModuleReference devKit : sourceModel.importedDevkits()) {
             createdModel.addDevKit(devKit);

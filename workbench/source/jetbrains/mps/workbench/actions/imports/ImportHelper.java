@@ -28,7 +28,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
@@ -153,7 +152,7 @@ public class ImportHelper {
           if (myContextModule.getScope().getLanguage(lang.getModuleReference())==null) {
             myContextModule.addUsedLanguage(lang.getModuleReference());
           }
-          SModelOperations.addLanguage(myModel.getSModel(), lang.getModuleReference());
+          myModel.getSModel().addLanguage(lang.getModuleReference());
         }
       });
     }

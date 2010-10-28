@@ -28,10 +28,10 @@ public class GeneratorModelCreationListener extends ModelCreationListener {
 
   public void onCreate(SModelDescriptor model) {
     if (SModelStereotype.isGeneratorModel(model)) {
-      SModelOperations.addLanguage(model.getSModel(), Generator_Language.get().getModuleReference());
+      model.getSModel().addLanguage(Generator_Language.get().getModuleReference());
     } else {
       model.getSModel().addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
     }
-    SModelOperations.addLanguage(model.getSModel(), GenerationContext_Language.get().getModuleReference());
+    model.getSModel().addLanguage(GenerationContext_Language.get().getModuleReference());
   }
 }

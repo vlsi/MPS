@@ -27,6 +27,6 @@ public class TestsModelCreationListener extends ModelCreationListener {
     if (!model.getModule().getUsedLanguagesReferences().contains(UnitTest_Language.MODULE_REFERENCE)) {
       model.getModule().addUsedLanguage(UnitTest_Language.MODULE_REFERENCE);
     }
-    SModelOperations.addLanguage(model.getSModel(), UnitTest_Language.get().getModuleReference());
+    model.getSModel().addLanguage(UnitTest_Language.get().getModuleReference());
   }
 }

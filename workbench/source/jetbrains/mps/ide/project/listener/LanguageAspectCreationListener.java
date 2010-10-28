@@ -32,7 +32,7 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
     LanguageAspect aspect = language.getAspectForModel(model);
 
     for (ModuleReference impLang : aspect.getAllLanguagesToImport(language)) {
-      SModelOperations.addLanguage(model.getSModel(), impLang);
+      model.getSModel().addLanguage(impLang);
     }
 
     if (ThreadUtils.isEventDispatchThread()) {

@@ -205,10 +205,10 @@ public class ImportProperties {
       targetModel.addModelImport(imported, false);
     }
     for (ModuleReference language : getLanguagesToImport(all)) {
-      SModelOperations.addLanguage(targetModel, language);
+      targetModel.addLanguage(language);
     }
     for (ModuleReference devkit : getDevkitsToImport(all)) {
-      SModelOperations.addNewlyImportedDevKit(targetModel, devkit);
+      targetModel.addDevKit(devkit);
     }
 
 

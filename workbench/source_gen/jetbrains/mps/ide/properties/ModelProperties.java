@@ -101,7 +101,7 @@ public class ModelProperties extends BaseBean {
       DevKit devKit = MPSModuleRepository.getInstance().getDevKit(dk);
       assert devKit != null;
       SModel model = myModelDescriptor.getSModel();
-      SModelOperations.addNewlyImportedDevKit(model, dk);
+      model.addDevKit(dk);
     }
   }
 

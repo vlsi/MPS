@@ -47,7 +47,7 @@ public class SModel {
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
   private List<ModuleReference> myDevKits = new ArrayList<ModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
-  private List<ImportElement> myAdditionalModelsVersions = new ArrayList<ImportElement>();
+  private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
@@ -570,8 +570,7 @@ public class SModel {
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
-      myAdditionalModelsVersions.add(importElement);  // to save version and ID if model was imported implicitly
-//      importElement.setImplicit(true);
+      myImplicitImports.add(importElement);  // to save version and ID if model was imported implicitly
       fireImportRemovedEvent(modelReference);
     }
   }
@@ -624,18 +623,18 @@ public class SModel {
     for (ImportElement elem : myImports) {  // ??? explicit imports should become implicit on deletion till new recalculation
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
     }
-    List<ImportElement> implicitImport = new ArrayList<ImportElement>(usedModels.size());
-    for (ImportElement elem : myAdditionalModelsVersions) {
+    List<ImportElement> implicitImports = new ArrayList<ImportElement>(usedModels.size());
+    for (ImportElement elem : myImplicitImports) {
       if (usedModels.remove(elem.getModelReference())) {
-        implicitImport.add(elem);   // already added elements save their version and id
+        implicitImports.add(elem);   // already added elements save their version and id
       }
     }
     for (SModelReference ref : usedModels) {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
       int version = modelDescriptor instanceof EditableSModelDescriptor ? ((EditableSModelDescriptor) modelDescriptor).getVersion() : -1;
-      implicitImport.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
+      implicitImports.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
     }
-    myAdditionalModelsVersions = implicitImport;
+    myImplicitImports = implicitImports;
   }
 
   public List<ModuleReference> engagedOnGenerationLanguages() {
@@ -669,7 +668,7 @@ public class SModel {
   //aspects / additional
 
   public List<ImportElement> getAdditionalModelVersions() {
-    return Collections.unmodifiableList(myAdditionalModelsVersions);
+    return Collections.unmodifiableList(myImplicitImports);
   }
 
   public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
@@ -678,12 +677,7 @@ public class SModel {
 
   public void addAdditionalModelVersion(@NotNull ImportElement element) {
     ModelChange.assertLegalChange(this);
-    myAdditionalModelsVersions.add(element);
-  }
-
-  public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
-    ModelChange.assertLegalChange(this);
-    //calculateImplicitImports();
+    myImplicitImports.add(element);
   }
 
   //other
@@ -692,7 +686,6 @@ public class SModel {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index
     private int myUsedVersion;
-    private boolean myImplicit; // true - this element is just to keep version of implicit import
 
     public ImportElement(SModelReference modelReference, int referenceID) {
       this(modelReference, referenceID, -1);
@@ -720,14 +713,6 @@ public class SModel {
       return myUsedVersion;
     }
 
-    public boolean isImplicit() {
-      return myImplicit;
-    }
-
-    public void setImplicit(boolean implicit) {
-      myImplicit = implicit;
-    }
-
     public String toString() {
       return "ImportElement(" +
         "uid=" + myModelReference + ", " +
@@ -744,7 +729,6 @@ public class SModel {
 
       if (myReferenceID != that.myReferenceID) return false;
       if (myUsedVersion != that.myUsedVersion) return false;
-      if (myImplicit != that.myImplicit) return false;
       if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
         return false;
 
@@ -846,7 +830,7 @@ public class SModel {
       }
     }
 
-    for (ImportElement e : myAdditionalModelsVersions) {
+    for (ImportElement e : myImplicitImports) {
       SModelReference oldReference = e.myModelReference;
       SModelReference newRef = oldReference.update();
       if (newRef.differs(oldReference)) {
