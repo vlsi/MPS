@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
+  <unitInfo fileName="Templateout_class.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Templateout_class" />
   <root nodeId="1209150022679">
     <nodeInfo nodeId="1209150621175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="14" startPosition="146" endLine="15" endPosition="253" />
     <nodeInfo nodeId="1209150505329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="18" startPosition="146" endLine="19" endPosition="112" />

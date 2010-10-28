@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TemplateOutputRoot_by_MappingRule.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot_by_MappingRule" />
+  <unitInfo fileName="TemplateOutputRoot_By_RootRule.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot_By_RootRule" />
   <unitInfo fileName="QueriesGenerated.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
   <root nodeId="1195164863269">
     <nodeInfo nodeId="1202245325859" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="19" startPosition="144" endLine="20" endPosition="57" />
