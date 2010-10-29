@@ -149,12 +149,12 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
-  public static Set<ModuleReference> getUsedLanguages(SModel model) {
+  public static Set<ModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
     for (SNode node : model.nodes()) {
       Language lang = node.getLanguage(GlobalScope.getInstance());
-      ModuleReference ref = lang.getModuleReference();
-      result.add(ref);
+      if (lang == null) continue;
+      result.add(lang.getModuleReference());
     }
     return result;
   }
