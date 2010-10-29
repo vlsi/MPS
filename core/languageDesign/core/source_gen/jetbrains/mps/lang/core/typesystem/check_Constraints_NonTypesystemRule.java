@@ -151,9 +151,6 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
     }
 
     for (String name : SetSequence.fromSet(node.getPropertyNames())) {
-      if (node.isRoot() && SNode.PACK.equals(name)) {
-        continue;
-      }
       if (SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), name) == null) {
         {
           BaseQuickFixProvider intentionProvider = null;
