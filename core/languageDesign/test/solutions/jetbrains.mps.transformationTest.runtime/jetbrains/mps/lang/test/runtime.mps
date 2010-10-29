@@ -415,13 +415,13 @@
                         </node>
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="1215607026435">
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1224766633497">
-                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1224766775030">
-                              <link role="enumConstantDeclaration:3" targetNodeId="27.~MessageStatus.WARNING" resolveInfo="WARNING" />
-                              <link role="enumClass:3" targetNodeId="27.~MessageStatus" resolveInfo="MessageStatus" />
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3107022731982705795">
+                              <link role="enumConstantDeclaration:3" targetNodeId="53.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                              <link role="enumClass:3" targetNodeId="53.~MessageStatus" resolveInfo="MessageStatus" />
                             </node>
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1215607026436">
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224766631996">
-                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7938028138875693049">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8042441407353530930">
@@ -479,9 +479,9 @@
                         </node>
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1215607026459">
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1224766784657">
-                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1224766795333">
-                              <link role="enumConstantDeclaration:3" targetNodeId="27.~MessageStatus.WARNING" resolveInfo="WARNING" />
-                              <link role="enumClass:3" targetNodeId="27.~MessageStatus" resolveInfo="MessageStatus" />
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3107022731982705796">
+                              <link role="enumConstantDeclaration:3" targetNodeId="53.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                              <link role="enumClass:3" targetNodeId="53.~MessageStatus" resolveInfo="MessageStatus" />
                             </node>
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1215607026460">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1215607026461">
@@ -496,7 +496,7 @@
                                 </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224766783515">
-                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -572,12 +572,12 @@
                                 <link role="variableDeclaration:3" targetNodeId="7938028138875678861" resolveInfo="reporter" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3996711022540418650">
-                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
-                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3996711022540418652">
-                              <link role="enumConstantDeclaration:3" targetNodeId="27.~MessageStatus.ERROR" resolveInfo="ERROR" />
-                              <link role="enumClass:3" targetNodeId="27.~MessageStatus" resolveInfo="MessageStatus" />
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3107022731982705797">
+                              <link role="enumConstantDeclaration:3" targetNodeId="53.~MessageStatus.ERROR" resolveInfo="ERROR" />
+                              <link role="enumClass:3" targetNodeId="53.~MessageStatus" resolveInfo="MessageStatus" />
                             </node>
                           </node>
                         </node>
@@ -597,12 +597,12 @@
                                 <link role="variableDeclaration:3" targetNodeId="7938028138875678861" resolveInfo="reporter" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3996711022540418665">
-                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.nodeEditor.MessageStatus" resolveInfo="getMessageStatus" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="53.~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolveInfo="getMessageStatus" />
                               </node>
                             </node>
-                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3996711022540418667">
-                              <link role="enumConstantDeclaration:3" targetNodeId="27.~MessageStatus.WARNING" resolveInfo="WARNING" />
-                              <link role="enumClass:3" targetNodeId="27.~MessageStatus" resolveInfo="MessageStatus" />
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3107022731982705798">
+                              <link role="enumConstantDeclaration:3" targetNodeId="53.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                              <link role="enumClass:3" targetNodeId="53.~MessageStatus" resolveInfo="MessageStatus" />
                             </node>
                           </node>
                         </node>
@@ -1309,6 +1309,7 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1217253515489">
         <property name="name:3" value="model" />
+        <property name="isFinal:3" value="true" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1932269937152847569" />
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1217253486859" />
@@ -1356,9 +1357,9 @@
                       </node>
                     </node>
                   </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225466978914">
-                    <link role="baseMethodDeclaration:3" targetNodeId="18.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
-                    <link role="classConcept:3" targetNodeId="18.~Macros" resolveInfo="Macros" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3107022731982706014">
+                    <link role="baseMethodDeclaration:3" targetNodeId="18.~MacrosFactory.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />
+                    <link role="classConcept:3" targetNodeId="18.~MacrosFactory" resolveInfo="MacrosFactory" />
                   </node>
                 </node>
               </node>
@@ -1570,17 +1571,22 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1224595559072">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224595559073">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224595559074">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224595559075">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3107022731982706016">
+            <link role="baseMethodDeclaration:3" targetNodeId="17.~SModelOperations.validateLanguagesAndImports(jetbrains.mps.smodel.SModel,boolean,boolean):void" resolveInfo="validateLanguagesAndImports" />
+            <link role="classConcept:3" targetNodeId="17.~SModelOperations" resolveInfo="SModelOperations" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3107022731982706017">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3107022731982706018">
                 <link role="baseMethodDeclaration:3" targetNodeId="17.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2408218760772589879">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3107022731982706019">
                 <link role="variableDeclaration:3" targetNodeId="1223050949294" resolveInfo="myTransidentModel" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224595559079">
-              <link role="baseMethodDeclaration:3" targetNodeId="17.~SModel.validateLanguagesAndImports():void" resolveInfo="validateLanguagesAndImports" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3107022731982706021">
+              <property name="value:3" value="false" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3107022731982706023">
+              <property name="value:3" value="false" />
             </node>
           </node>
         </node>

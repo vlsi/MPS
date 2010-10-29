@@ -1,5 +1,6 @@
 package jetbrains.mps.nodeEditor.messageTargets;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;

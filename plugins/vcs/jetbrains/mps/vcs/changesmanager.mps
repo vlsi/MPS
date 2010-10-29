@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
-  <maxImportIndex value="80" />
+  <maxImportIndex value="81" />
   <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
@@ -96,6 +96,7 @@
   <import index="78" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
   <import index="79" modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="-1" />
   <import index="80" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
+  <import index="81" modelUID="f:java_stub#jetbrains.mps.errors(jetbrains.mps.errors@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="23553604208246606">
     <property name="name:3" value="ChangesManager" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5569581551640537985">
@@ -15290,13 +15291,13 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6149144798615862334" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6149144798615862335">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="6149144798615862361">
-            <link role="baseMethodDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.MessageStatus,jetbrains.mps.nodeEditor.messageTargets.MessageTarget,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.EditorMessageOwner)" resolveInfo="EditorMessageWithTarget" />
+            <link role="baseMethodDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.errors.MessageStatus,jetbrains.mps.nodeEditor.messageTargets.MessageTarget,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.EditorMessageOwner)" resolveInfo="EditorMessageWithTarget" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6149144798615862362">
               <link role="variableDeclaration:3" targetNodeId="6149144798615862351" resolveInfo="node" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6149144798615862365">
-              <link role="enumConstantDeclaration:3" targetNodeId="29.~MessageStatus.OK" resolveInfo="OK" />
-              <link role="enumClass:3" targetNodeId="29.~MessageStatus" resolveInfo="MessageStatus" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="5633784011573353731">
+              <link role="enumConstantDeclaration:3" targetNodeId="81.~MessageStatus.OK" resolveInfo="OK" />
+              <link role="enumClass:3" targetNodeId="81.~MessageStatus" resolveInfo="MessageStatus" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6149144798615862367">
               <link role="variableDeclaration:3" targetNodeId="6149144798615862356" resolveInfo="messageTarget" />

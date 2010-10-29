@@ -2616,16 +2616,19 @@
     <scopeInfo nodeId="1888601967414926034" fileName="SelectInActionAdapter_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="14" />
   </root>
   <root nodeId="1947025217948103722">
-    <nodeInfo nodeId="3619186996280266604" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SpecificChecker.java" startLine="15" startPosition="166" endLine="16" endPosition="129" />
-    <nodeInfo nodeId="2337689001241473456" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SpecificChecker.java" startLine="12" startPosition="39" endLine="14" endPosition="0" />
-    <nodeInfo nodeId="3619186996280266584" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SpecificChecker.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3619186996280266586" fileName="SpecificChecker.java" startLine="15" startPosition="166" endLine="16" endPosition="129" />
-    <scopeInfo nodeId="2337689001241473456" fileName="SpecificChecker.java" startLine="12" startPosition="39" endLine="14" endPosition="0">
+    <nodeInfo nodeId="3619186996280266604" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SpecificChecker.java" startLine="18" startPosition="166" endLine="19" endPosition="129" />
+    <nodeInfo nodeId="3107022731982570336" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SpecificChecker.java" startLine="12" startPosition="39" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="2337689001241473456" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SpecificChecker.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <nodeInfo nodeId="3619186996280266584" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SpecificChecker.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3107022731982570339" fileName="SpecificChecker.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="3619186996280266586" fileName="SpecificChecker.java" startLine="18" startPosition="166" endLine="19" endPosition="129" />
+    <scopeInfo nodeId="3107022731982570336" fileName="SpecificChecker.java" startLine="12" startPosition="39" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="2337689001241473456" fileName="SpecificChecker.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2337689001241473462" varName="model" />
       <varInfo nodeId="3619186996280217588" varName="operationContext" />
       <varInfo nodeId="3793508159765822193" varName="progressContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3619186996280266584" fileName="SpecificChecker.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="3619186996280266584" fileName="SpecificChecker.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3619186996280266598" varName="message" />
       <varInfo nodeId="3619186996280266596" varName="node" />
       <varInfo nodeId="3619186996280266588" varName="results" />
@@ -2633,7 +2636,7 @@
       <varInfo nodeId="3619186996280266600" varName="issueType" />
       <varInfo nodeId="2806738246792935520" varName="severity" />
     </scopeInfo>
-    <unitInfo nodeId="1947025217948103722" fileName="SpecificChecker.java" startLine="12" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ide.actions.SpecificChecker" />
+    <unitInfo nodeId="1947025217948103722" fileName="SpecificChecker.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.SpecificChecker" />
   </root>
   <root nodeId="200443176057274802">
     <nodeInfo nodeId="200443176057277554" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowReferencesToMissingStuff_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="26" />

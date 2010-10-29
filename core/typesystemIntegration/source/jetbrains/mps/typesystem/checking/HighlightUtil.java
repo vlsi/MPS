@@ -1,6 +1,7 @@
 package jetbrains.mps.typesystem.checking;
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.SNode;

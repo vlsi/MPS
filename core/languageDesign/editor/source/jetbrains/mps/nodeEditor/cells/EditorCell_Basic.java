@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;

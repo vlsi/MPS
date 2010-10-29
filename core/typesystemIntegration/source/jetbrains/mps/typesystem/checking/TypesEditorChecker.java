@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;

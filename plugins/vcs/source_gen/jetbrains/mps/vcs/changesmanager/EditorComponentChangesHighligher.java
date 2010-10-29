@@ -34,7 +34,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
-import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
 import jetbrains.mps.nodeEditor.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;

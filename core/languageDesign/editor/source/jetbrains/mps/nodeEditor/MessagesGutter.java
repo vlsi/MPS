@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;

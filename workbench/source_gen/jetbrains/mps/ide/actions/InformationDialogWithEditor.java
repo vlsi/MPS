@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
-import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.messageTargets.NodeMessageTarget;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;

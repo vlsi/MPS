@@ -2293,6 +2293,7 @@
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
+    <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
@@ -2307,7 +2308,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -5109,6 +5109,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProgressContext" />
@@ -5116,8 +5118,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

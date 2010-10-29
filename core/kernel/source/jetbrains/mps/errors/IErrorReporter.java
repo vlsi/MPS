@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.errors;
 
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.util.Pair;
 
