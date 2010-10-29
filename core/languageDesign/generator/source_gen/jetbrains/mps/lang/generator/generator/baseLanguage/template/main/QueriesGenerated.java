@@ -514,23 +514,23 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2895393989835680764(final IOperationContext operationContext, final IfMacroContext _context) {
-    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
   }
 
   public static boolean ifMacro_Condition_2895393989835680758(final IOperationContext operationContext, final IfMacroContext _context) {
-    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
   }
 
   public static boolean ifMacro_Condition_2895393989835680752(final IOperationContext operationContext, final IfMacroContext _context) {
-    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
   }
 
   public static boolean ifMacro_Condition_2895393989835680746(final IOperationContext operationContext, final IfMacroContext _context) {
-    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
   }
 
   public static boolean ifMacro_Condition_2895393989835680740(final IOperationContext operationContext, final IfMacroContext _context) {
-    return false && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence");
   }
 
   public static SNode sourceNodeQuery_1168025917226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

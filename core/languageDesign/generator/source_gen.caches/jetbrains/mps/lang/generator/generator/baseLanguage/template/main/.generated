@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8vr3hwt0eq9m8lo0vymw1jn61lqg2jv">
+<dependencies version="2" modelHash="5s88qbtzp6dxye2rvaegvgv6nx9khle">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
@@ -16,9 +16,10 @@
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="8vahp5vl1dfub37ec0dx13nrzy9ovky" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6m9ys4qo8mx9tt8ia3tepmd0dbb5sew" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="77rn04hub6f8gk30071gb1d591vj9n4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" hash="4347dbq9hlhtv4ku5bnushdfpegeznm" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="-9m043zztcohmco0o6rgqcg0cykcopbk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-46oycxh7vfqw1kvsemxtmo0oa4y6zzn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="8vr3hwt0eq9m8lo0vymw1jn61lqg2jv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="5s88qbtzp6dxye2rvaegvgv6nx9khle" />
   <dep model="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" hash="8cauciuq677n7308aq6d2cx6ocl8qp4" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-da6kx3fdfpn0u46qfvj1352580h8nze" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="8c9uzrjhqtw5vqls14yy3z3tjr5aqcm" />
@@ -82,6 +83,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
@@ -137,8 +139,13 @@
   <source id="344761564571002720" name="reduce_Switch" hash="4a6yii4hzysowev8flayx60yro5zlxx" />
   <source id="3038523907450732753" name="reduce_SubNodeListExpression" hash="-71r3cfbdcfnbhmqhol90x1jhd05qps7" />
   <source id="8961331321403206046" name="reduce_Context" hash="60hq8ifpy3hjd0thtno4e3q6ot1ki79" />
-  <source id="2895393989835677675" name="reduce_Consequence" hash="1gvmb6fs21q9acsvusimd6kxi6r3qxz" />
+  <source id="2895393989835677675" name="reduce_Consequence" hash="5t4v70alev2m9yfm3pd7hpm24qbe2zx" />
   <source id="2895393989835680694" name="reduce_AbandonInputConsequence" hash="-7o8zz6km8h3gospdzryrzyftqs5bnsy" />
   <source id="2895393989835680822" name="reduce_DismissTopMappingRule" hash="-e67m5s69ma23eimbnz2ep0wh7p3elzi" />
+  <source id="2226924809855855981" name="reduce_InlineSwitchConsequence" />
+  <source id="2226924809855859161" name="reduce_InlineTemplateWithContextConsequence" />
+  <source id="2226924809855859163" name="reduce_InlineTemplateRuleConsequence" />
+  <source id="2226924809855869474" name="reduce_TemplateDeclarationReferenceConsequence" />
+  <source id="2226924809855869476" name="reduce_WeaveEachRuleConsequence" />
 </dependencies>
 
