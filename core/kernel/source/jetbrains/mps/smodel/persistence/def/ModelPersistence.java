@@ -312,15 +312,15 @@ public class ModelPersistence {
     StructureModificationHistory refactorings = null;
     int version = fromVersion;
     while (version < toVersion) {
-      IModelWriter writer = modelWriters.get(++version);
-      if (version == 5) {
+      if (++version == 5) {
         //noinspection deprecation
         refactorings = model.getRefactoringHistory();
         if (refactorings != null && refactorings.getDataList().isEmpty()) {
           refactorings = null;
         }
       }
-      Document document = writer.saveModel(model);
+      model.calculateImplicitImports();
+      Document document = saveModel(model, version);
       model.dispose();
       LOG.assertLog(modelReaders.get(version) != null);
       model = modelReaders.get(version).readModel(document, NameUtil.shortNameFromLongName(reference.getLongName()), reference.getStereotype());
