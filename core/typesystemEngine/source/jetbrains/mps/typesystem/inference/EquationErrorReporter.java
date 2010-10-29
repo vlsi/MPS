@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.typesystem.uiActions.PresentationManager;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.IErrorReporter;
@@ -62,8 +64,8 @@ public class EquationErrorReporter extends AbstractErrorReporter implements IErr
     return MessageStatus.ERROR;
   }
 
-  public IErrorTarget getErrorTarget() {
-    return new NodeErrorTarget();
+  public MessageTarget getErrorTarget() {
+    return new NodeMessageTarget();
   }
 
   public SNode getSNode() {

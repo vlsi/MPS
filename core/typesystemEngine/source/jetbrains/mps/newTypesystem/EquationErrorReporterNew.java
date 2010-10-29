@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.errors.AbstractErrorReporter;
 import jetbrains.mps.errors.IErrorReporter;
@@ -70,8 +72,8 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
     return MessageStatus.ERROR;
   }
 
-  public IErrorTarget getErrorTarget() {
-    return new NodeErrorTarget();
+  public MessageTarget getErrorTarget() {
+    return new NodeMessageTarget();
   }
 
   public SNode getSNode() {
