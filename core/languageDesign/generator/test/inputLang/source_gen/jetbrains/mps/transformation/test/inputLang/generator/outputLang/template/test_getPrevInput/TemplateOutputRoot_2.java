@@ -12,6 +12,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_2 implements TemplateDeclaration {
@@ -47,6 +48,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
             TemplateContext context4 = context3.subContext(null, itnode4);
             SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
             // TODO notify environment 
+            tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
             // MAP-SRC 
             // MAP-SRC 
             // MAP-SRC 

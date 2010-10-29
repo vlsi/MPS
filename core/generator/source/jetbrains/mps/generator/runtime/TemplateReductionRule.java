@@ -17,7 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Evgeny Gryaznov, 10/27/10
@@ -28,5 +28,5 @@ public interface TemplateReductionRule {
 
   boolean applyToInheritors();
 
-  List<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context);
+  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context);
 }

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templateweave_InputNode_A implements TemplateDeclaration {
@@ -18,6 +19,7 @@ public class Templateweave_InputNode_A implements TemplateDeclaration {
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
     SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
+    tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
     return TemplateUtil.singletonList(tnode1);
   }
 }

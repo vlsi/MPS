@@ -17,6 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public interface TemplateRootMappingRule {
 
   boolean applyToInheritors();
 
-  List<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context);
+  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context);
 
   boolean keepSourceRoot();
 }

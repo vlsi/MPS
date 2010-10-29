@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
@@ -19,6 +20,7 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
     SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot_by_MappingRule");
+    tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
     // COPY-SRCL 
     return TemplateUtil.singletonList(tnode1);
 

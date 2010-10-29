@@ -17,12 +17,12 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Evgeny Gryaznov, 10/27/10
  */
 public interface TemplateCreateRootRule {
 
-  List<SNode> apply(TemplateExecutionEnvironment environment);
+  Collection<SNode> apply(TemplateExecutionEnvironment environment);
 }

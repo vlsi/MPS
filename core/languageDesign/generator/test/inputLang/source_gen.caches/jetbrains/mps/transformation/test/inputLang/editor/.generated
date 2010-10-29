@@ -11,7 +11,6 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ubnuov1kf43waig305o8fw1ay435a0" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-2go7ntiy4y4s4zbof6664w4aiiy7ts2" />
   <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-dgimjz19gnp6gpp15rfqaqri0s2z0gn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="akxgudclh6nc3p4loivlw3ihvknuhy7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6m9ys4qo8mx9tt8ia3tepmd0dbb5sew" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="2v8ad5zs063snh13s6nd3wfc9e3vz4e" />
   <dep model="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" hash="c14j1q0hk1xna1zfmcvn7daqto6rz1x" />
@@ -26,7 +25,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" />
     <file name="InputRoot_Editor.java" />
