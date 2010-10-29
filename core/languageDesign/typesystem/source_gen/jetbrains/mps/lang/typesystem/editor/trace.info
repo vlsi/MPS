@@ -65,9 +65,9 @@
   <unitInfo fileName="OverloadedOpRulesContainer_Editor.java" startLine="97" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOpRulesContainer_Editor$ruleListHandler_6g4l6s_c0" />
   <unitInfo fileName="CreateJoinExpression_Editor.java" startLine="153" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.CreateJoinExpression_Editor$argumentListHandler_3dwcyv_f0" />
   <unitInfo fileName="CreateMeetExpression_Editor.java" startLine="153" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.CreateMeetExpression_Editor$argumentListHandler_kwbpig_f0" />
+  <unitInfo fileName="TypesystemQuickFix_Editor.java" startLine="195" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor$quickFixArgumentListHandler_la7hkt_d0" />
   <unitInfo fileName="MatchStatement_Editor.java" startLine="196" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.MatchStatement_Editor$itemListHandler_qh3cwh_e0" />
-  <unitInfo fileName="TypesystemQuickFix_Editor.java" startLine="225" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor$quickFixArgumentListHandler_la7hkt_d0" />
-  <unitInfo fileName="TypesystemQuickFix_Editor.java" startLine="263" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor$quickFixFieldListHandler_la7hkt_g0" />
+  <unitInfo fileName="TypesystemQuickFix_Editor.java" startLine="233" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor$quickFixFieldListHandler_la7hkt_g0" />
   <unitInfo fileName="InferenceRule_Editor.java" startLine="363" startPosition="0" endLine="400" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InferenceRule_Editor$dependencyListHandler_robprv_b0" />
   <unitInfo fileName="ReferenceRoleTarget_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ReferenceRoleTarget_Editor" />
   <unitInfo fileName="PropertyNameTarget_Editor.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.PropertyNameTarget_Editor" />
@@ -150,10 +150,10 @@
   <unitInfo fileName="InfoStatement_Editor.java" startLine="19" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InfoStatement_Editor" />
   <unitInfo fileName="WarningStatement_Editor.java" startLine="19" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.WarningStatement_Editor" />
   <unitInfo fileName="ReportErrorStatement_Editor.java" startLine="19" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ReportErrorStatement_Editor" />
+  <unitInfo fileName="TypesystemQuickFix_Editor.java" startLine="27" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor" />
   <unitInfo fileName="AssertStatement_Editor.java" startLine="21" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AssertStatement_Editor" />
   <unitInfo fileName="SimpleRule_ProcedureCall_Editor.java" startLine="25" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SimpleRule_ProcedureCall_Editor" />
   <unitInfo fileName="InequationReplacementRule_Editor.java" startLine="23" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InequationReplacementRule_Editor" />
-  <unitInfo fileName="TypesystemQuickFix_Editor.java" startLine="27" startPosition="0" endLine="301" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypesystemQuickFix_Editor" />
   <unitInfo fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="31" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOpTypeRule_OneTypeSpecified_Editor" />
   <unitInfo fileName="ComparisonRule_Editor.java" startLine="20" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ComparisonRule_Editor" />
   <unitInfo fileName="DependentComputationItem_Editor.java" startLine="21" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.DependentComputationItem_Editor" />
@@ -163,13 +163,13 @@
   <unitInfo fileName="OverloadedOperatorTypeRule_Editor.java" startLine="31" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOperatorTypeRule_Editor" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="41" startPosition="0" endLine="585" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor" />
   <root nodeId="1174643042913">
-    <nodeInfo nodeId="1183469177520" fileName="ConceptReference_Editor.java" startLine="152" startPosition="100" endLine="153" endPosition="26" />
-    <nodeInfo nodeId="1183469401108" fileName="ConceptReference_Editor.java" startLine="154" startPosition="172" endLine="155" endPosition="134" />
-    <nodeInfo nodeId="1183469342502" fileName="ConceptReference_Editor.java" startLine="155" startPosition="134" endLine="156" endPosition="46" />
-    <nodeInfo nodeId="1183469321701" fileName="ConceptReference_Editor.java" startLine="157" startPosition="14" endLine="158" endPosition="64" />
-    <nodeInfo nodeId="1183469334198" fileName="ConceptReference_Editor.java" startLine="159" startPosition="7" endLine="160" endPosition="20" />
-    <nodeInfo nodeId="1183469318555" fileName="ConceptReference_Editor.java" startLine="157" startPosition="12" endLine="159" endPosition="7" />
-    <nodeInfo nodeId="1183469272253" fileName="ConceptReference_Editor.java" startLine="153" startPosition="26" endLine="159" endPosition="7" />
+    <nodeInfo nodeId="1183469177520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptReference_Editor.java" startLine="152" startPosition="100" endLine="153" endPosition="26" />
+    <nodeInfo nodeId="1183469401108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptReference_Editor.java" startLine="154" startPosition="172" endLine="155" endPosition="134" />
+    <nodeInfo nodeId="1183469342502" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptReference_Editor.java" startLine="155" startPosition="134" endLine="156" endPosition="46" />
+    <nodeInfo nodeId="1183469321701" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptReference_Editor.java" startLine="157" startPosition="14" endLine="158" endPosition="64" />
+    <nodeInfo nodeId="1183469334198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptReference_Editor.java" startLine="159" startPosition="7" endLine="160" endPosition="20" />
+    <nodeInfo nodeId="1183469318555" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ConceptReference_Editor.java" startLine="157" startPosition="12" endLine="159" endPosition="7" />
+    <nodeInfo nodeId="1183469272253" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptReference_Editor.java" startLine="153" startPosition="26" endLine="159" endPosition="7" />
     <scopeInfo nodeId="1183469318556" fileName="ConceptReference_Editor.java" startLine="157" startPosition="14" endLine="158" endPosition="64" />
     <scopeInfo nodeId="1183469272254" fileName="ConceptReference_Editor.java" startLine="154" startPosition="172" endLine="156" endPosition="46">
       <varInfo nodeId="1183469401109" varName="name" />
@@ -179,13 +179,13 @@
     </scopeInfo>
   </root>
   <root nodeId="1174643207657">
-    <nodeInfo nodeId="1183469480802" fileName="InferenceRule_Editor.java" startLine="405" startPosition="105" endLine="406" endPosition="75" />
-    <nodeInfo nodeId="1183469577809" fileName="InferenceRule_Editor.java" startLine="407" startPosition="158" endLine="408" endPosition="207" />
-    <nodeInfo nodeId="1183469605813" fileName="InferenceRule_Editor.java" startLine="409" startPosition="90" endLine="410" endPosition="111" />
-    <nodeInfo nodeId="1183469643736" fileName="InferenceRule_Editor.java" startLine="410" startPosition="111" endLine="411" endPosition="110" />
-    <nodeInfo nodeId="1183469609217" fileName="InferenceRule_Editor.java" startLine="413" startPosition="7" endLine="414" endPosition="20" />
-    <nodeInfo nodeId="1183469580818" fileName="InferenceRule_Editor.java" startLine="408" startPosition="207" endLine="412" endPosition="9" />
-    <nodeInfo nodeId="1183469488128" fileName="InferenceRule_Editor.java" startLine="406" startPosition="75" endLine="413" endPosition="7" />
+    <nodeInfo nodeId="1183469480802" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InferenceRule_Editor.java" startLine="405" startPosition="105" endLine="406" endPosition="75" />
+    <nodeInfo nodeId="1183469577809" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InferenceRule_Editor.java" startLine="407" startPosition="158" endLine="408" endPosition="207" />
+    <nodeInfo nodeId="1183469605813" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InferenceRule_Editor.java" startLine="409" startPosition="90" endLine="410" endPosition="111" />
+    <nodeInfo nodeId="1183469643736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InferenceRule_Editor.java" startLine="410" startPosition="111" endLine="411" endPosition="110" />
+    <nodeInfo nodeId="1183469609217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InferenceRule_Editor.java" startLine="413" startPosition="7" endLine="414" endPosition="20" />
+    <nodeInfo nodeId="1183469580818" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InferenceRule_Editor.java" startLine="408" startPosition="207" endLine="412" endPosition="9" />
+    <nodeInfo nodeId="1183469488128" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InferenceRule_Editor.java" startLine="406" startPosition="75" endLine="413" endPosition="7" />
     <scopeInfo nodeId="1183469580819" fileName="InferenceRule_Editor.java" startLine="409" startPosition="90" endLine="411" endPosition="110" />
     <scopeInfo nodeId="1183469488129" fileName="InferenceRule_Editor.java" startLine="407" startPosition="158" endLine="412" endPosition="9">
       <varInfo nodeId="1183469577810" varName="concept" />
@@ -195,35 +195,35 @@
     </scopeInfo>
   </root>
   <root nodeId="1174657544132">
-    <nodeInfo nodeId="1214399678008" fileName="TypeOfExpression_Editor.java" startLine="133" startPosition="74" endLine="134" endPosition="24" />
-    <nodeInfo nodeId="1214399678012" fileName="TypeOfExpression_Editor.java" startLine="135" startPosition="12" endLine="136" endPosition="33" />
-    <nodeInfo nodeId="1214399678010" fileName="TypeOfExpression_Editor.java" startLine="135" startPosition="10" endLine="137" endPosition="5" />
-    <nodeInfo nodeId="1214399678003" fileName="TypeOfExpression_Editor.java" startLine="132" startPosition="107" endLine="137" endPosition="5" />
+    <nodeInfo nodeId="1214399678008" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TypeOfExpression_Editor.java" startLine="133" startPosition="74" endLine="134" endPosition="24" />
+    <nodeInfo nodeId="1214399678012" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TypeOfExpression_Editor.java" startLine="135" startPosition="12" endLine="136" endPosition="33" />
+    <nodeInfo nodeId="1214399678010" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TypeOfExpression_Editor.java" startLine="135" startPosition="10" endLine="137" endPosition="5" />
+    <nodeInfo nodeId="1214399678003" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TypeOfExpression_Editor.java" startLine="132" startPosition="107" endLine="137" endPosition="5" />
     <scopeInfo nodeId="1214399678007" fileName="TypeOfExpression_Editor.java" startLine="133" startPosition="74" endLine="134" endPosition="24" />
     <scopeInfo nodeId="1214399678011" fileName="TypeOfExpression_Editor.java" startLine="135" startPosition="12" endLine="136" endPosition="33" />
     <scopeInfo nodeId="1214399678002" fileName="TypeOfExpression_Editor.java" startLine="132" startPosition="107" endLine="137" endPosition="5" />
   </root>
   <root nodeId="1174664104035">
-    <nodeInfo nodeId="1214399678511" fileName="AbstractEquationStatement_Editor.java" startLine="125" startPosition="60" endLine="126" endPosition="24" />
-    <nodeInfo nodeId="1214399678515" fileName="AbstractEquationStatement_Editor.java" startLine="127" startPosition="12" endLine="128" endPosition="25" />
-    <nodeInfo nodeId="1214399678513" fileName="AbstractEquationStatement_Editor.java" startLine="127" startPosition="10" endLine="129" endPosition="5" />
-    <nodeInfo nodeId="1214399678506" fileName="AbstractEquationStatement_Editor.java" startLine="124" startPosition="107" endLine="129" endPosition="5" />
+    <nodeInfo nodeId="1214399678511" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEquationStatement_Editor.java" startLine="125" startPosition="60" endLine="126" endPosition="24" />
+    <nodeInfo nodeId="1214399678515" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEquationStatement_Editor.java" startLine="127" startPosition="12" endLine="128" endPosition="25" />
+    <nodeInfo nodeId="1214399678513" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AbstractEquationStatement_Editor.java" startLine="127" startPosition="10" endLine="129" endPosition="5" />
+    <nodeInfo nodeId="1214399678506" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEquationStatement_Editor.java" startLine="124" startPosition="107" endLine="129" endPosition="5" />
     <scopeInfo nodeId="1214399678510" fileName="AbstractEquationStatement_Editor.java" startLine="125" startPosition="60" endLine="126" endPosition="24" />
     <scopeInfo nodeId="1214399678514" fileName="AbstractEquationStatement_Editor.java" startLine="127" startPosition="12" endLine="128" endPosition="25" />
     <scopeInfo nodeId="1214399678505" fileName="AbstractEquationStatement_Editor.java" startLine="124" startPosition="107" endLine="129" endPosition="5" />
   </root>
   <root nodeId="1176893712697">
-    <nodeInfo nodeId="1176893715917" fileName="Colors.java" startLine="7" startPosition="21" endLine="8" endPosition="58" />
+    <nodeInfo nodeId="1176893715917" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="Colors.java" startLine="7" startPosition="21" endLine="8" endPosition="58" />
     <unitInfo nodeId="1176893712697" fileName="Colors.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Colors" />
   </root>
   <root nodeId="1195214383471">
-    <nodeInfo nodeId="1195214394153" fileName="NonTypesystemRule_Editor.java" startLine="357" startPosition="105" endLine="358" endPosition="75" />
-    <nodeInfo nodeId="1195214394162" fileName="NonTypesystemRule_Editor.java" startLine="359" startPosition="158" endLine="360" endPosition="207" />
-    <nodeInfo nodeId="1195214394173" fileName="NonTypesystemRule_Editor.java" startLine="361" startPosition="90" endLine="362" endPosition="111" />
-    <nodeInfo nodeId="1195214394182" fileName="NonTypesystemRule_Editor.java" startLine="362" startPosition="111" endLine="363" endPosition="110" />
-    <nodeInfo nodeId="1195214394206" fileName="NonTypesystemRule_Editor.java" startLine="365" startPosition="7" endLine="366" endPosition="20" />
-    <nodeInfo nodeId="1195214394171" fileName="NonTypesystemRule_Editor.java" startLine="360" startPosition="207" endLine="364" endPosition="9" />
-    <nodeInfo nodeId="1195214394160" fileName="NonTypesystemRule_Editor.java" startLine="358" startPosition="75" endLine="365" endPosition="7" />
+    <nodeInfo nodeId="1195214394153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NonTypesystemRule_Editor.java" startLine="357" startPosition="105" endLine="358" endPosition="75" />
+    <nodeInfo nodeId="1195214394162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NonTypesystemRule_Editor.java" startLine="359" startPosition="158" endLine="360" endPosition="207" />
+    <nodeInfo nodeId="1195214394173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NonTypesystemRule_Editor.java" startLine="361" startPosition="90" endLine="362" endPosition="111" />
+    <nodeInfo nodeId="1195214394182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NonTypesystemRule_Editor.java" startLine="362" startPosition="111" endLine="363" endPosition="110" />
+    <nodeInfo nodeId="1195214394206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NonTypesystemRule_Editor.java" startLine="365" startPosition="7" endLine="366" endPosition="20" />
+    <nodeInfo nodeId="1195214394171" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NonTypesystemRule_Editor.java" startLine="360" startPosition="207" endLine="364" endPosition="9" />
+    <nodeInfo nodeId="1195214394160" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NonTypesystemRule_Editor.java" startLine="358" startPosition="75" endLine="365" endPosition="7" />
     <scopeInfo nodeId="1195214394172" fileName="NonTypesystemRule_Editor.java" startLine="361" startPosition="90" endLine="363" endPosition="110" />
     <scopeInfo nodeId="1195214394161" fileName="NonTypesystemRule_Editor.java" startLine="359" startPosition="158" endLine="364" endPosition="9">
       <varInfo nodeId="1195214394163" varName="concept" />
@@ -233,35 +233,35 @@
     </scopeInfo>
   </root>
   <root nodeId="1212056593859">
-    <nodeInfo nodeId="1320713984677695231" fileName="AbstractInequationStatement_Editor.java" startLine="372" startPosition="111" endLine="373" endPosition="275" />
-    <nodeInfo nodeId="1214399678689" fileName="AbstractInequationStatement_Editor.java" startLine="377" startPosition="60" endLine="378" endPosition="24" />
-    <nodeInfo nodeId="1214399678693" fileName="AbstractInequationStatement_Editor.java" startLine="379" startPosition="12" endLine="380" endPosition="25" />
-    <nodeInfo nodeId="1214399678691" fileName="AbstractInequationStatement_Editor.java" startLine="379" startPosition="10" endLine="381" endPosition="5" />
-    <nodeInfo nodeId="1214399678684" fileName="AbstractInequationStatement_Editor.java" startLine="376" startPosition="107" endLine="381" endPosition="5" />
+    <nodeInfo nodeId="1320713984677695231" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractInequationStatement_Editor.java" startLine="372" startPosition="111" endLine="373" endPosition="275" />
+    <nodeInfo nodeId="1214399678689" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractInequationStatement_Editor.java" startLine="377" startPosition="60" endLine="378" endPosition="24" />
+    <nodeInfo nodeId="1214399678693" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractInequationStatement_Editor.java" startLine="379" startPosition="12" endLine="380" endPosition="25" />
+    <nodeInfo nodeId="1214399678691" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AbstractInequationStatement_Editor.java" startLine="379" startPosition="10" endLine="381" endPosition="5" />
+    <nodeInfo nodeId="1214399678684" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractInequationStatement_Editor.java" startLine="376" startPosition="107" endLine="381" endPosition="5" />
     <scopeInfo nodeId="1320713984677695230" fileName="AbstractInequationStatement_Editor.java" startLine="372" startPosition="111" endLine="373" endPosition="275" />
     <scopeInfo nodeId="1214399678688" fileName="AbstractInequationStatement_Editor.java" startLine="377" startPosition="60" endLine="378" endPosition="24" />
     <scopeInfo nodeId="1214399678692" fileName="AbstractInequationStatement_Editor.java" startLine="379" startPosition="12" endLine="380" endPosition="25" />
     <scopeInfo nodeId="1214399678683" fileName="AbstractInequationStatement_Editor.java" startLine="376" startPosition="107" endLine="381" endPosition="5" />
   </root>
   <root nodeId="1236083599819">
-    <nodeInfo nodeId="4888149946185001889" fileName="OverloadedOperatorTypeRule_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="66" />
-    <nodeInfo nodeId="4888149946185001902" fileName="OverloadedOperatorTypeRule_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="67" />
+    <nodeInfo nodeId="4888149946185001889" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverloadedOperatorTypeRule_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="66" />
+    <nodeInfo nodeId="4888149946185001902" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverloadedOperatorTypeRule_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="67" />
     <scopeInfo nodeId="4888149946185001888" fileName="OverloadedOperatorTypeRule_Editor.java" startLine="358" startPosition="112" endLine="359" endPosition="66" />
     <scopeInfo nodeId="4888149946185001901" fileName="OverloadedOperatorTypeRule_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="67" />
   </root>
   <root nodeId="1240322605367">
-    <nodeInfo nodeId="1240657226772" fileName="ConceptClauseLinkInfo_Editor.java" startLine="131" startPosition="111" endLine="132" endPosition="264" />
+    <nodeInfo nodeId="1240657226772" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptClauseLinkInfo_Editor.java" startLine="131" startPosition="111" endLine="132" endPosition="264" />
     <scopeInfo nodeId="1240657221642" fileName="ConceptClauseLinkInfo_Editor.java" startLine="131" startPosition="111" endLine="132" endPosition="264" />
   </root>
   <root nodeId="4778346850551666965">
-    <nodeInfo nodeId="4778346850551686234" fileName="InequationReference_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="246" />
-    <nodeInfo nodeId="4778346850551686253" fileName="InequationReference_Editor.java" startLine="86" startPosition="49" endLine="87" endPosition="22" />
+    <nodeInfo nodeId="4778346850551686234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InequationReference_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="246" />
+    <nodeInfo nodeId="4778346850551686253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InequationReference_Editor.java" startLine="86" startPosition="49" endLine="87" endPosition="22" />
     <scopeInfo nodeId="4778346850551686250" fileName="InequationReference_Editor.java" startLine="83" startPosition="42" endLine="83" endPosition="42" />
     <scopeInfo nodeId="4778346850551686233" fileName="InequationReference_Editor.java" startLine="79" startPosition="33" endLine="80" endPosition="246" />
     <scopeInfo nodeId="4778346850551686252" fileName="InequationReference_Editor.java" startLine="86" startPosition="49" endLine="87" endPosition="22" />
   </root>
   <root nodeId="8124453027370845380">
-    <nodeInfo nodeId="2885635457272643352" fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="253" startPosition="112" endLine="254" endPosition="62" />
+    <nodeInfo nodeId="2885635457272643352" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="253" startPosition="112" endLine="254" endPosition="62" />
     <scopeInfo nodeId="2885635457272643351" fileName="OverloadedOpTypeRule_OneTypeSpecified_Editor.java" startLine="253" startPosition="112" endLine="254" endPosition="62" />
   </root>
 </debugInfo>
