@@ -12,7 +12,6 @@ public class TargetDependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.make.facet.structure.TargetDependency";
   public static final String QUALIFIER = "qualifier";
   public static final String DEPENDS_ON = "dependsOn";
-  public static final String CONFIGURATION = "configuration";
 
   public TargetDependency(SNode node) {
     super(node);
@@ -33,14 +32,6 @@ public class TargetDependency extends BaseConcept {
 
   public void setDependsOn(TargetDeclaration node) {
     super.setReferent(TargetDependency.DEPENDS_ON, node);
-  }
-
-  public TargetConfiguration getConfiguration() {
-    return (TargetConfiguration) this.getChild(TargetConfiguration.class, TargetDependency.CONFIGURATION);
-  }
-
-  public void setConfiguration(TargetConfiguration node) {
-    super.setChild(TargetDependency.CONFIGURATION, node);
   }
 
   public static TargetDependency newInstance(SModel sm, boolean init) {

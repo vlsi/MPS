@@ -269,6 +269,30 @@
                           </node>
                         </node>
                       </node>
+                      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7320828025189521538">
+                        <property name="name:3" value="variables" />
+                        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7320828025189521539" />
+                        <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="7320828025189521537">
+                          <property name="name:3" value="T" />
+                        </node>
+                        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="7320828025189521540">
+                          <link role="typeVariableDeclaration:3" targetNodeId="7320828025189521537" resolveInfo="T" />
+                        </node>
+                        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7320828025189521541">
+                          <property name="name:3" value="target" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7320828025189521542">
+                            <link role="classifier:3" targetNodeId="5.6168415856807657134" resolveInfo="ITarget" />
+                            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="7320828025189521543">
+                              <link role="typeVariableDeclaration:3" targetNodeId="7320828025189521537" resolveInfo="T" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7320828025189521544">
+                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7320828025189521549">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7320828025189521550" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

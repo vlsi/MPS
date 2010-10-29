@@ -12,6 +12,8 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class GenerateSpecial_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -41,7 +43,7 @@ public class GenerateSpecial_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_i03q2a_a implements ITarget {
+  public static class Target_i03q2a_a implements ITarget<Object> {
     private ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
 
     public Target_i03q2a_a() {
@@ -53,10 +55,17 @@ public class GenerateSpecial_Facet implements IFacet {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
+              null.foo("asdasdsd");
               switch (monitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
+                  null.baz(false);
+                  break;
                 case IGNORE_i03q2a_c0a0a:
+                  null.baz(false);
+                  break;
                 case RETRY_i03q2a_b0a0a:
+                  null.baz(true);
+                  break;
                 default:
               }
             default:
@@ -84,6 +93,49 @@ public class GenerateSpecial_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public Object createVariables() {
+      return null;
+    }
+
+    public static class Variables extends MultiTuple._3<String, Integer, Boolean> {
+      public Variables() {
+        super();
+      }
+
+      public Variables(String foo, Integer bar, Boolean baz) {
+        super(foo, bar, baz);
+      }
+
+      public String foo(String value) {
+        return super._0(value);
+      }
+
+      public Integer bar(Integer value) {
+        return super._1(value);
+      }
+
+      public Boolean baz(Boolean value) {
+        return super._2(value);
+      }
+
+      public String foo() {
+        return super._0();
+      }
+
+      public Integer bar() {
+        return super._1();
+      }
+
+      public Boolean baz() {
+        return super._2();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public GenerateSpecial_Facet.Target_i03q2a_a.Variables assignFrom(Tuples._3<String, Integer, Boolean> from) {
+        return (GenerateSpecial_Facet.Target_i03q2a_a.Variables) super.assign(from);
+      }
     }
   }
 }

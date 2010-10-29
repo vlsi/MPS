@@ -75,6 +75,10 @@ public class MakeModel_Action extends GeneratedAction {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           return new UIQueryRelayStrategy().relayQuery(query, MakeModel_Action.this.context);
         }
+
+        public <T> T variables(ITarget<T> target) {
+          return null;
+        }
       });
       System.out.println("*** Success: " + res.isSucessful());
     } catch (Throwable t) {

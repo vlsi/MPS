@@ -40,7 +40,7 @@ public class Generate_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_fi61u2_a implements ITarget {
+  public static class Target_fi61u2_a implements ITarget<Object> {
     private ITarget.Name name = new ITarget.Name("GenerateTarget");
 
     public Target_fi61u2_a() {
@@ -77,6 +77,10 @@ public class Generate_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public Object createVariables() {
+      return null;
     }
   }
 }

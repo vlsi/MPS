@@ -180,6 +180,10 @@ public class TargetRange {
       return first.getName();
     }
 
+    public Object createVariables() {
+      return null;
+    }
+
     public IJob createJob() {
       return null;
     }

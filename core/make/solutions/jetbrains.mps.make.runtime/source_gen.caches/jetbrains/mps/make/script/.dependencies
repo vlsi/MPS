@@ -7,6 +7,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IMonitor" file="IMonitor.java">
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.script.IOption" />
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
   </dependency>

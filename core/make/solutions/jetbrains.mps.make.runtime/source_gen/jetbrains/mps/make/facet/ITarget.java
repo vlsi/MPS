@@ -5,12 +5,13 @@ package jetbrains.mps.make.facet;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.internal.make.runtime.util.SmartWrapper;
 
-public interface ITarget {
+public interface ITarget<T> {
   public ITarget.Name getName();
   public Iterable<ITarget.Name> before();
   public Iterable<ITarget.Name> notBefore();
   public Iterable<ITarget.Name> after();
   public Iterable<ITarget.Name> notAfter();
+  public T createVariables();
   public IJob createJob();
   public static class Name extends SmartWrapper<String> {
     public Name(String name) {

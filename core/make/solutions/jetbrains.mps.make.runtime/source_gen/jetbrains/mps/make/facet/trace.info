@@ -21,26 +21,28 @@
     <unitInfo nodeId="6168415856807657096" fileName="IFacet.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet" />
   </root>
   <root nodeId="6168415856807657134">
-    <nodeInfo nodeId="6168415856807657147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="8" startPosition="26" endLine="9" endPosition="32" />
+    <nodeInfo nodeId="6168415856807657147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="8" startPosition="29" endLine="9" endPosition="32" />
     <nodeInfo nodeId="6168415856807657151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="9" startPosition="32" endLine="10" endPosition="41" />
     <nodeInfo nodeId="6168415856807657156" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="10" startPosition="41" endLine="11" endPosition="44" />
     <nodeInfo nodeId="6168415856807657161" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="11" startPosition="44" endLine="12" endPosition="40" />
     <nodeInfo nodeId="6168415856807657166" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="12" startPosition="40" endLine="13" endPosition="43" />
-    <nodeInfo nodeId="6168415856807657171" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="13" startPosition="43" endLine="14" endPosition="26" />
-    <nodeInfo nodeId="6168415856807657141" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ITarget.java" startLine="16" startPosition="30" endLine="17" endPosition="18" />
-    <nodeInfo nodeId="6168415856807657137" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ITarget.java" startLine="15" startPosition="57" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="6168415856807657147" fileName="ITarget.java" startLine="8" startPosition="26" endLine="9" endPosition="32" />
+    <nodeInfo nodeId="7320828025189492112" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="13" startPosition="43" endLine="14" endPosition="29" />
+    <nodeInfo nodeId="6168415856807657171" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ITarget.java" startLine="14" startPosition="29" endLine="15" endPosition="26" />
+    <nodeInfo nodeId="6168415856807657141" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ITarget.java" startLine="17" startPosition="30" endLine="18" endPosition="18" />
+    <nodeInfo nodeId="6168415856807657137" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ITarget.java" startLine="16" startPosition="57" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="6168415856807657147" fileName="ITarget.java" startLine="8" startPosition="29" endLine="9" endPosition="32" />
     <scopeInfo nodeId="6168415856807657151" fileName="ITarget.java" startLine="9" startPosition="32" endLine="10" endPosition="41" />
     <scopeInfo nodeId="6168415856807657156" fileName="ITarget.java" startLine="10" startPosition="41" endLine="11" endPosition="44" />
     <scopeInfo nodeId="6168415856807657161" fileName="ITarget.java" startLine="11" startPosition="44" endLine="12" endPosition="40" />
     <scopeInfo nodeId="6168415856807657166" fileName="ITarget.java" startLine="12" startPosition="40" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="6168415856807657171" fileName="ITarget.java" startLine="13" startPosition="43" endLine="14" endPosition="26" />
-    <scopeInfo nodeId="6168415856807657140" fileName="ITarget.java" startLine="16" startPosition="30" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="6168415856807657137" fileName="ITarget.java" startLine="15" startPosition="57" endLine="18" endPosition="5">
+    <scopeInfo nodeId="7320828025189492112" fileName="ITarget.java" startLine="13" startPosition="43" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="6168415856807657171" fileName="ITarget.java" startLine="14" startPosition="29" endLine="15" endPosition="26" />
+    <scopeInfo nodeId="6168415856807657140" fileName="ITarget.java" startLine="17" startPosition="30" endLine="18" endPosition="18" />
+    <scopeInfo nodeId="6168415856807657137" fileName="ITarget.java" startLine="16" startPosition="57" endLine="19" endPosition="5">
       <varInfo nodeId="6168415856807657143" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="6168415856807657135" fileName="ITarget.java" startLine="15" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget$Name" />
-    <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
+    <unitInfo nodeId="6168415856807657135" fileName="ITarget.java" startLine="16" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget$Name" />
+    <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
   </root>
   <root nodeId="6168415856807659069">
     <nodeInfo nodeId="6168415856807662021" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="FacetRegistry.java" startLine="11" startPosition="28" endLine="12" endPosition="68" />

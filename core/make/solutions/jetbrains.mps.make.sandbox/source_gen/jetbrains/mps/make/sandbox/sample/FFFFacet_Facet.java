@@ -43,7 +43,7 @@ public class FFFFacet_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_chixuw_a implements ITarget {
+  public static class Target_chixuw_a implements ITarget<Object> {
     private ITarget.Name name = new ITarget.Name("QQQ");
 
     public Target_chixuw_a() {
@@ -83,9 +83,13 @@ public class FFFFacet_Facet implements IFacet {
     public ITarget.Name getName() {
       return name;
     }
+
+    public Object createVariables() {
+      return null;
+    }
   }
 
-  public static class Target_chixuw_b implements ITarget {
+  public static class Target_chixuw_b implements ITarget<Object> {
     private ITarget.Name name = new ITarget.Name("qweqwe");
 
     public Target_chixuw_b() {
@@ -123,9 +127,13 @@ public class FFFFacet_Facet implements IFacet {
     public ITarget.Name getName() {
       return name;
     }
+
+    public Object createVariables() {
+      return null;
+    }
   }
 
-  public static class Target_chixuw_c implements ITarget {
+  public static class Target_chixuw_c implements ITarget<Object> {
     private ITarget.Name name = new ITarget.Name("Nanana");
 
     public Target_chixuw_c() {
@@ -162,6 +170,10 @@ public class FFFFacet_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public Object createVariables() {
+      return null;
     }
   }
 }

@@ -179,6 +179,15 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7320828025189492112">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="createVariables" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7320828025189492114" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7320828025189492115" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="7320828025189492116">
+        <link role="typeVariableDeclaration:3" targetNodeId="7320828025189486625" resolveInfo="T" />
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6168415856807657171">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="createJob" />
@@ -189,6 +198,9 @@
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6168415856807657175" />
+    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="7320828025189486625">
+      <property name="name:3" value="T" />
+    </node>
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6168415856807659069">

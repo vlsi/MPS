@@ -2838,6 +2838,18 @@
           </node>
         </node>
       </node>
+      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7320828025189499534">
+        <property name="name:3" value="createVariables" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7320828025189499535" />
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7320828025189499536">
+          <link role="classifier:3" targetNodeId="2v.~Object" />
+        </node>
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7320828025189499537">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7320828025189499538">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7320828025189499539" />
+          </node>
+        </node>
+      </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6168415856807658476">
         <property name="name:3" value="createJob" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6168415856807658477" />

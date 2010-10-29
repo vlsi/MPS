@@ -183,8 +183,8 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_xfdsch_a2b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("config");
-    provider.setNoTargetText("<no config>");
+    provider.setRole("variables");
+    provider.setNoTargetText("<no variables>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
