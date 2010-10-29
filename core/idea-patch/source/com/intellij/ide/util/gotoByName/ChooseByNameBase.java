@@ -1096,6 +1096,12 @@ public abstract class ChooseByNameBase {
       pattern = pattern.substring(1);
     }
 
+    boolean empty = pattern.length() == 0;
+    if (empty) {
+      if (!canShowListForEmptyPattern()) return Collections.emptyList();
+      return Arrays.asList(names);
+    }
+
     ArrayList<String> result = new ArrayList<String>();
     try {
       for (String name : names) {
@@ -1203,9 +1209,6 @@ public abstract class ChooseByNameBase {
     private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
       String[] names = myCheckboxState ? myNames[1] : myNames[0];
       String namePattern = getNamePattern(pattern);
-
-      boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
-      if (empty && !canShowListForEmptyPattern()) return;
 
       List<String> namesList = getNamesByPattern(namePattern, names);
 
