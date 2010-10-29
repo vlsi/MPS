@@ -183,7 +183,9 @@
       <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
       <project file="${mps.home}/platform/math/mathLanguage.mpr"/>
       <project file="${mps.home}/platform/money/MoneyLang.mpr"/>
+<!--
       <project file="${mps.home}/platform/contracts/contracts.mpr"/>
+-->
       <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
 
       <!-- Samples -->
