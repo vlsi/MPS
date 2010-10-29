@@ -33,8 +33,8 @@
     <nodeInfo nodeId="7376433222636454073" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="23" startPosition="115" endLine="24" endPosition="36" />
     <nodeInfo nodeId="1225121875077" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="24" startPosition="36" endLine="25" endPosition="211" />
     <nodeInfo nodeId="1216860931285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="26" startPosition="137" endLine="27" endPosition="52" />
-    <nodeInfo nodeId="1216860931285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="27" startPosition="52" endLine="28" endPosition="55" />
-    <nodeInfo nodeId="1216860931285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="28" startPosition="55" endLine="29" endPosition="265" />
+    <nodeInfo nodeId="1216860931285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="27" startPosition="52" endLine="28" endPosition="58" />
+    <nodeInfo nodeId="1216860931285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="28" startPosition="58" endLine="29" endPosition="265" />
     <nodeInfo nodeId="1216860931285" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="25" startPosition="211" endLine="30" endPosition="5" />
     <scopeInfo nodeId="1216860931285" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="26" startPosition="137" endLine="29" endPosition="265" />
     <scopeInfo nodeId="1216860931281" fileName="check_GenerationContextOp_Base_NonTypesystemRule.java" startLine="23" startPosition="115" endLine="30" endPosition="5">
@@ -137,8 +137,8 @@
   </root>
   <root nodeId="1221220308822">
     <nodeInfo nodeId="1221220343089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="22" startPosition="126" endLine="23" endPosition="52" />
-    <nodeInfo nodeId="1221220343089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="23" startPosition="52" endLine="24" endPosition="55" />
-    <nodeInfo nodeId="1221220343089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="24" startPosition="55" endLine="25" endPosition="289" />
+    <nodeInfo nodeId="1221220343089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="23" startPosition="52" endLine="24" endPosition="58" />
+    <nodeInfo nodeId="1221220343089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="24" startPosition="58" endLine="25" endPosition="289" />
     <nodeInfo nodeId="1221220343089" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />
     <scopeInfo nodeId="1221220343089" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="22" startPosition="126" endLine="25" endPosition="289" />
     <scopeInfo nodeId="1221220308823" fileName="check_op_inside_refMacro_NonTypesystemRule.java" startLine="21" startPosition="115" endLine="26" endPosition="5" />

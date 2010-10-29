@@ -10,8 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -27,7 +27,7 @@ public class check_LoopMacro_NonTypesystemRule extends AbstractNonTypesystemRule
         if (SPropertyOperations.hasValue(linkdecl, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(linkdecl, "sourceCardinality", "1", "0..1")) {
           {
             BaseQuickFixProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
+            MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Target role for $LOOP$ macro can contain max 1 element (role: " + SPropertyOperations.getString(linkdecl, "role") + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", intentionProvider, errorTarget);
           }
         }

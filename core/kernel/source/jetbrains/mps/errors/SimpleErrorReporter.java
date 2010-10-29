@@ -18,8 +18,6 @@ package jetbrains.mps.errors;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class SimpleErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private String myErrorString;

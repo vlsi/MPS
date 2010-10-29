@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -23,7 +23,7 @@ import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -51,7 +51,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
       if (link == null && !(node.isAttribute())) {
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Child in a role with unknown link", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4950342498455637390", intentionProvider, errorTarget);
         }
         return;
@@ -60,7 +60,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
       if (!(cm.canBeChild(node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link))) {
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074610949", intentionProvider, errorTarget);
           {
             SNode _foreign_34989546 = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
@@ -75,7 +75,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
     if (node.isRoot() && !(cm.canBeRoot(operationContext, node.getConceptFqName(), SNodeOperations.getModel(node)))) {
       {
         BaseQuickFixProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
+        MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Not rootable concept added as root", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074611001", intentionProvider, errorTarget);
         {
           SNode _foreign_34989546 = cm.getCanBeRootBlock(operationContext, node.getConceptFqName());
@@ -95,7 +95,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
       if (!(cm.canBeParent(node, childConcept, childLink, operationContext))) {
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074611096", intentionProvider, errorTarget);
           {
             SNode _foreign_34989546 = cm.getCanBeParentBlock(node, operationContext);
@@ -109,7 +109,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
       if (rule != null) {
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(child, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1998770035420757821", intentionProvider, errorTarget);
           {
             SNode _foreign_34989546 = rule;
@@ -143,8 +143,8 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix", false);
           intentionProvider.putArgument("propertyName", p.getName());
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new PropertyErrorTarget(p.getName());
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget(p.getName());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Property constraint violation for property \"" + p.getName() + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "3618120580763111372", intentionProvider, errorTarget);
         }
       }
@@ -156,7 +156,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix", false);
           intentionProvider.putArgument("propertyName", name);
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "Usage of undeclared property \"" + name + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4049502122675887138", intentionProvider, errorTarget);
         }
       }

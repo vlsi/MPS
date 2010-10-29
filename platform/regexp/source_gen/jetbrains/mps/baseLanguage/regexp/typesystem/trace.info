@@ -131,8 +131,8 @@
   </root>
   <root nodeId="3796137614137565921">
     <nodeInfo nodeId="3796137614137565931" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="54" />
-    <nodeInfo nodeId="3796137614137565931" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="57" />
-    <nodeInfo nodeId="3796137614137565931" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="25" startPosition="57" endLine="26" endPosition="269" />
+    <nodeInfo nodeId="3796137614137565931" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="60" />
+    <nodeInfo nodeId="3796137614137565931" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="269" />
     <nodeInfo nodeId="3796137614137565931" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="22" startPosition="83" endLine="27" endPosition="7" />
     <nodeInfo nodeId="3796137614137565925" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="21" startPosition="120" endLine="28" endPosition="5" />
     <scopeInfo nodeId="3796137614137565931" fileName="check_LiteralReplacement_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="269" />
@@ -159,8 +159,8 @@
   </root>
   <root nodeId="8330008649152995908">
     <nodeInfo nodeId="8330008649152998035" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="54" />
-    <nodeInfo nodeId="8330008649152998035" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="57" />
-    <nodeInfo nodeId="8330008649152998035" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="25" startPosition="57" endLine="26" endPosition="269" />
+    <nodeInfo nodeId="8330008649152998035" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="60" />
+    <nodeInfo nodeId="8330008649152998035" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="269" />
     <nodeInfo nodeId="8330008649152998035" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="27" endPosition="7" />
     <nodeInfo nodeId="8330008649152998024" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="21" startPosition="120" endLine="28" endPosition="5" />
     <scopeInfo nodeId="8330008649152998035" fileName="check_StringLiteralRegexp_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="269" />

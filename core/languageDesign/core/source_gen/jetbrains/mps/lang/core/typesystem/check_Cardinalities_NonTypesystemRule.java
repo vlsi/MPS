@@ -14,11 +14,11 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_Cardinalities_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -42,7 +42,7 @@ public class check_Cardinalities_NonTypesystemRule extends AbstractNonTypesystem
 
             {
               BaseQuickFixProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
+              MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8431998747026837711", intentionProvider, errorTarget);
             }
           }
@@ -50,8 +50,8 @@ public class check_Cardinalities_NonTypesystemRule extends AbstractNonTypesystem
           if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
             {
               BaseQuickFixProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
-              errorTarget = new ReferenceErrorTarget(SPropertyOperations.getString(link, "role"));
+              MessageTarget errorTarget = new NodeMessageTarget();
+              errorTarget = new ReferenceMessageTarget(SPropertyOperations.getString(link, "role"));
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253889223", intentionProvider, errorTarget);
             }
           }
@@ -62,7 +62,7 @@ public class check_Cardinalities_NonTypesystemRule extends AbstractNonTypesystem
             BaseQuickFixProvider intentionProvider = null;
             intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix", false);
             intentionProvider.putArgument("link", link);
-            IErrorTarget errorTarget = new NodeErrorTarget();
+            MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253889251", intentionProvider, errorTarget);
           }
         }

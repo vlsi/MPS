@@ -17,9 +17,9 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -44,16 +44,16 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       if (sss.isError()) {
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752368615", intentionProvider, errorTarget);
         }
       } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
         String name = target.getName();
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
             "" :
             " " + name

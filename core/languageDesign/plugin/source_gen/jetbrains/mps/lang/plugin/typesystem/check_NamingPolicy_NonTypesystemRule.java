@@ -11,11 +11,11 @@ import jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.checkedName.PropertyReference;
-import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -31,7 +31,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140725", intentionProvider, errorTarget);
         }
         {
@@ -39,7 +39,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_literal_once_QuickFix", false);
           intentionProvider.putArgument("caption", "Fix String");
           intentionProvider.putArgument("literal", s);
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(s, myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140731", intentionProvider, errorTarget);
         }
       }
@@ -54,8 +54,8 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new PropertyErrorTarget(p.getProperty());
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget(p.getProperty());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140761", intentionProvider, errorTarget);
         }
         {
@@ -63,8 +63,8 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_property_once_QuickFix", false);
           intentionProvider.putArgument("caption", "Fix " + NameUtil.capitalize(p.getProperty()));
           intentionProvider.putArgument("property", p);
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new PropertyErrorTarget(p.getProperty());
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget(p.getProperty());
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p.getNode(), myWarning, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140773", intentionProvider, errorTarget);
         }
       }
