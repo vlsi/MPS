@@ -1554,12 +1554,24 @@ public class JavaConverterTreeBuilder {
     }
   }
 
+  
+
   private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
-    AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
-    AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
+     AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
     SNode sourceNode = annotationInstance.getNode();
-    sourceNode.addReference(myTypesProvider.createClassifierReference(
-      annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
+    AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
+    SReference classifierReference;
+    if (annotationBinding == null) {
+      TypeReference type = annotation.type;
+      classifierReference = myTypesProvider.createErrorClassifierReference(
+        AnnotationInstance.ANNOTATION, type.resolvedType, sourceNode);
+    } else {
+      classifierReference = myTypesProvider.createClassifierReference(
+      annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode);
+    }
+    if (classifierReference != null) {
+      sourceNode.addReference(classifierReference);
+    }
     MemberValuePair[] pairs = annotation.memberValuePairs();
     if (pairs != null) {
       for (MemberValuePair pair : pairs) {
@@ -1567,8 +1579,12 @@ public class JavaConverterTreeBuilder {
         value.setValue(processExpressionRefl(pair.value));
 
         SNode valueNode = value.getNode();
-        valueNode.addReference(
+        if (pair.binding == null) {
+          valueNode.addReference(myTypesProvider.createErrorReference(AnnotationInstanceValue.KEY, new String(pair.name), valueNode));
+        } else {
+          valueNode.addReference(
           myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
+        }
         annotationInstance.addValue(value);
       }
     }

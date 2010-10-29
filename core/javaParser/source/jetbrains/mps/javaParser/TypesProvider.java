@@ -156,10 +156,7 @@ public class TypesProvider {
       }
       if (binding instanceof MissingTypeBinding || binding instanceof ProblemReferenceBinding) {
         ClassifierType classifierType = ClassifierType.newInstance(model);
-        ReferenceBinding missingTypeBinding = (ReferenceBinding) binding;
-        char[][] chars = missingTypeBinding.compoundName;
-        char[] name = chars[chars.length - 1];
-        SReference reference = createErrorReference(ClassifierType.CLASSIFIER, new String(name), classifierType.getNode());
+        SReference reference = createErrorClassifierReference(ClassifierType.CLASSIFIER, (ReferenceBinding) binding, classifierType.getNode());
         classifierType.getNode().addReference(reference);
         return classifierType;
       }
@@ -197,6 +194,18 @@ public class TypesProvider {
 
   public SReference createErrorReference(String role, String resolveInfo, SNode sourceNode) {
     return new StaticReference(role, sourceNode, sourceNode.getModel().getSModelReference(), null, resolveInfo);
+  }
+
+  public SReference createErrorClassifierReference(String role, TypeBinding binding, SNode sourceNode) {
+    if (binding instanceof ReferenceBinding) {
+      ReferenceBinding referenceBinding = (ReferenceBinding) binding;
+      char[][] chars = referenceBinding.compoundName;
+      char[] name = chars[chars.length - 1];
+      return createErrorReference(role, new String(name), sourceNode);
+    } else {
+      //todo?
+      return null;
+    }
   }
 
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
