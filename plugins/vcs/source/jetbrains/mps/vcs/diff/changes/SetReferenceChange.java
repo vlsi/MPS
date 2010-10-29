@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
-import jetbrains.mps.nodeEditor.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.*;
 
 import java.util.Arrays;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.messageTargets;
+package jetbrains.mps.errors.messageTargets;
 
 public enum MessageTargetEnum {
   NODE, REFERENCE, PROPERTY, DELETED_CHILD

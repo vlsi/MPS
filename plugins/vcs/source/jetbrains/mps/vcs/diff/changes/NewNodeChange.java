@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
-import jetbrains.mps.nodeEditor.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SNodeId;
 
 public abstract class NewNodeChange extends Change {

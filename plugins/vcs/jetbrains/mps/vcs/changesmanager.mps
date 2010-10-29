@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
-  <maxImportIndex value="81" />
+  <maxImportIndex value="82" />
   <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
@@ -97,6 +97,7 @@
   <import index="79" modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="-1" />
   <import index="80" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <import index="81" modelUID="f:java_stub#jetbrains.mps.errors(jetbrains.mps.errors@java_stub)" version="-1" />
+  <import index="82" modelUID="f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="23553604208246606">
     <property name="name:3" value="ChangesManager" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5569581551640537985">
@@ -13885,16 +13886,16 @@
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6707717378011964268">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6707717378011982907">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6707717378011982916">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6707717378011982920">
-                <link role="enumConstantDeclaration:3" targetNodeId="40.~MessageTargetEnum.DELETED_CHILD" resolveInfo="DELETED_CHILD" />
-                <link role="enumClass:3" targetNodeId="40.~MessageTargetEnum" resolveInfo="MessageTargetEnum" />
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="2996471731681747961">
+                <link role="enumConstantDeclaration:3" targetNodeId="82.~MessageTargetEnum.DELETED_CHILD" resolveInfo="DELETED_CHILD" />
+                <link role="enumClass:3" targetNodeId="82.~MessageTargetEnum" resolveInfo="MessageTargetEnum" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6707717378011982911">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6707717378011982910">
                   <link role="variableDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.myMessageTarget" resolveInfo="myMessageTarget" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6707717378011982915">
-                  <link role="baseMethodDeclaration:3" targetNodeId="40.~MessageTarget.getTarget():jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum" resolveInfo="getTarget" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="82.~MessageTarget.getTarget():jetbrains.mps.errors.messageTargets.MessageTargetEnum" resolveInfo="getTarget" />
                 </node>
               </node>
             </node>
@@ -13986,13 +13987,13 @@
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4434895596490125507">
                               <link role="variableDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.myMessageTarget" resolveInfo="myMessageTarget" />
                             </node>
-                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4434895596490125508">
-                              <link role="classifier:3" targetNodeId="40.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
+                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2996471731681747962">
+                              <link role="classifier:3" targetNodeId="82.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
                             </node>
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4434895596490125509">
-                          <link role="baseMethodDeclaration:3" targetNodeId="40.~DeletedNodeMessageTarget.getNextChildIndex():int" resolveInfo="getNextChildIndex" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="82.~DeletedNodeMessageTarget.getNextChildIndex():int" resolveInfo="getNextChildIndex" />
                         </node>
                       </node>
                     </node>
@@ -14084,13 +14085,13 @@
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4434895596490168938">
                           <link role="variableDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.myMessageTarget" resolveInfo="myMessageTarget" />
                         </node>
-                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4434895596490168939">
-                          <link role="classifier:3" targetNodeId="40.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2996471731681747963">
+                          <link role="classifier:3" targetNodeId="82.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
                         </node>
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4434895596490168940">
-                      <link role="baseMethodDeclaration:3" targetNodeId="40.~DeletedNodeMessageTarget.getNextChildIndex():int" resolveInfo="getNextChildIndex" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="82.~DeletedNodeMessageTarget.getNextChildIndex():int" resolveInfo="getNextChildIndex" />
                     </node>
                   </node>
                 </node>
@@ -14345,12 +14346,12 @@
                     <link role="variableDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.myMessageTarget" resolveInfo="myMessageTarget" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3176852462137000055">
-                    <link role="baseMethodDeclaration:3" targetNodeId="40.~MessageTarget.getTarget():jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum" resolveInfo="getTarget" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="82.~MessageTarget.getTarget():jetbrains.mps.errors.messageTargets.MessageTargetEnum" resolveInfo="getTarget" />
                   </node>
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3176852462137000056">
-                  <link role="enumConstantDeclaration:3" targetNodeId="40.~MessageTargetEnum.NODE" resolveInfo="NODE" />
-                  <link role="enumClass:3" targetNodeId="40.~MessageTargetEnum" resolveInfo="MessageTargetEnum" />
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="2996471731681747964">
+                  <link role="enumConstantDeclaration:3" targetNodeId="82.~MessageTargetEnum.NODE" resolveInfo="NODE" />
+                  <link role="enumClass:3" targetNodeId="82.~MessageTargetEnum" resolveInfo="MessageTargetEnum" />
                 </node>
               </node>
             </node>
@@ -14430,13 +14431,13 @@
                               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2936752800012777368">
                                 <link role="variableDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.myMessageTarget" resolveInfo="myMessageTarget" />
                               </node>
-                              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2936752800012777369">
-                                <link role="classifier:3" targetNodeId="40.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
+                              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2996471731681747965">
+                                <link role="classifier:3" targetNodeId="82.~DeletedNodeMessageTarget" resolveInfo="DeletedNodeMessageTarget" />
                               </node>
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2936752800012777370">
-                            <link role="baseMethodDeclaration:3" targetNodeId="40.~DeletedNodeMessageTarget.getNextChildIndex():int" resolveInfo="getNextChildIndex" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="82.~DeletedNodeMessageTarget.getNextChildIndex():int" resolveInfo="getNextChildIndex" />
                           </node>
                         </node>
                       </node>
@@ -15291,7 +15292,7 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6149144798615862334" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6149144798615862335">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="6149144798615862361">
-            <link role="baseMethodDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.errors.MessageStatus,jetbrains.mps.nodeEditor.messageTargets.MessageTarget,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.EditorMessageOwner)" resolveInfo="EditorMessageWithTarget" />
+            <link role="baseMethodDeclaration:3" targetNodeId="40.~EditorMessageWithTarget.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.errors.MessageStatus,jetbrains.mps.errors.messageTargets.MessageTarget,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.EditorMessageOwner)" resolveInfo="EditorMessageWithTarget" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6149144798615862362">
               <link role="variableDeclaration:3" targetNodeId="6149144798615862351" resolveInfo="node" />
             </node>
@@ -15345,8 +15346,8 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6149144798615862356">
           <property name="name:3" value="messageTarget" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6149144798615862358">
-            <link role="classifier:3" targetNodeId="40.~MessageTarget" resolveInfo="MessageTarget" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2996471731681747960">
+            <link role="classifier:3" targetNodeId="82.~MessageTarget" resolveInfo="MessageTarget" />
           </node>
         </node>
       </node>
@@ -15710,8 +15711,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="94490962879300525">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="94490962879300526">
             <property name="name:3" value="messageTarget" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="94490962879300527">
-              <link role="classifier:3" targetNodeId="40.~MessageTarget" resolveInfo="MessageTarget" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2996471731681747958">
+              <link role="classifier:3" targetNodeId="82.~MessageTarget" resolveInfo="MessageTarget" />
             </node>
           </node>
         </node>
@@ -15822,7 +15823,7 @@
                       <link role="variableDeclaration:3" targetNodeId="166132277801275914" resolveInfo="change" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="94490962879300538">
-                      <link role="baseMethodDeclaration:3" targetNodeId="13.~Change.getMessageTarget():jetbrains.mps.nodeEditor.messageTargets.MessageTarget" resolveInfo="getMessageTarget" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="13.~Change.getMessageTarget():jetbrains.mps.errors.messageTargets.MessageTarget" resolveInfo="getMessageTarget" />
                     </node>
                   </node>
                   <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4549443622024151075">
@@ -16685,11 +16686,9 @@
                                 <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760639225">
                                   <link role="variableDeclaration:3" targetNodeId="6080400160196253616" resolveInfo="myChangeListener" />
                                 </node>
-                                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4366048675740426751">
-                                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4366048675740426752">
-                                    <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5264204858747865445">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="5264204858747865439" resolveInfo="EditorComponentChangesHighligher.MyChangeListener" />
-                                    </node>
+                                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2996471731681828406">
+                                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2996471731681828408">
+                                    <link role="baseMethodDeclaration:3" targetNodeId="5264204858747865439" resolveInfo="EditorComponentChangesHighligher.MyChangeListener" />
                                   </node>
                                 </node>
                               </node>

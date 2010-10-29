@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
-import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
-import jetbrains.mps.nodeEditor.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 
 public class ReferenceErrorTarget implements IErrorTarget {
   private String myRole;

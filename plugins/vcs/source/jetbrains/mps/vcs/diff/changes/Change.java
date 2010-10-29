@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
-import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 

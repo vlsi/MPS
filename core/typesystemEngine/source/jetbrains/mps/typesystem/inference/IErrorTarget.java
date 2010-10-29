@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
-import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 
 public interface IErrorTarget {
   public MessageTargetEnum getTarget();

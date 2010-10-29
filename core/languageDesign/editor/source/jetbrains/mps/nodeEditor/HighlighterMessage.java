@@ -16,8 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.errors.IErrorReporter;

@@ -1,4 +1,4 @@
-package jetbrains.mps.nodeEditor.messageTargets;
+package jetbrains.mps.errors.messageTargets;
 
 
 /**

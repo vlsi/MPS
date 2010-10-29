@@ -1,6 +1,4 @@
-package jetbrains.mps.nodeEditor.messageTargets;
-
-import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
+package jetbrains.mps.errors.messageTargets;
 
 /**
  * Created by IntelliJ IDEA.
