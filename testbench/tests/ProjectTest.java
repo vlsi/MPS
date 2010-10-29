@@ -83,7 +83,7 @@ public class ProjectTest {
       "/platform/uiLanguage/uiLanguage.mpr",
       "/platform/ypath/YPath.mpr",
       "/platform/dates/dates.mpr",
-      "/platform/unitTest/unitTest.mpr",
+      "/core/baseLanguage/unitTest/unitTest.mpr",
       "/platform/math/mathLanguage.mpr",
       "/platform/money/MoneyLang.mpr",
       "/platform/contracts/contracts.mpr",

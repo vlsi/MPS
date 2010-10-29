@@ -180,7 +180,7 @@
       <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
       <project file="${mps.home}/platform/ypath/YPath.mpr"/>
       <project file="${mps.home}/platform/dates/dates.mpr"/>
-      <project file="${mps.home}/platform/unitTest/unitTest.mpr"/>
+      <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
       <project file="${mps.home}/platform/math/mathLanguage.mpr"/>
       <project file="${mps.home}/platform/money/MoneyLang.mpr"/>
       <project file="${mps.home}/platform/contracts/contracts.mpr"/>
