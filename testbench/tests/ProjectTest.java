@@ -39,14 +39,10 @@ public class ProjectTest {
       "/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr",
       "/core/baseLanguage/closures/closures.mpr",
       "/core/baseLanguage/collections/collections.mpr",
-      "/core/baseLanguage/dates/dates.mpr",
 
       "/core/baseLanguage/javadoc/javadoc.mpr",
       "/core/baseLanguage/logging/logging.mpr",
-      "/core/baseLanguage/math/mathLanguage.mpr",
-      "/core/baseLanguage/money/MoneyLang.mpr",
       "/core/baseLanguage/tuples/tuples.mpr",
-      "/core/baseLanguage/unitTest/unitTest.mpr",
       "/core/baseLanguage/runConfigurations/runConfigurations.mpr",
       "/core/languageDesign/actions/actions.mpr",
       "/core/languageDesign/annotations/annotations.mpr",
@@ -86,6 +82,11 @@ public class ProjectTest {
       "/platform/quickQueryLanguage/quickQueryLanguage.mpr",
       "/platform/uiLanguage/uiLanguage.mpr",
       "/platform/ypath/YPath.mpr",
+      "/platform/dates/dates.mpr",
+      "/platform/unitTest/unitTest.mpr",
+      "/platform/math/mathLanguage.mpr",
+      "/platform/money/MoneyLang.mpr",
+      "/platform/contracts/contracts.mpr",
       "/workbench/ideSolution/ide.mpr",
 
       //  Samples

@@ -136,13 +136,9 @@
       <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
       <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
       <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/dates/dates.mpr"/>
       <project file="${mps.home}/core/baseLanguage/javadoc/javadoc.mpr"/>
       <project file="${mps.home}/core/baseLanguage/logging/logging.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/math/mathLanguage.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/money/MoneyLang.mpr"/>
       <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
-      <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
       <project file="${mps.home}/core/baseLanguage/runConfigurations/runConfigurations.mpr"/>
       <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
       <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
@@ -183,6 +179,11 @@
       <project file="${mps.home}/platform/quickQueryLanguage/quickQueryLanguage.mpr"/>
       <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
       <project file="${mps.home}/platform/ypath/YPath.mpr"/>
+      <project file="${mps.home}/platform/dates/dates.mpr"/>
+      <project file="${mps.home}/platform/unitTest/unitTest.mpr"/>
+      <project file="${mps.home}/platform/math/mathLanguage.mpr"/>
+      <project file="${mps.home}/platform/money/MoneyLang.mpr"/>
+      <project file="${mps.home}/platform/contracts/contracts.mpr"/>
       <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
 
       <!-- Samples -->
