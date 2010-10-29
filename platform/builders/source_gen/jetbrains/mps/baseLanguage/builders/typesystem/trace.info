@@ -47,8 +47,8 @@
   </root>
   <root nodeId="4315270135340734341">
     <nodeInfo nodeId="4315270135340741370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="54" />
-    <nodeInfo nodeId="4315270135340741370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="57" />
-    <nodeInfo nodeId="4315270135340741370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="27" startPosition="57" endLine="28" endPosition="266" />
+    <nodeInfo nodeId="4315270135340741370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="60" />
+    <nodeInfo nodeId="4315270135340741370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="27" startPosition="60" endLine="28" endPosition="266" />
     <nodeInfo nodeId="4315270135340745007" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="29" startPosition="7" endLine="30" endPosition="13" />
     <nodeInfo nodeId="4315270135340745008" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="0" />
     <nodeInfo nodeId="4315270135340745084" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="134" />

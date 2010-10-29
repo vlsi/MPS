@@ -11,8 +11,8 @@ import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -25,7 +25,7 @@ public class check_UIObject_consistent_belongsTo_NonTypesystemRule extends Abstr
     if ((SLinkOperations.getTarget(uio, "belongsTo", false) != null) && (mbt != null)) {
       if (!(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(uio, "belongsTo", false))).contains(mbt))) {
         BaseQuickFixProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
+        MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(uio, "Inconsistent enclosure", "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1719339442171055290", intentionProvider, errorTarget);
       }
     }

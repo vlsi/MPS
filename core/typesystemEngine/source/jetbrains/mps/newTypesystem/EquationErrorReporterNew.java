@@ -23,8 +23,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.uiActions.PresentationManager;
 
 public class EquationErrorReporterNew extends AbstractErrorReporter implements IErrorReporter {

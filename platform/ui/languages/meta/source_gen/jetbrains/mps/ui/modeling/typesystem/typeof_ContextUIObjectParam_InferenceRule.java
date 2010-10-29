@@ -13,8 +13,8 @@ import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -38,7 +38,7 @@ public class typeof_ContextUIObjectParam_InferenceRule extends AbstractInference
     }
     {
       BaseQuickFixProvider intentionProvider = null;
-      IErrorTarget errorTarget = new NodeErrorTarget();
+      MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(param, "No context available", "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "1642651187739321115", intentionProvider, errorTarget);
     }
   }

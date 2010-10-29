@@ -11,8 +11,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -24,7 +24,7 @@ public class matrix_element_must_be_number_NonTypesystemRule extends AbstractNon
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(mT, "elementType", true), SNodeOperations.copyNode(MathTypeUtil.qBigComplex)))) {
       {
         BaseQuickFixProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
+        MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mT, "Matrix parameter type must be subtype of bigcomplex", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3498370411873296912", intentionProvider, errorTarget);
       }
     }

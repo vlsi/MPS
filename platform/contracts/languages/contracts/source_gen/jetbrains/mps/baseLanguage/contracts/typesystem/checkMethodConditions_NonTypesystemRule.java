@@ -9,8 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -24,7 +24,7 @@ public class checkMethodConditions_NonTypesystemRule extends AbstractNonTypesyst
         BaseQuickFixProvider intentionProvider = null;
         intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.contracts.typesystem.fixMethodConditions_QuickFix", true);
         intentionProvider.putArgument("methodConditions", methodConditions);
-        IErrorTarget errorTarget = new NodeErrorTarget();
+        MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(methodConditions, "conditions outside interface", "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "8892289062514009099", intentionProvider, errorTarget);
       }
     }

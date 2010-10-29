@@ -59,26 +59,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc2cb128-32f6-4de8-96d7-99fd0f4b16f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/questions.txt" />
+      <change type="NEW" beforePath="" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\questions.txt" />
       <change type="DELETED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\test\InequalityMapPair_Test.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeToErrorDifference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypesUtil.java" />
-      <change type="MOVED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeToTypeDifference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/NodeMapDifference.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypeCheckingContextNew.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypeCheckingContextNew.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/CompositeDifference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/CompositeDifference.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/Difference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/Difference.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/EquationDifference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/EquationDifference.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/NonConcreteAdded.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/NonConcreteAdded.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/NonConcreteRemoved.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/NonConcreteRemoved.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/SubTypingAdded.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/SubTypingAdded.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/SubTypingRemoved.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/mapPair/SubTypingRemoved.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Equations.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Equations.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Inequalities.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Inequalities.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NodeMaps.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NodeMaps.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NonConcrete.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NonConcrete.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/State.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.iws" afterPath="$PROJECT_DIR$/analyzers.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.mpr" afterPath="$PROJECT_DIR$/analyzers.mpr" />
+      <change type="MOVED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeToTypeDifference.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeMapDifference.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/State.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/State.java" />
+      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingAdded.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingAdded.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NonConcrete.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NonConcrete.java" />
+      <change type="MOVED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeToErrorDifference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypesUtil.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypeCheckingContextNew.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypeCheckingContextNew.java" />
+      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\EquationDifference.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\EquationDifference.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Inequalities.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Inequalities.java" />
+      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteAdded.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteAdded.java" />
+      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteRemoved.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteRemoved.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.iws" afterPath="$PROJECT_DIR$/analyzers.iws" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Equations.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Equations.java" />
+      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\CompositeDifference.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\CompositeDifference.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/Difference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/Difference.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.test/jetbrains/mps/analyzers/test/test.mps" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.test/jetbrains/mps/analyzers/test/test.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NodeMaps.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NodeMaps.java" />
+      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingRemoved.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingRemoved.java" />
     </list>
     <list id="07822054-ccc9-4433-a9b5-98d904ced214" name="project" comment="" />
     <ignored path=".idea/workspace.xml" />
@@ -100,11 +100,11 @@
         <finder class_name="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
       </finders>
     </option>
-    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions">
-      <scope_type scope_type="global_scope" module="&lt;default&gt;" model="&lt;default&gt;" />
-    </option>
     <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions">
       <flags show_one_result="true" new_tab="false" />
+    </option>
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions">
+      <scope_type scope_type="global_scope" module="&lt;default&gt;" model="&lt;default&gt;" />
     </option>
   </component>
   <component name="FileEditorManager">
@@ -113,9 +113,16 @@
         <entry file="mps://jetbrains.mps.analyzers.test.test/Ftest">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-              <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-                <node model="r:9f41ad18-de28-4221-837a-564b3aebdfa9(jetbrains.mps.analyzers.test.test)" id="7962250936070464749" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
             </state>
           </provider>
         </entry>
@@ -124,9 +131,16 @@
         <entry file="mps://jetbrains.mps.lang.typesystem.structure/WhenConcreteStatement">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <selectedCell cellId="TransactionalProperty_ueqr71_b0a" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1185805035213" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -149,9 +163,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.structure/BinaryOperation">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <selectedCell cellId="property_value" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1387988544209571121" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -174,9 +195,19 @@
         <entry file="mps://jetbrains.mps.lang.typesystem.structure/WasSelectedNodeOperation">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <selectedCell cellId="Constant_ueqr71_i1c0" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1076452857759748206" />
-              </selectedCell>
+              <memento>
+                <selectedCell cellId="TransactionalProperty_ueqr71_b0a" cellNumber="0" isInList="false">
+                  <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1076452857759748206" />
+                </selectedCell>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="67" selStart="0" selEnd="0" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -199,9 +230,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.structure/InstanceMethodCallOperation">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <selectedCell cellId="property_text" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="7376433222636454474" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -224,9 +262,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.structure/UnaryMinus">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <selectedCell cellId="Constant_robprv_c0" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="3860149536565525475" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -249,9 +294,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.closures.structure/InvokeFunctionExpression">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <selectedCell cellId="empty_argumentRepresentator" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" id="642108346586029351" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -274,9 +326,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.collections.structure/DowncastExpression">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <selectedCell cellId="Constant_ndq0bl_a0" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)" id="1228231710394" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -299,9 +358,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.math.structure/AbsExpression">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <selectedCell cellId="Collection_u56bem_a" cellNumber="0" isInList="false">
-                <node model="r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)" id="1238331598001" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
               <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
@@ -324,9 +390,16 @@
         <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleAfterDotExpression">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-              <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-                <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432375" />
-              </selectedCell>
+              <memento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
             </state>
           </provider>
         </entry>
@@ -599,6 +672,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="VCSRoots" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -606,133 +681,9 @@
               <option name="myItemId" value="analyzers" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzers" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzers" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mps" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzers" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Languages" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jetbrains" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mps" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzers" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules Pool" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Solutions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzers" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <selection>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="analyzers" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Modules Pool" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Languages" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="jetbrains" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="mps" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="lang" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="typesystem" />
-                <option name="myItemType" value="" />
-              </PATH_ELEMENT>
-            </PATH>
-          </selection>
         </subPane>
       </pane>
-      <pane id="VCSRoots" />
-      <pane id="Favorites" />
       <pane id="FileSystem" />
     </panes>
   </component>
@@ -755,7 +706,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
   </component>
-  <component name="RunManager" selected="JUnit.SelectionOfWrappedCell">
+  <component name="RunManager">
     <configuration default="false" name="UnusedAssignment" type="JUnit" factoryName="JUnit" temporary="true">
       <MyState>
         <option name="myJavaRunParameters">
@@ -768,7 +719,6 @@
             <option name="workingDirectory" />
           </ConfigRunParameters>
         </option>
-        <option name="node" />
         <option name="nodes">
           <list>
             <option value="jetbrains.mps.baseLanguage.test.UnusedAssignment" />
@@ -776,10 +726,6 @@
         </option>
         <option name="model" />
         <option name="module" />
-        <option name="method" />
-        <option name="methods">
-          <list />
-        </option>
         <option name="fullMethodNames">
           <list />
         </option>
@@ -801,7 +747,6 @@
             <option name="workingDirectory" />
           </ConfigRunParameters>
         </option>
-        <option name="node" />
         <option name="nodes">
           <list>
             <option value="jetbrains.mps.editorTest.SelectionOfWrappedCell" />
@@ -809,10 +754,6 @@
         </option>
         <option name="model" />
         <option name="module" />
-        <option name="method" />
-        <option name="methods">
-          <list />
-        </option>
         <option name="fullMethodNames">
           <list />
         </option>
@@ -843,16 +784,11 @@
             <option name="workingDirectory" />
           </ConfigRunParameters>
         </option>
-        <option name="node" />
         <option name="nodes">
           <list />
         </option>
         <option name="model" />
         <option name="module" />
-        <option name="method" />
-        <option name="methods">
-          <list />
-        </option>
         <option name="fullMethodNames">
           <list />
         </option>
@@ -884,38 +820,39 @@
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="1186" extended-state="6" />
+    <frame x="1310" y="12" width="1205" height="986" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5075901" sideWeight="0.45221296" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5075145" sideWeight="0.45221296" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32694152" sideWeight="0.5137909" order="7" side_tool="false" content_ui="tabs" x="397" y="42" width="1088" height="1078" />
       <window_info id="Supertypes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.49739245" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Model Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49775496" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Module Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295238" sideWeight="0.49240986" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293617" sideWeight="0.49248555" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49775496" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49198204" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45567146" sideWeight="0.6647399" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49198204" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49478486" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827324" sideWeight="0.6812059" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.31430405" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49518922" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Analyze Stacktrace" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Class Hierarchy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.4977778" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827324" sideWeight="0.6812059" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1874,197 +1811,63 @@
   <component name="editorHistoryManager">
     <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleIfNullReturn">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="Constant_jkilyg_b0" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432497" />
-          </selectedCell>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleNotEqualsNull">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="Constant_eb7h0d_c4a" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432566" />
-          </selectedCell>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleNotEqualsNullAnd">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432589" />
-          </selectedCell>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleNullLiteral">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432616" />
-          </selectedCell>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleVariableDeclaration">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432624" />
-          </selectedCell>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleCreator">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="conceptProperty_alias" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432400" />
-          </selectedCell>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleAfterDotExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" id="6868777471677432375" />
-          </selectedCell>
-        </state>
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.analyzers.test.test/Ftest">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
-          <selectedCell cellId="property_name" cellNumber="0" isInList="false">
-            <node model="r:9f41ad18-de28-4221-837a-564b3aebdfa9(jetbrains.mps.analyzers.test.test)" id="7962250936070464749" />
-          </selectedCell>
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
         </state>
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.lang.typesystem.structure/WhenConcreteStatement">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-          <selectedCell cellId="TransactionalProperty_ueqr71_b0a" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1185805035213" />
-          </selectedCell>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.structure/InstanceMethodCallOperation">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <selectedCell cellId="property_text" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="7376433222636454474" />
-          </selectedCell>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.closures.structure/InvokeFunctionExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <selectedCell cellId="empty_argumentRepresentator" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" id="642108346586029351" />
-          </selectedCell>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.collections.structure/DowncastExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <selectedCell cellId="Constant_ndq0bl_a0" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)" id="1228231710394" />
-          </selectedCell>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.math.structure/AbsExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <selectedCell cellId="Collection_u56bem_a" cellNumber="0" isInList="false">
-            <node model="r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)" id="1238331598001" />
-          </selectedCell>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.structure/UnaryMinus">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <selectedCell cellId="Constant_robprv_c0" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="3860149536565525475" />
-          </selectedCell>
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
           <inner_tabs>
             <tab index="0" />
             <tab index="0" />
@@ -2085,9 +1888,16 @@
     <entry file="mps://jetbrains.mps.baseLanguage.structure/BinaryOperation">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <selectedCell cellId="property_value" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1387988544209571121" />
-          </selectedCell>
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
           <inner_tabs>
             <tab index="0" />
             <tab index="0" />
@@ -2105,12 +1915,188 @@
         </state>
       </provider>
     </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/InstanceMethodCallOperation">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/UnaryMinus">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.closures.structure/InvokeFunctionExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.collections.structure/DowncastExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.math.structure/AbsExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleAfterDotExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
     <entry file="mps://jetbrains.mps.lang.typesystem.structure/WasSelectedNodeOperation">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-          <selectedCell cellId="Constant_ueqr71_i1c0" cellNumber="0" isInList="false">
-            <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1076452857759748206" />
-          </selectedCell>
+          <memento>
+            <selectedCell cellId="TransactionalProperty_ueqr71_b0a" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1076452857759748206" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="67" selStart="0" selEnd="0" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
           <inner_tabs>
             <tab index="0" />
             <tab index="0" />

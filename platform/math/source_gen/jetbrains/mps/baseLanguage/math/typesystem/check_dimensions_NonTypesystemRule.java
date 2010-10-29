@@ -13,8 +13,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 
 public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -40,7 +40,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
               if (lc != 0 && rr != 0 && rr != lc) {
                 {
                   BaseQuickFixProvider intentionProvider = null;
-                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  MessageTarget errorTarget = new NodeMessageTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "These matrices cannot be multiplied with each other", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632809", intentionProvider, errorTarget);
                 }
               }
@@ -61,7 +61,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
           if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
             {
               BaseQuickFixProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
+              MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516632993", intentionProvider, errorTarget);
             }
           }
@@ -80,7 +80,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
           if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_n3qbw2_a0))) {
             {
               BaseQuickFixProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
+              MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(binaryOperation, "Invalid dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6527203785516633003", intentionProvider, errorTarget);
             }
           }

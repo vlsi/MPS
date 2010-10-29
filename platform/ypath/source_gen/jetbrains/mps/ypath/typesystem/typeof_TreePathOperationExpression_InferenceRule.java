@@ -14,8 +14,8 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.ypath.behavior.FeatureUtil;
 import jetbrains.mps.ypath.behavior.ParameterWrapper_Behavior;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -48,7 +48,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                 SNode targetType = FeatureUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
                   BaseQuickFixProvider intentionProvider = null;
-                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  MessageTarget errorTarget = new NodeMessageTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(tpoe, "Received null target type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196269826366", intentionProvider, errorTarget);
                 }
                 if ((targetType != null)) {
@@ -75,7 +75,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
         } else
         if (!(false)) {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(tpoe, "No treepath found", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196942498551", intentionProvider, errorTarget);
         }
       }

@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +20,7 @@ public class check_GivetypeStatement_NonTypesystemRule extends AbstractNonTypesy
   public void applyRule(final SNode givetypeStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(RulesUtil.withinInferenceItem(givetypeStatement))) {
       BaseQuickFixProvider intentionProvider = null;
-      IErrorTarget errorTarget = new NodeErrorTarget();
+      MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(givetypeStatement, "GIVETYPE should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195217450603", intentionProvider, errorTarget);
     }
   }

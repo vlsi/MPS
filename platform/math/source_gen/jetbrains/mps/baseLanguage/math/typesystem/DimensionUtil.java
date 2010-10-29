@@ -13,8 +13,8 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import java.util.Set;
 import java.util.HashSet;
@@ -224,7 +224,7 @@ public class DimensionUtil {
   public static void reportError(final TypeCheckingContext typeCheckingContext, SNode n) {
     {
       BaseQuickFixProvider intentionProvider = null;
-      IErrorTarget errorTarget = new NodeErrorTarget();
+      MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(n, "Invalid matrix dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7676695779583019339", intentionProvider, errorTarget);
     }
   }

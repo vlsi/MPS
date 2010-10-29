@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -44,14 +44,14 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
             if (SPropertyOperations.getInteger(mt, "rows") != 0 && SPropertyOperations.getInteger(mt, "columns") != 0 && SPropertyOperations.getInteger(mt, "rows") != SPropertyOperations.getInteger(mt, "columns")) {
               {
                 BaseQuickFixProvider intentionProvider = null;
-                IErrorTarget errorTarget = new NodeErrorTarget();
+                MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "Inverse operation is undefined for non-square matrices", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229476", intentionProvider, errorTarget);
               }
             }
           } else {
             {
               BaseQuickFixProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
+              MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "Inverse operation is defined for matrices only", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749171", intentionProvider, errorTarget);
             }
           }
