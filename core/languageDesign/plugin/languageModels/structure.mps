@@ -473,9 +473,32 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <maxImportIndex value="37" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -497,9 +520,9 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203071646776">
     <property name="name:0" value="ActionDeclaration" />
     <property name="rootable:0" value="true" />
+    <property name="package:0" value="Actions.Action" />
     <property name="iconPath:0" value="${language_descriptor}/icons/actionNew.png" />
     <property name="helpURL:0" value="http://www.jetbrains.net/confluence/display/MPSD1/Plugin#Plugin-actionsandactiongroups" />
-    <property name="virtualPackage:0" value="Actions.Action" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203083196627">
       <property name="metaClass:0" value="aggregation" />
@@ -580,8 +603,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203071663527">
     <property name="name:0" value="SingletabbedEditorTab" />
+    <property name="package:0" value="EditorTab" />
     <property name="rootable:0" value="false" />
-    <property name="virtualPackage:0" value="EditorTab" />
     <link role="extends:0" targetNodeId="1203851787677:23" resolveInfo="AbstractEditorTab" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203852126300">
       <property name="metaClass:0" value="aggregation" />
@@ -592,8 +615,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203071677434">
     <property name="name:0" value="ToolDeclaration" />
+    <property name="package:0" value="Tool" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="Tool" />
     <link role="extends:0" targetNodeId="6547237850567458268:23" resolveInfo="BaseToolDeclaration" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1213888910618">
       <property name="metaClass:0" value="aggregation" />
@@ -620,7 +643,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203082695294">
     <property name="name:0" value="DoUpdateBlock" />
-    <property name="virtualPackage:0" value="Actions.Action.Methods" />
+    <property name="package:0" value="Actions.Action.Methods" />
     <link role="extends:0" targetNodeId="1205681149025:23" resolveInfo="UpdateBlock" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1205681280616">
       <property name="value:0" value="update" />
@@ -632,7 +655,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203082903663">
     <property name="name:0" value="ConceptFunctionParameter_AnActionEvent" />
-    <property name="virtualPackage:0" value="Shared" />
+    <property name="package:0" value="Shared" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1205179132154">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -654,7 +677,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203083511112">
     <property name="name:0" value="ExecuteBlock" />
-    <property name="virtualPackage:0" value="Actions.Action.Methods" />
+    <property name="package:0" value="Actions.Action.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203083511113">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -673,10 +696,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203087890642">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="ActionGroupDeclaration" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}/icons/actionGroupNew.png" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1204991552650">
       <property name="metaClass:0" value="aggregation" />
@@ -728,8 +751,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203088046679">
+    <property name="package:0" value="Actions.Groups.GroupMembers" />
     <property name="name:0" value="ActionInstance" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupMembers" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227011543811">
       <property name="metaClass:0" value="aggregation" />
@@ -751,8 +774,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203092361741">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="ModificationStatement" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203092736097">
       <property name="role:0" value="modifiedGroup" />
@@ -770,8 +793,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203680534665">
+    <property name="package:0" value="Actions.Groups.GroupMembers" />
     <property name="name:0" value="GroupAnchor" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupMembers" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1203682365376">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
@@ -789,9 +812,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203780151140">
+    <property name="package:0" value="EditorTab" />
     <property name="name:0" value="MultitabbedEditorTab" />
     <property name="rootable:0" value="false" />
-    <property name="virtualPackage:0" value="EditorTab" />
     <link role="extends:0" targetNodeId="1203851787677:23" resolveInfo="AbstractEditorTab" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203852083094">
       <property name="metaClass:0" value="aggregation" />
@@ -818,9 +841,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203851787677">
+    <property name="package:0" value="EditorTab" />
     <property name="name:0" value="AbstractEditorTab" />
     <property name="rootable:0" value="false" />
-    <property name="virtualPackage:0" value="EditorTab" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="929556153838351527">
       <property name="metaClass:0" value="aggregation" />
@@ -860,8 +883,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203851854402">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="CreateBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203853371692">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -884,8 +907,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203851983563">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="GetNodeBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203853817204">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -904,8 +927,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203852029150">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="GetNodesBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203853766301">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -924,8 +947,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203852039202">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="GetInnerTabCaptionBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203853448851">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -944,8 +967,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203853034639">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_node" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="5854436268949437211:23" resolveInfo="ConceptFunctionParameter_CreatorType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1204041802621">
       <property name="value:0" value="node" />
@@ -960,10 +983,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203866019489">
+    <property name="package:0" value="EditorTab" />
     <property name="name:0" value="TabbedEditorDeclaration" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}\icons\tabbedEditor.png" />
-    <property name="virtualPackage:0" value="EditorTab" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203866063460">
       <property name="metaClass:0" value="aggregation" />
@@ -991,8 +1014,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204038435236">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="GetBaseNodeBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1204038629111">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1015,8 +1038,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204039194827">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_OperationContext" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1204041809545">
       <property name="value:0" value="context" />
@@ -1037,9 +1060,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204383956737">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="InterfaceGroup" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="1203087890642:23" resolveInfo="ActionGroupDeclaration" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1205511365503">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -1063,12 +1086,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1204391079391">
+    <property name="package:0" value="Actions.Groups.GroupMembers" />
     <property name="name:0" value="ActionGroupMember" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupMembers" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204397573187">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="InterfaceExtentionPoint" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="1203680534665:23" resolveInfo="ExtentionPoint" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1205510728384">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -1085,8 +1108,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204471433283">
+    <property name="package:0" value="Tool.Methods" />
     <property name="name:0" value="ToolInstanceExpression" />
-    <property name="virtualPackage:0" value="Tool.Methods" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1204472970200">
       <property name="value:0" value="instance" />
@@ -1094,8 +1117,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204477852167">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_IModule" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="5854436268949437211:23" resolveInfo="ConceptFunctionParameter_CreatorType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1204477987839">
       <property name="value:0" value="module" />
@@ -1112,8 +1135,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204478074808">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_MPSProject" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1204478180683">
       <property name="value:0" value="project" />
@@ -1134,8 +1157,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204908117386">
+    <property name="package:0" value="Actions.Groups.GroupMembers" />
     <property name="name:0" value="Separator" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupMembers" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1204908131621">
       <link role="intfc:0" targetNodeId="1204391079391:23" resolveInfo="ActionGroupMember" />
@@ -1150,13 +1173,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration:0" id="1205676676847">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="mnemonic" />
     <property name="constraint:0" value=".|" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205679047295">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionParameterDeclaration" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="2.1068390468200:3" resolveInfo="FieldDeclaration" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1206092616187">
       <link role="intfc:0" targetNodeId="14.1205752032448:0" resolveInfo="IMember" />
@@ -1174,8 +1197,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205681149025">
+    <property name="package:0" value="Actions.Action.Methods" />
     <property name="name:0" value="UpdateBlock" />
-    <property name="virtualPackage:0" value="Actions.Action.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1205681227497">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1190,8 +1213,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205681243813">
+    <property name="package:0" value="Actions.Action.Methods" />
     <property name="name:0" value="IsApplicableBlock" />
-    <property name="virtualPackage:0" value="Actions.Action.Methods" />
     <link role="extends:0" targetNodeId="1205681149025:23" resolveInfo="UpdateBlock" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1205681268802">
       <property name="value:0" value="isApplicable" />
@@ -1206,8 +1229,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205852320419">
+    <property name="package:0" value="Actions.Action" />
     <property name="name:0" value="ActionType" />
-    <property name="virtualPackage:0" value="Actions.Action" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1205852364250">
       <property name="value:0" value="action&lt;&lt;{action}&gt;&gt;" />
@@ -1220,8 +1243,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206092561075">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionParameterReferenceOperation" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1206092665971">
       <link role="intfc:0" targetNodeId="14.1205756064662:0" resolveInfo="IMemberOperation" />
@@ -1238,9 +1261,9 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206110063106">
     <property name="name:0" value="ProjectPluginDeclaration" />
+    <property name="package:0" value="Custom.ProjectPlugin" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}/icons/projectPlugin.png" />
-    <property name="virtualPackage:0" value="Custom.ProjectPlugin" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1206111500859">
       <link role="intfc:0" targetNodeId="14.1205751982837:0" resolveInfo="IClassifier" />
@@ -1267,8 +1290,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206110093589">
+    <property name="package:0" value="Custom.ProjectPlugin" />
     <property name="name:0" value="ProjectPluginInitBlock" />
-    <property name="virtualPackage:0" value="Custom.ProjectPlugin" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1206110184190">
       <property name="value:0" value="init" />
@@ -1287,8 +1310,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206110108761">
+    <property name="package:0" value="Custom.ProjectPlugin" />
     <property name="name:0" value="ProjectPluginDisposeBlock" />
-    <property name="virtualPackage:0" value="Custom.ProjectPlugin" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1206110157077">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1307,8 +1330,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206111617316">
+    <property name="package:0" value="Custom.ProjectPlugin" />
     <property name="name:0" value="ProjectPluginType" />
-    <property name="virtualPackage:0" value="Custom.ProjectPlugin" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1206111653895">
       <property name="value:0" value="project plugin&lt;&gt;" />
@@ -1321,12 +1344,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1207145102141">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="GroupContents" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207145360364">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="BuildGroupBlock" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1207145398313">
       <link role="intfc:0" targetNodeId="1207145102141:23" resolveInfo="GroupContents" />
@@ -1344,8 +1367,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207145475354">
+    <property name="package:0" value="Actions.Groups.GroupContents.Statements" />
     <property name="name:0" value="AddElementStatement" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1207145494930">
       <property name="metaClass:0" value="aggregation" />
@@ -1363,8 +1386,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1227012987922" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207145163717">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="ElementListContents" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1207145191491">
       <link role="intfc:0" targetNodeId="1207145102141:23" resolveInfo="GroupContents" />
@@ -1382,20 +1405,22 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207318242772">
     <property name="name:0" value="KeyMapKeystroke" />
-    <property name="virtualPackage:0" value="Actions.Action" />
+    <property name="package:0" value="Actions.Action" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1207318242773">
       <property name="name:0" value="modifiers" />
+      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="6.1082983041843:0" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1207318242774">
       <property name="name:0" value="keycode" />
+      <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="6.1082983041843:0" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207489456631">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="DoUpdateGroupBlock" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1207489456632">
       <link role="intfc:0" targetNodeId="1207145102141:23" resolveInfo="GroupContents" />
@@ -1421,8 +1446,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1239975353851" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207490810216">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="GroupType" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1207490810217">
       <property name="value:0" value="actiongroup&lt;&lt;{actionGroup}&gt;&gt;" />
@@ -1435,8 +1460,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1208528650020">
+    <property name="package:0" value="Tool" />
     <property name="name:0" value="ToolType" />
-    <property name="virtualPackage:0" value="Tool" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1208529537963">
       <property name="role:0" value="tool" />
@@ -1449,8 +1474,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209909558075">
+    <property name="package:0" value="DEPRECATED" />
     <property name="name:0" value="ProjectOperation" />
-    <property name="virtualPackage:0" value="DEPRECATED" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1209909568520">
       <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
@@ -1458,8 +1483,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3339131993542057600" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209909878702">
+    <property name="package:0" value="DEPRECATED" />
     <property name="name:0" value="GetToolOperation" />
-    <property name="virtualPackage:0" value="DEPRECATED" />
     <link role="extends:0" targetNodeId="1209909558075:23" resolveInfo="ProjectOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1209909902559">
       <property name="role:0" value="tool" />
@@ -1473,8 +1498,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="2880878974640497882" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209911036758">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="GetGroupOperation" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1209911071024">
       <property name="value:0" value="actionGroup&lt;&lt;{group}&gt;&gt;" />
@@ -1489,8 +1514,8 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210070489991">
     <property name="name:0" value="GenerationListenerDeclaration" />
     <property name="rootable:0" value="true" />
+    <property name="package:0" value="GenerationListener" />
     <property name="iconPath:0" value="${language_descriptor}/icons/generationListener.png" />
-    <property name="virtualPackage:0" value="GenerationListener" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210094435173">
       <property name="metaClass:0" value="aggregation" />
@@ -1519,8 +1544,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210070546769">
+    <property name="package:0" value="GenerationListener" />
     <property name="name:0" value="OnModelsGeneratedBlock" />
-    <property name="virtualPackage:0" value="GenerationListener" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210070636843">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1554,8 +1579,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210094300689">
+    <property name="package:0" value="GenerationListener" />
     <property name="name:0" value="BeforeGenerationBlock" />
-    <property name="virtualPackage:0" value="GenerationListener" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210094300690">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1583,7 +1608,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210094339163">
     <property name="name:0" value="GenerationListener_models" />
-    <property name="virtualPackage:0" value="GenerationListener" />
+    <property name="package:0" value="GenerationListener" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210094339164">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -1604,8 +1629,8 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210179134063">
     <property name="name:0" value="PreferencesComponentDeclaration" />
     <property name="rootable:0" value="true" />
+    <property name="package:0" value="Preference" />
     <property name="iconPath:0" value="${language_descriptor}\icons\preferences.png" />
-    <property name="virtualPackage:0" value="Preference" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210179829398">
       <property name="metaClass:0" value="aggregation" />
@@ -1640,8 +1665,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210179190070">
+    <property name="package:0" value="Preference.Members" />
     <property name="name:0" value="PersistentPropertyDeclaration" />
-    <property name="virtualPackage:0" value="Preference.Members" />
     <link role="extends:0" targetNodeId="2.1068431474542:3" resolveInfo="VariableDeclaration" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1210186252947">
       <link role="intfc:0" targetNodeId="14.1205752032448:0" resolveInfo="IMember" />
@@ -1652,8 +1677,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210180874794">
+    <property name="package:0" value="Preference.Members" />
     <property name="name:0" value="PersistentPropertyReference" />
-    <property name="virtualPackage:0" value="Preference.Members" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210180958412">
       <property name="role:0" value="propertyDeclaration" />
       <property name="sourceCardinality:0" value="1" />
@@ -1672,8 +1697,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210184105060">
+    <property name="package:0" value="Preference" />
     <property name="name:0" value="PreferencesComponentType" />
-    <property name="virtualPackage:0" value="Preference" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210184138184">
       <property name="role:0" value="componentDeclaration" />
@@ -1686,8 +1711,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210184823336">
+    <property name="package:0" value="DEPRECATED" />
     <property name="name:0" value="GetPreferencesComponentOperation" />
-    <property name="virtualPackage:0" value="DEPRECATED" />
     <link role="extends:0" targetNodeId="1209909558075:23" resolveInfo="ProjectOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210184858209">
       <property name="role:0" value="componentDeclaration" />
@@ -1701,8 +1726,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="2880878974640497881" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210676672555">
+    <property name="package:0" value="Preference.Members" />
     <property name="name:0" value="OnBeforeWriteBlock" />
-    <property name="virtualPackage:0" value="Preference.Members" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210676740167">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1721,8 +1746,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210676879526">
+    <property name="package:0" value="Preference.Members" />
     <property name="name:0" value="OnAfterReadBlock" />
-    <property name="virtualPackage:0" value="Preference.Members" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210676879527">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1741,8 +1766,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210684385183">
+    <property name="package:0" value="Preference.Page" />
     <property name="name:0" value="PreferencePage" />
-    <property name="virtualPackage:0" value="Preference.Page" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1210686769921">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
@@ -1780,8 +1805,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210686882550">
+    <property name="package:0" value="Preference.Page" />
     <property name="name:0" value="PreferencePageResetBlock" />
-    <property name="virtualPackage:0" value="Preference.Page" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210686917553">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1804,8 +1829,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210686969356">
+    <property name="package:0" value="Preference.Page" />
     <property name="name:0" value="PreferencePageCommitBlock" />
-    <property name="virtualPackage:0" value="Preference.Page" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210686969358">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1828,8 +1853,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210690798207">
+    <property name="package:0" value="Preference.Page" />
     <property name="name:0" value="ConceptFunctionParameter_PreferencePage_component" />
-    <property name="virtualPackage:0" value="Preference.Page" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210690885394">
       <property name="value:0" value="component" />
@@ -1844,8 +1869,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210763550007">
+    <property name="package:0" value="Preference.Page" />
     <property name="name:0" value="PreferencePageIsModifiedBlock" />
-    <property name="virtualPackage:0" value="Preference.Page" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210763550009">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1868,13 +1893,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration:0" id="1212578595463">
+    <property name="package:0" value="Tool" />
     <property name="name:0" value="digit" />
     <property name="constraint:0" value="[0-9]" />
-    <property name="virtualPackage:0" value="Tool" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1213048754923">
+    <property name="package:0" value="GenerationListener" />
     <property name="name:0" value="AfterGenerationBlock" />
-    <property name="virtualPackage:0" value="GenerationListener" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1213048754924">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1901,8 +1926,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1213888653896">
+    <property name="package:0" value="Tool.Methods" />
     <property name="name:0" value="InitBlock" />
-    <property name="virtualPackage:0" value="Tool.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1213888894742">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -1917,8 +1942,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1213888677711">
+    <property name="package:0" value="Tool.Methods" />
     <property name="name:0" value="DisposeBlock" />
-    <property name="virtualPackage:0" value="Tool.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1213888766766">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -1933,8 +1958,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1213888797251">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_Project" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1213888797252">
       <property name="value:0" value="project" />
@@ -1955,8 +1980,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214307303872">
+    <property name="package:0" value="Tool.Methods" />
     <property name="name:0" value="GetComponentBlock" />
-    <property name="virtualPackage:0" value="Tool.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1214307320403">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1973,8 +1998,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215278261851">
+    <property name="package:0" value="Custom.ApplicationPlugin" />
     <property name="name:0" value="ApplicationPluginInitBlock" />
-    <property name="virtualPackage:0" value="Custom.ApplicationPlugin" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215278261852">
       <property name="value:0" value="init" />
@@ -1989,8 +2014,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215278396618">
+    <property name="package:0" value="Custom.ApplicationPlugin" />
     <property name="name:0" value="ApplicationPluginDisposeBlock" />
-    <property name="virtualPackage:0" value="Custom.ApplicationPlugin" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215278396619">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -2005,8 +2030,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215279025855">
+    <property name="package:0" value="Custom.ApplicationPlugin" />
     <property name="name:0" value="ApplicationPluginType" />
-    <property name="virtualPackage:0" value="Custom.ApplicationPlugin" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215279025856">
       <property name="value:0" value="application plugin&lt;&gt;" />
@@ -2020,9 +2045,9 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215279937187">
     <property name="name:0" value="ApplicationPluginDeclaration" />
+    <property name="package:0" value="Custom.ApplicationPlugin" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}/icons/applicationPlugin.png" />
-    <property name="virtualPackage:0" value="Custom.ApplicationPlugin" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1215279937188">
       <link role="intfc:0" targetNodeId="14.1205751982837:0" resolveInfo="IClassifier" />
@@ -2066,8 +2091,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1217252042208">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionDataParameterDeclaration" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1217252116819">
       <link role="intfc:0" targetNodeId="14.1205752032448:0" resolveInfo="IMember" />
@@ -2091,8 +2116,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1217252428768">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionDataParameterReferenceOperation" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1217252428769">
       <link role="intfc:0" targetNodeId="14.1205756064662:0" resolveInfo="IMemberOperation" />
@@ -2108,8 +2133,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1217413147516">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionParameter" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1217413172604">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
@@ -2119,10 +2144,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218035894314">
+    <property name="package:0" value="FileGenerator" />
     <property name="name:0" value="FileGeneratorDeclaration" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}/icons/fileGenerator.png" />
-    <property name="virtualPackage:0" value="FileGenerator" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218035912362">
       <property name="value:0" value="File Generator" />
@@ -2168,8 +2193,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="6987517167924755840" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218035947926">
+    <property name="package:0" value="FileGenerator" />
     <property name="name:0" value="GenerateFileBlock" />
-    <property name="virtualPackage:0" value="FileGenerator" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218035947927">
       <property name="value:0" value="generateFile" />
@@ -2206,8 +2231,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218036049505">
+    <property name="package:0" value="FileGenerator" />
     <property name="name:0" value="FileGeneratorType" />
-    <property name="virtualPackage:0" value="FileGenerator" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218036191275">
       <property name="value:0" value="filegen" />
@@ -2224,8 +2249,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218036560363">
+    <property name="package:0" value="FileGenerator" />
     <property name="name:0" value="OverridesDefaultBlock" />
-    <property name="virtualPackage:0" value="FileGenerator" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218036560364">
       <property name="value:0" value="overridesDefault" />
@@ -2248,8 +2273,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218036578306">
+    <property name="package:0" value="FileGenerator" />
     <property name="name:0" value="IsDefaultBlock" />
-    <property name="virtualPackage:0" value="FileGenerator" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218036578307">
       <property name="value:0" value="isDefault" />
@@ -2268,8 +2293,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218037709947">
+    <property name="package:0" value="FileGenerator.Parameters" />
     <property name="name:0" value="ConceptFunctionParameter_OutputRootNode" />
-    <property name="virtualPackage:0" value="FileGenerator.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1238589965863">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -2284,8 +2309,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218038076825">
+    <property name="package:0" value="FileGenerator.Parameters" />
     <property name="name:0" value="ConceptFunctionParameter_OriginalInputNode" />
-    <property name="virtualPackage:0" value="FileGenerator.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218038076826">
       <property name="value:0" value="originalInputNode" />
@@ -2300,8 +2325,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218038135122">
+    <property name="package:0" value="FileGenerator.Parameters" />
     <property name="name:0" value="ConceptFunctionParameter_InputModel" />
-    <property name="virtualPackage:0" value="FileGenerator.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218038135123">
       <property name="value:0" value="inputModel" />
@@ -2313,8 +2338,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218038210413">
+    <property name="package:0" value="FileGenerator.Parameters" />
     <property name="name:0" value="ConceptFunctionParameter_Contents" />
-    <property name="virtualPackage:0" value="FileGenerator.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218038210414">
       <property name="value:0" value="contents" />
@@ -2326,8 +2351,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1218038289731">
+    <property name="package:0" value="FileGenerator.Parameters" />
     <property name="name:0" value="ConceptFunctionParameter_OutputRootDir" />
-    <property name="virtualPackage:0" value="FileGenerator.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1218038289732">
       <property name="value:0" value="outputRootDir" />
@@ -2341,8 +2366,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1224853843293">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="ConceptFunctionParameter_ask" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1224854078072">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -2357,8 +2382,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441160166">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="BaseExecuteCommandStatement" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225441160167">
       <property name="metaClass:0" value="aggregation" />
@@ -2368,13 +2393,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441216717">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="CommandClosureLiteral" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="28.1199569711397:3" resolveInfo="ClosureLiteral" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441257564">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="ExecuteCommandInEDTStatement" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="1225441160166:23" resolveInfo="BaseExecuteCommandStatement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8319207097755373179">
       <property name="metaClass:0" value="aggregation" />
@@ -2387,8 +2412,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441285519">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="ExecuteCommandStatement" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="1229346248766:23" resolveInfo="BaseExecuteCommandStatementSync" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225441285520">
       <property name="value:0" value="command" />
@@ -2396,8 +2421,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441312937">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="ExecuteEDTCommandStatement" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="1225441160166:23" resolveInfo="BaseExecuteCommandStatement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225441312938">
       <property name="value:0" value="execute in EDT" />
@@ -2405,8 +2430,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441341971">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="ExecuteLightweightCommandStatement" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="1229346248766:23" resolveInfo="BaseExecuteCommandStatementSync" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225441341972">
       <property name="value:0" value="read action" />
@@ -2414,8 +2439,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225441380935">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="ExecuteWriteActionStatement" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="1229346248766:23" resolveInfo="BaseExecuteCommandStatementSync" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225441380936">
       <property name="value:0" value="write action" />
@@ -2423,8 +2448,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227008846812">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionConstructionParameterDeclaration" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="14.1213999088275:0" resolveInfo="DefaultClassifierFieldDeclaration" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1227009371731">
       <link role="intfc:0" targetNodeId="14.1205752032448:0" resolveInfo="IMember" />
@@ -2436,8 +2461,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227008925923">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ActionConstructorParameterReferenceOperation" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227008991854">
       <property name="metaClass:0" value="reference" />
@@ -2450,8 +2475,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227013049127">
+    <property name="package:0" value="Actions.Groups.GroupContents.Statements" />
     <property name="name:0" value="AddStatement" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227013166210">
       <property name="metaClass:0" value="aggregation" />
@@ -2465,8 +2490,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227019068586">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ToStringConceptFunction" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1227019080354">
       <property name="value:0" value="toString" />
@@ -2485,8 +2510,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227019310584">
+    <property name="package:0" value="Actions.Action.Parameters" />
     <property name="name:0" value="ToStringParameter" />
-    <property name="virtualPackage:0" value="Actions.Action.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1227019325648">
       <property name="value:0" value="object" />
@@ -2497,17 +2522,17 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1229346143986">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="IExecuteCommandStatementSync" />
-    <property name="virtualPackage:0" value="Command" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1229346248766">
+    <property name="package:0" value="Command" />
     <property name="name:0" value="BaseExecuteCommandStatementSync" />
-    <property name="virtualPackage:0" value="Command" />
     <link role="extends:0" targetNodeId="1225441160166:23" resolveInfo="BaseExecuteCommandStatement" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239975356883">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="UpdateGroupBlock" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1239975862177">
       <property name="value:0" value="update" />
@@ -2529,8 +2554,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239975436002">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="UpdateGroupFunction" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1239975436004">
       <property name="value:0" value="update" />
@@ -2549,8 +2574,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239975563668">
+    <property name="package:0" value="Actions.Groups.GroupContents" />
     <property name="name:0" value="EnumerateChildrenFunction" />
-    <property name="virtualPackage:0" value="Actions.Groups.GroupContents" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1239975563669">
       <property name="value:0" value="enumerateChildren" />
@@ -2569,9 +2594,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1562714432501166197">
+    <property name="package:0" value="Actions.Keymaps" />
     <property name="name:0" value="KeymapChangesDeclaration" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="Actions.Keymaps" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1562714432501166281">
       <property name="name:0" value="keymap" />
@@ -2588,8 +2613,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1562714432501166198">
+    <property name="package:0" value="Actions.Keymaps" />
     <property name="name:0" value="SimpleShortcutChange" />
-    <property name="virtualPackage:0" value="Actions.Keymaps" />
     <link role="extends:0" targetNodeId="6193305307616715384:23" resolveInfo="ShortcutChange" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6193305307616740483">
       <property name="value:0" value="simple" />
@@ -2603,8 +2628,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1562714432501166200">
+    <property name="package:0" value="Actions.Keymaps" />
     <property name="name:0" value="Keymap" />
-    <property name="virtualPackage:0" value="Actions.Keymaps" />
     <link role="memberDataType:0" targetNodeId="6.1082983041843:0" resolveInfo="string" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1562714432501166201">
       <property name="internalValue:0" value="Mac OS X" />
@@ -2628,8 +2653,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6193305307616715384">
+    <property name="package:0" value="Actions.Keymaps" />
     <property name="name:0" value="ShortcutChange" />
-    <property name="virtualPackage:0" value="Actions.Keymaps" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6193305307616734326">
       <property name="metaClass:0" value="reference" />
@@ -2639,8 +2664,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6193305307616734266">
+    <property name="package:0" value="Actions.Keymaps" />
     <property name="name:0" value="ParameterizedShortcutChange" />
-    <property name="virtualPackage:0" value="Actions.Keymaps" />
     <link role="extends:0" targetNodeId="6193305307616715384:23" resolveInfo="ShortcutChange" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6193305307616740486">
       <property name="value:0" value="parameterized (not implemented)" />
@@ -2649,8 +2674,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7035278950562850663">
     <property name="name:0" value="RunConfigurationTypeDeclaration" />
+    <property name="package:0" value="RunConfigs" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="RunConfigs" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7035278950562850664">
       <property name="name:0" value="iconPath" />
@@ -2672,9 +2697,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7035278950562851062">
+    <property name="package:0" value="RunConfigs" />
     <property name="name:0" value="RunConfigurationDeclaration" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="RunConfigs" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration:0" id="2195473424935653498">
       <property name="name:0" value="requiresCustomEditor" />
@@ -2767,8 +2792,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472871">
+    <property name="package:0" value="RunConfigs.Configuration" />
     <property name="name:0" value="GetConfigurationIconBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223472872">
       <property name="value:0" value="getIcon" />
@@ -2785,8 +2810,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472879">
+    <property name="package:0" value="RunConfigs.Configuration.IsCorrect" />
     <property name="name:0" value="CheckConfigurationBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.IsCorrect" />
     <link role="extends:0" targetNodeId="1347772807199150767:23" resolveInfo="AbstractCheckConfigBlock" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223472886">
       <property name="value:0" value="check" />
@@ -2800,8 +2825,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472884">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="ExecuteConfigBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223472891">
       <property name="value:0" value="execute" />
@@ -2823,8 +2848,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472892">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ActionsStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223882661">
       <property name="value:0" value="actions" />
@@ -2841,8 +2866,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472893">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ProcessHandlerStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223882657">
       <property name="value:0" value="process handler" />
@@ -2865,8 +2890,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472894">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ExecutionConsoleStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223882659">
       <property name="value:0" value="console" />
@@ -2889,8 +2914,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472895">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="DisposeConsoleBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="28.1199569711397:3" resolveInfo="ClosureLiteral" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223925732">
       <property name="value:0" value="dispose" />
@@ -2901,12 +2926,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="678887849223527750">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ExecuteSpecific" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223882678">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="Executor_FunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223882682">
       <property name="value:0" value="executor" />
@@ -2923,8 +2948,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223882679">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="Environment_FunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="678887849223883473">
       <property name="value:0" value="environment" />
@@ -2941,8 +2966,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8821770403474030735">
+    <property name="package:0" value="RunConfigs.Configuration.IsCorrect" />
     <property name="name:0" value="ReportErrorStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.IsCorrect" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8821770403474030754">
       <property name="metaClass:0" value="aggregation" />
@@ -2956,8 +2981,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="162872405267681132">
+    <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="ConfigurationEditorDeclaration" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Editor" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="162872405267681134">
       <property name="metaClass:0" value="aggregation" />
@@ -2982,8 +3007,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="162872405267681153">
+    <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="ApplyEditorBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Editor" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="AbstractEnhancedConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="162872405267681158">
       <property name="value:0" value="apply" />
@@ -2994,8 +3019,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="162872405267681154">
+    <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="ResetEditorBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Editor" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="AbstractEnhancedConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="162872405267681157">
       <property name="value:0" value="reset" />
@@ -3006,8 +3031,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="162872405267681155">
+    <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="DisposeEditorBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Editor" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="162872405267681156">
       <property name="value:0" value="dispose" />
@@ -3018,8 +3043,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3452826078638178132">
+    <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="ComponentReference" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Editor" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3452826078638183467">
       <property name="value:0" value="component" />
@@ -3028,11 +3053,11 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1628770029971140533">
     <property name="name:0" value="ICheckedNamePolicy" />
-    <property name="virtualPackage:0" value="CheckedName" />
+    <property name="package:0" value="CheckedName" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1628770029971140534">
     <property name="name:0" value="PropertyRefExpression" />
-    <property name="virtualPackage:0" value="CheckedName" />
+    <property name="package:0" value="CheckedName" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1628770029971140535">
       <property name="metaClass:0" value="aggregation" />
@@ -3056,8 +3081,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1628770029971140539">
+    <property name="package:0" value="CheckedName" />
     <property name="name:0" value="PropertyRefType" />
-    <property name="virtualPackage:0" value="CheckedName" />
     <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1628770029971140540">
       <property name="value:0" value="propRef" />
@@ -3065,8 +3090,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="394857668356997867">
+    <property name="package:0" value="Actions.Action.Places" />
     <property name="name:0" value="SimpleActionPlace" />
-    <property name="virtualPackage:0" value="Actions.Action.Places" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="394857668357022341">
       <link role="intfc:0" targetNodeId="394857668356997868:23" resolveInfo="ActionPlaceSpecification" />
@@ -3080,12 +3105,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="394857668356997868">
+    <property name="package:0" value="Actions.Action.Places" />
     <property name="name:0" value="ActionPlaceSpecification" />
-    <property name="virtualPackage:0" value="Actions.Action.Places" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="394857668357022342">
+    <property name="package:0" value="Actions.Action.Places" />
     <property name="name:0" value="ToolActionPlace" />
-    <property name="virtualPackage:0" value="Actions.Action.Places" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="394857668357022343">
       <link role="intfc:0" targetNodeId="394857668356997868:23" resolveInfo="ActionPlaceSpecification" />
@@ -3099,8 +3124,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="394857668357342104">
+    <property name="package:0" value="Actions.Action.Places" />
     <property name="name:0" value="EverywhereActionPlace" />
-    <property name="virtualPackage:0" value="Actions.Action.Places" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="394857668357342105">
       <link role="intfc:0" targetNodeId="394857668356997868:23" resolveInfo="ActionPlaceSpecification" />
@@ -3111,8 +3136,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="929556153838351528">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="InitTabBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="929556153838351530">
       <property name="value:0" value="init" />
@@ -3123,8 +3148,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="144706109457474501">
+    <property name="package:0" value="EditorTab" />
     <property name="name:0" value="SingletabbedEditorTabType" />
-    <property name="virtualPackage:0" value="EditorTab" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="144706109457474503">
       <property name="value:0" value="tab-single" />
@@ -3132,8 +3157,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="144706109457489882">
+    <property name="package:0" value="EditorTab" />
     <property name="name:0" value="MultitabbedEditorTabType" />
-    <property name="virtualPackage:0" value="EditorTab" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="144706109457489883">
       <property name="value:0" value="tab-multi" />
@@ -3141,8 +3166,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7974234327424524992">
+    <property name="package:0" value="RunConfigs" />
     <property name="name:0" value="RunConfigType" />
-    <property name="virtualPackage:0" value="RunConfigs" />
     <link role="extends:0" targetNodeId="14.1205752813637:0" resolveInfo="BaseClassifierType" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7974234327424528831">
       <property name="metaClass:0" value="reference" />
@@ -3156,8 +3181,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6586153900349324059">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ActionListStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6586153900349324060">
       <property name="value:0" value="actionList" />
@@ -3174,8 +3199,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7066926174333289651">
+    <property name="package:0" value="RunConfigs.Create.CreateStatement" />
     <property name="name:0" value="CreateRunConfigStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.CreateStatement" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7066926174333535759">
       <property name="value:0" value="createRunConfig" />
@@ -3206,8 +3231,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7066926174333292873">
+    <property name="package:0" value="RunConfigs.Create.CreateStatement" />
     <property name="name:0" value="RunConfigPropertyInstance" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.CreateStatement" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7066926174333292904">
       <property name="metaClass:0" value="reference" />
@@ -3227,9 +3252,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8415911927033048374">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated" />
     <property name="name:0" value="RunConfigCreator" />
     <property name="rootable:0" value="false" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8415911927033051518">
       <property name="metaClass:0" value="reference" />
@@ -3249,9 +3274,9 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3856910426407528275" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8415911927033048375">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <property name="name:0" value="CreateNodeRunConfigBlock" />
     <property name="rootable:0" value="false" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <link role="extends:0" targetNodeId="5854436268949437223:23" resolveInfo="BaseCreateRunConfigFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8415911927033051532">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -3263,8 +3288,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8415911927033048376">
+    <property name="package:0" value="RunConfigs.Create" />
     <property name="name:0" value="RunConfigMainNodeStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Create" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8415911927033050433">
       <property name="metaClass:0" value="aggregation" />
@@ -3278,8 +3303,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5854436268949437205">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_Model" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="5854436268949437211:23" resolveInfo="ConceptFunctionParameter_CreatorType" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="5854436268949437208">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -3294,16 +3319,16 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5854436268949437211">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="ConceptFunctionParameter_CreatorType" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="5854436268949437212">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5854436268949437221">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <property name="name:0" value="CreateModuleRunConfigBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <link role="extends:0" targetNodeId="5854436268949437223:23" resolveInfo="BaseCreateRunConfigFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="5854436268949437226">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -3315,8 +3340,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3856910426407528272" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5854436268949437222">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <property name="name:0" value="CreateModelRunConfigBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <link role="extends:0" targetNodeId="5854436268949437223:23" resolveInfo="BaseCreateRunConfigFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="5854436268949437227">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -3328,8 +3353,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5854436268949437223">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <property name="name:0" value="BaseCreateRunConfigFunction" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated.Function" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5854436268949437224">
       <property name="value:0" value="create" />
@@ -3347,8 +3372,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3856910426407528265" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5528847031674321866">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated" />
     <property name="name:0" value="RunNodeConfigCreator" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="extends:0" targetNodeId="8415911927033048374:23" resolveInfo="RunConfigCreator" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5528847031674321871">
       <property name="metaClass:0" value="aggregation" />
@@ -3366,8 +3391,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3856910426407528286" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5528847031674321867">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated" />
     <property name="name:0" value="RunModuleConfigCreator" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="extends:0" targetNodeId="8415911927033048374:23" resolveInfo="RunConfigCreator" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1890954770481145788">
       <property name="value:0" value="run configuration creator from module" />
@@ -3385,8 +3410,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3856910426407528281" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5528847031674321868">
+    <property name="package:0" value="RunConfigs.Create.Creator.Deprecated" />
     <property name="name:0" value="RunModelConfigCreator" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="extends:0" targetNodeId="8415911927033048374:23" resolveInfo="RunConfigCreator" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1890954770481145789">
       <property name="value:0" value="run configuration creator from model" />
@@ -3404,8 +3429,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3856910426407528280" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9061443648117357794">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ProcessStatement" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9061443648117357795">
       <property name="value:0" value="process" />
@@ -3428,8 +3453,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9061443648117368090">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ConsoleExpression" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9061443648117634896">
       <property name="value:0" value="console" />
@@ -3440,8 +3465,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9061443648117368091">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ConsoleType" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9061443648117368097">
       <property name="value:0" value="console" />
@@ -3449,9 +3474,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407528287">
+    <property name="package:0" value="RunConfigs.Create.Creator" />
     <property name="name:0" value="UniversalRunConfigCreator" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3856910426407529532">
       <property name="metaClass:0" value="aggregation" />
@@ -3476,8 +3501,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407529501">
+    <property name="package:0" value="RunConfigs.Create.Creator.Target" />
     <property name="name:0" value="NodeCreatorTarget" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Target" />
     <link role="extends:0" targetNodeId="3856910426407529502:23" resolveInfo="BaseCreatorTarget" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3856910426407529508">
       <property name="metaClass:0" value="reference" />
@@ -3494,8 +3519,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407529502">
+    <property name="package:0" value="RunConfigs.Create.Creator.Target" />
     <property name="name:0" value="BaseCreatorTarget" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Target" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3856910426407529531">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />
@@ -3506,8 +3531,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407529503">
+    <property name="package:0" value="RunConfigs.Create.Creator.Target" />
     <property name="name:0" value="ModelCreatorTarget" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Target" />
     <link role="extends:0" targetNodeId="3856910426407529502:23" resolveInfo="BaseCreatorTarget" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3856910426407529506">
       <property name="value:0" value="model" />
@@ -3519,8 +3544,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407529504">
+    <property name="package:0" value="RunConfigs.Create.Creator.Target" />
     <property name="name:0" value="ModuleCreatorTarget" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Target" />
     <link role="extends:0" targetNodeId="3856910426407529502:23" resolveInfo="BaseCreatorTarget" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3856910426407529505">
       <property name="value:0" value="module" />
@@ -3534,8 +3559,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407529578">
+    <property name="package:0" value="RunConfigs.Create.Creator.CreateBlock" />
     <property name="name:0" value="CreateRunConfigBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.CreateBlock" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3856910426407529591">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -3550,8 +3575,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3856910426407529586">
+    <property name="package:0" value="RunConfigs.Create.Creator.CreateBlock" />
     <property name="name:0" value="CreateRunConfigBlockParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.CreateBlock" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3856910426407529587">
       <property name="value:0" value="parameter" />
@@ -3562,8 +3587,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1969840607717540885">
+    <property name="package:0" value="RunConfigs.Create.Creator.Target" />
     <property name="name:0" value="ProjectCreatorTarget" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Target" />
     <link role="extends:0" targetNodeId="3856910426407529502:23" resolveInfo="BaseCreatorTarget" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1969840607717540886">
       <property name="value:0" value="project" />
@@ -3577,10 +3602,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6547237850567458268">
+    <property name="package:0" value="Tool" />
     <property name="name:0" value="BaseToolDeclaration" />
     <property name="rootable:0" value="false" />
     <property name="iconPath:0" value="${language_descriptor}\icons\tool.png" />
-    <property name="virtualPackage:0" value="Tool" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6547237850567462848">
       <property name="metaClass:0" value="aggregation" />
@@ -3631,9 +3656,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5896642449625981893">
+    <property name="package:0" value="Tool" />
     <property name="name:0" value="TabbedToolDeclaration" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="Tool" />
     <link role="extends:0" targetNodeId="6547237850567458268:23" resolveInfo="BaseToolDeclaration" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7566788359603019575">
       <property name="value:0" value="Tabbed Tool" />
@@ -3641,8 +3666,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5896642449625987000">
+    <property name="package:0" value="Tool.Operations" />
     <property name="name:0" value="AddTabOperation" />
-    <property name="virtualPackage:0" value="Tool.Operations" />
     <link role="extends:0" targetNodeId="8096638938275438668:23" resolveInfo="TabbedToolOperation" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8096638938275469509">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1217022095863:3" resolveInfo="returnType" />
@@ -3663,8 +3688,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5818192529492099570">
+    <property name="package:0" value="Tool.Operations" />
     <property name="name:0" value="CloseTabOperation" />
-    <property name="virtualPackage:0" value="Tool.Operations" />
     <link role="extends:0" targetNodeId="8096638938275438668:23" resolveInfo="TabbedToolOperation" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8096638938275469505">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1217022095863:3" resolveInfo="returnType" />
@@ -3682,8 +3707,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1862809785209122566">
+    <property name="package:0" value="Tool.Operations" />
     <property name="name:0" value="GetSelectedTabOperation" />
-    <property name="virtualPackage:0" value="Tool.Operations" />
     <link role="extends:0" targetNodeId="8096638938275438668:23" resolveInfo="TabbedToolOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1862809785209128867">
       <property name="value:0" value="getSelectedTab" />
@@ -3697,8 +3722,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8096638938275438668">
+    <property name="package:0" value="Tool.Operations" />
     <property name="name:0" value="TabbedToolOperation" />
-    <property name="virtualPackage:0" value="Tool.Operations" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8096638938275444188">
       <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
@@ -3708,8 +3733,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5124230653299542673">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="DebuggableNodeItem" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6516056543317148534">
       <property name="metaClass:0" value="aggregation" />
@@ -3726,8 +3751,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5124230653299345208">
     <property name="name:0" value="DebugInfoInitializer" />
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="rootable:0" value="true" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2947985314240879946">
       <property name="value:0" value="TraceInfoInitializer" />
@@ -3753,8 +3778,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="485694842828664424">
+    <property name="package:0" value="Tool.Operations" />
     <property name="name:0" value="SmartDisposeClosureParameterDeclaration" />
-    <property name="virtualPackage:0" value="Tool.Operations" />
     <link role="extends:0" targetNodeId="28.1203252195462:3" resolveInfo="UnboundClosureParameterDeclaration" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="485694842828666085">
       <property name="value:0" value="~ &lt;name&gt;" />
@@ -3766,8 +3791,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="485694842829280671">
+    <property name="package:3" value="Tool" />
     <property name="name:3" value="IComponentDisposer" />
-    <property name="virtualPackage:3" value="Tool" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="485694842829280677">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="disposeComponent" />
@@ -3790,8 +3815,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3994570451548100919">
+    <property name="package:0" value="RunConfigs.Create.Creator.Target" />
     <property name="name:0" value="NodesCreatorTarget" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.Creator.Target" />
     <link role="extends:0" targetNodeId="3856910426407529502:23" resolveInfo="BaseCreatorTarget" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="441707825122654598">
       <property name="metaClass:0" value="reference" />
@@ -3808,8 +3833,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6938053545825350222">
+    <property name="package:0" value="Tool.Operations" />
     <property name="name:0" value="ToolTab" />
-    <property name="virtualPackage:0" value="Tool.Operations" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6938053545825381648">
       <property name="metaClass:0" value="aggregation" />
@@ -3841,8 +3866,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5703381818025946290">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="AskBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5703381818025949417">
       <property name="value:0" value="ask" />
@@ -3861,8 +3886,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5703381818026462228">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="AskStatement" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5703381818026464829">
       <property name="metaClass:0" value="aggregation" />
@@ -3882,8 +3907,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7692832593197705758">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="GetConceptsBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="7692832593197705759">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -3904,8 +3929,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7692832593197710972">
+    <property name="package:0" value="EditorTab.Methods" />
     <property name="name:0" value="NewCreateBlock" />
-    <property name="virtualPackage:0" value="EditorTab.Methods" />
     <link role="extends:0" targetNodeId="1203851854402:23" resolveInfo="CreateBlock" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="7692832593197710973">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -3920,8 +3945,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7692832593197710975">
+    <property name="package:0" value="FileGenerator.Parameters" />
     <property name="name:0" value="ConceptFunctionParameter_Concept" />
-    <property name="virtualPackage:0" value="FileGenerator.Parameters" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7692832593197710976">
       <property name="value:0" value="concept" />
@@ -3933,8 +3958,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5857416866788524756">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="VariableNodeItem" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5857416866788529838">
       <property name="metaClass:0" value="reference" />
@@ -3950,8 +3975,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5857416866788535167">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="VariableNodeExpression" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5857416866788535168">
       <property name="value:0" value="varNode" />
@@ -3959,8 +3984,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="492938830216689663">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="GetUserDataExpression" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="492938830216689689">
       <property name="value:0" value="user data" />
@@ -3977,8 +4002,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288560358">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ScopeNodeItem" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5177675550061605585">
       <property name="metaClass:0" value="aggregation" />
@@ -3994,8 +4019,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288561741">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunction_GetVariables" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="936299881288561767">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -4009,8 +4034,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288561816">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunctionParameter_ScopeNode" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="936299881288561841">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -4022,8 +4047,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8179323502814630510">
+    <property name="package:0" value="RunConfigs" />
     <property name="name:0" value="RunConfigExecutionParameterDeclaration" />
-    <property name="virtualPackage:0" value="RunConfigs" />
     <link role="extends:0" targetNodeId="1217252042208:23" resolveInfo="ActionDataParameterDeclaration" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8179323502815740710">
       <link role="conceptLinkDeclaration:0" targetNodeId="14.1205921683134:0" resolveInfo="operationConcept" />
@@ -4032,8 +4057,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3680762252128105704" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8179323502814656936">
+    <property name="package:0" value="RunConfigs" />
     <property name="name:0" value="RunConfigParameterReferenceOperation" />
-    <property name="virtualPackage:0" value="RunConfigs" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8179323502814656938">
       <property name="metaClass:0" value="reference" />
@@ -4046,20 +4071,20 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1347772807199150767">
+    <property name="package:0" value="RunConfigs.Configuration.IsCorrect" />
     <property name="name:0" value="AbstractCheckConfigBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.IsCorrect" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1347772807199150769">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="8376523923662591983">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="IExecuteConfigBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076025">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ParametrizedExecuteBlock" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7187575959583995554">
       <property name="value:0" value="parametrized execute" />
@@ -4093,8 +4118,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076036">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ParametrizedExecuteActions" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3273619486685172379">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4106,8 +4131,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076037">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ParametrizedExecuteConsole" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764579">
       <property name="value:0" value="create console" />
@@ -4119,8 +4144,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076038">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ParametrizedExecuteProcess" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3607966867310349606">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4138,8 +4163,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076053">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="Console_FunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1110842925895076054">
       <property name="value:0" value="console" />
@@ -4156,8 +4181,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7187575959585005270">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ExecuteParameterQuery" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="444169778577244677">
       <property name="metaClass:0" value="aggregation" />
@@ -4171,8 +4196,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="453992125914151040">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="Parameter_FunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="453992125914151041">
       <property name="value:0" value="parameter" />
@@ -4192,25 +4217,25 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3636700473138833152">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="AbstractEnhancedConceptFunction" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3636700473138833155">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3636700473138841144">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="IEnhancedRunConfiguration" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3018238135942601771">
+    <property name="package:0" value="RunConfigs" />
     <property name="name:0" value="RunConfigurationMethodDeclaration" />
-    <property name="virtualPackage:0" value="RunConfigs" />
     <link role="extends:0" targetNodeId="14.1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3339131993542057764">
+    <property name="package:0" value="Preference" />
     <property name="name:0" value="GetPreferencesComponentInProjectOperation" />
-    <property name="virtualPackage:0" value="Preference" />
     <link role="extends:0" targetNodeId="3339131993542057767:23" resolveInfo="BaseProjectOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3339131993542057765">
       <property name="role:0" value="componentDeclaration" />
@@ -4223,16 +4248,16 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3339131993542057767">
+    <property name="package:0" value="Shared" />
     <property name="name:0" value="BaseProjectOperation" />
-    <property name="virtualPackage:0" value="Shared" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3339131993542057768">
       <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3339131993542058151">
+    <property name="package:0" value="Tool" />
     <property name="name:0" value="GetToolInProjectOperation" />
-    <property name="virtualPackage:0" value="Tool" />
     <link role="extends:0" targetNodeId="3339131993542057767:23" resolveInfo="BaseProjectOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3339131993542058152">
       <property name="role:0" value="tool" />
@@ -4245,8 +4270,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3273619486685168257">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ActionsList_FunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3273619486685172382">
       <property name="value:0" value="actionsList" />
@@ -4254,8 +4279,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="7086588812844908357">
+    <property name="package:0" value="RunConfigs.Create.CreateStatement" />
     <property name="name:0" value="IRunConfigPropertyInstance" />
-    <property name="virtualPackage:0" value="RunConfigs.Create.CreateStatement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7086588812844916869">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="propertyValue" />
@@ -4267,8 +4292,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6516056543316792926">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunction_CreateBreakpoint" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="6516056543316809596">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4286,8 +4311,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6516056543316793311">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunctionParameter_DebuggableNode" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="6516056543316793313">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -4300,8 +4325,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1270798772176070200" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6516056543316809582">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunctionParameter_Debug_Project" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6516056543316809583">
       <property name="value:0" value="project" />
@@ -4316,8 +4341,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="1270798772176070199" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3205675194086589964">
+    <property name="package:0" value="Actions.Action" />
     <property name="name:0" value="ActionAccessOperation" />
-    <property name="virtualPackage:0" value="Actions.Action" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3205675194086671728">
       <property name="metaClass:0" value="reference" />
@@ -4331,8 +4356,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3205675194086686068">
+    <property name="package:0" value="Actions.Groups" />
     <property name="name:0" value="GroupAccessOperation" />
-    <property name="virtualPackage:0" value="Actions.Groups" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3205675194086686070">
       <property name="metaClass:0" value="reference" />
@@ -4346,8 +4371,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8255351389869159733">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
     <property name="name:0" value="DebugSessionCreator" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Debug" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8255351389869160282">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4368,8 +4393,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8255351389869160280">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
     <property name="name:0" value="Project_ConceptFunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Debug" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8255351389869184297">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -4383,8 +4408,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089570349960658154">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="UnitNodeItem" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4089570349960658155">
       <property name="metaClass:0" value="reference" />
@@ -4400,8 +4425,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089570349960659791">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunction_GetUnitName" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="4089570349960659802">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4417,8 +4442,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089570349960659796">
+    <property name="package:0" value="Custom.TraceInfo" />
     <property name="name:0" value="ConceptFunctionParameter_UnitNode" />
-    <property name="virtualPackage:0" value="Custom.TraceInfo" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4089570349960659798">
       <property name="value:0" value="unitNode" />
@@ -4426,8 +4451,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9017024590936865843">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
     <property name="name:0" value="PrepareConceptFunction" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Debug" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="9017024590937198562">
       <property name="metaClass:0" value="aggregation" />
@@ -4452,8 +4477,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9017024590937198702">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
     <property name="name:0" value="PrepareReturnType_FunctionParameter" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Debug" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="9017024590937198704">
       <property name="value:0" value="preparedValue" />
@@ -4461,8 +4486,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3680762252127977523">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Statements" />
     <property name="name:0" value="ProjectExpression" />
-    <property name="virtualPackage:0" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3680762252127977524">
       <link role="intfc:0" targetNodeId="678887849223527750:23" resolveInfo="ExecuteSpecific" />
@@ -4473,8 +4498,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8871719840296751250">
+    <property name="package:0" value="GenerationListener" />
     <property name="name:0" value="GenerationListener_options" />
-    <property name="virtualPackage:0" value="GenerationListener" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8871719840296751251">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
