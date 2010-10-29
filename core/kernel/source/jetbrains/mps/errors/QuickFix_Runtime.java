@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.typesystem.runtime.quickfix;
+package jetbrains.mps.errors;
 
 import jetbrains.mps.smodel.SNode;
 

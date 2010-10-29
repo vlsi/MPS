@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.errors;
 
-import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
-
 public interface QuickFixProvider {
 
   public QuickFix_Runtime getQuickFix();

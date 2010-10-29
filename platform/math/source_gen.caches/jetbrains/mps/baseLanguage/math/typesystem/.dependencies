@@ -5,7 +5,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.MathUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.typesystem.DimensionUtil" file="DimensionUtil.java">
     <classNode dependClassName="java.lang.Object" />

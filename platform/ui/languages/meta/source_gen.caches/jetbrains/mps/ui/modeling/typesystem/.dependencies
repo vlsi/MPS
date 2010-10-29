@@ -56,7 +56,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.typesystem.fix_IAspectParameterHolder_QuickFix" file="fix_IAspectParameterHolder_QuickFix.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.typesystem.typeof_AspectParameterRef_InferenceRule" file="typeof_AspectParameterRef_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />

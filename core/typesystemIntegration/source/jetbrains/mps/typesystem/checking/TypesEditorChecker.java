@@ -21,7 +21,7 @@ import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

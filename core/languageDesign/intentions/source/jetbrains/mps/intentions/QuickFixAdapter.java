@@ -1,6 +1,6 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
