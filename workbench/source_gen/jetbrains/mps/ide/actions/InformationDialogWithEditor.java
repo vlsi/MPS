@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -23,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.errors.MessageStatus;
-
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.smodel.ModelAccess;
