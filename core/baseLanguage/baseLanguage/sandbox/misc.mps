@@ -3088,5 +3088,51 @@
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3511256318310379100" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2233570453276337707">
+    <property name="name:3" value="AClass" />
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="2233570453276391630">
+      <property name="name:3" value="myField" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="2233570453276391633" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="2233570453276391634">
+        <link role="typeVariableDeclaration:3" targetNodeId="2233570453276391629" resolveInfo="N" />
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2233570453276337708" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="2233570453276337709">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2233570453276337710" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2233570453276337711" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2233570453276337712" />
+    </node>
+    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="2233570453276391629">
+      <property name="name:3" value="N" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2233570453276391635">
+    <property name="name:3" value="BClass" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2233570453276391636" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="2233570453276391637">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2233570453276391638" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2233570453276391639" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2233570453276391640">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2233570453276391645">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2233570453276391646">
+            <link role="variableDeclaration:3" targetNodeId="2233570453276391630" resolveInfo="myField" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2233570453276391648">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2233570453276391650">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="2233570453276391649" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2233570453276391654">
+              <link role="fieldDeclaration:3" targetNodeId="2233570453276391630" resolveInfo="myField" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2233570453276391642">
+      <link role="classifier:3" targetNodeId="2233570453276337707" resolveInfo="AClass" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2233570453276391644" />
+    </node>
+  </node>
 </model>
 
