@@ -10,36 +10,14 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="38" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -326,7 +304,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213107437767">
-    <property name="package:8" value="DEPRECATED" />
+    <property name="virtualPackage:8" value="DEPRECATED" />
     <link role="concept:8" targetNodeId="7.1209909558075:23" resolveInfo="ProjectOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1213107437768">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213107437769">
@@ -386,7 +364,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1215776856972">
-    <property name="package:8" value="Actions.Groups.GroupMembers" />
+    <property name="virtualPackage:8" value="Actions.Groups.GroupMembers" />
     <link role="concept:8" targetNodeId="7.1203680534665:23" resolveInfo="ExtentionPoint" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1215776860582">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215776860583">
@@ -425,7 +403,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1215777002116">
-    <property name="package:8" value="Actions.Groups.GroupMembers" />
+    <property name="virtualPackage:8" value="Actions.Groups.GroupMembers" />
     <link role="concept:8" targetNodeId="7.1204908117386:23" resolveInfo="Separator" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1215777006555">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215777006556">
@@ -448,7 +426,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1215777014643">
-    <property name="package:8" value="Actions.Groups" />
+    <property name="virtualPackage:8" value="Actions.Groups" />
     <link role="concept:8" targetNodeId="7.1203087890642:23" resolveInfo="ActionGroupDeclaration" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1215777016910">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215777016911">
@@ -471,7 +449,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1215777027935">
-    <property name="package:8" value="Actions.Groups.GroupModification.bootstrap" />
+    <property name="virtualPackage:8" value="Actions.Groups.GroupModification.bootstrap" />
     <link role="concept:8" targetNodeId="7.1204397573187:23" resolveInfo="BootstrapExtentionPoint" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1215777030421">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215777030422">
@@ -495,7 +473,7 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1217253124985">
-    <property name="package:8" value="Actions.Action" />
+    <property name="virtualPackage:8" value="Actions.Action" />
     <link role="concept:8" targetNodeId="7.1217252042208:23" resolveInfo="ActionDataParameterDeclaration" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1217254447581">
       <link role="applicableLink:8" targetNodeId="7.1217252646389:23" />
@@ -512,7 +490,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1217679244579">
-    <property name="package:8" value="Actions.Action" />
+    <property name="virtualPackage:8" value="Actions.Action" />
     <link role="concept:8" targetNodeId="7.1205679047295:23" resolveInfo="ActionParameterDeclaration" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1217679246549">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1217679246550">
@@ -536,7 +514,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227013116652">
-    <property name="package:8" value="Actions.Groups.GroupContents" />
+    <property name="virtualPackage:8" value="Actions.Groups.GroupContents" />
     <link role="concept:8" targetNodeId="7.1227013049127:23" resolveInfo="AddStatement" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1227013118716">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227013118717">
@@ -591,7 +569,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6193305307616734335">
-    <property name="package:8" value="Actions.Keymaps" />
+    <property name="virtualPackage:8" value="Actions.Keymaps" />
     <link role="concept:8" targetNodeId="7.6193305307616715384:23" resolveInfo="ShortcutChange" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="6193305307616734336">
       <link role="applicableLink:8" targetNodeId="7.6193305307616734326:23" />
@@ -610,7 +588,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="678887849223527751">
-    <property name="package:8" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="virtualPackage:8" value="RunConfigs.Configuration.Execute.Statements" />
     <link role="concept:8" targetNodeId="7.678887849223527750:23" resolveInfo="ExecuteSpecificStatement" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="678887849223527752">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="678887849223527753">
@@ -634,7 +612,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8821770403474030736">
-    <property name="package:8" value="RunConfigs.Configuration.IsCorrect" />
+    <property name="virtualPackage:8" value="RunConfigs.Configuration.IsCorrect" />
     <link role="concept:8" targetNodeId="7.8821770403474030735:23" resolveInfo="ReportErrorStatement" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="8821770403474030737">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8821770403474030738">
@@ -658,7 +636,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="3452826078638187868">
-    <property name="package:8" value="RunConfigs.Configuration.Editor" />
+    <property name="virtualPackage:8" value="RunConfigs.Configuration.Editor" />
     <link role="concept:8" targetNodeId="7.3452826078638178132:23" resolveInfo="ComponentReference" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="3452826078638187869">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3452826078638187870">
@@ -681,7 +659,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1628770029971140583">
-    <property name="package:8" value="CheckedName" />
+    <property name="virtualPackage:8" value="CheckedName" />
     <link role="concept:8" targetNodeId="7.1628770029971140534:23" resolveInfo="PropertyRefExpression" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1628770029971140584">
       <link role="applicableLink:8" targetNodeId="7.1628770029971140536:23" />
@@ -746,7 +724,7 @@
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7066926174333292960">
-    <property name="package:8" value="RunConfigs.Create.CreateStatement" />
+    <property name="virtualPackage:8" value="RunConfigs.Create.CreateStatement" />
     <link role="concept:8" targetNodeId="7.7066926174333292873:23" resolveInfo="RunConfigPropertyInstance" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="3361586479359798749">
       <link role="applicableProperty:8" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
@@ -872,7 +850,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8415911927033050434">
-    <property name="package:8" value="RunConfigs.Create" />
+    <property name="virtualPackage:8" value="RunConfigs.Create" />
     <link role="concept:8" targetNodeId="7.8415911927033048376:23" resolveInfo="RunConfigMainNodeStatement" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="8415911927033051484">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8415911927033051485">
@@ -896,7 +874,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8415911927033051504">
-    <property name="package:8" value="RunConfigs.Create.CreateStatement" />
+    <property name="virtualPackage:8" value="RunConfigs.Create.CreateStatement" />
     <link role="concept:8" targetNodeId="7.7066926174333289651:23" resolveInfo="CreateRunConfigStatement" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="8415911927033051505">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8415911927033051506">
@@ -920,12 +898,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7641798150165719784">
-    <property name="package:8" value="Actions.Action.Methods" />
+    <property name="virtualPackage:8" value="Actions.Action.Methods" />
     <link role="concept:8" targetNodeId="7.1205681149025:23" resolveInfo="UpdateBlock" />
     <link role="defaultConcreteConcept:8" targetNodeId="7.1205681243813:23" resolveInfo="IsApplicableBlock" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8096638938275444162">
-    <property name="package:8" value="Tool.Operations" />
+    <property name="virtualPackage:8" value="Tool.Operations" />
     <link role="concept:8" targetNodeId="7.8096638938275438668:23" resolveInfo="TabbedToolOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="8096638938275444163">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8096638938275444164">
@@ -982,7 +960,7 @@
   </node>
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="485694842828666087">
-    <property name="package:8" value="Tool.Operations" />
+    <property name="virtualPackage:8" value="Tool.Operations" />
     <link role="concept:8" targetNodeId="7.485694842828664424:23" resolveInfo="SmartDisposeClosureParameterDeclaration" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="485694842828666088">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="485694842828666089">
@@ -1000,7 +978,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5703381818026462229">
-    <property name="package:8" value="EditorTab.Methods" />
+    <property name="virtualPackage:8" value="EditorTab.Methods" />
     <link role="concept:8" targetNodeId="7.5703381818026462228:23" resolveInfo="AskStatement" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="5703381818026462230">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5703381818026462231">
@@ -1024,7 +1002,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5857416866788535172">
-    <property name="package:8" value="Custom.TraceInfo" />
+    <property name="virtualPackage:8" value="Custom.TraceInfo" />
     <link role="concept:8" targetNodeId="7.5857416866788535167:23" resolveInfo="VariableNodeExpression" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="5857416866788535173">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5857416866788535174">
@@ -1048,7 +1026,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8179323502814656939">
-    <property name="package:8" value="RunConfigs" />
+    <property name="virtualPackage:8" value="RunConfigs" />
     <link role="concept:8" targetNodeId="7.8179323502814656936:23" resolveInfo="RunConfigParameterReferenceOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="8179323502814656940">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8179323502814656941">
@@ -1071,7 +1049,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="444169778578071400">
-    <property name="package:8" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="virtualPackage:8" value="RunConfigs.Configuration.Execute.Parametrized" />
     <link role="concept:8" targetNodeId="7.7187575959585005270:23" resolveInfo="ExecuteParameterQuery" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="444169778578071401">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="444169778578071402">
@@ -1089,7 +1067,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="3339131993542058155">
-    <property name="package:8" value="Shared" />
+    <property name="virtualPackage:8" value="Shared" />
     <link role="concept:8" targetNodeId="7.3339131993542057767:23" resolveInfo="BaseProjectOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="3339131993542058156">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3339131993542058157">
@@ -1149,7 +1127,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5267773026153284329">
-    <property name="package:8" value="RunConfigs.Configuration.IsCorrect" />
+    <property name="virtualPackage:8" value="RunConfigs.Configuration.IsCorrect" />
     <link role="concept:8" targetNodeId="7.1347772807199150767:23" resolveInfo="AbstractCheckConfigBlock" />
     <link role="defaultConcreteConcept:8" targetNodeId="7.678887849223472879:23" resolveInfo="CheckConfigurationBlock" />
   </node>
