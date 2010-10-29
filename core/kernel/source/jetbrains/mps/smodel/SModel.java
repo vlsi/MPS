@@ -559,6 +559,9 @@ public class SModel {
       }
       importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
     }
+    if (importElement.getReferenceID() < 0) { // fix for persistence <6
+      importElement.setReferenceID(++myMaxImportIndex);
+    }
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
@@ -606,6 +609,9 @@ public class SModel {
       }
       for (SNode child : node.getChildren()) {
         //result.add(child.getRoleLink().getModel().getSModelReference());
+        if (child.isAttribute()) {
+          continue;   // temporary don't check annotation roles, suppose the model of AnnotationDeclaration is the same as of concept
+        }
         LinkDeclaration decl = child.getRoleLink();
         if (decl == null) {
           LOG.error("link declaration " + child.getRole_() + " not found for node " + node);

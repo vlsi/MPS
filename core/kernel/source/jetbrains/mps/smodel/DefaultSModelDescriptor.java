@@ -121,10 +121,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private void updateOnLoad(SModel result, boolean quick) {
     if (StructureModificationProcessor.updateModelOnLoad(result)) {
-      IFile modelFile = getModelFile();
-      if (modelFile != null && !modelFile.isReadOnly()) {
-        SModelRepository.getInstance().markChanged(this, true);
-      }
+      // do not mark as "changed" after playing "refactoring"
+//      IFile modelFile = getModelFile();
+//      if (modelFile != null && !modelFile.isReadOnly()) {
+//        SModelRepository.getInstance().markChanged(this, true);
+//      }
     }
     if (!quick) {
       tryFixingVersion();
