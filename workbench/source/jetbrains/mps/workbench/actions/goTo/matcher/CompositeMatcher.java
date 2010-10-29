@@ -28,17 +28,18 @@ public class CompositeMatcher implements EntityMatcher {
     myMatcher = matcher;
   }
 
+  public boolean nameMatches(String pattern, String name) {
+    for (EntityMatcher matcher : myMatcher) {
+      if (matcher.nameMatches(pattern,name)) return true;
+    }
+    return false;
+  }
+
   public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names, boolean checkboxState, int maxCount, Computable<Boolean> isCancelled) {
     boolean overflow = false;
     for (EntityMatcher matcher : myMatcher) {
       overflow |= matcher.addElementsByPattern(result, pattern, names, checkboxState, maxCount, isCancelled);
     }
     return overflow;
-  }
-
-  public void getNamesByPattern(List<String> list, String pattern, String[] names, Computable<Boolean> isCancelled) {
-    for (EntityMatcher matcher : myMatcher) {
-      matcher.getNamesByPattern(list, pattern, names, isCancelled);
-    }
   }
 }

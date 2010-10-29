@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.intellij.openapi.MnemonicHelper;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorColorsScheme;
 import com.intellij.openapi.keymap.KeymapManager;
@@ -62,6 +63,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.text.DefaultEditorKit;
 import java.awt.*;
 import java.awt.event.*;
+import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.List;
 
@@ -505,7 +507,7 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  private void doClose(final boolean ok) {
+  protected void doClose(final boolean ok) {
     if (myDisposedFlag) return;
 
     if (posponeCloseWhenListReady(ok)) return;
@@ -521,7 +523,7 @@ public abstract class ChooseByNameBase {
   }
 
   private boolean posponeCloseWhenListReady(boolean ok) {
-    if (!Registry.is("actionSystem.fixLostTyping")) return false;
+    if (!isToFixLostTyping()) return false;
 
     final String text = myTextField.getText();
     if (ok && !myListIsUpToDate && text != null && text.trim().length() > 0) {
@@ -531,6 +533,10 @@ public abstract class ChooseByNameBase {
     }
 
     return false;
+  }
+
+  protected boolean isToFixLostTyping() {
+    return Registry.is("actionSystem.fixLostTyping");
   }
 
   private synchronized void ensureNamesLoaded(boolean checkboxState) {
@@ -673,6 +679,10 @@ public abstract class ChooseByNameBase {
         }
       }
     }, modalityState);
+  }
+
+  protected boolean isToBuildListOnPolledThread() {
+    return true;
   }
 
   private boolean isShowListAfterCompletionKeyStroke() {
@@ -834,7 +844,9 @@ public abstract class ChooseByNameBase {
       if (myCommands.isEmpty() || myDisposedFlag) return;
       myAlarm.addRequest(new Runnable() {
         public void run() {
-          if (myDisposedFlag) return;
+          if (myDisposedFlag) {
+            return;
+          }
           final long startTime = System.currentTimeMillis();
           while (!myCommands.isEmpty() && System.currentTimeMillis() - startTime < MAX_BLOCKING_TIME) {
             final Cmd cmd = myCommands.remove(0);
@@ -1002,9 +1014,7 @@ public abstract class ChooseByNameBase {
     }
 
     private void fillInCommonPrefix(final String pattern) {
-      final ArrayList<String> list = new ArrayList<String>();
-      String[] names = myCheckBox.isSelected() ? myNames[1] : myNames[0];
-      myMatcher.getNamesByPattern(list, pattern, names, new Computable<Boolean>() {
+      final List<String> list = getNamesByPattern(myMatcher, pattern, getNames(), new Computable<Boolean>() {
         public Boolean compute() {
           return false;
         }
@@ -1071,6 +1081,28 @@ public abstract class ChooseByNameBase {
     public boolean isCompletionKeyStroke() {
       return completionKeyStrokeHappened;
     }
+  }
+
+  public static List<String> getNamesByPattern(EntityMatcher matcher,String pattern, String[] names, Computable<Boolean> isCancelled) {
+    if (pattern.startsWith("@")) {
+      pattern = pattern.substring(1);
+    }
+
+    ArrayList<String> result = new ArrayList<String>();
+    try {
+      for (String name : names) {
+        if (isCancelled.compute()) {
+          break;
+        }
+        if (matcher.nameMatches(pattern, name)) {
+          result.add(name);
+        }
+      }
+    }
+    catch (Exception e) {
+      // Do nothing. No matches appears valid result for "bad" pattern
+    }
+    return result;
   }
 
   private static final String EXTRA_ELEM = "...";
@@ -1176,6 +1208,10 @@ public abstract class ChooseByNameBase {
         myCancelled = true;
       }
     }
+  }
+
+  private String[] getNames() {
+    return myCheckBox.isSelected() ? myNames[1] : myNames[0];
   }
 
   private boolean canShowListForEmptyPattern() {

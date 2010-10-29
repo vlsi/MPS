@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,12 @@ import java.util.List;
 import java.util.Set;
 
 public interface EntityMatcher {
+  boolean nameMatches(String pattern, String name);
+
   boolean addElementsByPattern(Set<Object> result,
                                String pattern,
                                String[] names,
                                boolean checkboxState,
                                int maxCount,
                                Computable<Boolean> isCancelled);
-
-  void getNamesByPattern(final List<String> list, String pattern, String[] names, Computable<Boolean> isCancelled);
 }

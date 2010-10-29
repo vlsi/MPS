@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,20 +40,39 @@ public abstract class DefaultMatcher implements EntityMatcher {
   private ChooseByNameModel myModel;
   private WeakReference<PsiElement> myContext;
 
+  private String myPattern = null;
+  private NameUtil.Matcher myMatcher = null;
+
   public DefaultMatcher(ChooseByNameModel model, PsiElement context) {
     myModel = model;
     myContext = new WeakReference<PsiElement>(context);
   }
 
-  public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names, boolean checkboxState, int maxCount, Computable<Boolean> isCancelled) {
+  public boolean nameMatches(String pattern, String name) {
+    if (!canShowListForEmptyPattern()) {
+      LOG.assertTrue(pattern.length() > 0);
+    }
+
+    if (myPattern == null || !myPattern.equals(pattern)) {
+      myMatcher = buildPatternMatcher(pattern);
+    }
+
+    return matches(pattern, myMatcher, name);
+  }
+
+  public boolean addElementsByPattern(Set<Object> result,
+                                      String pattern,
+                                      String[] names,
+                                      boolean checkboxState,
+                                      int maxCount,
+                                      Computable<Boolean> isCancelled) {
     String namePattern = getNamePattern(pattern);
     String qualifierPattern = getQualifierPattern(pattern);
 
     boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
     if (empty && !canShowListForEmptyPattern()) return false;
 
-    List<String> namesList = new ArrayList<String>();
-    getNamesByPattern(namesList, namePattern, names, isCancelled);
+    List<String> namesList = ChooseByNameBase.getNamesByPattern(this, namePattern, names, isCancelled);
     if (isCancelled.compute()) {
       throw new ProcessCanceledException();
     }
@@ -83,7 +102,8 @@ public abstract class DefaultMatcher implements EntityMatcher {
             break All;
           }
         }
-      } else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
+      }
+      else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
         result.add(elements[0]);
         if (result.size() >= maxCount) {
           overflow = true;
@@ -96,33 +116,6 @@ public abstract class DefaultMatcher implements EntityMatcher {
   }
 
   protected abstract boolean canShowListForEmptyPattern();
-
-  public void getNamesByPattern(final List<String> list, String pattern, String[] names, Computable<Boolean> isCancelled)
-    throws ProcessCanceledException {
-    if (!canShowListForEmptyPattern()) {
-      LOG.assertTrue(pattern.length() > 0);
-    }
-
-    if (pattern.startsWith("@")) {
-      pattern = pattern.substring(1);
-    }
-
-    final NameUtil.Matcher matcher = buildPatternMatcher(pattern);
-
-    try {
-      for (String name : names) {
-        if (isCancelled.compute()) {
-          break;
-        }
-        if (matches(pattern, matcher, name)) {
-          list.add(name);
-        }
-      }
-    }
-    catch (Exception e) {
-      // Do nothing. No matches appears valid result for "bad" pattern
-    }
-  }
 
   private void sortByProximity(final List<Object> sameNameElements) {
     Collections.sort(sameNameElements, new PathProximityComparator(myModel, myContext.get()));
@@ -188,10 +181,11 @@ public abstract class DefaultMatcher implements EntityMatcher {
     boolean matches = false;
     if (name != null) {
       if (myModel instanceof CustomMatcherModel) {
-        if (((CustomMatcherModel) myModel).matches(name, pattern)) {
+        if (((CustomMatcherModel)myModel).matches(name, pattern)) {
           matches = true;
         }
-      } else if (pattern.length() == 0 || matcher.matches(name)) {
+      }
+      else if (pattern.length() == 0 || matcher.matches(name)) {
         matches = true;
       }
     }
