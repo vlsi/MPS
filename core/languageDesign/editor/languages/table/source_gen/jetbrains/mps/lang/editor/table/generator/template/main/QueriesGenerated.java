@@ -5,13 +5,9 @@ package jetbrains.mps.lang.editor.table.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 
@@ -20,21 +16,8 @@ public class QueriesGenerated {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }
 
-  public static Object referenceMacro_GetReferent_6189378527250534418(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
-  }
-
-  public static boolean ifMacro_Condition_6189378527250534435(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true) != null;
-  }
-
   public static Iterable sourceNodesQuery_8562016843455421178(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tableModel", true), "body", true), "statement", true);
-  }
-
-  public static Iterable sourceNodesQuery_6189378527250534408(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true), "cellMenuPart", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1642854152031151252(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
