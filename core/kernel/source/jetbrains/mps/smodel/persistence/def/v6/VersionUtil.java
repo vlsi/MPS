@@ -140,9 +140,12 @@ public class VersionUtil {
     res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
     res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
 
-    // check integrity
-    if (hasmodel && res.version != myImports.get(getSModelReference(res.modelID)).getUsedVersion()) {
-      LOG.error("wrong version of " + src + ", model=" + getSModelReference(res.modelID) + ". Possible reason: merge conflict was not resolved.");
+    // check integrity except concepts and attribute roles
+    if (hasmodel && !AttributesRolesUtil.isAttributeRole(res.text)) {
+      ImportElement elem = myImports.get(getSModelReference(res.modelID));
+      if (elem == null || res.version != myImports.get(getSModelReference(res.modelID)).getUsedVersion()) {
+        LOG.error("wrong version of " + src + ", model=" + getSModelReference(res.modelID) + ". Possible reason: merge conflict was not resolved.");
+      }
     }
 
     return res;
