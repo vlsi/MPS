@@ -1203,6 +1203,10 @@ public abstract class ChooseByNameBase {
     private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
       String[] names = myCheckboxState ? myNames[1] : myNames[0];
       String namePattern = getNamePattern(pattern);
+
+      boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
+      if (empty && !canShowListForEmptyPattern()) return;
+
       List<String> namesList = getNamesByPattern(namePattern, names);
 
       // Here we sort using namePattern to have similar logic with empty qualified patten case

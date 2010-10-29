@@ -38,7 +38,7 @@ public class CompositeMatcher implements EntityMatcher {
   public Set<Object> getElementsByPattern(String fullPattern, String fullName, boolean checkboxState) {
     Set<Object> result = new HashSet<Object>();
     for (EntityMatcher matcher : myMatcher) {
-      result.add(matcher.getElementsByPattern(fullPattern, fullName, checkboxState));
+      result.addAll(matcher.getElementsByPattern(fullPattern, fullName, checkboxState));
     }
     return result;
   }

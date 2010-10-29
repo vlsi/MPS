@@ -28,8 +28,8 @@ public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher
     super(model, new FakePsiContext());
   }
 
-  public boolean nameMatches(String fullPattern, String shortName) {
-    return super.nameMatches(transformPattern(fullPattern), shortName);
+  public boolean nameMatches(String shortPattern, String shortName) {
+    return super.nameMatches(shortPattern, shortName);
   }
 
   public Set<Object> getElementsByPattern(String fullPattern, String fullName, boolean checkboxState) {
