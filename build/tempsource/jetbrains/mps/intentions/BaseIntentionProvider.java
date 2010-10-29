@@ -82,7 +82,6 @@ public class BaseQuickFixProvider implements IntentionProvider {
         }
         Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
         quickFix.execute(node);
-        quickFix.setSelection(node, editorContext, wasSelected);
       }
 
       public IntentionType getType() {

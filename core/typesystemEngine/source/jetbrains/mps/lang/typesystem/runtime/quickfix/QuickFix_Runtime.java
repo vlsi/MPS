@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime.quickfix;
 
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,10 +37,6 @@ public abstract class QuickFix_Runtime {
   }
 
   public abstract void execute(SNode node);
-
-  public void setSelection(SNode node, EditorContext editorContext, Pair<SNode, Integer> wasSelected) {
-
-  }
 
   public String getDescription() {
     //quickFix w/o description was added to intentions menu
