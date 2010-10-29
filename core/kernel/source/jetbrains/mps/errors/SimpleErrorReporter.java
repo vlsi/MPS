@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.errors;
 
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -22,7 +24,7 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 public class SimpleErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private String myErrorString;
   private MessageStatus myMessageStatus = MessageStatus.ERROR;
-  private IErrorTarget myErrorTarget = new NodeErrorTarget();
+  private MessageTarget myErrorTarget = new NodeMessageTarget();
   private SNode mySNode;
 
   public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId) {
@@ -36,7 +38,7 @@ public class SimpleErrorReporter extends AbstractErrorReporter implements IError
     myMessageStatus = isWarning ? MessageStatus.WARNING : MessageStatus.ERROR;
   }
 
-  public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId, MessageStatus messageStatus, IErrorTarget errorTarget) {
+  public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId, MessageStatus messageStatus, MessageTarget errorTarget) {
     this(node, s, ruleModel, ruleId);
     myMessageStatus = messageStatus;
     myErrorTarget = errorTarget;
@@ -50,7 +52,7 @@ public class SimpleErrorReporter extends AbstractErrorReporter implements IError
     return myMessageStatus;
   }
 
-  public IErrorTarget getErrorTarget() {
+  public MessageTarget getErrorTarget() {
     return myErrorTarget;
   }
 

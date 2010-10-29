@@ -3104,7 +3104,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~PropertyErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~PropertyMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3122,7 +3122,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~ReferenceErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~ReferenceMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3140,7 +3140,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~PropertyErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~PropertyMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3158,7 +3158,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~ReferenceErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~ReferenceMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3176,7 +3176,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~PropertyErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~PropertyMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3194,7 +3194,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~ReferenceErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~ReferenceMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3266,7 +3266,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~PropertyErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~PropertyMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;
@@ -3284,7 +3284,7 @@ parametersLoop:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~ReferenceErrorTarget.<init>(java.lang.String)")));
+        quotedNode1_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)"), SNodeId.fromString("~ReferenceMessageTarget.<init>(java.lang.String)")));
         result = quotedNode1_2;
       }
       return result;

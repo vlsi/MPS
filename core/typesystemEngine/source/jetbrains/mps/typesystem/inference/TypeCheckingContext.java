@@ -20,6 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -105,43 +106,21 @@ public class TypeCheckingContext {
   }
 
   //errors reporting
-
-  @Deprecated
-  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, new NodeErrorTarget());
-    reporter.setIntentionProvider(intentionProvider);
-    reportMessage(nodeWithError, reporter);
-  }
-
-  @Deprecated
-  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, new NodeErrorTarget());
-    reporter.setIntentionProvider(intentionProvider);
-    reportMessage(nodeWithError, reporter);
-  }
-
-  @Deprecated
-  public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, new NodeErrorTarget());
-    reporter.setIntentionProvider(intentionProvider);
-    reportMessage(nodeWithInfo, reporter);
-  }
-
-  public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, IErrorTarget errorTarget) {
+  public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
     return reporter;
   }
 
-  public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, IErrorTarget errorTarget) {
+  public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithError, reporter);
     return reporter;
   }
 
-  public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, IErrorTarget errorTarget) {
+  public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
     reportMessage(nodeWithInfo, reporter);

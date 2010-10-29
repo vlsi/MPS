@@ -33,6 +33,14 @@ public class NodeErrorTarget implements IErrorTarget {
   }
 
   @Override
+  public boolean sameAs(MessageTarget messageTarget) {
+    if (messageTarget instanceof IErrorTarget) {
+      return sameAs((IErrorTarget) messageTarget);
+    }
+    return false;
+  }
+
+  @Override
   public MessageTarget toEditorMessageTarget() {
     return new NodeMessageTarget();
   }

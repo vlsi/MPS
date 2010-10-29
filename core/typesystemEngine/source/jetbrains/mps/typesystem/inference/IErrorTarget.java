@@ -18,7 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 
-public interface IErrorTarget {
+public interface IErrorTarget extends MessageTarget {
   public MessageTargetEnum getTarget();
 
   public String getRole();

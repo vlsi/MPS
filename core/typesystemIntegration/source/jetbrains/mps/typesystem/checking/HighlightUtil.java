@@ -25,7 +25,7 @@ public class HighlightUtil {
     HighlighterMessage error = new HighlighterMessage(
       node, 
       status,
-      errorReporter.getErrorTarget().toEditorMessageTarget(),
+      errorReporter.getErrorTarget(),
       getMessageColor(status),
       message,
       checker.getOwner(node.getContainingRoot(), editorContext.getNodeEditorComponent()));
