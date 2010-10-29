@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.util.Computable;
 
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 public class CompositeMatcher implements EntityMatcher {
@@ -30,16 +30,16 @@ public class CompositeMatcher implements EntityMatcher {
 
   public boolean nameMatches(String pattern, String name) {
     for (EntityMatcher matcher : myMatcher) {
-      if (matcher.nameMatches(pattern,name)) return true;
+      if (matcher.nameMatches(pattern, name)) return true;
     }
     return false;
   }
 
-  public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names, boolean checkboxState, int maxCount, Computable<Boolean> isCancelled) {
-    boolean overflow = false;
+  public Set<Object> getElementsByPattern(String fullPattern, String fullName, boolean checkboxState) {
+    Set<Object> result = new HashSet<Object>();
     for (EntityMatcher matcher : myMatcher) {
-      overflow |= matcher.addElementsByPattern(result, pattern, names, checkboxState, maxCount, isCancelled);
+      result.add(matcher.getElementsByPattern(fullPattern, fullName, checkboxState));
     }
-    return overflow;
+    return result;
   }
 }

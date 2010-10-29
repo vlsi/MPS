@@ -19,9 +19,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.Comparing;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
@@ -48,71 +46,49 @@ public abstract class DefaultMatcher implements EntityMatcher {
     myContext = new WeakReference<PsiElement>(context);
   }
 
-  public boolean nameMatches(String pattern, String name) {
+  public boolean nameMatches(String shortPattern, String shortName) {
     if (!canShowListForEmptyPattern()) {
-      LOG.assertTrue(pattern.length() > 0);
+      LOG.assertTrue(shortPattern.length() > 0);
     }
 
-    if (myPattern == null || !myPattern.equals(pattern)) {
-      myMatcher = buildPatternMatcher(pattern);
+    if (myPattern == null || !myPattern.equals(shortPattern)) {
+      myMatcher = buildPatternMatcher(shortPattern);
     }
 
-    return matches(pattern, myMatcher, name);
+    return matches(shortPattern, myMatcher, shortName);
   }
 
-  public boolean addElementsByPattern(Set<Object> result,
-                                      String pattern,
-                                      String[] names,
-                                      boolean checkboxState,
-                                      int maxCount,
-                                      Computable<Boolean> isCancelled) {
-    String namePattern = getNamePattern(pattern);
-    String qualifierPattern = getQualifierPattern(pattern);
+  public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState) {
+    String namePattern = getShortNamePattern(fullPattern);
+    String qualifierPattern = getQualifierPattern(fullPattern);
 
     boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
-    if (empty && !canShowListForEmptyPattern()) return false;
+    if (empty && !canShowListForEmptyPattern()) return Collections.emptySet();
 
-    List<String> namesList = ChooseByNameBase.getNamesByPattern(this, namePattern, names, isCancelled);
-    if (isCancelled.compute()) {
-      throw new ProcessCanceledException();
-    }
-    // Here we sort using namePattern to have similar logic with empty qualified patten case
-    Collections.sort(namesList, new MatchesComparator(namePattern));
+    //todo this is a code duplicate - remove it
+    String newPattern = namePattern.startsWith("@") ? namePattern.substring(1) : namePattern;
+    if (!nameMatches(newPattern, shortName)) return Collections.emptySet();
 
-    boolean overflow = false;
     List<Object> sameNameElements = new SmartList<Object>();
-    All:
-    for (String name : namesList) {
-      if (isCancelled.compute()) {
-        throw new ProcessCanceledException();
-      }
-      final Object[] elements = myModel.getElementsByName(name, checkboxState, namePattern);
-      if (elements.length > 1) {
-        sameNameElements.clear();
-        for (final Object element : elements) {
-          if (matchesQualifier(element, qualifierPattern)) {
-            sameNameElements.add(element);
-          }
-        }
-        sortByProximity(sameNameElements);
-        for (Object element : sameNameElements) {
-          result.add(element);
-          if (result.size() >= maxCount) {
-            overflow = true;
-            break All;
-          }
+    final Object[] elements = myModel.getElementsByName(shortName, checkboxState, namePattern);
+
+    Set<Object> result = new HashSet<Object>();
+    if (elements.length > 1) {
+      sameNameElements.clear();
+      for (final Object element : elements) {
+        if (matchesQualifier(element, qualifierPattern)) {
+          sameNameElements.add(element);
         }
       }
-      else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
-        result.add(elements[0]);
-        if (result.size() >= maxCount) {
-          overflow = true;
-          break;
-        }
+      sortByProximity(sameNameElements);
+      for (Object element : sameNameElements) {
+        result.add(element);
       }
     }
-
-    return overflow;
+    else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
+      result.add(elements[0]);
+    }
+    return result;
   }
 
   protected abstract boolean canShowListForEmptyPattern();
@@ -129,7 +105,7 @@ public abstract class DefaultMatcher implements EntityMatcher {
     final List<Pair<String, NameUtil.Matcher>> patternsAndMatchers =
       ContainerUtil.map2List(split(qualifierPattern), new Function<String, Pair<String, NameUtil.Matcher>>() {
         public Pair<String, NameUtil.Matcher> fun(String s) {
-          final String pattern = getNamePattern(s);
+          final String pattern = getShortNamePattern(s);
           final NameUtil.Matcher matcher = buildPatternMatcher(pattern);
 
           return new Pair<String, NameUtil.Matcher>(pattern, matcher);
@@ -164,7 +140,7 @@ public abstract class DefaultMatcher implements EntityMatcher {
     return true;
   }
 
-  private String getNamePattern(String s) {
+  public String getShortNamePattern(String s) {
     return ChooseByNameBase.getNamePattern_static(myModel, s);
   }
 
@@ -224,20 +200,4 @@ public abstract class DefaultMatcher implements EntityMatcher {
     }
   }
 
-  private static class MatchesComparator implements Comparator<String> {
-    private final String myOriginalPattern;
-
-    private MatchesComparator(final String originalPattern) {
-      myOriginalPattern = originalPattern.trim();
-    }
-
-    public int compare(final String a, final String b) {
-      boolean aStarts = a.startsWith(myOriginalPattern);
-      boolean bStarts = b.startsWith(myOriginalPattern);
-      if (aStarts && bStarts) return a.compareToIgnoreCase(b);
-      if (aStarts && !bStarts) return -1;
-      if (bStarts && !aStarts) return 1;
-      return a.compareToIgnoreCase(b);
-    }
-  }
 }

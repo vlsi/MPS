@@ -28,10 +28,15 @@ public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher
     super(model, new FakePsiContext());
   }
 
-  public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names, boolean checkboxState, int maxCount, Computable<Boolean> isCancelled) {
-    if (!pattern.endsWith(" ")){
-      pattern += ".*";
-    }
-    return super.addElementsByPattern(result, pattern, names, checkboxState, maxCount, isCancelled);
+  public boolean nameMatches(String fullPattern, String shortName) {
+    return super.nameMatches(transformPattern(fullPattern), shortName);
+  }
+
+  public Set<Object> getElementsByPattern(String fullPattern, String fullName, boolean checkboxState) {
+    return super.getElementsByPattern(transformPattern(fullPattern), fullName, checkboxState);
+  }
+
+  private String transformPattern(String pattern){
+    return pattern.endsWith(" ") ? pattern : pattern + ".*";
   }
 }
