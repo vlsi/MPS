@@ -13,8 +13,8 @@ import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -38,7 +38,7 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, caughtType)) {
             {
               BaseQuickFixProvider intentionProvider = null;
-              IErrorTarget errorTarget = new NodeErrorTarget();
+              MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(catchClause, "throwable", true), "\"" + Type_Behavior.call_getClassExpression_1213877337357(SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true)) + "\" has already been caught", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2248407684786323918", intentionProvider, errorTarget);
             }
           }

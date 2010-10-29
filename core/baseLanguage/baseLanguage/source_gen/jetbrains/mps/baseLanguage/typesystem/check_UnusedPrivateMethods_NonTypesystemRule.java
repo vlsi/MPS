@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 
 public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -52,8 +52,8 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
                 }))) {
                   {
                     BaseQuickFixProvider intentionProvider = null;
-                    IErrorTarget errorTarget = new NodeErrorTarget();
-                    errorTarget = new PropertyErrorTarget("name");
+                    MessageTarget errorTarget = new NodeMessageTarget();
+                    errorTarget = new PropertyMessageTarget("name");
                     IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_sl9v9q_a0a0, "Private method " + matchedNode_sl9v9q_a0a0 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8101436443850399677", intentionProvider, errorTarget);
                   }
                 }

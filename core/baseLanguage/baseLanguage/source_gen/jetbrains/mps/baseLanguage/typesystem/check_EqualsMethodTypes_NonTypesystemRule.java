@@ -13,8 +13,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -27,7 +27,7 @@ public class check_EqualsMethodTypes_NonTypesystemRule extends AbstractNonTypesy
       if (!(RulesFunctions_BaseLanguage.typesAreComparable(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(instanceMethodCallOperation)), TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCallOperation, "actualArgument", true)).first())))) {
         {
           BaseQuickFixProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
+          MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(instanceMethodCallOperation, "equals() between objects of inconvertible types", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6293790355739144894", intentionProvider, errorTarget);
         }
       }
