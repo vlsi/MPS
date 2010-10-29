@@ -39,7 +39,6 @@ public class ReferenceErrorTarget implements IErrorTarget {
       && ((ReferenceErrorTarget) errorTarget).myRole.equals(myRole);
   }
 
-  @Override
   public boolean sameAs(MessageTarget messageTarget) {
      if (messageTarget instanceof IErrorTarget) {
       return sameAs((IErrorTarget) messageTarget);

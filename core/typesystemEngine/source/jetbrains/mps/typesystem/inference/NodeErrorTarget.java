@@ -32,7 +32,6 @@ public class NodeErrorTarget implements IErrorTarget {
     return errorTarget instanceof NodeErrorTarget;
   }
 
-  @Override
   public boolean sameAs(MessageTarget messageTarget) {
     if (messageTarget instanceof IErrorTarget) {
       return sameAs((IErrorTarget) messageTarget);
