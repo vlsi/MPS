@@ -4,8 +4,12 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import java.util.ArrayList;
 
 public class NamedTupleDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +18,24 @@ public class NamedTupleDeclaration_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for (SNode cmp : SLinkOperations.getTargets(thisNode, "component", true)) {
+    for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(thisNode)).reversedList().translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode ntd) {
+        return SLinkOperations.getTargets(ntd, "component", true);
+      }
+    })) {
       sb.append(sep).append(SPropertyOperations.getString(cmp, "name"));
       sep = ", ";
     }
     return sb.append(SConceptPropertyOperations.getString(thisNode, "rightBracket")).append(" ").append(SPropertyOperations.getString(thisNode, "nestedName")).toString();
+  }
+
+  public static List<SNode> call_allExtends_3142843783245461132(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    SNode ntd = thisNode;
+    while ((ntd != null) && !(ListSequence.fromList(result).contains(ntd))) {
+      ListSequence.fromList(result).addElement(ntd);
+      ntd = SLinkOperations.getTarget(ntd, "extends", false);
+    }
+    return result;
   }
 }

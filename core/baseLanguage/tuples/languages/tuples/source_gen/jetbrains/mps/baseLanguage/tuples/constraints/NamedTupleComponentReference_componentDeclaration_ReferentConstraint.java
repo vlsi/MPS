@@ -7,8 +7,12 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleComponentReference_componentDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -24,7 +28,11 @@ public class NamedTupleComponentReference_componentDeclaration_ReferentConstrain
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), "tupleDeclaration", false), "component", true);
+    return ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), "tupleDeclaration", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode ntd) {
+        return SLinkOperations.getTargets(ntd, "component", true);
+      }
+    });
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

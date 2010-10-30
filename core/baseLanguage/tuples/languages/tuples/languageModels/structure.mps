@@ -144,6 +144,11 @@
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}/icons/namedTuple.png" />
     <link role="extends:0" targetNodeId="2v.1107461130800:3" resolveInfo="Classifier" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3142843783245461118">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="extends" />
+      <link role="target:0" targetNodeId="1239360506533:2" resolveInfo="NamedTupleDeclaration" />
+    </node>
     <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration:0" id="1239546091267">
       <property name="name:0" value="leftBracket" />
     </node>

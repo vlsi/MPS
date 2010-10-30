@@ -21,6 +21,14 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples._4" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.test.Foo" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test" file="ExtendedNamedTuples_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test" file="GenericNamedTuples_Test.java">
     <classNode dependClassName="java.lang.Exception" />

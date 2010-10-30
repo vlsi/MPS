@@ -24,6 +24,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,6 +33,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -218,10 +223,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1b0());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -297,7 +298,11 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         public String getText() {
           StringBuilder sb = new StringBuilder();
           String sep = "";
-          for (SNode ntcd : SLinkOperations.getTargets(node, "component", true)) {
+          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(SNode ntd) {
+              return SLinkOperations.getTargets(ntd, "component", true);
+            }
+          })) {
             sb.append(sep).append(SPropertyOperations.getString(ntcd, "name"));
             sep = ", ";
           }
@@ -397,25 +402,35 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createCollection_2ojjgh_a0b1a(editorContext, node);
+      return this.createReadOnlyModelAccessor_2ojjgh_a0b1a(editorContext, node);
     }
 
-    private EditorCell createCollection_2ojjgh_a0b1a(EditorContext editorContext, SNode node) {
-      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-      editorCell.setCellId("Collection_2ojjgh_a0b1a");
-      editorCell.addEditorCell(this.createRefNodeList_2ojjgh_a0a1b0(editorContext, node));
-      return editorCell;
-    }
+    private EditorCell createReadOnlyModelAccessor_2ojjgh_a0b1a(final EditorContext editorContext, final SNode node) {
+      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+        public String getText() {
+          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(SNode ntd) {
+              return SLinkOperations.getTargets(ntd, "component", true);
+            }
+          }).select(new ISelector<SNode, String>() {
+            public String select(SNode c) {
+              return ((SPropertyOperations.getBoolean(c, "final") ?
+                "final " :
+                ""
+              )) + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(c, "type", true)) + " " + SPropertyOperations.getString(c, "name") + ";";
+            }
+          }), "\n");
+        }
 
-    private EditorCell createRefNodeList_2ojjgh_a0a1b0(EditorContext editorContext, SNode node) {
-      AbstractCellListHandler handler = new NamedTupleType_Editor.componentListHandler_2ojjgh_a0a1b0(node, "component", editorContext);
-      EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-      editorCell.setCellId("refNodeList_component");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-      }
-      editorCell.setRole(handler.getElementRole());
+        public void setText(String s) {
+        }
+
+        public boolean isValidText(String s) {
+          return EqualUtil.equals(s, this.getText());
+        }
+      }, node);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b1a");
       return editorCell;
     }
   }
@@ -465,44 +480,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
       return editorCell;
-    }
-  }
-
-  private static class componentListHandler_2ojjgh_a0a1b0 extends RefNodeListHandler {
-    public componentListHandler_2ojjgh_a0a1b0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
-          substituteInfoNode = elementNode;
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
     }
   }
 }

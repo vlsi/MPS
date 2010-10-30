@@ -14,10 +14,19 @@ public class NamedTupleDeclaration extends Classifier {
   public static final String concept = "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration";
   public static final String CPR_LeftBracket = "leftBracket";
   public static final String CPR_RightBracket = "rightBracket";
+  public static final String EXTENDS = "extends";
   public static final String COMPONENT = "component";
 
   public NamedTupleDeclaration(SNode node) {
     super(node);
+  }
+
+  public NamedTupleDeclaration getExtends() {
+    return (NamedTupleDeclaration) this.getReferent(NamedTupleDeclaration.class, NamedTupleDeclaration.EXTENDS);
+  }
+
+  public void setExtends(NamedTupleDeclaration node) {
+    super.setReferent(NamedTupleDeclaration.EXTENDS, node);
   }
 
   public int getComponentsCount() {

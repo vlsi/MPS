@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -51,7 +53,11 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_NamedTupleLiteral_1239567483801(final IOperationContext operationContext, final NodeSetupContext _context) {
-    for (SNode cd : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNewNode(), "tupleDeclaration", false), "component", true)) {
+    for (SNode cd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(_context.getNewNode(), "tupleDeclaration", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode ntd) {
+        return SLinkOperations.getTargets(ntd, "component", true);
+      }
+    })) {
       SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "componentRef", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", null)), "componentDeclaration", cd, false);
     }
   }

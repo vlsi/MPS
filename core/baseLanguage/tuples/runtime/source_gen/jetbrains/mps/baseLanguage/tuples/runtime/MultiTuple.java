@@ -153,11 +153,11 @@ public class MultiTuple {
   }
 
   public static class _0 extends MultiTuple implements Tuples._0 {
-    protected _0(Object... objs) {
+    public _0(Object... objs) {
       super(objs);
     }
 
-    protected _0() {
+    public _0() {
       super(0);
     }
 
@@ -168,11 +168,11 @@ public class MultiTuple {
   }
 
   public static class _1<T0> extends MultiTuple implements Tuples._1<T0> {
-    protected _1(Object... objs) {
+    public _1(Object... objs) {
       super(objs);
     }
 
-    protected _1() {
+    public _1() {
       super(1);
     }
 
@@ -186,6 +186,11 @@ public class MultiTuple {
       return (T0) this.get(0);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
       this.assign(from._0());
       return this;
@@ -193,11 +198,11 @@ public class MultiTuple {
   }
 
   public static class _2<T0, T1> extends MultiTuple implements Tuples._2<T0, T1> {
-    protected _2(Object... objs) {
+    public _2(Object... objs) {
       super(objs);
     }
 
-    protected _2() {
+    public _2() {
       super(2);
     }
 
@@ -221,6 +226,16 @@ public class MultiTuple {
       return (T1) this.get(1);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
       this.assign(from._0(), from._1());
       return this;
@@ -228,11 +243,11 @@ public class MultiTuple {
   }
 
   public static class _3<T0, T1, T2> extends MultiTuple implements Tuples._3<T0, T1, T2> {
-    protected _3(Object... objs) {
+    public _3(Object... objs) {
       super(objs);
     }
 
-    protected _3() {
+    public _3() {
       super(3);
     }
 
@@ -266,6 +281,21 @@ public class MultiTuple {
       return (T2) this.get(2);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
       this.assign(from._0(), from._1(), from._2());
       return this;
@@ -273,11 +303,11 @@ public class MultiTuple {
   }
 
   public static class _4<T0, T1, T2, T3> extends MultiTuple implements Tuples._4<T0, T1, T2, T3> {
-    protected _4(Object... objs) {
+    public _4(Object... objs) {
       super(objs);
     }
 
-    protected _4() {
+    public _4() {
       super(4);
     }
 
@@ -321,6 +351,26 @@ public class MultiTuple {
       return (T3) this.get(3);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
+    public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
+      this.assign(from._0(), from._1(), from._2());
+      return this;
+    }
+
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
       this.assign(from._0(), from._1(), from._2(), from._3());
       return this;
@@ -328,11 +378,11 @@ public class MultiTuple {
   }
 
   public static class _5<T0, T1, T2, T3, T4> extends MultiTuple implements Tuples._5<T0, T1, T2, T3, T4> {
-    protected _5(Object... objs) {
+    public _5(Object... objs) {
       super(objs);
     }
 
-    protected _5() {
+    public _5() {
       super(5);
     }
 
@@ -386,6 +436,31 @@ public class MultiTuple {
       return (T4) this.get(4);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
+    public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
+      this.assign(from._0(), from._1(), from._2());
+      return this;
+    }
+
+    public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3());
+      return this;
+    }
+
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
       return this;
@@ -393,11 +468,11 @@ public class MultiTuple {
   }
 
   public static class _6<T0, T1, T2, T3, T4, T5> extends MultiTuple implements Tuples._6<T0, T1, T2, T3, T4, T5> {
-    protected _6(Object... objs) {
+    public _6(Object... objs) {
       super(objs);
     }
 
-    protected _6() {
+    public _6() {
       super(6);
     }
 
@@ -461,6 +536,36 @@ public class MultiTuple {
       return (T5) this.get(5);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
+    public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
+      this.assign(from._0(), from._1(), from._2());
+      return this;
+    }
+
+    public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3());
+      return this;
+    }
+
+    public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
+      return this;
+    }
+
     public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
       return this;
@@ -468,11 +573,11 @@ public class MultiTuple {
   }
 
   public static class _7<T0, T1, T2, T3, T4, T5, T6> extends MultiTuple implements Tuples._7<T0, T1, T2, T3, T4, T5, T6> {
-    protected _7(Object... objs) {
+    public _7(Object... objs) {
       super(objs);
     }
 
-    protected _7() {
+    public _7() {
       super(7);
     }
 
@@ -546,6 +651,41 @@ public class MultiTuple {
       return (T6) this.get(6);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
+    public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
+      this.assign(from._0(), from._1(), from._2());
+      return this;
+    }
+
+    public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3());
+      return this;
+    }
+
+    public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
+      return this;
+    }
+
+    public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
+      return this;
+    }
+
     public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
       return this;
@@ -553,11 +693,11 @@ public class MultiTuple {
   }
 
   public static class _8<T0, T1, T2, T3, T4, T5, T6, T7> extends MultiTuple implements Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> {
-    protected _8(Object... objs) {
+    public _8(Object... objs) {
       super(objs);
     }
 
-    protected _8() {
+    public _8() {
       super(8);
     }
 
@@ -641,6 +781,46 @@ public class MultiTuple {
       return (T7) this.get(7);
     }
 
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
+    public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
+      this.assign(from._0(), from._1(), from._2());
+      return this;
+    }
+
+    public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3());
+      return this;
+    }
+
+    public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
+      return this;
+    }
+
+    public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
+      return this;
+    }
+
+    public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
+      return this;
+    }
+
     public Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> assign(Tuples._8<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> from) {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
       return this;
@@ -648,11 +828,11 @@ public class MultiTuple {
   }
 
   public static class _9<T0, T1, T2, T3, T4, T5, T6, T7, T8> extends MultiTuple implements Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
-    protected _9(Object... objs) {
+    public _9(Object... objs) {
       super(objs);
     }
 
-    protected _9() {
+    public _9() {
       super(9);
     }
 
@@ -744,6 +924,51 @@ public class MultiTuple {
     @SuppressWarnings(value = "unchecked")
     public T8 _8() {
       return (T8) this.get(8);
+    }
+
+    public Tuples._0 assign(Tuples._0 from) {
+      this.assign();
+      return this;
+    }
+
+    public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
+      this.assign(from._0());
+      return this;
+    }
+
+    public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
+      this.assign(from._0(), from._1());
+      return this;
+    }
+
+    public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
+      this.assign(from._0(), from._1(), from._2());
+      return this;
+    }
+
+    public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3());
+      return this;
+    }
+
+    public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
+      return this;
+    }
+
+    public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
+      return this;
+    }
+
+    public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
+      return this;
+    }
+
+    public Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> assign(Tuples._8<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> from) {
+      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
+      return this;
     }
 
     public Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> assign(Tuples._9<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> from) {

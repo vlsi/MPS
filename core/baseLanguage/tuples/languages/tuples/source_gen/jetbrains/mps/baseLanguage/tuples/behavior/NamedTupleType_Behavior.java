@@ -4,7 +4,9 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -15,7 +17,11 @@ public class NamedTupleType_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for (SNode ntcd : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "component", true)) {
+    for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(thisNode, "classifier", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode ntd) {
+        return SLinkOperations.getTargets(ntd, "component", true);
+      }
+    })) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(ntcd, "type", true))).append(" ").append(SPropertyOperations.getString(ntcd, "name"));
       sep = ", ";
     }

@@ -39,4 +39,66 @@ public class ExtendedNamedTuples {
       return (ExtendedNamedTuples.Foo) super.assign(from);
     }
   }
+
+  public static class Bar extends ExtendedNamedTuples.Foo implements Tuples._4<Integer, String, String, Integer> {
+    private MultiTuple._2<String, Integer> tuple;
+
+    public Bar() {
+      super();
+    }
+
+    public Bar(Integer num, String str, String id, Integer size) {
+      super(num, str);
+      this.tuple = new MultiTuple._2<String, Integer>(id, size);
+    }
+
+    public String id(String value) {
+      return this._2(value);
+    }
+
+    public Integer size(Integer value) {
+      return this._3(value);
+    }
+
+    public String id() {
+      return this._2();
+    }
+
+    public Integer size() {
+      return this._3();
+    }
+
+    public String _2(String id) {
+      return tuple._0();
+    }
+
+    public Integer _3(Integer size) {
+      return tuple._1();
+    }
+
+    public String _2() {
+      return tuple._0();
+    }
+
+    public Integer _3() {
+      return tuple._1();
+    }
+
+    public Tuples._3<Integer, String, String> assign(Tuples._3<? extends Integer, ? extends String, ? extends String> from) {
+      super.assign(from);
+      tuple.assign(from._2());
+      return this;
+    }
+
+    public Tuples._4<Integer, String, String, Integer> assign(Tuples._4<? extends Integer, ? extends String, ? extends String, ? extends Integer> from) {
+      super.assign(from);
+      tuple.assign(from._2(), from._3());
+      return this;
+    }
+
+    @SuppressWarnings(value = "unchecked")
+    public ExtendedNamedTuples.Bar assignFrom(Tuples._2<String, Integer> from) {
+      return (ExtendedNamedTuples.Bar) super.assign(from);
+    }
+  }
 }

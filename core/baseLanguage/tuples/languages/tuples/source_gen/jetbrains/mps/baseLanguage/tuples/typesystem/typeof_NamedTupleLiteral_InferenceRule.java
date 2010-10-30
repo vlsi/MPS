@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -31,7 +33,11 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "component", true)).count())) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, "tupleDeclaration", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
+      public Integer combine(Integer s, SNode ntd) {
+        return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
+      }
+    }))) {
       BaseQuickFixProvider intentionProvider = null;
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Invalid components number", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579091243", intentionProvider, errorTarget);
