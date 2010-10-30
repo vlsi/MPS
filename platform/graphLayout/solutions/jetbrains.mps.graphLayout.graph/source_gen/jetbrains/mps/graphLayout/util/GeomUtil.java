@@ -44,7 +44,7 @@ public class GeomUtil {
   public static boolean onBorder(Point p, Rectangle rect) {
     boolean res = false;
     res |= p.x == rect.x && insideClosedSegment(rect.y, rect.y + rect.height, p.y);
-    res |= p.x == rect.x + rect.height && insideClosedSegment(rect.y, rect.y + rect.height, p.y);
+    res |= p.x == rect.x + rect.width && insideClosedSegment(rect.y, rect.y + rect.height, p.y);
     res |= p.y == rect.y && insideClosedSegment(rect.x, rect.x + rect.width, p.x);
     res |= p.y == rect.y + rect.height && insideClosedSegment(rect.x, rect.x + rect.width, p.x);
     return res;
@@ -174,5 +174,16 @@ public class GeomUtil {
     } else {
       return rect.width;
     }
+  }
+
+  public static boolean intersects(Rectangle rect, List<Point> polyline) {
+    Point prev = null;
+    for (Point cur : ListSequence.fromList(polyline)) {
+      if (prev != null && rect.intersectsLine(prev.x, prev.y, cur.x, cur.y)) {
+        return true;
+      }
+      prev = cur;
+    }
+    return false;
   }
 }

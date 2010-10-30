@@ -61,7 +61,7 @@ public class StressTestPQ {
       out.close();
       try {
         EmbeddedGraph embeddedGraph = finder.find(firstComponent);
-        CheckEmbeddedGraph.checkEmbeddedGraph(embeddedGraph);
+        CheckEmbeddedGraph.checkEmbeddedGraph(embeddedGraph, true);
         System.out.println("number of faces: " + ListSequence.fromList(embeddedGraph.getFaces()).count());
       } catch (Exception e) {
         System.out.println("planarization failed!!!");

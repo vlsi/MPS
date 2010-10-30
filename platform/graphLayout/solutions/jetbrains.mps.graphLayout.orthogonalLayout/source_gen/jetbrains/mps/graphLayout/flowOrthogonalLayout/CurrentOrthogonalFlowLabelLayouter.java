@@ -4,22 +4,24 @@ package jetbrains.mps.graphLayout.flowOrthogonalLayout;
 
 import jetbrains.mps.graphLayout.graphLayout.GraphLayout;
 import jetbrains.mps.graphLayout.planarGraph.EmbeddedGraph;
+import jetbrains.mps.graphLayout.graphLayout.LayoutInfo;
 import java.util.Map;
 import jetbrains.mps.graphLayout.graph.Node;
 import java.awt.Dimension;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.graphLayout.graph.Edge;
 import jetbrains.mps.graphLayout.graph.Graph;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.graphLayout.planarGraph.Dart;
 import java.util.HashMap;
+import jetbrains.mps.graphLayout.planarGraph.Face;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.graphLayout.util.Direction2D;
-import jetbrains.mps.graphLayout.planarGraph.Face;
 import java.awt.Point;
 import java.awt.Rectangle;
 import jetbrains.mps.graphLayout.util.GeomUtil;
@@ -31,9 +33,17 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
   public CurrentOrthogonalFlowLabelLayouter() {
   }
 
-  public GraphLayout getLayoutFromEmbeddedGraph(EmbeddedGraph embeddedGraph, Map<Node, Dimension> nodeSizes, Map<Edge, Dimension> edgeSizes) {
-    if (CurrentOrthogonalFlowLabelLayouter.SHOW_INFO > 0) {
+  public GraphLayout getLayoutFromEmbeddedGraph(EmbeddedGraph embeddedGraph, LayoutInfo layoutInfo) {
+    if (SHOW_INFO > 0) {
       System.out.println("initial graph: " + embeddedGraph);
+    }
+    Map<Node, Dimension> nodeSizes = MapSequence.fromMap(new LinkedHashMap<Node, Dimension>(16, (float) 0.75, false));
+    for (Node node : SetSequence.fromSet(layoutInfo.getNodesWithSize())) {
+      MapSequence.fromMap(nodeSizes).put(node, layoutInfo.getSize(node));
+    }
+    Map<Edge, Dimension> edgeSizes = MapSequence.fromMap(new LinkedHashMap<Edge, Dimension>(16, (float) 0.75, false));
+    for (Edge edge : SetSequence.fromSet(layoutInfo.getLabeledEdges())) {
+      MapSequence.fromMap(edgeSizes).put(edge, layoutInfo.getSize(edge));
     }
     Graph graph = embeddedGraph.getGraph();
     List<Edge> initialEdges = ListSequence.fromList(new ArrayList<Edge>());
@@ -44,6 +54,19 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
     Map<Dart, Integer> angles = MapSequence.fromMap(new HashMap<Dart, Integer>());
 
     QuasiOrthogonalRepresentation.getRepresentation(embeddedGraph, bends, angles);
+    /*
+      for (Face face : ListSequence.fromList(embeddedGraph.getFaces())) {
+        System.out.println("face:");
+        for (Dart dart : ListSequence.fromList(face.getDarts())) {
+          System.out.println(dart + " b = " + MapSequence.fromMap(bends).get(dart));
+        }
+        for (Node node : ListSequence.fromList(graph.getNodes())) {
+          for (Dart dart : ListSequence.fromList(embeddedGraph.getDartWithSource(node))) {
+            System.out.println(dart + " = " + MapSequence.fromMap(angles).get(dart));
+          }
+        }
+      }
+    */
     QuasiRepresentationModifier quasiModifier = new QuasiRepresentationModifier(embeddedGraph, bends, angles);
     quasiModifier.reduceToOrthogonalRepresentation();
     List<QuasiRepresentationModifier.Modification> modifications = quasiModifier.getModifications();
@@ -66,7 +89,7 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
         MapSequence.fromMap(labeledEdges).put(edge, edge);
       }
     }
-    if (CurrentOrthogonalFlowLabelLayouter.SHOW_INFO > 0) {
+    if (SHOW_INFO > 0) {
       System.out.println("modifications: ");
       for (QuasiRepresentationModifier.Modification modification : ListSequence.fromList(modifications)) {
         System.out.println(modification);
@@ -78,7 +101,7 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
       MapSequence.fromMap(labeledEdges).put(edge, labeledEdge);
     }
     Map<Dart, Direction2D> directions = OrthogonalRepresentation.getDirections(embeddedGraph, angles);
-    if (CurrentOrthogonalFlowLabelLayouter.SHOW_INFO > 0) {
+    if (SHOW_INFO > 0) {
       System.out.println("modified graph: " + embeddedGraph);
     }
 
@@ -186,14 +209,14 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
         if (isHorizontal) {
           boolean isIntersecting = GeomUtil.insideClosedSegment(sourcePoint.x, targetPoint.x, rect.x) && GeomUtil.insideClosedSegment(sourcePoint.x, targetPoint.x, rect.x + rect.width);
           int dist = rect.y + rect.height - sourcePoint.y;
-          if (isIntersecting && dist > 0 && dist < rect.height) {
+          if (isIntersecting && dist < rect.height) {
             Edge constraintEdge = constraintsGraph.addConstraintEdge(center, graphEdge.getSource(), Direction2D.UP);
             MapSequence.fromMap(constraintEdgeLengths).put(constraintEdge, rect.height);
           }
         } else {
           boolean isIntersecting = GeomUtil.insideClosedSegment(sourcePoint.y, targetPoint.y, rect.y) && GeomUtil.insideClosedSegment(sourcePoint.y, targetPoint.y, rect.y + rect.height);
           int dist = rect.x + rect.width - sourcePoint.x;
-          if (isIntersecting && dist > 0 && dist < rect.width) {
+          if (isIntersecting && dist < rect.width) {
             Edge constraintEdge = constraintsGraph.addConstraintEdge(center, graphEdge.getSource(), Direction2D.RIGHT);
             MapSequence.fromMap(constraintEdgeLengths).put(constraintEdge, rect.width);
           }
@@ -227,6 +250,11 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
           }
         }
       }
+    }
+    for (Edge edge : ListSequence.fromList(graph.getEdges())) {
+      Point sourcePoint = MapSequence.fromMap(coordinates).get(edge.getSource());
+      Point targetPoint = MapSequence.fromMap(coordinates).get(edge.getTarget());
+      MapSequence.fromMap(edgeLengths).put(edge, Math.abs(sourcePoint.x - targetPoint.x) + Math.abs(sourcePoint.y - targetPoint.y));
     }
     coordinates = constraintsGraph.getCoordinates(edgeLengths, constraintEdgeLengths);
 
