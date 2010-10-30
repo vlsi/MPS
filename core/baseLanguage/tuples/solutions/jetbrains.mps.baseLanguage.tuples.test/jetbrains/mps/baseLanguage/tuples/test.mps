@@ -3509,54 +3509,6 @@
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240574537740" />
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="1240577854606">
-    <property name="name:3" value="TupleIface" />
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1240577861424">
-      <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="value" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240577861426" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240577861427" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1240577864663" />
-    </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1240578108877">
-      <property name="isAbstract:3" value="true" />
-      <property name="name:3" value="anotherValue" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240578108879" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240578108880" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="1240578111603">
-        <link role="typeVariableDeclaration:3" targetNodeId="1240578104884" resolveInfo="T" />
-      </node>
-    </node>
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240577854607" />
-    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="1240578104884">
-      <property name="name:3" value="T" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="1240578001803">
-    <property name="name:2" value="Tuple" />
-    <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="1240578014025">
-      <property name="final:2" value="false" />
-      <property name="name:2" value="value" />
-      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1240578015540" />
-    </node>
-    <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="1240578147033">
-      <property name="final:2" value="false" />
-      <property name="name:2" value="anotherValue" />
-      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="1240578147847">
-        <link role="typeVariableDeclaration:3" targetNodeId="1240578138918" resolveInfo="AAA" />
-      </node>
-    </node>
-    <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240578001804" />
-    <node role="extends:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1240578011981">
-      <link role="classifier:3" targetNodeId="1240577854606" resolveInfo="TupleIface" />
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="1240578145654">
-        <link role="typeVariableDeclaration:3" targetNodeId="1240578138918" resolveInfo="AAA" />
-      </node>
-    </node>
-    <node role="typeVariableDeclaration:2" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="1240578138918">
-      <property name="name:3" value="AAA" />
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8209339320719679363">
     <property name="name:3" value="MPS7408" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8209339320719682348">
@@ -3681,6 +3633,29 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8209339320719679366" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8209339320719679367" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8209339320719679368" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3142843783245432636">
+    <property name="name:3" value="ExtendedNamedTuples" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3142843783245432637" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3142843783245432638">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3142843783245432639" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3142843783245432640" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3142843783245432641" />
+    </node>
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="3142843783245432642">
+      <property name="name:2" value="Foo" />
+      <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="3142843783245432644">
+        <property name="final:2" value="false" />
+        <property name="name:2" value="num" />
+        <node role="type:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3142843783245432646" />
+      </node>
+      <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="3142843783245432647">
+        <property name="final:2" value="false" />
+        <property name="name:2" value="str" />
+        <node role="type:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3142843783245432649" />
+      </node>
+      <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3142843783245432643" />
     </node>
   </node>
 </model>

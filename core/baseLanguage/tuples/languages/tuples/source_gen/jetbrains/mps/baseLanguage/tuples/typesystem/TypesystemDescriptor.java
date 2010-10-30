@@ -43,15 +43,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new extended_interfaces_supertypesOf_namedTupleType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new indexedTupleType_supertypeOf_namedTupleType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
@@ -60,10 +52,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new indexedTuple_assignableTo_indexedTuple_InequationReplacementRule();
-      this.myInequationReplacementRules.add(eliminationRule);
-    }
-    {
-      InequationReplacementRule_Runtime eliminationRule = new interfaceTupleType_assignableTo_namedTupleType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
