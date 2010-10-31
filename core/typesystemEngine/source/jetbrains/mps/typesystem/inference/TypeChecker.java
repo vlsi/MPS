@@ -337,17 +337,4 @@ public class TypeChecker implements ApplicationComponent {
       typesReadListener.nodeTypeAccessed(term);
     }
   }
-
-  private static class RuntimeTypesModelDescriptor extends BaseSModelDescriptor {
-    public RuntimeTypesModelDescriptor(SModelFqName fqName) {
-      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
-    }
-
-    protected ModelLoadResult initialLoad() {
-      SModel model = new SModel(getSModelReference());
-      model.setLoading(true);
-
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
-    }
-  }
 }
