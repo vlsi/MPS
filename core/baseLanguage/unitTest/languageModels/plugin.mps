@@ -22722,7 +22722,7 @@
                                     <link role="variableDeclaration:3" targetNodeId="1200269551723332834:0" resolveInfo="testCase" />
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1772682388918993397">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="2595782876361293173:0" resolveInfo="getName" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="1772682388919020008:0" resolveInfo="getFqName" />
                                   </node>
                                 </node>
                               </node>

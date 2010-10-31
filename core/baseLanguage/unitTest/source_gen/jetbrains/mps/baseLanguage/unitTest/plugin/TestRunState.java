@@ -60,7 +60,7 @@ public class TestRunState {
         TestRunState.this.addTestMethods(testMethods);
         for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
           for (ITestNodeWrapper testMethod : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).get(testCase)) {
-            ListSequence.fromList(TestRunState.this.myTestMethods).addElement(testCase.getName() + '.' + testMethod.getName());
+            ListSequence.fromList(TestRunState.this.myTestMethods).addElement(testCase.getFqName() + '.' + testMethod.getName());
           }
         }
       }
