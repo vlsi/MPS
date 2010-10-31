@@ -41,7 +41,7 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
     for (SNode method : parameter) {
       String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(method));
       if (fqName != null) {
-        ListSequence.fromList(methodNames).addElement(fqName + TestRunUtil.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(method));
+        ListSequence.fromList(methodNames).addElement(fqName + TestUtils.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(method));
       }
     }
     {

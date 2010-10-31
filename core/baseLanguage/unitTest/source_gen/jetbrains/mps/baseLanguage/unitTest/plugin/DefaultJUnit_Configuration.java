@@ -36,8 +36,9 @@ import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.DebuggerKeys;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -141,10 +142,14 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               public UnitTestExecutionController invoke() {
                 final MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
 
-                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(mpsProject);
+                List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(mpsProject);
 
                 if (javaRunParameters.getMake()) {
-                  RunUtil.makeBeforeRun(project_22042010, stuffToTest);
+                  RunUtil.makeBeforeRun(project_22042010, ListSequence.fromList(stuffToTest).select(new ISelector<ITestNodeWrapper, SNode>() {
+                    public SNode select(ITestNodeWrapper it) {
+                      return it.getNode();
+                    }
+                  }).toListSequence());
                 }
 
                 return new UnitTestExecutionController(stuffToTest, javaRunParameters);
@@ -251,8 +256,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return true;
   }
 
-  private List<SNode> collectWhatToTest(final MPSProject mpsProject) {
-    final List<SNode>[] all = (List<SNode>[]) new List[1];
+  private List<ITestNodeWrapper> collectWhatToTest(final MPSProject mpsProject) {
+    final List<ITestNodeWrapper>[] all = (List<ITestNodeWrapper>[]) new List[1];
     if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -263,8 +268,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return all[0];
   }
 
-  private List<SNode> collectWhatToTestUnderProgress(final MPSProject mpsProject) {
-    final List<SNode> stuffToTest = new ArrayList<SNode>();
+  private List<ITestNodeWrapper> collectWhatToTestUnderProgress(final MPSProject mpsProject) {
+    final List<ITestNodeWrapper> stuffToTest = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     Runnable collect = new Runnable() {
       public void run() {
         if (DefaultJUnit_Configuration.this.getStateObject().type != null) {

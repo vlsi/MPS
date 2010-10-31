@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import org.jetbrains.annotations.Nullable;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import javax.swing.event.TableModelEvent;
@@ -88,17 +87,17 @@ public class StatisticsTableModel implements TableModel {
     });
   }
 
-  private void setTests(Map<SNode, List<SNode>> tests) {
+  private void setTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {
     this.myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
     TotalRow totalRow = new TotalRow();
     ListSequence.fromList(this.myRows).addElement(totalRow);
     this.myMap.clear();
-    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(tests).keySet())) {
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(tests).keySet())) {
       TestCaseRow testCaseRow = new TestCaseRow(testCase);
       totalRow.addRow(testCaseRow);
       ListSequence.fromList(this.myRows).addElement(testCaseRow);
       this.myMap.put(testCase, testCaseRow);
-      for (SNode testMethod : ListSequence.fromList(MapSequence.fromMap(tests).get(testCase))) {
+      for (ITestNodeWrapper testMethod : ListSequence.fromList(MapSequence.fromMap(tests).get(testCase))) {
         TestMethodRow testMethodRow = new TestMethodRow(testMethod);
         testCaseRow.addRow(testMethodRow);
         ListSequence.fromList(this.myRows).addElement(testMethodRow);
