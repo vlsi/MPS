@@ -15,10 +15,12 @@
  */
 package com.intellij.ide.util.gotoByName.matchers;
 
+import com.intellij.openapi.util.Computable;
+
 import java.util.Set;
 
 public interface EntityMatcher {
-  boolean nameMatches(String fullPattern, String fullName);
+  boolean nameMatches(String shortPattern, String shortName);
 
-  Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState);
+  Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled);
 }

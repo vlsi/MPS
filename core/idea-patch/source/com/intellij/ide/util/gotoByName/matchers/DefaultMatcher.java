@@ -20,6 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.Comparing;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
@@ -33,8 +34,6 @@ import java.lang.ref.WeakReference;
 import java.util.*;
 
 public class DefaultMatcher implements EntityMatcher {
-  private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.matcher.DefaultMatcher");
-
   private ChooseByNameModel myModel;
   private WeakReference<PsiElement> myContext;
 
@@ -54,7 +53,7 @@ public class DefaultMatcher implements EntityMatcher {
     return matches(shortPattern, myMatcher, shortName);
   }
 
-  public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState) {
+  public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled) {
     String namePattern = getShortNamePattern(fullPattern);
     String qualifierPattern = getQualifierPattern(fullPattern);
 
@@ -66,21 +65,22 @@ public class DefaultMatcher implements EntityMatcher {
     final Object[] elements = myModel.getElementsByName(shortName, checkboxState, namePattern);
 
     Set<Object> result = new HashSet<Object>();
-    if (elements.length > 1) {
-      sameNameElements.clear();
-      for (final Object element : elements) {
-        if (matchesQualifier(element, qualifierPattern)) {
-          sameNameElements.add(element);
-        }
+    if (elements.length == 1) {
+      if (matchesQualifier(elements[0], qualifierPattern)) {
+        result.add(elements[0]);
       }
-      sortByProximity(sameNameElements);
-      for (Object element : sameNameElements) {
-        result.add(element);
+      return result;
+    }
+
+    sameNameElements.clear();
+    for (final Object element : elements) {
+      if (isCancelled.compute()) return result;
+      if (matchesQualifier(element, qualifierPattern)) {
+        sameNameElements.add(element);
       }
     }
-    else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
-      result.add(elements[0]);
-    }
+    sortByProximity(sameNameElements);
+    result.addAll(sameNameElements);
     return result;
   }
 

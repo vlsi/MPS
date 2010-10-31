@@ -1212,7 +1212,11 @@ public abstract class ChooseByNameBase {
       Collections.sort(namesList, new MatchesComparator(namePattern));
 
       for (String name : namesList) {
-        Set<Object> elems = myMatcher.getElementsByPattern(pattern, name, myCheckboxState);
+        Set<Object> elems = myMatcher.getElementsByPattern(pattern, name, myCheckboxState,new Computable<Boolean>() {
+          public Boolean compute() {
+            return myCancelled;
+          }
+        });
         if (elementsArray.size() + elems.size() <= myMaximumListSizeLimit) {
           elementsArray.addAll(elems);
         }
