@@ -127,11 +127,7 @@ public abstract class ChooseByNameBase {
    */
   protected ChooseByNameBase(Project project, ChooseByNameModel model, String initialText, final PsiElement context) {
     this(project, model, initialText);
-    myMatcher = new DefaultMatcher(model, context) {
-      protected boolean canShowListForEmptyPattern() {
-        return ChooseByNameBase.this.canShowListForEmptyPattern();
-      }
-    };
+    myMatcher = new DefaultMatcher(model, context);
   }
 
   protected ChooseByNameBase(Project project, ChooseByNameModel model, String initialText, EntityMatcher matcher) {

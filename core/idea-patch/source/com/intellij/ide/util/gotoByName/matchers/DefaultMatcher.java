@@ -32,7 +32,7 @@ import com.intellij.util.containers.ContainerUtil;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public abstract class DefaultMatcher implements EntityMatcher {
+public class DefaultMatcher implements EntityMatcher {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.matcher.DefaultMatcher");
 
   private ChooseByNameModel myModel;
@@ -47,10 +47,6 @@ public abstract class DefaultMatcher implements EntityMatcher {
   }
 
   public boolean nameMatches(String shortPattern, String shortName) {
-    if (!canShowListForEmptyPattern()) {
-      LOG.assertTrue(shortPattern.length() > 0);
-    }
-
     if (myPattern == null || !myPattern.equals(shortPattern)) {
       myMatcher = buildPatternMatcher(shortPattern);
     }
@@ -61,9 +57,6 @@ public abstract class DefaultMatcher implements EntityMatcher {
   public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState) {
     String namePattern = getShortNamePattern(fullPattern);
     String qualifierPattern = getQualifierPattern(fullPattern);
-
-    boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
-    if (empty && !canShowListForEmptyPattern()) return Collections.emptySet();
 
     //todo this is a code duplicate - remove it
     String newPattern = namePattern.startsWith("@") ? namePattern.substring(1) : namePattern;
@@ -90,8 +83,6 @@ public abstract class DefaultMatcher implements EntityMatcher {
     }
     return result;
   }
-
-  protected abstract boolean canShowListForEmptyPattern();
 
   private void sortByProximity(final List<Object> sameNameElements) {
     Collections.sort(sameNameElements, new PathProximityComparator(myModel, myContext.get()));
