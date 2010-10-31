@@ -32,11 +32,11 @@ public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher
     return super.nameMatches(shortPattern, shortName);
   }
 
-  public Set<Object> getElementsByPattern(String fullPattern, String fullName, boolean checkboxState) {
-    return super.getElementsByPattern(transformPattern(fullPattern), fullName, checkboxState);
+  public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled) {
+    return super.getElementsByPattern(transformPattern(fullPattern), shortName, checkboxState, isCancelled);
   }
 
-  private String transformPattern(String pattern){
+  private String transformPattern(String pattern) {
     return pattern.endsWith(" ") ? pattern : pattern + ".*";
   }
 }

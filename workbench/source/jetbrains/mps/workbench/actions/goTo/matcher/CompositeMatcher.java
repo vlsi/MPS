@@ -35,10 +35,10 @@ public class CompositeMatcher implements EntityMatcher {
     return false;
   }
 
-  public Set<Object> getElementsByPattern(String fullPattern, String fullName, boolean checkboxState) {
+  public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled) {
     Set<Object> result = new HashSet<Object>();
     for (EntityMatcher matcher : myMatcher) {
-      result.addAll(matcher.getElementsByPattern(fullPattern, fullName, checkboxState));
+      result.addAll(matcher.getElementsByPattern(fullPattern, shortName, checkboxState,isCancelled));
     }
     return result;
   }
