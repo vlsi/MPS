@@ -65,6 +65,9 @@ public class TestUtils {
       return null;
     }
     SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), GlobalScope.getInstance());
+    if (node == null) {
+      return null;
+    }
     return TestNodeWrapperFactory.tryToWrap(node);
   }
 

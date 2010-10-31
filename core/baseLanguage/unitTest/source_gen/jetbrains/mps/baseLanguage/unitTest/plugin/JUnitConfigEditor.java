@@ -426,6 +426,9 @@ public class JUnitConfigEditor extends JPanel {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ITestNodeWrapper testCase = TestUtils.getTestCase(nodeName);
+        if (testCase == null) {
+          return;
+        }
         ListSequence.fromList(myThis.getNodes()).addElement(testCase);
         myThis.myTestCases_d0.addItem(testCase);
       }
@@ -436,6 +439,9 @@ public class JUnitConfigEditor extends JPanel {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ITestNodeWrapper testMethod = TestUtils.getTestMethod(nodeName, methodName);
+        if (testMethod == null) {
+          return;
+        }
         ListSequence.fromList(myThis.getMethods()).addElement(testMethod);
         myThis.myTestMethods_e0.addItem(testMethod);
       }

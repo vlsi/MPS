@@ -171,8 +171,14 @@ public class ListPanel extends JPanel {
     public MyAbstractListModel() {
     }
 
-    public Object getElementAt(int p0) {
-      return ListSequence.fromList(ListPanel.this.myValues).getElement(p0).getFqName();
+    public Object getElementAt(final int p0) {
+      final Wrappers._T<String> name = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          name.value = ListSequence.fromList(ListPanel.this.myValues).getElement(p0).getFqName();
+        }
+      });
+      return name.value;
     }
 
     public int getSize() {
