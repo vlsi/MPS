@@ -69,15 +69,19 @@ public class ListPanel extends JPanel {
       });
       this.myCandidates = methodsList;
     } else {
-      this.myCandidates = ListSequence.fromList(nodesList.value).select(new ISelector<SNode, ITestNodeWrapper>() {
-        public ITestNodeWrapper select(SNode it) {
-          return TestNodeWrapperFactory.tryToWrap(it);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ListPanel.this.myCandidates = ListSequence.fromList(nodesList.value).select(new ISelector<SNode, ITestNodeWrapper>() {
+            public ITestNodeWrapper select(SNode it) {
+              return TestNodeWrapperFactory.tryToWrap(it);
+            }
+          }).where(new IWhereFilter<ITestNodeWrapper>() {
+            public boolean accept(ITestNodeWrapper it) {
+              return it != null;
+            }
+          }).toListSequence();
         }
-      }).where(new IWhereFilter<ITestNodeWrapper>() {
-        public boolean accept(ITestNodeWrapper it) {
-          return it != null;
-        }
-      }).toListSequence();
+      });
     }
   }
 
