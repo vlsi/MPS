@@ -29487,6 +29487,9 @@
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2595782876361303743">
         <link role="annotation:3" targetNodeId="79.~Nullable" resolveInfo="Nullable" />
       </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7524575410241990772">
+        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
+      </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2595782876361303803">
       <property name="name:3" value="getTestMethod" />
@@ -29588,6 +29591,9 @@
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2595782876361303851">
         <link role="annotation:3" targetNodeId="79.~Nullable" resolveInfo="Nullable" />
       </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7524575410241996078">
+        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
+      </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2595782876361314334">
       <property name="name:3" value="getTestCase" />
@@ -29661,6 +29667,9 @@
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2595782876361314368">
         <link role="annotation:3" targetNodeId="79.~Nullable" resolveInfo="Nullable" />
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7524575410241996079">
+        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
       </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2595782876361334784">

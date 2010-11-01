@@ -139,6 +139,7 @@ __switch__:
   }
 
   @Nullable
+  @Deprecated
   public static ITestNodeWrapper getTestMethod(@Nls String caseName, @Nls final String methodName) {
     if (StringUtils.isEmpty(caseName) || StringUtils.isEmpty(methodName)) {
       return null;
@@ -156,6 +157,7 @@ __switch__:
   }
 
   @Nullable
+  @Deprecated
   public static ITestNodeWrapper getTestMethod(@Nls String fullMethodName) {
     if (StringUtils.isEmpty(fullMethodName)) {
       return null;
@@ -168,6 +170,7 @@ __switch__:
   }
 
   @Nullable
+  @Deprecated
   public static ITestNodeWrapper getTestCase(@Nls String nodeName) {
     if (nodeName == null) {
       return null;

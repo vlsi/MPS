@@ -838,6 +838,7 @@
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" file="TestUtils.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
