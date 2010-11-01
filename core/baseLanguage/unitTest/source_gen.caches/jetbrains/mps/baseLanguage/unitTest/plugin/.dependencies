@@ -200,14 +200,15 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.JbRadioButton" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.events.Events" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
@@ -392,6 +393,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -399,6 +401,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
@@ -835,7 +838,12 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestUtils" file="TestUtils.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestNodeWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -851,10 +859,13 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.Nls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

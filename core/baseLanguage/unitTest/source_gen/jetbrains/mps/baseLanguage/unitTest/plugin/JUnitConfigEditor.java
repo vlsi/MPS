@@ -28,7 +28,8 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
@@ -423,6 +424,7 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private void addNodeValue(final String nodeName) {
+    // also some legacy botva, remove it after 2.0 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ITestNodeWrapper testCase = TestUtils.getTestCase(nodeName);
@@ -436,6 +438,7 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private void addMethodValue(final String nodeName, final String methodName) {
+    // here we have some legacy botva which should be removed after 2.0 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ITestNodeWrapper testMethod = TestUtils.getTestMethod(nodeName, methodName);
@@ -461,20 +464,18 @@ public class JUnitConfigEditor extends JPanel {
           config.getStateObject().type = JUnitRunTypes.values()[index];
         }
 
-        config.getStateObject().fullMethodNames = new ClonableList<String>();
+        // set legacy stuff to null 
+        config.getStateObject().fullMethodNames = null;
+        config.getStateObject().nodes = null;
+
+        config.getStateObject().testMethods = new ClonableList<String>();
         for (ITestNodeWrapper testMethod : myThis.getMethods()) {
-          String fqName = testMethod.getTestCase().getFqName();
-          if (fqName != null) {
-            config.getStateObject().fullMethodNames.add(fqName + TestUtils.SEPARATOR + testMethod.getName());
-          }
+          config.getStateObject().testMethods.add(TestUtils.pointerToString(new SNodePointer(testMethod.getNode())));
         }
 
-        config.getStateObject().nodes = new ClonableList<String>();
+        config.getStateObject().testCases = new ClonableList<String>();
         for (ITestNodeWrapper testCase : myThis.getNodes()) {
-          String fqName = testCase.getFqName();
-          if (fqName != null) {
-            config.getStateObject().nodes.add(fqName);
-          }
+          config.getStateObject().testCases.add(TestUtils.pointerToString(new SNodePointer(testCase.getNode())));
         }
 
         config.getStateObject().model = (myThis.getModel() != null ?
@@ -498,36 +499,45 @@ public class JUnitConfigEditor extends JPanel {
     }
 
     // nodes 
-    List<String> nodes = config.getStateObject().nodes;
     myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     myThis.myTestCases_d0.clear();
-    for (String nodeName : nodes) {
-      myThis.addNodeValue(nodeName);
-      assert ListSequence.fromList(nodes).first() != null;
-      if (ListSequence.fromList(nodes).first().equals(nodeName)) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (ListSequence.fromList(myThis.getNodes()).isNotEmpty() && SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first().getNode()) != null) {
-              String modelName = SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first().getNode()).getSModelFqName().toString();
-              myThis.setModelValue(modelName);
-              myThis.myModelName_d5c0.setText(modelName);
-              if (SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first().getNode()).getModelDescriptor() != null && SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first().getNode()).getModelDescriptor().getModule() != null) {
-                String moduleName = SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first().getNode()).getModelDescriptor().getModule().getModuleFqName();
-                myThis.setModuleValue(moduleName);
-                myThis.myModuleName_d4c0.setText(moduleName);
-              }
-            }
+    // legacy code (config.nodes should be removed) 
+    if (config.getStateObject().nodes != null) {
+      for (String nodeName : config.getStateObject().nodes) {
+        myThis.addNodeValue(nodeName);
+      }
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Sequence.fromIterable(TestUtils.wrapPointerStrings(config.getStateObject().testCases)).visitAll(new IVisitor<ITestNodeWrapper>() {
+          public void visit(ITestNodeWrapper it) {
+            myThis.myTestCases_d0.addItem(it);
+            ListSequence.fromList(myThis.getNodes()).addElement(it);
           }
         });
       }
-    }
+    });
 
     // methods 
     myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    for (String methodName : ListSequence.fromList(config.getStateObject().fullMethodNames)) {
-      int separatorIndex = methodName.lastIndexOf(TestUtils.SEPARATOR);
-      myThis.addMethodValue(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1));
+    myThis.myTestMethods_e0.clear();
+    // legacy code (config.fullMethodNames should be removed) 
+    if (config.getStateObject().fullMethodNames != null) {
+      for (String methodName : ListSequence.fromList(config.getStateObject().fullMethodNames)) {
+        int separatorIndex = methodName.lastIndexOf(TestUtils.SEPARATOR);
+        myThis.addMethodValue(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1));
+      }
     }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Sequence.fromIterable(TestUtils.wrapPointerStrings(config.getStateObject().testMethods)).visitAll(new IVisitor<ITestNodeWrapper>() {
+          public void visit(ITestNodeWrapper it) {
+            myThis.myTestMethods_e0.addItem(it);
+            ListSequence.fromList(myThis.getMethods()).addElement(it);
+          }
+        });
+      }
+    });
 
     // models 
     if (config.getStateObject().model != null) {
