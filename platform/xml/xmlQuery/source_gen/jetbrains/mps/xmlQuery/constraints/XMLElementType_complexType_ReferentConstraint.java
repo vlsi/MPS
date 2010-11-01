@@ -4,7 +4,7 @@ package jetbrains.mps.xmlQuery.constraints;
 
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
-import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
+import jetbrains.mps.smodel.constraints.INodeReferenceFullSetHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 
-public class XMLElementType_complexType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
+public class XMLElementType_complexType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferenceFullSetHandler {
   public XMLElementType_complexType_ReferentConstraint() {
   }
 
@@ -30,6 +30,10 @@ public class XMLElementType_complexType_ReferentConstraint extends BaseNodeRefer
   }
 
   public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
+  }
+
+  public boolean keepsOriginalReference(SNode referenceNode, SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
+    return true;
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
