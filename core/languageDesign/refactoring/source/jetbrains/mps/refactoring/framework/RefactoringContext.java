@@ -271,7 +271,7 @@ public class RefactoringContext {
   }
 
   public void updateByDefault(SModel model) {
-    myData.updateModelWithMaps(model);
+    myData.updateModelWithMaps(model, true);
   }
 
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {

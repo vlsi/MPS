@@ -103,7 +103,7 @@ public class StructureModificationProcessor {
   }
 
   private static boolean playRefactoring(@NotNull SModel model, @NotNull StructureModificationData data) {
-    data.updateModelWithMaps(model);
+    data.updateModelWithMaps(model, false);
     return true;    // todo: rewrite previous call to return real status of update
   }
 }
