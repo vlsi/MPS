@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.lang.typesystem.runtime.*;
+import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
@@ -51,7 +53,7 @@ public class NodeTypesComponentNew {
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
   }
-    
+
   private boolean loadTypeSystemRules(SNode root) {
     SModel model = root.getModel();
     RulesManager rulesManager = myTypeChecker.getRulesManager();
@@ -75,7 +77,7 @@ public class NodeTypesComponentNew {
         applyRulesToNode(desc);
       }
       checked = true;
-      
+
     }
   }
 
@@ -97,7 +99,6 @@ public class NodeTypesComponentNew {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }
   }
-
 
 
 }

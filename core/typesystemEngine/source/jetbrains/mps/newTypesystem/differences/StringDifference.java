@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
-import java.awt.Color;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -45,7 +43,4 @@ public class StringDifference extends Difference {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  public Color getColor() {
-    return new Color(0x111177);
-  }
 }

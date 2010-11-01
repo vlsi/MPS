@@ -16,8 +16,7 @@
 package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JDialog;
@@ -26,11 +25,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
-import jetbrains.mps.newTypesystem.states.State;
 
 public class ShowTypeSystemState extends JDialog {
   private JScrollPane myScrollPane;
- // private ShowTypeSystemTrace.MyComponent myComponent;
+  // private ShowTypeSystemTrace.MyComponent myComponent;
   private MPSTree myTree;
 
 
@@ -41,18 +39,18 @@ public class ShowTypeSystemState extends JDialog {
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
 
- //   this.myComponent = new ShowTypeSystemTrace.MyComponent();
+    //   this.myComponent = new ShowTypeSystemTrace.MyComponent();
 
     myTree = new TypeSystemStateTree(operationContext, s);
-   
+
     this.myScrollPane = new JScrollPane(myTree);
     this.myScrollPane.setBackground(this.getBackground());
     this.add(this.myScrollPane, BorderLayout.CENTER);
     myTree.setBackground(getBackground());
     myTree.setForeground(new Color(0x07025D));
-    this.setSize(500,600);
-    this.setPreferredSize(new Dimension(500,900));
-    this.setLocation(600,0);
+    this.setSize(500, 600);
+    this.setPreferredSize(new Dimension(500, 900));
+    this.setLocation(600, 0);
     setTitle("TypeSystem state");
     this.pack();
     this.setModal(true);
@@ -60,7 +58,7 @@ public class ShowTypeSystemState extends JDialog {
   }
 
   public Color getBackground() {
-   return Color.WHITE;
+    return Color.WHITE;
   }
 
 

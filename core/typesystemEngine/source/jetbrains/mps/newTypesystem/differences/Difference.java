@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 

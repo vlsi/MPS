@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,24 +32,52 @@ import java.util.*;
 
 public class SubTyping {
   private TypeChecker myTypeChecker;
+  private State myState;
 
-
-  public SubTyping(TypeChecker typeChecker) {
+  public SubTyping(TypeChecker typeChecker, State state) {
     myTypeChecker = typeChecker;
+    myState = state;
+  }
+
+  private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
+    if (LatticeUtil.isJoin(superType)) {
+      for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
+        /* if (state.isConc) {
+         if (isSubTypeByReplacementRules(subType, argument)) {
+           return true;
+         }
+       } */
+        if (isSubType(subType, argument, info, isWeak, checkOnly)) {
+          return true;
+        }
+      }
+    }
+    if (LatticeUtil.isMeet(subType)) {
+      for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
+
+        if (isSubType(argument, superType, info, isWeak, checkOnly)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public boolean isSubType(SNode subType, SNode superType) {
-    return isInSuperTypes(subType, superType, null, true, null);
+    return isInSuperTypes(subType, superType, null, true, true);
   }
 
-  public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, State state) {
-    if (TypesUtil.match(subType, superType, state.getEquations(), info)) {
+  public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
+    if (meetsAndJoins(subType, superType, info, isWeak, checkOnly)) {
       return true;
     }
-    return isInSuperTypes(subType, superType, info, isWeak, state);
+    if (TypesUtil.match(subType, superType, myState.getEquations(), info, checkOnly)) {
+      return true;
+    }
+    return isInSuperTypes(subType, superType, info, isWeak, checkOnly);
   }
 
-  private boolean isInSuperTypes(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, State state) {
+  private boolean isInSuperTypes(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
     if (subType == null) {
       return false;
     }
@@ -64,7 +93,7 @@ public class SubTyping {
       //collecting a set of frontier's ancestors
       Set<SNode> ancestors = new HashSet<SNode>();
       for (SNode node : frontier) {
-        Set<SNode> result = collectImmediateSuperTypes(node, isWeak, state.getTypeCheckingContext(), superType.getConceptFqName());
+        Set<SNode> result = collectImmediateSuperTypes(node, isWeak, myState.getTypeCheckingContext(), superType.getConceptFqName());
         for (SNode test : result) {
           boolean found = false;
           for (SNode anc : yetPassed) {
@@ -88,23 +117,23 @@ public class SubTyping {
 
       //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        if (TypesUtil.match(ancestor, superType, null, info)) {
+        if (TypesUtil.match(ancestor, superType, null, info, false)) {
           return true;
         }
       }
       /*  if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
-// then we should equate them with a most specific type. if there's is no unique one then we choose a random one
-Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
-Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
-for (SNode var : mapWithVars.keySet()) {
-  childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
-}
-if (state != null) {
-  state.getEquations().addEquations(childEqs, info);
-}
-return true;
-}
-//new:        */
+      // then we should equate them with a most specific type. if there's is no unique one then we choose a random one
+      Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
+      Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
+      for (SNode var : mapWithVars.keySet()) {
+        childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
+      }
+      if (state != null) {
+       state.getEquations().addEquations(childEqs, info);
+      }
+      return true;
+      }
+      //new:        */
 
       for (SNode passedNodeRaw : yetPassedRaw) {
         yetPassed.add(passedNodeRaw);

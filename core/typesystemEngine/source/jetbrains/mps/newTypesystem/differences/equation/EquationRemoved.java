@@ -29,10 +29,11 @@ public class EquationRemoved extends EquationDifference {
   private SNode myChild;
   private SNode myParent;
 
-  public EquationRemoved(SNode child, SNode parent, Equations equations) {
+  public EquationRemoved(SNode child, SNode parent, SNode source, Equations equations) {
     super(equations);
     myChild = child;
     myParent = parent;
+    mySource = source;
   }
 
   @Override

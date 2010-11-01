@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh

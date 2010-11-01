@@ -190,6 +190,14 @@ public class SModelOperations {
     return null;
   }
 
+  @NotNull
+  public static List<ImportElement> getAllImportElements(SModel model) {
+    List<ImportElement> result = new ArrayList<ImportElement>();
+    result.addAll(model.importedModels());
+    result.addAll(model.getAdditionalModelVersions());
+    return result;
+  }
+
   //todo rewrite using iterators
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {

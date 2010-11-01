@@ -36,6 +36,7 @@ public class WhenConcreteAdded extends Difference {
 
   public WhenConcreteAdded(WhenConcreteEntry entry, SNode node, NonConcreteMapPair map) {
     myNode = node;
+    mySource = node;
     myEntry = entry;
     myMap = map;
   }

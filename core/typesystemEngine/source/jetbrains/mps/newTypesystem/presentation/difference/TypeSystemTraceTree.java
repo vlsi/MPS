@@ -44,12 +44,14 @@ public class TypeSystemTraceTree extends MPSTree {
   private Difference myDifference;
   private Frame myFrame;
   private TypeCheckingContextNew myTypeCheckingContextNew;
+  private ShowTypeSystemTrace myParent;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, ShowTypeSystemTrace parent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
     myDifference = tcc.getDifference();
     myFrame = frame;
+    myParent = parent;
     this.rebuildNow();
     expandAll();
   }
@@ -64,7 +66,9 @@ public class TypeSystemTraceTree extends MPSTree {
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
     if (diff.getChildren() != null) {
       for (Difference child : diff.getChildren()) {
-        result.add(createNode(child));
+        if (myParent.show(child)) {
+          result.add(createNode(child));
+        }
       }
     }
     return result;
@@ -74,12 +78,12 @@ public class TypeSystemTraceTree extends MPSTree {
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
     BaseAction goToRule = new BaseAction("Go to rule") {
       public void doExecute(AnActionEvent e) {
-        ((TypeSystemTraceTreeNode) treeNode ).goToRule();
+        ((TypeSystemTraceTreeNode) treeNode).goToRule();
       }
     };
     BaseAction goToNode = new BaseAction("Go to node") {
       public void doExecute(AnActionEvent e) {
-        ((TypeSystemTraceTreeNode) treeNode ).goToNode();
+        ((TypeSystemTraceTreeNode) treeNode).goToNode();
       }
     };
     BaseAction showState = new BaseAction("Show state") {
@@ -97,7 +101,7 @@ public class TypeSystemTraceTree extends MPSTree {
     Difference rootDifference = myTypeCheckingContextNew.getDifference();
     Object difference = node.getUserObject();
     state.clear(false);
-    state.applyDifferenceBefore(rootDifference,difference);
+    state.applyDifferenceBefore(rootDifference, difference);
     new ShowTypeSystemState(state, myOperationContext, myFrame);
     state.reset();
   }

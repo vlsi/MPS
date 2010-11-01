@@ -17,9 +17,8 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -45,7 +44,7 @@ public class NonConcrete {
   }
 
   public void addNonConcrete(WhenConcreteEntry entry, SNode node, boolean shallow) {
-    node = myState.getEquations().getRepresentative(node);
+    node = myState.getRepresentative(node);
     if (shallow) {
       myShallow.addWhenConcrete(entry, node);
     } else {
@@ -67,7 +66,7 @@ public class NonConcrete {
       }
     }
     for (SNode child : node.getChildren(false)) {
-      if(hasVariablesInside(child)) {
+      if (hasVariablesInside(child)) {
         return true;
       }
     }

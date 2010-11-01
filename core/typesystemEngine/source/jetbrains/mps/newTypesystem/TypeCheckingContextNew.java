@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.*;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -33,7 +36,6 @@ import java.util.Stack;
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 4:32:55 PM
- * To change this template use File | Settings | File Templates.
  */
 public class TypeCheckingContextNew extends TypeCheckingContext {
 
@@ -49,8 +51,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(typeChecker);
-
+    mySubTyping = new SubTyping(typeChecker, myState);
   }
 
   public void rollBack() {
@@ -58,7 +59,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       return;
     }
     Difference diff = getDifferenceStack().pop();
-    System.out.println("Rolled back (" + diff.getPresentation()+")");
+    System.out.println("Rolled back (" + diff.getPresentation() + ")");
     diff.rollBack();
   }
 
@@ -66,18 +67,18 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myState.addInequality(left.getNode(), right.getNode(), true, true, equationInfo);
   }
 
-  public void createLessThanInequationStrong(SNode node1,SNode node2, SNode nodeToCheck,
-                                             String errorString,String ruleModel, String ruleId, boolean checkOnly,
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck,
+                                             String errorString, String ruleModel, String ruleId, boolean checkOnly,
                                              int inequationPriority, QuickFixProvider intentionProvider) {
-      myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel, 
-                            ruleId, inequationPriority, intentionProvider));
+    myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+      ruleId, inequationPriority, intentionProvider));
   }
 
 
   @Override
   public void checkRoot() {
     myNodeTypesComponent.checkNode(myRootNode, false);
-   // myState.solveInequalities();
+    // myState.solveInequalities();
   }
 
   @Override
@@ -92,6 +93,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       myNodeTypesComponent.checkNode(myRootNode, true);
       myState.solveInequalities();
       myState.expandAll();
+      myState.checkInequalities();
+      myState.checkWhenConcrete();
     }
   }
 
@@ -99,9 +102,9 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, true, checkOnly, equationInfo);
   }
-  
+
   @Override
-   public void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
+  public void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, false, checkOnly, equationInfo);
   }
 
@@ -112,7 +115,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
-    EquationInfo info = new EquationInfo(node, "typeOf",  ruleModel, ruleId);
+    EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     return myState.typeOf(node, info);
   }
 
@@ -135,13 +138,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
 
-    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId,argument), argument, false);
+    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-   
-    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, skipError,argument), argument, isShallow);
+
+    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, skipError, argument), argument, isShallow);
   }
 
   public State getState() {
@@ -159,7 +162,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public Stack<Difference> getDifferenceStack() {
     return myState.getDifferenceStack();
   }
+
   public Difference getDifference() {
     return myState.getDifference();
+  }
+
+  @Override
+  public SNode createNewRuntimeTypesVariable() {
+    return myState.createNewRuntimeTypesVariable();
   }
 }

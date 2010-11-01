@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem.differences.equation;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,9 +30,10 @@ public class EquationSubstituted extends Difference {
   EquationAdded myAdded;
   EquationRemoved myRemoved;
 
-  public EquationSubstituted(SNode key, SNode prev, SNode cur, Equations equations) {
-    myAdded = new EquationAdded(key, cur, equations, null);
-    myRemoved = new EquationRemoved(key, prev, equations);
+  public EquationSubstituted(SNode key, SNode prev, SNode cur, SNode source, Equations equations) {
+    myAdded = new EquationAdded(key, cur, source, equations, null);
+    myRemoved = new EquationRemoved(key, prev, source, equations);
+    mySource = source;
   }
 
   @Override
@@ -51,6 +51,6 @@ public class EquationSubstituted extends Difference {
   @Override
   public String getPresentation() {
     return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
-      myAdded.getChild() + " = " + myAdded.getParent() ;
+      myAdded.getChild() + " = " + myAdded.getParent();
   }
 }

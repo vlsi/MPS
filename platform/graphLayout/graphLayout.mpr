@@ -11,6 +11,7 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.orthogonalLayout/jetbrains.mps.graphLayout.orthogonalLayout.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.planarization/jetbrains.mps.graphLayout.planarization.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.test/jetbrains.mps.graphLayout.test.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.graphLayout.geom/jetbrains.mps.graphLayout.geom.msd" folder="" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />

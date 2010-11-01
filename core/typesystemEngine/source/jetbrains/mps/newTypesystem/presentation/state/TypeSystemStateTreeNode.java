@@ -17,14 +17,7 @@ package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 /**
  * Created by IntelliJ IDEA.

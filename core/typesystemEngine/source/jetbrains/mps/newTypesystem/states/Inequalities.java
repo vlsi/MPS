@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.SubTyping;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
 import jetbrains.mps.newTypesystem.differences.inequality.SubTypingAdded;
-import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -44,7 +42,7 @@ import java.util.Set;
 public class Inequalities {
   private State myState;
 
-  private InequalityMapPair myWeakInequalities ;
+  private InequalityMapPair myWeakInequalities;
   private InequalityMapPair myStrongInequalities;
   private InequalityMapPair myWeakCheckInequalities;
   private InequalityMapPair myStrongCheckInequalities;
@@ -73,14 +71,14 @@ public class Inequalities {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    Equations equations = myState.getEquations();
-    subType = equations.getRepresentative(subType);
-    superType = equations.getRepresentative(superType);
+    subType = myState.getRepresentative(subType);
+    superType = myState.getRepresentative(superType);
+
     if (subType == null || superType == null || subType == superType) {
       return;
     }
     //Variables inside
-    if (!myState.isConcrete(subType) || !myState.isConcrete(superType)) {
+    if (!myState.isConcrete(subType) || TypesUtil.isVariable(superType)) {
       addSubTyping(subType, superType, isWeak, check, info);
       return;
     }
@@ -89,20 +87,21 @@ public class Inequalities {
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
       IsApplicable2Status status = inequalityReplacementRule.o2;
-      ((AbstractInequationReplacementRule_Runtime)rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
-      myState.addDifference(new StringDifference("Replacement rule:" + subType + " <: "+ superType), false);
+      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
+      myState.addDifference(new StringDifference(subType + " is subtype of " + superType + " by replacement rule"), false);
       return;
     }
     // todo kill for
     // //    comparison rules?
 
-    //subType
+    subType = myState.getEquations().expandNode(subType);
+    superType = myState.getEquations().expandNode(superType);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
-    if (subTyping.isSubType(subType, superType, info, isWeak, myState)) {
+    if (subTyping.isSubType(subType, superType, info, isWeak, true)) {
+      myState.addDifference(new StringDifference(subType + " is subtype of " + superType), false);
       return;
     }
-    //error
-    reportError(subType, superType, info, isWeak);
+    myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
   }
 
   public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
@@ -118,28 +117,12 @@ public class Inequalities {
     }
   }
 
-  private void reportError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
-    IErrorReporter errorReporter;
-    String errorString = equationInfo.getErrorString();
-    String ruleModel = equationInfo.getRuleModel();
-    String ruleId = equationInfo.getRuleId();
-    SNode nodeWithError = equationInfo.getNodeWithError();
-    if (errorString == null) {
-      String strongString = isWeak ? "" : " strong";
-      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType,
-        " is not a" + strongString + " subtype of ", superType, "", ruleModel, ruleId);
-    } else {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
-    }
-    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
-    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-   // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
-    myState.addError(nodeWithError, errorReporter, equationInfo);
-  }
 
   public void solveInequalities() {
+    myWeakInequalities.expand();
+    myStrongInequalities.expand();
     for (SNode var : getAllVariables()) {
-      solveInequality(var);
+      // solveInequality(var);
     }
   }
 
@@ -150,17 +133,17 @@ public class Inequalities {
     Map<SNode, EquationInfo> strongSuperTypes = myStrongInequalities.getSuperTypes(var);
     if (emptyOrNull(subTypes) && emptyOrNull(strongSubTypes)) {
       if (emptyOrNull(strongSuperTypes)) {
-        if (superTypes != null && superTypes.size() == 1 ) {
+        if (superTypes != null && superTypes.size() == 1) {
           SNode type = superTypes.keySet().iterator().next();
-          myState.addEquation(var, superTypes.keySet().iterator().next(),superTypes.get(type));
+          myState.addEquation(var, superTypes.keySet().iterator().next(), superTypes.get(type));
         }
       }
     }
     if (emptyOrNull(superTypes) && emptyOrNull(strongSuperTypes)) {
       if (emptyOrNull(strongSubTypes)) {
-        if (subTypes != null && subTypes.size() ==1 ) {
+        if (subTypes != null && subTypes.size() == 1) {
           SNode type = subTypes.keySet().iterator().next();
-          myState.addEquation(var, type, subTypes.get(type) );
+          myState.addEquation(var, type, subTypes.get(type));
         }
       }
     }
@@ -176,6 +159,11 @@ public class Inequalities {
       result.addAll(inequalityMapPair.getListPresentation());
     }
     return result;
+  }
+
+  public void check() {
+    myWeakCheckInequalities.check();
+    myStrongCheckInequalities.check();
   }
 
   public void clear() {

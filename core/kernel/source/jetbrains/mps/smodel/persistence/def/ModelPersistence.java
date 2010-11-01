@@ -253,7 +253,8 @@ public class ModelPersistence {
     if (canUpgrade) {
       if (modelVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelVersion)) {
         newVersion = getCurrentPersistenceVersion();
-        return upgradePersistence(file, model, modelVersion, newVersion);
+        upgradePersistence(file, model, modelVersion, newVersion);
+        return model;
       }
     }
 
@@ -307,38 +308,22 @@ public class ModelPersistence {
   }
 
   // upgrades model persistence and saves model
-  public static SModel upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-    SModelReference reference = model.getSModelReference();
-    StructureModificationHistory refactorings = null;
-    int version = fromVersion;
-    while (version < toVersion) {
-      if (++version == 5) {
-        //noinspection deprecation
-        refactorings = model.getRefactoringHistory();
-        if (refactorings != null && refactorings.getDataList().isEmpty()) {
-          refactorings = null;
-        }
-      }
-      model.calculateImplicitImports();
-      Document document = saveModel(model, version);
-      model.dispose();
-      LOG.assertLog(modelReaders.get(version) != null);
-      model = modelReaders.get(version).readModel(document, NameUtil.shortNameFromLongName(reference.getLongName()), reference.getStereotype());
-    }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
-    model.setPersistenceVersion(toVersion);
-
-    try {
-      Document document = saveModel(model,toVersion);
-      JDOMUtil.writeDocument(document, file);
-
-      if (refactorings != null) {
+  public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
+    if (fromVersion < 5 && toVersion >= 5) {
+      StructureModificationHistory refactorings = model.getRefactoringHistory();
+      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
         RefactoringsPersistence.save(file, refactorings);
       }
+      model.setRefactoringHistory(null);
+    }
+    model.setPersistenceVersion(toVersion);
+    Document document = saveModel(model, toVersion);
+    try {
+      JDOMUtil.writeDocument(document, file);
     } catch (IOException e) {
       LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
     }
-    return model;
+    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + model.getSModelReference());
   }
 
   public static boolean needsRecreating(IFile file) {

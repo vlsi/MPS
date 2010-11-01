@@ -18,11 +18,14 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.HeadDifference;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.*;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.Stack;
 
@@ -41,6 +44,8 @@ public class State {
   private NodeMaps myNodeMaps;
   private NonConcrete myNonConcrete;
 
+  private VariableIdentifier myVariableIdentifier;
+
   private Stack<Difference> myDifferenceStack = new Stack<Difference>();
   private Difference myDifference = new HeadDifference();
 
@@ -50,6 +55,7 @@ public class State {
     myInequalities = new Inequalities(this);
     myNonConcrete = new NonConcrete(this);
     myNodeMaps = new NodeMaps(this);
+    myVariableIdentifier = new VariableIdentifier();
   }
 
   public Equations getEquations() {
@@ -60,7 +66,7 @@ public class State {
     myEquations.addEquation(left, right, info);
   }
 
-  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) { 
+  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
@@ -113,6 +119,7 @@ public class State {
     myInequalities.clear();
     myNodeMaps.clear();
     myNonConcrete.clear();
+    myVariableIdentifier.clear();
     if (clearDiff) {
       myDifferenceStack.clear();
       myDifference = new HeadDifference();
@@ -121,9 +128,19 @@ public class State {
   }
 
   public void solveInequalities() {
-    addDifference(new StringDifference("Solving inequalities"),true);
+    addDifference(new StringDifference("Solving inequalities"), true);
     myInequalities.solveInequalities();
     popDifference();
+  }
+
+  public void checkInequalities() {
+    addDifference(new StringDifference("Checking inequalities"), true);
+    myInequalities.check();
+    popDifference();
+  }
+
+  public void checkWhenConcrete() {
+
   }
 
   public Stack<Difference> getDifferenceStack() {
@@ -141,7 +158,7 @@ public class State {
   public void expandAll() {
     addDifference(new StringDifference("Types Expansion"), true);
     myNodeMaps.expandAll();
-    popDifference();    
+    popDifference();
   }
 
   public boolean applyDifferenceBefore(Difference diff, Object toCompare) {
@@ -158,6 +175,18 @@ public class State {
       }
     }
     return false;
+  }
+
+  public SNode getRepresentative(SNode node) {
+    return myEquations.getRepresentative(node);
+  }
+
+  public SNode createNewRuntimeTypesVariable() {
+    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
+    myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+    typeVar.setName(myVariableIdentifier.getNewVarName());
+//  registerTypeVariable(typeVar);          todo ?
+    return typeVar;
   }
 
   public void reset() {

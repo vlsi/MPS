@@ -63,7 +63,7 @@ public class AttributesRolesUtil {
   }
 
   public static boolean isNodeAttributeRole(String role) {
-    return role.endsWith(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE);
+    return role.endsWith(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE) && !(isLinkAttributeRole(role) || isPropertyAttributeRole(role));
   }
 
   public static boolean isLinkAttributeRole(String role) {

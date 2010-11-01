@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 
@@ -51,6 +50,6 @@ public class BecameConcrete extends Difference {
 
   @Override
   public void play() {
-   myMap.remove(myEntry);
+    myMap.remove(myEntry);
   }
 }

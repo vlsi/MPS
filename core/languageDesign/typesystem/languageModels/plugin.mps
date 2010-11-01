@@ -10,33 +10,11 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="55" />
@@ -126,10 +104,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1206101816406">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="GoToTypeErrorRule" />
     <property name="caption:23" value="Go to Rule Which Caused Error" />
     <property name="isAlwaysVisible:23" value="false" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1206101816407">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206101816408">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1206105385968">
@@ -309,7 +287,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1206108391540">
     <property name="name:3" value="GoToTypeErrorRuleUtil" />
-    <property name="package:3" value="Actions" />
+    <property name="virtualPackage:3" value="Actions" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3817304287385072447">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3817304287385072448" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3817304287385072449" />
@@ -848,9 +826,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1206108972918">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="RefactorModel" />
     <property name="caption:23" value="Refactor Helgins Model" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1206108972919">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206109345596">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206109353589">
@@ -925,10 +903,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1206184013394">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowRulesWhichAffectNodeType" />
     <property name="caption:23" value="Show Rules Which Affect Node's Type" />
     <property name="isAlwaysVisible:23" value="true" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1206184013395">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206184013396">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8551151787057541472">
@@ -1204,9 +1182,9 @@
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1219330134776" />
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1228836959162">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowTypechekerDebugger" />
     <property name="caption:23" value="Show Typechecker Debugger" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1228837001272">
       <property name="name:23" value="project" />
       <link role="key:23" targetNodeId="43.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
@@ -1241,9 +1219,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1228846419607">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="SliceWithNode" />
     <property name="caption:23" value="Slice with Selected Node" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1228846419608">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1228846419609">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1228847408927">
@@ -1331,9 +1309,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1230214426481">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowInequationsForCell" />
     <property name="caption:23" value="Show Inequations for Cell" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1230214590204">
       <property name="name:23" value="selectedCell" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.EDITOR_CELL" resolveInfo="EDITOR_CELL" />
@@ -1424,12 +1402,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="7796696880649589009">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowNodeType" />
     <property name="caption:23" value="Show Type" />
     <property name="description:23" value="Show node's HELGINS type" />
     <property name="outsideCommandExecution:23" value="true" />
     <property name="iconPath:23" value="${language_descriptor}/icons/types.png" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="7796696880649589046">
       <property name="name:23" value="context" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
@@ -1626,10 +1604,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="4290387479601509657">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="GoToTypeErrorRule_InGroup" />
     <property name="caption:23" value="Go to Rule Which Caused Error" />
     <property name="isAlwaysVisible:23" value="true" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="constructionParameter:23" type="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration:23" id="4290387479601537361">
       <property name="name:23" value="errorId" />
       <node role="visibility:23" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4290387479601537362" />
@@ -1789,11 +1767,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="4290387479601537374">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="GoToTypeErrorGroup" />
     <property name="isPopup:23" value="true" />
     <property name="caption:23" value="Go to Rule Which Caused Error" />
     <property name="isInvisibleWhenDisabled:23" value="true" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="4290387479601584173">
       <link role="modifiedGroup:23" targetNodeId="1205244087094" resolveInfo="TypesystemActions" />
     </node>
@@ -2093,11 +2071,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="6359146168314435522">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowInferredNodeType" />
     <property name="caption:23" value="Show Inferred Type" />
     <property name="description:23" value="Show type inferred using check only inequations, too" />
     <property name="outsideCommandExecution:23" value="true" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="6359146168314435523">
       <property name="name:23" value="context" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
@@ -2224,9 +2202,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="8779663014757326680">
-    <property name="package:23" value="Actions" />
     <property name="name:23" value="ShowTypeSystemTrace" />
     <property name="caption:23" value="Show Typesystem Trace" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8779663014757355879">
       <property name="name:23" value="context" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
@@ -2297,9 +2275,9 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6867415733702651125">
                     <link role="variableDeclaration:3" targetNodeId="6867415733702648394" resolveInfo="t" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4213432195536185606">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4213432195536185607" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4213432195536185608">
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4187171894114448949">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4187171894114448950" />
+                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4187171894114448951">
                       <link role="member:23" targetNodeId="8779663014757355879" resolveInfo="context" />
                     </node>
                   </node>
@@ -2323,6 +2301,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="keystroke:23" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="4187171894114553081">
+      <property name="keycode:23" value="VK_Q" />
+      <property name="modifiers:23" value="ctrl+shift" />
     </node>
   </node>
 </model>

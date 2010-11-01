@@ -506,7 +506,7 @@ public class StructureModificationData {
     myCachesAreUpToDate = true;
   }
 
-  public void updateModelWithMaps(SModel model) {
+  public void updateModelWithMaps(SModel model, boolean allowLoad) {
     if (!myCachesAreUpToDate)  computeCaches();
     assert myCachesAreUpToDate;
 
@@ -539,10 +539,12 @@ public class StructureModificationData {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
 
-      for (String parentConceptFQName : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFQName)) {
-        Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
-        if (conceptFeatures != null) {
-          allConceptFeatures.addAll(conceptFeatures);
+      if (allowLoad) { // temp fix for refactoring cycling on load
+        for (String parentConceptFQName : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFQName)) {
+          Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
+          if (conceptFeatures != null) {
+            allConceptFeatures.addAll(conceptFeatures);
+          }
         }
       }
 

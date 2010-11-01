@@ -57,7 +57,7 @@ public class TypesUtil {
     return 1;
   }
 
-  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
+  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
     if (left == right) {
       return true;
     }
@@ -81,7 +81,7 @@ public class TypesUtil {
       public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
       }
     }, false);
-    if (result) {
+    if (!checkOnly && result) {
       if (equations != null) {
         equations.addEquations(childEQs, info);
       }

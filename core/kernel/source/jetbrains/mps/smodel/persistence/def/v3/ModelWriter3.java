@@ -115,12 +115,10 @@ public class ModelWriter3 implements IModelWriter {
 
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {
     int modelVersion = SModelOperations.getLanguageAspectModelVersion(sourceModel, aspectReference);
-    if (modelVersion > -1) {
-      Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
-      aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());
-      aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
-      parent.addContent(aspectModelElement);
-    }
+    Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
+    aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());
+    aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);
+    parent.addContent(aspectModelElement);
   }
 
   public void saveNode(Element container, SNode node) {
