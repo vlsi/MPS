@@ -139,8 +139,14 @@ public class ListPanel extends JPanel {
     AnAction remove = new ListRemoveAction(this.myListComponent) {
       protected void doRemove(AnActionEvent p0) {
         for (Object value : ListPanel.this.myListComponent.getSelectedValues()) {
-          for (ITestNodeWrapper node : ListPanel.this.myValues) {
-            if (node.getFqName().equals(value)) {
+          for (final ITestNodeWrapper node : ListPanel.this.myValues) {
+            final Wrappers._T<String> fqName = new Wrappers._T<String>();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                fqName.value = node.getFqName();
+              }
+            });
+            if (fqName.value.equals(value)) {
               ListSequence.fromList(ListPanel.this.myValues).removeElement(node);
               break;
             }
