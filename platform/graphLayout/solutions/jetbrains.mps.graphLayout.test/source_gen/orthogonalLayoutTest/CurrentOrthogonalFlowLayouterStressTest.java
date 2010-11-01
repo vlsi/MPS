@@ -9,7 +9,7 @@ import sampleGraphs.SimpleConnectedGraphGenerator;
 import jetbrains.mps.graphLayout.graph.Graph;
 import java.util.Map;
 import jetbrains.mps.graphLayout.graph.Node;
-import java.awt.Dimension;
+import jetbrains.mps.graphLayout.intGeom2D.Dimension;
 import jetbrains.mps.graphLayout.graph.Edge;
 import jetbrains.mps.graphLayout.graphLayout.LayoutInfo;
 import java.io.PrintWriter;
@@ -42,7 +42,7 @@ public class CurrentOrthogonalFlowLayouterStressTest {
       out.close();
       layouter.setUnitLength(30);
       double time = System.currentTimeMillis();
-      GraphLayout layout = layouter.doLayout(layoutInfo);
+      GraphLayout layout = layouter.doLayoutConnectedGraph(layoutInfo);
       double passedTime = (1.0 * System.currentTimeMillis() - time) / 1000;
       System.out.println("iteration " + iter + " has been working " + passedTime + " seconds");
       OrthogonalLayoutChecker.checkLayout(layout);
