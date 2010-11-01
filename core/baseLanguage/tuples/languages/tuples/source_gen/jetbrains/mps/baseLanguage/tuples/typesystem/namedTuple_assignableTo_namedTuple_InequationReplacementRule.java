@@ -8,13 +8,14 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -24,67 +25,73 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status) {
-    if (!(SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false))) {
-      BaseQuickFixProvider intentionProvider = null;
-      MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Different named tuples", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579585554", intentionProvider, errorTarget);
-      HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
-    }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
-      BaseQuickFixProvider intentionProvider = null;
-      MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Parameter types counts don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968591797", intentionProvider, errorTarget);
-      HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
-    }
-    {
-      SNode lp;
-      SNode rp;
-      Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
-      Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
-      while (true) {
-        if (!(lp_iterator.hasNext())) {
-          break;
+    if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
+      if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
+        BaseQuickFixProvider intentionProvider = null;
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Parameter types counts don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968591797", intentionProvider, errorTarget);
+        HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
+      }
+      {
+        SNode lp;
+        SNode rp;
+        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
+        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        while (true) {
+          if (!(lp_iterator.hasNext())) {
+            break;
+          }
+          if (!(rp_iterator.hasNext())) {
+            break;
+          }
+          lp = lp_iterator.next();
+          rp = rp_iterator.next();
+          {
+            SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+            BaseQuickFixProvider intentionProvider = null;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, intentionProvider);
+            _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+            _info_12389875345.setInequationGroup("default");
+            typeCheckingContext.createLessThanInequation((SNode) lp, (SNode) rp, false, _info_12389875345);
+          }
         }
-        if (!(rp_iterator.hasNext())) {
-          break;
-        }
-        lp = lp_iterator.next();
-        rp = rp_iterator.next();
-        {
-          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, intentionProvider);
-          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-          _info_12389875345.setInequationGroup("default");
-          typeCheckingContext.createLessThanInequation((SNode) lp, (SNode) rp, false, _info_12389875345);
-        }
+      }
+    } else {
+      if (!(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(subtype, "classifier", false))).contains(SLinkOperations.getTarget(supertype, "classifier", false)))) {
+        BaseQuickFixProvider intentionProvider = null;
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(supertype, "Incompatible named closure", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "2213502935616215826", intentionProvider, errorTarget);
+        HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
       }
     }
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
     boolean result_14532009 = true;
-    if (!(SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false))) {
-      result_14532009 = false;
-    }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
-      result_14532009 = false;
-    }
-    {
-      SNode lp;
-      SNode rp;
-      Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
-      Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
-      while (true) {
-        if (!(lp_iterator.hasNext())) {
-          break;
+    if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
+      if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
+        result_14532009 = false;
+      }
+      {
+        SNode lp;
+        SNode rp;
+        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
+        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        while (true) {
+          if (!(lp_iterator.hasNext())) {
+            break;
+          }
+          if (!(rp_iterator.hasNext())) {
+            break;
+          }
+          lp = lp_iterator.next();
+          rp = rp_iterator.next();
+          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) lp, (SNode) rp, true);
         }
-        if (!(rp_iterator.hasNext())) {
-          break;
-        }
-        lp = lp_iterator.next();
-        rp = rp_iterator.next();
-        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) lp, (SNode) rp, true);
+      }
+    } else {
+      if (!(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(subtype, "classifier", false))).contains(SLinkOperations.getTarget(supertype, "classifier", false)))) {
+        result_14532009 = false;
       }
     }
     return result_14532009;

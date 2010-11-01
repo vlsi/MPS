@@ -1206,7 +1206,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8911874220955537729(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    final List<SNode> allExtends = ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(_context.getNode(), "tupleDeclaration", false))).reversedList().toListSequence();
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentRef", true)).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode cmpRef) {
+        return ListSequence.fromList(allExtends).indexOf(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(cmpRef, "componentDeclaration", false)), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
+      }
+    }, true).alsoSort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode cmpRef) {
         return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(cmpRef, "componentDeclaration", false));
       }

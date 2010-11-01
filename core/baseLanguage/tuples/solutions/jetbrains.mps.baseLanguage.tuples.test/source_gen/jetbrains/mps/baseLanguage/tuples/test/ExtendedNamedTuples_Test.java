@@ -8,7 +8,7 @@ import junit.framework.Assert;
 public class ExtendedNamedTuples_Test extends TestCase {
   public void test_asd() throws Exception {
     ExtendedNamedTuples.Foo foo = new ExtendedNamedTuples.Foo(123, "abc");
-    ExtendedNamedTuples.Bar bar = new ExtendedNamedTuples.Bar(321, "XYZ", "CBA", 42);
+    ExtendedNamedTuples.Bar bar = new ExtendedNamedTuples.Bar(321, "CBA", "XYZ", 42);
     foo = bar;
     Assert.assertEquals(new ExtendedNamedTuples.Foo(321, "CBA"), foo);
   }
