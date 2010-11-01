@@ -18,6 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590287(jetbrains.mps.lang.core.scripts)" version="-1" />
   <maxImportIndex value="48" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -1228,6 +1229,7 @@
     <property name="title:0" value="Restore Virtual Packages" />
     <node role="part:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance:0" id="3180819252996380866">
       <property name="description:0" value="Restore Virtual Packages" />
+      <property name="showAsIntention:0" value="true" />
       <link role="affectedInstanceConcept:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
       <node role="affectedInstanceUpdater:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater:0" id="3180819252996380867">
         <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3180819252996380868">

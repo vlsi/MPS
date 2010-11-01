@@ -35,7 +35,7 @@ public class package2virtualPackage_MigrationScript extends BaseMigrationScript 
       }
 
       public boolean isShowAsIntention() {
-        return false;
+        return true;
       }
     });
   }
