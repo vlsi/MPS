@@ -1963,27 +1963,50 @@
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="702458022103097201">
                 <link role="variableDeclaration:3" targetNodeId="1208286037144:0" resolveInfo="iconName" />
               </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="702458022103097202">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702458022103097203">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702458022103212550">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702458022103097204">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="702458022103097205">
-                        <link role="variableDeclaration:3" targetNodeId="1208357926510:0" resolveInfo="language" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="702458022103097206">
-                        <link role="baseMethodDeclaration:3" targetNodeId="8.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolveInfo="getDescriptorFile" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="702458022103212554">
-                      <link role="baseMethodDeclaration:3" targetNodeId="122.~IFile.getParent():jetbrains.mps.vfs.IFile" resolveInfo="getParent" />
-                    </node>
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="702458022103097207">
-                    <link role="baseMethodDeclaration:3" targetNodeId="122.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
-                  </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3139877525204707010">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3139877525204707013">
+                  <link role="classifier:3" targetNodeId="18.~File" resolveInfo="File" />
+                  <link role="variableDeclaration:3" targetNodeId="18.~File.separator" resolveInfo="separator" />
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="702458022103097208">
-                  <property name="value:3" value="\\icons\\states\\" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3139877525204707018">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3139877525204707021">
+                    <property name="value:3" value="states" />
+                  </node>
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3139877525204707014">
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3139877525204663858">
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="702458022103097202">
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702458022103097203">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702458022103212550">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702458022103097204">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="702458022103097205">
+                                <link role="variableDeclaration:3" targetNodeId="1208357926510:0" resolveInfo="language" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="702458022103097206">
+                                <link role="baseMethodDeclaration:3" targetNodeId="8.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolveInfo="getDescriptorFile" />
+                              </node>
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="702458022103212554">
+                              <link role="baseMethodDeclaration:3" targetNodeId="122.~IFile.getParent():jetbrains.mps.vfs.IFile" resolveInfo="getParent" />
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="702458022103097207">
+                            <link role="baseMethodDeclaration:3" targetNodeId="122.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                          </node>
+                        </node>
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3139877525204700232">
+                          <link role="classifier:3" targetNodeId="18.~File" resolveInfo="File" />
+                          <link role="variableDeclaration:3" targetNodeId="18.~File.separator" resolveInfo="separator" />
+                        </node>
+                      </node>
+                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="702458022103097208">
+                        <property name="value:3" value="icons" />
+                      </node>
+                    </node>
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3139877525204707017">
+                      <link role="classifier:3" targetNodeId="18.~File" resolveInfo="File" />
+                      <link role="variableDeclaration:3" targetNodeId="18.~File.separator" resolveInfo="separator" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
