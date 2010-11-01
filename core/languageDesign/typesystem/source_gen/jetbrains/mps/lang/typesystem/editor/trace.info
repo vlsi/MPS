@@ -86,13 +86,13 @@
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="480" startPosition="0" endLine="527" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$beforeGroupsListHandler_ka3b3c_m0" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="528" startPosition="0" endLine="575" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$afterGroupsListHandler_ka3b3c_o0" />
   <unitInfo fileName="ListVarDeclaration_Editor.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ListVarDeclaration_Editor" />
-  <unitInfo fileName="TypeVarDeclaration_Editor.java" startLine="21" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeVarDeclaration_Editor" />
   <unitInfo fileName="JoinContainer_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.JoinContainer_Editor" />
   <unitInfo fileName="MeetContainer_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.MeetContainer_Editor" />
   <unitInfo fileName="QuickFixField_Editor.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.QuickFixField_Editor" />
   <unitInfo fileName="QuickFixArgument_Editor.java" startLine="21" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.QuickFixArgument_Editor" />
   <unitInfo fileName="MultipleForeachLoopVariable_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.MultipleForeachLoopVariable_Editor" />
   <unitInfo fileName="ImmediateSupertypesExpression_Editor.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ImmediateSupertypesExpression_Editor" />
+  <unitInfo fileName="TypeVarDeclaration_Editor.java" startLine="21" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeVarDeclaration_Editor" />
   <unitInfo fileName="RuntimeErrorType_Editor.java" startLine="17" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.RuntimeErrorType_Editor" />
   <unitInfo fileName="WhenConcreteVariableReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.WhenConcreteVariableReference_Editor" />
   <unitInfo fileName="PatternCondition_Editor.java" startLine="24" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.PatternCondition_Editor" />
