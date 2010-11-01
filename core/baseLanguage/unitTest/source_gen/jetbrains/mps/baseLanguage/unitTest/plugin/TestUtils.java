@@ -32,8 +32,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.MPSProject;
 
 public class TestUtils {
+  @Deprecated
   public static final String SEPARATOR = "#";
-  public static final String POINTER_SEPARATOR = "%";
+  private static final String POINTER_SEPARATOR = "%";
 
   public TestUtils() {
   }

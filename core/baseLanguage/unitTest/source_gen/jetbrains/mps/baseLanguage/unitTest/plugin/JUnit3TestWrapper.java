@@ -9,9 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
@@ -34,11 +31,15 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   public Iterable<ITestNodeWrapper> getTestMethods() {
     return ListSequence.fromList(SLinkOperations.getTargets(myNode, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(it)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && SPropertyOperations.getString(it, "name").startsWith("test");
+        return JUnit3MethodWrapper.isTestMethod(it);
       }
     }).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
+      }
+    }).where(new IWhereFilter<ITestNodeWrapper>() {
+      public boolean accept(ITestNodeWrapper it) {
+        return it != null;
       }
     });
   }

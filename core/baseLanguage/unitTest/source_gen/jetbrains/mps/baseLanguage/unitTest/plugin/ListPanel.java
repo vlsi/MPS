@@ -8,16 +8,15 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.BorderLayout;
@@ -26,6 +25,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddA
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -48,17 +48,19 @@ public class ListPanel extends JPanel {
   }
 
   private void collectCandidates() {
-    final Wrappers._T<List<SNode>> nodesList = new Wrappers._T<List<SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        nodesList.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
-      }
-    });
+    final List<SNode> nodesList = new ArrayList<SNode>();
+    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedConcepts())) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false)));
+        }
+      });
+    }
     if (this.myIsTestMethods) {
       final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (SNode testCase : nodesList.value) {
+          for (SNode testCase : nodesList) {
             ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testCase);
             if (wrapper == null) {
               continue;
@@ -71,7 +73,7 @@ public class ListPanel extends JPanel {
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListPanel.this.myCandidates = ListSequence.fromList(nodesList.value).select(new ISelector<SNode, ITestNodeWrapper>() {
+          ListPanel.this.myCandidates = ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
             public ITestNodeWrapper select(SNode it) {
               return TestNodeWrapperFactory.tryToWrap(it);
             }
@@ -115,7 +117,7 @@ public class ListPanel extends JPanel {
           ListPanel.this.collectCandidates();
         }
         ListSequence.fromList(ListPanel.this.myCandidates).removeSequence(ListSequence.fromList(ListPanel.this.myValues));
-        final SNode resultNode = (SNode) CommonChoosers.showDialogNodeChooser(ListPanel.this, ListSequence.fromList(ListPanel.this.myCandidates).select(new ISelector<ITestNodeWrapper, SNode>() {
+        final SNode resultNode = CommonChoosers.showDialogNodeChooser(ListPanel.this, ListSequence.fromList(ListPanel.this.myCandidates).select(new ISelector<ITestNodeWrapper, SNode>() {
           public SNode select(ITestNodeWrapper it) {
             return it.getNode();
           }
