@@ -78,7 +78,7 @@ public class ModelUtils {
   }
 
   public static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile));
+    final EditableSModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile));
     if (modelDescriptor == null) return;
 
     try {

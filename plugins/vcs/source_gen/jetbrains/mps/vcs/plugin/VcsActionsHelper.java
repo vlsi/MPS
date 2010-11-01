@@ -105,7 +105,7 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 8:
-                      this._8__yield_deu5rm_a0b0a0a0c_it = collectUnversionedFiles(fileStatusProvider, _5_child).iterator();
+                      this._8__yield_deu5rm_a0b0a0a0c_it = Sequence.fromIterable(collectUnversionedFiles(fileStatusProvider, _5_child)).iterator();
                     case 9:
                       if (!(this._8__yield_deu5rm_a0b0a0a0c_it.hasNext())) {
                         this.__CP__ = 6;

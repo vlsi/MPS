@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class LongestCommonSubsequenceFinder {
   @NotNull
@@ -113,12 +112,5 @@ __switch__:
     }
 
     return subsequences;
-  }
-
-  public static void main(String[] args) {
-    List<Character> a = Sequence.fromIterable(ArrayUtils.fromCharacterArray("ABCDE".toCharArray())).toListSequence();
-    List<Character> b = Sequence.fromIterable(ArrayUtils.fromCharacterArray("XBCYYEF".toCharArray())).toListSequence();
-    System.out.println(findLongestCommonSubsequenceIndices(a, b));
-    System.out.println(findDifferentSubsequences(a, b));
   }
 }

@@ -471,7 +471,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
           if (EXTRA_CHECKS_ENABLED && !(wereMessages.isEmpty()) && fileStatus == FileStatus.NOT_CHANGED) {
             SModel model = modelDescriptor.getSModel();
             if (model != null && !(model.isDisposed())) {
-              for (final SNode node : Sequence.fromIterable(model.getAllNodesWithIds())) {
+              for (final SNode node : Sequence.fromIterable(model.nodes())) {
                 myChangeCountForNode.zeroizeKey(node);
                 myPropertyChangeCountForNode.zeroizeKey(node);
                 myReferenceChangeCountForNode.zeroizeKey(node);

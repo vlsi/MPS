@@ -683,405 +683,394 @@
     <nodeInfo nodeId="2253323551303615584" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="94" startPosition="79" endLine="95" endPosition="17" />
     <nodeInfo nodeId="2253323551303615595" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="96" startPosition="9" endLine="97" endPosition="102" />
     <nodeInfo nodeId="2253323551303615647" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="97" startPosition="102" endLine="98" endPosition="79" />
-    <nodeInfo nodeId="5917222806358140700" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="104" startPosition="23" endLine="105" endPosition="13" />
-    <nodeInfo nodeId="891158202133120888" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="106" startPosition="5" endLine="107" endPosition="49" />
-    <nodeInfo nodeId="891158202133120908" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="108" startPosition="24" endLine="109" endPosition="13" />
-    <nodeInfo nodeId="891158202133120914" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="110" startPosition="5" endLine="111" endPosition="87" />
-    <nodeInfo nodeId="891158202133120935" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="112" startPosition="103" endLine="113" endPosition="13" />
-    <nodeInfo nodeId="891158202133120937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="114" startPosition="5" endLine="115" endPosition="51" />
-    <nodeInfo nodeId="6058514296621167620" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="120" startPosition="101" endLine="121" endPosition="36" />
-    <nodeInfo nodeId="5962623969496447622" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="129" startPosition="78" endLine="130" endPosition="76" />
-    <nodeInfo nodeId="5962623969496447630" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="130" startPosition="76" endLine="131" endPosition="72" />
-    <nodeInfo nodeId="8639616537809463291" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="138" startPosition="96" endLine="139" endPosition="49" />
-    <nodeInfo nodeId="5643745088231031185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="139" startPosition="49" endLine="140" endPosition="68" />
-    <nodeInfo nodeId="5643745088231031161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="141" startPosition="71" endLine="142" endPosition="109" />
-    <nodeInfo nodeId="3935103675993747856" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="143" startPosition="5" endLine="144" endPosition="61" />
-    <nodeInfo nodeId="2859527253109744416" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="148" startPosition="76" endLine="149" endPosition="62" />
-    <nodeInfo nodeId="8477273007880816991" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="156" startPosition="29" endLine="157" endPosition="41" />
-    <nodeInfo nodeId="8477273007880816995" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="157" startPosition="41" endLine="158" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817005" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="160" startPosition="87" endLine="161" endPosition="85" />
-    <nodeInfo nodeId="8477273007880817017" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="164" endPosition="58" />
-    <nodeInfo nodeId="8477273007880817028" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="164" startPosition="58" endLine="165" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817037" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="166" startPosition="95" endLine="167" endPosition="36" />
-    <nodeInfo nodeId="8477273007880817042" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="168" startPosition="15" endLine="169" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817043" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="169" startPosition="0" endLine="170" endPosition="28" />
-    <nodeInfo nodeId="8477273007880817047" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="171" startPosition="13" endLine="172" endPosition="26" />
-    <nodeInfo nodeId="8477273007880817051" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="172" startPosition="26" endLine="173" endPosition="48" />
-    <nodeInfo nodeId="8477273007880817065" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="175" startPosition="87" endLine="176" endPosition="107" />
-    <nodeInfo nodeId="8477273007880817076" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="178" startPosition="17" endLine="179" endPosition="51" />
-    <nodeInfo nodeId="1741994337989997226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="180" startPosition="13" endLine="181" endPosition="26" />
-    <nodeInfo nodeId="1741994337989997199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="183" startPosition="87" endLine="184" endPosition="110" />
-    <nodeInfo nodeId="3722815385094377378" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="194" startPosition="47" endLine="195" endPosition="26" />
-    <nodeInfo nodeId="15936038984552681" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="198" startPosition="61" endLine="199" endPosition="54" />
-    <nodeInfo nodeId="5267577397386524188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="80" />
-    <nodeInfo nodeId="5569581551640544141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="211" startPosition="93" endLine="212" endPosition="75" />
-    <nodeInfo nodeId="5569581551640544164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="217" startPosition="110" endLine="218" endPosition="30" />
-    <nodeInfo nodeId="6276661785379536160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="223" startPosition="93" endLine="224" endPosition="57" />
-    <nodeInfo nodeId="5569581551640544216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="229" startPosition="131" endLine="230" endPosition="30" />
-    <nodeInfo nodeId="5752539231810518963" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="235" startPosition="142" endLine="236" endPosition="45" />
-    <nodeInfo nodeId="4912291546802911414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="245" startPosition="52" endLine="246" endPosition="34" />
-    <nodeInfo nodeId="8096178926743441905" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="249" startPosition="119" endLine="250" endPosition="34" />
-    <nodeInfo nodeId="209997191345316862" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="259" startPosition="33" endLine="260" endPosition="34" />
-    <nodeInfo nodeId="3555722951728565725" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="272" startPosition="57" endLine="273" endPosition="72" />
-    <nodeInfo nodeId="5569581551640537987" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="206" startPosition="64" endLine="208" endPosition="5" />
-    <nodeInfo nodeId="4912291546802908729" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="241" startPosition="62" endLine="243" endPosition="5" />
-    <nodeInfo nodeId="209997191345281328" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="254" startPosition="56" endLine="256" endPosition="5" />
-    <nodeInfo nodeId="6003305288819068443" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="264" startPosition="76" endLine="266" endPosition="5" />
+    <nodeInfo nodeId="6350890791643915257" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="98" startPosition="79" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="5917222806358140700" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="105" startPosition="23" endLine="106" endPosition="13" />
+    <nodeInfo nodeId="891158202133120888" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="107" startPosition="5" endLine="108" endPosition="49" />
+    <nodeInfo nodeId="891158202133120908" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="109" startPosition="24" endLine="110" endPosition="13" />
+    <nodeInfo nodeId="891158202133120914" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="111" startPosition="5" endLine="112" endPosition="87" />
+    <nodeInfo nodeId="891158202133120935" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="113" startPosition="103" endLine="114" endPosition="13" />
+    <nodeInfo nodeId="891158202133120937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="115" startPosition="5" endLine="116" endPosition="51" />
+    <nodeInfo nodeId="6058514296621167620" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="121" startPosition="101" endLine="122" endPosition="36" />
+    <nodeInfo nodeId="5962623969496447622" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="130" startPosition="78" endLine="131" endPosition="76" />
+    <nodeInfo nodeId="5962623969496447630" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="131" startPosition="76" endLine="132" endPosition="72" />
+    <nodeInfo nodeId="8639616537809463291" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="139" startPosition="96" endLine="140" endPosition="49" />
+    <nodeInfo nodeId="5643745088231031185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="140" startPosition="49" endLine="141" endPosition="68" />
+    <nodeInfo nodeId="5643745088231031161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="142" startPosition="71" endLine="143" endPosition="109" />
+    <nodeInfo nodeId="3935103675993747856" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="144" startPosition="5" endLine="145" endPosition="61" />
+    <nodeInfo nodeId="2859527253109744416" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="149" startPosition="76" endLine="150" endPosition="62" />
+    <nodeInfo nodeId="8477273007880816991" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesManager.java" startLine="157" startPosition="29" endLine="158" endPosition="41" />
+    <nodeInfo nodeId="8477273007880816995" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="158" startPosition="41" endLine="159" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817005" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="161" startPosition="87" endLine="162" endPosition="85" />
+    <nodeInfo nodeId="8477273007880817017" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="164" startPosition="17" endLine="165" endPosition="58" />
+    <nodeInfo nodeId="8477273007880817028" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="165" startPosition="58" endLine="166" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817037" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="167" startPosition="95" endLine="168" endPosition="36" />
+    <nodeInfo nodeId="8477273007880817042" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ChangesManager.java" startLine="169" startPosition="15" endLine="170" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817043" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="170" startPosition="0" endLine="171" endPosition="28" />
+    <nodeInfo nodeId="8477273007880817047" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="172" startPosition="13" endLine="173" endPosition="26" />
+    <nodeInfo nodeId="8477273007880817051" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="173" startPosition="26" endLine="174" endPosition="48" />
+    <nodeInfo nodeId="8477273007880817065" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="176" startPosition="87" endLine="177" endPosition="107" />
+    <nodeInfo nodeId="8477273007880817076" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="179" startPosition="17" endLine="180" endPosition="51" />
+    <nodeInfo nodeId="1741994337989997226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="181" startPosition="13" endLine="182" endPosition="26" />
+    <nodeInfo nodeId="1741994337989997199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="184" startPosition="87" endLine="185" endPosition="110" />
+    <nodeInfo nodeId="3722815385094377378" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="195" startPosition="47" endLine="196" endPosition="26" />
+    <nodeInfo nodeId="15936038984552681" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="199" startPosition="61" endLine="200" endPosition="54" />
+    <nodeInfo nodeId="5267577397386524188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesManager.java" startLine="203" startPosition="37" endLine="204" endPosition="80" />
+    <nodeInfo nodeId="5569581551640544141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="212" startPosition="93" endLine="213" endPosition="75" />
+    <nodeInfo nodeId="5569581551640544164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="218" startPosition="110" endLine="219" endPosition="30" />
+    <nodeInfo nodeId="6276661785379536160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="224" startPosition="93" endLine="225" endPosition="57" />
+    <nodeInfo nodeId="5569581551640544216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="230" startPosition="131" endLine="231" endPosition="30" />
+    <nodeInfo nodeId="5752539231810518963" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="236" startPosition="142" endLine="237" endPosition="45" />
+    <nodeInfo nodeId="4912291546802911414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="246" startPosition="52" endLine="247" endPosition="34" />
+    <nodeInfo nodeId="8096178926743441905" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="250" startPosition="119" endLine="251" endPosition="34" />
+    <nodeInfo nodeId="209997191345316862" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="260" startPosition="33" endLine="261" endPosition="34" />
+    <nodeInfo nodeId="3555722951728565725" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="273" startPosition="57" endLine="274" endPosition="72" />
+    <nodeInfo nodeId="5569581551640537987" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="207" startPosition="64" endLine="209" endPosition="5" />
+    <nodeInfo nodeId="4912291546802908729" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="242" startPosition="62" endLine="244" endPosition="5" />
+    <nodeInfo nodeId="209997191345281328" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="255" startPosition="56" endLine="257" endPosition="5" />
+    <nodeInfo nodeId="6003305288819068443" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="265" startPosition="76" endLine="267" endPosition="5" />
     <nodeInfo nodeId="23553604208248975" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangesManager.java" startLine="53" startPosition="0" endLine="56" endPosition="3" />
     <nodeInfo nodeId="5962623969496447662" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="76" startPosition="25" endLine="79" endPosition="9" />
     <nodeInfo nodeId="2190647295030883777" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="5917222806358140691" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="103" startPosition="95" endLine="106" endPosition="5" />
-    <nodeInfo nodeId="891158202133120895" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="107" startPosition="49" endLine="110" endPosition="5" />
-    <nodeInfo nodeId="891158202133120922" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="111" startPosition="87" endLine="114" endPosition="5" />
-    <nodeInfo nodeId="6058514296621167608" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="119" startPosition="109" endLine="122" endPosition="7" />
-    <nodeInfo nodeId="5643745088231031128" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="140" startPosition="68" endLine="143" endPosition="5" />
-    <nodeInfo nodeId="8477273007880817029" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="165" startPosition="0" endLine="168" endPosition="15" />
-    <nodeInfo nodeId="5569581551640544132" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="210" startPosition="94" endLine="213" endPosition="7" />
-    <nodeInfo nodeId="6276661785379535590" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="222" startPosition="114" endLine="225" endPosition="7" />
-    <nodeInfo nodeId="5752539231810518951" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="234" startPosition="46" endLine="237" endPosition="7" />
-    <nodeInfo nodeId="3555722951728565723" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="271" startPosition="27" endLine="274" endPosition="11" />
+    <nodeInfo nodeId="5917222806358140691" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="104" startPosition="95" endLine="107" endPosition="5" />
+    <nodeInfo nodeId="891158202133120895" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="108" startPosition="49" endLine="111" endPosition="5" />
+    <nodeInfo nodeId="891158202133120922" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="112" startPosition="87" endLine="115" endPosition="5" />
+    <nodeInfo nodeId="6058514296621167608" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="120" startPosition="109" endLine="123" endPosition="7" />
+    <nodeInfo nodeId="5643745088231031128" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="141" startPosition="68" endLine="144" endPosition="5" />
+    <nodeInfo nodeId="8477273007880817029" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="166" startPosition="0" endLine="169" endPosition="15" />
+    <nodeInfo nodeId="5569581551640544132" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="211" startPosition="94" endLine="214" endPosition="7" />
+    <nodeInfo nodeId="6276661785379535590" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="223" startPosition="114" endLine="226" endPosition="7" />
+    <nodeInfo nodeId="5752539231810518951" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="235" startPosition="46" endLine="238" endPosition="7" />
+    <nodeInfo nodeId="3555722951728565723" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="272" startPosition="27" endLine="275" endPosition="11" />
     <nodeInfo nodeId="1552342397249028055" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="92" startPosition="72" endLine="96" endPosition="9" />
-    <nodeInfo nodeId="5962623969496447620" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="128" startPosition="25" endLine="132" endPosition="9" />
-    <nodeInfo nodeId="8477273007880817003" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="159" startPosition="187" endLine="163" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="174" startPosition="187" endLine="178" endPosition="0" />
-    <nodeInfo nodeId="1741994337989997195" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="182" startPosition="134" endLine="186" endPosition="0" />
-    <nodeInfo nodeId="15936038984552262" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ChangesManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
-    <nodeInfo nodeId="5267577397386524129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ChangesManager.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
-    <nodeInfo nodeId="4912291546802911401" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="244" startPosition="0" endLine="248" endPosition="0" />
-    <nodeInfo nodeId="8096178926743427291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="248" startPosition="0" endLine="252" endPosition="0" />
-    <nodeInfo nodeId="6058514296621167602" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="118" startPosition="43" endLine="123" endPosition="5" />
-    <nodeInfo nodeId="2859527253109744351" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="146" startPosition="0" endLine="151" endPosition="0" />
-    <nodeInfo nodeId="1741994337989997182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="181" startPosition="26" endLine="186" endPosition="45" />
-    <nodeInfo nodeId="3722815385094377319" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
-    <nodeInfo nodeId="5569581551640544148" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="215" startPosition="0" endLine="220" endPosition="0" />
-    <nodeInfo nodeId="5569581551640544192" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="227" startPosition="0" endLine="232" endPosition="0" />
-    <nodeInfo nodeId="209997191345281381" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
-    <nodeInfo nodeId="5569581551640544125" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="209" startPosition="0" endLine="215" endPosition="0" />
-    <nodeInfo nodeId="3555722951728565721" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="270" startPosition="54" endLine="276" endPosition="0" />
-    <nodeInfo nodeId="5962623969496447618" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="127" startPosition="43" endLine="134" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817056" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
-    <nodeInfo nodeId="5569581551640544170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="220" startPosition="0" endLine="227" endPosition="0" />
-    <nodeInfo nodeId="5752539231810454519" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="232" startPosition="0" endLine="239" endPosition="0" />
-    <nodeInfo nodeId="3555722951728565718" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="269" startPosition="71" endLine="276" endPosition="9" />
+    <nodeInfo nodeId="5962623969496447620" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="129" startPosition="25" endLine="133" endPosition="9" />
+    <nodeInfo nodeId="8477273007880817003" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="160" startPosition="187" endLine="164" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="175" startPosition="187" endLine="179" endPosition="0" />
+    <nodeInfo nodeId="1741994337989997195" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="183" startPosition="134" endLine="187" endPosition="0" />
+    <nodeInfo nodeId="15936038984552262" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ChangesManager.java" startLine="198" startPosition="0" endLine="202" endPosition="0" />
+    <nodeInfo nodeId="5267577397386524129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ChangesManager.java" startLine="202" startPosition="0" endLine="206" endPosition="0" />
+    <nodeInfo nodeId="4912291546802911401" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="245" startPosition="0" endLine="249" endPosition="0" />
+    <nodeInfo nodeId="8096178926743427291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="249" startPosition="0" endLine="253" endPosition="0" />
+    <nodeInfo nodeId="6058514296621167602" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="119" startPosition="43" endLine="124" endPosition="5" />
+    <nodeInfo nodeId="2859527253109744351" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="147" startPosition="0" endLine="152" endPosition="0" />
+    <nodeInfo nodeId="1741994337989997182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="182" startPosition="26" endLine="187" endPosition="45" />
+    <nodeInfo nodeId="3722815385094377319" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="193" startPosition="0" endLine="198" endPosition="0" />
+    <nodeInfo nodeId="5569581551640544148" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="216" startPosition="0" endLine="221" endPosition="0" />
+    <nodeInfo nodeId="5569581551640544192" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="228" startPosition="0" endLine="233" endPosition="0" />
+    <nodeInfo nodeId="209997191345281381" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="258" startPosition="0" endLine="263" endPosition="0" />
+    <nodeInfo nodeId="5569581551640544125" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="210" startPosition="0" endLine="216" endPosition="0" />
+    <nodeInfo nodeId="3555722951728565721" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="271" startPosition="54" endLine="277" endPosition="0" />
+    <nodeInfo nodeId="5962623969496447618" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="128" startPosition="43" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817056" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="174" startPosition="48" endLine="181" endPosition="13" />
+    <nodeInfo nodeId="5569581551640544170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="221" startPosition="0" endLine="228" endPosition="0" />
+    <nodeInfo nodeId="5752539231810454519" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="233" startPosition="0" endLine="240" endPosition="0" />
+    <nodeInfo nodeId="3555722951728565718" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="270" startPosition="71" endLine="277" endPosition="9" />
     <nodeInfo nodeId="5267577397386524717" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesManager.java" startLine="58" startPosition="31" endLine="66" endPosition="5" />
     <nodeInfo nodeId="5962623969496447659" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="75" startPosition="43" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="6058514296621167572" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
-    <nodeInfo nodeId="5962623969496447609" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="126" startPosition="90" endLine="134" endPosition="7" />
+    <nodeInfo nodeId="6058514296621167572" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="118" startPosition="0" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="5962623969496447609" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="127" startPosition="90" endLine="135" endPosition="7" />
     <nodeInfo nodeId="5962623969496447650" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="74" startPosition="0" endLine="83" endPosition="7" />
-    <nodeInfo nodeId="5186220276475231268" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="136" startPosition="0" endLine="146" endPosition="0" />
+    <nodeInfo nodeId="5186220276475231268" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="137" startPosition="0" endLine="147" endPosition="0" />
     <nodeInfo nodeId="23553604208247412" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="6003305288819000319" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="125" startPosition="0" endLine="136" endPosition="0" />
-    <nodeInfo nodeId="6003305288819068505" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="267" startPosition="0" endLine="278" endPosition="0" />
-    <nodeInfo nodeId="8386680215811366511" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="87" startPosition="43" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="8477273007880816996" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="158" startPosition="0" endLine="171" endPosition="13" />
-    <nodeInfo nodeId="8386680215811366504" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="100" endPosition="7" />
-    <nodeInfo nodeId="5392440913055405811" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="102" startPosition="0" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="6003305288819000319" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="126" startPosition="0" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="6003305288819068505" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="268" startPosition="0" endLine="279" endPosition="0" />
+    <nodeInfo nodeId="8477273007880816996" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesManager.java" startLine="159" startPosition="0" endLine="172" endPosition="13" />
+    <nodeInfo nodeId="8386680215811366511" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="87" startPosition="43" endLine="101" endPosition="0" />
+    <nodeInfo nodeId="8386680215811366504" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="101" endPosition="7" />
+    <nodeInfo nodeId="5392440913055405811" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="103" startPosition="0" endLine="118" endPosition="0" />
     <nodeInfo nodeId="23553604208247408" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
-    <nodeInfo nodeId="1552342397249028021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="8680220358160029437" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="155" startPosition="61" endLine="188" endPosition="0" />
-    <nodeInfo nodeId="8680220358160029436" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="154" startPosition="25" endLine="188" endPosition="11" />
-    <nodeInfo nodeId="5962623969496398596" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="153" startPosition="43" endLine="190" endPosition="0" />
-    <nodeInfo nodeId="5962623969496398384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="152" startPosition="22" endLine="190" endPosition="7" />
-    <nodeInfo nodeId="4709697229103733136" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="151" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="5569581551640537990" fileName="ChangesManager.java" startLine="207" startPosition="35" endLine="207" endPosition="35" />
-    <scopeInfo nodeId="4912291546802908732" fileName="ChangesManager.java" startLine="242" startPosition="37" endLine="242" endPosition="37" />
-    <scopeInfo nodeId="209997191345281331" fileName="ChangesManager.java" startLine="255" startPosition="31" endLine="255" endPosition="31" />
-    <scopeInfo nodeId="6003305288819068446" fileName="ChangesManager.java" startLine="265" startPosition="41" endLine="265" endPosition="41" />
+    <nodeInfo nodeId="1552342397249028021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="8680220358160029437" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="156" startPosition="61" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="8680220358160029436" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="155" startPosition="25" endLine="189" endPosition="11" />
+    <nodeInfo nodeId="5962623969496398596" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="154" startPosition="43" endLine="191" endPosition="0" />
+    <nodeInfo nodeId="5962623969496398384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesManager.java" startLine="153" startPosition="22" endLine="191" endPosition="7" />
+    <nodeInfo nodeId="4709697229103733136" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangesManager.java" startLine="152" startPosition="0" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="5569581551640537990" fileName="ChangesManager.java" startLine="208" startPosition="35" endLine="208" endPosition="35" />
+    <scopeInfo nodeId="4912291546802908732" fileName="ChangesManager.java" startLine="243" startPosition="37" endLine="243" endPosition="37" />
+    <scopeInfo nodeId="209997191345281331" fileName="ChangesManager.java" startLine="256" startPosition="31" endLine="256" endPosition="31" />
+    <scopeInfo nodeId="6003305288819068446" fileName="ChangesManager.java" startLine="266" startPosition="41" endLine="266" endPosition="41" />
     <scopeInfo nodeId="23553604208248979" fileName="ChangesManager.java" startLine="54" startPosition="51" endLine="55" endPosition="19" />
     <scopeInfo nodeId="5962623969496447669" fileName="ChangesManager.java" startLine="77" startPosition="125" endLine="78" endPosition="40" />
     <scopeInfo nodeId="2190647295030883778" fileName="ChangesManager.java" startLine="89" startPosition="63" endLine="90" endPosition="17" />
-    <scopeInfo nodeId="5917222806358140692" fileName="ChangesManager.java" startLine="104" startPosition="23" endLine="105" endPosition="13" />
-    <scopeInfo nodeId="891158202133120896" fileName="ChangesManager.java" startLine="108" startPosition="24" endLine="109" endPosition="13" />
-    <scopeInfo nodeId="891158202133120923" fileName="ChangesManager.java" startLine="112" startPosition="103" endLine="113" endPosition="13" />
-    <scopeInfo nodeId="6058514296621167612" fileName="ChangesManager.java" startLine="120" startPosition="101" endLine="121" endPosition="36" />
-    <scopeInfo nodeId="5643745088231031129" fileName="ChangesManager.java" startLine="141" startPosition="71" endLine="142" endPosition="109" />
-    <scopeInfo nodeId="2859527253109744354" fileName="ChangesManager.java" startLine="148" startPosition="76" endLine="149" endPosition="62" />
-    <scopeInfo nodeId="8477273007880817004" fileName="ChangesManager.java" startLine="160" startPosition="87" endLine="161" endPosition="85" />
-    <scopeInfo nodeId="8477273007880817036" fileName="ChangesManager.java" startLine="166" startPosition="95" endLine="167" endPosition="36" />
-    <scopeInfo nodeId="8477273007880817064" fileName="ChangesManager.java" startLine="175" startPosition="87" endLine="176" endPosition="107" />
-    <scopeInfo nodeId="8477273007880817075" fileName="ChangesManager.java" startLine="178" startPosition="17" endLine="179" endPosition="51" />
-    <scopeInfo nodeId="1741994337989997196" fileName="ChangesManager.java" startLine="183" startPosition="87" endLine="184" endPosition="110" />
-    <scopeInfo nodeId="3722815385094377322" fileName="ChangesManager.java" startLine="194" startPosition="47" endLine="195" endPosition="26" />
-    <scopeInfo nodeId="15936038984552265" fileName="ChangesManager.java" startLine="198" startPosition="61" endLine="199" endPosition="54" />
-    <scopeInfo nodeId="5267577397386524132" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="80" />
-    <scopeInfo nodeId="5569581551640544135" fileName="ChangesManager.java" startLine="211" startPosition="93" endLine="212" endPosition="75" />
-    <scopeInfo nodeId="5569581551640544156" fileName="ChangesManager.java" startLine="217" startPosition="110" endLine="218" endPosition="30" />
-    <scopeInfo nodeId="6276661785379535593" fileName="ChangesManager.java" startLine="223" startPosition="93" endLine="224" endPosition="57" />
-    <scopeInfo nodeId="5569581551640544202" fileName="ChangesManager.java" startLine="229" startPosition="131" endLine="230" endPosition="30" />
-    <scopeInfo nodeId="5752539231810518954" fileName="ChangesManager.java" startLine="235" startPosition="142" endLine="236" endPosition="45" />
-    <scopeInfo nodeId="4912291546802911406" fileName="ChangesManager.java" startLine="245" startPosition="52" endLine="246" endPosition="34" />
-    <scopeInfo nodeId="8096178926743427298" fileName="ChangesManager.java" startLine="249" startPosition="119" endLine="250" endPosition="34" />
-    <scopeInfo nodeId="209997191345281384" fileName="ChangesManager.java" startLine="259" startPosition="33" endLine="260" endPosition="34" />
-    <scopeInfo nodeId="3555722951728565724" fileName="ChangesManager.java" startLine="272" startPosition="57" endLine="273" endPosition="72" />
+    <scopeInfo nodeId="5917222806358140692" fileName="ChangesManager.java" startLine="105" startPosition="23" endLine="106" endPosition="13" />
+    <scopeInfo nodeId="891158202133120896" fileName="ChangesManager.java" startLine="109" startPosition="24" endLine="110" endPosition="13" />
+    <scopeInfo nodeId="891158202133120923" fileName="ChangesManager.java" startLine="113" startPosition="103" endLine="114" endPosition="13" />
+    <scopeInfo nodeId="6058514296621167612" fileName="ChangesManager.java" startLine="121" startPosition="101" endLine="122" endPosition="36" />
+    <scopeInfo nodeId="5643745088231031129" fileName="ChangesManager.java" startLine="142" startPosition="71" endLine="143" endPosition="109" />
+    <scopeInfo nodeId="2859527253109744354" fileName="ChangesManager.java" startLine="149" startPosition="76" endLine="150" endPosition="62" />
+    <scopeInfo nodeId="8477273007880817004" fileName="ChangesManager.java" startLine="161" startPosition="87" endLine="162" endPosition="85" />
+    <scopeInfo nodeId="8477273007880817036" fileName="ChangesManager.java" startLine="167" startPosition="95" endLine="168" endPosition="36" />
+    <scopeInfo nodeId="8477273007880817064" fileName="ChangesManager.java" startLine="176" startPosition="87" endLine="177" endPosition="107" />
+    <scopeInfo nodeId="8477273007880817075" fileName="ChangesManager.java" startLine="179" startPosition="17" endLine="180" endPosition="51" />
+    <scopeInfo nodeId="1741994337989997196" fileName="ChangesManager.java" startLine="184" startPosition="87" endLine="185" endPosition="110" />
+    <scopeInfo nodeId="3722815385094377322" fileName="ChangesManager.java" startLine="195" startPosition="47" endLine="196" endPosition="26" />
+    <scopeInfo nodeId="15936038984552265" fileName="ChangesManager.java" startLine="199" startPosition="61" endLine="200" endPosition="54" />
+    <scopeInfo nodeId="5267577397386524132" fileName="ChangesManager.java" startLine="203" startPosition="37" endLine="204" endPosition="80" />
+    <scopeInfo nodeId="5569581551640544135" fileName="ChangesManager.java" startLine="212" startPosition="93" endLine="213" endPosition="75" />
+    <scopeInfo nodeId="5569581551640544156" fileName="ChangesManager.java" startLine="218" startPosition="110" endLine="219" endPosition="30" />
+    <scopeInfo nodeId="6276661785379535593" fileName="ChangesManager.java" startLine="224" startPosition="93" endLine="225" endPosition="57" />
+    <scopeInfo nodeId="5569581551640544202" fileName="ChangesManager.java" startLine="230" startPosition="131" endLine="231" endPosition="30" />
+    <scopeInfo nodeId="5752539231810518954" fileName="ChangesManager.java" startLine="236" startPosition="142" endLine="237" endPosition="45" />
+    <scopeInfo nodeId="4912291546802911406" fileName="ChangesManager.java" startLine="246" startPosition="52" endLine="247" endPosition="34" />
+    <scopeInfo nodeId="8096178926743427298" fileName="ChangesManager.java" startLine="250" startPosition="119" endLine="251" endPosition="34" />
+    <scopeInfo nodeId="209997191345281384" fileName="ChangesManager.java" startLine="260" startPosition="33" endLine="261" endPosition="34" />
+    <scopeInfo nodeId="3555722951728565724" fileName="ChangesManager.java" startLine="273" startPosition="57" endLine="274" endPosition="72" />
     <scopeInfo nodeId="1552342397249028057" fileName="ChangesManager.java" startLine="93" startPosition="72" endLine="95" endPosition="17" />
-    <scopeInfo nodeId="5962623969496447621" fileName="ChangesManager.java" startLine="129" startPosition="78" endLine="131" endPosition="72" />
-    <scopeInfo nodeId="5569581551640537987" fileName="ChangesManager.java" startLine="206" startPosition="64" endLine="208" endPosition="5" />
-    <scopeInfo nodeId="4912291546802908729" fileName="ChangesManager.java" startLine="241" startPosition="62" endLine="243" endPosition="5" />
-    <scopeInfo nodeId="209997191345281328" fileName="ChangesManager.java" startLine="254" startPosition="56" endLine="256" endPosition="5" />
-    <scopeInfo nodeId="6003305288819068443" fileName="ChangesManager.java" startLine="264" startPosition="76" endLine="266" endPosition="5" />
+    <scopeInfo nodeId="5962623969496447621" fileName="ChangesManager.java" startLine="130" startPosition="78" endLine="132" endPosition="72" />
+    <scopeInfo nodeId="5569581551640537987" fileName="ChangesManager.java" startLine="207" startPosition="64" endLine="209" endPosition="5" />
+    <scopeInfo nodeId="4912291546802908729" fileName="ChangesManager.java" startLine="242" startPosition="62" endLine="244" endPosition="5" />
+    <scopeInfo nodeId="209997191345281328" fileName="ChangesManager.java" startLine="255" startPosition="56" endLine="257" endPosition="5" />
+    <scopeInfo nodeId="6003305288819068443" fileName="ChangesManager.java" startLine="265" startPosition="76" endLine="267" endPosition="5" />
     <scopeInfo nodeId="23553604208248975" fileName="ChangesManager.java" startLine="53" startPosition="0" endLine="56" endPosition="3">
       <varInfo nodeId="23553604208248980" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="76" startPosition="25" endLine="79" endPosition="9" />
-    <scopeInfo nodeId="6058514296621167607" fileName="ChangesManager.java" startLine="119" startPosition="109" endLine="122" endPosition="7" />
-    <scopeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="165" startPosition="0" endLine="168" endPosition="15" />
-    <scopeInfo nodeId="5569581551640544131" fileName="ChangesManager.java" startLine="210" startPosition="94" endLine="213" endPosition="7" />
-    <scopeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="210" startPosition="94" endLine="213" endPosition="7" />
-    <scopeInfo nodeId="5569581551640544178" fileName="ChangesManager.java" startLine="222" startPosition="114" endLine="225" endPosition="7" />
-    <scopeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="222" startPosition="114" endLine="225" endPosition="7" />
-    <scopeInfo nodeId="5752539231810454522" fileName="ChangesManager.java" startLine="234" startPosition="46" endLine="237" endPosition="7" />
-    <scopeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="234" startPosition="46" endLine="237" endPosition="7" />
-    <scopeInfo nodeId="3555722951728565722" fileName="ChangesManager.java" startLine="271" startPosition="27" endLine="274" endPosition="11" />
-    <scopeInfo nodeId="5962623969496447619" fileName="ChangesManager.java" startLine="128" startPosition="25" endLine="132" endPosition="9" />
-    <scopeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="187" endLine="163" endPosition="0" />
-    <scopeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="187" endLine="178" endPosition="0" />
-    <scopeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="134" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0">
+    <scopeInfo nodeId="6058514296621167607" fileName="ChangesManager.java" startLine="120" startPosition="109" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="166" startPosition="0" endLine="169" endPosition="15" />
+    <scopeInfo nodeId="5569581551640544131" fileName="ChangesManager.java" startLine="211" startPosition="94" endLine="214" endPosition="7" />
+    <scopeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="211" startPosition="94" endLine="214" endPosition="7" />
+    <scopeInfo nodeId="5569581551640544178" fileName="ChangesManager.java" startLine="223" startPosition="114" endLine="226" endPosition="7" />
+    <scopeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="223" startPosition="114" endLine="226" endPosition="7" />
+    <scopeInfo nodeId="5752539231810454522" fileName="ChangesManager.java" startLine="235" startPosition="46" endLine="238" endPosition="7" />
+    <scopeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="235" startPosition="46" endLine="238" endPosition="7" />
+    <scopeInfo nodeId="3555722951728565722" fileName="ChangesManager.java" startLine="272" startPosition="27" endLine="275" endPosition="11" />
+    <scopeInfo nodeId="5962623969496447619" fileName="ChangesManager.java" startLine="129" startPosition="25" endLine="133" endPosition="9" />
+    <scopeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="160" startPosition="187" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="175" startPosition="187" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="183" startPosition="134" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="198" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="15936038984552679" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5267577397386524129" fileName="ChangesManager.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="4912291546802911401" fileName="ChangesManager.java" startLine="244" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="5267577397386524129" fileName="ChangesManager.java" startLine="202" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="4912291546802911401" fileName="ChangesManager.java" startLine="245" startPosition="0" endLine="249" endPosition="0">
       <varInfo nodeId="4912291546802911404" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="8096178926743427291" fileName="ChangesManager.java" startLine="248" startPosition="0" endLine="252" endPosition="0">
+    <scopeInfo nodeId="8096178926743427291" fileName="ChangesManager.java" startLine="249" startPosition="0" endLine="253" endPosition="0">
       <varInfo nodeId="8096178926743427294" varName="oldState" />
       <varInfo nodeId="8096178926743465753" varName="md" />
       <varInfo nodeId="8096178926743427296" varName="newState" />
     </scopeInfo>
     <scopeInfo nodeId="5962623969496447660" fileName="ChangesManager.java" startLine="76" startPosition="25" endLine="81" endPosition="33" />
-    <scopeInfo nodeId="6058514296621167575" fileName="ChangesManager.java" startLine="118" startPosition="43" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="118" startPosition="43" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="2859527253109744351" fileName="ChangesManager.java" startLine="146" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="6058514296621167575" fileName="ChangesManager.java" startLine="119" startPosition="43" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="119" startPosition="43" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="2859527253109744351" fileName="ChangesManager.java" startLine="147" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="2859527253109744412" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094377319" fileName="ChangesManager.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
-    <scopeInfo nodeId="5569581551640544148" fileName="ChangesManager.java" startLine="215" startPosition="0" endLine="220" endPosition="0">
+    <scopeInfo nodeId="3722815385094377319" fileName="ChangesManager.java" startLine="193" startPosition="0" endLine="198" endPosition="0" />
+    <scopeInfo nodeId="5569581551640544148" fileName="ChangesManager.java" startLine="216" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="5569581551640544154" varName="toList" />
       <varInfo nodeId="5569581551640544151" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="227" startPosition="0" endLine="232" endPosition="0">
+    <scopeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="228" startPosition="0" endLine="233" endPosition="0">
       <varInfo nodeId="5569581551640544200" varName="toList" />
       <varInfo nodeId="5569581551640544198" varName="fromList" />
       <varInfo nodeId="5569581551640544195" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="258" startPosition="0" endLine="263" endPosition="0" />
     <scopeInfo nodeId="5267577397386524719" fileName="ChangesManager.java" startLine="59" startPosition="22" endLine="65" endPosition="34" />
-    <scopeInfo nodeId="5186220276475231271" fileName="ChangesManager.java" startLine="138" startPosition="96" endLine="144" endPosition="61">
+    <scopeInfo nodeId="5186220276475231271" fileName="ChangesManager.java" startLine="139" startPosition="96" endLine="145" endPosition="61">
       <varInfo nodeId="5643745088231031186" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="5569581551640544125" fileName="ChangesManager.java" startLine="209" startPosition="0" endLine="215" endPosition="0">
+    <scopeInfo nodeId="5569581551640544125" fileName="ChangesManager.java" startLine="210" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="5569581551640544126" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="270" startPosition="54" endLine="276" endPosition="0" />
-    <scopeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="127" startPosition="43" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="170" endPosition="28" />
-    <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
-    <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="220" startPosition="0" endLine="227" endPosition="0">
+    <scopeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="271" startPosition="54" endLine="277" endPosition="0" />
+    <scopeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="128" startPosition="43" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="164" startPosition="17" endLine="171" endPosition="28" />
+    <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="174" startPosition="48" endLine="181" endPosition="13" />
+    <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="221" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="5569581551640544176" varName="fromList" />
       <varInfo nodeId="5569581551640544173" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="232" startPosition="0" endLine="239" endPosition="0" />
-    <scopeInfo nodeId="6003305288819068510" fileName="ChangesManager.java" startLine="269" startPosition="71" endLine="276" endPosition="9" />
+    <scopeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="233" startPosition="0" endLine="240" endPosition="0" />
+    <scopeInfo nodeId="6003305288819068510" fileName="ChangesManager.java" startLine="270" startPosition="71" endLine="277" endPosition="9" />
     <scopeInfo nodeId="23553604208247415" fileName="ChangesManager.java" startLine="58" startPosition="31" endLine="66" endPosition="5" />
     <scopeInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="75" startPosition="43" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="6003305288819000322" fileName="ChangesManager.java" startLine="126" startPosition="90" endLine="134" endPosition="7" />
-    <scopeInfo nodeId="8386680215811366512" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="98" endPosition="79">
-      <varInfo nodeId="2253323551303615596" varName="modelChangesManager" />
-      <varInfo nodeId="1552342397249029519" varName="modelRef" />
-    </scopeInfo>
-    <scopeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="136" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="118" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="6003305288819000322" fileName="ChangesManager.java" startLine="127" startPosition="90" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="137" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="5186220276475231323" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="23553604208247412" fileName="ChangesManager.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="6003305288819000319" fileName="ChangesManager.java" startLine="125" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="8386680215811366512" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="99" endPosition="0">
+      <varInfo nodeId="2253323551303615596" varName="modelChangesManager" />
+      <varInfo nodeId="1552342397249029519" varName="modelRef" />
+    </scopeInfo>
+    <scopeInfo nodeId="6003305288819000319" fileName="ChangesManager.java" startLine="126" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="6003305288819008798" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="6003305288819068505" fileName="ChangesManager.java" startLine="267" startPosition="0" endLine="278" endPosition="0">
+    <scopeInfo nodeId="6003305288819068505" fileName="ChangesManager.java" startLine="268" startPosition="0" endLine="279" endPosition="0">
       <varInfo nodeId="6003305288819068508" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5392440913055405814" fileName="ChangesManager.java" startLine="103" startPosition="95" endLine="115" endPosition="51">
+    <scopeInfo nodeId="5392440913055405814" fileName="ChangesManager.java" startLine="104" startPosition="95" endLine="116" endPosition="51">
       <varInfo nodeId="891158202133120915" varName="modelDescriptor" />
       <varInfo nodeId="891158202133120889" varName="iFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="43" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="158" startPosition="0" endLine="171" endPosition="13" />
+    <scopeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="159" startPosition="0" endLine="172" endPosition="13" />
     <scopeInfo nodeId="23553604208247411" fileName="ChangesManager.java" startLine="69" startPosition="31" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="100" endPosition="7" />
-    <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="102" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="43" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="101" endPosition="7" />
+    <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="103" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="3645216862591272454" varName="fileStatus" />
       <varInfo nodeId="891158202133117057" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="1552342397249028028" varName="modelDescriptor" />
       <varInfo nodeId="3645216862591272442" varName="fileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="8680220358160029438" fileName="ChangesManager.java" startLine="156" startPosition="29" endLine="186" endPosition="45">
+    <scopeInfo nodeId="8680220358160029438" fileName="ChangesManager.java" startLine="157" startPosition="29" endLine="187" endPosition="45">
       <varInfo nodeId="8477273007880816992" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="155" startPosition="61" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="5962623969496398597" fileName="ChangesManager.java" startLine="154" startPosition="25" endLine="188" endPosition="11" />
-    <scopeInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="153" startPosition="43" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="4709697229103733139" fileName="ChangesManager.java" startLine="152" startPosition="22" endLine="190" endPosition="7" />
-    <scopeInfo nodeId="4709697229103733136" fileName="ChangesManager.java" startLine="151" startPosition="0" endLine="192" endPosition="0" />
-    <unitInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="123" endLine="163" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
-    <unitInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="123" endLine="178" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
-    <unitInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="70" endLine="186" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
-    <unitInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="270" startPosition="42" endLine="276" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
-    <unitInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="127" startPosition="31" endLine="134" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$3" />
+    <scopeInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="156" startPosition="61" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="5962623969496398597" fileName="ChangesManager.java" startLine="155" startPosition="25" endLine="189" endPosition="11" />
+    <scopeInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="154" startPosition="43" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="4709697229103733139" fileName="ChangesManager.java" startLine="153" startPosition="22" endLine="191" endPosition="7" />
+    <scopeInfo nodeId="4709697229103733136" fileName="ChangesManager.java" startLine="152" startPosition="0" endLine="193" endPosition="0" />
+    <unitInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="160" startPosition="123" endLine="164" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
+    <unitInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="175" startPosition="123" endLine="179" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
+    <unitInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="183" startPosition="70" endLine="187" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
+    <unitInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="271" startPosition="42" endLine="277" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
+    <unitInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="128" startPosition="31" endLine="135" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$3" />
     <unitInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="75" startPosition="31" endLine="83" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
-    <unitInfo nodeId="209997191345281326" fileName="ChangesManager.java" startLine="254" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyReloadListener" />
-    <unitInfo nodeId="4912291546802908727" fileName="ChangesManager.java" startLine="241" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyGlobalSModelListener" />
-    <unitInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="31" endLine="100" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$2" />
-    <unitInfo nodeId="6003305288819068441" fileName="ChangesManager.java" startLine="264" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MySModelRepositoryListener" />
-    <unitInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="155" startPosition="49" endLine="188" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$5" />
-    <unitInfo nodeId="5569581551640537985" fileName="ChangesManager.java" startLine="206" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyChangeListListener" />
-    <unitInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="153" startPosition="31" endLine="190" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$4" />
-    <unitInfo nodeId="23553604208246606" fileName="ChangesManager.java" startLine="46" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
+    <unitInfo nodeId="209997191345281326" fileName="ChangesManager.java" startLine="255" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyReloadListener" />
+    <unitInfo nodeId="4912291546802908727" fileName="ChangesManager.java" startLine="242" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyGlobalSModelListener" />
+    <unitInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="31" endLine="101" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$2" />
+    <unitInfo nodeId="6003305288819068441" fileName="ChangesManager.java" startLine="265" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MySModelRepositoryListener" />
+    <unitInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="156" startPosition="49" endLine="189" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$5" />
+    <unitInfo nodeId="5569581551640537985" fileName="ChangesManager.java" startLine="207" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyChangeListListener" />
+    <unitInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="154" startPosition="31" endLine="191" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$4" />
+    <unitInfo nodeId="23553604208246606" fileName="ChangesManager.java" startLine="46" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
   </root>
   <root nodeId="2698665420347342210">
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="94" startPosition="27" endLine="94" endPosition="27" />
-    <nodeInfo nodeId="1998279847126756712" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="20" startPosition="105" endLine="21" endPosition="72" />
-    <nodeInfo nodeId="1998279847126757169" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="21" startPosition="72" endLine="22" endPosition="83" />
-    <nodeInfo nodeId="1998279847126757333" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="22" startPosition="83" endLine="23" endPosition="48" />
-    <nodeInfo nodeId="7183063426006365433" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="23" startPosition="48" endLine="24" endPosition="106" />
-    <nodeInfo nodeId="7183063426006365451" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="24" startPosition="106" endLine="25" endPosition="0" />
-    <nodeInfo nodeId="7183063426006424000" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="28" startPosition="121" endLine="29" endPosition="52" />
-    <nodeInfo nodeId="7183063426006424070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="30" startPosition="16" endLine="31" endPosition="73" />
-    <nodeInfo nodeId="7183063426006365457" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="34" startPosition="5" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="7183063426006365453" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="35" startPosition="0" endLine="36" endPosition="19" />
-    <nodeInfo nodeId="1998279847126757426" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="40" startPosition="131" endLine="41" endPosition="69" />
-    <nodeInfo nodeId="1998279847126757481" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="41" startPosition="69" endLine="42" endPosition="46" />
-    <nodeInfo nodeId="7183063426006642455" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="42" startPosition="46" endLine="43" endPosition="64" />
-    <nodeInfo nodeId="7183063426006642465" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="43" startPosition="64" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="7183063426006642479" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="44" startPosition="0" endLine="45" endPosition="116" />
-    <nodeInfo nodeId="7183063426006642495" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="45" startPosition="116" endLine="46" endPosition="45" />
-    <nodeInfo nodeId="7183063426006642507" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="46" startPosition="45" endLine="47" endPosition="45" />
-    <nodeInfo nodeId="7183063426006642808" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="49" startPosition="119" endLine="50" endPosition="98" />
-    <nodeInfo nodeId="7183063426006872337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="50" startPosition="98" endLine="51" endPosition="12" />
-    <nodeInfo nodeId="7183063426006872354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="51" startPosition="12" endLine="52" endPosition="12" />
-    <nodeInfo nodeId="7183063426006642931" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="54" startPosition="49" endLine="55" endPosition="14" />
-    <nodeInfo nodeId="7183063426006642950" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="56" startPosition="16" endLine="57" endPosition="14" />
-    <nodeInfo nodeId="7183063426006642974" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="60" startPosition="5" endLine="61" endPosition="57" />
-    <nodeInfo nodeId="1998279847126757545" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="65" startPosition="141" endLine="66" endPosition="74" />
-    <nodeInfo nodeId="1998279847126757560" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="66" startPosition="74" endLine="67" endPosition="62" />
-    <nodeInfo nodeId="1998279847126757535" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="67" startPosition="62" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="7183063426006642411" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="68" startPosition="0" endLine="69" endPosition="137" />
-    <nodeInfo nodeId="7183063426006642433" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="69" startPosition="137" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="7183063426006904052" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="70" startPosition="0" endLine="71" endPosition="107" />
-    <nodeInfo nodeId="7183063426006904075" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="71" startPosition="107" endLine="72" endPosition="14" />
-    <nodeInfo nodeId="7183063426006904081" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="72" startPosition="14" endLine="73" endPosition="14" />
-    <nodeInfo nodeId="1998279847126676275" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="73" startPosition="14" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="79" startPosition="72" endLine="80" endPosition="37" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="87" startPosition="28" endLine="88" endPosition="54" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="88" startPosition="54" endLine="89" endPosition="35" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="90" startPosition="27" endLine="91" endPosition="38" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="91" startPosition="38" endLine="92" endPosition="135" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="92" startPosition="135" endLine="93" endPosition="34" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="94" startPosition="27" endLine="95" endPosition="38" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="95" startPosition="38" endLine="96" endPosition="28" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="97" startPosition="28" endLine="98" endPosition="37" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="100" startPosition="31" endLine="101" endPosition="29" />
-    <nodeInfo nodeId="7183063426006982217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="108" startPosition="42" endLine="109" endPosition="181" />
-    <nodeInfo nodeId="7183063426006988895" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="110" startPosition="7" endLine="111" endPosition="21" />
-    <nodeInfo nodeId="7183063426006988955" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="111" startPosition="21" endLine="112" endPosition="21" />
-    <nodeInfo nodeId="7183063426006642428" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="113" startPosition="5" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="7183063426006642430" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="114" startPosition="0" endLine="115" endPosition="24" />
-    <nodeInfo nodeId="7183063426006643007" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="118" startPosition="42" endLine="119" endPosition="117" />
-    <nodeInfo nodeId="7183063426006643400" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="119" startPosition="117" endLine="120" endPosition="119" />
-    <nodeInfo nodeId="7183063426006642999" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="119" endLine="121" endPosition="66" />
-    <nodeInfo nodeId="7183063426006936622" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="121" startPosition="66" endLine="122" endPosition="56" />
-    <nodeInfo nodeId="7183063426006424066" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="30" startPosition="14" endLine="32" endPosition="9" />
-    <nodeInfo nodeId="7183063426006642937" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="56" startPosition="14" endLine="58" endPosition="9" />
-    <nodeInfo nodeId="7183063426006981975" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="107" startPosition="19" endLine="110" endPosition="7" />
-    <nodeInfo nodeId="7183063426006423942" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="27" startPosition="70" endLine="32" endPosition="9" />
-    <nodeInfo nodeId="7183063426006642841" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="53" startPosition="14" endLine="58" endPosition="9" />
-    <nodeInfo nodeId="7183063426006642837" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="53" startPosition="12" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="7183063426006365536" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="26" startPosition="68" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="7183063426006642988" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="117" startPosition="0" endLine="124" endPosition="0" />
-    <nodeInfo nodeId="7183063426006365464" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="25" startPosition="0" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="7183063426006642765" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="48" startPosition="28" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="7183063426006642638" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="47" startPosition="45" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="84" startPosition="20" endLine="99" endPosition="19" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="82" startPosition="46" endLine="100" endPosition="31" />
-    <nodeInfo nodeId="2698665420347342216" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="45" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="81" startPosition="0" endLine="103" endPosition="0" />
-    <nodeInfo nodeId="7183063426006642444" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="38" startPosition="0" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="78" startPosition="67" endLine="103" endPosition="14" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="77" startPosition="60" endLine="105" endPosition="0" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="76" startPosition="61" endLine="105" endPosition="10" />
-    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="75" startPosition="193" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="7183063426006904088" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="74" startPosition="0" endLine="113" endPosition="5" />
-    <nodeInfo nodeId="7183063426006424203" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="63" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="94" startPosition="27" endLine="94" endPosition="27" />
-    <scopeInfo nodeId="7183063426006423943" fileName="LongestCommonSubsequenceFinder.java" startLine="28" startPosition="121" endLine="29" endPosition="52" />
-    <scopeInfo nodeId="7183063426006424067" fileName="LongestCommonSubsequenceFinder.java" startLine="30" startPosition="16" endLine="31" endPosition="73" />
-    <scopeInfo nodeId="7183063426006642843" fileName="LongestCommonSubsequenceFinder.java" startLine="54" startPosition="49" endLine="55" endPosition="14" />
-    <scopeInfo nodeId="7183063426006642938" fileName="LongestCommonSubsequenceFinder.java" startLine="56" startPosition="16" endLine="57" endPosition="14" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="97" startPosition="28" endLine="98" endPosition="37" />
-    <scopeInfo nodeId="7183063426006982182" fileName="LongestCommonSubsequenceFinder.java" startLine="108" startPosition="42" endLine="109" endPosition="181" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="87" startPosition="28" endLine="89" endPosition="35" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="94" startPosition="27" endLine="96" endPosition="28" />
-    <scopeInfo nodeId="7183063426006642767" fileName="LongestCommonSubsequenceFinder.java" startLine="49" startPosition="119" endLine="52" endPosition="12" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="90" startPosition="27" endLine="93" endPosition="34" />
-    <scopeInfo nodeId="7183063426006642991" fileName="LongestCommonSubsequenceFinder.java" startLine="118" startPosition="42" endLine="122" endPosition="56">
-      <varInfo nodeId="7183063426006643401" varName="b" />
-      <varInfo nodeId="7183063426006643008" varName="a" />
-    </scopeInfo>
-    <scopeInfo nodeId="7183063426006365539" fileName="LongestCommonSubsequenceFinder.java" startLine="27" startPosition="70" endLine="32" endPosition="9" />
-    <scopeInfo nodeId="7183063426006642838" fileName="LongestCommonSubsequenceFinder.java" startLine="53" startPosition="14" endLine="58" endPosition="9" />
-    <scopeInfo nodeId="7183063426006904091" fileName="LongestCommonSubsequenceFinder.java" startLine="107" startPosition="19" endLine="112" endPosition="21" />
-    <scopeInfo nodeId="7183063426006365465" fileName="LongestCommonSubsequenceFinder.java" startLine="26" startPosition="68" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="7183063426006365536" fileName="LongestCommonSubsequenceFinder.java" startLine="26" startPosition="68" endLine="33" endPosition="7">
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="93" startPosition="27" endLine="93" endPosition="27" />
+    <nodeInfo nodeId="1998279847126756712" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="19" startPosition="105" endLine="20" endPosition="72" />
+    <nodeInfo nodeId="1998279847126757169" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="20" startPosition="72" endLine="21" endPosition="83" />
+    <nodeInfo nodeId="1998279847126757333" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="21" startPosition="83" endLine="22" endPosition="48" />
+    <nodeInfo nodeId="7183063426006365433" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="22" startPosition="48" endLine="23" endPosition="106" />
+    <nodeInfo nodeId="7183063426006365451" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="23" startPosition="106" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="7183063426006424000" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="27" startPosition="121" endLine="28" endPosition="52" />
+    <nodeInfo nodeId="7183063426006424070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="29" startPosition="16" endLine="30" endPosition="73" />
+    <nodeInfo nodeId="7183063426006365457" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="33" startPosition="5" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="7183063426006365453" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="34" startPosition="0" endLine="35" endPosition="19" />
+    <nodeInfo nodeId="1998279847126757426" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="131" endLine="40" endPosition="69" />
+    <nodeInfo nodeId="1998279847126757481" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="40" startPosition="69" endLine="41" endPosition="46" />
+    <nodeInfo nodeId="7183063426006642455" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="41" startPosition="46" endLine="42" endPosition="64" />
+    <nodeInfo nodeId="7183063426006642465" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="42" startPosition="64" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="7183063426006642479" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="43" startPosition="0" endLine="44" endPosition="116" />
+    <nodeInfo nodeId="7183063426006642495" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="44" startPosition="116" endLine="45" endPosition="45" />
+    <nodeInfo nodeId="7183063426006642507" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="45" startPosition="45" endLine="46" endPosition="45" />
+    <nodeInfo nodeId="7183063426006642808" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="48" startPosition="119" endLine="49" endPosition="98" />
+    <nodeInfo nodeId="7183063426006872337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="49" startPosition="98" endLine="50" endPosition="12" />
+    <nodeInfo nodeId="7183063426006872354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="50" startPosition="12" endLine="51" endPosition="12" />
+    <nodeInfo nodeId="7183063426006642931" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="53" startPosition="49" endLine="54" endPosition="14" />
+    <nodeInfo nodeId="7183063426006642950" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="55" startPosition="16" endLine="56" endPosition="14" />
+    <nodeInfo nodeId="7183063426006642974" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="59" startPosition="5" endLine="60" endPosition="57" />
+    <nodeInfo nodeId="1998279847126757545" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="64" startPosition="141" endLine="65" endPosition="74" />
+    <nodeInfo nodeId="1998279847126757560" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LongestCommonSubsequenceFinder.java" startLine="65" startPosition="74" endLine="66" endPosition="62" />
+    <nodeInfo nodeId="1998279847126757535" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="66" startPosition="62" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="7183063426006642411" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="67" startPosition="0" endLine="68" endPosition="137" />
+    <nodeInfo nodeId="7183063426006642433" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="68" startPosition="137" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="7183063426006904052" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="69" startPosition="0" endLine="70" endPosition="107" />
+    <nodeInfo nodeId="7183063426006904075" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="70" startPosition="107" endLine="71" endPosition="14" />
+    <nodeInfo nodeId="7183063426006904081" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="71" startPosition="14" endLine="72" endPosition="14" />
+    <nodeInfo nodeId="1998279847126676275" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="72" startPosition="14" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="78" startPosition="72" endLine="79" endPosition="37" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="86" startPosition="28" endLine="87" endPosition="54" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="87" startPosition="54" endLine="88" endPosition="35" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="89" startPosition="27" endLine="90" endPosition="38" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="90" startPosition="38" endLine="91" endPosition="135" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="91" startPosition="135" endLine="92" endPosition="34" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="93" startPosition="27" endLine="94" endPosition="38" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="94" startPosition="38" endLine="95" endPosition="28" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="96" startPosition="28" endLine="97" endPosition="37" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="99" startPosition="31" endLine="100" endPosition="29" />
+    <nodeInfo nodeId="7183063426006982217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="107" startPosition="42" endLine="108" endPosition="181" />
+    <nodeInfo nodeId="7183063426006988895" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="109" startPosition="7" endLine="110" endPosition="21" />
+    <nodeInfo nodeId="7183063426006988955" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="110" startPosition="21" endLine="111" endPosition="21" />
+    <nodeInfo nodeId="7183063426006642428" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LongestCommonSubsequenceFinder.java" startLine="112" startPosition="5" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="7183063426006642430" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="113" startPosition="0" endLine="114" endPosition="24" />
+    <nodeInfo nodeId="7183063426006424066" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="29" startPosition="14" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="7183063426006642937" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="55" startPosition="14" endLine="57" endPosition="9" />
+    <nodeInfo nodeId="7183063426006981975" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="106" startPosition="19" endLine="109" endPosition="7" />
+    <nodeInfo nodeId="7183063426006423942" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="26" startPosition="70" endLine="31" endPosition="9" />
+    <nodeInfo nodeId="7183063426006642841" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="52" startPosition="14" endLine="57" endPosition="9" />
+    <nodeInfo nodeId="7183063426006642837" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="52" startPosition="12" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="7183063426006365536" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="25" startPosition="68" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="7183063426006365464" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="24" startPosition="0" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="7183063426006642765" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="47" startPosition="28" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="7183063426006642638" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="46" startPosition="45" endLine="59" endPosition="5" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="83" startPosition="20" endLine="98" endPosition="19" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="81" startPosition="46" endLine="99" endPosition="31" />
+    <nodeInfo nodeId="2698665420347342216" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="17" startPosition="45" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="80" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="7183063426006642444" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="37" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="77" startPosition="67" endLine="102" endPosition="14" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="76" startPosition="60" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="75" startPosition="61" endLine="104" endPosition="10" />
+    <nodeInfo nodeId="1998279847126749414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="74" startPosition="193" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="7183063426006904088" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LongestCommonSubsequenceFinder.java" startLine="73" startPosition="0" endLine="112" endPosition="5" />
+    <nodeInfo nodeId="7183063426006424203" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="LongestCommonSubsequenceFinder.java" startLine="62" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="93" startPosition="27" endLine="93" endPosition="27" />
+    <scopeInfo nodeId="7183063426006423943" fileName="LongestCommonSubsequenceFinder.java" startLine="27" startPosition="121" endLine="28" endPosition="52" />
+    <scopeInfo nodeId="7183063426006424067" fileName="LongestCommonSubsequenceFinder.java" startLine="29" startPosition="16" endLine="30" endPosition="73" />
+    <scopeInfo nodeId="7183063426006642843" fileName="LongestCommonSubsequenceFinder.java" startLine="53" startPosition="49" endLine="54" endPosition="14" />
+    <scopeInfo nodeId="7183063426006642938" fileName="LongestCommonSubsequenceFinder.java" startLine="55" startPosition="16" endLine="56" endPosition="14" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="96" startPosition="28" endLine="97" endPosition="37" />
+    <scopeInfo nodeId="7183063426006982182" fileName="LongestCommonSubsequenceFinder.java" startLine="107" startPosition="42" endLine="108" endPosition="181" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="86" startPosition="28" endLine="88" endPosition="35" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="93" startPosition="27" endLine="95" endPosition="28" />
+    <scopeInfo nodeId="7183063426006642767" fileName="LongestCommonSubsequenceFinder.java" startLine="48" startPosition="119" endLine="51" endPosition="12" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="89" startPosition="27" endLine="92" endPosition="34" />
+    <scopeInfo nodeId="7183063426006365539" fileName="LongestCommonSubsequenceFinder.java" startLine="26" startPosition="70" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="7183063426006642838" fileName="LongestCommonSubsequenceFinder.java" startLine="52" startPosition="14" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="7183063426006904091" fileName="LongestCommonSubsequenceFinder.java" startLine="106" startPosition="19" endLine="111" endPosition="21" />
+    <scopeInfo nodeId="7183063426006365465" fileName="LongestCommonSubsequenceFinder.java" startLine="25" startPosition="68" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="7183063426006365536" fileName="LongestCommonSubsequenceFinder.java" startLine="25" startPosition="68" endLine="32" endPosition="7">
       <varInfo nodeId="7183063426006365537" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="7183063426006642988" fileName="LongestCommonSubsequenceFinder.java" startLine="117" startPosition="0" endLine="124" endPosition="0">
-      <varInfo nodeId="7183063426006642992" varName="args" />
-    </scopeInfo>
-    <scopeInfo nodeId="7183063426006365464" fileName="LongestCommonSubsequenceFinder.java" startLine="25" startPosition="0" endLine="34" endPosition="5">
+    <scopeInfo nodeId="7183063426006365464" fileName="LongestCommonSubsequenceFinder.java" startLine="24" startPosition="0" endLine="33" endPosition="5">
       <varInfo nodeId="7183063426006365470" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7183063426006642640" fileName="LongestCommonSubsequenceFinder.java" startLine="48" startPosition="28" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="84" startPosition="20" endLine="99" endPosition="19" />
-    <scopeInfo nodeId="2698665420347342219" fileName="LongestCommonSubsequenceFinder.java" startLine="20" startPosition="105" endLine="36" endPosition="19">
+    <scopeInfo nodeId="7183063426006642640" fileName="LongestCommonSubsequenceFinder.java" startLine="47" startPosition="28" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="83" startPosition="20" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="2698665420347342219" fileName="LongestCommonSubsequenceFinder.java" startLine="19" startPosition="105" endLine="35" endPosition="19">
       <varInfo nodeId="7183063426006365434" varName="lengths" />
     </scopeInfo>
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="82" startPosition="46" endLine="101" endPosition="29" />
-    <scopeInfo nodeId="2698665420347342216" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="45" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="81" startPosition="46" endLine="100" endPosition="29" />
+    <scopeInfo nodeId="2698665420347342216" fileName="LongestCommonSubsequenceFinder.java" startLine="17" startPosition="45" endLine="37" endPosition="0">
       <varInfo nodeId="2698665420347342226" varName="b" />
       <varInfo nodeId="2698665420347342222" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="7183063426006642447" fileName="LongestCommonSubsequenceFinder.java" startLine="40" startPosition="131" endLine="61" endPosition="57">
+    <scopeInfo nodeId="7183063426006642447" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="131" endLine="60" endPosition="57">
       <varInfo nodeId="7183063426006642480" varName="indices" />
       <varInfo nodeId="7183063426006642456" varName="lengths" />
       <varInfo nodeId="7183063426006642508" varName="j" />
       <varInfo nodeId="7183063426006642496" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="81" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="7183063426006642444" fileName="LongestCommonSubsequenceFinder.java" startLine="38" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="80" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="7183063426006642444" fileName="LongestCommonSubsequenceFinder.java" startLine="37" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="7183063426006642452" varName="b" />
       <varInfo nodeId="7183063426006642449" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="78" startPosition="67" endLine="103" endPosition="14" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="77" startPosition="60" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="76" startPosition="61" endLine="105" endPosition="10" />
-    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="75" startPosition="193" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="7183063426006904088" fileName="LongestCommonSubsequenceFinder.java" startLine="74" startPosition="0" endLine="113" endPosition="5" />
-    <scopeInfo nodeId="7183063426006424206" fileName="LongestCommonSubsequenceFinder.java" startLine="65" startPosition="141" endLine="115" endPosition="24">
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="77" startPosition="67" endLine="102" endPosition="14" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="76" startPosition="60" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="75" startPosition="61" endLine="104" endPosition="10" />
+    <scopeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="74" startPosition="193" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="7183063426006904088" fileName="LongestCommonSubsequenceFinder.java" startLine="73" startPosition="0" endLine="112" endPosition="5" />
+    <scopeInfo nodeId="7183063426006424206" fileName="LongestCommonSubsequenceFinder.java" startLine="64" startPosition="141" endLine="114" endPosition="24">
       <varInfo nodeId="7183063426006642412" varName="subsequences" />
       <varInfo nodeId="7183063426006904053" varName="commonSubsequenceIndices" />
       <varInfo nodeId="7183063426006904082" varName="j" />
       <varInfo nodeId="7183063426006904076" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7183063426006424203" fileName="LongestCommonSubsequenceFinder.java" startLine="63" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="7183063426006424203" fileName="LongestCommonSubsequenceFinder.java" startLine="62" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="7183063426006642378" varName="b" />
       <varInfo nodeId="7183063426006642374" varName="a" />
     </scopeInfo>
-    <unitInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="79" startPosition="23" endLine="103" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder$3" />
-    <unitInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="77" startPosition="19" endLine="105" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder$2" />
-    <unitInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="75" startPosition="122" endLine="107" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder$1" />
-    <unitInfo nodeId="2698665420347342210" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder" />
+    <unitInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="78" startPosition="23" endLine="102" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder$3" />
+    <unitInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="76" startPosition="19" endLine="104" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder$2" />
+    <unitInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="74" startPosition="122" endLine="106" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder$1" />
+    <unitInfo nodeId="2698665420347342210" fileName="LongestCommonSubsequenceFinder.java" startLine="17" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder" />
   </root>
   <root nodeId="3017189042833268903">
     <nodeInfo nodeId="8443787673911898661" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ChangesManagerFileStatusProvider.java" startLine="18" startPosition="110" endLine="19" endPosition="28" />
@@ -1314,9 +1303,9 @@
     <nodeInfo nodeId="3722815385094360910" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleCommandQueue.java" startLine="78" startPosition="13" endLine="79" endPosition="21" />
     <nodeInfo nodeId="3722815385094360918" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleCommandQueue.java" startLine="81" startPosition="37" endLine="82" endPosition="80" />
     <nodeInfo nodeId="3722815385094377523" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleCommandQueue.java" startLine="25" startPosition="10" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="3722815385094288887" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="3722815385094288887" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" />
     <nodeInfo nodeId="6669546492594083167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleCommandQueue.java" startLine="63" startPosition="20" endLine="66" endPosition="9" />
-    <nodeInfo nodeId="3722815385094360918" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" />
+    <nodeInfo nodeId="3722815385094360918" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" />
     <nodeInfo nodeId="3722815385094205363" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SimpleCommandQueue.java" startLine="16" startPosition="0" endLine="20" endPosition="3" />
     <nodeInfo nodeId="3722815385094288782" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="SimpleCommandQueue.java" startLine="30" startPosition="47" endLine="34" endPosition="5" />
     <nodeInfo nodeId="6669546492594067000" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SimpleCommandQueue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
@@ -1616,7 +1605,7 @@
     <nodeInfo nodeId="5962623969496448881" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="467" startPosition="115" endLine="468" endPosition="59" />
     <nodeInfo nodeId="7430908097350477915" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="469" startPosition="142" endLine="470" endPosition="117" />
     <nodeInfo nodeId="3935103675993767273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="471" startPosition="106" endLine="472" endPosition="55" />
-    <nodeInfo nodeId="3935103675993769262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="474" startPosition="90" endLine="475" endPosition="54" />
+    <nodeInfo nodeId="3935103675993769262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="474" startPosition="77" endLine="475" endPosition="54" />
     <nodeInfo nodeId="3935103675993784051" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="475" startPosition="54" endLine="476" endPosition="62" />
     <nodeInfo nodeId="3935103675993784056" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="476" startPosition="62" endLine="477" endPosition="63" />
     <nodeInfo nodeId="365157171029572552" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectTreeChangesHighlighter.java" startLine="481" startPosition="59" endLine="482" endPosition="88" />
@@ -2137,7 +2126,7 @@
     <scopeInfo nodeId="1064435610503045194" fileName="ProjectTreeChangesHighlighter.java" startLine="349" startPosition="0" endLine="361" endPosition="0">
       <varInfo nodeId="1064435610503045265" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3935103675993769250" fileName="ProjectTreeChangesHighlighter.java" startLine="474" startPosition="90" endLine="486" endPosition="19" />
+    <scopeInfo nodeId="3935103675993769250" fileName="ProjectTreeChangesHighlighter.java" startLine="474" startPosition="77" endLine="486" endPosition="19" />
     <scopeInfo nodeId="6484240062667323248" fileName="ProjectTreeChangesHighlighter.java" startLine="103" startPosition="58" endLine="116" endPosition="11" />
     <scopeInfo nodeId="9167608307817304536" fileName="ProjectTreeChangesHighlighter.java" startLine="251" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="9167608307817304639" varName="model" />
@@ -2307,7 +2296,7 @@
     <nodeInfo nodeId="6204261414007568272" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="RootNodeFileStatusManager.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="5962623969496448657" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="46" startPosition="83" endLine="49" endPosition="5" />
     <nodeInfo nodeId="5962623969496448660" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="52" startPosition="86" endLine="55" endPosition="5" />
-    <nodeInfo nodeId="3722815385094384699" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="RootNodeFileStatusManager.java" startLine="73" startPosition="37" endLine="76" endPosition="17" />
+    <nodeInfo nodeId="3722815385094384699" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="RootNodeFileStatusManager.java" startLine="73" startPosition="37" endLine="76" endPosition="17" />
     <nodeInfo nodeId="3722815385094378532" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="107" startPosition="7" endLine="110" endPosition="5" />
     <nodeInfo nodeId="3722815385094384451" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="135" startPosition="7" endLine="138" endPosition="5" />
     <nodeInfo nodeId="6204261414007568296" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="RootNodeFileStatusManager.java" startLine="32" startPosition="0" endLine="36" endPosition="3" />
@@ -3243,14 +3232,14 @@
     <nodeInfo nodeId="3187554551048019021" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="ModelChangesManager.java" startLine="147" startPosition="48" endLine="150" endPosition="5" />
     <nodeInfo nodeId="3187554551048036636" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="158" startPosition="29" endLine="161" endPosition="9" />
     <nodeInfo nodeId="3187554551048036395" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="171" startPosition="29" endLine="174" endPosition="9" />
-    <nodeInfo nodeId="3187554551048035436" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="184" startPosition="29" endLine="187" endPosition="9" />
-    <nodeInfo nodeId="7542415519011390366" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="197" startPosition="29" endLine="200" endPosition="9" />
+    <nodeInfo nodeId="3187554551048035436" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="184" startPosition="29" endLine="187" endPosition="9" />
+    <nodeInfo nodeId="7542415519011390366" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="197" startPosition="29" endLine="200" endPosition="9" />
     <nodeInfo nodeId="7542415519011395027" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="210" startPosition="29" endLine="213" endPosition="9" />
     <nodeInfo nodeId="6105600802953124476" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="226" startPosition="71" endLine="229" endPosition="5" />
     <nodeInfo nodeId="4373338147090813408" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="234" startPosition="69" endLine="237" endPosition="5" />
     <nodeInfo nodeId="3913480212906642511" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="241" startPosition="49" endLine="244" endPosition="5" />
     <nodeInfo nodeId="3913480212906643301" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="256" startPosition="70" endLine="259" endPosition="5" />
-    <nodeInfo nodeId="3367145324776993279" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="266" startPosition="56" endLine="269" endPosition="7" />
+    <nodeInfo nodeId="3367145324776993279" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="266" startPosition="56" endLine="269" endPosition="7" />
     <nodeInfo nodeId="8303122470448996053" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="272" startPosition="59" endLine="275" endPosition="5" />
     <nodeInfo nodeId="399572749666385472" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="275" startPosition="5" endLine="278" endPosition="5" />
     <nodeInfo nodeId="5235541930885971714" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="278" startPosition="5" endLine="281" endPosition="5" />
@@ -3278,10 +3267,10 @@
     <nodeInfo nodeId="1142852935921022217" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="602" startPosition="26" endLine="605" endPosition="5" />
     <nodeInfo nodeId="1281598945698463531" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="605" startPosition="5" endLine="608" endPosition="5" />
     <nodeInfo nodeId="5449562650807997377" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="608" startPosition="5" endLine="611" endPosition="5" />
-    <nodeInfo nodeId="83742232301382749" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="614" startPosition="96" endLine="617" endPosition="9" />
+    <nodeInfo nodeId="83742232301382749" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="614" startPosition="96" endLine="617" endPosition="9" />
     <nodeInfo nodeId="1281598945698463551" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="618" startPosition="7" endLine="621" endPosition="7" />
     <nodeInfo nodeId="1281598945698463601" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="635" startPosition="0" endLine="638" endPosition="7" />
-    <nodeInfo nodeId="1281598945698463662" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="650" startPosition="35" endLine="653" endPosition="7" />
+    <nodeInfo nodeId="1281598945698463662" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="650" startPosition="35" endLine="653" endPosition="7" />
     <nodeInfo nodeId="3767959966756100127" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="662" startPosition="24" endLine="665" endPosition="13" />
     <nodeInfo nodeId="5260985045910033383" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="683" startPosition="34" endLine="686" endPosition="9" />
     <nodeInfo nodeId="1998279847126832470" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="707" startPosition="34" endLine="710" endPosition="9" />
@@ -3295,7 +3284,7 @@
     <nodeInfo nodeId="5890845648943338" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="883" startPosition="52" endLine="886" endPosition="9" />
     <nodeInfo nodeId="5494534766666272288" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="887" startPosition="52" endLine="890" endPosition="9" />
     <nodeInfo nodeId="3368272443920363764" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="920" startPosition="35" endLine="923" endPosition="11" />
-    <nodeInfo nodeId="5687497293128274385" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="944" startPosition="16" endLine="947" endPosition="11" />
+    <nodeInfo nodeId="5687497293128274385" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="944" startPosition="16" endLine="947" endPosition="11" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="953" startPosition="70" endLine="956" endPosition="5" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="960" startPosition="70" endLine="963" endPosition="5" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="967" startPosition="82" endLine="970" endPosition="5" />

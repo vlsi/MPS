@@ -196,12 +196,9 @@
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder" file="LongestCommonSubsequenceFinder.java">
-    <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
@@ -209,7 +206,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />

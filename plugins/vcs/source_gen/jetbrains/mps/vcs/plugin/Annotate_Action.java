@@ -11,7 +11,6 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.vcs.annotate.AnnotateUtil;
 
 public class Annotate_Action extends GeneratedAction {
   private static final Icon ICON = null;

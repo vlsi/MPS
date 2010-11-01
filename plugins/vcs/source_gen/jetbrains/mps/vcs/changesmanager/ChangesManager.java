@@ -96,6 +96,7 @@ public class ChangesManager extends AbstractProjectComponent {
         }
         ModelChangesManager modelChangesManager = new ModelChangesManager(myProject, modelDescriptor);
         MapSequence.fromMap(myModelChanges).put(modelRef, modelChangesManager);
+
       }
     });
   }
