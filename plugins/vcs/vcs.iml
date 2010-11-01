@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="OROMatcher" level="project" />
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
   </component>
 </module>
 

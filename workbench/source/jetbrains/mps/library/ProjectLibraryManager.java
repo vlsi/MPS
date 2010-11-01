@@ -55,6 +55,25 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   }
 
   @Override
+  public void initComponent() {
+    if (myProject.isDefault()) {
+      return;
+    }
+    myProject.getComponent(ProjectScope.class);
+    if (!ThreadUtils.isEventDispatchThread()) {
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ProjectLibraryManager.super.initComponent();
+        }
+      }, ModalityState.defaultModalityState());
+    }
+    else {
+      ProjectLibraryManager.super.initComponent();
+    }
+  }
+
+  @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
     Application application = ApplicationManager.getApplication();
@@ -82,22 +101,6 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   protected String removeMacros(String path) {
     return MacrosFactory.projectDescriptor().expandPath(path, getAnchorFile());
-  }
-
-  @Override
-  public void initComponent() {
-    myProject.getComponent(ProjectScope.class);
-    if (!ThreadUtils.isEventDispatchThread()) {
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ProjectLibraryManager.super.initComponent();
-        }
-      }, ModalityState.defaultModalityState());
-    }
-    else {
-      ProjectLibraryManager.super.initComponent();      
-    }
   }
 
   private File getAnchorFile() {
