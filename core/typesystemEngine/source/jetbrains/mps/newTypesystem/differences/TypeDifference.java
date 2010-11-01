@@ -28,7 +28,7 @@ import java.util.Map;
  * Time: 1:04:39 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TypeDifference extends Difference{
+public class TypeDifference extends Difference {
   private SNode myNode;
   private SNode myType;
   private Map<SNode, SNode> myMap;
@@ -53,7 +53,7 @@ public class TypeDifference extends Difference{
 
   @Override
   public String getPresentation() {
-    return "Type added (" + myNode + " : " + myType+")";
+    return "Type added (" + myNode + " : " + myType + ")";
   }
 
   @Override

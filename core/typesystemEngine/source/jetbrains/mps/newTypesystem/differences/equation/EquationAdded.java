@@ -32,10 +32,10 @@ public class EquationAdded extends EquationDifference {
   private SNode myChild;
   private SNode myParent;
 
-  public EquationAdded(SNode child, SNode parent, Equations equations, EquationInfo info) {
+  public EquationAdded(SNode child, SNode parent, SNode source, Equations equations, EquationInfo info) {
     super(equations);
     myChild = child;
-    mySource = child;
+    mySource = source;
     myParent = parent;
     myEquationInfo = info;
   }
@@ -60,7 +60,7 @@ public class EquationAdded extends EquationDifference {
 
   @Override
   public String getPresentation() {
-    return "Equation added " + myChild + " = " + myParent; 
+    return "Equation added " + myChild + " = " + myParent;
   }
 
   @Override

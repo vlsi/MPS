@@ -19,7 +19,6 @@ import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 
 import java.awt.Color;
 

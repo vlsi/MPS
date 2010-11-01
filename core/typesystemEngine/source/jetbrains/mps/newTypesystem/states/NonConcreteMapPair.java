@@ -47,7 +47,7 @@ public class NonConcreteMapPair {
 
   private void addAndTrack(WhenConcreteEntry e, SNode var) {
     myState.addDifference(new WhenConcreteDependencyAdded(e, var, this), false);
-    addDependency(e,var);
+    addDependency(e, var);
   }
 
   public void addDependency(WhenConcreteEntry e, SNode var) {
@@ -63,7 +63,7 @@ public class NonConcreteMapPair {
       dependents = new HashSet<WhenConcreteEntry>();
       myDependents.put(var, dependents);
     }
-    dependents.add(e);    
+    dependents.add(e);
   }
 
   private void becameConcrete(WhenConcreteEntry entry) {
@@ -80,8 +80,8 @@ public class NonConcreteMapPair {
   }
 
   private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
-    myState.addDifference(new WhenConcreteDependencyRemoved(e,var,this),false);
-    removeDependency(e,var);
+    myState.addDifference(new WhenConcreteDependencyRemoved(e, var, this), false);
+    removeDependency(e, var);
   }
 
   public void removeDependency(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
@@ -91,13 +91,14 @@ public class NonConcreteMapPair {
   }
 
   public void addWhenConcrete(WhenConcreteEntry e, SNode node) {
+    SNode source = myState.getNodeMaps().getNode(node);
     myState.addDifference(new WhenConcreteAdded(e, node, this), true);
     List<SNode> variables = getChildAndReferentVariables(node);
     if (variables.isEmpty()) {
       becameConcrete(e);
     }
     for (SNode var : variables) {
-      addAndTrack(e, myState.getEquations().getRepresentative(var));
+      addAndTrack(e, myState.getRepresentative(var));
     }
     myState.popDifference();
   }
@@ -107,9 +108,9 @@ public class NonConcreteMapPair {
     if (entities == null) {
       return;
     }
-    for (WhenConcreteEntry entity : entities) {
+    for (WhenConcreteEntry entity : new HashSet<WhenConcreteEntry>(entities)) {
       for (SNode variable : getChildAndReferentVariables(type)) {
-         addDependency(entity, variable);
+        addAndTrack(entity, variable);
       }
       removeAndTrack(entity, oldVar);
       testConcrete(entity);
@@ -139,7 +140,7 @@ public class NonConcreteMapPair {
   public List<String> getListPresentation() {
     List<String> result = new LinkedList<String>();
     for (WhenConcreteEntry key : myDependencies.keySet()) {
-      result.add(key + " -:- "+  myDependencies.get(key) + (isShallow ? " shallow" : " deep"));
+      result.add(key + " -:- " + myDependencies.get(key) + (isShallow ? " shallow" : " deep"));
     }
     return result;
   }

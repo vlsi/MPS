@@ -16,6 +16,9 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.differences.ErrorDifference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
@@ -36,24 +39,24 @@ import java.util.*;
  */
 public class NodeMaps {
   private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
+  private Map<SNode, SNode> myTypesToNodes = new HashMap<SNode, SNode>();
   private Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
   private State myState;
-  private VariableIdentifier myVariableIdentifier;
 
   public NodeMaps(State state) {
     myState = state;
-    myVariableIdentifier = new VariableIdentifier();
   }
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
     myNodeToTypes.put(node, type);
+    myTypesToNodes.put(type, node);
     myState.addDifference(new TypeDifference(node, type, myNodeToTypes, info), false);
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
     SNode type = myNodeToTypes.get(node);
     if (type == null) {
-      type = createNewRuntimeTypesVariable();
+      type = myState.createNewRuntimeTypesVariable();
       addNodeToType(node, type, info);
     }
     return type;
@@ -92,33 +95,19 @@ public class NodeMaps {
     return result;
   }
 
-  public Map<SNode, SNode> getNodeToTypes() {
-    return myNodeToTypes;
-  }
-
   public void clear() {
     myNodesToErrors.clear();
     myNodeToTypes.clear();
-    myVariableIdentifier.clear();
   }
 
   public SNode getType(SNode node) {
     SNode type = myNodeToTypes.get(node);
-    return myState.getEquations().getRepresentative(type);
-  }
-
-
-  public SNode createNewRuntimeTypesVariable() {
-    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-      myState.getTypeCheckingContext().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-    typeVar.setName(myVariableIdentifier.getNewVarName());
-//  registerTypeVariable(typeVar);          todo ?
-    return typeVar;
+    return myState.getRepresentative(type);
   }
 
   public List<String> getErrorListPresentation() {
     List<String> result = new LinkedList<String>();
-    for (Map.Entry<SNode, List<IErrorReporter>> entry: myNodesToErrors.entrySet()) {
+    for (Map.Entry<SNode, List<IErrorReporter>> entry : myNodesToErrors.entrySet()) {
       for (IErrorReporter error : entry.getValue()) {
         result.add(entry.getKey() + " " + error.reportError());
       }
@@ -128,8 +117,8 @@ public class NodeMaps {
 
   public List<String> getTypeListPresentation() {
     List<String> result = new LinkedList<String>();
-    for (Map.Entry<SNode, SNode> entry: myNodeToTypes.entrySet()) {
-      result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getEquations().getRepresentative(entry.getValue()));
+    for (Map.Entry<SNode, SNode> entry : myNodeToTypes.entrySet()) {
+      result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getRepresentative(entry.getValue()));
     }
     return result;
   }
@@ -143,7 +132,54 @@ public class NodeMaps {
     }
   }
 
+  public SNode getNode(SNode type) {
+    return myTypesToNodes.get(type);
+  }
 
+  public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
+    IErrorReporter errorReporter;
+    SNode nodeWithError = null;
+    QuickFixProvider intentionProvider = null;
+    String errorString = null;
+    String ruleModel = null;
+    String ruleId = null;
+    if (info != null) {
+      nodeWithError = info.getNodeWithError();
+      intentionProvider = info.getIntentionProvider();
+      errorString = info.getErrorString();
+      ruleModel = info.getRuleModel();
+      ruleId = info.getRuleId();
+    }
+    if (errorString != null) {
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+    } else {
+      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ",
+        right, " and ", left, "", ruleModel, ruleId);
+    }
+    errorReporter.setIntentionProvider(intentionProvider);
+    if (info != null) {
+      errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
+    }
+    addNodeToError(nodeWithError, errorReporter, info);
+  }
 
+  public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
+    IErrorReporter errorReporter;
+    String errorString = equationInfo.getErrorString();
+    String ruleModel = equationInfo.getRuleModel();
+    String ruleId = equationInfo.getRuleId();
+    SNode nodeWithError = equationInfo.getNodeWithError();
+    if (errorString == null) {
+      String strongString = isWeak ? "" : " strong";
+      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType,
+        " is not a" + strongString + " subtype of ", superType, "", ruleModel, ruleId);
+    } else {
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+    }
+    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
+    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
+    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.addError(nodeWithError, errorReporter, equationInfo);
+  }
 
 }

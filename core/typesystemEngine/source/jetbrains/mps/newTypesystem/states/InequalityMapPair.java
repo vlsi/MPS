@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.differences.inequality.SubTypingRemoved;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -43,7 +44,7 @@ public class InequalityMapPair {
 
   public boolean contains(SNode key, SNode value) {
     Map<SNode, EquationInfo> map = mySubToSuper.get(key);
-    return (map !=null && map.containsKey(value));
+    return (map != null && map.containsKey(value));
   }
 
   private void removeAndDelete(Map<SNode, Map<SNode, EquationInfo>> map, SNode key, SNode toRemove) {
@@ -64,7 +65,7 @@ public class InequalityMapPair {
   }
 
   public void add(SNode subType, SNode superType, EquationInfo info) {
-    getMap(mySubToSuper,subType).put(superType, info);
+    getMap(mySubToSuper, subType).put(superType, info);
     getMap(mySuperToSub, superType).put(subType, info);
   }
 
@@ -74,8 +75,8 @@ public class InequalityMapPair {
   }
 
   public void substituteInMap(Map<SNode, Map<SNode, EquationInfo>> baseMap,
-                               Map<SNode, Map<SNode, EquationInfo>> pairMap,
-                               SNode var, SNode type, boolean reversed) {
+                              Map<SNode, Map<SNode, EquationInfo>> pairMap,
+                              SNode var, SNode type, boolean reversed) {
     Map<SNode, EquationInfo> values = baseMap.remove(var);
     if (values == null) return;
     for (final SNode value : values.keySet()) {
@@ -99,7 +100,7 @@ public class InequalityMapPair {
   public void print() {
     for (SNode key : mySubToSuper.keySet()) {
       for (SNode value : mySubToSuper.get(key).keySet()) {
-        System.out.println(key +(isWeak ? " <= " : " < ")+ value + (checkOnly ? " check only" : ""));
+        System.out.println(key + (isWeak ? " <= " : " < ") + value + (checkOnly ? " check only" : ""));
       }
     }
   }
@@ -119,7 +120,7 @@ public class InequalityMapPair {
     for (SNode key : map.keySet()) {
       map.get(key).clear();
     }
-    map.clear();    
+    map.clear();
   }
 
   public boolean isWeak() {
@@ -138,10 +139,37 @@ public class InequalityMapPair {
     List<String> result = new LinkedList<String>();
     for (SNode key : mySubToSuper.keySet()) {
       for (SNode value : mySubToSuper.get(key).keySet()) {
-        result.add(key +(isWeak ? " <= " : " < ")+ value + (checkOnly ? " check only" : ""));
+        result.add(key + (isWeak ? " <= " : " < ") + value + (checkOnly ? " check only" : ""));
       }
     }
     return result;
   }
 
+  private void expandKeySet(Map<SNode, Map<SNode, EquationInfo>> map) {
+    for (SNode node : new HashSet<SNode>(map.keySet())) {
+      SNode expanded = myState.getEquations().expandNode(node);
+      if (expanded != node) {
+        substitute(node, expanded);
+      }
+    }
+  }
+
+  public void expand() {
+    expandKeySet(mySuperToSub);
+    expandKeySet(mySubToSuper);
+  }
+
+  public void check() {
+    expand();
+    SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+    for (SNode subType : mySubToSuper.keySet()) {
+      Map<SNode, EquationInfo> map = mySubToSuper.get(subType);
+      for (SNode superType : map.keySet()) {
+        EquationInfo info = map.get(superType);
+        if (!subTyping.isSubType(subType, superType, info, isWeak, checkOnly)) {
+          myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
+        }
+      }
+    }
+  }
 }

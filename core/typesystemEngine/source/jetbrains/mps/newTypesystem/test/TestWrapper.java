@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * Time: 3:29:28 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TestWrapper implements IWrapper{
+public class TestWrapper implements IWrapper {
   private String name;
 
   public String getName() {

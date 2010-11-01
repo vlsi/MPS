@@ -15,20 +15,11 @@
  */
 package jetbrains.mps.newTypesystem.presentation.state;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.newTypesystem.presentation.difference.TypeSystemTraceTreeNode;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 
-import javax.swing.JPopupMenu;
 import java.awt.Color;
 import java.util.List;
 
@@ -60,11 +51,11 @@ public class TypeSystemStateTree extends MPSTree {
 
   private TypeSystemStateTreeNode createNode(State state) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
-    result.add(createNode("Inequalities",myState.getInequalities().getListPresentation(), null));
-    result.add(createNode("When concrete",myState.getNonConcrete().getListPresentation(), null));
+    result.add(createNode("Inequalities", myState.getInequalities().getListPresentation(), null));
+    result.add(createNode("When concrete", myState.getNonConcrete().getListPresentation(), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
     result.add(createNode("Types", myState.getNodeMaps().getTypeListPresentation(), null));
-    result.add(createNode("Equations",myState.getEquations().getListPresentation(), null));
+    result.add(createNode("Equations", myState.getEquations().getListPresentation(), null));
 
     return result;
   }

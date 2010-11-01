@@ -66,8 +66,11 @@ public class Equations {
   }
 
   private void substituteRepresentative(SNode elem, SNode current) {
-
-    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, this), false);
+    if (myRepresentatives.get(elem) == current) {
+      return;
+    }
+    SNode source = myState.getNodeMaps().getNode(elem);
+    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, source, this), false);
     myRepresentatives.put(elem, current);
   }
 
@@ -86,7 +89,7 @@ public class Equations {
       return;
     }
     if (!compareTypes(lRepresentative, rRepresentative, info)) {
-      reportEquationBroken(info, lRepresentative, rRepresentative);
+      myState.getNodeMaps().reportEquationBroken(info, lRepresentative, rRepresentative);
     }
   }
 
@@ -97,7 +100,7 @@ public class Equations {
     if (left == null || right == null) {
       return false;
     }
-    return TypesUtil.match(left, right, this, info);
+    return TypesUtil.match(left, right, this, info, false);
   }
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
@@ -114,7 +117,8 @@ public class Equations {
   }
 
   private void addAndTrack(SNode child, SNode parent, EquationInfo info) {
-    myState.addDifference(new EquationAdded(child, parent, this, info), true);
+    SNode source = myState.getNodeMaps().getNode(child);
+    myState.addDifference(new EquationAdded(child, parent, source, this, info), true);
     add(child, parent);
   }
 
@@ -197,17 +201,17 @@ public class Equations {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     } else {
       errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ",
-           right, " and ", left, "", ruleModel, ruleId);
+        right, " and ", left, "", ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(intentionProvider);
-    if (info!=null) {
+    if (info != null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
     myState.addError(nodeWithError, errorReporter, info);
   }
 
   public void reportRecursiveType(SNode node) {
-    IErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed", null, null);
+    //todo IErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed", null, null);
   }
 
   public void addEquations(Set<Pair<SNode, SNode>> childEqs, EquationInfo errorInfo) {
@@ -225,6 +229,7 @@ public class Equations {
     for (Map.Entry<SNode, SNode> entry : myRepresentatives.entrySet()) {
       result.add(entry.getKey() + " = " + entry.getValue());
     }
+    Collections.sort(result);
     return result;
   }
 }

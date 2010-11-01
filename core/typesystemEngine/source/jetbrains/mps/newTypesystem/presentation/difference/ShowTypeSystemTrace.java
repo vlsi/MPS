@@ -17,6 +17,8 @@ package jetbrains.mps.newTypesystem.presentation.difference;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.differences.TypeDifference;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
@@ -24,8 +26,9 @@ import java.awt.*;
 
 public class ShowTypeSystemTrace extends JDialog {
   private JScrollPane myScrollPane;
- // private ShowTypeSystemTrace.MyComponent myComponent;
+  // private ShowTypeSystemTrace.MyComponent myComponent;
   private MPSTree myTree;
+  private boolean showTypeAdded = true;
 
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame) {
@@ -33,25 +36,29 @@ public class ShowTypeSystemTrace extends JDialog {
     t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
-
- //   this.myComponent = new ShowTypeSystemTrace.MyComponent();
-
-    myTree = new TypeSystemTraceTree(operationContext, t, frame);
+    myTree = new TypeSystemTraceTree(operationContext, t, frame,this);
    
     this.myScrollPane = new JScrollPane(myTree);
     this.myScrollPane.setBackground(this.getBackground());
     this.add(this.myScrollPane, BorderLayout.CENTER);
     myTree.setBackground(getBackground());
     myTree.setForeground(new Color(0x07025D));
-    this.setSize(500,600);
-    this.setPreferredSize(new Dimension(500,900));
+    this.setSize(500, 600);
+    this.setPreferredSize(new Dimension(500, 900));
     setTitle("TypeSystem trace");
     this.pack();
     this.setModal(true);
     this.setVisible(true);
   }
 
+  public boolean show(Difference difference) {
+    if (difference instanceof TypeDifference) {
+      return showTypeAdded;
+    }
+    return true;
+  }
+
   public Color getBackground() {
-   return Color.WHITE;
+    return Color.WHITE;
   }
 }
