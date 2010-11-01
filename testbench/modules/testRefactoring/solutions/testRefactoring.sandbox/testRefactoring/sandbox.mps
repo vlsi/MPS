@@ -4,8 +4,9 @@
   <refactoringHistory />
   <language namespace="343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)" />
   <languageAspect modelUID="jetbrains.mps.core.constraints" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8a4661d0(testRefactoring.structure)" version="-1" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8a4661cc(testRefactoring.sandbox2)" version="-1" />
   <node type="testRefactoring.structure.MyVeryGoodConcept1" id="1198157680448">
