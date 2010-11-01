@@ -253,7 +253,7 @@ public class JavaCompiler {
         //todo: it is not very convenient
       }
     }
-    myModule.save();
+    //    myModule.save();
 
     boolean needsRecompilation = true;
     while (needsRecompilation) {

@@ -277,7 +277,11 @@ public class JavaConverterTreeBuilder {
           dimensionExpression.setExpression(dim);
         }
       }
-      arrayCreator.setComponentType(CopyUtil.copy(arrayType.getComponentType()));
+      Type deepestComponentType = arrayType.getComponentType();
+      while (deepestComponentType instanceof ArrayType) {
+        deepestComponentType = ((ArrayType) deepestComponentType).getComponentType();
+      }
+      arrayCreator.setComponentType(CopyUtil.copy(deepestComponentType));
       GenericNewExpression genericNewExpression = GenericNewExpression.newInstance(myCurrentModel);
       genericNewExpression.setCreator(arrayCreator);
       return genericNewExpression;
