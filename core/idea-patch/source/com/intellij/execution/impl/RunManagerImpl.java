@@ -33,6 +33,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
 import java.util.*;
 
 
@@ -689,6 +690,16 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   @Nullable
   public RunnerAndConfigurationSettings findConfigurationByName(@NotNull String name) {
     return null;
+  }
+
+  @Override
+  public Icon getConfigurationIcon(@NotNull RunnerAndConfigurationSettings settings) {
+    return null;
+  }
+
+  @Override
+  public void invalidateConfigurationIcon(@NotNull RunnerAndConfigurationSettings settings) {
+
   }
 
   @Nullable
