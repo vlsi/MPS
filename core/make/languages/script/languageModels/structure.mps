@@ -234,6 +234,9 @@
       <property name="value:0" value="option" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4125795553994047764">
+      <link role="intfc:0" targetNodeId="2v.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854384059">
     <property name="name:0" value="ExpectedOption" />

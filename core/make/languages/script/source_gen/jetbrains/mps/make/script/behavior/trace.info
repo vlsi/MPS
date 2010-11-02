@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ExpectedOption_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedOption_Behavior" />
+  <unitInfo fileName="OptionType_Behavior.java" startLine="49" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.make.script.behavior.OptionType_Behavior$QuotationClass_cm5g9t_a0a0a2" />
   <unitInfo fileName="QueryDefinition_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.behavior.QueryDefinition_Behavior" />
+  <unitInfo fileName="ExpectedOption_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedOption_Behavior" />
   <unitInfo fileName="RelayQueryOperation_Behavior.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.script.behavior.RelayQueryOperation_Behavior" />
+  <unitInfo fileName="OptionType_Behavior.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.script.behavior.OptionType_Behavior" />
+  <root nodeId="4125795553994047765">
+    <nodeInfo nodeId="4125795553994049033" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OptionType_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="140" />
+    <nodeInfo nodeId="4125795553994049053" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OptionType_Behavior.java" startLine="29" startPosition="82" endLine="30" endPosition="127" />
+    <scopeInfo nodeId="4125795553994047767" fileName="OptionType_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
+    <scopeInfo nodeId="4125795553994047770" fileName="OptionType_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="140" />
+    <scopeInfo nodeId="4125795553994049047" fileName="OptionType_Behavior.java" startLine="29" startPosition="82" endLine="30" endPosition="127" />
+  </root>
   <root nodeId="505095865854377517">
     <nodeInfo nodeId="505095865854377558" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryOperation_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="16" />
     <nodeInfo nodeId="505095865854377552" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryOperation_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="20" />

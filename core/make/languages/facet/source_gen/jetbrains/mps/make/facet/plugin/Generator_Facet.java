@@ -43,7 +43,7 @@ public class Generator_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_ixz87t_a implements ITarget<Object> {
+  public static class Target_ixz87t_a implements ITarget<Void> {
     private ITarget.Name name = new ITarget.Name("ConfigureGenerator");
 
     public Target_ixz87t_a() {
@@ -100,12 +100,12 @@ public class Generator_Facet implements IFacet {
       return name;
     }
 
-    public Object createVariables() {
+    public Void createVariables() {
       return null;
     }
   }
 
-  public static class Target_ixz87t_b implements ITarget<Object> {
+  public static class Target_ixz87t_b implements ITarget<Void> {
     private ITarget.Name name = new ITarget.Name("GenerateFiles");
 
     public Target_ixz87t_b() {
@@ -145,7 +145,7 @@ public class Generator_Facet implements IFacet {
       return name;
     }
 
-    public Object createVariables() {
+    public Void createVariables() {
       return null;
     }
   }

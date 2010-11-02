@@ -8,11 +8,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <languageAspect modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <devkit namespace="e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="505095865854377517">
     <property name="virtualPackage" value="job" />
     <link role="concept" targetNodeId="1.505095865854377502" resolveInfo="RelayQueryOperation" />
@@ -145,6 +148,59 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8486446835277382822" />
+    </node>
+  </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4125795553994047765">
+    <property name="virtualPackage" value="query" />
+    <link role="concept" targetNodeId="1.505095865854384053" resolveInfo="OptionType" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4125795553994047766">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4125795553994047767" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4125795553994047768">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="classifierName" />
+      <link role="overriddenMethod" targetNodeId="2.4609636120081351397" resolveInfo="classifierName" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4125795553994047769" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4125795553994047770">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4125795553994049033">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553994049040">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553994049035">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4125795553994049034" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4125795553994049039">
+                <link role="link:16" targetNodeId="1.505095865854384060" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4125795553994049044">
+              <link role="baseMethodDeclaration:16" targetNodeId="2.4609636120081351397" resolveInfo="classifierName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4125795553994047771" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4125795553994049045">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="baseClassifier" />
+      <link role="overriddenMethod" targetNodeId="2.4125795553993767872" resolveInfo="baseClassifier" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4125795553994049046" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4125795553994049047">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4125795553994049053">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553994058348">
+            <node role="operand:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4125795553994049054">
+              <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4125795553994058347">
+                <link role="classifier:3" targetNodeId="4.~EnumClass" resolveInfo="EnumClass" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4125795553994058352">
+              <link role="link:16" targetNodeId="3v.1107535924139:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4125795553994049048">
+        <link role="concept:16" targetNodeId="3v.1107461130800:3" resolveInfo="Classifier" />
+      </node>
     </node>
   </node>
 </model>
