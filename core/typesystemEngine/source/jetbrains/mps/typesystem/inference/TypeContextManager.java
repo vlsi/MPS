@@ -51,7 +51,7 @@ public class TypeContextManager implements ApplicationComponent {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
         for (SNode node : new ArrayList<SNode>(myTypeCheckingContexts.keySet())) {
-          if (modelRef == node.getModel().getSModelReference()) {
+          if (node.shouldHaveBeenDisposed() || modelRef == node.getModel().getSModelReference()) {
             removeContextForNode(node);
           }
         }
