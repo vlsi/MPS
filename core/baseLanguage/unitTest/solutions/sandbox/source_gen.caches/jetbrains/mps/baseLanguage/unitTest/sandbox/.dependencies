@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test" file="Test.java">
+    <classNode dependClassName="java.lang.System" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test1_Test" file="Test1_Test.java">

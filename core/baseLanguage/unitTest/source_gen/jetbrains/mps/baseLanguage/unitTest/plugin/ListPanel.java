@@ -24,8 +24,8 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -49,9 +49,10 @@ public class ListPanel extends JPanel {
 
   private void collectCandidates() {
     final List<SNode> nodesList = new ArrayList<SNode>();
-    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedConcepts())) {
+    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedConcepts(!(myIsTestMethods)))) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          // todo be smarter 
           ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false)));
         }
       });
@@ -125,17 +126,22 @@ public class ListPanel extends JPanel {
         if (resultNode == null) {
           return -1;
         }
-        ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(resultNode);
-        if (wrapper == null) {
+        final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode);
+          }
+        });
+        if (wrapper.value == null) {
           return -1;
         }
-        ListSequence.fromList(ListPanel.this.myValues).addElement(wrapper);
+        ListSequence.fromList(ListPanel.this.myValues).addElement(wrapper.value);
         if (ListPanel.this.myListener != null) {
           ListPanel.this.myListener.actionPerformed(null);
         }
         ListPanel.this.myListComponent.updateUI();
         ListPanel.this.myListModel.fireSomethingChanged();
-        return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper);
+        return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value);
       }
     };
     AnAction remove = new ListRemoveAction(this.myListComponent) {
