@@ -22,6 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
+  <languageAspect modelUID="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" version="-1" />
   <maxImportIndex value="20" />
   <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -2483,7 +2484,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1238920134649">
     <property name="name:2" value="weave_tupleInterface" />
-    <property name="package:2" value="runtime" />
+    <property name="virtualPackage:2" value="runtime" />
     <link role="applicableConcept:2" targetNodeId="19.1068580320020:3" resolveInfo="IntegerConstant" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1238920140023">
       <property name="name:3" value="Tuples" />
@@ -3481,7 +3482,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1238926722082">
     <property name="name:2" value="weave_tupleImplementation" />
-    <property name="package:2" value="runtime" />
+    <property name="virtualPackage:2" value="runtime" />
     <link role="applicableConcept:2" targetNodeId="19.1068580320020:3" resolveInfo="IntegerConstant" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1238926745433">
       <property name="name:3" value="MultiTuple" />
@@ -5096,7 +5097,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1238930682568">
     <property name="name:2" value="weave_tupleFromObjects" />
-    <property name="package:2" value="runtime" />
+    <property name="virtualPackage:2" value="runtime" />
     <link role="applicableConcept:2" targetNodeId="19.1068580320020:3" resolveInfo="IntegerConstant" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1238930709347">
       <property name="name:3" value="MultiTuple" />
@@ -5781,8 +5782,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1238949818960">
-    <property name="package:2" value="runtime" />
     <property name="name:2" value="weave_tupleCreateEmpty" />
+    <property name="virtualPackage:2" value="runtime" />
     <link role="applicableConcept:2" targetNodeId="19.1068580320020:3" resolveInfo="IntegerConstant" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1238949843744">
       <property name="name:3" value="MultiTuple" />
