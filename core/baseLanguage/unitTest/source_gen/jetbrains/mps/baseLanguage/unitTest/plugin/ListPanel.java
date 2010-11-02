@@ -49,7 +49,7 @@ public class ListPanel extends JPanel {
 
   private void collectCandidates() {
     final List<SNode> nodesList = new ArrayList<SNode>();
-    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedConcepts(!(myIsTestMethods)))) {
+    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedConcepts(true))) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           // todo be smarter 

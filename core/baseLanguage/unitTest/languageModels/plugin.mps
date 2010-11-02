@@ -21317,10 +21317,8 @@
           <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3054957629347005357">
             <link role="classConcept:3" targetNodeId="4087070200985108968:0" resolveInfo="TestNodeWrapperFactory" />
             <link role="baseMethodDeclaration:3" targetNodeId="4549155866737422219:0" resolveInfo="getWrappedConcepts" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7582928611138368947">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7582928611138368950">
-                <link role="variableDeclaration:3" targetNodeId="752969433250135123:0" resolveInfo="myIsTestMethods" />
-              </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2678767641691709671">
+              <property name="value:3" value="true" />
             </node>
           </node>
           <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7524575410242179042">
