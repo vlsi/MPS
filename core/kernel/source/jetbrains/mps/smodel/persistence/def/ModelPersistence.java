@@ -24,21 +24,13 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
-import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
-import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
-import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
-import jetbrains.mps.smodel.persistence.def.v2.ModelReader2;
-import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
-import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
-import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
-import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
-import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
-import jetbrains.mps.smodel.persistence.def.v5.Handler5;
-import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
-import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
-import jetbrains.mps.smodel.persistence.def.v6.Handler6;
-import jetbrains.mps.smodel.persistence.def.v6.ModelReader6;
-import jetbrains.mps.smodel.persistence.def.v6.ModelWriter6;
+import jetbrains.mps.smodel.persistence.def.v0.ModelPersistence0;
+import jetbrains.mps.smodel.persistence.def.v1.ModelPersistence1;
+import jetbrains.mps.smodel.persistence.def.v2.ModelPersistence2;
+import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
+import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
+import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
+import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -94,36 +86,18 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
-  private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
-  private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
-  private static final Map<Integer, DefaultMPSHandler> modelReadHandlers = new HashMap<Integer, DefaultMPSHandler>();
+  private static final IModelPersistence[] myModelPersistenceFactory = {
+    new ModelPersistence0(),
+    new ModelPersistence1(),
+    new ModelPersistence2(),
+    new ModelPersistence3(),
+    new ModelPersistence4(),
+    new ModelPersistence5(),
+    new ModelPersistence6()
+  };
   private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
 
   private static PersistenceSettings ourPersistenceSettings;
-
-  static {
-    modelReaders.put(0, new ModelReader0());
-
-    modelReaders.put(1, new ModelReader1());
-    modelWriters.put(1, new ModelWriter1());
-
-    modelReaders.put(2, new ModelReader2());
-    modelWriters.put(2, new ModelWriter2());
-
-    modelReaders.put(3, new ModelReader3());
-    modelWriters.put(3, new ModelWriter3());
-
-    modelReaders.put(4, new ModelReader4());
-    modelWriters.put(4, new ModelWriter4());
-
-    modelReadHandlers.put(5, new Handler5());
-    modelReaders.put(5, new ModelReader5());
-    modelWriters.put(5, new ModelWriter5());
-
-    modelReadHandlers.put(6, new Handler6());
-    modelReaders.put(6, new ModelReader6());
-    modelWriters.put(6, new ModelWriter6());
-  }
 
   private static PersistenceSettings getPersistenceSettings() {
     if (ourPersistenceSettings == null) {
@@ -132,6 +106,9 @@ public class ModelPersistence {
     return ourPersistenceSettings;
   }
 
+  private static IModelPersistence getModelPersistence(int persistenceID) {
+    return myModelPersistenceFactory[persistenceID];
+  }
   //--------read--------
 
   public static DescriptorLoadResult loadDescriptor(IFile file) {
@@ -202,10 +179,13 @@ public class ModelPersistence {
   }
 
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
-    if (version > 5) {
+    if (version > PersistenceSettings.MAX_VERSION) {
+      SModel model = handleNullReaderForPersistence(name);
+      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+    } else if (version > 5) {
       try {
         SAXParser parser = JDOMUtil.createSAXParser();
-        DefaultMPSHandler handler = modelReadHandlers.get(version);
+        DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
         boolean partial = handler.setPartialLoading(state);
         try {
           parser.parse(source, (DefaultHandler) handler);
@@ -221,7 +201,7 @@ public class ModelPersistence {
       }
     } else {
       Document document = loadModelDocument(source);
-      IModelReader modelReader = modelReaders.get(version);
+      IModelReader modelReader = getModelPersistence(version).getModelReader();
       if (modelReader == null) {
         SModel model = handleNullReaderForPersistence(name);
         return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
@@ -280,7 +260,7 @@ public class ModelPersistence {
 
     sourceModel.calculateImplicitImports();
 
-    return modelWriters.get(version).saveModel(sourceModel);
+    return getModelPersistence(version).getModelWriter().saveModel(sourceModel);
   }
 
   //-------- --------
@@ -327,11 +307,11 @@ public class ModelPersistence {
   }
 
   public static boolean needsRecreating(IFile file) {
-    return modelReaders.get(getCurrentPersistenceVersion()).needsRecreating(file);
+    return getModelPersistence(getCurrentPersistenceVersion()).needsRecreating(file);
   }
 
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
-    return modelReaders.get(getCurrentPersistenceVersion()).upgradeModelUID(modelReference);
+    return getModelPersistence(getCurrentPersistenceVersion()).upgradeModelUID(modelReference);
   }
 
   //-------- --------

@@ -73,10 +73,6 @@ public class ModelReader0 implements IModelReader {
     return stereotype;
   }
 
-  public boolean needsRecreating(IFile file) {
-    return false;
-  }
-
   @Override
   public int getVersion() {
     return 0;

@@ -15,19 +15,25 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vfs.IFile;
-import org.jdom.Document;
-import org.jdom.Element;
 
 /**
- * Igor Alshannikov
- * Oct 9, 2007
+ * Created by IntelliJ IDEA.
+ * User: Michael.Vlassiev
+ * Date: Nov 2, 2010
+ * Time: 12:46:04 PM
+ * To change this template use File | Settings | File Templates.
  */
-public interface IModelReader {
-  int getVersion();
+public interface IModelPersistence {
+  IModelWriter getModelWriter();
 
-  SModel readModel(Document document, String modelShortName, String stereotype);
+  IModelReader getModelReader();
+
+  DefaultMPSHandler getModelReaderHandler();
+
+
+  SModelReference upgradeModelUID(SModelReference modelReference);
+
+  boolean needsRecreating(IFile file);
 }

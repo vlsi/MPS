@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.smodel.persistence.def.v6.VersionUtil.ParseResult;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -38,6 +37,8 @@ import java.util.List;
 public class ModelReader6 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader6.class);
 
+  private VersionUtil myHelper;
+
   @Override
   public int getVersion() {
     return 6;
@@ -50,27 +51,14 @@ public class ModelReader6 implements IModelReader {
     return stereotype;
   }
 
-  public boolean needsRecreating(IFile file) {
-    String fileName = file.getName();
-    int index = fileName.indexOf('.');
-    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
-    String modelStereotype = "";
-    int index1 = rawModelName.indexOf("@");
-    if (index1 >= 0) {
-      modelStereotype = rawModelName.substring(index1 + 1);
-    }
-    return SModelStereotype.TEMPLATES.equals(modelStereotype);
-  }
-
 
   public SModel readModel(Document document, String modelShortName, String stereotype) {
-    //SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference);
     model.setPersistenceVersion(getVersion());
-    VersionUtil helper = new VersionUtil(modelReference);
+    myHelper = new VersionUtil(modelReference);
 
     model.setLoading(true);
 
@@ -115,7 +103,7 @@ public class ModelReader6 implements IModelReader {
 
       SModelReference importedModelReference = upgradeModelUID(SModelReference.fromString(importedModelUIDString));
       ImportElement impElem = new ImportElement(importedModelReference, importIndex, usedModelVersion);
-      helper.addImport(impElem);
+      myHelper.addImport(impElem);
       if (element.getAttributeValue(ModelPersistence.IMPLICIT) == null)
         model.addModelImport(impElem);
       else
@@ -126,7 +114,7 @@ public class ModelReader6 implements IModelReader {
 
     // nodes
     for (Element child : (List<Element>) rootElement.getChildren(ModelPersistence.NODE)) {
-      SNode snode = readNode(child, model, helper);
+      SNode snode = readNode(child, model);
       if (snode != null) {
         model.addRoot(snode);
       }
@@ -141,8 +129,8 @@ public class ModelReader6 implements IModelReader {
   }
 
   @Nullable
-  protected SNode readNode(Element nodeElement, SModel model, VersionUtil helper) {
-    String conceptFqName = helper.parse(nodeElement.getAttributeValue(ModelPersistence.TYPE), false).text;
+  protected SNode readNode(Element nodeElement, SModel model) {
+    String conceptFqName = myHelper.parse(nodeElement.getAttributeValue(ModelPersistence.TYPE), false).text;
     SNode node = new SNode(model, conceptFqName);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
@@ -156,7 +144,7 @@ public class ModelReader6 implements IModelReader {
     }
 
     for (Element element : (List<Element>) nodeElement.getChildren(ModelPersistence.PROPERTY)) {
-      String propertyName = helper.parse(element.getAttributeValue(ModelPersistence.NAME), true).text;
+      String propertyName = myHelper.parse(element.getAttributeValue(ModelPersistence.NAME), true).text;
       String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
         node.setProperty(propertyName, propertyValue);
@@ -164,13 +152,13 @@ public class ModelReader6 implements IModelReader {
     }
 
     for (Element link : (List<Element>) nodeElement.getChildren(ModelPersistence.LINK)) {
-      SReference reference = readReference(link, node, helper);
+      SReference reference = readReference(link, node);
       if (reference != null) node.addReference(reference);
     }
 
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
-      String role = helper.parse(child.getAttributeValue(ModelPersistence.ROLE), true).text;
-      SNode childNode = readNode(child, model, helper);
+      String role = myHelper.parse(child.getAttributeValue(ModelPersistence.ROLE), true).text;
+      SNode childNode = readNode(child, model);
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {
@@ -181,11 +169,11 @@ public class ModelReader6 implements IModelReader {
     return node;
   }
 
-  private SReference readReference(Element element, SNode node, VersionUtil helper) {
-    String role = helper.parse(element.getAttributeValue(ModelPersistence.ROLE), true).text;
-    ParseResult target = helper.parse(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID), true);
+  private SReference readReference(Element element, SNode node) {
+    String role = myHelper.parse(element.getAttributeValue(ModelPersistence.ROLE), true).text;
+    ParseResult target = myHelper.parse(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID), true);
     String resolveInfo = element.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    SModelReference modelRef = helper.getSModelReference(target.modelID);
+    SModelReference modelRef = myHelper.getSModelReference(target.modelID);
     if (modelRef == null) {
       LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
       return null;

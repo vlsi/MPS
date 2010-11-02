@@ -59,18 +59,6 @@ public class ModelReader2 implements IModelReader {
     return stereotype;
   }
 
-  public boolean needsRecreating(IFile file) {
-    String fileName = file.getName();
-    int index = fileName.indexOf('.');
-    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
-    String modelStereotype = "";
-    int index1 = rawModelName.indexOf("@");
-    if (index1 >= 0) {
-      modelStereotype = rawModelName.substring(index1 + 1);
-    }
-    return SModelStereotype.TEMPLATES.equals(modelStereotype);
-  }
-
   @Override
   public int getVersion() {
     return 2;
