@@ -37,8 +37,6 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.util.annotation.Patch;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -76,17 +74,14 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
     myFileStatusProvider = fileStatusProvider;
   }
 
-  @Patch
   public FileStatus calcStatus(@NotNull VirtualFile virtualFile) {
-    // Patched for MPS: special check for MPSNodeVirtualFile
-    if ((virtualFile.isInLocalFileSystem() || virtualFile instanceof MPSNodeVirtualFile)
-      && myFileStatusProvider != null) {
-      for (FileStatusProvider extension : myExtensions.getValue()) {
-        FileStatus status = extension.getFileStatus(virtualFile);
-        if (status != null) {
-          return status;
-        }
+    for (FileStatusProvider extension : myExtensions.getValue()) {
+      FileStatus status = extension.getFileStatus(virtualFile);
+      if (status != null) {
+        return status;
       }
+    }
+    if (virtualFile.isInLocalFileSystem() && myFileStatusProvider != null) {
       return myFileStatusProvider.getFileStatus(virtualFile);
     } else {
       return FileStatus.NOT_CHANGED;
@@ -117,15 +112,10 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
     return "FileStatusManager";
   }
 
-  public void initComponent() {
-  }
+  public void initComponent() { }
 
-  @Patch
-  public void addFileStatusListener(FileStatusListener listener) {
-    // MPS patch: fixed MPS-7548
-    if (listener != null) {
-      myListeners.add(listener);
-    }
+  public void addFileStatusListener(@NotNull FileStatusListener listener) {
+    myListeners.add(listener);
   }
 
   public void addFileStatusListener(final FileStatusListener listener, Disposable parentDisposable) {
@@ -168,7 +158,7 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
       return;
     }
 
-    if ((file == null) || (!file.isValid())) return;
+    if ((file == null) || (! file.isValid())) return;
     FileStatus cachedStatus = getCachedStatus(file);
     if (cachedStatus == null) return;
     FileStatus newStatus = calcStatus(file);
