@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="7502385099314243444">
-    <nodeInfo nodeId="7502385099314243457" fileName="QuotationUtil.java" startLine="13" startPosition="88" endLine="14" endPosition="122" />
-    <nodeInfo nodeId="7502385099314244160" fileName="QuotationUtil.java" startLine="14" startPosition="122" endLine="15" endPosition="68" />
-    <nodeInfo nodeId="7502385099314244185" fileName="QuotationUtil.java" startLine="16" startPosition="21" endLine="17" endPosition="13" />
-    <nodeInfo nodeId="7067169270832925651" fileName="QuotationUtil.java" startLine="18" startPosition="12" endLine="19" endPosition="18" />
-    <nodeInfo nodeId="7502385099314244192" fileName="QuotationUtil.java" startLine="20" startPosition="5" endLine="21" endPosition="49" />
-    <nodeInfo nodeId="7502385099314245107" fileName="QuotationUtil.java" startLine="21" startPosition="49" endLine="22" endPosition="25" />
-    <nodeInfo nodeId="7502385099314243446" fileName="QuotationUtil.java" startLine="9" startPosition="28" endLine="11" endPosition="3" />
-    <nodeInfo nodeId="7067169270832925649" fileName="QuotationUtil.java" startLine="18" startPosition="10" endLine="20" endPosition="5" />
-    <nodeInfo nodeId="7502385099314244176" fileName="QuotationUtil.java" startLine="15" startPosition="68" endLine="20" endPosition="5" />
-    <nodeInfo nodeId="7502385099314243450" fileName="QuotationUtil.java" startLine="12" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="7502385099314243457" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QuotationUtil.java" startLine="13" startPosition="88" endLine="14" endPosition="122" />
+    <nodeInfo nodeId="7502385099314244160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QuotationUtil.java" startLine="14" startPosition="122" endLine="15" endPosition="68" />
+    <nodeInfo nodeId="7502385099314244185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QuotationUtil.java" startLine="16" startPosition="21" endLine="17" endPosition="13" />
+    <nodeInfo nodeId="7067169270832925651" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QuotationUtil.java" startLine="18" startPosition="12" endLine="19" endPosition="18" />
+    <nodeInfo nodeId="7502385099314244192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QuotationUtil.java" startLine="20" startPosition="5" endLine="21" endPosition="49" />
+    <nodeInfo nodeId="7502385099314245107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QuotationUtil.java" startLine="21" startPosition="49" endLine="22" endPosition="25" />
+    <nodeInfo nodeId="7502385099314243446" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="QuotationUtil.java" startLine="9" startPosition="28" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="7067169270832925649" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="QuotationUtil.java" startLine="18" startPosition="10" endLine="20" endPosition="5" />
+    <nodeInfo nodeId="7502385099314244176" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="QuotationUtil.java" startLine="15" startPosition="68" endLine="20" endPosition="5" />
+    <nodeInfo nodeId="7502385099314243450" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="QuotationUtil.java" startLine="12" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="7502385099314243449" fileName="QuotationUtil.java" startLine="10" startPosition="26" endLine="10" endPosition="26" />
     <scopeInfo nodeId="7502385099314244177" fileName="QuotationUtil.java" startLine="16" startPosition="21" endLine="17" endPosition="13" />
     <scopeInfo nodeId="7067169270832925650" fileName="QuotationUtil.java" startLine="18" startPosition="12" endLine="19" endPosition="18" />
