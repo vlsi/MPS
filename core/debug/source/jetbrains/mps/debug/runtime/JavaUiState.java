@@ -131,16 +131,17 @@ public class JavaUiState extends AbstractUiState {
 
   // changes state on pause/resume
 
+  @NotNull
   JavaUiState paused(SuspendContext context) {
     // we select new context even if we are already on some other context
     // user probably wants to know about new paused contexts
     return new JavaUiState(context, myDebugSession);
   }
 
-  @Nullable
+  @NotNull
   JavaUiState resumed(SuspendContext context) {
     //TODO if some other context is resumed it does not mean that those changes do not concern us. We still want to display correct threads state.
-    if (context != myContext) return null;
+    if (context != myContext) return this;
     SuspendContext newContext = null;
     List<SuspendContext> allPausedContexts = getAllPausedContexts();
     if (!allPausedContexts.isEmpty()) {
