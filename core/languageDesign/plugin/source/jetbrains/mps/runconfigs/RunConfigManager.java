@@ -22,7 +22,6 @@ import com.intellij.execution.impl.ProjectRunConfigurationManager;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.ui.RunContentDescriptor;
-import com.intellij.execution.ui.RunContentManagerImpl;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
@@ -38,7 +37,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -178,8 +176,7 @@ public class RunConfigManager implements ProjectComponent {
         LOG.error(e);
       }
 
-      getRunManager().clear();
-      getRunManager().initializeConfigurationTypes(new ConfigurationType[0]);
+      getRunManager().clearAll();
 
       final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
       ModelAccess.instance().runReadAction(new Runnable() {
