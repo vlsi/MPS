@@ -21,20 +21,14 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -88,7 +82,7 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_955wzk_a6a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_955wzk_b6a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_955wzk_b6a(editorContext, node));
     return editorCell;
   }
 
@@ -274,12 +268,11 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_955wzk_b6a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("extends");
+  private EditorCell createRefNode_955wzk_b6a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("extended");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleDeclaration_Editor._Inline_955wzk_a1g0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -302,38 +295,6 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_955wzk_a7a(SNode node, EditorContext editorContext, IScope scope) {
     return (SNodeOperations.getParent(node) != null);
-  }
-
-  public static class _Inline_955wzk_a1g0 extends InlineCellProvider {
-    public _Inline_955wzk_a1g0() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReadOnlyModelAccessor_955wzk_a0b6a(editorContext, node);
-    }
-
-    private EditorCell createReadOnlyModelAccessor_955wzk_a0b6a(final EditorContext editorContext, final SNode node) {
-      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-        public String getText() {
-          return BaseConcept_Behavior.call_getPresentation_1213877396640(node);
-        }
-
-        public void setText(String s) {
-        }
-
-        public boolean isValidText(String s) {
-          return EqualUtil.equals(s, this.getText());
-        }
-      }, node);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-      editorCell.setCellId("ReadOnlyModelAccessor_955wzk_a0b6a");
-      return editorCell;
-    }
   }
 
   private static class typeVariableDeclarationListHandler_955wzk_b5a extends RefNodeListHandler {

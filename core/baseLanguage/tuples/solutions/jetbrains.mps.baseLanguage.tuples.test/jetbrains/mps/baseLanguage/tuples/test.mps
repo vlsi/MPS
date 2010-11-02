@@ -7,18 +7,13 @@
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <languageAspect modelUID="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)" version="-1" />
@@ -3659,7 +3654,6 @@
     </node>
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="7367153454745440808">
       <property name="name:2" value="Bar" />
-      <link role="extends:2" targetNodeId="3142843783245432642" resolveInfo="Foo" />
       <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="7367153454745566187">
         <property name="final:2" value="false" />
         <property name="name:2" value="id" />
@@ -3671,6 +3665,9 @@
         <node role="type:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7367153454745570766" />
       </node>
       <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7367153454745440809" />
+      <node role="extended:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType:2" id="322547369016118907">
+        <link role="classifier:2" targetNodeId="3142843783245432642" resolveInfo="(num, str) ExtendedNamedTuples.Foo" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="4483021482224672488">
@@ -3683,7 +3680,7 @@
     </node>
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="4483021482224672494">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="4483021482224672495">
-        <property name="methodName" value="asd" />
+        <property name="methodName" value="subtyping" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4483021482224672496" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4483021482224672497" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4483021482224672498">
@@ -3706,6 +3703,26 @@
                   <node role="value:2" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2912004279740772139">
                     <property name="value:3" value="abc" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="6880792723344866594">
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6880792723344866600">
+              <link role="variableDeclaration:3" targetNodeId="2912004279740772133" resolveInfo="foo" />
+            </node>
+            <node role="expected" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral:2" id="6880792723345006969">
+              <link role="tupleDeclaration:2" targetNodeId="3142843783245432642" resolveInfo="ExtendedNamedTuples.Foo" />
+              <node role="componentRef:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference:2" id="6880792723345006970">
+                <link role="componentDeclaration:2" targetNodeId="3142843783245432644" resolveInfo="num" />
+                <node role="value:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6880792723345006976">
+                  <property name="value:3" value="123" />
+                </node>
+              </node>
+              <node role="componentRef:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference:2" id="6880792723345006974">
+                <link role="componentDeclaration:2" targetNodeId="3142843783245432647" resolveInfo="str" />
+                <node role="value:2" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6880792723345006977">
+                  <property name="value:3" value="abc" />
                 </node>
               </node>
             </node>

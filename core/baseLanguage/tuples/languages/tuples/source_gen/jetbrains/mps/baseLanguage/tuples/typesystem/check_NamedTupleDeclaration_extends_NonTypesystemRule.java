@@ -25,12 +25,12 @@ public class check_NamedTupleDeclaration_extends_NonTypesystemRule extends Abstr
   }
 
   public void applyRule(final SNode ntd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(ntd, "extends", false) != null)) {
-      List<SNode> allExtends = NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(ntd, "extends", false));
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false) != null)) {
+      List<SNode> allExtends = NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false));
       if (!(!(ListSequence.fromList(allExtends).contains(ntd)))) {
         BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(ntd, "extends", false), "circular extends relation", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473434", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(ntd, "extended", true), "circular extends relation", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "7367153454745473434", intentionProvider, errorTarget);
       }
       for (final SNode cmp : ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true))) {
         if (cmp != null) {

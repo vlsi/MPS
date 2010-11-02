@@ -34,7 +34,7 @@ public class NamedTupleDeclaration_Behavior {
     SNode ntd = thisNode;
     while ((ntd != null) && !(ListSequence.fromList(result).contains(ntd))) {
       ListSequence.fromList(result).addElement(ntd);
-      ntd = SLinkOperations.getTarget(ntd, "extends", false);
+      ntd = SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false);
     }
     return result;
   }

@@ -74,6 +74,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

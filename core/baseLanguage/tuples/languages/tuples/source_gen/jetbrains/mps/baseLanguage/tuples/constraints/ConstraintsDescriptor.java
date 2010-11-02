@@ -12,13 +12,10 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new NamedTupleDeclaration_resolveInfo_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NamedTupleComponentAccessOperation_alias_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new NamedTupleDeclaration_extends_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NamedTupleComponentReference_componentDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NamedTupleComponentAccessOperation_component_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NamedTupleType_tupleDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new NamedTupleDeclaration_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
