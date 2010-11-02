@@ -26821,6 +26821,51 @@
           </node>
         </node>
       </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4125795553993934526">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4125795553993934527">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4125795553993934538">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4125795553993934539">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4125795553993934562" />
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553994143861">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553993934546">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="4125795553993934544">
+                  <link role="concept:16" targetNodeId="1.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
+                  <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4125795553993934543">
+                    <link role="variableDeclaration:3" targetNodeId="3306910260423168184" resolveInfo="argType" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4125795553993934550">
+                  <link role="baseMethodDeclaration:16" targetNodeId="37.4125795553993767872" resolveInfo="baseClassifier" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4125795553994143865">
+                <link role="baseMethodDeclaration:16" targetNodeId="37.7165541881557222913" resolveInfo="isDescendant" />
+                <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553994152574">
+                  <node role="operand:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4125795553994152569">
+                    <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4125795553994152573">
+                      <link role="classifier:3" targetNodeId="57.~EnumClass" resolveInfo="EnumClass" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4125795553994152578">
+                    <link role="link:16" targetNodeId="1.1107535924139:3" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4125795553993934531">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4125795553993934530">
+            <link role="variableDeclaration:3" targetNodeId="3306910260423168184" resolveInfo="argType" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4125795553993934535">
+            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4125795553993934537">
+              <link role="conceptDeclaration:16" targetNodeId="1.4609636120081351393:3" resolveInfo="IWillBeClassifier" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="3306910260423168223">
         <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3306910260423168226">
           <property name="value:3" value="Argument of switch should be enum of primitive" />
