@@ -39,11 +39,11 @@ public class CurrentOrthogonalFlowLabelLayouter extends AbstractOrthogonalFlowLa
     }
     Map<Node, Dimension> nodeSizes = MapSequence.fromMap(new LinkedHashMap<Node, Dimension>(16, (float) 0.75, false));
     for (Node node : SetSequence.fromSet(layoutInfo.getNodesWithSize())) {
-      MapSequence.fromMap(nodeSizes).put(node, layoutInfo.getSize(node));
+      MapSequence.fromMap(nodeSizes).put(node, layoutInfo.getNodeSize(node));
     }
     Map<Edge, Dimension> edgeSizes = MapSequence.fromMap(new LinkedHashMap<Edge, Dimension>(16, (float) 0.75, false));
     for (Edge edge : SetSequence.fromSet(layoutInfo.getLabeledEdges())) {
-      MapSequence.fromMap(edgeSizes).put(edge, layoutInfo.getSize(edge));
+      MapSequence.fromMap(edgeSizes).put(edge, layoutInfo.getLabelSize(edge));
     }
     Graph graph = embeddedGraph.getGraph();
     List<Edge> initialEdges = ListSequence.fromList(new ArrayList<Edge>());
