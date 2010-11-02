@@ -32,7 +32,7 @@ public class IfNullReturnAll extends DataFlowConstructor {
           SNode notNullNode = NullableUtil.getEqualsNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
           if (notNullNode != null) {
             {
-              Object object = node;
+              Object object = expression;
               if (((Program) o).contains(object)) {
                 int position = ((Program) (o)).getEnd(object);
                 Instruction instruction = new notNullInstruction(notNullNode);
