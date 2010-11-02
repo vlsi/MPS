@@ -12921,11 +12921,9 @@
                     <link role="classifier:3" targetNodeId="27.~EditorComponentCreateListener" resolveInfo="EditorComponentCreateListener" />
                     <link role="variableDeclaration:3" targetNodeId="27.~EditorComponentCreateListener.EDITOR_COMPONENT_CREATION" resolveInfo="EDITOR_COMPONENT_CREATION" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5267577397386525091">
-                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5267577397386525092">
-                      <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5643745088231031273">
-                        <link role="baseMethodDeclaration:3" targetNodeId="5643745088231031267" resolveInfo="EditorChangesHighlighter.MyEditorComponentCreateListener" />
-                      </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229332885">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229332887">
+                      <link role="baseMethodDeclaration:3" targetNodeId="5643745088231031267" resolveInfo="EditorChangesHighlighter.MyEditorComponentCreateListener" />
                     </node>
                   </node>
                 </node>
@@ -12937,11 +12935,9 @@
                 <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3531050000760638993">
                   <link role="variableDeclaration:3" targetNodeId="4135866720256473240" resolveInfo="myEditorSettingsListener" />
                 </node>
-                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5267577397386525149">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5267577397386525150">
-                    <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5643745088231031282">
-                      <link role="baseMethodDeclaration:3" targetNodeId="5643745088231031276" resolveInfo="EditorChangesHighlighter.MyEditorSettingsListener" />
-                    </node>
+                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229332889">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229332891">
+                    <link role="baseMethodDeclaration:3" targetNodeId="5643745088231031276" resolveInfo="EditorChangesHighlighter.MyEditorSettingsListener" />
                   </node>
                 </node>
               </node>
@@ -17979,6 +17975,11 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2698665420347342210">
     <property name="name:3" value="LongestCommonSubsequenceFinder" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7459083455229332877">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7459083455229332878" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7459083455229332881" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7459083455229332880" />
+    </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2698665420347342216">
       <property name="name:3" value="findLongestCommonSubsequenceLengths" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="2698665420347342232">
@@ -19195,11 +19196,9 @@
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8899216664493117249">
           <link role="baseMethodDeclaration:3" targetNodeId="36.~CounterMap.&lt;init&gt;(jetbrains.mps.util.CounterMap$CounterMapHandler)" resolveInfo="CounterMap" />
           <node role="typeParameter:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8899216664493117250" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8899216664493117251">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="8899216664493121289">
-              <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="272407866692946539">
-                <link role="baseMethodDeclaration:3" targetNodeId="272407866692946533" resolveInfo="ProjectTreeChangesHighlighter.MyChangeCountForNodeHandler" />
-              </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229239844">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229239846">
+              <link role="baseMethodDeclaration:3" targetNodeId="272407866692946533" resolveInfo="ProjectTreeChangesHighlighter.MyChangeCountForNodeHandler" />
             </node>
           </node>
         </node>
@@ -19215,11 +19214,9 @@
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3208730671234903081">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3208730671234903082">
           <link role="baseMethodDeclaration:3" targetNodeId="36.~CounterMap.&lt;init&gt;(jetbrains.mps.util.CounterMap$CounterMapHandler)" resolveInfo="CounterMap" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3208730671234903088">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3208730671234903089">
-              <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="272407866692946548">
-                <link role="baseMethodDeclaration:3" targetNodeId="272407866692946542" resolveInfo="ProjectTreeChangesHighlighter.MyPropertyChangeCountForNode" />
-              </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229239848">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229239850">
+              <link role="baseMethodDeclaration:3" targetNodeId="272407866692946542" resolveInfo="ProjectTreeChangesHighlighter.MyPropertyChangeCountForNodeHandler" />
             </node>
           </node>
           <node role="typeParameter:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3208730671234903083" />
@@ -19236,11 +19233,9 @@
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2018072152268789300">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2018072152268789301">
           <link role="baseMethodDeclaration:3" targetNodeId="36.~CounterMap.&lt;init&gt;(jetbrains.mps.util.CounterMap$CounterMapHandler)" resolveInfo="CounterMap" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2018072152268789302">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="2018072152268789303">
-              <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="272407866692946557">
-                <link role="baseMethodDeclaration:3" targetNodeId="272407866692946551" resolveInfo="ProjectTreeChangesHighlighter.MyReferenceChangeCountForNode" />
-              </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229239852">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229327004">
+              <link role="baseMethodDeclaration:3" targetNodeId="272407866692946551" resolveInfo="ProjectTreeChangesHighlighter.MyReferenceChangeCountForNodeHandler" />
             </node>
           </node>
           <node role="typeParameter:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2018072152268789369" />
@@ -19301,11 +19296,9 @@
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5052922865790664054">
         <link role="classifier:3" targetNodeId="3501823384977732903" resolveInfo="ChangeListener" />
       </node>
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5052922865790664056">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5052922865790729007">
-          <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="272407866692946566">
-            <link role="baseMethodDeclaration:3" targetNodeId="272407866692946560" resolveInfo="ProjectTreeChangesHighlighter.MyChangeListener" />
-          </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229327006">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229327008">
+          <link role="baseMethodDeclaration:3" targetNodeId="272407866692946560" resolveInfo="ProjectTreeChangesHighlighter.MyChangeListener" />
         </node>
       </node>
     </node>
@@ -19315,11 +19308,9 @@
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5052922865790891695">
         <link role="classifier:3" targetNodeId="45.~MPSTreeNodeListener" resolveInfo="MPSTreeNodeListener" />
       </node>
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5052922865790891700">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5052922865790891792">
-          <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="272407866692946575">
-            <link role="baseMethodDeclaration:3" targetNodeId="272407866692946569" resolveInfo="ProjectTreeChangesHighlighter.MyMPSTreeNodeListener" />
-          </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7459083455229327010">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7459083455229327012">
+          <link role="baseMethodDeclaration:3" targetNodeId="272407866692946569" resolveInfo="ProjectTreeChangesHighlighter.MyMPSTreeNodeListener" />
         </node>
       </node>
     </node>

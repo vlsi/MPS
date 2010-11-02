@@ -15,6 +15,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class LongestCommonSubsequenceFinder {
+  private LongestCommonSubsequenceFinder() {
+  }
+
   @NotNull
   public static <E> int[][] findLongestCommonSubsequenceLengths(@NotNull List<E> a, @NotNull List<E> b) {
     // This method finds lengths of longest common subsequence for each 
