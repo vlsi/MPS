@@ -39,7 +39,7 @@ public class JUnitConfigFromMethod extends BaseConfigCreator<SNode> implements C
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethod.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
       _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(parameter));
       _config.getStateObject().type = JUnitRunTypes.METHOD;
-      _config.getStateObject().fullMethodNames = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(parameter)) + TestRunUtil.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(parameter));
+      _config.getStateObject().fullMethodNames = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(parameter)) + TestUtils.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(parameter));
       JUnitConfigFromMethod.this.myConfig = _config;
     }
   }

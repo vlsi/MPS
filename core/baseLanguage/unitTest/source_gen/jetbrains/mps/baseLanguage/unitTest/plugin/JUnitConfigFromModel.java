@@ -30,7 +30,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
   }
 
   private void createConfig(final SModel parameter) {
-    if (Sequence.fromIterable(TestRunUtil.getModelTests(parameter)).isEmpty()) {
+    if (Sequence.fromIterable(TestUtils.getModelTests(parameter)).isEmpty()) {
       return;
     }
     final String name = SModelOperations.getModelName(parameter);

@@ -11,23 +11,13 @@
   <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <maxImportIndex value="35" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
@@ -63,7 +53,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6937689104170748691">
     <property name="name:3" value="MainNodeChooser" />
-    <property name="package:3" value="ui.nodeChooser" />
+    <property name="virtualPackage:3" value="ui.nodeChooser" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="6937689104170748692">
       <property name="name:3" value="myTargetConcept" />
       <property name="isFinal:3" value="true" />
@@ -1170,7 +1160,7 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration:1" id="1447676209063345962">
     <property name="name:1" value="JavaConfigOptions" />
-    <property name="package:1" value="ui" />
+    <property name="virtualPackage:1" value="ui" />
     <node role="root:1" type="jetbrains.mps.uiLanguage.structure.ComponentInstance:1" id="1447676209063345963">
       <property name="name:1" value="main" />
       <link role="componentDeclaration:1" targetNodeId="15.1202816402995" resolveInfo="Panel" />
@@ -1468,7 +1458,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1447676209063346076">
-    <property name="package:1" value="ui" />
+    <property name="virtualPackage:1" value="ui" />
     <link role="component:1" targetNodeId="1447676209063345962" resolveInfo="JavaConfigOptions" />
     <node role="componentMethod:1" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="1447676209063346077">
       <property name="name:0" value="reset" />
@@ -1936,12 +1926,12 @@
     <property name="name:1" value="FieldWithBrowseButton" />
     <property name="stub:1" value="true" />
     <property name="actionComponent:1" value="true" />
-    <property name="package:1" value="ui" />
+    <property name="virtualPackage:1" value="ui" />
     <link role="mapTo:1" targetNodeId="1447676209063491233" resolveInfo="FieldWithPathChooseDialog" />
     <link role="extendedComponent:1" targetNodeId="15.1202816402995" resolveInfo="Panel" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1447676209063491226">
-    <property name="package:1" value="ui" />
+    <property name="virtualPackage:1" value="ui" />
     <link role="component:1" targetNodeId="1447676209063491225" resolveInfo="FieldWithBrowseButton" />
     <node role="attribute:1" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration:1" id="1447676209063491227">
       <property name="name:1" value="text" />
@@ -1958,7 +1948,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1447676209063491233">
     <property name="name:3" value="FieldWithPathChooseDialog" />
-    <property name="package:3" value="ui" />
+    <property name="virtualPackage:3" value="ui" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1447676209063491234">
       <property name="name:3" value="setEditable" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1447676209063491235" />
@@ -2349,12 +2339,12 @@
     <property name="stub:1" value="true" />
     <property name="name:1" value="ParameterBrowser" />
     <property name="actionComponent:1" value="true" />
-    <property name="package:1" value="ui" />
+    <property name="virtualPackage:1" value="ui" />
     <link role="mapTo:1" targetNodeId="1447676209063499877" resolveInfo="RawLineEditorComponent" />
     <link role="extendedComponent:1" targetNodeId="15.1202816402995" resolveInfo="Panel" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1447676209063499872">
-    <property name="package:1" value="ui" />
+    <property name="virtualPackage:1" value="ui" />
     <link role="component:1" targetNodeId="1447676209063499871" resolveInfo="ParameterBrowser" />
     <node role="attribute:1" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration:1" id="1447676209063499873">
       <property name="name:1" value="text" />
@@ -2367,7 +2357,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1447676209063499877">
     <property name="name:3" value="RawLineEditorComponent" />
-    <property name="package:3" value="ui" />
+    <property name="virtualPackage:3" value="ui" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1447676209063499878">
       <property name="name:3" value="getTextField" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1447676209063499879">
@@ -2665,8 +2655,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1447676209063503972">
-    <property name="package:3" value="ui.nodeChooser" />
     <property name="name:3" value="BaseChooserComponent" />
+    <property name="virtualPackage:3" value="ui.nodeChooser" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1447676209063503973">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1447676209063503974" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1447676209063503975" />
@@ -2821,8 +2811,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1447676209063504041" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1447676209063504042">
-    <property name="package:3" value="ui.nodeChooser" />
     <property name="name:3" value="BaseFieldWithButtonComponent" />
+    <property name="virtualPackage:3" value="ui.nodeChooser" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7094400837991816878">
       <property name="name:3" value="removeActionListener" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7094400837991816879" />
@@ -3306,8 +3296,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3225885096401341897">
-    <property name="package:3" value="ui.nodeChooser" />
     <property name="name:3" value="GlobalFilteredScope" />
+    <property name="virtualPackage:3" value="ui.nodeChooser" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3225885096401356816">
       <property name="name:3" value="getVisibleModules" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="3225885096401356820">
@@ -3795,7 +3785,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="2178855608171213717">
     <property name="name:3" value="IJavaNodeChangeListener" />
-    <property name="package:3" value="ui.nodeChooser" />
+    <property name="virtualPackage:3" value="ui.nodeChooser" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2178855608171213719">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="nodeChanged" />

@@ -5,26 +5,26 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JPanel;
 import javax.swing.JList;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -37,9 +37,9 @@ import javax.swing.JLabel;
 import javax.swing.AbstractListModel;
 
 public class ListPanel extends JPanel {
-  private JList myList;
-  private List<SNode> myValues = new ArrayList<SNode>();
-  private List<SNode> myCandidates;
+  private JList myListComponent;
+  private List<ITestNodeWrapper> myValues = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+  private List<ITestNodeWrapper> myCandidates;
   private boolean myIsTestMethods;
   private ActionListener myListener;
   private ListPanel.MyAbstractListModel myListModel;
@@ -47,46 +47,50 @@ public class ListPanel extends JPanel {
   public ListPanel() {
   }
 
-  private String getPresentation(final SNode value) {
-    final StringBuilder sb = new StringBuilder();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-          sb.append(ITestCase_Behavior.call_getClassName_1216136193905(SNodeOperations.cast(value, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
-        } else if (SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) {
-          SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(SNodeOperations.cast(value, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
-          sb.append(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + '.' + BaseConcept_Behavior.call_getPresentation_1213877396640(value));
-        }
-      }
-    });
-    return sb.toString();
-  }
-
   private void collectCandidates() {
-    final Wrappers._T<List<SNode>> nodesList = new Wrappers._T<List<SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        nodesList.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
-      }
-    });
+    final List<SNode> nodesList = new ArrayList<SNode>();
+    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedConcepts(true))) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          // todo be smarter 
+          ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false)));
+        }
+      });
+    }
     if (this.myIsTestMethods) {
-      final List<SNode> methodsList = new ArrayList<SNode>();
-      for (final SNode testCase : nodesList.value) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            ListSequence.fromList(methodsList).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(testCase, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
+      final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (SNode testCase : nodesList) {
+            ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testCase);
+            if (wrapper == null) {
+              continue;
+            }
+            ListSequence.fromList(methodsList).addSequence(Sequence.fromIterable(wrapper.getTestMethods()));
           }
-        });
-      }
+        }
+      });
       this.myCandidates = methodsList;
     } else {
-      this.myCandidates = nodesList.value;
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ListPanel.this.myCandidates = ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
+            public ITestNodeWrapper select(SNode it) {
+              return TestNodeWrapperFactory.tryToWrap(it);
+            }
+          }).where(new IWhereFilter<ITestNodeWrapper>() {
+            public boolean accept(ITestNodeWrapper it) {
+              return it != null;
+            }
+          }).toListSequence();
+        }
+      });
     }
   }
 
-  public void addItem(SNode item) {
+  public void addItem(ITestNodeWrapper item) {
     ListSequence.fromList(this.myValues).addElement(item);
-    this.myList.updateUI();
+    this.myListComponent.updateUI();
   }
 
   public void addActionListener(ActionListener listener) {
@@ -99,39 +103,58 @@ public class ListPanel extends JPanel {
 
   public void clear() {
     ListSequence.fromList(this.myValues).removeSequence(ListSequence.fromList(this.myValues));
-    this.myList.updateUI();
+    this.myListComponent.updateUI();
   }
 
-  public void init(List<SNode> nodes, final boolean isTestMethods) {
+  public void init(List<ITestNodeWrapper> nodes, final boolean isTestMethods) {
     this.myIsTestMethods = isTestMethods;
     this.setLayout(new BorderLayout());
     this.myValues = nodes;
     this.myListModel = new ListPanel.MyAbstractListModel();
-    this.myList = new JList(this.myListModel);
-    AnAction add = new ListAddAction(this.myList) {
+    this.myListComponent = new JList(this.myListModel);
+    AnAction add = new ListAddAction(this.myListComponent) {
       protected int doAdd(AnActionEvent p0) {
         if (ListPanel.this.myCandidates == null) {
           ListPanel.this.collectCandidates();
         }
         ListSequence.fromList(ListPanel.this.myCandidates).removeSequence(ListSequence.fromList(ListPanel.this.myValues));
-        final SNode resultNode = (SNode) CommonChoosers.showDialogNodeChooser(ListPanel.this, ListPanel.this.myCandidates);
+        final SNode resultNode = CommonChoosers.showDialogNodeChooser(ListPanel.this, ListSequence.fromList(ListPanel.this.myCandidates).select(new ISelector<ITestNodeWrapper, SNode>() {
+          public SNode select(ITestNodeWrapper it) {
+            return it.getNode();
+          }
+        }).toListSequence());
         if (resultNode == null) {
           return -1;
         }
-        ListSequence.fromList(ListPanel.this.myValues).addElement(resultNode);
+        final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode);
+          }
+        });
+        if (wrapper.value == null) {
+          return -1;
+        }
+        ListSequence.fromList(ListPanel.this.myValues).addElement(wrapper.value);
         if (ListPanel.this.myListener != null) {
           ListPanel.this.myListener.actionPerformed(null);
         }
-        ListPanel.this.myList.updateUI();
+        ListPanel.this.myListComponent.updateUI();
         ListPanel.this.myListModel.fireSomethingChanged();
-        return ListSequence.fromList(ListPanel.this.myValues).indexOf(resultNode);
+        return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value);
       }
     };
-    AnAction remove = new ListRemoveAction(this.myList) {
+    AnAction remove = new ListRemoveAction(this.myListComponent) {
       protected void doRemove(AnActionEvent p0) {
-        for (Object value : ListPanel.this.myList.getSelectedValues()) {
-          for (SNode node : ListPanel.this.myValues) {
-            if (ListPanel.this.getPresentation(node).equals(value)) {
+        for (Object value : ListPanel.this.myListComponent.getSelectedValues()) {
+          for (final ITestNodeWrapper node : ListPanel.this.myValues) {
+            final Wrappers._T<String> fqName = new Wrappers._T<String>();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                fqName.value = node.getFqName();
+              }
+            });
+            if (fqName.value.equals(value)) {
               ListSequence.fromList(ListPanel.this.myValues).removeElement(node);
               break;
             }
@@ -140,7 +163,7 @@ public class ListPanel extends JPanel {
         if (ListPanel.this.myListener != null) {
           ListPanel.this.myListener.actionPerformed(null);
         }
-        ListPanel.this.myList.updateUI();
+        ListPanel.this.myListComponent.updateUI();
         ListPanel.this.myListModel.fireSomethingChanged();
       }
     };
@@ -151,7 +174,7 @@ public class ListPanel extends JPanel {
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     this.add(toolbar.getComponent(), BorderLayout.WEST);
 
-    JScrollPane comp = new JScrollPane(this.myList);
+    JScrollPane comp = new JScrollPane(this.myListComponent);
     comp.doLayout();
     this.add(comp, BorderLayout.CENTER);
 
@@ -159,15 +182,21 @@ public class ListPanel extends JPanel {
       "Methods" :
       "Classes"
     )), BorderLayout.PAGE_START);
-    this.myList.updateUI();
+    this.myListComponent.updateUI();
   }
 
   private class MyAbstractListModel extends AbstractListModel {
     public MyAbstractListModel() {
     }
 
-    public Object getElementAt(int p0) {
-      return ListPanel.this.getPresentation(ListSequence.fromList(ListPanel.this.myValues).getElement(p0));
+    public Object getElementAt(final int p0) {
+      final Wrappers._T<String> name = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          name.value = ListSequence.fromList(ListPanel.this.myValues).getElement(p0).getFqName();
+        }
+      });
+      return name.value;
     }
 
     public int getSize() {

@@ -20,6 +20,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
+      <solutionPath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.baselang" />
       <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
