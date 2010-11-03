@@ -138,7 +138,7 @@ public class Execute_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(config).before();
-        will(returnValue(new ITarget.Name("make")));
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         exactly(1).of(config).createJob();
         IJob cj = new IJob() {
           public IResult execute(Iterable<IResource> res, IMonitor mon, IVariablesPool pool) {
@@ -168,6 +168,7 @@ public class Execute_Test extends MockTestCase {
 
     TargetRange tr = new TargetRange();
     tr.addTarget(make);
+    tr.addTarget(config);
 
     Script sc = new Script(tr, new ITarget.Name("make"));
     sc.validate();
@@ -178,6 +179,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
-    Assert.assertEquals("FOOBAR", vars[0]);
+    Assert.assertEquals("FUBAR", vars[0]);
   }
 }

@@ -56,16 +56,16 @@ public class GenerateSpecial_Facet implements IFacet {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
-              monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
+              pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
               switch (monitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
-                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
+                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
                   break;
                 case IGNORE_i03q2a_c0a0a:
-                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
+                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
                   break;
                 case RETRY_i03q2a_b0a0a:
-                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(true);
+                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(true);
                   break;
                 default:
               }

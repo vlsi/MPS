@@ -9,8 +9,8 @@
   <root nodeId="6418371274763153153">
     <nodeInfo nodeId="8351679702044371556" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="FFFFacet_Facet.java" startLine="47" startPosition="58" endLine="48" endPosition="56" />
     <nodeInfo nodeId="505095865854424933" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FFFFacet_Facet.java" startLine="55" startPosition="98" endLine="56" endPosition="56" />
-    <nodeInfo nodeId="6872280991287184162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FFFFacet_Facet.java" startLine="58" startPosition="19" endLine="59" endPosition="187" />
-    <nodeInfo nodeId="505095865854424938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FFFFacet_Facet.java" startLine="59" startPosition="187" endLine="60" endPosition="144" />
+    <nodeInfo nodeId="6872280991287184162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FFFFacet_Facet.java" startLine="58" startPosition="19" endLine="59" endPosition="184" />
+    <nodeInfo nodeId="505095865854424938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FFFFacet_Facet.java" startLine="59" startPosition="184" endLine="60" endPosition="144" />
     <nodeInfo nodeId="505095865854424940" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FFFFacet_Facet.java" startLine="60" startPosition="144" endLine="61" endPosition="61" />
     <nodeInfo nodeId="505095865854424933" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FFFFacet_Facet.java" startLine="62" startPosition="20" endLine="63" endPosition="61" />
     <nodeInfo nodeId="8351679702044371556" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FFFFacet_Facet.java" startLine="73" startPosition="43" endLine="74" endPosition="18" />
@@ -175,13 +175,13 @@
   <root nodeId="8351679702044326367">
     <nodeInfo nodeId="8351679702044326369" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="GenerateSpecial_Facet.java" startLine="47" startPosition="58" endLine="48" endPosition="74" />
     <nodeInfo nodeId="505095865854424950" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenerateSpecial_Facet.java" startLine="55" startPosition="98" endLine="56" endPosition="56" />
-    <nodeInfo nodeId="7320828025189446627" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="58" startPosition="19" endLine="59" endPosition="184" />
-    <nodeInfo nodeId="7320828025189472060" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="61" startPosition="40" endLine="62" endPosition="183" />
-    <nodeInfo nodeId="7320828025189472069" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="GenerateSpecial_Facet.java" startLine="62" startPosition="183" endLine="63" endPosition="24" />
-    <nodeInfo nodeId="7320828025189472070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="64" startPosition="41" endLine="65" endPosition="183" />
-    <nodeInfo nodeId="7320828025189472079" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="GenerateSpecial_Facet.java" startLine="65" startPosition="183" endLine="66" endPosition="24" />
-    <nodeInfo nodeId="7320828025189472080" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="67" startPosition="40" endLine="68" endPosition="182" />
-    <nodeInfo nodeId="7320828025189472092" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="GenerateSpecial_Facet.java" startLine="68" startPosition="182" endLine="69" endPosition="24" />
+    <nodeInfo nodeId="7320828025189446627" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="58" startPosition="19" endLine="59" endPosition="181" />
+    <nodeInfo nodeId="7320828025189472060" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="61" startPosition="40" endLine="62" endPosition="180" />
+    <nodeInfo nodeId="7320828025189472069" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="GenerateSpecial_Facet.java" startLine="62" startPosition="180" endLine="63" endPosition="24" />
+    <nodeInfo nodeId="7320828025189472070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="64" startPosition="41" endLine="65" endPosition="180" />
+    <nodeInfo nodeId="7320828025189472079" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="GenerateSpecial_Facet.java" startLine="65" startPosition="180" endLine="66" endPosition="24" />
+    <nodeInfo nodeId="7320828025189472080" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateSpecial_Facet.java" startLine="67" startPosition="40" endLine="68" endPosition="179" />
+    <nodeInfo nodeId="7320828025189472092" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="GenerateSpecial_Facet.java" startLine="68" startPosition="179" endLine="69" endPosition="24" />
     <nodeInfo nodeId="505095865854424950" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GenerateSpecial_Facet.java" startLine="72" startPosition="20" endLine="73" endPosition="61" />
     <nodeInfo nodeId="8351679702044326369" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GenerateSpecial_Facet.java" startLine="79" startPosition="46" endLine="80" endPosition="18" />
     <nodeInfo nodeId="8351679702044326369" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GenerateSpecial_Facet.java" startLine="83" startPosition="43" endLine="84" endPosition="18" />
@@ -209,7 +209,7 @@
     <nodeInfo nodeId="7320828025189358923" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenerateSpecial_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
     <nodeInfo nodeId="7320828025189358923" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenerateSpecial_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
     <nodeInfo nodeId="7320828025189358923" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenerateSpecial_Facet.java" startLine="135" startPosition="0" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="505095865854557914" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="GenerateSpecial_Facet.java" startLine="59" startPosition="184" endLine="71" endPosition="15" />
+    <nodeInfo nodeId="505095865854557914" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="GenerateSpecial_Facet.java" startLine="59" startPosition="181" endLine="71" endPosition="15" />
     <nodeInfo nodeId="505095865854424950" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="GenerateSpecial_Facet.java" startLine="56" startPosition="56" endLine="74" endPosition="11" />
     <nodeInfo nodeId="505095865854424950" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenerateSpecial_Facet.java" startLine="54" startPosition="25" endLine="76" endPosition="0" />
     <nodeInfo nodeId="8351679702044326369" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GenerateSpecial_Facet.java" startLine="53" startPosition="29" endLine="76" endPosition="8" />

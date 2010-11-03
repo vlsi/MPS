@@ -307,7 +307,20 @@
     <property name="virtualPackage:0" value="job" />
     <property name="name:0" value="VariablesPoolParameter" />
     <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3868725017587120379">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.make.script.structure.VariablesPoolType" id="3868725017587267326" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6872280991287275953">
+      <property name="value:0" value="pool" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3868725017587120368">
+    <property name="virtualPackage:0" value="job" />
+    <property name="name:0" value="VariablesPoolType" />
+    <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3868725017587120375">
       <property name="value:0" value="pool" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>

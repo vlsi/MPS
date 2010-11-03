@@ -117,6 +117,7 @@ public class Script implements IScript {
         T vars = targetRange.getTarget(target).createVariables(cls);
         MapSequence.fromMap(cache).put(target, vars);
       }
+      System.out.println("Vars " + target + "==" + MapSequence.fromMap(cache).get(target));
       return cls.cast(MapSequence.fromMap(cache).get(target));
     }
   }

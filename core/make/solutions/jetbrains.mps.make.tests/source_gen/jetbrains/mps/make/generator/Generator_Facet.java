@@ -13,6 +13,9 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
 import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import junit.framework.Assert;
 
 public class Generator_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -20,6 +23,7 @@ public class Generator_Facet implements IFacet {
 
   public Generator_Facet() {
     ListSequence.fromList(targets).addElement(new Generator_Facet.Target_ixz87t_a());
+    ListSequence.fromList(targets).addElement(new Generator_Facet.Target_ixz87t_b());
   }
 
   public Iterable<ITarget> targets() {
@@ -43,7 +47,7 @@ public class Generator_Facet implements IFacet {
   }
 
   public static class Target_ixz87t_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("Generate");
+    private ITarget.Name name = new ITarget.Name("Configure");
 
     public Target_ixz87t_a() {
     }
@@ -54,12 +58,7 @@ public class Generator_Facet implements IFacet {
           Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
-              for (IResource resource : input) {
-                System.out.println("Input: " + resource);
-                _output_ixz87t_a0a = Sequence.fromIterable(_output_ixz87t_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
-              }
-              _output_ixz87t_a0a = Sequence.fromIterable(_output_ixz87t_a0a).concat(Sequence.fromIterable(input));
-              return new IResult.SUCCESS(_output_ixz87t_a0a);
+              pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).value("uninitialized");
             default:
               return new IResult.SUCCESS(_output_ixz87t_a0a);
           }
@@ -73,6 +72,80 @@ public class Generator_Facet implements IFacet {
 
     public Iterable<ITarget.Name> after() {
       return null;
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return null;
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public <T> T createVariables(Class<T> cls) {
+      return cls.cast(new Variables());
+    }
+
+    public static class Variables extends MultiTuple._1<String> {
+      public Variables() {
+        super();
+      }
+
+      public Variables(String value) {
+        super(value);
+      }
+
+      public String value(String value) {
+        return super._0(value);
+      }
+
+      public String value() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public Generator_Facet.Target_ixz87t_a.Variables assignFrom(Tuples._1<String> from) {
+        return (Generator_Facet.Target_ixz87t_a.Variables) super.assign(from);
+      }
+    }
+  }
+
+  public static class Target_ixz87t_b implements ITarget {
+    private ITarget.Name name = new ITarget.Name("Generate");
+
+    public Target_ixz87t_b() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
+          Iterable<IResource> _output_ixz87t_a0b = null;
+          switch (0) {
+            case 0:
+              Assert.assertEquals("uninitialized", pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value());
+              pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value("VALUE");
+              for (IResource resource : input) {
+                _output_ixz87t_a0b = Sequence.fromIterable(_output_ixz87t_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+              }
+              _output_ixz87t_a0b = Sequence.fromIterable(_output_ixz87t_a0b).concat(Sequence.fromIterable(input));
+              return new IResult.SUCCESS(_output_ixz87t_a0b);
+            default:
+              return new IResult.SUCCESS(_output_ixz87t_a0b);
+          }
+        }
+      };
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Configure")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

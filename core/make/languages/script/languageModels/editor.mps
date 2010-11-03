@@ -334,5 +334,16 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="505095865854557926" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3868725017587120369">
+    <property name="virtualPackage:32" value="job" />
+    <link role="conceptDeclaration:32" targetNodeId="1.3868725017587120368" resolveInfo="VariablesPoolType" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3868725017587120371">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="3868725017587120374">
+        <link role="relationDeclaration:32" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3868725017587120373" />
+    </node>
+  </node>
 </model>
 

@@ -135,7 +135,8 @@
     <nodeInfo nodeId="6872280991287272285" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="Script.java" startLine="109" startPosition="56" endLine="110" endPosition="103" />
     <nodeInfo nodeId="6872280991287272255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="116" startPosition="62" endLine="117" endPosition="68" />
     <nodeInfo nodeId="6872280991287272336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="117" startPosition="68" endLine="118" endPosition="53" />
-    <nodeInfo nodeId="6872280991287272322" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="119" startPosition="7" endLine="120" endPosition="62" />
+    <nodeInfo nodeId="3868725017587295658" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="119" startPosition="7" endLine="120" endPosition="91" />
+    <nodeInfo nodeId="6872280991287272322" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="120" startPosition="91" endLine="121" endPosition="62" />
     <nodeInfo nodeId="6872280991287272233" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="Script.java" startLine="111" startPosition="0" endLine="113" endPosition="5" />
     <nodeInfo nodeId="6168415856807657571" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="62" startPosition="59" endLine="65" endPosition="5" />
     <nodeInfo nodeId="6168415856807657653" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="Script.java" startLine="30" startPosition="0" endLine="34" endPosition="3" />
@@ -152,8 +153,8 @@
     <nodeInfo nodeId="6872280991287272310" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="115" startPosition="63" endLine="119" endPosition="7" />
     <nodeInfo nodeId="1291978361072217542" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="96" startPosition="43" endLine="103" endPosition="7" />
     <nodeInfo nodeId="6168415856807657560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Script.java" startLine="60" startPosition="0" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="6872280991287272245" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Script.java" startLine="114" startPosition="0" endLine="122" endPosition="0" />
     <nodeInfo nodeId="1291978361072223855" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="84" startPosition="45" endLine="93" endPosition="9" />
+    <nodeInfo nodeId="6872280991287272245" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Script.java" startLine="114" startPosition="0" endLine="123" endPosition="0" />
     <nodeInfo nodeId="6168415856807657489" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Script.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
     <nodeInfo nodeId="1291978361072209315" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Script.java" startLine="82" startPosition="91" endLine="104" endPosition="5" />
     <nodeInfo nodeId="6168415856807657603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Script.java" startLine="72" startPosition="0" endLine="108" endPosition="0" />
@@ -190,9 +191,9 @@
       <varInfo nodeId="6168415856807657565" varName="trg" />
     </scopeInfo>
     <scopeInfo nodeId="1291978361072217543" fileName="Script.java" startLine="97" startPosition="54" endLine="102" endPosition="14" />
-    <scopeInfo nodeId="6872280991287272254" fileName="Script.java" startLine="115" startPosition="63" endLine="120" endPosition="62" />
+    <scopeInfo nodeId="6872280991287272254" fileName="Script.java" startLine="115" startPosition="63" endLine="121" endPosition="62" />
     <scopeInfo nodeId="6168415856807657560" fileName="Script.java" startLine="60" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="6872280991287272245" fileName="Script.java" startLine="114" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="6872280991287272245" fileName="Script.java" startLine="114" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="6872280991287272251" varName="cls" />
       <varInfo nodeId="6872280991287272249" varName="target" />
     </scopeInfo>
@@ -214,8 +215,8 @@
     </scopeInfo>
     <unitInfo nodeId="1291978361072223900" fileName="Script.java" startLine="85" startPosition="115" endLine="89" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.script.Script$1" />
     <unitInfo nodeId="1291978361072223925" fileName="Script.java" startLine="89" startPosition="23" endLine="93" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.script.Script$2" />
-    <unitInfo nodeId="6872280991287272231" fileName="Script.java" startLine="109" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$VariablesPool" />
-    <unitInfo nodeId="6168415856807657480" fileName="Script.java" startLine="23" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script" />
+    <unitInfo nodeId="6872280991287272231" fileName="Script.java" startLine="109" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$VariablesPool" />
+    <unitInfo nodeId="6168415856807657480" fileName="Script.java" startLine="23" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script" />
   </root>
   <root nodeId="6168415856807657684">
     <nodeInfo nodeId="6168415856807657685" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ScriptBuilder.java" startLine="26" startPosition="28" endLine="27" endPosition="68" />

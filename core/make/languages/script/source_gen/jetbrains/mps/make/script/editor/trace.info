@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="VariablesPoolType_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.VariablesPoolType_Editor" />
   <unitInfo fileName="MonitorType_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.MonitorType_Editor" />
   <unitInfo fileName="ResourceType_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResourceType_Editor" />
   <unitInfo fileName="OptionExpression_Editor.java" startLine="49" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.make.script.editor.OptionExpression_Editor$_Inline_57zibj_a0a" />

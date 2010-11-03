@@ -13,6 +13,8 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
 import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class Generator_Facet implements IFacet {
@@ -58,16 +60,15 @@ public class Generator_Facet implements IFacet {
             case 0:
               GenerationSettings settings = GenerationSettings.getInstance();
               if (settings.isSaveTransientModels()) {
-                System.out.println("Configuring...");
                 switch (monitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
                   case SAVE_ixz87t_a0a0a:
-                    System.out.println("Yes");
+                    pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).saveTransient(true);
                     break;
                   case DONT_SAVE_ixz87t_b0a0a:
-                    System.out.println("No");
+                    pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).saveTransient(false);
                     break;
                   case BUGGER_OFF_ixz87t_c0a0a:
-                    System.out.println("Piss off");
+                    monitor.<rrr_Option>relayQuery(new WontAskAgain_Query());
                     break;
                   default:
                     return new IResult.FAILURE(_output_ixz87t_a0a);
@@ -102,7 +103,30 @@ public class Generator_Facet implements IFacet {
     }
 
     public <T> T createVariables(Class<T> cls) {
-      return null;
+      return cls.cast(new Variables());
+    }
+
+    public static class Variables extends MultiTuple._1<Boolean> {
+      public Variables() {
+        super();
+      }
+
+      public Variables(Boolean saveTransient) {
+        super(saveTransient);
+      }
+
+      public Boolean saveTransient(Boolean value) {
+        return super._0(value);
+      }
+
+      public Boolean saveTransient() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public Generator_Facet.Target_ixz87t_a.Variables assignFrom(Tuples._1<Boolean> from) {
+        return (Generator_Facet.Target_ixz87t_a.Variables) super.assign(from);
+      }
     }
   }
 
@@ -118,7 +142,7 @@ public class Generator_Facet implements IFacet {
           Iterable<IResource> _output_ixz87t_a0b = null;
           switch (0) {
             case 0:
-              System.out.println("Generating....");
+              System.out.println("Save transient: " + pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("ConfigureGenerator"), Generator_Facet.Target_ixz87t_a.Variables.class).saveTransient());
             default:
               return new IResult.SUCCESS(_output_ixz87t_a0b);
           }

@@ -18,7 +18,6 @@ import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
-import org.apache.log4j.BasicConfigurator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import jetbrains.mps.make.facet.FacetRegistry;
@@ -120,7 +119,6 @@ public class Generator_Test extends MockTestCase {
   @Override
   protected void setUp() throws Exception {
     super.setUp();
-    BasicConfigurator.configure();
     Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");
     Constructor<?> ctor = mf.getConstructor();
     Object inst = ctor.newInstance();
