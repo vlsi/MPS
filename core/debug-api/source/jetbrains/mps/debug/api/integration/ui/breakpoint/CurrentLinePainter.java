@@ -94,4 +94,9 @@ public class CurrentLinePainter extends EditorCellPainter<SNode> {
   public void setVisible(boolean visible) {
     myInvisible = !visible;
   }
+
+  @Override
+  public boolean paintsBackground() {
+    return !myInvisible;
+  }
 }

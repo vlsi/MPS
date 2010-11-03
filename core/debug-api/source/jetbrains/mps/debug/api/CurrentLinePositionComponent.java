@@ -31,7 +31,6 @@ import java.util.Map;
 public class CurrentLinePositionComponent implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(CurrentLinePositionComponent.class);
   private final FileEditorManager myFileEditorManager;
-  private final EditorsProvider myEditorsProvider;
   private final MPSEditorOpener myEditorOpener;
   private final Map<AbstractDebugSession, CurrentLinePainter> mySessionToContextPainterMap =
     new HashMap<AbstractDebugSession, CurrentLinePainter>();
@@ -44,8 +43,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   public CurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager, MPSEditorOpener editorOpener) {
     myFileEditorManager = fileEditorManager;
     myEditorOpener = editorOpener;
-    myEditorsProvider = new EditorsProvider(project);
-    myEditorsProvider.addEditorOpenListener(new EditorOpenListener() {
+    EditorsProvider editorsProvider = new EditorsProvider(project);
+    editorsProvider.addEditorOpenListener(new EditorOpenListener() {
       @Override
       public void editorOpened(MPSFileNodeEditor editor) {
         editorComponentOpened(editor.getNodeEditor());
