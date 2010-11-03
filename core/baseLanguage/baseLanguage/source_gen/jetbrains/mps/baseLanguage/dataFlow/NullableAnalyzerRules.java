@@ -75,6 +75,7 @@ public class NullableAnalyzerRules {
     myConceptRules.add(new RuleAfterDotExpression());
     myConceptRules.add(new RuleVariableDeclaration());
     myConceptRules.add(new IfNullReturnAll());
+    myConceptRules.add(new RuleTernaryOperation());
   }
 
   public void apply(SNode nodeToApply, Program program) {

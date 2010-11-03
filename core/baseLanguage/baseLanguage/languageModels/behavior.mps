@@ -110,7 +110,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877220084">
-    <property name="package" value="classifier" />
+    <property name="virtualPackage" value="classifier" />
     <link role="concept" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240936659085">
       <property name="name" value="getSuperclass" />

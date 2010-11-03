@@ -31,7 +31,7 @@ public class NullableUtil {
     ListSequence.fromList(result).addElement(expression);
   }
 
-  public static SNode getEqualsNull(SNode equals) {
+  public static SNode getOtherThanNull(SNode equals) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(equals, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
       return SLinkOperations.getTarget(equals, "rightExpression", true);
     }

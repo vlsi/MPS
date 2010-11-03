@@ -29,7 +29,7 @@ public class IfNullReturnAll extends DataFlowConstructor {
     if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
       for (SNode expression : NullableUtil.getOrConditions(node)) {
         if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
-          SNode notNullNode = NullableUtil.getEqualsNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
+          SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
           if (notNullNode != null) {
             {
               Object object = expression;
