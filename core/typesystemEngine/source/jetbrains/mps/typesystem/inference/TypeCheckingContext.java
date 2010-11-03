@@ -73,6 +73,10 @@ public class TypeCheckingContext {
     return getNodeTypesComponent().getEquationManager();
   }
 
+  public SNode getRepresentative (SNode node) {
+    return getEquationManager().getRepresentator(node);
+  }
+
   public boolean isIncrementalMode() {
     return !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode();
   }
@@ -511,7 +515,7 @@ public class TypeCheckingContext {
   private Runnable wrapRunnableWithIf(final NodeInfo argument, final Runnable oldRunnable) {
     return new Runnable() {
       public void run() {
-        SNode nodeType = getEquationManager().getRepresentator(argument.myNode);
+        SNode nodeType = getRepresentative(argument.myNode);
         SNode restriction = argument.myType;
         if (argument.myEquals) {
           if (MatchingUtil.matchNodes(nodeType, restriction)) {

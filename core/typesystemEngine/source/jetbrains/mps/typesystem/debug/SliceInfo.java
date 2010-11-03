@@ -50,7 +50,7 @@ public class SliceInfo {
   public void completeResultType(TypeCheckingContext typeCheckingContext) {
     SNode type = typeCheckingContext.getMainContext().get(myNode);
     if (type != null) {
-      myResultType = typeCheckingContext.getEquationManager().getRepresentator(type);
+      myResultType = typeCheckingContext.getRepresentative(type);
     }
   }
 
