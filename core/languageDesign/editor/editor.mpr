@@ -25,6 +25,7 @@
     <projectLanguages>
       <languagePath path="${project}/editor.mpl" />
       <languagePath path="${project}/languages/table/table.mpl" folder="" />
+      <languagePath path="${project}/languages/tableTests/tableTests.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
