@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import org.xml.sax.helpers.DefaultHandler;
 import java.util.Stack;
+import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
@@ -16,51 +17,57 @@ public class BLDependenciesHandler extends DefaultHandler {
   private BLDependenciesHandler.dependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.dependenciesRootElementHandler();
   private BLDependenciesHandler.dependencyElementHandler dependencyhandler = new BLDependenciesHandler.dependencyElementHandler();
   private BLDependenciesHandler.classNodeElementHandler classNodehandler = new BLDependenciesHandler.classNodeElementHandler();
-  private Stack<BLDependenciesHandler.ElementHandler> handlers = new Stack<BLDependenciesHandler.ElementHandler>();
-  private Stack<Object> values = new Stack<Object>();
-  private ModelDependencies result;
+  private Stack<BLDependenciesHandler.ElementHandler> myHandlersStack = new Stack<BLDependenciesHandler.ElementHandler>();
+  private Stack<Object> myValues = new Stack<Object>();
+  private Locator myLocator;
+  private ModelDependencies myResult;
 
   public BLDependenciesHandler() {
   }
 
   public ModelDependencies getResult() {
-    return result;
+    return myResult;
+  }
+
+  @Override
+  public void setDocumentLocator(Locator locator) {
+    myLocator = locator;
   }
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = (handlers.empty() ?
+    BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ?
       (BLDependenciesHandler.ElementHandler) null :
-      handlers.peek()
+      myHandlersStack.peek()
     );
     if (current != null) {
-      current.handleText(values.peek(), new String(array, start, len));
+      current.handleText(myValues.peek(), new String(array, start, len));
     }
   }
 
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = handlers.pop();
-    Object childValue = values.pop();
+    BLDependenciesHandler.ElementHandler current = myHandlersStack.pop();
+    Object childValue = myValues.pop();
     if (current != null) {
       current.validate(childValue);
-      BLDependenciesHandler.ElementHandler parent = (handlers.empty() ?
+      BLDependenciesHandler.ElementHandler parent = (myHandlersStack.empty() ?
         (BLDependenciesHandler.ElementHandler) null :
-        handlers.peek()
+        myHandlersStack.peek()
       );
       if (parent != null) {
-        parent.handleChild(values.peek(), qName, childValue);
+        parent.handleChild(myValues.peek(), qName, childValue);
       } else {
-        result = (ModelDependencies) childValue;
+        myResult = (ModelDependencies) childValue;
       }
     }
   }
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = (handlers.empty() ?
+    BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ?
       (BLDependenciesHandler.ElementHandler) null :
-      handlers.peek()
+      myHandlersStack.peek()
     );
     if (current == null) {
       // root 
@@ -84,8 +91,8 @@ public class BLDependenciesHandler extends DefaultHandler {
       String value = attributes.getValue(i);
       current.handleAttribute(result, name, value);
     }
-    handlers.push(current);
-    values.push(result);
+    myHandlersStack.push(current);
+    myValues.push(result);
   }
 
   private class ElementHandler {
