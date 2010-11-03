@@ -53,7 +53,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class QueriesGenerated {
   private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a3a43 = new SNodePointer("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)", "~SNode");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a305 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a305 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.INodeAdapter");
   private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a305 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil");
   private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a405 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport");
   private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a405 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker");

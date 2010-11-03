@@ -21,6 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="54" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -3727,19 +3728,14 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1174666440715">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216929835402">
-          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216929835783">
-            <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223923177703">
-              <property name="name:1" value="typeCheckingContext" />
-              <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223923180438">
-                <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223923188530">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
+          <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223923177703">
+            <property name="name:1" value="typeCheckingContext" />
+            <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223923180438">
+              <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
             </node>
           </node>
           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216929835403">
-            <link role="baseMethodDeclaration:3" targetNodeId="6.~EquationManager.getRepresentator(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getRepresentator" />
+            <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.getRepresentative(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getRepresentative" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1185876297646">
               <link role="variableDeclaration:3" targetNodeId="1174666432572" resolveInfo="typevar" />
               <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1185876297647">
@@ -14294,19 +14290,14 @@
     <property name="name:2" value="WhenConcreteVariableReference_to_Expression" />
     <link role="applicableConcept:2" targetNodeId="1.1205762656241:3" resolveInfo="WhenConcreteVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205766329451">
-      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205766329452">
-        <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223986338330">
-          <property name="name:1" value="typeCheckingContext" />
-          <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223986341050">
-            <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
-          </node>
-        </node>
-        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223986355550">
-          <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
+      <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223986338330">
+        <property name="name:1" value="typeCheckingContext" />
+        <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223986341050">
+          <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
         </node>
       </node>
       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1205766329455">
-        <link role="baseMethodDeclaration:3" targetNodeId="6.~EquationManager.getRepresentator(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getRepresentator" />
+        <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.getRepresentative(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getRepresentative" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1205766819816">
           <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1205766846449">
             <link role="classifier:3" targetNodeId="4.~SNode" resolveInfo="SNode" />
@@ -15396,19 +15387,14 @@
     <property name="name:2" value="reduce_ChildTypeRestrictionReference" />
     <link role="applicableConcept:2" targetNodeId="1.1212763614690:3" resolveInfo="ChildTypeRestrictionReference" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1212766512596">
-      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1212766493154">
-        <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223989288218">
-          <property name="name:1" value="typeCheckingContext" />
-          <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223989291189">
-            <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
-          </node>
-        </node>
-        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223989309098">
-          <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.getEquationManager():jetbrains.mps.typesystem.inference.EquationManager" resolveInfo="getEquationManager" />
+      <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223989288218">
+        <property name="name:1" value="typeCheckingContext" />
+        <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223989291189">
+          <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
         </node>
       </node>
       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1212766515756">
-        <link role="baseMethodDeclaration:3" targetNodeId="6.~EquationManager.getRepresentator(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getRepresentator" />
+        <link role="baseMethodDeclaration:3" targetNodeId="6.~TypeCheckingContext.getRepresentative(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getRepresentative" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1212766516835">
           <property name="name:1" value="varname" />
           <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1212766516836">
@@ -19891,7 +19877,7 @@
                                       <node role="pattern:3" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="1224065863908">
                                         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1224065863909">
                                           <link role="classConcept:3" targetNodeId="15.~HUtil" resolveInfo="HUtil" />
-                                          <link role="baseMethodDeclaration:3" targetNodeId="15.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="15.~HUtil.copyIfNecessary(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.INodeAdapter" resolveInfo="copyIfNecessary" />
                                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1224065863910">
                                             <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="1224065863911">
                                               <property name="varName:0" value="p" />
