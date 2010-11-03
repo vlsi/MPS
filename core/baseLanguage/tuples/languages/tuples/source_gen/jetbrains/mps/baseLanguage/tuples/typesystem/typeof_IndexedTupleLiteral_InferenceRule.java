@@ -66,7 +66,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
         {
           List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

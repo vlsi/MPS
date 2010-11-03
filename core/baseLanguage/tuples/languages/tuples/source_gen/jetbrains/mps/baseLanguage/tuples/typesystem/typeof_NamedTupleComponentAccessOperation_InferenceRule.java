@@ -93,7 +93,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

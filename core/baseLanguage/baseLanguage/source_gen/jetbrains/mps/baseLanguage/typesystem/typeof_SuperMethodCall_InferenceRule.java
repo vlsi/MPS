@@ -116,7 +116,7 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
         {
           List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
