@@ -7,5 +7,5 @@ import jetbrains.mps.make.facet.ITarget;
 public interface IMonitor {
   public boolean pleaseStop();
   public <T extends IOption> T relayQuery(IQuery<T> query);
-  public <T> T variables(ITarget<T> target);
+  public <T> T variables(ITarget.Name target, Class<T> cls);
 }

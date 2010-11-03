@@ -10,18 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LocalVariablesExpression extends Expression {
   public static final String concept = "jetbrains.mps.make.facet.structure.LocalVariablesExpression";
-  public static final String VARIABLES = "variables";
 
   public LocalVariablesExpression(SNode node) {
     super(node);
-  }
-
-  public VariablesDeclaration getVariables() {
-    return (VariablesDeclaration) this.getReferent(VariablesDeclaration.class, LocalVariablesExpression.VARIABLES);
-  }
-
-  public void setVariables(VariablesDeclaration node) {
-    super.setReferent(LocalVariablesExpression.VARIABLES, node);
   }
 
   public static LocalVariablesExpression newInstance(SModel sm, boolean init) {

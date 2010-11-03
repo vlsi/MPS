@@ -40,7 +40,7 @@ public class Generate_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_fi61u2_a implements ITarget<Void> {
+  public static class Target_fi61u2_a implements ITarget {
     private ITarget.Name name = new ITarget.Name("GenerateTarget");
 
     public Target_fi61u2_a() {
@@ -79,7 +79,7 @@ public class Generate_Facet implements IFacet {
       return name;
     }
 
-    public Void createVariables() {
+    public <T> T createVariables(Class<T> cls) {
       return null;
     }
   }

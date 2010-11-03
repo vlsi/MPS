@@ -43,7 +43,7 @@ public class GenerateSpecial_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_i03q2a_a implements ITarget<GenerateSpecial_Facet.Target_i03q2a_a.Variables> {
+  public static class Target_i03q2a_a implements ITarget {
     private ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
 
     public Target_i03q2a_a() {
@@ -55,16 +55,16 @@ public class GenerateSpecial_Facet implements IFacet {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
-              monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this).foo("asdasdsd");
+              monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
               switch (monitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
-                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this).baz(false);
+                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
                   break;
                 case IGNORE_i03q2a_c0a0a:
-                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this).baz(false);
+                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
                   break;
                 case RETRY_i03q2a_b0a0a:
-                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this).baz(true);
+                  monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(true);
                   break;
                 default:
               }
@@ -95,7 +95,7 @@ public class GenerateSpecial_Facet implements IFacet {
       return name;
     }
 
-    public GenerateSpecial_Facet.Target_i03q2a_a.Variables createVariables() {
+    public <T> T createVariables(Class<T> cls) {
       return null;
     }
 

@@ -76,7 +76,7 @@ public class MakeModel_Action extends GeneratedAction {
           return new UIQueryRelayStrategy().relayQuery(query, MakeModel_Action.this.context);
         }
 
-        public <T> T variables(ITarget<T> target) {
+        public <T> T variables(ITarget.Name target, Class<T> cls) {
           return null;
         }
       });

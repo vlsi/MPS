@@ -4,10 +4,12 @@
   <unitInfo fileName="Facet_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.structure.Facet_Language" />
   <unitInfo fileName="RelatedFacetReference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.structure.RelatedFacetReference" />
   <unitInfo fileName="ExtendsFacetReference.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ExtendsFacetReference" />
+  <unitInfo fileName="LocalVariablesExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.structure.LocalVariablesExpression" />
   <unitInfo fileName="VariablesDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.structure.VariablesDeclaration" />
   <unitInfo fileName="LocalVariablesComponentExpression.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression" />
-  <unitInfo fileName="LocalVariablesExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.LocalVariablesExpression" />
+  <unitInfo fileName="ForeignVariablesComponentExpression.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ForeignVariablesComponentExpression" />
   <unitInfo fileName="FacetReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetReference" />
+  <unitInfo fileName="ForeignVariablesExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.structure.ForeignVariablesExpression" />
   <unitInfo fileName="TargetDependency.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependency" />
   <unitInfo fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier_PropertySupport" />
   <unitInfo fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />

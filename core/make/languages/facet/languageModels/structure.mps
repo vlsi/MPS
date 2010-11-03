@@ -204,12 +204,6 @@
     <property name="name:0" value="LocalVariablesExpression" />
     <property name="virtualPackage:0" value="target" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7320828025189387032">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="variables" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="7320828025189345662:1" resolveInfo="VariablesDeclaration" />
-    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7320828025189444082">
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
@@ -223,6 +217,32 @@
       <property name="role:0" value="expression" />
       <link role="specializedLink:0" targetNodeId="2.1197027771414:3" />
       <link role="target:0" targetNodeId="7320828025189375154:1" resolveInfo="LocalVariablesExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3344436107830227888">
+    <property name="virtualPackage:0" value="target" />
+    <property name="name:0" value="ForeignVariablesExpression" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3344436107830227902">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="target" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="6418371274763029565:1" resolveInfo="TargetDeclaration" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3344436107830276804">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3344436107830227889">
+    <property name="virtualPackage:0" value="target" />
+    <property name="name:0" value="ForeignVariablesComponentExpression" />
+    <link role="extends:0" targetNodeId="2.1197027756228:3" resolveInfo="DotExpression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3344436107830227890">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="expression" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="3344436107830227888:1" resolveInfo="ForeignVarialblesExpression" />
+      <link role="specializedLink:0" targetNodeId="2.1197027771414:3" />
     </node>
   </node>
 </model>

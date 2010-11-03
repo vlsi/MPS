@@ -520,7 +520,7 @@
     <nodeInfo nodeId="6168415856807658445" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetRange.java" startLine="171" startPosition="47" endLine="172" endPosition="104" />
     <nodeInfo nodeId="6168415856807658459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetRange.java" startLine="175" startPosition="44" endLine="176" endPosition="98" />
     <nodeInfo nodeId="6168415856807658472" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetRange.java" startLine="179" startPosition="35" endLine="180" endPosition="29" />
-    <nodeInfo nodeId="7320828025189499538" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetRange.java" startLine="183" startPosition="37" endLine="184" endPosition="18" />
+    <nodeInfo nodeId="7320828025189499538" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetRange.java" startLine="183" startPosition="48" endLine="184" endPosition="18" />
     <nodeInfo nodeId="6168415856807658480" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TargetRange.java" startLine="187" startPosition="29" endLine="188" endPosition="18" />
     <nodeInfo nodeId="6168415856807658489" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="TargetRange.java" startLine="192" startPosition="35" endLine="193" endPosition="94" />
     <nodeInfo nodeId="6168415856807658496" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="TargetRange.java" startLine="193" startPosition="94" endLine="194" endPosition="93" />
@@ -606,7 +606,7 @@
     <scopeInfo nodeId="6168415856807658444" fileName="TargetRange.java" startLine="171" startPosition="47" endLine="172" endPosition="104" />
     <scopeInfo nodeId="6168415856807658458" fileName="TargetRange.java" startLine="175" startPosition="44" endLine="176" endPosition="98" />
     <scopeInfo nodeId="6168415856807658471" fileName="TargetRange.java" startLine="179" startPosition="35" endLine="180" endPosition="29" />
-    <scopeInfo nodeId="7320828025189499537" fileName="TargetRange.java" startLine="183" startPosition="37" endLine="184" endPosition="18" />
+    <scopeInfo nodeId="7320828025189499537" fileName="TargetRange.java" startLine="183" startPosition="48" endLine="184" endPosition="18" />
     <scopeInfo nodeId="6168415856807658479" fileName="TargetRange.java" startLine="187" startPosition="29" endLine="188" endPosition="18" />
     <scopeInfo nodeId="6168415856807658532" fileName="TargetRange.java" startLine="207" startPosition="48" endLine="208" endPosition="62" />
     <scopeInfo nodeId="6168415856807658557" fileName="TargetRange.java" startLine="216" startPosition="48" endLine="217" endPosition="62" />
@@ -639,7 +639,9 @@
     <scopeInfo nodeId="6168415856807658440" fileName="TargetRange.java" startLine="170" startPosition="0" endLine="174" endPosition="0" />
     <scopeInfo nodeId="6168415856807658454" fileName="TargetRange.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
     <scopeInfo nodeId="6168415856807658468" fileName="TargetRange.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="7320828025189499534" fileName="TargetRange.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="7320828025189499534" fileName="TargetRange.java" startLine="182" startPosition="0" endLine="186" endPosition="0">
+      <varInfo nodeId="3344436107829992845" varName="cls" />
+    </scopeInfo>
     <scopeInfo nodeId="6168415856807658476" fileName="TargetRange.java" startLine="186" startPosition="0" endLine="190" endPosition="0" />
     <scopeInfo nodeId="6168415856807658531" fileName="TargetRange.java" startLine="206" startPosition="118" endLine="210" endPosition="0" />
     <scopeInfo nodeId="6168415856807658556" fileName="TargetRange.java" startLine="215" startPosition="119" endLine="219" endPosition="0" />

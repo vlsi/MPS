@@ -43,7 +43,7 @@ public class FFFFacet_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_chixuw_a implements ITarget<Void> {
+  public static class Target_chixuw_a implements ITarget {
     private ITarget.Name name = new ITarget.Name("QQQ");
 
     public Target_chixuw_a() {
@@ -55,6 +55,7 @@ public class FFFFacet_Facet implements IFacet {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
+              monitor.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).bar(42);
               _output_chixuw_a0a = Sequence.fromIterable(_output_chixuw_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(null)));
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
@@ -65,7 +66,7 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> notAfter() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateTarget")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateSpecialTarget")});
     }
 
     public Iterable<ITarget.Name> after() {
@@ -84,12 +85,12 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
-    public Void createVariables() {
+    public <T> T createVariables(Class<T> cls) {
       return null;
     }
   }
 
-  public static class Target_chixuw_b implements ITarget<Void> {
+  public static class Target_chixuw_b implements ITarget {
     private ITarget.Name name = new ITarget.Name("qweqwe");
 
     public Target_chixuw_b() {
@@ -128,12 +129,12 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
-    public Void createVariables() {
+    public <T> T createVariables(Class<T> cls) {
       return null;
     }
   }
 
-  public static class Target_chixuw_c implements ITarget<Void> {
+  public static class Target_chixuw_c implements ITarget {
     private ITarget.Name name = new ITarget.Name("Nanana");
 
     public Target_chixuw_c() {
@@ -172,7 +173,7 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
-    public Void createVariables() {
+    public <T> T createVariables(Class<T> cls) {
       return null;
     }
   }

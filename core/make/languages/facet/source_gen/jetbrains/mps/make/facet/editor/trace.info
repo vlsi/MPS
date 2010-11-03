@@ -6,13 +6,16 @@
   <unitInfo fileName="FacetReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetReference_Editor$_Inline_7rmqfw_a0a" />
   <unitInfo fileName="TargetDependency_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$_Inline_x08tk8_a1a" />
   <unitInfo fileName="TargetDeclaration_Editor.java" startLine="236" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$_Inline_xfdsch_a2a0" />
+  <unitInfo fileName="ForeignVariablesExpression_Editor.java" startLine="50" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ForeignVariablesExpression_Editor$_Inline_uqmyvs_a0a" />
   <unitInfo fileName="VariablesDeclaration_Editor.java" startLine="95" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.make.facet.editor.VariablesDeclaration_Editor$componentListHandler_gnykt0_b1a" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="284" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$extendedListHandler_aj8zjo_c0a" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="332" startPosition="0" endLine="379" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$requiredListHandler_aj8zjo_c3b1a" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="380" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$optionalListHandler_aj8zjo_c4b1a" />
   <unitInfo fileName="FacetDeclaration_Editor.java" startLine="428" startPosition="0" endLine="475" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$targetDeclarationListHandler_aj8zjo_a1i1b0" />
   <unitInfo fileName="TargetDeclaration_Editor.java" startLine="269" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$dependencyListHandler_xfdsch_a0b1a" />
+  <unitInfo fileName="ForeignVariablesComponentExpression_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ForeignVariablesComponentExpression_Editor" />
   <unitInfo fileName="FacetReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetReference_Editor" />
+  <unitInfo fileName="ForeignVariablesExpression_Editor.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ForeignVariablesExpression_Editor" />
   <unitInfo fileName="TargetDependency_Editor.java" startLine="23" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor" />
   <unitInfo fileName="VariablesDeclaration_Editor.java" startLine="23" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.make.facet.editor.VariablesDeclaration_Editor" />
   <unitInfo fileName="TargetDeclaration_Editor.java" startLine="30" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor" />

@@ -180,7 +180,7 @@ public class TargetRange {
       return first.getName();
     }
 
-    public Object createVariables() {
+    public <T> T createVariables(Class<T> cls) {
       return null;
     }
 

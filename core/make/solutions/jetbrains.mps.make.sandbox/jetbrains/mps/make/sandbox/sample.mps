@@ -10,14 +10,10 @@
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <languageAspect modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
+  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:592314bc-6729-4503-84dc-fd04330640bd(jetbrains.mps.make.sandbox.sample)" version="-1" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="6418371274763153153">
     <property name="name:1" value="FFFFacet" />
@@ -29,11 +25,26 @@
       <link role="overrides:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
       <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="395692171604530851">
         <property name="qualifier:1" value="NOT_AFTER" />
-        <link role="dependsOn:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
+        <link role="dependsOn:1" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
       </node>
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="505095865854424933">
         <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="505095865854424936">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854424937">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6872280991287184162">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6872280991287184176">
+                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6872280991287184179">
+                  <property name="value:3" value="42" />
+                </node>
+                <node role="lValue:3" type="jetbrains.mps.make.facet.structure.ForeignVariablesComponentExpression:1" id="6872280991287184163">
+                  <node role="operand:1" type="jetbrains.mps.make.facet.structure.ForeignVariablesExpression:1" id="6872280991287184164">
+                    <link role="target:1" targetNodeId="8351679702044326369" resolveInfo="GenerateSpecialTarget" />
+                  </node>
+                  <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="6872280991287184165">
+                    <link role="component:2" targetNodeId="7320828025189446641" resolveInfo="bar" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.make.script.structure.OutputResources" id="505095865854424938">
               <node role="resource" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="505095865854424939" />
             </node>
@@ -121,12 +132,10 @@
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7320828025189446635">
                   <property name="value:3" value="asdasdsd" />
                 </node>
-                <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="7320828025189446628">
-                  <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="7320828025189446629">
-                    <link role="variables:1" targetNodeId="7320828025189358923" resolveInfo="&lt;foo&gt; Variables" />
-                  </node>
-                  <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="7320828025189446630">
-                    <link role="component" targetNodeId="7320828025189358925" resolveInfo="foo" />
+                <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="3344436107830276755">
+                  <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="3344436107830276756" />
+                  <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="3344436107830276758">
+                    <link role="component:2" targetNodeId="7320828025189358925" resolveInfo="foo" />
                   </node>
                 </node>
               </node>
@@ -142,12 +151,10 @@
                       <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7320828025189472067">
                         <property name="value:3" value="false" />
                       </node>
-                      <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="7320828025189472061">
-                        <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="7320828025189472062">
-                          <link role="variables:1" targetNodeId="7320828025189358923" resolveInfo="&lt;foo, bar, baz&gt; Variables" />
-                        </node>
-                        <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="7320828025189472063">
-                          <link role="component" targetNodeId="7320828025189472056" resolveInfo="baz" />
+                      <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="3344436107830276759">
+                        <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="3344436107830276760" />
+                        <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="3344436107830276762">
+                          <link role="component:2" targetNodeId="7320828025189472056" resolveInfo="baz" />
                         </node>
                       </node>
                     </node>
@@ -165,12 +172,10 @@
                       <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7320828025189472077">
                         <property name="value:3" value="false" />
                       </node>
-                      <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="7320828025189472071">
-                        <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="7320828025189472072">
-                          <link role="variables:1" targetNodeId="7320828025189358923" resolveInfo="&lt;foo, bar, baz&gt; Variables" />
-                        </node>
-                        <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="7320828025189472073">
-                          <link role="component" targetNodeId="7320828025189472056" resolveInfo="baz" />
+                      <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="3344436107830276763">
+                        <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="3344436107830276764" />
+                        <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="3344436107830276765">
+                          <link role="component:2" targetNodeId="7320828025189472056" resolveInfo="baz" />
                         </node>
                       </node>
                     </node>
@@ -188,12 +193,10 @@
                       <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7320828025189472090">
                         <property name="value:3" value="true" />
                       </node>
-                      <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="7320828025189472081">
-                        <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="7320828025189472082">
-                          <link role="variables:1" targetNodeId="7320828025189358923" resolveInfo="&lt;foo, bar, baz&gt; Variables" />
-                        </node>
-                        <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="7320828025189472083">
-                          <link role="component" targetNodeId="7320828025189472056" resolveInfo="baz" />
+                      <node role="lValue:3" type="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression:1" id="3344436107830276766">
+                        <node role="operand:1" type="jetbrains.mps.make.facet.structure.LocalVariablesExpression:1" id="3344436107830276767" />
+                        <node role="operation:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="3344436107830276768">
+                          <link role="component:2" targetNodeId="7320828025189472056" resolveInfo="baz" />
                         </node>
                       </node>
                     </node>
@@ -214,20 +217,20 @@
       </node>
       <node role="variables:1" type="jetbrains.mps.make.facet.structure.VariablesDeclaration:1" id="7320828025189358923">
         <property name="name:1" value="Variables" />
-        <node role="component:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" id="7320828025189358925">
-          <property name="final" value="false" />
-          <property name="name" value="foo" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7320828025189358927" />
+        <node role="component:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="7320828025189358925">
+          <property name="final:2" value="false" />
+          <property name="name:2" value="foo" />
+          <node role="type:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7320828025189358927" />
         </node>
-        <node role="component:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" id="7320828025189446641">
-          <property name="final" value="false" />
-          <property name="name" value="bar" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7320828025189446643" />
+        <node role="component:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="7320828025189446641">
+          <property name="final:2" value="false" />
+          <property name="name:2" value="bar" />
+          <node role="type:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7320828025189446643" />
         </node>
-        <node role="component:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" id="7320828025189472056">
-          <property name="final" value="false" />
-          <property name="name" value="baz" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7320828025189472058" />
+        <node role="component:1" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="7320828025189472056">
+          <property name="final:2" value="false" />
+          <property name="name:2" value="baz" />
+          <node role="type:2" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7320828025189472058" />
         </node>
         <node role="visibility:1" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7320828025189358924" />
       </node>

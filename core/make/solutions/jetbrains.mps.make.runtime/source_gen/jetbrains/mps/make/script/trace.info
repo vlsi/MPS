@@ -68,13 +68,14 @@
   <root nodeId="6168415856807657250">
     <nodeInfo nodeId="6168415856807657251" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitor.java" startLine="7" startPosition="27" endLine="8" endPosition="30" />
     <nodeInfo nodeId="8486446835277348225" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitor.java" startLine="8" startPosition="30" endLine="9" endPosition="59" />
-    <nodeInfo nodeId="7320828025189492095" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitor.java" startLine="9" startPosition="59" endLine="10" endPosition="44" />
+    <nodeInfo nodeId="7320828025189492095" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitor.java" startLine="9" startPosition="59" endLine="10" endPosition="60" />
     <scopeInfo nodeId="6168415856807657251" fileName="IMonitor.java" startLine="7" startPosition="27" endLine="8" endPosition="30" />
     <scopeInfo nodeId="8486446835277348225" fileName="IMonitor.java" startLine="8" startPosition="30" endLine="9" endPosition="59">
       <varInfo nodeId="8486446835277348230" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="7320828025189492095" fileName="IMonitor.java" startLine="9" startPosition="59" endLine="10" endPosition="44">
-      <varInfo nodeId="7320828025189492105" varName="target" />
+    <scopeInfo nodeId="7320828025189492095" fileName="IMonitor.java" startLine="9" startPosition="59" endLine="10" endPosition="60">
+      <varInfo nodeId="3344436107830187050" varName="cls" />
+      <varInfo nodeId="3344436107830187046" varName="target" />
     </scopeInfo>
     <unitInfo nodeId="6168415856807657250" fileName="IMonitor.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.script.IMonitor" />
   </root>
