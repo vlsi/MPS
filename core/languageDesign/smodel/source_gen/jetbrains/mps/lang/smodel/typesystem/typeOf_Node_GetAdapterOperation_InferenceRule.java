@@ -25,12 +25,12 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Concept_typevar_1205967245422 = typeCheckingContext.createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967245422));
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, typeCheckingContext.getRepresentative(Concept_typevar_1205967245422));
     {
-      final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967245422);
+      final SNode C = typeCheckingContext.getRepresentative(Concept_typevar_1205967245422);
       typeCheckingContext.whenConcrete(C, new Runnable() {
         public void run() {
-          SNode inputNodeConcept = SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(C), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+          SNode inputNodeConcept = SNodeOperations.cast(typeCheckingContext.getRepresentative(C), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
           {
             SNode _nodeToCheck_1029348928467 = node;
             BaseQuickFixProvider intentionProvider = null;

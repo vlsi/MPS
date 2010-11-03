@@ -65,7 +65,7 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {
@@ -78,7 +78,7 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         result = quotedNode1_4;

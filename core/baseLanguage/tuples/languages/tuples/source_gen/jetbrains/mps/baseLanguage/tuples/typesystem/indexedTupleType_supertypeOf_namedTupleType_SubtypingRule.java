@@ -81,7 +81,7 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
         {
           List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(child));
           }
         }
         result = quotedNode1_3;

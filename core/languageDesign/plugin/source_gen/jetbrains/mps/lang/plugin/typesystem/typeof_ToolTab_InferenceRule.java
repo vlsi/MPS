@@ -30,14 +30,14 @@ public class typeof_ToolTab_InferenceRule extends AbstractInferenceRule_Runtime 
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(tab, "componentExpression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381661", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(componentType_typevar_6938053545825381660), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381665", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(componentType_typevar_6938053545825381660), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381665", true), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = tab;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381669", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getEquationManager().getRepresentator(componentType_typevar_6938053545825381660), (SNode) new typeof_ToolTab_InferenceRule.QuotationClass_6sqcaa_a0a2a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getRepresentative(componentType_typevar_6938053545825381660), (SNode) new typeof_ToolTab_InferenceRule.QuotationClass_6sqcaa_a0a2a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(tab, "titleExpression", true);
@@ -57,7 +57,7 @@ public class typeof_ToolTab_InferenceRule extends AbstractInferenceRule_Runtime 
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(tab, "disposeTabClosure", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381696", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381705", true), (SNode) new typeof_ToolTab_InferenceRule.QuotationClass_6sqcaa_a0a5a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(componentType_typevar_6938053545825381660), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "6938053545825381705", true), (SNode) new typeof_ToolTab_InferenceRule.QuotationClass_6sqcaa_a0a5a0().createNode(typeCheckingContext.getRepresentative(componentType_typevar_6938053545825381660), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -195,7 +195,7 @@ public class typeof_ToolTab_InferenceRule extends AbstractInferenceRule_Runtime 
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         result = quotedNode1_4;

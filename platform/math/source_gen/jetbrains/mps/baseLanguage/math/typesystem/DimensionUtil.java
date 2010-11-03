@@ -85,7 +85,7 @@ public class DimensionUtil {
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652074322", 0, intentionProvider);
                 _info_12389875345.setInequationGroup("default");
-                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_757772128652074250), false, _info_12389875345);
+                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
               }
               break;
             }
@@ -135,7 +135,7 @@ public class DimensionUtil {
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652075446", 0, intentionProvider);
                 _info_12389875345.setInequationGroup("default");
-                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_757772128652074250), false, _info_12389875345);
+                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
               }
               break;
             }
@@ -145,7 +145,7 @@ public class DimensionUtil {
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652104638", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
-            typeCheckingContext.createLessThanInequation((SNode) type, (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_757772128652074250), false, _info_12389875345);
+            typeCheckingContext.createLessThanInequation((SNode) type, (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, _info_12389875345);
           }
           if (row) {
             if (cbd && f != 0 && f != 1) {
@@ -174,7 +174,7 @@ public class DimensionUtil {
           }
         } while (false);
       }
-      SNode result = MathTypeUtil.qMatrix(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_757772128652074250));
+      SNode result = MathTypeUtil.qMatrix(typeCheckingContext.getRepresentative(T_typevar_757772128652074250));
       if (row) {
         if (cbc) {
           SPropertyOperations.set(result, "columns", "" + s);
@@ -195,7 +195,7 @@ public class DimensionUtil {
           SNode _nodeToCheck_1029348928467 = node;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973498", 0, intentionProvider);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973494", true), (SNode) new DimensionUtil.QuotationClass_48zlf8_a0a0a8a0a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_757772128652074250), "" + SPropertyOperations.getInteger(result, "rows"), typeCheckingContext), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973494", true), (SNode) new DimensionUtil.QuotationClass_48zlf8_a0a0a8a0a0().createNode(typeCheckingContext.getRepresentative(T_typevar_757772128652074250), "" + SPropertyOperations.getInteger(result, "rows"), typeCheckingContext), _info_12389875345);
         }
       } else {
         {
@@ -212,7 +212,7 @@ public class DimensionUtil {
           public void run() {
             List<SNode> types2 = new ArrayList<SNode>();
             ListSequence.fromList(types2).addSequence(ListSequence.fromList(types));
-            ListSequence.fromList(types2).addElement(typeCheckingContext.getEquationManager().getRepresentator(t1));
+            ListSequence.fromList(types2).addElement(typeCheckingContext.getRepresentative(t1));
             checkDim(typeCheckingContext, components, n + 1, types2, row, node);
           }
         }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128651891776", false, false);
@@ -314,7 +314,7 @@ public class DimensionUtil {
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

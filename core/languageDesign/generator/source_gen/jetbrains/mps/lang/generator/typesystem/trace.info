@@ -180,11 +180,11 @@
     <nodeInfo nodeId="1226671793009" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesUtil.java" startLine="212" startPosition="47" endLine="213" endPosition="52" />
     <nodeInfo nodeId="1226671793009" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesUtil.java" startLine="213" startPosition="52" endLine="214" endPosition="212" />
     <nodeInfo nodeId="1226671793009" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesUtil.java" startLine="214" startPosition="212" endLine="215" endPosition="54" />
-    <nodeInfo nodeId="1226671793009" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesUtil.java" startLine="215" startPosition="54" endLine="216" endPosition="516" />
+    <nodeInfo nodeId="1226671793009" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesUtil.java" startLine="215" startPosition="54" endLine="216" endPosition="476" />
     <nodeInfo nodeId="1226671862829" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesUtil.java" startLine="218" startPosition="5" endLine="219" endPosition="46" />
     <nodeInfo nodeId="1226671862829" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesUtil.java" startLine="219" startPosition="46" endLine="220" endPosition="52" />
     <nodeInfo nodeId="1226671862829" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesUtil.java" startLine="220" startPosition="52" endLine="221" endPosition="212" />
-    <nodeInfo nodeId="1226671862829" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesUtil.java" startLine="221" startPosition="212" endLine="222" endPosition="260" />
+    <nodeInfo nodeId="1226671862829" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesUtil.java" startLine="221" startPosition="212" endLine="222" endPosition="240" />
     <nodeInfo nodeId="1226663300840" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesUtil.java" startLine="227" startPosition="24" endLine="228" endPosition="74" />
     <nodeInfo nodeId="1226663324362" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesUtil.java" startLine="229" startPosition="5" endLine="230" endPosition="66" />
     <nodeInfo nodeId="1226663406575" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesUtil.java" startLine="231" startPosition="104" endLine="232" endPosition="211" />
@@ -464,7 +464,7 @@
     <scopeInfo nodeId="1178667390815" fileName="QueriesUtil.java" startLine="89" startPosition="112" endLine="93" endPosition="11" />
     <scopeInfo nodeId="1178667527166" fileName="QueriesUtil.java" startLine="95" startPosition="108" endLine="99" endPosition="11" />
     <scopeInfo nodeId="1206286245992" fileName="QueriesUtil.java" startLine="202" startPosition="7" endLine="206" endPosition="174" />
-    <scopeInfo nodeId="1226671862829" fileName="QueriesUtil.java" startLine="218" startPosition="5" endLine="222" endPosition="260" />
+    <scopeInfo nodeId="1226671862829" fileName="QueriesUtil.java" startLine="218" startPosition="5" endLine="222" endPosition="240" />
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="275" startPosition="7" endLine="279" endPosition="31" />
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="288" startPosition="7" endLine="292" endPosition="31" />
     <scopeInfo nodeId="1178666070052" fileName="QueriesUtil.java" startLine="344" startPosition="11" endLine="348" endPosition="64" />
@@ -480,7 +480,7 @@
     <scopeInfo nodeId="1203116393388" fileName="QueriesUtil.java" startLine="45" startPosition="252" endLine="50" endPosition="11">
       <varInfo nodeId="1203116401820" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="1226671793009" fileName="QueriesUtil.java" startLine="211" startPosition="5" endLine="216" endPosition="516" />
+    <scopeInfo nodeId="1226671793009" fileName="QueriesUtil.java" startLine="211" startPosition="5" endLine="216" endPosition="476" />
     <scopeInfo nodeId="1226663373817" fileName="QueriesUtil.java" startLine="239" startPosition="41" endLine="244" endPosition="11">
       <varInfo nodeId="1226663373825" varName="outputSNodeType2" />
       <varInfo nodeId="1226663373819" varName="elementType" />

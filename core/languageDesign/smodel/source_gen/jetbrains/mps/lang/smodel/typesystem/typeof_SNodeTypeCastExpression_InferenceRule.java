@@ -26,14 +26,14 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expr, "leftExpression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061673586", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061683045", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061683045", true), _info_12389875345);
     }
     //  this when concrete has a sense of overloading 
     {
-      final SNode ignore1 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
+      final SNode ignore1 = typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928);
       typeCheckingContext.whenConcrete(ignore1, new Runnable() {
         public void run() {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new typeof_SNodeTypeCastExpression_InferenceRule.QuotationClass_x0jg87_a1a0a0d0a().createNode(typeCheckingContext), false)) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928), new typeof_SNodeTypeCastExpression_InferenceRule.QuotationClass_x0jg87_a1a0a0d0a().createNode(typeCheckingContext), false)) {
             {
               SNode _nodeToCheck_1029348928467 = expr;
               BaseQuickFixProvider intentionProvider = null;
@@ -49,14 +49,14 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
             }
           }
           {
-            final SNode ignore2 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
+            final SNode ignore2 = typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928);
             typeCheckingContext.whenConcrete(ignore2, new Runnable() {
               public void run() {
                 {
                   SNode _nodeToCheck_1029348928467 = expr;
                   BaseQuickFixProvider intentionProvider = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640332", 0, intentionProvider);
-                  typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), _info_12389875345);
+                  typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1238686640336", true), (SNode) typeCheckingContext.getRepresentative(LeftType_typevar_1186061665928), _info_12389875345);
                 }
               }
             }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1239380067971", false, true);

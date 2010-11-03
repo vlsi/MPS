@@ -30,7 +30,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
     SNode tupleDecl = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(operation, "component", false)), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
     for (SNode tvr : ListSequence.fromList(SLinkOperations.getTargets(tupleDecl, "typeVariableDeclaration", true))) {
       final SNode PTYPE_typevar_1239974367138 = typeCheckingContext.createNewRuntimeTypesVariable();
-      ListSequence.fromList(PTYPES).addElement(typeCheckingContext.getEquationManager().getRepresentator(PTYPE_typevar_1239974367138));
+      ListSequence.fromList(PTYPES).addElement(typeCheckingContext.getRepresentative(PTYPE_typevar_1239974367138));
     }
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
@@ -93,7 +93,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
         {
           List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
         result = quotedNode1_3;

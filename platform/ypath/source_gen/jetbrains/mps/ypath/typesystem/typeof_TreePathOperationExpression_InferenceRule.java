@@ -39,13 +39,13 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(tpoe, "operand", true);
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145347351", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145352982", true), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145352982", true), _info_12389875345);
           }
           {
-            final SNode _representatorVar_knbqle_c0a0b0a0a = typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
+            final SNode _representatorVar_knbqle_c0a0b0a0a = typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005);
             typeCheckingContext.whenConcrete(_representatorVar_knbqle_c0a0b0a0a, new Runnable() {
               public void run() {
-                SNode targetType = FeatureUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
+                SNode targetType = FeatureUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(SourceType_typevar_1186145333005), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
                   BaseQuickFixProvider intentionProvider = null;
                   MessageTarget errorTarget = new NodeMessageTarget();
@@ -126,7 +126,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("nodeType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("nodeType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

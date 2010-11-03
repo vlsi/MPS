@@ -21,14 +21,14 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Concept_typevar_1206099875685 = typeCheckingContext.createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099875685));
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getRepresentative(Concept_typevar_1206099875685));
     SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
     if (parameterConcept == null) {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304625", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304627", true), (SNode) new typeOf_Link_SetNewChildOperation_InferenceRule.QuotationClass_7cps2z_a0a0a3a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099875685), typeCheckingContext), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304627", true), (SNode) new typeOf_Link_SetNewChildOperation_InferenceRule.QuotationClass_7cps2z_a0a0a3a0().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1206099875685), typeCheckingContext), _info_12389875345);
       }
     } else {
       {
@@ -42,7 +42,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227538763392", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227538760113", true), (SNode) new typeOf_Link_SetNewChildOperation_InferenceRule.QuotationClass_7cps2z_a0a1a0d0a().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099875685), typeCheckingContext), true, _info_12389875345);
+        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227538760113", true), (SNode) new typeOf_Link_SetNewChildOperation_InferenceRule.QuotationClass_7cps2z_a0a1a0d0a().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1206099875685), typeCheckingContext), true, _info_12389875345);
       }
     }
   }

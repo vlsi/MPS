@@ -25,12 +25,12 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
       final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, "param", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
       typeCheckingContext.whenConcrete(detmat, new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(detmat), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(detmat), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
             {
               SNode _nodeToCheck_1029348928467 = determinant;
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969892", 0, intentionProvider);
-              typeCheckingContext.createEquation((SNode) MathTypeUtil.getElementType(typeCheckingContext.getEquationManager().getRepresentator(detmat)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3417571330831779750", true), _info_12389875345);
+              typeCheckingContext.createEquation((SNode) MathTypeUtil.getElementType(typeCheckingContext.getRepresentative(detmat)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3417571330831779750", true), _info_12389875345);
             }
           } else {
             {

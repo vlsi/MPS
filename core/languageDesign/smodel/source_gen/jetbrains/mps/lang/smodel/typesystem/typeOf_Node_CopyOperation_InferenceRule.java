@@ -20,12 +20,12 @@ public class typeOf_Node_CopyOperation_InferenceRule extends AbstractInferenceRu
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Concept_typevar_1205967749950 = typeCheckingContext.createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967749950));
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, node, typeCheckingContext.getRepresentative(Concept_typevar_1205967749950));
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749964", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749966", true), (SNode) new typeOf_Node_CopyOperation_InferenceRule.QuotationClass_72s9fw_a0a2a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967749950), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205967749966", true), (SNode) new typeOf_Node_CopyOperation_InferenceRule.QuotationClass_72s9fw_a0a2a0().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1205967749950), typeCheckingContext), _info_12389875345);
     }
   }
 

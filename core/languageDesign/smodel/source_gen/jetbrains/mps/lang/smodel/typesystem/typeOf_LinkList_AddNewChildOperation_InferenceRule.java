@@ -21,14 +21,14 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule extends Abstract
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Concept_typevar_1206099501305 = typeCheckingContext.createNewRuntimeTypesVariable();
-    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099501305));
+    RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getRepresentative(Concept_typevar_1206099501305));
     SNode parameterConcept = SLinkOperations.getTarget(op, "concept", false);
     if (parameterConcept == null) {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205771608895", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205771608897", true), (SNode) new typeOf_LinkList_AddNewChildOperation_InferenceRule.QuotationClass_w9gdy4_a0a0a3a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099501305), typeCheckingContext), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205771608897", true), (SNode) new typeOf_LinkList_AddNewChildOperation_InferenceRule.QuotationClass_w9gdy4_a0a0a3a0().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1206099501305), typeCheckingContext), _info_12389875345);
       }
     } else {
       {
@@ -42,7 +42,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule extends Abstract
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227536411703", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227536397149", true), (SNode) new typeOf_LinkList_AddNewChildOperation_InferenceRule.QuotationClass_w9gdy4_a0a1a0d0a().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099501305), typeCheckingContext), true, _info_12389875345);
+        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227536397149", true), (SNode) new typeOf_LinkList_AddNewChildOperation_InferenceRule.QuotationClass_w9gdy4_a0a1a0d0a().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1206099501305), typeCheckingContext), true, _info_12389875345);
       }
     }
   }

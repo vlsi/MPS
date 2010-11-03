@@ -35,20 +35,20 @@ public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(extensionMethodCall);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319660", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_5744862332973319659), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319664", false), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319664", false), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = extensionMethodCall;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973319668", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_5744862332973319659), (SNode) Type_Behavior.call_getLooseType_5744862332972792015(methodApplicableType), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), (SNode) Type_Behavior.call_getLooseType_5744862332972792015(methodApplicableType), true, _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, extensionMethodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(extensionMethodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
-    RulesFunctions_Extension.inference_equateApplicableType(typeCheckingContext, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_5744862332973319659), SLinkOperations.getTarget(extensionMethodCall, "baseMethodDeclaration", false), mmap);
+    RulesFunctions_Extension.inference_equateApplicableType(typeCheckingContext, typeCheckingContext.getRepresentative(instanceType_typevar_5744862332973319659), SLinkOperations.getTarget(extensionMethodCall, "baseMethodDeclaration", false), mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 

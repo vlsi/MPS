@@ -29,7 +29,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885254825", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885254827", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a1a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1209728259188), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1225885254827", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a1a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), false, _info_12389875345);
     }
     final SNode resType_typevar_1209728259189 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -37,7 +37,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259190", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259192", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a3a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1209728259188), typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1209728259188), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259192", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a3a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cso, "ascending", true);
@@ -50,7 +50,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = cso;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259211", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259213", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a5a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1209728259188), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1209728259213", true), (SNode) new typeof_ComparatorSortOperation_InferenceRule.QuotationClass_8czehp_a0a5a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1209728259188), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -91,7 +91,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;
@@ -150,7 +150,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
             quotedNode1_6 = quotedNode_2;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         {
@@ -163,7 +163,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
             quotedNode1_7 = quotedNode_3;
           }
           if (quotedNode1_7 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_7, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_7));
           }
         }
         {
@@ -274,7 +274,7 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

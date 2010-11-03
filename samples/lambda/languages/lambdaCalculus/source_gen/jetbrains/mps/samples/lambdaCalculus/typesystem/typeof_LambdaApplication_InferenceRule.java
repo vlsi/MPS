@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.List;
@@ -23,15 +24,15 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
   public typeof_LambdaApplication_InferenceRule() {
   }
 
-  public void applyRule(final SNode lambdaApplication, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode lambdaApplication, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode R_typevar_247065157659474768 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = lambdaApplication;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474769", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474773", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(R_typevar_247065157659474768), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474773", true), (SNode) typeCheckingContext.getRepresentative(R_typevar_247065157659474768), _info_12389875345);
     }
-    SNode result = typeCheckingContext.getEquationManager().getRepresentator(R_typevar_247065157659474768);
+    SNode result = typeCheckingContext.getRepresentative(R_typevar_247065157659474768);
     boolean first = true;
     List<SNode> reversedNodes = new ArrayList<SNode>();
     for (SNode node : SLinkOperations.getTargets(lambdaApplication, "argument", true)) {
@@ -43,9 +44,9 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
         SNode _nodeToCheck_1029348928467 = node;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474806", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474810", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(D_typevar_247065157659474805), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474810", true), (SNode) typeCheckingContext.getRepresentative(D_typevar_247065157659474805), _info_12389875345);
       }
-      result = new typeof_LambdaApplication_InferenceRule.QuotationClass_uumt54_a0a2a6a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(D_typevar_247065157659474805), result, typeCheckingContext);
+      result = new typeof_LambdaApplication_InferenceRule.QuotationClass_uumt54_a0a2a6a0().createNode(typeCheckingContext.getRepresentative(D_typevar_247065157659474805), result, typeCheckingContext);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaApplication, "function", true);
@@ -59,8 +60,11 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
     return "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {
@@ -90,7 +94,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("domain", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("domain", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {
@@ -103,7 +107,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("range", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("range", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         result = quotedNode1_4;

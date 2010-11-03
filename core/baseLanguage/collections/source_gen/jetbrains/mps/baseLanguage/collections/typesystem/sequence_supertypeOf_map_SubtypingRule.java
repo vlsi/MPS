@@ -62,7 +62,7 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {
@@ -75,7 +75,7 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         result = quotedNode1_4;
@@ -146,7 +146,7 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

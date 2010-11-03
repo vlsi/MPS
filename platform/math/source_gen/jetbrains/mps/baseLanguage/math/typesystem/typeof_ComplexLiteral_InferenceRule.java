@@ -28,31 +28,31 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, "real", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360405", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360409", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(tR_typevar_1238420360404), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360409", true), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, "imag", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383147", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383151", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(tI_typevar_1238420378223), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383151", true), _info_12389875345);
     }
     {
-      final SNode t1v = typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223);
+      final SNode t1v = typeCheckingContext.getRepresentative(tI_typevar_1238420378223);
       typeCheckingContext.whenConcrete(t1v, new Runnable() {
         public void run() {
           if (SLinkOperations.getTarget(literal, "real", true) != null) {
             {
-              final SNode t2v = typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404);
+              final SNode t2v = typeCheckingContext.getRepresentative(tR_typevar_1238420360404);
               typeCheckingContext.whenConcrete(t2v, new Runnable() {
                 public void run() {
-                  if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404), MathTypeUtil.qDouble) && TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), MathTypeUtil.qDouble)) {
+                  if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(tR_typevar_1238420360404), MathTypeUtil.qDouble) && TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(tI_typevar_1238420378223), MathTypeUtil.qDouble)) {
                     {
                       SNode _nodeToCheck_1029348928467 = literal;
                       BaseQuickFixProvider intentionProvider = null;
                       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927645", 0, intentionProvider);
                       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927650", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qComplex), _info_12389875345);
                     }
-                  } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404), MathTypeUtil.qBigDecimal) && TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), MathTypeUtil.qBigDecimal)) {
+                  } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(tR_typevar_1238420360404), MathTypeUtil.qBigDecimal) && TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(tI_typevar_1238420378223), MathTypeUtil.qBigDecimal)) {
                     {
                       SNode _nodeToCheck_1029348928467 = literal;
                       BaseQuickFixProvider intentionProvider = null;
@@ -70,14 +70,14 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
               }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426914994", false, false);
             }
           } else {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), MathTypeUtil.qDouble)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(tI_typevar_1238420378223), MathTypeUtil.qDouble)) {
               {
                 SNode _nodeToCheck_1029348928467 = literal;
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926358", 0, intentionProvider);
                 typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926363", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qComplex), _info_12389875345);
               }
-            } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), MathTypeUtil.qBigDecimal)) {
+            } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(tI_typevar_1238420378223), MathTypeUtil.qBigDecimal)) {
               {
                 SNode _nodeToCheck_1029348928467 = literal;
                 BaseQuickFixProvider intentionProvider = null;

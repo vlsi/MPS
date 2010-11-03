@@ -124,7 +124,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
             quotedNode1_10 = quotedNode_5;
           }
           if (quotedNode1_10 != null) {
-            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_10, typeCheckingContext));
+            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_10));
           }
         }
         result = quotedNode1_6;

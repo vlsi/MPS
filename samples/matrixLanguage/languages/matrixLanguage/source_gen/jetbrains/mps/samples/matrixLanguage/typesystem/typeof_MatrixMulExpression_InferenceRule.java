@@ -37,10 +37,10 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
             typeCheckingContext.whenConcrete(right, new Runnable() {
               public void run() {
                 boolean done = false;
-                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(left), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0b0a0a0a().createNode(typeCheckingContext))) {
+                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(left), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0b0a0a0a().createNode(typeCheckingContext))) {
                   {
                     IMatchingPattern pattern_bwoj06_a0b0a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.samples.matrixLanguage.structure.MatrixType");
-                    SNode coercedNode_bwoj06_a0b0a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(right), pattern_bwoj06_a0b0a0a0, typeCheckingContext);
+                    SNode coercedNode_bwoj06_a0b0a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(right), pattern_bwoj06_a0b0a0a0, typeCheckingContext);
                     if (coercedNode_bwoj06_a0b0a0a0 != null) {
                       {
                         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -56,14 +56,14 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                     {
                       BaseQuickFixProvider intentionProvider = null;
                       MessageTarget errorTarget = new NodeMessageTarget();
-                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getEquationManager().getRepresentator(right)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210175930104", intentionProvider, errorTarget);
+                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "rightExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getRepresentative(right)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210175930104", intentionProvider, errorTarget);
                     }
                   }
                 } else
-                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(right), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0a1a0a0a0().createNode(typeCheckingContext))) {
+                if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(right), new typeof_MatrixMulExpression_InferenceRule.QuotationClass_s4fcwx_a1a0a1a0a0a0().createNode(typeCheckingContext))) {
                   {
                     IMatchingPattern pattern_bwoj06_a0a1a0a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.samples.matrixLanguage.structure.MatrixType");
-                    SNode coercedNode_bwoj06_a0a1a0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(left), pattern_bwoj06_a0a1a0a0a, typeCheckingContext);
+                    SNode coercedNode_bwoj06_a0a1a0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(left), pattern_bwoj06_a0a1a0a0a, typeCheckingContext);
                     if (coercedNode_bwoj06_a0a1a0a0a != null) {
                       {
                         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -79,7 +79,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                     {
                       BaseQuickFixProvider intentionProvider = null;
                       MessageTarget errorTarget = new NodeMessageTarget();
-                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getEquationManager().getRepresentator(left)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210176257229", intentionProvider, errorTarget);
+                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(nodeToCheck, "leftExpression", true), "Type must be Matrix but " + SNodeOperations.getConceptDeclaration(typeCheckingContext.getRepresentative(left)), "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210176257229", intentionProvider, errorTarget);
                     }
                   }
                 } else {
@@ -88,19 +88,19 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                     SNode _nodeToCheck_1029348928467 = nodeToCheck;
                     BaseQuickFixProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591725", 0, intentionProvider);
-                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591729", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1210174591724), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591729", true), (SNode) typeCheckingContext.getRepresentative(v_typevar_1210174591724), _info_12389875345);
                   }
                   {
                     SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "leftExpression", true);
                     BaseQuickFixProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591731", 0, intentionProvider);
-                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591735", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1210174591724), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591735", true), (SNode) typeCheckingContext.getRepresentative(v_typevar_1210174591724), _info_12389875345);
                   }
                   {
                     SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "rightExpression", true);
                     BaseQuickFixProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591739", 0, intentionProvider);
-                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591743", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(v_typevar_1210174591724), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591743", true), (SNode) typeCheckingContext.getRepresentative(v_typevar_1210174591724), _info_12389875345);
                   }
                   done = true;
                 }
@@ -149,7 +149,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;
@@ -235,7 +235,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

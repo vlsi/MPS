@@ -28,13 +28,13 @@ public class typeof_EventHandlerParam_InferenceRule extends AbstractInferenceRul
       SNode _nodeToCheck_1029348928467 = ehp;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "8115675450774809688", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(EVENT_TYPE_typevar_8115675450774809684), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(ehp, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", false, false), "eventType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(EVENT_TYPE_typevar_8115675450774809684), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(ehp, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", false, false), "eventType", true), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = ehp;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "8115675450774809726", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "12091369613268997", true), (SNode) new typeof_EventHandlerParam_InferenceRule.QuotationClass_3reh76_a0a2a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(EVENT_TYPE_typevar_8115675450774809684), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)", "12091369613268997", true), (SNode) new typeof_EventHandlerParam_InferenceRule.QuotationClass_3reh76_a0a2a0().createNode(typeCheckingContext.getRepresentative(EVENT_TYPE_typevar_8115675450774809684), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -76,7 +76,7 @@ public class typeof_EventHandlerParam_InferenceRule extends AbstractInferenceRul
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {

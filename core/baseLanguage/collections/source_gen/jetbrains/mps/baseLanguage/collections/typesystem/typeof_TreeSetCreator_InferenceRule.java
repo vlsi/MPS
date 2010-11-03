@@ -29,14 +29,14 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018326", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018323", true), (SNode) new typeof_TreeSetCreator_InferenceRule.QuotationClass_3g5uu_a0a1a0a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ELEMENT_typevar_2261417478149018313), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018323", true), (SNode) new typeof_TreeSetCreator_InferenceRule.QuotationClass_3g5uu_a0a1a0a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_typevar_2261417478149018313), typeCheckingContext), false, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(treeSetCreator, "comparator", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018298", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018290", true), (SNode) new typeof_TreeSetCreator_InferenceRule.QuotationClass_3g5uu_a0a2a0a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ELEMENT_typevar_2261417478149018313), typeCheckingContext.getEquationManager().getRepresentator(ELEMENT_typevar_2261417478149018313), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2261417478149018290", true), (SNode) new typeof_TreeSetCreator_InferenceRule.QuotationClass_3g5uu_a0a2a0a0().createNode(typeCheckingContext.getRepresentative(ELEMENT_typevar_2261417478149018313), typeCheckingContext.getRepresentative(ELEMENT_typevar_2261417478149018313), typeCheckingContext), false, _info_12389875345);
       }
     }
   }
@@ -78,7 +78,7 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;
@@ -137,7 +137,7 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
             quotedNode1_6 = quotedNode_2;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         {
@@ -150,7 +150,7 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
             quotedNode1_7 = quotedNode_3;
           }
           if (quotedNode1_7 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_7, typeCheckingContext));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_7));
           }
         }
         {

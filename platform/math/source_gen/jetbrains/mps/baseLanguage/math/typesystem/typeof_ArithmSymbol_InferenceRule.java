@@ -32,7 +32,7 @@ public class typeof_ArithmSymbol_InferenceRule extends AbstractInferenceRule_Run
       final SNode t = typeCheckingContext.typeOf(symbol, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042132166", true);
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(t), MathTypeUtil.qBigComplex)) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getRepresentative(t), MathTypeUtil.qBigComplex)) {
             {
               SNode _nodeToCheck_1029348928467 = symbol;
               BaseQuickFixProvider intentionProvider = null;
@@ -40,7 +40,7 @@ public class typeof_ArithmSymbol_InferenceRule extends AbstractInferenceRule_Run
               _info_12389875345.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042133323", true), true, _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
+          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
           } else {
             String s = "";
             if (SNodeOperations.isInstanceOf(symbol, "jetbrains.mps.baseLanguage.math.structure.BigProdExpression")) {

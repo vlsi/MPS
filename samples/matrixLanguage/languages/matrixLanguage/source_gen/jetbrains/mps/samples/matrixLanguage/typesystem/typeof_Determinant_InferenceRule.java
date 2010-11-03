@@ -27,13 +27,13 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "literal", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547308673", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547290624", true), (SNode) new typeof_Determinant_InferenceRule.QuotationClass_v3zl66_a0a1a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1225547330471), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547290624", true), (SNode) new typeof_Determinant_InferenceRule.QuotationClass_v3zl66_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1225547330471), typeCheckingContext), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547352826", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547343050", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1225547330471), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1225547343050", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1225547330471), _info_12389875345);
     }
   }
 
@@ -74,7 +74,7 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

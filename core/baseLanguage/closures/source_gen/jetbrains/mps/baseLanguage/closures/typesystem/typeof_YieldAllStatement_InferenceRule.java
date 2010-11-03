@@ -28,7 +28,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998112076", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), (SNode) new typeof_YieldAllStatement_InferenceRule.QuotationClass_oliywx_a0a1a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), (SNode) new typeof_YieldAllStatement_InferenceRule.QuotationClass_oliywx_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1228998160752), typeCheckingContext.getRepresentative(elementType_typevar_1228998160752), typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -75,7 +75,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
               quotedNode1_8 = quotedNode_4;
             }
             if (quotedNode1_8 != null) {
-              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_8, typeCheckingContext));
+              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_8));
             }
           }
           quotedNode_1.addChild("argument", quotedNode1_7);
@@ -93,7 +93,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
               quotedNode1_10 = quotedNode_5;
             }
             if (quotedNode1_10 != null) {
-              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10, typeCheckingContext));
+              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10));
             }
           }
           quotedNode_1.addChild("argument", quotedNode1_9);

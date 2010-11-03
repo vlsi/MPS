@@ -66,14 +66,14 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         final SNode superTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
         typeCheckingContext.whenConcrete(superTerminate, new Runnable() {
           public void run() {
-            if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(superTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+            if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(superTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814209725", 0, intentionProvider);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                 _info_12389875345.setInequationGroup("default");
-                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(superTerminate), false, _info_12389875345);
+                typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), (SNode) typeCheckingContext.getRepresentative(superTerminate), false, _info_12389875345);
               }
             }
           }
@@ -220,7 +220,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
@@ -20,21 +21,21 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
   public typeof_LetRef_InferenceRule() {
   }
 
-  public void applyRule(final SNode letRef, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode letRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
 
     SNode type = SNodeOperations.copyNode(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(letRef, "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "value", true), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "926857988255646351", true));
     Map<String, SNode> map = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode t : SNodeOperations.getDescendants(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{})) {
       final SNode v_typevar_464844656889754475 = typeCheckingContext.createNewRuntimeTypesVariable();
-      SNode varNode = typeCheckingContext.getEquationManager().getRepresentator(v_typevar_464844656889754475);
+      SNode varNode = typeCheckingContext.getRepresentative(v_typevar_464844656889754475);
       if (!(MapSequence.fromMap(map).containsKey(SPropertyOperations.getString(t, "name")))) {
-        MapSequence.fromMap(map).put(SPropertyOperations.getString(t, "name"), SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(v_typevar_464844656889754475), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
+        MapSequence.fromMap(map).put(SPropertyOperations.getString(t, "name"), SNodeOperations.cast(typeCheckingContext.getRepresentative(v_typevar_464844656889754475), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
       } else {
         {
           SNode _nodeToCheck_1029348928467 = letRef;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "464844656889754494", 0, intentionProvider);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(v_typevar_464844656889754475), (SNode) MapSequence.fromMap(map).get(SPropertyOperations.getString(t, "name")), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(v_typevar_464844656889754475), (SNode) MapSequence.fromMap(map).get(SPropertyOperations.getString(t, "name")), _info_12389875345);
         }
       }
       SNodeOperations.replaceWithAnother(t, varNode);
@@ -51,8 +52,11 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
     return "jetbrains.mps.samples.lambdaCalculus.structure.LetRef";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

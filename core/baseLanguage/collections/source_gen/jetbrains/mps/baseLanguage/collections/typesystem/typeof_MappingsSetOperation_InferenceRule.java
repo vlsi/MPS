@@ -29,20 +29,20 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854465372", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854449114", true), (SNode) new typeof_MappingsSetOperation_InferenceRule.QuotationClass_9rcmzr_a0a2a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240854441569), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240854445546), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854449114", true), (SNode) new typeof_MappingsSetOperation_InferenceRule.QuotationClass_9rcmzr_a0a2a0().createNode(typeCheckingContext.getRepresentative(KEY_typevar_1240854441569), typeCheckingContext.getRepresentative(VALUE_typevar_1240854445546), typeCheckingContext), false, _info_12389875345);
     }
     final SNode MAPPING_typevar_1240854519783 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854488447", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(MAPPING_typevar_1240854519783), (SNode) new typeof_MappingsSetOperation_InferenceRule.QuotationClass_9rcmzr_a0a4a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240854441569), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240854445546), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(MAPPING_typevar_1240854519783), (SNode) new typeof_MappingsSetOperation_InferenceRule.QuotationClass_9rcmzr_a0a4a0().createNode(typeCheckingContext.getRepresentative(KEY_typevar_1240854441569), typeCheckingContext.getRepresentative(VALUE_typevar_1240854445546), typeCheckingContext), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854537317", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854533220", true), (SNode) new typeof_MappingsSetOperation_InferenceRule.QuotationClass_9rcmzr_a0a5a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(MAPPING_typevar_1240854519783), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854533220", true), (SNode) new typeof_MappingsSetOperation_InferenceRule.QuotationClass_9rcmzr_a0a5a0().createNode(typeCheckingContext.getRepresentative(MAPPING_typevar_1240854519783), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -84,7 +84,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {
@@ -97,7 +97,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         result = quotedNode1_4;
@@ -169,7 +169,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
         {
@@ -182,7 +182,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         result = quotedNode1_4;
@@ -253,7 +253,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

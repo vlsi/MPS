@@ -35,14 +35,14 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
       final SNode mT = typeCheckingContext.typeOf(SLinkOperations.getTarget(norm, "mat", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835031830", true);
       typeCheckingContext.whenConcrete(mT, new Runnable() {
         public void run() {
-          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(mT), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
+          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(mT), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
             {
               BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(norm, "Expression should have matrix or vector type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835032977", intentionProvider, errorTarget);
             }
           } else {
-            SNode t = MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(mT));
+            SNode t = MathUtil.getUnboxedElementType(typeCheckingContext.getRepresentative(mT));
             boolean floatResult = SPropertyOperations.getInteger_def(norm, "deg", "1") == 2;
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(t, MathTypeUtil.qBigInteger)) {
               SNode f = null;

@@ -21,14 +21,14 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
     SNode parameter = SLinkOperations.getTarget(op, "linkTarget", true);
     if ((parameter != null)) {
       final SNode ExpectedType_typevar_1206101371703 = typeCheckingContext.createNewRuntimeTypesVariable();
-      RulesUtil.equate_inputNodeType(typeCheckingContext, op, typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703));
+      RulesUtil.equate_inputNodeType(typeCheckingContext, op, typeCheckingContext.getRepresentative(ExpectedType_typevar_1206101371703));
       SNode parmType = typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060393994", true);
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060404653", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode) parmType, (SNode) typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) parmType, (SNode) typeCheckingContext.getRepresentative(ExpectedType_typevar_1206101371703), false, _info_12389875345);
       }
     }
     // op returns node passed in parameter 
