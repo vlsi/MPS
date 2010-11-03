@@ -78,6 +78,10 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="505095865854369491" resolveInfo="MonitorParameter" />
     </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="6872280991287275959">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="6872280991287275952" resolveInfo="VariablesPoolParameter" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2360002718792625580">
     <property name="name:0" value="ResourcesParameter" />
@@ -298,6 +302,15 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="505095865854427623">
     <property name="name:0" value="IExpected" />
     <property name="virtualPackage:0" value="query" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6872280991287275952">
+    <property name="virtualPackage:0" value="job" />
+    <property name="name:0" value="VariablesPoolParameter" />
+    <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6872280991287275953">
+      <property name="value:0" value="pool" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 

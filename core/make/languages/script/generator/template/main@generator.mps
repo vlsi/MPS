@@ -188,6 +188,12 @@
               <link role="classifier:3" targetNodeId="3.6168415856807657250" resolveInfo="IMonitor" />
             </node>
           </node>
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6872280991287218331">
+            <property name="name:3" value="pool" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6872280991287218333">
+              <link role="classifier:3" targetNodeId="3.6872280991287216857" resolveInfo="IVariablesPool" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

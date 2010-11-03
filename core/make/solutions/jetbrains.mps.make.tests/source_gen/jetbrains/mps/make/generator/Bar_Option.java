@@ -6,7 +6,8 @@ import jetbrains.mps.make.script.IOption;
 
 public enum Bar_Option implements IOption {
   GOAHEAD_21gswx_a0a0a("ok"),
-  NOWAY_21gswx_b0a0a("cancel");
+  NOWAY_21gswx_b0a0a("cancel"),
+  __VOID__("__VOID__");
 
   private String text;
 

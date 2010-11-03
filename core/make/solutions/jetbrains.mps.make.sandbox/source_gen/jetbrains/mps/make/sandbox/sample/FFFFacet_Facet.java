@@ -12,6 +12,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IVariablesPool;
 
 public class FFFFacet_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -51,7 +52,7 @@ public class FFFFacet_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
@@ -98,7 +99,7 @@ public class FFFFacet_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
           Iterable<IResource> _output_chixuw_a0b = null;
           switch (0) {
             case 0:
@@ -142,7 +143,7 @@ public class FFFFacet_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
           Iterable<IResource> _output_chixuw_a0c = null;
           switch (0) {
             case 0:

@@ -15,6 +15,10 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IJob;
+import jetbrains.mps.make.script.IVariablesPool;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
@@ -74,6 +78,7 @@ public class Script implements IScript {
     }
     LOG.info("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
+    Script.VariablesPool pool = new Script.VariablesPool();
     Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
     for (ITarget trg : Sequence.fromIterable(toExecute)) {
       LOG.info("Executing " + trg.getName());
@@ -87,7 +92,7 @@ public class Script implements IScript {
         }
       });
       IJob job = trg.createJob();
-      IResult jr = job.execute(input, monit);
+      IResult jr = job.execute(input, monit, pool);
       results.addResult(trg.getName(), jr);
       if (!(jr.isSucessful()) || monit.pleaseStop()) {
         LOG.info((jr.isSucessful() ?
@@ -99,5 +104,20 @@ public class Script implements IScript {
     }
     LOG.info("Finished executing script");
     return results;
+  }
+
+  public class VariablesPool implements IVariablesPool {
+    private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
+
+    public VariablesPool() {
+    }
+
+    public <T> T variables(ITarget.Name target, Class<T> cls) {
+      if (!(MapSequence.fromMap(cache).containsKey(target))) {
+        T vars = targetRange.getTarget(target).createVariables(cls);
+        MapSequence.fromMap(cache).put(target, vars);
+      }
+      return cls.cast(MapSequence.fromMap(cache).get(target));
+    }
   }
 }

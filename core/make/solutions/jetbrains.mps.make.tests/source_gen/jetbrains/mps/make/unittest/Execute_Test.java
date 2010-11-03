@@ -13,6 +13,9 @@ import org.jmock.Expectations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IJob;
+import jetbrains.mps.make.script.IVariablesPool;
 
 public class Execute_Test extends MockTestCase {
   public void test_single() throws Exception {
@@ -125,5 +128,56 @@ public class Execute_Test extends MockTestCase {
 
     Iterable<IResource> out = r.output();
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(out)).isEmpty());
+  }
+
+  public void test_variables() throws Exception {
+    final ITarget make = Mockups.target(context, "make");
+    final ITarget config = Mockups.target(context, "config");
+    final IMonitor monit = Mockups.monitor(context, "mon");
+    final String[] vars = new String[1];
+    context.checking(new Expectations() {
+      {
+        atLeast(1).of(config).before();
+        will(returnValue(new ITarget.Name("make")));
+        exactly(1).of(config).createJob();
+        IJob cj = new IJob() {
+          public IResult execute(Iterable<IResource> res, IMonitor mon, IVariablesPool pool) {
+            String[] arr = pool.variables(new ITarget.Name("make"), (new String[0]).getClass());
+            arr[0] = "BARFOO";
+            return new IResult.SUCCESS(res);
+          }
+        };
+        will(returnValue(cj));
+
+        exactly(1).of(make).createVariables(with(aNonNull(Class.class)));
+        will(returnValue(vars));
+        exactly(1).of(make).createJob();
+        IJob mj = new IJob() {
+          public IResult execute(Iterable<IResource> res, IMonitor mon, IVariablesPool pool) {
+            String[] arr = pool.variables(new ITarget.Name("make"), (new String[0]).getClass());
+            Assert.assertEquals("BARFOO", arr[0]);
+            arr[0] = "FUBAR";
+            return new IResult.SUCCESS(res);
+          }
+        };
+        will(returnValue(mj));
+      }
+    });
+    Mockups.allowing(context, make);
+    Mockups.allowing(context, config);
+
+    TargetRange tr = new TargetRange();
+    tr.addTarget(make);
+
+    Script sc = new Script(tr, new ITarget.Name("make"));
+    sc.validate();
+    Assert.assertTrue(sc.isValid());
+
+    IResult res = sc.execute(monit);
+    Assert.assertNotNull(res);
+    Assert.assertTrue(res.isSucessful());
+    Assert.assertNotNull(res.output());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+    Assert.assertEquals("FOOBAR", vars[0]);
   }
 }

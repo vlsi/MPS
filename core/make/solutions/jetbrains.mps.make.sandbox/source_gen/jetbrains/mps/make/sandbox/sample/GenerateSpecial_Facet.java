@@ -12,6 +12,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
@@ -51,7 +52,7 @@ public class GenerateSpecial_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:

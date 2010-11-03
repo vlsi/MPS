@@ -6,6 +6,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.make.facet.IFacet;
 import org.jmock.Mockery;
 import org.jmock.Expectations;
@@ -15,7 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Mockups {
   private static IJob DefaultJob = new IJob() {
-    public IResult execute(final Iterable<IResource> ignore, IMonitor mon) {
+    public IResult execute(final Iterable<IResource> ignore, IMonitor mon, IVariablesPool pool) {
       return DefaultResult;
     }
   };
@@ -99,7 +100,7 @@ public class Mockups {
     final IJob job = context.mock(IJob.class, name);
     context.checking(new Expectations() {
       {
-        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IMonitor.class)));
+        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IMonitor.class)), this.with(aNonNull(IVariablesPool.class)));
         this.will(returnValue(fun.invoke()));
       }
     });

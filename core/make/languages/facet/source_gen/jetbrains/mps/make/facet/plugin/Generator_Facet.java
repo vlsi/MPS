@@ -11,6 +11,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -51,7 +52,7 @@ public class Generator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
           Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
@@ -113,7 +114,7 @@ public class Generator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor) {
+        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
           Iterable<IResource> _output_ixz87t_a0b = null;
           switch (0) {
             case 0:
