@@ -37,7 +37,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         public void run() {
           {
             GeneratedMatchingPattern pattern_n8ubly_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a0(SLinkOperations.getTarget(supertype, "classifier", false));
-            SNode coercedNode_n8ubly_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_n8ubly_a0a0, typeCheckingContext);
+            SNode coercedNode_n8ubly_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(t), pattern_n8ubly_a0a0, typeCheckingContext);
             if (coercedNode_n8ubly_a0a0 != null) {
               {
                 SNode typeParam;
@@ -67,13 +67,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       final SNode concreteParam = myParam;
                       typeCheckingContext.whenConcrete(concreteParam, new Runnable() {
                         public void run() {
-                          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
+                          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(concreteParam), "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                               BaseQuickFixProvider intentionProvider = null;
                               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, intentionProvider);
                               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                              typeCheckingContext.createEquation((SNode) finalTypeParam, (SNode) typeCheckingContext.getEquationManager().getRepresentator(concreteParam), _info_12389875345);
+                              typeCheckingContext.createEquation((SNode) finalTypeParam, (SNode) typeCheckingContext.getRepresentative(concreteParam), _info_12389875345);
                             }
                           }
                         }

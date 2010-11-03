@@ -187,10 +187,10 @@ __switch__:
             SNode _nodeToCheck_1029348928467 = null;
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228174300650", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode) tvar, (SNode) typeCheckingContext.getEquationManager().getRepresentator(p_typevar_1228174472023), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) tvar, (SNode) typeCheckingContext.getRepresentative(p_typevar_1228174472023), _info_12389875345);
           }
         }
-        ListSequence.fromList(params).addElement(typeCheckingContext.getEquationManager().getRepresentator(p_typevar_1228174472023));
+        ListSequence.fromList(params).addElement(typeCheckingContext.getRepresentative(p_typevar_1228174472023));
       }
       {
         SNode _nodeToCheck_1029348928467 = null;
@@ -288,7 +288,7 @@ __switch__:
                   final SNode actualType = typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347108709", true);
                   typeCheckingContext.whenConcrete(actualType, new Runnable() {
                     public void run() {
-                      if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+                      if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
                         {
                           SNode _nodeToCheck_1029348928467 = actual;
                           BaseQuickFixProvider intentionProvider = null;
@@ -296,7 +296,7 @@ __switch__:
                           _info_12389875345.setInequationGroup("priority_2_1759628044690732299");
                           _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
                           _info_12389875345.addInequationGroupBefore("default");
-                          typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), (SNode) matchedType, false, _info_12389875345);
+                          typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), (SNode) matchedType, false, _info_12389875345);
                         }
                       } else {
                         SNode _nodeToCheck_1029348928467 = actual;
@@ -305,7 +305,7 @@ __switch__:
                         _info_12389875345.setInequationGroup("priority_2_1759628044690732299");
                         _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
                         _info_12389875345.addInequationGroupBefore("default");
-                        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getEquationManager().getRepresentator(actualType), (SNode) matchedType, false, _info_12389875345);
+                        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getRepresentative(actualType), (SNode) matchedType, false, _info_12389875345);
                       }
                     }
                   }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347102532", false, false);
@@ -431,8 +431,8 @@ __switch__:
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203439588896 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode tvd = SLinkOperations.getTarget(SNodeOperations.cast(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
-      inference_mapTypeVariable(tvd, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203439588896), mmap);
-      resType = typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203439588896);
+      inference_mapTypeVariable(tvd, typeCheckingContext.getRepresentative(tvar_typevar_1203439588896), mmap);
+      resType = typeCheckingContext.getRepresentative(tvar_typevar_1203439588896);
     } else {
       inference_mapTypeVariables(typeCheckingContext, resType, mmap);
     }
@@ -444,8 +444,8 @@ __switch__:
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode tvd = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
-      inference_mapTypeVariable(tvd, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168), mmap);
-      SNodeOperations.replaceWithAnother(type, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168));
+      inference_mapTypeVariable(tvd, typeCheckingContext.getRepresentative(tvar_typevar_1203431658168), mmap);
+      SNodeOperations.replaceWithAnother(type, typeCheckingContext.getRepresentative(tvar_typevar_1203431658168));
     } else {
       List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getChildren(type));
       for (SNode chld : children) {
@@ -775,7 +775,7 @@ with_anc:
         {
           List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
         result = quotedNode1_3;

@@ -128,7 +128,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1175517296787">
     <property name="name:3" value="typeof_BaseAssignmentExpression" />
-    <property name="package:3" value="assignments" />
+    <property name="virtualPackage:3" value="assignments" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1175517296788">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1175517337681">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1175517337682">
@@ -369,7 +369,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1175523864032">
     <property name="name:3" value="subtyping_classifier" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1175523864033">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1175523899734">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1175523899735">
@@ -899,7 +899,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1175598822283">
     <property name="isWeak:3" value="true" />
     <property name="name:3" value="boolean_extends_Boolean_1" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1175598822284">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1175598879021">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1196777953650">
@@ -935,7 +935,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1175600180197">
     <property name="name:3" value="typeOf_ArrayCreatorWithInitializer" />
-    <property name="package:3" value="array" />
+    <property name="virtualPackage:3" value="array" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1175600180198">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1175600224509">
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977952181">
@@ -1013,7 +1013,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1175601796469">
     <property name="name:3" value="typeOf_ArrayAccess" />
-    <property name="package:3" value="array" />
+    <property name="virtualPackage:3" value="array" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1175601796470">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1175601836165">
         <property name="name:3" value="T" />
@@ -5302,7 +5302,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1176897963478">
     <property name="name:3" value="typeOf_BaseMethodDeclaration" />
-    <property name="package:3" value="method" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1176897963479">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1176897990294">
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977963778">
@@ -5726,7 +5726,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1176898805542">
     <property name="name:3" value="typeOf_IfStatement" />
-    <property name="package:3" value="if" />
+    <property name="virtualPackage:3" value="if" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1176898805543">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1176898861472">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1185790951965">
@@ -5767,7 +5767,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1176898900727">
     <property name="name:3" value="typeOf_ClassifierClassExpression" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1176898900728">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1223981485115">
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1223981485118">
@@ -6008,7 +6008,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1176904326893">
     <property name="name:3" value="typeOf_EnumConstantDeclaration" />
     <property name="overrides:3" value="true" />
-    <property name="package:3" value="classifier.enum" />
+    <property name="virtualPackage:3" value="classifier.enum" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1176904326894">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1241009438533">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1241009438534">
@@ -6152,7 +6152,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1176905111758">
     <property name="name:3" value="typeOf_EnumConstantReference" />
-    <property name="package:3" value="classifier.enum" />
+    <property name="virtualPackage:3" value="classifier.enum" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1176905111759">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.AssertStatement:3" id="1176905227742">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977965442">
@@ -6298,7 +6298,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177065973247">
     <property name="name:3" value="byte_extends_short" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177065973248">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177066037269">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1196777955178">
@@ -6313,7 +6313,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177065992109">
     <property name="name:3" value="short_extends_int" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177065992110">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177066057681">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1196777955180">
@@ -6328,7 +6328,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177066158627">
     <property name="name:3" value="int_extends_long" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177066158628">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177066181803">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1196777955182">
@@ -6343,7 +6343,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177066295791">
     <property name="name:3" value="char_extends_int" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177066295792">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177066313413">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1196777955184">
@@ -6418,7 +6418,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177067593691">
     <property name="name:3" value="long_extends_integral" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177067593692">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177067639332">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977956414">
@@ -6454,7 +6454,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177067707161">
     <property name="name:3" value="float_extends_double" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177067707162">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177067733243">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1196777955205">
@@ -6469,7 +6469,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177067750029">
     <property name="name:3" value="double_extends_floatingPoint" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177067750030">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1177067774267">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977954888">
@@ -6491,7 +6491,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1177070067544">
     <property name="name:3" value="subtyping_arrayType" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177070067545">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1177070109472">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1177070109473">
@@ -6739,7 +6739,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1177075633500">
     <property name="name:3" value="typeOf_ConceptFunctionParameter" />
-    <property name="package:3" value="conceptFunction" />
+    <property name="virtualPackage:3" value="conceptFunction" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1177075633501">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1177326041792">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1177326041793">
@@ -6956,7 +6956,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1178585407565">
     <property name="name:3" value="typeOf_ConceptFunction" />
-    <property name="package:3" value="conceptFunction" />
+    <property name="virtualPackage:3" value="conceptFunction" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1178585407566">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1178586646436">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1178586646437">
@@ -7300,7 +7300,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1188221225149">
     <property name="name:3" value="typeof_ArrayLiteral" />
-    <property name="package:3" value="array" />
+    <property name="virtualPackage:3" value="array" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1188221225150">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1188221443596">
         <property name="name:3" value="elementType" />
@@ -7522,7 +7522,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1194623838236">
     <property name="name:3" value="typeof_AnonymousClass" />
     <property name="overrides:3" value="true" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1194623838237">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2925336694746296796">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2925336694746296797">
@@ -7825,7 +7825,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1194624206045">
     <property name="name:3" value="typeof_AnonymousClassCreator" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1194624206046">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1194624228553">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1194624230978">
@@ -8429,7 +8429,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1197028414515">
     <property name="name:3" value="typeof_DotExpression" />
-    <property name="package:3" value="dotExpression" />
+    <property name="virtualPackage:3" value="dotExpression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1197028414516">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1197028438070">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1197028440829">
@@ -8461,7 +8461,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1197029977451">
     <property name="name:3" value="typeof_FieldReferenceOperation" />
-    <property name="package:3" value="dotExpression" />
+    <property name="virtualPackage:3" value="dotExpression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1197029977452">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1206554174322">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1206554174323">
@@ -8675,7 +8675,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1197313434315">
     <property name="name:3" value="check_ConceptFunctionParameter" />
-    <property name="package:3" value="conceptFunction" />
+    <property name="virtualPackage:3" value="conceptFunction" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1197313434316">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1197313591287">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1197313591288">
@@ -9052,7 +9052,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1201467883353">
     <property name="name:3" value="typeof_PropertyReference" />
-    <property name="package:3" value="property" />
+    <property name="virtualPackage:3" value="property" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201467883354">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1201467936669">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1201467936670">
@@ -9140,7 +9140,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1201468290153">
     <property name="name:3" value="typeof_Property" />
-    <property name="package:3" value="property" />
+    <property name="virtualPackage:3" value="property" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201468290154">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1201468313014">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1201468314784">
@@ -9201,7 +9201,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1202594219548">
     <property name="name:3" value="typeof_ValueParameter" />
-    <property name="package:3" value="property.implementation.custom.set" />
+    <property name="virtualPackage:3" value="property.implementation.custom.set" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202594219549">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1202594395129">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1202594397695">
@@ -9255,7 +9255,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule:3" id="1203167756817">
     <property name="name:3" value="any_type_comparable_to_wildcard_type" />
     <property name="isWeak:3" value="true" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="anotherNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1203167782218">
       <property name="name:3" value="wct" />
       <link role="concept:3" targetNodeId="1.1171903607971:3" resolveInfo="WildCardType" />
@@ -9274,8 +9274,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1204056354664">
     <property name="name:3" value="typeof_InstanceMethodCallOperation" />
-    <property name="package:3" value="method.instance" />
     <property name="overrides:3" value="true" />
+    <property name="virtualPackage:3" value="method.instance" />
     <node role="dependency:3" type="jetbrains.mps.lang.typesystem.structure.Dependency:3" id="1207648619834">
       <link role="targetConcept:3" targetNodeId="1.1202948039474:3" resolveInfo="InstanceMethodCallOperation" />
       <link role="sourceConcept:3" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -9724,7 +9724,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule:3" id="1204200594298">
     <property name="name:3" value="any_type_supertypeof_nulltype" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="supertypeNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1204200619692">
       <property name="name:3" value="baseConcept" />
       <link role="concept:3" targetNodeId="25.1133920641626:0" resolveInfo="BaseConcept" />
@@ -9842,7 +9842,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1206069292242">
     <property name="name:3" value="typeof_ElsifClause" />
-    <property name="package:3" value="if" />
+    <property name="virtualPackage:3" value="if" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206069292243">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1206069320261">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1206069320262">
@@ -9969,7 +9969,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1207556276911">
     <property name="name:3" value="check_InstanceInitializer" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207556276912">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1223643032672">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8249991444799100542">
@@ -10095,7 +10095,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1208891036449">
     <property name="name:3" value="typeof_ArrayLengthOperation" />
-    <property name="package:3" value="dotExpression" />
+    <property name="virtualPackage:3" value="dotExpression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208891036450">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1208891068843">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1208891071566">
@@ -10119,7 +10119,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1209402480111">
     <property name="name:3" value="typeof_ArrayCreator" />
-    <property name="package:3" value="array" />
+    <property name="virtualPackage:3" value="array" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1209402480112">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1209402636732">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1209402636733">
@@ -10207,7 +10207,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1210175778925">
     <property name="name:3" value="checkThrowsOfMethodIsCaught" />
-    <property name="package:3" value="method" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210175778926">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1210179694986">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210179694987">
@@ -10407,7 +10407,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1212689018464">
     <property name="name:3" value="typeof_IMethodCall" />
-    <property name="package:3" value="method" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1212689018465">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1212689055889">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1212689055890">
@@ -10503,8 +10503,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1212781547110">
     <property name="name:3" value="typeof_ClassCreator" />
-    <property name="package:3" value="classifier" />
     <property name="overrides:3" value="true" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1212781547111">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1212781605947">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1212781605948">
@@ -12023,7 +12023,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1217023658415">
     <property name="name:3" value="typeof_IOperation" />
-    <property name="package:3" value="dotExpression" />
+    <property name="virtualPackage:3" value="dotExpression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1217023658416">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1217023680294">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1217023680295">
@@ -12330,7 +12330,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1220288256431">
     <property name="name:3" value="supertypes_of_typeVariableReference" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220288256432">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1220288490865">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1220288490866">
@@ -12463,7 +12463,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1220443729698">
     <property name="name:3" value="wildCard_is_Object" />
     <property name="isWeak:3" value="false" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220443729699">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1220443770976">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1220443773635">
@@ -12936,7 +12936,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1221637809819">
     <property name="overrides:3" value="false" />
     <property name="name:3" value="typeof_ClassConcept" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221637809822">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1221637809823">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1221637809824">
@@ -13077,7 +13077,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1221737503734">
     <property name="name:3" value="check_StaticInitializer" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221737503735">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1223643054732">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1223643057156">
@@ -14317,7 +14317,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1224574932971">
     <property name="name:3" value="typeof_EnumValuesExpression" />
-    <property name="package:3" value="enumOperations" />
+    <property name="virtualPackage:3" value="enumOperations" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224574932972">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1224574964063">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1224574966160">
@@ -14355,7 +14355,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1224575656586">
     <property name="name:3" value="typeof_EnumValueOfExpression" />
-    <property name="package:3" value="enumOperations" />
+    <property name="virtualPackage:3" value="enumOperations" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224575656587">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1224575709356">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1224575711204">
@@ -14471,7 +14471,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1225276837979">
     <property name="name:3" value="string_extends_java_lang_String" />
     <property name="isWeak:3" value="false" />
-    <property name="package:3" value="string" />
+    <property name="virtualPackage:3" value="string" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276837980">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1225276837981">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1225276837982">
@@ -14489,7 +14489,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225276837985">
     <property name="name:3" value="typeof_NPEEqualsExpression" />
     <property name="overrides:3" value="true" />
-    <property name="package:3" value="string" />
+    <property name="virtualPackage:3" value="string" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276837986">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement:3" id="6247012736950760408">
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6247012736950760409">
@@ -14543,7 +14543,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225276837995">
     <property name="name:3" value="typeof_NPENotEqualsExpression" />
     <property name="overrides:3" value="true" />
-    <property name="package:3" value="string" />
+    <property name="virtualPackage:3" value="string" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276837996">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement:3" id="6247012736950885309">
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6247012736950885310">
@@ -14596,7 +14596,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225276872491">
     <property name="name:3" value="typeof_BaseStringOperation" />
-    <property name="package:3" value="string.expression" />
+    <property name="virtualPackage:3" value="string.expression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276872492">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1225276872493">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1225276872494">
@@ -14626,7 +14626,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225276872503">
     <property name="name:3" value="typeof_StringBooleanOperation" />
-    <property name="package:3" value="string.expression" />
+    <property name="virtualPackage:3" value="string.expression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276872504">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1225276872505">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1225276872506">
@@ -14650,7 +14650,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225276872513">
     <property name="name:3" value="typeof_SubstringExpression" />
-    <property name="package:3" value="string.expression" />
+    <property name="virtualPackage:3" value="string.expression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276872514">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1225276872515">
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1225276872516">
@@ -14744,7 +14744,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1225276872555">
     <property name="name:3" value="typeof_TrimOperation" />
-    <property name="package:3" value="string.expression" />
+    <property name="virtualPackage:3" value="string.expression" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276872556">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1225276872557">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1225276872558">
@@ -16900,7 +16900,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1228406942093">
     <property name="name:3" value="check_AbstractMethodsInClass" />
-    <property name="package:3" value="method.instance" />
+    <property name="virtualPackage:3" value="method.instance" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1228406942094">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1228407061208">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1228407061209">
@@ -17000,8 +17000,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1228992488875">
-    <property name="package:3" value="method.static" />
     <property name="name:3" value="check_LocalStaticMethodCall" />
+    <property name="virtualPackage:3" value="method.static" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1228992488876">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1228992644008">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1228992644009">
@@ -17154,7 +17154,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1230476723779">
     <property name="name:3" value="Class_Void_weak_supertypeof_void" />
     <property name="isWeak:3" value="true" />
-    <property name="package:3" value="type.primitive" />
+    <property name="virtualPackage:3" value="type.primitive" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230476723780">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1230476822592">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1230476823561">
@@ -17904,8 +17904,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1239715048280">
     <property name="name:3" value="typeof_AbstractUnaryNumberOperation" />
-    <property name="package:3" value="prefix/postfix" />
     <property name="overrides:3" value="false" />
+    <property name="virtualPackage:3" value="prefix/postfix" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239715048281">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5885703495931979621">
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5885703495931979622">
@@ -17963,7 +17963,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1240394564106">
     <property name="name:3" value="NonFinalParametersInAnonymousClass" />
-    <property name="package:3" value="method" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240394564107">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1240395578457">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4434895596489966759">
@@ -18071,7 +18071,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule:3" id="1241450769537">
     <property name="name:3" value="any_type_supertypeof_bottom" />
-    <property name="package:3" value="type" />
+    <property name="virtualPackage:3" value="type" />
     <node role="supertypeNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1241450801401">
       <property name="name:3" value="baseConcept" />
       <link role="concept:3" targetNodeId="25.1133920641626:0" resolveInfo="BaseConcept" />
@@ -18208,7 +18208,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1241543745974">
     <property name="name:3" value="check_ConstructorInvocationStatementHasConstructor" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241543745975">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1241543833871">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241543848896">
@@ -19225,8 +19225,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="6935810692634693777">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="check_InnerClassesCantHaveStaticInnerClasses" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6935810692634693778">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6935810692634700297">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6935810692634700308">
@@ -19544,7 +19544,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1906502351318602269">
     <property name="name:3" value="check_DuplicateMethods" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1906502351318602270">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1906502351318607612">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1906502351318607613">
@@ -20283,8 +20283,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="498633765598940459">
-    <property name="package:3" value="method.static" />
     <property name="name:3" value="check_InnerClassesCantHaveStaticMethods" />
+    <property name="virtualPackage:3" value="method.static" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="498633765598940460">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="498633765599059146">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="498633765599059171">
@@ -20377,8 +20377,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="498633765599287313">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="check_InnerClassesCantHaveStaticInitializer" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="498633765599287314">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="498633765599292790">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="498633765599292805">
@@ -20564,8 +20564,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix:3" id="498633765599637389">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="MakeInnerClassStatic" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="quickFixArgument:3" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument:3" id="498633765599637392">
       <property name="name:3" value="innerClass" />
       <node role="argumentType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="498633765599640748">
@@ -20617,8 +20617,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix:3" id="498633765599987429">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="MakeStaticFieldNotStatic" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="quickFixArgument:3" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument:3" id="498633765599987432">
       <property name="name:3" value="staticField" />
       <node role="argumentType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="498633765599992952">
@@ -20851,8 +20851,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="498633765600365418">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="check_InnerClassesCantHaveStaticDeclarations" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="498633765600365419">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="498633765600370949">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="498633765600371151">
@@ -20946,8 +20946,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix:3" id="498633765600371276">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="MakeStaticMethodNotStatic" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="quickFixArgument:3" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument:3" id="498633765600371277">
       <property name="name:3" value="staticMethod" />
       <node role="argumentType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="498633765600371278">
@@ -21246,8 +21246,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix:3" id="498633765600377965">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="MakeStaticInitializerNotStatic" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="quickFixArgument:3" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument:3" id="498633765600377966">
       <property name="name:3" value="staticInitializer" />
       <node role="argumentType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="498633765600377967">
@@ -21656,7 +21656,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8620077627875074983">
     <property name="name:3" value="check_UnusedPrivateMethods" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8620077627875074984">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8620077627875080599">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8620077627875080609">
@@ -22059,7 +22059,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8218132442157467380">
     <property name="name:3" value="typeof_ThisConstructorInvocation" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8218132442157467381" />
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8218132442157467382">
       <property name="name:3" value="thisConstructorInvocation" />
@@ -22412,7 +22412,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="3256208460069601930">
     <property name="name:3" value="check_AbstractClassifierReference" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3256208460069601931">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="3256208460069612180">
         <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3256208460069612184">
@@ -22430,7 +22430,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4564374268190697518">
     <property name="name:3" value="typeof_PrimitiveClassExpression" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4564374268190697519">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7287261519498543243">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7287261519498543244">
@@ -22536,7 +22536,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="4276006055364077538">
     <property name="name:3" value="check_BaseMethodDeclaration" />
-    <property name="package:3" value="method" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055364077539">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4276006055364077541">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055364077543">
@@ -22576,7 +22576,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="5418393554803751358">
     <property name="name:3" value="check_BaseMethodDeclaration_OverrideAnnotation" />
-    <property name="package:3" value="method" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5418393554803751359">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5418393554804023547">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5418393554804023548">
@@ -23635,7 +23635,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4940013265625385407">
     <property name="name:3" value="typeof_LocalInstanceMethodCall" />
     <property name="overrides:3" value="true" />
-    <property name="package:3" value="method.instance" />
+    <property name="virtualPackage:3" value="method.instance" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4940013265625385408">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4940013265625385411">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4940013265625385412">
@@ -24236,8 +24236,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="7243599812675827514">
-    <property name="package:3" value="conceptFunction" />
     <property name="name:3" value="check_ConceptFunctionReturns" />
+    <property name="virtualPackage:3" value="conceptFunction" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7243599812675827515">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7243599812675828677">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7243599812675828678">
@@ -24492,8 +24492,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5569019188765049975">
     <property name="name:3" value="typeof_SuperMethodCall" />
-    <property name="package:3" value="method.instance" />
     <property name="overrides:3" value="true" />
+    <property name="virtualPackage:3" value="method.instance" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5569019188765049976">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5569019188765049983">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5569019188765049984">
@@ -24730,8 +24730,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule:3" id="4691618959158120626">
-    <property name="package:3" value="type" />
     <property name="name:3" value="subtypesOfLowerBoundType" />
+    <property name="virtualPackage:3" value="type" />
     <node role="supertypeNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4691618959158120631">
       <property name="name:3" value="lowerBoundType" />
       <link role="concept:3" targetNodeId="1.1171903862077:3" resolveInfo="LowerBoundType" />
@@ -24801,8 +24801,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="684456904424062648">
-    <property name="package:3" value="type" />
     <property name="name:3" value="supertypesOfUpperBoundType" />
+    <property name="virtualPackage:3" value="type" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="684456904424062649">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="684456904424062651">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="684456904424062654">
@@ -25134,8 +25134,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8974945326827873994">
-    <property name="package:3" value="classifier" />
     <property name="name:3" value="check_ClassShouldHaveConstructor" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8974945326827873995">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="586997174226034113">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="586997174226034114">
@@ -26070,8 +26070,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4957392803029437211">
     <property name="name:3" value="typeof_OperationAssignmentExpression" />
-    <property name="package:3" value="assignments" />
     <property name="overrides:3" value="true" />
+    <property name="virtualPackage:3" value="assignments" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4957392803029437212">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement:3" id="4957392803029437214">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4957392803029437215">
@@ -26169,8 +26169,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="7152041109751465917">
-    <property name="package:3" value="method" />
     <property name="name:3" value="check_DefaultSuperConstructorThrowables" />
+    <property name="virtualPackage:3" value="method" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7152041109751465918">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7152041109751578066">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7152041109751578070">
@@ -26313,7 +26313,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="3511256318310404914">
     <property name="name:3" value="check_NonStaticClassInInterface" />
-    <property name="package:3" value="classifier" />
+    <property name="virtualPackage:3" value="classifier" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3511256318310404915">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3511256318310404917">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="3511256318310404918">

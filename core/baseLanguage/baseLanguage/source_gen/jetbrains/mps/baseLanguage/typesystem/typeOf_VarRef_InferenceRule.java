@@ -88,7 +88,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

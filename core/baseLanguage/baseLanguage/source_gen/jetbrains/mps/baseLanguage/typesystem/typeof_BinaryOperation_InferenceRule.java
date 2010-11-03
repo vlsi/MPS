@@ -28,7 +28,7 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
             final SNode rightType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571123", true);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
-                SNode opType = typeCheckingContext.getOverloadedOperationType(operation, typeCheckingContext.getEquationManager().getRepresentator(leftType), typeCheckingContext.getEquationManager().getRepresentator(rightType));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(operation, typeCheckingContext.getRepresentative(leftType), typeCheckingContext.getRepresentative(rightType));
                 if ((opType != null)) {
                   {
                     SNode _nodeToCheck_1029348928467 = operation;

@@ -28,13 +28,13 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601848462", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601850481", true), (SNode) new typeOf_ArrayAccess_InferenceRule.QuotationClass_wq7qsi_a0a1a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1175601836165), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601850481", true), (SNode) new typeOf_ArrayAccess_InferenceRule.QuotationClass_wq7qsi_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1175601836165), typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayAccess;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484976", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484981", true), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1175601836165), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484981", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1175601836165), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, "index", true);
@@ -82,7 +82,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
         result = quotedNode1_3;

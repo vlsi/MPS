@@ -65,12 +65,12 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       SNode _nodeToCheck_1029348928467 = anonymousClass;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296815", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_2925336694746296814), (SNode) constructedType, _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_2925336694746296814), (SNode) constructedType, _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, anonymousClass, null, mmap);
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_2925336694746296814), mmap);
+    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getRepresentative(instanceType_typevar_2925336694746296814), mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 
@@ -105,7 +105,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
         {
           List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
         result = quotedNode1_3;

@@ -59,26 +59,214 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc2cb128-32f6-4de8-96d7-99fd0f4b16f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\questions.txt" />
-      <change type="DELETED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\test\InequalityMapPair_Test.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.mpr" afterPath="$PROJECT_DIR$/analyzers.mpr" />
-      <change type="MOVED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeToTypeDifference.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeMapDifference.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/State.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/State.java" />
-      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingAdded.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingAdded.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NonConcrete.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NonConcrete.java" />
-      <change type="MOVED" beforePath="C:\mps2\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\NodeToErrorDifference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypesUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/ReplacementRuleDifference.java" />
+      <change type="MOVED" beforePath="C:\mps2\mps\core\languageDesign\typesystem\source_gen.caches\jetbrains\mps\lang\typesystem\generator\baseLanguage\template\main\.hash.eb6vh8i7rb99qx5jgskfgclrme38023" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/source_gen.caches/jetbrains/mps/lang/typesystem/generator/baseLanguage/template/main/.hash.-9sbex1l02evrnj18amrtjy7w54zf2ou" />
+      <change type="MOVED" beforePath="C:\mps2\mps\core\languageDesign\typesystem\source_gen.caches\jetbrains\mps\lang\typesystem\plugin\.hash.-4co1v66blvmpawyo52qy1hdcvwldiok" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/source_gen.caches/jetbrains/mps/lang/typesystem/plugin/.hash.18l31pjkcy5m7e4gv9qjn5lt5qx3m0w" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/trace.info" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/trace.info" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/trace.info" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/trace.info" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/generator/baseLanguage/template/main/trace.info" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/generator/baseLanguage/template/main/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/typesystem/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen.caches/jetbrains/mps/baseLanguage/extensionMethods/typesystem/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/typesystem/trace.info" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/typesystem/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/trace.info" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/trace.info" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/intentions.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/intentions.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/textGen.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/textGen.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/typesystem.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/typesystem.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/RulesFunctions_BaseLanguage.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/RulesFunctions_BaseLanguage.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/anonymousClassExtendsItsClassifier_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/anonymousClassExtendsItsClassifier_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/subtyping_arrayType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/subtyping_arrayType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ArrayAccess_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ArrayAccess_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ArrayCreatorWithInitializer_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ArrayCreatorWithInitializer_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ConceptFunction_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ConceptFunction_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_EnumConstantDeclaration_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_EnumConstantDeclaration_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ForeachStatement_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_ForeachStatement_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_VarRef_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_VarRef_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_thisExpr_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeOf_thisExpr_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_AnonymousClass_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_AnonymousClass_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_ArrayCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_ArrayCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_ArrayLiteral_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_ArrayLiteral_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_BinaryOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_BinaryOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_ClassCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_ClassCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_FieldReferenceOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_FieldReferenceOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_InstanceMethodCallOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_InstanceMethodCallOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_LocalInstanceFieldReference_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_LocalInstanceFieldReference_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_OperationAssignmentExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_OperationAssignmentExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_SuperMethodCall_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_SuperMethodCall_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_UnaryMinus_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/typesystem/typeof_UnaryMinus_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/supertypesOf_ClassifierType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/supertypesOf_ClassifierType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_ClosureLiteral_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_ClosureLiteral_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_CompactInvokeFunctionExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_CompactInvokeFunctionExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_InvokeExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_InvokeExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_InvokeFunctionExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_InvokeFunctionExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_InvokeFunctionOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_InvokeFunctionOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_YieldAllStatement_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/typesystem/typeof_YieldAllStatement_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/RulesFunctions_Collections.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/RulesFunctions_Collections.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/SortedMap_comparableTo_sorted_map_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/SortedMap_comparableTo_sorted_map_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/SortedSet_comparableTo_sorted_set_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/SortedSet_comparableTo_sorted_set_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/java_util_Map_extends_map_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/java_util_Map_extends_map_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/map_extends_java_util_Map_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/map_extends_java_util_Map_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/queue_supertypeOf_deque_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/queue_supertypeOf_deque_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_map_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_map_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_queue_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_queue_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_set_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_set_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_stack_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sequence_supertypeOf_stack_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sortedMap_subtypeOf_map_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sortedMap_subtypeOf_map_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sorted_map_comparableTo_SortedMap_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sorted_map_comparableTo_SortedMap_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sorted_set_comparableTo_SortedSet_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sorted_set_comparableTo_SortedSet_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sorted_set_subtypeOf_set_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/sorted_set_subtypeOf_set_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/stack_supertypeOf_deque_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/stack_supertypeOf_deque_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierType_Iterator_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierType_Iterator_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ContainerIteratorType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ContainerIteratorType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_EnumeratorType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_EnumeratorType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_IEnumerator_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_IEnumerator_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ISequence_class_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ISequence_class_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_IteratorType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_IteratorType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ListType_SequenceType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_ListType_SequenceType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_StackType_ClassiType_Deque_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_StackType_ClassiType_Deque_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_linkedlist_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/supertypesOf_linkedlist_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AbstractContainerCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AbstractContainerCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddAllElementsOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddAllElementsOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddAllSetElementsOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddAllSetElementsOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddFirstElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddFirstElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddLastElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddLastElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddSetElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AddSetElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AllOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AllOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AnyOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AnyOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AsSequenceOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_AsSequenceOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_BinaryOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_BinaryOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ClearAllElementsOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ClearAllElementsOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ClearSetOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ClearSetOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ComparatorSortOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ComparatorSortOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsAllOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsAllOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsKeyOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsKeyOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsValueOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ContainsValueOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_DowncastExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_DowncastExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FindFirstOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FindFirstOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FindLastOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FindLastOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FoldLeftOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FoldLeftOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FoldRightOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_FoldRightOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ForEachStatement_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ForEachStatement_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetCurrentOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetCurrentOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetEnumeratorOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetEnumeratorOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetIndexOfOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetIndexOfOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetIteratorOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetIteratorOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetKeysOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetKeysOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetNextOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetNextOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetSizeOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetSizeOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetValuesOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_GetValuesOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HasNextOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HasNextOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HashMapCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HashMapCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HeadListOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HeadListOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HeadMapOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HeadMapOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HeadSetOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_HeadSetOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_InsertElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_InsertElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_JoinOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_JoinOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_KeyAccessOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_KeyAccessOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ListElementAccessExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ListElementAccessExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MapClearOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MapClearOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MapElement_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MapElement_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MapRemoveOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MapRemoveOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MappingOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MappingOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MappingsSetOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MappingsSetOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MoveNextOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_MoveNextOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PeekOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PeekOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PopOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PopOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PushOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PushOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PutAllOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_PutAllOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ReduceLeftOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ReduceLeftOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ReduceRightOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ReduceRightOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveAllElementsOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveAllElementsOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveAllSetElementsOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveAllSetElementsOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveAtElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveAtElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveFirstElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveFirstElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveLastElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveLastElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveSetElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveSetElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveWhereOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_RemoveWhereOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ReverseOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ReverseOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SelectOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SelectOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SequenceCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SequenceCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SetElementOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SetElementOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SingletonSequenceCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SingletonSequenceCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SmartClosureParameterDeclaration_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SmartClosureParameterDeclaration_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SortOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SortOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SubListOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SubListOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SubMapOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SubMapOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SubSetOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_SubSetOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TailListOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TailListOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TailMapOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TailMapOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TailSetOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TailSetOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ToArrayOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ToArrayOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ToIteratorOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ToIteratorOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ToListOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ToListOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TreeMapCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TreeMapCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TreeSetCreator_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_TreeSetCreator_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ValueAccessOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_ValueAccessOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_VisitAllOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_VisitAllOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_WhereOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/typesystem/typeof_WhereOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_IndexedTupleLiteral_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_IndexedTupleLiteral_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_NamedTupleComponentAccessOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_NamedTupleComponentAccessOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_NamedTupleLiteral_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/tuples/languages/tuples/source_gen/jetbrains/mps/baseLanguage/tuples/typesystem/typeof_NamedTupleLiteral_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/generator/baseLanguage/template/main@generator.mps" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/generator/baseLanguage/template/main@generator.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/languageModels/plugin.mps" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/languageModels/plugin.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/generator/baseLanguage/template/main/QueriesGenerated.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/generator/baseLanguage/template/main/QueriesGenerated.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/SubTyping.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/SubTyping.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypeCheckingContextNew.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypeCheckingContextNew.java" />
-      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\EquationDifference.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\EquationDifference.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypesUtil.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/TypesUtil.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Inequalities.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Inequalities.java" />
-      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteAdded.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteAdded.java" />
-      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteRemoved.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\NonConcreteRemoved.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.iws" afterPath="$PROJECT_DIR$/analyzers.iws" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Equations.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/Equations.java" />
-      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\CompositeDifference.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\CompositeDifference.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/Difference.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/differences/Difference.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.test/jetbrains/mps/analyzers/test/test.mps" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.test/jetbrains/mps/analyzers/test/test.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/InequalityMapPair.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/InequalityMapPair.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NodeMaps.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/newTypesystem/states/NodeMaps.java" />
-      <change type="MODIFICATION" beforePath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingRemoved.java" afterPath="C:\mps\core\typesystemEngine\source\jetbrains\mps\newTypesystem\differences\mapPair\SubTypingRemoved.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/typesystem/inference/TypeCheckingContext.java" afterPath="$APPLICATION_HOME_DIR$/core/typesystemEngine/source/jetbrains/mps/typesystem/inference/TypeCheckingContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzers.iws" afterPath="$PROJECT_DIR$/analyzers.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/generator/template/main@generator.mps" afterPath="$PROJECT_DIR$/languages/analyzers/generator/template/main@generator.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/languageModels/behavior.mps" afterPath="$PROJECT_DIR$/languages/analyzers/languageModels/behavior.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/languageModels/constraints.mps" afterPath="$PROJECT_DIR$/languages/analyzers/languageModels/constraints.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/languageModels/editor.mps" afterPath="$PROJECT_DIR$/languages/analyzers/languageModels/editor.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/languageModels/structure.mps" afterPath="$PROJECT_DIR$/languages/analyzers/languageModels/structure.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/languages/analyzers/languageModels/typesystem.mps" afterPath="$PROJECT_DIR$/languages/analyzers/languageModels/typesystem.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.test/jetbrains/mps/analyzers/test/test.mps" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.analyzers.test/jetbrains/mps/analyzers/test/test.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/typesystem/typeof_ExtensionMethodCall_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/source_gen/jetbrains/mps/baseLanguage/extensionMethods/typesystem/typeof_ExtensionMethodCall_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/DimensionUtil.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/DimensionUtil.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/IntervalSupertypes_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/IntervalSupertypes_SubtypingRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_AbsExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_AbsExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_BinaryOperationMathContext_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_BinaryOperationMathContext_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_ComplexLiteral_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_ComplexLiteral_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_ConjugateOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_ConjugateOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_DivOperationFraction_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_DivOperationFraction_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_InIntervalExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_InIntervalExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_IntervalContainsExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_IntervalContainsExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_IntervalLiteral_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_IntervalLiteral_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_LinearSolveOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_LinearSolveOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_MathSymbolIndex_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_MathSymbolIndex_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_MatrixElementAccessExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_MatrixElementAccessExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_PowExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_PowExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_TransposeOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_TransposeOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_TrigonometricExpression_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_TrigonometricExpression_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_VectorInitializer_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/typeof_VectorInitializer_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/vector_subtype_of_matrix_SubtypingRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/math/source_gen/jetbrains/mps/baseLanguage/math/typesystem/vector_subtype_of_matrix_SubtypingRule.java" />
     </list>
     <list id="07822054-ccc9-4433-a9b5-98d904ced214" name="project" comment="" />
     <ignored path=".idea/workspace.xml" />
@@ -109,32 +297,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Ftest" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.analyzers.test.test/Ftest">
+      <file leaf-file-name="IsSubtypeExpression" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.lang.typesystem.structure/IsSubtypeExpression">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
               <memento>
+                <selectedCell cellId="Constant_trik0f_c1a" cellNumber="0" isInList="false">
+                  <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1176817952409" />
+                </selectedCell>
                 <selectedStack />
                 <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WhenConcreteStatement" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.lang.typesystem.structure/WhenConcreteStatement">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
+                <textLine caretPosition="130" selStart="1" selEnd="1" />
               </memento>
               <inspectorMemento>
                 <selectedStack />
@@ -148,258 +321,69 @@
                 <tab index="0" />
                 <tab index="0" />
                 <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BinaryOperation" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.structure/BinaryOperation">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
                 <tab index="0" />
                 <tab index="0" />
                 <tab index="0" />
                 <tab index="0" />
                 <tab index="1" />
                 <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
               </inner_tabs>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WasSelectedNodeOperation" pinned="false" current="true" current-in-tab="true">
-        <entry file="mps://jetbrains.mps.lang.typesystem.structure/WasSelectedNodeOperation">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
-              <memento>
-                <selectedCell cellId="TransactionalProperty_ueqr71_b0a" cellNumber="0" isInList="false">
-                  <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1076452857759748206" />
-                </selectedCell>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="67" selStart="0" selEnd="0" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstanceMethodCallOperation" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.structure/InstanceMethodCallOperation">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnaryMinus" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.structure/UnaryMinus">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvokeFunctionExpression" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.closures.structure/InvokeFunctionExpression">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DowncastExpression" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.collections.structure/DowncastExpression">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbsExpression" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.math.structure/AbsExpression">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-              <memento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </memento>
-              <inspectorMemento>
-                <selectedStack />
-                <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
-              </inspectorMemento>
-              <inner_tabs>
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-                <tab index="0" />
-              </inner_tabs>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RuleAfterDotExpression" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleAfterDotExpression">
+      <file leaf-file-name="f" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.analyzers.test.test/f">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
               <memento>
+                <selectedCell cellId="Constant_zedcwq_b0" cellNumber="0" isInList="false">
+                  <node model="r:9f41ad18-de28-4221-837a-564b3aebdfa9(jetbrains.mps.analyzers.test.test)" id="1494099528773302668" />
+                </selectedCell>
                 <selectedStack />
                 <folded />
-                <textLine caretPosition="null" selStart="null" selEnd="null" />
+                <textLine caretPosition="295" selStart="1" selEnd="1" />
               </memento>
               <inspectorMemento>
                 <selectedStack />
                 <folded />
                 <textLine caretPosition="null" selStart="null" selEnd="null" />
               </inspectorMemento>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VariableReference" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.structure/VariableReference">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+              <memento>
+                <selectedCell cellId="Collection_ndq0bl_a" cellNumber="0" isInList="false">
+                  <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1219923304966" />
+                </selectedCell>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="0" selStart="null" selEnd="null" />
+              </memento>
+              <inspectorMemento>
+                <selectedStack />
+                <folded />
+                <textLine caretPosition="null" selStart="null" selEnd="null" />
+              </inspectorMemento>
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
             </state>
           </provider>
         </entry>
@@ -546,7 +530,7 @@
                     <option name="addReturnsOnImplement" value="false" />
                     <option name="sortAlphabetically" value="false" />
                     <option name="addOverrideAnnotation" value="true" />
-                    <option name="removeAttributes" value="false" />
+                    <option name="removeAttributes" value="true" />
                   </params>
                 </ComponentState>
               </list>
@@ -672,8 +656,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
-      <pane id="VCSRoots" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -682,9 +664,133 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.analyzers.test" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.analyzers.test" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="analyzers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.analyzers.runtime" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.analyzers.runtime" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="FileSystem" />
+      <pane id="Favorites" />
+      <pane id="VCSRoots" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -820,34 +926,34 @@
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1310" y="12" width="1205" height="986" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="1186" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5075145" sideWeight="0.45221296" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32694152" sideWeight="0.5137909" order="7" side_tool="false" content_ui="tabs" x="397" y="42" width="1088" height="1078" />
       <window_info id="Supertypes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.49739245" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Model Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827324" sideWeight="0.4946032" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49775496" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Module Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293617" sideWeight="0.49248555" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295238" sideWeight="0.67836815" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.49775496" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45567146" sideWeight="0.6647399" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49198204" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49478486" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.31430405" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32163188" sideWeight="0.47555557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.49518922" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Analyze Stacktrace" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32163188" sideWeight="0.52" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Class Hierarchy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32851636" sideWeight="0.4977778" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1373,25 +1479,19 @@
                                 <child>
                                   <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="RulesFunctions_BaseLanguage" info="" excluded="false" expanded="false" isresult="false" results_section="true">
                                     <role name="root" />
-                                    <node>
-                                      <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1176897069499" />
-                                    </node>
+                                    <node />
                                   </data>
                                   <children>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="inference_equateParametersAndReturnType(node&amp;lt;IMethodCall&amp;gt;,node&amp;lt;Type&amp;gt;,map&amp;lt;node&amp;lt;TypeVariableDeclaration&amp;gt;,nlist&amp;lt; &amp;gt;&amp;gt;):void" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;RulesFunctions_BaseLanguage&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
                                         <role name="root to target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1203441237747" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children>
                                         <child>
                                           <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                             <role name="target" />
-                                            <node>
-                                              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1220347102532" />
-                                            </node>
+                                            <node />
                                           </data>
                                           <children />
                                         </child>
@@ -1402,26 +1502,20 @@
                                 <child>
                                   <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="subtypesOfClassifierTypeWWildcards" info="" excluded="false" expanded="false" isresult="false" results_section="true">
                                     <role name="root" />
-                                    <node>
-                                      <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1220523233382" />
-                                    </node>
+                                    <node />
                                   </data>
                                   <children>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1220523357880" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1220523357849" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
@@ -1430,26 +1524,20 @@
                                 <child>
                                   <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="typeof_BinaryOperation" info="" excluded="false" expanded="false" isresult="false" results_section="true">
                                     <role name="root" />
-                                    <node>
-                                      <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1387988544209571090" />
-                                    </node>
+                                    <node />
                                   </data>
                                   <children>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1387988544209571096" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1387988544209571098" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
@@ -1458,17 +1546,13 @@
                                 <child>
                                   <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="typeof_InstanceMethodCallOperation" info="" excluded="false" expanded="false" isresult="false" results_section="true">
                                     <role name="root" />
-                                    <node>
-                                      <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1204056354664" />
-                                    </node>
+                                    <node />
                                   </data>
                                   <children>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="702942408396860198" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
@@ -1477,26 +1561,20 @@
                                 <child>
                                   <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="typeof_OperationAssignmentExpression" info="" excluded="false" expanded="false" isresult="false" results_section="true">
                                     <role name="root" />
-                                    <node>
-                                      <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="4957392803029437211" />
-                                    </node>
+                                    <node />
                                   </data>
                                   <children>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="4957392803029437214" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="4957392803029437216" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
@@ -1505,17 +1583,13 @@
                                 <child>
                                   <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="typeof_UnaryMinus" info="" excluded="false" expanded="false" isresult="false" results_section="true">
                                     <role name="root" />
-                                    <node>
-                                      <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="3860149536565525475" />
-                                    </node>
+                                    <node />
                                   </data>
                                   <children>
                                     <child>
                                       <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="when concrete" info="role: &lt;i&gt;statement&lt;/i&gt;; in: &lt;i&gt;StatementList&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
                                         <role name="target" />
-                                        <node>
-                                          <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="3860149536565525509" />
-                                        </node>
+                                        <node />
                                       </data>
                                       <children />
                                     </child>
@@ -1809,59 +1883,96 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleIfNullReturn">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleNotEqualsNull">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleNotEqualsNullAnd">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleNullLiteral">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleVariableDeclaration">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleCreator">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.analyzers.test.test/Ftest">
+    <entry file="mps://jetbrains.mps.baseLanguage.typesystem/RulesFunctions_BaseLanguage">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
           <memento>
+            <selectedCell cellId="conceptProperty_alias" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1178589699085" />
+            </selectedCell>
             <selectedStack />
             <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
+            <textLine caretPosition="195" selStart="7" selEnd="7" />
           </memento>
           <inspectorMemento>
+            <selectedCell cellId="conceptProperty_alias" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1178589699085" />
+            </selectedCell>
             <selectedStack />
             <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
+            <textLine caretPosition="195" selStart="7" selEnd="7" />
           </inspectorMemento>
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.lang.typesystem.structure/WhenConcreteStatement">
+    <entry file="mps://jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator/insertTypeContextIntoQuotations">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
           <memento>
+            <selectedCell cellId="property_name_1" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1224065863909" />
+            </selectedCell>
             <selectedStack />
             <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
+            <textLine caretPosition="287" selStart="9" selEnd="9" />
+          </memento>
+          <inspectorMemento>
+            <selectedCell cellId="property_name_1" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1224065863909" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="287" selStart="9" selEnd="9" />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.typesystem.structure/SimpleRule_Literal">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+          <memento>
+            <selectedCell cellId="property_name" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1223043988723" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="111" selStart="1" selEnd="1" />
+          </memento>
+          <inspectorMemento>
+            <selectedCell cellId="property_name" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1223043988723" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="111" selStart="1" selEnd="1" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.typesystem.structure/TypeVarDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+          <memento>
+            <selectedCell cellId="property_name" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1174665890970" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="83" selStart="0" selEnd="0" />
           </memento>
           <inspectorMemento>
             <selectedStack />
@@ -1885,13 +1996,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.structure/BinaryOperation">
+    <entry file="mps://jetbrains.mps.lang.smodel.structure/SPropertyAccess">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
           <memento>
+            <selectedCell cellId="property_value" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" id="1226069952507" />
+            </selectedCell>
             <selectedStack />
             <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
+            <textLine caretPosition="267" selStart="20" selEnd="20" />
           </memento>
           <inspectorMemento>
             <selectedStack />
@@ -1915,163 +2029,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.structure/InstanceMethodCallOperation">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <memento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </memento>
-          <inspectorMemento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </inspectorMemento>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.structure/UnaryMinus">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <memento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </memento>
-          <inspectorMemento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </inspectorMemento>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.closures.structure/InvokeFunctionExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <memento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </memento>
-          <inspectorMemento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </inspectorMemento>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.collections.structure/DowncastExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <memento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </memento>
-          <inspectorMemento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </inspectorMemento>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.math.structure/AbsExpression">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
-          <memento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </memento>
-          <inspectorMemento>
-            <selectedStack />
-            <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
-          </inspectorMemento>
-          <inner_tabs>
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-            <tab index="0" />
-          </inner_tabs>
-        </state>
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.dataFlow/RuleAfterDotExpression">
+    <entry file="mps://jetbrains.mps.lang.smodel.typesystem/RulesUtil">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
           <memento>
+            <selectedCell cellId="property_name" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" id="1208202100446" />
+            </selectedCell>
             <selectedStack />
             <folded />
-            <textLine caretPosition="null" selStart="null" selEnd="null" />
+            <textLine caretPosition="455" selStart="8" selEnd="8" />
           </memento>
           <inspectorMemento>
             <selectedStack />
@@ -2081,16 +2048,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.lang.typesystem.structure/WasSelectedNodeOperation">
+    <entry file="mps://jetbrains.mps.baseLanguage.typesystem/check_switchArgument">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
           <memento>
-            <selectedCell cellId="TransactionalProperty_ueqr71_b0a" cellNumber="0" isInList="false">
-              <node model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" id="1076452857759748206" />
+            <selectedCell cellId="Constant_evgwyu_c0" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="3306910260423168219" />
             </selectedCell>
             <selectedStack />
             <folded />
-            <textLine caretPosition="67" selStart="0" selEnd="0" />
+            <textLine caretPosition="655" selStart="1" selEnd="1" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.analyzers.test.test/f">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState">
+          <memento>
+            <selectedCell cellId="Constant_zedcwq_b0" cellNumber="0" isInList="false">
+              <node model="r:9f41ad18-de28-4221-837a-564b3aebdfa9(jetbrains.mps.analyzers.test.test)" id="1494099528773302668" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="295" selStart="1" selEnd="1" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/VariableDeclaration">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedCell cellId="Collection_ka3b3c_a" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="554301099359820442" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="0" selStart="null" selEnd="null" />
           </memento>
           <inspectorMemento>
             <selectedStack />
@@ -2109,6 +2114,135 @@
             <tab index="0" />
             <tab index="0" />
             <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/VariableReference">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedCell cellId="Collection_ndq0bl_a" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1219923304966" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="0" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/DotExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <memento>
+            <selectedCell cellId="Constant_ndq0bl_a0" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" id="1197028440830" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="259" selStart="0" selEnd="0" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.typesystem.structure/TypeVarReference">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+          <memento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="1" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.lang.typesystem.structure/IsSubtypeExpression">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+          <memento>
+            <selectedCell cellId="Constant_trik0f_c1a" cellNumber="0" isInList="false">
+              <node model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" id="1176817952409" />
+            </selectedCell>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="130" selStart="1" selEnd="1" />
+          </memento>
+          <inspectorMemento>
+            <selectedStack />
+            <folded />
+            <textLine caretPosition="null" selStart="null" selEnd="null" />
+          </inspectorMemento>
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="1" />
             <tab index="0" />
           </inner_tabs>
         </state>

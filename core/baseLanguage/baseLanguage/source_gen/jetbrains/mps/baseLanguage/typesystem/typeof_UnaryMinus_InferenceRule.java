@@ -31,13 +31,13 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(minus, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7602524515424797603", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(expressionType_typevar_7602524515424797598), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7602524515424797608", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(expressionType_typevar_7602524515424797598), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7602524515424797608", true), _info_12389875345);
     }
     {
-      final SNode exType = typeCheckingContext.getEquationManager().getRepresentator(expressionType_typevar_7602524515424797598);
+      final SNode exType = typeCheckingContext.getRepresentative(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getEquationManager().getRepresentator(exType), new typeof_UnaryMinus_InferenceRule.QuotationClass_2vfzm_a2a0a0a2a0().createNode(typeCheckingContext));
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getRepresentative(exType), new typeof_UnaryMinus_InferenceRule.QuotationClass_2vfzm_a2a0a0a2a0().createNode(typeCheckingContext));
           if (type != null) {
             {
               SNode _nodeToCheck_1029348928467 = minus;

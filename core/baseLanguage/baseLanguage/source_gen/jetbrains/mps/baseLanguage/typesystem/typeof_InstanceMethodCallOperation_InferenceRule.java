@@ -35,33 +35,33 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(imco);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204064763142", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204064784351", false), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204064784351", false), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = imco;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), (SNode) new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0a5a0().createNode(methodClassifier, typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0a5a0().createNode(methodClassifier, typeCheckingContext), true, _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
     final SNode returnType = SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true);
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty() || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       {
-        final SNode IT = typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338);
+        final SNode IT = typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338);
         typeCheckingContext.whenConcrete(IT, new Runnable() {
           public void run() {
-            if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType") && ClassifierType_Behavior.call_isRawType_702942408396828337(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-              RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, Type_Behavior.call_getErasure_702942408396803226(returnType), typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), methodClassifier);
+            if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType") && ClassifierType_Behavior.call_isRawType_702942408396828337(SNodeOperations.cast(typeCheckingContext.getRepresentative(IT), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+              RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, Type_Behavior.call_getErasure_702942408396803226(returnType), typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);
             } else {
-              RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), methodClassifier);
+              RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);
             }
           }
         }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "702942408396860198", true, false);
       }
     } else {
-      RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), methodClassifier);
+      RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);
     }
   }
 
