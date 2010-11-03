@@ -25,8 +25,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.StaticReference;
 
 public class ModelReader6Handler extends DefaultHandler {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -413,7 +411,7 @@ public class ModelReader6Handler extends DefaultHandler {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SNode(fieldmodel, fieldhelper.parse(attrs.getValue("type"), false).text);
+      return new SNode(fieldmodel, fieldhelper.readType(attrs.getValue("type")));
     }
 
     @Override
@@ -428,7 +426,7 @@ public class ModelReader6Handler extends DefaultHandler {
         return;
       }
       if ("role".equals(name)) {
-        result.setRoleInParent(fieldhelper.parse(value, true).text);
+        result.setRoleInParent(fieldhelper.readRole(value));
         return;
       }
       if ("id".equals(name)) {
@@ -463,7 +461,7 @@ public class ModelReader6Handler extends DefaultHandler {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.parse(child[0], true).text, child[1]);
+          result.setProperty(fieldhelper.readName(child[0]), child[1]);
         }
         return;
       }
@@ -475,20 +473,10 @@ public class ModelReader6Handler extends DefaultHandler {
           }
           return;
         }
-        VersionUtil.ParseResult target = fieldhelper.parse(child[2], true);
-
-        SModelReference modelRef = fieldhelper.getSModelReference(target.modelID);
-        if (modelRef == null) {
-          if (log.isErrorEnabled()) {
-            log.error("couldn't create reference '" + child[0] + "' : import for index [" + target.modelID + "] not found");
-          }
-          return;
+        SReference ref = fieldhelper.readLink(result, child[0], child[2], child[1]);
+        if (ref != null) {
+          result.addReference(ref);
         }
-        SReference ref = (target.text.equals("^") ?
-          new DynamicReference(child[0], result, modelRef, child[1]) :
-          new StaticReference(child[0], result, modelRef, SNodeId.fromString(target.text), child[1])
-        );
-        result.addReference(ref);
         return;
       }
       if ("node".equals(tagName)) {
@@ -546,7 +534,7 @@ public class ModelReader6Handler extends DefaultHandler {
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
       String[] result = (String[]) resultObject;
       if ("role".equals(name)) {
-        result[0] = fieldhelper.parse(value, true).text;
+        result[0] = value;
         return;
       }
       if ("resolveInfo".equals(name)) {

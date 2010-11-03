@@ -25,11 +25,17 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 public class ModelWriter6 implements IModelWriter {
+  private VersionUtil myHelper;
+  private SModel myModel;
+
   protected int getModelPersistenceVersion() {
     return 6;
   }
 
   public Document saveModel(SModel sourceModel) {
+    myModel = sourceModel;
+    myHelper = new VersionUtil(sourceModel);
+
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
@@ -58,8 +64,6 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     // imports
-    VersionUtil helper = new VersionUtil(sourceModel);
-
     for (ImportElement importElement : sourceModel.importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
@@ -77,47 +81,49 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     // roots
-    saveRootStubs(rootElement, sourceModel, helper);   // only for quick roots access
+    saveRootStubs(rootElement, sourceModel);   // only for quick roots access
     for (SNode root : sourceModel.roots()) {
-      saveNode(rootElement, root, helper, true);
+      saveNode(rootElement, root, null, true);
     }
 
     return new Document(rootElement);
   }
 
-  protected void saveRootStubs(Element parent, SModel model,  VersionUtil helper) {
+  protected void saveRootStubs(Element parent, SModel model) {
     Element roots = new Element(ModelPersistence.ROOTS);
     for (SNode root : model.roots()) {
-      saveNode(roots, root, helper, false);
+      saveNode(roots, root, null, false);
     }
     parent.addContent(roots);
   }
 
-  protected void saveNode(Element parentElement, SNode node, VersionUtil helper, boolean saveChildren) {
+  protected void saveNode(Element parentElement, SNode node, SNode parentConcept, boolean saveChildren) {
     Element element = new Element(ModelPersistence.NODE);
 
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, helper.genRole(node));
-    element.setAttribute(ModelPersistence.TYPE, helper.genType(node));
+    SNode concept = node.getConceptDeclarationNode();
+
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node, parentConcept));
+    element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
     element.setAttribute(ModelPersistence.ID, node.getId());
 
     for (String propertyName : node.getProperties().keySet()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
-      propertyElement.setAttribute(ModelPersistence.NAME, helper.genName(node, propertyName));
+      propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName, concept));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
       element.addContent(propertyElement);
     }
 
     for (SReference reference : node.getReferencesIterable()) {
       Element linkElement = new Element(ModelPersistence.LINK);
-      linkElement.setAttribute(ModelPersistence.ROLE, helper.genRole(reference));
-      linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, helper.genTarget(reference));
+      linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference, concept));
+      linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
       element.addContent(linkElement);
     }
 
     if (saveChildren) {
       for (SNode childNode : node.getChildren()) {
-        saveNode(element, childNode, helper, true);
+        saveNode(element, childNode, concept, true);
       }
     }
 

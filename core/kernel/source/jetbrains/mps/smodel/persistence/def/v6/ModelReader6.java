@@ -20,7 +20,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v6.VersionUtil.ParseResult;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -130,7 +129,7 @@ public class ModelReader6 implements IModelReader {
 
   @Nullable
   protected SNode readNode(Element nodeElement, SModel model) {
-    String conceptFqName = myHelper.parse(nodeElement.getAttributeValue(ModelPersistence.TYPE), false).text;
+    String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
     SNode node = new SNode(model, conceptFqName);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
@@ -144,7 +143,7 @@ public class ModelReader6 implements IModelReader {
     }
 
     for (Element element : (List<Element>) nodeElement.getChildren(ModelPersistence.PROPERTY)) {
-      String propertyName = myHelper.parse(element.getAttributeValue(ModelPersistence.NAME), true).text;
+      String propertyName = myHelper.readName(element.getAttributeValue(ModelPersistence.NAME));
       String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
         node.setProperty(propertyName, propertyValue);
@@ -157,7 +156,7 @@ public class ModelReader6 implements IModelReader {
     }
 
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
-      String role = myHelper.parse(child.getAttributeValue(ModelPersistence.ROLE), true).text;
+      String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       SNode childNode = readNode(child, model);
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
@@ -170,17 +169,7 @@ public class ModelReader6 implements IModelReader {
   }
 
   private SReference readReference(Element element, SNode node) {
-    String role = myHelper.parse(element.getAttributeValue(ModelPersistence.ROLE), true).text;
-    ParseResult target = myHelper.parse(element.getAttributeValue(ModelPersistence.TARGET_NODE_ID), true);
-    String resolveInfo = element.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    SModelReference modelRef = myHelper.getSModelReference(target.modelID);
-    if (modelRef == null) {
-      LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
-      return null;
-    } else if (target.text.equals("^")) {
-      return new DynamicReference(role, node, modelRef, resolveInfo);
-    } else {
-      return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
-    }
+    return myHelper.readLink(node, element.getAttributeValue(ModelPersistence.ROLE),
+      element.getAttributeValue(ModelPersistence.TARGET_NODE_ID), element.getAttributeValue(ModelPersistence.RESOLVE_INFO));
   }
 }
