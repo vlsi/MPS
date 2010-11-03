@@ -94,7 +94,6 @@
     <scopeInfo nodeId="4168438976304915213" fileName="ModelReader5Handler.java" startLine="131" startPosition="69" endLine="139" endPosition="7">
       <varInfo nodeId="7535955628554088445" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="4168438976304803891" fileName="ModelReader5Handler.java" startLine="130" startPosition="84" endLine="140" endPosition="5" />
     <scopeInfo nodeId="4168438976304915212" fileName="ModelReader5Handler.java" startLine="130" startPosition="84" endLine="140" endPosition="5">
       <varInfo nodeId="4168438976304915218" varName="i" />
     </scopeInfo>

@@ -16,6 +16,10 @@
 package jetbrains.mps.vcs.diff;
 
 public class MergeRefactoringTest extends MergeTestCase{
+  // This test now accepts the following problem:
+  // - base model and mine model contain unapplied structure modifications
+  // - repository model contain applied structure modifications
+  // - result model has partially applied structure modifications
   public void testRenameConcept() throws Throwable {
     testZip("resources/mergeRefactoringTest.mps.zip", false);
   }

@@ -138,7 +138,7 @@ public class NewModel_Action extends GeneratedAction {
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(NewModel_Action.this.project).selectModel(modelDescriptor);
+        ProjectPane.getInstance(NewModel_Action.this.project).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

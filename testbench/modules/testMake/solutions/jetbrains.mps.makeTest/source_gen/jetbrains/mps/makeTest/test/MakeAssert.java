@@ -26,6 +26,9 @@ public class MakeAssert {
   private static final String MESSAGE_DEPENDENCY_NOT_CHECKED = "Compilation finished with Unchecked Dependencies";
   private static final String PROJECT_FILE = "core/tests/testMake/testMake.mpr";
 
+  private MakeAssert() {
+  }
+
   public static void assertNotMake(final String modelName, final ChangeModel changer) {
     Project project = launchProject();
     Assert.assertNotNull("project is not loaded", project);

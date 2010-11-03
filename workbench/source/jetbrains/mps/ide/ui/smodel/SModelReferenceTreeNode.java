@@ -41,7 +41,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ProjectPane projectPane = ProjectPane.getInstance(myProject);
-        projectPane.selectModel(myModelDescriptor);
+        projectPane.selectModel(myModelDescriptor, false);
       }
     });
   }

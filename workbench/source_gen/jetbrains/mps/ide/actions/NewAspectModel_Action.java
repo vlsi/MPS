@@ -83,7 +83,7 @@ public class NewAspectModel_Action extends GeneratedAction {
       // we need it since tree is updated later 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          ProjectPane.getInstance(NewAspectModel_Action.this.ideaProject).selectModel(modelDescriptor);
+          ProjectPane.getInstance(NewAspectModel_Action.this.ideaProject).selectModel(modelDescriptor, false);
         }
       });
     } catch (Throwable t) {

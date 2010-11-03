@@ -44,7 +44,7 @@ public class ModuleTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    ProjectPane.getInstance(myProject).selectModule(myModule);
+    ProjectPane.getInstance(myProject).selectModule(myModule, false);
   }
 
   public int getToggleClickCount() {

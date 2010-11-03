@@ -83,7 +83,7 @@ public class NewDevKit_Action extends GeneratedAction {
       }
       ProjectPane projectPane = ProjectPane.getInstance(NewDevKit_Action.this.ideaProject);
       projectPane.rebuildTree();
-      projectPane.selectModule(devkit);
+      projectPane.selectModule(devkit, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewDevKit", t);

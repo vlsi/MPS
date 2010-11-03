@@ -48,8 +48,7 @@ public class GoToLanguageAction extends BaseAction {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
-            projectPane.selectModule(module);
-            projectPane.activate();
+            projectPane.selectModule(module, true);
           }
         };
       }

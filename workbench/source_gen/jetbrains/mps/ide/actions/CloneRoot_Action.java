@@ -102,7 +102,7 @@ public class CloneRoot_Action extends GeneratedAction {
         CloneRoot_Action.this.project.getComponent(MPSEditorOpener.class).editNode(copy, CloneRoot_Action.this.context);
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            ProjectPane.getInstance(CloneRoot_Action.this.ideaProject).selectNode(copy);
+            ProjectPane.getInstance(CloneRoot_Action.this.ideaProject).selectNode(copy, false);
           }
         });
       }

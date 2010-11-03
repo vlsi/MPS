@@ -171,6 +171,6 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
 
   /*package*/ void navigateToEditorDeclaration(SNode editorNode, IOperationContext oContext, IEditor editor) {
     oContext.getComponent(MPSEditorOpener.class).editNode(editorNode, oContext);
-    ProjectPane.getInstance(GoToEditorDeclaration_Action.this.ideaProject).selectNode(editorNode);
+    ProjectPane.getInstance(GoToEditorDeclaration_Action.this.ideaProject).selectNode(editorNode, false);
   }
 }

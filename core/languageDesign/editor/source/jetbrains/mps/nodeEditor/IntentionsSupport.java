@@ -259,7 +259,7 @@ public class IntentionsSupport {
                   + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
               myEditor.getOperationContext().getComponent(MPSEditorOpener.class).editNode(intentionNode, myEditor.getOperationContext());
-              ProjectPane.getInstance(myEditor.getOperationContext().getProject()).selectNode(intentionNode);
+              ProjectPane.getInstance(myEditor.getOperationContext().getProject()).selectNode(intentionNode, false);
             }
           }
         });

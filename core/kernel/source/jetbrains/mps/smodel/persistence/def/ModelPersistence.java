@@ -404,12 +404,6 @@ public class ModelPersistence {
 
   //--------deprecated--------
 
-  @NotNull
-  @Deprecated //very slow
-  public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model,model.getPersistenceVersion()), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
-  }
-
   @Deprecated //very slow
   public static SModel readModel(@NotNull Document d, String name, String stereotype) {
     InputSource source;

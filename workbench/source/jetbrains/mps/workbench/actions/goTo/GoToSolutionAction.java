@@ -28,7 +28,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseSolutionModel;
 
@@ -48,8 +47,7 @@ public class GoToSolutionAction extends BaseAction {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
-            projectPane.selectModule(module);
-            projectPane.activate();
+            projectPane.selectModule(module, true);
           }
         };
       }

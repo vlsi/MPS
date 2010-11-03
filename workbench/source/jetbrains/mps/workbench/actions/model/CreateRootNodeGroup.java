@@ -204,7 +204,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       if (!trySelectInCurrentPane(node)) {
         ProjectPane pane = ProjectPane.getInstance(myProject);
-        pane.selectNode(node);
+        pane.selectNode(node, false);
       }
 
       IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);

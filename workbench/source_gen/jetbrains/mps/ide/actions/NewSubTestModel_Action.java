@@ -120,7 +120,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
           }
         }
       });
-      ProjectPane.getInstance(NewSubTestModel_Action.this.ideaProject).selectModel(result.value);
+      ProjectPane.getInstance(NewSubTestModel_Action.this.ideaProject).selectModel(result.value, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSubTestModel", t);
