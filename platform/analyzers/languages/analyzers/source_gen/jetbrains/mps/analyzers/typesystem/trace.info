@@ -9,8 +9,7 @@
   <unitInfo fileName="typeof_AnalyzerFunParameterProgramState_InferenceRule.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_AnalyzerFunParameterProgramState_InferenceRule$QuotationClass_hgy1cg_a0a0a0" />
   <unitInfo fileName="typeof_InstructionType_InferenceRule.java" startLine="55" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_InstructionType_InferenceRule$QuotationClass_topy54_a0a0a0" />
   <unitInfo fileName="typeof_InstructionType_InferenceRule.java" startLine="86" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_InstructionType_InferenceRule$QuotationClass_topy54_a0a1a0" />
-  <unitInfo fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.checkDuplicatedRules_NonTypesystemRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="49" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_AnalyzerMergeParameterInput_InferenceRule$QuotationClass_rg9vlp_a0a0a0" />
   <unitInfo fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="51" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_AnalyzerRunnerCreator_InferenceRule$QuotationClass_tazfkf_a0a0a0" />
   <unitInfo fileName="typeof_AnalyzerParameterProgram_InferenceRule.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_AnalyzerParameterProgram_InferenceRule" />
@@ -19,30 +18,6 @@
   <unitInfo fileName="typeof_AnalyzerMergeParameterInput_InferenceRule.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_AnalyzerMergeParameterInput_InferenceRule" />
   <unitInfo fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="23" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_AnalyzerRunnerCreator_InferenceRule" />
   <unitInfo fileName="typeof_InstructionType_InferenceRule.java" startLine="21" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.analyzers.typesystem.typeof_InstructionType_InferenceRule" />
-  <root nodeId="1483902774837531410">
-    <nodeInfo nodeId="1483902774837531469" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="25" startPosition="121" endLine="26" endPosition="59" />
-    <nodeInfo nodeId="1483902774837540552" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="28" startPosition="89" endLine="29" endPosition="17" />
-    <nodeInfo nodeId="1483902774837535780" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="32" startPosition="9" endLine="33" endPosition="56" />
-    <nodeInfo nodeId="1483902774837535780" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="33" startPosition="56" endLine="34" endPosition="62" />
-    <nodeInfo nodeId="1483902774837535780" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="34" startPosition="62" endLine="35" endPosition="268" />
-    <nodeInfo nodeId="1483902774837535787" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="37" startPosition="14" endLine="38" endPosition="147" />
-    <nodeInfo nodeId="1483902774837535785" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="37" startPosition="12" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="1483902774837540543" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="27" startPosition="87" endLine="30" endPosition="7" />
-    <nodeInfo nodeId="1483902774837535780" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="31" startPosition="149" endLine="36" endPosition="9" />
-    <nodeInfo nodeId="1483902774837535764" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="1483902774837531414" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="26" startPosition="59" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1483902774837540544" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="28" startPosition="89" endLine="29" endPosition="17" />
-    <scopeInfo nodeId="1483902774837535786" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="37" startPosition="14" endLine="38" endPosition="147" />
-    <scopeInfo nodeId="1483902774837535780" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="32" startPosition="9" endLine="35" endPosition="268" />
-    <scopeInfo nodeId="1483902774837535765" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="31" startPosition="149" endLine="36" endPosition="9" />
-    <scopeInfo nodeId="1483902774837531417" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="27" startPosition="87" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="1483902774837531414" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="26" startPosition="59" endLine="40" endPosition="5">
-      <varInfo nodeId="1483902774837531415" varName="ruleRef" />
-    </scopeInfo>
-    <scopeInfo nodeId="1483902774837531411" fileName="checkDuplicatedRules_NonTypesystemRule.java" startLine="25" startPosition="121" endLine="40" endPosition="5">
-      <varInfo nodeId="1483902774837531470" varName="names" />
-    </scopeInfo>
-  </root>
   <root nodeId="178770917832494464">
     <nodeInfo nodeId="178770917832644953" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="63" />
     <nodeInfo nodeId="178770917832644953" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_AnalyzerRunnerCreator_InferenceRule.java" startLine="29" startPosition="63" endLine="30" endPosition="52" />

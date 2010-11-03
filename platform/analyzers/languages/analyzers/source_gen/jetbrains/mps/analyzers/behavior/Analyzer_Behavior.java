@@ -5,6 +5,12 @@ package jetbrains.mps.analyzers.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Analyzer_Behavior {
   public static void init(SNode thisNode) {
@@ -24,5 +30,15 @@ public class Analyzer_Behavior {
 
   public static String call_getAnalyzerName_178770917832626046(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "Analyzer";
+  }
+
+  public static List<SNode> call_getRules_4130591939054429267(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode rule : SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(thisNode), GlobalScope.getInstance(), "jetbrains.mps.analyzers.structure.Rule")) {
+      if (SLinkOperations.getTarget(rule, "analyzer", false) == thisNode) {
+        ListSequence.fromList(result).addElement(rule);
+      }
+    }
+    return result;
   }
 }

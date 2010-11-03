@@ -54,8 +54,6 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_590xoz_q0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_590xoz_r0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_590xoz_s0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_590xoz_t0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_590xoz_u0(editorContext, node));
     return editorCell;
   }
 
@@ -149,33 +147,10 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_590xoz_t0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "data flow constructors:");
-    editorCell.setCellId("Constant_590xoz_t0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNodeList_590xoz_r0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Analyzer_Editor.instructionListHandler_590xoz_r0(node, "instruction", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_instruction");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    }
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_590xoz_u0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Analyzer_Editor.ruleReferenceListHandler_590xoz_u0(node, "ruleReference", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_ruleReference");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -463,44 +438,6 @@ public class Analyzer_Editor extends DefaultNodeEditor {
 
   private static class instructionListHandler_590xoz_r0 extends RefNodeListHandler {
     public instructionListHandler_590xoz_r0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
-          substituteInfoNode = elementNode;
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
-    }
-  }
-
-  private static class ruleReferenceListHandler_590xoz_u0 extends RefNodeListHandler {
-    public ruleReferenceListHandler_590xoz_u0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

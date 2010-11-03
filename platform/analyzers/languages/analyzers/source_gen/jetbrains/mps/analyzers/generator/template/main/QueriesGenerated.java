@@ -19,8 +19,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4943044633102120866(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -325,26 +323,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4352355327610857207(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "ruleReference", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "rule", false) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "rule", false);
-      }
-    });
+    return Analyzer_Behavior.call_getRules_4130591939054429267(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_4352355327610883667(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "ruleReference", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "rule", false) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "rule", false);
-      }
-    });
+    return Analyzer_Behavior.call_getRules_4130591939054429267(_context.getNode());
   }
 }

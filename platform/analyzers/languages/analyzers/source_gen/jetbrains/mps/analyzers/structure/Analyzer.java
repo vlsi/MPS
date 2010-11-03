@@ -23,7 +23,6 @@ public class Analyzer extends BaseConcept implements INamedConcept {
   public static final String FUN_FUNCTION = "funFunction";
   public static final String DIRECTION = "direction";
   public static final String LATTICE_ELEMENT_TYPE = "latticeElementType";
-  public static final String RULE_REFERENCE = "ruleReference";
   public static final String INSTRUCTION = "instruction";
 
   public Analyzer(SNode node) {
@@ -100,26 +99,6 @@ public class Analyzer extends BaseConcept implements INamedConcept {
 
   public void setLatticeElementType(Type node) {
     super.setChild(Analyzer.LATTICE_ELEMENT_TYPE, node);
-  }
-
-  public int getRuleReferencesCount() {
-    return this.getChildCount(Analyzer.RULE_REFERENCE);
-  }
-
-  public Iterator<RuleReference> ruleReferences() {
-    return this.children(RuleReference.class, Analyzer.RULE_REFERENCE);
-  }
-
-  public List<RuleReference> getRuleReferences() {
-    return this.getChildren(RuleReference.class, Analyzer.RULE_REFERENCE);
-  }
-
-  public void addRuleReference(RuleReference node) {
-    this.addChild(Analyzer.RULE_REFERENCE, node);
-  }
-
-  public void insertRuleReference(RuleReference prev, RuleReference node) {
-    this.insertChild(prev, Analyzer.RULE_REFERENCE, node);
   }
 
   public int getInstructionsCount() {
