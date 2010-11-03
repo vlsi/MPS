@@ -21,12 +21,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
 
-public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements Cloneable {
-  private static final Logger LOG = Logger.getLogger(JUnitConfigFromClasses.class);
+public class JUnitConfigFromLanguageTestCases extends BaseConfigCreator<List> implements Cloneable {
+  private static final Logger LOG = Logger.getLogger(JUnitConfigFromLanguageTestCases.class);
 
   private RunConfiguration myConfig;
 
-  public JUnitConfigFromClasses() {
+  public JUnitConfigFromLanguageTestCases() {
     super(findFactoryImpl(ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class), "DefaultJUnit"));
   }
 
@@ -47,7 +47,7 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
       return;
     }
 
-    JUnitConfigFromClasses.this.setSourceElement(new MPSPsiElement(parameter));
+    JUnitConfigFromLanguageTestCases.this.setSourceElement(new MPSPsiElement(parameter));
 
     List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());
     for (SNode testCase : parameter) {
@@ -56,7 +56,7 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClasses.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromLanguageTestCases.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
         @Override
         public String suggestedName() {
           return "Several Test Classes";
@@ -65,13 +65,13 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
       _config.setName(SPropertyOperations.getString(SNodeOperations.cast(Sequence.fromIterable(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
-      JUnitConfigFromClasses.this.myConfig = _config;
+      JUnitConfigFromLanguageTestCases.this.myConfig = _config;
     }
   }
 
   @Override
-  public JUnitConfigFromClasses clone() {
-    return ((JUnitConfigFromClasses) super.clone());
+  public JUnitConfigFromLanguageTestCases clone() {
+    return ((JUnitConfigFromLanguageTestCases) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {

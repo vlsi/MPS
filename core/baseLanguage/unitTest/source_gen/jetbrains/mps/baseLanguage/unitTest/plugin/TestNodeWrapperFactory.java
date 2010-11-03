@@ -132,10 +132,10 @@ public enum TestNodeWrapperFactory {
     });
   }
 
-  public static Iterable<SNode> getWrappedConcepts(final boolean isTestCase) {
+  public static Iterable<SNode> getWrappedRootConcepts() {
     return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).where(new IWhereFilter<TestNodeWrapperFactory>() {
       public boolean accept(TestNodeWrapperFactory it) {
-        return it.isRoot() == isTestCase;
+        return it.isRoot();
       }
     }).select(new ISelector<TestNodeWrapperFactory, SNode>() {
       public SNode select(TestNodeWrapperFactory it) {
