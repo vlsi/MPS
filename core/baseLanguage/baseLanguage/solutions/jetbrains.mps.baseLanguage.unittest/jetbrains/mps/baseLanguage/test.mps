@@ -2998,19 +2998,6 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3383816410303583317">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3383816410303583319">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3383816410303583318">
-                <link role="variableDeclaration:3" targetNodeId="3383816410303507427" resolveInfo="s2" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3383816410303583323">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~String.charAt(int):char" resolveInfo="charAt" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3383816410303583324">
-                  <property name="value:3" value="2" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3383816410303582315">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3383816410303583261">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3383816410303582316">
