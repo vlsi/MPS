@@ -4,19 +4,27 @@ package jetbrains.mps.smodel.persistence.def.v5;
 
 import org.xml.sax.helpers.DefaultHandler;
 import java.util.Stack;
+import org.xml.sax.Locator;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModel;
+import java.util.List;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.SAXVisibleModelElements;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
 public class ModelReader5Handler extends DefaultHandler {
@@ -32,55 +40,65 @@ public class ModelReader5Handler extends DefaultHandler {
   private ModelReader5Handler.propertyElementHandler propertyhandler = new ModelReader5Handler.propertyElementHandler();
   private ModelReader5Handler.linkElementHandler linkhandler = new ModelReader5Handler.linkElementHandler();
   private ModelReader5Handler.visibleElementHandler visiblehandler = new ModelReader5Handler.visibleElementHandler();
-  private Stack<ModelReader5Handler.ElementHandler> handlers = new Stack<ModelReader5Handler.ElementHandler>();
-  private Stack<Object> values = new Stack<Object>();
-  private SModel result;
+  private Stack<ModelReader5Handler.ElementHandler> myHandlersStack = new Stack<ModelReader5Handler.ElementHandler>();
+  private Stack<Object> myValues = new Stack<Object>();
+  private Locator myLocator;
+  private Pair<SModel, List<SNodeId>> myResult;
   private SModelVersionsInfo fieldversionsInfo;
   private ArrayList<IReferencePersister> fieldreferenceDescriptors;
   private SAXVisibleModelElements fieldvisibleModelElements;
   private SModel fieldmodel;
+  private Deque<SNodeId> fieldnodeIdStack;
+  private List<SNodeId> fieldlineToIdMap;
+  private boolean fieldnodeEnded;
 
   public ModelReader5Handler() {
   }
 
-  public SModel getResult() {
-    return result;
+  public Pair<SModel, List<SNodeId>> getResult() {
+    return myResult;
+  }
+
+  @Override
+  public void setDocumentLocator(Locator locator) {
+    myLocator = locator;
   }
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    ModelReader5Handler.ElementHandler current = (handlers.empty() ?
+    globalHandleText(myValues.firstElement(), new String(array, start, len));
+    ModelReader5Handler.ElementHandler current = (myHandlersStack.empty() ?
       (ModelReader5Handler.ElementHandler) null :
-      handlers.peek()
+      myHandlersStack.peek()
     );
     if (current != null) {
-      current.handleText(values.peek(), new String(array, start, len));
+      current.handleText(myValues.peek(), new String(array, start, len));
     }
   }
 
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    ModelReader5Handler.ElementHandler current = handlers.pop();
-    Object childValue = values.pop();
+    ModelReader5Handler.ElementHandler current = myHandlersStack.pop();
+    Object childValue = myValues.pop();
     if (current != null) {
       current.validate(childValue);
-      ModelReader5Handler.ElementHandler parent = (handlers.empty() ?
+      ModelReader5Handler.ElementHandler parent = (myHandlersStack.empty() ?
         (ModelReader5Handler.ElementHandler) null :
-        handlers.peek()
+        myHandlersStack.peek()
       );
       if (parent != null) {
-        parent.handleChild(values.peek(), qName, childValue);
+        parent.handleChild(myValues.peek(), qName, childValue);
       } else {
-        result = (SModel) childValue;
+        myResult = (Pair<SModel, List<SNodeId>>) childValue;
       }
     }
   }
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    ModelReader5Handler.ElementHandler current = (handlers.empty() ?
+    ModelReader5Handler.ElementHandler current = (myHandlersStack.empty() ?
       (ModelReader5Handler.ElementHandler) null :
-      handlers.peek()
+      myHandlersStack.peek()
     );
     if (current == null) {
       // root 
@@ -104,8 +122,22 @@ public class ModelReader5Handler extends DefaultHandler {
       String value = attributes.getValue(i);
       current.handleAttribute(result, name, value);
     }
-    handlers.push(current);
-    values.push(result);
+    myHandlersStack.push(current);
+    myValues.push(result);
+  }
+
+  public void globalHandleText(Object resultObject, String value) {
+    Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
+    for (int i = 0; i < StringUtils.countMatches(value, "\n"); i++) {
+      int line = myLocator.getLineNumber() - 1;
+      while (line > ListSequence.fromList(fieldlineToIdMap).count()) {
+        ListSequence.fromList(fieldlineToIdMap).addElement(DequeSequence.fromDeque(fieldnodeIdStack).peekElement());
+        if (fieldnodeEnded) {
+          DequeSequence.fromDeque(fieldnodeIdStack).popElement();
+          fieldnodeEnded = false;
+        }
+      }
+    }
   }
 
   private class ElementHandler {
@@ -149,14 +181,17 @@ public class ModelReader5Handler extends DefaultHandler {
     }
 
     @Override
-    protected SModel createObject(Attributes attrs) {
+    protected Pair<SModel, List<SNodeId>> createObject(Attributes attrs) {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      fieldnodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
+      fieldlineToIdMap = ListSequence.fromList(new ArrayList<SNodeId>());
+      fieldnodeEnded = false;
       fieldmodel.setPersistenceVersion(5);
       fieldmodel.setLoading(true);
-      return fieldmodel;
+      return new Pair<SModel, List<SNodeId>>(fieldmodel, fieldlineToIdMap);
     }
 
     @Override
@@ -166,7 +201,7 @@ public class ModelReader5Handler extends DefaultHandler {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
-      SModel result = (SModel) resultObject;
+      Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
       if ("modelUID".equals(name)) {
         return;
       }
@@ -207,50 +242,50 @@ public class ModelReader5Handler extends DefaultHandler {
 
     @Override
     protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
-      SModel result = (SModel) resultObject;
+      Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
       if ("persistence".equals(tagName)) {
         return;
       }
       if ("maxImportIndex".equals(tagName)) {
         Integer child = (Integer) value;
-        if (child > result.getMaxImportIndex()) {
-          result.setMaxImportIndex(child);
+        if (child > result.o1.getMaxImportIndex()) {
+          result.o1.setMaxImportIndex(child);
         }
         return;
       }
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        result.addAdditionalModelVersion(ModelUtil.upgradeModelUID(SModelReference.fromString(child[0])), version);
+        result.o1.addAdditionalModelVersion(ModelUtil.upgradeModelUID(SModelReference.fromString(child[0])), version);
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        result.addLanguage(ModuleReference.fromString(child));
+        result.o1.addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        result.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        result.o1.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        result.addDevKit(ModuleReference.fromString(child));
+        result.o1.addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
         SModel.ImportElement child = (SModel.ImportElement) value;
-        if (child.getReferenceID() > result.getMaxImportIndex()) {
-          result.setMaxImportIndex(child.getReferenceID());
+        if (child.getReferenceID() > result.o1.getMaxImportIndex()) {
+          result.o1.setMaxImportIndex(child.getReferenceID());
         }
-        result.addModelImport(child);
+        result.o1.addModelImport(child);
         return;
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          result.addRoot(child);
+          result.o1.addRoot(child);
         }
         return;
       }
@@ -262,16 +297,16 @@ public class ModelReader5Handler extends DefaultHandler {
 
     @Override
     protected void validate(Object resultObject) throws SAXParseException {
-      if (!(validateInternal((SModel) resultObject))) {
+      if (!(validateInternal((Pair<SModel, List<SNodeId>>) resultObject))) {
         throw new SAXParseException("missing tags", null);
       }
     }
 
-    private boolean validateInternal(SModel result) throws SAXParseException {
+    private boolean validateInternal(Pair<SModel, List<SNodeId>> result) throws SAXParseException {
       for (IReferencePersister referencePersister : fieldreferenceDescriptors) {
-        referencePersister.createReferenceInModel(result, fieldvisibleModelElements);
+        referencePersister.createReferenceInModel(result.o1, fieldvisibleModelElements);
       }
-      result.setLoading(false);
+      result.o1.setLoading(false);
       return true;
     }
   }
@@ -453,6 +488,7 @@ public class ModelReader5Handler extends DefaultHandler {
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
+        DequeSequence.fromDeque(fieldnodeIdStack).pushElement(id);
         result.setId(id);
         return;
       }
@@ -493,6 +529,7 @@ public class ModelReader5Handler extends DefaultHandler {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         result.addChild(child.getRole_(), child);
+        fieldnodeEnded = true;
         return;
       }
       super.handleChild(resultObject, tagName, value);

@@ -47,9 +47,11 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -193,7 +195,7 @@ public class ModelPersistence {
           //this is normal
         }
         ModelLoadingState loadingState = partial ? state : ModelLoadingState.FULLY_LOADED;
-        return new ModelLoadResult(handler.getResult(), loadingState);
+        return new ModelLoadResult(handler.getModel(), loadingState);
       } catch (Throwable t) {
         LOG.error(t);
         StubModel model = new StubModel(new SModelReference(name, stereotype));
@@ -208,6 +210,27 @@ public class ModelPersistence {
       }
       SModel model = modelReader.readModel(document, name, stereotype);
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    }
+  }
+
+  @Nullable
+  public static List<SNodeId> getLineNumberToNodeIdMap(int version, String content) {
+    if (version >= 5) {
+      try {
+        SAXParser parser = JDOMUtil.createSAXParser();
+        DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
+        try {
+          parser.parse(new ByteArrayInputStream(content.getBytes("UTF-8")), (DefaultHandler) handler);
+        } catch (SAXException e) {
+          //this is normal
+        }
+        return handler.getLineToIdMap();
+      } catch (Throwable t) {
+        LOG.error(t);
+        return null;
+      }
+    } else {
+      return null;
     }
   }
 

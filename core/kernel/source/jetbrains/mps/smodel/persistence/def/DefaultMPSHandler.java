@@ -17,10 +17,15 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNodeId;
 
-public interface DefaultMPSHandler{
+import java.util.List;
+
+public interface DefaultMPSHandler {
   //return true is supports
   public boolean setPartialLoading(ModelLoadingState state);
 
-  public SModel getResult();
+  public SModel getModel();
+
+  public List<SNodeId> getLineToIdMap(); 
 }
