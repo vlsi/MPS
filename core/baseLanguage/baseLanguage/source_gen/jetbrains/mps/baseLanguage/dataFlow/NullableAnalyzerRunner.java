@@ -5,14 +5,12 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
-import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
-import java.util.HashMap;
-import java.util.LinkedList;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import java.util.HashMap;
+import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction;
@@ -22,8 +20,6 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
 public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, NullableState>> {
-  private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
-  private List<DataFlowConstructor> myConceptRules = new LinkedList();
   private SNode myNode;
 
   public NullableAnalyzerRunner(SNode node) {

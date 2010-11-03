@@ -22,6 +22,22 @@ public class NullableAnalyzerRules {
 
   public NullableAnalyzerRules() {
     {
+      DataFlowConstructor rule = new RuleEqualsNull();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
+    {
+      DataFlowConstructor rule = new RuleIfNullReturn();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
+    {
       DataFlowConstructor rule = new RuleNotEqualsNull();
       String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
@@ -46,14 +62,6 @@ public class NullableAnalyzerRules {
       myApplicableMap.get(conceptName).add(rule);
     }
     {
-      DataFlowConstructor rule = new RuleEqualsNull();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
       DataFlowConstructor rule = new RuleAssertNull();
       String conceptName = "jetbrains.mps.baseLanguage.structure.AssertStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
@@ -69,10 +77,11 @@ public class NullableAnalyzerRules {
       }
       myApplicableMap.get(conceptName).add(rule);
     }
+    myConceptRules.add(new RuleAfterDotExpression());
+    myConceptRules.add(new RuleCreator());
+    myConceptRules.add(new RuleFieldReference());
     myConceptRules.add(new RuleMethodCall());
     myConceptRules.add(new RuleNullLiteral());
-    myConceptRules.add(new RuleFieldReference());
-    myConceptRules.add(new RuleAfterDotExpression());
     myConceptRules.add(new RuleVariableDeclaration());
     myConceptRules.add(new IfNullReturnAll());
     myConceptRules.add(new RuleTernaryOperation());

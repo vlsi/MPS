@@ -2862,45 +2862,6 @@
   <node type="jetbrains.mps.analyzers.structure.Analyzer:0" id="6868777471677432036">
     <property name="name:0" value="Nullable" />
     <property name="virtualPackage:0" value="nullable" />
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432037">
-      <link role="rule:0" targetNodeId="6868777471677432563" resolveInfo="RuleNotEqualsNull" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432038">
-      <link role="rule:0" targetNodeId="6868777471677432589" resolveInfo="RuleNotEqualsNullAnd" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432040">
-      <link role="rule:0" targetNodeId="6868777471677432514" resolveInfo="RuleMethodCall" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432041">
-      <link role="rule:0" targetNodeId="6868777471677432616" resolveInfo="RuleNullLiteral" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432042">
-      <link role="rule:0" targetNodeId="6868777471677432435" resolveInfo="RuleFieldReference" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432043">
-      <link role="rule:0" targetNodeId="6868777471677432374" resolveInfo="RuleAfterDotExpression" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432044">
-      <link role="rule:0" targetNodeId="6868777471677432624" resolveInfo="RuleVariableDeclaration" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432045">
-      <link role="rule:0" targetNodeId="6868777471677432673" resolveInfo="WhileNotNull" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6868777471677432046">
-      <link role="rule:0" targetNodeId="6868777471677432402" resolveInfo="RuleEqualsNull" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="5730083271929373001">
-      <link role="rule:0" targetNodeId="5730083271929368106" resolveInfo="RuleAssertNull" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="6689253151531896536">
-      <link role="rule:0" targetNodeId="6689253151531890257" resolveInfo="RuleForLoop" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="1265678854311188144">
-      <link role="rule:0" targetNodeId="1265678854311102657" resolveInfo="IfNullReturnAll" />
-    </node>
-    <node role="ruleReference:0" type="jetbrains.mps.analyzers.structure.RuleReference:0" id="3383816410303360147">
-      <link role="rule:0" targetNodeId="3383816410303205607" resolveInfo="RuleTernaryOperation" />
-    </node>
     <node role="instruction:0" type="jetbrains.mps.analyzers.structure.Instruction:0" id="6868777471677432047">
       <property name="name:0" value="notNull" />
       <node role="parameter:0" type="jetbrains.mps.analyzers.structure.InstructionParameter:0" id="6868777471677432048">
@@ -3707,6 +3668,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432374">
     <property name="name:0" value="RuleAfterDotExpression" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="6868777471677432375">
       <property name="name:0" value="dot" />
       <link role="concept:0" targetNodeId="1.1197027756228:3" resolveInfo="DotExpression" />
@@ -3758,6 +3720,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432394">
     <property name="name:0" value="RuleCreator" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="6868777471677432395">
       <property name="name:0" value="creator" />
       <link role="concept:0" targetNodeId="1.1145552809883:3" resolveInfo="AbstractCreator" />
@@ -3780,6 +3743,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432402">
     <property name="name:0" value="RuleEqualsNull" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="6868777471677432403">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6868777471677432404">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6868777471677432405">
@@ -3856,6 +3820,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432435">
     <property name="name:0" value="RuleFieldReference" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="6868777471677432436">
       <property name="name:0" value="fieldReference" />
       <link role="concept:0" targetNodeId="1.7785501532031639928:3" resolveInfo="LocalInstanceFieldReference" />
@@ -3962,6 +3927,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432492">
     <property name="name:0" value="RuleIfNullReturn" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="6868777471677432493">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6868777471677432494">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6868777471677432495">
@@ -4009,6 +3975,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432514">
     <property name="name:0" value="RuleMethodCall" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="actions:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6868777471677432515">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6868777471677432516">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6868777471677432517">
@@ -4131,6 +4098,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432563">
     <property name="name:0" value="RuleNotEqualsNull" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="6868777471677432564">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6868777471677432565">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6868777471677432566">
@@ -4190,6 +4158,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432589">
     <property name="name:0" value="RuleNotEqualsNullAnd" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="6868777471677432590">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6868777471677432591">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6868777471677432592">
@@ -4254,6 +4223,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432616">
     <property name="name:0" value="RuleNullLiteral" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="6868777471677432617">
       <property name="name:0" value="nullLiteral" />
       <link role="concept:0" targetNodeId="1.1070534058343:3" resolveInfo="NullLiteral" />
@@ -4276,6 +4246,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432624">
     <property name="name:0" value="RuleVariableDeclaration" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="6868777471677432625">
       <property name="name:0" value="var" />
       <link role="concept:0" targetNodeId="1.1068431474542:3" resolveInfo="VariableDeclaration" />
@@ -4396,6 +4367,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6868777471677432673">
     <property name="name:0" value="WhileNotNull" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="6868777471677432674">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6868777471677432675">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.WhileStatement:3" id="6868777471677432676">
@@ -4442,6 +4414,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="5730083271929368106">
     <property name="name:0" value="RuleAssertNull" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="5730083271929368108">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="5730083271929368109">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="5730083271929368110">
@@ -4486,6 +4459,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="6689253151531890257">
     <property name="name:0" value="RuleForLoop" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.PatternCondition:0" id="6689253151531890259">
       <node role="pattern:0" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="6689253151531890260">
         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="6689253151531890261">
@@ -4535,6 +4509,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="1265678854311102657">
     <property name="name:0" value="IfNullReturnAll" />
     <property name="virtualPackage:0" value="nullable" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="1265678854311102659">
       <property name="name:0" value="ifStatement" />
       <link role="concept:0" targetNodeId="1.1068580123159:3" resolveInfo="IfStatement" />
@@ -4911,6 +4886,7 @@
   <node type="jetbrains.mps.analyzers.structure.Rule:0" id="3383816410303205607">
     <property name="virtualPackage:0" value="nullable" />
     <property name="name:0" value="RuleTernaryOperation" />
+    <link role="analyzer:0" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     <node role="condition:0" type="jetbrains.mps.analyzers.structure.ConceptCondition:0" id="3383816410303205609">
       <property name="name:0" value="operator" />
       <link role="concept:0" targetNodeId="1.1163668896201:3" resolveInfo="TernaryOperatorExpression" />
