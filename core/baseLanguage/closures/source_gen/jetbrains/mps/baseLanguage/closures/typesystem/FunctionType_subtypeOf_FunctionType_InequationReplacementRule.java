@@ -220,7 +220,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         {

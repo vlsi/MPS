@@ -90,7 +90,7 @@ public class typeof_SubListOperation_InferenceRule extends AbstractInferenceRule
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
@@ -205,7 +205,7 @@ public class typeof_SubListOperation_InferenceRule extends AbstractInferenceRule
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

@@ -195,7 +195,7 @@ public class typeof_ToolTab_InferenceRule extends AbstractInferenceRule_Runtime 
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
           }
         }
         result = quotedNode1_4;

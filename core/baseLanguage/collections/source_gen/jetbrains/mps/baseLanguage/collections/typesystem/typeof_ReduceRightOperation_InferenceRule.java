@@ -83,7 +83,7 @@ public class typeof_ReduceRightOperation_InferenceRule extends AbstractInference
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
@@ -142,7 +142,7 @@ public class typeof_ReduceRightOperation_InferenceRule extends AbstractInference
             quotedNode1_6 = quotedNode_2;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
           }
         }
         {
@@ -155,7 +155,7 @@ public class typeof_ReduceRightOperation_InferenceRule extends AbstractInference
             quotedNode1_7 = quotedNode_3;
           }
           if (quotedNode1_7 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_7));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_7, typeCheckingContext));
           }
         }
         {
@@ -168,7 +168,7 @@ public class typeof_ReduceRightOperation_InferenceRule extends AbstractInference
             quotedNode1_8 = quotedNode_4;
           }
           if (quotedNode1_8 != null) {
-            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_8));
+            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_8, typeCheckingContext));
           }
         }
         result = quotedNode1_5;

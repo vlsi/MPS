@@ -68,7 +68,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

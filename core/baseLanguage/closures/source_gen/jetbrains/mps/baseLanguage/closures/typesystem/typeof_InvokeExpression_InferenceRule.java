@@ -86,7 +86,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
         {
@@ -99,7 +99,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
             quotedNode1_5 = quotedNode_3;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         result = quotedNode1_4;

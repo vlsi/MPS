@@ -77,7 +77,7 @@ public class typeof_SequenceCreator_InferenceRule extends AbstractInferenceRule_
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
@@ -138,7 +138,7 @@ public class typeof_SequenceCreator_InferenceRule extends AbstractInferenceRule_
               quotedNode1_6 = quotedNode_3;
             }
             if (quotedNode1_6 != null) {
-              quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_6));
+              quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
             }
           }
           quotedNode_1.addChild("resultType", quotedNode1_5);

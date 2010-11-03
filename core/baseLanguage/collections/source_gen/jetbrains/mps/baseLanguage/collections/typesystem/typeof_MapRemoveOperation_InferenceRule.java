@@ -85,7 +85,7 @@ public class typeof_MapRemoveOperation_InferenceRule extends AbstractInferenceRu
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         {
@@ -98,7 +98,7 @@ public class typeof_MapRemoveOperation_InferenceRule extends AbstractInferenceRu
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_6));
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
           }
         }
         result = quotedNode1_4;

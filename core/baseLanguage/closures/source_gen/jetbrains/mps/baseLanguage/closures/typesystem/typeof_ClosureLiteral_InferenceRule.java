@@ -430,7 +430,7 @@ with_allThrows:
               quotedNode1_8 = quotedNode_4;
             }
             if (quotedNode1_8 != null) {
-              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_8));
+              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_8, typeCheckingContext));
             }
           }
           quotedNode_1.addChild("argument", quotedNode1_7);
@@ -448,7 +448,7 @@ with_allThrows:
               quotedNode1_10 = quotedNode_5;
             }
             if (quotedNode1_10 != null) {
-              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10));
+              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10, typeCheckingContext));
             }
           }
           quotedNode_1.addChild("argument", quotedNode1_9);
@@ -533,7 +533,7 @@ with_allThrows:
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
@@ -650,7 +650,7 @@ with_allThrows:
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

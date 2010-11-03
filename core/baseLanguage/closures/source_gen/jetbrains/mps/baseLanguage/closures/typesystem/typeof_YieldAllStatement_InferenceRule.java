@@ -75,7 +75,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
               quotedNode1_8 = quotedNode_4;
             }
             if (quotedNode1_8 != null) {
-              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_8));
+              quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_8, typeCheckingContext));
             }
           }
           quotedNode_1.addChild("argument", quotedNode1_7);
@@ -93,7 +93,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
               quotedNode1_10 = quotedNode_5;
             }
             if (quotedNode1_10 != null) {
-              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10));
+              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10, typeCheckingContext));
             }
           }
           quotedNode_1.addChild("argument", quotedNode1_9);

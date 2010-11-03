@@ -84,7 +84,7 @@ public class typeof_MappingOperation_InferenceRule extends AbstractInferenceRule
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
@@ -143,7 +143,7 @@ public class typeof_MappingOperation_InferenceRule extends AbstractInferenceRule
             quotedNode1_6 = quotedNode_2;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
           }
         }
         {
@@ -159,7 +159,7 @@ public class typeof_MappingOperation_InferenceRule extends AbstractInferenceRule
               quotedNode1_8 = quotedNode_4;
             }
             if (quotedNode1_8 != null) {
-              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8));
+              quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8, typeCheckingContext));
             }
           }
           quotedNode_1.addChild("resultType", quotedNode1_7);
@@ -238,7 +238,7 @@ public class typeof_MappingOperation_InferenceRule extends AbstractInferenceRule
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

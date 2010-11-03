@@ -84,7 +84,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         {
@@ -97,7 +97,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6));
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
           }
         }
         result = quotedNode1_4;
@@ -169,7 +169,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         {
@@ -182,7 +182,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_6 = quotedNode_3;
           }
           if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6));
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6, typeCheckingContext));
           }
         }
         result = quotedNode1_4;
@@ -253,7 +253,7 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
             quotedNode1_4 = quotedNode_2;
           }
           if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
           }
         }
         result = quotedNode1_3;

@@ -92,7 +92,7 @@ public class typeof_RemoveWhereOperation_InferenceRule extends AbstractInference
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         {
