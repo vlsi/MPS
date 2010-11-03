@@ -72,7 +72,7 @@
     <nodeInfo nodeId="7319439566871696859" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" fileName="ModelReader6Handler.java" startLine="376" startPosition="69" endLine="379" endPosition="8" />
     <nodeInfo nodeId="7319439566871678670" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="435" startPosition="47" endLine="438" endPosition="9" />
     <nodeInfo nodeId="7319439566871678587" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="464" startPosition="42" endLine="467" endPosition="9" />
-    <nodeInfo nodeId="212199194136557556" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelReader6Handler.java" startLine="472" startPosition="31" endLine="475" endPosition="11" />
+    <nodeInfo nodeId="212199194136557556" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="472" startPosition="31" endLine="475" endPosition="11" />
     <nodeInfo nodeId="1408137219337275076" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelReader6Handler.java" startLine="481" startPosition="31" endLine="484" endPosition="11" />
     <nodeInfo nodeId="4238874031540120245" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="132" startPosition="116" endLine="136" endPosition="9" />
     <nodeInfo nodeId="1408137219337284568" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelReader6Handler.java" startLine="486" startPosition="9" endLine="490" endPosition="10" />
@@ -98,7 +98,6 @@
     <scopeInfo nodeId="7535955628554206945" fileName="ModelReader6Handler.java" startLine="129" startPosition="69" endLine="137" endPosition="7">
       <varInfo nodeId="7535955628554206947" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="3440568815089790496" fileName="ModelReader6Handler.java" startLine="128" startPosition="84" endLine="138" endPosition="5" />
     <scopeInfo nodeId="7535955628554206944" fileName="ModelReader6Handler.java" startLine="128" startPosition="84" endLine="138" endPosition="5">
       <varInfo nodeId="7535955628554206966" varName="i" />
     </scopeInfo>
