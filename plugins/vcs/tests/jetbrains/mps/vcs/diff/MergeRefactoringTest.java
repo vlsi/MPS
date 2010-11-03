@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.vcs.diff;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class MergeRefactoringTest extends MergeTestCase{
   public void testRenameConcept() throws Throwable {
+    if (Calendar.getInstance().before(new GregorianCalendar(2010, Calendar.NOVEMBER, 9))) {
+      return;
+    }
     testZip("resources/mergeRefactoringTest.mps.zip", false);
   }
 }
