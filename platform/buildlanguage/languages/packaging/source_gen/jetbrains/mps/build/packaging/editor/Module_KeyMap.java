@@ -55,7 +55,7 @@ public class Module_KeyMap extends EditorCellKeyMap {
       IOperationContext operationContext = editorContext.getOperationContext();
 
       Project project = operationContext.getProject();
-      ProjectPane.getInstance(project).selectModule(Module_Behavior.call_getModule_1213877515148(node));
+      ProjectPane.getInstance(project).selectModule(Module_Behavior.call_getModule_1213877515148(node), false);
     }
 
     public String getKeyStroke() {
