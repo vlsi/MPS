@@ -19877,7 +19877,7 @@
                                       <node role="pattern:3" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="1224065863908">
                                         <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1224065863909">
                                           <link role="classConcept:3" targetNodeId="15.~HUtil" resolveInfo="HUtil" />
-                                          <link role="baseMethodDeclaration:3" targetNodeId="15.~HUtil.copyIfNecessary(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.INodeAdapter" resolveInfo="copyIfNecessary" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="15.~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copyIfNecessary" />
                                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1224065863910">
                                             <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="1224065863911">
                                               <property name="varName:0" value="p" />
