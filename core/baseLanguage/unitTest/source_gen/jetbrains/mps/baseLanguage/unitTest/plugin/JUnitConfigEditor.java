@@ -30,6 +30,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
@@ -478,10 +480,11 @@ public class JUnitConfigEditor extends JPanel {
           config.getStateObject().testCases.add(TestUtils.pointerToString(new SNodePointer(testCase.getNode())));
         }
 
-        config.getStateObject().model = (myThis.getModel() != null ?
-          config.getStateObject().model = myThis.getModel().getSModelFqName().toString() :
-          null
-        );
+        if (myThis.getModel() != null) {
+          config.getStateObject().model = myThis.getModel().getSModelFqName().toString();
+        } else {
+          config.getStateObject().model = null;
+        }
         if (myThis.getModule() != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
         } else {
@@ -541,14 +544,20 @@ public class JUnitConfigEditor extends JPanel {
 
     // models 
     if (config.getStateObject().model != null) {
-      myThis.setModelValue(config.getStateObject().model);
-      if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+      myThis.resetEditorModelWith(config.getStateObject().model);
+    } else {
+      // if model is null, it is convenient to take model from the first node 
+      final Wrappers._T<ITestNodeWrapper> wrapperToTakeModelFrom = new Wrappers._T<ITestNodeWrapper>(null);
+      if (myThis.getNodes() != null && ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
+        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getNodes()).first();
+      }
+      if (myThis.getMethods() != null && ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
+        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getMethods()).first();
+      }
+      if (wrapperToTakeModelFrom.value != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myThis.myModelName_d5c0.setText(config.getStateObject().model);
-            String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
-            myThis.setModuleValue(moduleName);
-            myThis.myModuleName_d4c0.setText(moduleName);
+            myThis.resetEditorModelWith(SNodeOperations.getModel(wrapperToTakeModelFrom.value.getNode()).getSModelFqName().toString());
           }
         });
       }
@@ -562,6 +571,20 @@ public class JUnitConfigEditor extends JPanel {
 
     // on select?? 
     myThis.onSelect();
+  }
+
+  private void resetEditorModelWith(final String modelName) {
+    myThis.setModelValue(modelName);
+    if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          myThis.myModelName_d5c0.setText(modelName);
+          String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
+          myThis.setModuleValue(moduleName);
+          myThis.myModuleName_d4c0.setText(moduleName);
+        }
+      });
+    }
   }
 
   public void dispose() {
