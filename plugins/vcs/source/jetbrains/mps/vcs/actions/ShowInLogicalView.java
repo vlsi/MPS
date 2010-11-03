@@ -46,7 +46,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
         }
       });
       if (model != null) {
-        projectPane.selectModel(model);
+        projectPane.selectModel(model, false);
       }
     } else if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
@@ -55,7 +55,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
         }
       });
       if (module != null) {
-        projectPane.selectModuleAndFocus(module);
+        projectPane.selectModule(module, true);
       }
     }
   }

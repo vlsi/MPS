@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
@@ -52,7 +51,7 @@ public class GoToModelAction extends BaseAction {
         return new BaseModelItem(modelDescriptor) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
-            projectPane.selectModel(modelDescriptor);
+            projectPane.selectModel(modelDescriptor, false);
           }
         };
       }

@@ -8,9 +8,9 @@ public class ModuleNavigationHandler implements INavigationHandler<IModule> {
   public void navigate(Project project, IModule object, boolean focus, boolean select) {
     ProjectPane projectPane = ProjectPane.getInstance(project);
     if (focus) {
-      projectPane.selectModuleAndFocus(object);
+      projectPane.selectModule(object, true);
     } else {
-      projectPane.selectModule(object);
+      projectPane.selectModule(object, false);
     }
   }
 }

@@ -62,7 +62,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         Project project = LanguagePropertiesDialog.this.getOperationContext().getProject();
-        ProjectPane.getInstance(project).selectModule(myLanguage);
+        ProjectPane.getInstance(project).selectModule(myLanguage, false);
       }
     });
     return true;

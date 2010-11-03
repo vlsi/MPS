@@ -224,7 +224,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         pane.rebuildTree();
-        pane.selectModel(modelDescriptor);
+        pane.selectModel(modelDescriptor, false);
       }
     });
     return true;

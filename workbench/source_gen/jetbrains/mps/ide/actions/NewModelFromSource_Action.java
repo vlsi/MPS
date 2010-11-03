@@ -179,7 +179,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(NewModelFromSource_Action.this.project).selectModel(modelDescriptor);
+        ProjectPane.getInstance(NewModelFromSource_Action.this.project).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

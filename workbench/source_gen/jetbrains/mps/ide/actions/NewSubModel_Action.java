@@ -110,7 +110,7 @@ public class NewSubModel_Action extends GeneratedAction {
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(NewSubModel_Action.this.ideaProject).selectModel(modelDescriptor);
+        ProjectPane.getInstance(NewSubModel_Action.this.ideaProject).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -217,15 +217,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   //----selection----
 
-  public void selectModuleAndFocus(@NotNull final IModule module) {
-    selectModule(module, true);
-  }
-
-  public void selectModule(@NotNull final IModule module) {
-    selectModule(module, false);
-  }
-
-  private void selectModule(@NotNull final IModule module, final boolean autoFocusContents) {
+  public void selectModule(@NotNull final IModule module, final boolean autofocus) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         activatePane(new PaneActivator(true) {
@@ -240,12 +232,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
             getTree().selectNode(moduleTreeNode);
           }
-        }, autoFocusContents);
+        }, autofocus);
       }
     });
   }
 
-  public void selectModel(@NotNull final SModelDescriptor model) {
+  public void selectModel(@NotNull final SModelDescriptor model, boolean autofocus) {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
@@ -259,7 +251,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         }
         getTree().selectNode(modelTreeNode);
       }
-    }, false);
+    }, autofocus);
   }
 
   private void activatePane(PaneActivator activator, boolean autoFocusContents) {
@@ -268,7 +260,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     projectViewToolWindow.activate(activator, autoFocusContents);
   }
 
-  public void selectNode(@NotNull final SNode node) {
+  public void selectNode(@NotNull final SNode node, boolean autofocus) {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
@@ -277,7 +269,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       public void doOnPaneActivation() {
         selectNodeWithoutExpansion(node);
       }
-    }, false);
+    }, autofocus);
   }
 
   private void selectNodeWithoutExpansion(final SNode node) {
@@ -380,7 +372,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     protected void doSelectIn(SelectInContext context, boolean requestFocus) {
       SNode toSelect = getNode(context);
       if (toSelect != null) {
-        selectNode(toSelect);
+        selectNode(toSelect, false);
       }
     }
 

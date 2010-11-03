@@ -91,7 +91,7 @@ public class NewSolution_Action extends GeneratedAction {
       });
       ProjectPane projectPane = ProjectPane.getInstance(NewSolution_Action.this.ideaProject);
       projectPane.rebuildTree();
-      projectPane.selectModule(s);
+      projectPane.selectModule(s, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSolution", t);

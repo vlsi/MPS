@@ -369,7 +369,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
                 return BaseAdapter.fromAdapter(getNode());
               }
             });
-            projectPane.selectNode(node);
+            projectPane.selectNode(node, false);
             if (e.getClickCount() == 2) {
               myOperationContext.getComponent(MPSEditorOpener.class).editNode(node, myOperationContext);
             }

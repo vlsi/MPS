@@ -133,7 +133,7 @@ public class PasteNode_Action extends GeneratedAction {
           PasteNode_Action.this.context.getComponent(MPSEditorOpener.class).editNode(root, PasteNode_Action.this.context);
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              ProjectPane.getInstance(PasteNode_Action.this.project).selectNode(pasteNodes.get(0));
+              ProjectPane.getInstance(PasteNode_Action.this.project).selectNode(pasteNodes.get(0), false);
             }
           });
         }

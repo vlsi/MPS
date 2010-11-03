@@ -688,16 +688,13 @@ public class UsagesTree extends MPSTree {
   private void navigateInTree(Object o, boolean focus) {
     ProjectPane projectPane = ProjectPane.getInstance(myProject);
     if (o instanceof SNode) {
-      projectPane.selectNode((SNode) o);
+      projectPane.selectNode((SNode) o, focus);
     } else if (o instanceof SModel) {
-      projectPane.selectModel(((SModel) o).getModelDescriptor());
+      projectPane.selectModel(((SModel) o).getModelDescriptor(), focus);
     } else if (o instanceof IModule) {
-      projectPane.selectModule((IModule) o);
+      projectPane.selectModule((IModule) o, focus);
     } else {
       throw new IllegalArgumentException();
-    }
-    if (focus) {
-      projectPane.activate();
     }
   }
 
