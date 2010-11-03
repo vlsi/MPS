@@ -78,7 +78,7 @@ public class typeof_Validator_InferenceRule extends AbstractInferenceRule_Runtim
             quotedNode1_5 = quotedNode_2;
           }
           if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_5));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
         {
