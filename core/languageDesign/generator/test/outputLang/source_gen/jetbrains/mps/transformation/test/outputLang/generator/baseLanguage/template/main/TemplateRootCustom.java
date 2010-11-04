@@ -17,21 +17,21 @@ public class TemplateRootCustom implements TemplateDeclaration {
   public TemplateRootCustom() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     // TODO notify environment 
     tnode1.setProperty("name", "RootCustom");
     {
-      SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false);
+      final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false);
       // TODO notify environment 
       tnode2.setProperty("name", "main");
       {
-        SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
+        final SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
         // TODO notify environment 
         tnode2.addChild("returnType", tnode3);
       }
       {
-        SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+        final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
         // TODO notify environment 
         tnode2.addChild("visibility", tnode4);
       }
@@ -45,25 +45,25 @@ public class TemplateRootCustom implements TemplateDeclaration {
       tnode1.addChild("method", tnode2);
     }
     {
-      SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+      final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
       // TODO notify environment 
       tnode1.addChild("visibility", tnode8);
     }
     {
-      SNode tnode9 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false);
+      final SNode tnode9 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false);
       // TODO notify environment 
       {
-        SNode tnode10 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
+        final SNode tnode10 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
         // TODO notify environment 
         tnode9.addChild("returnType", tnode10);
       }
       {
-        SNode tnode11 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+        final SNode tnode11 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
         // TODO notify environment 
         tnode9.addChild("visibility", tnode11);
       }
       {
-        SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+        final SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
         // TODO notify environment 
         tnode9.addChild("body", tnode12);
       }

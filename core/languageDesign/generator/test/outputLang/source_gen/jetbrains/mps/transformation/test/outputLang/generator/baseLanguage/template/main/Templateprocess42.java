@@ -19,29 +19,29 @@ public class Templateprocess42 implements TemplateDeclaration {
   public Templateprocess42() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PlusExpression", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PlusExpression", false);
     // TODO notify environment 
     {
-      SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
+      final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
       // TODO notify environment 
       tnode2.setProperty("value", "58");
       tnode1.addChild("leftExpression", tnode2);
     }
     {
-      SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", false);
+      final SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", false);
       // TODO notify environment 
       {
-        SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.DotExpression", false);
+        final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.DotExpression", false);
         // TODO notify environment 
         {
-          SNode tnode5 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
+          final SNode tnode5 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
           // TODO notify environment 
           tnode5.setProperty("value", (String) QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
           tnode4.addChild("operand", tnode5);
         }
         {
-          SNode tnode6 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false);
+          final SNode tnode6 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false);
           // TODO notify environment 
           tnode6.addReference(SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String.length():int")));
           tnode4.addChild("operation", tnode6);

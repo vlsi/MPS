@@ -19,8 +19,8 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
   public TemplateOutputRoot_2() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot_2");
     tnode1.setProperty("text", "'getPrevInputTest' output root (2)");
@@ -46,7 +46,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
               continue;
             }
             TemplateContext context4 = context3.subContext(null, itnode4);
-            SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+            final SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
             // TODO notify environment 
             tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
             // MAP-SRC 

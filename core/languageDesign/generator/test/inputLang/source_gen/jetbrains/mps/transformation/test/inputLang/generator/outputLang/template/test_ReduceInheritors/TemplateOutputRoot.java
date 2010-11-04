@@ -15,8 +15,8 @@ public class TemplateOutputRoot implements TemplateDeclaration {
   public TemplateOutputRoot() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot");
     tnode1.setProperty("text", "root in Reduce Inheritors test (expect: A, B, B)");

@@ -17,11 +17,11 @@ public class TemplateconvertMult implements TemplateDeclaration {
   public TemplateconvertMult() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
     // TODO notify environment 
     {
-      SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", false);
+      final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", false);
       // TODO notify environment 
       {
         final SNode sourcenode3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));

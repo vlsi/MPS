@@ -15,11 +15,11 @@ public class Templateaaaaa implements TemplateDeclaration {
   public Templateaaaaa() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
     // TODO notify environment 
     {
-      SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+      final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
       // TODO notify environment 
       tnode1.addChild("statements", tnode2);
     }

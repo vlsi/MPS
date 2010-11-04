@@ -15,11 +15,11 @@ public class Templatereduce_InputNode_A_switch implements TemplateDeclaration {
   public Templatereduce_InputNode_A_switch() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
     tnode1.setProperty("text", "child switch #1");
-    SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+    final SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
     tnode2.setProperty("text", "child switch #2");
     return TemplateUtil.asList(tnode1, tnode2);

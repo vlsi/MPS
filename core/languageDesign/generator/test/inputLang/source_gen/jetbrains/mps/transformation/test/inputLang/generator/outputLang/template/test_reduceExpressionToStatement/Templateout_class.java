@@ -17,21 +17,21 @@ public class Templateout_class implements TemplateDeclaration {
   public Templateout_class() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     // TODO notify environment 
     tnode1.setProperty("name", "out_class");
     {
-      SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false);
+      final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false);
       // TODO notify environment 
       tnode2.setProperty("name", "method");
       {
-        SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
+        final SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
         // TODO notify environment 
         tnode2.addChild("returnType", tnode3);
       }
       {
-        SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+        final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
         // TODO notify environment 
         tnode2.addChild("visibility", tnode4);
       }
@@ -45,7 +45,7 @@ public class Templateout_class implements TemplateDeclaration {
       tnode1.addChild("method", tnode2);
     }
     {
-      SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+      final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
       // TODO notify environment 
       tnode1.addChild("visibility", tnode8);
     }

@@ -517,6 +517,10 @@
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1473665232107485268">
       <property name="name:2" value="sd" />
     </node>
+    <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="5955416080080987348">
+      <property name="name:2" value="testlabel" />
+      <link role="targetConcept:2" targetNodeId="2v.1081236700938:3" resolveInfo="StaticMethodDeclaration" />
+    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="6010543442198679070">
       <link role="applicableConcept:2" targetNodeId="1.6010543442198679048:0" resolveInfo="TwoVarRoot" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence:2" id="6010543442198681229">
@@ -937,7 +941,39 @@
           <property name="name:3" value="e" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3392060900980724049" />
         </node>
-        <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3392060900980724070" />
+        <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3392060900980724070">
+          <link role="labelDeclaration:2" targetNodeId="5955416080080987348" resolveInfo="testlabel" />
+        </node>
+      </node>
+      <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="5955416080080987354">
+        <property name="name:3" value="worker" />
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5955416080080987355" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5955416080080987356" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5955416080080987357">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5955416080080987359">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="5955416080080987360">
+              <link role="baseMethodDeclaration:3" targetNodeId="3392060900980724041" resolveInfo="fact" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5955416080080987361">
+                <property name="value:3" value="3" />
+              </node>
+              <node role="referenceMacro$link_attribute$baseMethodDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="5955416080080987362">
+                <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="5955416080080987363">
+                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5955416080080987364">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5955416080080987365">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5955416080080987367">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5955416080080987366" />
+                        <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel:0" id="5955416080080987371">
+                          <link role="label:0" targetNodeId="5955416080080987348" resolveInfo="testlabel" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="5955416080080987358" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3392060900980724036" />
       <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3392060900980724037">

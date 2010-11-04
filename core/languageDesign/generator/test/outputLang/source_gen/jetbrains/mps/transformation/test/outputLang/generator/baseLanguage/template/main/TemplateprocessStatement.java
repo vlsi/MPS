@@ -18,23 +18,23 @@ public class TemplateprocessStatement implements TemplateDeclaration {
   public TemplateprocessStatement() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
     // TODO notify environment 
     {
-      SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+      final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
       // TODO notify environment 
       {
-        SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false);
+        final SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false);
         // TODO notify environment 
         {
-          SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false);
+          final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false);
           // TODO notify environment 
           tnode4.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695070(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
           tnode3.addChild("commentPart", tnode4);
         }
         {
-          SNode tnode5 = new SNode(null, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false);
+          final SNode tnode5 = new SNode(null, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false);
           // TODO notify environment 
           tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913280744(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
           tnode3.addChild("commentPart", tnode5);
@@ -42,14 +42,14 @@ public class TemplateprocessStatement implements TemplateDeclaration {
         tnode2.addChild("statement", tnode3);
       }
       {
-        SNode tnode6 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
+        final SNode tnode6 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
         // TODO notify environment 
         {
-          SNode tnode7 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false);
+          final SNode tnode7 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false);
           // TODO notify environment 
           tnode7.setProperty("name", (String) QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695040(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
           {
-            SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerType", false);
+            final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerType", false);
             // TODO notify environment 
             tnode7.addChild("type", tnode8);
           }
@@ -66,20 +66,20 @@ public class TemplateprocessStatement implements TemplateDeclaration {
       }
       tnode1.addChild("statements", tnode2);
     }
-    SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
+    final SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
     // TODO notify environment 
     {
-      SNode tnode13 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+      final SNode tnode13 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
       // TODO notify environment 
       {
-        SNode tnode14 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
+        final SNode tnode14 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
         // TODO notify environment 
         {
-          SNode tnode15 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false);
+          final SNode tnode15 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false);
           // TODO notify environment 
           tnode15.setProperty("name", "e");
           {
-            SNode tnode16 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerType", false);
+            final SNode tnode16 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerType", false);
             // TODO notify environment 
             tnode15.addChild("type", tnode16);
           }
@@ -88,19 +88,19 @@ public class TemplateprocessStatement implements TemplateDeclaration {
         tnode13.addChild("statement", tnode14);
       }
       {
-        SNode tnode17 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
+        final SNode tnode17 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
         // TODO notify environment 
         {
-          SNode tnode18 = new SNode(null, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false);
+          final SNode tnode18 = new SNode(null, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false);
           // TODO notify environment 
           {
-            SNode tnode19 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
+            final SNode tnode19 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
             // TODO notify environment 
-            environment.resolveInTemplateLater(tnode19, "variableDeclaration", "tpl/r:892d6d37-53bc-41be-9eef-f1dee29259f0/3392060900980649133", context);
+            environment.resolveInTemplateLater(tnode19, "variableDeclaration", "tpl/r:7712f643-87b6-48a9-a8dc-0eeb27ffe393/3392060900980649133", context);
             tnode18.addChild("lValue", tnode19);
           }
           {
-            SNode tnode20 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
+            final SNode tnode20 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
             // TODO notify environment 
             tnode20.setProperty("value", "5");
             tnode18.addChild("rValue", tnode20);

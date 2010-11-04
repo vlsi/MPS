@@ -16,8 +16,8 @@ public class Templateweave_InputNode_A implements TemplateDeclaration {
   public Templateweave_InputNode_A() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
     tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
     return TemplateUtil.singletonList(tnode1);

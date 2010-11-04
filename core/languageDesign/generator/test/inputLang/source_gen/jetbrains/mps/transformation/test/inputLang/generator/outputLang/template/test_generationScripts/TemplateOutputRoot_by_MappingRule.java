@@ -16,8 +16,8 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
   public TemplateOutputRoot_by_MappingRule() {
   }
 
-  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
-    SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+    final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot_by_MappingRule");
     tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));

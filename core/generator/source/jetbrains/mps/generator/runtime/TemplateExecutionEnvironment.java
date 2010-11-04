@@ -63,4 +63,8 @@ public class TemplateExecutionEnvironment {
   public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
 
   }
+
+  public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
+
+  }
 }
