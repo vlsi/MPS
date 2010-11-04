@@ -8,26 +8,16 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
+  <languageAspect modelUID="r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" version="-1" />
   <maxImportIndex value="45" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -130,7 +120,7 @@
     <property name="name:23" value="ShowConceptStructure" />
     <property name="caption:23" value="Show Concept Structure" />
     <property name="isAlwaysVisible:23" value="false" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1216650700675">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216650700676">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1216651728625">
@@ -222,7 +212,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1216651471788">
     <property name="name:23" value="Structure" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1216651485227">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1216651489872">
         <link role="action:23" targetNodeId="1216650700674" resolveInfo="ShowConceptStructure" />
@@ -243,7 +233,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="2465654535473033482">
     <property name="name:23" value="ShowHelpForNode" />
     <property name="caption:23" value="Show Help for Node" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="2465654535473033483">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2465654535473033484">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2510134983999478948">
@@ -325,7 +315,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="2510134983999308902">
     <property name="name:23" value="ShowDefaultHelp" />
     <property name="caption:23" value="Show Default Help" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="2510134983999308903">
       <property name="name:23" value="module" />
       <property name="isOptional:23" value="true" />
@@ -485,7 +475,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="2510134983999309022">
     <property name="name:23" value="ShowHelp" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="2510134983999309023">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="2510134983999309024">
         <link role="action:23" targetNodeId="2510134983999308902" resolveInfo="ShowHelpForAspect" />
@@ -1169,7 +1159,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="2510134983999478954">
     <property name="name:23" value="ShowHelpForRoot" />
     <property name="caption:23" value="Show Help for Root" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="2510134983999478955">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2510134983999478956">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2510134983999478957">
@@ -1251,7 +1241,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="2510134983999478992">
     <property name="name:23" value="ShowHelpForAspect" />
     <property name="caption:23" value="Show Help for Aspect" />
-    <property name="package:23" value="Actions" />
+    <property name="virtualPackage:23" value="Actions" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="2510134983999478993">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2510134983999478994">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2510134983999478995">

@@ -10,37 +10,14 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
+  <languageAspect modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -60,7 +37,7 @@
   <import index="22" modelUID="f:java_stub#jetbrains.mps.nodeEditor.style(jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877183870">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1088013125922:32" resolveInfo="CellModel_RefCell" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877183871">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877183872" />
@@ -159,7 +136,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877260635">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186402373407:32" resolveInfo="StyleSheetClass" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877260636">
       <property name="name" value="getConstantName" />
@@ -369,7 +346,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877273474">
-    <property name="package" value="CellKeyMap" />
+    <property name="virtualPackage" value="CellKeyMap" />
     <link role="concept" targetNodeId="1.1136916976737:32" resolveInfo="CellKeyMapKeystroke" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877273475">
       <property name="name" value="getKeyStroke" />
@@ -544,7 +521,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877280244">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165270999881:32" resolveInfo="CellMenuPart_ReplaceChild_Group_Create" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877280245">
       <property name="name" value="getExpectedReturnType" />
@@ -630,7 +607,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877296560">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1078939183254:32" resolveInfo="CellModel_Component" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877296561">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877296562" />
@@ -707,7 +684,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877309981">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389658414:32" resolveInfo="CellModel_Property" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877309982">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877309983" />
@@ -788,21 +765,21 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877312933">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1164914519156:32" resolveInfo="CellMenuPart_ReplaceNode_CustomNodeConcept" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877312934">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877312935" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877313327">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1166042131867:32" resolveInfo="CellMenuComponentFeature_Link" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877313328">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877313329" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877323455">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165270662927:32" resolveInfo="CellMenuPart_ReplaceChild_Group_Query" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877323456">
       <property name="name" value="getExpectedReturnType" />
@@ -882,7 +859,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877329110">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877329111">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877329112" />
@@ -946,7 +923,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877335426">
-    <property name="package" value="CellKeyMap" />
+    <property name="virtualPackage" value="CellKeyMap" />
     <link role="concept" targetNodeId="1.1136916919141:32" resolveInfo="CellKeyMapItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877335427">
       <property name="name" value="getKeyStroke" />
@@ -1012,7 +989,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877341316">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389882823:32" resolveInfo="CellModel_RefNode" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877341317">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877341318" />
@@ -1111,7 +1088,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877342152">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1073390211982:32" resolveInfo="CellModel_RefNodeList" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877342153">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877342154" />
@@ -1314,7 +1291,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877386047">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216811674575">
       <property name="name" value="getCellModelKind" />
@@ -2718,7 +2695,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877395571">
-    <property name="package" value="SNode" />
+    <property name="virtualPackage" value="SNode" />
     <link role="concept" targetNodeId="1.1201265905111:32" resolveInfo="SelectLaterOperation" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877395572">
       <property name="isPrivate" value="false" />
@@ -2923,7 +2900,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877438486">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1165339307433:32" resolveInfo="CellMenuPart_ReplaceChild_Item_Create" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877438487">
       <property name="name" value="getExpectedReturnType" />
@@ -3136,7 +3113,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877515584">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186402211651:32" resolveInfo="StyleSheet" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877515585">
       <property name="name" value="getClassFqName" />
@@ -3239,7 +3216,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877516036">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1163613035599:32" resolveInfo="CellMenuPart_AbstractGroup_Query" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877516037">
       <property name="name" value="getExpectedReturnType" />
@@ -3315,14 +3292,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877538771">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1166041748520:32" resolveInfo="CellMenuComponentFeature_Property" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877538772">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877538773" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1214304712000">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214304723440">
       <property name="name" value="isApplicableTo" />
@@ -3374,7 +3351,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1214405736963">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186404549998:32" resolveInfo="ForegroundColorStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214405738762">
       <property name="name" value="isApplicableTo" />
@@ -3408,7 +3385,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1214405764144">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1187258617779:32" resolveInfo="ForegroundNullColorStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214405766460">
       <property name="name" value="isApplicableTo" />
@@ -3442,7 +3419,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1214405914995">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186414860679:32" resolveInfo="EditableStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214405916295">
       <property name="name" value="isApplicableTo" />
@@ -3476,7 +3453,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1214406601868">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1214406466686:32" resolveInfo="TextBackgroundColorSelectedStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214406603371">
       <property name="name" value="isApplicableTo" />
@@ -3510,7 +3487,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1214406624347">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1214406454886:32" resolveInfo="TextBackgroundColorStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1214406625647">
       <property name="name" value="isApplicableTo" />
@@ -3544,7 +3521,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1215085210820">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1215085112640:32" resolveInfo="FirstPositionAllowedStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1215085212151">
       <property name="name" value="isApplicableTo" />
@@ -3578,7 +3555,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1215085235805">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1215085197271:32" resolveInfo="LastPositionAllowedStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1215085237324">
       <property name="name" value="isApplicableTo" />
@@ -3612,14 +3589,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1216029180736">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1216029180737">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216029180738" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1216378116896">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1137553248617:32" resolveInfo="CellModel_ConceptProperty" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1216378116897">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216378116898" />
@@ -3714,7 +3691,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1216378460069">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1184319644772:32" resolveInfo="CellModel_NonEmptyProperty" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1216378460070">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216378460071" />
@@ -3761,7 +3738,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1219409807383">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1219409807384">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1219409807385" />
@@ -3883,7 +3860,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1219419899728">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1219418625346:32" resolveInfo="IStyleContainer" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1219419899729">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1219419899730" />
@@ -4035,7 +4012,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220339770457">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1075375595203:32" resolveInfo="CellModel_Error" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220339770458">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220339770459" />
@@ -4068,7 +4045,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220339802197">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389446423:32" resolveInfo="CellModel_Collection" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220339802198">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220339802199" />
@@ -4477,7 +4454,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220339884256">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1078308402140:32" resolveInfo="CellModel_Custom" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220339884257">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220339884258" />
@@ -4510,7 +4487,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220339903257">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1074767920765:32" resolveInfo="CellModel_ModelAccess" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220339903258">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220339903259" />
@@ -4543,7 +4520,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220340056978">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1088612959204:32" resolveInfo="CellModel_Alternation" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220340056979">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220340056980" />
@@ -4589,7 +4566,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220340080983">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1216380990741:32" resolveInfo="CellModel_TransactionalProperty" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220340080984">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220340080985" />
@@ -4622,7 +4599,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220342012302">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1164824717996:32" resolveInfo="CellMenuDescriptor" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220342012303">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220342012304" />
@@ -4756,8 +4733,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1220342505672">
-    <property name="package:3" value="CellMenu" />
     <property name="name:3" value="CellMenuUtil" />
+    <property name="virtualPackage:3" value="CellMenu" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1220342505673" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1220342505674">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1220342505675" />
@@ -4832,7 +4809,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220962155097">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389577006:32" resolveInfo="CellModel_Constant" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220962155098">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220962155099" />
@@ -4854,28 +4831,28 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1221048114768">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186403751766:32" resolveInfo="FontStyleStyleClassItem" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1221048114769">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221048114770" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1221055011632">
-    <property name="package" value="QueryFunction.Style" />
+    <property name="virtualPackage" value="QueryFunction.Style" />
     <link role="concept" targetNodeId="1.1176809959526:32" resolveInfo="QueryFunction_Color" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1221055011633">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221055011634" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1221482169625">
-    <property name="package" value="QueryFunction.Style" />
+    <property name="virtualPackage" value="QueryFunction.Style" />
     <link role="concept" targetNodeId="1.1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1221482169626">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221482169627" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1223387282640">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1223386653097:32" resolveInfo="DeprecatedStyleSheet" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1223387282641">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223387282642" />
@@ -4895,7 +4872,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1223387360724">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1223387362946">
       <property name="isVirtual" value="true" />
@@ -5020,7 +4997,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225463327950">
-    <property name="package" value="QueryFunction.Style" />
+    <property name="virtualPackage" value="QueryFunction.Style" />
     <link role="concept" targetNodeId="1.1225456097782:32" resolveInfo="IQueryFunction_Color" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225463329531">
       <property name="name" value="isFunction" />
@@ -5051,7 +5028,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225463370896">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.1225456267680:32" resolveInfo="RGBColor" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225463372946">
       <property name="name" value="isFunction" />
@@ -5087,7 +5064,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226070122940">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1225900081164:32" resolveInfo="CellModel_ReadOnlyModelAccessor" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226070124177">
       <property name="name" value="getOpeningText" />
@@ -5120,7 +5097,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226339994113">
-    <property name="package" value="Stylesheet.Paddings" />
+    <property name="virtualPackage" value="Stylesheet.Paddings" />
     <link role="concept" targetNodeId="1.1226339938453:32" resolveInfo="PaddingStyleClassItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226339995678">
       <property name="name" value="isApplicableTo" />
@@ -5168,7 +5145,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226492869577">
-    <property name="package" value="Stylesheet.Paddings" />
+    <property name="virtualPackage" value="Stylesheet.Paddings" />
     <link role="concept" targetNodeId="1.1226339813308:32" resolveInfo="PaddingBottomStyleClassItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226492871049">
       <property name="name" value="canUseSpaces" />
@@ -5207,7 +5184,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226492900089">
-    <property name="package" value="Stylesheet.Paddings" />
+    <property name="virtualPackage" value="Stylesheet.Paddings" />
     <link role="concept" targetNodeId="1.1226339751946:32" resolveInfo="PaddingTopStyleClassItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226492901482">
       <property name="name" value="canUseSpaces" />
@@ -5246,7 +5223,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229954885568">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1136564507907:32" resolveInfo="CellModel_AttributedLinkCell" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954888837">
       <property name="name" value="isCellIdInitialized" />
@@ -5266,7 +5243,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229954912396">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1149850725784:32" resolveInfo="CellModel_AttributedNodeCell" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954916212">
       <property name="name" value="isCellIdInitialized" />
@@ -5286,7 +5263,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1229954921077">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1134379236839:32" resolveInfo="CellModel_AttributedPropertyCell" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1229954923377">
       <property name="name" value="isCellIdInitialized" />
@@ -5306,7 +5283,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233828595706">
-    <property name="package" value="Stylesheet.Paddings" />
+    <property name="virtualPackage" value="Stylesheet.Paddings" />
     <link role="concept" targetNodeId="1.1233823429331:32" resolveInfo="HorizontalGapStyleClassItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233828599088">
       <property name="name" value="isApplicableTo" />
@@ -5332,7 +5309,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239873372471">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.1140524381322:32" resolveInfo="CellModel_ListWithRole" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239873472748">
       <property name="name" value="isVertical" />
@@ -5551,7 +5528,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7806530711846755629">
-    <property name="package" value="MethodParameters" />
+    <property name="virtualPackage" value="MethodParameters" />
     <link role="concept" targetNodeId="1.7667276221847612943:32" resolveInfo="QueryFunction_ParametersList" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7806530711846755630">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7806530711846755631" />
@@ -5632,7 +5609,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8598098202018087054">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.7620205565664569937:32" resolveInfo="DefaultBaseLine" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8598098202018087057">
       <property name="name" value="isApplicableTo" />
@@ -5751,7 +5728,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8255250703325737458">
-    <property name="package" value="Stylesheet" />
+    <property name="virtualPackage" value="Stylesheet" />
     <link role="concept" targetNodeId="1.8255250703325731016:32" resolveInfo="ScriptSwitchClassItem" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8255250703325737461">
       <property name="name" value="isApplicableTo" />
@@ -5890,7 +5867,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5270353093116096534">
-    <property name="package" value="CellKeyMap" />
+    <property name="virtualPackage" value="CellKeyMap" />
     <link role="concept" targetNodeId="1.1081293058843:32" resolveInfo="CellKeyMapDeclaration" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5270353093116096535">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5270353093116096536" />
@@ -5946,7 +5923,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5270353093116097657">
-    <property name="package" value="CellMenu" />
+    <property name="virtualPackage" value="CellMenu" />
     <link role="concept" targetNodeId="1.1166040637528:32" resolveInfo="CellMenuComponent" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5270353093116097658">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5270353093116097659" />
@@ -6057,7 +6034,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3696012239575646494">
-    <property name="package" value="CellModel" />
+    <property name="virtualPackage" value="CellModel" />
     <link role="concept" targetNodeId="1.3696012239575138270:32" resolveInfo="CellModel_URL" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="3696012239575646495">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3696012239575646496" />

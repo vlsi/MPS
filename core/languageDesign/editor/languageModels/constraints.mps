@@ -9,36 +9,13 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="25" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -659,7 +636,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1214304865402">
-    <property name="package:8" value="Stylesheet" />
+    <property name="virtualPackage:8" value="Stylesheet" />
     <link role="concept:8" targetNodeId="1.1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1214304867262">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1214304867263">
@@ -713,7 +690,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1216381238253">
-    <property name="package:8" value="CellModel" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="concept:8" targetNodeId="1.1216380990741:32" resolveInfo="CellModel_TransactionalProperty" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1216381240441">
       <link role="applicableLink:8" targetNodeId="1.1216381219207:32" />
@@ -769,7 +746,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1225459364437">
-    <property name="package:8" value="Stylesheet" />
+    <property name="virtualPackage:8" value="Stylesheet" />
     <link role="concept:8" targetNodeId="1.1225456267680:32" resolveInfo="RGBColor" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1225459366922">
       <link role="applicableProperty:8" targetNodeId="1.1225456424731:32" resolveInfo="value" />
@@ -840,7 +817,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227090233322">
-    <property name="package:8" value="CellKeyMap" />
+    <property name="virtualPackage:8" value="CellKeyMap" />
     <link role="concept:8" targetNodeId="1.1081293058843:32" resolveInfo="CellKeyMapDeclaration" />
     <node role="canBeRoot:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot:8" id="1227090234635">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227090234636">
@@ -860,7 +837,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227090241439">
-    <property name="package:8" value="CellMenu" />
+    <property name="virtualPackage:8" value="CellMenu" />
     <link role="concept:8" targetNodeId="1.1166040637528:32" resolveInfo="CellMenuComponent" />
     <node role="canBeRoot:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot:8" id="1227090243940">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227090243941">
@@ -880,7 +857,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227090255088">
-    <property name="package:8" value="Stylesheet" />
+    <property name="virtualPackage:8" value="Stylesheet" />
     <link role="concept:8" targetNodeId="1.1186402211651:32" resolveInfo="StyleSheet" />
     <node role="canBeRoot:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot:8" id="1227090256339">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227090256340">
@@ -900,7 +877,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227861662670">
-    <property name="package:8" value="Stylesheet" />
+    <property name="virtualPackage:8" value="Stylesheet" />
     <link role="concept:8" targetNodeId="1.1227861515039:32" resolveInfo="NavigatableReferenceStyleClassItem" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1227861665046">
       <link role="applicableLink:8" targetNodeId="1.1227861587090:32" />
@@ -956,7 +933,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="625126330682991629">
-    <property name="package:8" value="CellModel" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="concept:8" targetNodeId="1.625126330682908270:32" resolveInfo="CellModel_RefererencePresentation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="625126330682991630">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="625126330682991631">

@@ -8,36 +8,13 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
   <maxImportIndex value="25" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
@@ -51,7 +28,7 @@
     <property name="name:2" value="OverridingMethods" />
     <property name="description:2" value="Overriding Methods" />
     <property name="isVisible:2" value="true" />
-    <property name="package:2" value="method.instance" />
+    <property name="virtualPackage:2" value="method.instance" />
     <link role="forConcept:2" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1200309609797">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200309609798">
@@ -138,7 +115,7 @@
     <property name="name:2" value="ImplementingClasses" />
     <property name="description:2" value="Implementing Classes" />
     <property name="isVisible:2" value="true" />
-    <property name="package:2" value="classifier" />
+    <property name="virtualPackage:2" value="classifier" />
     <link role="forConcept:2" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
     <node role="findFunction:2" type="jetbrains.mps.lang.findUsages.structure.FindBlock:2" id="1200310248827">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200310248828">
@@ -493,7 +470,7 @@
     <property name="name:2" value="DerivedClasses" />
     <property name="description:2" value="Derived Classes" />
     <property name="isVisible:2" value="true" />
-    <property name="package:2" value="classifier" />
+    <property name="virtualPackage:2" value="classifier" />
     <link role="forConcept:2" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
     <node role="findFunction:2" type="jetbrains.mps.lang.findUsages.structure.FindBlock:2" id="1200310473080">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200310473081">
@@ -636,7 +613,7 @@
     <property name="description:2" value="All Method Usages" />
     <property name="isVisible:2" value="true" />
     <property name="longDescription:2" value="Usages of this method, overriding methods and implementing methods" />
-    <property name="package:2" value="method" />
+    <property name="virtualPackage:2" value="method" />
     <link role="forConcept:2" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1200317943494">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200317943495">
@@ -1193,7 +1170,7 @@
     <property name="name:2" value="OverridingFields" />
     <property name="description:2" value="Overriding Fields" />
     <property name="isVisible:2" value="true" />
-    <property name="package:2" value="inadequate" />
+    <property name="virtualPackage:2" value="inadequate" />
     <link role="forConcept:2" targetNodeId="1.1068431474542:3" resolveInfo="VariableDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1200420731717">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200420731718">
@@ -1679,7 +1656,7 @@
     <property name="isVisible:2" value="true" />
     <property name="name:2" value="ParameterUsages" />
     <property name="description:2" value="Parameter Usages" />
-    <property name="package:2" value="method" />
+    <property name="virtualPackage:2" value="method" />
     <link role="forConcept:2" targetNodeId="1.1068498886292:3" resolveInfo="ParameterDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1201091722184">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201091722185">

@@ -338,27 +338,9 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="13" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -568,8 +550,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1154465273778">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_parentNode" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1154465303545">
       <property name="value:0" value="parentNode" />
@@ -715,24 +697,24 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177323240852">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="MenuBuilderPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1177323252946">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177323652379">
-    <property name="package:0" value="menuParts.Substitute" />
     <property name="name:0" value="SubstituteMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.Substitute" />
     <link role="extends:0" targetNodeId="1177495774157:23" resolveInfo="MenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1177323663787">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177323996388">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="AddMenuPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1177333529597:23" resolveInfo="ConceptPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177324874604">
       <property name="value:0" value="add custom items" />
@@ -740,8 +722,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177327161126">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_CanSubstitute" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177327222295">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -784,8 +766,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177327274449">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_pattern" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177327315889">
       <property name="value:0" value="pattern" />
@@ -803,8 +785,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177327570013">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_Substitute_Handler" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177327612422">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -843,8 +825,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177327666243">
-    <property name="package:0" value="menuParts.Substitute" />
     <property name="name:0" value="SimpleItemSubstitutePart" />
+    <property name="virtualPackage:0" value="menuParts.Substitute" />
     <link role="extends:0" targetNodeId="1177323652379:23" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177496097737">
       <property name="value:0" value="simple" />
@@ -879,8 +861,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177333529597">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="ConceptPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1177333551023">
       <property name="role:0" value="concept" />
@@ -898,8 +880,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177335944525">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SubstituteString" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1177335968687">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" />
@@ -938,8 +920,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177337641126">
-    <property name="package:0" value="menuParts.Substitute" />
     <property name="name:0" value="ParameterizedSubstituteMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.Substitute" />
     <link role="extends:0" targetNodeId="1177323652379:23" resolveInfo="SubstituteMenuPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1177337679534">
       <property name="metaClass:0" value="aggregation" />
@@ -980,8 +962,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177337833147">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_parameterObject" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177337833148">
       <property name="value:0" value="parameterObject" />
@@ -995,8 +977,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177337890340">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ParameterizedSubstitute_Query" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1177337983167">
       <link role="target:0" targetNodeId="5.1161622753914:0" />
@@ -1027,8 +1009,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177339114370">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ParameterizedSubstitute_String" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177339114374">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1074,8 +1056,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177339225103">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ParameterizedSubstitute_Handler" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177339225104">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1118,8 +1100,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177398027324">
-    <property name="package:0" value="menuParts.Substitute" />
     <property name="name:0" value="ConceptsSubstituteMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.Substitute" />
     <link role="extends:0" targetNodeId="1177323652379:23" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177496107815">
       <property name="value:0" value="concepts menu" />
@@ -1133,8 +1115,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177402519659">
-    <property name="package:0" value="menuParts.Substitute" />
     <property name="name:0" value="WrapperSubstituteMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.Substitute" />
     <link role="extends:0" targetNodeId="1177323652379:23" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177496087440">
       <property name="value:0" value="wrapper" />
@@ -1158,8 +1140,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177402571666">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SubstituteWrapper" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177402590248">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1195,8 +1177,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177402641904">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_nodeToWrap" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177402641905">
       <property name="value:0" value="nodeToWrap" />
@@ -1207,8 +1189,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177409831820">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="RemovePart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177413869030">
       <property name="value:0" value="remove concept" />
@@ -1221,8 +1203,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177413882405">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="RemoveByConditionPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1177414109676">
       <property name="metaClass:0" value="aggregation" />
@@ -1239,8 +1221,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177413954598">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_RemoveBy_Condition" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177414083748">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1276,8 +1258,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177414026667">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_concept" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177414054030">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" />
@@ -1292,8 +1274,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177495774157">
-    <property name="package:0" value="menuParts" />
     <property name="name:0" value="MenuPart" />
+    <property name="virtualPackage:0" value="menuParts" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1230300823443">
       <property name="metaClass:0" value="aggregation" />
@@ -1305,16 +1287,16 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177496137779">
-    <property name="package:0" value="menuParts.RightTransform" />
     <property name="name:0" value="SideTransformMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.RightTransform" />
     <link role="extends:0" targetNodeId="1177495774157:23" resolveInfo="MenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1177498002696">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177497140107">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_sourceNode" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177497149042">
       <property name="value:0" value="sourceNode" />
@@ -1325,8 +1307,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177498013932">
-    <property name="package:0" value="menuParts.RightTransform" />
     <property name="name:0" value="SimpleSideTransformMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.RightTransform" />
     <link role="extends:0" targetNodeId="1177496137779:23" resolveInfo="RightTransformMenuPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1177498166690">
       <property name="metaClass:0" value="aggregation" />
@@ -1356,8 +1338,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177498071304">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SideTransform_String" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177498071308">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1396,8 +1378,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177498227294">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SideTransform_Handler" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177498227295">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1425,8 +1407,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177508764419">
-    <property name="package:0" value="menuParts.RightTransform" />
     <property name="name:0" value="ParameterizedSideTransformMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.RightTransform" />
     <link role="extends:0" targetNodeId="1177496137779:23" resolveInfo="RightTransformMenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177508983755">
       <property name="value:0" value="parameterized item" />
@@ -1467,8 +1449,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177508842676">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ParameterizedSideTransform_Query" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1177508842677">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" />
@@ -1491,8 +1473,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177509289232">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ParameterizedSideTransform_Handler" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177509289233">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1524,8 +1506,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177526535706">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_result" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177526560423">
       <property name="value:0" value="result" />
@@ -1536,8 +1518,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177526592562">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SideTransform_ConceptHandler" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1177526626764">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" />
@@ -1561,8 +1543,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177568407352">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_currentTargetNode" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177568407353">
       <property name="value:0" value="currentTargetNode" />
@@ -1573,8 +1555,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177614709184">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="RemoveDefaultsPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1177614725102">
       <property name="value:0" value="remove defaults" />
@@ -1585,8 +1567,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177768753302">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_childConcept" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1177768753303">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" />
@@ -1601,8 +1583,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1178537049112">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SideTransform_NodeQuery" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1178537125465">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1648,8 +1630,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1178781654714">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_Substitute_CommonInitializer" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1178781678039">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -1684,8 +1666,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1179456248444">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SubstituteVariableInitializer" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1179456248445">
       <link role="target:0" targetNodeId="5.1161622753914:0" />
@@ -1713,8 +1695,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180111159572">
-    <property name="package:0" value="menuBuilderParts.RightTransform" />
     <property name="name:0" value="IncludeRightTransformForNodePart" />
+    <property name="virtualPackage:0" value="menuBuilderParts.RightTransform" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1180111513020">
       <property name="value:0" value="include transform for" />
@@ -1731,8 +1713,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180134965967">
-    <property name="package:0" value="menuBuilderParts.Substitute" />
     <property name="name:0" value="ConceptSubstitutePart" />
+    <property name="virtualPackage:0" value="menuBuilderParts.Substitute" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180135092669">
       <property name="role:0" value="concept" />
@@ -1748,8 +1730,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1182819125053">
-    <property name="package:0" value="menuBuilderParts.RightTransform" />
     <property name="name:0" value="ConceptRightTransformPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts.RightTransform" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1182819256630">
       <property name="value:0" value="add concept" />
@@ -1771,12 +1753,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1196433731217">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="ISideTransform_String" />
+    <property name="virtualPackage:0" value="queryFunctions" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196433923911">
-    <property name="package:0" value="sugar" />
     <property name="name:0" value="SideTransform_SimpleString" />
+    <property name="virtualPackage:0" value="sugar" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196434014050">
       <property name="value:0" value="simple string" />
@@ -1791,8 +1773,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196434649611">
-    <property name="package:0" value="sugar" />
     <property name="name:0" value="Substitute_SimpleString" />
+    <property name="virtualPackage:0" value="sugar" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1196434851095">
       <property name="name:0" value="text" />
@@ -1806,12 +1788,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1196434661488">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="ISubstitute_String" />
+    <property name="virtualPackage:0" value="queryFunctions" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197454418909">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ST_RemoveBy_Condition" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1197454519422">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -1834,8 +1816,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197454626277">
-    <property name="package:0" value="menuBuilderParts" />
     <property name="name:0" value="RemoveSTByConditionPart" />
+    <property name="virtualPackage:0" value="menuBuilderParts" />
     <link role="extends:0" targetNodeId="1177323240852:23" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1197454658375">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -1852,8 +1834,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1199902626702">
-    <property name="package:0" value="menuParts.Substitute" />
     <property name="name:0" value="GenericSubstituteMenuPart" />
+    <property name="virtualPackage:0" value="menuParts.Substitute" />
     <link role="extends:0" targetNodeId="1177323652379:23" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1199902870345">
       <property name="value:0" value="generic query" />
@@ -1867,8 +1849,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1199902658767">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_GenericSubstituteMenuPart" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1199902693256">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -1903,8 +1885,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1199903446272">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_childSetter" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1199903446273">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -1921,8 +1903,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203072734037">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ParameterizedSubstitute_Icon" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203072734043">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -1967,8 +1949,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203073162537">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SubstituteIcon" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203073162542">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -2006,8 +1988,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203073706921">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_SideTransform_Icon" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203073706926">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -2061,8 +2043,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203347609566">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_STVariableInitializer" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1203347609567">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -2095,8 +2077,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203349485621">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ST_CommonInitializer" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203349485622">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -2123,8 +2105,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206027602242">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ReturnSmallPart" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1206027602243">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -2160,8 +2142,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1208867830282">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_strictly" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1208867830283">
       <property name="value:0" value="strictly" />
@@ -2179,8 +2161,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214830969967">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_wrapped" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1214830982220">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -2250,8 +2232,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221137268788">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_nodeToPasteWrap" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1221137333967">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -2262,8 +2244,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221137293320">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_PasteWrapper" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1221137315261">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -2274,8 +2256,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221634900557">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_link" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1221634900558">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -2292,8 +2274,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1230300670420">
-    <property name="package:0" value="queryFunctions" />
     <property name="name:0" value="QueryFunction_ActionType" />
+    <property name="virtualPackage:0" value="queryFunctions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1230300736594">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -2404,7 +2386,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1235055936803">
     <property name="name:0" value="ConceptFunctionParameter_EditorCell" />
-    <property name="package:0" value="conceptFunctionParameters" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1235055973399">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -2418,8 +2400,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1235056040733">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_OperationContext" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1235056076517">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -2460,7 +2442,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="564335015825199468">
     <property name="name:0" value="PastePostProcessor" />
-    <property name="package:0" value="copyPaste" />
+    <property name="virtualPackage:0" value="copyPaste" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3887139083693416947">
       <property name="metaClass:0" value="aggregation" />
@@ -2480,8 +2462,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6026743057587433039">
-    <property name="package:0" value="copyPaste" />
     <property name="name:0" value="PastePostProcessFunction" />
+    <property name="virtualPackage:0" value="copyPaste" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3887139083693417101">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -2493,8 +2475,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6026743057587447931">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_nodeToPastePostProcess" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6026743057587447941">
       <property name="value:0" value="pastedNode" />
@@ -2505,8 +2487,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5948027493682321734">
-    <property name="package:0" value="copyPaste" />
     <property name="name:0" value="CopyPreProcessor" />
+    <property name="virtualPackage:0" value="copyPaste" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5948027493682346893">
       <property name="metaClass:0" value="reference" />
@@ -2526,8 +2508,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5948027493682346911">
-    <property name="package:0" value="copyPaste" />
     <property name="name:0" value="CopyPreProcessFunction" />
+    <property name="virtualPackage:0" value="copyPaste" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="5948027493682405699">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -2543,8 +2525,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5948027493682405428">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_nodeToCopyPreProcess" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5948027493682405858">
       <property name="value:0" value="copy" />
@@ -2555,8 +2537,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5948027493682405480">
-    <property name="package:0" value="conceptFunctionParameters" />
     <property name="name:0" value="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
+    <property name="virtualPackage:0" value="conceptFunctionParameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5948027493682405805">
       <property name="value:0" value="original" />
@@ -2567,9 +2549,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5948027493682789918">
-    <property name="package:0" value="copyPaste" />
     <property name="name:0" value="CopyPasteHandlers" />
     <property name="rootable:0" value="true" />
+    <property name="virtualPackage:0" value="copyPaste" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5948027493682790226">
       <property name="value:0" value="copy paste handlers" />

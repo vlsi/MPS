@@ -8,32 +8,10 @@
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)" version="-1" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -43,7 +21,7 @@
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1138078942005">
     <property name="name:23" value="snodeOperation" />
-    <property name="package:23" value="substitute" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1138413233760">
       <property name="description:23" value="remove operations which are not appropriate for expression before'.'" />
       <property name="applicableLinkMetaclass:23" value="aggregation" />
@@ -832,7 +810,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1138079717967">
     <property name="name:23" value="snodeOperation" />
-    <property name="package:23" value="rightTransform" />
+    <property name="virtualPackage:23" value="rightTransform" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1144103719164">
       <property name="description:23" value="add operation param: expr.op -&gt; expr.op&lt; .. &gt;" />
       <link role="applicableConcept:23" targetNodeId="1.1138411891628:16" />
@@ -1339,7 +1317,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1179535152689">
     <property name="name:23" value="expression" />
-    <property name="package:23" value="rightTransform" />
+    <property name="virtualPackage:23" value="rightTransform" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1179535189125">
       <property name="description:23" value="node type cast: &lt;expr&gt; --&gt; &lt;expr&gt;:&lt;concept&gt;" />
       <link role="applicableConcept:23" targetNodeId="3.1068431790191:3" />
@@ -1677,8 +1655,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1205263868336">
-    <property name="package:23" value="rightTransform" />
     <property name="name:23" value="applyAncestorActions" />
+    <property name="virtualPackage:23" value="rightTransform" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1205263933103">
       <link role="applicableConcept:23" targetNodeId="1.1204762015203:16" resolveInfo="IAttributeAccessQualifier" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart:23" id="1205263951293">
@@ -1696,8 +1674,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1206021156875">
-    <property name="package:23" value="substitute" />
     <property name="name:23" value="staticMethodAccess" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1206022149742">
       <link role="applicableConcept:23" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1206022190296">
@@ -1789,8 +1767,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1206377804308">
-    <property name="package:3" value="substitute" />
     <property name="name:3" value="ApplicableTypesInfo" />
+    <property name="virtualPackage:3" value="substitute" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1206378005506">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1206378005507" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1206378005508" />
@@ -1855,8 +1833,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1206377804309" />
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1206996873883">
-    <property name="package:23" value="substitute" />
     <property name="name:23" value="operationParameter" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1206996889215">
       <link role="applicableConcept:23" targetNodeId="1.1144100743722:16" resolveInfo="AbstractOperationParameter" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1206996939326">
@@ -1891,8 +1869,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1241013242727">
-    <property name="package:23" value="rightTransform" />
     <property name="name:23" value="EnumOperationActions" />
+    <property name="virtualPackage:23" value="rightTransform" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1241013269073">
       <property name="description:23" value="same actions as for containing OperationInvocation" />
       <link role="applicableConcept:23" targetNodeId="1.1240930395965:16" resolveInfo="SEnumOperation" />

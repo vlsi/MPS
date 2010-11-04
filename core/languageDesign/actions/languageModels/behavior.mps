@@ -9,34 +9,13 @@
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)" version="-1" />
+  <languageAspect modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -50,7 +29,7 @@
   <import index="11" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877228937">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177327570013:23" resolveInfo="QueryFunction_Substitute_Handler" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877228938">
       <property name="name" value="usesParameterObjectFor" />
@@ -156,7 +135,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877247276">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177498227294:23" resolveInfo="QueryFunction_RightTransform_Handler" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877247277">
       <property name="name" value="usesParameterObjectFor" />
@@ -250,7 +229,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877273936">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177509289232:23" resolveInfo="QueryFunction_ParameterizedRightTransform_Handler" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877273937">
       <property name="name" value="usesParameterObjectFor" />
@@ -315,7 +294,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877328704">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177498071304:23" resolveInfo="QueryFunction_RightTransform_String" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877328705">
       <property name="name" value="usesParameterObjectFor" />
@@ -425,7 +404,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877372965">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177402571666:23" resolveInfo="QueryFunction_SubstituteWrapper" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877372966">
       <property name="name" value="usesParameterObjectFor" />
@@ -544,7 +523,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877380314">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1203073706921:23" resolveInfo="QueryFunction_RightTransform_Icon" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877380315">
       <property name="name" value="getParameters" />
@@ -615,7 +594,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877395198">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177413954598:23" resolveInfo="QueryFunction_RemoveBy_Condition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877395199">
       <property name="name" value="usesParameterObjectFor" />
@@ -651,7 +630,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877415648">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177337890340:23" resolveInfo="QueryFunction_ParameterizedSubstitute_Query" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877415649">
       <property name="name" value="getExpectedReturnType" />
@@ -797,7 +776,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877437021">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177339225103:23" resolveInfo="QueryFunction_ParameterizedSubstitute_Handler" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877437022">
       <property name="name" value="usesParameterObjectFor" />
@@ -903,7 +882,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877437423">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1179456248444:23" resolveInfo="QueryFunction_SubstituteVariableInitializer" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877437424">
       <property name="name" value="usesParameterObjectFor" />
@@ -964,7 +943,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877477288">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177526592562:23" resolveInfo="QueryFunction_RightTransform_ConceptHandler" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877477289">
       <property name="name" value="usesParameterObjectFor" />
@@ -1072,7 +1051,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877533502">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177508842676:23" resolveInfo="QueryFunction_ParameterizedRightTransform_Query" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877533503">
       <property name="name" value="getExpectedReturnType" />
@@ -1460,7 +1439,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220279472899">
-    <property name="package" value="menuBuilderParts" />
+    <property name="virtualPackage" value="menuBuilderParts" />
     <link role="concept" targetNodeId="1.1197454626277:23" resolveInfo="RemoveSTByConditionPart" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220279472900">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220279472901" />
@@ -1489,7 +1468,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1221137354968">
-    <property name="package" value="conceptFunctionParameters" />
+    <property name="virtualPackage" value="conceptFunctionParameters" />
     <link role="concept" targetNodeId="1.1221137268788:23" resolveInfo="ConceptFunctionParameter_nodeToPasteWrap" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1221137354969">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221137354970" />
@@ -1517,7 +1496,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1221137518235">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1221137293320:23" resolveInfo="QueryFunction_PasteWrapper" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1221137518236">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221137518237" />
@@ -1590,7 +1569,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3146964333471402253">
-    <property name="package" value="queryFunctions" />
+    <property name="virtualPackage" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1203347609566:23" resolveInfo="QueryFunction_STVariableInitializer" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="3146964333471402254">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3146964333471402255" />
@@ -2173,7 +2152,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="6026743057587447967">
-    <property name="package" value="conceptFunctionParameters" />
+    <property name="virtualPackage" value="conceptFunctionParameters" />
     <link role="concept" targetNodeId="1.6026743057587447931:23" resolveInfo="ConceptFunctionParameter_nodeToPastePostProcess" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6026743057587447970">
       <property name="name" value="getPostProcessor" />
@@ -2201,7 +2180,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5457641811177522082">
-    <property name="package" value="copyPaste" />
+    <property name="virtualPackage" value="copyPaste" />
     <link role="concept" targetNodeId="1.564335015825199468:23" resolveInfo="PastePostProcessor" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5457641811177522085">
       <property name="name" value="getClassName" />
@@ -2253,7 +2232,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5948027493682347858">
-    <property name="package" value="copyPaste" />
+    <property name="virtualPackage" value="copyPaste" />
     <link role="concept" targetNodeId="1.5948027493682321734:23" resolveInfo="PastePreProcessor" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5948027493682347859">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5948027493682347860" />
@@ -2305,7 +2284,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5948027493682405566">
-    <property name="package" value="conceptFunctionParameters" />
+    <property name="virtualPackage" value="conceptFunctionParameters" />
     <link role="concept" targetNodeId="1.5948027493682405428:23" resolveInfo="ConceptFunctionParameter_nodeToCopyPreProcess" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5948027493682405569">
       <property name="name" value="getPreProcessor" />
@@ -2333,7 +2312,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5948027493682405580">
-    <property name="package" value="conceptFunctionParameters" />
+    <property name="virtualPackage" value="conceptFunctionParameters" />
     <link role="concept" targetNodeId="1.5948027493682405480:23" resolveInfo="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5948027493682405583">
       <property name="name" value="getPreProcessor" />
@@ -2361,7 +2340,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5948027493682791347">
-    <property name="package" value="copyPaste" />
+    <property name="virtualPackage" value="copyPaste" />
     <link role="concept" targetNodeId="1.5948027493682789918:23" resolveInfo="CopyPasteHandlers" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5948027493682791348">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5948027493682791349" />

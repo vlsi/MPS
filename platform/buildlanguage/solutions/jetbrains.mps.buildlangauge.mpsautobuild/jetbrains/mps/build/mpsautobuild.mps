@@ -9,35 +9,14 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c2(jetbrains.mps.buildlanguage.editor)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c3(jetbrains.mps.buildlanguage.generated)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c6(jetbrains.mps.buildlanguage.optional)" version="0" />
   <languageAspect modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" version="-1" />
+  <languageAspect modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
+  <languageAspect modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" version="-1" />
+  <languageAspect modelUID="r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)" version="-1" />
   <maxImportIndex value="9" />
   <visible index="2" modelUID="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" />
   <node type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="2235195415637073459">
@@ -826,7 +805,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472400">
     <property name="name:7" value="MPS-src.zip" />
-    <property name="package:7" value="components" />
+    <property name="virtualPackage:7" value="components" />
     <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Zip:7" id="8431776905956472401">
       <property name="file:7" value="true" />
@@ -930,7 +909,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472441">
     <property name="name:7" value="external.libs" />
-    <property name="package:7" value="components" />
+    <property name="virtualPackage:7" value="components" />
     <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472448">
       <property name="file:7" value="false" />
@@ -966,7 +945,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472682">
     <property name="name:7" value="generate.ant.task.jar" />
-    <property name="package:7" value="components" />
+    <property name="virtualPackage:7" value="components" />
     <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8431776905956472683">
       <property name="excludes:7" value="" />
@@ -1002,7 +981,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472694">
     <property name="name:7" value="idea-patch.jar" />
-    <property name="package:7" value="components" />
+    <property name="virtualPackage:7" value="components" />
     <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8431776905956472695">
       <property name="file:7" value="true" />
@@ -1035,7 +1014,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472723">
     <property name="name:7" value="mps.jar" />
-    <property name="package:7" value="components" />
+    <property name="virtualPackage:7" value="components" />
     <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8431776905956472724">
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8431776905956472725">
@@ -1314,14 +1293,14 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472851">
     <property name="name:7" value="workbench" />
-    <property name="package:7" value="modules" />
+    <property name="virtualPackage:7" value="modules" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472852">
       <property name="id:7" value="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" />
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472858">
     <property name="name:7" value="core" />
-    <property name="package:7" value="modules.core" />
+    <property name="virtualPackage:7" value="modules.core" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8431776905956472859">
       <link role="block:7" targetNodeId="8431776905956472940" resolveInfo="core.usages" />
     </node>
@@ -1343,7 +1322,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472865">
     <property name="name:7" value="core.baseLanguage" />
-    <property name="package:7" value="modules.core" />
+    <property name="virtualPackage:7" value="modules.core" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472866">
       <property name="file:7" value="false" />
       <property name="name:7" value="baseLanguage" />
@@ -1441,8 +1420,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472896">
-    <property name="package:7" value="modules.core" />
     <property name="name:7" value="core.debug" />
+    <property name="virtualPackage:7" value="modules.core" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472897">
       <property name="id:7" value="9b67baf0-e986-49af-b77c-998667f458cb" />
     </node>
@@ -1465,7 +1444,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472902">
     <property name="name:7" value="core.devkits" />
-    <property name="package:7" value="modules.core" />
+    <property name="virtualPackage:7" value="modules.core" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472903">
       <property name="file:7" value="false" />
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472904">
@@ -1487,7 +1466,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472907">
     <property name="name:7" value="core.languageDesign" />
-    <property name="package:7" value="modules.core" />
+    <property name="virtualPackage:7" value="modules.core" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472908">
       <property name="file:7" value="false" />
       <property name="name:7" value="languageDesign" />
@@ -1591,8 +1570,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472940">
-    <property name="package:7" value="modules.core" />
     <property name="name:7" value="core.usages" />
+    <property name="virtualPackage:7" value="modules.core" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472941">
       <property name="id:7" value="13bb5d8e-e640-4722-80ed-259ec90709b3" />
     </node>
@@ -1602,7 +1581,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472948">
     <property name="name:7" value="platform" />
-    <property name="package:7" value="modules.platform" />
+    <property name="virtualPackage:7" value="modules.platform" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8431776905956472949">
       <link role="block:7" targetNodeId="8431776905956472981" resolveInfo="platform.deprecated" />
     </node>
@@ -1650,8 +1629,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472964">
-    <property name="package:7" value="modules.platform" />
     <property name="name:7" value="platform.baseLanguage" />
+    <property name="virtualPackage:7" value="modules.platform" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472965">
       <property name="id:7" value="daafa647-f1f7-4b0b-b096-69cd7c8408c0" />
     </node>
@@ -1676,7 +1655,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472972">
     <property name="name:7" value="platform.build" />
-    <property name="package:7" value="modules.platform" />
+    <property name="virtualPackage:7" value="modules.platform" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472973">
       <property name="id:7" value="0b608d44-1308-418d-8715-22d040c3b3cc" />
     </node>
@@ -1704,8 +1683,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472981">
-    <property name="package:7" value="modules.platform" />
     <property name="name:7" value="platform.deprecated" />
+    <property name="virtualPackage:7" value="modules.platform" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472982">
       <property name="id:7" value="823d79c6-2e26-4b0e-92a0-e1884a10bba9" />
     </node>
@@ -1718,7 +1697,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472985">
     <property name="name:7" value="platform.ui" />
-    <property name="package:7" value="modules.platform" />
+    <property name="virtualPackage:7" value="modules.platform" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472986">
       <property name="excludes:7" value="" />
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472987">
@@ -1752,7 +1731,7 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472996">
     <property name="name:7" value="platform.xml" />
-    <property name="package:7" value="modules.platform" />
+    <property name="virtualPackage:7" value="modules.platform" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472997">
       <property name="id:7" value="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9" />
     </node>

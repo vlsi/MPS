@@ -7,63 +7,11 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:f8e2b09f-b9d8-4076-a472-4264b3fb6a47(jetbrains.mps.baseLanguage.regexp.dataFlow)" version="-1" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222616427165">
@@ -82,7 +30,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222878765427">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174564062919:0" resolveInfo="MatchParensRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1222878765428">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222878765429">
@@ -101,7 +49,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222878945495">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174482743037:0" resolveInfo="Regexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1222878945496">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222878945497">
@@ -110,7 +58,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222879245754">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174909099093:0" resolveInfo="MatchVariableReferenceRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1222879245755">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222879245756">
@@ -126,7 +74,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222880783870">
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174512414484:0" resolveInfo="MatchRegexpStatement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1222880783871">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222880783872">
@@ -166,7 +114,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222881745113">
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="conceptDeclaration:0" targetNodeId="1.1175169009571:0" resolveInfo="FindMatchStatement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1222881745114">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222881745115">
@@ -206,7 +154,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1222881765852">
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="conceptDeclaration:0" targetNodeId="1.1175154849582:0" resolveInfo="ForEachMatchStatement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1222881765853">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222881765854">
@@ -253,7 +201,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223044979251">
-    <property name="package:0" value="Operations" />
+    <property name="virtualPackage:0" value="Operations" />
     <link role="conceptDeclaration:0" targetNodeId="1.1222260469397:0" resolveInfo="MatchRegexpOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223044979252">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223044979253">
@@ -284,7 +232,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223045512026">
-    <property name="package:0" value="Operations" />
+    <property name="virtualPackage:0" value="Operations" />
     <link role="conceptDeclaration:0" targetNodeId="1.1222260556146:0" resolveInfo="ReplaceWithRegexpOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223045512027">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223045512028">
@@ -308,7 +256,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223045543003">
-    <property name="package:0" value="Operations" />
+    <property name="virtualPackage:0" value="Operations" />
     <link role="conceptDeclaration:0" targetNodeId="1.1222256539755:0" resolveInfo="SplitOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223045543004">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223045543005">
@@ -375,7 +323,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223047350586">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223047350587">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223047350588">
@@ -391,7 +339,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223047413847">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174554186090:0" resolveInfo="SymbolClassRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223047413848">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223047413849">
@@ -420,7 +368,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223047488830">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174662605354:0" resolveInfo="RegexpDeclarationReferenceRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223047488831">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223047488832">
@@ -436,7 +384,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223047583396">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174906544517:0" resolveInfo="LookRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223047583397">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223047583398">
@@ -452,7 +400,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223047610860">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174491169200:0" resolveInfo="ParensRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223047610861">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223047610862">
@@ -468,7 +416,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1223047727950">
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="conceptDeclaration:0" targetNodeId="1.1174485167097:0" resolveInfo="BinaryRegexp" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1223047727951">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1223047727952">
@@ -492,7 +440,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6129327962763258619">
-    <property name="package:0" value="Expressions" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="conceptDeclaration:0" targetNodeId="1.1179357154354:0" resolveInfo="MatchRegexpExpression" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6129327962763258620">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6129327962763258621">
@@ -516,7 +464,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6129327962763258641">
-    <property name="package:0" value="Expressions" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="conceptDeclaration:0" targetNodeId="1.6129327962763158517:0" resolveInfo="FindMatchExpression" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6129327962763258642">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6129327962763258643">
@@ -540,7 +488,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="3796137614137203415">
-    <property name="package:0" value="Operations" />
+    <property name="virtualPackage:0" value="Operations" />
     <link role="conceptDeclaration:0" targetNodeId="1.3796137614137086346:0" resolveInfo="ReplaceRegexpOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="3796137614137203416">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3796137614137203417">
@@ -574,7 +522,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="3796137614137559556">
-    <property name="package:0" value="Replaces" />
+    <property name="virtualPackage:0" value="Replaces" />
     <link role="conceptDeclaration:0" targetNodeId="1.3796137614137538894:0" resolveInfo="MatchVariableReferenceReplacement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="3796137614137559557">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3796137614137559558">

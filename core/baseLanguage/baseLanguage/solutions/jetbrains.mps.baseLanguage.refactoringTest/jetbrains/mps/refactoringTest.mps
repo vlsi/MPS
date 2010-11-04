@@ -16,44 +16,14 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
+  <languageAspect modelUID="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <maxImportIndex value="25" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -74,7 +44,7 @@
   <import index="25" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders(jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052406553">
     <property name="name:4" value="ChangeMethodParametersForStatement" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052406554">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052406555">
         <property name="name:3" value="c1" />
@@ -472,7 +442,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052406741">
     <property name="name:4" value="ConceptFunctioParameterTest" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052406742">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1230052406743">
         <property name="name:23" value="Action" />
@@ -578,7 +548,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052406787">
     <property name="name:4" value="ConceptMethod" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="methods:4" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="1230052406788">
       <property name="name:0" value="fff" />
       <node role="parameter:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1230052406789">
@@ -949,7 +919,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052406933">
     <property name="name:4" value="ExtractFromAnonymous" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230052406934">
       <property name="name:4" value="ExtractFromAnonymous" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230052406935" />
@@ -1175,7 +1145,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052407024">
     <property name="name:4" value="ExtractFromStatements" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052407025">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052407026">
         <property name="name:3" value="c1" />
@@ -1436,7 +1406,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052407134">
     <property name="name:4" value="ExtractMethodFromConstructor" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052407135">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052407136">
         <property name="name:3" value="Class" />
@@ -1570,7 +1540,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052444309">
     <property name="name:4" value="FindInputVariables" />
-    <property name="package:4" value="extractMethod.analyzer" />
+    <property name="virtualPackage:4" value="extractMethod.analyzer" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052444310">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052444311">
         <property name="name:3" value="Class1" />
@@ -1735,7 +1705,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052480263">
     <property name="name:4" value="BreakStatement" />
-    <property name="package:4" value="extractMethod.break" />
+    <property name="virtualPackage:4" value="extractMethod.break" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052480264">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052480265">
         <property name="name:3" value="Clazz" />
@@ -1889,7 +1859,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052480332">
     <property name="name:4" value="ExtractBreak" />
-    <property name="package:4" value="extractMethod.break" />
+    <property name="virtualPackage:4" value="extractMethod.break" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052480333">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052480334">
         <property name="name:3" value="clazz" />
@@ -2130,7 +2100,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052480438">
     <property name="name:4" value="ExtractContinue" />
-    <property name="package:4" value="extractMethod.break" />
+    <property name="virtualPackage:4" value="extractMethod.break" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052480439">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052480440">
         <property name="name:3" value="clazz" />
@@ -2333,7 +2303,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052509258">
     <property name="name:4" value="ExtractDefaultClassifierMethodDeclaration" />
-    <property name="package:4" value="extractMethod.conceptFunction" />
+    <property name="virtualPackage:4" value="extractMethod.conceptFunction" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052509259">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1230052509260">
         <property name="name:23" value="Action" />
@@ -2667,7 +2637,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052551970">
     <property name="name:4" value="ExtractFromExpression" />
-    <property name="package:4" value="extractMethod.expression" />
+    <property name="virtualPackage:4" value="extractMethod.expression" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052551971">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052551972">
         <property name="name:3" value="clazz" />
@@ -2874,7 +2844,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052552060">
     <property name="name:4" value="ExtractFromExpressionWithoutReturn" />
-    <property name="package:4" value="extractMethod.expression" />
+    <property name="virtualPackage:4" value="extractMethod.expression" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052552061">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052552062">
         <property name="name:3" value="c" />
@@ -3044,7 +3014,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052641811">
     <property name="name:4" value="ExtractDifferentReturns" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052641812">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052641813">
         <property name="name:3" value="clazz" />
@@ -3281,7 +3251,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052641913">
     <property name="name:4" value="ExtractFromStatementWithReturnValue" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052641914">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052641915">
         <property name="name:3" value="c1" />
@@ -3541,7 +3511,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052642039">
     <property name="name:4" value="ExtractFromStatementsEndsWithReturn" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052642040">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052642041">
         <property name="name:3" value="extractMethod" />
@@ -3685,7 +3655,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052642100">
     <property name="name:4" value="MethodsWithoutReturnStatement" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052642101">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052642102">
         <property name="name:3" value="Clazz" />
@@ -3856,7 +3826,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052642174">
     <property name="name:4" value="OneReturnStatement" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052642175">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052642176">
         <property name="name:3" value="clazz" />
@@ -4041,7 +4011,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052642255">
     <property name="name:4" value="OneReturnTransformation" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052642256">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052642257">
         <property name="name:3" value="clazz" />
@@ -4248,7 +4218,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052642344">
     <property name="name:4" value="ReturnStatement" />
-    <property name="package:4" value="extractMethod.return" />
+    <property name="virtualPackage:4" value="extractMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052642345">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052642346">
         <property name="name:3" value="Clazz" />
@@ -4505,7 +4475,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052684456">
     <property name="name:4" value="ExtractFromIntention" />
-    <property name="package:4" value="extractMethod.staticContainer" />
+    <property name="virtualPackage:4" value="extractMethod.staticContainer" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230052684457">
       <property name="name:4" value="extractExpression" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230052684458" />
@@ -4736,7 +4706,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052684553">
     <property name="name:4" value="staticContainerBehaviorTest" />
-    <property name="package:4" value="extractMethod.staticContainer" />
+    <property name="virtualPackage:4" value="extractMethod.staticContainer" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052684554">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230052684555">
         <link role="concept" targetNodeId="3.1080120340718:3" resolveInfo="AndExpression" />
@@ -5062,7 +5032,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052684686">
     <property name="name:4" value="staticContainerClassTest" />
-    <property name="package:4" value="extractMethod.staticContainer" />
+    <property name="virtualPackage:4" value="extractMethod.staticContainer" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052684687">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230052684688">
         <link role="concept" targetNodeId="3.1080120340718:3" resolveInfo="AndExpression" />
@@ -5331,7 +5301,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052902925">
     <property name="name:4" value="AddThrowDeclaration" />
-    <property name="package:4" value="changeMethodSignature" />
+    <property name="virtualPackage:4" value="changeMethodSignature" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052902926">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052902927">
         <property name="name:3" value="class1" />
@@ -5454,7 +5424,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052902977">
     <property name="name:4" value="ChangeMethodName" />
-    <property name="package:4" value="changeMethodSignature" />
+    <property name="virtualPackage:4" value="changeMethodSignature" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052902978">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052902979">
         <property name="name:3" value="c2" />
@@ -5570,7 +5540,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052903026">
     <property name="name:4" value="ChangeReturningType" />
-    <property name="package:4" value="changeMethodSignature" />
+    <property name="virtualPackage:4" value="changeMethodSignature" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052903027">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052903028">
         <property name="name:3" value="Class1" />
@@ -5693,7 +5663,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052903078">
     <property name="name:4" value="ChangeSignatureOfStaticMethod" />
-    <property name="package:4" value="changeMethodSignature" />
+    <property name="virtualPackage:4" value="changeMethodSignature" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052903079">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052903080">
         <property name="name:3" value="Clazz" />
@@ -6053,7 +6023,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052943763">
     <property name="name:4" value="AddParameter" />
-    <property name="package:4" value="changeMethodSignature.parameter" />
+    <property name="virtualPackage:4" value="changeMethodSignature.parameter" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052943764">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052943765">
         <property name="name:3" value="class1" />
@@ -6178,7 +6148,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052943817">
     <property name="name:4" value="ChangeParameterName" />
-    <property name="package:4" value="changeMethodSignature.parameter" />
+    <property name="virtualPackage:4" value="changeMethodSignature.parameter" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052943818">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052943819">
         <property name="name:3" value="c1" />
@@ -6330,7 +6300,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052943883">
     <property name="name:4" value="ChangeParameterType" />
-    <property name="package:4" value="changeMethodSignature.parameter" />
+    <property name="virtualPackage:4" value="changeMethodSignature.parameter" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052943884">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052943885">
         <property name="name:3" value="class1" />
@@ -6474,7 +6444,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052943946">
     <property name="name:4" value="ChangeParametersOrder" />
-    <property name="package:4" value="changeMethodSignature.parameter" />
+    <property name="virtualPackage:4" value="changeMethodSignature.parameter" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052943947">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052943948">
         <property name="name:3" value="Class1" />
@@ -6781,7 +6751,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052944081">
     <property name="name:4" value="RemoveParameter" />
-    <property name="package:4" value="changeMethodSignature.parameter" />
+    <property name="virtualPackage:4" value="changeMethodSignature.parameter" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052944082">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052944083">
         <property name="name:3" value="c1" />
@@ -6899,7 +6869,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052944132">
     <property name="name:4" value="TwoParametersWithSameType" />
-    <property name="package:4" value="changeMethodSignature.parameter" />
+    <property name="virtualPackage:4" value="changeMethodSignature.parameter" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052944133">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052944134">
         <property name="name:3" value="Class1" />
@@ -7083,7 +7053,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989007">
     <property name="name:4" value="DeclarationVariablesInMethod" />
-    <property name="package:4" value="inlineMethod" />
+    <property name="virtualPackage:4" value="inlineMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989008">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052989009">
         <property name="name:3" value="c1" />
@@ -7249,7 +7219,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989081">
     <property name="name:4" value="InlineFromAnotherClass" />
-    <property name="package:4" value="inlineMethod" />
+    <property name="virtualPackage:4" value="inlineMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989082">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052989083">
         <property name="name:3" value="c1" />
@@ -7448,7 +7418,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989172">
     <property name="name:4" value="InlineFromExpression" />
-    <property name="package:4" value="inlineMethod" />
+    <property name="virtualPackage:4" value="inlineMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989173">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052989174">
         <property name="name:3" value="TestClass" />
@@ -7685,7 +7655,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989282">
     <property name="name:4" value="InlineRecursiveMethod" />
-    <property name="package:4" value="inlineMethod" />
+    <property name="virtualPackage:4" value="inlineMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989283">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052989284">
         <property name="name:3" value="c1" />
@@ -7737,7 +7707,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989306">
     <property name="name:4" value="InlineWithNoSourcesAttached" />
-    <property name="package:4" value="inlineMethod" />
+    <property name="virtualPackage:4" value="inlineMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989307">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052989308">
         <property name="name:3" value="c1" />
@@ -7793,7 +7763,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989334">
     <property name="name:4" value="SimpleInlineWithOneReturn" />
-    <property name="package:4" value="inlineMethod" />
+    <property name="virtualPackage:4" value="inlineMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989335">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230052989336">
         <property name="name:3" value="c1" />
@@ -7927,7 +7897,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053040715">
     <property name="name:4" value="InlineFromBehavior" />
-    <property name="package:4" value="inlineMethod.behavior" />
+    <property name="virtualPackage:4" value="inlineMethod.behavior" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040716">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053040717">
         <property name="name:3" value="c1" />
@@ -8052,7 +8022,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053040767">
     <property name="name:4" value="InlineFromBehaviorWithMethods" />
-    <property name="package:4" value="inlineMethod.behavior" />
+    <property name="virtualPackage:4" value="inlineMethod.behavior" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040768">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230053040769">
         <link role="concept" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
@@ -8319,7 +8289,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053040888">
     <property name="name:4" value="InlineInBehaviorWithThis" />
-    <property name="package:4" value="inlineMethod.behavior" />
+    <property name="virtualPackage:4" value="inlineMethod.behavior" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040889">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230053040890">
         <link role="concept" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
@@ -8435,7 +8405,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053073153">
     <property name="name:4" value="InlineMethodThatChangesParameters" />
-    <property name="package:4" value="inlineMethod.parameters" />
+    <property name="virtualPackage:4" value="inlineMethod.parameters" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053073154">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053073155">
         <property name="name:3" value="c1" />
@@ -8649,7 +8619,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053073246">
     <property name="name:4" value="InlineModelWithConstants" />
-    <property name="package:4" value="inlineMethod.parameters" />
+    <property name="virtualPackage:4" value="inlineMethod.parameters" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053073247">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053073248">
         <property name="name:3" value="c1" />
@@ -8854,7 +8824,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053073336">
     <property name="name:4" value="OneReturnWithNotVariableParameters" />
-    <property name="package:4" value="inlineMethod.parameters" />
+    <property name="virtualPackage:4" value="inlineMethod.parameters" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053073337">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053073338">
         <property name="name:3" value="c1" />
@@ -9069,7 +9039,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053073435">
     <property name="name:4" value="OneReturnWithParameteres" />
-    <property name="package:4" value="inlineMethod.parameters" />
+    <property name="virtualPackage:4" value="inlineMethod.parameters" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053073436">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053073437">
         <property name="name:3" value="c1" />
@@ -9247,7 +9217,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053114801">
     <property name="name:4" value="CheckStaticVisibility" />
-    <property name="package:4" value="inlineMethod.problems" />
+    <property name="virtualPackage:4" value="inlineMethod.problems" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053114802">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053114803">
         <property name="name:3" value="Calss1" />
@@ -9410,7 +9380,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053114873">
     <property name="name:4" value="CheckVisibility" />
-    <property name="package:4" value="inlineMethod.problems" />
+    <property name="virtualPackage:4" value="inlineMethod.problems" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053114874">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053114875">
         <property name="name:3" value="Class1" />
@@ -9674,7 +9644,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187317">
     <property name="name:4" value="CheckInlineCanBePerformed" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053187318">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053187319">
         <property name="name:3" value="c1" />
@@ -10049,7 +10019,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187488">
     <property name="name:4" value="CheckInlineWithThrow" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053187489">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053187490">
         <property name="name:3" value="class1" />
@@ -10145,7 +10115,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187531">
     <property name="name:4" value="InlineManyReturns" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053187532">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053187533">
         <property name="name:3" value="c1" />
@@ -10406,7 +10376,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187647">
     <property name="name:4" value="InlineMethodWithReturnAtTheEnd" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053187648">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053187649">
         <property name="name:3" value="c1" />
@@ -10646,7 +10616,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187752">
     <property name="name:4" value="InlineMethodWithVoidType" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053187753">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053187754">
         <property name="name:3" value="c1" />
@@ -10848,7 +10818,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187844">
     <property name="name:4" value="InlineWithVoidTypeAndBug" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053187845">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053187846">
         <property name="name:3" value="c1" />
@@ -10970,7 +10940,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053187900">
     <property name="name:4" value="InlineWithoutReturnStatement" />
-    <property name="package:4" value="inlineMethod.return" />
+    <property name="virtualPackage:4" value="inlineMethod.return" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053187901">
       <property name="name:4" value="InlineWithoutReturnStatement" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053187902" />
@@ -11092,7 +11062,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053223832">
     <property name="name:4" value="InlineStaticFromAnotherClass" />
-    <property name="package:4" value="extractMethod.static" />
+    <property name="virtualPackage:4" value="extractMethod.static" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053223833">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053223834">
         <property name="name:3" value="AnotherClass" />
@@ -11205,7 +11175,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053223883">
     <property name="name:4" value="StaticMethod" />
-    <property name="package:4" value="extractMethod.static" />
+    <property name="virtualPackage:4" value="extractMethod.static" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053223884">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053223885">
         <property name="name:3" value="c1" />
@@ -11362,7 +11332,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053266365">
     <property name="name:4" value="InlineFromConceptFunction" />
-    <property name="package:4" value="inlineVariable" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053266366">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ConceptFunction:3" id="1230053266367">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230053266368">
@@ -11497,7 +11467,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053266420">
     <property name="name:4" value="InlineLocalVariableReferenceWithoutDeclarationDeleting" />
-    <property name="package:4" value="inlineVariable" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053266421">
       <property name="name:4" value="InlineLocalVariableReferenceWithoutDeclarationDeleting" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053266422" />
@@ -11627,7 +11597,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053266477">
     <property name="name:4" value="InlineLocalVariableReferense" />
-    <property name="package:4" value="inlineVariable" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053266478">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053266479">
         <property name="name:3" value="TestClass" />
@@ -11740,7 +11710,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053266526">
     <property name="name:4" value="InlineReferenceWithAssignment" />
-    <property name="package:4" value="inlineVariable" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053266527">
       <property name="name:4" value="InlineReferenceWithAssignment" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053266528" />
@@ -11870,7 +11840,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053266582">
     <property name="name:4" value="InlineWithoutDeclarationDeletion" />
-    <property name="package:4" value="inlineVariable" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053266583">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230053266584">
         <property name="name:3" value="TestClass" />
@@ -11999,7 +11969,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053266638">
     <property name="name:4" value="SimpleInlineVariable" />
-    <property name="package:4" value="inlineVariable" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053266639">
       <property name="name:4" value="simpleInlineVariable" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053266640" />
@@ -12112,7 +12082,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053302505">
     <property name="name:4" value="MoveMethodWithFields" />
-    <property name="package:4" value="moveMethod" />
+    <property name="virtualPackage:4" value="moveMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053302506">
       <property name="name:4" value="MoveMethodWithFields" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053302507" />
@@ -12249,7 +12219,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053302564">
     <property name="name:4" value="MoveMethodWithMethods" />
-    <property name="package:4" value="moveMethod" />
+    <property name="virtualPackage:4" value="moveMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053302565">
       <property name="name:4" value="MoveMethodWithMethods" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053302566" />
@@ -12388,7 +12358,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053302625">
     <property name="name:4" value="MoveMethodWithUssages" />
-    <property name="package:4" value="moveMethod" />
+    <property name="virtualPackage:4" value="moveMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053302626">
       <property name="name:4" value="check" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053302627" />
@@ -12533,7 +12503,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230053302691">
     <property name="name:4" value="SimpleMoveMethod" />
-    <property name="package:4" value="moveMethod" />
+    <property name="virtualPackage:4" value="moveMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230053302692">
       <property name="name:4" value="check" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230053302693" />
@@ -12637,7 +12607,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230057984816">
     <property name="name:4" value="InlineMethodInTest" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230057984817">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230057984818">
         <property name="name:4" value="test1" />
@@ -12746,8 +12716,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3925159399320841060">
-    <property name="package:4" value="changeMethodSignature" />
     <property name="name:4" value="ChangeSigantureOfInterface" />
+    <property name="virtualPackage:4" value="changeMethodSignature" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="418758558327028827">
       <property name="name:4" value="ChangeSigantureOfInterface" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="418758558327028828" />
@@ -12906,7 +12876,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8495840634674645158">
     <property name="name:4" value="MoveStaticFieldSimpleTest" />
-    <property name="package:4" value="moveStaticField" />
+    <property name="virtualPackage:4" value="moveStaticField" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8495840634674645236">
       <property name="name:4" value="SimpleTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8495840634674645237" />
@@ -13029,8 +12999,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8495840634675243977">
-    <property name="package:4" value="moveStaticField" />
     <property name="name:4" value="MoveStaticFieldWithUsageTest" />
+    <property name="virtualPackage:4" value="moveStaticField" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8495840634675285753">
       <property name="name:4" value="UsageTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8495840634675285754" />
@@ -13190,8 +13160,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="5142438244427169026">
-    <property name="package:4" value="moveMethod" />
     <property name="name:4" value="MoveMethodWithParameters" />
+    <property name="virtualPackage:4" value="moveMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="5142438244427184232">
       <property name="name:4" value="check" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5142438244427184233" />
@@ -13379,8 +13349,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6791439617122300870">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousInterfaceTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="6791439617122315497">
       <property name="name:4" value="InterfaceTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6791439617122315498" />
@@ -13603,8 +13573,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6791439617122628436">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousAbstractClassTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="6791439617122640167">
       <property name="name:4" value="AbstractClassTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6791439617122640168" />
@@ -13911,8 +13881,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="2230400082817266597">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousWithTypeVariablesTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="2230400082817279740">
       <property name="name:4" value="TypeVariablesTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2230400082817279741" />
@@ -14170,8 +14140,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="2230400082818031588">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousToStaticTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="2230400082818041866">
       <property name="name:4" value="ToStaticTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2230400082818041867" />
@@ -14308,8 +14278,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="4946830740863806270">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousWithTypeVariablesComplexTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="4946830740863818097">
       <property name="name:4" value="TypeVariablesComplexTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4946830740863818098" />
@@ -14693,8 +14663,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3145818413496050321">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousWithLocalVariablesTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="3145818413496514603">
       <property name="name:4" value="WithLocalVariablesTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3145818413496514604" />
@@ -15039,8 +15009,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3145818413497245718">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousAbstractClassWithConstructorTest" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="3145818413497708745">
       <property name="name:4" value="AbstractClassWithConstructorTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3145818413497708746" />
@@ -15369,8 +15339,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="4412735672778824686">
-    <property name="package:4" value="inlineMethod.parameters" />
     <property name="name:4" value="InlineMethodWithUnusedParameters" />
+    <property name="virtualPackage:4" value="inlineMethod.parameters" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="4412735672778826495">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4412735672778826503">
         <property name="name:3" value="A" />
@@ -15548,8 +15518,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="4412735672780105517">
-    <property name="package:4" value="inlineMethod.parameters" />
     <property name="name:4" value="InlineMethodWithConceptFunctionParameters" />
+    <property name="virtualPackage:4" value="inlineMethod.parameters" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="4412735672780107330">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4412735672780107332">
         <property name="name:3" value="Test" />
@@ -15660,8 +15630,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8556882668095192252">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractFromExpression" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8556882668095202192">
       <property name="name:4" value="SimpleFindForExtractFromExpressionTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8556882668095202193" />
@@ -16059,8 +16029,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8556882668095222061">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractFromStatement" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8556882668095222213">
       <property name="name:4" value="SimpleFindForExtractFromStatementTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8556882668095222214" />
@@ -16458,8 +16428,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1998477585418803771">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractWithReturn" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1998477585418805710">
       <property name="name:4" value="SimpleFindForExtractWithReturnTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1998477585418805711" />
@@ -16872,8 +16842,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7793057097608406463">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractFromManyStatements" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7793057097608416373">
       <property name="name:4" value="SimpleFindForExtractFromManyStatementsTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7793057097608416374" />
@@ -17208,7 +17178,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8155843501976326915">
     <property name="name:4" value="ExtractMethodWithOutputVaryableFromStatement" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8155843501976328851">
       <property name="name:4" value="ExtractMethodWithOutputVaryableFromStatementTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8155843501976328852" />
@@ -17408,8 +17378,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8155843501977546256">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="ReplaceOutputVaryable" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8155843501977560935">
       <property name="name:4" value="ReplaceOutputVaryableTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8155843501977560936" />
@@ -17753,8 +17723,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8155843501978460076">
-    <property name="package:4" value="extractMethod" />
     <property name="name:4" value="ExtractMethodWithOutputVaryableFromExpression" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8155843501978461957">
       <property name="name:4" value="ExtractMethodWithOutputVaryableFromStatementTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8155843501978461958" />
@@ -17962,8 +17932,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7568753874916167799">
-    <property name="package:4" value="findDuplicates.variable" />
     <property name="name:4" value="SimpleFindAndMoveForIntroduceLocalVar" />
+    <property name="virtualPackage:4" value="findDuplicates.variable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7568753874916167933">
       <property name="name:4" value="SimpleFindAndMoveForIntroduceLocalVarTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7568753874916167934" />
@@ -18210,8 +18180,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7568753874916187325">
-    <property name="package:4" value="findDuplicates.variable" />
     <property name="name:4" value="SimpleFindForIntroduceConstant" />
+    <property name="virtualPackage:4" value="findDuplicates.variable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7568753874916187418">
       <property name="name:4" value="SimpleFindForIntroduceConstantTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7568753874916187419" />
@@ -18477,8 +18447,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7568753874916226562">
-    <property name="package:4" value="findDuplicates.variable" />
     <property name="name:4" value="SimpleFindForIntroduceLocalVariable" />
+    <property name="virtualPackage:4" value="findDuplicates.variable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7568753874916226583">
       <property name="name:4" value="SimpleFindAndMoveForIntroduceLocalVariableTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7568753874916226584" />
@@ -18670,8 +18640,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7568753874916244224">
-    <property name="package:4" value="findDuplicates.variable" />
     <property name="name:4" value="FindAndMoveFromIfForIntroduceLocalVar" />
+    <property name="virtualPackage:4" value="findDuplicates.variable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7568753874916244267">
       <property name="name:4" value="SimpleFindAndMoveForIntroduceLocalVarTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7568753874916244268" />
@@ -18921,8 +18891,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3109730807963541425">
-    <property name="package:4" value="introduceVariable" />
     <property name="name:4" value="IntroduceVariableFromAnonimousClass" />
+    <property name="virtualPackage:4" value="introduceVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="3109730807963545055">
       <property name="name:4" value="IntroduceVariableFromAnonimousClassTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3109730807963545056" />
@@ -19151,8 +19121,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3109730807963748196">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousWithLocalVariables" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="3109730807963748292">
       <property name="name:4" value="AbstractClassTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3109730807963748293" />
@@ -19366,8 +19336,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="2163048091639854868">
-    <property name="package:4" value="introduceVariable" />
     <property name="name:4" value="IntroduceConstantFromAnonimousClass" />
+    <property name="virtualPackage:4" value="introduceVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="2163048091639855068">
       <property name="name:4" value="IntroduceConstantFromAnonimousClassTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2163048091639855069" />
@@ -19709,7 +19679,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6195342755328023609">
     <property name="name:4" value="ExtractAddingNewDeclaration" />
-    <property name="package:4" value="extractMethod" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="6195342755328023704">
       <property name="name:4" value="ExtractAddingNewDeclaration" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6195342755328023705" />
@@ -19940,8 +19910,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6195342755328044201">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="FindForMethodWithOutputVariable" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="6195342755328044297">
       <property name="name:4" value="FindForMethodWithOutputVariableTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6195342755328044298" />
@@ -20454,8 +20424,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1300615610528534002">
-    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="FindForMethodWithIVariableLikeNodes" />
+    <property name="virtualPackage:4" value="findDuplicates.method" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1300615610528534093">
       <property name="name:4" value="FindForMethodWithIVariableLikeNodesTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1300615610528534094" />
@@ -20906,8 +20876,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8823815475437525602">
-    <property name="package:4" value="extractMethod" />
     <property name="name:4" value="ExtractMethodWithThrows" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8823815475437525729">
       <property name="name:4" value="ExtractMethodWithThrowsTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8823815475437525730" />
@@ -21137,8 +21107,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7093131866560585661">
-    <property name="package:4" value="inlineVariable" />
     <property name="name:4" value="InlineInsideClosure" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7093131866560585733">
       <property name="name:4" value="InlineInsideClosureTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7093131866560585734" />
@@ -21333,8 +21303,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7093131866560585771">
-    <property name="package:4" value="inlineVariable" />
     <property name="name:4" value="InlineInClosureWithOutsideAssingment" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7093131866560585851">
       <property name="name:4" value="InlineInClosureWithOutsideAssingmentTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7093131866560585852" />
@@ -21529,8 +21499,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="9118878263582083310">
-    <property name="package:4" value="inlineVariable" />
     <property name="name:4" value="InlineAssingmentWithClosures" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="9118878263582085165">
       <property name="name:4" value="InlineAssingmentWithClosures" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="9118878263582085166" />
@@ -21757,8 +21727,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6351584993764365770">
-    <property name="package:4" value="inlineVariable" />
     <property name="name:4" value="InlineAssingmentInClosure" />
+    <property name="virtualPackage:4" value="inlineVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="6351584993764365829">
       <property name="name:4" value="InlineAssingmentInClosure" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6351584993764365830" />
@@ -21888,8 +21858,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="995475547969867885">
-    <property name="package:4" value="convertAnonimous" />
     <property name="name:4" value="ConvertAnonymousWithParameterReference" />
+    <property name="virtualPackage:4" value="convertAnonimous" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="995475547969868020">
       <property name="name:4" value="WithParameterReferenceTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="995475547969868021" />
@@ -22115,8 +22085,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6974242407276765599">
-    <property name="package:4" value="introduceVariable" />
     <property name="name:4" value="IntroduceVariableFromWildcards" />
+    <property name="virtualPackage:4" value="introduceVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="6974242407276777307">
       <property name="name:4" value="IntroduceVariableFromWildcardsTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6974242407276777308" />
@@ -22519,8 +22489,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="5161277940733600913">
-    <property name="package:4" value="extractMethod" />
     <property name="name:4" value="ExtractMethodFromClosure" />
+    <property name="virtualPackage:4" value="extractMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="5161277940733601053">
       <property name="name:4" value="ExtractMethodFromClosure" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5161277940733601054" />
@@ -22909,7 +22879,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3014415391767789119">
     <property name="name:4" value="SimpleMoveStaticMethod" />
-    <property name="package:4" value="moveStaticMethod" />
+    <property name="virtualPackage:4" value="moveStaticMethod" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="3014415391767789218">
       <property name="name:4" value="SimpleMoveStaticMethod" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3014415391767789219" />
@@ -23134,8 +23104,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="4038232163186978773">
-    <property name="package:4" value="introduceVariable" />
     <property name="name:4" value="IntroduceFinalLocalVariable" />
+    <property name="virtualPackage:4" value="introduceVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="4038232163186978816">
       <property name="name:4" value="IntroduceFinalLocalVariable" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4038232163186978817" />
@@ -23286,8 +23256,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="4038232163187008743">
-    <property name="package:4" value="introduceVariable" />
     <property name="name:4" value="IntroduceFinalField" />
+    <property name="virtualPackage:4" value="introduceVariable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="4038232163187008791">
       <property name="name:4" value="IntroduceFinalField" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4038232163187008792" />

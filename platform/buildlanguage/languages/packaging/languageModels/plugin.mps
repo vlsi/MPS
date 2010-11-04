@@ -9,50 +9,14 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)" />
   <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d7(jetbrains.mps.build.packaging.plugin)" version="-1" />
   <maxImportIndex value="101" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -292,7 +256,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1220376685232">
     <property name="name:3" value="PackagingLanguageGenerator" />
-    <property name="package:3" value="create" />
+    <property name="virtualPackage:3" value="create" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1220376685233" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1220376685234">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1220376685235" />
@@ -819,7 +783,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1221149114857">
     <property name="name:23" value="GenerateBuildForProjectAction" />
     <property name="caption:23" value="Build Script" />
-    <property name="package:23" value="create" />
+    <property name="virtualPackage:23" value="create" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1221149976842">
       <property name="name:23" value="mpsProject" />
       <link role="key:23" targetNodeId="11.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
@@ -921,7 +885,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1221153700178">
     <property name="name:23" value="ProjectPaneProjectAddition" />
-    <property name="package:23" value="create" />
+    <property name="virtualPackage:23" value="create" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1221153717675">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1224172951739" />
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1221153772444">
@@ -934,7 +898,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222854011172">
     <property name="name:3" value="BuildGeneratorImpl" />
-    <property name="package:3" value="create" />
+    <property name="virtualPackage:3" value="create" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1222863546137">
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1222949647138">
         <property name="name:3" value="project" />
@@ -3026,7 +2990,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222950292812">
     <property name="name:3" value="BuildGeneratorUtil" />
-    <property name="package:3" value="create" />
+    <property name="virtualPackage:3" value="create" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1222950292813" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1222950292814">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1222950292815" />
@@ -3751,8 +3715,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050118467">
-    <property name="package:3" value="create.wizard.checkboxTree" />
     <property name="name:3" value="CheckBoxCellRenderrer" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223050118468">
       <property name="name:3" value="myCheckBox" />
       <property name="isFinal:3" value="true" />
@@ -4325,7 +4289,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050118711">
     <property name="name:3" value="CheckBoxNode" />
-    <property name="package:3" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223050118712">
       <property name="name:3" value="myData" />
       <property name="isFinal:3" value="true" />
@@ -4605,8 +4569,8 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050118770">
     <property name="name:3" value="CheckBoxTree" />
-    <property name="package:3" value="create.wizard.checkboxTree" />
     <property name="abstractClass:3" value="false" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1229432000907">
       <property name="name:3" value="mouseParessed" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1229432000908" />
@@ -5343,7 +5307,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="1223050118897">
     <property name="name:3" value="NodeData" />
-    <property name="package:3" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1223050118898">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="getChildren" />
@@ -5422,7 +5386,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050118913">
     <property name="name:3" value="AbstractBuildGenerator" />
     <property name="abstractClass:3" value="true" />
-    <property name="package:3" value="create.wizard" />
+    <property name="virtualPackage:3" value="create.wizard" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223050118914">
       <property name="name:3" value="myProjectName" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1223050118915" />
@@ -6127,7 +6091,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050119144">
     <property name="name:3" value="AbstractStep" />
     <property name="abstractClass:3" value="true" />
-    <property name="package:3" value="create.wizard.steps" />
+    <property name="virtualPackage:3" value="create.wizard.steps" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223050119145">
       <property name="name:3" value="myMainPanel" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1224847870509" />
@@ -6531,7 +6495,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050119356">
     <property name="name:3" value="GenerateBuildWizard" />
-    <property name="package:3" value="create.wizard" />
+    <property name="virtualPackage:3" value="create.wizard" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1223050119357">
       <property name="name:3" value="getHelpID" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1223050119358" />
@@ -6956,7 +6920,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050119523">
     <property name="name:3" value="LanguagesStep" />
-    <property name="package:3" value="create.wizard.steps" />
+    <property name="virtualPackage:3" value="create.wizard.steps" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223656664187">
       <property name="name:3" value="MyTreeBuilder" />
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223662160259">
@@ -8436,7 +8400,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050119955">
     <property name="name:3" value="ModuleData" />
-    <property name="package:3" value="create.wizard.checkboxTree.data" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree.data" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223050119956">
       <property name="name:3" value="myModule" />
       <property name="isFinal:3" value="true" />
@@ -8711,7 +8675,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050119997">
     <property name="name:3" value="ModulesListData" />
-    <property name="package:3" value="create.wizard.checkboxTree.data" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree.data" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223050119998">
       <property name="name:3" value="myData" />
       <property name="isFinal:3" value="true" />
@@ -8991,7 +8955,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223050120055">
     <property name="name:3" value="SolutionStep" />
-    <property name="package:3" value="create.wizard.steps" />
+    <property name="virtualPackage:3" value="create.wizard.steps" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1223050120161">
       <property name="name:3" value="getDescription" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1223050120162" />
@@ -9465,8 +9429,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223647613151">
-    <property name="package:3" value="create.wizard.checkboxTree" />
     <property name="name:3" value="CheckBoxNamespaceNode" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1223647613152" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1223647613153">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1223647613154" />
@@ -9545,8 +9509,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223647776843">
-    <property name="package:3" value="create.wizard.checkboxTree.data" />
     <property name="name:3" value="NamespaceData" />
+    <property name="virtualPackage:3" value="create.wizard.checkboxTree.data" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1223647857266">
       <property name="name:3" value="myText" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1223647857267" />
@@ -9781,9 +9745,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1223998310209">
-    <property name="package:3" value="create.wizard.steps" />
     <property name="name:3" value="TwoOptionsStep" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="create.wizard.steps" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1223999003248">
       <property name="name:3" value="getVariants" />
       <property name="isAbstract:3" value="true" />
@@ -11014,8 +10978,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1224007565785">
-    <property name="package:3" value="create.wizard.steps" />
     <property name="name:3" value="ModelStep" />
+    <property name="virtualPackage:3" value="create.wizard.steps" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1224007565786" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1224007565787">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1224007565788" />
@@ -11635,8 +11599,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="1224788773266">
-    <property name="package:3" value="create.wizard.steps" />
     <property name="name:3" value="IErrorHandler" />
+    <property name="virtualPackage:3" value="create.wizard.steps" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1224788785255">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="setErrorText" />
@@ -12119,7 +12083,7 @@
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="2864298211886144956">
     <property name="name:0" value="DefaultPackagingLanguageApplication" />
     <property name="caption:0" value="Packaging Build Script" />
-    <property name="package:0" value="runner" />
+    <property name="virtualPackage:0" value="runner" />
     <link role="stateTypeParameter:0" targetNodeId="92.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="conceptDeclaration:0" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
     <link role="configType:0" targetNodeId="73.7234763849538443893:0" resolveInfo="BuildLanguage" />
@@ -12571,8 +12535,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5842104767988515740">
-    <property name="package:3" value="runner" />
     <property name="name:3" value="ConfigurationChoosePanel" />
+    <property name="virtualPackage:3" value="runner" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2178855608171202011">
       <property name="name:3" value="nodeChanged" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="2178855608171202036">
@@ -13255,8 +13219,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618155431">
-    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultPackagingLanguageConfigurationFromMPSLayout" />
+    <property name="virtualPackage:23" value="runner" />
     <link role="rcType:23" targetNodeId="73.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618175273">
       <link role="concept:23" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
@@ -13369,8 +13333,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618219198">
-    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultPackagingLanguageConfigurationFromConfiguration" />
+    <property name="virtualPackage:23" value="runner" />
     <link role="rcType:23" targetNodeId="73.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618219202">
       <link role="concept:23" targetNodeId="1.1204115658627:7" resolveInfo="Configuration" />

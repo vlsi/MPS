@@ -9,35 +9,14 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)" version="-1" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
@@ -1238,8 +1217,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1227110056528">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangeOrientationCollection" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1073389446423:32" resolveInfo="CellModel_Collection" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1227110056529">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227110056530">
@@ -1356,8 +1335,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1227111401175">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangeOrientationList" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1140524381322:32" resolveInfo="CellModel_ListWithRole" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1227111401176">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227111401177">
@@ -1467,8 +1446,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1227111553026">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangeOrientationAlternation" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1088612959204:32" resolveInfo="CellModel_Alternation" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1227111553027">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227111553028">
@@ -1514,8 +1493,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1235489867936">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangeProperty" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1073389658414:32" resolveInfo="CellModel_Property" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1235489867937">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235489867938">
@@ -1723,8 +1702,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1235490923121">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangeTransactionalProperty" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1216380990741:32" resolveInfo="CellModel_TransactionalProperty" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1235490923122">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235490923123">
@@ -1942,8 +1921,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237386546176">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="UseIndentLayoutInCollection" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1073389446423:32" resolveInfo="CellModel_Collection" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237386546177">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237386546178">
@@ -2037,8 +2016,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237386846745">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="UseIndentLayoutInRefNodeList" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1073390211982:32" resolveInfo="CellModel_RefNodeList" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237386846746">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237386846747">
@@ -2132,8 +2111,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237395176004">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="AddNewLine" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237395176005">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237395176006">
@@ -2254,8 +2233,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237395366590">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="AddIndent" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237395366591">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237395366592">
@@ -2376,8 +2355,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237395444116">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="AddOnNewLine" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237395444117">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237395444118">
@@ -2498,8 +2477,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237403857170">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="RemoveIndent" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237403857171">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237403857172">
@@ -2545,8 +2524,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237403993138">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="RemoveNewLine" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237403993139">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237403993140">
@@ -2592,8 +2571,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237404019413">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="RemoveOnNewLine" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237404019414">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237404019415">
@@ -4290,8 +4269,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1445505956982000110">
-    <property name="package:8" value="CellModel.Indent" />
     <property name="name:8" value="AddRemoveNewLineForChildren" />
+    <property name="virtualPackage:8" value="CellModel.Indent" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1445505956982000111">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1445505956982000112">
@@ -4629,8 +4608,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="5137527105084909325">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangePropertyWithNonEmpty" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1073389658414:32" resolveInfo="CellModel_Property" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="5137527105084909326">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5137527105084909327">
@@ -4853,8 +4832,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="5137527105085214125">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ChangeNonEmptyProperty" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1184319644772:32" resolveInfo="CellModel_NonEmptyProperty" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="5137527105085214126">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5137527105085214127">
@@ -5061,8 +5040,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="98380422618971761">
-    <property name="package:8" value="CellModel" />
     <property name="name:8" value="ExtractComponent" />
+    <property name="virtualPackage:8" value="CellModel" />
     <link role="forConcept:8" targetNodeId="1.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="98380422618971762">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="98380422618971763">

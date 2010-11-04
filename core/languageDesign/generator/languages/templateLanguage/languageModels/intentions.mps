@@ -22,6 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)" version="-1" />
   <maxImportIndex value="44" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -52,7 +53,7 @@
   <import index="44" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1203775431223">
     <property name="name:8" value="ConvertInlineTemplateToTemplateFragment" />
-    <property name="package:8" value="migrations" />
+    <property name="virtualPackage:8" value="migrations" />
     <link role="forConcept:8" targetNodeId="1.1177093525992:2" resolveInfo="InlineTemplate_RuleConsequence" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1203775431224">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1203775431225">
@@ -307,7 +308,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1205436780371">
     <property name="name:8" value="ConvertTemplateDeclRefToInlineTemplate" />
-    <property name="package:8" value="migrations" />
+    <property name="virtualPackage:8" value="migrations" />
     <link role="forConcept:8" targetNodeId="1.1168559333462:2" resolveInfo="TemplateDeclarationReference" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1205436780372">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1205436780373">
@@ -560,7 +561,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1207152859258">
     <property name="name:8" value="AddNodeMacro" />
-    <property name="package:8" value="create macro" />
+    <property name="virtualPackage:8" value="create macro" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1207152859259">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207152859260">
@@ -672,7 +673,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1207154194671">
     <property name="name:8" value="AddPropertyMacro" />
-    <property name="package:8" value="create macro" />
+    <property name="virtualPackage:8" value="create macro" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1207154194672">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207154194673">
@@ -804,7 +805,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1207154220489">
     <property name="name:8" value="AddReferenceMacro" />
-    <property name="package:8" value="create macro" />
+    <property name="virtualPackage:8" value="create macro" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1207154220490">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207154220491">
@@ -936,7 +937,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1216319039419">
     <property name="name:8" value="NewTemplateInWeaveEach" />
-    <property name="package:8" value="create template" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1169569792945:2" resolveInfo="WeaveEach_RuleConsequence" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1216319039420">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216319039421">
@@ -1296,8 +1297,8 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1216320260188">
     <property name="name:8" value="NewTemplateInReductionRule" />
-    <property name="package:8" value="create template" />
     <property name="isAvailableInChildNodes:8" value="true" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1167327847730:2" resolveInfo="Reduction_MappingRule" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1216320260189">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216320260190">
@@ -1605,7 +1606,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1216323872536">
     <property name="name:8" value="NewTemplateInSwitchDefault" />
-    <property name="package:8" value="create template" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1112730859144:2" resolveInfo="TemplateSwitch" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1216323872537">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216323872538">
@@ -1806,7 +1807,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1216334426557">
     <property name="name:8" value="NewTemplateInRootMappingRule" />
-    <property name="package:8" value="create template" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1167514355419:2" resolveInfo="Root_MappingRule" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1216334426558">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216334426559">
@@ -2125,7 +2126,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1216337594117">
     <property name="name:8" value="NewTemplateInCreateRootRule" />
-    <property name="package:8" value="create template" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1167087469898:2" resolveInfo="CreateRootRule" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1216337594118">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216337594119">
@@ -2402,7 +2403,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1227216572218">
     <property name="name:8" value="NewCreateRootRule" />
-    <property name="package:8" value="create rule" />
+    <property name="virtualPackage:8" value="create rule" />
     <link role="forConcept:8" targetNodeId="2.1169194658468:0" resolveInfo="INamedConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1227216572219">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227216572220">
@@ -2799,7 +2800,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1227221178632">
     <property name="name:8" value="NewRootMappingRule" />
-    <property name="package:8" value="create rule" />
+    <property name="virtualPackage:8" value="create rule" />
     <link role="forConcept:8" targetNodeId="2.1169194658468:0" resolveInfo="INamedConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1227221178633">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227221178634">
@@ -3223,7 +3224,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1227291795686">
     <property name="name:8" value="AttachMappingLabel" />
-    <property name="package:8" value="attach mapping label" />
+    <property name="virtualPackage:8" value="attach mapping label" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1227291795687">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227291795688">
@@ -3706,7 +3707,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1227305822695">
     <property name="name:3" value="AttachMappingLabelDialog" />
     <property name="abstractClass:3" value="false" />
-    <property name="package:3" value="attach mapping label" />
+    <property name="virtualPackage:3" value="attach mapping label" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1227305822696">
       <property name="name:3" value="createNamePanel" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227305822697">
@@ -4661,8 +4662,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1227319800070">
-    <property name="package:3" value="attach mapping label" />
     <property name="name:3" value="MappingLabelUtil" />
+    <property name="virtualPackage:3" value="attach mapping label" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1227319800071" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1227319800072">
       <property name="name:3" value="findOrCreateMappingLabelForName" />
@@ -4977,8 +4978,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="1240572960649">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddNodeMacroParam_ifMacro" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1240572960650">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240572960651">
@@ -5364,8 +5365,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="1240573470307">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddReferenceMacroParam_link" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1240573470308">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240573470309">
@@ -5784,8 +5785,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="1240595522621">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddPropertyMacroParam_property" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1240595522622">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240595522623">
@@ -6275,8 +6276,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="1240595838065">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddNodeMacroParam_copySrcMacro" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="queryBlock:8" type="jetbrains.mps.lang.intentions.structure.QueryBlock:8" id="1240595838066">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240595838067">
@@ -6621,8 +6622,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="1240595864245">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddNodeMacroParam_copySrclMacro" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="queryBlock:8" type="jetbrains.mps.lang.intentions.structure.QueryBlock:8" id="1240595864246">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240595864247">
@@ -6967,8 +6968,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="1240595919493">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddNodeMacroParam_loopMacro" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="queryBlock:8" type="jetbrains.mps.lang.intentions.structure.QueryBlock:8" id="1240595919494">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240595919495">
@@ -7313,8 +7314,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="9092065972411421046">
-    <property name="package:8" value="create template" />
     <property name="name:8" value="NewTemplateFragment" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="9092065972411421047">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9092065972411421048">
@@ -7461,8 +7462,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1980960612890491907">
-    <property name="package:3" value="create macro.parameterized" />
     <property name="name:3" value="MacroIntentionsUtil" />
+    <property name="virtualPackage:3" value="create macro.parameterized" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1980960612890493321">
       <property name="name:3" value="getContextNodeConcept" />
       <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="1980960612890494614" />
@@ -7943,8 +7944,8 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="8699312839322230162">
     <property name="name:8" value="NewTemplateInWeavingRule" />
-    <property name="package:8" value="create template" />
     <property name="isAvailableInChildNodes:8" value="true" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1167171569011:2" resolveInfo="Weaving_MappingRule" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="8699312839322230163">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8699312839322230164">
@@ -8442,8 +8443,8 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="8004199436029426156">
     <property name="name:8" value="NewTemplateInSwitchCase" />
-    <property name="package:8" value="create template" />
     <property name="isAvailableInChildNodes:8" value="true" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1167327847730:2" resolveInfo="Reduction_MappingRule" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="8004199436029426157">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8004199436029426158">
@@ -8753,7 +8754,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="8004199436029429270">
     <property name="name:8" value="NewTemplateInInlineSwitchDefault" />
-    <property name="package:8" value="create template" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1195158154974:2" resolveInfo="InlineSwitch_RuleConsequence" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="8004199436029429271">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8004199436029429272">
@@ -8982,8 +8983,8 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="8004199436029429362">
     <property name="name:8" value="NewTemplateInInlineSwitchCase" />
-    <property name="package:8" value="create template" />
     <property name="isAvailableInChildNodes:8" value="true" />
+    <property name="virtualPackage:8" value="create template" />
     <link role="forConcept:8" targetNodeId="1.1195158388553:2" resolveInfo="InlineSwitch_Case" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="8004199436029429363">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8004199436029429364">
@@ -9264,8 +9265,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration:8" id="3644457381597319727">
-    <property name="package:8" value="create macro.parameterized" />
     <property name="name:8" value="AddNodeMacroParam_switch" />
+    <property name="virtualPackage:8" value="create macro.parameterized" />
     <link role="forConcept:8" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3644457381597319728">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3644457381597319729">

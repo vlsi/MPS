@@ -10,32 +10,12 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904ae(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="17" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -53,7 +33,7 @@
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1203519942287">
     <property name="name:2" value="IDEDialog" />
-    <property name="package:2" value="IDEDialog" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1203607360417">
       <property name="name:2" value="dialogAttribute" />
       <link role="sourceConcept:2" targetNodeId="15.1202387718766:1" resolveInfo="ComponentDeclaration" />
@@ -221,7 +201,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1203593248798">
     <property name="name:3" value="DialogClass" />
-    <property name="package:3" value="IDEDialog" />
+    <property name="virtualPackage:3" value="IDEDialog" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1203598537489">
       <property name="name:3" value="myContentPane" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1203598537490" />
@@ -829,7 +809,7 @@
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration:1" id="1203593377246">
     <property name="name:1" value="DialogContentPane" />
-    <property name="package:1" value="IDEDialog" />
+    <property name="virtualPackage:1" value="IDEDialog" />
     <node role="root:1" type="jetbrains.mps.uiLanguage.structure.ComponentInstance:1" id="1203593392510">
       <link role="componentDeclaration:1" targetNodeId="16.1202393560969" resolveInfo="Button" />
       <node role="nodeMacro$attribute:1" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1203593394387">
@@ -879,7 +859,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1203593385808">
-    <property name="package:1" value="IDEDialog" />
+    <property name="virtualPackage:1" value="IDEDialog" />
     <link role="component:1" targetNodeId="1203593377246" resolveInfo="DialogContentPane" />
     <node role="attribute:1" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration:1" id="1203593890507">
       <property name="name:1" value="abc" />
@@ -1020,7 +1000,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1203594547725">
     <property name="name:2" value="RemoveIDEDialogStuff" />
-    <property name="package:2" value="IDEDialog" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1203594547726">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1203594547727">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1203595575423">
@@ -1072,12 +1052,12 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1203595946796">
     <property name="name:3" value="_ToRemove" />
-    <property name="package:3" value="IDEDialog" />
+    <property name="virtualPackage:3" value="IDEDialog" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1203595946797" />
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1203607151844">
-    <property name="package:2" value="IDEDialog" />
     <property name="name:2" value="reduce_DisposeDialogExpression" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <link role="applicableConcept:2" targetNodeId="1.1203606241544" resolveInfo="DisposeDialogExpression" />
     <node role="contentNode:2" type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1203607193692">
       <link role="component:1" targetNodeId="1203593377246" resolveInfo="DialogContentPane" />
@@ -1139,8 +1119,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1203607687117">
-    <property name="package:2" value="IDEDialog" />
     <property name="name:2" value="reduce_ReportErrorExpression" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <link role="applicableConcept:2" targetNodeId="1.1203607523033" resolveInfo="ReportErrorExpression" />
     <node role="contentNode:2" type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1203607703412">
       <link role="component:1" targetNodeId="1203593377246" resolveInfo="DialogContentPane" />
@@ -1218,8 +1198,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1203610648201">
-    <property name="package:2" value="IDEDialog" />
     <property name="name:2" value="reduce_DialogExpression" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <link role="applicableConcept:2" targetNodeId="1.1203610466731" resolveInfo="DialogExpression" />
     <node role="contentNode:2" type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="1203610648202">
       <link role="component:1" targetNodeId="1203593377246" resolveInfo="DialogContentPane" />
@@ -1276,8 +1256,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3734045384532546760">
-    <property name="package:2" value="IDEDialog" />
     <property name="name:2" value="reduce_ReportErrorStatement" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <link role="applicableConcept:2" targetNodeId="1.3734045384532546729" resolveInfo="ReportErrorStatement" />
     <node role="contentNode:2" type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="3734045384532546761">
       <link role="component:1" targetNodeId="1203593377246" resolveInfo="DialogContentPane" />
@@ -1355,8 +1335,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3734045384532546817">
-    <property name="package:2" value="IDEDialog" />
     <property name="name:2" value="reduce_DisposeDialogStatement" />
+    <property name="virtualPackage:2" value="IDEDialog" />
     <link role="applicableConcept:2" targetNodeId="1.3734045384532546800" resolveInfo="DisposeDialogStatement" />
     <node role="contentNode:2" type="jetbrains.mps.uiLanguage.structure.ComponentController:1" id="3734045384532546818">
       <link role="component:1" targetNodeId="1203593377246" resolveInfo="DialogContentPane" />

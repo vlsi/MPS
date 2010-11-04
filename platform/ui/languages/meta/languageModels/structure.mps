@@ -168,25 +168,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <maxImportIndex value="4" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -312,7 +294,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4643695836678898389">
     <property name="name" value="UIObjectTemplate" />
     <property name="rootable" value="true" />
-    <property name="package" value="code.uiObjects" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4643695836678898436">
       <property name="metaClass" value="aggregation" />
@@ -369,7 +351,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4643695836678934010">
     <property name="name" value="UIPropertyAccessCode" />
-    <property name="package" value="code.uiObjects.properties" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4643695836679531005">
       <property name="metaClass" value="aggregation" />
@@ -392,7 +374,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4643695836679547626">
     <property name="name" value="UIPropertySetter" />
-    <property name="package" value="code.uiObjects.properties" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="4643695836679547745">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -409,7 +391,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4643695836679547627">
     <property name="name" value="ThisUIObjectParam" />
-    <property name="package" value="code.uiObjects" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4643695836679547658">
       <property name="value" value="this" />
@@ -421,7 +403,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4643695836679547628">
     <property name="name" value="PropertyValueParam" />
-    <property name="package" value="code.uiObjects.properties" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4643695836679547663">
       <property name="value" value="value" />
@@ -433,7 +415,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4643695836679547748">
     <property name="name" value="UIPropertyGetter" />
-    <property name="package" value="code.uiObjects.properties" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="4643695836679547801">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -442,8 +424,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8115675450774717215">
     <property name="name" value="EventHandlerTemplate" />
-    <property name="package" value="code.events" />
     <property name="rootable" value="true" />
+    <property name="virtualPackage" value="code.events" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8115675450775148415">
       <property name="metaClass" value="reference" />
@@ -481,7 +463,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8115675450774717217">
     <property name="name" value="ThisEventParam" />
-    <property name="package" value="code.events" />
+    <property name="virtualPackage" value="code.events" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8115675450774717218">
       <property name="value" value="this" />
@@ -493,7 +475,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8115675450774807738">
     <property name="name" value="EventHandlerParam" />
-    <property name="package" value="code.events" />
+    <property name="virtualPackage" value="code.events" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8115675450774807739">
       <property name="value" value="handler" />
@@ -504,8 +486,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5703963167136660800">
-    <property name="package" value="code.events" />
     <property name="name" value="EventProducerParam" />
+    <property name="virtualPackage" value="code.events" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5703963167136660801">
       <property name="value" value="producer" />
@@ -517,7 +499,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8115675450774806491">
     <property name="name" value="EventHandlerSetup" />
-    <property name="package" value="code.events" />
+    <property name="virtualPackage" value="code.events" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="8115675450774806493">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -549,8 +531,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5263857617434466045">
-    <property name="package" value="code.events.properties" />
     <property name="name" value="EventPropertyGetter" />
+    <property name="virtualPackage" value="code.events.properties" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5263857617434466082">
       <property name="metaClass" value="reference" />
@@ -564,8 +546,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8938819815716165293">
-    <property name="package" value="code.uiObjects.properties" />
     <property name="name" value="PropertyChangeHandlerSetup" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="8938819815716551535">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -581,8 +563,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8938819815716373279">
-    <property name="package" value="code.uiObjects.properties" />
     <property name="name" value="EditableUIPropertyAccessCode" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="4643695836678934010" resolveInfo="UIPropertyAccessCode" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8938819815716373281">
       <property name="metaClass" value="aggregation" />
@@ -599,8 +581,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8938819815716721054">
-    <property name="package" value="code.uiObjects.properties" />
     <property name="name" value="PropertyChangeHandlerParam" />
+    <property name="virtualPackage" value="code.uiObjects.properties" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8938819815716721056">
       <property name="value" value="handler" />
@@ -644,8 +626,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4391079257750389358">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContainerTemplate" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4391079257750550448">
       <property name="metaClass" value="aggregation" />
@@ -691,8 +673,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4391079257750550368">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ItemUIObjectParam" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4391079257750550369">
       <property name="value" value="item" />
@@ -703,8 +685,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4391079257750550393">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContainerItemAdder" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="4391079257750550394">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -719,8 +701,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7655275107718250838">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="UIObjectFactory" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1642651187739182158">
       <property name="metaClass" value="aggregation" />
@@ -729,8 +711,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7655275107718250839">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContextUIObjectParam" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7655275107718250840">
       <property name="value" value="context" />
@@ -741,8 +723,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1642651187739181626">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="Context" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1642651187739181627">
       <property name="metaClass" value="reference" />
@@ -752,8 +734,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1412244996130857074">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="AuxObjectTemplate" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1412244996130857075">
       <property name="metaClass" value="aggregation" />
@@ -772,8 +754,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1412244996130857078">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="AuxObjectFactory" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1412244996130860585">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -781,8 +763,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1412244996131394684">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="Auxillary" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1412244996131394685">
       <property name="metaClass" value="aggregation" />
@@ -792,8 +774,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1412244996131807615">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="AuxObjectAccessOp" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1412244996131808157">
       <property name="metaClass" value="reference" />
@@ -833,8 +815,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7798684637310718056">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContainerItemIterator" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7798684637310718059">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -842,8 +824,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2459884175398146657">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContainerItemRemover" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="2459884175398146679">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -855,8 +837,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2459884175399838883">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="BeforeUIObjectParam" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2459884175399838905">
       <property name="value" value="before" />
@@ -864,8 +846,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2459884175399840230">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContainerItemInserter" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="2459884175399840252">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -881,8 +863,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="413330188016988766">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ContainerItemClearer" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="413330188016988791">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -890,8 +872,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4033850706585269114">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="Geometry" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4033850706585269234">
       <property name="metaClass" value="aggregation" />
@@ -901,8 +883,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4033850706585269152">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="ForceLayoutCode" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="4033850706585269186">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -1137,8 +1119,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6261739386029733370">
-    <property name="package" value="code.uiObjects" />
     <property name="name" value="UIActionCode" />
+    <property name="virtualPackage" value="code.uiObjects" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6261739386029733408">
       <property name="metaClass" value="reference" />

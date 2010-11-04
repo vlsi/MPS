@@ -655,29 +655,8 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <maxImportIndex value="44" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -715,7 +694,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1073389214265">
     <property name="name:0" value="EditorCellModel" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1119645550923">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" />
@@ -764,7 +743,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1073389446423">
     <property name="name:0" value="CellModel_Collection" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1073389446424">
       <property name="sourceCardinality:0" value="0..n" />
@@ -823,7 +802,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1073389577006">
     <property name="name:0" value="CellModel_Constant" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1079353555532:32" resolveInfo="CellModel_AbstractLabel" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1073389577007">
       <property name="name:0" value="text" />
@@ -846,7 +825,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1073389658414">
     <property name="name:0" value="CellModel_Property" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1073389964684">
       <property name="sourceCardinality:0" value="1" />
@@ -865,7 +844,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1073389882823">
     <property name="name:0" value="CellModel_RefNode" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1073389882824">
       <property name="sourceCardinality:0" value="1" />
@@ -884,7 +863,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1073390211982">
     <property name="name:0" value="CellModel_RefNodeList" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1140524381322:32" resolveInfo="CellModel_ListWithRole" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1145360728033">
       <property name="name:0" value="reverse" />
@@ -921,7 +900,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1074767920765">
     <property name="name:0" value="CellModel_ModelAccess" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1079353555532:32" resolveInfo="CellModel_AbstractLabel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176718152741">
       <property name="metaClass:0" value="aggregation" />
@@ -945,7 +924,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1075375595203">
     <property name="name:0" value="CellModel_Error" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1079353555532:32" resolveInfo="CellModel_AbstractLabel" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1075375595204">
       <property name="name:0" value="text" />
@@ -963,7 +942,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1078308402140">
     <property name="name:0" value="CellModel_Custom" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176795024817">
       <property name="metaClass:0" value="aggregation" />
@@ -998,7 +977,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1078939183254">
     <property name="name:0" value="CellModel_Component" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1078939183255">
       <property name="sourceCardinality:0" value="1" />
@@ -1016,7 +995,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1079353555532">
     <property name="name:0" value="CellModel_AbstractLabel" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176889772388">
       <property name="metaClass:0" value="aggregation" />
@@ -1060,7 +1039,7 @@
     <property name="iconPath:0" value="${language_descriptor}\icons\keyMap.png" />
     <property name="rootable:0" value="true" />
     <property name="name:0" value="CellKeyMapDeclaration" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1173470710781">
       <link role="intfc:0" targetNodeId="3.1169194658468:0" />
     </node>
@@ -1192,7 +1171,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1088013125922">
     <property name="name:0" value="CellModel_RefCell" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1088013239202">
       <property name="sourceCardinality:0" value="1" />
@@ -1225,7 +1204,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1088612959204">
     <property name="name:0" value="CellModel_Alternation" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1088613081987">
       <property name="name:0" value="vertical" />
@@ -1289,7 +1268,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1103016434866">
     <property name="name:0" value="CellModel_JComponent" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176475119347">
       <property name="metaClass:0" value="aggregation" />
@@ -1304,14 +1283,14 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1106270491082">
     <property name="name:0" value="CellLayout" />
-    <property name="package:0" value="CellLayout" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1235226217430">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1106270549637">
     <property name="name:0" value="CellLayout_Horizontal" />
-    <property name="package:0" value="CellLayout" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1235227714767">
       <property name="value:0" value="horizontal" />
@@ -1320,7 +1299,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1106270571710">
     <property name="name:0" value="CellLayout_Vertical" />
-    <property name="package:0" value="CellLayout" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1235227746009">
       <property name="value:0" value="vertical" />
@@ -1329,7 +1308,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1106270637846">
     <property name="name:0" value="CellLayout_Flow" />
-    <property name="package:0" value="CellLayout" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1235227699406">
       <property name="value:0" value="flow" />
@@ -1377,7 +1356,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1134379236839">
     <property name="name:0" value="CellModel_AttributedPropertyCell" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1134380148394">
       <property name="value:0" value="attributed property" />
@@ -1390,7 +1369,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136564507907">
     <property name="name:0" value="CellModel_AttributedLinkCell" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1136564532725">
       <property name="value:0" value="attributed link" />
@@ -1403,7 +1382,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136916919141">
     <property name="name:0" value="CellKeyMapItem" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1136916998332">
       <property name="sourceCardinality:0" value="1..n" />
       <property name="role:0" value="keystroke" />
@@ -1441,7 +1420,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136916976737">
     <property name="name:0" value="CellKeyMapKeystroke" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1136923970223">
       <property name="name:0" value="modifiers" />
@@ -1456,7 +1435,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136917155755">
     <property name="name:0" value="CellKeyMap_AbstractFunction" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1161630184985">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" />
@@ -1519,7 +1498,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136917249679">
     <property name="name:0" value="CellKeyMap_IsApplicableFunction" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <link role="extends:0" targetNodeId="1136917155755:32" resolveInfo="CellKeyMap_AbstractFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1137545690489">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" />
@@ -1532,7 +1511,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136917288805">
     <property name="name:0" value="CellKeyMap_ExecuteFunction" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <link role="extends:0" targetNodeId="1136917155755:32" resolveInfo="CellKeyMap_AbstractFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1158958837093">
       <property name="value:0" value="execute block" />
@@ -1541,7 +1520,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1137553248617">
     <property name="name:0" value="CellModel_ConceptProperty" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1137553248621">
       <property name="sourceCardinality:0" value="1" />
@@ -1681,7 +1660,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1139744628335">
     <property name="name:0" value="CellModel_Image" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176899909521">
       <property name="metaClass:0" value="aggregation" />
@@ -1707,7 +1686,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1139848536355">
     <property name="name:0" value="CellModel_WithRole" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1079353555532:32" resolveInfo="CellModel_AbstractLabel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1139849308084">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" />
@@ -1738,7 +1717,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1140524381322">
     <property name="name:0" value="CellModel_ListWithRole" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1140524467909">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" />
@@ -1844,7 +1823,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1141091053936">
     <property name="name:0" value="CellKeyMapCaretPolicy" />
-    <property name="package:0" value="CellKeyMap" />
+    <property name="virtualPackage:0" value="CellKeyMap" />
     <link role="memberDataType:0" targetNodeId="3.1082983041843:0" />
     <link role="defaultMember:0" targetNodeId="1141091054266:32" resolveInfo="ANY_POSITION" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1141091054266">
@@ -1869,7 +1848,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1142886221719">
     <property name="name:0" value="QueryFunction_NodeCondition" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1145652669910">
       <property name="value:0" value="condition" />
@@ -1928,7 +1907,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1149850725784">
     <property name="name:0" value="CellModel_AttributedNodeCell" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1149850757778">
       <property name="value:0" value="attributed node" />
@@ -1941,7 +1920,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1160493135005">
     <property name="name:0" value="CellMenuPart_PropertyValues_GetValues" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1160500373903">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" />
@@ -1985,7 +1964,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1162497113192">
     <property name="name:0" value="CellMenuPart_ReplaceChild_currentChild" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1162497113193">
       <property name="value:0" value="currentChild" />
@@ -1997,7 +1976,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1162498275506">
     <property name="name:0" value="CellMenuPart_ReplaceChild_defaultConceptOfChild" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1162498325651">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545963098:3" />
@@ -2015,7 +1994,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163613035599">
     <property name="name:0" value="CellMenuPart_AbstractGroup_Query" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1163613035600">
       <property name="value:0" value="get objects" />
@@ -2042,7 +2021,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163613131943">
     <property name="name:0" value="CellMenuPart_ReplaceNode_Group_Create" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1163711457917">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" />
@@ -2075,7 +2054,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163613549566">
     <property name="name:0" value="CellMenuPart_AbstractGroup_parameterObject" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1163613549567">
       <property name="value:0" value="parameterObject" />
@@ -2087,7 +2066,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163613822479">
     <property name="name:0" value="CellMenuPart_Abstract_editedNode" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1163613822480">
       <property name="value:0" value="node" />
@@ -2099,7 +2078,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164052439493">
     <property name="name:0" value="CellMenuPart_AbstractGroup_MatchingText" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1164052439494">
       <property name="value:0" value="matching text" />
@@ -2116,7 +2095,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164052588708">
     <property name="name:0" value="CellMenuPart_AbstractGroup_DescriptionText" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1164052588709">
       <property name="value:0" value="description text" />
@@ -2133,7 +2112,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164824717996">
     <property name="name:0" value="CellMenuDescriptor" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1164824815888">
       <property name="metaClass:0" value="aggregation" />
@@ -2148,7 +2127,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164824854750">
     <property name="name:0" value="CellMenuPart_Abstract" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1164824871502">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" />
@@ -2156,7 +2135,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164833692343">
     <property name="name:0" value="CellMenuPart_PropertyValues" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1164833692344">
       <property name="metaClass:0" value="aggregation" />
@@ -2174,7 +2153,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164914519156">
     <property name="name:0" value="CellMenuPart_ReplaceNode_CustomNodeConcept" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1164914727930">
       <property name="sourceCardinality:0" value="1" />
@@ -2188,7 +2167,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164996492011">
     <property name="name:0" value="CellMenuPart_ReferentPrimary" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1199894998166">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -2200,7 +2179,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165004207520">
     <property name="name:0" value="CellMenuPart_ReplaceNode_Group" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1165253627126:32" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1165004529292">
       <property name="metaClass:0" value="aggregation" />
@@ -2221,7 +2200,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165253627126">
     <property name="name:0" value="CellMenuPart_AbstractGroup" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1165253627127">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" />
@@ -2249,7 +2228,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165270418989">
     <property name="name:0" value="CellMenuPart_ReplaceChild_Group" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1165253627126:32" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1165270418991">
       <property name="metaClass:0" value="aggregation" />
@@ -2272,7 +2251,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165270662927">
     <property name="name:0" value="CellMenuPart_ReplaceChild_Group_Query" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1165270662928">
       <property name="value:0" value="get objects" />
@@ -2301,7 +2280,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165270999881">
     <property name="name:0" value="CellMenuPart_ReplaceChild_Group_Create" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1165270999882">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" />
@@ -2338,7 +2317,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165280503630">
     <property name="name:0" value="CellMenuPart_ReplaceChild_CustomChildConcept" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1165280503631">
       <property name="metaClass:0" value="aggregation" />
@@ -2356,7 +2335,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165280856333">
     <property name="name:0" value="CellMenuPart_ReplaceChild_CustomChildConcept_Query" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1165280856334">
       <property name="value:0" value="get child concept" />
@@ -2391,7 +2370,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165339175678">
     <property name="name:0" value="CellMenuPart_ReplaceChild_Item" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1165339639991">
       <property name="name:0" value="matchingText" />
@@ -2416,7 +2395,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165339307433">
     <property name="name:0" value="CellMenuPart_ReplaceChild_Item_Create" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1165339307434">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" />
@@ -2445,7 +2424,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165420413719">
     <property name="name:0" value="CellMenuPart_Generic_Group" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1165253627126:32" resolveInfo="CellMenuPart_AbstractGroup" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1165420413720">
       <property name="metaClass:0" value="aggregation" />
@@ -2466,7 +2445,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165420626554">
     <property name="name:0" value="CellMenuPart_Generic_Group_Handler" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1165420626557">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" />
@@ -2499,7 +2478,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165424453110">
     <property name="name:0" value="CellMenuPart_Generic_Item" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1165424453111">
       <property name="name:0" value="matchingText" />
@@ -2518,7 +2497,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1165424657443">
     <property name="name:0" value="CellMenuPart_Generic_Item_Handler" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1165424657444">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" />
@@ -2541,7 +2520,7 @@
     <property name="iconPath:0" value="${language_descriptor}\icons\menuComponent.png" />
     <property name="rootable:0" value="true" />
     <property name="name:0" value="CellMenuComponent" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1166049232041:32" resolveInfo="AbstractComponent" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1166040865497">
       <property name="metaClass:0" value="aggregation" />
@@ -2567,7 +2546,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1166041033436">
     <property name="name:0" value="CellMenuComponentFeature" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1166054297096">
       <property name="sourceCardinality:0" value="1" />
@@ -2580,7 +2559,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1166041748520">
     <property name="name:0" value="CellMenuComponentFeature_Property" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1166041033436:32" resolveInfo="CellMenuComponentFeature" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1166041884271">
       <property name="sourceCardinality:0" value="1" />
@@ -2591,7 +2570,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1166042131867">
     <property name="name:0" value="CellMenuComponentFeature_Link" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1166041033436:32" resolveInfo="CellMenuComponentFeature" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1166042131869">
       <property name="sourceCardinality:0" value="1" />
@@ -2613,7 +2592,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1166059625718">
     <property name="name:0" value="CellMenuPart_CellMenuComponent" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1166059677893">
       <property name="sourceCardinality:0" value="1" />
@@ -2627,7 +2606,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174088067129">
     <property name="name:0" value="CellMenuPart_ReplaceChildPrimary" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1199895105514">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -2639,7 +2618,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176474535556">
     <property name="name:0" value="QueryFunction_JComponent" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176474588488">
       <property name="value:0" value="component" />
@@ -2685,7 +2664,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176717841777">
     <property name="name:0" value="QueryFunction_ModelAccess_Getter" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176717841778">
       <property name="value:0" value="condition" />
@@ -2710,7 +2689,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176717871254">
     <property name="name:0" value="QueryFunction_ModelAccess_Setter" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176717871255">
       <property name="value:0" value="condition" />
@@ -2739,7 +2718,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176717888428">
     <property name="name:0" value="QueryFunction_ModelAccess_Validator" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176717888429">
       <property name="value:0" value="condition" />
@@ -2813,7 +2792,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176749715029">
     <property name="name:0" value="QueryFunction_CellProvider" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176749779885">
       <property name="value:0" value="cell provider" />
@@ -2840,7 +2819,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176809959526">
     <property name="name:0" value="QueryFunction_Color" />
-    <property name="package:0" value="QueryFunction.Style" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176809959527">
       <property name="value:0" value="color function" />
@@ -2858,7 +2837,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176897764478">
     <property name="name:0" value="QueryFunction_NodeFactory" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176897764479">
       <property name="value:0" value="node factory" />
@@ -2883,7 +2862,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176899348742">
     <property name="name:0" value="QueryFunction_ImagePath" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176899348743">
       <property name="value:0" value="string" />
@@ -2908,7 +2887,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180615838666">
     <property name="name:0" value="CellMenuPart_PropertyPostfixHints" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="1164824854750:32" resolveInfo="CellMenuPart_Abstract" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180615838667">
       <property name="metaClass:0" value="aggregation" />
@@ -2926,7 +2905,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180616057533">
     <property name="name:0" value="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
-    <property name="package:0" value="CellMenu" />
+    <property name="virtualPackage:0" value="CellMenu" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1180616057534">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" />
@@ -2953,7 +2932,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1182191800432">
     <property name="name:0" value="QueryFunction_NodeListFilter" />
-    <property name="package:0" value="QueryFunction" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1182191800433">
       <property name="value:0" value="node list provider" />
@@ -2993,7 +2972,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184319644772">
     <property name="name:0" value="CellModel_NonEmptyProperty" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389658414:32" resolveInfo="CellModel_Property" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1184319817911">
       <property name="value:0" value="{+&lt;{propertyDeclaration}&gt;+}" />
@@ -3010,8 +2989,8 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186402211651">
     <property name="name:0" value="StyleSheet" />
     <property name="rootable:0" value="true" />
-    <property name="package:0" value="Stylesheet" />
     <property name="iconPath:0" value="${language_descriptor}\icons\editorStylesheet.png" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1186402402630">
       <property name="metaClass:0" value="aggregation" />
@@ -3028,8 +3007,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186402373407">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="StyleSheetClass" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1198252369256">
       <property name="metaClass:0" value="aggregation" />
@@ -3047,8 +3026,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186402475462">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="StyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1186402481854">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" />
@@ -3059,8 +3038,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186403694788">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="ColorStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1186403803051">
       <property name="metaClass:0" value="aggregation" />
@@ -3076,8 +3055,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186403751766">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="FontStyleStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220975211821">
       <property name="metaClass:0" value="aggregation" />
@@ -3101,8 +3080,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186404549998">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="ForegroundColorStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215703469851">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3117,8 +3096,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186404574412">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="BackgroundColorStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1186404589776">
       <property name="value:0" value="background-color" />
@@ -3133,8 +3112,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186413799158">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="BracketColorStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215703461771">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3149,8 +3128,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186414536763">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="BooleanStyleSheetItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1223387335081">
       <property name="metaClass:0" value="aggregation" />
@@ -3166,8 +3145,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186414928363">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="SelectableStyleSheetItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215702083875">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3182,8 +3161,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186414949600">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="AutoDeletableStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215702053365">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3198,8 +3177,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186414976055">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="DrawBorderStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1186414988603">
       <property name="value:0" value="draw-border" />
@@ -3214,8 +3193,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186414999511">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="UnderlinedStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1214316229833">
       <property name="name:0" value="underlined" />
@@ -3232,8 +3211,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186415722038">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="FontSizeStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1221064706952">
       <property name="metaClass:0" value="aggregation" />
@@ -3251,8 +3230,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186414860679">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="EditableStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215702059789">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3267,8 +3246,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1187258617779">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="ForegroundNullColorStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215703479915">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3299,8 +3278,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1198252130653">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="StyleSheetClassReference" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1198252276894">
       <property name="sourceCardinality:0" value="1" />
@@ -3309,8 +3288,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1198256887712">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_Indent" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1198256955554">
       <property name="value:0" value="---&gt;" />
@@ -3322,8 +3301,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1198257632966">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_BlockStart" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1198504797640">
       <property name="name:0" value="openBrace" />
@@ -3335,8 +3314,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1198257747917">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_BlockEnd" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1198257819370">
       <property name="value:0" value="block end" />
@@ -3348,8 +3327,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1198489924438">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_Block" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1198508727334">
       <property name="name:0" value="openBrace" />
@@ -3378,7 +3357,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1201265905111">
     <property name="name:0" value="SelectOperation" />
-    <property name="package:0" value="SNode" />
+    <property name="virtualPackage:0" value="SNode" />
     <link role="extends:0" targetNodeId="40.1138411891628:16" resolveInfo="SNodeOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1201266028598">
       <property name="metaClass:0" value="aggregation" />
@@ -3404,16 +3383,16 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1201266127262">
-    <property name="package:0" value="SNode" />
     <property name="name:0" value="SelectParameter" />
+    <property name="virtualPackage:0" value="SNode" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1201266139935">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1201268783309">
-    <property name="package:0" value="SNode" />
     <property name="name:0" value="SelectPositionParameter" />
+    <property name="virtualPackage:0" value="SNode" />
     <link role="extends:0" targetNodeId="1201266127262:32" resolveInfo="SelectLaterParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1201268911190">
       <property name="value:0" value="position=" />
@@ -3425,8 +3404,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1201268793545">
-    <property name="package:0" value="SNode" />
     <property name="name:0" value="SelectPosition" />
+    <property name="virtualPackage:0" value="SNode" />
     <link role="memberDataType:0" targetNodeId="3.1082983041843:0" resolveInfo="string" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1201268793546">
       <property name="internalValue:0" value="before" />
@@ -3438,8 +3417,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1201270864927">
-    <property name="package:0" value="SNode" />
     <property name="name:0" value="CaretPositionParameter" />
+    <property name="virtualPackage:0" value="SNode" />
     <link role="extends:0" targetNodeId="1201266127262:32" resolveInfo="SelectLaterParameter" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1201270907764">
       <property name="metaClass:0" value="aggregation" />
@@ -3453,8 +3432,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214317859050">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="LayoutConstraintStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1214317859051">
       <property name="name:0" value="layoutConstraint" />
@@ -3466,8 +3445,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214320119173">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="SideTransformAnchorTagStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3608226089191997414">
       <property name="metaClass:0" value="aggregation" />
@@ -3485,8 +3464,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214406454886">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="TextBackgroundColorStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215703515607">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3501,8 +3480,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214406466686">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="TextBackgroundColorSelectedStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215703491746">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3517,8 +3496,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1214472762472">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="DefaultCaretPositionStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1214472762473">
       <property name="name:0" value="position" />
@@ -3530,8 +3509,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215007762405">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="FloatStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215007802031">
       <property name="name:0" value="value" />
@@ -3542,8 +3521,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215007883204">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="PaddingLeftStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="extends:0" targetNodeId="1226339938453:32" resolveInfo="PaddingStyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215007893986">
       <property name="value:0" value="padding-left" />
@@ -3558,8 +3537,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215007897487">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="PaddingRightStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="extends:0" targetNodeId="1226339938453:32" resolveInfo="AbstractPaddingStyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215007897488">
       <property name="value:0" value="padding-right" />
@@ -3574,8 +3553,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215085112640">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="FirstPositionAllowedStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215702064900">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3590,8 +3569,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215085197271">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="LastPositionAllowedStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1215702077186">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3621,9 +3600,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216308599511">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="PositionStyleClassItem" />
     <property name="rootable:0" value="false" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1216308761668">
       <property name="name:0" value="position" />
@@ -3635,8 +3614,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216380990741">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_TransactionalProperty" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1079353555532:32" resolveInfo="CellModel_AbstractLabel" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1232439938817">
       <property name="name:0" value="runInCommand" />
@@ -3668,8 +3647,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216381054717">
-    <property name="package:0" value="QueryFunction" />
     <property name="name:0" value="TransactionalPropertyHandler" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1216381097005">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -3693,8 +3672,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216381117100">
-    <property name="package:0" value="QueryFunction" />
     <property name="name:0" value="TransactionPropertyHandler_oldValue" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1216381136570">
       <property name="value:0" value="oldValue" />
@@ -3702,8 +3681,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216381148013">
-    <property name="package:0" value="QueryFunction" />
     <property name="name:0" value="TransactionPropertyHandler_newValue" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1216381148014">
       <property name="value:0" value="newValue" />
@@ -3714,8 +3693,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216560327200">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="PositionChildrenStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1216560518566">
       <property name="name:0" value="position" />
@@ -3728,8 +3707,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216672142186">
-    <property name="package:0" value="CellLayout" />
     <property name="name:0" value="CellLayout_Indent_Old" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1235227729696">
       <property name="value:0" value="indent_old" />
@@ -3737,8 +3716,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1219226236603">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="DrawBracketsStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1219226236604">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -3753,8 +3732,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1219418625346">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="IStyleContainer" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1219418656006">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="styleItem" />
@@ -3763,8 +3742,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220974635399">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="QueryFunction_FontStyle" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1220974841934">
       <property name="value:0" value="font style function" />
@@ -3776,8 +3755,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221057094638">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="QueryFunction_Integer" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1221057195672">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -3789,8 +3768,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221059528506">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="QueryFunction_StyleParameter" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1221211298019">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
@@ -3815,8 +3794,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221062700015">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="QueryFunction_Underlined" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1221062795610">
       <property name="value:0" value="underlined function" />
@@ -3828,8 +3807,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1223386653097">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="StrikeOutStyleSheet" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1223386894103">
       <property name="value:0" value="strike-out" />
@@ -3844,8 +3823,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1223387125302">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="QueryFunction_Boolean" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1223387147820">
       <property name="value:0" value="boolean function" />
@@ -3857,12 +3836,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1225456097782">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="IQueryFunction_Color" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225456267680">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="RGBColor" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1225456281899">
       <link role="intfc:0" targetNodeId="1225456097782:32" resolveInfo="IQueryFunction_Color" />
@@ -3891,8 +3870,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225900081164">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_ReadOnlyModelAccessor" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1079353555532:32" resolveInfo="CellModel_AbstractLabel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225903603081">
       <property name="value:0" value="read only model access" />
@@ -3910,8 +3889,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1226339751946">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="PaddingTopStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="extends:0" targetNodeId="1226339938453:32" resolveInfo="AbstractPaddingStyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1226339797666">
       <property name="value:0" value="padding-top" />
@@ -3926,8 +3905,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1226339813308">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="PaddingBottomStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="extends:0" targetNodeId="1226339938453:32" resolveInfo="AbstractPaddingStyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1226339845434">
       <property name="value:0" value="padding-bottom" />
@@ -3942,8 +3921,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1226339938453">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="AbstractPaddingStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="extends:0" targetNodeId="1215007762405:32" resolveInfo="FloatStyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1226503604644">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
@@ -3954,8 +3933,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1226504633752">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="_Enum_Measure" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="memberDataType:0" targetNodeId="3.1082983041843:0" resolveInfo="string" />
     <link role="defaultMember:0" targetNodeId="1226504706052:32" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1226504633753">
@@ -3968,8 +3947,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227861515039">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="NavigatableReferenceStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227861587090">
       <property name="metaClass:0" value="reference" />
@@ -3995,8 +3974,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233758997495">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="PunctuationLeftStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1233759068045">
       <property name="value:0" value="punctuation-left" />
@@ -4011,8 +3990,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233759184865">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="PunctuationRightStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1233759225808">
       <property name="value:0" value="punctuation-right" />
@@ -4027,8 +4006,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233823429331">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="HorizontalGapStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
     <link role="extends:0" targetNodeId="1226339938453:32" resolveInfo="AbstractPaddingStyleClassItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1233823521393">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -4043,8 +4022,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1235728439575">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="BaseLineCell" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1235728439576">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -4059,8 +4038,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1235999440492">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="HorizontalAlign" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1235999512654">
       <property name="value:0" value="horizontal-align" />
@@ -4096,8 +4075,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1236262245656">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="MatchingLabelStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1238091709220">
       <property name="name:0" value="labelName" />
@@ -4126,8 +4105,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1236263696991">
-    <property name="package:0" value="QueryFunction" />
     <property name="name:0" value="QueryFunction_MatchingNode" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1236263780519">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -4139,8 +4118,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1236443640684">
-    <property name="package:0" value="QueryFunction" />
     <property name="name:0" value="QueryFunction_String" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1236443640685">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -4152,8 +4131,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1237303669825">
-    <property name="package:0" value="CellLayout" />
     <property name="name:0" value="CellLayout_Indent" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1237303669826">
       <property name="value:0" value="indent" />
@@ -4161,8 +4140,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1237307900041">
-    <property name="package:0" value="Stylesheet.IndentLayout" />
     <property name="name:0" value="IndentLayoutIndentStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.IndentLayout" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1237308006695">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -4177,8 +4156,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1237308012275">
-    <property name="package:0" value="Stylesheet.IndentLayout" />
     <property name="name:0" value="IndentLayoutNewLineStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.IndentLayout" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1237308012276">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -4193,8 +4172,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1237375020029">
-    <property name="package:0" value="Stylesheet.IndentLayout" />
     <property name="name:0" value="IndentLayoutNewLineChildrenStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.IndentLayout" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1237374854247">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -4209,8 +4188,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1237385578942">
-    <property name="package:0" value="Stylesheet.IndentLayout" />
     <property name="name:0" value="IndentLayoutOnNewLineStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.IndentLayout" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1237385578943">
       <link role="conceptLinkDeclaration:0" targetNodeId="1215701938122:32" resolveInfo="attributeConstant" />
@@ -4225,13 +4204,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration:0" id="1239805001815">
-    <property name="package:0" value="Stylesheet.Paddings" />
     <property name="name:0" value="_FloatOrInteger_String" />
     <property name="constraint:0" value="-?[0-9]+\\.?[0-9]*" />
+    <property name="virtualPackage:0" value="Stylesheet.Paddings" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239814640496">
-    <property name="package:0" value="CellLayout" />
     <property name="name:0" value="CellLayout_VerticalGrid" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270571710:32" resolveInfo="CellLayout_Vertical" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1239814668280">
       <property name="value:0" value="vertical grid" />
@@ -4239,8 +4218,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1240253180846">
-    <property name="package:0" value="Stylesheet.IndentLayout" />
     <property name="name:0" value="IndentLayoutNoWrapClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet.IndentLayout" />
     <link role="extends:0" targetNodeId="1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1240253297498">
       <property name="value:0" value="indent-layout-no-wrap" />
@@ -4255,8 +4234,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="625126330682908270">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_ReferencePresentation" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="625126330682991093">
       <property name="value:0" value="ref. presentation" />
@@ -4264,8 +4243,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7667276221847570194">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="ParametersInformationStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8863456892852949148">
       <property name="metaClass:0" value="reference" />
@@ -4279,9 +4258,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7667276221847612622">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="ParametersInformationQuery" />
     <property name="rootable:0" value="true" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4203201205843994215">
       <property name="metaClass:0" value="reference" />
@@ -4326,8 +4305,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7667276221847612943">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="QueryFunction_ParametersList" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="671290755173763930">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4339,8 +4318,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="671290755174094686">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="QueryFunction_MethodPresentation" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="671290755174094687">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4365,7 +4344,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="671290755174094691">
     <property name="name:0" value="ConceptFunctionParameter_parameterObject" />
-    <property name="package:0" value="MethodParameters" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="671290755174094694">
       <property name="value:0" value="parameterObject" />
@@ -4379,8 +4358,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6419604448124516209">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="QueryFunction_IsMethodCurrent" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="6419604448124516210">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4400,8 +4379,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4526149749187797167">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="ConceptFunctionParameter_StyledText" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4526149749187797170">
       <property name="value:0" value="styledText" />
@@ -4416,8 +4395,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="280151408461567367">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="AppendTextOperation" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4531786690998636238:32" resolveInfo="AbstractOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="280151408461603512">
       <property name="value:0" value="append" />
@@ -4433,8 +4412,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="280151408461909164">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="SetBoldOperation" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4531786690998636238:32" resolveInfo="AbstractOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="280151408461967237">
       <property name="value:0" value="setBold" />
@@ -4450,8 +4429,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4531786690998636238">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="AbstractStyledTextOperation" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptLinkDeclaration:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration:0" id="4531786690998812992">
       <property name="name:0" value="operationArgumentType" />
@@ -4477,8 +4456,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3903367331818357915">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="StyledTextType" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1068431790189:3" resolveInfo="Type" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6552123473823027984">
       <property name="value:0" value="styled text" />
@@ -4486,8 +4465,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7620205565664569937">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="DefaultBaseLine" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7620205565664606477">
       <property name="name:0" value="baseline" />
@@ -4522,8 +4501,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1886960078078641793">
-    <property name="package:0" value="CellLayout" />
     <property name="name:0" value="CellLayout_Superscript" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1886960078078641794">
       <property name="value:0" value="superscript" />
@@ -4547,8 +4526,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8255250703325731016">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="ScriptKindClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8255250703325731017">
       <property name="value:0" value="script-kind" />
@@ -4560,8 +4539,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4203201205844553978">
-    <property name="package:0" value="MethodParameters" />
     <property name="name:0" value="ConceptFunctionParameter_selectedNode" />
+    <property name="virtualPackage:0" value="MethodParameters" />
     <link role="extends:0" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4203201205844628834">
       <property name="value:0" value="node" />
@@ -4576,8 +4555,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5949640294884234625">
-    <property name="package:0" value="CellLayout" />
     <property name="name:0" value="CellLayout_Table" />
+    <property name="virtualPackage:0" value="CellLayout" />
     <link role="extends:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5949640294884269781">
       <property name="value:0" value="table" />
@@ -4597,8 +4576,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6820251943131810950">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="TableComponentStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="6820251943131810955">
       <property name="name:0" value="tableComponent" />
@@ -4610,8 +4589,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8313721352726366579">
-    <property name="package:0" value="CellModel" />
     <property name="name:0" value="CellModel_Empty" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8313721352726450629">
       <property name="value:0" value="empty" />
@@ -4619,8 +4598,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7597241200646296617">
-    <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="NavigatableNodeStyleClassItem" />
+    <property name="virtualPackage:0" value="Stylesheet" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7597241200646296626">
       <property name="value:0" value="navigatable-node" />
@@ -4634,8 +4613,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7597241200646296619">
-    <property name="package:0" value="QueryFunction.Style" />
     <property name="name:0" value="QueryFunction_SNode" />
+    <property name="virtualPackage:0" value="QueryFunction.Style" />
     <link role="extends:0" targetNodeId="1221059528506:32" resolveInfo="QueryFunction_StyleParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="7597241200646296622">
       <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -4648,7 +4627,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3696012239575138270">
     <property name="name:0" value="CellModel_URL" />
-    <property name="package:0" value="CellModel" />
+    <property name="virtualPackage:0" value="CellModel" />
     <link role="extends:0" targetNodeId="1139848536355:32" resolveInfo="CellModel_WithRole" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3696012239575138271">
       <property name="sourceCardinality:0" value="1" />
@@ -4674,8 +4653,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="709996738298806197">
-    <property name="package:0" value="QueryFunction" />
     <property name="name:0" value="QueryFunction_SeparatorText" />
+    <property name="virtualPackage:0" value="QueryFunction" />
     <link role="extends:0" targetNodeId="4.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="709996738298806202">
       <property name="value:0" value="separator text" />

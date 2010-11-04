@@ -6,25 +6,11 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
+  <languageAspect modelUID="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" version="-1" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
@@ -32,7 +18,7 @@
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059665">
     <property name="name:2" value="reduce_IsEmptyExpression" />
-    <property name="package:2" value="string.expression" />
+    <property name="virtualPackage:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271369338:3" resolveInfo="IsEmptyOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059666">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -59,7 +45,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059676">
     <property name="name:2" value="reduce_IsNotEmptyExpression" />
-    <property name="package:2" value="string.expression" />
+    <property name="virtualPackage:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271408483:3" resolveInfo="IsNotEmptyOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059677">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -86,7 +72,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059687">
     <property name="name:2" value="reduce_NPEEqualsExpression" />
-    <property name="package:2" value="string" />
+    <property name="virtualPackage:2" value="string" />
     <link role="applicableConcept:2" targetNodeId="4.1225271283259:3" resolveInfo="NPEEqualsExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression:1" id="1326302914272776608">
       <property name="makeUnique:1" value="true" />
@@ -178,7 +164,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059706">
     <property name="name:2" value="reduce_NPENotEqualsExpression" />
-    <property name="package:2" value="string" />
+    <property name="virtualPackage:2" value="string" />
     <link role="applicableConcept:2" targetNodeId="4.1225271221393:3" resolveInfo="NPENotEqualsExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression:1" id="1326302914272778850">
       <property name="makeUnique:1" value="true" />
@@ -279,7 +265,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059745">
     <property name="name:2" value="reduce_SubstringExpression" />
-    <property name="package:2" value="string.expression" />
+    <property name="virtualPackage:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271484915:3" resolveInfo="SubstringExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059746">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -362,7 +348,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059783">
     <property name="name:2" value="reduce_TrimOperation_Both" />
-    <property name="package:2" value="string.expression" />
+    <property name="virtualPackage:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271546410:3" resolveInfo="TrimOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059784">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -389,7 +375,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059794">
     <property name="name:2" value="reduce_TrimOperation_Leading" />
-    <property name="package:2" value="string.expression" />
+    <property name="virtualPackage:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271546410:3" resolveInfo="TrimOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059795">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -419,7 +405,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059806">
     <property name="name:2" value="reduce_TrimOperation_Trainling" />
-    <property name="package:2" value="string.expression" />
+    <property name="virtualPackage:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271546410:3" resolveInfo="TrimOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059807">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />

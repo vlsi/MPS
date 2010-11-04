@@ -6,41 +6,20 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)" version="-1" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174482859926">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174482753837:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174482863553">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1174482866914">
@@ -56,7 +35,6 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237800051122" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174483140444">
     <link role="conceptDeclaration:32" targetNodeId="1.1174483125581:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174662313117">
@@ -149,7 +127,7 @@
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4759120547781297432">
-                        <link role="baseMethodDeclaration:16" targetNodeId="2v.4759120547781297301" resolveInfo="isValid" />
+                        <link role="baseMethodDeclaration:16" targetNodeId="7.4759120547781297301" resolveInfo="isValid" />
                       </node>
                     </node>
                     <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4759120547781297436">
@@ -165,7 +143,7 @@
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4759120547781297443">
-                            <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877429451" resolveInfo="toString" />
+                            <link role="baseMethodDeclaration:16" targetNodeId="7.1213877429451" resolveInfo="toString" />
                           </node>
                         </node>
                       </node>
@@ -186,7 +164,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174491183609">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174491169200:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174491186783">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -514,7 +492,7 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7048923897762548606">
-                      <link role="baseMethodDeclaration:16" targetNodeId="2v.4759120547781297301" resolveInfo="isValid" />
+                      <link role="baseMethodDeclaration:16" targetNodeId="7.4759120547781297301" resolveInfo="isValid" />
                     </node>
                   </node>
                   <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7048923897762548607">
@@ -530,7 +508,7 @@
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7048923897762548614">
-                          <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877429451" resolveInfo="toString" />
+                          <link role="baseMethodDeclaration:16" targetNodeId="7.1213877429451" resolveInfo="toString" />
                         </node>
                       </node>
                     </node>
@@ -550,7 +528,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174512458522">
-    <property name="package:32" value="Statements" />
+    <property name="virtualPackage:32" value="Statements" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174512414484:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174512460884">
       <property name="vertical:32" value="true" />
@@ -680,7 +658,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174555873257">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174555732504:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174555875696">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1174555877167">
@@ -724,7 +702,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174556839424">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174556813606:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174556841426">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -738,7 +716,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174557641733">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174554211468:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174557643563">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1174557644675">
@@ -764,7 +742,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174557669695">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174554238051:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174557673745">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1174557673746">
@@ -800,7 +778,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174558014576">
-    <property name="package:32" value="SymbolClassParts" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174557878319:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174558016484">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1174558018736">
@@ -816,7 +794,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174558321839">
-    <property name="package:32" value="SymbolClassParts" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174558301835:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174558324060">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1174558326265">
@@ -855,7 +833,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174558830461">
-    <property name="package:32" value="SymbolClassParts" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174558792178:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174558833260">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1174558836402">
@@ -898,7 +876,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174564100658">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174564062919:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174564107521">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1039,7 +1017,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174565050899">
-    <property name="package:32" value="Expressions" />
+    <property name="virtualPackage:32" value="Expressions" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174565027678:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174565052932">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1174565057138">
@@ -1064,7 +1042,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174656055179">
-    <property name="package:32" value="Expressions" />
+    <property name="virtualPackage:32" value="Expressions" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174655989549:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174656564840">
       <property name="vertical:32" value="true" />
@@ -1170,7 +1148,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174662637544">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174662605354:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174662639718">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1193,7 +1171,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174900297678">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174485235885:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174900298799">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1206,7 +1184,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956793">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956794" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956795">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1225,7 +1203,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956783">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956782" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956787">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1257,7 +1235,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174900468388">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174485167097:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174900470765">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1174900472658">
@@ -1281,7 +1259,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174900565443">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174484562151:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174900567679">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1174900570494">
@@ -1297,7 +1275,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1174900929182">
     <property name="name:32" value="BinaryRegexp_Left_Actions" />
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174485167097:0" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1174900949527">
       <property name="actionId:32" value="delete_action_id" />
@@ -1322,7 +1300,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1174900996306">
     <property name="name:32" value="BinaryRegexp_Right_Actions" />
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174485167097:0" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1174901008848">
       <property name="actionId:32" value="delete_action_id" />
@@ -1347,7 +1325,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1174901330112">
     <property name="name:32" value="UnaryRegexp_Regexp_actions" />
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174485235885:0" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1174901340613">
       <property name="actionId:32" value="delete_action_id" />
@@ -1500,7 +1478,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1174902509875">
     <property name="name:32" value="ParensRegexp_Actions" />
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174491169200:0" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1174902520111">
       <property name="actionId:32" value="delete_action_id" />
@@ -1652,7 +1630,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174904190236">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174904166999:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174904192254">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1665,7 +1643,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956841">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956842" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956843">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1684,7 +1662,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956835">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956836" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956837">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1724,7 +1702,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174904496552">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174904442594:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174904497428">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1737,7 +1715,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956803">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956804" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956805">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1756,7 +1734,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956809">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956810" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956811">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1805,7 +1783,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174904641130">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174904605806:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174904641994">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1818,7 +1796,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956825">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956826" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956827">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1837,7 +1815,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956819">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956820" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956821">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956744" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956744" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -1889,7 +1867,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174906576476">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174906544517:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174906578712">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -1985,7 +1963,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1174908577381">
     <property name="name:32" value="LookRegexp_Actions" />
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174906544517:0" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1174908585725">
       <property name="actionId:32" value="delete_action_id" />
@@ -2009,7 +1987,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174909128877">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174909099093:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174909137457">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -2039,7 +2017,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1175154899447">
-    <property name="package:32" value="Statements" />
+    <property name="virtualPackage:32" value="Statements" />
     <link role="conceptDeclaration:32" targetNodeId="1.1175154849582:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1175154901464">
       <property name="vertical:32" value="true" />
@@ -2092,7 +2070,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1175161285381">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1175161264766:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1175161288102">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -2106,7 +2084,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1175161321516">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1175161300324:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1175161323378">
       <link role="keyMap:32" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
@@ -2120,7 +2098,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1175164437386">
-    <property name="package:32" value="Expressions" />
+    <property name="virtualPackage:32" value="Expressions" />
     <link role="conceptDeclaration:32" targetNodeId="1.1175164405556:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1175164439982">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1175164450235">
@@ -2137,7 +2115,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1175169033043">
-    <property name="package:32" value="Statements" />
+    <property name="virtualPackage:32" value="Statements" />
     <link role="conceptDeclaration:32" targetNodeId="1.1175169009571:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1175169036701">
       <property name="vertical:32" value="true" />
@@ -2190,7 +2168,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1179357325994">
-    <property name="package:32" value="Expressions" />
+    <property name="virtualPackage:32" value="Expressions" />
     <link role="conceptDeclaration:32" targetNodeId="1.1179357154354:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1179357344403">
       <property name="vertical:32" value="false" />
@@ -2208,14 +2186,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1179358159391">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174482743037:0" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Error:32" id="1179358161315">
       <property name="text:32" value="regexp" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1203415591718">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1203415418648:0" resolveInfo="UnicodeCharacterRegexp" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1203415597463">
       <property name="vertical:32" value="false" />
@@ -2236,7 +2214,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1220022981815">
-    <property name="package:32" value="SymbolClassParts" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1220021842985:0" resolveInfo="IntersectionSymbolClassPart" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1220022999427">
       <property name="vertical:32" value="false" />
@@ -2261,8 +2239,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1220362181460">
-    <property name="package:32" value="SymbolClassParts" />
     <property name="name:32" value="IntersectionSymbolClassPart_Left_Actions" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="applicableConcept:32" targetNodeId="1.1220021842985:0" resolveInfo="IntersectionSymbolClassPart" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1220362243578">
       <property name="actionId:32" value="delete_action_id" />
@@ -2286,8 +2264,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1220362394300">
-    <property name="package:32" value="SymbolClassParts" />
     <property name="name:32" value="IntersectionSymbolClassPart_Right_Actions" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="applicableConcept:32" targetNodeId="1.1220021842985:0" resolveInfo="IntersectionSymbolClassPart" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1220362425438">
       <property name="actionId:32" value="delete_action_id" />
@@ -2311,7 +2289,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1222256693689">
-    <property name="package:32" value="Operations" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="conceptDeclaration:32" targetNodeId="1.1222256539755:0" resolveInfo="SplitOperation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1222256741499">
       <property name="vertical:32" value="false" />
@@ -2326,7 +2304,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1222261087917">
-    <property name="package:32" value="Operations" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="conceptDeclaration:32" targetNodeId="1.1222260556146:0" resolveInfo="ReplaceWithRegexpOperation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1222261089731">
       <property name="vertical:32" value="true" />
@@ -2364,7 +2342,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1222261540424">
-    <property name="package:32" value="Operations" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="conceptDeclaration:32" targetNodeId="1.1222260469397:0" resolveInfo="MatchRegexpOperation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1222261592444">
       <property name="vertical:32" value="false" />
@@ -2410,7 +2388,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration:32" id="3050481019131644558">
     <property name="name:32" value="RegexpSequenceByEnter" />
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174482743037:0" resolveInfo="Regexp" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem:32" id="3050481019131644559">
       <property name="caretPolicy:32" value="caret_at_last_position" />
@@ -2546,7 +2524,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1353467374623956844">
-    <property name="package:32" value="Regexps" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="conceptDeclaration:32" targetNodeId="1.1174482769792:0" resolveInfo="OrRegexp" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1353467374623956846">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1353467374623956855">
@@ -2557,7 +2535,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956897">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956896" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956901">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956858" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956858" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -2592,7 +2570,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1353467374623956905">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1353467374623956906" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1353467374623956907">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1353467374623956858" resolveInfo="inParentheses" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="7.1353467374623956858" resolveInfo="inParentheses" />
                 </node>
               </node>
             </node>
@@ -2606,7 +2584,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6129327962763255291">
-    <property name="package:32" value="Expressions" />
+    <property name="virtualPackage:32" value="Expressions" />
     <link role="conceptDeclaration:32" targetNodeId="1.6129327962763158517:0" resolveInfo="FindMatchExpression" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6129327962763255293">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6129327962763255296">
@@ -2624,7 +2602,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="6129327962764883162">
     <property name="name:32" value="IntervalSymbolClassPart_removeRight" />
-    <property name="package:32" value="SymbolClassParts" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="applicableConcept:32" targetNodeId="1.1174558301835:0" resolveInfo="IntervalSymbolClassPart" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="6129327962764883163">
       <property name="actionId:32" value="delete_action_id" />
@@ -2667,8 +2645,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="6129327962765122924">
-    <property name="package:32" value="SymbolClassParts" />
     <property name="name:32" value="IntervalSymbolClassPart_removeLeft" />
+    <property name="virtualPackage:32" value="SymbolClassParts" />
     <link role="applicableConcept:32" targetNodeId="1.1174558301835:0" resolveInfo="IntervalSymbolClassPart" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="6129327962765122925">
       <property name="actionId:32" value="delete_action_id" />
@@ -2933,8 +2911,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="3840684028956596921">
-    <property name="package:32" value="Regexps" />
     <property name="name:32" value="MatchParensRegexp_removeName" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174564062919:0" resolveInfo="MatchParensRegexp" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="3840684028956596922">
       <property name="actionId:32" value="delete_action_id" />
@@ -2953,8 +2931,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="4759120547780522710">
-    <property name="package:32" value="Regexps" />
     <property name="name:32" value="NegativeSymbolClassRegexp_toPositive" />
+    <property name="virtualPackage:32" value="Regexps" />
     <link role="applicableConcept:32" targetNodeId="1.1174554238051:0" resolveInfo="NegativeSymbolClassRegexp" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="4759120547780522711">
       <property name="actionId:32" value="delete_action_id" />
@@ -2974,7 +2952,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3796137614137159229">
-    <property name="package:32" value="Operations" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="conceptDeclaration:32" targetNodeId="1.3796137614137086346:0" resolveInfo="InlineReplaceRegexpExpression" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3796137614137159234">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3796137614137159235">
@@ -3244,7 +3222,7 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3796137614137203337">
-                      <link role="baseMethodDeclaration:16" targetNodeId="2v.4759120547781297301" resolveInfo="isValid" />
+                      <link role="baseMethodDeclaration:16" targetNodeId="7.4759120547781297301" resolveInfo="isValid" />
                     </node>
                   </node>
                   <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3796137614137203338">
@@ -3260,7 +3238,7 @@
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3796137614137203345">
-                          <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877429451" resolveInfo="toString" />
+                          <link role="baseMethodDeclaration:16" targetNodeId="7.1213877429451" resolveInfo="toString" />
                         </node>
                       </node>
                     </node>
@@ -3296,7 +3274,7 @@
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4161170987575926964">
                       <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4161170987575926965" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4161170987575926966">
-                        <link role="baseMethodDeclaration:16" targetNodeId="2v.3796137614137207007" resolveInfo="getReplacementString" />
+                        <link role="baseMethodDeclaration:16" targetNodeId="7.3796137614137207007" resolveInfo="getReplacementString" />
                       </node>
                     </node>
                   </node>
@@ -3312,7 +3290,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3796137614137558169">
-    <property name="package:32" value="Replaces" />
+    <property name="virtualPackage:32" value="Replaces" />
     <link role="conceptDeclaration:32" targetNodeId="1.3796137614137538894:0" resolveInfo="MatchVariableReferenceReplacement" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3796137614137558171">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3796137614137558172">
@@ -3341,7 +3319,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3796137614137565245">
-    <property name="package:32" value="Replaces" />
+    <property name="virtualPackage:32" value="Replaces" />
     <link role="conceptDeclaration:32" targetNodeId="1.3796137614137538892:0" resolveInfo="LiteralReplacement" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3796137614137565247">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3796137614137565248">
@@ -3357,8 +3335,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1767845709140465500">
-    <property name="package:32" value="Operations" />
     <property name="name:32" value="ReplaceRegexpOperation_removeI" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="applicableConcept:32" targetNodeId="1.3796137614137086346:0" resolveInfo="ReplaceRegexpOperation" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1767845709140471608">
       <property name="actionId:32" value="delete_action_id" />
@@ -3432,8 +3410,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1767845709140471611">
-    <property name="package:32" value="Operations" />
     <property name="name:32" value="ReplaceRegexpOperation_removeM" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="applicableConcept:32" targetNodeId="1.3796137614137086346:0" resolveInfo="ReplaceRegexpOperation" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1767845709140471612">
       <property name="actionId:32" value="delete_action_id" />
@@ -3507,8 +3485,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1767845709140471615">
-    <property name="package:32" value="Operations" />
     <property name="name:32" value="ReplaceRegexpOperation_removeS" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="applicableConcept:32" targetNodeId="1.3796137614137086346:0" resolveInfo="ReplaceRegexpOperation" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1767845709140471616">
       <property name="actionId:32" value="delete_action_id" />
@@ -3582,8 +3560,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1767845709140471619">
-    <property name="package:32" value="Operations" />
     <property name="name:32" value="ReplaceRegexpOperation_removeG" />
+    <property name="virtualPackage:32" value="Operations" />
     <link role="applicableConcept:32" targetNodeId="1.3796137614137086346:0" resolveInfo="ReplaceRegexpOperation" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1767845709140471620">
       <property name="actionId:32" value="delete_action_id" />

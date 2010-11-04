@@ -7,18 +7,11 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" />
+  <languageAspect modelUID="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" version="-1" />
   <maxImportIndex value="17" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
@@ -1828,8 +1821,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="2482864227446593900">
-    <property name="package" value="widgets" />
     <property name="name" value="JTabbedPane" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.6424935405034500197" resolveInfo="TabbedPane" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="2482864227446630461">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2482864227446630462">
@@ -1873,8 +1866,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="6399754879758206694">
-    <property name="package" value="widgets" />
     <property name="name" value="JTree" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.6399754879758206688" resolveInfo="Tree" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="6399754879758257552">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6399754879758257553">
@@ -1917,8 +1910,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="6399754879758253323">
-    <property name="package" value="widgets" />
     <property name="name" value="TreeNode" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.7936848552255359513" resolveInfo="AbstractTreeNode" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="6399754879758253327">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6399754879758253328">
@@ -2013,8 +2006,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="7383889057843473725">
-    <property name="package" value="widgets" />
     <property name="name" value="JTable" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.3616339824038852574" resolveInfo="Table" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="7383889057843475346">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7383889057843475347">
@@ -2207,8 +2200,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="7383889057843490669">
-    <property name="package" value="widgets" />
     <property name="name" value="Vector" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.3616339824038886165" resolveInfo="TableRow" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="7383889057843490673">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7383889057843490674">
@@ -2270,8 +2263,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="7383889057843526540">
-    <property name="package" value="widgets" />
     <property name="name" value="TableColumn" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.3616339824038886161" resolveInfo="TableColumn" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="7383889057843526730">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7383889057843526731">
@@ -2336,8 +2329,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="513490887686307657">
-    <property name="package" value="widgets" />
     <property name="name" value="JXSingleTaskPaneContainer" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.513490887686296700" resolveInfo="StackPanel" />
     <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5220699420101859969">
       <link role="classifier" targetNodeId="13.2204726755035753584" resolveInfo="JXSingleTaskPaneContainer" />
@@ -2357,8 +2350,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="513490887686345260">
-    <property name="package" value="widgets" />
     <property name="name" value="JXSingleTaskPane" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.513490887686296702" resolveInfo="StackItem" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="513490887686346109">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="513490887686346110">

@@ -11,63 +11,17 @@
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
+  <languageAspect modelUID="r:f614deea-8cff-4e4a-82d2-ec479420b091(jetbrains.mps.build.custommps.plugin)" version="-1" />
   <maxImportIndex value="46" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
@@ -105,8 +59,8 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1241450087965">
     <property name="name:23" value="GenerateCustomMPSBuildForProjectAction" />
     <property name="caption:23" value="Custom MPS Build Script" />
-    <property name="package:23" value="wizard" />
     <property name="outsideCommandExecution:23" value="true" />
+    <property name="virtualPackage:23" value="wizard" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1241450087966">
       <property name="name:23" value="mpsProject" />
       <link role="key:23" targetNodeId="2.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
@@ -219,7 +173,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1241450126378">
     <property name="name:3" value="GenerateCustomMpsBuildWizard" />
-    <property name="package:3" value="wizard" />
+    <property name="virtualPackage:3" value="wizard" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1241450230126">
       <property name="name:3" value="initWizard" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1241450230563" />
@@ -305,8 +259,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1241450650307">
-    <property name="package:3" value="wizard" />
     <property name="name:3" value="BuildToolsStep" />
+    <property name="virtualPackage:3" value="wizard" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1241453753127">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1241453753128" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1241453753129" />
@@ -839,7 +793,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1241455730164">
     <property name="name:23" value="ProjectAddition" />
-    <property name="package:23" value="wizard" />
+    <property name="virtualPackage:23" value="wizard" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1241455730165">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1241455730167">
         <link role="action:23" targetNodeId="1241450087965" resolveInfo="GenerateCustomMPSBuildForProjectAction" />
@@ -850,8 +804,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1241460295003">
-    <property name="package:3" value="wizard" />
     <property name="name:3" value="CustomMPSBuildGenerator" />
+    <property name="virtualPackage:3" value="wizard" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1241462303819">
       <property name="name:3" value="createLibraryFolder" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1241462303821" />
@@ -1674,7 +1628,7 @@
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="1325286122617526157">
     <property name="name:0" value="DefaultCustomMpsApplication" />
     <property name="caption:0" value="Custom MPS Build Script" />
-    <property name="package:0" value="runner" />
+    <property name="virtualPackage:0" value="runner" />
     <link role="stateTypeParameter:0" targetNodeId="35.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
     <link role="configType:0" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <link role="conceptDeclaration:0" targetNodeId="43.1202916958754:7" resolveInfo="MPSLayout" />
@@ -2312,8 +2266,8 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618317652">
-    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromConfiguration" />
+    <property name="virtualPackage:23" value="runner" />
     <link role="rcType:23" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618317653">
       <link role="concept:23" targetNodeId="43.1204115658627:7" resolveInfo="Configuration" />
@@ -2481,8 +2435,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618317720">
-    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromMPSLayout" />
+    <property name="virtualPackage:23" value="runner" />
     <link role="rcType:23" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618317721">
       <link role="concept:23" targetNodeId="43.1202916958754:7" resolveInfo="MPSLayout" />
@@ -2608,8 +2562,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="1325286122618391251">
-    <property name="package:23" value="runner" />
     <property name="name:23" value="DefaultCustomMpsLanguageConfigurationFromMPSBuild" />
+    <property name="virtualPackage:23" value="runner" />
     <link role="rcType:23" targetNodeId="6.7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="1325286122618391252">
       <link role="concept:23" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />

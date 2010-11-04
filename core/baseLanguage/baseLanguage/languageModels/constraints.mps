@@ -100,7 +100,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104836770">
-    <property name="package:8" value="method.static" />
+    <property name="virtualPackage:8" value="method.static" />
     <link role="concept:8" targetNodeId="1.1081236700937:3" resolveInfo="StaticMethodCall" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104837311">
       <link role="applicableLink:8" targetNodeId="1.1081236769987:3" />
@@ -154,7 +154,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104840453">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1213104840454">
       <link role="applicableProperty:8" targetNodeId="2.1169194664001:0" resolveInfo="name" />
@@ -228,7 +228,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104841381">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1212685548494:3" resolveInfo="ClassCreator" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104844199">
       <link role="applicableLink:8" targetNodeId="1.1212686240295:3" />
@@ -305,7 +305,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104844541">
-    <property name="package:8" value="type" />
+    <property name="virtualPackage:8" value="type" />
     <link role="concept:8" targetNodeId="1.1109283449304:3" resolveInfo="TypeVariableReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104844542">
       <link role="applicableLink:8" targetNodeId="1.1109283546497:3" />
@@ -457,7 +457,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104846249">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1213104846250">
       <link role="applicableProperty:8" targetNodeId="1.1211504562189:3" resolveInfo="nestedName" />
@@ -627,7 +627,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104847239">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1070475587102:3" resolveInfo="SuperConstructorInvocation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104847240">
       <link role="applicableLink:8" targetNodeId="1.1241540960362:3" />
@@ -1015,7 +1015,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104847518">
-    <property name="package:8" value="property" />
+    <property name="virtualPackage:8" value="property" />
     <link role="concept:8" targetNodeId="1.1201370618622:3" resolveInfo="Property" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1213104847519">
       <link role="applicableProperty:8" targetNodeId="2.1156235010670:0" resolveInfo="alias" />
@@ -1049,7 +1049,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104847533">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
     <node role="defaultScope:8" type="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope:8" id="1213104847534">
       <property name="description:8" value="visible interfaces from model and imported models" />
@@ -1080,7 +1080,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104847625">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="4980874121082275158">
       <link role="applicableProperty:8" targetNodeId="1.4980874121082273661:3" resolveInfo="static" />
@@ -1200,7 +1200,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104855712">
-    <property name="package:8" value="method.instance" />
+    <property name="virtualPackage:8" value="method.instance" />
     <link role="concept:8" targetNodeId="1.1073063089578:3" resolveInfo="SuperMethodCall" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104855713">
       <link role="applicableLink:8" targetNodeId="1.1073063089579:3" />
@@ -1282,7 +1282,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104855787">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1178893518978:3" resolveInfo="ThisConstructorInvocation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104855788">
       <link role="applicableLink:8" targetNodeId="1.1241540960362:3" />
@@ -1422,7 +1422,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104856125">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1178285077437:3" resolveInfo="ClassifierMember" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1213104856126">
       <link role="applicableProperty:8" targetNodeId="2.1156234966388:0" resolveInfo="shortDescription" />
@@ -1520,7 +1520,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104856628">
-    <property name="package:8" value="classifier.enum" />
+    <property name="virtualPackage:8" value="classifier.enum" />
     <link role="concept:8" targetNodeId="1.1083260308424:3" resolveInfo="EnumConstantReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104856629">
       <link role="applicableLink:8" targetNodeId="1.1083260308426:3" />
@@ -1561,7 +1561,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104856698">
-    <property name="package:8" value="method" />
+    <property name="virtualPackage:8" value="method" />
     <link role="concept:8" targetNodeId="1.1068581242874:3" resolveInfo="ParameterReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104856699">
       <link role="applicableLink:8" targetNodeId="1.1070567982819:3" />
@@ -1585,7 +1585,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104856735">
-    <property name="package:8" value="method.instance" />
+    <property name="virtualPackage:8" value="method.instance" />
     <link role="concept:8" targetNodeId="1.1202948039474:3" resolveInfo="InstanceMethodCallOperation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104856736">
       <link role="applicableLink:8" targetNodeId="1.1202948736718:3" />
@@ -1809,7 +1809,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104859410">
-    <property name="package:8" value="method.static" />
+    <property name="virtualPackage:8" value="method.static" />
     <link role="concept:8" targetNodeId="1.1172058436953:3" resolveInfo="LocalStaticMethodCall" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104859411">
       <link role="applicableLink:8" targetNodeId="1.1172058436957:3" />
@@ -1836,7 +1836,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104859430">
-    <property name="package:8" value="property" />
+    <property name="virtualPackage:8" value="property" />
     <link role="concept:8" targetNodeId="1.1201385106094:3" resolveInfo="PropertyReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104859431">
       <link role="applicableLink:8" targetNodeId="1.1201385237847:3" />
@@ -2009,7 +2009,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104860474">
-    <property name="package:8" value="dotExpression" />
+    <property name="virtualPackage:8" value="dotExpression" />
     <link role="concept:8" targetNodeId="1.1197029447546:3" resolveInfo="FieldReferenceOperation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104860475">
       <link role="applicableLink:8" targetNodeId="1.1197029500499:3" />
@@ -2084,12 +2084,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213107435885">
-    <property name="package:8" value="property.implementation" />
+    <property name="virtualPackage:8" value="property.implementation" />
     <link role="concept:8" targetNodeId="1.1201372346056:3" resolveInfo="PropertyImplementation" />
     <link role="defaultConcreteConcept:8" targetNodeId="1.1201372606839:3" resolveInfo="DefaultPropertyImplementation" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213107435918">
-    <property name="package:8" value="dotExpression" />
+    <property name="virtualPackage:8" value="dotExpression" />
     <link role="concept:8" targetNodeId="1.1208890769693:3" resolveInfo="ArrayLengthOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1213107435919">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213107435920">
@@ -2178,7 +2178,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1225271316036">
-    <property name="package:8" value="string.expression" />
+    <property name="virtualPackage:8" value="string.expression" />
     <link role="concept:8" targetNodeId="1.1225271315873:3" resolveInfo="BaseStringOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1225271316037">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225271316038">
@@ -2219,7 +2219,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1225995033549">
-    <property name="package:8" value="dotExpression" />
+    <property name="virtualPackage:8" value="dotExpression" />
     <link role="concept:8" targetNodeId="1.1197027803184:3" resolveInfo="IOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1225995041051">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225995041052">
@@ -2459,7 +2459,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6768994795312000101">
-    <property name="package:8" value="classifier" />
+    <property name="virtualPackage:8" value="classifier" />
     <link role="concept:8" targetNodeId="1.1116615150612:3" resolveInfo="ClassifierClassExpression" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="6768994795312000102">
       <link role="applicableLink:8" targetNodeId="1.1116615189566:3" />
@@ -2655,7 +2655,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="9048361382548188116">
-    <property name="package:8" value="enumOperations" />
+    <property name="virtualPackage:8" value="enumOperations" />
     <link role="concept:8" targetNodeId="1.1224575136086:3" resolveInfo="EnumValueOfExpression" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="9048361382548188117">
       <link role="applicableProperty:8" targetNodeId="2.1156234966388:0" resolveInfo="shortDescription" />
@@ -2671,7 +2671,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="9048361382548212239">
-    <property name="package:8" value="enumOperations" />
+    <property name="virtualPackage:8" value="enumOperations" />
     <link role="concept:8" targetNodeId="1.1224573963862:3" resolveInfo="EnumValuesExpression" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="9048361382548212240">
       <link role="applicableProperty:8" targetNodeId="2.1156234966388:0" resolveInfo="shortDescription" />
@@ -2687,11 +2687,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5363084893386564700">
-    <property name="package:8" value="method" />
+    <property name="virtualPackage:8" value="method" />
     <link role="concept:8" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5536314641534779166">
-    <property name="package:8" value="array" />
+    <property name="virtualPackage:8" value="array" />
     <link role="concept:8" targetNodeId="1.1188220165133:3" resolveInfo="ArrayLiteral" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="5536314641534779167">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5536314641534779168">
@@ -2986,7 +2986,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="3066917033203129867">
-    <property name="package:8" value="method.instance" />
+    <property name="virtualPackage:8" value="method.instance" />
     <link role="concept:8" targetNodeId="1.3066917033203108594:3" resolveInfo="LocalInstanceMethodCall" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="3066917033203129868">
       <link role="applicableLink:8" targetNodeId="1.3066917033203112509:3" />
@@ -3613,7 +3613,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5205855332950450152">
-    <property name="package:8" value="array" />
+    <property name="virtualPackage:8" value="array" />
     <link role="concept:8" targetNodeId="1.5205855332950442198:3" resolveInfo="ArrayCloneOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="5205855332950450153">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5205855332950450154">
@@ -3675,7 +3675,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7474456048895327068">
-    <property name="package:8" value="method.instance" />
+    <property name="virtualPackage:8" value="method.instance" />
     <link role="concept:8" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
     <node role="alternativeIcon:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon:8" id="7474456048895327069">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7474456048895327070">

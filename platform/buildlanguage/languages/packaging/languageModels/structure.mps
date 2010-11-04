@@ -439,32 +439,12 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
+  <import index="6" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1202916958754">
     <property name="name:0" value="MPSLayout" />
     <property name="rootable:0" value="true" />
@@ -544,11 +524,11 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1203013653398">
     <property name="name:0" value="ILayoutComponent" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203598300291">
     <property name="name:0" value="AbstractProjectComponent" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1204116468206">
       <property name="metaClass:0" value="aggregation" />
@@ -575,7 +555,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203598322527">
     <property name="name:0" value="File" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220981955937">
       <property name="metaClass:0" value="aggregation" />
@@ -592,7 +572,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203598417283">
     <property name="name:0" value="Jar" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1204018553150:7" resolveInfo="Zip" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1239622015207">
       <property name="metaClass:0" value="aggregation" />
@@ -612,7 +592,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203598512427">
     <property name="name:0" value="Folder" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1203598804073">
       <property name="value:0" value="folder" />
@@ -629,7 +609,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203599702327">
     <property name="name:0" value="Module" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1203599818361">
       <property name="value:0" value="module" />
@@ -650,7 +630,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1203617883391">
     <property name="name:0" value="ICompositeComponent" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration:0" id="1203619938976">
       <property name="name:0" value="cleanAfterTheJob" />
     </node>
@@ -674,7 +654,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204015075559">
     <property name="name:0" value="Copy" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220974847213">
       <property name="metaClass:0" value="aggregation" />
@@ -696,7 +676,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204018553150">
     <property name="name:0" value="Zip" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1239622421791">
       <property name="name:0" value="filemode" />
@@ -748,7 +728,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204122781510">
     <property name="name:0" value="Delete" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1204123091967:7" resolveInfo="PostProcessingTask" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1204122861469">
       <property name="name:0" value="path" />
@@ -757,7 +737,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204123091967">
     <property name="name:0" value="PostProcessingTask" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1204123098625">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
@@ -765,7 +745,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1204737220833">
     <property name="name:0" value="PathHolder" />
-    <property name="package:0" value="generate" />
+    <property name="virtualPackage:0" value="generate" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1208952075958">
       <property name="name:0" value="fullPath" />
@@ -785,7 +765,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205331422635">
     <property name="name:0" value="Echo" />
-    <property name="package:0" value="projectComponents" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598322527:7" resolveInfo="File" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1205340508811">
       <property name="metaClass:0" value="aggregation" />
@@ -804,8 +784,8 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205335290326">
     <property name="name:0" value="Variable" />
-    <property name="package:0" value="variables" />
     <property name="rootable:0" value="true" />
+    <property name="virtualPackage:0" value="variables" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1205335300842">
       <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />
@@ -821,7 +801,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205339044029">
     <property name="name:0" value="SimpleString" />
-    <property name="package:0" value="variables" />
+    <property name="virtualPackage:0" value="variables" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1205339413506">
       <link role="intfc:0" targetNodeId="1205339194346:7" resolveInfo="IStringExpression" />
@@ -837,11 +817,11 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1205339194346">
     <property name="name:0" value="IStringExpression" />
-    <property name="package:0" value="variables" />
+    <property name="virtualPackage:0" value="variables" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205339464939">
-    <property name="package:0" value="variables" />
     <property name="name:0" value="VariableReference" />
+    <property name="virtualPackage:0" value="variables" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1205339481424">
       <link role="intfc:0" targetNodeId="1205339194346:7" resolveInfo="IStringExpression" />
@@ -853,8 +833,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205342812422">
-    <property name="package:0" value="variables" />
     <property name="name:0" value="CompositeString" />
+    <property name="virtualPackage:0" value="variables" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1205342854412">
       <property name="value:0" value="composite string" />
@@ -877,8 +857,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210777529562">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="Antcall" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210778516491">
       <property name="value:0" value="antcall" />
@@ -906,8 +886,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210777902405">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="BuildLanguageTargetReference" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210777931344">
       <property name="role:0" value="targetDeclaration" />
@@ -916,8 +896,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1212485154251">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="Replace" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598322527:7" resolveInfo="File" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1212485191151">
       <property name="value:0" value="replace" />
@@ -931,8 +911,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1212485500119">
-    <property name="package:0" value="variables" />
     <property name="name:0" value="Pair" />
+    <property name="virtualPackage:0" value="variables" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1212485511583">
       <property name="metaClass:0" value="aggregation" />
@@ -949,7 +929,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216905728562">
     <property name="name:0" value="ModuleCycle" />
-    <property name="package:0" value="compile" />
+    <property name="virtualPackage:0" value="compile" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1217524819628">
       <property name="metaClass:0" value="aggregation" />
@@ -969,7 +949,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1217524754911">
     <property name="name:0" value="NewModuleReference" />
-    <property name="package:0" value="compile" />
+    <property name="virtualPackage:0" value="compile" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1217524800588">
       <property name="metaClass:0" value="reference" />
@@ -979,7 +959,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1219228952036">
     <property name="name:0" value="Macro" />
-    <property name="package:0" value="generate" />
+    <property name="virtualPackage:0" value="generate" />
     <link role="extends:0" targetNodeId="4.1196851107341:21" resolveInfo="PropertyDeclaration" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1219230127826">
       <property name="name:0" value="path" />
@@ -991,7 +971,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220973916698">
     <property name="name:0" value="Path" />
-    <property name="package:0" value="sourcePaths" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <link role="extends:0" targetNodeId="4.1196851952934:21" resolveInfo="PropertyValueExpression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220976095387">
       <property name="metaClass:0" value="aggregation" />
@@ -1013,8 +993,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220973955905">
-    <property name="package:0" value="sourcePaths" />
     <property name="name:0" value="PathComponent" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1220974398640">
       <property name="name:0" value="path" />
@@ -1023,7 +1003,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220973992845">
     <property name="name:0" value="CompositePathComponent" />
-    <property name="package:0" value="sourcePaths" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220978161990">
       <property name="metaClass:0" value="aggregation" />
@@ -1033,8 +1013,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220976052975">
-    <property name="package:0" value="sourcePaths" />
     <property name="name:0" value="MacroReference" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1220976068141">
       <property name="name:0" value="name" />
@@ -1046,18 +1026,18 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration:0" id="1223640176546">
-    <property name="package:0" value="variables" />
     <property name="name:0" value="StringWithoutSpaces" />
     <property name="constraint:0" value="[^\\s]*" />
+    <property name="virtualPackage:0" value="variables" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1226494304686">
     <property name="name:0" value="BaseDirPath" />
-    <property name="package:0" value="sourcePaths.basedir" />
+    <property name="virtualPackage:0" value="sourcePaths.basedir" />
     <link role="extends:0" targetNodeId="1220973916698:7" resolveInfo="Path" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1230220313182">
-    <property name="package:0" value="buildlanguageExtension" />
     <property name="name:0" value="MPSLayoutConfigurationReferencePropertyValueExpression" />
+    <property name="virtualPackage:0" value="buildlanguageExtension" />
     <link role="extends:0" targetNodeId="4.1196851952934:21" resolveInfo="PropertyValueExpression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1230220362584">
       <property name="metaClass:0" value="reference" />
@@ -1067,12 +1047,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1233159299625">
-    <property name="package:0" value="projectComponents.conditions" />
     <property name="name:0" value="ICondition" />
+    <property name="virtualPackage:0" value="projectComponents.conditions" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233159325466">
-    <property name="package:0" value="projectComponents.conditions" />
     <property name="name:0" value="FileExistsCondition" />
+    <property name="virtualPackage:0" value="projectComponents.conditions" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1233159347850">
       <link role="intfc:0" targetNodeId="1233159299625:7" resolveInfo="ICondition" />
@@ -1093,8 +1073,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233159354124">
-    <property name="package:0" value="projectComponents.conditions" />
     <property name="name:0" value="NotCondition" />
+    <property name="virtualPackage:0" value="projectComponents.conditions" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1233159365757">
       <property name="metaClass:0" value="aggregation" />
@@ -1115,8 +1095,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233321396603">
-    <property name="package:0" value="sourcePaths" />
     <property name="name:0" value="NonExistingPath" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1233321410159">
       <property name="metaClass:0" value="aggregation" />
@@ -1136,15 +1116,15 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1233321544558">
-    <property name="package:0" value="sourcePaths" />
     <property name="name:0" value="IPath" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration:0" id="1233321577500">
       <property name="name:0" value="canStartFromBasedir" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1234531699390">
-    <property name="package:0" value="variables" />
     <property name="name:0" value="Space" />
+    <property name="virtualPackage:0" value="variables" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1234531712976">
       <link role="intfc:0" targetNodeId="1205339194346:7" resolveInfo="IStringExpression" />
@@ -1155,12 +1135,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1234864659795">
-    <property name="package:0" value="variables" />
     <property name="name:0" value="IVariableHolder" />
+    <property name="virtualPackage:0" value="variables" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1234968728594">
-    <property name="package:0" value="sourcePaths" />
     <property name="name:0" value="IMacroHolder" />
+    <property name="virtualPackage:0" value="sourcePaths" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1234969173075">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="macro" />
@@ -1169,15 +1149,15 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1237389142373">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="IAbstractCompositeComponent" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1237389160321">
       <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239621723881">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="Manifest" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1239621801146">
       <property name="metaClass:0" value="aggregation" />
@@ -1187,8 +1167,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239621743648">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="ManifestAttribute" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1239621768698">
       <property name="metaClass:0" value="aggregation" />
@@ -1201,8 +1181,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1240562872025">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="ComponentsList" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1240564882506">
       <property name="value:0" value="list" />
@@ -1222,12 +1202,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1240564398817">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="ITransparentProjectComponent" />
+    <property name="virtualPackage:0" value="projectComponents" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1240832649054">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="INotBuildableComponent" />
+    <property name="virtualPackage:0" value="projectComponents" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2372113960322848944">
     <property name="name:0" value="PropertiesImport" />
@@ -1236,7 +1216,6 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2372113960322848946">
     <property name="name:0" value="PropertyNodeImport" />
     <link role="extends:0" targetNodeId="2372113960322848944:7" resolveInfo="PropertiesImport" />
@@ -1248,7 +1227,7 @@
       <property name="metaClass:0" value="reference" />
       <property name="role:0" value="propertyNode" />
       <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2v.1200504738494:1" resolveInfo="PropertyNode" />
+      <link role="target:0" targetNodeId="6.1200504738494:1" resolveInfo="PropertyNode" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2372113960322848948">
@@ -1266,8 +1245,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="701559220729139189">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="BlockReference" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="701559220729212648">
       <property name="metaClass:0" value="reference" />
@@ -1277,9 +1256,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="701559220729212645">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="Block" />
     <property name="rootable:0" value="true" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7323449223785753314">
       <property name="metaClass:0" value="reference" />
@@ -1305,8 +1284,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7857794759871898774">
-    <property name="package:0" value="compile" />
     <property name="name:0" value="ModuleCycleReference" />
+    <property name="virtualPackage:0" value="compile" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7857794759871898775">
       <property name="metaClass:0" value="reference" />
@@ -1316,8 +1295,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4159241239519649208">
-    <property name="package:0" value="projectComponents" />
     <property name="name:0" value="Plugin" />
+    <property name="virtualPackage:0" value="projectComponents" />
     <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4159241239519649209">
       <property name="metaClass:0" value="aggregation" />

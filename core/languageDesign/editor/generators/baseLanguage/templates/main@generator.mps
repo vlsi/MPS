@@ -21,6 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="81" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -176,7 +177,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1096647705671">
     <property name="name:2" value="weave_CellModel_Collection" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1073389446423:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1096647713813">
       <property name="name:3" value="_context_class_" />
@@ -1035,7 +1036,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097139242515">
     <property name="name:2" value="weave_CellModel_Alternation" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1088612959204:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097139262188">
       <property name="name:3" value="_context_class_" />
@@ -1420,7 +1421,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097151314077">
     <property name="name:2" value="weave_CellModel_Constant" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1073389577006:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097151330625">
       <property name="name:3" value="_context_class_" />
@@ -1605,7 +1606,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097158831835">
     <property name="name:2" value="weave_CellModel_Custom" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1078308402140:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097158847789">
       <property name="name:3" value="_context_class_" />
@@ -1756,7 +1757,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097243716762">
     <property name="name:2" value="weave_CellModel_Error" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1075375595203:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097243736091">
       <property name="name:3" value="_context_class_" />
@@ -1910,7 +1911,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097659173341">
     <property name="name:2" value="weave_CellModel_ListWithRole" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1140524381322:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097659235689">
       <property name="name:3" value="_context_class_" />
@@ -2662,7 +2663,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097663873068">
     <property name="name:2" value="weave_CellModel_Component" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1078939183254:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097663887116">
       <property name="name:3" value="_context_class_" />
@@ -2812,7 +2813,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1097667551918">
     <property name="name:2" value="weave_CellModel_ModelAccess" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1074767920765:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1097667563216">
       <property name="name:3" value="_context_class_" />
@@ -4254,7 +4255,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1134495075165">
     <property name="name:2" value="weave_CellModel_AttributedPropertyCell" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1134379236839:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1134496032979">
       <property name="name:3" value="_context_class_" />
@@ -4383,7 +4384,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1136565058540">
     <property name="name:2" value="weave_CellModel_AttributedLinkCell" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1136564507907:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1136565126429">
       <property name="name:3" value="_context_class_" />
@@ -4538,7 +4539,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1139748492512">
     <property name="name:2" value="weave_CellModel_Image" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1139744628335:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1139749055739">
       <property name="name:3" value="_context_class_" />
@@ -4852,7 +4853,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1139852871567">
     <property name="name:2" value="weave_CellModel_WithRole" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1139848536355:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1139852960722">
       <property name="name:3" value="_context_class_" />
@@ -6029,7 +6030,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1141852515844">
     <property name="name:2" value="MAPPING_CellMenu" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="1168478720055">
       <link role="applicableConcept:2" targetNodeId="38.1166040637528:32" />
       <link role="template:2" targetNodeId="1166063029142" resolveInfo="class_CellMenuComponent" />
@@ -6486,7 +6487,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1149851533317">
     <property name="name:2" value="weave_CellModel_AttributedNodeCell" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1149850725784:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1149851577828">
       <property name="name:3" value="_context_class_" />
@@ -6615,8 +6616,8 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1164844794756">
     <property name="name:3" value="stuff_CellMenuPart" />
-    <property name="package:3" value="cellMenu" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="cellMenu" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1164844811101">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1164844811102" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1164844811103" />
@@ -7688,7 +7689,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184142154197">
     <property name="name:2" value="weave_RefNodeList_ListHandler" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1073390211982:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184142270908">
       <property name="name:3" value="_context_" />
@@ -9086,13 +9087,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184143608362">
     <property name="name:2" value="weave_CellMenuPart_PropertyValues" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1164833692343:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184143717734">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184143722117">
         <property name="name:3" value="class_CellMenuPart_PropertyValues" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1184143722118">
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1184143722119" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1184143722120" />
@@ -9262,13 +9263,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184143801020">
     <property name="name:2" value="weave_CellMenuPart_PropertyPostfixHints" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1180615838666:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144001298">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144008692">
         <property name="name:3" value="class_CellMenuPart_PropertyPostfixHints" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184144008693">
           <property name="name:3" value="getPostfixes" />
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1237047181343">
@@ -9432,13 +9433,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184144092414">
     <property name="name:2" value="weave_CellMenuPart_ReplaceNode_CustomNodeConcept" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1164914519156:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144120447">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144125783">
         <property name="name:3" value="class_CellMenuPart_ReplaceNode_CustomNodeConcept" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184144125784">
           <property name="name:3" value="getReplacementConceptName" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1184144125785">
@@ -9550,13 +9551,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184144431685">
     <property name="name:2" value="weave_CellMenuPart_ReplaceNode_Group" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1165004207520:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144458757">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144460401">
         <property name="name:3" value="class_CellMenuPart_ReplaceNode_Group" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184144460402">
           <property name="name:3" value="createParameterObjects" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1184144460403">
@@ -9833,13 +9834,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184144527953">
     <property name="name:2" value="weave_CellMenuPart_ReferentPrimary" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1164996492011:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144546143">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144549348">
         <property name="name:3" value="class_CellMenuPart_ReferentPrimary" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1184144549349">
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1184144549350" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1184144549351" />
@@ -9956,12 +9957,12 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184144810392">
     <property name="name:2" value="weave_CellMenuPart_ReplaceChildPrimary" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1174088067129:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144835587">
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144840580">
         <property name="name:3" value="class_CellMenuPart_ReplaceChildPrimary" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1184144840581">
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1184144840582" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1184144840583" />
@@ -10078,13 +10079,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184144908080">
     <property name="name:2" value="weave_CellMenuPart_ReplaceChild_Group" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1165270418989:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144925113">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184144928945">
         <property name="name:3" value="class_CellMenuPart_ReplaceChild_Group" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184144928946">
           <property name="name:3" value="createParameterObjects" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1184144928947">
@@ -10485,12 +10486,12 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184144995846">
     <property name="name:2" value="weave_CellMenuPart_ReplaceChild_Item" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1165339175678:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145015458">
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145018712">
         <property name="name:3" value="class_CellMenuPart_ReplaceChild_Item" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184145018713">
           <property name="name:3" value="getMatchingText" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1184145018714">
@@ -10779,13 +10780,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184145097536">
     <property name="name:2" value="weave_CellMenuPart_ReplaceChild_CustomChildConcept" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1165280503630:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145116085">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145119637">
         <property name="name:3" value="class_CellMenuPart_ReplaceChild_CustomChildConcept" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184145119638">
           <property name="name:3" value="getConceptOfChild" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1184145119639">
@@ -10955,13 +10956,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184145217087">
     <property name="name:2" value="weave_CellMenuPart_Generic_Group" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1165420413719:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145232293">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145254389">
         <property name="name:3" value="class_CellMenuPart_Generic_Group" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184145254390">
           <property name="name:3" value="createParameterObjects" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1184145254391">
@@ -11251,13 +11252,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184145320988">
     <property name="name:2" value="weave_CellMenuPart_Generic_Item" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1165424453110:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145330786">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145338768">
         <property name="name:3" value="class_CellMenuPart_Generic_Item" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1184145338769">
           <property name="name:3" value="handleAction" />
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1184145338770">
@@ -11416,13 +11417,13 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1184145395052">
     <property name="name:2" value="weave_CelllMenuPart_CellMenuComponent" />
-    <property name="package:2" value="cellMenu" />
+    <property name="virtualPackage:2" value="cellMenu" />
     <link role="applicableConcept:2" targetNodeId="38.1166059625718:32" resolveInfo="CellMenuPart_CellMenuComponent" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145419367">
       <property name="name:3" value="_context_" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1184145427464">
         <property name="name:3" value="class_CellMenuPart_CellMenuComponent" />
-        <property name="package:3" value="CellMenu" />
+        <property name="virtualPackage:3" value="CellMenu" />
         <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1184145427465">
           <property name="name:3" value="myComponent" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1184145427466">
@@ -11675,8 +11676,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1186404688558">
     <property name="name:2" value="StyleSheet" />
-    <property name="package:2" value="styleSheet" />
     <property name="topPriorityGroup:2" value="false" />
+    <property name="virtualPackage:2" value="styleSheet" />
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="1186404704122">
       <link role="applicableConcept:2" targetNodeId="38.1186402211651:32" />
       <link role="template:2" targetNodeId="1186404727331" resolveInfo="StyleSheetClass" />
@@ -11684,8 +11685,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1186404727331">
-    <property name="package:3" value="styleSheet" />
     <property name="name:3" value="StyleSheetClass" />
+    <property name="virtualPackage:3" value="styleSheet" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1186404727332" />
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1186404741005">
       <link role="applicableConcept:2" targetNodeId="38.1186402211651:32" />
@@ -11888,8 +11889,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1186404942965">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="Switch_StyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1186415172645">
       <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="38.1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
@@ -12252,7 +12253,7 @@
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4098449021143850232">
-      <property name="package:2" value="Stylesheet" />
+      <property name="virtualPackage:2" value="Stylesheet" />
       <link role="applicableConcept:2" targetNodeId="38.7620205565664569937:32" resolveInfo="DefaultBaseLine" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4098449021143850233">
         <link role="template:2" targetNodeId="7620205565664614815" resolveInfo="reduce_DefaultBaseLine" />
@@ -12279,8 +12280,8 @@
     <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence:2" id="1230567891550" />
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1186405163329">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="FontStyleStyleSheetItem_NoQuery" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186403751766:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214302234352">
       <property name="name:3" value="ABC" />
@@ -12334,8 +12335,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1186405179705">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="ColorStyleSheetItem_NoQuery" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214302582728">
       <property name="name:3" value="ABC" />
@@ -12438,8 +12439,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1186410990478">
-    <property name="package:3" value="styleSheet.Stub" />
     <property name="name:3" value="StyleSheetClass_Stub" />
+    <property name="virtualPackage:3" value="styleSheet.Stub" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1186410990479">
       <property name="name:3" value="colorCalculator" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1186411549312">
@@ -12571,8 +12572,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1186410990521" />
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1186415121794">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="BooleanStyleSheetItem_NoQuery" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214303328370">
       <property name="name:3" value="ABC" />
@@ -12639,8 +12640,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1186415320905">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="UnderlinedStyleSheetItem_NoQuery" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186414999511:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214303464448">
       <property name="name:3" value="ABC" />
@@ -12700,8 +12701,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1186415852137">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="FontSizeStyleSheetItem_NoQuery" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186415722038:32" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214303166574">
       <property name="name:3" value="ABC" />
@@ -12755,7 +12756,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1198257250013">
     <property name="name:2" value="weave_CellModel_Indent" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1198256887712:32" resolveInfo="CellModel_Indent" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1198257250014">
       <property name="name:3" value="_context_class_" />
@@ -12827,7 +12828,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1198258144506">
     <property name="name:2" value="reduce_CellModel_BlockStart" />
-    <property name="package:2" value="sugar" />
+    <property name="virtualPackage:2" value="sugar" />
     <link role="applicableConcept:2" targetNodeId="38.1198257632966:32" resolveInfo="CellModel_BlockStart" />
     <node role="contentNode:2" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1198258236630">
       <property name="name:32" value="nodeCellPanel" />
@@ -12970,7 +12971,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1198258322917">
     <property name="name:2" value="MAPPING_Sugar" />
-    <property name="package:2" value="sugar" />
+    <property name="virtualPackage:2" value="sugar" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1198258329340">
       <link role="applicableConcept:2" targetNodeId="38.1198257632966:32" resolveInfo="CellModel_BlockStart" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1198258338202">
@@ -13084,7 +13085,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1198258380049">
     <property name="name:2" value="reduce_CellModel_BlockEnd" />
-    <property name="package:2" value="sugar" />
+    <property name="virtualPackage:2" value="sugar" />
     <link role="applicableConcept:2" targetNodeId="38.1198257747917:32" resolveInfo="CellModel_BlockEnd" />
     <node role="contentNode:2" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1198506850252">
       <property name="name:32" value="nodeCellPanel" />
@@ -13226,8 +13227,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1198490666793">
-    <property name="package:2" value="sugar" />
     <property name="name:2" value="reduce_CellModel_Block" />
+    <property name="virtualPackage:2" value="sugar" />
     <link role="applicableConcept:2" targetNodeId="38.1198489924438:32" resolveInfo="CellModel_Block" />
     <node role="contentNode:2" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1198490711938">
       <property name="attractsFocus:32" value="0" />
@@ -13436,7 +13437,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1201269922332">
     <property name="name:2" value="MAPPING_nodesOperations" />
-    <property name="package:2" value="nodes" />
+    <property name="virtualPackage:2" value="nodes" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1201269979411">
       <link role="applicableConcept:2" targetNodeId="38.1201265905111:32" resolveInfo="SelectLaterOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1201269932274">
@@ -13502,8 +13503,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1201270306688">
-    <property name="package:2" value="nodes" />
     <property name="name:2" value="reduce_SelectAfterLater" />
+    <property name="virtualPackage:2" value="nodes" />
     <link role="applicableConcept:2" targetNodeId="38.1201265905111:32" resolveInfo="SelectLaterOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1201270316349">
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1201270317633">
@@ -13563,8 +13564,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1201269833576">
-    <property name="package:2" value="nodes" />
     <property name="name:2" value="reduce_SelectBeforeLater" />
+    <property name="virtualPackage:2" value="nodes" />
     <link role="applicableConcept:2" targetNodeId="38.1201265905111:32" resolveInfo="SelectLaterOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1201269833577">
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1201269833578">
@@ -13624,8 +13625,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1201269955682">
-    <property name="package:2" value="nodes" />
     <property name="name:2" value="reduce_SelectLater" />
+    <property name="virtualPackage:2" value="nodes" />
     <link role="applicableConcept:2" targetNodeId="38.1201265905111:32" resolveInfo="SelectLaterOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1201269955683">
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1201269955684">
@@ -13685,8 +13686,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1201271748988">
-    <property name="package:2" value="nodes" />
     <property name="name:2" value="reduce_SelectAtCaretPositionLater" />
+    <property name="virtualPackage:2" value="nodes" />
     <link role="applicableConcept:2" targetNodeId="38.1201265905111:32" resolveInfo="SelectLaterOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1201271748989">
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1201271748990">
@@ -13768,8 +13769,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1204307861396">
-    <property name="package:2" value="sugar" />
     <property name="name:2" value="reduce_WrapRootConditionCell" />
+    <property name="virtualPackage:2" value="sugar" />
     <link role="applicableConcept:2" targetNodeId="38.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="contentNode:2" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1204307957345">
       <property name="name:32" value="nodeCellPanel" />
@@ -13801,8 +13802,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1214318102272">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="LayoutConstraintStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1214317859050:32" resolveInfo="LayoutConstraintStyleSheetItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214318102273">
       <property name="name:3" value="ABC" />
@@ -13855,8 +13856,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1214320860829">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="RightTransformAnchorTagStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1214320119173:32" resolveInfo="RightTransformAnchorTagStyleSheetItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214320860830">
       <property name="name:3" value="ABC" />
@@ -13985,8 +13986,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1214473552934">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="DefaultCaretPositionStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1214472762472:32" resolveInfo="DefaultCaretPositionStyleSheetItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1214473552935">
       <property name="name:3" value="ABC" />
@@ -14053,8 +14054,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1215085777824">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="FirstPositionAllowedStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1215085112640:32" resolveInfo="FirstPositionAllowedStyleSheetItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215085777825">
       <property name="name:3" value="ABC" />
@@ -14107,8 +14108,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1216309459337">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="PositionStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1216308599511:32" resolveInfo="LayoutNextLine" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216309508698">
       <property name="name:3" value="ABC" />
@@ -14162,7 +14163,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1216382671510">
     <property name="name:2" value="weave_CellModel_TransactionalProperty" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1216380990741:32" resolveInfo="CellModel_TransactionalProperty" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216382671511">
       <property name="name:3" value="_context_class_" />
@@ -14947,8 +14948,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1216560777188">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="PositionChildrenStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1216560327200:32" resolveInfo="NextLineForChildrenStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216560952371">
       <property name="name:3" value="ABC" />
@@ -15001,8 +15002,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225901291056">
-    <property name="package:2" value="cellModel" />
     <property name="name:2" value="weave_CellModel_ReadOnlyModelAccessor" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1225900081164:32" resolveInfo="CellModel_ReadOnlyModelAccessor" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1225901348153">
       <property name="name:3" value="Class" />
@@ -15242,8 +15243,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1226675799066">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="AbstractPaddingStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1226339938453:32" resolveInfo="AbstractPaddingStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1226675867659">
       <property name="name:3" value="ABC" />
@@ -15346,8 +15347,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1227875493717">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="NavigatableReferenceStyleClassItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1227861515039:32" resolveInfo="NavigatableReferenceStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1227875493718">
       <property name="name:3" value="ABC" />
@@ -15405,8 +15406,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1229342844257">
-    <property name="package:2" value="sugar" />
     <property name="name:2" value="reduce_WrapRootRefNode" />
+    <property name="virtualPackage:2" value="sugar" />
     <link role="applicableConcept:2" targetNodeId="38.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="contentNode:2" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1229342946521">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1229342954079">
@@ -15426,8 +15427,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1236001821442">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="HorizontalAlignStyleSheetItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1235999440492:32" resolveInfo="HorizontalAlign" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1236001947160">
       <property name="name:3" value="ABC" />
@@ -15481,8 +15482,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1236266815130">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="MatchingLabelStyleClassItem_NoQuery" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1236262245656:32" resolveInfo="MatchingLabelStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1236266815131">
       <property name="name:3" value="ABC" />
@@ -15671,8 +15672,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7533883740977702759">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="BooleanStyleSheetItem_Query" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186414536763:32" resolveInfo="BooleanStyleSheetItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7533883740977702760">
       <property name="name:3" value="ABC" />
@@ -15830,8 +15831,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7533883740977705627">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="ColorStyleSheetItem_RGBValue" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7533883740977705628">
       <property name="name:3" value="ABC" />
@@ -15932,8 +15933,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7533883740977705801">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="ColorStyleSheetItem_Query" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186403694788:32" resolveInfo="ColorStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7533883740977705802">
       <property name="name:3" value="ABC" />
@@ -16091,8 +16092,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7533883740977706021">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="FontStyleStyleSheetItem_Query" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186403751766:32" resolveInfo="FontStyleStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7533883740977706022">
       <property name="name:3" value="ABC" />
@@ -16236,8 +16237,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7533883740977706148">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="UnderlinedStyleSheetItem_Query" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186414999511:32" resolveInfo="UnderlinedStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7533883740977706149">
       <property name="name:3" value="ABC" />
@@ -16380,8 +16381,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7533883740977706274">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="FontSizeStyleSheetItem_Query" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1186415722038:32" resolveInfo="FontSizeStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7533883740977706275">
       <property name="name:3" value="ABC" />
@@ -16524,8 +16525,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3219221556189195367">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="MatchingLabelStyleClassItem_Query" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.1236262245656:32" resolveInfo="MatchingLabelStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3219221556189195368">
       <property name="name:3" value="ABC" />
@@ -16648,7 +16649,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="5170495790389304146">
     <property name="name:2" value="template_cellSetupBlock" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5170495790389304147">
       <property name="name:3" value="_context_class_" />
@@ -17292,7 +17293,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="996730828437272666">
     <property name="name:2" value="weave_CellModel_JComponent" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1103016434866:32" resolveInfo="CellModel_JComponent" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="996730828437272667">
       <property name="name:3" value="_context_class_" />
@@ -17498,7 +17499,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="625126330683217337">
     <property name="name:2" value="weave_CellModel_ReferencePresentation" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.625126330682908270:32" resolveInfo="CellModel_RefererencePresentation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="625126330683217338">
       <property name="name:3" value="_context_class_" />
@@ -17648,8 +17649,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7667276221847904977">
-    <property name="package:2" value="styleSheet.Switch" />
     <property name="name:2" value="ParametersInformationStyleClassItem" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.7667276221847570194:32" resolveInfo="ParametersInformationStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7667276221847965192">
       <property name="name:3" value="ABC" />
@@ -17711,7 +17712,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4755152624710441322">
     <property name="name:3" value="class_ParametersInformation" />
-    <property name="package:3" value="MethodParameters" />
+    <property name="virtualPackage:3" value="MethodParameters" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5479017698521651352">
       <property name="name:3" value="getMethods" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5479017698521651353" />
@@ -17955,8 +17956,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4514257407427004628">
-    <property name="package:2" value="MethodParameters" />
     <property name="name:2" value="reduce_AbstractOperation" />
+    <property name="virtualPackage:2" value="MethodParameters" />
     <link role="applicableConcept:2" targetNodeId="38.4531786690998636238:32" resolveInfo="AbstractOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4514257407427046483">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4514257407427046484">
@@ -18104,7 +18105,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="8255250703325743205">
     <property name="name:2" value="reduce_ScriptKindClassItem" />
-    <property name="package:2" value="styleSheet.Switch" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.8255250703325731016:32" resolveInfo="ScriptKindClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255250703325743209">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8255250703325743212">
@@ -18152,7 +18153,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="6820251943131815758">
     <property name="name:2" value="case_TableComponentStyleClassItem" />
-    <property name="package:2" value="styleSheet.Switch" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.6820251943131810950:32" resolveInfo="TableComponentStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6820251943131815761">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6820251943131815762">
@@ -18203,7 +18204,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="8313721352726742367">
     <property name="name:2" value="weave_CellModel_Empty" />
-    <property name="package:2" value="cellModel" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.8313721352726366579:32" resolveInfo="CellModel_Empty" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8313721352726742368">
       <property name="name:3" value="_context_class_" />
@@ -18851,7 +18852,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7597241200646442781">
     <property name="name:2" value="NavigatableNodeStyleClassItem" />
-    <property name="package:2" value="styleSheet.Switch" />
+    <property name="virtualPackage:2" value="styleSheet.Switch" />
     <link role="applicableConcept:2" targetNodeId="38.7597241200646296617:32" resolveInfo="ReferenceTargetStyleClassItem" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7597241200646473302">
       <property name="name:3" value="ABC" />
@@ -18993,8 +18994,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="6287772348368334582">
-    <property name="package:2" value="cellModel" />
     <property name="name:2" value="template_cellSetSubstituteInfo" />
+    <property name="virtualPackage:2" value="cellModel" />
     <link role="applicableConcept:2" targetNodeId="38.1073389214265:32" resolveInfo="EditorCellModel" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6287772348368340671">
       <property name="name:3" value="_cell_fatcory_method" />

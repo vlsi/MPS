@@ -615,36 +615,19 @@
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
+  <languageAspect modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" version="-1" />
   <maxImportIndex value="64" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -680,7 +663,7 @@
   <import index="64" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1225567253971">
     <property name="name:3" value="BuildScriptRunner" />
-    <property name="package:3" value="runner" />
+    <property name="virtualPackage:3" value="runner" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1225567253972">
       <property name="name:3" value="myComponent" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1225567253973" />
@@ -1975,7 +1958,7 @@
   <visible index="2" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1225567254164">
     <property name="name:3" value="BuildScriptRunnerComponent" />
-    <property name="package:3" value="runner" />
+    <property name="virtualPackage:3" value="runner" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="6103486036061427462">
       <property name="name:3" value="BUILD_STATE_CONSTANT" />
       <property name="isFinal:3" value="true" />
@@ -2776,8 +2759,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1240833723109">
-    <property name="package:3" value="runner" />
     <property name="name:3" value="BuildTableModel" />
+    <property name="virtualPackage:3" value="runner" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1240833723110">
       <property name="name:3" value="loadState" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240833723111" />
@@ -3801,8 +3784,8 @@
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration:23" id="1240833723566">
-    <property name="package:23" value="runner.preferences" />
     <property name="name:23" value="AntRunnerPreferences" />
+    <property name="virtualPackage:23" value="runner.preferences" />
     <node role="persistenPropertyDeclaration:23" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="1240833723567">
       <property name="name:23" value="data" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.collections.structure.MapType:7" id="1240833723568">
@@ -4075,8 +4058,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1240833723703">
-    <property name="package:3" value="runner.preferences" />
     <property name="name:3" value="AntRunnerPreferencesPage" />
+    <property name="virtualPackage:3" value="runner.preferences" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1240833723704">
       <property name="name:3" value="updateState" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1240833723705" />
@@ -4308,8 +4291,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1240834761783">
-    <property name="package:3" value="runner" />
     <property name="name:3" value="AntRunner" />
+    <property name="virtualPackage:3" value="runner" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1240834761784">
       <property name="name:3" value="runAntScript" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1240834761785" />
@@ -4480,8 +4463,8 @@
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="7234763849538404662">
     <property name="name:0" value="DefaultBuildLanguageApplication" />
     <property name="caption:0" value="Build Language Project" />
-    <property name="package:0" value="newRunner" />
     <property name="generate:0" value="true" />
+    <property name="virtualPackage:0" value="newRunner" />
     <link role="stateTypeParameter:0" targetNodeId="58.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="configType:0" targetNodeId="7234763849538443893:0" resolveInfo="Ant" />
     <link role="conceptDeclaration:0" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />
@@ -4658,11 +4641,11 @@
     <property name="name:23" value="BuildLanguage" />
     <property name="caption:23" value="Ant" />
     <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
-    <property name="package:23" value="newRunner" />
+    <property name="virtualPackage:23" value="newRunner" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="823693461259265263">
     <property name="name:3" value="AntScriptRunner" />
-    <property name="package:3" value="newRunner" />
+    <property name="virtualPackage:3" value="newRunner" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3038691514509218379">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3038691514509218380" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3038691514509218381" />
@@ -5436,8 +5419,8 @@
   </node>
   <visible index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="5842104767987839284">
-    <property name="package:23" value="newRunner" />
     <property name="name:23" value="DefaultBuildLanguageConfigurationFromNode" />
+    <property name="virtualPackage:23" value="newRunner" />
     <link role="rcType:23" targetNodeId="7234763849538443893:0" resolveInfo="BuildLanguage" />
     <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="5842104767987843778">
       <link role="concept:23" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />

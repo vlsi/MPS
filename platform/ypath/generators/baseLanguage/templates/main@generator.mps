@@ -11,36 +11,14 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)" version="49" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905b3(jetbrains.mps.ypath.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="55" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
@@ -4777,8 +4755,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180087057511">
-    <property name="package:2" value="treeOperation.switch" />
     <property name="name:2" value="reduce_SwitchNodeKindStatement" />
+    <property name="virtualPackage:2" value="treeOperation.switch" />
     <link role="applicableConcept:2" targetNodeId="1.1180023776692:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1180087086276">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1180087086277">
@@ -4834,8 +4812,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180087330676">
-    <property name="package:2" value="treeOperation.switch" />
     <property name="name:2" value="reduce_NodeKindSpecificCase" />
+    <property name="virtualPackage:2" value="treeOperation.switch" />
     <link role="applicableConcept:2" targetNodeId="1.1180007382905:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1180087350289">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1180087350290">
@@ -5026,8 +5004,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ypath.structure.TreePathAspect:0" id="1180087474110">
-    <property name="package:0" value="treeOperation.switch" />
     <property name="name:0" value="FakeTreePath" />
+    <property name="virtualPackage:0" value="treeOperation.switch" />
     <node role="nodeKinds:0" type="jetbrains.mps.ypath.structure.TreeNodeKind:0" id="1180087499132">
       <property name="name:0" value="FAKE_KIND" />
       <node role="trigger:0" type="jetbrains.mps.ypath.structure.KindBlock:0" id="1180087499133">
@@ -5074,8 +5052,8 @@
     <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1180087480405" />
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180088156256">
-    <property name="package:2" value="treeOperation.switch" />
     <property name="name:2" value="reduce_NodeKindDefaultCase" />
+    <property name="virtualPackage:2" value="treeOperation.switch" />
     <link role="applicableConcept:2" targetNodeId="1.1180007571027:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1180088156257">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1180088156258">
@@ -5175,8 +5153,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1180088476544">
-    <property name="package:3" value="treeOperation.visit" />
     <property name="name:3" value="VisitBlock" />
+    <property name="virtualPackage:3" value="treeOperation.visit" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1180089061511">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1180089061512" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1180089061513" />
@@ -5514,8 +5492,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180089021322">
-    <property name="package:2" value="treeOperation.visit" />
     <property name="name:2" value="reduce_VisitNodesStatement" />
+    <property name="virtualPackage:2" value="treeOperation.visit" />
     <link role="applicableConcept:2" targetNodeId="1.1180024940230:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1180089087155">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1180089087156">
@@ -5624,8 +5602,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180090749156">
-    <property name="package:2" value="treeOperation.visit" />
     <property name="name:2" value="reduce_VisitParameterReference" />
+    <property name="virtualPackage:2" value="treeOperation.visit" />
     <link role="applicableConcept:2" targetNodeId="1.1180014258612:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1180090818473">
       <property name="name:1" value="visitParameter" />
@@ -5673,12 +5651,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180091183156">
-    <property name="package:2" value="treeOperation.visit" />
     <property name="name:2" value="reduce_VisitChildrenExpression" />
+    <property name="virtualPackage:2" value="treeOperation.visit" />
     <link role="applicableConcept:2" targetNodeId="1.1180011113930:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1180091782134">
-      <property name="package:3" value="treeOperation.visit" />
       <property name="name:3" value="VisitBlock" />
+      <property name="virtualPackage:3" value="treeOperation.visit" />
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1180091782144">
         <property name="name:3" value="visit" />
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1180091782145" />

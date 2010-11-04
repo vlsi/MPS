@@ -9,31 +9,12 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="32" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -1276,7 +1257,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1221169539542">
-    <property name="package:8" value="operation.node" />
+    <property name="virtualPackage:8" value="operation.node" />
     <link role="concept:8" targetNodeId="1.1221163681458:16" resolveInfo="Node_GetReferentSearchScopeOperation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1221169548606">
       <link role="applicableLink:8" targetNodeId="1.1221164078452:16" />
@@ -1356,7 +1337,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1221170817280">
-    <property name="package:8" value="operation" />
+    <property name="virtualPackage:8" value="operation" />
     <link role="concept:8" targetNodeId="1.1221170373891:16" resolveInfo="SearchScope_ContainsOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1221170833984">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221170833985">
@@ -1408,7 +1389,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1240148885571">
-    <property name="package:8" value="operation.enum" />
+    <property name="virtualPackage:8" value="operation.enum" />
     <link role="concept:8" targetNodeId="1.1240930444945:16" resolveInfo="SEnum_MemberOperation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1240148887384">
       <link role="applicableLink:8" targetNodeId="1.1240930444946:16" />
@@ -1465,7 +1446,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1240930364461">
-    <property name="package:8" value="enum" />
+    <property name="virtualPackage:8" value="enum" />
     <link role="concept:8" targetNodeId="1.1240930118027:16" resolveInfo="SEnumOperationInvocation" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1240930366884">
       <link role="applicableLink:8" targetNodeId="1.1240930118028:16" />
@@ -1495,7 +1476,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1240931364428">
-    <property name="package:8" value="enum.enumoperation" />
+    <property name="virtualPackage:8" value="enum.enumoperation" />
     <link role="concept:8" targetNodeId="1.1240930395965:16" resolveInfo="SEnumOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1240931368586">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240931368587">
@@ -1513,7 +1494,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1241016231436">
-    <property name="package:8" value="enum.enumoperation" />
+    <property name="virtualPackage:8" value="enum.enumoperation" />
     <link role="concept:8" targetNodeId="1.1241015185235:16" resolveInfo="SEnumMemberOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1241016234328">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241016234329">
@@ -1544,7 +1525,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8405512791876074475">
-    <property name="package:8" value="operation.featureAccess" />
+    <property name="virtualPackage:8" value="operation.featureAccess" />
     <link role="concept:8" targetNodeId="1.3562215692195599741:16" resolveInfo="SLinkImplicitSelect" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="8405512791876074489">
       <link role="applicableLink:8" targetNodeId="1.3562215692195600259:16" />
@@ -1614,7 +1595,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1547759872598425099">
-    <property name="package:8" value="operation.reference" />
+    <property name="virtualPackage:8" value="operation.reference" />
     <link role="concept:8" targetNodeId="1.1547759872598425074:16" resolveInfo="ILinkOperation" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1547759872598425102">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1547759872598425103">

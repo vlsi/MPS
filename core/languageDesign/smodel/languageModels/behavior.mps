@@ -9,31 +9,11 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" />
   <maxImportIndex value="19" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -49,14 +29,14 @@
   <import index="17" modelUID="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877246679">
-    <property name="package" value="attribute" />
+    <property name="virtualPackage" value="attribute" />
     <link role="concept" targetNodeId="1.1204837120311:16" resolveInfo="PropertyRefQualifier" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877246680">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877246681" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877264086">
-    <property name="package" value="type" />
+    <property name="virtualPackage" value="type" />
     <link role="concept" targetNodeId="1.1143226024141:16" resolveInfo="SModelType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877264087">
       <property name="name" value="getPresentation" />
@@ -77,7 +57,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877271845">
-    <property name="package" value="operation.featureAccess" />
+    <property name="virtualPackage" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1138056282393:16" resolveInfo="SLinkListAccess" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877271846">
       <property name="name" value="getVariableExpectedName" />
@@ -170,7 +150,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877274343">
-    <property name="package" value="type" />
+    <property name="virtualPackage" value="type" />
     <link role="concept" targetNodeId="1.1145383075378:16" resolveInfo="SNodeListType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877274344">
       <property name="name" value="getPresentation" />
@@ -416,7 +396,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877300697">
-    <property name="package" value="type" />
+    <property name="virtualPackage" value="type" />
     <link role="concept" targetNodeId="1.1172420572800:16" resolveInfo="SConceptType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877300698">
       <property name="name" value="getPresentation" />
@@ -580,7 +560,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877310375">
-    <property name="package" value="operation.featureAccess" />
+    <property name="virtualPackage" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1175618182947:16" resolveInfo="SConceptLinkAccess" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877310376">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877310377" />
@@ -609,7 +589,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877317114">
-    <property name="package" value="type" />
+    <property name="virtualPackage" value="type" />
     <link role="concept" targetNodeId="1.1138055754698:16" resolveInfo="SNodeType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877317115">
       <property name="name" value="getPresentation" />
@@ -855,7 +835,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877325506">
-    <property name="package" value="attribute" />
+    <property name="virtualPackage" value="attribute" />
     <link role="concept" targetNodeId="1.1204761823073:16" resolveInfo="AttributeAccessOperation" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877325507">
       <property name="name" value="isLValue" />
@@ -1057,7 +1037,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877353972">
-    <property name="package" value="operation.featureAccess" />
+    <property name="virtualPackage" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1138056022639:16" resolveInfo="SPropertyAccess" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877353973">
       <property name="name" value="getVariableExpectedName" />
@@ -1086,7 +1066,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877364624">
-    <property name="package" value="attribute" />
+    <property name="virtualPackage" value="attribute" />
     <link role="concept" targetNodeId="1.1204832665472:16" resolveInfo="PropertyAttributeAccessQualifier" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4024382256428848996">
       <property name="name" value="isAggregation" />
@@ -1157,7 +1137,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877383850">
-    <property name="package" value="operation.featureAccess" />
+    <property name="virtualPackage" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1145994841052:16" resolveInfo="SConceptPropertyAccess" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877383851">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877383852" />
@@ -1186,14 +1166,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877401222">
-    <property name="package" value="operation.property" />
+    <property name="virtualPackage" value="operation.property" />
     <link role="concept" targetNodeId="1.1138676077309:16" resolveInfo="EnumMemberReference" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877401223">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877401224" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877403605">
-    <property name="package" value="type_internal" />
+    <property name="virtualPackage" value="type_internal" />
     <link role="concept" targetNodeId="1.1204919674986:16" resolveInfo="_LinkAccessT" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877403606">
       <property name="name" value="getClassExpression" />
@@ -1412,7 +1392,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877416510">
-    <property name="package" value="attribute" />
+    <property name="virtualPackage" value="attribute" />
     <link role="concept" targetNodeId="1.1204763358057:16" resolveInfo="NodeAttributeAccessQualifier" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4024382256428849192">
       <property name="name" value="isAggregation" />
@@ -1483,7 +1463,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877437822">
-    <property name="package" value="operation.node" />
+    <property name="virtualPackage" value="operation.node" />
     <link role="concept" targetNodeId="1.1179409122411:16" resolveInfo="Node_ConceptMethodCall" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877437823">
       <property name="name" value="isVirtualMethodCall" />
@@ -1816,7 +1796,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877500232">
-    <property name="package" value="attribute" />
+    <property name="virtualPackage" value="attribute" />
     <link role="concept" targetNodeId="1.1204848911283:16" resolveInfo="LinkAttributeAccessQualifier" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877500233">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877500234" />
@@ -1978,7 +1958,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877508846">
-    <property name="package" value="operation" />
+    <property name="virtualPackage" value="operation" />
     <link role="concept" targetNodeId="1.1138411891628:16" resolveInfo="SNodeOperation" />
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1213877508847">
       <property name="name" value="getLeftNodeConcept" />
@@ -2336,7 +2316,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877527364">
-    <property name="package" value="operation.featureAccess" />
+    <property name="virtualPackage" value="operation.featureAccess" />
     <link role="concept" targetNodeId="1.1138056143562:16" resolveInfo="SLinkAccess" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877527365">
       <property name="name" value="getVariableExpectedName" />
@@ -2797,7 +2777,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240334100559">
-    <property name="package" value="type" />
+    <property name="virtualPackage" value="type" />
     <link role="concept" targetNodeId="1.1240170042401:16" resolveInfo="SEnumMemberType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240334114847">
       <property name="name" value="getPresentation" />
@@ -2944,7 +2924,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240931315602">
-    <property name="package" value="enum.enumoperation" />
+    <property name="virtualPackage" value="enum.enumoperation" />
     <link role="concept" targetNodeId="1.1240930395965:16" resolveInfo="SEnumOperation" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1240931315603">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240931315604" />
@@ -3006,7 +2986,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3542758363529077379">
-    <property name="package" value="attribute" />
+    <property name="virtualPackage" value="attribute" />
     <link role="concept" targetNodeId="1.3542758363529077353:16" resolveInfo="ILinkAccessQualifierContainer" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2906110183022538642">
       <property name="isVirtual" value="true" />
@@ -3025,7 +3005,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5815925154349132185">
-    <property name="package" value="operation.parameter" />
+    <property name="virtualPackage" value="operation.parameter" />
     <link role="concept" targetNodeId="1.5168775467716640652:16" resolveInfo="OperationParm_LinkQualifier" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5815925154349132186">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5815925154349132187" />
@@ -3164,7 +3144,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3476105411552591981">
-    <property name="package" value="operation.node" />
+    <property name="virtualPackage" value="operation.node" />
     <link role="concept" targetNodeId="1.1171500988903:16" resolveInfo="Node_GetChildrenOperation" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3476105411552591984">
       <property name="name" value="getLinkQualifier" />

@@ -33,23 +33,18 @@
   <language namespace="8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" />
+  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" version="-1" />
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7421785601023770739">
-    <property name="package" value="widgets" />
     <property name="name" value="ButtonBase" />
     <property name="abstract" value="true" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="7421785601023770740">
       <property name="name" value="text" />
@@ -57,8 +52,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7421785601023770742">
-    <property name="package" value="widgets" />
     <property name="name" value="CheckBox" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770739" resolveInfo="ButtonBase" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.EditableUIProperty" id="7421785601023770743">
       <property name="name" value="checked" />
@@ -67,12 +62,12 @@
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7421785601023770745">
     <property name="name" value="Widget" />
-    <property name="package" value="widgets" />
+    <property name="virtualPackage" value="widgets" />
     <link role="belongsTo" targetNodeId="7421785601023770754" resolveInfo="Panel" />
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7421785601023770748">
     <property name="name" value="RadioButton" />
-    <property name="package" value="widgets" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770739" resolveInfo="ButtonBase" />
     <node role="produceEvent" type="jetbrains.mps.ui.modeling.structure.EventProducer" id="7421785601023770749">
       <link role="event" targetNodeId="2.7421785601023888124" resolveInfo="SelectEvent" />
@@ -84,7 +79,7 @@
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7421785601023770752">
     <property name="name" value="Button" />
-    <property name="package" value="widgets" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770739" resolveInfo="ButtonBase" />
     <node role="produceEvent" type="jetbrains.mps.ui.modeling.structure.EventProducer" id="7001216437968644953">
       <link role="event" targetNodeId="2.5275753781174783545" resolveInfo="ActionEvent" />
@@ -92,7 +87,7 @@
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7421785601023770754">
     <property name="name" value="Panel" />
-    <property name="package" value="widgets" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="7421785601023770755">
       <property name="name" value="children" />
@@ -100,8 +95,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="4007322171505962920">
-    <property name="package" value="widgets" />
     <property name="name" value="VerticalPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="513490887686267285">
       <property name="name" value="verticalAlignment" />
@@ -117,8 +112,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="352695393470301153">
-    <property name="package" value="widgets" />
     <property name="name" value="HorizontalPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="513490887686270297">
       <property name="name" value="verticalAlignment" />
@@ -138,8 +133,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="262873202871571543">
-    <property name="package" value="widgets" />
     <property name="name" value="DockPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="262873202871571544">
       <property name="name" value="north" />
@@ -176,8 +171,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="262873202871588254">
-    <property name="package" value="widgets" />
     <property name="name" value="Label" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="262873202871593902">
       <property name="name" value="text" />
@@ -185,8 +180,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="6424935405034500197">
-    <property name="package" value="widgets" />
     <property name="name" value="TabbedPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="6424935405034500198">
       <property name="name" value="tabs" />
@@ -198,22 +193,22 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="6399754879758206671">
-    <property name="package" value="widgets" />
     <property name="name" value="TreeNode" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7936848552255359513" resolveInfo="AbstractTreeNode" />
     <link role="belongsTo" targetNodeId="7936848552255359513" resolveInfo="AbstractTreeNode" />
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="6399754879758206688">
-    <property name="package" value="widgets" />
     <property name="name" value="Tree" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="6399754879758206689">
       <property name="name" value="root" />
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="3616339824038852574">
-    <property name="package" value="widgets" />
     <property name="name" value="Table" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="3616339824038886159">
       <property name="name" value="columns" />
@@ -223,8 +218,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="3616339824038886161">
-    <property name="package" value="widgets" />
     <property name="name" value="TableColumn" />
+    <property name="virtualPackage" value="widgets" />
     <link role="belongsTo" targetNodeId="3616339824038852574" resolveInfo="Table" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="3616339824038886162">
       <property name="name" value="name" />
@@ -233,8 +228,8 @@
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="3616339824038886165">
-    <property name="package" value="widgets" />
     <property name="name" value="TableRow" />
+    <property name="virtualPackage" value="widgets" />
     <link role="belongsTo" targetNodeId="3616339824038852574" resolveInfo="Table" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="3616339824038886166">
       <property name="name" value="data" />
@@ -246,9 +241,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7936848552255359513">
-    <property name="package" value="widgets" />
     <property name="name" value="AbstractTreeNode" />
     <property name="abstract" value="true" />
+    <property name="virtualPackage" value="widgets" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="7936848552255362159">
       <property name="name" value="children" />
     </node>
@@ -260,14 +255,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7936848552255362162">
-    <property name="package" value="widgets" />
     <property name="name" value="RootTreeNode" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7936848552255359513" resolveInfo="AbstractTreeNode" />
     <link role="belongsTo" targetNodeId="6399754879758206688" resolveInfo="Tree" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="513490887686270244">
-    <property name="package" value="widgets" />
     <property name="name" value="VerticalAlignment" />
+    <property name="virtualPackage" value="widgets" />
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="513490887686270250">
       <property name="name" value="TOP" />
       <link role="baseMethodDeclaration" targetNodeId="513490887686270246" resolveInfo="VerticalAlignment" />
@@ -320,8 +315,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="513490887686270269">
-    <property name="package" value="widgets" />
     <property name="name" value="HorizontalAlignment" />
+    <property name="virtualPackage" value="widgets" />
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="513490887686270286">
       <property name="name" value="LEFT" />
       <link role="baseMethodDeclaration" targetNodeId="513490887686270271" resolveInfo="HorizontalAlignment" />
@@ -374,8 +369,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="513490887686296700">
-    <property name="package" value="widgets" />
     <property name="name" value="StackPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="513490887686296701">
       <property name="name" value="stack" />
@@ -384,8 +379,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="513490887686296702">
-    <property name="package" value="widgets" />
     <property name="name" value="StackItem" />
+    <property name="virtualPackage" value="widgets" />
     <link role="belongsTo" targetNodeId="513490887686296700" resolveInfo="StackPanel" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="513490887686296703">
@@ -394,8 +389,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7001216437968619238">
-    <property name="package" value="widgets" />
     <property name="name" value="Hyperlink" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770739" resolveInfo="ButtonBase" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="6196826443637184763">
       <property name="name" value="href" />
@@ -410,14 +405,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="4917245576577583971">
-    <property name="package" value="widgets" />
     <property name="name" value="FlowPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
   </node>
   <visible index="3" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" />
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="2663453265346089636">
-    <property name="package" value="widgets" />
     <property name="name" value="LayoutPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="2663453265346089637">
       <property name="name" value="layoutChildren" />
@@ -431,8 +426,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="7617727720684691215">
-    <property name="package" value="widgets" />
     <property name="name" value="FillPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="4850120319523368884">
       <property name="name" value="child" />
@@ -443,8 +438,8 @@
     <property name="name" value="CustomComponent" />
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="8508807536211634698">
-    <property name="package" value="widgets" />
     <property name="name" value="GridPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="8508807536211634699">
       <property name="name" value="gridChildren" />
@@ -465,8 +460,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="3546006303814975218">
-    <property name="package" value="widgets" />
     <property name="name" value="RootPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770754" resolveInfo="Panel" />
     <node role="compartment" type="jetbrains.mps.ui.modeling.structure.Container" id="3546006303814975219">
       <property name="name" value="content" />
@@ -474,8 +469,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="6261739386029717105">
-    <property name="package" value="widgets" />
     <property name="name" value="Dialog" />
+    <property name="virtualPackage" value="widgets" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="1870423755832688529">
       <property name="name" value="contentPane" />
       <node role="dataType" type="jetbrains.mps.ui.structure.ContainerType" id="5409370515560040349">
@@ -491,8 +486,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObject" id="2700392567716868344">
-    <property name="package" value="widgets" />
     <property name="name" value="TextField" />
+    <property name="virtualPackage" value="widgets" />
     <link role="extends" targetNodeId="7421785601023770745" resolveInfo="Widget" />
     <node role="property" type="jetbrains.mps.ui.modeling.structure.UIProperty" id="2700392567716868345">
       <property name="name" value="text" />

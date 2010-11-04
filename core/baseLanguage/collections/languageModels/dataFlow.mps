@@ -4,21 +4,10 @@
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)" version="-1" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -84,7 +73,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1207074632097">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1197932370469:7" resolveInfo="MapElement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1207074632098">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207074632099">
@@ -281,7 +270,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1225200397608">
-    <property name="package:0" value="internal" />
+    <property name="virtualPackage:0" value="internal" />
     <link role="conceptDeclaration:0" targetNodeId="1.1204796164442:7" resolveInfo="InternalSequenceOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1225200397609">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225200397610">
@@ -297,7 +286,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1226567762875">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1226566855640:7" resolveInfo="AddSetElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1226567762876">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226567762877">
@@ -313,7 +302,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1226591528105">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1226591481394:7" resolveInfo="RemoveSetElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1226591528106">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226591528107">
@@ -329,7 +318,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1226592668185">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1226592602759:7" resolveInfo="AddAllSetElementsOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1226592668186">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226592668187">
@@ -345,7 +334,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1226594122909">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1226593880804:7" resolveInfo="RemoveAllSetElementsOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1226594122910">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226594122911">
@@ -361,7 +350,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1227022509407">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.1227022196108:7" resolveInfo="RemoveAtElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1227022509408">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227022509409">
@@ -377,7 +366,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1227022729874">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.1227022179634:7" resolveInfo="AddLastElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1227022729875">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227022729876">
@@ -393,7 +382,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1227022740613">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.1227022159410:7" resolveInfo="AddFirstElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1227022740614">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227022740615">
@@ -540,7 +529,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1240251544236">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240251356173:7" resolveInfo="HeadSetOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1240251544237">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240251544238">
@@ -556,7 +545,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1240251651184">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240251565326:7" resolveInfo="TailSetOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1240251651185">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240251651186">
@@ -572,7 +561,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1240251752474">
-    <property name="package:0" value="set" />
+    <property name="virtualPackage:0" value="set" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240251665173:7" resolveInfo="SubSetOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1240251752475">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240251752476">
@@ -596,7 +585,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1240251810698">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240239379525:7" resolveInfo="HeadMapOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1240251810699">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240251810700">
@@ -612,7 +601,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1240251824908">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240240201186:7" resolveInfo="SubMapOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1240251824909">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240251824910">
@@ -636,7 +625,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1240251841053">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240240127120:7" resolveInfo="TailMapOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1240251841054">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240251841055">
@@ -680,7 +669,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1241094395647">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.1225621920911:7" resolveInfo="InsertElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1241094395648">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241094395649">
@@ -704,7 +693,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="2638521544925399292">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.1225711141656:7" resolveInfo="ListElementAccessExpression" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="2638521544925399293">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2638521544925399294">
@@ -728,7 +717,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370230998012">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1201306600024:7" resolveInfo="ContainsKeyOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370230998013">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370230998014">
@@ -744,7 +733,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370230999948">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1237907129112:7" resolveInfo="ContainsValueOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370230999949">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370230999950">
@@ -760,7 +749,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370230999959">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1206655735055:7" resolveInfo="MapEntry" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370230999960">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370230999961">
@@ -784,7 +773,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370230999979">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1206655653991:7" resolveInfo="MapInitializer" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370230999980">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370230999981">
@@ -813,7 +802,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231000008">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1197686869805:7" resolveInfo="HashMapCreator" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231000009">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231000010">
@@ -842,7 +831,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231117047">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1201216218329:7" resolveInfo="MapOperationExpression" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231117048">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231117049">
@@ -866,7 +855,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231117067">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1207233427108:7" resolveInfo="MapRemoveOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231117068">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231117069">
@@ -882,7 +871,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231117078">
-    <property name="package:0" value="mapType" />
+    <property name="virtualPackage:0" value="mapType" />
     <link role="conceptDeclaration:0" targetNodeId="1.1240906768633:7" resolveInfo="PutAllOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231117079">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231117080">
@@ -898,7 +887,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231117089">
-    <property name="package:0" value="sequence.chunks" />
+    <property name="virtualPackage:0" value="sequence.chunks" />
     <link role="conceptDeclaration:0" targetNodeId="1.1205753243362:7" resolveInfo="ChunkOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231117090">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231117091">
@@ -914,7 +903,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231117100">
-    <property name="package:0" value="sequence.closures" />
+    <property name="virtualPackage:0" value="sequence.closures" />
     <link role="conceptDeclaration:0" targetNodeId="1.1209727891789:7" resolveInfo="ComparatorSortOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231117101">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231117102">
@@ -930,7 +919,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8844961370231117120">
-    <property name="package:0" value="sequence.closures" />
+    <property name="virtualPackage:0" value="sequence.closures" />
     <link role="conceptDeclaration:0" targetNodeId="1.1205679737078:7" resolveInfo="SortOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8844961370231117121">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8844961370231117122">
@@ -946,7 +935,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6126991172893688561">
-    <property name="package:0" value="sequence" />
+    <property name="virtualPackage:0" value="sequence" />
     <link role="conceptDeclaration:0" targetNodeId="1.6126991172893676625:7" resolveInfo="ContainsAllOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6126991172893688562">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6126991172893688563">
@@ -962,7 +951,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="5633809102336891218">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.5633809102336885303:7" resolveInfo="SubListOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="5633809102336891219">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5633809102336891220">
@@ -986,7 +975,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="5232196642625575046">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.5232196642625574978:7" resolveInfo="HeadListOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="5232196642625575047">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5232196642625575048">
@@ -1002,7 +991,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="5232196642625575163">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.5232196642625575054:7" resolveInfo="TailListOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="5232196642625575164">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5232196642625575165">
@@ -1018,7 +1007,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="3602611744238064785">
-    <property name="package:0" value="stack" />
+    <property name="virtualPackage:0" value="stack" />
     <link role="conceptDeclaration:0" targetNodeId="1.3358009230508699932:7" resolveInfo="PushOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="3602611744238064786">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3602611744238064787">
@@ -1034,7 +1023,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="3091159734392890124">
-    <property name="package:0" value="list" />
+    <property name="virtualPackage:0" value="list" />
     <link role="conceptDeclaration:0" targetNodeId="1.1225645868993:7" resolveInfo="SetElementOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="3091159734392890125">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3091159734392890126">

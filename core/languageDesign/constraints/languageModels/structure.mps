@@ -3975,31 +3975,8 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -4034,8 +4011,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1147467790433">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_PropertyGetter" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1177671709693">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" />
@@ -4055,8 +4032,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1147468365020">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintsFunctionParameter_node" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1147468428841">
       <property name="value:0" value="node" />
@@ -4071,8 +4048,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1148684180339">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_ReferentSearchScope_Factory" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="1148934493876:8" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1148685212404">
       <property name="value:0" value="search scope" />
@@ -4123,8 +4100,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1148934493876">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1161721561937">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" />
@@ -4152,7 +4129,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1148934636683">
     <property name="name:0" value="ConceptParameter_ReferentSearchScope_enclosingNode" />
-    <property name="package:0" value="Parameters" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1148934636684">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" />
@@ -4171,8 +4148,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1152959968041">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_PropertySetter" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1152960040908">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" />
@@ -4229,8 +4206,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163200368514">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_ReferentSetHandler" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1163203474660">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" />
@@ -4258,8 +4235,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163200647017">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_referenceNode" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1163201234487">
       <property name="value:0" value="referenceNode" />
@@ -4274,8 +4251,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163202640154">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_newReferentNode" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1163202640155">
       <property name="value:0" value="newReferentNode" />
@@ -4290,8 +4267,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1163202694127">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_oldReferentNode" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1163202694128">
       <property name="value:0" value="oldReferentNode" />
@@ -4306,8 +4283,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1202989531578">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_CanBeAChild" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099217320">
       <property name="value:0" value="return false if node cannot be a child of parentNode" />
@@ -4339,8 +4316,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1202989658459">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_parentNode" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1202989658460">
       <property name="value:0" value="parentNode" />
@@ -4359,8 +4336,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203001093456">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_CanBeAParent" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5403837141099222262">
       <property name="value:0" value="return false if node cannot be a parent of given node" />
@@ -4392,8 +4369,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203001236505">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_childConcept" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203001236506">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -4408,8 +4385,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203009604308">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_link" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1203009720817">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
@@ -4426,8 +4403,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205764368223">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_linkTarget" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1205764396604">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
@@ -4443,7 +4420,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1153138554286">
     <property name="name:0" value="ConstraintsFunctionParameter_propertyValue" />
-    <property name="package:0" value="Parameters" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1153138579851">
       <property name="value:0" value="propertyValue" />
@@ -4455,8 +4432,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1212096972063">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_PropertyValidator" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1212096972064">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -4550,8 +4527,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227084988347">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_CanBeARoot" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1227084988348">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4571,8 +4548,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3906442776579549644">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_parameterNode" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3906442776579549645">
       <property name="value:0" value="parameterNode" />
@@ -4587,8 +4564,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3906442776579556545">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_ReferentSearchScope_Presentation" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="1148934493876:8" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3906442776579617128">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4620,8 +4597,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6768994795311967732">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_visible" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6768994795311967733">
       <property name="value:0" value="visible" />
@@ -4636,8 +4613,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6768994795311967741">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_smartReference" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6768994795311967742">
       <property name="value:0" value="smartReference" />
@@ -4652,8 +4629,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4590747232508808445">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_inEditor" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4590747232508808446">
       <property name="value:0" value="inEditor" />
@@ -4668,8 +4645,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3754598629525415375">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_GetAlternativeIcon" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3754598629525415382">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4681,8 +4658,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7855321458717464197">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_CanBeAnAncestor" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="7855321458717464198">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4706,8 +4683,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3481330710159180554">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_ReferentSearchScope_Validator" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="1148934493876:8" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3481330710159180558">
       <link role="conceptLinkDeclaration:0" targetNodeId="3.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4727,8 +4704,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2990203945683059368">
-    <property name="package:0" value="Parameters" />
     <property name="name:0" value="ConstraintFunctionParameter_checkedNode" />
+    <property name="virtualPackage:0" value="Parameters" />
     <link role="extends:0" targetNodeId="3.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2990203945683059370">
       <property name="value:0" value="checkedNode" />
@@ -4746,8 +4723,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4962705936936018688">
-    <property name="package:0" value="Functions" />
     <property name="name:0" value="ConstraintFunction_RefSetHandlerKeepsReference" />
+    <property name="virtualPackage:0" value="Functions" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4962705936936018693">
       <property name="value:0" value="keeps reference" />

@@ -12,32 +12,15 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="22" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#java.util.regex(java.util.regex@java_stub)" version="-1" />
@@ -274,7 +257,7 @@
       <link role="applicableConcept:2" targetNodeId="1.1174554406855:0" resolveInfo="PredefinedSymbolClasses" />
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="6129327962763257332">
-      <property name="package:2" value="Expressions" />
+      <property name="virtualPackage:2" value="Expressions" />
       <link role="applicableConcept:2" targetNodeId="1.6129327962763158517:0" resolveInfo="FindMatchExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence:2" id="4276824325038550471">
         <node role="case:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case:2" id="4276824325038550473">
@@ -420,7 +403,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1174510782150">
     <property name="name:2" value="reduce_InlineRegexp" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1174510540317:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1174510866880">
       <property name="name:3" value="ClassConcept" />
@@ -576,7 +559,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1174512791870">
     <property name="name:2" value="reduce_MatchRegexp" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1174512414484:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1174512797997">
       <property name="name:3" value="ClassConcept" />
@@ -753,7 +736,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1174657156447">
     <property name="name:2" value="reduce_ReplaceWithRegexp" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1174655989549:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1174659136522">
       <property name="name:3" value="method" />
@@ -879,7 +862,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1174659580870">
     <property name="name:2" value="reduce_MatchVariableReference_ReplaceExpression" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1174565027678:0" resolveInfo="MatchVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1210020256281">
       <property name="name:3" value="method" />
@@ -1002,7 +985,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1175155416895">
     <property name="name:2" value="reduce_ForEachMatchStatement" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1175154849582:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1175155438404">
       <property name="name:3" value="method" />
@@ -1174,7 +1157,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1175164916487">
     <property name="name:2" value="reduce_SplitExpression" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1175164405556:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1175164929272">
       <property name="name:3" value="method" />
@@ -1225,7 +1208,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1175169578541">
     <property name="name:2" value="reduce_FindMatchStatement" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1175169009571:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1175169593193">
       <property name="name:3" value="method" />
@@ -1397,7 +1380,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1175170026377">
     <property name="name:2" value="reduce_MatchVariableReference" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1174565027678:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1175170026378">
       <property name="name:3" value="method" />
@@ -1541,7 +1524,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1179358112803">
     <property name="name:2" value="reduce_MatchRegexpExpression" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.1179357154354:0" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1210020425414">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1210020425821">
@@ -1592,7 +1575,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1222257072263">
     <property name="name:2" value="reduce_SplitOperation" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="4.1197027756228:3" resolveInfo="DotExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222257121598">
       <property name="name:3" value="abc" />
@@ -1660,7 +1643,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1222261236269">
     <property name="name:2" value="reduce_ReplaceOperation" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="4.1197027756228:3" resolveInfo="DotExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222261258850">
       <property name="name:3" value="abc" />
@@ -1812,7 +1795,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1222261613401">
     <property name="name:2" value="reduce_MatchRegexpOperation" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="4.1197027756228:3" resolveInfo="DotExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222261645948">
       <property name="name:3" value="abc" />
@@ -1886,7 +1869,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="6129327962763257335">
     <property name="name:2" value="reduce_FindMatchExpression" />
-    <property name="package:2" value="Reduce" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.6129327962763158517:0" resolveInfo="FindMatchExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6129327962763257337">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6129327962763257338">
@@ -2069,8 +2052,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4276824325038550588">
-    <property name="package:2" value="Reduce" />
     <property name="name:2" value="reduce_FindMatchExpressionWithVar" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="1.6129327962763158517:0" resolveInfo="FindMatchExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4276824325038550590">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276824325038550591">
@@ -2162,8 +2145,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3796137614137206922">
-    <property name="package:2" value="Reduce" />
     <property name="name:2" value="reduce_ReplaceRegexpOperation" />
+    <property name="virtualPackage:2" value="Reduce" />
     <link role="applicableConcept:2" targetNodeId="4.1197027756228:3" resolveInfo="DotExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3796137614137206924">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3796137614137206925">

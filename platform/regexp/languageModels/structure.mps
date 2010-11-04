@@ -236,30 +236,14 @@
   </refactoringHistory>
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174482743037">
     <property name="name:0" value="Regexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1174482750898">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
@@ -267,7 +251,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174482753837">
     <property name="name:0" value="StringLiteralRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174483061702">
       <property name="value:0" value="'" />
@@ -280,7 +264,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174482769792">
     <property name="name:0" value="OrRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485167097:0" resolveInfo="BinaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174483022852">
       <property name="value:0" value="|" />
@@ -289,7 +273,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174482804200">
     <property name="name:0" value="PlusRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174483026791">
       <property name="value:0" value="+" />
@@ -302,7 +286,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174482808826">
     <property name="name:0" value="StarRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174483030683">
       <property name="value:0" value="*" />
@@ -333,7 +317,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174484562151">
     <property name="name:0" value="SeqRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485167097:0" resolveInfo="BinaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174484606306">
       <property name="value:0" value="seq" />
@@ -342,7 +326,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174485167097">
     <property name="name:0" value="BinaryRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174485176897">
       <property name="metaClass:0" value="aggregation" />
@@ -362,7 +346,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174485235885">
     <property name="name:0" value="UnaryRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1174485252764">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
@@ -376,7 +360,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174491169200">
     <property name="name:0" value="ParensRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174491382873">
       <property name="value:0" value="(" />
@@ -421,7 +405,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174512414484">
     <property name="name:0" value="MatchRegexpStatement" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1174653421060">
       <link role="intfc:0" targetNodeId="1174653354106:0" resolveInfo="RegexpUsingConstruction" />
@@ -449,7 +433,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174552240608">
     <property name="name:0" value="QuestionRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174552330777">
       <property name="value:0" value="?" />
@@ -462,7 +446,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174554186090">
     <property name="name:0" value="SymbolClassRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174557628217">
       <property name="metaClass:0" value="aggregation" />
@@ -479,7 +463,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174554211468">
     <property name="name:0" value="PositiveSymbolClassRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174554186090:0" resolveInfo="SymbolClassRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174554226704">
       <property name="value:0" value="[" />
@@ -492,7 +476,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174554238051">
     <property name="name:0" value="NegativeSymbolClassRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174554186090:0" resolveInfo="SymbolClassRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174554246475">
       <property name="value:0" value="[^" />
@@ -530,7 +514,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174555732504">
     <property name="name:0" value="PredefinedSymbolClassRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174555843709">
       <property name="sourceCardinality:0" value="1" />
@@ -540,7 +524,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174556813606">
     <property name="name:0" value="DotRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174556830202">
       <property name="value:0" value="." />
@@ -553,7 +537,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174557861378">
     <property name="name:0" value="SymbolClassPart" />
-    <property name="package:0" value="SymbolClassParts" />
+    <property name="virtualPackage:0" value="SymbolClassParts" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1174557870224">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
@@ -564,7 +548,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174557878319">
     <property name="name:0" value="CharacterSymbolClassPart" />
-    <property name="package:0" value="SymbolClassParts" />
+    <property name="virtualPackage:0" value="SymbolClassParts" />
     <link role="extends:0" targetNodeId="1174557861378:0" resolveInfo="SymbolClassPart" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1174557887320">
       <property name="name:0" value="character" />
@@ -581,7 +565,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174558301835">
     <property name="name:0" value="IntervalSymbolClassPart" />
-    <property name="package:0" value="SymbolClassParts" />
+    <property name="virtualPackage:0" value="SymbolClassParts" />
     <link role="extends:0" targetNodeId="1174557861378:0" resolveInfo="SymbolClassPart" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1174558315290">
       <property name="name:0" value="start" />
@@ -602,7 +586,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174558792178">
     <property name="name:0" value="PredefinedSymbolClassSymbolClassPart" />
-    <property name="package:0" value="SymbolClassParts" />
+    <property name="virtualPackage:0" value="SymbolClassParts" />
     <link role="extends:0" targetNodeId="1174557861378:0" resolveInfo="SymbolClassPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174558819022">
       <property name="sourceCardinality:0" value="1" />
@@ -612,7 +596,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174564062919">
     <property name="name:0" value="MatchParensRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174564160889">
       <property name="metaClass:0" value="aggregation" />
@@ -640,7 +624,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174565027678">
     <property name="name:0" value="MatchVariableReference" />
-    <property name="package:0" value="Expressions" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174565035929">
       <property name="sourceCardinality:0" value="1" />
@@ -659,7 +643,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174655989549">
     <property name="name:0" value="ReplaceWithRegexpExpression" />
-    <property name="package:0" value="Expressions" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174657169497">
       <property name="value:0" value="replace with regexp" />
@@ -694,7 +678,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174660461415">
     <property name="name:0" value="LazyStarRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174660474120">
       <property name="value:0" value="*?" />
@@ -707,7 +691,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174660505718">
     <property name="name:0" value="LazyPlusRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174660515579">
       <property name="value:0" value="+?" />
@@ -720,7 +704,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174660533095">
     <property name="name:0" value="LazyQuestionRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174660567895">
       <property name="value:0" value="??" />
@@ -747,7 +731,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174662605354">
     <property name="name:0" value="RegexpDeclarationReferenceRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174662628918">
       <property name="sourceCardinality:0" value="1" />
@@ -757,7 +741,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174904166999">
     <property name="name:0" value="NTimesRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1174904184877">
       <property name="name:0" value="n" />
@@ -774,7 +758,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174904442594">
     <property name="name:0" value="AtLeastNTimesRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174904484266">
       <property name="value:0" value="{n,}" />
@@ -791,7 +775,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174904605806">
     <property name="name:0" value="FromNToMTimesRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174485235885:0" resolveInfo="UnaryRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174904757971">
       <property name="value:0" value="{n,m}" />
@@ -812,7 +796,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174906321267">
     <property name="name:0" value="PositiveLookAheadRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174906544517:0" resolveInfo="LookRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174906385283">
       <property name="value:0" value="(?=" />
@@ -821,7 +805,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174906468661">
     <property name="name:0" value="NegativeLookAheadRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174906544517:0" resolveInfo="LookRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174906482383">
       <property name="value:0" value="(?!" />
@@ -834,7 +818,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174906544517">
     <property name="name:0" value="LookRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174906566584">
       <property name="metaClass:0" value="aggregation" />
@@ -848,7 +832,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174906762287">
     <property name="name:0" value="PositiveLookBehindRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174906544517:0" resolveInfo="LookRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174906771743">
       <property name="value:0" value="(?&lt;=" />
@@ -861,7 +845,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174906790902">
     <property name="name:0" value="NegativeLookBehindRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174906544517:0" resolveInfo="LookRegexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1174906828077">
       <property name="value:0" value="(?&lt;!" />
@@ -874,7 +858,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174909099093">
     <property name="name:0" value="MatchVariableReferenceRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174909113141">
       <property name="sourceCardinality:0" value="1" />
@@ -891,7 +875,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175154849582">
     <property name="name:0" value="ForEachMatchStatement" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1175154888102">
       <property name="value:0" value="while (expr =~ regex) {" />
@@ -915,7 +899,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175161264766">
     <property name="name:0" value="LineStartRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1175161277910">
       <property name="value:0" value="^" />
@@ -928,7 +912,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175161300324">
     <property name="name:0" value="LineEndRegexp" />
-    <property name="package:0" value="Regexps" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1175161312248">
       <property name="value:0" value="$" />
@@ -941,7 +925,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175164405556">
     <property name="name:0" value="SplitExpression" />
-    <property name="package:0" value="Expressions" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1175164472898">
       <property name="value:0" value="split with" />
@@ -966,7 +950,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175169009571">
     <property name="name:0" value="FindMatchStatement" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1175169377208">
       <property name="value:0" value="if (expr =~ regex) {" />
@@ -990,7 +974,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1179357154354">
     <property name="name:0" value="MatchRegexpExpression" />
-    <property name="package:0" value="Expressions" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6129327962764464866">
       <property name="value:0" value="matches" />
@@ -1010,8 +994,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203415418648">
-    <property name="package:0" value="Regexps" />
     <property name="name:0" value="UnicodeCharacterRegexp" />
+    <property name="virtualPackage:0" value="Regexps" />
     <link role="extends:0" targetNodeId="1174482743037:0" resolveInfo="Regexp" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1203415499835">
       <property name="name:0" value="code" />
@@ -1023,13 +1007,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration:0" id="1203415512996">
-    <property name="package:0" value="Regexps" />
     <property name="name:0" value="FourHex" />
     <property name="constraint:0" value="[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]" />
+    <property name="virtualPackage:0" value="Regexps" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220021842985">
-    <property name="package:0" value="SymbolClassParts" />
     <property name="name:0" value="IntersectionSymbolClassPart" />
+    <property name="virtualPackage:0" value="SymbolClassParts" />
     <link role="extends:0" targetNodeId="1174557861378:0" resolveInfo="SymbolClassPart" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220356033934">
       <property name="metaClass:0" value="aggregation" />
@@ -1053,12 +1037,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1220356640633">
-    <property name="package:0" value="Regexps" />
     <property name="name:0" value="SymbolClassRegexpAndPart" />
+    <property name="virtualPackage:0" value="Regexps" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1222256539755">
     <property name="name:0" value="SplitOperation" />
-    <property name="package:0" value="Operations" />
+    <property name="virtualPackage:0" value="Operations" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1222263505453">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
@@ -1078,8 +1062,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1222260469397">
-    <property name="package:0" value="Operations" />
     <property name="name:0" value="MatchRegexpOperation" />
+    <property name="virtualPackage:0" value="Operations" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1222260599569">
       <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
     </node>
@@ -1092,8 +1076,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1222260556146">
-    <property name="package:0" value="Operations" />
     <property name="name:0" value="ReplaceWithRegexpOperation" />
+    <property name="virtualPackage:0" value="Operations" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1222261064681">
       <property name="value:0" value="replace with" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
@@ -1120,8 +1104,8 @@
     <property name="constraint:0" value="[^\\+?.\\[\\]]+" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6129327962763158517">
-    <property name="package:0" value="Expressions" />
     <property name="name:0" value="FindMatchExpression" />
+    <property name="virtualPackage:0" value="Expressions" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6129327962763909203">
       <property name="value:0" value="=~" />
@@ -1142,7 +1126,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3796137614137086346">
     <property name="name:0" value="ReplaceRegexpOperation" />
-    <property name="package:0" value="Operations" />
+    <property name="virtualPackage:0" value="Operations" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="3796137614137159270">
       <property name="name:0" value="dotAll" />
       <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
@@ -1181,7 +1165,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3796137614137538892">
     <property name="name:0" value="LiteralReplacement" />
-    <property name="package:0" value="Replaces" />
+    <property name="virtualPackage:0" value="Replaces" />
     <link role="extends:0" targetNodeId="3796137614137538898:0" resolveInfo="Replacement" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="3796137614137565243">
       <property name="name:0" value="text" />
@@ -1192,8 +1176,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3796137614137538894">
-    <property name="package:0" value="Replaces" />
     <property name="name:0" value="MatchVariableReferenceReplacement" />
+    <property name="virtualPackage:0" value="Replaces" />
     <link role="extends:0" targetNodeId="3796137614137538898:0" resolveInfo="Replacement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3796137614137539525">
       <property name="sourceCardinality:0" value="1" />
@@ -1202,8 +1186,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3796137614137538898">
-    <property name="package:0" value="Replaces" />
     <property name="name:0" value="Replacement" />
+    <property name="virtualPackage:0" value="Replaces" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3796137614137949772">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
