@@ -6,27 +6,15 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fc(jetbrains.mps.lang.smodel.dataFlow)" version="-1" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1210626395131">
-    <property name="package:0" value="operation" />
+    <property name="virtualPackage:0" value="operation" />
     <link role="conceptDeclaration:0" targetNodeId="1.1138411891628:16" resolveInfo="SNodeOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1210626395132">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210626395133">
@@ -94,7 +82,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6806646868560743951">
-    <property name="package:0" value="operation.concept" />
+    <property name="virtualPackage:0" value="operation.concept" />
     <link role="conceptDeclaration:0" targetNodeId="1.1180031783296:16" resolveInfo="Concept_IsSubConceptOfOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6806646868560743952">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6806646868560743953">
@@ -110,7 +98,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6806646868560743962">
-    <property name="package:0" value="operation.parameter" />
+    <property name="virtualPackage:0" value="operation.parameter" />
     <link role="conceptDeclaration:0" targetNodeId="1.1204834851141:16" resolveInfo="PoundExpression" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6806646868560743963">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6806646868560743964">
@@ -126,7 +114,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6031770219184889510">
-    <property name="package:0" value="operation.concept" />
+    <property name="virtualPackage:0" value="operation.concept" />
     <link role="conceptDeclaration:0" targetNodeId="1.1180028149140:16" resolveInfo="Concept_IsSuperConceptOfOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6031770219184889511">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6031770219184889512">
@@ -142,7 +130,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="8287985554703837204">
-    <property name="package:0" value="operation.node" />
+    <property name="virtualPackage:0" value="operation.node" />
     <link role="conceptDeclaration:0" targetNodeId="1.1139621453865:16" resolveInfo="Node_IsInstanceOfOperation" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="8287985554703837205">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8287985554703837206">

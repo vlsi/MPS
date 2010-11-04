@@ -4,23 +4,13 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="b51b9e02-45dc-4b48-b300-cf49360a8d1f(jetbrains.mps.xmlSchema)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
+  <languageAspect modelUID="r:4f0c356c-7aaf-4781-86ec-26e5859d0c01(jetbrains.mps.smodel.persistence.def.v4)" version="-1" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="5885912106184295766">
     <property name="schemaName:3" value="MPS model" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="5885912106184295767">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="5885912106184295768">
         <property name="line:3" value="===" />
@@ -286,8 +276,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="5885912106184296249">
-    <property name="package:3" value="schema" />
     <property name="schemaName:3" value="MPS refactorings" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="5885912106184296250">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="5885912106184296251">
         <property name="line:3" value="===" />

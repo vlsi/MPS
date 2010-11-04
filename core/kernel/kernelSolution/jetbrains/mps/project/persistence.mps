@@ -9,26 +9,16 @@
   <language namespace="132aa4d8-a3f7-441c-a7eb-3fce23492c6a(jetbrains.mps.baseLanguage.builders)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" version="4" />
   <languageAspect modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590595(jetbrains.mps.xmlSchema.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
+  <languageAspect modelUID="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" version="-1" />
+  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project.structure.modules.mappingpriorities(jetbrains.mps.project.structure.modules.mappingpriorities@java_stub)" version="-1" />
@@ -45,7 +35,7 @@
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883029650">
     <property name="schemaName:3" value="MPS devkit" />
     <property name="alwaysUseRoot:3" value="true" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="842994667883029651">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="842994667883029652">
         <property name="line:3" value="========" />
@@ -144,7 +134,7 @@
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883029706">
     <property name="schemaName:3" value="MPS generator" />
     <property name="alwaysUseRoot:3" value="true" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="842994667883029707">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="842994667883029708">
         <property name="line:3" value="===" />
@@ -354,7 +344,7 @@
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883029789">
     <property name="schemaName:3" value="MPS language" />
     <property name="alwaysUseRoot:3" value="true" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="842994667883029790">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="842994667883029791">
         <property name="line:3" value="========" />
@@ -516,7 +506,7 @@
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883029870">
     <property name="schemaName:3" value="MPS module" />
     <property name="alwaysUseRoot:3" value="true" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="842994667883029871">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="842994667883029872">
         <property name="line:3" value="===" />
@@ -849,7 +839,7 @@
   </node>
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883029936">
     <property name="schemaName:3" value="MPS project" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="842994667883029937">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="842994667883029938">
         <property name="line:3" value="==" />
@@ -1019,7 +1009,7 @@
   <node type="jetbrains.mps.xmlSchema.structure.Schema:3" id="842994667883030001">
     <property name="schemaName:3" value="MPS solution" />
     <property name="alwaysUseRoot:3" value="true" />
-    <property name="package:3" value="schema" />
+    <property name="virtualPackage:3" value="schema" />
     <node role="declarationBlock:3" type="jetbrains.mps.xmlSchema.structure.DeclarationBlock:3" id="842994667883030002">
       <node role="textLine:3" type="jetbrains.mps.xmlSchema.structure.TextLine:3" id="842994667883030003">
         <property name="line:3" value="========" />
@@ -1087,7 +1077,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="842994667883030054">
     <property name="name:0" value="ModuleDescriptorsBuilders" />
-    <property name="package:0" value="builders" />
+    <property name="virtualPackage:0" value="builders" />
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030127">
       <property name="name:0" value="moduleDescriptor" />
       <property name="root:0" value="true" />
@@ -1203,7 +1193,7 @@
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="842994667883030151">
     <property name="name:3" value="DevkitDescriptorPersistence" />
-    <property name="package:3" value="classes" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="842994667883030152">
       <property name="name:3" value="loadDevKitDescriptor" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030153">
@@ -2004,7 +1994,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="842994667883030499">
     <property name="name:3" value="GeneratorDescriptorPersistence" />
-    <property name="package:3" value="classes" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="842994667883030500">
       <property name="name:3" value="loadGeneratorDescriptor" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030501">
@@ -3609,7 +3599,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="842994667883031167">
     <property name="name:3" value="LanguageDescriptorPersistence" />
-    <property name="package:3" value="classes" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="842994667883031168">
       <property name="name:3" value="loadLanguageDescriptor" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883031169">
@@ -5541,7 +5531,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="842994667883031742">
     <property name="name:3" value="ModuleDescriptorPersistence" />
-    <property name="package:3" value="classes" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="842994667883031743">
       <property name="name:3" value="loadDependencies" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="842994667883031744" />
@@ -7209,7 +7199,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="842994667883032218">
     <property name="name:3" value="ProjectDescriptorPersistence" />
-    <property name="package:3" value="classes" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="842994667883032219">
       <property name="name:3" value="saveProjectDescriptorToElement" />
       <node role="returnType:3" type="jetbrains.mps.xmlQuery.structure.XMLElementType:4" id="842994667883032220">
@@ -8763,7 +8753,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="842994667883032842">
     <property name="name:3" value="SolutionDescriptorPersistence" />
-    <property name="package:3" value="classes" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="842994667883032843">
       <property name="name:3" value="loadSolutionDescriptor" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883032844">
@@ -9801,8 +9791,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="842994667883033238" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2709156219364650064">
-    <property name="package:3" value="classes" />
     <property name="name:3" value="ModuleReadException" />
+    <property name="virtualPackage:3" value="classes" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2709156219364650065" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2709156219364650537">
       <link role="classifier:3" targetNodeId="2v.~RuntimeException" resolveInfo="RuntimeException" />
@@ -9828,7 +9818,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646763875">
     <property name="name:0" value="LanguageDescriptorsBuilders" />
-    <property name="package:0" value="builders" />
+    <property name="virtualPackage:0" value="builders" />
     <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646763974">
       <property name="root:0" value="true" />
@@ -9891,7 +9881,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646763988">
     <property name="name:0" value="SolutionDescriptorsBuilders" />
-    <property name="package:0" value="builders" />
+    <property name="virtualPackage:0" value="builders" />
     <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764002">
       <property name="name:0" value="solutionDescriptor" />
@@ -9909,7 +9899,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646764006">
     <property name="name:0" value="GeneratorDescriptorsBuilders" />
-    <property name="package:0" value="builders" />
+    <property name="virtualPackage:0" value="builders" />
     <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764011">
       <property name="root:0" value="true" />
@@ -9967,7 +9957,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646764030">
     <property name="name:0" value="DevkitDescriptorsBuilders" />
-    <property name="package:0" value="builders" />
+    <property name="virtualPackage:0" value="builders" />
     <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764044">
       <property name="root:0" value="true" />
@@ -9985,7 +9975,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646769803">
     <property name="name:0" value="ProjectDescriptorsBuilders" />
-    <property name="package:0" value="builders" />
+    <property name="virtualPackage:0" value="builders" />
     <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646769808">
       <property name="root:0" value="true" />

@@ -60,29 +60,7 @@
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <maxImportIndex value="16" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -91,7 +69,7 @@
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197044488840">
     <property name="name:0" value="FindBlock" />
-    <property name="package:0" value="Methods" />
+    <property name="virtualPackage:0" value="Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1206444393923">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -143,7 +121,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197044488852">
     <property name="name:0" value="IsApplicableBlock" />
-    <property name="package:0" value="Methods" />
+    <property name="virtualPackage:0" value="Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1197044488853">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
@@ -163,7 +141,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197386047362">
     <property name="name:0" value="ConceptFunctionParameter_node" />
-    <property name="package:0" value="Methods" />
+    <property name="virtualPackage:0" value="Methods" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1197386047363">
       <property name="value:0" value="node" />
@@ -179,7 +157,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1200242336756">
     <property name="name:0" value="ResultStatement" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1200242376867">
       <property name="metaClass:0" value="aggregation" />
@@ -194,7 +172,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1200242562138">
     <property name="name:0" value="NodeStatement" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1200242582311">
       <property name="metaClass:0" value="aggregation" />
@@ -209,7 +187,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206197741569">
     <property name="name:0" value="ExecuteFinderExpression" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1206197741572">
       <property name="metaClass:0" value="aggregation" />
@@ -233,8 +211,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206461221942">
-    <property name="package:0" value="Methods" />
     <property name="name:0" value="CategorizeBlock" />
+    <property name="virtualPackage:0" value="Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1206461244865">
       <property name="value:0" value="getCategory" />
@@ -253,8 +231,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206461516825">
-    <property name="package:0" value="Methods" />
     <property name="name:0" value="SearchedNodesBlock" />
+    <property name="virtualPackage:0" value="Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1206461992750">
       <property name="value:0" value="getSearchedNodes" />
@@ -278,7 +256,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1207141825411">
     <property name="name:0" value="CheckCancelledStatusStatement" />
-    <property name="package:0" value="Statements" />
+    <property name="virtualPackage:0" value="Statements" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1207141825414">
       <property name="value:0" value="check cancelled status" />
@@ -286,8 +264,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216396788049">
-    <property name="package:0" value="Methods" />
     <property name="name:0" value="IsVisibleBlock" />
+    <property name="virtualPackage:0" value="Methods" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1216396788050">
       <property name="value:0" value="isVisible" />

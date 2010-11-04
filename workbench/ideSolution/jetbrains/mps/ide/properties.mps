@@ -8407,7 +8407,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075039038">
     <property name="name:3" value="DevKitPropertiesDialog" />
-    <property name="package:3" value="DialogsBase" />
+    <property name="virtualPackage:3" value="DialogsBase" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075039039" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075039040">
       <link role="classifier:3" targetNodeId="23.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
@@ -8652,7 +8652,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075041653">
     <property name="name:3" value="GeneratorPropertiesDialog" />
-    <property name="package:3" value="DialogsBase" />
+    <property name="virtualPackage:3" value="DialogsBase" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075041654" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075041655">
       <link role="classifier:3" targetNodeId="23.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
@@ -8995,7 +8995,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075041819">
     <property name="name:3" value="LanguagePropertiesDialog" />
-    <property name="package:3" value="DialogsBase" />
+    <property name="virtualPackage:3" value="DialogsBase" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075041820" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075041821">
       <link role="classifier:3" targetNodeId="23.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
@@ -9544,7 +9544,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075042074">
     <property name="name:3" value="ModelPropertiesDialog" />
-    <property name="package:3" value="DialogsBase" />
+    <property name="virtualPackage:3" value="DialogsBase" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075042075" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075042076">
       <link role="classifier:3" targetNodeId="23.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
@@ -11105,7 +11105,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075042681">
     <property name="name:3" value="SolutionPropertiesDialog" />
-    <property name="package:3" value="DialogsBase" />
+    <property name="virtualPackage:3" value="DialogsBase" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075042682" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075042683">
       <link role="classifier:3" targetNodeId="23.~BasePropertiesDialog" resolveInfo="BasePropertiesDialog" />
@@ -11532,7 +11532,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075042878">
     <property name="name:3" value="ModelProperties" />
-    <property name="package:3" value="Properties" />
+    <property name="virtualPackage:3" value="Properties" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075042879" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075042880">
       <link role="classifier:3" targetNodeId="76.~BaseBean" resolveInfo="BaseBean" />
@@ -12990,7 +12990,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075043551">
     <property name="name:3" value="DevkitProperties" />
-    <property name="package:3" value="Properties" />
+    <property name="virtualPackage:3" value="Properties" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075043552" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075043553">
       <link role="classifier:3" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
@@ -13504,7 +13504,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075043786">
     <property name="name:3" value="GeneratorProperties" />
-    <property name="package:3" value="Properties" />
+    <property name="virtualPackage:3" value="Properties" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075043787" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075043788">
       <link role="classifier:3" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
@@ -13848,7 +13848,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075043939">
     <property name="name:3" value="LanguageProperties" />
-    <property name="package:3" value="Properties" />
+    <property name="virtualPackage:3" value="Properties" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075043940" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075043941">
       <link role="classifier:3" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
@@ -14683,7 +14683,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075044370">
     <property name="name:3" value="SolutionProperties" />
-    <property name="package:3" value="Properties" />
+    <property name="virtualPackage:3" value="Properties" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075044371" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075044372">
       <link role="classifier:3" targetNodeId="5923576889075044542" resolveInfo="ModuleProperties" />
@@ -15032,7 +15032,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075044542">
     <property name="name:3" value="ModuleProperties" />
-    <property name="package:3" value="Properties" />
+    <property name="virtualPackage:3" value="Properties" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075044543" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="5923576889075044544">
       <property name="isFinal:3" value="true" />
@@ -16208,7 +16208,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075046252">
     <property name="name:3" value="MappingSelectTree" />
-    <property name="package:3" value="DialogsBase.Generator" />
+    <property name="virtualPackage:3" value="DialogsBase.Generator" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075046253" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075046254">
       <link role="classifier:3" targetNodeId="10.~JTree" resolveInfo="JTree" />
@@ -17664,7 +17664,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5923576889075046931">
     <property name="name:3" value="EditOperandDialog" />
-    <property name="package:3" value="DialogsBase.Generator" />
+    <property name="virtualPackage:3" value="DialogsBase.Generator" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5923576889075046932" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075046933">
       <link role="classifier:3" targetNodeId="38.~BaseDialog" resolveInfo="BaseDialog" />

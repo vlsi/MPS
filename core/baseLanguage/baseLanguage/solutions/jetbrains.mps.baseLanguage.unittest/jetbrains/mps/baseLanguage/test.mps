@@ -27,7 +27,7 @@
   <import index="47" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271585456">
     <property name="name:4" value="OnlyStatementsCanUnreachable" />
-    <property name="package:4" value="dataFlow.unreachable" />
+    <property name="virtualPackage:4" value="dataFlow.unreachable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271585458">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216231136438">
         <property name="name:3" value="C1" />
@@ -61,7 +61,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271585523">
     <property name="name:4" value="ForLoop" />
-    <property name="package:4" value="dataFlow" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271585525">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444253195">
         <property name="name:3" value="Class" />
@@ -152,7 +152,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271585641">
     <property name="name:4" value="MethodParametersTest" />
-    <property name="package:4" value="dataFlow" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271585643">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444224345">
         <property name="name:3" value="Class1" />
@@ -212,7 +212,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271585692">
     <property name="name:4" value="UnusedAssignment" />
-    <property name="package:4" value="dataFlow.unusedAssignment" />
+    <property name="virtualPackage:4" value="dataFlow.unusedAssignment" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271585694">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444198386">
         <property name="name:3" value="Class1" />
@@ -268,7 +268,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271586138">
     <property name="name:4" value="UnreachableStatements" />
-    <property name="package:4" value="dataFlow" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271586140">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444211006">
         <property name="name:3" value="Class1" />
@@ -321,7 +321,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271586324">
     <property name="name:4" value="ReadAction" />
-    <property name="package:4" value="dataFlow.unusedAssignment" />
+    <property name="virtualPackage:4" value="dataFlow.unusedAssignment" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271586326">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216549142326">
         <property name="name:3" value="class1" />
@@ -382,7 +382,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271586411">
     <property name="name:4" value="DataFlowInClosure" />
-    <property name="package:4" value="dataFlow" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271586413">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444268403">
         <property name="name:3" value="Class2" />
@@ -469,7 +469,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271586585">
     <property name="name:4" value="UnexpectedReturnInAnonymousClass" />
-    <property name="package:4" value="dataFlow.anonymous" />
+    <property name="virtualPackage:4" value="dataFlow.anonymous" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271586587">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444400359">
         <property name="name:3" value="Class" />
@@ -540,7 +540,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271587023">
     <property name="name:4" value="UnusedVariableDeclaration" />
-    <property name="package:4" value="dataFlow.unusedVariableDeaclaration" />
+    <property name="virtualPackage:4" value="dataFlow.unusedVariableDeaclaration" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271587025">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216889573145">
         <property name="name:3" value="Test" />
@@ -573,7 +573,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271587074">
     <property name="name:4" value="AnonymousClass" />
-    <property name="package:4" value="dataFlow.anonymous" />
+    <property name="virtualPackage:4" value="dataFlow.anonymous" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271587076">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444376212">
         <property name="name:3" value="Class2" />
@@ -659,7 +659,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271587656">
     <property name="name:4" value="VariableUninitialized" />
-    <property name="package:4" value="dataFlow" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271587658">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444156809">
         <property name="name:3" value="c1" />
@@ -713,7 +713,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217271587918">
     <property name="name:4" value="IfStatementDataFlow" />
-    <property name="package:4" value="dataFlow" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217271587920">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1215444237451">
         <property name="name:3" value="Class2" />
@@ -805,8 +805,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217861204623">
-    <property name="package:4" value="dataFlow.unreachable" />
     <property name="name:4" value="IfStatementWrongUnreachable" />
+    <property name="virtualPackage:4" value="dataFlow.unreachable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217861232093">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1217861284983">
         <property name="name:3" value="Class1" />
@@ -1000,8 +1000,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1217866056908">
-    <property name="package:4" value="dataFlow.unusedVariableDeaclaration" />
     <property name="name:4" value="UnusedAssignmentWithIF" />
+    <property name="virtualPackage:4" value="dataFlow.unusedVariableDeaclaration" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1217866137447">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1217866140838">
         <property name="name:3" value="Class" />
@@ -1084,8 +1084,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1220012417777">
-    <property name="package:4" value="dataFlow.unusedVariableDeaclaration" />
     <property name="name:4" value="CatchingUnthrownException" />
+    <property name="virtualPackage:4" value="dataFlow.unusedVariableDeaclaration" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1220012458871">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1220012464903">
         <property name="name:3" value="Class" />
@@ -1162,8 +1162,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1220013369431">
-    <property name="package:4" value="dataFlow.unreachable" />
     <property name="name:4" value="IfStatementWithReturns" />
+    <property name="virtualPackage:4" value="dataFlow.unreachable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1220013386885">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1220013389636">
         <property name="name:3" value="Class" />
@@ -1225,8 +1225,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1220265193995">
-    <property name="package:4" value="dataFlow.unusedVariableDeaclaration" />
     <property name="name:4" value="UnusedParameters" />
+    <property name="virtualPackage:4" value="dataFlow.unusedVariableDeaclaration" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1220265258910">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1220265263160">
         <property name="name:3" value="Test" />
@@ -1301,8 +1301,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1222443174371">
-    <property name="package:4" value="dataFlow.unreachable" />
     <property name="name:4" value="ListWithConceptFunction" />
+    <property name="virtualPackage:4" value="dataFlow.unreachable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1222443224345">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222443227050">
         <property name="name:3" value="Clazz" />
@@ -1376,8 +1376,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1226936033402">
-    <property name="package:4" value="dataFlow" />
     <property name="name:4" value="CommentCanBeUnreachable" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1226936061419">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1226936065326">
         <property name="name:3" value="Class" />
@@ -1422,8 +1422,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1229349783966">
-    <property name="package:4" value="dataFlow" />
     <property name="name:4" value="CommandDataflowWithReturn" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1229349830782">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1229349840377">
         <property name="name:3" value="method" />
@@ -1496,8 +1496,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6017652711700374672">
-    <property name="package:4" value="dataFlow" />
     <property name="name:4" value="TypesTest_BL" />
+    <property name="virtualPackage:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="6017652711700376486">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6017652711700376487">
         <property name="name:3" value="testBinaryOp" />
@@ -3103,8 +3103,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="9092976468699800028">
-    <property name="package:4" value="dataFlow.unreachable" />
     <property name="name:4" value="ForBreakUnreachable" />
+    <property name="virtualPackage:4" value="dataFlow.unreachable" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="9092976468699800029">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="9092976468699800030">
         <property name="name:3" value="Class1" />

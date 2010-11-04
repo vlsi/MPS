@@ -10,59 +10,14 @@
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
+  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <maxImportIndex value="52" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -110,9 +65,9 @@
   <import index="52" modelUID="f:java_stub#jetbrains.mps.ide.refactoring(jetbrains.mps.ide.refactoring@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162125">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceVariableDialog" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399162126">
       <property name="name:3" value="createNamePanel" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399162127">
@@ -1891,8 +1846,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162714">
-    <property name="package:3" value="extractMethod" />
     <property name="name:3" value="ExtractMethodFactory" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8155843501977598856">
       <property name="name:3" value="createParameters" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8155843501977598858" />
@@ -2453,8 +2408,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399162891" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162892">
-    <property name="package:3" value="extractMethod.dialog" />
     <property name="name:3" value="ParameterTypeCellEditor" />
+    <property name="virtualPackage:3" value="extractMethod.dialog" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399162893">
       <property name="name:3" value="mySelected" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399162894" />
@@ -2671,8 +2626,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162985">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceLocalVariableRefactoring" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8492459591399162986">
       <property name="name:3" value="isApplicable" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8492459591399162987" />
@@ -3365,8 +3320,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399163103">
-    <property name="package:3" value="inlineMethod" />
     <property name="name:3" value="InlineMethodRefactoringAnalyzer" />
+    <property name="virtualPackage:3" value="inlineMethod" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399163104">
       <property name="name:3" value="findProblems" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399163105">
@@ -4160,8 +4115,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399163429" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399163430">
-    <property name="package:3" value="extractMethod.refactor" />
     <property name="name:3" value="ParametersTableModel" />
+    <property name="virtualPackage:3" value="extractMethod.refactor" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="8492459591399163431">
       <property name="name:3" value="IS_SELECTED_COLUMN_INDEX" />
       <property name="isFinal:3" value="true" />
@@ -4658,9 +4613,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399163659">
-    <property name="package:3" value="extractMethod.refactor.refactoring" />
     <property name="name:3" value="ExtractMethodRefactoring" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.refactoring" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399163660">
       <property name="name:3" value="myParameters" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="8492459591399163661" />
@@ -6921,8 +6876,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399164209" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164210">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceConstantDialog" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399164211">
       <property name="name:3" value="getRefactoring" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399164212">
@@ -7208,8 +7163,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164277">
-    <property name="package:3" value="extractMethod.refactor.refactoring" />
     <property name="name:3" value="ExtractMethodWithReturn" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.refactoring" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399164278">
       <property name="name:3" value="getMethodType" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8492459591399164279">
@@ -7386,8 +7341,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399164342" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164343">
-    <property name="package:3" value="extractMethod.refactor.processor" />
     <property name="name:3" value="AbstractExtractMethodRefactoringProcessor" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.processor" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8492459591399164344">
       <property name="name:3" value="universalAddMethod" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399164345">
@@ -7775,8 +7730,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164533">
-    <property name="package:3" value="extractMethod.dialog" />
     <property name="name:3" value="ToStringWrap" />
+    <property name="virtualPackage:3" value="extractMethod.dialog" />
     <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="8492459591399164534">
       <property name="name:3" value="C" />
     </node>
@@ -7870,8 +7825,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399164577" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164578">
-    <property name="package:3" value="extractMethod.refactor.refactoring" />
     <property name="name:3" value="ExtractMethodWithExitPoints" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.refactoring" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399164579">
       <property name="name:3" value="getMethodType" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1334376219849383318" />
@@ -8217,8 +8172,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399164721" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164722">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceFieldRefactoring" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6140205464397988730">
       <property name="name:3" value="isApplicable" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6140205464397988738" />
@@ -8856,8 +8811,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399164935">
-    <property name="package:3" value="extractMethod" />
     <property name="name:3" value="ExtractMethodRefactoringParameters" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399164936">
       <property name="name:3" value="myAnalyzer" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399164937" />
@@ -9459,8 +9414,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399165206">
-    <property name="package:3" value="changeMethodSignature" />
     <property name="name:3" value="ChangeMethodSignatureParameters" />
+    <property name="virtualPackage:3" value="changeMethodSignature" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399165207">
       <property name="name:3" value="getDeclaration" />
       <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8492459591399165208">
@@ -9688,8 +9643,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="8492459591399165317">
-    <property name="package:3" value="extractMethod" />
     <property name="name:3" value="VisibilityLevel" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399165318">
       <property name="name:3" value="getNode" />
       <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8492459591399165319">
@@ -9895,8 +9850,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399165412" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="8492459591399165413">
-    <property name="package:3" value="extractMethod.refactor.processor" />
     <property name="name:3" value="IExtractMethodRefactoringProcessor" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.processor" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399165414">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="getContainerMethod" />
@@ -9957,8 +9912,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399165440" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399165441">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceFieldDialog" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399165442">
       <property name="name:3" value="myRefactoring" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399165443" />
@@ -10866,8 +10821,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399165730">
-    <property name="package:3" value="extractMethod.refactor.refactoring" />
     <property name="name:3" value="ExtractMethodWithOutputVariable" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.refactoring" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399165731">
       <property name="name:3" value="myOutputVariable" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399165732" />
@@ -11934,8 +11889,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399166166">
-    <property name="package:3" value="extractMethod.refactor.processor" />
     <property name="name:3" value="ClassExtractMethodRefactoringProcessor" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.processor" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399166167">
       <property name="name:3" value="myClass" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399166168" />
@@ -12339,8 +12294,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="8492459591399166340">
-    <property name="package:3" value="extractMethod.refactor.processor" />
     <property name="name:3" value="IStaticContainerProcessor" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.processor" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399166341">
       <property name="name:3" value="createNewMethod" />
       <property name="isAbstract:3" value="true" />
@@ -12382,8 +12337,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399166356" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399166357">
-    <property name="package:3" value="inlineMethod" />
     <property name="name:3" value="ProblemsDialog" />
+    <property name="virtualPackage:3" value="inlineMethod" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399166358">
       <property name="name:3" value="myPanel" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399166359" />
@@ -12738,7 +12693,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399166501">
     <property name="name:3" value="ExtractMethodRefactoringAnalyzer" />
-    <property name="package:3" value="extractMethod" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8492459591399166502">
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399166503">
         <property name="name:3" value="nodes" />
@@ -15390,8 +15345,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399167468" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399167469">
-    <property name="package:3" value="adapter" />
     <property name="name:3" value="MethodCallAdapter" />
+    <property name="virtualPackage:3" value="adapter" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399167470">
       <property name="name:3" value="getMethodDeclaration" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399167471" />
@@ -15845,8 +15800,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399167680">
-    <property name="package:3" value="inlineMethod" />
     <property name="name:3" value="InlineMethodDialog" />
+    <property name="virtualPackage:3" value="inlineMethod" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399167681">
       <property name="name:3" value="myPanel" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399167682">
@@ -17007,8 +16962,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399168690">
-    <property name="package:3" value="extractMethod" />
     <property name="name:3" value="MethodOptimizer" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8492459591399168691">
       <property name="name:3" value="optimize" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8492459591399168692" />
@@ -17690,8 +17645,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399168918" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399168919">
-    <property name="package:3" value="extractMethod" />
     <property name="name:3" value="MethodParameter" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399168920">
       <property name="name:3" value="myDeclaration" />
       <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8492459591399168921" />
@@ -18383,8 +18338,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399169241">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceConstantRefactoring" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6140205464397988602">
       <property name="name:3" value="isApplicable" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6140205464397988608" />
@@ -19006,9 +18961,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399169401">
-    <property name="package:3" value="extractMethod.refactor.processor" />
     <property name="name:3" value="AbstractStaticContainerProcessor" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.processor" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399169402">
       <property name="name:3" value="addMethod" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8492459591399169403" />
@@ -19325,8 +19280,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399169558">
-    <property name="package:3" value="inlineMethod" />
     <property name="name:3" value="InlineMethodDialogModel" />
+    <property name="virtualPackage:3" value="inlineMethod" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399169559">
       <property name="name:3" value="findUssages" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8492459591399169560">
@@ -20271,8 +20226,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399169985" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399169986">
-    <property name="package:3" value="inlineVariable" />
     <property name="name:3" value="InlineVariableAssignmentRefactoring" />
+    <property name="virtualPackage:3" value="inlineVariable" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399169987">
       <property name="name:3" value="myProgram" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399169988" />
@@ -20972,8 +20927,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399170264" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399170869">
-    <property name="package:3" value="utils" />
     <property name="name:3" value="MethodRefactoringUtils" />
+    <property name="virtualPackage:3" value="utils" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8492459591399170870">
       <property name="name:3" value="findOverridingMethods" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399170871">
@@ -21466,8 +21421,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399171061" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399171062">
-    <property name="package:3" value="changeMethodSignature" />
     <property name="name:3" value="TableWithControlsPanel" />
+    <property name="virtualPackage:3" value="changeMethodSignature" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399171063">
       <property name="name:3" value="myTableModel" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399171064">
@@ -22892,8 +22847,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399171652">
-    <property name="package:3" value="extractMethod.refactor.refactoring" />
     <property name="name:3" value="ExtractMethodFromStatementsRefactoring" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.refactoring" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399171653">
       <property name="name:3" value="myStatements" />
       <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="8492459591399171654">
@@ -23167,8 +23122,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399171824">
-    <property name="package:3" value="utils" />
     <property name="name:3" value="ClassRefactoringUtils" />
+    <property name="virtualPackage:3" value="utils" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8492459591399171825">
       <property name="name:3" value="getClassMemberRefernce" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="8492459591399171826">
@@ -23362,8 +23317,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399171910">
-    <property name="package:3" value="extractMethod.dialog" />
     <property name="name:3" value="ExtractMethodDialog" />
+    <property name="virtualPackage:3" value="extractMethod.dialog" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5159544814168902953">
       <property name="nonStatic:3" value="true" />
       <property name="name:3" value="MyMethodDuplicatesProcessor" />
@@ -25859,9 +25814,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399173071">
-    <property name="package:3" value="inlineVariable" />
     <property name="name:3" value="InlineVariableRefactoring" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="inlineVariable" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399173072">
       <property name="name:3" value="checkRefactoring" />
       <property name="isAbstract:3" value="true" />
@@ -26427,8 +26382,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399173315" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="8492459591399173316">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="FieldInitializationPlace" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399173317">
       <property name="name:3" value="getName" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399173318" />
@@ -26496,8 +26451,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399173347">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceLocalVariableDialog" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399173348">
       <property name="name:3" value="myRefactoring" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399173349" />
@@ -26746,8 +26701,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399173414">
-    <property name="package:3" value="extractMethod.refactor.refactoring" />
     <property name="name:3" value="ExtractMethodFromExpressionRefactoring" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.refactoring" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399173415">
       <property name="name:3" value="myExpression" />
       <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8492459591399173416">
@@ -27072,8 +27027,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399173598">
-    <property name="package:3" value="inlineVariable" />
     <property name="name:3" value="InlineVariableReferenceRefactoring" />
+    <property name="virtualPackage:3" value="inlineVariable" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399173599">
       <property name="name:3" value="myReference" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399173600" />
@@ -27659,8 +27614,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399173795">
-    <property name="package:3" value="inlineMethod" />
     <property name="name:3" value="InlineMethodRefactoring" />
+    <property name="virtualPackage:3" value="inlineMethod" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399173796">
       <property name="name:3" value="doRefactor" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8492459591399173797" />
@@ -30697,8 +30652,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399175050">
-    <property name="package:3" value="extractMethod.refactor.processor" />
     <property name="name:3" value="ClassStaticContainerProcessor" />
+    <property name="virtualPackage:3" value="extractMethod.refactor.processor" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399175051" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8492459591399175052">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8492459591399175053" />
@@ -30835,9 +30790,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399175108">
-    <property name="package:3" value="introduceVariable" />
     <property name="name:3" value="IntroduceVariableRefactoring" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="introduceVariable" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399175109">
       <property name="name:3" value="myName" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399175110" />
@@ -31852,8 +31807,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399175323">
-    <property name="package:3" value="extractMethod.dialog" />
     <property name="name:3" value="ParametersPanel" />
+    <property name="virtualPackage:3" value="extractMethod.dialog" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="8492459591399175324">
       <property name="name:3" value="MINIMUM_TABLE_COLUMN_WIDTH" />
       <property name="isFinal:3" value="true" />
@@ -34000,7 +33955,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8517902611909168513">
     <property name="name:3" value="MoveStaticFieldRefactoring" />
-    <property name="package:3" value="moveStaticMember" />
+    <property name="virtualPackage:3" value="moveStaticMember" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8495840634675573138">
       <property name="name:3" value="replaceSingleUsage" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8495840634675573139" />
@@ -34150,8 +34105,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4909369320862629899">
-    <property name="package:3" value="utils" />
     <property name="name:3" value="MoveRefactoringUtils" />
+    <property name="virtualPackage:3" value="utils" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4909369320863190489">
       <property name="name:3" value="addNodeAtLink" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4909369320863190490">
@@ -34471,9 +34426,9 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4909369320862629900" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5142438244426402999">
-    <property name="package:3" value="moveStaticMember" />
     <property name="name:3" value="BasicMoveRefactoring" />
     <property name="abstractClass:3" value="false" />
+    <property name="virtualPackage:3" value="moveStaticMember" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5142438244426403075">
       <property name="name:3" value="setUssages" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5142438244426403076" />
@@ -34833,8 +34788,8 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5142438244426403000" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="418677511065435622">
-    <property name="package:3" value="moveStaticMember" />
     <property name="name:3" value="MoveStaticMethodRefactoring" />
+    <property name="virtualPackage:3" value="moveStaticMember" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="418677511065441949">
       <property name="name:3" value="replaceFields" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="418677511065441950" />
@@ -35306,7 +35261,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8184320397304927312">
     <property name="name:3" value="ConvertAnonymousRefactoring" />
-    <property name="package:3" value="convertAnonymous" />
+    <property name="virtualPackage:3" value="convertAnonymous" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="8184320397304989933">
       <property name="isFinal:3" value="true" />
       <property name="name:3" value="ROLES_NOT_TO_COPY" />
@@ -37319,7 +37274,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1143458983612836301">
     <property name="name:3" value="AskDialog" />
-    <property name="package:3" value="processDuplicates" />
+    <property name="virtualPackage:3" value="processDuplicates" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="142251460458085997">
       <property name="name:3" value="DialogResults" />
       <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="142251460458208186">
@@ -37720,7 +37675,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1143458983612877046">
     <property name="name:3" value="SimpleDuplicatesFinder" />
-    <property name="package:3" value="processDuplicates.finder" />
+    <property name="virtualPackage:3" value="processDuplicates.finder" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1143458983612877047">
       <property name="name:3" value="findDuplicates" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1143458983612877048" />
@@ -37843,9 +37798,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1143458983614632858">
-    <property name="package:3" value="processDuplicates.processor" />
     <property name="name:3" value="DuplicatesProcessor" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="processDuplicates.processor" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1143458983614660100">
       <property name="name:3" value="process" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1143458983614660101" />
@@ -38186,8 +38141,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1769066237347579005">
-    <property name="package:3" value="processDuplicates.finder" />
     <property name="name:3" value="MethodDuplicatesFinder" />
+    <property name="virtualPackage:3" value="processDuplicates.finder" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1769066237347633716">
       <property name="name:3" value="findDuplicates" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1769066237347633718" />
@@ -38878,8 +38833,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1769066237347603177">
-    <property name="package:3" value="processDuplicates" />
     <property name="name:3" value="MethodMatch" />
+    <property name="virtualPackage:3" value="processDuplicates" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1769066237347633283">
       <property name="name:3" value="putMapping" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1769066237347633284" />
@@ -39606,9 +39561,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7782234301060366093">
-    <property name="package:3" value="processDuplicates.processor" />
     <property name="name:3" value="MethodDuplicatesProcessor" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="processDuplicates.processor" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7782234301060371592">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7782234301060371593" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7782234301060371594" />
@@ -39736,9 +39691,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7782234301060403220">
-    <property name="package:3" value="processDuplicates.processor" />
     <property name="name:3" value="VariableDuplicatesProcessor" />
     <property name="abstractClass:3" value="true" />
+    <property name="virtualPackage:3" value="processDuplicates.processor" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7782234301060415253">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7782234301060415254" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7782234301060415255" />
@@ -39822,8 +39777,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4626240717634869722">
-    <property name="package:3" value="extractMethod" />
     <property name="name:3" value="VisibilityPanel" />
+    <property name="virtualPackage:3" value="extractMethod" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4626240717634896030">
       <property name="name:3" value="getResult" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4626240717634896034">
@@ -40341,8 +40296,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5161277940733353446">
-    <property name="package:3" value="changeMethodSignature" />
     <property name="name:3" value="ChangeMethodSignatureDialog" />
+    <property name="virtualPackage:3" value="changeMethodSignature" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5161277940733353447">
       <property name="name:3" value="initializeData" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5161277940733353448" />
@@ -41451,8 +41406,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399170533">
-    <property name="package:3" value="changeMethodSignature" />
     <property name="name:3" value="ChangeMethodSignatureRefactoring" />
+    <property name="virtualPackage:3" value="changeMethodSignature" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8492459591399170534">
       <property name="name:3" value="isApplicable" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8492459591399170535" />

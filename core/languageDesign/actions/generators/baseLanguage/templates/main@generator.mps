@@ -10,37 +10,12 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="35" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -994,7 +969,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1177329385615">
     <property name="name:2" value="MenuParts_Substitute" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1177329409406">
       <link role="applicableConcept:2" targetNodeId="4.1177327666243:23" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1177331624440">
@@ -1034,7 +1009,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1177329420522">
     <property name="name:2" value="MenuPart_Substitute_Simple" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <link role="applicableConcept:2" targetNodeId="4.1177327666243:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1177331076763">
       <property name="name:3" value="_query_method_" />
@@ -1598,7 +1573,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1177340188418">
     <property name="name:2" value="MenuPart_Substitute_Concepts" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <link role="applicableConcept:2" targetNodeId="4.1177398027324:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1177340188419">
       <property name="name:3" value="_query_method_" />
@@ -1917,7 +1892,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1177399350680">
     <property name="name:2" value="MenuPart_Substitute_Parameterized" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <link role="applicableConcept:2" targetNodeId="4.1177337641126:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1177399369116">
       <property name="name:3" value="_query_method_" />
@@ -2517,7 +2492,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1177404507206">
     <property name="name:2" value="MenuPart_Substitute_Wrapper" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <link role="applicableConcept:2" targetNodeId="4.1177402519659:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1177404507207">
       <property name="name:3" value="_query_method_" />
@@ -3640,7 +3615,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1177442049832">
     <property name="name:2" value="MenuParts_SideTransform" />
-    <property name="package:2" value="MenuParts.RTransform" />
+    <property name="virtualPackage:2" value="MenuParts.RTransform" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1177499564461">
       <link role="applicableConcept:2" targetNodeId="4.1177498013932:23" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1177499625717">
@@ -3668,7 +3643,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1177499191569">
     <property name="name:2" value="MenuPart_SideTransform_Simple" />
-    <property name="package:2" value="MenuParts.RTransform" />
+    <property name="virtualPackage:2" value="MenuParts.RTransform" />
     <link role="applicableConcept:2" targetNodeId="4.1177498013932:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1177499217120">
       <property name="name:3" value="_class_" />
@@ -4046,7 +4021,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1177509909246">
     <property name="name:2" value="MenuPart_SideTransform_Parameterized" />
-    <property name="package:2" value="MenuParts.RTransform" />
+    <property name="virtualPackage:2" value="MenuParts.RTransform" />
     <link role="applicableConcept:2" targetNodeId="4.1177508764419:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1177509909247">
       <property name="name:3" value="_class_" />
@@ -4675,7 +4650,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180114556430">
     <property name="name:2" value="MenuBuilderPart_SideTransform_IncludeSideTransformForNode" />
-    <property name="package:2" value="MenuParts.RTransform" />
+    <property name="virtualPackage:2" value="MenuParts.RTransform" />
     <link role="applicableConcept:2" targetNodeId="4.1180111159572:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1180114556431">
       <property name="name:3" value="_class_" />
@@ -4868,7 +4843,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1180136156066">
     <property name="name:2" value="MenuBuilderPart_Substitute_Concept" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <link role="applicableConcept:2" targetNodeId="4.1180134965967:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1180136156067">
       <property name="name:3" value="_query_method_" />
@@ -5004,7 +4979,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1182820930185">
     <property name="name:2" value="MenuBuilderPart_SideTransform_Concept" />
-    <property name="package:2" value="MenuParts.RTransform" />
+    <property name="virtualPackage:2" value="MenuParts.RTransform" />
     <link role="applicableConcept:2" targetNodeId="4.1182819125053:23" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1182820930186">
       <property name="name:3" value="_class_" />
@@ -5246,8 +5221,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1196434186575">
-    <property name="package:2" value="Sugar" />
     <property name="name:2" value="reduce_SideTransform_SimpleString" />
+    <property name="virtualPackage:2" value="Sugar" />
     <link role="applicableConcept:2" targetNodeId="4.1196433923911:23" resolveInfo="RightTransform_SimpleString" />
     <node role="contentNode:2" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String:23" id="1196434210671">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1196434210672">
@@ -5290,8 +5265,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1196434782260">
-    <property name="package:2" value="Sugar" />
     <property name="name:2" value="reduce_Substitute_SimpleString" />
+    <property name="virtualPackage:2" value="Sugar" />
     <link role="applicableConcept:2" targetNodeId="4.1196434649611:23" resolveInfo="Substitute_SimpleString" />
     <node role="contentNode:2" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String:23" id="1196435148716">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1196435148717">
@@ -5519,7 +5494,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1199903065200">
     <property name="name:2" value="MenuPart_Substitute_Generic" />
-    <property name="package:2" value="MenuParts.Substitute" />
+    <property name="virtualPackage:2" value="MenuParts.Substitute" />
     <link role="applicableConcept:2" targetNodeId="4.1199902626702:23" resolveInfo="GenericSubstituteMenuPart" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1199903065201">
       <property name="name:3" value="_query_method_" />
@@ -5645,7 +5620,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1221137101806">
     <property name="name:2" value="pasteWrappers" />
-    <property name="package:2" value="PasteWrappers" />
+    <property name="virtualPackage:2" value="PasteWrappers" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1221138223238">
       <link role="applicableConcept:2" targetNodeId="4.1221137268788:23" resolveInfo="ConceptFunctionParameter_nodeToPasteWrap" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1221138312286">
@@ -5678,8 +5653,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1221137159370">
-    <property name="package:3" value="PasteWrappers" />
     <property name="name:3" value="PasteWrappers" />
+    <property name="virtualPackage:3" value="PasteWrappers" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1221137159371" />
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1221137159392" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1221137210081">
@@ -6527,7 +6502,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="5457641811177468688">
     <property name="name:2" value="PasteProcessing" />
-    <property name="package:2" value="copyPaste" />
+    <property name="virtualPackage:2" value="copyPaste" />
     <node role="dropRootRule:2" type="jetbrains.mps.lang.generator.structure.DropRootRule:2" id="5948027493682791498">
       <link role="applicableConcept:2" targetNodeId="4.5948027493682789918:23" resolveInfo="CopyPasteHandlers" />
     </node>
@@ -6559,8 +6534,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5457641811177469698">
-    <property name="package:3" value="copyPaste" />
     <property name="name:3" value="PastePostProcessor" />
+    <property name="virtualPackage:3" value="copyPaste" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5457641811177469699" />
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="5457641811177469704">
       <link role="applicableConcept:2" targetNodeId="4.564335015825199468:23" resolveInfo="PastePostProcessor" />
@@ -6669,8 +6644,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5948027493682405965">
-    <property name="package:3" value="copyPaste" />
     <property name="name:3" value="CopyPreProcessor" />
+    <property name="virtualPackage:3" value="copyPaste" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5948027493682498259">
       <property name="name:3" value="getApplicableConcept" />
       <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="5948027493682498260" />

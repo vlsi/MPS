@@ -13,44 +13,17 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7(jetbrains.mps.lang.editor.editorTest)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590571(jetbrains.mps.gtext.constraints)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <languageAspect modelUID="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
+  <languageAspect modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <maxImportIndex value="37" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
@@ -72,7 +45,7 @@
   <import index="36" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635633">
     <property name="name:4" value="AnonymousClassTest" />
-    <property name="package:4" value="bugTest" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635634">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635635" />
@@ -159,7 +132,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635669">
     <property name="name:4" value="AssignmentTest" />
-    <property name="package:4" value="simple" />
+    <property name="virtualPackage:4" value="simple" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635670">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635671" />
@@ -209,7 +182,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635689">
     <property name="name:4" value="BadCodeInTheLeftTest" />
-    <property name="package:4" value="intelligentInputUtil" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635690">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635691" />
@@ -270,7 +243,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635714">
     <property name="name:4" value="BadCodeTest" />
-    <property name="package:4" value="intelligentInputUtil" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635715">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635716" />
@@ -327,7 +300,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635737">
     <property name="name:4" value="EqualsTest" />
-    <property name="package:4" value="intelligentInputUtil" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635738">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635739" />
@@ -390,7 +363,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635763">
     <property name="name:4" value="ForEachTest" />
-    <property name="package:4" value="intelligentInputUtil" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635764">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635765" />
@@ -452,7 +425,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635795">
     <property name="name:4" value="ForTest" />
-    <property name="package:4" value="intelligentInputUtil" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635796">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635797" />
@@ -493,7 +466,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635842">
     <property name="name:4" value="RemoveNodeTest" />
-    <property name="package:4" value="intelligentInputUtil" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635843">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635844" />
@@ -553,7 +526,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635866">
     <property name="name:4" value="ReturnNullTest" />
-    <property name="package:4" value="bugTest" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635867">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1230058635868">
@@ -598,7 +571,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635881">
     <property name="name:4" value="IfAndElseTest" />
-    <property name="package:4" value="simple" />
+    <property name="virtualPackage:4" value="simple" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635882">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635883" />
@@ -677,7 +650,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230058635925">
     <property name="name:4" value="TwoPlusTwo" />
-    <property name="package:4" value="simple" />
+    <property name="virtualPackage:4" value="simple" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230058635926">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635927" />
@@ -725,7 +698,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230119686657">
     <property name="name:4" value="SelectTwoCells" />
-    <property name="package:4" value="selection" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230119716735">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230119716736" />
@@ -775,8 +748,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230132483495">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="IntentionTest" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1230132506154">
       <property name="name:3" value="Clazz" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230132506155" />
@@ -811,8 +784,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230137733176">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="TwoMullTwo" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230137753727">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230137753728" />
@@ -861,8 +834,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230223594759">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="RightTransformInAnnotation" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230223594770">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="1230223594771">
         <property name="keys:4" value="+1" />
@@ -901,8 +874,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1230303889046">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="RightTransform" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1230303902564">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230303902565" />
@@ -970,8 +943,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1231771167333">
-    <property name="package:4" value="assignExpression" />
     <property name="name:4" value="AssignmentExpression" />
+    <property name="virtualPackage:4" value="assignExpression" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1231771186867">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1231771186868" />
@@ -1038,8 +1011,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1231855239736">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="STHintTest" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1231855275889">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1231855275890" />
@@ -1101,8 +1074,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1231856179276">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="RightTransformWithSmallPatternCompletion" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1231856205436">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1231856205437" />
@@ -1151,8 +1124,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232031307006">
-    <property name="package:4" value="assignExpression" />
     <property name="name:4" value="AssigningToField" />
+    <property name="virtualPackage:4" value="assignExpression" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1232031357067">
       <property name="name:3" value="C" />
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1232031382524">
@@ -1214,8 +1187,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232033101779">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="DeleteStatement" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232033114563">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232033114564" />
@@ -1265,8 +1238,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232033509158">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="DeleteVariableInitializer" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232033529129">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232033529130" />
@@ -1319,8 +1292,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232034646995">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="DeleteFieldReference" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1232034672814">
       <property name="name:3" value="C" />
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1232034683092">
@@ -1382,8 +1355,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232110128465">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="IntSpaceA" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232110144683">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232110144684" />
@@ -1425,8 +1398,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232130281150">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="MathE" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232130325397">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232130325398" />
@@ -1468,8 +1441,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232458271691">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="DeleteFirstChild" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232458315066">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232458315067" />
@@ -1519,8 +1492,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232554293720">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="DeleteOverridenMethodInBehavior" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1232554649248">
       <link role="concept" targetNodeId="15.1068581242875:3" resolveInfo="PlusExpression" />
       <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1232554649249">
@@ -1618,7 +1591,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232614612246">
     <property name="name:4" value="smartStatementsInsert" />
-    <property name="package:4" value="smartStatements" />
+    <property name="virtualPackage:4" value="smartStatements" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232614669178">
       <property name="name:3" value="m" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232614669179" />
@@ -1664,7 +1637,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232624675967">
     <property name="name:4" value="SidedeleteAtTheEnd" />
-    <property name="package:4" value="sideDelete" />
+    <property name="virtualPackage:4" value="sideDelete" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232624761393">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232624761394" />
@@ -1723,8 +1696,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232625253115">
-    <property name="package:4" value="sideDelete" />
     <property name="name:4" value="SidedeleteAtStart" />
+    <property name="virtualPackage:4" value="sideDelete" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232625272299">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232625272300" />
@@ -1785,8 +1758,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232626195939">
-    <property name="package:4" value="sideDelete" />
     <property name="name:4" value="SidedeleteAtStartOfIf" />
+    <property name="virtualPackage:4" value="sideDelete" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232626228175">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232626228176" />
@@ -1849,8 +1822,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232626621203">
-    <property name="package:4" value="sideDelete" />
     <property name="name:4" value="SidedeleteAtEndWithOneStatement" />
+    <property name="virtualPackage:4" value="sideDelete" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232626665971">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232626665972" />
@@ -1897,8 +1870,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232973305241">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="InsertBeforeInIf" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232973328242">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232973328243" />
@@ -1961,8 +1934,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1232980648942">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="PressingEndWithSelectedNode" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1232980665819">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232980665820" />
@@ -2035,8 +2008,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1233333241782">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="BracesTest" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1233333428757">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="3167392541572726587">
         <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="3167392541572726588">
@@ -2090,8 +2063,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1234447176815">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="TypeToTypeof" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1234447269499">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1234447269500" />
@@ -2145,8 +2118,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1235221783263">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="AnnotationSelection" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1235221839249">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1235221839250" />
@@ -2188,8 +2161,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1235487648829">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="ActionAtFirstPostionProblem" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1235487676167">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1235487676168" />
@@ -2342,8 +2315,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1236090523881">
-    <property name="package:4" value="sideDelete" />
     <property name="name:4" value="SideDeleteAtEndWhithBackSpace" />
+    <property name="virtualPackage:4" value="sideDelete" />
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236090613501">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1236090613502">
         <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1236090613503">
@@ -2443,8 +2416,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1238485466527">
-    <property name="package:4" value="assignExpression" />
     <property name="name:4" value="AssignLeftTransform" />
+    <property name="virtualPackage:4" value="assignExpression" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1238485500481">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1238485500482" />
@@ -2523,8 +2496,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1238501587602">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="DotExpression" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1238501603819">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1238501603820" />
@@ -2593,8 +2566,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1240561497307">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="LeftTransformOfDotOperation" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1240561528709">
       <property name="name:3" value="Clazz" />
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1240561532552">
@@ -2677,8 +2650,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1241100648020">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="SurrondByParensesis" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1241100704753">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1241100704754" />
@@ -2748,7 +2721,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1241356058569">
     <property name="name:4" value="ReplacingSelection" />
-    <property name="package:4" value="editorCell" />
+    <property name="virtualPackage:4" value="editorCell" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1241356146402">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1241356146403" />
@@ -2796,8 +2769,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7424976593885769460">
-    <property name="package:4" value="editorCell" />
     <property name="name:4" value="EnterAfterElseIf" />
+    <property name="virtualPackage:4" value="editorCell" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7424976593885769462">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7424976593885769463" />
@@ -2857,8 +2830,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1195975797953542959">
-    <property name="package:4" value="editorCell" />
     <property name="name:4" value="PressingBackspaseInFirstPosition" />
+    <property name="virtualPackage:4" value="editorCell" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1195975797953576231">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1195975797953576232" />
@@ -2903,8 +2876,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1195975797953892764">
-    <property name="package:4" value="editorCell" />
     <property name="name:4" value="PressingDelInLastPosition" />
+    <property name="virtualPackage:4" value="editorCell" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1195975797953892766">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1195975797953892767" />
@@ -2962,8 +2935,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5109488425461983831">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="SelectionByShiftArrows" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5109488425462005079">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5109488425462005080" />
@@ -3005,8 +2978,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1452412866770392994">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="MovingNode" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1452412866770394613">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1452412866770394614" />
@@ -3129,8 +3102,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7247887419163198990">
-    <property name="package:4" value="selection" />
     <property name="name:4" value="MoveNodeRange" />
+    <property name="virtualPackage:4" value="selection" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7247887419163198992">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7247887419163198993" />
@@ -3259,7 +3232,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6249787563914683642">
     <property name="name:4" value="DefaultCellInfoTest" />
-    <property name="package:4" value="cellInfo" />
+    <property name="virtualPackage:4" value="cellInfo" />
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5984013018584925852">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5423119640845749257">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5423119640845749258">
@@ -3430,7 +3403,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7301049412170069060">
     <property name="name:4" value="RestoreCellSelection" />
-    <property name="package:4" value="Memento" />
+    <property name="virtualPackage:4" value="Memento" />
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList:5" id="7301049412170117859">
       <node role="statement:5" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock:5" id="7301049412170117861">
         <node role="testNode$attribute:5" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330113843">
@@ -3466,8 +3439,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1932269937152125075">
-    <property name="package:4" value="Memento" />
     <property name="name:4" value="RestoreRangeSeletion" />
+    <property name="virtualPackage:4" value="Memento" />
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList:5" id="1932269937152125077">
       <node role="statement:5" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock:5" id="1932269937152125078">
         <node role="testNode$attribute:5" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330113845">
@@ -3504,7 +3477,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="707974323667242142">
     <property name="name:4" value="AssociativityProblem" />
-    <property name="package:4" value="parenthesisUtil" />
+    <property name="virtualPackage:4" value="parenthesisUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="707974323667245243">
       <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330085286">
         <property name="isLastPosition:4" value="true" />
@@ -3545,8 +3518,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6778605776625957377">
-    <property name="package:4" value="parenthesisUtil" />
     <property name="name:4" value="PriorityProblem" />
+    <property name="virtualPackage:4" value="parenthesisUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6778605776625982935">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6778605776625982936" />
@@ -3743,8 +3716,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5110219550150557757">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="ConflictingRigthTransform" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList:5" id="5110219550150577774">
       <node role="statement:5" type="jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper:5" id="5110219550150577780">
         <node role="child:5" type="jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral:5" id="5110219550150610466">
@@ -3781,8 +3754,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1622243561473092614">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="TypingIncorrectTextInFields" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1622243561473153891">
       <property name="name:3" value="Clazz" />
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1622243561473153897">
@@ -3831,7 +3804,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4741152186081386068">
     <property name="name:4" value="InsertBeforeUnaryMinus" />
-    <property name="package:4" value="editorComponent" />
+    <property name="virtualPackage:4" value="editorComponent" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4741152186081386073">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4741152186081386074" />
@@ -3893,8 +3866,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5207728530610804374">
-    <property name="package:4" value="editorComponent" />
     <property name="name:4" value="InterWithNonLabelSelected" />
+    <property name="virtualPackage:4" value="editorComponent" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5207728530610872266">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5207728530610872267" />
@@ -3952,8 +3925,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1267114898303293315">
-    <property name="package:4" value="editorCell" />
     <property name="name:4" value="FieldDeletion" />
+    <property name="virtualPackage:4" value="editorCell" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1267114898303352600">
       <property name="name:3" value="Clazz" />
       <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1267114898303352612">
@@ -4020,8 +3993,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="2322823743453985855">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="WrappingCellShouldntBeSelectable" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2322823743453985857">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2322823743453985858" />
@@ -4090,7 +4063,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="2707740038604155061">
     <property name="name:4" value="DeleteIfPossibleMethod" />
-    <property name="package:4" value="editorCell_Label" />
+    <property name="virtualPackage:4" value="editorCell_Label" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2707740038604205732">
       <property name="name:3" value="Clazz" />
       <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3176358661158853421">
@@ -4215,8 +4188,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1086097794003843976">
-    <property name="package:4" value="bugTest" />
     <property name="name:4" value="ReplacePlusWithMinus" />
+    <property name="virtualPackage:4" value="bugTest" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1086097794003869711">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1086097794003869712" />
@@ -4278,7 +4251,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1883175908513185012">
     <property name="name:4" value="AddingTypeParameterToConstructor" />
-    <property name="package:4" value="baseLanguage" />
+    <property name="virtualPackage:4" value="baseLanguage" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1883175908513199132">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1883175908513199133" />
@@ -4331,8 +4304,8 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="2345623147105465521">
     <property name="name:4" value="SmartReferenseUpdateOnChange" />
-    <property name="package:4" value="cellProvider" />
     <property name="description:4" value="Actions of creating node wasn't writen, and cell presentation wasn't updated." />
+    <property name="virtualPackage:4" value="cellProvider" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2345623147105495371">
       <property name="name:3" value="SmartReferenseUpdate" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2345623147105495372" />
@@ -4447,8 +4420,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4439253381394558442">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="SubstitudeAmbigousActions" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4439253381394558444">
       <property name="name:3" value="SubstitudeAmbigousActions" />
       <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4439253381394558450">
@@ -4528,8 +4501,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6230565632479499242">
-    <property name="package:4" value="editorCell_Label" />
     <property name="name:4" value="DeleteOnSelectedNode" />
+    <property name="virtualPackage:4" value="editorCell_Label" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6230565632479558667">
       <property name="name:3" value="DeleteOnSelectedNode" />
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6230565632479558673">
@@ -4686,9 +4659,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6615429292103589151">
-    <property name="package:4" value="Memento" />
     <property name="name:4" value="RestoringSThintCell" />
     <property name="description:4" value="If we restore cell whitch deleted, we shouldn't restore selection" />
+    <property name="virtualPackage:4" value="Memento" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6615429292103589154">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6615429292103589155" />
@@ -4757,8 +4730,8 @@
     <property name="projectPath:4" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3727822333335494274">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="NodeAfterSubstitutionHasNoErrorCell" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList:5" id="3727822333335546447">
       <node role="statement:5" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock:5" id="3727822333335739721">
         <property name="name:5" value="stubs" />
@@ -4797,8 +4770,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3891087596588926733">
-    <property name="package:4" value="VariableDeclaration_NameCellComponent" />
     <property name="name:4" value="AddingParameterThroughtWrapper" />
+    <property name="virtualPackage:4" value="VariableDeclaration_NameCellComponent" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3891087596588953785">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3891087596588953786" />
@@ -4838,8 +4811,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3891087596588955389">
-    <property name="package:4" value="VariableDeclaration_NameCellComponent" />
     <property name="name:4" value="AddingParameterWithEnter" />
+    <property name="virtualPackage:4" value="VariableDeclaration_NameCellComponent" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3891087596588955390">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3891087596588955391" />
@@ -4876,8 +4849,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1574561129028766962">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="SubstituteSmallPatternInLeft" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1574561129028803924">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1574561129028803925" />
@@ -4942,8 +4915,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8976921645732250110">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="PerformLeftTransformWithNoLeftTransformActions" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8976921645732305714">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8976921645732305715" />
@@ -5018,8 +4991,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4360574204777335616">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="SettingTextToNodeAfterApplingAction" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4360574204777372534">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4360574204777372535" />
@@ -5086,8 +5059,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="2907839077756756657">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="TryingToLeftTransformNewExpression" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2907839077756812217">
       <property name="name:3" value="method" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2907839077756812218" />
@@ -5171,7 +5144,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3852894662483077199">
     <property name="name:4" value="SurrondWithParenthesisTest" />
-    <property name="package:4" value="parenthesisUtil" />
+    <property name="virtualPackage:4" value="parenthesisUtil" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="3852894662483077200">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3852894662483077201">
         <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3852894662483077202">
@@ -5398,8 +5371,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="3852894662483397197">
-    <property name="package:4" value="parenthesisUtil" />
     <property name="name:4" value="PriorityCheckTest" />
+    <property name="virtualPackage:4" value="parenthesisUtil" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="3852894662483441863">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3852894662483441864">
         <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3852894662483441865">
@@ -5558,8 +5531,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7164702912147669285">
-    <property name="package:4" value="intelligentInputUtil" />
     <property name="name:4" value="SubstitutionOfMethodWithNameSimularToStaticMethod" />
+    <property name="virtualPackage:4" value="intelligentInputUtil" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7164702912147697389">
       <property name="name:3" value="Clazz" />
       <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2567318117465220477">
@@ -5630,9 +5603,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8547191361977403062">
-    <property name="package:4" value="bugTest.return" />
     <property name="name:4" value="ReturnFollowerByVarName" />
     <property name="description:4" value="Checking tight transform action on typing variable name after return statement (see http://youtrack.jetbrains.net/issue/MPS-6152)" />
+    <property name="virtualPackage:4" value="bugTest.return" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8547191361977426854">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8547191361977426855">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8547191361977426856">
@@ -5687,9 +5660,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8547191361977486335">
-    <property name="package:4" value="bugTest.return" />
     <property name="name:4" value="ReturnFollowedBySpaceVarName" />
     <property name="description:4" value="Checking tight transform action on typing space + variable name after return statement (see http://youtrack.jetbrains.net/issue/MPS-6152)" />
+    <property name="virtualPackage:4" value="bugTest.return" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8547191361977497076">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8547191361977497077">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8547191361977497078">
@@ -5743,9 +5716,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8547191361978247892">
-    <property name="package:4" value="bugTest.anonymousClassCreator" />
     <property name="name:4" value="DeleteOpenCurlyBrace" />
     <property name="description:4" value="Deleting &quot;{&quot; in the beggining of AnonymousClass should transform containing AnonymousClassCreator to ClassCreator (see http://youtrack.jetbrains.net/issue/MPS-6049)" />
+    <property name="virtualPackage:4" value="bugTest.anonymousClassCreator" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8547191361978288727">
       <property name="name:3" value="Container" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8547191361978288728" />
@@ -5893,9 +5866,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8547191361978792978">
-    <property name="package:4" value="bugTest.anonymousClassCreator" />
     <property name="name:4" value="DeleteClosingCurlyBrace" />
     <property name="description:4" value="Deleting &quot;}&quot; in the end of AnonymousClass should transform containing AnonymousClassCreator to ClassCreator (see http://youtrack.jetbrains.net/issue/MPS-6049)" />
+    <property name="virtualPackage:4" value="bugTest.anonymousClassCreator" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8547191361978792982">
       <property name="name:3" value="Container" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8547191361978792983" />
@@ -6140,7 +6113,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="654795966042457025">
     <property name="name:4" value="Post_ThisSettingClassConcept" />
-    <property name="package:4" value="copyPaste" />
+    <property name="virtualPackage:4" value="copyPaste" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="654795966042500703">
       <property name="name:3" value="Post_ThisSet_1" />
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="654795966042521232">
@@ -6286,8 +6259,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="222793074662099169">
-    <property name="package:4" value="copyPaste" />
     <property name="name:4" value="Post_ThisSavingClassConceptSet" />
+    <property name="virtualPackage:4" value="copyPaste" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="222793074662099172">
       <property name="name:3" value="Post_ThisSave_2" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="222793074662099196" />
@@ -6429,8 +6402,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="222793074662091829">
-    <property name="package:4" value="copyPaste" />
     <property name="name:4" value="Post_ThisSavingClassConceptUnset" />
+    <property name="virtualPackage:4" value="copyPaste" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="222793074662091832">
       <property name="name:3" value="Post_ThisSave_1" />
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="222793074662091833">
@@ -6526,8 +6499,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="2671731496587878888">
-    <property name="package:4" value="copyPaste" />
     <property name="name:4" value="Post_ThisRemovingClassConcept" />
+    <property name="virtualPackage:4" value="copyPaste" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2671731496587878891">
       <property name="name:3" value="Post_ThisRemove_1" />
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2671731496587878892">
@@ -6713,8 +6686,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6769498721974583566">
-    <property name="package:4" value="copyPaste" />
     <property name="name:4" value="Pre_LocalStaicFieldToStaticFieldReference" />
+    <property name="virtualPackage:4" value="copyPaste" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6769498721974583568">
       <property name="name:3" value="Pre_LocalStatic_1" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6769498721974638206">
@@ -6873,8 +6846,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8350369201053315001">
-    <property name="package:4" value="copyPaste" />
     <property name="name:4" value="Post_StaticFieldToLocalStaticFieldReference" />
+    <property name="virtualPackage:4" value="copyPaste" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8350369201053315003">
       <property name="name:3" value="Post_Static_1" />
       <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="8350369201053315025">
@@ -7062,9 +7035,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7075734325385824176">
-    <property name="package:4" value="bugTest.conceptBehavior" />
     <property name="name:4" value="StaticBehaviorMethodWithParameters_completion" />
     <property name="description:4" value="Checking completion of static concept behavior method with parameters (http://youtrack.jetbrains.net/issue/MPS-6512)" />
+    <property name="virtualPackage:4" value="bugTest.conceptBehavior" />
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7075734325385964912">
       <link role="concept" targetNodeId="35.1138411891628:16" resolveInfo="SNodeOperation" />
       <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7075734325385964915">
@@ -7128,7 +7101,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4246727699196031257">
     <property name="name:4" value="RT_toStaticFieldReference" />
-    <property name="package:4" value="AbstractClassifierReference" />
+    <property name="virtualPackage:4" value="AbstractClassifierReference" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4246727699196031778">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4246727699196031779">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4246727699196040260">
@@ -7161,8 +7134,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8221415467041264294">
-    <property name="package:4" value="AbstractClassifierReference" />
     <property name="name:4" value="RT_addTypeVariable" />
+    <property name="virtualPackage:4" value="AbstractClassifierReference" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8221415467041337184">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041337185">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8221415467041346661">
@@ -7206,8 +7179,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8221415467041384661">
-    <property name="package:4" value="AbstractClassifierReference" />
     <property name="name:4" value="RT_toArray" />
+    <property name="virtualPackage:4" value="AbstractClassifierReference" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8221415467041384664">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041384665">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8221415467041384666">
@@ -7251,8 +7224,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913342768">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PlusExpression_with_Cast" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913342772">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913342773">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913342776">
@@ -7312,8 +7285,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913378557">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_MapElement_with_Assignment" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913378559">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913378560">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913378563">
@@ -7385,8 +7358,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913385484">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_Assignment_with_PlusAssignment" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913385486">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913385487">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913385488">
@@ -7465,8 +7438,8 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="3956753173913394401">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_SNodeTypeCast_with_PlusExpression" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3956753173913414192">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3956753173913414193">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3956753173913414196">
@@ -7530,8 +7503,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1413941122942910870">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PostfixIncrement_with_Plus" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1413941122942912211">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942912212">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1413941122942920655">
@@ -7597,8 +7570,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1413941122942930891">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PlusExpression_with_Plus" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1413941122942931504">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1413941122942931505">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1413941122942932312">
@@ -7652,8 +7625,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="577599984096529177">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_AssignmentRValue_with_PlusAssignment" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="577599984096529179">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="577599984096529180">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="577599984096529183">
@@ -7731,8 +7704,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5331479185384370996">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PlusExpressionRArgument_with_Plus" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="5331479185384374304">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5331479185384374305">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5331479185384376295">
@@ -7784,8 +7757,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8763293761094334351">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PlusExpressionRArgument_with_Mul" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8763293761094385740">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8763293761094385741">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8763293761094402144">
@@ -7875,8 +7848,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8763293761094485347">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_MulExpressionRArgument_with_Plus" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8763293761094485349">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8763293761094485350">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8763293761094485353">
@@ -7968,8 +7941,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="738178674097913525">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PlusExpressionRArgument_with_Assignment" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="738178674097913527">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="738178674097913528">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="738178674097913531">
@@ -8071,8 +8044,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4507831107787893758">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PostfixIncrementExpression_with_PrefixIncrement" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4507831107787893760">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4507831107787893761">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4507831107787903365">
@@ -8136,8 +8109,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4507831107788050192">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_PostfixDecrementExpression_with_PrefixDecrement" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4507831107788070679">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4507831107788070680">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4507831107788070681">
@@ -8201,8 +8174,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4507831107788078158">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_Cast" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4507831107788309260">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4507831107788309261">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4507831107788309264">
@@ -8282,8 +8255,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4507831107788309237">
-    <property name="package:3" value="sideTransform.precedence" />
     <property name="name:3" value="TestClass" />
+    <property name="virtualPackage:3" value="sideTransform.precedence" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4507831107788309243">
       <property name="name:3" value="i" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4507831107788309246" />
@@ -8317,8 +8290,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4507831107788316822">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_UnaryMinus" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4507831107788316824">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4507831107788316825">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4507831107788316826">
@@ -8412,8 +8385,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6042072087468697821">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_MinusAssignment" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6042072087468697823">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6042072087468697824">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6042072087468697825">
@@ -8493,8 +8466,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6042072087468729475">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_PlusOperation" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6042072087468729477">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6042072087468729478">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6042072087468729483">
@@ -8574,8 +8547,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6042072087468729526">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_Not" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6042072087468729532">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6042072087468729533">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6042072087468729534">
@@ -8664,8 +8637,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6042072087468737360">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_Parenthesis" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6042072087468737362">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6042072087468737363">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6042072087468737364">
@@ -8754,8 +8727,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6042072087468738470">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_DotExpression_with_PrefixDecrement" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6042072087468738472">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6042072087468738473">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6042072087468738474">
@@ -8833,8 +8806,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1989240834983537719">
-    <property name="package:4" value="focusMovements" />
     <property name="name:4" value="SurroundExpressionWithParenthesis" />
+    <property name="virtualPackage:4" value="focusMovements" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1989240834983537721">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1989240834983537722">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1989240834983537723">
@@ -8884,7 +8857,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="7011073693661692260">
     <property name="name:4" value="SimpleUndoTest" />
-    <property name="package:4" value="undoRedo" />
+    <property name="virtualPackage:4" value="undoRedo" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7011073693661757279">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7011073693661757280">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7011073693661765721">
@@ -8931,8 +8904,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1205677679168513015">
-    <property name="package:4" value="undoRedo" />
     <property name="name:4" value="SimpleRedoTest" />
+    <property name="virtualPackage:4" value="undoRedo" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1205677679168513017">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1205677679168513018">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1205677679168513025">
@@ -8989,8 +8962,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4910482895444456901">
-    <property name="package:4" value="sideTransform" />
     <property name="name:4" value="RT_Assert_with_colon" />
+    <property name="virtualPackage:4" value="sideTransform" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4910482895444510849">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4910482895444510850">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="4910482895444519291">
@@ -9032,8 +9005,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5041847952539798523">
-    <property name="package:4" value="sideTransform" />
     <property name="name:4" value="RT_AssertBinaryOperation_with_colon" />
+    <property name="virtualPackage:4" value="sideTransform" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="5041847952539846136">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5041847952539846137">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="5041847952539854578">
@@ -9095,8 +9068,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="5041847952539922831">
-    <property name="package:4" value="sideTransform" />
     <property name="name:4" value="RT_AssertInstanceMethodCallOperation_with_colon" />
+    <property name="virtualPackage:4" value="sideTransform" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5041847952539922837">
       <property name="name:3" value="Container" />
       <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5041847952539922850">
@@ -9228,8 +9201,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="6386137884199284577">
-    <property name="package:4" value="sideTransform.precedence" />
     <property name="name:4" value="LT_ListElementAccess_with_PlusOperation" />
+    <property name="virtualPackage:4" value="sideTransform.precedence" />
     <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="6386137884199285709">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6386137884199285710">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6386137884199290122">

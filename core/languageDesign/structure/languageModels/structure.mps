@@ -115,18 +115,6 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -517,7 +505,7 @@
     <property name="name:0" value="AnnotationLinkDeclaration" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}\icons\annotationLink.png" />
-    <property name="package:0" value="annotation" />
+    <property name="virtualPackage:0" value="annotation" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1174387216526">
       <link role="intfc:0" targetNodeId="1.1169194658468:0" />
@@ -555,7 +543,7 @@
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1149608316235">
     <property name="name:0" value="AnnotationLinkStereotype" />
     <property name="memberIdentifierPolicy:0" value="derive_from_internal_value" />
-    <property name="package:0" value="annotation" />
+    <property name="virtualPackage:0" value="annotation" />
     <link role="memberDataType:0" targetNodeId="1.1082983041843:0" />
     <link role="defaultMember:0" targetNodeId="1149608364144:0" resolveInfo="node" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1149608364144">
@@ -671,9 +659,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1204742406467">
-    <property name="package:0" value="annotation" />
     <property name="name:0" value="AnnotationLinkCardinality" />
     <property name="memberIdentifierPolicy:0" value="derive_from_internal_value" />
+    <property name="virtualPackage:0" value="annotation" />
     <link role="memberDataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1204742406468">
       <property name="internalValue:0" value="0..1" />
@@ -686,7 +674,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1224240836180">
     <property name="name:0" value="DeprecatedNodeAnnotation" />
-    <property name="package:0" value="deprecatedAnnotation" />
+    <property name="virtualPackage:0" value="deprecatedAnnotation" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1224240859229">
       <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
@@ -702,13 +690,13 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="1224241293279">
     <property name="role:0" value="deprecatedNode" />
-    <property name="package:0" value="deprecatedAnnotation" />
+    <property name="virtualPackage:0" value="deprecatedAnnotation" />
     <link role="target:0" targetNodeId="1224240836180:0" resolveInfo="DeprecatedNodeAnnotation" />
     <link role="source:0" targetNodeId="1224848324737:0" resolveInfo="IStructureDeprecatable" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1224848324737">
-    <property name="package:0" value="deprecatedAnnotation" />
     <property name="name:0" value="IStructureDeprecatable" />
+    <property name="virtualPackage:0" value="deprecatedAnnotation" />
     <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1224848346098">
       <link role="intfc:0" targetNodeId="1.1224608834445:0" resolveInfo="IDeprecatable" />
     </node>

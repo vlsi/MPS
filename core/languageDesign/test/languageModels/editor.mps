@@ -6,33 +6,11 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)" version="-1" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
@@ -75,7 +53,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1211979400462">
-    <property name="package:32" value="asserts" />
+    <property name="virtualPackage:32" value="asserts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1211979288880:4" resolveInfo="AssertMatch" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1211979486899">
       <property name="vertical:32" value="false" />
@@ -151,7 +129,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215076060697">
-    <property name="package:32" value="asserts" />
+    <property name="virtualPackage:32" value="asserts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215075719096:4" resolveInfo="NodeCheckForErrors" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1215076070570">
       <property name="vertical:32" value="false" />
@@ -174,7 +152,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215507692910">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215507671101:4" resolveInfo="NodeErrorPropeties" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1215507702924">
       <property name="text:32" value="has error" />
@@ -182,7 +160,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215507929232">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215507532627:4" resolveInfo="NodePropertiesContainer" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1215507934349">
       <property name="vertical:32" value="false" />
@@ -214,7 +192,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215515356354">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215511704609:4" resolveInfo="NodeWarningProperty" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1215515361840">
       <property name="text:32" value="has warning" />
@@ -238,7 +216,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215525724822">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215525678776:4" resolveInfo="NodeReachable" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1215525730465">
       <property name="text:32" value="reachable" />
@@ -246,7 +224,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215526335114">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215526290564:4" resolveInfo="NodeTypeProperty" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1215526424302">
       <property name="vertical:32" value="false" />
@@ -261,7 +239,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215604450654">
-    <property name="package:32" value="nodeOperation" />
+    <property name="virtualPackage:32" value="nodeOperation" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215603922101:4" resolveInfo="NodeOperationsContainer" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1215604454000">
       <property name="vertical:32" value="false" />
@@ -302,7 +280,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215607090776">
-    <property name="package:32" value="nodeOperation" />
+    <property name="virtualPackage:32" value="nodeOperation" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215607067978:4" resolveInfo="NodeErrorCheck" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1381629087548445812">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1381629087548445813">
@@ -349,7 +327,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215611856135">
-    <property name="package:32" value="nodeOperation" />
+    <property name="virtualPackage:32" value="nodeOperation" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215611834554:4" resolveInfo="CheckDataFlowOperation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1215611873639">
       <property name="text:32" value="check dataflow" />
@@ -357,7 +335,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215612962552">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215612918969:4" resolveInfo="NodeUnreacable" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1215612967335">
       <property name="text:32" value="unreachable" />
@@ -365,7 +343,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215614451933">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215614394933:4" resolveInfo="VaribaleInialized" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1215614462466">
       <property name="vertical:32" value="false" />
@@ -380,7 +358,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1215617027617">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.1215616993394:4" resolveInfo="VariableLive" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1215617031291">
       <property name="vertical:32" value="false" />
@@ -554,7 +532,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1217425897587">
-    <property name="package:32" value="asserts" />
+    <property name="virtualPackage:32" value="asserts" />
     <link role="conceptDeclaration:32" targetNodeId="1.1217425837708:4" resolveInfo="CheckNodeDataflow" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1217425919667">
       <property name="vertical:32" value="false" />
@@ -579,14 +557,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1225467113507">
-    <property name="package:32" value="expression" />
+    <property name="virtualPackage:32" value="expression" />
     <link role="conceptDeclaration:32" targetNodeId="1.1225467090849:4" resolveInfo="ProjectExpression" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1225468134152">
       <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1225469884187">
-    <property name="package:32" value="expression" />
+    <property name="virtualPackage:32" value="expression" />
     <link role="conceptDeclaration:32" targetNodeId="1.1225469856668:4" resolveInfo="ModelExpression" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1225469891485">
       <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
@@ -637,14 +615,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1225983147681">
-    <property name="package:32" value="expression" />
+    <property name="virtualPackage:32" value="expression" />
     <link role="conceptDeclaration:32" targetNodeId="1.1225983109083:4" resolveInfo="EditorExpression" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1225983152839">
       <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1225989927048">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.1225989773458:4" resolveInfo="RunIntentionStatement" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1225989934582">
       <property name="vertical:32" value="false" />
@@ -664,7 +642,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1227182106173">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.1227182079811:4" resolveInfo="TypeKeyOperation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1227182171833">
       <property name="vertical:32" value="false" />
@@ -694,7 +672,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1228934535921">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.1228934484974:4" resolveInfo="PressKeyStatement" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1228934540801">
       <property name="vertical:32" value="false" />
@@ -715,7 +693,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1229187914710">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.1229187653856:4" resolveInfo="EditorTestCase" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1229187926087">
       <property name="vertical:32" value="true" />
@@ -782,7 +760,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1229194997584">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.1229194968594:4" resolveInfo="TestCellAnnotation2" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1229195018258">
       <property name="vertical:32" value="false" />
@@ -896,7 +874,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1230224860032">
-    <property name="package:32" value="mock" />
+    <property name="virtualPackage:32" value="mock" />
     <link role="conceptDeclaration:32" targetNodeId="1.1230224281548:4" resolveInfo="MockAnnotation" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1230224865909">
       <property name="vertical:32" value="false" />
@@ -911,7 +889,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="95706764259118090">
-    <property name="package:32" value="nodeProperties" />
+    <property name="virtualPackage:32" value="nodeProperties" />
     <link role="conceptDeclaration:32" targetNodeId="1.95706764259116183:4" resolveInfo="NodeTypeSetProperty" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="95706764259118092">
       <property name="vertical:32" value="false" />
@@ -943,7 +921,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5773579205429617811">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.5773579205429617809:4" resolveInfo="SwitchToInspector" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="5773579205429617813">
       <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
@@ -951,7 +929,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5773579205429866752">
-    <property name="package:32" value="expression" />
+    <property name="virtualPackage:32" value="expression" />
     <link role="conceptDeclaration:32" targetNodeId="1.5773579205429866751:4" resolveInfo="EditorComponent" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="5773579205429866756">
       <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
@@ -970,7 +948,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1101347953350099232">
-    <property name="package:32" value="editor" />
+    <property name="virtualPackage:32" value="editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.7011073693661765739:4" resolveInfo="InvokeActionStatement" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1101347953350099234">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1101347953350099238">
@@ -984,7 +962,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1101347953350138824">
-    <property name="package:32" value="actions" />
+    <property name="virtualPackage:32" value="actions" />
     <link role="conceptDeclaration:32" targetNodeId="1.1101347953350122758:4" resolveInfo="BootstrapActionReference" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1101347953350138826">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1205677679168424445">

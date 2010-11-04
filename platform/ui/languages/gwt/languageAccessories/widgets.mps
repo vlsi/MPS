@@ -6,16 +6,10 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="e5c2a44a-6085-4aeb-a5b6-851cecd2d926(jetbrains.mps.ui.gwt)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" />
-  <languageAspect modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" />
+  <languageAspect modelUID="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" version="-1" />
   <maxImportIndex value="11" />
   <import index="2" modelUID="f:java_stub#com.google.gwt.user.client.ui(com.google.gwt.user.client.ui@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#com.google.gwt.event.logical.shared(com.google.gwt.event.logical.shared@java_stub)" version="-1" />
@@ -1542,8 +1536,8 @@
     <node role="auxillary" type="jetbrains.mps.ui.modeling.structure.Auxillary" id="262873202871588257" />
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="600037073069499088">
-    <property name="package" value="widgets" />
     <property name="name" value="TabLayoutPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.6424935405034500197" resolveInfo="TabbedPanel" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="600037073069500885">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="600037073069500886">
@@ -1594,8 +1588,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="2884369009050493104">
-    <property name="package" value="widgets" />
     <property name="name" value="Tree" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.6399754879758206688" resolveInfo="Tree" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="2884369009050497332">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2884369009050497333">
@@ -1633,8 +1627,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="2884369009050509085">
-    <property name="package" value="widgets" />
     <property name="name" value="TreeItem" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.7936848552255359513" resolveInfo="AbstractTreeNode" />
     <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2884369009050509088">
       <link role="classifier" targetNodeId="2.~TreeItem" resolveInfo="TreeItem" />
@@ -1704,8 +1698,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="8915860021643594571">
-    <property name="package" value="widgets" />
     <property name="name" value="Grid" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.3616339824038852574" resolveInfo="Table" />
     <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8915860021643596368">
       <link role="classifier" targetNodeId="2.~Grid" resolveInfo="Grid" />
@@ -1866,8 +1860,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="8915860021643600696">
-    <property name="package" value="widgets" />
     <property name="name" value="String_array_Column" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.3616339824038886161" resolveInfo="TableColumn" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="8915860021643600700">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8915860021643600701">
@@ -1935,8 +1929,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="8915860021643600761">
-    <property name="package" value="widgets" />
     <property name="name" value="Object_array_Row" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.3616339824038886165" resolveInfo="TableRow" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="8915860021643600765">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8915860021643600766">
@@ -2200,8 +2194,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="7001216437968644958">
-    <property name="package" value="widgets" />
     <property name="name" value="Hyperlink" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.7001216437968619238" resolveInfo="Hyperlink" />
     <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7001216437968645427">
       <link role="classifier" targetNodeId="2.~Hyperlink" resolveInfo="Hyperlink" />
@@ -2277,8 +2271,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="4917245576577583972">
-    <property name="package" value="widgets" />
     <property name="name" value="FlowPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.4917245576577583971" resolveInfo="FlowPanel" />
     <node role="factory" type="jetbrains.mps.ui.modeling.structure.UIObjectFactory" id="4917245576577583977">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4917245576577583978">
@@ -2298,8 +2292,8 @@
     <node role="geometry" type="jetbrains.mps.ui.modeling.structure.Geometry" id="4917245576577583975" />
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="2663453265348464651">
-    <property name="package" value="widgets" />
     <property name="name" value="LayoutPanel" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.2663453265346089636" resolveInfo="LayoutPanel" />
     <node role="containerTemplate" type="jetbrains.mps.ui.modeling.structure.ContainerTemplate" id="2663453265348466239">
       <link role="container" targetNodeId="7.2663453265346089637" resolveInfo="children" />
@@ -2395,8 +2389,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" id="7617727720684691216">
-    <property name="package" value="widgets" />
     <property name="name" value="LayoutPanel_no_cons" />
+    <property name="virtualPackage" value="widgets" />
     <link role="uiObject" targetNodeId="7.7617727720684691215" resolveInfo="FillPanel" />
     <node role="containerTemplate" type="jetbrains.mps.ui.modeling.structure.ContainerTemplate" id="4850120319523365302">
       <link role="container" targetNodeId="7.4850120319523368884" resolveInfo="child" />

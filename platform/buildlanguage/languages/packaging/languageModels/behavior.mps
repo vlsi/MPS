@@ -8,35 +8,13 @@
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
+  <languageAspect modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -55,7 +33,7 @@
   <import index="21" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.generator.cache(jetbrains.mps.generator.cache@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877173053">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1205339194346:7" resolveInfo="IStringExpression" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877173054">
       <property name="name" value="getValue" />
@@ -1222,7 +1200,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877230695">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203013653398:7" resolveInfo="ILayoutComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877230696">
       <property name="name" value="getPath" />
@@ -1238,7 +1216,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877251335">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1204015075559:7" resolveInfo="Copy" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877251336">
       <property name="name" value="getPath" />
@@ -1652,7 +1630,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877252693">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1205331422635:7" resolveInfo="Echo" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877252694">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877252695" />
@@ -1737,7 +1715,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877279369">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203617883391:7" resolveInfo="ICompositeComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877279373">
       <property name="name" value="getExcludes" />
@@ -1988,7 +1966,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877286221">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1210777529562:7" resolveInfo="Antcall" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877286222">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877286223">
@@ -2211,7 +2189,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877295513">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1205339044029:7" resolveInfo="SimpleString" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877295514">
       <property name="name" value="getValue" />
@@ -2235,14 +2213,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877317755">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1204122781510:7" resolveInfo="Delete" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877317756">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877317757" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877333763">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203598300291:7" resolveInfo="AbstractProjectComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877333764">
       <property name="name" value="getHomePath" />
@@ -2710,7 +2688,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877370066">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203598512427:7" resolveInfo="Folder" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877370067">
       <property name="name" value="getChildrenTargetDir" />
@@ -2760,7 +2738,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877384790">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1205342812422:7" resolveInfo="CompositeString" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877384791">
       <property name="name" value="getValue" />
@@ -2802,7 +2780,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877479682">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203598322527:7" resolveInfo="File" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877479683">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877479684">
@@ -2829,14 +2807,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877485658">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203598417283:7" resolveInfo="Jar" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877485709">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877485710" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877514764">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1203599702327:7" resolveInfo="Module" />
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1222444513017">
       <property name="name" value="getAllAvailableModules" />
@@ -4473,7 +4451,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877518466">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1205335290326:7" resolveInfo="Variable" />
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="5558646027962551669">
       <property name="name" value="getPackagingLanguage" />
@@ -4605,7 +4583,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877541033">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1205339464939:7" resolveInfo="VariableReference" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877541034">
       <property name="name" value="getValue" />
@@ -4644,7 +4622,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1218646036622">
-    <property name="package" value="compile" />
+    <property name="virtualPackage" value="compile" />
     <link role="concept" targetNodeId="1.1216905728562:7" resolveInfo="ModuleCycle" />
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1218716245482">
       <property name="name" value="getMPSClassPath" />
@@ -5469,7 +5447,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1219231429105">
-    <property name="package" value="generate" />
+    <property name="virtualPackage" value="generate" />
     <link role="concept" targetNodeId="1.1204737220833:7" resolveInfo="PathHolder" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1219231432401">
       <property name="name" value="getValue" />
@@ -5599,7 +5577,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220976312909">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1220976052975:7" resolveInfo="MacroReference" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1220976312910">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220976312911">
@@ -5624,7 +5602,7 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220977682599">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1220973916698:7" resolveInfo="Path" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226511495568">
       <property name="name" value="getFullPathWithoutMacro" />
@@ -5979,7 +5957,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220977778672">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1220973955905:7" resolveInfo="PathComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1220977780435">
       <property name="name" value="getFullPath" />
@@ -6001,7 +5979,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1220983417227">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1220973992845:7" resolveInfo="CompositePathComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1220983419344">
       <property name="name" value="getPath" />
@@ -6106,7 +6084,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1221152505956">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1204018553150:7" resolveInfo="Zip" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239622540603">
       <property name="name" value="getTemporalDir" />
@@ -6269,7 +6247,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1226499531830">
-    <property name="package" value="sourcePaths.basedir" />
+    <property name="virtualPackage" value="sourcePaths.basedir" />
     <link role="concept" targetNodeId="1.1226494304686:7" resolveInfo="BaseDirPath" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226499535273">
       <property name="name" value="getName" />
@@ -6351,7 +6329,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230220438989">
-    <property name="package" value="buildlanguageExtension" />
+    <property name="virtualPackage" value="buildlanguageExtension" />
     <link role="concept" targetNodeId="1.1230220313182:7" resolveInfo="MPSLayoutConfigurationReferencePropertyValueExpression" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230220452515">
       <property name="name" value="getActualValue" />
@@ -6450,7 +6428,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233161182353">
-    <property name="package" value="projectComponents.conditions" />
+    <property name="virtualPackage" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159299625:7" resolveInfo="ICondition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233161185181">
       <property name="name" value="canCalculateWhileGenerating" />
@@ -6473,7 +6451,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233161890003">
-    <property name="package" value="projectComponents.conditions" />
+    <property name="virtualPackage" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159325466:7" resolveInfo="FileExistsCondition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233161939740">
       <property name="name" value="canCalculateWhileGenerating" />
@@ -6519,7 +6497,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233322309060">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1233321396603:7" resolveInfo="NonExistingPath" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233322312894">
       <property name="name" value="getFile" />
@@ -6592,7 +6570,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233322717448">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1233321544558:7" resolveInfo="IPath" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233322718999">
       <property name="name" value="getFile" />
@@ -6609,7 +6587,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1234531719239">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1234531699390:7" resolveInfo="Space" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234531735205">
       <property name="name" value="getValue" />
@@ -6629,7 +6607,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1234864689834">
-    <property name="package" value="variables" />
+    <property name="virtualPackage" value="variables" />
     <link role="concept" targetNodeId="1.1234864659795:7" resolveInfo="IVariableHolder" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234864693585">
       <property name="name" value="getAllVariable" />
@@ -6737,7 +6715,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1234972705117">
-    <property name="package" value="sourcePaths" />
+    <property name="virtualPackage" value="sourcePaths" />
     <link role="concept" targetNodeId="1.1234968728594:7" resolveInfo="IMacroHolder" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234972707641">
       <property name="name" value="findMacroForReference" />
@@ -6973,7 +6951,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1236881736606">
-    <property name="package" value="projectComponents.conditions" />
+    <property name="virtualPackage" value="projectComponents.conditions" />
     <link role="concept" targetNodeId="1.1233159354124:7" resolveInfo="NotCondition" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1236881744775">
       <property name="name" value="canCalculateWhileGenerating" />
@@ -7024,7 +7002,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1237389207313">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1237389142373:7" resolveInfo="IAbstractCompositeComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237389224202">
       <property name="name" value="getChildrenTargetDir" />
@@ -7040,7 +7018,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240562980505">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1240562872025:7" resolveInfo="ComponentsList" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240562982189">
       <property name="name" value="getChildrenTargetDir" />
@@ -7107,7 +7085,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240564449607">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.1240564398817:7" resolveInfo="ITransparentProjectComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240564451382">
       <property name="name" value="getChildrenToDo" />
@@ -7124,7 +7102,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7323513735995554361">
-    <property name="package" value="projectComponents" />
+    <property name="virtualPackage" value="projectComponents" />
     <link role="concept" targetNodeId="1.701559220729212645:7" resolveInfo="Block" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7323513735995554364">
       <property name="name" value="getAllMacroNames" />

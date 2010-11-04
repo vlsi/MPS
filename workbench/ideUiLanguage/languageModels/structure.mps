@@ -3,29 +3,15 @@
   <persistence version="4" />
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904ae(jetbrains.mps.ide.uiLanguage.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" version="-1" />
   <maxImportIndex value="4" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203592595174">
     <property name="name:0" value="IDEDialog" />
-    <property name="package:0" value="IDEDialog" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1203603964664">
       <property name="name:0" value="stretch" />
@@ -58,8 +44,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203592642690">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="IDEDialogButton" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203592657479">
       <property name="metaClass:0" value="aggregation" />
@@ -77,8 +63,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203606241544">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="DisposeDialogExpression" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="4.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1203606266719">
       <property name="value:0" value="disposeDialog" />
@@ -92,8 +78,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203607523033">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="ReportErrorExpression" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="4.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1203607530566">
       <property name="metaClass:0" value="aggregation" />
@@ -113,8 +99,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203610466731">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="DialogExpression" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="4.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1203610475578">
       <property name="value:0" value="dialog" />
@@ -122,8 +108,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1226850367300">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="DialogDimensions" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1226850380566">
       <property name="name:0" value="left" />
@@ -143,8 +129,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3734045384532546729">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="ReportErrorStatement" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="4.1068580123157:3" resolveInfo="Statement" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3734045384532546730">
       <property name="metaClass:0" value="aggregation" />
@@ -158,8 +144,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3734045384532546800">
-    <property name="package:0" value="IDEDialog" />
     <property name="name:0" value="DisposeDialogStatement" />
+    <property name="virtualPackage:0" value="IDEDialog" />
     <link role="extends:0" targetNodeId="4.1068580123157:3" resolveInfo="Statement" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3734045384532546801">
       <property name="value:0" value="disposeDialog" />

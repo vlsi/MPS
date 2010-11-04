@@ -13,35 +13,16 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <maxImportIndex value="29" />
+  <languageAspect modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" version="-1" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -58,6 +39,7 @@
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="28" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="29" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
+  <import index="30" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1199623542211">
     <property name="name:2" value="main" />
     <node role="preMappingScript:2" type="jetbrains.mps.lang.generator.structure.MappingScriptReference:2" id="1203007568996">
@@ -12330,7 +12312,7 @@
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1201686683808">
     <property name="name:2" value="prep_FunctionType_BaseMethodCall_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
-    <property name="package:2" value="adaptations" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1201686683809">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201686683810">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1201686921380">
@@ -12532,7 +12514,7 @@
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1201703073187">
     <property name="name:2" value="prep_FunctionType_AssignmentExpression_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
-    <property name="package:2" value="adaptations" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1201703119163">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201703119164">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1201703119165">
@@ -12594,7 +12576,7 @@
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1201705444341">
     <property name="name:2" value="prep_FunctionType_VariableDeclaration_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
-    <property name="package:2" value="adaptations" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1201705474278">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201705474279">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1201705474280">
@@ -12940,8 +12922,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1202817802054">
-    <property name="package:2" value="adaptations" />
     <property name="name:2" value="reduce_ClassifierType_new_anonymous" />
+    <property name="virtualPackage:2" value="adaptations" />
     <link role="applicableConcept:2" targetNodeId="3.1107535904670:3" resolveInfo="ClassifierType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1202817818150">
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1202817821242">
@@ -13545,9 +13527,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1204637450605">
-    <property name="package:2" value="adaptations" />
     <property name="name:2" value="prep_FunctionType_InstanceMethodCallOperation_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1204637450606">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1204637450607">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1204637560739">
@@ -15703,9 +15685,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1215524499703">
-    <property name="package:2" value="adaptations" />
     <property name="name:2" value="prep_FunctionType_ReturnStatement_adaptation" />
     <property name="scriptKind:2" value="pre_processing" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1215524499704">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215524499705">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1215524527859">
@@ -15854,7 +15836,7 @@
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="1219747408128">
     <property name="name:2" value="prep_FunctionType_ClassCreator_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
-    <property name="package:2" value="adaptations" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="1219747408129">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1219747408130">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1219747408131">
@@ -30129,7 +30111,6 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="8665905049776863436">
     <property name="name:2" value="replace_ControlClosureStatement_UnrestrictedClosureLiteral" />
     <link role="applicableConcept:2" targetNodeId="1.1229598881739:3" resolveInfo="UnrestrictedClosureLiteral" />
@@ -30958,7 +30939,7 @@
                               </node>
                               <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8665905049776863824">
                                 <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8665905049776863825">
-                                  <link role="concept:16" targetNodeId="3v.1071489090640:0" resolveInfo="ConceptDeclaration" />
+                                  <link role="concept:16" targetNodeId="30.1071489090640:0" resolveInfo="ConceptDeclaration" />
                                 </node>
                               </node>
                             </node>
@@ -32945,7 +32926,7 @@
                               </node>
                               <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8665905049776865791">
                                 <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8665905049776865792">
-                                  <link role="concept:16" targetNodeId="3v.1071489090640:0" resolveInfo="ConceptDeclaration" />
+                                  <link role="concept:16" targetNodeId="30.1071489090640:0" resolveInfo="ConceptDeclaration" />
                                 </node>
                               </node>
                             </node>
@@ -38182,9 +38163,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="4923436771430697282">
-    <property name="package:2" value="adaptations" />
     <property name="name:2" value="prep_FunctionType_ExpressionStatement_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="4923436771430697283">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4923436771430697284">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="4923436771430698256">
@@ -38633,9 +38614,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingScript:2" id="5988816933596133426">
-    <property name="package:2" value="adaptations" />
     <property name="name:2" value="prep_FunctionType_AnonymousClass_adaptations" />
     <property name="scriptKind:2" value="pre_processing" />
+    <property name="virtualPackage:2" value="adaptations" />
     <node role="codeBlock:2" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock:2" id="5988816933596133427">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5988816933596133428">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="5988816933596133436">

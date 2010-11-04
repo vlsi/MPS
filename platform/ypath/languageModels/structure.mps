@@ -16,23 +16,7 @@
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)" version="49" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -55,8 +39,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168428603688">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="TreePathCreator" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="2.1145552809883:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1168429847720">
       <property name="value:0" value="treepath initializer" />
@@ -77,13 +61,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168428668253">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="ParentBlock" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1168428649324:0" resolveInfo="LambdaMethod" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168428680123">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="ChildrenBlock" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1168428649324:0" resolveInfo="LambdaMethod" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168428709096">
@@ -91,8 +75,8 @@
     <link role="extends:0" targetNodeId="2.1153179527848:3" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1168457888645">
-    <property name="package:0" value="treeOperation.traverse" />
     <property name="name:0" value="TraversalAxis" />
+    <property name="virtualPackage:0" value="treeOperation.traverse" />
     <link role="memberDataType:0" targetNodeId="1.1082983041843:0" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1168457888646">
       <property name="internalValue:0" value="DESCENDANTS" />
@@ -132,8 +116,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168468602533">
-    <property name="package:0" value="treeOperation" />
     <property name="name:0" value="TreePathOperationExpression" />
+    <property name="virtualPackage:0" value="treeOperation" />
     <link role="extends:0" targetNodeId="2.1197027756228:3" resolveInfo="DotExpression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1168468622494">
       <property name="metaClass:0" value="aggregation" />
@@ -154,8 +138,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168468681335">
-    <property name="package:0" value="treeOperation" />
     <property name="name:0" value="TreePathOperation" />
+    <property name="virtualPackage:0" value="treeOperation" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1168468923164">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
@@ -183,8 +167,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168524996431">
-    <property name="package:0" value="treeOperation.traverse" />
     <property name="name:0" value="IterateOperation" />
+    <property name="virtualPackage:0" value="treeOperation.traverse" />
     <link role="extends:0" targetNodeId="1168468681335:0" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1184776023529">
       <property name="metaClass:0" value="aggregation" />
@@ -213,8 +197,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168527701993">
-    <property name="package:0" value="treeOperation.filter" />
     <property name="name:0" value="WhereOperation" />
+    <property name="virtualPackage:0" value="treeOperation.filter" />
     <link role="extends:0" targetNodeId="1168468681335:0" resolveInfo="TreePathOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1168527804378">
       <property name="value:0" value="where" />
@@ -239,8 +223,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168527733553">
-    <property name="package:0" value="deprecated.treeOperation.filter" />
     <property name="name:0" value="WhereBlock" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.filter" />
     <link role="extends:0" targetNodeId="1168428649324:0" resolveInfo="LambdaMethod" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1179325851058">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" />
@@ -250,9 +234,9 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168879975004">
     <property name="rootable:0" value="true" />
-    <property name="package:0" value="treePath" />
     <property name="iconPath:0" value="${language_descriptor}\icons\treepath.png" />
     <property name="name:0" value="TreePathAspect" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1172240749936">
       <property name="metaClass:0" value="aggregation" />
@@ -271,8 +255,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168890168054">
-    <property name="package:0" value="treeOperation.traverse" />
     <property name="name:0" value="TreePathAdapterExpression" />
+    <property name="virtualPackage:0" value="treeOperation.traverse" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1168890213786">
       <property name="metaClass:0" value="aggregation" />
@@ -287,8 +271,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1172240563057">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="TreeNodeKind" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1173709509952">
       <link role="intfc:0" targetNodeId="1.1169194658468:0" />
@@ -307,8 +291,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1172242735136">
-    <property name="package:0" value="treeOperation.filter" />
     <property name="name:0" value="MatchKindOperation" />
+    <property name="virtualPackage:0" value="treeOperation.filter" />
     <link role="extends:0" targetNodeId="1168468681335:0" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1172242802393">
       <property name="role:0" value="nodeKind" />
@@ -323,8 +307,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1172243209751">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="KindBlock" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1168428649324:0" resolveInfo="LambdaMethod" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1179572764651">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" />
@@ -332,8 +316,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175160940972">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="TreeNodeKindProperty" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1175877871677">
       <property name="name:0" value="default" />
@@ -350,8 +334,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175161007000">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="PropertyGetter" />
+    <property name="virtualPackage:0" value="treePath" />
     <link role="extends:0" targetNodeId="1168428649324:0" resolveInfo="LambdaMethod" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1179572821196">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" />
@@ -359,8 +343,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175165417012">
-    <property name="package:0" value="treeOperation.filter" />
     <property name="name:0" value="TreeNodeKindOccurrence" />
+    <property name="virtualPackage:0" value="treeOperation.filter" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1175167444487">
       <property name="role:0" value="nodeKind" />
@@ -368,8 +352,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175169769579">
-    <property name="package:0" value="treeOperation.filter" />
     <property name="name:0" value="MatchPropertyOperation" />
+    <property name="virtualPackage:0" value="treeOperation.filter" />
     <link role="extends:0" targetNodeId="1172242735136:0" resolveInfo="MatchKindOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1175169795791">
       <property name="role:0" value="property" />
@@ -383,8 +367,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1175879071372">
-    <property name="package:0" value="treeOperation.filter" />
     <property name="name:0" value="MatchDefaultPropertyOperation" />
+    <property name="virtualPackage:0" value="treeOperation.filter" />
     <link role="extends:0" targetNodeId="1168468681335:0" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1175879605156">
       <property name="metaClass:0" value="aggregation" />
@@ -394,8 +378,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1179235924605">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="TreePath" />
+    <property name="virtualPackage:0" value="treePath" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1184069859692">
       <property name="role:0" value="defaultFeature" />
       <link role="target:0" targetNodeId="1184066209434:0" resolveInfo="IFeature" />
@@ -448,8 +432,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180006635472">
-    <property name="package:0" value="deprecated.treeOperation.visit" />
     <property name="name:0" value="VisitBlock" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.visit" />
     <link role="extends:0" targetNodeId="1168428649324:0" resolveInfo="LambdaMethod" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1180007981312">
       <property name="value:0" value="visit" />
@@ -470,8 +454,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="6781207870293803745" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180007355512">
-    <property name="package:0" value="switch" />
     <property name="name:0" value="NodeKindCase" />
+    <property name="virtualPackage:0" value="switch" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180024059811">
       <property name="metaClass:0" value="aggregation" />
@@ -484,8 +468,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180007382905">
-    <property name="package:0" value="switch" />
     <property name="name:0" value="NodeKindSpecificCase" />
+    <property name="virtualPackage:0" value="switch" />
     <link role="extends:0" targetNodeId="1180007355512:0" resolveInfo="NodeKindCase" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180007405188">
       <property name="role:0" value="treeNodeKind" />
@@ -498,8 +482,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180007571027">
-    <property name="package:0" value="switch" />
     <property name="name:0" value="NodeKindDefaultCase" />
+    <property name="virtualPackage:0" value="switch" />
     <link role="extends:0" targetNodeId="1180007355512:0" resolveInfo="NodeKindCase" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1180007571029">
       <property name="value:0" value="default:" />
@@ -507,8 +491,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180011113930">
-    <property name="package:0" value="deprecated.treeOperation.visit" />
     <property name="name:0" value="VisitChildrenExpression" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.visit" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180014148583">
       <property name="metaClass:0" value="aggregation" />
@@ -526,14 +510,14 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="6781207870293803760" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180013705438">
-    <property name="package:0" value="deprecated.treeOperation.visit" />
     <property name="name:0" value="VisitParameterDeclaration" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.visit" />
     <link role="extends:0" targetNodeId="2.1068431474542:3" />
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="6781207870293803771" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180014258612">
-    <property name="package:0" value="deprecated.treeOperation.visit" />
     <property name="name:0" value="VisitParameterReference" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.visit" />
     <link role="extends:0" targetNodeId="2.1068498886296:3" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180014281395">
       <property name="role:0" value="visitParameterDeclaration" />
@@ -543,8 +527,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="6781207870293803791" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180023776692">
-    <property name="package:0" value="switch" />
     <property name="name:0" value="SwitchNodeKindStatement" />
+    <property name="virtualPackage:0" value="switch" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180023956589">
       <property name="metaClass:0" value="aggregation" />
@@ -567,8 +551,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180024940230">
-    <property name="package:0" value="deprecated.treeOperation.visit" />
     <property name="name:0" value="VisitNodesStatement" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.visit" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180024958680">
       <property name="metaClass:0" value="aggregation" />
@@ -583,8 +567,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="6781207870293803761" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1180025029823">
-    <property name="package:0" value="deprecated.treeOperation.visit" />
     <property name="name:0" value="VisitParameterDeclarationList" />
+    <property name="virtualPackage:0" value="deprecated.treeOperation.visit" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1180025054224">
       <property name="metaClass:0" value="aggregation" />
@@ -596,7 +580,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1183978481785">
     <property name="name:0" value="ListFeature" />
-    <property name="package:0" value="treePath.features" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1184066322941">
       <property name="value:0" value="list feature" />
@@ -626,7 +610,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1183978641483">
     <property name="name:0" value="FeatureGetFun" />
-    <property name="package:0" value="treePath.features.functions" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1183978913184">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -646,7 +630,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1183978693009">
     <property name="name:0" value="FeatureSizeFun" />
-    <property name="package:0" value="treePath.features.functions" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1183979498032">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -662,7 +646,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1183978789889">
     <property name="name:0" value="NodeFunctionParam" />
-    <property name="package:0" value="treePath.features.functions.params" />
+    <property name="virtualPackage:0" value="treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1183978813828">
       <property name="value:0" value="node" />
@@ -674,7 +658,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1183978827781">
     <property name="name:0" value="IndexFunctionParam" />
-    <property name="package:0" value="treePath.features.functions.params" />
+    <property name="virtualPackage:0" value="treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1183978845180">
       <property name="value:0" value="index" />
@@ -686,7 +670,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1183978852670">
     <property name="name:0" value="ValueFunctionParam" />
-    <property name="package:0" value="treePath.features.functions.params" />
+    <property name="virtualPackage:0" value="treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1183978870572">
       <property name="value:0" value="value" />
@@ -698,7 +682,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184064321014">
     <property name="name:0" value="FeatureSequenceFun" />
-    <property name="package:0" value="treePath.features.functions" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1184064338121">
       <property name="value:0" value="sequence" />
@@ -714,7 +698,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1184066209434">
     <property name="name:0" value="IFeature" />
-    <property name="package:0" value="treePath.features" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197826813331">
       <property name="role:0" value="opposite" />
       <link role="target:0" targetNodeId="1184066209434:0" resolveInfo="IFeature" />
@@ -737,7 +721,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184066481897">
     <property name="name:0" value="SequenceFeature" />
-    <property name="package:0" value="treePath.features" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1184066514754">
       <property name="metaClass:0" value="aggregation" />
@@ -767,7 +751,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184501940146">
     <property name="name:0" value="ParamFunctionParam" />
-    <property name="package:0" value="treePath.features.functions.params" />
+    <property name="virtualPackage:0" value="treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1184501958168">
       <property name="value:0" value="param" />
@@ -781,8 +765,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184593387281">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="ParameterQueryFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1184593638877">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -797,8 +781,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184593479323">
-    <property name="package:0" value="treePath.features.functions.params" />
     <property name="name:0" value="NodeTypeFunctionParam" />
+    <property name="virtualPackage:0" value="treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1184593610662">
       <property name="value:0" value="nodeType" />
@@ -809,8 +793,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184603621091">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="TargetTypeFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1184848068223">
       <property name="value:0" value="getTargetType" />
@@ -829,8 +813,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184657361043">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="ParamListFeature" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <link role="extends:0" targetNodeId="1183978481785:0" resolveInfo="ListFeature" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1184657381450">
       <property name="metaClass:0" value="aggregation" />
@@ -858,8 +842,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184657669811">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="ParamFeatureGetFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="1183978641483:0" resolveInfo="FeatureGetFun" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1184657689943">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -870,8 +854,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184658165849">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="ParamFeatureSequenceFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="1184064321014:0" resolveInfo="FeatureSequenceFun" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1184658179285">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -882,8 +866,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184658208019">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="ParamFeatureSizeFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="1183978693009:0" resolveInfo="FeatureSizeFun" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1184658221746">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -894,12 +878,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1184658241359">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="IParamFeatureFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184658874084">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="ParamSequenceFeature" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <link role="extends:0" targetNodeId="1184066481897:0" resolveInfo="SequenceFeature" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1184658913029">
       <property name="metaClass:0" value="aggregation" />
@@ -930,8 +914,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1184659060758">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="IParamFeature" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1184659264134">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="parameterType" />
@@ -967,8 +951,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184659771596">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="ToStringFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1184659810674">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" />
@@ -979,8 +963,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1184768155075">
-    <property name="package:0" value="treeOperation.traverse" />
     <property name="name:0" value="ParameterWrapper" />
+    <property name="virtualPackage:0" value="treeOperation.traverse" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1190284493458">
       <property name="name:0" value="paramValue" />
@@ -998,12 +982,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1184771264860">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="IDesignFunction" />
+    <property name="virtualPackage:0" value="treePath.features" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1190800051916">
-    <property name="package:0" value="treePath.features.functions.generic" />
     <property name="name:0" value="GFGetterParamFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions.generic" />
     <link role="extends:0" targetNodeId="1196857052853:0" resolveInfo="GFGetterFun" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1190800080009">
       <link role="intfc:0" targetNodeId="1184658241359:0" resolveInfo="IParamFeatureFun" />
@@ -1017,8 +1001,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1191843944385">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="IGenericFeature" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1192877073256">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="getter" />
@@ -1030,8 +1014,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1192620437851">
-    <property name="package:0" value="treePath.features.functions.params" />
     <property name="name:0" value="ExpressionFunctionParam" />
+    <property name="virtualPackage:0" value="treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1192620460824">
       <property name="value:0" value="expression" />
@@ -1045,12 +1029,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1192805568452">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="IFunctionParam" />
+    <property name="virtualPackage:0" value="treePath.features" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1193057943814">
-    <property name="package:0" value="treePath.features.functions.generic" />
     <property name="name:0" value="GFCardinalParamFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions.generic" />
     <link role="extends:0" targetNodeId="1196856873176:0" resolveInfo="GFCardinalFun" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1193057981642">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -1064,12 +1048,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1194366835810">
-    <property name="package:0" value="treePath" />
     <property name="name:0" value="ITreePathExpression" />
+    <property name="virtualPackage:0" value="treePath" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1196419521949">
-    <property name="package:0" value="treePath.features.functions" />
     <property name="name:0" value="FragmentTypeEnum" />
+    <property name="virtualPackage:0" value="treePath.features.functions" />
     <link role="memberDataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1196419521950">
       <property name="internalValue:0" value="REPLACE_SINGLE" />
@@ -1113,8 +1097,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196768299101">
-    <property name="package:0" value="deprecated.treePath.features.functions.params" />
     <property name="name:0" value="GeneratorFunctionParam" />
+    <property name="virtualPackage:0" value="deprecated.treePath.features.functions.params" />
     <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196768322802">
       <property name="value:0" value="generator" />
@@ -1129,8 +1113,8 @@
     <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="8997498478155546100" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196856873176">
-    <property name="package:0" value="treePath.features.functions.generic" />
     <property name="name:0" value="GFCardinalFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions.generic" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1196856886768">
       <link role="intfc:0" targetNodeId="1184771264860:0" resolveInfo="IDesignFunction" />
@@ -1140,8 +1124,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196857052853">
-    <property name="package:0" value="treePath.features.functions.generic" />
     <property name="name:0" value="GFGetterFun" />
+    <property name="virtualPackage:0" value="treePath.features.functions.generic" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1196857105087">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -1156,8 +1140,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4581582910844536269">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="GenericFeature" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4581582910844536270">
       <link role="intfc:0" targetNodeId="1191843944385:0" resolveInfo="IGenericFeature" />
@@ -1170,8 +1154,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4581582910844784750">
-    <property name="package:0" value="treePath.features" />
     <property name="name:0" value="GenericParamFeature" />
+    <property name="virtualPackage:0" value="treePath.features" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4581582910844784751">
       <link role="intfc:0" targetNodeId="1191843944385:0" resolveInfo="IGenericFeature" />

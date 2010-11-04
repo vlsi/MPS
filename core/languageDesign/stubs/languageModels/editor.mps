@@ -9,31 +9,16 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:962014de-b79f-4dca-a99e-cf09dffd17cf(jetbrains.mps.lang.stubs.editor)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -46,7 +31,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="444366895203545215">
-    <property name="package:32" value="Stubs" />
+    <property name="virtualPackage:32" value="Stubs" />
     <link role="conceptDeclaration:32" targetNodeId="1.3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Block:32" id="3798212845297795126">
       <node role="header:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3798212845297795128">
@@ -89,7 +74,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="368569065472988616">
-    <property name="package:32" value="AbstractCreator.Methods.CreationSettings" />
+    <property name="virtualPackage:32" value="AbstractCreator.Methods.CreationSettings" />
     <link role="conceptDeclaration:32" targetNodeId="1.368569065472982598" resolveInfo="ModelCreationSettings" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="368569065472988618">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="368569065472988621">
@@ -107,7 +92,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="368569065472988631">
-    <property name="package:32" value="AbstractCreator.Methods.CreationSettings" />
+    <property name="virtualPackage:32" value="AbstractCreator.Methods.CreationSettings" />
     <link role="conceptDeclaration:32" targetNodeId="1.368569065472982597" resolveInfo="LanguageRef" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="562112407431586574">
       <link role="relationDeclaration:32" targetNodeId="1.562112407431569980" resolveInfo="languageFqName" />
@@ -229,7 +214,7 @@
   </node>
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5516999836374121345">
-    <property name="package:32" value="Stubs" />
+    <property name="virtualPackage:32" value="Stubs" />
     <link role="conceptDeclaration:32" targetNodeId="1.5516999836374121342" resolveInfo="StubsCreatorType" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5516999836374121347">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5516999836374121349" />
@@ -267,7 +252,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5553449326502622465">
-    <property name="package:32" value="Persistence" />
+    <property name="virtualPackage:32" value="Persistence" />
     <link role="conceptDeclaration:32" targetNodeId="1.5553449326502622462" resolveInfo="ModelManagerDeclaration" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Block:32" id="5553449326502622467">
       <node role="header:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5553449326502622468">
@@ -310,7 +295,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5553449326502623302">
-    <property name="package:32" value="Persistence" />
+    <property name="virtualPackage:32" value="Persistence" />
     <link role="conceptDeclaration:32" targetNodeId="1.5553449326502623299" resolveInfo="ModelManagerType" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5553449326502623304">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5553449326502623305" />
@@ -341,7 +326,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8529737993487833472">
-    <property name="package:32" value="Libs" />
+    <property name="virtualPackage:32" value="Libs" />
     <link role="conceptDeclaration:32" targetNodeId="1.8529737993487825733" resolveInfo="LibraryRoots" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Block:32" id="8529737993487833477">
       <node role="body:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833501">

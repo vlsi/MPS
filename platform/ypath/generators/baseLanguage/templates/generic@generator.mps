@@ -9,37 +9,11 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)" version="49" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905b1(jetbrains.mps.ypath.generator.baseLanguage.template.generic@generator)" version="-1" />
   <maxImportIndex value="22" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905b2(jetbrains.mps.ypath.generator.baseLanguage.template.helper)" version="-1" />
@@ -252,7 +226,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1191855331435">
     <property name="name:2" value="switch_operation" />
-    <property name="package:2" value="traversal" />
+    <property name="virtualPackage:2" value="traversal" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1196091735151">
       <link role="applicableConcept:2" targetNodeId="1.1168468602533:0" resolveInfo="TreePathOperationExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence:2" id="1196091742118">
@@ -333,7 +307,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1196092519773">
     <property name="name:2" value="switch_innerOperation" />
-    <property name="package:2" value="traversal" />
+    <property name="virtualPackage:2" value="traversal" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1196092528457">
       <link role="applicableConcept:2" targetNodeId="1.1168468602533:0" resolveInfo="TreePathOperationExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence:2" id="1196092583093">
@@ -421,7 +395,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1196093032544">
     <property name="name:2" value="switch_firstOperation" />
-    <property name="package:2" value="traversal" />
+    <property name="virtualPackage:2" value="traversal" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1196093042953">
       <link role="applicableConcept:2" targetNodeId="1.1168468602533:0" resolveInfo="TreePathOperationExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence:2" id="1196093062098">
@@ -479,7 +453,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1199401706727">
     <property name="name:2" value="switch_IterateOperation_inner" />
-    <property name="package:2" value="traversal.iterate" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1199401715588">
       <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence:2" id="1199401739611">
@@ -677,7 +651,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1199798621025">
     <property name="name:2" value="tpl_MapYieldIterateFeaturesRecursively" />
-    <property name="package:2" value="traversal.iterate" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199798621026">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1199798621027">
@@ -1240,7 +1214,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1199799264124">
     <property name="name:2" value="tpl_MapIterateFeatures" />
-    <property name="package:2" value="traversal.iterate" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199799264125">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1199799264126">
@@ -1579,7 +1553,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1199802212930">
     <property name="name:2" value="tpl_MapIterateSiblings" />
-    <property name="package:2" value="traversal.iterate" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199802212931">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1199802212932">
@@ -2668,7 +2642,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1199997838693">
     <property name="name:2" value="switch_IterateOperation_first" />
-    <property name="package:2" value="traversal.iterate" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1199997838694">
       <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence:2" id="1199997838695">
@@ -3125,8 +3099,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1199998495406">
-    <property name="package:2" value="traversal.iterate" />
     <property name="name:2" value="tpl_CreateIterateFeatures" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1199998525977">
       <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator:7" id="1225096836796">
@@ -3795,7 +3769,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1200060317462">
     <property name="name:2" value="tpl_CreateIterateSiblings" />
-    <property name="package:2" value="traversal.iterate" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200060317463">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1200060371325">
@@ -4858,8 +4832,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1210075143714">
-    <property name="package:2" value="traversal.iterate" />
     <property name="name:2" value="tpl_CreateYieldIterateFeaturesRecursively_new" />
+    <property name="virtualPackage:2" value="traversal.iterate" />
     <link role="applicableConcept:2" targetNodeId="1.1168524996431:0" resolveInfo="IterateOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1210075192239">
       <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator:7" id="1225096836315">

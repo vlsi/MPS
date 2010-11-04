@@ -12,40 +12,13 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" version="-1" />
   <maxImportIndex value="76" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -77,7 +50,7 @@
   <import index="76" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1138168268784">
     <property name="name:23" value="binaryOperations" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1138168906052">
       <property name="description:23" value="transform expression into left operand of binary operation" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
@@ -2054,7 +2027,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177334745415">
     <property name="name:23" value="constants" />
-    <property name="package:23" value="substitute.expression" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177334764520">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177334764521">
@@ -2719,7 +2692,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177362978256">
     <property name="name:23" value="instanceMembers" />
-    <property name="package:23" value="substitute.expression" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177362994569">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177362994570">
@@ -3029,7 +3002,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177397776787">
     <property name="name:23" value="conceptFunctionParameters" />
-    <property name="package:23" value="substitute.expression" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177397791368">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177397839813">
@@ -3141,7 +3114,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177400730676">
     <property name="name:23" value="loopStatements" />
-    <property name="package:23" value="substitute.statements" />
+    <property name="virtualPackage:23" value="substitute.statements" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177400765735">
       <link role="applicableConcept:23" targetNodeId="1.1068580123157:3" />
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1177400765736">
@@ -3275,7 +3248,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177403608931">
     <property name="name:23" value="expressionStatement" />
-    <property name="package:23" value="substitute.statements" />
+    <property name="virtualPackage:23" value="substitute.statements" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177403614729">
       <link role="applicableConcept:23" targetNodeId="1.1068580123157:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177403622097">
@@ -3339,7 +3312,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177406367737">
     <property name="name:23" value="localVariablesWithType" />
-    <property name="package:23" value="substitute.statements" />
+    <property name="virtualPackage:23" value="substitute.statements" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177406371457">
       <link role="applicableConcept:23" targetNodeId="1.1068580123157:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="7812779912049675299">
@@ -3436,7 +3409,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177406963247">
     <property name="name:23" value="localVariables" />
-    <property name="package:23" value="substitute.statements" />
+    <property name="virtualPackage:23" value="substitute.statements" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177406968279">
       <link role="applicableConcept:23" targetNodeId="1.1068580123157:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177406981716">
@@ -3487,7 +3460,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177408374473">
     <property name="name:23" value="parameters" />
-    <property name="package:23" value="substitute" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177408380007">
       <link role="applicableConcept:23" targetNodeId="1.1068498886292:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177408386765">
@@ -3538,7 +3511,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177498981738">
     <property name="name:23" value="dotExpression" />
-    <property name="package:23" value="sideTransforms.expression" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1197028841767">
       <property name="description:23" value="transform expression into DotExpression" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -3645,7 +3618,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177502352477">
     <property name="name:23" value="instanceOf" />
-    <property name="package:23" value="sideTransforms.expression" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177502380176">
       <property name="description:23" value="transform expression into left operand of 'instanceof'" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
@@ -3711,7 +3684,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177503287075">
     <property name="name:23" value="assignments" />
-    <property name="package:23" value="sideTransforms.expression" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177503307237">
       <property name="description:23" value="transform expression into Lvalue of assignment" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
@@ -3868,7 +3841,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177503862877">
     <property name="name:23" value="arrayAccess" />
-    <property name="package:23" value="sideTransforms.expression" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177503884612">
       <property name="description:23" value="transforms array into array access expression" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
@@ -3966,7 +3939,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177505027922">
     <property name="name:23" value="variableDeclarationInitializer" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177505054799">
       <property name="description:23" value="add initializer to variable declaration" />
       <link role="applicableConcept:23" targetNodeId="1.1068431474542:3" />
@@ -4044,7 +4017,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177505340963">
     <property name="name:23" value="arrayBrackets" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177505359407">
       <property name="description:23" value="tranform type into array type" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790189:3" />
@@ -4130,7 +4103,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177505591885">
     <property name="name:23" value="addGenericParameter" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177505734540">
       <property name="description:23" value="add generic parameters to classifier type" />
       <link role="applicableConcept:23" targetNodeId="1.1107535904670:3" />
@@ -4195,7 +4168,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177506061638">
     <property name="name:23" value="genericDeclaration" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177506104969">
       <property name="description:23" value="add type variables to class/interface declaration" />
       <link role="applicableConcept:23" targetNodeId="1.1109279851642:3" />
@@ -4272,7 +4245,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177506302287">
     <property name="name:23" value="newExpression" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1212701533821">
       <property name="transformTag:23" value="ext_2_RTransform" />
       <property name="description:23" value="new Smth() --&gt; new Smth&lt;T&gt;()" />
@@ -4349,7 +4322,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177507958366">
     <property name="name:23" value="tryCatch" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177507970664">
       <property name="description:23" value="add catch clause" />
       <link role="applicableConcept:23" targetNodeId="1.1164879751025:3" />
@@ -4455,7 +4428,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177508104715">
     <property name="name:23" value="convertToTry" />
-    <property name="package:23" value="sideTransforms" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177508119482">
       <property name="description:23" value="convert to try statement" />
       <link role="applicableConcept:23" targetNodeId="1.1164879751025:3" />
@@ -4783,7 +4756,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1177508499638">
     <property name="name:23" value="ternaryOperator" />
-    <property name="package:23" value="sideTransforms.expression" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1177508524786">
       <property name="description:23" value="convert to ternary operator" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
@@ -4917,7 +4890,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1178549402802">
     <property name="name:23" value="VisibilityInClassifiers" />
-    <property name="package:23" value="substitute" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1178549410741">
       <link role="applicableConcept:23" targetNodeId="1.1146644584814:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="1178549476913">
@@ -4958,7 +4931,7 @@
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1178893901690">
     <property name="name:23" value="thisAndSuperConstructor" />
-    <property name="package:23" value="substitute.statements" />
+    <property name="virtualPackage:23" value="substitute.statements" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1178893908066">
       <link role="applicableConcept:23" targetNodeId="1.1068580123157:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1181216848438">
@@ -5346,8 +5319,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1187946457493">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="arrayCreator" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1187946508194">
       <link role="applicableConcept:23" targetNodeId="1.1184950988562:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1187946521718">
@@ -5461,8 +5434,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1188219514483">
-    <property name="package:23" value="substitute" />
     <property name="name:23" value="AnnotationInstanceExpression" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1188219521578">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1188219591787">
@@ -5532,8 +5505,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1197884208514">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="thisExpression" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1197884213577">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1218491493155">
@@ -5751,8 +5724,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1199465903940">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="break" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1199465912028">
       <link role="applicableConcept:23" targetNodeId="1.1081855346303:3" resolveInfo="BreakStatement" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1199465929524">
@@ -6085,8 +6058,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1199470396950">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="continue" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1199470401054">
       <link role="applicableConcept:23" targetNodeId="1.1082113931046:3" resolveInfo="ContinueStatement" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1199470435359">
@@ -6281,8 +6254,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1202576247045">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="valueParameter" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1202576255421">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart:23" id="1202576344422">
@@ -6310,8 +6283,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1210680229030">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="liveTemplates" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1210680266460">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1210680278235">
@@ -7342,8 +7315,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1214840259991">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="classifierTypeInLocalVarRT" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1214840267304">
       <link role="applicableConcept:23" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1214840779666">
@@ -7491,8 +7464,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1214919533012">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="postfix" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1214919536691">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1214919588363">
@@ -7627,8 +7600,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1215434748907">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="ifStatement" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1215434760427">
       <property name="transformTag:23" value="ext_1_RTransform" />
       <link role="applicableConcept:23" targetNodeId="1.1068580123159:3" resolveInfo="IfStatement" />
@@ -7875,8 +7848,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1215595015926">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="anonymousClass" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1215595029605">
       <link role="applicableConcept:23" targetNodeId="1.1212685548494:3" resolveInfo="ClassCreator" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1215595061739">
@@ -8059,8 +8032,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1215681490967">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="OuterClassesOnThisExpression" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1215681514846">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1070475354124:3" resolveInfo="ThisExpression" />
@@ -8168,8 +8141,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1219922127637">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="variableArityType" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1219922154317">
       <link role="applicableConcept:23" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="1219922208354">
@@ -8237,8 +8210,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1221054843240">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="anonymousClassParameters" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1221054901509">
       <link role="applicableConcept:23" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="1221054927580">
@@ -8559,8 +8532,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1221569179842">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="finalOnTypesInVariables" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1221569206015">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
@@ -8647,8 +8620,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1221572213413">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="convertVariableAssignmentToVarDeclaration" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1221572224367">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068581242866:3" resolveInfo="LocalVariableReference" />
@@ -9441,8 +9414,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1227002514431">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="new" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1227002519873">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1227004875738">
@@ -9627,8 +9600,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1229000263935">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="smartCast" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1229000267030">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1229000291305">
@@ -9815,8 +9788,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1232015468338">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="expressionStatement" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1232463815953">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
@@ -9905,8 +9878,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1232118173212">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="expression to varaible declaration" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1232118196763">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -10024,8 +9997,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1233154522846">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="addGenericTypeDeclaration" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1233156433392">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
@@ -10208,8 +10181,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1233161041378">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="addAbstract" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1233161052644">
       <property name="transformTag:23" value="ext_1_RTransform" />
       <link role="applicableConcept:23" targetNodeId="1.1146644584814:3" resolveInfo="Visibility" />
@@ -11066,8 +11039,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1235477674657">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="expressionToNotExpression" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1235477734335">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -11333,8 +11306,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1235990996454">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="expressionToParenthesis" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1235993905117">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1235993968118">
@@ -11394,8 +11367,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1239714243840">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="prefix" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1239714323555">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -11566,8 +11539,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="5606590085431552230">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="Expression to type Cast" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="5606590085431629508">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -11621,8 +11594,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="358937142748924039">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="UnaryMinusLeftTransform" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="358937142748958384">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -11764,8 +11737,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="9072722389861457598">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="expressionRTAfterAnonymous" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="9072722389861457599">
       <property name="transformTag:23" value="ext_1_RTransform" />
       <link role="applicableConcept:23" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
@@ -11790,8 +11763,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="260226996411710067">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="addComment" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="260226996411742136">
       <property name="side:23" value="left" />
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -12138,8 +12111,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4652593672362467942">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="loopLabels" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4652593672362467943">
       <property name="side:23" value="left" />
       <property name="transformTag:23" value="ext_1_RTransform" />
@@ -12199,8 +12172,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4652593672362892678">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="switchLabels" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4652593672362892679">
       <property name="side:23" value="left" />
       <property name="transformTag:23" value="ext_1_RTransform" />
@@ -12373,8 +12346,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="973073204985267452">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="returnStatement" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="973073204985267453">
       <property name="description:23" value="adding expression to the empty ReturnStatement" />
       <link role="applicableConcept:23" targetNodeId="1.1068581242878:3" resolveInfo="ReturnStatement" />
@@ -13095,8 +13068,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4972241301747233312">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="AddMethodCallTypeArgument" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4972241301747233843">
       <property name="transformTag:23" value="ext_1_RTransform" />
       <link role="applicableConcept:23" targetNodeId="1.1204053956946:3" resolveInfo="IMethodCall" />
@@ -13184,8 +13157,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1177396165731">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="staticAccess" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1177396179719">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="1177396218490">
@@ -13366,8 +13339,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="5790076564176961892">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="AddAnnotationMemberDefaultValue" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="5790076564176961893">
       <property name="transformTag:23" value="ext_3_RTransform" />
       <link role="applicableConcept:23" targetNodeId="1.1188206574119:3" resolveInfo="AnnotationMethodDeclaration" />
@@ -13412,8 +13385,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="2580416627845424599">
-    <property name="package:23" value="substitute" />
     <property name="name:23" value="ImplicitAnnotationInstanceValue" />
+    <property name="virtualPackage:23" value="substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="2580416627845424600">
       <link role="applicableConcept:23" targetNodeId="1.1188214545140:3" resolveInfo="AnnotationInstanceValue" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="2580416627845424604">
@@ -13544,8 +13517,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="6163353915142220924">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="PrimitiveClassExpression" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="6163353915142220925">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="6163353915142228166">
@@ -13769,8 +13742,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4246727699194754942">
-    <property name="package:23" value="sideTransforms" />
     <property name="name:23" value="AbstractClassifierReferenceRT" />
+    <property name="virtualPackage:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4246727699194754943">
       <link role="applicableConcept:23" targetNodeId="1.7812779912047922391:3" resolveInfo="AbstractClassifierReference" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart:23" id="4246727699195408810">
@@ -13938,8 +13911,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1302191354693877826">
-    <property name="package:3" value="sideTransforms" />
     <property name="name:3" value="PrecedenceUtil" />
+    <property name="virtualPackage:3" value="sideTransforms" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6376253365366200761">
       <property name="name:3" value="getTargetForRightTransform" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6376253365366200765">
@@ -15291,8 +15264,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4592306222112729713">
-    <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="assert" />
+    <property name="virtualPackage:23" value="sideTransforms.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4592306222112729715">
       <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="4592306222112729854">
@@ -15422,8 +15395,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="2948164764175063178">
-    <property name="package:23" value="substitute.expression" />
     <property name="name:23" value="UnresolvedName" />
+    <property name="virtualPackage:23" value="substitute.expression" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="2948164764175063179">
       <link role="applicableConcept:23" targetNodeId="1.2948164764175055168:3" resolveInfo="UnresolvedNameReference" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="2948164764175065182">

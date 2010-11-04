@@ -7,61 +7,11 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)" version="-1" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
@@ -109,7 +59,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592914689930">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.8465538089690324384:5" resolveInfo="VersionBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592914689931">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592914689932">
@@ -136,7 +86,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592914931237">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.5349172909345530174:5" resolveInfo="AuthorBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592914931238">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592914931239">
@@ -163,7 +113,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592914931248">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.8465538089690324397:5" resolveInfo="SinceBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592914931249">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592914931250">
@@ -190,7 +140,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592914931259">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.2217234381367190443:5" resolveInfo="SeeBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592914931260">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592914931261">
@@ -228,7 +178,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592914931272">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.8465538089690881930:5" resolveInfo="ParameterBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592914931273">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592914931274">
@@ -266,7 +216,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592915003850">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.5858074156537397872:5" resolveInfo="ThrowsBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592915003851">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592915003852">
@@ -305,7 +255,7 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592915417821">
-    <property name="package:11" value="reference" />
+    <property name="virtualPackage:11" value="reference" />
     <link role="conceptDeclaration:11" targetNodeId="1.2217234381367530195:5" resolveInfo="MethodDocReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592915417822">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592915417823">
@@ -440,7 +390,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592915737408">
-    <property name="package:11" value="reference" />
+    <property name="virtualPackage:11" value="reference" />
     <link role="conceptDeclaration:11" targetNodeId="1.2217234381367530212:5" resolveInfo="ClassifierDocReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592915737409">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592915737410">
@@ -463,7 +413,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592915878293">
-    <property name="package:11" value="reference" />
+    <property name="virtualPackage:11" value="reference" />
     <link role="conceptDeclaration:11" targetNodeId="1.2217234381367188008:5" resolveInfo="FieldDocReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592915878294">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592915878295">
@@ -511,7 +461,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592915878383">
-    <property name="package:11" value="reference" />
+    <property name="virtualPackage:11" value="reference" />
     <link role="conceptDeclaration:11" targetNodeId="1.6501140109493894267:5" resolveInfo="StaticFieldDocReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592915878384">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592915878385">
@@ -610,7 +560,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592916005381">
-    <property name="package:11" value="reference" />
+    <property name="virtualPackage:11" value="reference" />
     <link role="conceptDeclaration:11" targetNodeId="1.6832197706140518103:5" resolveInfo="BaseParameterReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592916005382">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592916005383">
@@ -813,7 +763,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592916758726">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.5858074156537516430:5" resolveInfo="ReturnBlockDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592916758727">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592916758728">
@@ -880,7 +830,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592916799006">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.2217234381367049075:5" resolveInfo="CodeInlineDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592916799007">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592916799008">
@@ -901,7 +851,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592916879658">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.4730661099054379103:5" resolveInfo="InheritDocInlineDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592916879659">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592916879660">
@@ -914,7 +864,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592916879718">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.2546654756694997551:5" resolveInfo="LinkInlineDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592916879719">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592916879720">
@@ -961,7 +911,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592916960592">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.6962838954693748795:5" resolveInfo="ValueInlineDocTag" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592916960593">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592916960594">
@@ -1000,7 +950,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4021391592917060962">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.2565027568480805887:5" resolveInfo="CodeSnippet" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4021391592917060963">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4021391592917060964">
@@ -1048,7 +998,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="2099616960330110596">
-    <property name="package:11" value="tag" />
+    <property name="virtualPackage:11" value="tag" />
     <link role="conceptDeclaration:11" targetNodeId="1.6612597108003615641:5" resolveInfo="HTMLElement" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="2099616960330110597">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2099616960330110598">

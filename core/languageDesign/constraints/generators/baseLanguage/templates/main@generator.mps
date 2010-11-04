@@ -10,36 +10,12 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" version="-1" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -63,7 +39,7 @@
   <import index="41" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1147476728864">
     <property name="name:2" value="mc_main" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <node role="createRootRule:2" type="jetbrains.mps.lang.generator.structure.CreateRootRule:2" id="1194967147048">
       <link role="templateNode:2" targetNodeId="1194966710828" resolveInfo="ConstraintsDescriptor" />
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition:2" id="1194967181314">
@@ -505,7 +481,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1159290906849">
     <property name="name:3" value="class_NodeDefaultSearchScope" />
-    <property name="package:3" value="Constraints" />
+    <property name="virtualPackage:3" value="Constraints" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1159290906850">
       <property name="name:3" value="registerSelf" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1159290906851" />
@@ -634,7 +610,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1163453359804">
     <property name="name:2" value="weave_NodeReferentSetHandler" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.1148687176410:8" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1163453675384">
       <property name="name:3" value="_referentConstraint_class_" />
@@ -962,7 +938,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1163466150244">
     <property name="name:2" value="weave_SearchScopeProvider" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.1148687176410:8" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1163466184866">
       <property name="name:3" value="_referentConstraint_class_" />
@@ -1138,7 +1114,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1163466744093">
     <property name="name:3" value="class_ReferentConstraint" />
-    <property name="package:3" value="Constraints" />
+    <property name="virtualPackage:3" value="Constraints" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1163466744094">
       <property name="name:3" value="registerSelf" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1163466744095" />
@@ -1220,7 +1196,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1164676693619">
     <property name="name:3" value="class_PropertyConstraint" />
-    <property name="package:3" value="Constraints" />
+    <property name="virtualPackage:3" value="Constraints" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1164676693620">
       <property name="name:3" value="registerSelf" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1164676693621" />
@@ -1302,7 +1278,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1164677350684">
     <property name="name:2" value="weave_PropertyGetter" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.1147467115080:8" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1164677369030">
       <property name="name:3" value="_propertyConstraint_class_" />
@@ -1529,7 +1505,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1164677789166">
     <property name="name:2" value="weave_PropertySetter" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.1147467115080:8" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1164677789167">
       <property name="name:3" value="_propertyConstraint_class_" />
@@ -1758,8 +1734,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1194966710828">
-    <property name="package:3" value="Constraints" />
     <property name="name:3" value="ConstraintsDescriptor" />
+    <property name="virtualPackage:3" value="Constraints" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1194966763070">
       <property name="name:3" value="myConstraints" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1194966763071" />
@@ -2078,7 +2054,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1198585361787">
     <property name="name:2" value="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias_old" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1198585361788">
       <property name="name:3" value="execPropertySet" />
@@ -2270,7 +2246,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1198766482059">
     <property name="name:2" value="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="4.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1198766482060">
       <property name="name:3" value="execPropertySet" />
@@ -2306,7 +2282,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1212101471472">
     <property name="name:2" value="weave_PropertyValidator" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.1147467115080:8" resolveInfo="NodePropertyConstraint" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1212101471473">
       <property name="name:3" value="_propertyConstraint_class_" />
@@ -2540,8 +2516,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1213106217514">
-    <property name="package:3" value="Constraints" />
     <property name="name:3" value="ConstraintsClass" />
+    <property name="virtualPackage:3" value="Constraints" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1213106217515" />
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1213106217516">
       <link role="applicableConcept:2" targetNodeId="11.1213093968558:8" resolveInfo="ConceptConstraints" />
@@ -2983,7 +2959,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3595467341488129997">
     <property name="name:2" value="weave_SearchScopeFactory" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.1148684180339:8" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3595467341488130002">
       <property name="name:3" value="_name_" />
@@ -3236,7 +3212,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3595467341488130262">
     <property name="name:2" value="weave_Presentation" />
-    <property name="package:2" value="Constraints" />
+    <property name="virtualPackage:2" value="Constraints" />
     <link role="applicableConcept:2" targetNodeId="11.3906442776579556545:8" resolveInfo="ConstraintFunction_ReferentSearchScope_Presentation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3595467341488130267">
       <property name="name:3" value="_name_" />
