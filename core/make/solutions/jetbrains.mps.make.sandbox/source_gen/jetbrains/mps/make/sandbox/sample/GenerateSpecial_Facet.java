@@ -52,7 +52,7 @@ public class GenerateSpecial_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
@@ -97,7 +97,7 @@ public class GenerateSpecial_Facet implements IFacet {
     }
 
     public <T> T createVariables(Class<T> cls) {
-      return null;
+      return cls.cast(new Variables());
     }
 
     public static class Variables extends MultiTuple._3<String, Integer, Boolean> {

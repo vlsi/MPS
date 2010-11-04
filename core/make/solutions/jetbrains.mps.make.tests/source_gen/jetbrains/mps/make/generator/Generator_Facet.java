@@ -54,7 +54,7 @@ public class Generator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
           Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
@@ -122,7 +122,7 @@ public class Generator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
           Iterable<IResource> _output_ixz87t_a0b = null;
           switch (0) {
             case 0:

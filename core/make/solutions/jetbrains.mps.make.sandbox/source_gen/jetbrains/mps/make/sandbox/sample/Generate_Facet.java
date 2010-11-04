@@ -49,7 +49,7 @@ public class Generate_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(Iterable<IResource> input, IMonitor monitor, IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
           Iterable<IResource> _output_fi61u2_a0a = null;
           switch (0) {
             case 0:

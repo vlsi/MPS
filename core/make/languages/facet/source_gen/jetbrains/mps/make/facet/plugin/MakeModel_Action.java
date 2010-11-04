@@ -72,7 +72,7 @@ public class MakeModel_Action extends GeneratedAction {
       IScript scr = scb.withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("GenerateFiles")).withInit(new _FunctionTypes._void_P1_E0<IVariablesPool>() {
         public void invoke(IVariablesPool pool) {
           Tuples._1<Project> vars = (Tuples._1<Project>) pool.variables(new ITarget.Name("Parameters"), Object.class);
-          // <node> 
+          vars._0(MakeModel_Action.this.context.getProject());
         }
       }).toScript();
       System.out.println("*** Script valid: " + scr.isValid());

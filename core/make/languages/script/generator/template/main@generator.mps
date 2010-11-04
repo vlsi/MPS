@@ -175,6 +175,7 @@
           </node>
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3916013743093735310">
             <property name="name:3" value="input" />
+            <property name="isFinal:3" value="true" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3916013743093735311">
               <link role="classifier:3" targetNodeId="2.~Iterable" resolveInfo="Iterable" />
               <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3916013743093735312">
@@ -184,12 +185,14 @@
           </node>
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3916013743093735313">
             <property name="name:3" value="monitor" />
+            <property name="isFinal:3" value="true" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3916013743093735314">
               <link role="classifier:3" targetNodeId="3.6168415856807657250" resolveInfo="IMonitor" />
             </node>
           </node>
           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6872280991287218331">
             <property name="name:3" value="pool" />
+            <property name="isFinal:3" value="true" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6872280991287218333">
               <link role="classifier:3" targetNodeId="3.6872280991287216857" resolveInfo="IVariablesPool" />
             </node>
