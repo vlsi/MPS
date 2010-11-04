@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,119 +22,53 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_egantk_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_a");
-    editorCell.addEditorCell(this.createCollection_egantk_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_egantk_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_egantk_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_egantk_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_egantk_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_egantk_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createProperty_egantk_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_egantk_b0a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_egantk_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell_egantk_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_egantk_b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_egantk_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_egantk_b1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createCollection_egantk_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_egantk_b1b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_egantk_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_egantk_a1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_egantk_a0b1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_egantk_b0b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_egantk_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_egantk_b1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_egantk_a1b1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_egantk_b1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_egantk_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_egantk_b1a(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_egantk_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_egantk_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_egantk_b2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_egantk_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_egantk_b0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_egantk_a0b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_egantk_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "display");
-    editorCell.setCellId("Constant_egantk_a0b1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_egantk_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expect");
-    editorCell.setCellId("Constant_egantk_a1b1a");
+    editorCell.setCellId("Constant_egantk_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_egantk_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expect");
     editorCell.setCellId("Constant_egantk_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createIndentCell_egantk_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createProperty_egantk_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_egantk_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -153,7 +86,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_egantk_b0b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_egantk_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("presentation");
     provider.setNoTargetText("<no presentation>");
@@ -170,7 +103,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_egantk_b1b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_egantk_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expected");
     provider.setNoTargetText("<no expected>");

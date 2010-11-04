@@ -236,5 +236,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="127305800529643681">
+    <property name="name:1" value="GGG" />
+  </node>
 </model>
 

@@ -622,5 +622,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeFactories:23" id="127305800529615843">
+    <property name="name:23" value="VariablesDeclaration_add_empty_var" />
+    <node role="nodeFactory:23" type="jetbrains.mps.lang.actions.structure.NodeFactory:23" id="127305800529615844">
+      <link role="applicableConcept:23" targetNodeId="1.7320828025189345662:1" resolveInfo="VariablesDeclaration" />
+      <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="127305800529615845">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="127305800529615846">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="127305800529615847">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="127305800529615854">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="127305800529615849">
+                <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode:23" id="127305800529615848" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="127305800529615853">
+                  <link role="link:16" targetNodeId="4.1239529553065:2" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation:16" id="127305800529615860" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
