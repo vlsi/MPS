@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.QueriesGenerated" />
+  <unitInfo fileName="Mappingmain.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain" />
   <unitInfo fileName="TemplateoutputRoot.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateoutputRoot" />
   <root nodeId="1209604518979">
     <nodeInfo nodeId="1209604582248" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="10" startPosition="146" endLine="11" endPosition="108" />

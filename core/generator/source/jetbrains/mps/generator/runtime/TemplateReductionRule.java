@@ -28,5 +28,5 @@ public interface TemplateReductionRule {
 
   boolean applyToInheritors();
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context);
+  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

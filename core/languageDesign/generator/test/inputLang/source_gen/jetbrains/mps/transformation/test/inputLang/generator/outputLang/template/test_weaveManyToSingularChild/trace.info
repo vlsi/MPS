@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Templateweave_InputNode_A.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templateweave_InputNode_A" />
+  <unitInfo fileName="Mappingmain.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
   <unitInfo fileName="QueriesGenerated.java" startLine="13" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
   <unitInfo fileName="Templatemap_outputNode.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templatemap_outputNode" />
   <root nodeId="1218738629621">
