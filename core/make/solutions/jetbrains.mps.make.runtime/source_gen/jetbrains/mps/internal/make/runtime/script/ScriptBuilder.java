@@ -15,6 +15,8 @@ import jetbrains.mps.make.resources.ResourcePool;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.make.facet.FacetRegistry;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IScript;
@@ -31,6 +33,7 @@ public class ScriptBuilder {
   private ITarget.Name defaultTarget;
   private ResourcePool pool;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
+  private _FunctionTypes._void_P1_E0<? super IVariablesPool> init;
 
   public ScriptBuilder() {
   }
@@ -77,6 +80,11 @@ public class ScriptBuilder {
     return this;
   }
 
+  public ScriptBuilder withInit(_FunctionTypes._void_P1_E0<? super IVariablesPool> init) {
+    this.init = init;
+    return this;
+  }
+
   public IScript toScript() {
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return new InvalidScript(errors);
@@ -95,7 +103,7 @@ public class ScriptBuilder {
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return new InvalidScript(errors);
     }
-    Script sc = new Script(tr, defaultTarget);
+    Script sc = new Script(tr, defaultTarget, init);
     sc.validate();
     return sc;
   }

@@ -13,6 +13,10 @@ import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IMonitor;
 import jetbrains.mps.make.script.IOption;
@@ -63,9 +67,14 @@ public class MakeModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      System.out.println("*** WOO-HOO!!!!");
+      System.out.println("*** Building make script");
       ScriptBuilder scb = new ScriptBuilder();
-      IScript scr = scb.withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("GenerateFiles")).toScript();
+      IScript scr = scb.withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("GenerateFiles")).withInit(new _FunctionTypes._void_P1_E0<IVariablesPool>() {
+        public void invoke(IVariablesPool pool) {
+          Tuples._1<Project> vars = (Tuples._1<Project>) pool.variables(new ITarget.Name("Parameters"), Object.class);
+          // <node> 
+        }
+      }).toScript();
       System.out.println("*** Script valid: " + scr.isValid());
       IResult res = scr.execute(new IMonitor() {
         public boolean pleaseStop() {

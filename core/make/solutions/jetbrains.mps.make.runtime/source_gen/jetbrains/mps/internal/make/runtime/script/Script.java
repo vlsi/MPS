@@ -8,6 +8,8 @@ import jetbrains.mps.make.facet.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -15,7 +17,6 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IJob;
-import jetbrains.mps.make.script.IVariablesPool;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -27,6 +28,12 @@ public class Script implements IScript {
   private TargetRange targetRange;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private boolean validated = false;
+  private _FunctionTypes._void_P1_E0<? super IVariablesPool> init;
+
+  public Script(TargetRange targetRange, ITarget.Name defaultTargetName, _FunctionTypes._void_P1_E0<? super IVariablesPool> init) {
+    this(targetRange, defaultTargetName);
+    this.init = init;
+  }
 
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
@@ -79,6 +86,10 @@ public class Script implements IScript {
     LOG.info("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
     Script.VariablesPool pool = new Script.VariablesPool();
+    LOG.info("Initializing");
+    if (init != null) {
+      init.invoke(pool);
+    }
     Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
     for (ITarget trg : Sequence.fromIterable(toExecute)) {
       LOG.info("Executing " + trg.getName());
@@ -117,7 +128,6 @@ public class Script implements IScript {
         T vars = targetRange.getTarget(target).createVariables(cls);
         MapSequence.fromMap(cache).put(target, vars);
       }
-      System.out.println("Vars " + target + "==" + MapSequence.fromMap(cache).get(target));
       return cls.cast(MapSequence.fromMap(cache).get(target));
     }
   }

@@ -97,7 +97,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7320828025189279641(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "variables", true) != null);
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "variables", true), "component", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_3868725017587322815(final IOperationContext operationContext, final IfMacroContext _context) {
