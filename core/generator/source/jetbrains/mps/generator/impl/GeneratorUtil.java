@@ -27,10 +27,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -401,4 +398,7 @@ public class GeneratorUtil {
     }
   }
 
+  public static String getTemplateNodeId(SNode templateNode) {
+    return "tpl/" + templateNode.getModel().getSModelId() + "/" + templateNode.getSNodeId();
+  }
 }

@@ -18,6 +18,7 @@ package jetbrains.mps.generator.runtime;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.Collection;
@@ -28,9 +29,9 @@ import java.util.Collections;
  */
 public class TemplateExecutionEnvironment {
 
-  private TemplateGenerator generator;
-  private ReductionContext reductionContext;
-  private IOperationContext operationContext;
+  private final TemplateGenerator generator;
+  private final ReductionContext reductionContext;
+  private final IOperationContext operationContext;
 
   public TemplateExecutionEnvironment(TemplateGenerator generator, ReductionContext reductionContext, IOperationContext operationContext) {
     this.generator = generator;
@@ -41,5 +42,25 @@ public class TemplateExecutionEnvironment {
   public Collection<SNode> copyNodes(Collection<SNode> inputNodes, String mappingName) {
     // TODO
     return Collections.emptyList();
+  }
+
+  public IOperationContext getOperationContext() {
+    return operationContext;
+  }
+
+  public SModel getOutputModel() {
+    return generator.getOutputModel();
+  }
+
+  public void nodeCopied(SNode node, SNode outputNode, String mappingName, String templateNodeId) {
+
+  }
+
+  public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
+
+  }
+
+  public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
+
   }
 }

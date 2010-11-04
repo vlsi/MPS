@@ -800,7 +800,24 @@
           <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="2681305894288695031" />
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7870321878389838426">
-          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7870321878389838427" />
+          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7870321878389838427">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3392060900980649132">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3392060900980649133">
+                <property name="name:3" value="e" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3392060900980649134" />
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3392060900980649136">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3392060900980649138">
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3392060900980649137">
+                  <link role="variableDeclaration:3" targetNodeId="3392060900980649133" resolveInfo="e" />
+                </node>
+                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3392060900980649141">
+                  <property name="value:3" value="5" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7870321878389838429" />
         </node>
       </node>
@@ -868,6 +885,66 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7870321878389731890">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7870321878389731891" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7870321878389731892" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3392060900980718989">
+    <property name="name:2" value="gen_static_method" />
+    <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3392060900980724035">
+      <property name="nonStatic:3" value="true" />
+      <property name="name:3" value="aa" />
+      <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3392060900980724041">
+        <property name="name:3" value="fact" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3392060900980724042" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3392060900980724043">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3392060900980724057">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3392060900980724058">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3392060900980724067">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3392060900980724069">
+                  <property name="value:3" value="1" />
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3392060900980724062">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3392060900980724061">
+                <link role="variableDeclaration:3" targetNodeId="3392060900980724048" resolveInfo="e" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3392060900980724066">
+                <property name="value:3" value="0" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3392060900980724044">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="3392060900980724045">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3392060900980724046">
+                <link role="variableDeclaration:3" targetNodeId="3392060900980724048" resolveInfo="e" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="3392060900980724050">
+                <link role="baseMethodDeclaration:3" targetNodeId="3392060900980724041" resolveInfo="fact" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="3392060900980724052">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3392060900980724055">
+                    <property name="value:3" value="1" />
+                  </node>
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3392060900980724051">
+                    <link role="variableDeclaration:3" targetNodeId="3392060900980724048" resolveInfo="e" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3392060900980724047" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3392060900980724048">
+          <property name="name:3" value="e" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3392060900980724049" />
+        </node>
+        <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3392060900980724070" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3392060900980724036" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3392060900980724037">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3392060900980724038" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3392060900980724039" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3392060900980724040" />
+      </node>
     </node>
   </node>
 </model>
