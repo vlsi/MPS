@@ -96,7 +96,7 @@ public class TemplateprocessStatement implements TemplateDeclaration {
           {
             final SNode tnode19 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
             // TODO notify environment 
-            environment.resolveInTemplateLater(tnode19, "variableDeclaration", "tpl/r:7712f643-87b6-48a9-a8dc-0eeb27ffe393/3392060900980649133", context);
+            environment.resolveInTemplateLater(tnode19, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", context);
             tnode18.addChild("lValue", tnode19);
           }
           {

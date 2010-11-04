@@ -56,7 +56,7 @@ public class Templategen_static_method implements TemplateDeclaration {
           {
             final SNode tnode10 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ParameterReference", false);
             // TODO notify environment 
-            environment.resolveInTemplateLater(tnode10, "variableDeclaration", "tpl/r:7712f643-87b6-48a9-a8dc-0eeb27ffe393/3392060900980724048", context1);
+            environment.resolveInTemplateLater(tnode10, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", context1);
             tnode9.addChild("leftExpression", tnode10);
           }
           {
@@ -78,7 +78,7 @@ public class Templategen_static_method implements TemplateDeclaration {
           {
             final SNode tnode14 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ParameterReference", false);
             // TODO notify environment 
-            environment.resolveInTemplateLater(tnode14, "variableDeclaration", "tpl/r:7712f643-87b6-48a9-a8dc-0eeb27ffe393/3392060900980724048", context1);
+            environment.resolveInTemplateLater(tnode14, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", context1);
             tnode13.addChild("leftExpression", tnode14);
           }
           {
@@ -97,7 +97,7 @@ public class Templategen_static_method implements TemplateDeclaration {
               {
                 final SNode tnode18 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ParameterReference", false);
                 // TODO notify environment 
-                environment.resolveInTemplateLater(tnode18, "variableDeclaration", "tpl/r:7712f643-87b6-48a9-a8dc-0eeb27ffe393/3392060900980724048", context1);
+                environment.resolveInTemplateLater(tnode18, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", context1);
                 tnode16.addChild("leftExpression", tnode18);
               }
               tnode15.addChild("actualArgument", tnode16);
