@@ -54,8 +54,8 @@ public class TemplateprocessStatement implements TemplateDeclaration {
             tnode7.addChild("type", tnode8);
           }
           {
-            final SNode sourcenode9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-            Collection<SNode> tlist10 = environment.copyNodes(Collections.singletonList(sourcenode9), null);
+            final SNode inputNode9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+            Collection<SNode> tlist10 = environment.copyNodes(Collections.singletonList(inputNode9), null);
             for (SNode child11 : tlist10) {
               tnode7.addChild("initializer", child11);
             }

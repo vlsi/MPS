@@ -45,8 +45,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       // TODO notify environment 
       tnode1.setProperty("text", "wrapper created by reduction 1");
       {
-        final SNode sourcenode2 = QueriesGenerated.sourceNodeQuery_1209604320455(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(sourcenode2), null);
+        final SNode inputNode2 = QueriesGenerated.sourceNodeQuery_1209604320455(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(inputNode2), null);
         for (SNode child4 : tlist3) {
           tnode1.addChild("outputChild", child4);
         }
@@ -71,8 +71,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_8900764248744322639(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      final SNode sourcenode1 = QueriesGenerated.sourceNodeQuery_1473665232107485240(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-      Collection<SNode> tlist2 = environment.copyNodes(Collections.singletonList(sourcenode1), null);
+      final SNode inputNode1 = QueriesGenerated.sourceNodeQuery_1473665232107485240(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+      Collection<SNode> tlist2 = environment.copyNodes(Collections.singletonList(inputNode1), null);
       TemplateContext context3 = context.subContext("sd");
       final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
       // TODO notify environment 
@@ -103,8 +103,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       // TODO notify environment 
       tnode1.setProperty("text", "wrapper created by reduction 2");
       {
-        final SNode sourcenode2 = QueriesGenerated.sourceNodeQuery_1209662301920(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(sourcenode2), null);
+        final SNode inputNode2 = QueriesGenerated.sourceNodeQuery_1209662301920(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(inputNode2), null);
         for (SNode child4 : tlist3) {
           tnode1.addChild("outputChild", child4);
         }
@@ -225,8 +225,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
           tnode2.addChild("visibility", tnode4);
         }
         {
-          final SNode sourcenode5 = QueriesGenerated.sourceNodeQuery_4146564171992412788(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-          Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(sourcenode5), null);
+          final SNode inputNode5 = QueriesGenerated.sourceNodeQuery_4146564171992412788(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+          Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(inputNode5), null);
           for (SNode child7 : tlist6) {
             tnode2.addChild("body", child7);
           }

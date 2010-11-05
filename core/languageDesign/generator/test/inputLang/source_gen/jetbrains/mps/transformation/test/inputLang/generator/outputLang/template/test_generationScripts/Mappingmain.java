@@ -98,8 +98,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       tnode1.setProperty("name", "OutputRoot_by_MappingRule");
       tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
       {
-        final Iterable<SNode> sourcenode2 = QueriesGenerated.sourceNodesQuery_1195170582047(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(sourcenode2, null);
+        final Iterable<SNode> inputNodes2 = QueriesGenerated.sourceNodesQuery_1195170582047(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+        Collection<SNode> tlist3 = environment.copyNodes(inputNodes2, null);
         for (SNode child4 : tlist3) {
           tnode1.addChild("outputChild", child4);
         }

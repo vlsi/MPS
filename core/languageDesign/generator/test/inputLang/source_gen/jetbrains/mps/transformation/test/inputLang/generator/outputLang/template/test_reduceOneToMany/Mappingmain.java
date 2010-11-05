@@ -65,8 +65,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       tnode1.setProperty("name", "OutputRoot");
       tnode1.setProperty("text", "chilren were generated from a single child in input node.");
       {
-        final Iterable<SNode> sourcenode2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(sourcenode2, null);
+        final Iterable<SNode> inputNodes2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+        Collection<SNode> tlist3 = environment.copyNodes(inputNodes2, null);
         for (SNode child4 : tlist3) {
           tnode1.addChild("outputChild", child4);
         }

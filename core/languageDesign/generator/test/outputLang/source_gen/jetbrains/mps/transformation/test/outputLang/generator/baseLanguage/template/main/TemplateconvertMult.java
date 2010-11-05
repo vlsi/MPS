@@ -24,15 +24,15 @@ public class TemplateconvertMult implements TemplateDeclaration {
       final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", false);
       // TODO notify environment 
       {
-        final SNode sourcenode3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist4 = environment.copyNodes(Collections.singletonList(sourcenode3), null);
+        final SNode inputNode3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+        Collection<SNode> tlist4 = environment.copyNodes(Collections.singletonList(inputNode3), null);
         for (SNode child5 : tlist4) {
           tnode2.addChild("lValue", child5);
         }
       }
       {
-        final SNode sourcenode6 = QueriesGenerated.sourceNodeQuery_4146564171992617085(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist7 = environment.copyNodes(Collections.singletonList(sourcenode6), null);
+        final SNode inputNode6 = QueriesGenerated.sourceNodeQuery_4146564171992617085(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+        Collection<SNode> tlist7 = environment.copyNodes(Collections.singletonList(inputNode6), null);
         for (SNode child8 : tlist7) {
           tnode2.addChild("rValue", child8);
         }

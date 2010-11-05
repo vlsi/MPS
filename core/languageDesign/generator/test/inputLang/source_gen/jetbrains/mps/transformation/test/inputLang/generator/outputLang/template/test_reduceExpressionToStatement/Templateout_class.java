@@ -36,8 +36,8 @@ public class Templateout_class implements TemplateDeclaration {
         tnode2.addChild("visibility", tnode4);
       }
       {
-        final SNode sourcenode5 = QueriesGenerated.sourceNodeQuery_1209150187921(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(sourcenode5), null);
+        final SNode inputNode5 = QueriesGenerated.sourceNodeQuery_1209150187921(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
+        Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(inputNode5), null);
         for (SNode child7 : tlist6) {
           tnode2.addChild("body", child7);
         }
