@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.smodel.SNode;
+
 import java.util.Collection;
 
 /**
@@ -24,5 +26,7 @@ public interface TemplateSwitchMapping {
 
   Collection<TemplateReductionRule> getReductionRules();
 
+  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
+  Collection<SNode> processNull(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

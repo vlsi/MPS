@@ -576,6 +576,16 @@ public class QueriesGenerated {
     return name;
   }
 
+  public static Object referenceMacro_GetReferent_418849768498866690(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
+    return name;
+  }
+
+  public static Object referenceMacro_GetReferent_418849768498866727(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
+    return name;
+  }
+
   public static boolean ifMacro_Condition_8530225126180766850(final IOperationContext operationContext, final IfMacroContext _context) {
     return SModelOperations.getModelName(_context.getOriginalInputModel()).startsWith("jetbrains.mps.transformation.test");
   }
@@ -618,11 +628,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5879407265495314363(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0bf(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0df(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_195833869251699517(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0cf(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0ef(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_8285036680620207425(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -933,6 +943,20 @@ public class QueriesGenerated {
     return name != null;
   }
 
+  public static boolean ifMacro_Condition_418849768498866706(final IOperationContext operationContext, final IfMacroContext _context) {
+    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
+    return name.startsWith("tnode");
+  }
+
+  public static boolean ifMacro_Condition_418849768498866743(final IOperationContext operationContext, final IfMacroContext _context) {
+    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
+    return name != null;
+  }
+
+  public static boolean ifMacro_Condition_4723636356214946463(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1168025917226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1055,6 +1079,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1949333268577590755(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "template", false);
+  }
+
+  public static SNode sourceNodeQuery_418849768498945717(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true);
   }
 
   public static Object templateArgumentQuery_5301578252490196824(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1626,6 +1654,10 @@ public class QueriesGenerated {
     return new int[]{0};
   }
 
+  public static Object templateArgumentQuery_418849768498866662(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return new int[]{0};
+  }
+
   public static Iterable sourceNodesQuery_6220262973299791769(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.CreateRootRule_Condition");
   }
@@ -1743,7 +1775,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0ko(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0ro(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -1980,21 +2012,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0bf(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0df(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0cf(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0ef(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0ko(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0ro(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import java.util.Collections;
 
 public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
   public Switchswitch_InputNode_A() {
@@ -16,6 +17,15 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
 
   public Collection<TemplateReductionRule> getReductionRules() {
     return null;
+  }
+
+  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    return null;
+  }
+
+  public Collection<SNode> processNull(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    // TODO environment.reportError(...) 
+    return Collections.emptyList();
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
