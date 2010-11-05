@@ -4,13 +4,13 @@
   <unitInfo fileName="NotMake_Test.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.makeTest.test.NotMake_Test" />
   <root nodeId="1957199320903967681">
     <nodeInfo nodeId="1957199320903967682" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ChangeModel.java" startLine="9" startPosition="35" endLine="10" endPosition="25" />
-    <nodeInfo nodeId="1957199320903967690" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangeModel.java" startLine="15" startPosition="36" endLine="16" endPosition="45" />
+    <nodeInfo nodeId="1957199320903967690" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangeModel.java" startLine="15" startPosition="36" endLine="16" endPosition="53" />
     <nodeInfo nodeId="1957199320903967702" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangeModel.java" startLine="19" startPosition="38" endLine="20" endPosition="87" />
     <nodeInfo nodeId="7137969394171673935" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ChangeModel.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
     <nodeInfo nodeId="1957199320903967686" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangeModel.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <nodeInfo nodeId="1957199320903967699" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ChangeModel.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="7137969394171673938" fileName="ChangeModel.java" startLine="12" startPosition="24" endLine="12" endPosition="24" />
-    <scopeInfo nodeId="1957199320903967689" fileName="ChangeModel.java" startLine="15" startPosition="36" endLine="16" endPosition="45" />
+    <scopeInfo nodeId="1957199320903967689" fileName="ChangeModel.java" startLine="15" startPosition="36" endLine="16" endPosition="53" />
     <scopeInfo nodeId="1957199320903967701" fileName="ChangeModel.java" startLine="19" startPosition="38" endLine="20" endPosition="87" />
     <scopeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
@@ -39,117 +39,114 @@
     <nodeInfo nodeId="1957199320903968387" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="MakeAssert.java" startLine="24" startPosition="25" endLine="25" endPosition="80" />
     <nodeInfo nodeId="1957199320903968391" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="MakeAssert.java" startLine="25" startPosition="80" endLine="26" endPosition="114" />
     <nodeInfo nodeId="1957199320903968395" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="MakeAssert.java" startLine="26" startPosition="114" endLine="27" endPosition="80" />
-    <nodeInfo nodeId="1957199320903967764" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="32" startPosition="87" endLine="33" endPosition="38" />
-    <nodeInfo nodeId="4338657704633418355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="33" startPosition="38" endLine="34" endPosition="59" />
-    <nodeInfo nodeId="7196776143116386535" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="34" startPosition="59" endLine="35" endPosition="102" />
-    <nodeInfo nodeId="7196776143116393597" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="35" startPosition="102" endLine="36" endPosition="54" />
-    <nodeInfo nodeId="7196776143116393307" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="36" startPosition="54" endLine="37" endPosition="64" />
-    <nodeInfo nodeId="7196776143116393322" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="37" startPosition="64" endLine="38" endPosition="63" />
-    <nodeInfo nodeId="7196776143116393365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="38" startPosition="63" endLine="39" endPosition="62" />
-    <nodeInfo nodeId="7196776143116393334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="39" startPosition="62" endLine="40" endPosition="56" />
-    <nodeInfo nodeId="1957199320903967863" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="40" startPosition="56" endLine="41" endPosition="28" />
-    <nodeInfo nodeId="1957199320903967866" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="41" startPosition="28" endLine="42" endPosition="31" />
-    <nodeInfo nodeId="1957199320903967869" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="42" startPosition="31" endLine="43" endPosition="39" />
-    <nodeInfo nodeId="1957199320903967880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="46" startPosition="99" endLine="47" endPosition="44" />
-    <nodeInfo nodeId="4338657704633610067" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="47" startPosition="44" endLine="48" endPosition="59" />
-    <nodeInfo nodeId="7196776143116393386" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="48" startPosition="59" endLine="49" endPosition="108" />
-    <nodeInfo nodeId="7196776143116393606" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="49" startPosition="108" endLine="50" endPosition="68" />
-    <nodeInfo nodeId="7196776143116393399" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="50" startPosition="68" endLine="51" endPosition="53" />
-    <nodeInfo nodeId="6016914837743474509" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="51" startPosition="53" endLine="52" endPosition="77" />
-    <nodeInfo nodeId="7196776143116393416" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="52" startPosition="77" endLine="53" endPosition="55" />
-    <nodeInfo nodeId="7196776143116393425" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="53" startPosition="55" endLine="54" endPosition="59" />
-    <nodeInfo nodeId="1957199320903967957" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="54" startPosition="59" endLine="55" endPosition="54" />
-    <nodeInfo nodeId="1957199320903967970" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="55" startPosition="54" endLine="56" endPosition="65" />
-    <nodeInfo nodeId="1957199320903967979" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="59" startPosition="13" endLine="60" endPosition="97" />
-    <nodeInfo nodeId="1957199320903967987" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="60" startPosition="97" endLine="61" endPosition="55" />
-    <nodeInfo nodeId="2381103581468453845" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="61" startPosition="55" endLine="62" endPosition="56" />
-    <nodeInfo nodeId="1957199320903967997" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="62" startPosition="56" endLine="63" endPosition="111" />
-    <nodeInfo nodeId="1957199320903968008" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="63" startPosition="111" endLine="64" endPosition="61" />
-    <nodeInfo nodeId="1957199320903968015" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="64" startPosition="61" endLine="65" endPosition="52" />
-    <nodeInfo nodeId="1957199320903968023" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="65" startPosition="52" endLine="66" endPosition="57" />
-    <nodeInfo nodeId="1957199320903968034" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="66" startPosition="57" endLine="67" endPosition="105" />
-    <nodeInfo nodeId="7196776143116393564" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="67" startPosition="105" endLine="68" endPosition="59" />
-    <nodeInfo nodeId="7196776143116393575" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="68" startPosition="59" endLine="69" endPosition="70" />
-    <nodeInfo nodeId="1957199320903968085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="70" startPosition="31" endLine="71" endPosition="34" />
-    <nodeInfo nodeId="1957199320903968088" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="71" startPosition="34" endLine="72" endPosition="30" />
-    <nodeInfo nodeId="1957199320903968092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="72" startPosition="30" endLine="73" endPosition="41" />
-    <nodeInfo nodeId="1957199320903968098" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="76" startPosition="7" endLine="77" endPosition="28" />
-    <nodeInfo nodeId="1957199320903968101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="77" startPosition="28" endLine="78" endPosition="71" />
-    <nodeInfo nodeId="1957199320903968115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="81" startPosition="62" endLine="82" endPosition="61" />
-    <nodeInfo nodeId="1957199320903968128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="85" startPosition="53" endLine="86" endPosition="56" />
-    <nodeInfo nodeId="1957199320903968141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="89" startPosition="42" endLine="90" endPosition="46" />
-    <nodeInfo nodeId="1957199320903968147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="90" startPosition="46" endLine="91" endPosition="52" />
-    <nodeInfo nodeId="1957199320903968150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="91" startPosition="52" endLine="92" endPosition="28" />
-    <nodeInfo nodeId="1957199320903968154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeAssert.java" startLine="93" startPosition="34" endLine="94" endPosition="18" />
-    <nodeInfo nodeId="1957199320903968160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="95" startPosition="5" endLine="96" endPosition="42" />
-    <nodeInfo nodeId="1957199320903968165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeAssert.java" startLine="96" startPosition="42" endLine="97" endPosition="58" />
-    <nodeInfo nodeId="3289117052597495670" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="100" startPosition="61" endLine="101" endPosition="64" />
-    <nodeInfo nodeId="4705914142885010393" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="103" startPosition="25" endLine="104" endPosition="20" />
-    <nodeInfo nodeId="1957199320903968383" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeAssert.java" startLine="109" startPosition="58" endLine="110" endPosition="39" />
-    <nodeInfo nodeId="1421568629578017573" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="30" endPosition="3" />
-    <nodeInfo nodeId="1957199320903968152" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeAssert.java" startLine="92" startPosition="28" endLine="95" endPosition="5" />
-    <nodeInfo nodeId="1957199320903968111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="1957199320903968124" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="4705914142885010391" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MakeAssert.java" startLine="102" startPosition="53" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="1957199320903968379" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <nodeInfo nodeId="1957199320903968172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="101" startPosition="64" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="1957199320903968168" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="99" startPosition="0" endLine="108" endPosition="0" />
-    <nodeInfo nodeId="1957199320903968137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="88" startPosition="0" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="1957199320903967760" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="31" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="1957199320903967968" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="MakeAssert.java" startLine="58" startPosition="25" endLine="74" endPosition="9" />
-    <nodeInfo nodeId="1957199320903967966" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MakeAssert.java" startLine="57" startPosition="57" endLine="76" endPosition="0" />
-    <nodeInfo nodeId="1957199320903967965" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="56" startPosition="65" endLine="76" endPosition="7" />
-    <nodeInfo nodeId="1957199320903967876" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="45" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1421568629578017576" fileName="MakeAssert.java" startLine="29" startPosition="24" endLine="29" endPosition="24" />
-    <scopeInfo nodeId="1957199320903968114" fileName="MakeAssert.java" startLine="81" startPosition="62" endLine="82" endPosition="61" />
-    <scopeInfo nodeId="1957199320903968127" fileName="MakeAssert.java" startLine="85" startPosition="53" endLine="86" endPosition="56" />
-    <scopeInfo nodeId="1957199320903968153" fileName="MakeAssert.java" startLine="93" startPosition="34" endLine="94" endPosition="18" />
-    <scopeInfo nodeId="4705914142885010392" fileName="MakeAssert.java" startLine="103" startPosition="25" endLine="104" endPosition="20" />
-    <scopeInfo nodeId="1957199320903968382" fileName="MakeAssert.java" startLine="109" startPosition="58" endLine="110" endPosition="39" />
-    <scopeInfo nodeId="1421568629578017573" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="1957199320903968081" fileName="MakeAssert.java" startLine="70" startPosition="0" endLine="73" endPosition="41">
+    <nodeInfo nodeId="1957199320903967764" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="29" startPosition="87" endLine="30" endPosition="38" />
+    <nodeInfo nodeId="4338657704633418355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="30" startPosition="38" endLine="31" endPosition="59" />
+    <nodeInfo nodeId="7196776143116386535" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="31" startPosition="59" endLine="32" endPosition="102" />
+    <nodeInfo nodeId="7196776143116393597" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="32" startPosition="102" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="7196776143116393307" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="33" startPosition="54" endLine="34" endPosition="64" />
+    <nodeInfo nodeId="7196776143116393322" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="34" startPosition="64" endLine="35" endPosition="63" />
+    <nodeInfo nodeId="7196776143116393365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="35" startPosition="63" endLine="36" endPosition="62" />
+    <nodeInfo nodeId="7196776143116393334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="36" startPosition="62" endLine="37" endPosition="56" />
+    <nodeInfo nodeId="1957199320903967863" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="37" startPosition="56" endLine="38" endPosition="28" />
+    <nodeInfo nodeId="1957199320903967866" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="38" startPosition="28" endLine="39" endPosition="31" />
+    <nodeInfo nodeId="1957199320903967869" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="39" startPosition="31" endLine="40" endPosition="39" />
+    <nodeInfo nodeId="1957199320903967880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="43" startPosition="99" endLine="44" endPosition="44" />
+    <nodeInfo nodeId="4338657704633610067" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="44" startPosition="44" endLine="45" endPosition="59" />
+    <nodeInfo nodeId="7196776143116393386" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="45" startPosition="59" endLine="46" endPosition="108" />
+    <nodeInfo nodeId="7196776143116393606" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="46" startPosition="108" endLine="47" endPosition="68" />
+    <nodeInfo nodeId="7196776143116393399" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="47" startPosition="68" endLine="48" endPosition="53" />
+    <nodeInfo nodeId="6016914837743474509" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="48" startPosition="53" endLine="49" endPosition="77" />
+    <nodeInfo nodeId="7196776143116393416" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="49" startPosition="77" endLine="50" endPosition="55" />
+    <nodeInfo nodeId="7196776143116393425" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="50" startPosition="55" endLine="51" endPosition="59" />
+    <nodeInfo nodeId="1957199320903967957" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="51" startPosition="59" endLine="52" endPosition="54" />
+    <nodeInfo nodeId="1957199320903967970" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="52" startPosition="54" endLine="53" endPosition="65" />
+    <nodeInfo nodeId="1957199320903967979" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="56" startPosition="13" endLine="57" endPosition="97" />
+    <nodeInfo nodeId="1957199320903967987" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="57" startPosition="97" endLine="58" endPosition="55" />
+    <nodeInfo nodeId="2381103581468453845" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="58" startPosition="55" endLine="59" endPosition="56" />
+    <nodeInfo nodeId="1957199320903967997" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="59" startPosition="56" endLine="60" endPosition="111" />
+    <nodeInfo nodeId="1957199320903968008" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="60" startPosition="111" endLine="61" endPosition="61" />
+    <nodeInfo nodeId="1957199320903968015" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="61" startPosition="61" endLine="62" endPosition="52" />
+    <nodeInfo nodeId="1957199320903968023" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="62" startPosition="52" endLine="63" endPosition="57" />
+    <nodeInfo nodeId="1957199320903968034" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="63" startPosition="57" endLine="64" endPosition="105" />
+    <nodeInfo nodeId="7196776143116393564" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="64" startPosition="105" endLine="65" endPosition="59" />
+    <nodeInfo nodeId="7196776143116393575" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="65" startPosition="59" endLine="66" endPosition="70" />
+    <nodeInfo nodeId="1957199320903968085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="67" startPosition="31" endLine="68" endPosition="34" />
+    <nodeInfo nodeId="1957199320903968088" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="68" startPosition="34" endLine="69" endPosition="30" />
+    <nodeInfo nodeId="1957199320903968092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="69" startPosition="30" endLine="70" endPosition="41" />
+    <nodeInfo nodeId="1957199320903968098" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="73" startPosition="7" endLine="74" endPosition="28" />
+    <nodeInfo nodeId="1957199320903968101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="74" startPosition="28" endLine="75" endPosition="71" />
+    <nodeInfo nodeId="1957199320903968115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="78" startPosition="62" endLine="79" endPosition="61" />
+    <nodeInfo nodeId="1957199320903968128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="82" startPosition="53" endLine="83" endPosition="56" />
+    <nodeInfo nodeId="1957199320903968141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="86" startPosition="42" endLine="87" endPosition="46" />
+    <nodeInfo nodeId="1957199320903968147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="87" startPosition="46" endLine="88" endPosition="52" />
+    <nodeInfo nodeId="1957199320903968150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="88" startPosition="52" endLine="89" endPosition="28" />
+    <nodeInfo nodeId="1957199320903968154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeAssert.java" startLine="90" startPosition="34" endLine="91" endPosition="18" />
+    <nodeInfo nodeId="1957199320903968160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="92" startPosition="5" endLine="93" endPosition="42" />
+    <nodeInfo nodeId="1957199320903968165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeAssert.java" startLine="93" startPosition="42" endLine="94" endPosition="58" />
+    <nodeInfo nodeId="3289117052597495670" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeAssert.java" startLine="97" startPosition="61" endLine="98" endPosition="64" />
+    <nodeInfo nodeId="4705914142885010393" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="100" startPosition="25" endLine="101" endPosition="20" />
+    <nodeInfo nodeId="1957199320903968383" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeAssert.java" startLine="106" startPosition="58" endLine="107" endPosition="39" />
+    <nodeInfo nodeId="1957199320903968152" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeAssert.java" startLine="89" startPosition="28" endLine="92" endPosition="5" />
+    <nodeInfo nodeId="1957199320903968111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="1957199320903968124" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="4705914142885010391" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MakeAssert.java" startLine="99" startPosition="53" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="1957199320903968379" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <nodeInfo nodeId="1957199320903968172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="98" startPosition="64" endLine="103" endPosition="7" />
+    <nodeInfo nodeId="1957199320903968168" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="96" startPosition="0" endLine="105" endPosition="0" />
+    <nodeInfo nodeId="1957199320903968137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="85" startPosition="0" endLine="96" endPosition="0" />
+    <nodeInfo nodeId="1957199320903967760" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="1957199320903967968" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="MakeAssert.java" startLine="55" startPosition="25" endLine="71" endPosition="9" />
+    <nodeInfo nodeId="1957199320903967966" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MakeAssert.java" startLine="54" startPosition="57" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="1957199320903967965" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeAssert.java" startLine="53" startPosition="65" endLine="73" endPosition="7" />
+    <nodeInfo nodeId="1957199320903967876" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MakeAssert.java" startLine="42" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1957199320903968114" fileName="MakeAssert.java" startLine="78" startPosition="62" endLine="79" endPosition="61" />
+    <scopeInfo nodeId="1957199320903968127" fileName="MakeAssert.java" startLine="82" startPosition="53" endLine="83" endPosition="56" />
+    <scopeInfo nodeId="1957199320903968153" fileName="MakeAssert.java" startLine="90" startPosition="34" endLine="91" endPosition="18" />
+    <scopeInfo nodeId="4705914142885010392" fileName="MakeAssert.java" startLine="100" startPosition="25" endLine="101" endPosition="20" />
+    <scopeInfo nodeId="1957199320903968382" fileName="MakeAssert.java" startLine="106" startPosition="58" endLine="107" endPosition="39" />
+    <scopeInfo nodeId="1957199320903968081" fileName="MakeAssert.java" startLine="67" startPosition="0" endLine="70" endPosition="41">
       <varInfo nodeId="1957199320903968082" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903968084" fileName="MakeAssert.java" startLine="70" startPosition="31" endLine="73" endPosition="41" />
-    <scopeInfo nodeId="1957199320903968111" fileName="MakeAssert.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="1957199320903968084" fileName="MakeAssert.java" startLine="67" startPosition="31" endLine="70" endPosition="41" />
+    <scopeInfo nodeId="1957199320903968111" fileName="MakeAssert.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="2373221169643219029" varName="isOk" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903968124" fileName="MakeAssert.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="1957199320903968124" fileName="MakeAssert.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="2373221169643219006" varName="isOk" />
     </scopeInfo>
-    <scopeInfo nodeId="4705914142885010391" fileName="MakeAssert.java" startLine="102" startPosition="53" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968379" fileName="MakeAssert.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968171" fileName="MakeAssert.java" startLine="100" startPosition="61" endLine="106" endPosition="7">
+    <scopeInfo nodeId="4705914142885010391" fileName="MakeAssert.java" startLine="99" startPosition="53" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1957199320903968379" fileName="MakeAssert.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="1957199320903968171" fileName="MakeAssert.java" startLine="97" startPosition="61" endLine="103" endPosition="7">
       <varInfo nodeId="3289117052597495671" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903968140" fileName="MakeAssert.java" startLine="89" startPosition="42" endLine="97" endPosition="58">
+    <scopeInfo nodeId="1957199320903968140" fileName="MakeAssert.java" startLine="86" startPosition="42" endLine="94" endPosition="58">
       <varInfo nodeId="1957199320903968142" varName="projectFile" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903968168" fileName="MakeAssert.java" startLine="99" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="1957199320903968168" fileName="MakeAssert.java" startLine="96" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="1957199320903968186" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903967969" fileName="MakeAssert.java" startLine="59" startPosition="13" endLine="69" endPosition="70">
+    <scopeInfo nodeId="1957199320903967969" fileName="MakeAssert.java" startLine="56" startPosition="13" endLine="66" endPosition="70">
       <varInfo nodeId="1957199320903967980" varName="test" />
       <varInfo nodeId="1957199320903968009" varName="testClass" />
       <varInfo nodeId="1957199320903968016" varName="method" />
       <varInfo nodeId="1957199320903967988" varName="className" />
       <varInfo nodeId="1957199320903967998" varName="classLoader" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903967763" fileName="MakeAssert.java" startLine="32" startPosition="87" endLine="43" endPosition="39">
+    <scopeInfo nodeId="1957199320903967763" fileName="MakeAssert.java" startLine="29" startPosition="87" endLine="40" endPosition="39">
       <varInfo nodeId="1957199320903967765" varName="project" />
       <varInfo nodeId="7196776143116393308" varName="baseIsOk" />
       <varInfo nodeId="7196776143116393598" varName="genType" />
       <varInfo nodeId="7196776143116386536" varName="changeModelProcessor" />
       <varInfo nodeId="7196776143116393323" varName="newIsOk" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903968137" fileName="MakeAssert.java" startLine="88" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967760" fileName="MakeAssert.java" startLine="31" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1957199320903968137" fileName="MakeAssert.java" startLine="85" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1957199320903967760" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1957199320903967872" varName="modelName" />
       <varInfo nodeId="1957199320903967874" varName="changer" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903967967" fileName="MakeAssert.java" startLine="58" startPosition="25" endLine="74" endPosition="9" />
-    <scopeInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="57" startPosition="57" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967879" fileName="MakeAssert.java" startLine="46" startPosition="99" endLine="78" endPosition="71">
+    <scopeInfo nodeId="1957199320903967967" fileName="MakeAssert.java" startLine="55" startPosition="25" endLine="71" endPosition="9" />
+    <scopeInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="54" startPosition="57" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1957199320903967879" fileName="MakeAssert.java" startLine="43" startPosition="99" endLine="75" endPosition="71">
       <varInfo nodeId="1957199320903967881" varName="project" />
       <varInfo nodeId="7196776143116393607" varName="filesGenHandler" />
       <varInfo nodeId="1957199320903967958" varName="returnValue" />
@@ -157,13 +154,13 @@
       <varInfo nodeId="6016914837743474510" varName="genHandler" />
       <varInfo nodeId="7196776143116393387" varName="changeModelProcessor" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903967876" fileName="MakeAssert.java" startLine="45" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1957199320903967876" fileName="MakeAssert.java" startLine="42" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1957199320903968107" varName="modelName" />
       <varInfo nodeId="1957199320903968109" varName="changer" />
     </scopeInfo>
-    <unitInfo nodeId="4705914142885010391" fileName="MakeAssert.java" startLine="102" startPosition="41" endLine="106" endPosition="5" unitName="jetbrains.mps.makeTest.test.MakeAssert$2" />
-    <unitInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="57" startPosition="45" endLine="76" endPosition="5" unitName="jetbrains.mps.makeTest.test.MakeAssert$1" />
-    <unitInfo nodeId="1957199320903967759" fileName="MakeAssert.java" startLine="24" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.makeTest.test.MakeAssert" />
+    <unitInfo nodeId="4705914142885010391" fileName="MakeAssert.java" startLine="99" startPosition="41" endLine="103" endPosition="5" unitName="jetbrains.mps.makeTest.test.MakeAssert$2" />
+    <unitInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="54" startPosition="45" endLine="73" endPosition="5" unitName="jetbrains.mps.makeTest.test.MakeAssert$1" />
+    <unitInfo nodeId="1957199320903967759" fileName="MakeAssert.java" startLine="24" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.makeTest.test.MakeAssert" />
   </root>
   <root nodeId="1957199320903968411">
     <nodeInfo nodeId="1957199320903968434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NotMake_Test.java" startLine="21" startPosition="40" endLine="22" endPosition="28" />

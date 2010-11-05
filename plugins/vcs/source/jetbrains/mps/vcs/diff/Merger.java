@@ -15,18 +15,20 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
+
+import com.intellij.openapi.util.Pair;
+import jetbrains.mps.vcs.diff.changes.*;
 
 public class Merger {
   private final SModel[] mySourceModels = new SModel[Version.values().length];
@@ -388,7 +390,7 @@ public class Merger {
   }
 
   public void rebuldResultModel() {
-    myResultModel = CopyUtil.copyModel(getBase(mySourceModels));
+    myResultModel = ModelPersistence.copyModel(getBase(mySourceModels));
     boolean wasLoading = myResultModel.setLoading(true);
 
     try {
