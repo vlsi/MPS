@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TemplateOutputRoot.java" startLine="14" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateOutputRoot" />
-  <unitInfo fileName="Mappingmain.java" startLine="33" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule0" />
-  <unitInfo fileName="Mappingmain.java" startLine="56" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule1" />
-  <unitInfo fileName="Mappingmain.java" startLine="79" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule2" />
+  <unitInfo fileName="TemplateOutputRoot.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateOutputRoot" />
+  <unitInfo fileName="Mappingmain.java" startLine="34" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule0" />
+  <unitInfo fileName="Mappingmain.java" startLine="57" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule1" />
+  <unitInfo fileName="Mappingmain.java" startLine="80" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$ReductionRule2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated" />
-  <unitInfo fileName="Mappingmain.java" startLine="17" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain" />
+  <unitInfo fileName="Mappingmain.java" startLine="103" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain$RootMappingRule0" />
+  <unitInfo fileName="Mappingmain.java" startLine="18" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain" />
   <root nodeId="1206459766745">
     <nodeInfo nodeId="1206461151462" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="14" startPosition="146" endLine="15" endPosition="238" />
     <nodeInfo nodeId="1206461877477" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="18" startPosition="146" endLine="19" endPosition="238" />

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
@@ -20,7 +21,13 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot");
     tnode1.setProperty("text", "root in Reduce Inheritors test (expect: A, B, B)");
-    // COPY-SRCL 
+    {
+      final Iterable<SNode> sourcenode2 = QueriesGenerated.sourceNodesQuery_1206460249786(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+      Collection<SNode> tlist3 = environment.copyNodes(sourcenode2, null);
+      for (SNode child4 : tlist3) {
+        tnode1.addChild("outputChild", child4);
+      }
+    }
     return TemplateUtil.singletonList(tnode1);
 
   }

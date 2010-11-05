@@ -10,6 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
@@ -21,7 +22,13 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot_by_MappingRule");
     tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
-    // COPY-SRCL 
+    {
+      final Iterable<SNode> sourcenode2 = QueriesGenerated.sourceNodesQuery_1195170582047(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+      Collection<SNode> tlist3 = environment.copyNodes(sourcenode2, null);
+      for (SNode child4 : tlist3) {
+        tnode1.addChild("outputChild", child4);
+      }
+    }
     return TemplateUtil.singletonList(tnode1);
 
   }

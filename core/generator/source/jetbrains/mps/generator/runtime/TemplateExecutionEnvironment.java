@@ -39,7 +39,7 @@ public class TemplateExecutionEnvironment {
     this.operationContext = operationContext;
   }
 
-  public Collection<SNode> copyNodes(Collection<SNode> inputNodes, String mappingName) {
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName) {
     // TODO
     return Collections.emptyList();
   }

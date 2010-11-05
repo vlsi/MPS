@@ -7,6 +7,16 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -22,5 +32,108 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
   public Collection<TemplateRootMappingRule> getRootRules() {
     return null;
+  }
+
+  public class RootMappingRule0 implements TemplateRootMappingRule {
+    public RootMappingRule0() {
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      final String mappingName = "ROOT INPUT";
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202255161954(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
+        return null;
+      }
+      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+      // TODO notify environment 
+      tnode1.setProperty("name", "OutputRoot_1");
+      tnode1.setProperty("text", "'getPrevInputTest' output root (1)");
+      // MAPS-SRCL 
+      return TemplateUtil.singletonList(tnode1);
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
+    }
+
+    public boolean keepSourceRoot() {
+      return false;
+    }
+  }
+
+  public class RootMappingRule1 implements TemplateRootMappingRule {
+    public RootMappingRule1() {
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      final String mappingName = "ROOT INPUT";
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202338801829(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
+        return null;
+      }
+      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+      // TODO notify environment 
+      tnode1.setProperty("name", "OutputRoot_2");
+      tnode1.setProperty("text", "'getPrevInputTest' output root (2)");
+      {
+        final Iterable<SNode> sourcelist2 = QueriesGenerated.sourceNodesQuery_1202338467105(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+        final List<SNode> tlist2 = new ArrayList();
+        for (SNode itnode2 : sourcelist2) {
+          if (itnode2 == null) {
+            continue;
+          }
+          TemplateContext context2 = context.subContext("LEVEL 1", itnode2);
+          final Iterable<SNode> sourcelist3 = QueriesGenerated.sourceNodesQuery_1202338467112(null, new SourceSubstituteMacroNodesContext(context2.getInput(), null, null, context2, null));
+          final List<SNode> tlist3 = new ArrayList();
+          for (SNode itnode3 : sourcelist3) {
+            if (itnode3 == null) {
+              continue;
+            }
+            TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
+            final Iterable<SNode> sourcelist4 = QueriesGenerated.sourceNodesQuery_1202338467119(null, new SourceSubstituteMacroNodesContext(context3.getInput(), null, null, context3, null));
+            final List<SNode> tlist4 = new ArrayList();
+            for (SNode itnode4 : sourcelist4) {
+              if (itnode4 == null) {
+                continue;
+              }
+              TemplateContext context4 = context3.subContext(null, itnode4);
+              final SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+              // TODO notify environment 
+              tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
+              // MAP-SRC 
+              // MAP-SRC 
+              // MAP-SRC 
+              if (tnode5 != null) {
+                tlist4.add(tnode5);
+              }
+            }
+            if (tlist4 != null) {
+              tlist3.addAll(tlist4);
+            }
+          }
+          if (tlist3 != null) {
+            tlist2.addAll(tlist3);
+          }
+        }
+        for (SNode child6 : tlist2) {
+          tnode1.addChild("outputChild", child6);
+        }
+      }
+      return TemplateUtil.singletonList(tnode1);
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
+    }
+
+    public boolean keepSourceRoot() {
+      return false;
+    }
   }
 }

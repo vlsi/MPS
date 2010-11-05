@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TemplateOutputRoot_1.java" startLine="14" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot_1" />
-  <unitInfo fileName="Mappingmain.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain" />
+  <unitInfo fileName="Mappingmain.java" startLine="37" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain$RootMappingRule0" />
   <unitInfo fileName="TemplateOutputRoot_2.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot_2" />
+  <unitInfo fileName="Mappingmain.java" startLine="67" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain$RootMappingRule1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="19" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
+  <unitInfo fileName="Mappingmain.java" startLine="21" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain" />
   <root nodeId="1202255161944">
     <nodeInfo nodeId="1202255161956" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="20" startPosition="146" endLine="21" endPosition="101" />
     <nodeInfo nodeId="1202338801831" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="24" startPosition="146" endLine="25" endPosition="101" />

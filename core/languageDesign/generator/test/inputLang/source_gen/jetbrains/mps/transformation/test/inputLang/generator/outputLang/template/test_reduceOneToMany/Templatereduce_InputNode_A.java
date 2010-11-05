@@ -37,7 +37,8 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     // TODO notify environment 
     tnode3.setProperty("text", "child #2");
     Collection<SNode> tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context, null);
-    // SWITCH 
-    return TemplateUtil.asList(tlist1, tnode3, tlist4);
+    // TODO SWITCH 
+    Collection<SNode> tlist5 = null;
+    return TemplateUtil.asList(tlist1, tnode3, tlist4, tlist5);
   }
 }

@@ -29,7 +29,7 @@ public interface TemplateRootMappingRule {
 
   boolean applyToInheritors();
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context);
+  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
   boolean keepSourceRoot();
 }

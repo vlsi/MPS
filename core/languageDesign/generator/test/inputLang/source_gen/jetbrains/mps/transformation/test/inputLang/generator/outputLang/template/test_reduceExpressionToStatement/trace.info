@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
-  <unitInfo fileName="Mappingmain.java" startLine="33" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
+  <unitInfo fileName="Mappingmain.java" startLine="35" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
   <unitInfo fileName="Templateout_class.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Templateout_class" />
-  <unitInfo fileName="Mappingmain.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
+  <unitInfo fileName="Mappingmain.java" startLine="63" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$RootMappingRule0" />
+  <unitInfo fileName="Mappingmain.java" startLine="19" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
   <root nodeId="1209150022679">
     <nodeInfo nodeId="1209150621175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="15" startPosition="146" endLine="16" endPosition="253" />
     <nodeInfo nodeId="1209150505329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="19" startPosition="146" endLine="20" endPosition="112" />

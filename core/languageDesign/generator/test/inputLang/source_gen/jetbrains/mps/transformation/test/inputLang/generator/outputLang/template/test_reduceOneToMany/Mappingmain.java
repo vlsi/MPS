@@ -12,6 +12,8 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -47,6 +49,41 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
+    }
+  }
+
+  public class RootMappingRule0 implements TemplateRootMappingRule {
+    public RootMappingRule0() {
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414129777(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
+        return null;
+      }
+      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+      // TODO notify environment 
+      tnode1.setProperty("name", "OutputRoot");
+      tnode1.setProperty("text", "chilren were generated from a single child in input node.");
+      {
+        final Iterable<SNode> sourcenode2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+        Collection<SNode> tlist3 = environment.copyNodes(sourcenode2, null);
+        for (SNode child4 : tlist3) {
+          tnode1.addChild("outputChild", child4);
+        }
+      }
+      return TemplateUtil.singletonList(tnode1);
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
+    }
+
+    public boolean keepSourceRoot() {
+      return false;
     }
   }
 }

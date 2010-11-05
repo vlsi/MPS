@@ -14,6 +14,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -80,6 +82,41 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
+    }
+  }
+
+  public class RootMappingRule0 implements TemplateRootMappingRule {
+    public RootMappingRule0() {
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202243113773(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
+        return null;
+      }
+      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
+      // TODO notify environment 
+      tnode1.setProperty("name", "OutputRoot_by_MappingRule");
+      tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
+      {
+        final Iterable<SNode> sourcenode2 = QueriesGenerated.sourceNodesQuery_1195170582047(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+        Collection<SNode> tlist3 = environment.copyNodes(sourcenode2, null);
+        for (SNode child4 : tlist3) {
+          tnode1.addChild("outputChild", child4);
+        }
+      }
+      return TemplateUtil.singletonList(tnode1);
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
+    }
+
+    public boolean keepSourceRoot() {
+      return false;
     }
   }
 }
