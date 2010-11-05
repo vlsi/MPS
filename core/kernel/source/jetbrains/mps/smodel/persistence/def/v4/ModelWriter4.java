@@ -57,6 +57,9 @@ public class ModelWriter4 implements IModelWriter {
     }
     for (ImportElement aspectElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelReference = aspectElement.getModelReference();
+      if (modelReference == null) {
+        continue;
+      }
       if (!writtenAspects.contains(modelReference.toString())) {
         writtenAspects.add(modelReference.toString());
         writeAspect(sourceModel, rootElement, modelReference);
