@@ -31,7 +31,7 @@
     <nodeInfo nodeId="1237463993148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OutputRoot_TextGen.java" startLine="27" startPosition="80" endLine="28" endPosition="27" />
     <nodeInfo nodeId="1237463993148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OutputRoot_TextGen.java" startLine="28" startPosition="27" endLine="29" endPosition="27" />
     <nodeInfo nodeId="1236704522133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OutputRoot_TextGen.java" startLine="29" startPosition="27" endLine="30" endPosition="27" />
-    <nodeInfo nodeId="1237463992697" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OutputRoot_TextGen.java" startLine="30" startPosition="27" endLine="31" endPosition="109" />
+    <nodeInfo nodeId="1237463992697" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OutputRoot_TextGen.java" startLine="30" startPosition="27" endLine="31" endPosition="109" />
     <nodeInfo nodeId="1236704522133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OutputRoot_TextGen.java" startLine="31" startPosition="109" endLine="32" endPosition="27" />
     <nodeInfo nodeId="1237463993148" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OutputRoot_TextGen.java" startLine="27" startPosition="80" endLine="29" endPosition="27" />
     <nodeInfo nodeId="1237463991656" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OutputRoot_TextGen.java" startLine="22" startPosition="74" endLine="25" endPosition="27" />
