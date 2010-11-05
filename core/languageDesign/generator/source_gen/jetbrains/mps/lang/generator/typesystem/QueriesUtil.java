@@ -77,7 +77,10 @@ public class QueriesUtil {
       return null;
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
-      return null;
+      SNode parent = SNodeOperations.getParent(node);
+      if ((parent == null) || !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.generator.structure.IfMacro")) || SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true) != node) {
+        return null;
+      }
     }
     List<SNode> attributes = SNodeOperations.getAllAttributes(node);
     SNode prevMacro = null;

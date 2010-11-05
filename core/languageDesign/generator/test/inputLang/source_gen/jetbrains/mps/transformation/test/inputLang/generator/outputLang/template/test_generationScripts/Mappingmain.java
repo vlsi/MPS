@@ -12,6 +12,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 
 public class Mappingmain implements TemplateMappingConfiguration {
@@ -43,10 +44,12 @@ public class Mappingmain implements TemplateMappingConfiguration {
         final SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
         // TODO notify environment 
         tnode2.setProperty("text", "<input option : 1>");
+        tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
         final SNode tnode3 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
         // TODO notify environment 
         tnode3.setProperty("text", "<input option : default>");
+        tlist1 = TemplateUtil.singletonList(tnode3);
       }
       return tlist1;
     }

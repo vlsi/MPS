@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="19g8rd8a6ci491wqjv9psj07yfx6li9">
+<dependencies version="2" modelHash="26qtwss6ks5eheqfkatji1bu3g26xsq">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
@@ -19,7 +19,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="77rn04hub6f8gk30071gb1d591vj9n4" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="-9m043zztcohmco0o6rgqcg0cykcopbk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-46oycxh7vfqw1kvsemxtmo0oa4y6zzn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="19g8rd8a6ci491wqjv9psj07yfx6li9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="26qtwss6ks5eheqfkatji1bu3g26xsq" />
   <dep model="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" hash="8cauciuq677n7308aq6d2cx6ocl8qp4" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-da6kx3fdfpn0u46qfvj1352580h8nze" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="8c9uzrjhqtw5vqls14yy3z3tjr5aqcm" />
@@ -150,7 +150,7 @@
   <source id="2895393989835677675" name="reduce_Consequence" hash="-8nikludd8669pp737xtc97jieq2pwwx" />
   <source id="2895393989835680694" name="reduce_AbandonInputConsequence" hash="-7o8zz6km8h3gospdzryrzyftqs5bnsy" />
   <source id="2895393989835680822" name="reduce_DismissTopMappingRule" hash="-e67m5s69ma23eimbnz2ep0wh7p3elzi" />
-  <source id="2226924809855855981" name="reduce_InlineSwitchConsequence" hash="-981w7sba5hsg0q5zigaqb8mddendql6" />
+  <source id="2226924809855855981" name="reduce_InlineSwitchConsequence" hash="duufhc1dnd7a4i4hdyu24x1iqam6p1t" />
   <source id="2226924809855859161" name="reduce_InlineTemplateWithContextConsequence" hash="599nph9mw6s4ibriv91smigz13fnq7g" />
   <source id="2226924809855859163" name="reduce_InlineTemplateRuleConsequence" hash="5az53tz1n4an65b6sigf1ofw8di7242" />
   <source id="2226924809855869474" name="reduce_TemplateDeclarationReferenceConsequence" hash="-wk4acjfjfr7yxh0mk4xhxc9398ic0" />
