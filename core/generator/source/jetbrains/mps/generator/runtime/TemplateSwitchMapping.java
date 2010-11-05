@@ -15,20 +15,14 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNode;
-
 import java.util.Collection;
 
 /**
- * Evgeny Gryaznov, 10/27/10
+ * Evgeny Gryaznov, 11/5/10
  */
-public interface TemplateRootMappingRule {
+public interface TemplateSwitchMapping {
 
-  String getApplicableConcept();
+  Collection<TemplateReductionRule> getReductionRules();
 
-  boolean applyToInheritors();
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
-
-  boolean keepSourceRoot();
 }

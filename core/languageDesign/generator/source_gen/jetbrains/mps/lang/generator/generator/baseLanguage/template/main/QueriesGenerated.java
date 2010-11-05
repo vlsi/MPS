@@ -51,6 +51,10 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).startsWith("jetbrains.mps.transformation.test");
   }
 
+  public static boolean baseMappingRule_Condition_3423901696829298384(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).startsWith("jetbrains.mps.transformation.test");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1167762379110(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TemplateFunctionMethodName.createRootRule_Condition(_context.getNode());
   }
@@ -289,7 +293,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1147906725605225580(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "ReductionRule" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "reductionMappingRule", true)).indexOf(_context.getNode());
+    return "ReductionRule" + ((SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.generator.structure.MappingConfiguration") ?
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "reductionMappingRule", true)).indexOf(_context.getNode()) :
+      0
+    ));
   }
 
   public static Object propertyMacro_GetPropertyValue_1147906725605285885(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -322,6 +329,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1949333268577554902(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "RootMappingRule" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "rootMappingRule", true)).indexOf(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1940510396026567414(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "Switch" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_8530225126180766836(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -607,11 +618,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5879407265495314363(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0ze(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0bf(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_195833869251699517(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0af(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0cf(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_8285036680620207425(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1732,7 +1743,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0io(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0ko(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -1832,6 +1843,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_2226924809855999539(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_3423901696829261267(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "reductionMappingRule", true);
   }
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
@@ -1965,21 +1980,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0ze(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0bf(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0af(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0cf(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0io(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0ko(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
