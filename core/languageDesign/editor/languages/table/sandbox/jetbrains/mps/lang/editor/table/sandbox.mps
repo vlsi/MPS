@@ -4,25 +4,11 @@
   <refactoringHistory />
   <language namespace="0272d3b4-4cc8-481e-9e2f-07793fbfcb41(jetbrains.mps.lang.editor.table)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="48c3e946-6e2c-44cd-9882-eada7feeac68(jetbrains.mps.lang.editor.tableTests)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" version="0" />
+  <languageAspect modelUID="r:ce53207e-e09e-455a-bd5e-e0645c832f2e(jetbrains.mps.lang.editor.table.sandbox)" version="-1" />
+  <languageAspect modelUID="r:129d7ce0-d484-44f5-af4b-5ca6f3d19cba(jetbrains.mps.lang.editor.tableTests.structure)" version="-1" />
   <maxImportIndex value="0" />
   <node type="jetbrains.mps.lang.editor.table.structure.TableTest:0" id="3050082749681882836">
     <node role="table:0" type="jetbrains.mps.lang.editor.table.structure.Table:0" id="526753931570794629">
@@ -183,6 +169,72 @@
       <node role="targetState:0" type="jetbrains.mps.lang.editor.table.structure.StateReference:0" id="2373913864346132990">
         <link role="state:0" targetNodeId="4146106785014771724" resolveInfo="s3" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.tableTests.structure.Table" id="5561556180861970656">
+    <node role="rows" type="jetbrains.mps.lang.editor.tableTests.structure.Row" id="5561556180861970657">
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970658">
+        <property name="value" value="0 0" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970659">
+        <property name="value" value="0 1" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970660">
+        <property name="value" value="0 2" />
+      </node>
+    </node>
+    <node role="rows" type="jetbrains.mps.lang.editor.tableTests.structure.Row" id="5561556180861970661">
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970662">
+        <property name="value" value="1 0" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970663">
+        <property name="value" value="1 1" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970664">
+        <property name="value" value="1 2" />
+      </node>
+    </node>
+    <node role="rows" type="jetbrains.mps.lang.editor.tableTests.structure.Row" id="5561556180861970665">
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970666">
+        <property name="value" value="2 0" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970667">
+        <property name="value" value="2 1" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970668">
+        <property name="value" value="2 2" />
+      </node>
+    </node>
+    <node role="rows" type="jetbrains.mps.lang.editor.tableTests.structure.Row" id="5561556180861970669">
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970670">
+        <property name="value" value="3 0" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970671">
+        <property name="value" value="3 1" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970672">
+        <property name="value" value="3 2" />
+      </node>
+    </node>
+    <node role="rows" type="jetbrains.mps.lang.editor.tableTests.structure.Row" id="5561556180861970673">
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970674">
+        <property name="value" value="4 0" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970675">
+        <property name="value" value="4 1" />
+      </node>
+      <node role="cells" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970676">
+        <property name="value" value="4 2" />
+      </node>
+    </node>
+    <node role="headers" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970677">
+      <property name="value" value="h-0" />
+    </node>
+    <node role="headers" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970678">
+      <property name="value" value="h-1" />
+    </node>
+    <node role="headers" type="jetbrains.mps.lang.editor.tableTests.structure.DataCell" id="5561556180861970679">
+      <property name="value" value="h-2" />
     </node>
   </node>
 </model>

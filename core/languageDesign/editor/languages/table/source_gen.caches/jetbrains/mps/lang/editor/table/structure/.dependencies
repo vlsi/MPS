@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.editor.table.structure.CellModel_Table" file="CellModel_Table.java">
+  <dependency className="jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable" file="CellModel_HierarchycalTable.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.structure.GetTableModel" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.structure.CellModel_Table_proposal" file="CellModel_Table_proposal.java">
+  <dependency className="jetbrains.mps.lang.editor.table.structure.CellModel_Table" file="CellModel_Table.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.structure.GetTableModel" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

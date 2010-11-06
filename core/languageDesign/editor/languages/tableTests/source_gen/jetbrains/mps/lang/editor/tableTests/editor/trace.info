@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="Table_Editor.java" startLine="22" startPosition="36" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$1" />
+  <unitInfo fileName="Table_Editor.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor" />
+  <unitInfo fileName="DataCell_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCell_Editor" />
+</debugInfo>
 

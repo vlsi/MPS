@@ -6,6 +6,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguage>0272d3b4-4cc8-481e-9e2f-07793fbfcb41(jetbrains.mps.lang.editor.table)</usedLanguage>
+    <usedLanguage>48c3e946-6e2c-44cd-9882-eada7feeac68(jetbrains.mps.lang.editor.tableTests)</usedLanguage>
   </usedLanguages>
 </solution>
 
