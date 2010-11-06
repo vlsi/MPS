@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SModel.ImportElement;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,40 +22,8 @@ import java.util.Map;
 
 
 public final class CopyUtil {
+
   private CopyUtil() {
-  }
-
-  public static void copyModelContent(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copy(root));
-    }
-  }
-
-  private static void copyModelContentAndPreserveIds(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copyAndPreserveId(root));
-    }
-  }
-
-  private static void copyModelProperties(SModel from, SModel to) {
-    for (ImportElement ie : from.getAdditionalModelVersions()) {
-      to.addAdditionalModelVersion(new ImportElement(ie.getModelReference(),
-        ie.getReferenceID(), ie.getUsedVersion()));
-    }
-    for (ImportElement ie : from.importedModels()) {
-      to.addModelImport(new ImportElement(ie.getModelReference(),
-        ie.getReferenceID(), ie.getUsedVersion()));
-    }
-    to.setPersistenceVersion(from.getPersistenceVersion());
-  }
-
-  public static SModel copyModel(SModel model) {
-    SModel copy = new SModel(model.getSModelReference());
-    copy.setLoading(true);
-    copyModelContentAndPreserveIds(model, copy);
-    copyModelProperties(model, copy);
-    copy.setLoading(false);
-    return copy;
   }
 
   public static List<SNode> copy(List<SNode> nodes) {
