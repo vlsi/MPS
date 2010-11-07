@@ -17,11 +17,15 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
+import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
+import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
+import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.script.IProgress;
 
 public class MakeModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -67,7 +71,6 @@ public class MakeModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      System.out.println("*** Building make script");
       ScriptBuilder scb = new ScriptBuilder();
       IScript scr = scb.withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("GenerateFiles")).withInit(new _FunctionTypes._void_P1_E0<IVariablesPool>() {
         public void invoke(IVariablesPool pool) {
@@ -75,17 +78,26 @@ public class MakeModel_Action extends GeneratedAction {
           vars._0(MakeModel_Action.this.context.getProject());
         }
       }).toScript();
-      System.out.println("*** Script valid: " + scr.isValid());
+      final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();
+      final LoggingProgressStrategy logStrat = new LoggingProgressStrategy();
+      final LoggingFeedbackStrategy feedbackStrat = new LoggingFeedbackStrategy();
       IResult res = scr.execute(new IMonitor() {
         public boolean pleaseStop() {
           return false;
         }
 
         public <T extends IOption> T relayQuery(IQuery<T> query) {
-          return new UIQueryRelayStrategy().relayQuery(query, MakeModel_Action.this.context);
+          return relayStrat.relayQuery(query, MakeModel_Action.this.context);
+        }
+
+        public void reportFeedback(IFeedback feedback) {
+          feedbackStrat.reportFeedback(feedback);
+        }
+
+        public IProgress currentProgress() {
+          return logStrat.currentProgress();
         }
       });
-      System.out.println("*** Success: " + res.isSucessful());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeModel", t);
     }

@@ -16,7 +16,7 @@
   <languageAspect modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
   <languageAspect modelUID="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)" version="-1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
   <import index="2" modelUID="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -29,6 +29,9 @@
   <import index="10" modelUID="f:java_stub#org.hamcrest(org.hamcrest@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#org.jmock.api(org.jmock.api@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#org.junit.runner(org.junit.runner@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#org.jmock.integration.junit4(org.jmock.integration.junit4@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="671853460608595937">
     <property name="name:1" value="Maker" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="671853460608595938">
@@ -334,6 +337,9 @@
               <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation:7" id="3916013743093952651" />
             </node>
           </node>
+        </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2383991756720172433">
+          <link role="annotation:3" targetNodeId="15.~Test" resolveInfo="Test" />
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="2551169102353067140">
@@ -754,6 +760,9 @@
             </node>
           </node>
         </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2383991756720172434">
+          <link role="annotation:3" targetNodeId="15.~Test" resolveInfo="Test" />
+        </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="2551169102353647622">
         <property name="methodName" value="queryStop" />
@@ -1173,6 +1182,9 @@
             </node>
           </node>
         </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2383991756720172435">
+          <link role="annotation:3" targetNodeId="15.~Test" resolveInfo="Test" />
+        </node>
       </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3916013743093940227">
@@ -1180,17 +1192,12 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="671853460608703882">
       <property name="name:3" value="setUp" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="671853460608703883" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2383991756720176975" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="671853460608703884" />
       <node role="throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="671853460608703885">
         <link role="classifier:3" targetNodeId="3.~Exception" resolveInfo="Exception" />
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="671853460608703886">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="671853460608703888">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="671853460608703889">
-            <link role="baseMethodDeclaration:3" targetNodeId="1.~TestCase.setUp():void" resolveInfo="setUp" />
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="671853460608825101">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="671853460608825102">
             <property name="name:3" value="mf" />
@@ -1309,12 +1316,12 @@
         </node>
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="671853460608703887">
-        <link role="annotation:3" targetNodeId="3.~Override" />
+        <link role="annotation:3" targetNodeId="15.~Before" resolveInfo="Before" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="671853460608704030">
       <property name="name:3" value="tearDown" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="671853460608704031" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2383991756720176976" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="671853460608704032" />
       <node role="throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="671853460608704033">
         <link role="classifier:3" targetNodeId="3.~Exception" resolveInfo="Exception" />
@@ -1390,14 +1397,18 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="671853460608826045">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="671853460608826046">
-            <link role="baseMethodDeclaration:3" targetNodeId="1.~TestCase.tearDown():void" resolveInfo="tearDown" />
-          </node>
-        </node>
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="671853460608704035">
-        <link role="annotation:3" targetNodeId="3.~Override" />
+        <link role="annotation:3" targetNodeId="15.~After" resolveInfo="After" />
+      </node>
+    </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2383991756720172429">
+      <link role="annotation:3" targetNodeId="13.~RunWith" resolveInfo="RunWith" />
+      <node role="value:3" type="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue:3" id="2383991756720172430">
+        <link role="key:3" targetNodeId="13.~RunWith.value()" resolveInfo="value" />
+        <node role="value:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="2383991756720172432">
+          <link role="classifier:3" targetNodeId="14.~JMock" resolveInfo="JMock" />
+        </node>
       </node>
     </node>
   </node>

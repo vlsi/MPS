@@ -6,4 +6,6 @@ package jetbrains.mps.make.script;
 public interface IMonitor {
   public boolean pleaseStop();
   public <T extends IOption> T relayQuery(IQuery<T> query);
+  public void reportFeedback(IFeedback feedback);
+  public IProgress currentProgress();
 }

@@ -46,7 +46,6 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.Constructor" />
     <classNode dependClassName="java.lang.reflect.Method" />
@@ -66,6 +65,11 @@
     <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="org.jmock.api.Action" />
     <classNode dependClassName="org.jmock.api.Invocation" />
+    <classNode dependClassName="org.jmock.integration.junit4.JMock" />
+    <classNode dependClassName="org.junit.After" />
+    <classNode dependClassName="org.junit.Before" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.generator.Maker_Facet" file="Maker_Facet.java">

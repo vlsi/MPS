@@ -5,7 +5,7 @@
   <unitInfo fileName="Askfoo_Query.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.generator.Askfoo_Query" />
   <unitInfo fileName="Maker_Facet.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.make.generator.Maker_Facet" />
   <unitInfo fileName="TextGen_Facet.java" startLine="17" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen_Facet" />
-  <unitInfo fileName="Generator_Test.java" startLine="25" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.make.generator.Generator_Test" />
+  <unitInfo fileName="Generator_Test.java" startLine="30" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.make.generator.Generator_Test" />
   <unitInfo fileName="Generator_Facet.java" startLine="20" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.make.generator.Generator_Facet" />
   <root nodeId="2551169102353069011">
     <nodeInfo nodeId="2551169102353069015" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="TextGen_Facet.java" startLine="45" startPosition="58" endLine="46" endPosition="74" />
@@ -208,162 +208,160 @@
     <unitInfo nodeId="2340850238541116081" fileName="Generator_Facet.java" startLine="49" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.make.generator.Generator_Facet$Target_ixz87t_a" />
   </root>
   <root nodeId="671853460608703866">
-    <nodeInfo nodeId="671853460608825978" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="Generator_Test.java" startLine="25" startPosition="50" endLine="26" endPosition="26" />
-    <nodeInfo nodeId="671853460608826849" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="28" startPosition="51" endLine="29" endPosition="44" />
-    <nodeInfo nodeId="671853460608828970" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="29" startPosition="44" endLine="30" endPosition="146" />
-    <nodeInfo nodeId="671853460608829006" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="30" startPosition="146" endLine="31" endPosition="37" />
-    <nodeInfo nodeId="671853460608829017" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="31" startPosition="37" endLine="32" endPosition="37" />
-    <nodeInfo nodeId="671853460608829028" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="32" startPosition="37" endLine="33" endPosition="29" />
-    <nodeInfo nodeId="671853460608829032" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="33" startPosition="29" endLine="34" endPosition="64" />
-    <nodeInfo nodeId="3916013743093940233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="34" startPosition="64" endLine="35" endPosition="63" />
-    <nodeInfo nodeId="3916013743093940243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="35" startPosition="63" endLine="36" endPosition="30" />
-    <nodeInfo nodeId="3916013743093940247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="36" startPosition="30" endLine="37" endPosition="41" />
-    <nodeInfo nodeId="3916013743093952633" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="37" startPosition="41" endLine="38" endPosition="69" />
-    <nodeInfo nodeId="2551169102353068204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="41" startPosition="47" endLine="42" endPosition="44" />
-    <nodeInfo nodeId="2551169102353068209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="42" startPosition="44" endLine="43" endPosition="184" />
-    <nodeInfo nodeId="2551169102353068230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="43" startPosition="184" endLine="44" endPosition="37" />
-    <nodeInfo nodeId="2551169102353068234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="44" startPosition="37" endLine="45" endPosition="37" />
-    <nodeInfo nodeId="2551169102353068240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="45" startPosition="37" endLine="46" endPosition="29" />
-    <nodeInfo nodeId="2551169102353068242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="46" startPosition="29" endLine="47" endPosition="64" />
-    <nodeInfo nodeId="2551169102353074008" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="47" startPosition="64" endLine="48" endPosition="57" />
-    <nodeInfo nodeId="2551169102353076305" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="50" startPosition="7" endLine="51" endPosition="45" />
-    <nodeInfo nodeId="2551169102353644912" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="54" startPosition="38" endLine="55" endPosition="36" />
-    <nodeInfo nodeId="2551169102353644920" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="55" startPosition="36" endLine="56" endPosition="26" />
-    <nodeInfo nodeId="2551169102353644922" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="57" startPosition="13" endLine="58" endPosition="25" />
-    <nodeInfo nodeId="2551169102353646753" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="65" startPosition="72" endLine="66" endPosition="69" />
-    <nodeInfo nodeId="2551169102353068249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="73" startPosition="7" endLine="74" endPosition="35" />
-    <nodeInfo nodeId="2551169102353068258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="74" startPosition="35" endLine="75" endPosition="30" />
-    <nodeInfo nodeId="2551169102353068260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="75" startPosition="30" endLine="76" endPosition="41" />
-    <nodeInfo nodeId="2551169102353068264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="76" startPosition="41" endLine="77" endPosition="69" />
-    <nodeInfo nodeId="2551169102353647626" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="80" startPosition="49" endLine="81" endPosition="44" />
-    <nodeInfo nodeId="2551169102353647631" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="81" startPosition="44" endLine="82" endPosition="184" />
-    <nodeInfo nodeId="2551169102353647657" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="82" startPosition="184" endLine="83" endPosition="37" />
-    <nodeInfo nodeId="2551169102353647661" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="83" startPosition="37" endLine="84" endPosition="37" />
-    <nodeInfo nodeId="2551169102353647667" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="84" startPosition="37" endLine="85" endPosition="29" />
-    <nodeInfo nodeId="2551169102353647669" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="85" startPosition="29" endLine="86" endPosition="64" />
-    <nodeInfo nodeId="2551169102353647676" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="86" startPosition="64" endLine="87" endPosition="57" />
-    <nodeInfo nodeId="2551169102353647692" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="89" startPosition="7" endLine="90" endPosition="45" />
-    <nodeInfo nodeId="2551169102353647725" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="93" startPosition="38" endLine="94" endPosition="36" />
-    <nodeInfo nodeId="2551169102353647733" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="94" startPosition="36" endLine="95" endPosition="26" />
-    <nodeInfo nodeId="2551169102353647735" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="96" startPosition="13" endLine="97" endPosition="25" />
-    <nodeInfo nodeId="2551169102353647757" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="104" startPosition="72" endLine="105" endPosition="68" />
-    <nodeInfo nodeId="2551169102353647771" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="112" startPosition="7" endLine="113" endPosition="35" />
-    <nodeInfo nodeId="2551169102353647778" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="113" startPosition="35" endLine="114" endPosition="30" />
-    <nodeInfo nodeId="2551169102353648671" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="114" startPosition="30" endLine="115" endPosition="42" />
-    <nodeInfo nodeId="2551169102353647784" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="115" startPosition="42" endLine="116" endPosition="69" />
-    <nodeInfo nodeId="671853460608703888" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="120" startPosition="43" endLine="121" endPosition="18" />
-    <nodeInfo nodeId="671853460608825101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="121" startPosition="18" endLine="122" endPosition="96" />
-    <nodeInfo nodeId="671853460608825127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="122" startPosition="96" endLine="123" endPosition="46" />
-    <nodeInfo nodeId="671853460608825142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="123" startPosition="46" endLine="124" endPosition="37" />
-    <nodeInfo nodeId="671853460608825983" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="124" startPosition="37" endLine="125" endPosition="25" />
-    <nodeInfo nodeId="671853460608825157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="125" startPosition="25" endLine="126" endPosition="69" />
-    <nodeInfo nodeId="671853460608825166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="126" startPosition="69" endLine="127" endPosition="50" />
-    <nodeInfo nodeId="671853460608825999" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="131" startPosition="46" endLine="132" endPosition="96" />
-    <nodeInfo nodeId="671853460608826030" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="132" startPosition="96" endLine="133" endPosition="71" />
-    <nodeInfo nodeId="671853460608826038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="133" startPosition="71" endLine="134" endPosition="54" />
-    <nodeInfo nodeId="671853460608826045" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="134" startPosition="54" endLine="135" endPosition="21" />
-    <nodeInfo nodeId="2551169102353644924" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="2551169102353646761" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="2551169102353647737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="2551169102353647765" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
-    <nodeInfo nodeId="2551169102353644907" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Generator_Test.java" startLine="53" startPosition="44" endLine="57" endPosition="13" />
-    <nodeInfo nodeId="2551169102353646746" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="64" startPosition="27" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="2551169102353647720" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Generator_Test.java" startLine="92" startPosition="44" endLine="96" endPosition="13" />
-    <nodeInfo nodeId="2551169102353647750" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="103" startPosition="27" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="2551169102353644901" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="52" startPosition="70" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="2551169102353074040" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="63" startPosition="12" endLine="71" endPosition="11" />
-    <nodeInfo nodeId="2551169102353647714" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="91" startPosition="70" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="2551169102353647744" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="102" startPosition="12" endLine="110" endPosition="11" />
-    <nodeInfo nodeId="671853460608704030" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="129" startPosition="0" endLine="137" endPosition="0" />
-    <nodeInfo nodeId="671853460608703882" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="118" startPosition="0" endLine="129" endPosition="0" />
-    <nodeInfo nodeId="2551169102353074016" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="51" startPosition="45" endLine="63" endPosition="12" />
-    <nodeInfo nodeId="2551169102353647701" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="90" startPosition="45" endLine="102" endPosition="12" />
-    <nodeInfo nodeId="671853460608703873" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="2551169102353070723" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="48" startPosition="57" endLine="73" endPosition="7" />
-    <nodeInfo nodeId="2551169102353647682" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="87" startPosition="57" endLine="112" endPosition="7" />
-    <nodeInfo nodeId="2551169102353067140" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="40" startPosition="0" endLine="79" endPosition="0" />
-    <nodeInfo nodeId="2551169102353647622" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="79" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="2551169102353644929" fileName="Generator_Test.java" startLine="61" startPosition="50" endLine="61" endPosition="50" />
-    <scopeInfo nodeId="2551169102353646766" fileName="Generator_Test.java" startLine="69" startPosition="59" endLine="69" endPosition="59" />
-    <scopeInfo nodeId="2551169102353647742" fileName="Generator_Test.java" startLine="100" startPosition="50" endLine="100" endPosition="50" />
-    <scopeInfo nodeId="2551169102353647770" fileName="Generator_Test.java" startLine="108" startPosition="59" endLine="108" endPosition="59" />
-    <scopeInfo nodeId="2551169102353646752" fileName="Generator_Test.java" startLine="65" startPosition="72" endLine="66" endPosition="69" />
-    <scopeInfo nodeId="2551169102353647756" fileName="Generator_Test.java" startLine="104" startPosition="72" endLine="105" endPosition="68" />
-    <scopeInfo nodeId="2551169102353644911" fileName="Generator_Test.java" startLine="54" startPosition="38" endLine="56" endPosition="26" />
-    <scopeInfo nodeId="2551169102353647724" fileName="Generator_Test.java" startLine="93" startPosition="38" endLine="95" endPosition="26" />
-    <scopeInfo nodeId="2551169102353644924" fileName="Generator_Test.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
+    <nodeInfo nodeId="671853460608825978" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="Generator_Test.java" startLine="31" startPosition="50" endLine="32" endPosition="26" />
+    <nodeInfo nodeId="671853460608826849" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="35" startPosition="51" endLine="36" endPosition="44" />
+    <nodeInfo nodeId="671853460608828970" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="36" startPosition="44" endLine="37" endPosition="146" />
+    <nodeInfo nodeId="671853460608829006" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="37" startPosition="146" endLine="38" endPosition="37" />
+    <nodeInfo nodeId="671853460608829017" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="38" startPosition="37" endLine="39" endPosition="37" />
+    <nodeInfo nodeId="671853460608829028" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="39" startPosition="37" endLine="40" endPosition="29" />
+    <nodeInfo nodeId="671853460608829032" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="40" startPosition="29" endLine="41" endPosition="64" />
+    <nodeInfo nodeId="3916013743093940233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="41" startPosition="64" endLine="42" endPosition="63" />
+    <nodeInfo nodeId="3916013743093940243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="42" startPosition="63" endLine="43" endPosition="30" />
+    <nodeInfo nodeId="3916013743093940247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="43" startPosition="30" endLine="44" endPosition="41" />
+    <nodeInfo nodeId="3916013743093952633" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="44" startPosition="41" endLine="45" endPosition="69" />
+    <nodeInfo nodeId="2551169102353068204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="49" startPosition="47" endLine="50" endPosition="44" />
+    <nodeInfo nodeId="2551169102353068209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="50" startPosition="44" endLine="51" endPosition="184" />
+    <nodeInfo nodeId="2551169102353068230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="51" startPosition="184" endLine="52" endPosition="37" />
+    <nodeInfo nodeId="2551169102353068234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="52" startPosition="37" endLine="53" endPosition="37" />
+    <nodeInfo nodeId="2551169102353068240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="53" startPosition="37" endLine="54" endPosition="29" />
+    <nodeInfo nodeId="2551169102353068242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="54" startPosition="29" endLine="55" endPosition="64" />
+    <nodeInfo nodeId="2551169102353074008" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="55" startPosition="64" endLine="56" endPosition="57" />
+    <nodeInfo nodeId="2551169102353076305" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="58" startPosition="7" endLine="59" endPosition="45" />
+    <nodeInfo nodeId="2551169102353644912" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="62" startPosition="38" endLine="63" endPosition="36" />
+    <nodeInfo nodeId="2551169102353644920" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="63" startPosition="36" endLine="64" endPosition="26" />
+    <nodeInfo nodeId="2551169102353644922" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="65" startPosition="13" endLine="66" endPosition="25" />
+    <nodeInfo nodeId="2551169102353646753" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="73" startPosition="72" endLine="74" endPosition="69" />
+    <nodeInfo nodeId="2551169102353068249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="81" startPosition="7" endLine="82" endPosition="35" />
+    <nodeInfo nodeId="2551169102353068258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="82" startPosition="35" endLine="83" endPosition="30" />
+    <nodeInfo nodeId="2551169102353068260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="83" startPosition="30" endLine="84" endPosition="41" />
+    <nodeInfo nodeId="2551169102353068264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="84" startPosition="41" endLine="85" endPosition="69" />
+    <nodeInfo nodeId="2551169102353647626" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="89" startPosition="49" endLine="90" endPosition="44" />
+    <nodeInfo nodeId="2551169102353647631" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="90" startPosition="44" endLine="91" endPosition="184" />
+    <nodeInfo nodeId="2551169102353647657" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="91" startPosition="184" endLine="92" endPosition="37" />
+    <nodeInfo nodeId="2551169102353647661" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="92" startPosition="37" endLine="93" endPosition="37" />
+    <nodeInfo nodeId="2551169102353647667" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="93" startPosition="37" endLine="94" endPosition="29" />
+    <nodeInfo nodeId="2551169102353647669" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="94" startPosition="29" endLine="95" endPosition="64" />
+    <nodeInfo nodeId="2551169102353647676" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="95" startPosition="64" endLine="96" endPosition="57" />
+    <nodeInfo nodeId="2551169102353647692" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="98" startPosition="7" endLine="99" endPosition="45" />
+    <nodeInfo nodeId="2551169102353647725" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="102" startPosition="38" endLine="103" endPosition="36" />
+    <nodeInfo nodeId="2551169102353647733" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="103" startPosition="36" endLine="104" endPosition="26" />
+    <nodeInfo nodeId="2551169102353647735" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="105" startPosition="13" endLine="106" endPosition="25" />
+    <nodeInfo nodeId="2551169102353647757" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Generator_Test.java" startLine="113" startPosition="72" endLine="114" endPosition="68" />
+    <nodeInfo nodeId="2551169102353647771" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="121" startPosition="7" endLine="122" endPosition="35" />
+    <nodeInfo nodeId="2551169102353647778" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="122" startPosition="35" endLine="123" endPosition="30" />
+    <nodeInfo nodeId="2551169102353648671" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="123" startPosition="30" endLine="124" endPosition="42" />
+    <nodeInfo nodeId="2551169102353647784" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="124" startPosition="42" endLine="125" endPosition="69" />
+    <nodeInfo nodeId="671853460608825101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="129" startPosition="40" endLine="130" endPosition="96" />
+    <nodeInfo nodeId="671853460608825127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="130" startPosition="96" endLine="131" endPosition="46" />
+    <nodeInfo nodeId="671853460608825142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="131" startPosition="46" endLine="132" endPosition="37" />
+    <nodeInfo nodeId="671853460608825983" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="132" startPosition="37" endLine="133" endPosition="25" />
+    <nodeInfo nodeId="671853460608825157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="133" startPosition="25" endLine="134" endPosition="69" />
+    <nodeInfo nodeId="671853460608825166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="134" startPosition="69" endLine="135" endPosition="50" />
+    <nodeInfo nodeId="671853460608825999" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="139" startPosition="43" endLine="140" endPosition="96" />
+    <nodeInfo nodeId="671853460608826030" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Generator_Test.java" startLine="140" startPosition="96" endLine="141" endPosition="71" />
+    <nodeInfo nodeId="671853460608826038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="141" startPosition="71" endLine="142" endPosition="54" />
+    <nodeInfo nodeId="2551169102353644924" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="2551169102353646761" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="2551169102353647737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="108" startPosition="0" endLine="111" endPosition="0" />
+    <nodeInfo nodeId="2551169102353647765" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
+    <nodeInfo nodeId="2551169102353644907" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Generator_Test.java" startLine="61" startPosition="44" endLine="65" endPosition="13" />
+    <nodeInfo nodeId="2551169102353646746" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="72" startPosition="27" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="2551169102353647720" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Generator_Test.java" startLine="101" startPosition="44" endLine="105" endPosition="13" />
+    <nodeInfo nodeId="2551169102353647750" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="112" startPosition="27" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="671853460608704030" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="137" startPosition="0" endLine="144" endPosition="0" />
+    <nodeInfo nodeId="2551169102353644901" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="60" startPosition="70" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="2551169102353074040" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="71" startPosition="12" endLine="79" endPosition="11" />
+    <nodeInfo nodeId="2551169102353647714" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="100" startPosition="70" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="2551169102353647744" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="111" startPosition="12" endLine="119" endPosition="11" />
+    <nodeInfo nodeId="671853460608703882" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="127" startPosition="0" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="2551169102353074016" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="59" startPosition="45" endLine="71" endPosition="12" />
+    <nodeInfo nodeId="2551169102353647701" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="99" startPosition="45" endLine="111" endPosition="12" />
+    <nodeInfo nodeId="671853460608703873" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="2551169102353070723" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="56" startPosition="57" endLine="81" endPosition="7" />
+    <nodeInfo nodeId="2551169102353647682" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Generator_Test.java" startLine="96" startPosition="57" endLine="121" endPosition="7" />
+    <nodeInfo nodeId="2551169102353067140" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="47" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="2551169102353647622" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Generator_Test.java" startLine="87" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="2551169102353644929" fileName="Generator_Test.java" startLine="69" startPosition="50" endLine="69" endPosition="50" />
+    <scopeInfo nodeId="2551169102353646766" fileName="Generator_Test.java" startLine="77" startPosition="59" endLine="77" endPosition="59" />
+    <scopeInfo nodeId="2551169102353647742" fileName="Generator_Test.java" startLine="109" startPosition="50" endLine="109" endPosition="50" />
+    <scopeInfo nodeId="2551169102353647770" fileName="Generator_Test.java" startLine="117" startPosition="59" endLine="117" endPosition="59" />
+    <scopeInfo nodeId="2551169102353646752" fileName="Generator_Test.java" startLine="73" startPosition="72" endLine="74" endPosition="69" />
+    <scopeInfo nodeId="2551169102353647756" fileName="Generator_Test.java" startLine="113" startPosition="72" endLine="114" endPosition="68" />
+    <scopeInfo nodeId="2551169102353644911" fileName="Generator_Test.java" startLine="62" startPosition="38" endLine="64" endPosition="26" />
+    <scopeInfo nodeId="2551169102353647724" fileName="Generator_Test.java" startLine="102" startPosition="38" endLine="104" endPosition="26" />
+    <scopeInfo nodeId="2551169102353644924" fileName="Generator_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="2551169102353644927" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353646761" fileName="Generator_Test.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="2551169102353646761" fileName="Generator_Test.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2551169102353646764" varName="description" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353647737" fileName="Generator_Test.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="2551169102353647737" fileName="Generator_Test.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="2551169102353647740" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353647765" fileName="Generator_Test.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="2551169102353647765" fileName="Generator_Test.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="2551169102353647768" varName="description" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353646746" fileName="Generator_Test.java" startLine="64" startPosition="27" endLine="68" endPosition="0">
-      <varInfo nodeId="2551169102353646749" varName="invocation" />
-    </scopeInfo>
-    <scopeInfo nodeId="2551169102353647750" fileName="Generator_Test.java" startLine="103" startPosition="27" endLine="107" endPosition="0">
-      <varInfo nodeId="2551169102353647753" varName="invocation" />
-    </scopeInfo>
-    <scopeInfo nodeId="671853460608704034" fileName="Generator_Test.java" startLine="131" startPosition="46" endLine="135" endPosition="21">
+    <scopeInfo nodeId="671853460608704034" fileName="Generator_Test.java" startLine="139" startPosition="43" endLine="142" endPosition="54">
       <varInfo nodeId="671853460608826000" varName="mf" />
       <varInfo nodeId="671853460608826031" varName="mth" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353644906" fileName="Generator_Test.java" startLine="53" startPosition="44" endLine="58" endPosition="25" />
-    <scopeInfo nodeId="2551169102353647719" fileName="Generator_Test.java" startLine="92" startPosition="44" endLine="97" endPosition="25" />
-    <scopeInfo nodeId="671853460608703886" fileName="Generator_Test.java" startLine="120" startPosition="43" endLine="127" endPosition="50">
+    <scopeInfo nodeId="2551169102353646746" fileName="Generator_Test.java" startLine="72" startPosition="27" endLine="76" endPosition="0">
+      <varInfo nodeId="2551169102353646749" varName="invocation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2551169102353647750" fileName="Generator_Test.java" startLine="112" startPosition="27" endLine="116" endPosition="0">
+      <varInfo nodeId="2551169102353647753" varName="invocation" />
+    </scopeInfo>
+    <scopeInfo nodeId="2551169102353644906" fileName="Generator_Test.java" startLine="61" startPosition="44" endLine="66" endPosition="25" />
+    <scopeInfo nodeId="2551169102353647719" fileName="Generator_Test.java" startLine="101" startPosition="44" endLine="106" endPosition="25" />
+    <scopeInfo nodeId="671853460608703886" fileName="Generator_Test.java" startLine="129" startPosition="40" endLine="135" endPosition="50">
       <varInfo nodeId="671853460608825128" varName="ctor" />
       <varInfo nodeId="671853460608825102" varName="mf" />
       <varInfo nodeId="671853460608825143" varName="inst" />
       <varInfo nodeId="671853460608825158" varName="mth" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353644901" fileName="Generator_Test.java" startLine="52" startPosition="70" endLine="60" endPosition="0">
+    <scopeInfo nodeId="671853460608704030" fileName="Generator_Test.java" startLine="137" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="2551169102353644901" fileName="Generator_Test.java" startLine="60" startPosition="70" endLine="68" endPosition="0">
       <varInfo nodeId="2551169102353644904" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353647714" fileName="Generator_Test.java" startLine="91" startPosition="70" endLine="99" endPosition="0">
+    <scopeInfo nodeId="2551169102353647714" fileName="Generator_Test.java" startLine="100" startPosition="70" endLine="108" endPosition="0">
       <varInfo nodeId="2551169102353647717" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="671853460608704030" fileName="Generator_Test.java" startLine="129" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="671853460608703876" fileName="Generator_Test.java" startLine="28" startPosition="51" endLine="38" endPosition="69">
+    <scopeInfo nodeId="671853460608703876" fileName="Generator_Test.java" startLine="35" startPosition="51" endLine="45" endPosition="69">
       <varInfo nodeId="671853460608829018" varName="dt" />
       <varInfo nodeId="3916013743093940234" varName="res" />
       <varInfo nodeId="671853460608826850" varName="scb" />
       <varInfo nodeId="671853460608828971" varName="scr" />
     </scopeInfo>
-    <scopeInfo nodeId="671853460608703882" fileName="Generator_Test.java" startLine="118" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="671853460608703873" fileName="Generator_Test.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2551169102353074015" fileName="Generator_Test.java" startLine="50" startPosition="7" endLine="71" endPosition="11">
+    <scopeInfo nodeId="671853460608703882" fileName="Generator_Test.java" startLine="127" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="671853460608703873" fileName="Generator_Test.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2551169102353074015" fileName="Generator_Test.java" startLine="58" startPosition="7" endLine="79" endPosition="11">
       <varInfo nodeId="2551169102353076306" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353647691" fileName="Generator_Test.java" startLine="89" startPosition="7" endLine="110" endPosition="11">
+    <scopeInfo nodeId="2551169102353647691" fileName="Generator_Test.java" startLine="98" startPosition="7" endLine="119" endPosition="11">
       <varInfo nodeId="2551169102353647693" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353067143" fileName="Generator_Test.java" startLine="41" startPosition="47" endLine="77" endPosition="69">
+    <scopeInfo nodeId="2551169102353067143" fileName="Generator_Test.java" startLine="49" startPosition="47" endLine="85" endPosition="69">
       <varInfo nodeId="2551169102353068235" varName="dt" />
       <varInfo nodeId="2551169102353068250" varName="res" />
       <varInfo nodeId="2551169102353068205" varName="scb" />
       <varInfo nodeId="2551169102353068210" varName="scr" />
       <varInfo nodeId="2551169102353074009" varName="mon" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353647625" fileName="Generator_Test.java" startLine="80" startPosition="49" endLine="116" endPosition="69">
+    <scopeInfo nodeId="2551169102353647625" fileName="Generator_Test.java" startLine="89" startPosition="49" endLine="125" endPosition="69">
       <varInfo nodeId="2551169102353647662" varName="dt" />
       <varInfo nodeId="2551169102353647772" varName="res" />
       <varInfo nodeId="2551169102353647627" varName="scb" />
       <varInfo nodeId="2551169102353647632" varName="scr" />
       <varInfo nodeId="2551169102353647677" varName="mon" />
     </scopeInfo>
-    <scopeInfo nodeId="2551169102353067140" fileName="Generator_Test.java" startLine="40" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2551169102353647622" fileName="Generator_Test.java" startLine="79" startPosition="0" endLine="118" endPosition="0" />
-    <unitInfo nodeId="2551169102353646744" fileName="Generator_Test.java" startLine="64" startPosition="17" endLine="71" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$2" />
-    <unitInfo nodeId="2551169102353647748" fileName="Generator_Test.java" startLine="103" startPosition="17" endLine="110" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$3" />
-    <unitInfo nodeId="2551169102353644899" fileName="Generator_Test.java" startLine="52" startPosition="47" endLine="63" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$2" />
-    <unitInfo nodeId="2551169102353647712" fileName="Generator_Test.java" startLine="91" startPosition="47" endLine="102" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$3" />
-    <unitInfo nodeId="2551169102353073998" fileName="Generator_Test.java" startLine="49" startPosition="25" endLine="73" endPosition="5" unitName="jetbrains.mps.make.generator.Generator_Test$1" />
-    <unitInfo nodeId="2551169102353647688" fileName="Generator_Test.java" startLine="88" startPosition="25" endLine="112" endPosition="5" unitName="jetbrains.mps.make.generator.Generator_Test$2" />
+    <scopeInfo nodeId="2551169102353067140" fileName="Generator_Test.java" startLine="47" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2551169102353647622" fileName="Generator_Test.java" startLine="87" startPosition="0" endLine="127" endPosition="0" />
+    <unitInfo nodeId="2551169102353646744" fileName="Generator_Test.java" startLine="72" startPosition="17" endLine="79" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$2" />
+    <unitInfo nodeId="2551169102353647748" fileName="Generator_Test.java" startLine="112" startPosition="17" endLine="119" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$3" />
+    <unitInfo nodeId="2551169102353644899" fileName="Generator_Test.java" startLine="60" startPosition="47" endLine="71" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$2" />
+    <unitInfo nodeId="2551169102353647712" fileName="Generator_Test.java" startLine="100" startPosition="47" endLine="111" endPosition="9" unitName="jetbrains.mps.make.generator.Generator_Test$3" />
+    <unitInfo nodeId="2551169102353073998" fileName="Generator_Test.java" startLine="57" startPosition="25" endLine="81" endPosition="5" unitName="jetbrains.mps.make.generator.Generator_Test$1" />
+    <unitInfo nodeId="2551169102353647688" fileName="Generator_Test.java" startLine="97" startPosition="25" endLine="121" endPosition="5" unitName="jetbrains.mps.make.generator.Generator_Test$2" />
   </root>
 </debugInfo>
 
