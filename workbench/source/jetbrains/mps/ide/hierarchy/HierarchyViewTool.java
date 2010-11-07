@@ -31,13 +31,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> implements INavigateableTool {
-  private static List<SModelDescriptor> ourStructureModels = new ArrayList<SModelDescriptor>();
-
+  private List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
   private SModelListener myModelListener;
   private LanguageHierarchyCache myCache;
 
   public void onCreateStructureModel(SModelDescriptor md) {
-    ourStructureModels.add(md);
+    myStructureModels.add(md);
     md.addModelListener(myModelListener);
   }
 
@@ -57,7 +56,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     super.projectOpened();
     for (SModelDescriptor md : GlobalScope.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
-        ourStructureModels.add(md);
+        myStructureModels.add(md);
       }
     }
   }
@@ -65,7 +64,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
   @Override
   public void projectClosed() {
     super.projectClosed();
-    ourStructureModels.clear();
+    myStructureModels.clear();
   }
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
@@ -74,17 +73,17 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
 
   protected void doRegister() {
     UsagesViewTracker.register(this);
-    for (SModelDescriptor md : ourStructureModels) {
+    for (SModelDescriptor md : myStructureModels) {
       md.addModelListener(myModelListener);
     }
   }
 
   protected void doUnregister() {
     UsagesViewTracker.unregister(this);
-    for (SModelDescriptor md : ourStructureModels) {
+    for (SModelDescriptor md : myStructureModels) {
       md.removeModelListener(myModelListener);
     }
-    ourStructureModels.clear();
+    myStructureModels.clear();
   }
 
   public int getPriority() {
