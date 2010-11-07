@@ -581,7 +581,6 @@ public class SModel {
   @NotNull
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (SNode node : model.nodes()) {
-      //result.add(node.getConceptDeclarationNode().getModel().getSModelReference());
       SNode concept = node.getConceptDeclarationNode();
       if (concept == null) {
         LOG.error("concept not found for node " + node);
@@ -589,7 +588,6 @@ public class SModel {
         result.add(concept.getModel().getSModelReference());
       }
       for (String propname : node.getProperties().keySet()) {
-        //result.add(node.getPropertyDeclaration(propname).getModel().getSModelReference());
         PropertyDeclaration decl = node.getPropertyDeclaration(propname);
         if (decl == null) {
           LOG.error("property declaration " + propname + " not found for node " + node);
@@ -598,8 +596,12 @@ public class SModel {
         }
       }
       for (SReference ref : node.getReferencesIterable()) {
-        result.add(ref.getTargetSModelReference());
-        //result.add(node.getLinkDeclaration(ref.getRole()).getModel().getSModelReference());
+        SModelReference targetModelRef = ref.getTargetSModelReference();
+        if (targetModelRef == null) {
+          LOG.error("target model reference " + ref.getRole() + " is null for node " + node);
+        } else {
+          result.add(targetModelRef);
+        }
         LinkDeclaration decl = node.getLinkDeclaration(ref.getRole());
         if (decl == null) {
           LOG.error("link declaration " + ref.getRole() + " not found for node " + node);
@@ -608,7 +610,6 @@ public class SModel {
         }
       }
       for (SNode child : node.getChildren()) {
-        //result.add(child.getRoleLink().getModel().getSModelReference());
         if (child.isAttribute()) {
           continue;   // temporary don't check annotation roles, suppose the model of AnnotationDeclaration is the same as of concept
         }

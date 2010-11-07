@@ -99,7 +99,9 @@ public class VersionUtil {
     return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
   }
   public String genTarget(@NotNull SReference ref) {
-    return genReferenceString(ref.getTargetSModelReference(), ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^", true);
+    String target = ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^";
+    SModelReference targetModel = ref.getTargetSModelReference();
+    return targetModel == null ? target : genReferenceString(targetModel, target, true);
   }
 
 
