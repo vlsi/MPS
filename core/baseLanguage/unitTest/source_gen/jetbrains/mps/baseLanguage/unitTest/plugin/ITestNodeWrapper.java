@@ -19,5 +19,6 @@ public interface ITestNodeWrapper<N extends SNode> {
   public String getName();
   @NonNls
   public String getFqName();
+  public String getCachedFqName();
   public TestRunParameters getTestRunParameters();
 }

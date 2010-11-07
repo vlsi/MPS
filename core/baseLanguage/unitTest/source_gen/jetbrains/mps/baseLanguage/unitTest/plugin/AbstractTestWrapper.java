@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
-  protected N myNode;
+  protected final N myNode;
+  private String myFqName;
 
   public AbstractTestWrapper(N node) {
     myNode = node;
@@ -78,5 +80,16 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
       return SPropertyOperations.getString(myNode, "name");
     }
     return testCase.getFqName() + "." + getName();
+  }
+
+  public String getCachedFqName() {
+    if (myFqName == null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          myFqName = getFqName();
+        }
+      });
+    }
+    return myFqName;
   }
 }
