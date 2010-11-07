@@ -172,7 +172,7 @@ public enum TestNodeWrapperFactory {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }
-    });
+    }).distinct();
   }
 
   public static Iterable<SNode> getWrappedRootConcepts() {
@@ -184,7 +184,7 @@ public enum TestNodeWrapperFactory {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }
-    });
+    }).distinct();
   }
 
   private static SNode check_kl7j79_a0a0b0a0b2(SNode p) {
