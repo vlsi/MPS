@@ -146,6 +146,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     removeListeners();
     myDisposed = true;
+    super.dispose();
   }
 
   public boolean isShowPropertiesAndReferences() {
