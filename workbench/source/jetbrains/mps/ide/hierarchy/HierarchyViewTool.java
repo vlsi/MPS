@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> implements INavigateableTool {
-  private static List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
+  private List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
   private SModelListener myModelListener;
   private LanguageHierarchyCache myCache;
 
@@ -39,7 +39,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     myStructureModels.add(md);
     md.addModelListener(myModelListener);
   }
-  
+
   public HierarchyViewTool(Project project, LanguageHierarchyCache cache) {
     super(project, "Hierarchy", 8, jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON);
     myCache = cache;
@@ -56,7 +56,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     super.projectOpened();
     for (SModelDescriptor md : GlobalScope.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
-        myStructureModels.add(md);  
+        myStructureModels.add(md);
       }
     }
   }
@@ -68,7 +68,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
   }
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
-    return new ConceptHierarchyTree(myCache,this,isParentHierarchy);
+    return new ConceptHierarchyTree(myCache, this, isParentHierarchy);
   }
 
   protected void doRegister() {
