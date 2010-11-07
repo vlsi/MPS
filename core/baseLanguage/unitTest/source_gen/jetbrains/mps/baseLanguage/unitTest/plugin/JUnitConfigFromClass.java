@@ -10,14 +10,14 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cloneable {
   private static final Logger LOG = Logger.getLogger(JUnitConfigFromClass.class);
@@ -34,20 +34,28 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   }
 
   private void createConfig(final SNode parameter) {
-    SNode testCase = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", true, false);
-
-    if ((testCase == null) || ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)).isEmpty()) {
+    SNode testNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(parameter, Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts()).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return INamedConcept_Behavior.call_getFqName_1213877404258(it);
+      }
+    }).toGenericArray(String.class), true, true), "jetbrains.mps.lang.core.structure.INamedConcept");
+    if (testNode == null) {
       return;
     }
 
-    JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement(testCase));
+    ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testNode);
+    if (wrapper == null || Sequence.fromIterable(wrapper.getTestMethods()).isEmpty()) {
+      return;
+    }
+
+    JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement(testNode));
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
-      _config.setName(SPropertyOperations.getString(testCase, "name"));
+      _config.setName(SPropertyOperations.getString(testNode, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;
-      _config.getStateObject().nodes = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
+      _config.getStateObject().testCases = new ClonableList<String>(TestUtils.pointerToString(new SNodePointer(testNode)));
       JUnitConfigFromClass.this.myConfig = _config;
     }
   }

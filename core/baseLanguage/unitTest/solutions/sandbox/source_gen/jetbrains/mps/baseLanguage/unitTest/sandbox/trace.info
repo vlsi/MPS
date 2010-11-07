@@ -9,13 +9,29 @@
   </root>
   <root nodeId="3669442855016277665">
     <nodeInfo nodeId="2678767641691661448" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Test.java" startLine="11" startPosition="26" endLine="12" endPosition="30" />
+    <nodeInfo nodeId="4268859740513510653" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Test.java" startLine="12" startPosition="30" endLine="13" endPosition="22" />
     <nodeInfo nodeId="3669442855016277667" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="Test.java" startLine="7" startPosition="36" endLine="9" endPosition="3" />
-    <nodeInfo nodeId="3669442855016278294" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Test.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <nodeInfo nodeId="3669442855016278294" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Test.java" startLine="10" startPosition="0" endLine="15" endPosition="0" />
     <scopeInfo nodeId="3669442855016277670" fileName="Test.java" startLine="8" startPosition="17" endLine="8" endPosition="17" />
-    <scopeInfo nodeId="3669442855016278297" fileName="Test.java" startLine="11" startPosition="26" endLine="12" endPosition="30" />
     <scopeInfo nodeId="3669442855016277667" fileName="Test.java" startLine="7" startPosition="36" endLine="9" endPosition="3" />
-    <scopeInfo nodeId="3669442855016278294" fileName="Test.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="3669442855016277665" fileName="Test.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.sandbox.Test" />
+    <scopeInfo nodeId="3669442855016278297" fileName="Test.java" startLine="11" startPosition="26" endLine="13" endPosition="22" />
+    <scopeInfo nodeId="3669442855016278294" fileName="Test.java" startLine="10" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="3669442855016277665" fileName="Test.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.sandbox.Test" />
+  </root>
+  <root nodeId="4347343044614079991">
+    <nodeInfo nodeId="4347343044614080007" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Test4.java" startLine="13" startPosition="24" endLine="14" endPosition="29" />
+    <nodeInfo nodeId="4347343044614080016" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Test4.java" startLine="18" startPosition="25" endLine="19" endPosition="30" />
+    <nodeInfo nodeId="4268859740513510677" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="Test4.java" startLine="19" startPosition="30" endLine="20" endPosition="36" />
+    <nodeInfo nodeId="4347343044614079993" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="Test4.java" startLine="8" startPosition="20" endLine="10" endPosition="3" />
+    <nodeInfo nodeId="4347343044614080001" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Test4.java" startLine="11" startPosition="0" endLine="16" endPosition="0" />
+    <nodeInfo nodeId="4347343044614080011" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="Test4.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4347343044614079996" fileName="Test4.java" startLine="9" startPosition="18" endLine="9" endPosition="18" />
+    <scopeInfo nodeId="4347343044614080004" fileName="Test4.java" startLine="13" startPosition="24" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="4347343044614079993" fileName="Test4.java" startLine="8" startPosition="20" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="4347343044614080014" fileName="Test4.java" startLine="18" startPosition="25" endLine="20" endPosition="36" />
+    <scopeInfo nodeId="4347343044614080001" fileName="Test4.java" startLine="11" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4347343044614080011" fileName="Test4.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="4347343044614079991" fileName="Test4.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.sandbox.Test4" />
   </root>
 </debugInfo>
 

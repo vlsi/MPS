@@ -152,8 +152,8 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunner" />
   </dependency>
 </dependenciesRoot>
 

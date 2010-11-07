@@ -9,5 +9,10 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test4" file="Test4.java">
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+  </dependency>
 </dependenciesRoot>
 

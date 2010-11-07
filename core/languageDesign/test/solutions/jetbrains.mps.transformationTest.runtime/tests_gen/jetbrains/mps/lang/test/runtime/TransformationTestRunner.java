@@ -7,14 +7,13 @@ import javax.swing.SwingUtilities;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class TransformationTestRunner extends TestRunner {
+public class TransformationTestRunner {
   public TransformationTestRunner() {
   }
 
   public static void main(String[] argv) {
-    TestRunner runner = new TestRunner();
     try {
-      runner.start(argv);
+      TestRunner.main(argv);
     } catch (Throwable t) {
       t.printStackTrace(System.err);
       System.exit(1);

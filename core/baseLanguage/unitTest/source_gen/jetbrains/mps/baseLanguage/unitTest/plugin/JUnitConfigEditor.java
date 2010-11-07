@@ -28,8 +28,11 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
@@ -82,6 +85,12 @@ public class JUnitConfigEditor extends JPanel {
         if (myThis.myProjectName_d3c0 != null) {
           myThis.myProjectName_d3c0.setText(myThis.getProjectName());
         }
+        if (myThis.myTestCases_d0 != null) {
+          myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
+        }
+        if (myThis.myTestMethods_e0 != null) {
+          myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+        }
       }
     });
     component.setLayout(new GridBagLayout());
@@ -90,6 +99,8 @@ public class JUnitConfigEditor extends JPanel {
     component.add(this.createComponent_d0(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(1));
     this.myEvents.initialize();
+    myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
+    myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
     myThis.myTestCases_d0.init(myThis.getNodes(), false);
     myThis.myTestMethods_e0.init(myThis.getMethods(), true);
     myThis.setButtons(new JRadioButton[JUnitRunTypes.values().length]);
@@ -452,41 +463,63 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void apply(final DefaultJUnit_Configuration config) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    // read our fields in UI thread 
+    final List<ITestNodeWrapper> editorMethodList = myThis.getMethods();
+    final List<ITestNodeWrapper> editorTestCasesList = myThis.getNodes();
+    final SModel editorModel = myThis.getModel();
+    final IModule editorModule = myThis.getModule();
+    // five of them, so we do not mind going twice 
+    final int configTypeIndex = Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
+      public boolean accept(JRadioButton it) {
+        return it.isSelected();
+      }
+    }));
+
+    // perform everything else outside 
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        // five of them, so we do not mind going twice 
-        int index = Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
-          public boolean accept(JRadioButton it) {
-            return it.isSelected();
+        final ClonableList<String> testMethods = new ClonableList<String>();
+        final ClonableList<String> testCases = new ClonableList<String>();
+        final Wrappers._T<String> model = new Wrappers._T<String>();
+        final Wrappers._T<String> module = new Wrappers._T<String>();
+
+        // we have to do all processing in read action 
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            for (ITestNodeWrapper testMethod : editorMethodList) {
+              testMethods.add(TestUtils.pointerToString(new SNodePointer(testMethod.getNode())));
+            }
+
+            for (ITestNodeWrapper testCase : editorTestCasesList) {
+              testCases.add(TestUtils.pointerToString(new SNodePointer(testCase.getNode())));
+            }
+
+            if (editorModel != null) {
+              model.value = editorModel.getSModelFqName().toString();
+            }
+            if (editorModule != null) {
+              module.value = editorModule.getModuleFqName();
+            }
           }
-        }));
-        if (index >= 0) {
-          config.getStateObject().type = JUnitRunTypes.values()[index];
-        }
+        });
 
-        // set legacy stuff to null 
-        config.getStateObject().fullMethodNames = null;
-        config.getStateObject().nodes = null;
+        // we neeed to set run config fields so we have to go into UI thread again 
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            if (configTypeIndex >= 0) {
+              config.getStateObject().type = JUnitRunTypes.values()[configTypeIndex];
+            }
+            // set legacy stuff to null 
+            config.getStateObject().fullMethodNames = null;
+            config.getStateObject().nodes = null;
 
-        config.getStateObject().testMethods = new ClonableList<String>();
-        for (ITestNodeWrapper testMethod : myThis.getMethods()) {
-          config.getStateObject().testMethods.add(TestUtils.pointerToString(new SNodePointer(testMethod.getNode())));
-        }
+            config.getStateObject().testMethods = testMethods;
+            config.getStateObject().testCases = testCases;
+            config.getStateObject().model = model.value;
+            config.getStateObject().module = module.value;
+          }
+        });
 
-        config.getStateObject().testCases = new ClonableList<String>();
-        for (ITestNodeWrapper testCase : myThis.getNodes()) {
-          config.getStateObject().testCases.add(TestUtils.pointerToString(new SNodePointer(testCase.getNode())));
-        }
-
-        config.getStateObject().model = (myThis.getModel() != null ?
-          config.getStateObject().model = myThis.getModel().getSModelFqName().toString() :
-          null
-        );
-        if (myThis.getModule() != null) {
-          config.getStateObject().module = myThis.getModule().getModuleFqName();
-        } else {
-          config.getStateObject().module = null;
-        }
       }
     });
   }
@@ -541,14 +574,20 @@ public class JUnitConfigEditor extends JPanel {
 
     // models 
     if (config.getStateObject().model != null) {
-      myThis.setModelValue(config.getStateObject().model);
-      if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+      myThis.resetEditorModelWith(config.getStateObject().model);
+    } else {
+      // if model is null, it is convenient to take model from the first node 
+      final Wrappers._T<ITestNodeWrapper> wrapperToTakeModelFrom = new Wrappers._T<ITestNodeWrapper>(null);
+      if (myThis.getNodes() != null && ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
+        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getNodes()).first();
+      }
+      if (myThis.getMethods() != null && ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
+        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getMethods()).first();
+      }
+      if (wrapperToTakeModelFrom.value != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myThis.myModelName_d5c0.setText(config.getStateObject().model);
-            String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
-            myThis.setModuleValue(moduleName);
-            myThis.myModuleName_d4c0.setText(moduleName);
+            myThis.resetEditorModelWith(SNodeOperations.getModel(wrapperToTakeModelFrom.value.getNode()).getSModelFqName().toString());
           }
         });
       }
@@ -562,6 +601,20 @@ public class JUnitConfigEditor extends JPanel {
 
     // on select?? 
     myThis.onSelect();
+  }
+
+  private void resetEditorModelWith(final String modelName) {
+    myThis.setModelValue(modelName);
+    if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          myThis.myModelName_d5c0.setText(modelName);
+          String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
+          myThis.setModuleValue(moduleName);
+          myThis.myModuleName_d4c0.setText(moduleName);
+        }
+      });
+    }
   }
 
   public void dispose() {
