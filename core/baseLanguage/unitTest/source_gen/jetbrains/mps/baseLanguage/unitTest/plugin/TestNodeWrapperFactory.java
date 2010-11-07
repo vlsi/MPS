@@ -98,6 +98,49 @@ public enum TestNodeWrapperFactory {
       return false;
     }
 
+  },
+  JUnit4TestNodeWrapperFactory() {
+
+    @Nullable
+    public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
+      return new JUnit4TestWrapper(node);
+    }
+
+    public boolean canWrap(@NotNull SNode node) {
+      if (eq_kl7j79_a0a0b4(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        return JUnit4TestWrapper.isJUnit4TestCase(node);
+      }
+      return false;
+    }
+
+    public SNode getWrappedConcept() {
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+    }
+
+    public boolean isRoot() {
+      return true;
+    }
+
+  },
+  JUnit4MethodsNodeWrapperFactory() {
+
+    @Nullable
+    public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
+      return new JUnit4MethodWrapper(node);
+    }
+
+    public boolean canWrap(@NotNull SNode node) {
+      return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && JUnit4MethodWrapper.isJUnit4TestMethod(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+    }
+
+    public SNode getWrappedConcept() {
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    }
+
+    public boolean isRoot() {
+      return false;
+    }
+
   };
 
   TestNodeWrapperFactory() {
@@ -152,6 +195,13 @@ public enum TestNodeWrapperFactory {
   }
 
   private static boolean eq_kl7j79_a0a0b2(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_kl7j79_a0a0b4(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

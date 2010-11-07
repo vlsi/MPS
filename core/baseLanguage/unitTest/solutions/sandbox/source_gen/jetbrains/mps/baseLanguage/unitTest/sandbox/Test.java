@@ -10,5 +10,6 @@ public class Test extends TestCase {
 
   public void testBlah() {
     System.out.println("Hi!");
+    assertFalse(true);
   }
 }

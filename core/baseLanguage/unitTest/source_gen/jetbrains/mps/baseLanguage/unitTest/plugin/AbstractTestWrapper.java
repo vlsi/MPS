@@ -75,7 +75,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   public String getFqName() {
     ITestNodeWrapper testCase = getTestCase();
     if (isTestCase() || testCase == null) {
-      return getFqName();
+      return SPropertyOperations.getString(myNode, "name");
     }
     return testCase.getFqName() + "." + getName();
   }
