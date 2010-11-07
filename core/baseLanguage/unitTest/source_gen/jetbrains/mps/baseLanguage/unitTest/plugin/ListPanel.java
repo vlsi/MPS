@@ -8,6 +8,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
@@ -16,7 +18,6 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.BorderLayout;
@@ -43,49 +44,54 @@ public class ListPanel extends JPanel {
   private boolean myIsTestMethods;
   private ActionListener myListener;
   private ListPanel.MyAbstractListModel myListModel;
+  private Project myProject;
 
   public ListPanel() {
   }
 
   private void collectCandidates() {
-    final List<SNode> nodesList = new ArrayList<SNode>();
-    for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          // todo be smarter 
-          ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false)));
-        }
-      });
-    }
-    if (this.myIsTestMethods) {
-      final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (SNode testCase : nodesList) {
-            ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testCase);
-            if (wrapper == null) {
-              continue;
+    ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+      public void run() {
+        final List<SNode> nodesList = new ArrayList<SNode>();
+        for (final SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              // todo be smarter 
+              ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(ProgressManager.getInstance().getProgressIndicator()), false)));
             }
-            ListSequence.fromList(methodsList).addSequence(Sequence.fromIterable(wrapper.getTestMethods()));
-          }
+          });
         }
-      });
-      this.myCandidates = methodsList;
-    } else {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ListPanel.this.myCandidates = ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
-            public ITestNodeWrapper select(SNode it) {
-              return TestNodeWrapperFactory.tryToWrap(it);
+        if (ListPanel.this.myIsTestMethods) {
+          final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              for (SNode testCase : nodesList) {
+                ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testCase);
+                if (wrapper == null) {
+                  continue;
+                }
+                ListSequence.fromList(methodsList).addSequence(Sequence.fromIterable(wrapper.getTestMethods()));
+              }
             }
-          }).where(new IWhereFilter<ITestNodeWrapper>() {
-            public boolean accept(ITestNodeWrapper it) {
-              return it != null;
+          });
+          ListPanel.this.myCandidates = methodsList;
+        } else {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              ListPanel.this.myCandidates = ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
+                public ITestNodeWrapper select(SNode it) {
+                  return TestNodeWrapperFactory.tryToWrap(it);
+                }
+              }).where(new IWhereFilter<ITestNodeWrapper>() {
+                public boolean accept(ITestNodeWrapper it) {
+                  return it != null;
+                }
+              }).toListSequence();
             }
-          }).toListSequence();
+          });
         }
-      });
-    }
+      }
+    }, "Searching for test nodes", false, myProject);
   }
 
   public void addItem(ITestNodeWrapper item) {
@@ -183,6 +189,10 @@ public class ListPanel extends JPanel {
       "Classes"
     )), BorderLayout.PAGE_START);
     this.myListComponent.updateUI();
+  }
+
+  public void setMyProject(Project project) {
+    myProject = project;
   }
 
   private class MyAbstractListModel extends AbstractListModel {
