@@ -17,33 +17,33 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
 public class TestOutputComponent implements TestView {
-  private JComponent component;
-  private ConsoleViewImpl consoleView;
-  private List<TestOutputComponent.Message> messages;
-  private String filterClass;
-  private String filterMethod;
-  private TestRunState state;
+  private JComponent myComponent;
+  private ConsoleViewImpl myConsoleView;
+  private List<TestOutputComponent.Message> myMessages;
+  private String myFilterClass;
+  private String myFilterMethod;
+  private TestRunState myState;
 
   public TestOutputComponent(Project project, JComponent parentComponent, ConsoleViewImpl console, TestRunState state) {
-    this.messages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
-    this.consoleView = console;
-    this.component = this.consoleView.getComponent();
-    this.state = state;
+    this.myMessages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
+    this.myConsoleView = console;
+    this.myComponent = this.myConsoleView.getComponent();
+    this.myState = state;
   }
 
   public void update() {
     final Wrappers._T<String> text = new Wrappers._T<String>(null);
     final Wrappers._T<Key> key = new Wrappers._T<Key>(null);
-    final Wrappers._T<String> test = new Wrappers._T<String>(this.state.getLoseClass());
-    final Wrappers._T<String> method = new Wrappers._T<String>(this.state.getLoseMethod());
+    final Wrappers._T<String> test = new Wrappers._T<String>(this.myState.getLoseClass());
+    final Wrappers._T<String> method = new Wrappers._T<String>(this.myState.getLoseMethod());
     if (test.value != null && method.value != null) {
       text.value = "\nError: couldn't find method '" + method.value + "' in '" + test.value + "'\n\n";
       key.value = ProcessOutputTypes.STDERR;
-    } else if (this.state.getAvailableText() != null) {
-      text.value = this.state.getAvailableText();
-      key.value = this.state.getKey();
-      test.value = this.state.getCurrentClass();
-      method.value = this.state.getCurrentMethod();
+    } else if (this.myState.getAvailableText() != null) {
+      text.value = this.myState.getAvailableText();
+      key.value = this.myState.getKey();
+      test.value = this.myState.getCurrentClass();
+      method.value = this.myState.getCurrentMethod();
     }
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -57,23 +57,23 @@ public class TestOutputComponent implements TestView {
   }
 
   public JComponent getComponent() {
-    return this.component;
+    return this.myComponent;
   }
 
   public String getCurrentClassName() {
-    return this.state.getCurrentClass();
+    return this.myState.getCurrentClass();
   }
 
   public String getCurrentMethodName() {
-    return this.state.getCurrentMethod();
+    return this.myState.getCurrentMethod();
   }
 
   public void filter(String filterClass, String filterMethod) {
-    if (neq_r62oz9_a0a0a5_0(filterClass, this.filterClass) || neq_r62oz9_a0a0a5(filterMethod, this.filterMethod)) {
-      this.filterClass = filterClass;
-      this.filterMethod = filterMethod;
-      this.consoleView.clear();
-      for (TestOutputComponent.Message message : ListSequence.fromList(this.messages)) {
+    if (neq_r62oz9_a0a0a5_0(filterClass, this.myFilterClass) || neq_r62oz9_a0a0a5(filterMethod, this.myFilterMethod)) {
+      this.myFilterClass = filterClass;
+      this.myFilterMethod = filterMethod;
+      this.myConsoleView.clear();
+      for (TestOutputComponent.Message message : ListSequence.fromList(this.myMessages)) {
         this.append(message);
       }
     }
@@ -81,41 +81,41 @@ public class TestOutputComponent implements TestView {
 
   public void appendWithParameters(String testClass, String testMethod, String text, Key type) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(testClass, testMethod, text, type);
-    ListSequence.fromList(this.messages).addElement(newMessage);
+    ListSequence.fromList(this.myMessages).addElement(newMessage);
     this.append(newMessage);
   }
 
   public void append(String message, Key type) {
     TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.getCurrentClassName(), this.getCurrentMethodName(), message, type);
-    ListSequence.fromList(this.messages).addElement(newMessage);
+    ListSequence.fromList(this.myMessages).addElement(newMessage);
     this.append(newMessage);
   }
 
   public void clear() {
-    this.messages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
-    this.consoleView.clear();
+    this.myMessages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
+    this.myConsoleView.clear();
   }
 
   private void append(TestOutputComponent.Message message) {
-    if (message.matches(this.filterClass, this.filterMethod)) {
+    if (message.matches(this.myFilterClass, this.myFilterMethod)) {
       if (ProcessOutputTypes.STDERR.equals(message.getType())) {
-        ConsoleView consoleView = this.consoleView;
+        ConsoleView consoleView = this.myConsoleView;
         String text = message.getMessage();
         consoleView.print(text, ConsoleViewContentType.ERROR_OUTPUT);
       } else if (ProcessOutputTypes.SYSTEM.equals(message.getType())) {
-        this.consoleView.print(message.getMessage(), ConsoleViewContentType.SYSTEM_OUTPUT);
+        this.myConsoleView.print(message.getMessage(), ConsoleViewContentType.SYSTEM_OUTPUT);
       } else if (ProcessOutputTypes.STDOUT.equals(message.getType())) {
-        this.consoleView.print(message.getMessage(), ConsoleViewContentType.NORMAL_OUTPUT);
+        this.myConsoleView.print(message.getMessage(), ConsoleViewContentType.NORMAL_OUTPUT);
       }
     }
   }
 
   public void dispose() {
-    Disposer.dispose(this.consoleView);
+    Disposer.dispose(this.myConsoleView);
   }
 
   public ConsoleViewImpl getConsole() {
-    return this.consoleView;
+    return this.myConsoleView;
   }
 
   private static boolean neq_r62oz9_a0a0a5(Object a, Object b) {

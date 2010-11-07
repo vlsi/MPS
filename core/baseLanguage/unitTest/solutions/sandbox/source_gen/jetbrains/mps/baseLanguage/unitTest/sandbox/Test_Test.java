@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.sandbox;
 import junit.framework.TestCase;
 import junit.framework.Assert;
 
-public class Test1_Test extends TestCase {
+public class Test_Test extends TestCase {
   public void test_test1() throws Exception {
     Assert.assertFalse(false);
   }

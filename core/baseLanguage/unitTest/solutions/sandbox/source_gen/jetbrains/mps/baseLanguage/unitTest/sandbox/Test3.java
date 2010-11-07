@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.unitTest.sandbox;
 
 import junit.framework.TestCase;
 
-public class Test extends TestCase {
-  public Test() {
+public class Test3 extends TestCase {
+  public Test3() {
   }
 
   public void testBlah() {

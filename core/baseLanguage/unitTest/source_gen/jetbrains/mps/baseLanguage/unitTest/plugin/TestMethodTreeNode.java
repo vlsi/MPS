@@ -30,7 +30,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
       public void run() {
         ITestNodeWrapper testCase = TestMethodTreeNode.this.testMethod.getTestCase();
         if (testCase != null) {
-          className.value = testCase.getName();
+          className.value = testCase.getFqName();
         }
       }
     });

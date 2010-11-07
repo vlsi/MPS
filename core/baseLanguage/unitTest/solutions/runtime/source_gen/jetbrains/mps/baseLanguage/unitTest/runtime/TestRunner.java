@@ -51,7 +51,6 @@ public class TestRunner {
         int index = s.lastIndexOf('.');
         String testCase = s.substring(0, index);
         String method = s.substring(index + 1);
-
         ListSequence.fromList(requests).addElement(Request.method(Class.forName(testCase), method));
       } else if ("-f".equals(argv[i])) {
         i++;
@@ -92,7 +91,7 @@ public class TestRunner {
     @Override
     public void testFailure(Failure failure) throws Exception {
       this.printSyncToken(TestEvent.ERROR_TEST_PREFIX, failure.getDescription());
-      failure.getException().printStackTrace(System.err);
+      failure.getException().printStackTrace(System.out);
       this.printSyncToken(TestEvent.ERROR_TEST_SUFFIX, failure.getDescription());
       super.testFailure(failure);
     }
@@ -100,7 +99,7 @@ public class TestRunner {
     @Override
     public void testAssumptionFailure(Failure failure) {
       this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, failure.getDescription());
-      failure.getException().printStackTrace(System.err);
+      failure.getException().printStackTrace(System.out);
       this.printSyncToken(TestEvent.FAILURE_TEST_SUFFIX, failure.getDescription());
       super.testAssumptionFailure(failure);
     }
@@ -116,6 +115,7 @@ public class TestRunner {
       String out = testEvent.toString();
       synchronized (this.myOutput) {
         this.myOutput.writeCommand(out);
+        myOutput.flushSafe();
       }
     }
   }
