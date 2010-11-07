@@ -3036,8 +3036,8 @@
                           </node>
                         </node>
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="892466083792934629">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                          <link role="variableDeclaration:3" targetNodeId="21.1208864505391" resolveInfo="START_TEST_PREFIX" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                          <link role="variableDeclaration:3" targetNodeId="21.1796275887793108314" resolveInfo="START_TEST_PREFIX" />
                         </node>
                       </node>
                     </node>
@@ -3058,8 +3058,8 @@
                           </node>
                         </node>
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="892466083792934557">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                          <link role="variableDeclaration:3" targetNodeId="21.1208864505395" resolveInfo="END_TEST_PREFIX" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                          <link role="variableDeclaration:3" targetNodeId="21.1796275887793108318" resolveInfo="END_TEST_PREFIX" />
                         </node>
                       </node>
                       <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="892466083792934558">
@@ -3121,8 +3121,8 @@
                           </node>
                         </node>
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="892466083792934599">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                          <link role="variableDeclaration:3" targetNodeId="21.1208864505408" resolveInfo="FAILURE_TEST_PREFIX" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                          <link role="variableDeclaration:3" targetNodeId="21.1796275887793108330" resolveInfo="FAILURE_TEST_PREFIX" />
                         </node>
                       </node>
                       <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="892466083792934600">
@@ -3163,8 +3163,8 @@
                           </node>
                         </node>
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="892466083792934614">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                          <link role="variableDeclaration:3" targetNodeId="21.1208864505399" resolveInfo="ERROR_TEST_PREFIX" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                          <link role="variableDeclaration:3" targetNodeId="21.1796275887793108322" resolveInfo="ERROR_TEST_PREFIX" />
                         </node>
                       </node>
                       <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="892466083792934615">
@@ -7335,7 +7335,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022521123">
                         <property name="name:3" value="event" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022521124">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
                         </node>
                       </node>
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4675671065022521125">
@@ -7365,12 +7365,12 @@
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521215">
                                   <link role="baseMethodDeclaration:3" targetNodeId="1208803349660:0" resolveInfo="setStartTime" />
-                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4675671065022521216">
+                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7224681466135663838">
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4675671065022521217">
                                       <link role="variableDeclaration:3" targetNodeId="4675671065022521123:0" resolveInfo="event" />
                                     </node>
-                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521218">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1208865031585" resolveInfo="getTime" />
+                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7224681466135663842">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108374" resolveInfo="getTime" />
                                     </node>
                                   </node>
                                 </node>
@@ -7388,7 +7388,7 @@
                                       <link role="variableDeclaration:3" targetNodeId="4675671065022521123:0" resolveInfo="event" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521225">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1208865028453" resolveInfo="getMemoryUsage" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108366" resolveInfo="getMemoryUsage" />
                                     </node>
                                   </node>
                                 </node>
@@ -7418,7 +7418,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022521181">
                         <property name="name:3" value="event" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022521185">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
                         </node>
                       </node>
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4675671065022521186">
@@ -7431,7 +7431,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="4675671065022521181:0" resolveInfo="event" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521192">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="21.1208865019945" resolveInfo="getTestCaseName" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108350" resolveInfo="getTestCaseName" />
                                 </node>
                               </node>
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4675671065022521193">
@@ -7439,7 +7439,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="4675671065022521181:0" resolveInfo="event" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521195">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="21.1208865025038" resolveInfo="getTestMethodName" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108358" resolveInfo="getTestMethodName" />
                                 </node>
                               </node>
                             </node>
@@ -7461,7 +7461,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022521129">
                         <property name="name:3" value="event" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022521130">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
                         </node>
                       </node>
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4675671065022521131">
@@ -7496,7 +7496,7 @@
                                       <link role="variableDeclaration:3" targetNodeId="4675671065022521129:0" resolveInfo="event" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521244">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1208865031585" resolveInfo="getTime" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108374" resolveInfo="getTime" />
                                     </node>
                                   </node>
                                 </node>
@@ -7514,7 +7514,7 @@
                                       <link role="variableDeclaration:3" targetNodeId="4675671065022521129:0" resolveInfo="event" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022521251">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1208865028453" resolveInfo="getMemoryUsage" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108366" resolveInfo="getMemoryUsage" />
                                     </node>
                                   </node>
                                 </node>
@@ -7585,7 +7585,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022521135">
                         <property name="name:3" value="event" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022521136">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
                         </node>
                       </node>
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4675671065022521137">
@@ -7641,7 +7641,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022521141">
                         <property name="name:3" value="event" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022521142">
-                          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
                         </node>
                       </node>
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4675671065022521143">
@@ -20617,11 +20617,11 @@
                           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4060094294590056972">
                             <property name="name:3" value="testEvent" />
                             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4060094294590056973">
-                              <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                              <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
                             </node>
                             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4060094294590056974">
-                              <link role="baseMethodDeclaration:3" targetNodeId="21.1208864564893" resolveInfo="parse" />
-                              <link role="classConcept:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+                              <link role="classConcept:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108045" resolveInfo="parse" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4060094294590056975">
                                 <link role="variableDeclaration:3" targetNodeId="4060094294590056941:0" resolveInfo="textTrimmed" />
                               </node>
@@ -23042,7 +23042,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1717728468089923709:0" resolveInfo="event" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4403789015609952736">
-                  <link role="baseMethodDeclaration:3" targetNodeId="21.1208865013303" resolveInfo="getToken" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108342" resolveInfo="getToken" />
                 </node>
               </node>
             </node>
@@ -23075,13 +23075,13 @@
                   <link role="variableDeclaration:3" targetNodeId="1717728468089923709:0" resolveInfo="token" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1717728468089923553">
-                  <link role="baseMethodDeclaration:3" targetNodeId="21.1208865013303" resolveInfo="getToken" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108342" resolveInfo="getToken" />
                 </node>
               </node>
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1717728468089923554">
-              <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-              <link role="variableDeclaration:3" targetNodeId="21.1208864505391" resolveInfo="START_TEST_PREFIX" />
+              <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+              <link role="variableDeclaration:3" targetNodeId="21.1796275887793108314" resolveInfo="START_TEST_PREFIX" />
             </node>
           </node>
           <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="1717728468089923555">
@@ -23093,13 +23093,13 @@
                     <link role="variableDeclaration:3" targetNodeId="1717728468089923709:0" resolveInfo="token" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1717728468089923560">
-                    <link role="baseMethodDeclaration:3" targetNodeId="21.1208865013303" resolveInfo="getToken" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108342" resolveInfo="getToken" />
                   </node>
                 </node>
               </node>
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1717728468089923561">
-                <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                <link role="variableDeclaration:3" targetNodeId="21.1208864505395" resolveInfo="END_TEST_PREFIX" />
+                <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                <link role="variableDeclaration:3" targetNodeId="21.1796275887793108318" resolveInfo="END_TEST_PREFIX" />
               </node>
             </node>
             <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1717728468089923562">
@@ -23130,13 +23130,13 @@
                     <link role="variableDeclaration:3" targetNodeId="1717728468089923709:0" resolveInfo="token" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1717728468089923625">
-                    <link role="baseMethodDeclaration:3" targetNodeId="21.1208865013303" resolveInfo="getToken" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108342" resolveInfo="getToken" />
                   </node>
                 </node>
               </node>
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1717728468089923626">
-                <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                <link role="variableDeclaration:3" targetNodeId="21.1208864505408" resolveInfo="FAILURE_TEST_PREFIX" />
+                <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                <link role="variableDeclaration:3" targetNodeId="21.1796275887793108330" resolveInfo="FAILURE_TEST_PREFIX" />
               </node>
             </node>
             <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1717728468089923627">
@@ -23167,13 +23167,13 @@
                     <link role="variableDeclaration:3" targetNodeId="1717728468089923709:0" resolveInfo="token" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1717728468089923652">
-                    <link role="baseMethodDeclaration:3" targetNodeId="21.1208865013303" resolveInfo="getToken" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108342" resolveInfo="getToken" />
                   </node>
                 </node>
               </node>
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1717728468089923653">
-                <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                <link role="variableDeclaration:3" targetNodeId="21.1208864505399" resolveInfo="ERROR_TEST_PREFIX" />
+                <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                <link role="variableDeclaration:3" targetNodeId="21.1796275887793108322" resolveInfo="ERROR_TEST_PREFIX" />
               </node>
             </node>
             <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1717728468089923654">
@@ -23216,7 +23216,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1717728468089923709">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1717728468089923710">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -23773,7 +23773,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="1717728468090419694:0" resolveInfo="startTest" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4675671065022478107">
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022478109">
-                  <link role="baseMethodDeclaration:3" targetNodeId="21.1208865019945" resolveInfo="getTestCaseName" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108350" resolveInfo="getTestCaseName" />
                 </node>
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4675671065022478114">
                   <link role="variableDeclaration:3" targetNodeId="4675671065022478096:0" resolveInfo="event" />
@@ -23784,7 +23784,7 @@
                   <link role="variableDeclaration:3" targetNodeId="4675671065022478096:0" resolveInfo="event" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4675671065022478112">
-                  <link role="baseMethodDeclaration:3" targetNodeId="21.1208865025038" resolveInfo="getTestMethodName" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108358" resolveInfo="getTestMethodName" />
                 </node>
               </node>
             </node>
@@ -23794,7 +23794,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022478096">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022478097">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -23848,7 +23848,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022478199">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022478200">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -23902,7 +23902,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022478312">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022478313">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -23956,7 +23956,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022478431">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022478432">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -24429,7 +24429,7 @@
                 <link role="variableDeclaration:3" targetNodeId="9008364566102377499:0" resolveInfo="event" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9008364566102377764">
-                <link role="baseMethodDeclaration:3" targetNodeId="21.1208865013303" resolveInfo="getToken" />
+                <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108342" resolveInfo="getToken" />
               </node>
             </node>
           </node>
@@ -24445,7 +24445,7 @@
                     <link role="variableDeclaration:3" targetNodeId="9008364566102377499:0" resolveInfo="event" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9008364566102377506">
-                    <link role="baseMethodDeclaration:3" targetNodeId="21.1208865019945" resolveInfo="getTestCaseName" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108350" resolveInfo="getTestCaseName" />
                   </node>
                 </node>
               </node>
@@ -24459,7 +24459,7 @@
                     <link role="variableDeclaration:3" targetNodeId="9008364566102377499:0" resolveInfo="event" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9008364566102377523">
-                    <link role="baseMethodDeclaration:3" targetNodeId="21.1208865025038" resolveInfo="getTestMethodName" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.1796275887793108358" resolveInfo="getTestMethodName" />
                   </node>
                 </node>
               </node>
@@ -24535,8 +24535,8 @@
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9008364566102377740">
                   <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="9008364566102377741">
-                    <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                    <link role="variableDeclaration:3" targetNodeId="21.1208864505395" resolveInfo="END_TEST_PREFIX" />
+                    <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                    <link role="variableDeclaration:3" targetNodeId="21.1796275887793108318" resolveInfo="END_TEST_PREFIX" />
                   </node>
                 </node>
               </node>
@@ -24547,8 +24547,8 @@
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9008364566102377744">
                   <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="9008364566102377745">
-                    <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                    <link role="variableDeclaration:3" targetNodeId="21.1208864505404" resolveInfo="ERROR_TEST_SUFFIX" />
+                    <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                    <link role="variableDeclaration:3" targetNodeId="21.1796275887793108326" resolveInfo="ERROR_TEST_SUFFIX" />
                   </node>
                 </node>
               </node>
@@ -24560,8 +24560,8 @@
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9008364566102377748">
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="9008364566102377749">
-                  <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                  <link role="variableDeclaration:3" targetNodeId="21.1208864505412" resolveInfo="FAILURE_TEST_SUFFIX" />
+                  <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
+                  <link role="variableDeclaration:3" targetNodeId="21.1796275887793108334" resolveInfo="FAILURE_TEST_SUFFIX" />
                 </node>
               </node>
             </node>
@@ -24571,7 +24571,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="9008364566102377499">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9008364566102377500">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -27918,7 +27918,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022421044">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022421045">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -27931,7 +27931,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022421052">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022421053">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -27944,7 +27944,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022421058">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022421059">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>
@@ -27957,7 +27957,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4675671065022421064">
         <property name="name:3" value="event" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4675671065022421065">
-          <link role="classifier:3" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
+          <link role="classifier:3" targetNodeId="21.1796275887793108017" resolveInfo="TestEvent" />
         </node>
       </node>
     </node>

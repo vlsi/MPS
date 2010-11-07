@@ -12,7 +12,7 @@ public class TestRunParameters {
   private List<String> myClassPath;
 
   public TestRunParameters() {
-    this.myTestRunner = ModernTestRunner.class.getName();
+    this.myTestRunner = TestRunner.class.getName();
     this.myVmParameters = ListSequence.fromList(new ArrayList<String>());
     this.myClassPath = ListSequence.fromList(new ArrayList<String>());
   }
