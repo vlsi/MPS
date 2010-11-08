@@ -39,7 +39,6 @@
     <orderEntry type="module" module-name="constraints" />
     <orderEntry type="module" module-name="constructors" />
     <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="customMps" />
     <orderEntry type="module" module-name="dataFlow" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="debug-api" />
@@ -77,7 +76,6 @@
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="xmlDeprecated" />
     <orderEntry type="module" module-name="xmlQuery-runtime" />
-    <orderEntry type="module" module-name="xmlSchema" />
     <orderEntry type="module" module-name="YPath" />
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="YPath-solutions" />
