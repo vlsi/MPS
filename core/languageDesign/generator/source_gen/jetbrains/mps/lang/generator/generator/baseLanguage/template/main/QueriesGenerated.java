@@ -19,12 +19,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -694,16 +694,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "template", false), "templDeclarationClass"), "constructor", true)).first();
   }
 
-  public static Object referenceMacro_GetReferent_418849768498866690(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
-    return name;
-  }
-
-  public static Object referenceMacro_GetReferent_418849768498866727(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
-    return name;
-  }
-
   public static Object referenceMacro_GetReferent_8626372016104475444(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (String) _context.getTransientObject(_context.getNode());
   }
@@ -713,7 +703,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8530225126180766850(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SModelOperations.getModelName(_context.getOriginalInputModel()).startsWith("jetbrains.mps.transformation.test");
+    return GenUtil.isGeneratable(_context.getOriginalInputModel());
   }
 
   public static boolean ifMacro_Condition_4112907264514926008(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -758,11 +748,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5879407265495314363(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0kg(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0ig(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_195833869251699517(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0lg(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0jg(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_8285036680620207425(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1131,11 +1121,6 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean ifMacro_Condition_418849768498866706(final IOperationContext operationContext, final IfMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
-    return name.startsWith("tnode");
-  }
-
   public static boolean ifMacro_Condition_418849768498866743(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
     return name != null;
@@ -1292,6 +1277,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_418849768498945717(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true);
+  }
+
+  public static SNode sourceNodeQuery_8294566892413665808(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true);
   }
 
@@ -2056,7 +2045,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0ir(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0gr(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2293,21 +2282,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0kg(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0ig(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0lg(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0jg(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0ir(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0gr(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

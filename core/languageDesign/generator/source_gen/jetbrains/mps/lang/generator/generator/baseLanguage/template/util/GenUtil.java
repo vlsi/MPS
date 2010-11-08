@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenUtil {
   private static final String KEY = "VarName";
@@ -44,6 +46,13 @@ public class GenUtil {
   }
 
   public static boolean isGeneratable(SModel model) {
+    if (ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "weavingMappingRule", true);
+      }
+    }).isNotEmpty()) {
+      return false;
+    }
     return SModelOperations.getModelName(model).startsWith("jetbrains.mps.transformation.test");
   }
 }

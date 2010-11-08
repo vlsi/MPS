@@ -246,6 +246,31 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8294566892413615334" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8294566892413615306" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8294566892413615307">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8294566892413665760">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8294566892413665761">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8294566892413665782">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8294566892413665784">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413665777">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413665770">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413665765">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8294566892413665764">
+                  <link role="variableDeclaration:3" targetNodeId="8294566892413615308" resolveInfo="model" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="8294566892413665769">
+                  <link role="concept:16" targetNodeId="7.1095416546421:2" resolveInfo="MappingConfiguration" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect:16" id="8294566892413665774">
+                <link role="link:16" targetNodeId="7.1167172143858:2" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="8294566892413665781" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8294566892413615310">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413615317">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413615312">
