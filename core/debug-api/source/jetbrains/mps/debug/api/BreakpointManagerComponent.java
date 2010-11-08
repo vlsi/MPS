@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -128,22 +129,33 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     return findDebuggableCell(cell) != null || findTraceableCell(cell) != null;
   }
 
-  private SNode findDebuggableNode(EditorComponent editorComponent, int x, int y) {
-    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y);
+  private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
+    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<EditorCell>() {
+      @Override
+      public boolean met(EditorCell object) {
+        EditorCell debuggableOrTraceableCell = findDebuggableOrTraceableCell(object);
+        if (debuggableOrTraceableCell == null) {
+          return false;
+        }
+        EditorCell iconAnchorCell = BreakpointIconRenderer.getBreakpointIconAnchorCell(editorComponent.findNodeCell(debuggableOrTraceableCell.getSNode()));
+        // ignoring mouse clicks to any other rows except one containing "BreakpointIconAnchorCell"
+        // (this cell will be marked with breakpoint icon in LeftEditorHighlighter)
+        return (y >= iconAnchorCell.getY() && iconAnchorCell.getBaseline() >= y);
+      }
+    });
     if (foundCell == null) return null;
+    EditorCell cell = findDebuggableOrTraceableCell(foundCell);
+    if (cell == null) return null;
+    return cell.getSNode();
+  }
+
+  private EditorCell findDebuggableOrTraceableCell(EditorCell foundCell) {
     EditorCell cell = findDebuggableCell(foundCell);
     if (cell == null) {
       cell = findTraceableCell(foundCell);
     }
     if (cell == null) return null;
-    SNode sNode = cell.getSNode();
-    EditorCell iconAnchorCell = BreakpointIconRenderer.getBreakpointIconAnchorCell(editorComponent.findNodeCell(sNode));
-    if (y < iconAnchorCell.getY() || iconAnchorCell.getBaseline() < y) {
-      // ignoring mouse clicks to any other rows except one containing "BreakpointIconAnchorCell"
-      // (this cell will be marked with breakpoint icon in LeftEditorHighlighter)  
-      return null;
-    }
-    return sNode;
+    return cell;
   }
 
   private EditorCell findDebuggableCell(EditorCell foundCell) {
