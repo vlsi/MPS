@@ -188,9 +188,7 @@
   <unitInfo fileName="BinaryOperation_RightArgument_Actions.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions" />
   <unitInfo fileName="BinaryOperation_LeftArgument_Actions.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BinaryOperation_LeftArgument_Actions" />
   <unitInfo fileName="LocalStaticMethodCall_Editor.java" startLine="62" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalStaticMethodCall_Editor$_Inline_qj9uei_a0a" />
-  <unitInfo fileName="TestCoercion_Keymap.java" startLine="105" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TestCoercion_Keymap.TestCoercion_Keymap_Action0$Pattern_b5sqja_a1a0a1a5a4a" />
   <unitInfo fileName="StaticFieldReference_Editor.java" startLine="130" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticFieldReference_Editor$_Inline_ji2wba_a2a" />
-  <unitInfo fileName="TestCoercion_Keymap.java" startLine="142" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TestCoercion_Keymap.TestCoercion_Keymap_Action0$Pattern_b5sqja_a1a0a3a5a4a" />
   <unitInfo fileName="AnonymousClass_CurlyBraces.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_CurlyBraces" />
   <unitInfo fileName="VariableArityType_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VariableArityType_Editor" />
   <unitInfo fileName="CastExpression_KeyMap.java" startLine="26" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CastExpression_KeyMap$CastExpression_KeyMap_Action0" />
@@ -389,13 +387,11 @@
   <unitInfo fileName="ElsifClause_Editor.java" startLine="29" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ElsifClause_Editor" />
   <unitInfo fileName="ConceptFunctionAliased_Component.java" startLine="31" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ConceptFunctionAliased_Component" />
   <unitInfo fileName="ArrayCreatorWithInitializer_Editor.java" startLine="28" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayCreatorWithInitializer_Editor" />
-  <unitInfo fileName="TestCoercion_Keymap.java" startLine="30" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TestCoercion_Keymap$TestCoercion_Keymap_Action0" />
   <unitInfo fileName="ConceptFunction_Component.java" startLine="31" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ConceptFunction_Component" />
   <unitInfo fileName="EnumConstantReference_Editor.java" startLine="30" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumConstantReference_Editor" />
   <unitInfo fileName="ClassifierType_Editor.java" startLine="33" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor" />
   <unitInfo fileName="UsingStatement_Editor.java" startLine="28" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.UsingStatement_Editor" />
   <unitInfo fileName="TypeVariableDeclaration_Editor.java" startLine="31" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_Editor" />
-  <unitInfo fileName="TestCoercion_Keymap.java" startLine="19" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TestCoercion_Keymap" />
   <unitInfo fileName="BreakStatement_Editor.java" startLine="33" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BreakStatement_Editor" />
   <unitInfo fileName="StaticFieldReference_Editor.java" startLine="32" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticFieldReference_Editor" />
   <unitInfo fileName="ContinueStatement_Editor.java" startLine="34" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ContinueStatement_Editor" />
@@ -1166,60 +1162,6 @@
   <root nodeId="1178609859861">
     <nodeInfo nodeId="1178609888849" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="_InstanceMethodDeclaration_RemoveAbstract.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
     <scopeInfo nodeId="1178609869697" fileName="_InstanceMethodDeclaration_RemoveAbstract.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
-  </root>
-  <root nodeId="1178925890397">
-    <nodeInfo nodeId="1178925890402" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="60" startPosition="146" endLine="61" endPosition="61" />
-    <nodeInfo nodeId="1178925890414" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="61" startPosition="61" endLine="62" endPosition="36" />
-    <nodeInfo nodeId="1179270307452" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="63" startPosition="7" endLine="64" endPosition="51" />
-    <nodeInfo nodeId="1179270291490" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="64" startPosition="51" endLine="65" endPosition="203" />
-    <nodeInfo nodeId="1179270291496" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="65" startPosition="203" endLine="66" endPosition="49" />
-    <nodeInfo nodeId="1179270291504" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="66" startPosition="49" endLine="67" endPosition="198" />
-    <nodeInfo nodeId="1179270291510" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="67" startPosition="198" endLine="68" endPosition="49" />
-    <nodeInfo nodeId="1179270436048" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="70" startPosition="7" endLine="71" endPosition="47" />
-    <nodeInfo nodeId="1179270417602" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="71" startPosition="47" endLine="72" endPosition="199" />
-    <nodeInfo nodeId="1179270417608" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="72" startPosition="199" endLine="73" endPosition="49" />
-    <nodeInfo nodeId="1179270417616" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="73" startPosition="49" endLine="74" endPosition="194" />
-    <nodeInfo nodeId="1179270417622" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="74" startPosition="194" endLine="75" endPosition="49" />
-    <nodeInfo nodeId="1179270505858" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="77" startPosition="7" endLine="78" endPosition="53" />
-    <nodeInfo nodeId="1179270478624" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="78" startPosition="53" endLine="79" endPosition="193" />
-    <nodeInfo nodeId="1179270478630" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="79" startPosition="193" endLine="80" endPosition="49" />
-    <nodeInfo nodeId="1179270478638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="80" startPosition="49" endLine="81" endPosition="188" />
-    <nodeInfo nodeId="1179270478644" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="81" startPosition="188" endLine="82" endPosition="49" />
-    <nodeInfo nodeId="1179270565132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="84" startPosition="7" endLine="85" endPosition="51" />
-    <nodeInfo nodeId="1179270543454" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="85" startPosition="51" endLine="86" endPosition="176" />
-    <nodeInfo nodeId="1179270543462" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="86" startPosition="176" endLine="87" endPosition="49" />
-    <nodeInfo nodeId="1179270543470" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="87" startPosition="49" endLine="88" endPosition="171" />
-    <nodeInfo nodeId="1179270543478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="88" startPosition="171" endLine="89" endPosition="49" />
-    <nodeInfo nodeId="1205530956465" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="91" startPosition="7" endLine="92" endPosition="43" />
-    <nodeInfo nodeId="1205530956471" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TestCoercion_Keymap.java" startLine="92" startPosition="43" endLine="93" endPosition="183" />
-    <nodeInfo nodeId="1205530956477" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="93" startPosition="183" endLine="94" endPosition="49" />
-    <nodeInfo nodeId="1205530956485" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="94" startPosition="49" endLine="95" endPosition="178" />
-    <nodeInfo nodeId="1205530956491" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="95" startPosition="178" endLine="96" endPosition="49" />
-    <nodeInfo nodeId="1178925890424" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TestCoercion_Keymap.java" startLine="97" startPosition="7" endLine="98" endPosition="102" />
-    <nodeInfo nodeId="1179270276252" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TestCoercion_Keymap.java" startLine="62" startPosition="36" endLine="69" endPosition="7" />
-    <nodeInfo nodeId="1179270403668" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TestCoercion_Keymap.java" startLine="69" startPosition="7" endLine="76" endPosition="7" />
-    <nodeInfo nodeId="1179270468240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TestCoercion_Keymap.java" startLine="76" startPosition="7" endLine="83" endPosition="7" />
-    <nodeInfo nodeId="1179270534682" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TestCoercion_Keymap.java" startLine="83" startPosition="7" endLine="90" endPosition="7" />
-    <nodeInfo nodeId="1205530956463" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TestCoercion_Keymap.java" startLine="90" startPosition="7" endLine="97" endPosition="7" />
-    <scopeInfo nodeId="1179270276253" fileName="TestCoercion_Keymap.java" startLine="63" startPosition="7" endLine="68" endPosition="49">
-      <varInfo nodeId="1179270291491" varName="coercedType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1179270403669" fileName="TestCoercion_Keymap.java" startLine="70" startPosition="7" endLine="75" endPosition="49">
-      <varInfo nodeId="1179270417603" varName="coercedType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1179270468241" fileName="TestCoercion_Keymap.java" startLine="77" startPosition="7" endLine="82" endPosition="49">
-      <varInfo nodeId="1179270478625" varName="coercedType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1179270534683" fileName="TestCoercion_Keymap.java" startLine="84" startPosition="7" endLine="89" endPosition="49">
-      <varInfo nodeId="1179270543455" varName="coercedType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1205530956464" fileName="TestCoercion_Keymap.java" startLine="91" startPosition="7" endLine="96" endPosition="49">
-      <varInfo nodeId="1205530956472" varName="coercedType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1178925890401" fileName="TestCoercion_Keymap.java" startLine="60" startPosition="146" endLine="98" endPosition="102">
-      <varInfo nodeId="1178925890415" varName="text" />
-      <varInfo nodeId="1178925890403" varName="type" />
-    </scopeInfo>
   </root>
   <root nodeId="1181823106174">
     <nodeInfo nodeId="684456904423619414" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableDeclaration_NameCellComponent.java" startLine="71" startPosition="110" endLine="72" endPosition="199" />
