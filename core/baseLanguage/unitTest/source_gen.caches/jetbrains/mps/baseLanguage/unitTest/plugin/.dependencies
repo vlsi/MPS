@@ -1038,6 +1038,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.FailedTestOccurenceNavigator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ProgressLine" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsRowRenderer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsTableModel" />

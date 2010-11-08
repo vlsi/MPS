@@ -225,12 +225,24 @@
                         <link role="classConcept:3" targetNodeId="1208270545572:0" resolveInfo="UnitTestViewComponent" />
                       </node>
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6638278271607605865">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6638278271607605864">
-                        <link role="variableDeclaration:3" targetNodeId="6638278271607605587:0" resolveInfo="currentNode" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7248927498593651506">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7248927498593651504">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7248927498593650953">
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7248927498593651503">
+                            <link role="classifier:3" targetNodeId="4087070200985064052:0" resolveInfo="ITestNodeWrapper" />
+                          </node>
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6638278271607605865">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6638278271607605864">
+                              <link role="variableDeclaration:3" targetNodeId="6638278271607605587:0" resolveInfo="currentNode" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6638278271607605870">
+                              <link role="baseMethodDeclaration:3" targetNodeId="13.~DefaultMutableTreeNode.getUserObject():java.lang.Object" resolveInfo="getUserObject" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6638278271607605870">
-                        <link role="baseMethodDeclaration:3" targetNodeId="13.~DefaultMutableTreeNode.getUserObject():java.lang.Object" resolveInfo="getUserObject" />
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7248927498593651510">
+                        <link role="baseMethodDeclaration:3" targetNodeId="4087070200985064321:0" resolveInfo="getNode" />
                       </node>
                     </node>
                   </node>

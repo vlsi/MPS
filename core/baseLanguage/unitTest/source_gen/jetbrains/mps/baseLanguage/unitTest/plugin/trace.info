@@ -459,7 +459,7 @@
     <nodeInfo nodeId="6638278271607605348" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="UnitTestViewComponent.java" startLine="160" startPosition="47" endLine="161" endPosition="21" />
     <nodeInfo nodeId="6638278271607605586" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnitTestViewComponent.java" startLine="166" startPosition="45" endLine="167" endPosition="94" />
     <nodeInfo nodeId="4632317321135813567" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnitTestViewComponent.java" startLine="168" startPosition="34" endLine="169" endPosition="22" />
-    <nodeInfo nodeId="6638278271607605808" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnitTestViewComponent.java" startLine="170" startPosition="9" endLine="171" endPosition="98" />
+    <nodeInfo nodeId="6638278271607605808" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnitTestViewComponent.java" startLine="170" startPosition="9" endLine="171" endPosition="129" />
     <nodeInfo nodeId="6638278271607605464" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnitTestViewComponent.java" startLine="172" startPosition="7" endLine="173" endPosition="18" />
     <nodeInfo nodeId="1239644763263" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="UnitTestViewComponent.java" startLine="143" startPosition="38" endLine="146" endPosition="5" />
     <nodeInfo nodeId="6638278271607554958" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="UnitTestViewComponent.java" startLine="159" startPosition="67" endLine="162" endPosition="5" />
@@ -520,7 +520,7 @@
       <varInfo nodeId="1208802450696" varName="tablePanel" />
       <varInfo nodeId="1208801381526" varName="statisticsTable" />
     </scopeInfo>
-    <scopeInfo nodeId="6638278271607605455" fileName="UnitTestViewComponent.java" startLine="166" startPosition="45" endLine="171" endPosition="98">
+    <scopeInfo nodeId="6638278271607605455" fileName="UnitTestViewComponent.java" startLine="166" startPosition="45" endLine="171" endPosition="129">
       <varInfo nodeId="6638278271607605587" varName="currentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1208271155269" fileName="UnitTestViewComponent.java" startLine="52" startPosition="0" endLine="58" endPosition="3">
