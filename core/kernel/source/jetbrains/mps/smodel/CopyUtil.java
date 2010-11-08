@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.SModel.ImportElement;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,8 +24,45 @@ import java.util.Map;
 
 
 public final class CopyUtil {
-
   private CopyUtil() {
+  }
+
+  public static void copyModelContent(SModel from, SModel to) {
+    for (SNode root : from.roots()) {
+      to.addRoot(copy(root));
+    }
+  }
+
+  private static void copyModelContentAndPreserveIds(SModel from, SModel to) {
+    for (SNode root : from.roots()) {
+//      HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+//      SNode rootCopy = clone(root, mapping, true);
+//      for (SNode sourceNode : mapping.keySet()) {
+//        mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+//      }
+      to.addRoot(copyAndPreserveId(root));
+    }
+  }
+
+  private static void copyModelProperties(SModel from, SModel to) {
+    for (ImportElement ie : from.getAdditionalModelVersions()) {
+      to.addAdditionalModelVersion(new ImportElement(ie.getModelReference(),
+        ie.getReferenceID(), ie.getUsedVersion()));
+    }
+    for (ImportElement ie : from.importedModels()) {
+      to.addModelImport(new ImportElement(ie.getModelReference(),
+        ie.getReferenceID(), ie.getUsedVersion()));
+    }
+    to.setPersistenceVersion(from.getPersistenceVersion());
+  }
+
+  public static SModel copyModel(SModel model) {
+    SModel copy = new SModel(model.getSModelReference());
+    copy.setLoading(true);
+    copyModelContentAndPreserveIds(model, copy);
+    copyModelProperties(model, copy);
+    copy.setLoading(false);
+    return copy;
   }
 
   public static List<SNode> copy(List<SNode> nodes) {
@@ -36,7 +75,7 @@ public final class CopyUtil {
 
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
-    addReferences(nodes, mapping, true);
+    addReferences(nodes, mapping, true, false);
     return result;
   }
 
@@ -56,7 +95,7 @@ public final class CopyUtil {
     }
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
-    addReferences(nodes, mapping, true);
+    addReferences(nodes, mapping, true, true);
     return result;
   }
 
@@ -68,7 +107,7 @@ public final class CopyUtil {
     SNode result = clone(node, mapping, copyAttributes);
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
-    addReferences(nodes, mapping, copyAttributes);
+    addReferences(nodes, mapping, copyAttributes, false);
     return result;
   }
 
@@ -112,7 +151,7 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes) {
+  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes, boolean cloneRefs) {
     for (SNode inputNode : inputNodes) {
       if (inputNode == null) {
         continue;
@@ -121,7 +160,7 @@ public final class CopyUtil {
 
       for (SReference ref : inputNode.getReferencesArray()) {
         SNode inputTargetNode = ref.getTargetNode();
-        if (inputTargetNode == null) {//broken reference
+        if (cloneRefs || inputTargetNode == null) {//broken reference
           if (ref instanceof StaticReference) {//copy broken static reference
             StaticReference staticReference = (StaticReference) ref;
             outputNode.addReference(new StaticReference(
@@ -138,7 +177,7 @@ public final class CopyUtil {
         }
       }
 
-      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes);
+      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes, cloneRefs);
     }
   }
 }
