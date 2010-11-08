@@ -95,6 +95,7 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
             }
           }
           if (tlist4 != null) {
+            environment.registerLabel(itnode3, tlist4, "LEVEL 2");
             tlist3.addAll(tlist4);
           }
         }

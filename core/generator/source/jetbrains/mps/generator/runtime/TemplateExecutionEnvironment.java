@@ -67,6 +67,14 @@ public class TemplateExecutionEnvironment {
 
   }
 
+  public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
+
+  }
+
+  public void registerLabel(SNode inputNode, Iterable<SNode> outputNode, String mappingLabel) {
+
+  }
+
   public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
 
   }

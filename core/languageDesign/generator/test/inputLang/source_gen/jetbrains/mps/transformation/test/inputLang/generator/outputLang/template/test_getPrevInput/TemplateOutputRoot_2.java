@@ -114,10 +114,12 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
             }
           }
           if (tlist4 != null) {
+            environment.registerLabel(itnode3, tlist4, "LEVEL 2");
             tlist3.addAll(tlist4);
           }
         }
         if (tlist3 != null) {
+          environment.registerLabel(itnode2, tlist3, "LEVEL 1");
           tlist2.addAll(tlist3);
         }
       }
