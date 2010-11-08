@@ -9,7 +9,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 
 public class TemplateOutputRoot_1 implements TemplateDeclaration {
   public TemplateOutputRoot_1() {
@@ -20,7 +27,92 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
     // TODO notify environment 
     tnode1.setProperty("name", "OutputRoot_1");
     tnode1.setProperty("text", "'getPrevInputTest' output root (1)");
-    // MAPS-SRCL 
+    {
+      final Iterable<SNode> sourceList2 = QueriesGenerated.sourceNodesQuery_1233603475878(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+      final List<SNode> tlist2 = new ArrayList();
+      for (SNode itnode2 : sourceList2) {
+        if (itnode2 == null) {
+          continue;
+        }
+        TemplateContext context2 = context.subContext("LEVEL 1", itnode2);
+        final Iterable<SNode> sourcelist3 = QueriesGenerated.sourceNodesQuery_1202256587517(null, new SourceSubstituteMacroNodesContext(context2.getInput(), null, null, context2, null));
+        final List<SNode> tlist3 = new ArrayList();
+        for (SNode itnode3 : sourcelist3) {
+          if (itnode3 == null) {
+            continue;
+          }
+          TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
+          final Iterable<SNode> sourcelist4 = QueriesGenerated.sourceNodesQuery_1202256594380(null, new SourceSubstituteMacroNodesContext(context3.getInput(), null, null, context3, null));
+          final List<SNode> tlist4 = new ArrayList();
+          for (SNode itnode4 : sourcelist4) {
+            if (itnode4 == null) {
+              continue;
+            }
+            TemplateContext context4 = context3.subContext(null, itnode4);
+            final SNode sourceNode5 = context.getInput();
+            final List<SNode> tlist5 = new ArrayList();
+            if (sourceNode5 != null) {
+              TemplateContext context5 = context4.subContext(null, sourceNode5);
+              final SNode tnode6 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+              // TODO notify environment 
+              tnode6.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(null, new PropertyMacroContext(context5.getInput(), null, null, context5, null)));
+              {
+                final SNode tnode7 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                // TODO notify environment 
+                tnode7.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(null, new PropertyMacroContext(context5.getInput(), null, null, context5, null)));
+                tnode6.addChild("outputChild", tnode7);
+              }
+              {
+                Collection<SNode> tlist8 = null;
+                if (QueriesGenerated.ifMacro_Condition_1202332796047(null, new IfMacroContext(context5.getInput(), null, context5, null))) {
+                  final SNode tnode9 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                  // TODO notify environment 
+                  tnode9.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(null, new PropertyMacroContext(context5.getInput(), null, null, context5, null)));
+                  tlist8 = TemplateUtil.singletonList(tnode9);
+                }
+                for (SNode child10 : tlist8) {
+                  tnode6.addChild("outputChild", child10);
+                }
+              }
+              {
+                final SNode tnode11 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                // TODO notify environment 
+                tnode11.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(null, new PropertyMacroContext(context5.getInput(), null, null, context5, null)));
+                tnode6.addChild("outputChild", tnode11);
+              }
+              if (tnode6 != null) {
+                tlist5.add(tnode6);
+                environment.postProcess(new PostProcessor() {
+                  public void process(SNode outputNode, TemplateContext postProcessContext) {
+                    QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+                  }
+                }, tnode6, context5);
+              }
+
+            }
+            if (tlist5 != null) {
+              tlist4.addAll(tlist5);
+            }
+          }
+          if (tlist4 != null) {
+            tlist3.addAll(tlist4);
+          }
+        }
+        if (tlist3 != null) {
+          tlist2.addAll(tlist3);
+          for (SNode mapSrcOutput12 : tlist3) {
+            environment.postProcess(new PostProcessor() {
+              public void process(SNode outputNode, TemplateContext postProcessContext) {
+                QueriesGenerated.mapSrcMacro_post_mapper_1233603527948(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+              }
+            }, mapSrcOutput12, context2);
+          }
+        }
+      }
+      for (SNode child13 : tlist2) {
+        tnode1.addChild("outputChild", child13);
+      }
+    }
     return TemplateUtil.singletonList(tnode1);
 
   }

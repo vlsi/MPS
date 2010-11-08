@@ -67,4 +67,15 @@ public class TemplateExecutionEnvironment {
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
 
   }
+
+  /*
+   *  returns temporary node
+   */
+  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
+    return null;
+  }
+
+  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
+
+  }
 }

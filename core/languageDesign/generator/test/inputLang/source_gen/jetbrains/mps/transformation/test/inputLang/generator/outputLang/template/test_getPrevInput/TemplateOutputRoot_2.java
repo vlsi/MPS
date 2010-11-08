@@ -13,6 +13,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_2 implements TemplateDeclaration {
@@ -49,9 +53,62 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
             final SNode tnode5 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
             // TODO notify environment 
             tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
-            // MAP-SRC 
-            // MAP-SRC 
-            // MAP-SRC 
+            {
+              final SNode sourceNode6 = context.getInput();
+              final List<SNode> tlist6 = new ArrayList();
+              if (sourceNode6 != null) {
+                TemplateContext context6 = context4.subContext(null, sourceNode6);
+                tlist6.add(environment.insertLater(new NodeMapper() {
+                  public SNode map(SNode outputNode, TemplateContext mapContext) {
+                    return QueriesGenerated.mapSrcMacro_mapper_1202338546473(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, null));
+                  }
+                }, new PostProcessor() {
+                  public void process(SNode outputNode, TemplateContext postProcessContext) {
+                    QueriesGenerated.mapSrcMacro_post_mapper_1225236090395(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+                  }
+                }, context6));
+
+              }
+              for (SNode child7 : tlist6) {
+                tnode5.addChild("outputChild", child7);
+              }
+            }
+            {
+              final SNode sourceNode8 = context.getInput();
+              final List<SNode> tlist8 = new ArrayList();
+              if (sourceNode8 != null) {
+                TemplateContext context8 = context4.subContext(null, sourceNode8);
+                tlist8.add(environment.insertLater(new NodeMapper() {
+                  public SNode map(SNode outputNode, TemplateContext mapContext) {
+                    return QueriesGenerated.mapSrcMacro_mapper_1202338683284(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, null));
+                  }
+                }, null, context8));
+
+              }
+              for (SNode child9 : tlist8) {
+                tnode5.addChild("outputChild", child9);
+              }
+            }
+            {
+              final SNode sourceNode10 = context.getInput();
+              final List<SNode> tlist10 = new ArrayList();
+              if (sourceNode10 != null) {
+                TemplateContext context10 = context4.subContext(null, sourceNode10);
+                tlist10.add(environment.insertLater(new NodeMapper() {
+                  public SNode map(SNode outputNode, TemplateContext mapContext) {
+                    return QueriesGenerated.mapSrcMacro_mapper_1202338740199(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, null));
+                  }
+                }, new PostProcessor() {
+                  public void process(SNode outputNode, TemplateContext postProcessContext) {
+                    QueriesGenerated.mapSrcMacro_post_mapper_1225236639046(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+                  }
+                }, context10));
+
+              }
+              for (SNode child11 : tlist10) {
+                tnode5.addChild("outputChild", child11);
+              }
+            }
             if (tnode5 != null) {
               tlist4.add(tnode5);
             }
@@ -64,8 +121,8 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
           tlist2.addAll(tlist3);
         }
       }
-      for (SNode child6 : tlist2) {
-        tnode1.addChild("outputChild", child6);
+      for (SNode child12 : tlist2) {
+        tnode1.addChild("outputChild", child12);
       }
     }
     return TemplateUtil.singletonList(tnode1);
