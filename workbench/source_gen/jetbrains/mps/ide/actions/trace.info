@@ -6152,148 +6152,148 @@
     <unitInfo nodeId="6220902061650994161" fileName="ModelCheckerCheckinHandler.java" startLine="28" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler" />
   </root>
   <root nodeId="6276897598755404961">
-    <nodeInfo nodeId="4393431345217255534" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="OverrideConceptMethodStrategy.java" startLine="24" startPosition="57" endLine="25" endPosition="19" />
-    <nodeInfo nodeId="6359127068906225586" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="28" startPosition="62" endLine="29" endPosition="45" />
-    <nodeInfo nodeId="7907821417706853156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="29" startPosition="45" endLine="30" endPosition="190" />
-    <nodeInfo nodeId="7907821417706853179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="31" startPosition="121" endLine="32" endPosition="33" />
-    <nodeInfo nodeId="6276897598755405001" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="35" startPosition="37" endLine="36" endPosition="100" />
-    <nodeInfo nodeId="5817167241946142670" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="38" startPosition="7" endLine="39" endPosition="188" />
-    <nodeInfo nodeId="6276897598755405022" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="40" startPosition="143" endLine="41" endPosition="230" />
-    <nodeInfo nodeId="6276897598755405043" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="12" endLine="43" endPosition="170" />
-    <nodeInfo nodeId="6276897598755405064" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="47" startPosition="28" endLine="48" endPosition="29" />
-    <nodeInfo nodeId="5394250374101438048" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="51" startPosition="56" endLine="52" endPosition="35" />
-    <nodeInfo nodeId="5394250374101438053" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="52" startPosition="35" endLine="53" endPosition="66" />
-    <nodeInfo nodeId="5394250374101438061" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="53" startPosition="66" endLine="54" endPosition="38" />
-    <nodeInfo nodeId="5394250374101438068" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="54" startPosition="38" endLine="55" endPosition="40" />
-    <nodeInfo nodeId="5394250374101438075" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="55" startPosition="40" endLine="56" endPosition="20" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="49" endLine="64" endPosition="26" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="64" startPosition="26" endLine="65" endPosition="67" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="65" startPosition="67" endLine="66" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="67" startPosition="7" endLine="68" endPosition="167" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="68" startPosition="167" endLine="69" endPosition="43" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="69" startPosition="43" endLine="70" endPosition="78" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="70" startPosition="78" endLine="71" endPosition="31" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="72" startPosition="7" endLine="73" endPosition="20" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="81" startPosition="90" endLine="82" endPosition="26" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="82" startPosition="26" endLine="83" endPosition="67" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="83" startPosition="67" endLine="84" endPosition="32" />
+    <nodeInfo nodeId="4393431345217255534" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="57" endLine="24" endPosition="19" />
+    <nodeInfo nodeId="6359127068906225586" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="62" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="7907821417706853156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="28" startPosition="45" endLine="29" endPosition="190" />
+    <nodeInfo nodeId="7907821417706853179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="121" endLine="31" endPosition="33" />
+    <nodeInfo nodeId="6276897598755405001" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="37" endLine="35" endPosition="100" />
+    <nodeInfo nodeId="5817167241946142670" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="37" startPosition="7" endLine="38" endPosition="188" />
+    <nodeInfo nodeId="6276897598755405022" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="39" startPosition="143" endLine="40" endPosition="230" />
+    <nodeInfo nodeId="6276897598755405043" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="41" startPosition="12" endLine="42" endPosition="170" />
+    <nodeInfo nodeId="6276897598755405064" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="28" endLine="47" endPosition="29" />
+    <nodeInfo nodeId="5394250374101438048" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="56" endLine="51" endPosition="35" />
+    <nodeInfo nodeId="5394250374101438053" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="51" startPosition="35" endLine="52" endPosition="66" />
+    <nodeInfo nodeId="5394250374101438061" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="52" startPosition="66" endLine="53" endPosition="38" />
+    <nodeInfo nodeId="5394250374101438068" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="53" startPosition="38" endLine="54" endPosition="40" />
+    <nodeInfo nodeId="5394250374101438075" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="54" startPosition="40" endLine="55" endPosition="20" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="49" endLine="63" endPosition="26" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="26" endLine="64" endPosition="67" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="64" startPosition="67" endLine="65" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="7" endLine="67" endPosition="167" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="67" startPosition="167" endLine="68" endPosition="43" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="68" startPosition="43" endLine="69" endPosition="78" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="69" startPosition="78" endLine="70" endPosition="31" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="71" startPosition="7" endLine="72" endPosition="20" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="90" endLine="81" endPosition="26" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="81" startPosition="26" endLine="82" endPosition="67" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="82" startPosition="67" endLine="83" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="83" startPosition="32" endLine="84" endPosition="32" />
     <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="84" startPosition="32" endLine="85" endPosition="32" />
     <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="85" startPosition="32" endLine="86" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="86" startPosition="32" endLine="87" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="88" startPosition="7" endLine="89" endPosition="162" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="89" startPosition="162" endLine="90" endPosition="43" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="9" endLine="92" endPosition="171" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="92" startPosition="171" endLine="93" endPosition="45" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="93" startPosition="45" endLine="94" endPosition="73" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="94" startPosition="73" endLine="95" endPosition="58" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="9" endLine="98" endPosition="172" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="98" startPosition="172" endLine="99" endPosition="45" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="99" startPosition="45" endLine="100" endPosition="83" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="11" endLine="102" endPosition="58" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="103" startPosition="39" endLine="104" endPosition="84" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="106" startPosition="11" endLine="107" endPosition="60" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="108" startPosition="9" endLine="109" endPosition="31" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="110" startPosition="7" endLine="111" endPosition="20" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="49" endLine="120" endPosition="26" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="120" startPosition="26" endLine="121" endPosition="67" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="121" startPosition="67" endLine="122" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="122" startPosition="32" endLine="123" endPosition="32" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="124" startPosition="7" endLine="125" endPosition="168" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="125" startPosition="168" endLine="126" endPosition="43" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="9" endLine="128" endPosition="45" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="128" startPosition="45" endLine="129" endPosition="30" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="130" startPosition="66" endLine="131" endPosition="56" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="18" endLine="133" endPosition="57" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="133" startPosition="57" endLine="134" endPosition="41" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="136" startPosition="38" endLine="137" endPosition="86" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="139" startPosition="9" endLine="140" endPosition="31" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="141" startPosition="7" endLine="142" endPosition="20" />
-    <nodeInfo nodeId="6276897598755405041" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="10" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="57" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="52" endLine="79" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="55" endLine="117" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404963" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="77" endLine="26" endPosition="3" />
-    <nodeInfo nodeId="7907821417706853167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="190" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideConceptMethodStrategy.java" startLine="102" startPosition="58" endLine="105" endPosition="13" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="16" endLine="135" endPosition="11" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="135" startPosition="11" endLine="138" endPosition="11" />
-    <nodeInfo nodeId="6276897598755404999" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="147" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="6276897598755405060" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404990" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="33" startPosition="5" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="6276897598755405020" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="39" startPosition="188" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="32" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="90" startPosition="43" endLine="96" endPosition="9" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="100" startPosition="83" endLine="106" endPosition="11" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="129" startPosition="30" endLine="135" endPosition="11" />
-    <nodeInfo nodeId="6276897598755405066" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="9" endLine="108" endPosition="9" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="126" startPosition="43" endLine="139" endPosition="9" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="32" endLine="141" endPosition="7" />
-    <nodeInfo nodeId="6276897598755404970" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="32" endLine="110" endPosition="7" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="0" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="60" startPosition="48" endLine="60" endPosition="48" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="78" startPosition="43" endLine="78" endPosition="43" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="116" startPosition="46" endLine="116" endPosition="46" />
-    <scopeInfo nodeId="6276897598755404966" fileName="OverrideConceptMethodStrategy.java" startLine="24" startPosition="57" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="7907821417706853168" fileName="OverrideConceptMethodStrategy.java" startLine="31" startPosition="121" endLine="32" endPosition="33" />
-    <scopeInfo nodeId="6276897598755405000" fileName="OverrideConceptMethodStrategy.java" startLine="35" startPosition="37" endLine="36" endPosition="100" />
-    <scopeInfo nodeId="6276897598755405021" fileName="OverrideConceptMethodStrategy.java" startLine="40" startPosition="143" endLine="41" endPosition="230" />
-    <scopeInfo nodeId="6276897598755405042" fileName="OverrideConceptMethodStrategy.java" startLine="42" startPosition="12" endLine="43" endPosition="170" />
-    <scopeInfo nodeId="6276897598755405063" fileName="OverrideConceptMethodStrategy.java" startLine="47" startPosition="28" endLine="48" endPosition="29" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="103" startPosition="39" endLine="104" endPosition="84" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="130" startPosition="66" endLine="131" endPosition="56" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="136" startPosition="38" endLine="137" endPosition="86" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="57" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="52" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="55" endLine="117" endPosition="5" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="18" endLine="134" endPosition="41" />
-    <scopeInfo nodeId="6276897598755404963" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="77" endLine="26" endPosition="3">
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="7" endLine="88" endPosition="162" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="88" startPosition="162" endLine="89" endPosition="43" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="90" startPosition="9" endLine="91" endPosition="171" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="171" endLine="92" endPosition="45" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="92" startPosition="45" endLine="93" endPosition="73" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="93" startPosition="73" endLine="94" endPosition="58" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="9" endLine="97" endPosition="172" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="172" endLine="98" endPosition="45" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="98" startPosition="45" endLine="99" endPosition="83" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="100" startPosition="11" endLine="101" endPosition="58" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="102" startPosition="39" endLine="103" endPosition="84" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="105" startPosition="11" endLine="106" endPosition="60" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="107" startPosition="9" endLine="108" endPosition="31" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="109" startPosition="7" endLine="110" endPosition="20" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="49" endLine="119" endPosition="26" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="26" endLine="120" endPosition="67" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="120" startPosition="67" endLine="121" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="121" startPosition="32" endLine="122" endPosition="32" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="7" endLine="124" endPosition="168" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="124" startPosition="168" endLine="125" endPosition="43" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="126" startPosition="9" endLine="127" endPosition="45" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="45" endLine="128" endPosition="30" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="129" startPosition="66" endLine="130" endPosition="64" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="131" startPosition="18" endLine="132" endPosition="57" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="132" startPosition="57" endLine="133" endPosition="41" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="135" startPosition="38" endLine="136" endPosition="86" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideConceptMethodStrategy.java" startLine="138" startPosition="9" endLine="139" endPosition="31" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideConceptMethodStrategy.java" startLine="140" startPosition="7" endLine="141" endPosition="20" />
+    <nodeInfo nodeId="6276897598755405041" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="41" startPosition="10" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="58" startPosition="57" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="76" startPosition="52" endLine="78" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="114" startPosition="55" endLine="116" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404963" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="22" startPosition="77" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="7907821417706853167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="29" startPosition="190" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="58" endLine="104" endPosition="13" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="131" startPosition="16" endLine="134" endPosition="11" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="134" startPosition="11" endLine="137" endPosition="11" />
+    <nodeInfo nodeId="6276897598755404999" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="33" startPosition="147" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="6276897598755405060" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404990" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideConceptMethodStrategy.java" startLine="32" startPosition="5" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="6276897598755405020" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="38" startPosition="188" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="65" startPosition="32" endLine="71" endPosition="7" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="89" startPosition="43" endLine="95" endPosition="9" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="99" startPosition="83" endLine="105" endPosition="11" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideConceptMethodStrategy.java" startLine="128" startPosition="30" endLine="134" endPosition="11" />
+    <nodeInfo nodeId="6276897598755405066" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="49" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="95" startPosition="9" endLine="107" endPosition="9" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="61" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="125" startPosition="43" endLine="138" endPosition="9" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="122" startPosition="32" endLine="140" endPosition="7" />
+    <nodeInfo nodeId="6276897598755404970" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="26" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideConceptMethodStrategy.java" startLine="86" startPosition="32" endLine="109" endPosition="7" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="117" startPosition="0" endLine="143" endPosition="0" />
+    <nodeInfo nodeId="6276897598755404961" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideConceptMethodStrategy.java" startLine="79" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="48" endLine="59" endPosition="48" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="43" endLine="77" endPosition="43" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="46" endLine="115" endPosition="46" />
+    <scopeInfo nodeId="6276897598755404966" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="57" endLine="24" endPosition="19" />
+    <scopeInfo nodeId="7907821417706853168" fileName="OverrideConceptMethodStrategy.java" startLine="30" startPosition="121" endLine="31" endPosition="33" />
+    <scopeInfo nodeId="6276897598755405000" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="37" endLine="35" endPosition="100" />
+    <scopeInfo nodeId="6276897598755405021" fileName="OverrideConceptMethodStrategy.java" startLine="39" startPosition="143" endLine="40" endPosition="230" />
+    <scopeInfo nodeId="6276897598755405042" fileName="OverrideConceptMethodStrategy.java" startLine="41" startPosition="12" endLine="42" endPosition="170" />
+    <scopeInfo nodeId="6276897598755405063" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="28" endLine="47" endPosition="29" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="102" startPosition="39" endLine="103" endPosition="84" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="129" startPosition="66" endLine="130" endPosition="64" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="135" startPosition="38" endLine="136" endPosition="86" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="58" startPosition="57" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="76" startPosition="52" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="114" startPosition="55" endLine="116" endPosition="5" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="131" startPosition="18" endLine="133" endPosition="41" />
+    <scopeInfo nodeId="6276897598755404963" fileName="OverrideConceptMethodStrategy.java" startLine="22" startPosition="77" endLine="25" endPosition="3">
       <varInfo nodeId="4393431345217255532" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="102" startPosition="58" endLine="105" endPosition="13" />
-    <scopeInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="147" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6276897598755405060" fileName="OverrideConceptMethodStrategy.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="67" startPosition="7" endLine="71" endPosition="31" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="91" startPosition="9" endLine="95" endPosition="58" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="11" endLine="105" endPosition="13" />
-    <scopeInfo nodeId="6276897598755405069" fileName="OverrideConceptMethodStrategy.java" startLine="51" startPosition="56" endLine="56" endPosition="20">
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="101" startPosition="58" endLine="104" endPosition="13" />
+    <scopeInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="33" startPosition="147" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6276897598755405060" fileName="OverrideConceptMethodStrategy.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="7" endLine="70" endPosition="31" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="90" startPosition="9" endLine="94" endPosition="58" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="100" startPosition="11" endLine="104" endPosition="13" />
+    <scopeInfo nodeId="6276897598755405069" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="56" endLine="55" endPosition="20">
       <varInfo nodeId="5394250374101438049" varName="optPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="66" startPosition="32" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="90" startPosition="43" endLine="96" endPosition="9" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="100" startPosition="83" endLine="106" endPosition="11" />
-    <scopeInfo nodeId="6276897598755405066" fileName="OverrideConceptMethodStrategy.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="63" startPosition="49" endLine="73" endPosition="20" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="97" startPosition="9" endLine="107" endPosition="60" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="127" startPosition="9" endLine="138" endPosition="11" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="9" endLine="108" endPosition="9" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="126" startPosition="43" endLine="139" endPosition="9" />
-    <scopeInfo nodeId="6276897598755404973" fileName="OverrideConceptMethodStrategy.java" startLine="28" startPosition="62" endLine="44" endPosition="5">
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="65" startPosition="32" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="89" startPosition="43" endLine="95" endPosition="9" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="99" startPosition="83" endLine="105" endPosition="11" />
+    <scopeInfo nodeId="6276897598755405066" fileName="OverrideConceptMethodStrategy.java" startLine="49" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="62" startPosition="49" endLine="72" endPosition="20" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="96" startPosition="9" endLine="106" endPosition="60" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="126" startPosition="9" endLine="137" endPosition="11" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="95" startPosition="9" endLine="107" endPosition="9" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="61" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="125" startPosition="43" endLine="138" endPosition="9" />
+    <scopeInfo nodeId="6276897598755404973" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="62" endLine="43" endPosition="5">
       <varInfo nodeId="5817167241946142671" varName="superCallExpr" />
       <varInfo nodeId="7907821417706853157" varName="sourceMethodConcept" />
       <varInfo nodeId="6276897598755404991" varName="paramList" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="124" startPosition="7" endLine="140" endPosition="31" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="32" endLine="141" endPosition="7" />
-    <scopeInfo nodeId="6276897598755404970" fileName="OverrideConceptMethodStrategy.java" startLine="27" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="123" startPosition="7" endLine="139" endPosition="31" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="122" startPosition="32" endLine="140" endPosition="7" />
+    <scopeInfo nodeId="6276897598755404970" fileName="OverrideConceptMethodStrategy.java" startLine="26" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="6276897598755405056" varName="sourceMethod" />
       <varInfo nodeId="6276897598755405058" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="88" startPosition="7" endLine="109" endPosition="31" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="32" endLine="110" endPosition="7" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="119" startPosition="49" endLine="142" endPosition="20" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="81" startPosition="90" endLine="111" endPosition="20" />
-    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="0" endLine="113" endPosition="0" />
-    <unitInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="34" startPosition="120" endLine="38" endPosition="5" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$1" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="59" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0a0d0a" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="115" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0f0a" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="77" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a4a0" />
-    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="23" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="87" startPosition="7" endLine="108" endPosition="31" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="86" startPosition="32" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="118" startPosition="49" endLine="141" endPosition="20" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="117" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="80" startPosition="90" endLine="110" endPosition="20" />
+    <scopeInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="79" startPosition="0" endLine="112" endPosition="0" />
+    <unitInfo nodeId="6276897598755404999" fileName="OverrideConceptMethodStrategy.java" startLine="33" startPosition="120" endLine="37" endPosition="5" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$1" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="58" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0a0d0a" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="114" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a0a0f0a" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="76" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy$QuotationClass_3gioqg_a0a4a0" />
+    <unitInfo nodeId="6276897598755404961" fileName="OverrideConceptMethodStrategy.java" startLine="22" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodStrategy" />
   </root>
   <root nodeId="6351584993764480814">
     <nodeInfo nodeId="6351584993764485036" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NewModelUtil.java" startLine="15" startPosition="104" endLine="16" endPosition="93" />
@@ -6327,142 +6327,142 @@
     <unitInfo nodeId="6351584993764480814" fileName="NewModelUtil.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModelUtil" />
   </root>
   <root nodeId="6359127068906170520">
-    <nodeInfo nodeId="6359127068906170526" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="17" startPosition="101" endLine="18" endPosition="39" />
-    <nodeInfo nodeId="5394250374101374733" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="18" startPosition="39" endLine="19" endPosition="39" />
-    <nodeInfo nodeId="6359127068906170529" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="19" startPosition="39" endLine="20" endPosition="66" />
-    <nodeInfo nodeId="4393431345217231641" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="22" startPosition="46" endLine="23" endPosition="130" />
-    <nodeInfo nodeId="6359127068906225483" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="23" startPosition="130" endLine="24" endPosition="65" />
-    <nodeInfo nodeId="6359127068906225491" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="24" startPosition="65" endLine="25" endPosition="92" />
-    <nodeInfo nodeId="13814710162697077" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="BaseMethodUpdateStrategy.java" startLine="25" startPosition="92" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="5394250374101437003" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="26" startPosition="0" endLine="27" endPosition="60" />
-    <nodeInfo nodeId="5394250374101437014" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="27" startPosition="60" endLine="28" endPosition="87" />
-    <nodeInfo nodeId="5394250374101438128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="32" startPosition="44" endLine="33" endPosition="39" />
-    <nodeInfo nodeId="5394250374101438141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="35" startPosition="61" endLine="36" endPosition="32" />
-    <nodeInfo nodeId="5137877746012876018" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="41" startPosition="40" endLine="42" endPosition="30" />
-    <nodeInfo nodeId="5394250374101438025" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="45" startPosition="42" endLine="46" endPosition="30" />
-    <nodeInfo nodeId="6359127068906225554" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="49" startPosition="62" endLine="50" endPosition="94" />
-    <nodeInfo nodeId="5394250374101438079" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="50" startPosition="94" endLine="51" endPosition="89" />
-    <nodeInfo nodeId="5394250374101438256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="53" startPosition="63" endLine="54" endPosition="32" />
-    <nodeInfo nodeId="5137877746012876084" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="60" startPosition="31" endLine="61" endPosition="18" />
-    <nodeInfo nodeId="5137877746012876087" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="BaseMethodUpdateStrategy.java" startLine="62" startPosition="5" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="5137877746012876048" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="64" startPosition="42" endLine="65" endPosition="97" />
-    <nodeInfo nodeId="5137877746012876057" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="66" startPosition="12" endLine="67" endPosition="98" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="75" startPosition="49" endLine="76" endPosition="26" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="76" startPosition="26" endLine="77" endPosition="67" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="77" startPosition="67" endLine="78" endPosition="32" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="78" startPosition="32" endLine="79" endPosition="32" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="80" startPosition="7" endLine="81" endPosition="164" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="81" startPosition="164" endLine="82" endPosition="43" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="83" startPosition="9" endLine="84" endPosition="45" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="84" startPosition="45" endLine="85" endPosition="30" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="86" startPosition="66" endLine="87" endPosition="56" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="88" startPosition="18" endLine="89" endPosition="57" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="89" startPosition="57" endLine="90" endPosition="41" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="92" startPosition="38" endLine="93" endPosition="86" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="95" startPosition="9" endLine="96" endPosition="31" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="97" startPosition="7" endLine="98" endPosition="20" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="106" startPosition="49" endLine="107" endPosition="26" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="107" startPosition="26" endLine="108" endPosition="67" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="108" startPosition="67" endLine="109" endPosition="32" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="109" startPosition="32" endLine="110" endPosition="32" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="111" startPosition="7" endLine="112" endPosition="168" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="112" startPosition="168" endLine="113" endPosition="43" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="114" startPosition="9" endLine="115" endPosition="45" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="115" startPosition="45" endLine="116" endPosition="30" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="117" startPosition="66" endLine="118" endPosition="56" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="119" startPosition="18" endLine="120" endPosition="57" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="120" startPosition="57" endLine="121" endPosition="41" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="123" startPosition="38" endLine="124" endPosition="86" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="126" startPosition="9" endLine="127" endPosition="31" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="128" startPosition="7" endLine="129" endPosition="20" />
-    <nodeInfo nodeId="5137877746012876055" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="66" startPosition="10" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="71" startPosition="53" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="102" startPosition="54" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="5394250374101438134" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUpdateStrategy.java" startLine="34" startPosition="12" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="5394250374101438252" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUpdateStrategy.java" startLine="52" startPosition="42" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="5137877746012876074" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="59" startPosition="53" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="88" startPosition="16" endLine="91" endPosition="11" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="91" startPosition="11" endLine="94" endPosition="11" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="119" startPosition="16" endLine="122" endPosition="11" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="122" startPosition="11" endLine="125" endPosition="11" />
-    <nodeInfo nodeId="5394250374101438132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="34" startPosition="10" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="6359127068906225525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="5394250374101438021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <nodeInfo nodeId="5394250374101438175" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="51" startPosition="89" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="5137877746012876030" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="63" startPosition="0" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="85" startPosition="30" endLine="91" endPosition="11" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="116" startPosition="30" endLine="122" endPosition="11" />
-    <nodeInfo nodeId="5394250374101438123" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="31" startPosition="45" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="6359127068906170522" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="21" startPosition="0" endLine="29" endPosition="3" />
-    <nodeInfo nodeId="5394250374101438119" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="6359127068906225546" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="48" startPosition="0" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="5137877746012821063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="82" startPosition="43" endLine="95" endPosition="9" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="113" startPosition="43" endLine="126" endPosition="9" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="79" startPosition="32" endLine="97" endPosition="7" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="110" startPosition="32" endLine="128" endPosition="7" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="74" startPosition="0" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="105" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="72" startPosition="44" endLine="72" endPosition="44" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="103" startPosition="45" endLine="103" endPosition="45" />
-    <scopeInfo nodeId="5394250374101438127" fileName="BaseMethodUpdateStrategy.java" startLine="32" startPosition="44" endLine="33" endPosition="39" />
-    <scopeInfo nodeId="5394250374101438140" fileName="BaseMethodUpdateStrategy.java" startLine="35" startPosition="61" endLine="36" endPosition="32" />
-    <scopeInfo nodeId="6359127068906225530" fileName="BaseMethodUpdateStrategy.java" startLine="41" startPosition="40" endLine="42" endPosition="30" />
-    <scopeInfo nodeId="5394250374101438024" fileName="BaseMethodUpdateStrategy.java" startLine="45" startPosition="42" endLine="46" endPosition="30" />
-    <scopeInfo nodeId="5394250374101438255" fileName="BaseMethodUpdateStrategy.java" startLine="53" startPosition="63" endLine="54" endPosition="32" />
-    <scopeInfo nodeId="5137877746012876075" fileName="BaseMethodUpdateStrategy.java" startLine="60" startPosition="31" endLine="61" endPosition="18" />
-    <scopeInfo nodeId="5137877746012876031" fileName="BaseMethodUpdateStrategy.java" startLine="64" startPosition="42" endLine="65" endPosition="97" />
-    <scopeInfo nodeId="5137877746012876056" fileName="BaseMethodUpdateStrategy.java" startLine="66" startPosition="12" endLine="67" endPosition="98" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="86" startPosition="66" endLine="87" endPosition="56" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="92" startPosition="38" endLine="93" endPosition="86" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="117" startPosition="66" endLine="118" endPosition="56" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="123" startPosition="38" endLine="124" endPosition="86" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="71" startPosition="53" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="88" startPosition="18" endLine="90" endPosition="41" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="102" startPosition="54" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="119" startPosition="18" endLine="121" endPosition="41" />
-    <scopeInfo nodeId="5394250374101438133" fileName="BaseMethodUpdateStrategy.java" startLine="34" startPosition="12" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="5394250374101438134" fileName="BaseMethodUpdateStrategy.java" startLine="34" startPosition="12" endLine="37" endPosition="7">
+    <nodeInfo nodeId="6359127068906170526" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="16" startPosition="101" endLine="17" endPosition="39" />
+    <nodeInfo nodeId="5394250374101374733" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="17" startPosition="39" endLine="18" endPosition="39" />
+    <nodeInfo nodeId="6359127068906170529" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="18" startPosition="39" endLine="19" endPosition="66" />
+    <nodeInfo nodeId="4393431345217231641" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="21" startPosition="46" endLine="22" endPosition="130" />
+    <nodeInfo nodeId="6359127068906225483" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="22" startPosition="130" endLine="23" endPosition="65" />
+    <nodeInfo nodeId="6359127068906225491" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="23" startPosition="65" endLine="24" endPosition="92" />
+    <nodeInfo nodeId="13814710162697077" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="BaseMethodUpdateStrategy.java" startLine="24" startPosition="92" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="5394250374101437003" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="25" startPosition="0" endLine="26" endPosition="60" />
+    <nodeInfo nodeId="5394250374101437014" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="26" startPosition="60" endLine="27" endPosition="87" />
+    <nodeInfo nodeId="5394250374101438128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="31" startPosition="44" endLine="32" endPosition="39" />
+    <nodeInfo nodeId="5394250374101438141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="34" startPosition="61" endLine="35" endPosition="32" />
+    <nodeInfo nodeId="5137877746012876018" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="40" startPosition="40" endLine="41" endPosition="30" />
+    <nodeInfo nodeId="5394250374101438025" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="44" startPosition="42" endLine="45" endPosition="30" />
+    <nodeInfo nodeId="6359127068906225554" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="48" startPosition="62" endLine="49" endPosition="94" />
+    <nodeInfo nodeId="5394250374101438079" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="49" startPosition="94" endLine="50" endPosition="89" />
+    <nodeInfo nodeId="5394250374101438256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="52" startPosition="63" endLine="53" endPosition="32" />
+    <nodeInfo nodeId="5137877746012876084" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="59" startPosition="31" endLine="60" endPosition="18" />
+    <nodeInfo nodeId="5137877746012876087" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="BaseMethodUpdateStrategy.java" startLine="61" startPosition="5" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="5137877746012876048" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="63" startPosition="42" endLine="64" endPosition="97" />
+    <nodeInfo nodeId="5137877746012876057" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="65" startPosition="12" endLine="66" endPosition="98" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="74" startPosition="49" endLine="75" endPosition="26" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="75" startPosition="26" endLine="76" endPosition="67" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="76" startPosition="67" endLine="77" endPosition="32" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="77" startPosition="32" endLine="78" endPosition="32" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="79" startPosition="7" endLine="80" endPosition="164" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="80" startPosition="164" endLine="81" endPosition="43" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="82" startPosition="9" endLine="83" endPosition="45" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="83" startPosition="45" endLine="84" endPosition="30" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="85" startPosition="66" endLine="86" endPosition="64" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="87" startPosition="18" endLine="88" endPosition="57" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="88" startPosition="57" endLine="89" endPosition="41" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="91" startPosition="38" endLine="92" endPosition="86" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="94" startPosition="9" endLine="95" endPosition="31" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="96" startPosition="7" endLine="97" endPosition="20" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="105" startPosition="49" endLine="106" endPosition="26" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="106" startPosition="26" endLine="107" endPosition="67" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="107" startPosition="67" endLine="108" endPosition="32" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="108" startPosition="32" endLine="109" endPosition="32" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="110" startPosition="7" endLine="111" endPosition="168" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="111" startPosition="168" endLine="112" endPosition="43" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="113" startPosition="9" endLine="114" endPosition="45" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodUpdateStrategy.java" startLine="114" startPosition="45" endLine="115" endPosition="30" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="116" startPosition="66" endLine="117" endPosition="64" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="118" startPosition="18" endLine="119" endPosition="57" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="119" startPosition="57" endLine="120" endPosition="41" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="122" startPosition="38" endLine="123" endPosition="86" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodUpdateStrategy.java" startLine="125" startPosition="9" endLine="126" endPosition="31" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodUpdateStrategy.java" startLine="127" startPosition="7" endLine="128" endPosition="20" />
+    <nodeInfo nodeId="5137877746012876055" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="65" startPosition="10" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="70" startPosition="53" endLine="72" endPosition="5" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="101" startPosition="54" endLine="103" endPosition="5" />
+    <nodeInfo nodeId="5394250374101438134" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUpdateStrategy.java" startLine="33" startPosition="12" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="5394250374101438252" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUpdateStrategy.java" startLine="51" startPosition="42" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="5137877746012876074" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="58" startPosition="53" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="87" startPosition="16" endLine="90" endPosition="11" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="90" startPosition="11" endLine="93" endPosition="11" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="118" startPosition="16" endLine="121" endPosition="11" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="121" startPosition="11" endLine="124" endPosition="11" />
+    <nodeInfo nodeId="5394250374101438132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="33" startPosition="10" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="6359127068906225525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="5394250374101438021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="5394250374101438175" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="50" startPosition="89" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="5137877746012876030" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="62" startPosition="0" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="84" startPosition="30" endLine="90" endPosition="11" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="115" startPosition="30" endLine="121" endPosition="11" />
+    <nodeInfo nodeId="5394250374101438123" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodUpdateStrategy.java" startLine="30" startPosition="45" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="6359127068906170522" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="20" startPosition="0" endLine="28" endPosition="3" />
+    <nodeInfo nodeId="5394250374101438119" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="29" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="6359127068906225546" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="47" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="5137877746012821063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="57" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="81" startPosition="43" endLine="94" endPosition="9" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="112" startPosition="43" endLine="125" endPosition="9" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="78" startPosition="32" endLine="96" endPosition="7" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodUpdateStrategy.java" startLine="109" startPosition="32" endLine="127" endPosition="7" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="73" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="6359127068906170520" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodUpdateStrategy.java" startLine="104" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="71" startPosition="44" endLine="71" endPosition="44" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="102" startPosition="45" endLine="102" endPosition="45" />
+    <scopeInfo nodeId="5394250374101438127" fileName="BaseMethodUpdateStrategy.java" startLine="31" startPosition="44" endLine="32" endPosition="39" />
+    <scopeInfo nodeId="5394250374101438140" fileName="BaseMethodUpdateStrategy.java" startLine="34" startPosition="61" endLine="35" endPosition="32" />
+    <scopeInfo nodeId="6359127068906225530" fileName="BaseMethodUpdateStrategy.java" startLine="40" startPosition="40" endLine="41" endPosition="30" />
+    <scopeInfo nodeId="5394250374101438024" fileName="BaseMethodUpdateStrategy.java" startLine="44" startPosition="42" endLine="45" endPosition="30" />
+    <scopeInfo nodeId="5394250374101438255" fileName="BaseMethodUpdateStrategy.java" startLine="52" startPosition="63" endLine="53" endPosition="32" />
+    <scopeInfo nodeId="5137877746012876075" fileName="BaseMethodUpdateStrategy.java" startLine="59" startPosition="31" endLine="60" endPosition="18" />
+    <scopeInfo nodeId="5137877746012876031" fileName="BaseMethodUpdateStrategy.java" startLine="63" startPosition="42" endLine="64" endPosition="97" />
+    <scopeInfo nodeId="5137877746012876056" fileName="BaseMethodUpdateStrategy.java" startLine="65" startPosition="12" endLine="66" endPosition="98" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="85" startPosition="66" endLine="86" endPosition="64" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="91" startPosition="38" endLine="92" endPosition="86" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="116" startPosition="66" endLine="117" endPosition="64" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="122" startPosition="38" endLine="123" endPosition="86" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="70" startPosition="53" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="87" startPosition="18" endLine="89" endPosition="41" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="101" startPosition="54" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="118" startPosition="18" endLine="120" endPosition="41" />
+    <scopeInfo nodeId="5394250374101438133" fileName="BaseMethodUpdateStrategy.java" startLine="33" startPosition="12" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="5394250374101438134" fileName="BaseMethodUpdateStrategy.java" startLine="33" startPosition="12" endLine="36" endPosition="7">
       <varInfo nodeId="5394250374101438138" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="5394250374101438176" fileName="BaseMethodUpdateStrategy.java" startLine="52" startPosition="42" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="5394250374101438252" fileName="BaseMethodUpdateStrategy.java" startLine="52" startPosition="42" endLine="55" endPosition="7">
+    <scopeInfo nodeId="5394250374101438176" fileName="BaseMethodUpdateStrategy.java" startLine="51" startPosition="42" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="5394250374101438252" fileName="BaseMethodUpdateStrategy.java" startLine="51" startPosition="42" endLine="54" endPosition="7">
       <varInfo nodeId="5394250374101438253" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6359127068906225525" fileName="BaseMethodUpdateStrategy.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="5394250374101438021" fileName="BaseMethodUpdateStrategy.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6359127068906170525" fileName="BaseMethodUpdateStrategy.java" startLine="22" startPosition="46" endLine="28" endPosition="87" />
-    <scopeInfo nodeId="5394250374101438122" fileName="BaseMethodUpdateStrategy.java" startLine="31" startPosition="45" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="6359127068906225553" fileName="BaseMethodUpdateStrategy.java" startLine="49" startPosition="62" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="6359127068906170522" fileName="BaseMethodUpdateStrategy.java" startLine="21" startPosition="0" endLine="29" endPosition="3">
+    <scopeInfo nodeId="6359127068906225525" fileName="BaseMethodUpdateStrategy.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5394250374101438021" fileName="BaseMethodUpdateStrategy.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="6359127068906170525" fileName="BaseMethodUpdateStrategy.java" startLine="21" startPosition="46" endLine="27" endPosition="87" />
+    <scopeInfo nodeId="5394250374101438122" fileName="BaseMethodUpdateStrategy.java" startLine="30" startPosition="45" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="6359127068906225553" fileName="BaseMethodUpdateStrategy.java" startLine="48" startPosition="62" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="6359127068906170522" fileName="BaseMethodUpdateStrategy.java" startLine="20" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="4393431345217231635" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="5137877746012821066" fileName="BaseMethodUpdateStrategy.java" startLine="59" startPosition="53" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="5394250374101438119" fileName="BaseMethodUpdateStrategy.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="5137877746012821066" fileName="BaseMethodUpdateStrategy.java" startLine="58" startPosition="53" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="5394250374101438119" fileName="BaseMethodUpdateStrategy.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5394250374101438146" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6359127068906225546" fileName="BaseMethodUpdateStrategy.java" startLine="48" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="6359127068906225546" fileName="BaseMethodUpdateStrategy.java" startLine="47" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6359127068906225568" varName="sourceMethod" />
       <varInfo nodeId="6359127068906225570" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="83" startPosition="9" endLine="94" endPosition="11" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="114" startPosition="9" endLine="125" endPosition="11" />
-    <scopeInfo nodeId="5137877746012821063" fileName="BaseMethodUpdateStrategy.java" startLine="58" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="82" startPosition="9" endLine="93" endPosition="11" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="113" startPosition="9" endLine="124" endPosition="11" />
+    <scopeInfo nodeId="5137877746012821063" fileName="BaseMethodUpdateStrategy.java" startLine="57" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="5137877746012876016" varName="returnExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="82" startPosition="43" endLine="95" endPosition="9" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="113" startPosition="43" endLine="126" endPosition="9" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="80" startPosition="7" endLine="96" endPosition="31" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="111" startPosition="7" endLine="127" endPosition="31" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="79" startPosition="32" endLine="97" endPosition="7" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="110" startPosition="32" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="75" startPosition="49" endLine="98" endPosition="20" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="106" startPosition="49" endLine="129" endPosition="20" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="74" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="105" startPosition="0" endLine="131" endPosition="0" />
-    <unitInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="71" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy$QuotationClass_f5ta53_a0a0c0e" />
-    <unitInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="102" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy$QuotationClass_f5ta53_a0a0a2a4" />
-    <unitInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="17" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="81" startPosition="43" endLine="94" endPosition="9" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="112" startPosition="43" endLine="125" endPosition="9" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="79" startPosition="7" endLine="95" endPosition="31" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="110" startPosition="7" endLine="126" endPosition="31" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="78" startPosition="32" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="109" startPosition="32" endLine="127" endPosition="7" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="74" startPosition="49" endLine="97" endPosition="20" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="105" startPosition="49" endLine="128" endPosition="20" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="73" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="104" startPosition="0" endLine="130" endPosition="0" />
+    <unitInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="70" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy$QuotationClass_f5ta53_a0a0c0e" />
+    <unitInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="101" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy$QuotationClass_f5ta53_a0a0a2a4" />
+    <unitInfo nodeId="6359127068906170520" fileName="BaseMethodUpdateStrategy.java" startLine="16" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseMethodUpdateStrategy" />
   </root>
   <root nodeId="640843604926230885">
     <nodeInfo nodeId="640843604926264168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RuntimeFolderActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="128" />
@@ -8452,180 +8452,180 @@
     <nodeInfo nodeId="8243555296290550448" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Favorites_ActionGroup.java" startLine="23" startPosition="120" endLine="24" endPosition="81" />
   </root>
   <root nodeId="8300784086089079434">
-    <nodeInfo nodeId="8300784086089079442" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="28" startPosition="75" endLine="29" endPosition="31" />
-    <nodeInfo nodeId="1758506737085715448" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="29" startPosition="31" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="4393431345217255537" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="OverrideClassMethodStrategy.java" startLine="32" startPosition="55" endLine="33" endPosition="19" />
-    <nodeInfo nodeId="1758506737085642959" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="34" startPosition="9" endLine="35" endPosition="131" />
-    <nodeInfo nodeId="6359127068906225595" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="37" startPosition="5" endLine="38" endPosition="59" />
-    <nodeInfo nodeId="6359127068906225603" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="38" startPosition="59" endLine="39" endPosition="77" />
-    <nodeInfo nodeId="6359127068906225577" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="42" startPosition="62" endLine="43" endPosition="45" />
-    <nodeInfo nodeId="287511310790155726" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="44" startPosition="28" endLine="45" endPosition="81" />
-    <nodeInfo nodeId="287511310790145190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="47" startPosition="34" endLine="48" endPosition="41" />
-    <nodeInfo nodeId="287511310790155714" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="50" startPosition="159" endLine="51" endPosition="38" />
-    <nodeInfo nodeId="287511310790155721" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="OverrideClassMethodStrategy.java" startLine="51" startPosition="38" endLine="52" endPosition="16" />
-    <nodeInfo nodeId="2910980341266878303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="55" startPosition="32" endLine="56" endPosition="179" />
-    <nodeInfo nodeId="3359611512358152375" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="OverrideClassMethodStrategy.java" startLine="58" startPosition="5" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="6522274208130698459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="61" startPosition="37" endLine="62" endPosition="98" />
-    <nodeInfo nodeId="3359611512358152383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="64" startPosition="7" endLine="65" endPosition="165" />
-    <nodeInfo nodeId="5137877746012878309" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="OverrideClassMethodStrategy.java" startLine="65" startPosition="165" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="3359611512358152260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="67" startPosition="143" endLine="68" endPosition="228" />
-    <nodeInfo nodeId="3359611512358152349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="69" startPosition="12" endLine="70" endPosition="170" />
-    <nodeInfo nodeId="8300784086089079463" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="74" startPosition="28" endLine="75" endPosition="29" />
-    <nodeInfo nodeId="6359127068906225611" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="78" startPosition="56" endLine="79" endPosition="35" />
-    <nodeInfo nodeId="6359127068906225618" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="79" startPosition="35" endLine="80" endPosition="66" />
-    <nodeInfo nodeId="6359127068906283092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="80" startPosition="66" endLine="81" endPosition="38" />
-    <nodeInfo nodeId="5394250374101438035" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="81" startPosition="38" endLine="82" endPosition="40" />
-    <nodeInfo nodeId="6359127068906283103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="82" startPosition="40" endLine="83" endPosition="29" />
-    <nodeInfo nodeId="8300784086089079484" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="83" startPosition="29" endLine="84" endPosition="20" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="91" startPosition="31" endLine="92" endPosition="26" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="92" startPosition="26" endLine="93" endPosition="67" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="93" startPosition="67" endLine="94" endPosition="32" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="95" startPosition="7" endLine="96" endPosition="167" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="96" startPosition="167" endLine="97" endPosition="43" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="97" startPosition="43" endLine="98" endPosition="190" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="98" startPosition="190" endLine="99" endPosition="31" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="100" startPosition="7" endLine="101" endPosition="20" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="109" startPosition="49" endLine="110" endPosition="26" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="110" startPosition="26" endLine="111" endPosition="67" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="111" startPosition="67" endLine="112" endPosition="32" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="113" startPosition="7" endLine="114" endPosition="167" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="114" startPosition="167" endLine="115" endPosition="43" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="115" startPosition="43" endLine="116" endPosition="78" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="116" startPosition="78" endLine="117" endPosition="31" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="118" startPosition="7" endLine="119" endPosition="20" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="127" startPosition="69" endLine="128" endPosition="26" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="128" startPosition="26" endLine="129" endPosition="67" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="129" startPosition="67" endLine="130" endPosition="32" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="130" startPosition="32" endLine="131" endPosition="32" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="132" startPosition="7" endLine="133" endPosition="164" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="133" startPosition="164" endLine="134" endPosition="43" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="134" startPosition="43" endLine="135" endPosition="80" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="136" startPosition="9" endLine="137" endPosition="56" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="138" startPosition="37" endLine="139" endPosition="82" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="141" startPosition="9" endLine="142" endPosition="31" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="143" startPosition="7" endLine="144" endPosition="20" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="152" startPosition="49" endLine="153" endPosition="26" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="153" startPosition="26" endLine="154" endPosition="67" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="154" startPosition="67" endLine="155" endPosition="32" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="155" startPosition="32" endLine="156" endPosition="32" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="157" startPosition="7" endLine="158" endPosition="168" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="158" startPosition="168" endLine="159" endPosition="43" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="160" startPosition="9" endLine="161" endPosition="45" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="161" startPosition="45" endLine="162" endPosition="30" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="163" startPosition="66" endLine="164" endPosition="56" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="165" startPosition="18" endLine="166" endPosition="57" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="166" startPosition="57" endLine="167" endPosition="41" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="169" startPosition="38" endLine="170" endPosition="86" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="172" startPosition="9" endLine="173" endPosition="31" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="174" startPosition="7" endLine="175" endPosition="20" />
-    <nodeInfo nodeId="3359611512358152347" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="69" startPosition="10" endLine="71" endPosition="5" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="87" startPosition="57" endLine="89" endPosition="5" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="105" startPosition="57" endLine="107" endPosition="5" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="123" startPosition="52" endLine="125" endPosition="5" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="148" startPosition="55" endLine="150" endPosition="5" />
-    <nodeInfo nodeId="287511310790155724" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="43" startPosition="45" endLine="46" endPosition="5" />
-    <nodeInfo nodeId="1758506737085480642" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="54" startPosition="7" endLine="57" endPosition="7" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideClassMethodStrategy.java" startLine="137" startPosition="56" endLine="140" endPosition="11" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="165" startPosition="16" endLine="168" endPosition="11" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="168" startPosition="11" endLine="171" endPosition="11" />
-    <nodeInfo nodeId="1758506737085642932" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="OverrideClassMethodStrategy.java" startLine="33" startPosition="19" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="287511310790145454" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="49" startPosition="87" endLine="53" endPosition="9" />
-    <nodeInfo nodeId="6522274208130698457" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="60" startPosition="147" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="8300784086089079459" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <nodeInfo nodeId="6522274208130698448" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="59" startPosition="0" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="3359611512358152243" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="66" startPosition="0" endLine="71" endPosition="5" />
-    <nodeInfo nodeId="287511310790082011" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideClassMethodStrategy.java" startLine="48" startPosition="41" endLine="54" endPosition="7" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="94" startPosition="32" endLine="100" endPosition="7" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="112" startPosition="32" endLine="118" endPosition="7" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="135" startPosition="80" endLine="141" endPosition="9" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="162" startPosition="30" endLine="168" endPosition="11" />
-    <nodeInfo nodeId="8300784086089079436" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="31" startPosition="0" endLine="40" endPosition="3" />
-    <nodeInfo nodeId="8300784086089079465" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="77" startPosition="0" endLine="86" endPosition="0" />
-    <nodeInfo nodeId="2910980341266878291" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="46" startPosition="5" endLine="58" endPosition="5" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="131" startPosition="32" endLine="143" endPosition="7" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="90" startPosition="0" endLine="103" endPosition="0" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="108" startPosition="0" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="159" startPosition="43" endLine="172" endPosition="9" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="156" startPosition="32" endLine="174" endPosition="7" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="126" startPosition="0" endLine="146" endPosition="0" />
-    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="151" startPosition="0" endLine="177" endPosition="0" />
-    <nodeInfo nodeId="8300784086089079445" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="41" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1758506737085642935" fileName="OverrideClassMethodStrategy.java" startLine="36" startPosition="0" endLine="36" endPosition="38">
+    <nodeInfo nodeId="8300784086089079442" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="27" startPosition="75" endLine="28" endPosition="31" />
+    <nodeInfo nodeId="1758506737085715448" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="28" startPosition="31" endLine="29" endPosition="59" />
+    <nodeInfo nodeId="4393431345217255537" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="OverrideClassMethodStrategy.java" startLine="31" startPosition="55" endLine="32" endPosition="19" />
+    <nodeInfo nodeId="1758506737085642959" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="33" startPosition="9" endLine="34" endPosition="131" />
+    <nodeInfo nodeId="6359127068906225595" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="36" startPosition="5" endLine="37" endPosition="59" />
+    <nodeInfo nodeId="6359127068906225603" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="37" startPosition="59" endLine="38" endPosition="77" />
+    <nodeInfo nodeId="6359127068906225577" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="41" startPosition="62" endLine="42" endPosition="45" />
+    <nodeInfo nodeId="287511310790155726" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="43" startPosition="28" endLine="44" endPosition="81" />
+    <nodeInfo nodeId="287511310790145190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="46" startPosition="34" endLine="47" endPosition="41" />
+    <nodeInfo nodeId="287511310790155714" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="49" startPosition="159" endLine="50" endPosition="38" />
+    <nodeInfo nodeId="287511310790155721" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="OverrideClassMethodStrategy.java" startLine="50" startPosition="38" endLine="51" endPosition="16" />
+    <nodeInfo nodeId="2910980341266878303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="54" startPosition="32" endLine="55" endPosition="179" />
+    <nodeInfo nodeId="3359611512358152375" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="OverrideClassMethodStrategy.java" startLine="57" startPosition="5" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="6522274208130698459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="60" startPosition="37" endLine="61" endPosition="98" />
+    <nodeInfo nodeId="3359611512358152383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="63" startPosition="7" endLine="64" endPosition="165" />
+    <nodeInfo nodeId="5137877746012878309" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="OverrideClassMethodStrategy.java" startLine="64" startPosition="165" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="3359611512358152260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="66" startPosition="143" endLine="67" endPosition="228" />
+    <nodeInfo nodeId="3359611512358152349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="68" startPosition="12" endLine="69" endPosition="170" />
+    <nodeInfo nodeId="8300784086089079463" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="73" startPosition="28" endLine="74" endPosition="29" />
+    <nodeInfo nodeId="6359127068906225611" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="77" startPosition="56" endLine="78" endPosition="35" />
+    <nodeInfo nodeId="6359127068906225618" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="78" startPosition="35" endLine="79" endPosition="66" />
+    <nodeInfo nodeId="6359127068906283092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="79" startPosition="66" endLine="80" endPosition="38" />
+    <nodeInfo nodeId="5394250374101438035" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="80" startPosition="38" endLine="81" endPosition="40" />
+    <nodeInfo nodeId="6359127068906283103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="81" startPosition="40" endLine="82" endPosition="29" />
+    <nodeInfo nodeId="8300784086089079484" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="82" startPosition="29" endLine="83" endPosition="20" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="90" startPosition="31" endLine="91" endPosition="26" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="91" startPosition="26" endLine="92" endPosition="67" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="92" startPosition="67" endLine="93" endPosition="32" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="94" startPosition="7" endLine="95" endPosition="167" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="95" startPosition="167" endLine="96" endPosition="43" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="96" startPosition="43" endLine="97" endPosition="190" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="97" startPosition="190" endLine="98" endPosition="31" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="99" startPosition="7" endLine="100" endPosition="20" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="108" startPosition="49" endLine="109" endPosition="26" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="109" startPosition="26" endLine="110" endPosition="67" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="110" startPosition="67" endLine="111" endPosition="32" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="112" startPosition="7" endLine="113" endPosition="167" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="113" startPosition="167" endLine="114" endPosition="43" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="114" startPosition="43" endLine="115" endPosition="78" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="115" startPosition="78" endLine="116" endPosition="31" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="117" startPosition="7" endLine="118" endPosition="20" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="126" startPosition="69" endLine="127" endPosition="26" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="127" startPosition="26" endLine="128" endPosition="67" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="128" startPosition="67" endLine="129" endPosition="32" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="129" startPosition="32" endLine="130" endPosition="32" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="131" startPosition="7" endLine="132" endPosition="164" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="132" startPosition="164" endLine="133" endPosition="43" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="133" startPosition="43" endLine="134" endPosition="80" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="135" startPosition="9" endLine="136" endPosition="56" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="137" startPosition="37" endLine="138" endPosition="82" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="140" startPosition="9" endLine="141" endPosition="31" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="142" startPosition="7" endLine="143" endPosition="20" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="151" startPosition="49" endLine="152" endPosition="26" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="152" startPosition="26" endLine="153" endPosition="67" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="153" startPosition="67" endLine="154" endPosition="32" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="154" startPosition="32" endLine="155" endPosition="32" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="156" startPosition="7" endLine="157" endPosition="168" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="157" startPosition="168" endLine="158" endPosition="43" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="159" startPosition="9" endLine="160" endPosition="45" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="160" startPosition="45" endLine="161" endPosition="30" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="162" startPosition="66" endLine="163" endPosition="64" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="164" startPosition="18" endLine="165" endPosition="57" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="165" startPosition="57" endLine="166" endPosition="41" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="168" startPosition="38" endLine="169" endPosition="86" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideClassMethodStrategy.java" startLine="171" startPosition="9" endLine="172" endPosition="31" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideClassMethodStrategy.java" startLine="173" startPosition="7" endLine="174" endPosition="20" />
+    <nodeInfo nodeId="3359611512358152347" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="68" startPosition="10" endLine="70" endPosition="5" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="86" startPosition="57" endLine="88" endPosition="5" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="104" startPosition="57" endLine="106" endPosition="5" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="122" startPosition="52" endLine="124" endPosition="5" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="147" startPosition="55" endLine="149" endPosition="5" />
+    <nodeInfo nodeId="287511310790155724" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="42" startPosition="45" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="1758506737085480642" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="53" startPosition="7" endLine="56" endPosition="7" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideClassMethodStrategy.java" startLine="136" startPosition="56" endLine="139" endPosition="11" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="164" startPosition="16" endLine="167" endPosition="11" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="167" startPosition="11" endLine="170" endPosition="11" />
+    <nodeInfo nodeId="1758506737085642932" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="OverrideClassMethodStrategy.java" startLine="32" startPosition="19" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="287511310790145454" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="48" startPosition="87" endLine="52" endPosition="9" />
+    <nodeInfo nodeId="6522274208130698457" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="59" startPosition="147" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="8300784086089079459" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="6522274208130698448" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideClassMethodStrategy.java" startLine="58" startPosition="0" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="3359611512358152243" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="65" startPosition="0" endLine="70" endPosition="5" />
+    <nodeInfo nodeId="287511310790082011" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideClassMethodStrategy.java" startLine="47" startPosition="41" endLine="53" endPosition="7" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="93" startPosition="32" endLine="99" endPosition="7" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="111" startPosition="32" endLine="117" endPosition="7" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="134" startPosition="80" endLine="140" endPosition="9" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="161" startPosition="30" endLine="167" endPosition="11" />
+    <nodeInfo nodeId="8300784086089079436" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="30" startPosition="0" endLine="39" endPosition="3" />
+    <nodeInfo nodeId="8300784086089079465" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="76" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="2910980341266878291" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideClassMethodStrategy.java" startLine="45" startPosition="5" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="130" startPosition="32" endLine="142" endPosition="7" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="89" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="107" startPosition="0" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="158" startPosition="43" endLine="171" endPosition="9" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideClassMethodStrategy.java" startLine="155" startPosition="32" endLine="173" endPosition="7" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="125" startPosition="0" endLine="145" endPosition="0" />
+    <nodeInfo nodeId="8300784086089079434" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="150" startPosition="0" endLine="176" endPosition="0" />
+    <nodeInfo nodeId="8300784086089079445" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideClassMethodStrategy.java" startLine="40" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1758506737085642935" fileName="OverrideClassMethodStrategy.java" startLine="35" startPosition="0" endLine="35" endPosition="38">
       <varInfo nodeId="1758506737085642936" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1758506737085642938" fileName="OverrideClassMethodStrategy.java" startLine="36" startPosition="38" endLine="36" endPosition="38" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="88" startPosition="48" endLine="88" endPosition="48" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="106" startPosition="48" endLine="106" endPosition="48" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="124" startPosition="43" endLine="124" endPosition="43" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="149" startPosition="46" endLine="149" endPosition="46" />
-    <scopeInfo nodeId="1758506737085642933" fileName="OverrideClassMethodStrategy.java" startLine="34" startPosition="9" endLine="35" endPosition="131" />
-    <scopeInfo nodeId="287511310790155725" fileName="OverrideClassMethodStrategy.java" startLine="44" startPosition="28" endLine="45" endPosition="81" />
-    <scopeInfo nodeId="1758506737085480643" fileName="OverrideClassMethodStrategy.java" startLine="55" startPosition="32" endLine="56" endPosition="179" />
-    <scopeInfo nodeId="6522274208130698458" fileName="OverrideClassMethodStrategy.java" startLine="61" startPosition="37" endLine="62" endPosition="98" />
-    <scopeInfo nodeId="3359611512358152244" fileName="OverrideClassMethodStrategy.java" startLine="67" startPosition="143" endLine="68" endPosition="228" />
-    <scopeInfo nodeId="3359611512358152348" fileName="OverrideClassMethodStrategy.java" startLine="69" startPosition="12" endLine="70" endPosition="170" />
-    <scopeInfo nodeId="8300784086089079462" fileName="OverrideClassMethodStrategy.java" startLine="74" startPosition="28" endLine="75" endPosition="29" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="138" startPosition="37" endLine="139" endPosition="82" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="163" startPosition="66" endLine="164" endPosition="56" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="169" startPosition="38" endLine="170" endPosition="86" />
-    <scopeInfo nodeId="287511310790145455" fileName="OverrideClassMethodStrategy.java" startLine="50" startPosition="159" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="87" startPosition="57" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="105" startPosition="57" endLine="107" endPosition="5" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="123" startPosition="52" endLine="125" endPosition="5" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="148" startPosition="55" endLine="150" endPosition="5" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="165" startPosition="18" endLine="167" endPosition="41" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="137" startPosition="56" endLine="140" endPosition="11" />
-    <scopeInfo nodeId="287511310790082012" fileName="OverrideClassMethodStrategy.java" startLine="49" startPosition="87" endLine="53" endPosition="9" />
-    <scopeInfo nodeId="6522274208130698457" fileName="OverrideClassMethodStrategy.java" startLine="60" startPosition="147" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079459" fileName="OverrideClassMethodStrategy.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="95" startPosition="7" endLine="99" endPosition="31" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="113" startPosition="7" endLine="117" endPosition="31" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="136" startPosition="9" endLine="140" endPosition="11" />
-    <scopeInfo nodeId="287511310790082011" fileName="OverrideClassMethodStrategy.java" startLine="48" startPosition="41" endLine="54" endPosition="7">
+    <scopeInfo nodeId="1758506737085642938" fileName="OverrideClassMethodStrategy.java" startLine="35" startPosition="38" endLine="35" endPosition="38" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="87" startPosition="48" endLine="87" endPosition="48" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="105" startPosition="48" endLine="105" endPosition="48" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="123" startPosition="43" endLine="123" endPosition="43" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="148" startPosition="46" endLine="148" endPosition="46" />
+    <scopeInfo nodeId="1758506737085642933" fileName="OverrideClassMethodStrategy.java" startLine="33" startPosition="9" endLine="34" endPosition="131" />
+    <scopeInfo nodeId="287511310790155725" fileName="OverrideClassMethodStrategy.java" startLine="43" startPosition="28" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="1758506737085480643" fileName="OverrideClassMethodStrategy.java" startLine="54" startPosition="32" endLine="55" endPosition="179" />
+    <scopeInfo nodeId="6522274208130698458" fileName="OverrideClassMethodStrategy.java" startLine="60" startPosition="37" endLine="61" endPosition="98" />
+    <scopeInfo nodeId="3359611512358152244" fileName="OverrideClassMethodStrategy.java" startLine="66" startPosition="143" endLine="67" endPosition="228" />
+    <scopeInfo nodeId="3359611512358152348" fileName="OverrideClassMethodStrategy.java" startLine="68" startPosition="12" endLine="69" endPosition="170" />
+    <scopeInfo nodeId="8300784086089079462" fileName="OverrideClassMethodStrategy.java" startLine="73" startPosition="28" endLine="74" endPosition="29" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="137" startPosition="37" endLine="138" endPosition="82" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="162" startPosition="66" endLine="163" endPosition="64" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="168" startPosition="38" endLine="169" endPosition="86" />
+    <scopeInfo nodeId="287511310790145455" fileName="OverrideClassMethodStrategy.java" startLine="49" startPosition="159" endLine="51" endPosition="16" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="86" startPosition="57" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="104" startPosition="57" endLine="106" endPosition="5" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="122" startPosition="52" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="147" startPosition="55" endLine="149" endPosition="5" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="164" startPosition="18" endLine="166" endPosition="41" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="136" startPosition="56" endLine="139" endPosition="11" />
+    <scopeInfo nodeId="287511310790082012" fileName="OverrideClassMethodStrategy.java" startLine="48" startPosition="87" endLine="52" endPosition="9" />
+    <scopeInfo nodeId="6522274208130698457" fileName="OverrideClassMethodStrategy.java" startLine="59" startPosition="147" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079459" fileName="OverrideClassMethodStrategy.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="94" startPosition="7" endLine="98" endPosition="31" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="112" startPosition="7" endLine="116" endPosition="31" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="135" startPosition="9" endLine="139" endPosition="11" />
+    <scopeInfo nodeId="287511310790082011" fileName="OverrideClassMethodStrategy.java" startLine="47" startPosition="41" endLine="53" endPosition="7">
       <varInfo nodeId="287511310790082015" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079468" fileName="OverrideClassMethodStrategy.java" startLine="78" startPosition="56" endLine="84" endPosition="20">
+    <scopeInfo nodeId="8300784086089079468" fileName="OverrideClassMethodStrategy.java" startLine="77" startPosition="56" endLine="83" endPosition="20">
       <varInfo nodeId="6359127068906225612" varName="optPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="94" startPosition="32" endLine="100" endPosition="7" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="112" startPosition="32" endLine="118" endPosition="7" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="135" startPosition="80" endLine="141" endPosition="9" />
-    <scopeInfo nodeId="8300784086089079439" fileName="OverrideClassMethodStrategy.java" startLine="32" startPosition="55" endLine="39" endPosition="77" />
-    <scopeInfo nodeId="8300784086089079436" fileName="OverrideClassMethodStrategy.java" startLine="31" startPosition="0" endLine="40" endPosition="3">
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="93" startPosition="32" endLine="99" endPosition="7" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="111" startPosition="32" endLine="117" endPosition="7" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="134" startPosition="80" endLine="140" endPosition="9" />
+    <scopeInfo nodeId="8300784086089079439" fileName="OverrideClassMethodStrategy.java" startLine="31" startPosition="55" endLine="38" endPosition="77" />
+    <scopeInfo nodeId="8300784086089079436" fileName="OverrideClassMethodStrategy.java" startLine="30" startPosition="0" endLine="39" endPosition="3">
       <varInfo nodeId="4393431345217255516" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079465" fileName="OverrideClassMethodStrategy.java" startLine="77" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="2910980341266878292" fileName="OverrideClassMethodStrategy.java" startLine="47" startPosition="34" endLine="57" endPosition="7">
+    <scopeInfo nodeId="8300784086089079465" fileName="OverrideClassMethodStrategy.java" startLine="76" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="2910980341266878292" fileName="OverrideClassMethodStrategy.java" startLine="46" startPosition="34" endLine="56" endPosition="7">
       <varInfo nodeId="287511310790145191" varName="isNeedAddAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="91" startPosition="31" endLine="101" endPosition="20" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="109" startPosition="49" endLine="119" endPosition="20" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="132" startPosition="7" endLine="142" endPosition="31" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="160" startPosition="9" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="131" startPosition="32" endLine="143" endPosition="7" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="90" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="108" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="159" startPosition="43" endLine="172" endPosition="9" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="157" startPosition="7" endLine="173" endPosition="31" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="127" startPosition="69" endLine="144" endPosition="20" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="156" startPosition="32" endLine="174" endPosition="7" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="126" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="152" startPosition="49" endLine="175" endPosition="20" />
-    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="151" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="8300784086089079448" fileName="OverrideClassMethodStrategy.java" startLine="42" startPosition="62" endLine="71" endPosition="5">
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="90" startPosition="31" endLine="100" endPosition="20" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="108" startPosition="49" endLine="118" endPosition="20" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="131" startPosition="7" endLine="141" endPosition="31" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="159" startPosition="9" endLine="170" endPosition="11" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="130" startPosition="32" endLine="142" endPosition="7" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="89" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="107" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="158" startPosition="43" endLine="171" endPosition="9" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="156" startPosition="7" endLine="172" endPosition="31" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="126" startPosition="69" endLine="143" endPosition="20" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="155" startPosition="32" endLine="173" endPosition="7" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="125" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="151" startPosition="49" endLine="174" endPosition="20" />
+    <scopeInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="150" startPosition="0" endLine="176" endPosition="0" />
+    <scopeInfo nodeId="8300784086089079448" fileName="OverrideClassMethodStrategy.java" startLine="41" startPosition="62" endLine="70" endPosition="5">
       <varInfo nodeId="3359611512358152384" varName="superCallExpr" />
       <varInfo nodeId="6522274208130698449" varName="paramList" />
     </scopeInfo>
-    <scopeInfo nodeId="8300784086089079445" fileName="OverrideClassMethodStrategy.java" startLine="41" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="8300784086089079445" fileName="OverrideClassMethodStrategy.java" startLine="40" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="3359611512358152399" varName="sourceMethod" />
       <varInfo nodeId="8300784086089079457" varName="method" />
     </scopeInfo>
-    <unitInfo nodeId="6522274208130698457" fileName="OverrideClassMethodStrategy.java" startLine="60" startPosition="120" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$1" />
-    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="87" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a0a0c0c0a" />
-    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="105" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a0a0a0e0a" />
-    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="123" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a5a0" />
-    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="148" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a0a0h0a" />
-    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="28" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy" />
+    <unitInfo nodeId="6522274208130698457" fileName="OverrideClassMethodStrategy.java" startLine="59" startPosition="120" endLine="63" endPosition="5" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$1" />
+    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="86" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a0a0c0c0a" />
+    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="104" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a0a0a0e0a" />
+    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="122" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a5a0" />
+    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="147" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy$QuotationClass_px9rr4_a0a0a0h0a" />
+    <unitInfo nodeId="8300784086089079434" fileName="OverrideClassMethodStrategy.java" startLine="27" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideClassMethodStrategy" />
   </root>
   <root nodeId="8300784086089079504">
     <nodeInfo nodeId="4393431345217255364" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ImplementMethodStrategy.java" startLine="15" startPosition="51" endLine="16" endPosition="19" />
