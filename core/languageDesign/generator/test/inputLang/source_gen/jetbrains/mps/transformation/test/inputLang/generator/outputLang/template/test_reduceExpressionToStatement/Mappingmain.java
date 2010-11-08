@@ -66,7 +66,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1209150502311(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      return new Templateout_class().apply(environment, context, null);
+      return new Templateout_class().apply(environment, context);
     }
 
     public boolean applyToInheritors() {

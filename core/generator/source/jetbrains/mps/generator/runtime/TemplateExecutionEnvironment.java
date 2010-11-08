@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
@@ -32,16 +33,13 @@ public class TemplateExecutionEnvironment {
   private final TemplateGenerator generator;
   private final ReductionContext reductionContext;
   private final IOperationContext operationContext;
+  private final IGenerationTracer tracer;
 
-  public TemplateExecutionEnvironment(TemplateGenerator generator, ReductionContext reductionContext, IOperationContext operationContext) {
+  public TemplateExecutionEnvironment(TemplateGenerator generator, ReductionContext reductionContext, IOperationContext operationContext, IGenerationTracer tracer) {
     this.generator = generator;
     this.reductionContext = reductionContext;
     this.operationContext = operationContext;
-  }
-
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName) {
-    // TODO
-    return Collections.emptyList();
+    this.tracer = tracer;
   }
 
   public IOperationContext getOperationContext() {
@@ -52,7 +50,20 @@ public class TemplateExecutionEnvironment {
     return generator.getOutputModel();
   }
 
-  public void nodeCopied(SNode node, SNode outputNode, String mappingName, String templateNodeId) {
+  public TemplateGenerator getGenerator() {
+    return generator;
+  }
+
+  public IGenerationTracer getTracer() {
+    return tracer;
+  }
+
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName) {
+    // TODO
+    return Collections.emptyList();
+  }
+
+  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId) {
 
   }
 
@@ -77,5 +88,9 @@ public class TemplateExecutionEnvironment {
 
   public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
 
+  }
+
+  public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {
+    return null;
   }
 }

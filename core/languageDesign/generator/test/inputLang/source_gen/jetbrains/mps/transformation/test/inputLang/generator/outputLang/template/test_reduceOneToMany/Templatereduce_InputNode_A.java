@@ -18,7 +18,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
   public Templatereduce_InputNode_A() {
   }
 
-  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final Iterable<SNode> sourcelist1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
     final List<SNode> tlist1 = new ArrayList();
     for (SNode itnode1 : sourcelist1) {
@@ -36,9 +36,8 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     final SNode tnode3 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
     tnode3.setProperty("text", "child #2");
-    Collection<SNode> tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context, null);
-    // TODO SWITCH 
-    Collection<SNode> tlist5 = null;
+    Collection<SNode> tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context);
+    Collection<SNode> tlist5 = environment.processSwitch(null, context);
     return TemplateUtil.asList(tlist1, tnode3, tlist4, tlist5);
   }
 }

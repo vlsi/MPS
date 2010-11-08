@@ -17,7 +17,7 @@ public class Templateout_class implements TemplateDeclaration {
   public Templateout_class() {
   }
 
-  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     // TODO notify environment 
     tnode1.setProperty("name", "out_class");

@@ -38,7 +38,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1202255161954(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      return new TemplateOutputRoot_1().apply(environment, context, null);
+      return new TemplateOutputRoot_1().apply(environment, context);
     }
 
     public boolean applyToInheritors() {
@@ -63,7 +63,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1202338801829(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      return new TemplateOutputRoot_2().apply(environment, context, null);
+      return new TemplateOutputRoot_2().apply(environment, context);
     }
 
     public boolean applyToInheritors() {

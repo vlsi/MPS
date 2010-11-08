@@ -18,7 +18,7 @@ public class Templategen_static_method implements TemplateDeclaration {
   public Templategen_static_method() {
   }
 
-  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     TemplateContext context1 = context.subContext("testlabel");
     final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false);
     // TODO notify environment 

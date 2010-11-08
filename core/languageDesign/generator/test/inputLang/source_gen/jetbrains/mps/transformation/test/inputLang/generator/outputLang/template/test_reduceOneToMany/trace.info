@@ -7,7 +7,7 @@
   <unitInfo fileName="Mappingmain.java" startLine="32" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
   <unitInfo fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
   <unitInfo fileName="Mappingmain.java" startLine="53" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
-  <unitInfo fileName="Templatereduce_InputNode_A.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A" />
+  <unitInfo fileName="Templatereduce_InputNode_A.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A" />
   <unitInfo fileName="Switchswitch_InputNode_A.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A" />
   <unitInfo fileName="Mappingmain.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
   <root nodeId="3893401255414084744">

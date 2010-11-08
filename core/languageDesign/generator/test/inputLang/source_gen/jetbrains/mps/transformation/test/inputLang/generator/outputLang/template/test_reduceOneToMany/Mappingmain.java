@@ -37,7 +37,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414132234(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context, null);
+      Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;
     }
 
@@ -58,7 +58,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414129777(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      return new TemplateOutputRoot().apply(environment, context, null);
+      return new TemplateOutputRoot().apply(environment, context);
     }
 
     public boolean applyToInheritors() {

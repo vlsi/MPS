@@ -22,7 +22,7 @@ public class Templateprocess42 implements TemplateDeclaration {
     this.myNode = node;
   }
 
-  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     TemplateContext contextWithParameters = context;
     final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PlusExpression", false);
     // TODO notify environment 

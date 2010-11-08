@@ -33,7 +33,7 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      Collection<SNode> tlist1 = new Templatereduce_InputNode_A_switch().apply(environment, context, null);
+      Collection<SNode> tlist1 = new Templatereduce_InputNode_A_switch().apply(environment, context);
       return tlist1;
     }
 

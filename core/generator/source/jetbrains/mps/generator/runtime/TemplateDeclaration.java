@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, 10/22/10
@@ -27,6 +26,5 @@ import java.util.List;
 public interface TemplateDeclaration {
 
   Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment,
-                    @NotNull TemplateContext context,
-                    String mappingName) throws GenerationException;
+                          @NotNull TemplateContext context) throws GenerationException;
 }

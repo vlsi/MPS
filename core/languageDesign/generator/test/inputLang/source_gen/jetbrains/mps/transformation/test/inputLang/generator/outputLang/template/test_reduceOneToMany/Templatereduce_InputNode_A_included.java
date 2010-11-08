@@ -15,7 +15,7 @@ public class Templatereduce_InputNode_A_included implements TemplateDeclaration 
   public Templatereduce_InputNode_A_included() {
   }
 
-  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull TemplateContext context, String mappingName) throws GenerationException {
+  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
     tnode1.setProperty("text", "child included #1");
