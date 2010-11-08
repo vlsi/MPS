@@ -296,7 +296,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (mySModel != null) {
       mySModel.setModelDescriptor(this);
     }
-    SModelRepository.getInstance().markChanged(this, true);
+    SModelRepository.getInstance().markChanged(this, false);
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
       public void run() {
