@@ -4,7 +4,7 @@ package jetbrains.mps.ui.constraints;
 
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
-import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
+import jetbrains.mps.smodel.constraints.INodeReferenceFullSetHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class ContainerType_container_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
+public class ContainerType_container_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferenceFullSetHandler {
   public ContainerType_container_ReferentConstraint() {
   }
 
@@ -37,6 +37,10 @@ public class ContainerType_container_ReferentConstraint extends BaseNodeReferenc
     SLinkOperations.setTarget(referenceNode, "container", newReferentNode, false);
     SLinkOperations.setTarget(referenceNode, "uiObject", SNodeOperations.as(SNodeOperations.getParent(newReferentNode), "jetbrains.mps.ui.modeling.structure.UIObject"), false);
 
+  }
+
+  public boolean keepsOriginalReference(SNode referenceNode, SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
+    return true;
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {

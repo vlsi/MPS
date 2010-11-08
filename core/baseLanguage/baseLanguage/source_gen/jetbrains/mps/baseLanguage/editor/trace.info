@@ -335,7 +335,7 @@
   <unitInfo fileName="ArrayAccessExpression_Editor.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayAccessExpression_Editor" />
   <unitInfo fileName="AdditionalForLoopVariable_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AdditionalForLoopVariable_Editor" />
   <unitInfo fileName="ClosureParameterReference_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClosureParameterReference_Editor" />
-  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="84" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0$QuotationClass_bsktda_a0a1a5a" />
+  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="83" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0$QuotationClass_bsktda_a0a1a5a" />
   <unitInfo fileName="GetAccessor_Editor.java" startLine="18" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.GetAccessor_Editor" />
   <unitInfo fileName="StringLiteral_Editor.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StringLiteral_Editor" />
   <unitInfo fileName="SwitchCase_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.SwitchCase_Editor" />
@@ -364,7 +364,7 @@
   <unitInfo fileName="CloseParenthesis_KeyMap.java" startLine="14" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CloseParenthesis_KeyMap" />
   <unitInfo fileName="InstanceMethodCallOperation_Editor.java" startLine="20" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.InstanceMethodCallOperation_Editor" />
   <unitInfo fileName="ArrayLiteral_Editor.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayLiteral_Editor" />
-  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="202" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action1$QuotationClass_bsktda_a0a1a5b" />
+  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="201" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action1$QuotationClass_bsktda_a0a1a5b" />
   <unitInfo fileName="CastExpression_KeyMap.java" startLine="16" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CastExpression_KeyMap" />
   <unitInfo fileName="StatementList_Editor.java" startLine="26" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StatementList_Editor" />
   <unitInfo fileName="_DeprecatedPart.java" startLine="16" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor._DeprecatedPart" />
@@ -375,14 +375,14 @@
   <unitInfo fileName="CatchClause_Editor.java" startLine="18" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CatchClause_Editor" />
   <unitInfo fileName="BaseMethodDeclaration_BodyComponent.java" startLine="21" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent" />
   <unitInfo fileName="_GenericDeclaration_TypeVariables_Component.java" startLine="23" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component" />
-  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="36" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap$FieldDeclaration_keyMap_Action0" />
+  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="35" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap$FieldDeclaration_keyMap_Action0" />
   <unitInfo fileName="TryCatchStatement_Editor.java" startLine="26" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryCatchStatement_Editor" />
   <unitInfo fileName="AssertStatement_Editor.java" startLine="21" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AssertStatement_Editor" />
   <unitInfo fileName="ThisConstructorInvocation_Editor.java" startLine="23" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ThisConstructorInvocation_Editor" />
   <unitInfo fileName="SuperConstructorInvocation_Editor.java" startLine="23" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.SuperConstructorInvocation_Editor" />
   <unitInfo fileName="IMethodCall_typeArguments.java" startLine="26" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments" />
   <unitInfo fileName="EnumValueOfExpression_Editor.java" startLine="27" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumValueOfExpression_Editor" />
-  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="154" startPosition="0" endLine="297" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap$FieldDeclaration_keyMap_Action1" />
+  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="153" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap$FieldDeclaration_keyMap_Action1" />
   <unitInfo fileName="IMethodCall_actualArguments.java" startLine="28" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments" />
   <unitInfo fileName="ElsifClause_Editor.java" startLine="29" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ElsifClause_Editor" />
   <unitInfo fileName="ConceptFunctionAliased_Component.java" startLine="31" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ConceptFunctionAliased_Component" />
@@ -408,7 +408,7 @@
   <unitInfo fileName="Annotation_Editor.java" startLine="29" startPosition="0" endLine="276" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Annotation_Editor" />
   <unitInfo fileName="StaticFieldDeclaration_Editor.java" startLine="31" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticFieldDeclaration_Editor" />
   <unitInfo fileName="WhileStatement_Editor.java" startLine="23" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.WhileStatement_Editor" />
-  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="24" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap" />
+  <unitInfo fileName="FieldDeclaration_keyMap.java" startLine="23" startPosition="0" endLine="297" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_keyMap" />
   <unitInfo fileName="LocalVariableDeclaration_Editor.java" startLine="32" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Editor" />
   <unitInfo fileName="DoWhileStatement_Editor.java" startLine="24" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.DoWhileStatement_Editor" />
   <unitInfo fileName="ForeachStatement_Editor.java" startLine="23" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ForeachStatement_Editor" />
@@ -1207,26 +1207,26 @@
     <scopeInfo nodeId="1182955953325" fileName="ThisExpression_ClassConcept_Actions.java" startLine="28" startPosition="75" endLine="29" endPosition="67" />
   </root>
   <root nodeId="1184160518419">
-    <nodeInfo nodeId="1184161157243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="69" startPosition="152" endLine="70" endPosition="128" />
-    <nodeInfo nodeId="1184161182066" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_keyMap.java" startLine="70" startPosition="128" endLine="71" endPosition="117" />
-    <nodeInfo nodeId="1197551596589" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="74" startPosition="146" endLine="75" endPosition="14" />
-    <nodeInfo nodeId="1197551602046" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="75" startPosition="14" endLine="76" endPosition="258" />
-    <nodeInfo nodeId="1197551779313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="76" startPosition="258" endLine="77" endPosition="188" />
-    <nodeInfo nodeId="1184162280924" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="187" startPosition="152" endLine="188" endPosition="128" />
-    <nodeInfo nodeId="1184162280931" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_keyMap.java" startLine="188" startPosition="128" endLine="189" endPosition="117" />
-    <nodeInfo nodeId="1197551884288" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="192" startPosition="146" endLine="193" endPosition="14" />
-    <nodeInfo nodeId="1197551890739" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="193" startPosition="14" endLine="194" endPosition="303" />
-    <nodeInfo nodeId="1197551895661" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="194" startPosition="303" endLine="195" endPosition="188" />
-    <scopeInfo nodeId="1184160662679" fileName="FieldDeclaration_keyMap.java" startLine="69" startPosition="152" endLine="71" endPosition="117">
+    <nodeInfo nodeId="1184161157243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="68" startPosition="152" endLine="69" endPosition="128" />
+    <nodeInfo nodeId="1184161182066" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_keyMap.java" startLine="69" startPosition="128" endLine="70" endPosition="117" />
+    <nodeInfo nodeId="1197551596589" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="73" startPosition="146" endLine="74" endPosition="14" />
+    <nodeInfo nodeId="1197551602046" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="74" startPosition="14" endLine="75" endPosition="258" />
+    <nodeInfo nodeId="1197551779313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="75" startPosition="258" endLine="76" endPosition="188" />
+    <nodeInfo nodeId="1184162280924" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="186" startPosition="152" endLine="187" endPosition="128" />
+    <nodeInfo nodeId="1184162280931" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_keyMap.java" startLine="187" startPosition="128" endLine="188" endPosition="117" />
+    <nodeInfo nodeId="1197551884288" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FieldDeclaration_keyMap.java" startLine="191" startPosition="146" endLine="192" endPosition="14" />
+    <nodeInfo nodeId="1197551890739" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="192" startPosition="14" endLine="193" endPosition="303" />
+    <nodeInfo nodeId="1197551895661" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FieldDeclaration_keyMap.java" startLine="193" startPosition="303" endLine="194" endPosition="188" />
+    <scopeInfo nodeId="1184160662679" fileName="FieldDeclaration_keyMap.java" startLine="68" startPosition="152" endLine="70" endPosition="117">
       <varInfo nodeId="1184161157244" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1184162280923" fileName="FieldDeclaration_keyMap.java" startLine="187" startPosition="152" endLine="189" endPosition="117">
+    <scopeInfo nodeId="1184162280923" fileName="FieldDeclaration_keyMap.java" startLine="186" startPosition="152" endLine="188" endPosition="117">
       <varInfo nodeId="1184162280925" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1184160621380" fileName="FieldDeclaration_keyMap.java" startLine="74" startPosition="146" endLine="77" endPosition="188">
+    <scopeInfo nodeId="1184160621380" fileName="FieldDeclaration_keyMap.java" startLine="73" startPosition="146" endLine="76" endPosition="188">
       <varInfo nodeId="1197551596590" varName="g" />
     </scopeInfo>
-    <scopeInfo nodeId="1184162280855" fileName="FieldDeclaration_keyMap.java" startLine="192" startPosition="146" endLine="195" endPosition="188">
+    <scopeInfo nodeId="1184162280855" fileName="FieldDeclaration_keyMap.java" startLine="191" startPosition="146" endLine="194" endPosition="188">
       <varInfo nodeId="1197551884289" varName="s" />
     </scopeInfo>
   </root>

@@ -35,7 +35,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1251509410704061444(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -829,7 +828,7 @@ public class QueriesGenerated {
             quotedNode_3 = (SNode) parameter_7;
             SNode quotedNode1_6;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_6 = quotedNode_3;
@@ -863,7 +862,7 @@ public class QueriesGenerated {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;

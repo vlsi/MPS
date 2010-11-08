@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="CustomViewersDescriptor.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debug.customViewers.sandbox.CustomViewersDescriptor" />
+  <unitInfo fileName="CollectionWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debug.customViewers.sandbox.CollectionWatchables$MyWatchable_list" />
+  <unitInfo fileName="MyViewer_Factory.java" startLine="32" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.customViewers.sandbox.MyViewer_Factory$MyViewer_Wrapper" />
+  <unitInfo fileName="CollectionWatchables.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.customViewers.sandbox.CollectionWatchables" />
+  <unitInfo fileName="MyViewer_Factory.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.sandbox.MyViewer_Factory" />
+  <root nodeId="2333585717323758355">
+    <nodeInfo nodeId="2844414625304364896" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MyViewer_Factory.java" startLine="24" startPosition="43" endLine="25" endPosition="51" />
+    <nodeInfo nodeId="2844414625304364887" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MyViewer_Factory.java" startLine="25" startPosition="51" endLine="26" endPosition="99" />
+    <nodeInfo nodeId="399126674726715491" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MyViewer_Factory.java" startLine="27" startPosition="12" endLine="28" endPosition="19" />
+    <nodeInfo nodeId="399126674726715585" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MyViewer_Factory.java" startLine="37" startPosition="57" endLine="38" endPosition="60" />
+    <nodeInfo nodeId="399126674726715596" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MyViewer_Factory.java" startLine="38" startPosition="60" endLine="39" endPosition="101" />
+    <nodeInfo nodeId="399126674726715606" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MyViewer_Factory.java" startLine="39" startPosition="101" endLine="40" endPosition="151" />
+    <nodeInfo nodeId="399126674726715629" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MyViewer_Factory.java" startLine="40" startPosition="151" endLine="41" endPosition="20" />
+    <nodeInfo nodeId="399126674726715489" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MyViewer_Factory.java" startLine="27" startPosition="10" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="399126674726715482" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MyViewer_Factory.java" startLine="23" startPosition="48" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="399126674726715490" fileName="MyViewer_Factory.java" startLine="27" startPosition="12" endLine="28" endPosition="19" />
+    <scopeInfo nodeId="399126674726715483" fileName="MyViewer_Factory.java" startLine="24" startPosition="43" endLine="26" endPosition="99">
+      <varInfo nodeId="2844414625304364897" varName="ov" />
+    </scopeInfo>
+    <scopeInfo nodeId="2333585717323758357" fileName="MyViewer_Factory.java" startLine="37" startPosition="57" endLine="41" endPosition="20">
+      <varInfo nodeId="399126674726715597" varName="result" />
+      <varInfo nodeId="399126674726715586" varName="ov" />
+    </scopeInfo>
+    <scopeInfo nodeId="399126674726712518" fileName="MyViewer_Factory.java" startLine="23" startPosition="48" endLine="29" endPosition="5" />
+  </root>
+</debugInfo>
+

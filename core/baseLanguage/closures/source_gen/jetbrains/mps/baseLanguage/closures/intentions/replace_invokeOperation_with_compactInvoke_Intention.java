@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIntention implements Intention {
   public replace_invokeOperation_with_compactInvoke_Intention() {
@@ -83,7 +82,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
           quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_5 = quotedNode_3;

@@ -17,7 +17,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -104,7 +103,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
             quotedNode_2 = (SNode) parameter_17;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_2)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_2);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_2);
             } else {
               _parameterValues_129834374.add(quotedNode_2);
               quotedNode1_10 = quotedNode_2;
@@ -276,7 +275,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
               quotedNode_7 = (SNode) parameter_27;
               SNode quotedNode1_24;
               if (_parameterValues_129834374.contains(quotedNode_7)) {
-                quotedNode1_24 = CopyUtil.copy(quotedNode_7);
+                quotedNode1_24 = HUtil.copyIfNecessary(quotedNode_7);
               } else {
                 _parameterValues_129834374.add(quotedNode_7);
                 quotedNode1_24 = quotedNode_7;

@@ -23,7 +23,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
@@ -394,7 +393,7 @@ public class QueriesGenerated {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -407,7 +406,7 @@ public class QueriesGenerated {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -447,7 +446,7 @@ public class QueriesGenerated {
               quotedNode_5 = (SNode) parameter_11;
               SNode quotedNode1_9;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_9 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_9 = quotedNode_5;
@@ -464,7 +463,7 @@ public class QueriesGenerated {
           quotedNode_3 = (SNode) parameter_12;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_10 = quotedNode_3;
@@ -496,7 +495,7 @@ public class QueriesGenerated {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -509,7 +508,7 @@ public class QueriesGenerated {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -549,7 +548,7 @@ public class QueriesGenerated {
               quotedNode_5 = (SNode) parameter_11;
               SNode quotedNode1_9;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_9 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_9 = quotedNode_5;
@@ -566,7 +565,7 @@ public class QueriesGenerated {
           quotedNode_3 = (SNode) parameter_12;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_10 = quotedNode_3;

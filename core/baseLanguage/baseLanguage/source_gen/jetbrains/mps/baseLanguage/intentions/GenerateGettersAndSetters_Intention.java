@@ -21,7 +21,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGettersAndSetters_Intention extends GenerateIntention implements Intention {
@@ -173,7 +172,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
           quotedNode_2 = (SNode) parameter_13;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_8 = quotedNode_2;
@@ -197,7 +196,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
               quotedNode_6 = (SNode) parameter_14;
               SNode quotedNode1_12;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_12 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_12 = quotedNode_6;
@@ -265,7 +264,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
                 quotedNode_10 = (SNode) parameter_21;
                 SNode quotedNode1_18;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
-                  quotedNode1_18 = CopyUtil.copy(quotedNode_10);
+                  quotedNode1_18 = HUtil.copyIfNecessary(quotedNode_10);
                 } else {
                   _parameterValues_129834374.add(quotedNode_10);
                   quotedNode1_18 = quotedNode_10;
@@ -288,7 +287,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
             quotedNode_7 = (SNode) parameter_22;
             SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_7)) {
-              quotedNode1_20 = CopyUtil.copy(quotedNode_7);
+              quotedNode1_20 = HUtil.copyIfNecessary(quotedNode_7);
             } else {
               _parameterValues_129834374.add(quotedNode_7);
               quotedNode1_20 = quotedNode_7;

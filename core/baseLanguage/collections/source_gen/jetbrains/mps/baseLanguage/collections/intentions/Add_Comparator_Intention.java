@@ -12,7 +12,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Add_Comparator_Intention extends BaseIntention implements Intention {
@@ -82,7 +81,7 @@ public class Add_Comparator_Intention extends BaseIntention implements Intention
             quotedNode_5 = (SNode) parameter_13;
             SNode quotedNode1_9;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_9 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_5);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_9 = quotedNode_5;
@@ -101,7 +100,7 @@ public class Add_Comparator_Intention extends BaseIntention implements Intention
             quotedNode_6 = (SNode) parameter_14;
             SNode quotedNode1_11;
             if (_parameterValues_129834374.contains(quotedNode_6)) {
-              quotedNode1_11 = CopyUtil.copy(quotedNode_6);
+              quotedNode1_11 = HUtil.copyIfNecessary(quotedNode_6);
             } else {
               _parameterValues_129834374.add(quotedNode_6);
               quotedNode1_11 = quotedNode_6;

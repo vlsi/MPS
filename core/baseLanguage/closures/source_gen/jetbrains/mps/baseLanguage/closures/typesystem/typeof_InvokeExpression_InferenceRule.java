@@ -22,7 +22,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InvokeExpression_InferenceRule() {
@@ -93,7 +92,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
           quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_3, typeCheckingContext);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_5 = quotedNode_3;
@@ -126,7 +125,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
           quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_5 = quotedNode_3;

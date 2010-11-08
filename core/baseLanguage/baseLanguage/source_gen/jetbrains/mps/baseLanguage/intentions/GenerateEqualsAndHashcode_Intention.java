@@ -18,7 +18,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -239,7 +238,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_18 = (SNode) parameter_73;
                 SNode quotedNode1_46;
                 if (_parameterValues_129834374.contains(quotedNode_18)) {
-                  quotedNode1_46 = CopyUtil.copy(quotedNode_18);
+                  quotedNode1_46 = HUtil.copyIfNecessary(quotedNode_18);
                 } else {
                   _parameterValues_129834374.add(quotedNode_18);
                   quotedNode1_46 = quotedNode_18;
@@ -304,7 +303,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_33 = (SNode) parameter_74;
                     SNode quotedNode1_58;
                     if (_parameterValues_129834374.contains(quotedNode_33)) {
-                      quotedNode1_58 = CopyUtil.copy(quotedNode_33);
+                      quotedNode1_58 = HUtil.copyIfNecessary(quotedNode_33);
                     } else {
                       _parameterValues_129834374.add(quotedNode_33);
                       quotedNode1_58 = quotedNode_33;
@@ -471,7 +470,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_10 = (SNode) parameter_27;
                 SNode quotedNode1_22;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
-                  quotedNode1_22 = CopyUtil.copy(quotedNode_10);
+                  quotedNode1_22 = HUtil.copyIfNecessary(quotedNode_10);
                 } else {
                   _parameterValues_129834374.add(quotedNode_10);
                   quotedNode1_22 = quotedNode_10;
@@ -484,7 +483,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_11 = (SNode) parameter_28;
                 SNode quotedNode1_23;
                 if (_parameterValues_129834374.contains(quotedNode_11)) {
-                  quotedNode1_23 = CopyUtil.copy(quotedNode_11);
+                  quotedNode1_23 = HUtil.copyIfNecessary(quotedNode_11);
                 } else {
                   _parameterValues_129834374.add(quotedNode_11);
                   quotedNode1_23 = quotedNode_11;
@@ -502,7 +501,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_12 = (SNode) parameter_29;
                 SNode quotedNode1_25;
                 if (_parameterValues_129834374.contains(quotedNode_12)) {
-                  quotedNode1_25 = CopyUtil.copy(quotedNode_12);
+                  quotedNode1_25 = HUtil.copyIfNecessary(quotedNode_12);
                 } else {
                   _parameterValues_129834374.add(quotedNode_12);
                   quotedNode1_25 = quotedNode_12;
@@ -515,7 +514,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_13 = (SNode) parameter_30;
                 SNode quotedNode1_26;
                 if (_parameterValues_129834374.contains(quotedNode_13)) {
-                  quotedNode1_26 = CopyUtil.copy(quotedNode_13);
+                  quotedNode1_26 = HUtil.copyIfNecessary(quotedNode_13);
                 } else {
                   _parameterValues_129834374.add(quotedNode_13);
                   quotedNode1_26 = quotedNode_13;
@@ -580,7 +579,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_10 = (SNode) parameter_27;
                 SNode quotedNode1_19;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
-                  quotedNode1_19 = CopyUtil.copy(quotedNode_10);
+                  quotedNode1_19 = HUtil.copyIfNecessary(quotedNode_10);
                 } else {
                   _parameterValues_129834374.add(quotedNode_10);
                   quotedNode1_19 = quotedNode_10;
@@ -593,7 +592,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_11 = (SNode) parameter_28;
                 SNode quotedNode1_20;
                 if (_parameterValues_129834374.contains(quotedNode_11)) {
-                  quotedNode1_20 = CopyUtil.copy(quotedNode_11);
+                  quotedNode1_20 = HUtil.copyIfNecessary(quotedNode_11);
                 } else {
                   _parameterValues_129834374.add(quotedNode_11);
                   quotedNode1_20 = quotedNode_11;
@@ -611,7 +610,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_12 = (SNode) parameter_29;
                 SNode quotedNode1_22;
                 if (_parameterValues_129834374.contains(quotedNode_12)) {
-                  quotedNode1_22 = CopyUtil.copy(quotedNode_12);
+                  quotedNode1_22 = HUtil.copyIfNecessary(quotedNode_12);
                 } else {
                   _parameterValues_129834374.add(quotedNode_12);
                   quotedNode1_22 = quotedNode_12;
@@ -624,7 +623,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_13 = (SNode) parameter_30;
                 SNode quotedNode1_23;
                 if (_parameterValues_129834374.contains(quotedNode_13)) {
-                  quotedNode1_23 = CopyUtil.copy(quotedNode_13);
+                  quotedNode1_23 = HUtil.copyIfNecessary(quotedNode_13);
                 } else {
                   _parameterValues_129834374.add(quotedNode_13);
                   quotedNode1_23 = quotedNode_13;
@@ -692,7 +691,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_7 = (SNode) parameter_23;
               SNode quotedNode1_15;
               if (_parameterValues_129834374.contains(quotedNode_7)) {
-                quotedNode1_15 = CopyUtil.copy(quotedNode_7);
+                quotedNode1_15 = HUtil.copyIfNecessary(quotedNode_7);
               } else {
                 _parameterValues_129834374.add(quotedNode_7);
                 quotedNode1_15 = quotedNode_7;
@@ -705,7 +704,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_8 = (SNode) parameter_24;
               SNode quotedNode1_16;
               if (_parameterValues_129834374.contains(quotedNode_8)) {
-                quotedNode1_16 = CopyUtil.copy(quotedNode_8);
+                quotedNode1_16 = HUtil.copyIfNecessary(quotedNode_8);
               } else {
                 _parameterValues_129834374.add(quotedNode_8);
                 quotedNode1_16 = quotedNode_8;
@@ -723,7 +722,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_9 = (SNode) parameter_25;
               SNode quotedNode1_18;
               if (_parameterValues_129834374.contains(quotedNode_9)) {
-                quotedNode1_18 = CopyUtil.copy(quotedNode_9);
+                quotedNode1_18 = HUtil.copyIfNecessary(quotedNode_9);
               } else {
                 _parameterValues_129834374.add(quotedNode_9);
                 quotedNode1_18 = quotedNode_9;
@@ -736,7 +735,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_10 = (SNode) parameter_26;
               SNode quotedNode1_19;
               if (_parameterValues_129834374.contains(quotedNode_10)) {
-                quotedNode1_19 = CopyUtil.copy(quotedNode_10);
+                quotedNode1_19 = HUtil.copyIfNecessary(quotedNode_10);
               } else {
                 _parameterValues_129834374.add(quotedNode_10);
                 quotedNode1_19 = quotedNode_10;
@@ -808,7 +807,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_9 = (SNode) parameter_25;
                 SNode quotedNode1_17;
                 if (_parameterValues_129834374.contains(quotedNode_9)) {
-                  quotedNode1_17 = CopyUtil.copy(quotedNode_9);
+                  quotedNode1_17 = HUtil.copyIfNecessary(quotedNode_9);
                 } else {
                   _parameterValues_129834374.add(quotedNode_9);
                   quotedNode1_17 = quotedNode_9;
@@ -821,7 +820,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_10 = (SNode) parameter_26;
                 SNode quotedNode1_18;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
-                  quotedNode1_18 = CopyUtil.copy(quotedNode_10);
+                  quotedNode1_18 = HUtil.copyIfNecessary(quotedNode_10);
                 } else {
                   _parameterValues_129834374.add(quotedNode_10);
                   quotedNode1_18 = quotedNode_10;
@@ -839,7 +838,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_11 = (SNode) parameter_27;
                 SNode quotedNode1_20;
                 if (_parameterValues_129834374.contains(quotedNode_11)) {
-                  quotedNode1_20 = CopyUtil.copy(quotedNode_11);
+                  quotedNode1_20 = HUtil.copyIfNecessary(quotedNode_11);
                 } else {
                   _parameterValues_129834374.add(quotedNode_11);
                   quotedNode1_20 = quotedNode_11;
@@ -852,7 +851,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_12 = (SNode) parameter_28;
                 SNode quotedNode1_21;
                 if (_parameterValues_129834374.contains(quotedNode_12)) {
-                  quotedNode1_21 = CopyUtil.copy(quotedNode_12);
+                  quotedNode1_21 = HUtil.copyIfNecessary(quotedNode_12);
                 } else {
                   _parameterValues_129834374.add(quotedNode_12);
                   quotedNode1_21 = quotedNode_12;
@@ -959,7 +958,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_23 = (SNode) parameter_49;
                     SNode quotedNode1_34;
                     if (_parameterValues_129834374.contains(quotedNode_23)) {
-                      quotedNode1_34 = CopyUtil.copy(quotedNode_23);
+                      quotedNode1_34 = HUtil.copyIfNecessary(quotedNode_23);
                     } else {
                       _parameterValues_129834374.add(quotedNode_23);
                       quotedNode1_34 = quotedNode_23;
@@ -972,7 +971,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_24 = (SNode) parameter_50;
                     SNode quotedNode1_35;
                     if (_parameterValues_129834374.contains(quotedNode_24)) {
-                      quotedNode1_35 = CopyUtil.copy(quotedNode_24);
+                      quotedNode1_35 = HUtil.copyIfNecessary(quotedNode_24);
                     } else {
                       _parameterValues_129834374.add(quotedNode_24);
                       quotedNode1_35 = quotedNode_24;
@@ -992,7 +991,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_21 = (SNode) parameter_51;
                   SNode quotedNode1_37;
                   if (_parameterValues_129834374.contains(quotedNode_21)) {
-                    quotedNode1_37 = CopyUtil.copy(quotedNode_21);
+                    quotedNode1_37 = HUtil.copyIfNecessary(quotedNode_21);
                   } else {
                     _parameterValues_129834374.add(quotedNode_21);
                     quotedNode1_37 = quotedNode_21;
@@ -1005,7 +1004,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_22 = (SNode) parameter_52;
                   SNode quotedNode1_38;
                   if (_parameterValues_129834374.contains(quotedNode_22)) {
-                    quotedNode1_38 = CopyUtil.copy(quotedNode_22);
+                    quotedNode1_38 = HUtil.copyIfNecessary(quotedNode_22);
                   } else {
                     _parameterValues_129834374.add(quotedNode_22);
                     quotedNode1_38 = quotedNode_22;
@@ -1035,7 +1034,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_16 = (SNode) parameter_53;
                 SNode quotedNode1_42;
                 if (_parameterValues_129834374.contains(quotedNode_16)) {
-                  quotedNode1_42 = CopyUtil.copy(quotedNode_16);
+                  quotedNode1_42 = HUtil.copyIfNecessary(quotedNode_16);
                 } else {
                   _parameterValues_129834374.add(quotedNode_16);
                   quotedNode1_42 = quotedNode_16;
@@ -1048,7 +1047,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_17 = (SNode) parameter_54;
                 SNode quotedNode1_43;
                 if (_parameterValues_129834374.contains(quotedNode_17)) {
-                  quotedNode1_43 = CopyUtil.copy(quotedNode_17);
+                  quotedNode1_43 = HUtil.copyIfNecessary(quotedNode_17);
                 } else {
                   _parameterValues_129834374.add(quotedNode_17);
                   quotedNode1_43 = quotedNode_17;
@@ -1076,7 +1075,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_18 = (SNode) parameter_55;
                 SNode quotedNode1_47;
                 if (_parameterValues_129834374.contains(quotedNode_18)) {
-                  quotedNode1_47 = CopyUtil.copy(quotedNode_18);
+                  quotedNode1_47 = HUtil.copyIfNecessary(quotedNode_18);
                 } else {
                   _parameterValues_129834374.add(quotedNode_18);
                   quotedNode1_47 = quotedNode_18;
@@ -1089,7 +1088,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_19 = (SNode) parameter_56;
                 SNode quotedNode1_48;
                 if (_parameterValues_129834374.contains(quotedNode_19)) {
-                  quotedNode1_48 = CopyUtil.copy(quotedNode_19);
+                  quotedNode1_48 = HUtil.copyIfNecessary(quotedNode_19);
                 } else {
                   _parameterValues_129834374.add(quotedNode_19);
                   quotedNode1_48 = quotedNode_19;
@@ -1183,7 +1182,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_22 = (SNode) parameter_55;
                     SNode quotedNode1_37;
                     if (_parameterValues_129834374.contains(quotedNode_22)) {
-                      quotedNode1_37 = CopyUtil.copy(quotedNode_22);
+                      quotedNode1_37 = HUtil.copyIfNecessary(quotedNode_22);
                     } else {
                       _parameterValues_129834374.add(quotedNode_22);
                       quotedNode1_37 = quotedNode_22;
@@ -1196,7 +1195,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_23 = (SNode) parameter_56;
                     SNode quotedNode1_38;
                     if (_parameterValues_129834374.contains(quotedNode_23)) {
-                      quotedNode1_38 = CopyUtil.copy(quotedNode_23);
+                      quotedNode1_38 = HUtil.copyIfNecessary(quotedNode_23);
                     } else {
                       _parameterValues_129834374.add(quotedNode_23);
                       quotedNode1_38 = quotedNode_23;
@@ -1222,7 +1221,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_26 = (SNode) parameter_57;
                       SNode quotedNode1_42;
                       if (_parameterValues_129834374.contains(quotedNode_26)) {
-                        quotedNode1_42 = CopyUtil.copy(quotedNode_26);
+                        quotedNode1_42 = HUtil.copyIfNecessary(quotedNode_26);
                       } else {
                         _parameterValues_129834374.add(quotedNode_26);
                         quotedNode1_42 = quotedNode_26;
@@ -1235,7 +1234,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_27 = (SNode) parameter_58;
                       SNode quotedNode1_43;
                       if (_parameterValues_129834374.contains(quotedNode_27)) {
-                        quotedNode1_43 = CopyUtil.copy(quotedNode_27);
+                        quotedNode1_43 = HUtil.copyIfNecessary(quotedNode_27);
                       } else {
                         _parameterValues_129834374.add(quotedNode_27);
                         quotedNode1_43 = quotedNode_27;
@@ -1275,7 +1274,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_16 = (SNode) parameter_59;
                 SNode quotedNode1_48;
                 if (_parameterValues_129834374.contains(quotedNode_16)) {
-                  quotedNode1_48 = CopyUtil.copy(quotedNode_16);
+                  quotedNode1_48 = HUtil.copyIfNecessary(quotedNode_16);
                 } else {
                   _parameterValues_129834374.add(quotedNode_16);
                   quotedNode1_48 = quotedNode_16;
@@ -1288,7 +1287,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_17 = (SNode) parameter_60;
                 SNode quotedNode1_49;
                 if (_parameterValues_129834374.contains(quotedNode_17)) {
-                  quotedNode1_49 = CopyUtil.copy(quotedNode_17);
+                  quotedNode1_49 = HUtil.copyIfNecessary(quotedNode_17);
                 } else {
                   _parameterValues_129834374.add(quotedNode_17);
                   quotedNode1_49 = quotedNode_17;
@@ -1316,7 +1315,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_18 = (SNode) parameter_61;
                 SNode quotedNode1_53;
                 if (_parameterValues_129834374.contains(quotedNode_18)) {
-                  quotedNode1_53 = CopyUtil.copy(quotedNode_18);
+                  quotedNode1_53 = HUtil.copyIfNecessary(quotedNode_18);
                 } else {
                   _parameterValues_129834374.add(quotedNode_18);
                   quotedNode1_53 = quotedNode_18;
@@ -1329,7 +1328,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_19 = (SNode) parameter_62;
                 SNode quotedNode1_54;
                 if (_parameterValues_129834374.contains(quotedNode_19)) {
-                  quotedNode1_54 = CopyUtil.copy(quotedNode_19);
+                  quotedNode1_54 = HUtil.copyIfNecessary(quotedNode_19);
                 } else {
                   _parameterValues_129834374.add(quotedNode_19);
                   quotedNode1_54 = quotedNode_19;
@@ -1507,7 +1506,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -1560,7 +1559,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_5 = (SNode) parameter_37;
               SNode quotedNode1_22;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_22 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_22 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_22 = quotedNode_5;
@@ -1602,7 +1601,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                           quotedNode_17 = (SNode) parameter_38;
                           SNode quotedNode1_31;
                           if (_parameterValues_129834374.contains(quotedNode_17)) {
-                            quotedNode1_31 = CopyUtil.copy(quotedNode_17);
+                            quotedNode1_31 = HUtil.copyIfNecessary(quotedNode_17);
                           } else {
                             _parameterValues_129834374.add(quotedNode_17);
                             quotedNode1_31 = quotedNode_17;
@@ -1615,7 +1614,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                           quotedNode_18 = (SNode) parameter_39;
                           SNode quotedNode1_32;
                           if (_parameterValues_129834374.contains(quotedNode_18)) {
-                            quotedNode1_32 = CopyUtil.copy(quotedNode_18);
+                            quotedNode1_32 = HUtil.copyIfNecessary(quotedNode_18);
                           } else {
                             _parameterValues_129834374.add(quotedNode_18);
                             quotedNode1_32 = quotedNode_18;
@@ -1637,7 +1636,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_13 = (SNode) parameter_40;
                       SNode quotedNode1_34;
                       if (_parameterValues_129834374.contains(quotedNode_13)) {
-                        quotedNode1_34 = CopyUtil.copy(quotedNode_13);
+                        quotedNode1_34 = HUtil.copyIfNecessary(quotedNode_13);
                       } else {
                         _parameterValues_129834374.add(quotedNode_13);
                         quotedNode1_34 = quotedNode_13;
@@ -1650,7 +1649,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_14 = (SNode) parameter_41;
                       SNode quotedNode1_35;
                       if (_parameterValues_129834374.contains(quotedNode_14)) {
-                        quotedNode1_35 = CopyUtil.copy(quotedNode_14);
+                        quotedNode1_35 = HUtil.copyIfNecessary(quotedNode_14);
                       } else {
                         _parameterValues_129834374.add(quotedNode_14);
                         quotedNode1_35 = quotedNode_14;
@@ -1673,7 +1672,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = (SNode) parameter_42;
             SNode quotedNode1_36;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_36 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_36 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_36 = quotedNode_4;
@@ -1726,7 +1725,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_9 = (SNode) parameter_21;
                   SNode quotedNode1_16;
                   if (_parameterValues_129834374.contains(quotedNode_9)) {
-                    quotedNode1_16 = CopyUtil.copy(quotedNode_9);
+                    quotedNode1_16 = HUtil.copyIfNecessary(quotedNode_9);
                   } else {
                     _parameterValues_129834374.add(quotedNode_9);
                     quotedNode1_16 = quotedNode_9;
@@ -1739,7 +1738,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_10 = (SNode) parameter_22;
                   SNode quotedNode1_17;
                   if (_parameterValues_129834374.contains(quotedNode_10)) {
-                    quotedNode1_17 = CopyUtil.copy(quotedNode_10);
+                    quotedNode1_17 = HUtil.copyIfNecessary(quotedNode_10);
                   } else {
                     _parameterValues_129834374.add(quotedNode_10);
                     quotedNode1_17 = quotedNode_10;
@@ -1761,7 +1760,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_6 = (SNode) parameter_23;
               SNode quotedNode1_19;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_19 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_19 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_19 = quotedNode_6;
@@ -1776,7 +1775,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = (SNode) parameter_24;
             SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_20 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_20 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_20 = quotedNode_4;
@@ -1825,7 +1824,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = (SNode) parameter_31;
             SNode quotedNode1_18;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_18 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_18 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_18 = quotedNode_3;
@@ -1849,7 +1848,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_10 = (SNode) parameter_32;
                   SNode quotedNode1_22;
                   if (_parameterValues_129834374.contains(quotedNode_10)) {
-                    quotedNode1_22 = CopyUtil.copy(quotedNode_10);
+                    quotedNode1_22 = HUtil.copyIfNecessary(quotedNode_10);
                   } else {
                     _parameterValues_129834374.add(quotedNode_10);
                     quotedNode1_22 = quotedNode_10;
@@ -1862,7 +1861,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_11 = (SNode) parameter_33;
                   SNode quotedNode1_23;
                   if (_parameterValues_129834374.contains(quotedNode_11)) {
-                    quotedNode1_23 = CopyUtil.copy(quotedNode_11);
+                    quotedNode1_23 = HUtil.copyIfNecessary(quotedNode_11);
                   } else {
                     _parameterValues_129834374.add(quotedNode_11);
                     quotedNode1_23 = quotedNode_11;
@@ -1900,7 +1899,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_14 = (SNode) parameter_34;
                     SNode quotedNode1_29;
                     if (_parameterValues_129834374.contains(quotedNode_14)) {
-                      quotedNode1_29 = CopyUtil.copy(quotedNode_14);
+                      quotedNode1_29 = HUtil.copyIfNecessary(quotedNode_14);
                     } else {
                       _parameterValues_129834374.add(quotedNode_14);
                       quotedNode1_29 = quotedNode_14;
@@ -1913,7 +1912,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_15 = (SNode) parameter_35;
                     SNode quotedNode1_30;
                     if (_parameterValues_129834374.contains(quotedNode_15)) {
-                      quotedNode1_30 = CopyUtil.copy(quotedNode_15);
+                      quotedNode1_30 = HUtil.copyIfNecessary(quotedNode_15);
                     } else {
                       _parameterValues_129834374.add(quotedNode_15);
                       quotedNode1_30 = quotedNode_15;
@@ -1969,7 +1968,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = (SNode) parameter_29;
             SNode quotedNode1_17;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_17 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_17 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_17 = quotedNode_3;
@@ -1985,7 +1984,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_5 = (SNode) parameter_30;
               SNode quotedNode1_19;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_19 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_19 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_19 = quotedNode_5;
@@ -2024,7 +2023,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         quotedNode_14 = (SNode) parameter_31;
                         SNode quotedNode1_27;
                         if (_parameterValues_129834374.contains(quotedNode_14)) {
-                          quotedNode1_27 = CopyUtil.copy(quotedNode_14);
+                          quotedNode1_27 = HUtil.copyIfNecessary(quotedNode_14);
                         } else {
                           _parameterValues_129834374.add(quotedNode_14);
                           quotedNode1_27 = quotedNode_14;
@@ -2041,7 +2040,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_11 = (SNode) parameter_32;
                     SNode quotedNode1_28;
                     if (_parameterValues_129834374.contains(quotedNode_11)) {
-                      quotedNode1_28 = CopyUtil.copy(quotedNode_11);
+                      quotedNode1_28 = HUtil.copyIfNecessary(quotedNode_11);
                     } else {
                       _parameterValues_129834374.add(quotedNode_11);
                       quotedNode1_28 = quotedNode_11;
@@ -2091,7 +2090,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = (SNode) parameter_17;
             SNode quotedNode1_11;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_11 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_11 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_11 = quotedNode_3;
@@ -2110,7 +2109,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_7 = (SNode) parameter_18;
                 SNode quotedNode1_14;
                 if (_parameterValues_129834374.contains(quotedNode_7)) {
-                  quotedNode1_14 = CopyUtil.copy(quotedNode_7);
+                  quotedNode1_14 = HUtil.copyIfNecessary(quotedNode_7);
                 } else {
                   _parameterValues_129834374.add(quotedNode_7);
                   quotedNode1_14 = quotedNode_7;
@@ -2131,7 +2130,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_6 = (SNode) parameter_20;
               SNode quotedNode1_16;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_16 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_16 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_16 = quotedNode_6;
@@ -2184,7 +2183,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = (SNode) parameter_35;
             SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_20 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_20 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_20 = quotedNode_3;
@@ -2200,7 +2199,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_5 = (SNode) parameter_36;
               SNode quotedNode1_22;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_22 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_22 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_22 = quotedNode_5;
@@ -2227,7 +2226,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_14 = (SNode) parameter_37;
                       SNode quotedNode1_27;
                       if (_parameterValues_129834374.contains(quotedNode_14)) {
-                        quotedNode1_27 = CopyUtil.copy(quotedNode_14);
+                        quotedNode1_27 = HUtil.copyIfNecessary(quotedNode_14);
                       } else {
                         _parameterValues_129834374.add(quotedNode_14);
                         quotedNode1_27 = quotedNode_14;
@@ -2262,7 +2261,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_16 = (SNode) parameter_39;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
-                        quotedNode1_32 = CopyUtil.copy(quotedNode_16);
+                        quotedNode1_32 = HUtil.copyIfNecessary(quotedNode_16);
                       } else {
                         _parameterValues_129834374.add(quotedNode_16);
                         quotedNode1_32 = quotedNode_16;
@@ -2337,7 +2336,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = (SNode) parameter_39;
             SNode quotedNode1_22;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_22 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_22 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_22 = quotedNode_3;
@@ -2353,7 +2352,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_5 = (SNode) parameter_40;
               SNode quotedNode1_24;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_24 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_24 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_24 = quotedNode_5;
@@ -2389,7 +2388,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_15 = (SNode) parameter_41;
                       SNode quotedNode1_31;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
-                        quotedNode1_31 = CopyUtil.copy(quotedNode_15);
+                        quotedNode1_31 = HUtil.copyIfNecessary(quotedNode_15);
                       } else {
                         _parameterValues_129834374.add(quotedNode_15);
                         quotedNode1_31 = quotedNode_15;
@@ -2402,7 +2401,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_16 = (SNode) parameter_42;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
-                        quotedNode1_32 = CopyUtil.copy(quotedNode_16);
+                        quotedNode1_32 = HUtil.copyIfNecessary(quotedNode_16);
                       } else {
                         _parameterValues_129834374.add(quotedNode_16);
                         quotedNode1_32 = quotedNode_16;
@@ -2430,7 +2429,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         quotedNode_18 = (SNode) parameter_43;
                         SNode quotedNode1_36;
                         if (_parameterValues_129834374.contains(quotedNode_18)) {
-                          quotedNode1_36 = CopyUtil.copy(quotedNode_18);
+                          quotedNode1_36 = HUtil.copyIfNecessary(quotedNode_18);
                         } else {
                           _parameterValues_129834374.add(quotedNode_18);
                           quotedNode1_36 = quotedNode_18;
@@ -2443,7 +2442,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         quotedNode_19 = (SNode) parameter_44;
                         SNode quotedNode1_37;
                         if (_parameterValues_129834374.contains(quotedNode_19)) {
-                          quotedNode1_37 = CopyUtil.copy(quotedNode_19);
+                          quotedNode1_37 = HUtil.copyIfNecessary(quotedNode_19);
                         } else {
                           _parameterValues_129834374.add(quotedNode_19);
                           quotedNode1_37 = quotedNode_19;
@@ -2515,7 +2514,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_5 = (SNode) parameter_35;
               SNode quotedNode1_21;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_21 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_21 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_21 = quotedNode_5;
@@ -2548,7 +2547,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_14 = (SNode) parameter_36;
                       SNode quotedNode1_27;
                       if (_parameterValues_129834374.contains(quotedNode_14)) {
-                        quotedNode1_27 = CopyUtil.copy(quotedNode_14);
+                        quotedNode1_27 = HUtil.copyIfNecessary(quotedNode_14);
                       } else {
                         _parameterValues_129834374.add(quotedNode_14);
                         quotedNode1_27 = quotedNode_14;
@@ -2561,7 +2560,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_15 = (SNode) parameter_37;
                       SNode quotedNode1_28;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
-                        quotedNode1_28 = CopyUtil.copy(quotedNode_15);
+                        quotedNode1_28 = HUtil.copyIfNecessary(quotedNode_15);
                       } else {
                         _parameterValues_129834374.add(quotedNode_15);
                         quotedNode1_28 = quotedNode_15;
@@ -2589,7 +2588,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_16 = (SNode) parameter_38;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
-                        quotedNode1_32 = CopyUtil.copy(quotedNode_16);
+                        quotedNode1_32 = HUtil.copyIfNecessary(quotedNode_16);
                       } else {
                         _parameterValues_129834374.add(quotedNode_16);
                         quotedNode1_32 = quotedNode_16;
@@ -2602,7 +2601,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_17 = (SNode) parameter_39;
                       SNode quotedNode1_33;
                       if (_parameterValues_129834374.contains(quotedNode_17)) {
-                        quotedNode1_33 = CopyUtil.copy(quotedNode_17);
+                        quotedNode1_33 = HUtil.copyIfNecessary(quotedNode_17);
                       } else {
                         _parameterValues_129834374.add(quotedNode_17);
                         quotedNode1_33 = quotedNode_17;
@@ -2625,7 +2624,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = (SNode) parameter_40;
             SNode quotedNode1_34;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_34 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_34 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_34 = quotedNode_4;
@@ -2703,7 +2702,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_15 = (SNode) parameter_37;
                       SNode quotedNode1_28;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
-                        quotedNode1_28 = CopyUtil.copy(quotedNode_15);
+                        quotedNode1_28 = HUtil.copyIfNecessary(quotedNode_15);
                       } else {
                         _parameterValues_129834374.add(quotedNode_15);
                         quotedNode1_28 = quotedNode_15;
@@ -2716,7 +2715,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_16 = (SNode) parameter_38;
                       SNode quotedNode1_29;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
-                        quotedNode1_29 = CopyUtil.copy(quotedNode_16);
+                        quotedNode1_29 = HUtil.copyIfNecessary(quotedNode_16);
                       } else {
                         _parameterValues_129834374.add(quotedNode_16);
                         quotedNode1_29 = quotedNode_16;
@@ -2739,7 +2738,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_17 = (SNode) parameter_39;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_17)) {
-                        quotedNode1_32 = CopyUtil.copy(quotedNode_17);
+                        quotedNode1_32 = HUtil.copyIfNecessary(quotedNode_17);
                       } else {
                         _parameterValues_129834374.add(quotedNode_17);
                         quotedNode1_32 = quotedNode_17;
@@ -2752,7 +2751,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_18 = (SNode) parameter_40;
                       SNode quotedNode1_33;
                       if (_parameterValues_129834374.contains(quotedNode_18)) {
-                        quotedNode1_33 = CopyUtil.copy(quotedNode_18);
+                        quotedNode1_33 = HUtil.copyIfNecessary(quotedNode_18);
                       } else {
                         _parameterValues_129834374.add(quotedNode_18);
                         quotedNode1_33 = quotedNode_18;
@@ -2779,7 +2778,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_6 = (SNode) parameter_41;
               SNode quotedNode1_35;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_35 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_35 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_35 = quotedNode_6;
@@ -2794,7 +2793,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = (SNode) parameter_42;
             SNode quotedNode1_36;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_36 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_36 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_36 = quotedNode_4;
@@ -2875,7 +2874,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_15 = (SNode) parameter_43;
                       SNode quotedNode1_31;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
-                        quotedNode1_31 = CopyUtil.copy(quotedNode_15);
+                        quotedNode1_31 = HUtil.copyIfNecessary(quotedNode_15);
                       } else {
                         _parameterValues_129834374.add(quotedNode_15);
                         quotedNode1_31 = quotedNode_15;
@@ -2888,7 +2887,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_16 = (SNode) parameter_44;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
-                        quotedNode1_32 = CopyUtil.copy(quotedNode_16);
+                        quotedNode1_32 = HUtil.copyIfNecessary(quotedNode_16);
                       } else {
                         _parameterValues_129834374.add(quotedNode_16);
                         quotedNode1_32 = quotedNode_16;
@@ -2917,7 +2916,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                           quotedNode_20 = (SNode) parameter_45;
                           SNode quotedNode1_37;
                           if (_parameterValues_129834374.contains(quotedNode_20)) {
-                            quotedNode1_37 = CopyUtil.copy(quotedNode_20);
+                            quotedNode1_37 = HUtil.copyIfNecessary(quotedNode_20);
                           } else {
                             _parameterValues_129834374.add(quotedNode_20);
                             quotedNode1_37 = quotedNode_20;
@@ -2930,7 +2929,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                           quotedNode_21 = (SNode) parameter_46;
                           SNode quotedNode1_38;
                           if (_parameterValues_129834374.contains(quotedNode_21)) {
-                            quotedNode1_38 = CopyUtil.copy(quotedNode_21);
+                            quotedNode1_38 = HUtil.copyIfNecessary(quotedNode_21);
                           } else {
                             _parameterValues_129834374.add(quotedNode_21);
                             quotedNode1_38 = quotedNode_21;
@@ -2967,7 +2966,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_6 = (SNode) parameter_47;
               SNode quotedNode1_41;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_41 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_41 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_41 = quotedNode_6;
@@ -2982,7 +2981,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = (SNode) parameter_48;
             SNode quotedNode1_42;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_42 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_42 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_42 = quotedNode_4;
@@ -3015,7 +3014,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;

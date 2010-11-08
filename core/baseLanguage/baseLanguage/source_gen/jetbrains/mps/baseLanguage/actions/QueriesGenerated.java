@@ -70,7 +70,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class QueriesGenerated {
   private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a87 = Pattern.compile("-?\\d+", 0);
@@ -4208,7 +4207,7 @@ __switch__:
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_7 = quotedNode_3;
@@ -4221,7 +4220,7 @@ __switch__:
             quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -4255,7 +4254,7 @@ __switch__:
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -4268,7 +4267,7 @@ __switch__:
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -4327,7 +4326,7 @@ __switch__:
             quotedNode_3 = (SNode) parameter_7;
             SNode quotedNode1_6;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_6 = quotedNode_3;

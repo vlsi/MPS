@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -127,7 +126,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4, typeCheckingContext);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -145,7 +144,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
             quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5, typeCheckingContext);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_10 = quotedNode_5;
@@ -179,7 +178,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -197,7 +196,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
             quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_10 = quotedNode_5;

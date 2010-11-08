@@ -14,7 +14,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
@@ -104,7 +103,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
           quotedNode_2 = (SNode) parameter_9;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_6 = quotedNode_2;
@@ -117,7 +116,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
           quotedNode_3 = (SNode) parameter_10;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_7 = quotedNode_3;
@@ -130,7 +129,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
           quotedNode_4 = (SNode) parameter_11;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
           } else {
             _parameterValues_129834374.add(quotedNode_4);
             quotedNode1_8 = quotedNode_4;
@@ -163,7 +162,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -176,7 +175,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -230,7 +229,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
             quotedNode_4 = (SNode) parameter_14;
             SNode quotedNode1_12;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_12 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_12 = quotedNode_4;

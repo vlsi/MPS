@@ -13,9 +13,9 @@
   <unitInfo fileName="typeof_InternalNewExpression_InferenceRule.java" startLine="55" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalNewExpression_InferenceRule$QuotationClass_8luvtd_a0a0a0b0a" />
   <unitInfo fileName="typeof_InternalThisExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalThisExpression_InferenceRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="51" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule$QuotationClass_qvdecd_a0a0a0" />
+  <unitInfo fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule$QuotationClass_qvdecd_a0a0a0" />
   <unitInfo fileName="typeof_InternalNewExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalNewExpression_InferenceRule" />
-  <unitInfo fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="23" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule" />
+  <unitInfo fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_InternalClassExpression_InferenceRule" />
   <root nodeId="1196525371871">
     <nodeInfo nodeId="1196525371873" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalNewExpression_InferenceRule.java" startLine="25" startPosition="134" endLine="26" endPosition="15" />
     <nodeInfo nodeId="1196525371878" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_InternalNewExpression_InferenceRule.java" startLine="27" startPosition="83" endLine="28" endPosition="76" />
@@ -44,13 +44,13 @@
     <scopeInfo nodeId="1196525371904" fileName="typeof_InternalPartialInstanceMethodCall_InferenceRule.java" startLine="19" startPosition="115" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1196525371911">
-    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="43" />
-    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="29" startPosition="43" endLine="30" endPosition="52" />
-    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="30" startPosition="52" endLine="31" endPosition="218" />
-    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="31" startPosition="218" endLine="32" endPosition="401" />
-    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="27" startPosition="114" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="1196525371913" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="28" startPosition="5" endLine="32" endPosition="401" />
-    <scopeInfo nodeId="1196525371912" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="27" startPosition="114" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="28" endPosition="43" />
+    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="28" startPosition="43" endLine="29" endPosition="52" />
+    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="29" startPosition="52" endLine="30" endPosition="218" />
+    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="30" startPosition="218" endLine="31" endPosition="401" />
+    <nodeInfo nodeId="1196525371913" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="26" startPosition="114" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1196525371913" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="31" endPosition="401" />
+    <scopeInfo nodeId="1196525371912" fileName="typeof_InternalClassExpression_InferenceRule.java" startLine="26" startPosition="114" endLine="32" endPosition="5" />
   </root>
   <root nodeId="1196525371926">
     <nodeInfo nodeId="1196525371928" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InternalStaticMethodCall_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="46" />
