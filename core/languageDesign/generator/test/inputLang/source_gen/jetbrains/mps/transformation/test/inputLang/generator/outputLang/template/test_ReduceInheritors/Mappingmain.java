@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -108,18 +107,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1206460092545(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
-      // TODO notify environment 
-      tnode1.setProperty("name", "OutputRoot");
-      tnode1.setProperty("text", "root in Reduce Inheritors test (expect: A, B, B)");
-      {
-        final Iterable<SNode> inputNodes2 = QueriesGenerated.sourceNodesQuery_1206460249786(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(inputNodes2, null);
-        for (SNode child4 : tlist3) {
-          tnode1.addChild("outputChild", child4);
-        }
-      }
-      return TemplateUtil.singletonList(tnode1);
+      return new TemplateOutputRoot().apply(environment, context, null);
     }
 
     public boolean applyToInheritors() {

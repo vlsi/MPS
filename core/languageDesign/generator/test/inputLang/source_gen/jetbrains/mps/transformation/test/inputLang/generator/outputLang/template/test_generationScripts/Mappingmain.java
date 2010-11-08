@@ -14,8 +14,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
-import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -93,18 +91,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1202243113773(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
-      // TODO notify environment 
-      tnode1.setProperty("name", "OutputRoot_by_MappingRule");
-      tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
-      {
-        final Iterable<SNode> inputNodes2 = QueriesGenerated.sourceNodesQuery_1195170582047(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(inputNodes2, null);
-        for (SNode child4 : tlist3) {
-          tnode1.addChild("outputChild", child4);
-        }
-      }
-      return TemplateUtil.singletonList(tnode1);
+      return new TemplateOutputRoot_by_MappingRule().apply(environment, context, null);
     }
 
     public boolean applyToInheritors() {

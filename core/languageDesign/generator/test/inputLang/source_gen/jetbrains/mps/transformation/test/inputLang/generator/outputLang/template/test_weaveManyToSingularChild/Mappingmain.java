@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -39,17 +38,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1218738676457(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      final SNode tnode1 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
-      // TODO notify environment 
-      tnode1.setProperty("name", "map_outputNode");
-      tnode1.setProperty("text", "output root");
-      {
-        final SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
-        // TODO notify environment 
-        tnode2.setProperty("text", "this is 'special child' in root template");
-        tnode1.addChild("specialChild", tnode2);
-      }
-      return TemplateUtil.singletonList(tnode1);
+      return new Templatemap_outputNode().apply(environment, context, null);
     }
 
     public boolean applyToInheritors() {

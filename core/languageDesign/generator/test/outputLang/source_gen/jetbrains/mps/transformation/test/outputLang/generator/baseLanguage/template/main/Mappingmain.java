@@ -207,58 +207,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      final SNode tnode1 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
-      // TODO notify environment 
-      tnode1.setProperty("name", "RootCustom");
-      {
-        final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false);
-        // TODO notify environment 
-        tnode2.setProperty("name", "main");
-        {
-          final SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
-          // TODO notify environment 
-          tnode2.addChild("returnType", tnode3);
-        }
-        {
-          final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
-          // TODO notify environment 
-          tnode2.addChild("visibility", tnode4);
-        }
-        {
-          final SNode inputNode5 = QueriesGenerated.sourceNodeQuery_4146564171992412788(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-          Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(inputNode5), null);
-          for (SNode child7 : tlist6) {
-            tnode2.addChild("body", child7);
-          }
-        }
-        tnode1.addChild("method", tnode2);
-      }
-      {
-        final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
-        // TODO notify environment 
-        tnode1.addChild("visibility", tnode8);
-      }
-      {
-        final SNode tnode9 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false);
-        // TODO notify environment 
-        {
-          final SNode tnode10 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
-          // TODO notify environment 
-          tnode9.addChild("returnType", tnode10);
-        }
-        {
-          final SNode tnode11 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
-          // TODO notify environment 
-          tnode9.addChild("visibility", tnode11);
-        }
-        {
-          final SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
-          // TODO notify environment 
-          tnode9.addChild("body", tnode12);
-        }
-        tnode1.addChild("constructor", tnode9);
-      }
-      return TemplateUtil.singletonList(tnode1);
+      return new TemplateRootCustom().apply(environment, context, null);
     }
 
     public boolean applyToInheritors() {

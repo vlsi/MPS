@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="892y987ot3pupe6331izmth245t69gs">
+<dependencies version="2" modelHash="8f66kro6hmp4pyx4dx612zz6wyf8a29">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
@@ -20,7 +20,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" hash="4347dbq9hlhtv4ku5bnushdfpegeznm" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="-9m043zztcohmco0o6rgqcg0cykcopbk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="3wd4m755sd8xwc5nyuw5lh9vilzcubd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="892y987ot3pupe6331izmth245t69gs" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="8f66kro6hmp4pyx4dx612zz6wyf8a29" />
   <dep model="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" hash="8cauciuq677n7308aq6d2cx6ocl8qp4" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-da6kx3fdfpn0u46qfvj1352580h8nze" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="8c9uzrjhqtw5vqls14yy3z3tjr5aqcm" />
@@ -170,7 +170,7 @@
   <source id="1147906725605225569" name="reduce_ReductionRule" hash="-dhb156m5zrgdp0opkxylx28gtjuv2ju" />
   <source id="5412006700504152615" name="reduce_TemplateArgumentQueryExpression" hash="fooqerg7caspjr8s08kskr98oyrl1h" />
   <source id="5412006700504157831" name="reduce_Argument" hash="-26nsog0uxx7wssw6cyb0wbss8dmj8do" />
-  <source id="5412006700504199285" name="reduce_RootMappingRule" hash="8rfis820ci3i1kkhrvq7gq06a40q14f" />
+  <source id="5412006700504199285" name="reduce_RootMappingRule" hash="-9n8m7fjry1zn3w10o5i3jja2t1x7lpv" />
   <source id="1940510396026561969" name="map_TemplateSwitch" hash="-84x80964udwa7c3qr0ec4nihkpft2d3" />
   <source id="8626372016104475434" name="reduce_TemplateNodeExpression" hash="-c86zdr1un24ynaeubmb47k87ktyz34l" />
 </dependencies>
