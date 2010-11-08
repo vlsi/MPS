@@ -14,17 +14,15 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IMonitor;
 import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
-import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.generator.generationTypes.TextGenerator;
 
 public class TextGen_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -43,7 +41,7 @@ public class TextGen_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generator")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generator"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -66,19 +64,25 @@ public class TextGen_Facet implements IFacet {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
-              if (pool.<TextGen_Facet.Target_21gswx_a.Variables>variables(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Variables.class).invocationContext() == null) {
-                return new IResult.FAILURE(_output_21gswx_a0a);
-              }
               FileProcessor fileProc = new FileProcessor();
               for (IResource resource : input) {
                 GResource gr = (GResource) resource;
                 if (!(gr.data.status().isOk())) {
+                  Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
                 IFile targetDir = FileSystem.getInstance().getFileByPath(gr.data.module().getOutputFor(gr.data.model()));
                 JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gr.data.model(), targetDir, fileProc);
                 try {
-                  if (!(new TextGenerator(javaStreamHandler, ModelGenerationStatusManager.getInstance().getCacheGenerator(), BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator()).handleOutput(pool.<TextGen_Facet.Target_21gswx_a.Variables>variables(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Variables.class).invocationContext(), gr.data.status()))) {
+                  ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
+                  BLDependenciesCache bldc = BLDependenciesCache.getInstance();
+                  TraceInfoCache tic = TraceInfoCache.getInstance();
+                  GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
+                  if (mgsm == null || bldc == null || tic == null || gdc == null) {
+                    Logger.getLogger("jetbrains.mps.make.TextGen").error("Something's wrong" + mgsm + bldc + tic + gdc);
+                  }
+                  if (!(new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gr.data.status()))) {
+                    Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
                   _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(gr)));
@@ -87,6 +91,7 @@ public class TextGen_Facet implements IFacet {
                 }
               }
               fileProc.saveGeneratedFiles();
+              Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGen completed");
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }
@@ -99,7 +104,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateFiles")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateFiles"), new ITarget.Name("Parameters")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -107,7 +112,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
     }
 
     public ITarget.Name getName() {
@@ -115,30 +120,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public <T> T createVariables(Class<T> cls) {
-      return cls.cast(new Variables());
-    }
-
-    public static class Variables extends MultiTuple._1<IOperationContext> {
-      public Variables() {
-        super();
-      }
-
-      public Variables(IOperationContext invocationContext) {
-        super(invocationContext);
-      }
-
-      public IOperationContext invocationContext(IOperationContext value) {
-        return super._0(value);
-      }
-
-      public IOperationContext invocationContext() {
-        return super._0();
-      }
-
-      @SuppressWarnings(value = "unchecked")
-      public TextGen_Facet.Target_21gswx_a.Variables assignFrom(Tuples._1<IOperationContext> from) {
-        return (TextGen_Facet.Target_21gswx_a.Variables) super.assign(from);
-      }
+      return null;
     }
   }
 }

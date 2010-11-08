@@ -1299,6 +1299,34 @@
         <link role="classifier:3" targetNodeId="6168415856807657684" resolveInfo="ScriptBuilder" />
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2383991756720458978">
+      <property name="name:3" value="withFacets" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2383991756720458979" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2383991756720458980">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2383991756720459034">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="2383991756720459036">
+            <link role="baseMethodDeclaration:3" targetNodeId="6168415856807657719" resolveInfo="withFacets" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2383991756720459038">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2383991756720459037">
+                <link role="variableDeclaration:3" targetNodeId="2383991756720459022" resolveInfo="facetNames" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation:7" id="2383991756720459042" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="2383991756720459022">
+        <property name="name:3" value="facetNames" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.VariableArityType:3" id="2383991756720459031">
+          <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2383991756720459028">
+            <link role="classifier:3" targetNodeId="2.6168415856807657097" resolveInfo="IFacet.Name" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2383991756720459025">
+        <link role="classifier:3" targetNodeId="6168415856807657684" resolveInfo="ScriptBuilder" />
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6168415856807657719">
       <property name="name:3" value="withFacets" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6168415856807657720" />

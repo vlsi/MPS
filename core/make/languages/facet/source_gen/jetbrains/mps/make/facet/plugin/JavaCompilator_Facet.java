@@ -35,7 +35,7 @@ public class JavaCompilator_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("TextGen")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("TextGen"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -91,7 +91,7 @@ public class JavaCompilator_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
     }
 
     public ITarget.Name getName() {

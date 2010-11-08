@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ForeignVariablesExpression_target_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -27,10 +28,14 @@ public class ForeignVariablesExpression_target_ReferentConstraint extends BaseNo
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode td = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
+    final SNode td = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
     return ListSequence.fromList(SLinkOperations.getTargets(td, "dependency", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode d) {
         return SLinkOperations.getTarget(d, "dependsOn", false);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode td) {
+        return (td != null);
       }
     });
   }

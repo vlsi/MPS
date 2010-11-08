@@ -6,6 +6,8 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -32,11 +34,12 @@ public class MakeModel_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(MakeModel_Action.class);
 
   private IOperationContext context;
+  private List<SModelDescriptor> models;
 
   public MakeModel_Action() {
     super("_Make", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -61,21 +64,25 @@ public class MakeModel_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.models = event.getData(MPSDataKeys.MODELS);
     return true;
   }
 
   protected void cleanup() {
     super.cleanup();
     this.context = null;
+    this.models = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ScriptBuilder scb = new ScriptBuilder();
-      IScript scr = scb.withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("GenerateFiles")).withInit(new _FunctionTypes._void_P1_E0<IVariablesPool>() {
+      IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IVariablesPool>() {
         public void invoke(IVariablesPool pool) {
-          Tuples._1<Project> vars = (Tuples._1<Project>) pool.variables(new ITarget.Name("Parameters"), Object.class);
+          Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> vars = (Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>>) pool.variables(new ITarget.Name("Parameters"), Object.class);
           vars._0(MakeModel_Action.this.context.getProject());
+          vars._1(MakeModel_Action.this.context);
+          vars._2(MakeModel_Action.this.models);
         }
       }).toScript();
       final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();

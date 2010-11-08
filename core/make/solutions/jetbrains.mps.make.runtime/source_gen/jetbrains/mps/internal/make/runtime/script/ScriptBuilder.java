@@ -50,6 +50,10 @@ public class ScriptBuilder {
     return this;
   }
 
+  public ScriptBuilder withFacets(IFacet.Name... facetNames) {
+    return withFacets(Sequence.fromArray(facetNames));
+  }
+
   public ScriptBuilder withFacets(Iterable<IFacet.Name> facetNames) {
     for (IFacet.Name fn : Sequence.fromIterable(facetNames)) {
       IFacet fct = FacetRegistry.getInstance().lookup(fn);

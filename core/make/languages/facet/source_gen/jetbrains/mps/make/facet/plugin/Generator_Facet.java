@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
@@ -15,20 +16,22 @@ import jetbrains.mps.make.script.IVariablesPool;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.DumbService;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import com.intellij.ide.IdeEventQueue;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GeneratorManager;
@@ -54,7 +57,7 @@ public class Generator_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return null;
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -77,8 +80,17 @@ public class Generator_Facet implements IFacet {
           Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
+              Logger logger = Logger.getLogger("jetbrains.mps.make.Generator");
               if (pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).project() == null) {
-                Logger.getLogger("jetbrains.mps.make.Generator").error("project is null");
+                logger.error("project is null");
+                return new IResult.FAILURE(_output_ixz87t_a0a);
+              }
+              if (pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext() == null) {
+                logger.error("operationContext is null");
+                return new IResult.FAILURE(_output_ixz87t_a0a);
+              }
+              if (Sequence.fromIterable(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).models()).isEmpty()) {
+                logger.error("no models");
                 return new IResult.FAILURE(_output_ixz87t_a0a);
               }
             default:
@@ -112,25 +124,41 @@ public class Generator_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
-    public static class Variables extends MultiTuple._1<Project> {
+    public static class Variables extends MultiTuple._3<Project, IOperationContext, Iterable<SModelDescriptor>> {
       public Variables() {
         super();
       }
 
-      public Variables(Project project) {
-        super(project);
+      public Variables(Project project, IOperationContext operationContext, Iterable<SModelDescriptor> models) {
+        super(project, operationContext, models);
       }
 
       public Project project(Project value) {
         return super._0(value);
       }
 
+      public IOperationContext operationContext(IOperationContext value) {
+        return super._1(value);
+      }
+
+      public Iterable<SModelDescriptor> models(Iterable<SModelDescriptor> value) {
+        return super._2(value);
+      }
+
       public Project project() {
         return super._0();
       }
 
+      public IOperationContext operationContext() {
+        return super._1();
+      }
+
+      public Iterable<SModelDescriptor> models() {
+        return super._2();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Generator_Facet.Target_ixz87t_a.Variables assignFrom(Tuples._1<Project> from) {
+      public Generator_Facet.Target_ixz87t_a.Variables assignFrom(Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> from) {
         return (Generator_Facet.Target_ixz87t_a.Variables) super.assign(from);
       }
     }
@@ -213,20 +241,22 @@ public class Generator_Facet implements IFacet {
                   default:
                     return new IResult.FAILURE(_output_ixz87t_a0c);
                 }
-                GenerationStrategy strategy = null;
-                if (settings.isIncremental()) {
-                  strategy = new GenerationStrategy((settings.isIncrementalUseCache() ?
-                    GeneratorCacheComponent.getInstance().getCache() :
-                    null
-                  ));
-                }
-                IGenerationTracer tracer = (pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient() ?
-                  pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project().getComponent(GenerationTracer.class) :
-                  new NullGenerationTracer()
-                );
-                pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).generationOptions(GenerationOptions.getDefaults().saveTransientModels(pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient()).strictMode(settings.isStrictMode()).incremental(strategy).generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).tracing(settings.getPerformanceTracingLevel(), tracer).reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()));
-                return new IResult.SUCCESS(_output_ixz87t_a0c);
+              } else {
+                pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient(false);
               }
+              GenerationStrategy strategy = null;
+              if (settings.isIncremental()) {
+                strategy = new GenerationStrategy((settings.isIncrementalUseCache() ?
+                  GeneratorCacheComponent.getInstance().getCache() :
+                  null
+                ));
+              }
+              IGenerationTracer tracer = (pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient() ?
+                pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project().getComponent(GenerationTracer.class) :
+                new NullGenerationTracer()
+              );
+              pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).generationOptions(GenerationOptions.getDefaults().saveTransientModels(pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(Target_ixz87t_c.this.getName(), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient()).strictMode(settings.isStrictMode()).incremental(strategy).generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).tracing(settings.getPerformanceTracingLevel(), tracer).reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).rebuildAll(true));
+              return new IResult.SUCCESS(_output_ixz87t_a0c);
             default:
               return new IResult.SUCCESS(_output_ixz87t_a0c);
           }
@@ -307,13 +337,9 @@ public class Generator_Facet implements IFacet {
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
-          Iterable<IResource> _output_ixz87t_a0d = null;
+          final Wrappers._T<Iterable<IResource>> _output_ixz87t_a0d = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
-              if (pool.<Generator_Facet.Target_ixz87t_d.Variables>variables(Target_ixz87t_d.this.getName(), Generator_Facet.Target_ixz87t_d.Variables.class).options() == null) {
-                Logger.getLogger("jetbrains.mps.make.Generator").error("no options");
-                return new IResult.FAILURE(_output_ixz87t_a0d);
-              }
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   SModelRepository.getInstance().saveAll();
@@ -324,6 +350,12 @@ public class Generator_Facet implements IFacet {
                 mvt.openToolLater(false);
               }
               IdeEventQueue.getInstance().flushQueue();
+              final GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource.Data>() {
+                public Boolean invoke(GResource.Data data) {
+                  _output_ixz87t_a0d.value = Sequence.fromIterable(_output_ixz87t_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new GResource(data))));
+                  return true;
+                }
+              });
               final Wrappers._boolean generationOk = new Wrappers._boolean();
               ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
                 public void run(ProgressIndicator ind) {
@@ -331,14 +363,14 @@ public class Generator_Facet implements IFacet {
                   if (!(pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(new ITarget.Name("ConfigureGenerator"), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient())) {
                     pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
                   }
-                  generationOk.value = gm.generateModels(null, null, null, ind, new DefaultMessageHandler(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project()), pool.<Generator_Facet.Target_ixz87t_d.Variables>variables(Target_ixz87t_d.this.getName(), Generator_Facet.Target_ixz87t_d.Variables.class).options());
+                  generationOk.value = gm.generateModels(Sequence.fromIterable(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).models()).toListSequence(), pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gh, ind, new DefaultMessageHandler(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project()), pool.<Generator_Facet.Target_ixz87t_c.Variables>variables(new ITarget.Name("ConfigureGenerator"), Generator_Facet.Target_ixz87t_c.Variables.class).generationOptions().create());
                 }
               }, "Generation", true, pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project());
               if (!(generationOk.value)) {
-                return new IResult.FAILURE(_output_ixz87t_a0d);
+                return new IResult.FAILURE(_output_ixz87t_a0d.value);
               }
             default:
-              return new IResult.SUCCESS(_output_ixz87t_a0d);
+              return new IResult.SUCCESS(_output_ixz87t_a0d.value);
           }
         }
       };
@@ -357,7 +389,7 @@ public class Generator_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
     }
 
     public ITarget.Name getName() {
@@ -365,30 +397,7 @@ public class Generator_Facet implements IFacet {
     }
 
     public <T> T createVariables(Class<T> cls) {
-      return cls.cast(new Variables());
-    }
-
-    public static class Variables extends MultiTuple._1<GenerationOptions> {
-      public Variables() {
-        super();
-      }
-
-      public Variables(GenerationOptions options) {
-        super(options);
-      }
-
-      public GenerationOptions options(GenerationOptions value) {
-        return super._0(value);
-      }
-
-      public GenerationOptions options() {
-        return super._0();
-      }
-
-      @SuppressWarnings(value = "unchecked")
-      public Generator_Facet.Target_ixz87t_d.Variables assignFrom(Tuples._1<GenerationOptions> from) {
-        return (Generator_Facet.Target_ixz87t_d.Variables) super.assign(from);
-      }
+      return null;
     }
   }
 }

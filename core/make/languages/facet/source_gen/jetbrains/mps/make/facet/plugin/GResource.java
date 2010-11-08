@@ -16,13 +16,13 @@ public class GResource implements IResource {
     this.data = data;
   }
 
-  public static class Data extends MultiTuple._3<IModule, SModelDescriptor, GenerationStatus> {
+  public static class Data extends MultiTuple._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> {
     public Data() {
       super();
     }
 
-    public Data(IModule module, SModelDescriptor model, GenerationStatus status) {
-      super(module, model, status);
+    public Data(IModule module, SModelDescriptor model, Iterable<SModelDescriptor> models, GenerationStatus status) {
+      super(module, model, models, status);
     }
 
     public IModule module(IModule value) {
@@ -33,8 +33,12 @@ public class GResource implements IResource {
       return super._1(value);
     }
 
-    public GenerationStatus status(GenerationStatus value) {
+    public Iterable<SModelDescriptor> models(Iterable<SModelDescriptor> value) {
       return super._2(value);
+    }
+
+    public GenerationStatus status(GenerationStatus value) {
+      return super._3(value);
     }
 
     public IModule module() {
@@ -45,12 +49,16 @@ public class GResource implements IResource {
       return super._1();
     }
 
-    public GenerationStatus status() {
+    public Iterable<SModelDescriptor> models() {
       return super._2();
     }
 
+    public GenerationStatus status() {
+      return super._3();
+    }
+
     @SuppressWarnings(value = "unchecked")
-    public GResource.Data assignFrom(Tuples._3<IModule, SModelDescriptor, GenerationStatus> from) {
+    public GResource.Data assignFrom(Tuples._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> from) {
       return (GResource.Data) super.assign(from);
     }
   }
