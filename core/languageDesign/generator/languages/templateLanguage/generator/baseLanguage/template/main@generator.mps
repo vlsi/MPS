@@ -782,20 +782,13 @@
       <link role="labelDeclaration:2" targetNodeId="2478203504267210404" resolveInfo="templDeclarationClass" />
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="6304885153124981873">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6304885153124981874">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6304885153124981875">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6304885153124981887">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6304885153124981882">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6304885153124981877">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="6304885153124981876" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="6304885153124981881" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation:16" id="6304885153124981886" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6304885153124981891">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1147906725605262644">
-                  <property name="value:3" value="jetbrains.mps.transformation.test" />
-                </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8294566892413615325">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8294566892413615327">
+              <link role="baseMethodDeclaration:3" targetNodeId="36.8294566892413615304" resolveInfo="isGeneratable" />
+              <link role="classConcept:3" targetNodeId="36.8285036680620268543" resolveInfo="GenUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413615329">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8294566892413615328" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="8294566892413615333" />
               </node>
             </node>
           </node>
@@ -811,21 +804,6 @@
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="747214206848656616">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="747214206848667743">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="747214206848667752">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="747214206848667744">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="747214206848667745">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="747214206848667746">
-                    <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="747214206848667747" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="747214206848667748" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation:16" id="747214206848667749" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="747214206848667750">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1147906725605262643">
-                    <property name="value:3" value="jetbrains.mps.transformation.test" />
-                  </node>
-                </node>
-              </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="747214206848667755">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="747214206848667756" />
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="747214206848667757">
@@ -835,6 +813,14 @@
                       <link role="annotationLink:16" targetNodeId="7.1168619445822:2" resolveInfo="rootTemplateAnnotation" />
                     </node>
                   </node>
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8294566892413615335">
+                <link role="classConcept:3" targetNodeId="36.8285036680620268543" resolveInfo="GenUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="36.8294566892413615304" resolveInfo="isGeneratable" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413615336">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8294566892413615337" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="8294566892413615338" />
                 </node>
               </node>
             </node>
@@ -849,19 +835,12 @@
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1147906725605262632">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1147906725605262633">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1147906725605262634">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1147906725605262635">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1147906725605262636">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1147906725605262637">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1147906725605262638" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1147906725605262639" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation:16" id="1147906725605262640" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1147906725605262641">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1147906725605262642">
-                  <property name="value:3" value="jetbrains.mps.transformation.test" />
-                </node>
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8294566892413615339">
+              <link role="classConcept:3" targetNodeId="36.8285036680620268543" resolveInfo="GenUtil" />
+              <link role="baseMethodDeclaration:3" targetNodeId="36.8294566892413615304" resolveInfo="isGeneratable" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413615340">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8294566892413615341" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="8294566892413615342" />
               </node>
             </node>
           </node>
@@ -874,19 +853,12 @@
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="3423901696829298384">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3423901696829298385">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3423901696829298386">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3423901696829298387">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3423901696829298388">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3423901696829298389">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="3423901696829298390" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="3423901696829298391" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation:16" id="3423901696829298392" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3423901696829298393">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3423901696829298394">
-                  <property name="value:3" value="jetbrains.mps.transformation.test" />
-                </node>
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8294566892413615343">
+              <link role="classConcept:3" targetNodeId="36.8285036680620268543" resolveInfo="GenUtil" />
+              <link role="baseMethodDeclaration:3" targetNodeId="36.8294566892413615304" resolveInfo="isGeneratable" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8294566892413615344">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8294566892413615345" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="8294566892413615346" />
               </node>
             </node>
           </node>

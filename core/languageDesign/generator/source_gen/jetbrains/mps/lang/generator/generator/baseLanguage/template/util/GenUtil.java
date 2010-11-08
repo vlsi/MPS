@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class GenUtil {
   private static final String KEY = "VarName";
@@ -39,5 +41,9 @@ public class GenUtil {
     }
     context.putTransientObject(MultiTuple.<String,SNode>from(KEY, node), var);
     return var;
+  }
+
+  public static boolean isGeneratable(SModel model) {
+    return SModelOperations.getModelName(model).startsWith("jetbrains.mps.transformation.test");
   }
 }

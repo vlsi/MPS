@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -12,7 +12,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -20,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -40,19 +40,19 @@ import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_6304885153124981873(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).startsWith("jetbrains.mps.transformation.test");
+    return GenUtil.isGeneratable(SNodeOperations.getModel(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_747214206848656615(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).startsWith("jetbrains.mps.transformation.test") && SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null;
+    return GenUtil.isGeneratable(SNodeOperations.getModel(_context.getNode())) && SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null;
   }
 
   public static boolean baseMappingRule_Condition_1147906725605262632(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).startsWith("jetbrains.mps.transformation.test");
+    return GenUtil.isGeneratable(SNodeOperations.getModel(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_3423901696829298384(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).startsWith("jetbrains.mps.transformation.test");
+    return GenUtil.isGeneratable(SNodeOperations.getModel(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1167762379110(final IOperationContext operationContext, final PropertyMacroContext _context) {
