@@ -25,7 +25,7 @@
   <unitInfo fileName="SurroundWithSynchronized_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithSynchronized_Intention" />
   <unitInfo fileName="SurroundWithTryFinally_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTryFinally_Intention" />
   <unitInfo fileName="SuroundWithTryCatch_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention" />
-  <unitInfo fileName="SurroundWithForEach_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithForEach_Intention" />
+  <unitInfo fileName="SurroundStatementsWithForEach_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundStatementsWithForEach_Intention" />
   <unitInfo fileName="SurroundWithFor_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithFor_Intention" />
   <unitInfo fileName="SurroundWithDoWhile_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithDoWhile_Intention" />
   <unitInfo fileName="SurroundWithWhile_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithWhile_Intention" />
@@ -1559,17 +1559,17 @@
     </scopeInfo>
   </root>
   <root nodeId="3366354716707825882">
-    <nodeInfo nodeId="3366354716707825887" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SurroundWithForEach_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="22" />
-    <nodeInfo nodeId="3366354716707825890" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SurroundWithForEach_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="121" />
-    <nodeInfo nodeId="3366354716707825930" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SurroundWithForEach_Intention.java" startLine="40" startPosition="121" endLine="41" endPosition="65" />
-    <nodeInfo nodeId="3366354716707825896" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundWithForEach_Intention.java" startLine="41" startPosition="65" endLine="42" endPosition="63" />
-    <nodeInfo nodeId="3366354716707825907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundWithForEach_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="247" />
-    <nodeInfo nodeId="3366354716707825917" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundWithForEach_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="125" />
-    <nodeInfo nodeId="3366354716707825903" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SurroundWithForEach_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="3366354716707825884" fileName="SurroundWithForEach_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="3366354716707825906" fileName="SurroundWithForEach_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="247" />
-    <scopeInfo nodeId="3366354716707825903" fileName="SurroundWithForEach_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="3366354716707825886" fileName="SurroundWithForEach_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="125">
+    <nodeInfo nodeId="3366354716707825887" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="22" />
+    <nodeInfo nodeId="3366354716707825890" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="121" />
+    <nodeInfo nodeId="3366354716707825930" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="40" startPosition="121" endLine="41" endPosition="65" />
+    <nodeInfo nodeId="3366354716707825896" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="41" startPosition="65" endLine="42" endPosition="63" />
+    <nodeInfo nodeId="3366354716707825907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="247" />
+    <nodeInfo nodeId="3366354716707825917" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="125" />
+    <nodeInfo nodeId="3366354716707825903" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SurroundStatementsWithForEach_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="3366354716707825884" fileName="SurroundStatementsWithForEach_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="22" />
+    <scopeInfo nodeId="3366354716707825906" fileName="SurroundStatementsWithForEach_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="247" />
+    <scopeInfo nodeId="3366354716707825903" fileName="SurroundStatementsWithForEach_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="3366354716707825886" fileName="SurroundStatementsWithForEach_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="125">
       <varInfo nodeId="3366354716707825891" varName="forStatement" />
       <varInfo nodeId="3366354716707825931" varName="selectedNodes" />
     </scopeInfo>

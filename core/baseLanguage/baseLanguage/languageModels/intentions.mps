@@ -476,6 +476,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1195647309293">
     <property name="name:8" value="SplitIntoDeclarationAndAssignment" />
     <property name="isErrorIntention:8" value="false" />
+    <property name="isAvailableInChildNodes:8" value="true" />
     <link role="forConcept:8" targetNodeId="1.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1195647309378">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1195647309379">
@@ -17712,7 +17713,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration:8" id="3366354716707825882">
-    <property name="name:8" value="SurroundWithForEach" />
+    <property name="name:8" value="SurroundStatementsWithForEach" />
     <property name="isAvailableInChildNodes:8" value="true" />
     <property name="virtualPackage:8" value="surround" />
     <link role="forConcept:8" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />

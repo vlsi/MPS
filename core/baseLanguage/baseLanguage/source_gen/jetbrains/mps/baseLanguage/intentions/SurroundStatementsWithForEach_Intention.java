@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class SurroundWithForEach_Intention extends SurroundWithIntention implements Intention {
-  public SurroundWithForEach_Intention() {
+public class SurroundStatementsWithForEach_Intention extends SurroundWithIntention implements Intention {
+  public SurroundStatementsWithForEach_Intention() {
   }
 
   public String getConcept() {
