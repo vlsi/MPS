@@ -22,10 +22,10 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     tnode1.setProperty("name", "OutputRoot");
     tnode1.setProperty("text", "root in Reduce Inheritors test (expect: A, B, B)");
     {
-      final Iterable<SNode> inputNodes2 = QueriesGenerated.sourceNodesQuery_1206460249786(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
-      Collection<SNode> tlist3 = environment.copyNodes(inputNodes2, null);
-      for (SNode child4 : tlist3) {
-        tnode1.addChild("outputChild", child4);
+      final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1206460249786(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, environment.getGenerator()));
+      Collection<SNode> tlist2 = environment.copyNodes(copyListInput2, null);
+      for (SNode child3 : tlist2) {
+        tnode1.addChild("outputChild", child3);
       }
     }
     return TemplateUtil.singletonList(tnode1);

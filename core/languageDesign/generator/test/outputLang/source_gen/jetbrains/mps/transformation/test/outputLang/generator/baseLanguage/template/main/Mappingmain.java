@@ -45,10 +45,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
       // TODO notify environment 
       tnode1.setProperty("text", "wrapper created by reduction 1");
       {
-        final SNode inputNode2 = QueriesGenerated.sourceNodeQuery_1209604320455(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(inputNode2), null);
-        for (SNode child4 : tlist3) {
-          tnode1.addChild("outputChild", child4);
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1209604320455(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), null, context, environment.getGenerator()));
+        Collection<SNode> tlist2 = environment.copyNodes(Collections.singletonList(copySrcInput2), null);
+        for (SNode child3 : tlist2) {
+          tnode1.addChild("outputChild", child3);
         }
       }
       return TemplateUtil.singletonList(tnode1);
@@ -71,18 +71,18 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_8900764248744322639(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
-      final SNode inputNode1 = QueriesGenerated.sourceNodeQuery_1473665232107485240(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-      Collection<SNode> tlist2 = environment.copyNodes(Collections.singletonList(inputNode1), null);
-      TemplateContext context3 = context.subContext("sd");
-      final SNode tnode4 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
+      final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_1473665232107485240(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), null, context, environment.getGenerator()));
+      Collection<SNode> tlist1 = environment.copyNodes(Collections.singletonList(copySrcInput1), "sd");
+      TemplateContext context2 = context.subContext("sd");
+      final SNode tnode3 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
       // TODO notify environment 
       environment.resolve(new ReferenceResolver() {
         public Object resolve(SNode outputNode, TemplateContext context, ITemplateGenerator generator) {
-          return QueriesGenerated.referenceMacro_GetReferent_1473665232107455264(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode4, null, context, generator));
+          return QueriesGenerated.referenceMacro_GetReferent_1473665232107455264(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode3, null, context, generator));
         }
-      }, tnode4, "variableDeclaration", context3);
-      Collection<SNode> tlist5 = TemplateUtil.asList(tlist2, tnode4);
-      return tlist5;
+      }, tnode3, "variableDeclaration", context2);
+      Collection<SNode> tlist4 = TemplateUtil.asList(tlist1, tnode3);
+      return tlist4;
     }
 
     public boolean applyToInheritors() {
@@ -103,10 +103,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
       // TODO notify environment 
       tnode1.setProperty("text", "wrapper created by reduction 2");
       {
-        final SNode inputNode2 = QueriesGenerated.sourceNodeQuery_1209662301920(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(inputNode2), null);
-        for (SNode child4 : tlist3) {
-          tnode1.addChild("outputChild", child4);
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1209662301920(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), null, context, environment.getGenerator()));
+        Collection<SNode> tlist2 = environment.copyNodes(Collections.singletonList(copySrcInput2), null);
+        for (SNode child3 : tlist2) {
+          tnode1.addChild("outputChild", child3);
         }
       }
       return TemplateUtil.singletonList(tnode1);

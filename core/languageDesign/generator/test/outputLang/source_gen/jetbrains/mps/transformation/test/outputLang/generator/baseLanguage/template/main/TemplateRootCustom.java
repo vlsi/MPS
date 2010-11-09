@@ -36,38 +36,38 @@ public class TemplateRootCustom implements TemplateDeclaration {
         tnode2.addChild("visibility", tnode4);
       }
       {
-        final SNode inputNode5 = QueriesGenerated.sourceNodeQuery_4146564171992412788(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(inputNode5), null);
-        for (SNode child7 : tlist6) {
-          tnode2.addChild("body", child7);
+        final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992412788(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), null, context, environment.getGenerator()));
+        Collection<SNode> tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), null);
+        for (SNode child6 : tlist5) {
+          tnode2.addChild("body", child6);
         }
       }
       tnode1.addChild("method", tnode2);
     }
     {
-      final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+      final SNode tnode7 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
       // TODO notify environment 
-      tnode1.addChild("visibility", tnode8);
+      tnode1.addChild("visibility", tnode7);
     }
     {
-      final SNode tnode9 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false);
+      final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false);
       // TODO notify environment 
       {
-        final SNode tnode10 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
+        final SNode tnode9 = new SNode(null, "jetbrains.mps.baseLanguage.structure.VoidType", false);
         // TODO notify environment 
-        tnode9.addChild("returnType", tnode10);
+        tnode8.addChild("returnType", tnode9);
       }
       {
-        final SNode tnode11 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+        final SNode tnode10 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
         // TODO notify environment 
-        tnode9.addChild("visibility", tnode11);
+        tnode8.addChild("visibility", tnode10);
       }
       {
-        final SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+        final SNode tnode11 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
         // TODO notify environment 
-        tnode9.addChild("body", tnode12);
+        tnode8.addChild("body", tnode11);
       }
-      tnode1.addChild("constructor", tnode9);
+      tnode1.addChild("constructor", tnode8);
     }
     return TemplateUtil.singletonList(tnode1);
 

@@ -19,18 +19,28 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final Iterable<SNode> sourcelist1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+    final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, environment.getGenerator()));
     final List<SNode> tlist1 = new ArrayList();
-    for (SNode itnode1 : sourcelist1) {
+    for (SNode itnode1 : loopList1) {
       if (itnode1 == null) {
         continue;
       }
-      TemplateContext context1 = context.subContext(null, itnode1);
-      final SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
-      // TODO notify environment 
-      tnode2.setProperty("text", "child #1");
-      if (tnode2 != null) {
-        tlist1.add(tnode2);
+      boolean inputChanged1 = context.getInput() != itnode1;
+      try {
+        if (inputChanged1) {
+          environment.getTracer().pushInputNode(itnode1);
+        }
+        TemplateContext context1 = context.subContext(null, itnode1);
+        final SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+        // TODO notify environment 
+        tnode2.setProperty("text", "child #1");
+        if (tnode2 != null) {
+          tlist1.add(tnode2);
+        }
+      } finally {
+        if (inputChanged1) {
+          environment.getTracer().closeInputNode(itnode1);
+        }
       }
     }
     final SNode tnode3 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);

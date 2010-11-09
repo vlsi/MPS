@@ -30,17 +30,17 @@ public class TemplateconvertMult implements TemplateDeclaration {
       final SNode tnode2 = new SNode(null, "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", false);
       // TODO notify environment 
       {
-        final SNode inputNode3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(null, new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, null));
-        Collection<SNode> tlist4 = environment.copyNodes(Collections.singletonList(inputNode3), null);
-        for (SNode child5 : tlist4) {
-          tnode2.addChild("lValue", child5);
+        final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, environment.getGenerator()));
+        Collection<SNode> tlist3 = environment.copyNodes(Collections.singletonList(copySrcInput3), null);
+        for (SNode child4 : tlist3) {
+          tnode2.addChild("lValue", child4);
         }
       }
       {
-        final SNode inputNode6 = QueriesGenerated.sourceNodeQuery_4146564171992617085(null, new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, null));
-        Collection<SNode> tlist7 = environment.copyNodes(Collections.singletonList(inputNode6), null);
-        for (SNode child8 : tlist7) {
-          tnode2.addChild("rValue", child8);
+        final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992617085(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, environment.getGenerator()));
+        Collection<SNode> tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), null);
+        for (SNode child6 : tlist5) {
+          tnode2.addChild("rValue", child6);
         }
       }
       tnode1.addChild("expression", tnode2);

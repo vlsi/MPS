@@ -36,18 +36,18 @@ public class Templateout_class implements TemplateDeclaration {
         tnode2.addChild("visibility", tnode4);
       }
       {
-        final SNode inputNode5 = QueriesGenerated.sourceNodeQuery_1209150187921(null, new SourceSubstituteMacroNodeContext(context.getInput(), null, context, null));
-        Collection<SNode> tlist6 = environment.copyNodes(Collections.singletonList(inputNode5), null);
-        for (SNode child7 : tlist6) {
-          tnode2.addChild("body", child7);
+        final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1209150187921(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), null, context, environment.getGenerator()));
+        Collection<SNode> tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), null);
+        for (SNode child6 : tlist5) {
+          tnode2.addChild("body", child6);
         }
       }
       tnode1.addChild("method", tnode2);
     }
     {
-      final SNode tnode8 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
+      final SNode tnode7 = new SNode(null, "jetbrains.mps.baseLanguage.structure.PublicVisibility", false);
       // TODO notify environment 
-      tnode1.addChild("visibility", tnode8);
+      tnode1.addChild("visibility", tnode7);
     }
     return TemplateUtil.singletonList(tnode1);
 

@@ -66,10 +66,10 @@ public class TemplateprocessStatement implements TemplateDeclaration {
             tnode7.addChild("type", tnode8);
           }
           {
-            final SNode inputNode9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(null, new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, null));
-            Collection<SNode> tlist10 = environment.copyNodes(Collections.singletonList(inputNode9), null);
-            for (SNode child11 : tlist10) {
-              tnode7.addChild("initializer", child11);
+            final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, environment.getGenerator()));
+            Collection<SNode> tlist9 = environment.copyNodes(Collections.singletonList(copySrcInput9), null);
+            for (SNode child10 : tlist9) {
+              tnode7.addChild("initializer", child10);
             }
           }
           tnode6.addChild("localVariableDeclaration", tnode7);
@@ -78,51 +78,51 @@ public class TemplateprocessStatement implements TemplateDeclaration {
       }
       tnode1.addChild("statements", tnode2);
     }
-    final SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
+    final SNode tnode11 = new SNode(null, "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
     // TODO notify environment 
     {
-      final SNode tnode13 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+      final SNode tnode12 = new SNode(null, "jetbrains.mps.baseLanguage.structure.StatementList", false);
       // TODO notify environment 
       {
-        final SNode tnode14 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
+        final SNode tnode13 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
         // TODO notify environment 
         {
-          final SNode tnode15 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false);
+          final SNode tnode14 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false);
           // TODO notify environment 
-          tnode15.setProperty("name", "e");
+          tnode14.setProperty("name", "e");
           {
-            final SNode tnode16 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerType", false);
+            final SNode tnode15 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerType", false);
             // TODO notify environment 
-            tnode15.addChild("type", tnode16);
+            tnode14.addChild("type", tnode15);
           }
-          tnode14.addChild("localVariableDeclaration", tnode15);
+          tnode13.addChild("localVariableDeclaration", tnode14);
         }
-        tnode13.addChild("statement", tnode14);
+        tnode12.addChild("statement", tnode13);
       }
       {
-        final SNode tnode17 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
+        final SNode tnode16 = new SNode(null, "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
         // TODO notify environment 
         {
-          final SNode tnode18 = new SNode(null, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false);
+          final SNode tnode17 = new SNode(null, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false);
           // TODO notify environment 
           {
-            final SNode tnode19 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
+            final SNode tnode18 = new SNode(null, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);
             // TODO notify environment 
-            environment.resolveInTemplateLater(tnode19, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", contextWithParameters);
-            tnode18.addChild("lValue", tnode19);
+            environment.resolveInTemplateLater(tnode18, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", contextWithParameters);
+            tnode17.addChild("lValue", tnode18);
           }
           {
-            final SNode tnode20 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
+            final SNode tnode19 = new SNode(null, "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
             // TODO notify environment 
-            tnode20.setProperty("value", "5");
-            tnode18.addChild("rValue", tnode20);
+            tnode19.setProperty("value", "5");
+            tnode17.addChild("rValue", tnode19);
           }
-          tnode17.addChild("expression", tnode18);
+          tnode16.addChild("expression", tnode17);
         }
-        tnode13.addChild("statement", tnode17);
+        tnode12.addChild("statement", tnode16);
       }
-      tnode12.addChild("statements", tnode13);
+      tnode11.addChild("statements", tnode12);
     }
-    return TemplateUtil.asList(tnode1, tnode12);
+    return TemplateUtil.asList(tnode1, tnode11);
   }
 }
