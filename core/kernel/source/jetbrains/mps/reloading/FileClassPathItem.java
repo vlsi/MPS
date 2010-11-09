@@ -107,7 +107,7 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public Iterable<String> getAvailableRootClasses(String namespace) {
+  public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
@@ -117,7 +117,7 @@ public class FileClassPathItem extends RealClassPathItem {
     if (start == null) return new EmptyIterable<String>();
     Condition<String> cond = new Condition<String>() {
       public boolean met(String className) {
-        return !isInner(className);
+        return !isAnonymous(className);
       }
     };
     return new ConditionalIterable<String>(start, cond);

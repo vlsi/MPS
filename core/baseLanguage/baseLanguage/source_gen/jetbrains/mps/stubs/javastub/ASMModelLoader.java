@@ -108,7 +108,7 @@ public abstract class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      for (String name : myCpItem.getAvailableRootClasses(pack)) {
+      for (String name : myCpItem.getAvailableClasses(pack)) {
         getRootClassifier(name);
       }
     } catch (Exception e) {

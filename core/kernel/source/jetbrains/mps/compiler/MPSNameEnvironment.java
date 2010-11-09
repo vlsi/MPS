@@ -54,7 +54,7 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
     }
     pname += new String(packageName);
 
-    return getClassPathItem().getAvailableRootClasses(pname).iterator().hasNext() ||
+    return getClassPathItem().getAvailableClasses(pname).iterator().hasNext() ||
       getClassPathItem().getSubpackages(pname).iterator().hasNext();
   }
 

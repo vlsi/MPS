@@ -156,7 +156,7 @@ public class ClassPathTest extends BaseMPSTest {
       packages.remove(some);
       packages.addAll(IterableUtil.asCollection(pathItem.getSubpackages(some)));
 
-      for (String shortClassName : pathItem.getAvailableRootClasses(some)) {
+      for (String shortClassName : pathItem.getAvailableClasses(some)) {
         classNames.add(some + "." + shortClassName);
       }
     }

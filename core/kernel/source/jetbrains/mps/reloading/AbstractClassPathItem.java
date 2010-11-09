@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.reloading;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Set;
+import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
+  private static final Pattern DIGITS = Pattern.compile("\\d+");
+
   public long getTimestamp() {
     return getTimestamp("");
   }
@@ -28,8 +28,12 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     return this;
   }
 
-  protected boolean isInner(String className) {
-    if (className.contains("$")) return true;
+  protected boolean isAnonymous(String className) {
+    if (!className.contains("$")) return false;
+
+    for (String part : className.split("\\$")) {
+      if (DIGITS.matcher(part).matches()) return true;
+    }
     return false;
   }
 

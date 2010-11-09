@@ -17,7 +17,6 @@ package jetbrains.mps.javaParser;
 
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
@@ -108,7 +107,7 @@ public class UIComponents {
       myAdditionalClasspaths.add(classPath);
       for (String unresolvedFQName : new ArrayList<String>(myUnresolvedFQNames)) {
         if (classPath.getClass(unresolvedFQName) != null ||
-          classPath.getAvailableRootClasses(unresolvedFQName).iterator().hasNext() ||
+          classPath.getAvailableClasses(unresolvedFQName).iterator().hasNext() ||
           classPath.getSubpackages(unresolvedFQName).iterator().hasNext()) {
           addClassInClassPath(classPath, unresolvedFQName);
         }

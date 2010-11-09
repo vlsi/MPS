@@ -59,11 +59,11 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
-  public Iterable<String> getAvailableRootClasses(String namespace) {
+  public Iterable<String> getAvailableClasses(String namespace) {
     CompositeIterable<String> result = new CompositeIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
-      result.add(item.getAvailableRootClasses(namespace));
+      result.add(item.getAvailableClasses(namespace));
     }
     return result;
   }

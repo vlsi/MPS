@@ -123,13 +123,13 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public Iterable<String> getAvailableRootClasses(String namespace) {
+  public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     ensureInitialized();
     Set<String> start = myCache.getClassesSetFor(namespace);
     Condition<String> cond = new Condition<String>() {
       public boolean met(String className) {
-        return !isInner(className);
+        return !isAnonymous(className);
       }
     };
     return new ConditionalIterable<String>(start, cond);
@@ -144,7 +144,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long timestamp = 0;
-    for (String cls : getAvailableRootClasses(namespace)) {
+    for (String cls : getAvailableClasses(namespace)) {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
     }
     return timestamp;

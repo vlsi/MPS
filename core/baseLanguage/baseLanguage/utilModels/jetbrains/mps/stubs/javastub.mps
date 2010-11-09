@@ -162,7 +162,7 @@
                   <link role="variableDeclaration:3" targetNodeId="7241381882860002271" resolveInfo="myCpItem" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6962464904663134544">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~IClassPathItem.getAvailableRootClasses(java.lang.String):java.lang.Iterable" resolveInfo="getAvailableRootClasses" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~IClassPathItem.getAvailableClasses(java.lang.String):java.lang.Iterable" resolveInfo="getAvailableClasses" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6962464904663134545">
                     <link role="variableDeclaration:3" targetNodeId="7241381882860002332" resolveInfo="pack" />
                   </node>

@@ -90,7 +90,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     }
 
     for (String subpackage : cpItem.getSubpackages(pack)) {
-      if (cpItem.getAvailableRootClasses(subpackage).iterator().hasNext()) {
+      if (cpItem.getAvailableClasses(subpackage).iterator().hasNext()) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId());
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(JavaStubs.this.getLanguageId()));
@@ -107,7 +107,7 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   private void iterateClasspath(IClassPathItem item, Set<StubDescriptor> result, final String pack) {
-    for (String cls : item.getAvailableRootClasses(pack)) {
+    for (String cls : item.getAvailableClasses(pack)) {
       result.add(new StubDescriptor(cls, pack, item));
     }
     for (String subpack : item.getSubpackages(pack)) {
