@@ -26,7 +26,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="f:java_stub#jetbrains.mps.ide.progress(jetbrains.mps.ide.progress@java_stub)" version="-1" />
   <devkit namespace="e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)" />
-  <maxImportIndex value="32" />
+  <maxImportIndex value="33" />
   <import index="1" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.ide.generator(jetbrains.mps.ide.generator@java_stub)" version="-1" />
@@ -59,6 +59,7 @@
   <import index="30" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#jetbrains.mps.make(jetbrains.mps.make@java_stub)" version="-1" />
+  <import index="33" modelUID="f:java_stub#jetbrains.mps.make.java(jetbrains.mps.make.java@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="8163946392710004057">
     <property name="name:23" value="Make" />
@@ -1982,12 +1983,12 @@
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2383991756720502721">
                       <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2383991756720502722">
                         <property name="name:3" value="bldc" />
-                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2383991756720502723">
-                          <link role="classifier:3" targetNodeId="27.~BLDependenciesCache" resolveInfo="BLDependenciesCache" />
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7839491417008017677">
+                          <link role="classifier:3" targetNodeId="33.~BLDependenciesCache" resolveInfo="BLDependenciesCache" />
                         </node>
-                        <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2383991756720502724">
-                          <link role="baseMethodDeclaration:3" targetNodeId="27.~BLDependenciesCache.getInstance():jetbrains.mps.baseLanguage.textGen.BLDependenciesCache" resolveInfo="getInstance" />
-                          <link role="classConcept:3" targetNodeId="27.~BLDependenciesCache" resolveInfo="BLDependenciesCache" />
+                        <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7839491417008017678">
+                          <link role="baseMethodDeclaration:3" targetNodeId="33.~BLDependenciesCache.getInstance():jetbrains.mps.make.java.BLDependenciesCache" resolveInfo="getInstance" />
+                          <link role="classConcept:3" targetNodeId="33.~BLDependenciesCache" resolveInfo="BLDependenciesCache" />
                         </node>
                       </node>
                     </node>

@@ -2,6 +2,7 @@
 <model modelUID="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <import index="26" modelUID="f:java_stub#jetbrains.mps.make.java(jetbrains.mps.make.java@java_stub)" version="-1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" implicit="yes" />
@@ -21,7 +22,6 @@
   <import index="17" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" implicit="yes" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.generator.traceInfo(jetbrains.mps.generator.traceInfo@java_stub)" version="-1" implicit="yes" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
-  <import index="20" modelUID="f:java_stub#jetbrains.mps.baseLanguage.textGen(jetbrains.mps.baseLanguage.textGen@java_stub)" version="-1" implicit="yes" />
   <import index="21" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" implicit="yes" />
   <import index="22" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" implicit="yes" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.ide.progress(jetbrains.mps.ide.progress@java_stub)" version="-1" implicit="yes" />
@@ -275,9 +275,9 @@
                             </node>
                           </node>
                           <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4328738523548225408">
-                            <node role="4.operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4328738523548225409">
-                              <link role="4.classConcept:3" targetNodeId="20.~BLDependenciesCache" />
-                              <link role="4.baseMethodDeclaration:3" targetNodeId="20.~BLDependenciesCache.getInstance():jetbrains.mps.baseLanguage.textGen.BLDependenciesCache" />
+                            <node role="4.operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7839491417007985588">
+                              <link role="4.baseMethodDeclaration:3" targetNodeId="26.~BLDependenciesCache.getInstance():jetbrains.mps.make.java.BLDependenciesCache" resolveInfo="getInstance" />
+                              <link role="4.classConcept:3" targetNodeId="26.~BLDependenciesCache" resolveInfo="BLDependenciesCache" />
                             </node>
                             <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4328738523548225410">
                               <link role="4.baseMethodDeclaration:3" targetNodeId="12.~BaseModelCache.getGenerator():jetbrains.mps.generator.cache.CacheGenerator" />
