@@ -121,10 +121,13 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public void collectAvailableClasses(Set<String> classes, String namespace) {
+  public void collectAvailableRootClasses(Set<String> classes, String namespace) {
     checkValidity();
     ensureInitialized();
-    classes.addAll(myCache.getClassesSetFor(namespace));
+    for (String className:myCache.getClassesSetFor(namespace)){
+      if (isInner(className)) continue;
+      classes.add(className);
+    }
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
@@ -136,7 +139,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long timestamp = 0;
-    for (String cls : getAvailableClasses(namespace)) {
+    for (String cls : getAvailableRootClasses(namespace)) {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
     }
     return timestamp;

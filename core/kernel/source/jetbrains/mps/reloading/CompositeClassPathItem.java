@@ -58,12 +58,12 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
-  public void collectAvailableClasses(Set<String> classes, String namespace) {
+  public void collectAvailableRootClasses(Set<String> classes, String namespace) {
     for (IClassPathItem item : myChildren) {
       if (item instanceof AbstractClassPathItem) {
-        ((AbstractClassPathItem) item).collectAvailableClasses(classes, namespace);
+        ((AbstractClassPathItem) item).collectAvailableRootClasses(classes, namespace);
       } else {
-        classes.addAll(item.getAvailableClasses(namespace));
+        classes.addAll(item.getAvailableRootClasses(namespace));
       }
     }
   }

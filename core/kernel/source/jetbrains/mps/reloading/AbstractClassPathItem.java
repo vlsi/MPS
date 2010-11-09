@@ -37,10 +37,20 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   @NotNull
-  public final Set<String> getAvailableClasses(String namespace) {
+  public final Set<String> getAvailableRootClasses(String namespace) {
     Set<String> result = new HashSet<String>();
-    collectAvailableClasses(result, namespace);
+    collectAvailableRootClasses(result, namespace);
     return result;
+  }
+
+  protected boolean isInner(String className) {
+    if (className.contains("$")) {
+      for (String part : className.split("\\$")) {
+        if (part.matches("\\d+")) { return true; }
+      }
+    }
+    if (className.contains(".")) return true;
+    return false;
   }
 
   private long getTimestamp(String namespace) {
@@ -54,5 +64,5 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   protected abstract void collectSubpackages(Set<String> subpackages, String namespace);
 
-  protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
+  protected abstract void collectAvailableRootClasses(Set<String> classes, String namespace);
 }

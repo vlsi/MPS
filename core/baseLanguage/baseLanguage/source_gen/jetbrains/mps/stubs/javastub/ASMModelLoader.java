@@ -90,7 +90,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.SNodeId;
-import java.util.Iterator;
 
 public abstract class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
@@ -106,7 +105,7 @@ public abstract class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      final Set<String> classes = getAvailableClasses(pack);
+      final Set<String> classes = myCpItem.getAvailableRootClasses(pack);
       for (String name : classes) {
         getClassifier(name);
       }
@@ -841,27 +840,4 @@ public abstract class ASMModelLoader {
   }
 
   public abstract SModelReference getModelReferenceFor(String packageName);
-
-  private Set<String> getAvailableClasses(String namespace) {
-    Set<String> startSet = myCpItem.getAvailableClasses(namespace);
-    Iterator<String> it = startSet.iterator();
-    while (it.hasNext()) {
-      String s = it.next();
-      if (ASMModelLoader.isAnonymous(s)) {
-        it.remove();
-      }
-    }
-    return startSet;
-  }
-
-  private static boolean isAnonymous(String s) {
-    if (s.contains("$")) {
-      for (String part : s.split("\\$")) {
-        if (part.matches("\\d+")) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
 }

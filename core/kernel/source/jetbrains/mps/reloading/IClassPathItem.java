@@ -37,7 +37,7 @@ public interface IClassPathItem {
   URL getResource(String name);
 
   @NotNull
-  Set<String> getAvailableClasses(String namespace);
+  Set<String> getAvailableRootClasses(String namespace);
 
   @NotNull
   Set<String> getSubpackages(String namespace);

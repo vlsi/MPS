@@ -108,15 +108,18 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public void collectAvailableClasses(Set<String> classes, String namespace) {
+  public void collectAvailableRootClasses(Set<String> classes, String namespace) {
     checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
     Set<String> result = myAvailableClassesCache.get(namespace);
-    if (result != null) {
-      classes.addAll(result);
+    if (result == null) return;
+
+    for (String className:result){
+      if (isInner(className)) continue;
+      classes.add(className);
     }
   }
 
