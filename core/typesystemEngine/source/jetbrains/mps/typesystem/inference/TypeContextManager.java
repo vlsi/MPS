@@ -29,7 +29,6 @@ public class TypeContextManager implements ApplicationComponent {
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new HashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
-  private Map<SNode, Long> myAccessTimes = new HashMap<SNode, Long>();
 
   Timer myTimer;
 
@@ -117,7 +116,6 @@ public class TypeContextManager implements ApplicationComponent {
   public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner, boolean alwaysRegisterOwner) {
     if (node == null) return null;
     synchronized (myLock) {
-      myAccessTimes.put(node, System.currentTimeMillis());
       Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(node);
       if (contextWithOwners == null) {
         TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
@@ -146,7 +144,6 @@ public class TypeContextManager implements ApplicationComponent {
         if (owners.isEmpty()) {
           contextWithOwners.o1.dispose();
           myTypeCheckingContexts.remove(node);
-          myAccessTimes.remove(node);
         }
       }
     }
@@ -158,7 +155,6 @@ public class TypeContextManager implements ApplicationComponent {
       if (contextWithOwners != null) {
         contextWithOwners.o1.dispose();
         myTypeCheckingContexts.remove(node);
-        myAccessTimes.remove(node);
       }
     }
   }
@@ -182,20 +178,15 @@ public class TypeContextManager implements ApplicationComponent {
 
   private void clearDefaultOwners() {
     synchronized (myLock) {
-      long current = System.currentTimeMillis();
       Set<Entry<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>> entries =
         new HashSet<Entry<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>>(myTypeCheckingContexts.entrySet());
       for (Entry<SNode,Pair<TypeCheckingContext,List<ITypeContextOwner>>> entry : entries) {
         SNode node = entry.getKey();
-        Long accessTime = myAccessTimes.get(node);
-        if (accessTime == null || current - accessTime > TIMEOUT) {
-          Pair<TypeCheckingContext, List<ITypeContextOwner>> value = entry.getValue();
-          value.o2.remove(DEFAULT_OWNER);
-          if (value.o2.isEmpty()) {
-            value.o1.dispose();
-            myTypeCheckingContexts.remove(node);
-            myAccessTimes.remove(node);
-          }
+        Pair<TypeCheckingContext, List<ITypeContextOwner>> value = entry.getValue();
+        value.o2.remove(DEFAULT_OWNER);
+        if (value.o2.isEmpty()) {
+          value.o1.dispose();
+          myTypeCheckingContexts.remove(node);
         }
       }
     }
