@@ -12,18 +12,18 @@ public class ASMFormalTypeParameter extends ASMTypeVariable {
 
   public ASMFormalTypeParameter(String name, ASMType classBound, List<ASMType> interfaceBounds) {
     super(name);
-    this.myClassBound = classBound;
-    this.myInterfaceBounds = ((List<ASMType>) (interfaceBounds.isEmpty() ?
+    myClassBound = classBound;
+    myInterfaceBounds = ((List<ASMType>) (interfaceBounds.isEmpty() ?
       Collections.emptyList() :
       new ArrayList<ASMType>(interfaceBounds)
     ));
   }
 
   public ASMType getClassBound() {
-    return this.myClassBound;
+    return myClassBound;
   }
 
   public List<ASMType> getInterfaceBounds() {
-    return Collections.unmodifiableList(this.myInterfaceBounds);
+    return Collections.unmodifiableList(myInterfaceBounds);
   }
 }

@@ -16,70 +16,70 @@ public class ASMField {
   private ASMType myGenericType;
 
   /*package*/ ASMField(FieldNode field) {
-    this.myField = field;
-    if (this.myField.visibleAnnotations != null) {
-      this.myAnnotations = new ArrayList<ASMAnnotation>(this.myField.visibleAnnotations.size());
-      for (AnnotationNode an : (List<AnnotationNode>) this.myField.visibleAnnotations) {
+    myField = field;
+    if (myField.visibleAnnotations != null) {
+      myAnnotations = new ArrayList<ASMAnnotation>(myField.visibleAnnotations.size());
+      for (AnnotationNode an : (List<AnnotationNode>) myField.visibleAnnotations) {
         ASMAnnotation aa = new ASMAnnotation(an);
-        this.myAnnotations.add(aa);
+        myAnnotations.add(aa);
       }
     }
-    this.myType = TypeUtil.fromDescriptor(this.myField.desc);
-    if (this.myField.signature != null) {
-      this.myGenericType = TypeUtil.getFieldType(this.myField.signature);
+    myType = TypeUtil.fromDescriptor(myField.desc);
+    if (myField.signature != null) {
+      myGenericType = TypeUtil.getFieldType(myField.signature);
     } else {
-      this.myGenericType = this.myType;
+      myGenericType = myType;
     }
   }
 
   public String getName() {
-    return this.myField.name;
+    return myField.name;
   }
 
   public boolean isPrivate() {
-    return (Opcodes.ACC_PRIVATE & this.myField.access) != 0;
+    return (Opcodes.ACC_PRIVATE & myField.access) != 0;
   }
 
   public boolean isPublic() {
-    return (Opcodes.ACC_PUBLIC & this.myField.access) != 0;
+    return (Opcodes.ACC_PUBLIC & myField.access) != 0;
   }
 
   public boolean isProtected() {
-    return (Opcodes.ACC_PROTECTED & this.myField.access) != 0;
+    return (Opcodes.ACC_PROTECTED & myField.access) != 0;
   }
 
   public boolean isDeprecated() {
-    return (Opcodes.ACC_DEPRECATED & this.myField.access) != 0;
+    return (Opcodes.ACC_DEPRECATED & myField.access) != 0;
   }
 
   public boolean isPackageProtected() {
-    return !(this.isPublic()) && !(this.isPrivate()) && !(this.isProtected());
+    return !(isPublic()) && !(isPrivate()) && !(isProtected());
   }
 
   public boolean isStatic() {
-    return (Opcodes.ACC_STATIC & this.myField.access) != 0;
+    return (Opcodes.ACC_STATIC & myField.access) != 0;
   }
 
   public boolean isEnumConstant() {
-    return (Opcodes.ACC_ENUM & this.myField.access) != 0;
+    return (Opcodes.ACC_ENUM & myField.access) != 0;
   }
 
   public boolean isCompilerGenerated() {
-    return this.myField.name.equals("$assertionsDisabled");
+    return myField.name.equals("$assertionsDisabled");
   }
 
   public ASMType getType() {
-    return this.myType;
+    return myType;
   }
 
   public ASMType getGenericType() {
-    return this.myGenericType;
+    return myGenericType;
   }
 
   public List<ASMAnnotation> getAnnotations() {
-    return ((List<ASMAnnotation>) (this.myAnnotations == null ?
+    return ((List<ASMAnnotation>) (myAnnotations == null ?
       Collections.emptyList() :
-      Collections.unmodifiableList(this.myAnnotations)
+      Collections.unmodifiableList(myAnnotations)
     ));
   }
 }

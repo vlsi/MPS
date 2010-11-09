@@ -7,10 +7,10 @@ public class ASMSuperType extends ASMType {
   private ASMType myBase;
 
   public ASMSuperType(ASMType base) {
-    this.myBase = base;
+    myBase = base;
   }
 
   public ASMType getBase() {
-    return this.myBase;
+    return myBase;
   }
 }

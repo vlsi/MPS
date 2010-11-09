@@ -7,10 +7,10 @@ public class ASMArrayType extends ASMType {
   private ASMType myElementType;
 
   /*package*/ ASMArrayType(ASMType elementType) {
-    this.myElementType = elementType;
+    myElementType = elementType;
   }
 
   public ASMType getElementType() {
-    return this.myElementType;
+    return myElementType;
   }
 }

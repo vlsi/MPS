@@ -10,13 +10,13 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import org.objectweb.asm.ClassReader;
-import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.stubs.javastub.asm.ASMTypeVariable;
 import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import jetbrains.mps.stubs.javastub.asm.ASMFormalTypeParameter;
@@ -99,17 +99,17 @@ public abstract class ASMModelLoader {
   private SModel myModel;
 
   public ASMModelLoader(IClassPathItem classPathItem, SModel model) {
-    this.myCpItem = classPathItem;
-    this.myModel = model;
+    myCpItem = classPathItem;
+    myModel = model;
   }
 
   public void updateModel() {
     try {
-      SModelReference reference = this.myModel.getSModelReference();
+      SModelReference reference = myModel.getSModelReference();
       String pack = reference.getLongName();
-      final Set<String> classes = this.getAvailableClasses(pack);
+      final Set<String> classes = getAvailableClasses(pack);
       for (String name : classes) {
-        this.getClassifier(name);
+        getClassifier(name);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
@@ -117,11 +117,11 @@ public abstract class ASMModelLoader {
   }
 
   private Classifier getClassifier(String name) {
-    SModel model = this.myModel;
+    SModel model = myModel;
     Classifier result = (Classifier) BaseAdapter.fromNode(model.getNodeById(ASMNodeId.createId(name)));
     if (result == null) {
       String pack = model.getLongName();
-      byte[] code = this.myCpItem.getClass((pack.length() == 0 ?
+      byte[] code = myCpItem.getClass((pack.length() == 0 ?
         name :
         pack + "." + name
       ));
@@ -129,16 +129,12 @@ public abstract class ASMModelLoader {
         return null;
       }
       ClassReader reader = new ClassReader(code);
-      result = this.createClassifierForClass(name, model, reader);
+      result = createClassifierForClass(name, model, reader);
       if (result == null) {
         return null;
       }
-      ASMClass ac = new ASMClass(reader);
-      if (ac.isPrivate()) {
-        return null;
-      }
       model.addRoot(result.getNode());
-      this.updateClassifier(result, reader);
+      updateClassifier(result, reader);
     }
     return result;
   }
@@ -173,10 +169,10 @@ public abstract class ASMModelLoader {
       if (tv instanceof ASMFormalTypeParameter) {
         ASMFormalTypeParameter tp = (ASMFormalTypeParameter) tv;
         if (tp.getClassBound() != null) {
-          typeVariableDeclaration.setBound(this.getTypeByASMType(tp.getClassBound(), null, result, model));
+          typeVariableDeclaration.setBound(getTypeByASMType(tp.getClassBound(), null, result, model));
         }
         for (ASMType act : tp.getInterfaceBounds()) {
-          typeVariableDeclaration.addAuxBounds((ClassifierType) this.getTypeByASMType(act, null, result, model));
+          typeVariableDeclaration.addAuxBounds((ClassifierType) getTypeByASMType(act, null, result, model));
         }
       }
     }
@@ -195,10 +191,10 @@ public abstract class ASMModelLoader {
       if (tv instanceof ASMFormalTypeParameter) {
         ASMFormalTypeParameter tp = (ASMFormalTypeParameter) tv;
         if (tp.getClassBound() != null) {
-          typeVariableDeclaration.setBound(this.getTypeByASMType(tp.getClassBound(), result, cls, model));
+          typeVariableDeclaration.setBound(getTypeByASMType(tp.getClassBound(), result, cls, model));
         }
         for (ASMType act : tp.getInterfaceBounds()) {
-          typeVariableDeclaration.addAuxBounds((ClassifierType) this.getTypeByASMType(act, result, cls, model));
+          typeVariableDeclaration.addAuxBounds((ClassifierType) getTypeByASMType(act, result, cls, model));
         }
       }
     }
@@ -215,7 +211,7 @@ public abstract class ASMModelLoader {
 
   private TypeVariableReference createTypeVariableReference(GenericDeclaration genDecl, String name) {
     TypeVariableReference result = TypeVariableReference.newInstance(genDecl.getModel());
-    result.setTypeVariableDeclaration(this.findTypeVariableDeclaration(genDecl, name));
+    result.setTypeVariableDeclaration(findTypeVariableDeclaration(genDecl, name));
     return result;
   }
 
@@ -230,14 +226,14 @@ public abstract class ASMModelLoader {
       }
       cls.setAbstractClass(ac.isAbstract());
       cls.setIsDeprecated(ac.isDeprecated());
-      this.updateAnnotations(ac, cls);
-      this.updateTypeVariables(ac, cls.getModel(), cls);
-      this.updateExtendsAndImplements(ac, cls);
-      this.updateInstanceFields(ac, cls);
-      this.updateStaticFields(ac, cls);
-      this.updateConstructors(ac, cls);
-      this.updateInstanceMethods(ac, cls);
-      this.updateStaticMethods(ac, cls);
+      updateAnnotations(ac, cls);
+      updateTypeVariables(ac, cls.getModel(), cls);
+      updateExtendsAndImplements(ac, cls);
+      updateInstanceFields(ac, cls);
+      updateStaticFields(ac, cls);
+      updateConstructors(ac, cls);
+      updateInstanceMethods(ac, cls);
+      updateStaticMethods(ac, cls);
       cls.setIsFinal(ac.isFinal());
     }
     if (clsfr instanceof Annotation) {
@@ -248,8 +244,8 @@ public abstract class ASMModelLoader {
       } else {
         annotation.setVisibility(null);
       }
-      this.updateAnnotationMethods(cls, annotation);
-      this.updateAnnotations(cls, annotation);
+      updateAnnotationMethods(cls, annotation);
+      updateAnnotations(cls, annotation);
     }
     if (clsfr instanceof Interface && !((clsfr instanceof Annotation))) {
       final Interface intfc = (Interface) clsfr;
@@ -259,25 +255,25 @@ public abstract class ASMModelLoader {
       } else {
         intfc.setVisibility(null);
       }
-      this.updateAnnotations(ac, intfc);
-      this.updateTypeVariables(ac, intfc.getModel(), intfc);
-      this.updateExtendsForInterface(ac, intfc);
-      this.updateStaticFields(ac, intfc);
-      this.updateInstanceMethods(ac, intfc);
+      updateAnnotations(ac, intfc);
+      updateTypeVariables(ac, intfc.getModel(), intfc);
+      updateExtendsForInterface(ac, intfc);
+      updateStaticFields(ac, intfc);
+      updateInstanceMethods(ac, intfc);
       intfc.setIsDeprecated(ac.isDeprecated());
     }
   }
 
   private void updateAnnotations(ASMClass ac, Classifier cls) {
     for (ASMAnnotation annotation : ac.getAnnotations()) {
-      cls.addAnnotation(this.createAnnotation(annotation, cls.getModel()));
+      cls.addAnnotation(createAnnotation(annotation, cls.getModel()));
     }
   }
 
   private void updateExtendsForInterface(ASMClass ac, Interface intfc) {
     SModel model = intfc.getModel();
     for (ASMType type : ac.getGenericInterfaces()) {
-      ClassifierType classifierType = (ClassifierType) this.getTypeByASMType(type, null, intfc, model);
+      ClassifierType classifierType = (ClassifierType) getTypeByASMType(type, null, intfc, model);
       intfc.addExtendedInterface(classifierType);
     }
   }
@@ -286,14 +282,14 @@ public abstract class ASMModelLoader {
     SModel model = cls.getModel();
     ASMType refSuperclass = ac.getGenericSuperclass();
     if (refSuperclass != null) {
-      ClassifierType classifierType = (ClassifierType) this.getTypeByASMType(refSuperclass, null, cls, model);
+      ClassifierType classifierType = (ClassifierType) getTypeByASMType(refSuperclass, null, cls, model);
       cls.setSuperclass(classifierType);
     }
     for (ClassifierType itype : cls.getImplementedInterfaces()) {
       itype.delete();
     }
     for (ASMType type : ac.getGenericInterfaces()) {
-      ClassifierType classifierType = (ClassifierType) this.getTypeByASMType(type, null, cls, model);
+      ClassifierType classifierType = (ClassifierType) getTypeByASMType(type, null, cls, model);
       cls.addImplementedInterface(classifierType);
     }
   }
@@ -312,12 +308,12 @@ public abstract class ASMModelLoader {
       }
       FieldDeclaration decl = FieldDeclaration.newInstance(model);
       decl.getNode().setId(ASMNodeId.createId(refCls, field));
-      decl.setVisibility(this.createVisibility(field, model));
+      decl.setVisibility(createVisibility(field, model));
       decl.setName(field.getName());
-      decl.setType(this.getTypeByASMType(field.getGenericType(), null, cls, model));
+      decl.setType(getTypeByASMType(field.getGenericType(), null, cls, model));
       decl.setIsDeprecated(field.isDeprecated());
       for (ASMAnnotation annotation : field.getAnnotations()) {
-        decl.addAnnotation(this.createAnnotation(annotation, model));
+        decl.addAnnotation(createAnnotation(annotation, model));
       }
       cls.addField(decl);
     }
@@ -344,12 +340,12 @@ public abstract class ASMModelLoader {
       } else {
         StaticFieldDeclaration decl = StaticFieldDeclaration.newInstance(model);
         decl.getNode().setId(ASMNodeId.createId(ac, field));
-        decl.setVisibility(this.createVisibility(field, model));
+        decl.setVisibility(createVisibility(field, model));
         decl.setName(field.getName());
-        decl.setType(this.getTypeByASMType(field.getGenericType(), null, cls, model));
+        decl.setType(getTypeByASMType(field.getGenericType(), null, cls, model));
         decl.setIsDeprecated(field.isDeprecated());
         for (ASMAnnotation annotation : field.getAnnotations()) {
-          decl.addAnnotation(this.createAnnotation(annotation, model));
+          decl.addAnnotation(createAnnotation(annotation, model));
         }
         cls.addStaticField(decl);
       }
@@ -363,10 +359,10 @@ public abstract class ASMModelLoader {
       methodDeclaration.getNode().setId(ASMNodeId.createId(refCls, m));
       methodDeclaration.setVisibility(PublicVisibility.newInstance(model));
       methodDeclaration.setName(m.getName());
-      methodDeclaration.setReturnType(this.getTypeByASMType(m.getGenericReturnType(), null, annotation, model));
+      methodDeclaration.setReturnType(getTypeByASMType(m.getGenericReturnType(), null, annotation, model));
       methodDeclaration.getNode().setId(ASMNodeId.createAnnotationMethodId(refCls.getFqName(), m.getName()));
       if (m.getAnnotationDefault() != null) {
-        methodDeclaration.setDefaultValue(this.getAnnotationValue(m.getAnnotationDefault(), model));
+        methodDeclaration.setDefaultValue(getAnnotationValue(m.getAnnotationDefault(), model));
       }
       annotation.addMethod(methodDeclaration);
     }
@@ -382,7 +378,7 @@ public abstract class ASMModelLoader {
       constructor.getNode().setId(ASMNodeId.createId(ac, c));
       constructor.setBody(((StatementList) ((StubStatementList) SNodeOperations.getAdapter((SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null))))));
 
-      constructor.setVisibility(this.createVisibility(c, model));
+      constructor.setVisibility(createVisibility(c, model));
       constructor.setIsDeprecated(c.isDeprecated());
       for (ASMTypeVariable tv : c.getTypeParameters()) {
         TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(cls.getModel());
@@ -396,15 +392,15 @@ public abstract class ASMModelLoader {
         ASMType pt = parameterType.get(i);
         ParameterDeclaration pd = ParameterDeclaration.newInstance(model);
         pd.setName(parameterNames.get(i));
-        pd.setType(this.getTypeByASMType(pt, constructor, cls, model));
-        this.addAnnotationsToParameter(pd, c.getParameterAnnotations().get(i));
+        pd.setType(getTypeByASMType(pt, constructor, cls, model));
+        addAnnotationsToParameter(pd, c.getParameterAnnotations().get(i));
         constructor.addParameter(pd);
       }
       for (ASMAnnotation annotation : c.getAnnotations()) {
-        constructor.addAnnotation(this.createAnnotation(annotation, model));
+        constructor.addAnnotation(createAnnotation(annotation, model));
       }
       for (ASMType exception : c.getExceptionTypes()) {
-        constructor.addThrowsItem(this.getTypeByASMType(exception, constructor, cls, model));
+        constructor.addThrowsItem(getTypeByASMType(exception, constructor, cls, model));
       }
       cls.addConstructor(constructor);
     }
@@ -428,28 +424,28 @@ public abstract class ASMModelLoader {
       InstanceMethodDeclaration methodDeclaration = InstanceMethodDeclaration.newInstance(model);
       methodDeclaration.getNode().setId(ASMNodeId.createId(ac, m));
       methodDeclaration.setBody(((StatementList) ((StubStatementList) SNodeOperations.getAdapter((SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null))))));
-      methodDeclaration.setVisibility(this.createVisibility(m, model));
+      methodDeclaration.setVisibility(createVisibility(m, model));
       methodDeclaration.setIsFinal(m.isFinal());
       methodDeclaration.setIsAbstract(m.isAbstract());
       methodDeclaration.setIsDeprecated(m.isDeprecated());
-      this.updateTypeVariables(m, model, methodDeclaration, cls);
+      updateTypeVariables(m, model, methodDeclaration, cls);
       methodDeclaration.setName(m.getName());
-      methodDeclaration.setReturnType(this.getTypeByASMType(m.getGenericReturnType(), methodDeclaration, cls, model));
+      methodDeclaration.setReturnType(getTypeByASMType(m.getGenericReturnType(), methodDeclaration, cls, model));
       List<ASMType> parameterTypes = m.getGenericParameterTypes();
       List<String> parameterNames = m.getParameterNames();
       for (int i = 0; i < parameterTypes.size(); i++) {
         ASMType paramType = parameterTypes.get(i);
         ParameterDeclaration parameterDeclaration = ParameterDeclaration.newInstance(model);
         parameterDeclaration.setName(parameterNames.get(i));
-        parameterDeclaration.setType(this.getTypeByASMType(paramType, methodDeclaration, cls, model));
-        this.addAnnotationsToParameter(parameterDeclaration, m.getParameterAnnotations().get(i));
+        parameterDeclaration.setType(getTypeByASMType(paramType, methodDeclaration, cls, model));
+        addAnnotationsToParameter(parameterDeclaration, m.getParameterAnnotations().get(i));
         methodDeclaration.addParameter(parameterDeclaration);
       }
       for (ASMType exception : m.getExceptionTypes()) {
-        methodDeclaration.addThrowsItem(this.getTypeByASMType(exception, methodDeclaration, cls, model));
+        methodDeclaration.addThrowsItem(getTypeByASMType(exception, methodDeclaration, cls, model));
       }
       for (ASMAnnotation annotation : m.getAnnotations()) {
-        methodDeclaration.addAnnotation(this.createAnnotation(annotation, model));
+        methodDeclaration.addAnnotation(createAnnotation(annotation, model));
       }
       cls.addMethod(methodDeclaration);
     }
@@ -467,35 +463,35 @@ public abstract class ASMModelLoader {
       if (m.isCompilerGenerated()) {
         continue;
       }
-      if (cls instanceof EnumClass && this.isGeneratedEnumMethod(m)) {
+      if (cls instanceof EnumClass && isGeneratedEnumMethod(m)) {
         continue;
       }
       StaticMethodDeclaration methodDeclaration = StaticMethodDeclaration.newInstance(model);
       methodDeclaration.getNode().setId(ASMNodeId.createId(ac, m));
       methodDeclaration.setBody(((StatementList) ((StubStatementList) SNodeOperations.getAdapter((SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null))))));
-      methodDeclaration.setVisibility(this.createVisibility(m, model));
+      methodDeclaration.setVisibility(createVisibility(m, model));
       methodDeclaration.setIsDeprecated(m.isDeprecated());
       if (m.isFinal()) {
         methodDeclaration.setIsFinal(true);
       }
-      this.updateTypeVariables(m, model, methodDeclaration, cls);
+      updateTypeVariables(m, model, methodDeclaration, cls);
       methodDeclaration.setName(m.getName());
-      methodDeclaration.setReturnType(this.getTypeByASMType(m.getGenericReturnType(), methodDeclaration, cls, model));
+      methodDeclaration.setReturnType(getTypeByASMType(m.getGenericReturnType(), methodDeclaration, cls, model));
       List<ASMType> parameterTypes = m.getGenericParameterTypes();
       List<String> parameterNames = m.getParameterNames();
       for (int i = 0; i < parameterTypes.size(); i++) {
         ASMType paramType = parameterTypes.get(i);
         ParameterDeclaration parameterDeclaration = ParameterDeclaration.newInstance(model);
         parameterDeclaration.setName(parameterNames.get(i));
-        parameterDeclaration.setType(this.getTypeByASMType(paramType, methodDeclaration, cls, model));
-        this.addAnnotationsToParameter(parameterDeclaration, m.getParameterAnnotations().get(i));
+        parameterDeclaration.setType(getTypeByASMType(paramType, methodDeclaration, cls, model));
+        addAnnotationsToParameter(parameterDeclaration, m.getParameterAnnotations().get(i));
         methodDeclaration.addParameter(parameterDeclaration);
       }
       for (ASMAnnotation annotation : m.getAnnotations()) {
-        methodDeclaration.addAnnotation(this.createAnnotation(annotation, model));
+        methodDeclaration.addAnnotation(createAnnotation(annotation, model));
       }
       for (ASMType exception : m.getExceptionTypes()) {
-        methodDeclaration.addThrowsItem(this.getTypeByASMType(exception, methodDeclaration, cls, model));
+        methodDeclaration.addThrowsItem(getTypeByASMType(exception, methodDeclaration, cls, model));
       }
       cls.addStaticMethod(methodDeclaration);
     }
@@ -540,19 +536,19 @@ public abstract class ASMModelLoader {
 
   private void addAnnotationsToParameter(ParameterDeclaration pd, List<ASMAnnotation> annotations) {
     for (ASMAnnotation a : annotations) {
-      pd.addAnnotation(this.createAnnotation(a, pd.getModel()));
+      pd.addAnnotation(createAnnotation(a, pd.getModel()));
     }
   }
 
   private AnnotationInstance createAnnotation(ASMAnnotation annotation, SModel model) {
     AnnotationInstance result = AnnotationInstance.newInstance(model);
     ASMClassType c = (ASMClassType) annotation.getType();
-    this.addClassifierReference(result.getNode(), AnnotationInstance.ANNOTATION, c);
+    addClassifierReference(result.getNode(), AnnotationInstance.ANNOTATION, c);
     Map<String, Object> values = annotation.getValues();
     for (String key : values.keySet()) {
       AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(model);
-      this.addAnnotationMethodReference(value.getNode(), AnnotationInstanceValue.KEY, c, key);
-      value.setValue(this.getAnnotationValue(values.get(key), model));
+      addAnnotationMethodReference(value.getNode(), AnnotationInstanceValue.KEY, c, key);
+      value.setValue(getAnnotationValue(values.get(key), model));
       result.addValue(value);
     }
     return result;
@@ -611,7 +607,7 @@ public abstract class ASMModelLoader {
       List<Object> list = (List) value;
       ArrayLiteral res = ArrayLiteral.newInstance(model);
       for (Object o : list) {
-        Expression annotationValue = this.getAnnotationValue(o, model);
+        Expression annotationValue = getAnnotationValue(o, model);
         if (annotationValue != null) {
           res.addItem(annotationValue);
         }
@@ -622,26 +618,26 @@ public abstract class ASMModelLoader {
       ASMEnumValue enumValue = (ASMEnumValue) value;
       EnumConstantReference res = EnumConstantReference.newInstance(model);
       ASMClassType c = (ASMClassType) enumValue.getType();
-      this.addClassifierReference(res.getNode(), EnumConstantReference.ENUM_CLASS, c);
-      this.addEnumConstReference(res.getNode(), EnumConstantReference.ENUM_CONSTANT_DECLARATION, enumValue);
+      addClassifierReference(res.getNode(), EnumConstantReference.ENUM_CLASS, c);
+      addEnumConstReference(res.getNode(), EnumConstantReference.ENUM_CONSTANT_DECLARATION, enumValue);
       return res;
     }
     if (value instanceof ASMAnnotation) {
       ASMAnnotation annotation = (ASMAnnotation) value;
       AnnotationInstanceExpression res = AnnotationInstanceExpression.newInstance(model);
-      res.setAnnotationInstance(this.createAnnotation(annotation, model));
+      res.setAnnotationInstance(createAnnotation(annotation, model));
       return res;
     }
     if (value instanceof ASMClassType) {
       ASMClassType classType = (ASMClassType) value;
       ClassifierClassExpression res = ClassifierClassExpression.newInstance(model);
-      this.addClassifierReference(res.getNode(), ClassifierClassExpression.CLASSIFIER, classType);
+      addClassifierReference(res.getNode(), ClassifierClassExpression.CLASSIFIER, classType);
       return res;
     }
     if (value instanceof ASMPrimitiveType) {
       ASMPrimitiveType primitiveType = (ASMPrimitiveType) value;
       PrimitiveClassExpression res = PrimitiveClassExpression.newInstance(model);
-      res.setPrimitiveType((PrimitiveType) this.getTypeByASMType(primitiveType, null, null, model));
+      res.setPrimitiveType((PrimitiveType) getTypeByASMType(primitiveType, null, null, model));
       return res;
     }
     LOG.error("couldn't create annotation value from " + ((value == null ?
@@ -681,39 +677,39 @@ public abstract class ASMModelLoader {
     }
     if (type instanceof ASMArrayType) {
       ASMArrayType array = (ASMArrayType) type;
-      Type componentType = this.getTypeByASMType(array.getElementType(), method, classifier, model);
+      Type componentType = getTypeByASMType(array.getElementType(), method, classifier, model);
       ArrayType result = ArrayType.newInstance(model);
       result.setComponentType(componentType);
       return result;
     }
     if (type instanceof ASMVarArgType) {
       ASMVarArgType varArgType = (ASMVarArgType) type;
-      Type componentType = this.getTypeByASMType(varArgType.getElementType(), method, classifier, model);
+      Type componentType = getTypeByASMType(varArgType.getElementType(), method, classifier, model);
       VariableArityType result = VariableArityType.newInstance(model);
       result.setComponentType(componentType);
       return result;
     }
     if (type instanceof ASMTypeVariable) {
       ASMTypeVariable tv = (ASMTypeVariable) type;
-      if (method != null && this.findTypeVariableDeclaration(method, tv.getName()) != null) {
-        return this.createTypeVariableReference(method, tv.getName());
+      if (method != null && findTypeVariableDeclaration(method, tv.getName()) != null) {
+        return createTypeVariableReference(method, tv.getName());
       } else
-      if (this.findTypeVariableDeclaration(classifier, tv.getName()) != null) {
-        return this.createTypeVariableReference(classifier, tv.getName());
+      if (findTypeVariableDeclaration(classifier, tv.getName()) != null) {
+        return createTypeVariableReference(classifier, tv.getName());
       } else {
-        return this.getTypeByASMType(ASMClassType.OBJECT, method, classifier, model);
+        return getTypeByASMType(ASMClassType.OBJECT, method, classifier, model);
       }
     }
     if (type instanceof ASMClassType) {
       ASMClassType c = (ASMClassType) type;
       ClassifierType classifierType = ClassifierType.newInstance(model);
-      this.addClassifierReference(classifierType.getNode(), ClassifierType.CLASSIFIER, c);
+      addClassifierReference(classifierType.getNode(), ClassifierType.CLASSIFIER, c);
       return classifierType;
     }
     if (type instanceof ASMParameterizedType) {
       ASMParameterizedType pt = (ASMParameterizedType) type;
-      ClassifierType rawType = (ClassifierType) this.getTypeByASMType(pt.getRawType(), method, classifier, model);
-      this.addTypeParameters(pt.getActualTypeArguments(), method, classifier, rawType);
+      ClassifierType rawType = (ClassifierType) getTypeByASMType(pt.getRawType(), method, classifier, model);
+      addTypeParameters(pt.getActualTypeArguments(), method, classifier, rawType);
       return rawType;
     }
     if (type instanceof ASMExtendsType) {
@@ -725,13 +721,13 @@ public abstract class ASMModelLoader {
         }
       }
       UpperBoundType r = UpperBoundType.newInstance(model);
-      r.setBound(this.getTypeByASMType(e.getBase(), method, classifier, model));
+      r.setBound(getTypeByASMType(e.getBase(), method, classifier, model));
       return r;
     }
     if (type instanceof ASMSuperType) {
       ASMSuperType e = (ASMSuperType) type;
       LowerBoundType r = LowerBoundType.newInstance(model);
-      r.setBound(this.getTypeByASMType(e.getBase(), method, classifier, model));
+      r.setBound(getTypeByASMType(e.getBase(), method, classifier, model));
       return r;
     }
     if (type instanceof ASMUnboundedType) {
@@ -746,7 +742,7 @@ public abstract class ASMModelLoader {
   private void addTypeParameters(List<? extends ASMType> typeParameters, BaseMethodDeclaration method, Classifier classifier, ClassifierType result) {
     List<Type> toAdd = new ArrayList<Type>();
     for (ASMType tv : typeParameters) {
-      Type type = this.getTypeByASMType(tv, method, classifier, result.getModel());
+      Type type = getTypeByASMType(tv, method, classifier, result.getModel());
       if (type == null) {
         toAdd.clear();
         break;
@@ -764,9 +760,9 @@ public abstract class ASMModelLoader {
     }
 
     SReference reference = null;
-    SModelReference targetModelRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
+    SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
     if (sourceNode.getModel().getSModelReference().equals(targetModelRef)) {
-      Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(clsType.getName()));
+      Classifier classifier = getClassifier(NameUtil.shortNameFromLongName(clsType.getName()));
       if (classifier != null) {
         SNode targetNode = classifier.getNode();
         reference = SReference.create(role, sourceNode, targetNode);
@@ -785,11 +781,11 @@ public abstract class ASMModelLoader {
       return;
     }
 
-    SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()));
+    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()));
 
     SReference reference = null;
     if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
-      Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
+      Classifier classifier = getClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
       InstanceMethodDeclaration result = null;
       if (classifier instanceof Annotation) {
         Annotation annotation = (Annotation) classifier;
@@ -818,11 +814,11 @@ public abstract class ASMModelLoader {
     }
 
     ASMClassType classType = (ASMClassType) enumValue.getType();
-    SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()));
+    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()));
 
     SReference reference = null;
     if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
-      Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(classType.getName()));
+      Classifier classifier = getClassifier(NameUtil.shortNameFromLongName(classType.getName()));
       EnumConstantDeclaration constDcl = null;
       if (classifier instanceof EnumClass) {
         EnumClass ec = (EnumClass) classifier;

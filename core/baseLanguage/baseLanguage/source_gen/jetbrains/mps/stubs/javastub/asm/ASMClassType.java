@@ -9,14 +9,14 @@ public class ASMClassType extends ASMType {
   private String myName;
 
   public ASMClassType(String name) {
-    this.myName = name;
+    myName = name;
   }
 
   public String getName() {
-    return this.myName;
+    return myName;
   }
 
   public String toString() {
-    return "(" + this.myName + ")";
+    return "(" + myName + ")";
   }
 }
