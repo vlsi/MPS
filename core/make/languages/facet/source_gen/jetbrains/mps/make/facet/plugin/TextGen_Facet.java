@@ -78,10 +78,9 @@ public class TextGen_Facet implements IFacet {
                   BLDependenciesCache bldc = BLDependenciesCache.getInstance();
                   TraceInfoCache tic = TraceInfoCache.getInstance();
                   GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
-                  if (mgsm == null || bldc == null || tic == null || gdc == null) {
-                    Logger.getLogger("jetbrains.mps.make.TextGen").error("Something's wrong" + mgsm + bldc + tic + gdc);
-                  }
-                  if (!(new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gr.data.status()))) {
+                  boolean res;
+                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gr.data.status());
+                  if (!(res)) {
                     Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
@@ -91,7 +90,6 @@ public class TextGen_Facet implements IFacet {
                 }
               }
               fileProc.saveGeneratedFiles();
-              Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGen completed");
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }

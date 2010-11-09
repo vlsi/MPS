@@ -63,7 +63,8 @@ public class JavaCompilator_Facet implements IFacet {
                 if (gr.data.module() == null) {
                   return new IResult.FAILURE(_output_xl32vp_a0a);
                 }
-                CompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(gr.data.module()), new EmptyProgressIndicator());
+                CompilationResult compilationResult;
+                compilationResult = new ModuleMaker().make(CollectionUtil.set(gr.data.module()), new EmptyProgressIndicator());
                 if (compilationResult != null && compilationResult.getErrors() > 0) {
                   return new IResult.FAILURE(_output_xl32vp_a0a);
                 }

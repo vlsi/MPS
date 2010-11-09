@@ -5,6 +5,9 @@ package jetbrains.mps.internal.make.runtime.script;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.JOptionPane;
@@ -15,6 +18,14 @@ public class UIQueryRelayStrategy {
   }
 
   public <T extends IOption> T relayQuery(IQuery<T> query, IOperationContext context) {
+    ProgressIndicator ind = ProgressManager.getInstance().getProgressIndicator();
+    // <node> 
+    System.out.println("We're in " + Thread.currentThread().getName());
+    ind.stop();
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      public void run() {
+      }
+    });
     String[] options = Sequence.fromIterable(query.options()).select(new ISelector<T, String>() {
       public String select(T o) {
         return o.getText();
@@ -24,6 +35,13 @@ public class UIQueryRelayStrategy {
     if (res == JOptionPane.CLOSED_OPTION) {
       return query.voidOption();
     }
-    return ListSequence.fromList(Sequence.fromIterable(query.options()).toListSequence()).getElement(res);
+    T resOption = ListSequence.fromList(Sequence.fromIterable(query.options()).toListSequence()).getElement(res);
+    ind.start();
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      public void run() {
+      }
+    });
+    // <node> 
+    return resOption;
   }
 }

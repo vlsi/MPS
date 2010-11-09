@@ -124,7 +124,13 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy" file="UIQueryRelayStrategy.java">
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

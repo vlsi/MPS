@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="8502503369265714992">
+    <nodeInfo nodeId="8502503369265715721" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="9" startPosition="68" endLine="10" endPosition="32" />
+    <nodeInfo nodeId="8502503369265715724" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProgressIndicatorAdapter.java" startLine="12" startPosition="58" endLine="13" endPosition="19" />
+    <nodeInfo nodeId="8502503369265715094" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <nodeInfo nodeId="8502503369265715096" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="29" startPosition="43" endLine="30" endPosition="16" />
+    <nodeInfo nodeId="8502503369265715098" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="33" startPosition="28" endLine="34" endPosition="17" />
+    <nodeInfo nodeId="8502503369265715108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="52" startPosition="31" endLine="53" endPosition="14" />
+    <nodeInfo nodeId="8502503369265715100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="56" startPosition="28" endLine="57" endPosition="16" />
+    <nodeInfo nodeId="8502503369265715102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="63" startPosition="27" endLine="64" endPosition="16" />
+    <nodeInfo nodeId="8502503369265715104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="70" startPosition="31" endLine="71" endPosition="17" />
+    <nodeInfo nodeId="8502503369265715106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProgressIndicatorAdapter.java" startLine="77" startPosition="30" endLine="78" endPosition="17" />
+    <nodeInfo nodeId="8502503369265714994" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="11" startPosition="0" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="8502503369265714999" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715004" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715014" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715028" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715032" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715036" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715058" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715068" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715078" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715086" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715090" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715010" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715020" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715024" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715050" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715064" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715074" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="8502503369265715082" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ProgressIndicatorAdapter.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715003" fileName="ProgressIndicatorAdapter.java" startLine="16" startPosition="63" endLine="16" endPosition="63" />
+    <scopeInfo nodeId="8502503369265715009" fileName="ProgressIndicatorAdapter.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="8502503369265715019" fileName="ProgressIndicatorAdapter.java" startLine="26" startPosition="64" endLine="26" endPosition="64" />
+    <scopeInfo nodeId="8502503369265715031" fileName="ProgressIndicatorAdapter.java" startLine="37" startPosition="44" endLine="37" endPosition="44" />
+    <scopeInfo nodeId="8502503369265715035" fileName="ProgressIndicatorAdapter.java" startLine="40" startPosition="43" endLine="40" endPosition="43" />
+    <scopeInfo nodeId="8502503369265715039" fileName="ProgressIndicatorAdapter.java" startLine="43" startPosition="26" endLine="43" endPosition="26" />
+    <scopeInfo nodeId="8502503369265715043" fileName="ProgressIndicatorAdapter.java" startLine="46" startPosition="27" endLine="46" endPosition="27" />
+    <scopeInfo nodeId="8502503369265715049" fileName="ProgressIndicatorAdapter.java" startLine="49" startPosition="37" endLine="49" endPosition="37" />
+    <scopeInfo nodeId="8502503369265715063" fileName="ProgressIndicatorAdapter.java" startLine="60" startPosition="39" endLine="60" endPosition="39" />
+    <scopeInfo nodeId="8502503369265715073" fileName="ProgressIndicatorAdapter.java" startLine="67" startPosition="38" endLine="67" endPosition="38" />
+    <scopeInfo nodeId="8502503369265715081" fileName="ProgressIndicatorAdapter.java" startLine="74" startPosition="24" endLine="74" endPosition="24" />
+    <scopeInfo nodeId="8502503369265715089" fileName="ProgressIndicatorAdapter.java" startLine="81" startPosition="22" endLine="81" endPosition="22" />
+    <scopeInfo nodeId="8502503369265715093" fileName="ProgressIndicatorAdapter.java" startLine="84" startPosition="23" endLine="84" endPosition="23" />
+    <scopeInfo nodeId="8502503369265714997" fileName="ProgressIndicatorAdapter.java" startLine="12" startPosition="58" endLine="13" endPosition="19" />
+    <scopeInfo nodeId="8502503369265715013" fileName="ProgressIndicatorAdapter.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="8502503369265715023" fileName="ProgressIndicatorAdapter.java" startLine="29" startPosition="43" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="8502503369265715027" fileName="ProgressIndicatorAdapter.java" startLine="33" startPosition="28" endLine="34" endPosition="17" />
+    <scopeInfo nodeId="8502503369265715053" fileName="ProgressIndicatorAdapter.java" startLine="52" startPosition="31" endLine="53" endPosition="14" />
+    <scopeInfo nodeId="8502503369265715057" fileName="ProgressIndicatorAdapter.java" startLine="56" startPosition="28" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="8502503369265715067" fileName="ProgressIndicatorAdapter.java" startLine="63" startPosition="27" endLine="64" endPosition="16" />
+    <scopeInfo nodeId="8502503369265715077" fileName="ProgressIndicatorAdapter.java" startLine="70" startPosition="31" endLine="71" endPosition="17" />
+    <scopeInfo nodeId="8502503369265715085" fileName="ProgressIndicatorAdapter.java" startLine="77" startPosition="30" endLine="78" endPosition="17" />
+    <scopeInfo nodeId="8502503369265714994" fileName="ProgressIndicatorAdapter.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
+      <varInfo nodeId="8502503369265715719" varName="ind" />
+    </scopeInfo>
+    <scopeInfo nodeId="8502503369265714999" fileName="ProgressIndicatorAdapter.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715004" fileName="ProgressIndicatorAdapter.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="8502503369265715007" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8502503369265715014" fileName="ProgressIndicatorAdapter.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="8502503369265715017" varName="indicator" />
+    </scopeInfo>
+    <scopeInfo nodeId="8502503369265715028" fileName="ProgressIndicatorAdapter.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715032" fileName="ProgressIndicatorAdapter.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715036" fileName="ProgressIndicatorAdapter.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715040" fileName="ProgressIndicatorAdapter.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715044" fileName="ProgressIndicatorAdapter.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="8502503369265715047" varName="d" />
+    </scopeInfo>
+    <scopeInfo nodeId="8502503369265715058" fileName="ProgressIndicatorAdapter.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="8502503369265715061" varName="string" />
+    </scopeInfo>
+    <scopeInfo nodeId="8502503369265715068" fileName="ProgressIndicatorAdapter.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="8502503369265715071" varName="string" />
+    </scopeInfo>
+    <scopeInfo nodeId="8502503369265715078" fileName="ProgressIndicatorAdapter.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715086" fileName="ProgressIndicatorAdapter.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715090" fileName="ProgressIndicatorAdapter.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715010" fileName="ProgressIndicatorAdapter.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715020" fileName="ProgressIndicatorAdapter.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715024" fileName="ProgressIndicatorAdapter.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715050" fileName="ProgressIndicatorAdapter.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715054" fileName="ProgressIndicatorAdapter.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715064" fileName="ProgressIndicatorAdapter.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715074" fileName="ProgressIndicatorAdapter.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8502503369265715082" fileName="ProgressIndicatorAdapter.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <unitInfo nodeId="8502503369265714992" fileName="ProgressIndicatorAdapter.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorAdapter" />
+  </root>
+</debugInfo>
+
