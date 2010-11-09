@@ -28,7 +28,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     return this;
   }
 
-  protected boolean isAnonymous(String className) {
+  public static boolean isAnonymous(String className) {
     if (!className.contains("$")) return false;
 
     for (String part : className.split("\\$")) {
