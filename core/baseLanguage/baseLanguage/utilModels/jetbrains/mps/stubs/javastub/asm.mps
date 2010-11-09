@@ -3,10 +3,9 @@
   <persistence version="5" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <languageAspect modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.stubs.javastub.asm)" version="-1" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="f:java_stub#org.objectweb.asm.tree(org.objectweb.asm.tree@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -7645,14 +7644,20 @@
                 </node>
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7241381882860009472" />
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BitwiseAndExpression:3" id="7241381882860009473">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7241381882860009474">
-                  <link role="classifier:3" targetNodeId="4.~ClassReader" />
-                  <link role="variableDeclaration:3" targetNodeId="4.~ClassReader.SKIP_CODE" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BitwiseAndExpression:3" id="1738898960265256728">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1738898960265256731">
+                  <link role="classifier:3" targetNodeId="4.~ClassReader" resolveInfo="ClassReader" />
+                  <link role="variableDeclaration:3" targetNodeId="4.~ClassReader.SKIP_FRAMES" resolveInfo="SKIP_FRAMES" />
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7241381882860009475">
-                  <link role="classifier:3" targetNodeId="4.~ClassReader" />
-                  <link role="variableDeclaration:3" targetNodeId="4.~ClassReader.SKIP_DEBUG" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.BitwiseAndExpression:3" id="7241381882860009473">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7241381882860009474">
+                    <link role="classifier:3" targetNodeId="4.~ClassReader" />
+                    <link role="variableDeclaration:3" targetNodeId="4.~ClassReader.SKIP_CODE" />
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7241381882860009475">
+                    <link role="classifier:3" targetNodeId="4.~ClassReader" />
+                    <link role="variableDeclaration:3" targetNodeId="4.~ClassReader.SKIP_DEBUG" />
+                  </node>
                 </node>
               </node>
             </node>

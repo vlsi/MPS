@@ -10,13 +10,13 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import org.objectweb.asm.ClassReader;
+import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.stubs.javastub.asm.ASMTypeVariable;
 import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import jetbrains.mps.stubs.javastub.asm.ASMFormalTypeParameter;
@@ -97,16 +97,10 @@ public abstract class ASMModelLoader {
 
   private IClassPathItem myCpItem;
   private SModel myModel;
-  private final boolean mySkipPrivate;
 
   public ASMModelLoader(IClassPathItem classPathItem, SModel model) {
-    this(classPathItem, model, false);
-  }
-
-  public ASMModelLoader(IClassPathItem classPathItem, SModel model, boolean skipPrivate) {
     this.myCpItem = classPathItem;
     this.myModel = model;
-    this.mySkipPrivate = skipPrivate;
   }
 
   public void updateModel() {
@@ -137,6 +131,10 @@ public abstract class ASMModelLoader {
       ClassReader reader = new ClassReader(code);
       result = this.createClassifierForClass(name, model, reader);
       if (result == null) {
+        return null;
+      }
+      ASMClass ac = new ASMClass(reader);
+      if (ac.isPrivate()) {
         return null;
       }
       model.addRoot(result.getNode());
@@ -303,7 +301,7 @@ public abstract class ASMModelLoader {
   private void updateInstanceFields(ASMClass refCls, ClassConcept cls) {
     SModel model = cls.getModel();
     for (ASMField field : refCls.getDeclaredFields()) {
-      if (field.isPrivate() && mySkipPrivate) {
+      if (field.isPrivate()) {
         continue;
       }
       if (field.isStatic()) {
@@ -328,7 +326,7 @@ public abstract class ASMModelLoader {
   private void updateStaticFields(ASMClass ac, Classifier cls) {
     SModel model = cls.getModel();
     for (ASMField field : ac.getDeclaredFields()) {
-      if (field.isPrivate() && mySkipPrivate) {
+      if (field.isPrivate()) {
         continue;
       }
       if (!(field.isStatic())) {
@@ -377,7 +375,7 @@ public abstract class ASMModelLoader {
   private void updateConstructors(ASMClass ac, ClassConcept cls) {
     SModel model = cls.getModel();
     for (ASMMethod c : ac.getDeclaredConstructors()) {
-      if (c.isPrivate() && mySkipPrivate) {
+      if (c.isPrivate()) {
         continue;
       }
       ConstructorDeclaration constructor = ConstructorDeclaration.newInstance(model);
@@ -415,7 +413,7 @@ public abstract class ASMModelLoader {
   private void updateInstanceMethods(ASMClass ac, Classifier cls) {
     SModel model = cls.getModel();
     for (ASMMethod m : ac.getDeclaredMethods()) {
-      if (m.isPrivate() && mySkipPrivate) {
+      if (m.isPrivate()) {
         continue;
       }
       if (m.isStatic()) {
@@ -460,7 +458,7 @@ public abstract class ASMModelLoader {
   private void updateStaticMethods(ASMClass ac, ClassConcept cls) {
     SModel model = cls.getModel();
     for (ASMMethod m : ac.getDeclaredMethods()) {
-      if (m.isPrivate() && mySkipPrivate) {
+      if (m.isPrivate()) {
         continue;
       }
       if (!(m.isStatic())) {
@@ -850,11 +848,11 @@ public abstract class ASMModelLoader {
   public abstract SModelReference getModelReferenceFor(String packageName);
 
   private Set<String> getAvailableClasses(String namespace) {
-    Set<String> classes = this.myCpItem.getAvailableClasses(namespace);
+    Set<String> classes = myCpItem.getAvailableClasses(namespace);
     Iterator<String> it = classes.iterator();
     while (it.hasNext()) {
       String s = it.next();
-      if (ASMModelLoader.isAnonymous(s) && mySkipPrivate) {
+      if (ASMModelLoader.isAnonymous(s)) {
         it.remove();
       }
     }

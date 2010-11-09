@@ -26,7 +26,7 @@ public class ASMClass {
 
   public ASMClass(ClassReader reader) {
     this.myNode = new ClassNode();
-    reader.accept(this.myNode, ClassReader.SKIP_CODE & ClassReader.SKIP_DEBUG);
+    reader.accept(this.myNode, ClassReader.SKIP_CODE & ClassReader.SKIP_DEBUG & ClassReader.SKIP_FRAMES);
     if (this.myNode.signature != null) {
       SignatureReader signReader = new SignatureReader(this.myNode.signature);
       signReader.accept(new SignatureVisitorAdapter() {
