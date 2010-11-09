@@ -309,7 +309,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.baseLanguage.textGen.BLDependenciesCache</implementation-class>
+      <implementation-class>jetbrains.mps.make.java.BLDependenciesCache</implementation-class>
     </component>
 
     <component>

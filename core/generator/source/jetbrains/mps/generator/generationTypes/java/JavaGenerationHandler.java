@@ -17,7 +17,7 @@ package jetbrains.mps.generator.generationTypes.java;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
+import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;

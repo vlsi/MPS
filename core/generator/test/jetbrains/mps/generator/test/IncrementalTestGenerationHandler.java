@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.test;
 
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
+import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
