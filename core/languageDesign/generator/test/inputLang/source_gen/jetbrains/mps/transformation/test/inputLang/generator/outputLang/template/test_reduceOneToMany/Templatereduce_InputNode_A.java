@@ -12,6 +12,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templatereduce_InputNode_A implements TemplateDeclaration {
@@ -46,7 +47,14 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     final SNode tnode3 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     // TODO notify environment 
     tnode3.setProperty("text", "child #2");
-    Collection<SNode> tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context);
+    Collection<SNode> tlist4 = null;
+    final SNodePointer templateNode4 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
+    try {
+      environment.getTracer().pushTemplateNode(templateNode4);
+      tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context);
+    } finally {
+      environment.getTracer().pushTemplateNode(templateNode4);
+    }
     Collection<SNode> tlist5 = environment.processSwitch(null, context);
     return TemplateUtil.asList(tlist1, tnode3, tlist4, tlist5);
   }
