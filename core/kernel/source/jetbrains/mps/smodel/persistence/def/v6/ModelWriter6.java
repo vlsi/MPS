@@ -83,7 +83,7 @@ public class ModelWriter6 implements IModelWriter {
     // roots
     saveRootStubs(rootElement, sourceModel);   // only for quick roots access
     for (SNode root : sourceModel.roots()) {
-      saveNode(rootElement, root, null, true);
+      saveNode(rootElement, root, true);
     }
 
     return new Document(rootElement);
@@ -92,30 +92,32 @@ public class ModelWriter6 implements IModelWriter {
   protected void saveRootStubs(Element parent, SModel model) {
     Element roots = new Element(ModelPersistence.ROOTS);
     for (SNode root : model.roots()) {
-      saveNode(roots, root, null, false);
+      saveNode(roots, root, false);
     }
     parent.addContent(roots);
   }
 
-  protected void saveNode(Element parentElement, SNode node, SNode parentConcept, boolean saveChildren) {
+  protected void saveNode(Element parentElement, SNode node, boolean saveChildren) {
     Element element = new Element(ModelPersistence.NODE);
 
-    SNode concept = node.getConceptDeclarationNode();
-
-    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node, parentConcept));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node));
     element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
     element.setAttribute(ModelPersistence.ID, node.getId());
 
     for (String propertyName : node.getProperties().keySet()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
-      propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName, concept));
+      propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
       element.addContent(propertyElement);
     }
 
     for (SReference reference : node.getReferencesIterable()) {
       Element linkElement = new Element(ModelPersistence.LINK);
-      linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference, concept));
+      linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
       element.addContent(linkElement);
@@ -123,7 +125,7 @@ public class ModelWriter6 implements IModelWriter {
 
     if (saveChildren) {
       for (SNode childNode : node.getChildren()) {
-        saveNode(element, childNode, concept, true);
+        saveNode(element, childNode, true);
       }
     }
 

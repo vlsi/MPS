@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -74,62 +73,65 @@ public class VersionUtil {
   }
 
   @NotNull
-  public String genReferenceString(@NotNull SModelReference ref, @NotNull String text, boolean usemodel) {
+  public String genReferenceString(@NotNull SModelReference ref, @NotNull String text, boolean useversion) {
     ImportElement impElem = myImports.get(ref);
     if (impElem == null) {
       LOG.error("model " + ref + " not found in imports");
       return text;
     }
     StringBuilder result = new StringBuilder();
-    if (usemodel && !(myModelRef.equals(ref)))  result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
+    if (!(myModelRef.equals(ref)))  result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
     result.append(text);
-    if (impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
+    if (useversion && impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
     return result.toString();
   }
   @NotNull
-  public String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
-    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
+  public String genConceptReferenceString(@Nullable SNode concept, @NotNull String fqName) {
+    fqName = MODEL_SEPARATOR_CHAR + fqName;   // empty modelID part to distinguish fqName from model + concept
+    if (concept == null)  return fqName;
+    ImportElement impElem = myImports.get(concept.getModel().getSModelReference());
+    if (impElem == null) {
+      LOG.error("model " + concept.getModel().getSModelReference() + " not found in imports");
+      return fqName;
+    }
+    String name = concept.getName();
+    if (name == null)  return fqName;
+    return new StringBuilder().append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR).append(name).toString();
   }
   @NotNull
-  public String genReferenceString(@Nullable BaseAdapter node, @NotNull String text, boolean usemodel) {
-    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
+  public String genReferenceId(@NotNull SNode node) {
+    return genReferenceString(node.getModel().getSModelReference(), node.getId(), true);
+  }
+  @Nullable
+  public String genReferenceId(@Nullable BaseAdapter adapter) {
+    return adapter == null ? null : genReferenceId(adapter.getNode());
   }
 
   public String genType(@NotNull SNode node) {
-    return genReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName(), false);
+    return genConceptReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName());
+  }
+  public String genTypeId(@NotNull SNode node) {
+    SNode concept = node.getConceptDeclarationNode();
+    return concept == null ? null : genReferenceId(concept);
   }
   public String genRole(@NotNull SNode node) {
-    return node.getRole_() == null ? null : genReferenceString(node.isAttribute() ? null : node.getRoleLink(), node.getRole_(), true);
+    return node.getRole_();
   }
   public String genRole(@NotNull SReference ref) {
-    return genReferenceString(ref.getSourceNode().getLinkDeclaration(ref.getRole()), ref.getRole(), true);
+    return ref.getRole();
   }
-  public String genRole(@NotNull SNode node, SNode parentConcept) {
-    String role = node.getRole_();
-    if (role == null)  return null;
-    LinkDeclaration linkDecl = node.getRoleLink();
-    if (parentConcept != null && linkDecl != null && linkDecl.getNode().getParent() != parentConcept) {
-      role = linkDecl.getNode().getParent().getName() + "." + role;
-    }
-    return genReferenceString(linkDecl, role, true);
+  public String genRoleId(@NotNull SNode node) {
+    return genReferenceId(node.getRoleLink());
   }
-  public String genRole(@NotNull SReference ref, SNode parentConcept) {
-    String role = ref.getRole();
-    LinkDeclaration linkDecl = ref.getSourceNode().getLinkDeclaration(role);
-    if (parentConcept != null && linkDecl != null && linkDecl.getNode().getParent() != parentConcept) {
-      role = linkDecl.getNode().getParent().getName() + "." + role;
-    }
-    return genReferenceString(linkDecl, role, true);
+  public String genRoleId(@NotNull SReference ref) {
+    return genReferenceId(ref.getSourceNode().getLinkDeclaration(ref.getRole()));
   }
   public String genName(@NotNull SNode node, @NotNull String prop) {
-    return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
+    return prop;
   }
-  public String genName(@NotNull SNode node, @NotNull String prop, SNode parentConcept) {
+  public String genNameId(@NotNull SNode node, @NotNull String prop) {
     PropertyDeclaration propDecl = node.getPropertyDeclaration(prop);
-    if (parentConcept != null && propDecl != null && propDecl.getNode().getParent() != parentConcept) {
-      prop = propDecl.getNode().getParent().getName() + "." + prop;
-    }
-    return genReferenceString(propDecl, prop, true);
+    return propDecl == null ? null : genReferenceId(propDecl.getNode());
   }
   public String genTarget(@NotNull SReference ref) {
     String target = ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^";
@@ -153,7 +155,6 @@ public class VersionUtil {
 
   public class ParseResult {  // [modelID.]text[:version]
     public int modelID;
-    public String prefix;     // [modelID.][prefix.]text[:version]
     public String text;
     public int version;
   }
@@ -162,7 +163,7 @@ public class VersionUtil {
     return ix == -1 ? myModelRef : myImportByIx.get(ix).getModelReference();
   }
   
-  public ParseResult parse(String src, boolean hasmodel, boolean hasprefix) {
+  public ParseResult parse(String src, boolean hasmodel) {
     ParseResult res = new ParseResult();
     char[] chars = src.toCharArray();
     int i0 = -1, i1 = chars.length;
@@ -172,12 +173,7 @@ public class VersionUtil {
     }
     while (i0 < --i1)  if (!Character.isDigit(chars[i1]))  break;
     if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
-    int i2 = i0;
-    if (hasprefix) {
-      i2 = src.lastIndexOf(MODEL_SEPARATOR_CHAR);
-      res.prefix = i0 == i2 ? "" : src.substring(i0 + 1, i2);
-    }
-    res.text = src.substring(i2 + 1, i1);
+    res.text = src.substring(i0 + 1, i1);
     res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
     res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
 
@@ -192,18 +188,39 @@ public class VersionUtil {
     return res;
   }
 
+  private String getOldV6String(String s, boolean hasmodel) {
+    int i0 = s.indexOf(MODEL_SEPARATOR_CHAR), i1 = s.lastIndexOf(VERSION_SEPARATOR_CHAR);
+    return s.substring(hasmodel ? i0+1 : 0, i1<0 ? s.length() : i1);
+  }
+
   public String readType(String s) {
-    return parse(s, false, false).text;
+    int ix = s.indexOf(MODEL_SEPARATOR_CHAR);
+    if (ix <= 0)  return s.substring(ix + 1);   // no model ID
+    SModelReference modelRef = null;
+    try {
+    modelRef = getSModelReference(Integer.parseInt(s.substring(0, ix)));
+    } catch (NumberFormatException e) {
+    }
+    if (modelRef == null) {
+//      LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
+//      LOG.warning(myModelRef.getSModelFqName().getLongName());
+      return getOldV6String(s, false);
+      //return s.substring(ix + 1);
+    } else {
+      return modelRef.getSModelFqName().getLongName() + "." + s.substring(ix + 1);
+    }
   }
   public String readRole(String s) {
-    return parse(s, true, true).text;
+    return getOldV6String(s, true);
+    //return s;
   }
   public String readName(String s) {
-    return parse(s, true, true).text;
+    return getOldV6String(s, true);
+    //return s;
   }
   public SReference readLink(SNode node, String rawRole, String rawTarget, String resolveInfo) {
     String role = readRole(rawRole);
-    ParseResult target = parse(rawTarget, true, false);
+    ParseResult target = parse(rawTarget, true);
     SModelReference modelRef = getSModelReference(target.modelID);
     if (modelRef == null) {
       LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");

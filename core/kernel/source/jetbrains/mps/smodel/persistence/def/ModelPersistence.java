@@ -61,11 +61,14 @@ public class ModelPersistence {
   public static final String TARGET_NODE_ID = "targetNodeId";
   public static final String LINK = "link";
   public static final String ROLE = "role";
+  public static final String ROLE_ID = "roleId";
   public static final String NAME = "name";
+  public static final String NAME_ID = "nameId";
   public static final String NAMESPACE = "namespace";  // v0
   public static final String EXT_RESOLVE_INFO = "extResolveInfo"; //v0
   public static final String NODE = "node";
   public static final String TYPE = "type";
+  public static final String TYPE_ID = "typeId";
   public static final String ID = "id";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String MODEL = "model";
