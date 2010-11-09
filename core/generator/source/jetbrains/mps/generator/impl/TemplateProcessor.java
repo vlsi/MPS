@@ -109,7 +109,7 @@ public class TemplateProcessor {
     }
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
-    generationTracer.pushTemplateNode(templateNode);
+    generationTracer.pushTemplateNode(new SNodePointer(templateNode));
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
@@ -187,7 +187,7 @@ public class TemplateProcessor {
       }
     } finally {
       generationTracer.pushOutputNode(outputNode);
-      generationTracer.closeTemplateNode(templateNode);
+      generationTracer.closeTemplateNode(new SNodePointer(templateNode));
     }
     return Collections.singletonList(outputNode);
   }
@@ -422,7 +422,7 @@ public class TemplateProcessor {
       if (inputChanged) {
         generationTracer.pushInputNode(newInputNode);
       }
-      generationTracer.pushTemplateNode(includeTemplate.getNode());
+      generationTracer.pushTemplateNode(new SNodePointer(includeTemplate.getNode()));
 
       try {
         for (TemplateFragment fragment : fragments) {
@@ -471,7 +471,7 @@ public class TemplateProcessor {
       if (inputChanged) {
         generationTracer.pushInputNode(newInputNode);
       }
-      generationTracer.pushTemplateNode(template.getNode());
+      generationTracer.pushTemplateNode(new SNodePointer(template.getNode()));
 
       try {
         for (TemplateFragment fragment : fragments) {

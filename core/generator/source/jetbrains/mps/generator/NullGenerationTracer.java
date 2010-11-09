@@ -4,6 +4,7 @@ import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -63,12 +64,13 @@ public class NullGenerationTracer implements IGenerationTracer {
   public void replaceOutputNode(SNode node, SNode newOutputNode) {
   }
 
+
   @Override
-  public void pushTemplateNode(SNode node) {
+  public void pushTemplateNode(SNodePointer node) {
   }
 
   @Override
-  public void closeTemplateNode(SNode node) {
+  public void closeTemplateNode(SNodePointer node) {
   }
 
   @Override

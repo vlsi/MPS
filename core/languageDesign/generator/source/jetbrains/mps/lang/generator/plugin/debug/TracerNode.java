@@ -114,8 +114,8 @@ public class TracerNode {
     return _children();
   }
 
-  public boolean isThis(Kind kind, SNode node) {
-    return myKind == kind && myNodePointer.equals(new SNodePointer(node));
+  public boolean isThis(Kind kind, SNodePointer nodePointer) {
+    return myKind == kind && myNodePointer.equals(nodePointer);
   }
 
   /*package*/ TracerNode find(SNode node) {
@@ -131,7 +131,7 @@ public class TracerNode {
   }
 
 
-  /*package*/ TracerNode find(Kind kind, SNode node) {
+  /*package*/ TracerNode find(Kind kind, SNodePointer node) {
     if (isThis(kind, node)) return this;
     if (getDepth() > 1000) return null;
     for (TracerNode child : myChildren) {
@@ -143,7 +143,7 @@ public class TracerNode {
     return null;
   }
 
-  /*package*/ void findAllTopmost(Kind kind, SNode node, List<TracerNode> result) {
+  /*package*/ void findAllTopmost(Kind kind, SNodePointer node, List<TracerNode> result) {
     if (isThis(kind, node)) {
       result.add(this);
       return;

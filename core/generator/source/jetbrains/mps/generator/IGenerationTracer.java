@@ -4,6 +4,7 @@ import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -37,9 +38,9 @@ public interface IGenerationTracer {
 
   void replaceOutputNode(SNode node, SNode newOutputNode);
 
-  void pushTemplateNode(SNode node);
+  void pushTemplateNode(SNodePointer node);
 
-  void closeTemplateNode(SNode node);
+  void closeTemplateNode(SNodePointer node);
 
   void pushCopyOperation();
 

@@ -125,13 +125,13 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void closeInputNode(SNode node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.INPUT, node);
+    closeBranch(TracerNode.Kind.INPUT, new SNodePointer(node));
   }
 
   @Override
   public void popInputNode(SNode node) {
     if (!myActive) return;
-    pop(TracerNode.Kind.INPUT, node);
+    pop(TracerNode.Kind.INPUT, new SNodePointer(node));
   }
 
   @Override
@@ -143,7 +143,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void closeRule(SNode node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.RULE, node);
+    closeBranch(TracerNode.Kind.RULE, new SNodePointer(node));
   }
 
   @Override
@@ -167,7 +167,7 @@ public class GenerationTracer implements IGenerationTracer {
   @Override
   public void closeMacro(SNode node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.MACRO, node);
+    closeBranch(TracerNode.Kind.MACRO, new SNodePointer(node));
   }
 
   @Override
@@ -199,13 +199,13 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushTemplateNode(SNode node) {
+  public void pushTemplateNode(SNodePointer node) {
     if (!myActive) return;
-    push(new TracerNode(Kind.TEMPLATE, new SNodePointer(node)));
+    push(new TracerNode(Kind.TEMPLATE, node));
   }
 
   @Override
-  public void closeTemplateNode(SNode node) {
+  public void closeTemplateNode(SNodePointer node) {
     if (!myActive) return;
     closeBranch(Kind.TEMPLATE, node);
   }
@@ -236,7 +236,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
   }
 
-  private void closeBranch(Kind kind, SNode node) {
+  private void closeBranch(Kind kind, SNodePointer node) {
     TracerNode checkNode = myCurrentTraceNode;
     while (checkNode != null) {
       if (checkNode.isThis(kind, node)) {
@@ -246,14 +246,14 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getDebugText());
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getNode().getDebugText());
     myCurrentTraceNode = null; // reset branch
   }
 
   /**
    * removes node from tree
    */
-  private void pop(Kind kind, SNode node) {
+  private void pop(Kind kind, SNodePointer node) {
     TracerNode checkNode = myCurrentTraceNode;
     while (checkNode != null) {
       if (checkNode.isThis(kind, node)) {
@@ -268,7 +268,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getDebugText());
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + node.getNode().getDebugText());
     myCurrentTraceNode = null; // reset branch
   }
 
@@ -303,7 +303,7 @@ public class GenerationTracer implements IGenerationTracer {
 
   @Nullable
   private TracerNode buildTraceInputTree(SNode node) {
-    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, node);
+    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, new SNodePointer(node));
     if (!tracerNodes.isEmpty()) {
       TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
       for (TracerNode tracerNode : tracerNodes) {
@@ -372,7 +372,7 @@ public class GenerationTracer implements IGenerationTracer {
 
   private TracerNode buildTracebackTree(SNode node) {
     {
-      TracerNode tracerNode = findTracerNode(Kind.OUTPUT, node);
+      TracerNode tracerNode = findTracerNode(Kind.OUTPUT, new SNodePointer(node));
       if (tracerNode != null) {
         return buildTracebackTree(tracerNode, 0);
       }
@@ -415,7 +415,7 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @NotNull
-  private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNode node) {
+  private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNodePointer node) {
     List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getSModelReference());
     if (rootTracerNodes == null) return new ArrayList<TracerNode>();
 
@@ -442,7 +442,7 @@ public class GenerationTracer implements IGenerationTracer {
     return null;
   }
 
-  private TracerNode findTracerNode(Kind kind, SNode node) {
+  private TracerNode findTracerNode(Kind kind, SNodePointer node) {
     List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getSModelReference());
     if (rootTracerNodes == null) return null;
 
