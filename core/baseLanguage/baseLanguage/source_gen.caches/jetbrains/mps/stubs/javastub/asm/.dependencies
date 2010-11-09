@@ -23,6 +23,7 @@
     <classNode dependClassName="org.objectweb.asm.tree.AnnotationNode" />
     <classNode dependClassName="org.objectweb.asm.tree.ClassNode" />
     <classNode dependClassName="org.objectweb.asm.tree.FieldNode" />
+    <classNode dependClassName="org.objectweb.asm.tree.InnerClassNode" />
     <classNode dependClassName="org.objectweb.asm.tree.MethodNode" />
     <classNode extendsClassName="jetbrains.mps.stubs.javastub.asm.SignatureVisitorAdapter" />
   </dependency>

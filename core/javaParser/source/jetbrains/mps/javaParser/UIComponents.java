@@ -35,8 +35,6 @@ import java.io.File;
 import java.util.*;
 
 public class UIComponents {
-  private static final Logger LOG = Logger.getLogger(UIComponents.class);
-
   public static MyDialog createClasspathsDialog(IOperationContext context, final File sourceDir, List<String> classFqNames) {
     return new MyDialog(context, sourceDir, classFqNames);
   }
@@ -110,8 +108,8 @@ public class UIComponents {
       myAdditionalClasspaths.add(classPath);
       for (String unresolvedFQName : new ArrayList<String>(myUnresolvedFQNames)) {
         if (classPath.getClass(unresolvedFQName) != null ||
-          !classPath.getAvailableRootClasses(unresolvedFQName).isEmpty() ||
-          !classPath.getSubpackages(unresolvedFQName).isEmpty()) {
+          classPath.getAvailableRootClasses(unresolvedFQName).iterator().hasNext() ||
+          classPath.getSubpackages(unresolvedFQName).iterator().hasNext()) {
           addClassInClassPath(classPath, unresolvedFQName);
         }
       }

@@ -16,6 +16,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.util.CompositeIterable;
 
 import java.net.URL;
 import java.util.*;
@@ -58,24 +59,22 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
-  public void collectAvailableRootClasses(Set<String> classes, String namespace) {
+  public Iterable<String> getAvailableRootClasses(String namespace) {
+    CompositeIterable<String> result = new CompositeIterable<String>();
     for (IClassPathItem item : myChildren) {
-      if (item instanceof AbstractClassPathItem) {
-        ((AbstractClassPathItem) item).collectAvailableRootClasses(classes, namespace);
-      } else {
-        classes.addAll(item.getAvailableRootClasses(namespace));
-      }
+      //todo rewrite using mapping iterable
+      result.add(item.getAvailableRootClasses(namespace));
     }
+    return result;
   }
 
-  public void collectSubpackages(Set<String> subpackages, String namespace) {
+  public Iterable<String> getSubpackages(String namespace) {
+    CompositeIterable<String> result = new CompositeIterable<String>();
     for (IClassPathItem item : myChildren) {
-      if (item instanceof AbstractClassPathItem) {
-        ((AbstractClassPathItem) item).collectSubpackages(subpackages, namespace);
-      } else {
-        subpackages.addAll(item.getSubpackages(namespace));
-      }
+      //todo rewrite using mapping iterable
+      result.add(item.getSubpackages(namespace));
     }
+    return result;
   }
 
   public long getClassesTimestamp(String namespace) {

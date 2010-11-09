@@ -16,7 +16,6 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Annotation" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression" />
@@ -101,6 +100,8 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.NodeNameUtil" />
     <classNode dependClassName="org.objectweb.asm.ClassReader" />
+    <classNode dependClassName="org.objectweb.asm.Opcodes" />
+    <classNode dependClassName="org.objectweb.asm.tree.InnerClassNode" />
   </dependency>
   <dependency className="jetbrains.mps.stubs.javastub.ASMNodeId" file="ASMNodeId.java">
     <classNode dependClassName="java.lang.RuntimeException" />

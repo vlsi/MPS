@@ -23,8 +23,6 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageID;
 
 public class JavaStubs extends BaseStubModelRootManager {
@@ -92,7 +90,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     }
 
     for (String subpackage : cpItem.getSubpackages(pack)) {
-      if (!(cpItem.getAvailableRootClasses(subpackage).isEmpty())) {
+      if (cpItem.getAvailableRootClasses(subpackage).iterator().hasNext()) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId());
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(JavaStubs.this.getLanguageId()));
@@ -109,12 +107,7 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   private void iterateClasspath(IClassPathItem item, Set<StubDescriptor> result, final String pack) {
-    List<String> availableClasses = new ArrayList<String>();
-    availableClasses.addAll(item.getAvailableRootClasses(pack));
-    for (String cls : availableClasses) {
-      if (cls.contains("$")) {
-        continue;
-      }
+    for (String cls : item.getAvailableRootClasses(pack)) {
       result.add(new StubDescriptor(cls, pack, item));
     }
     for (String subpack : item.getSubpackages(pack)) {

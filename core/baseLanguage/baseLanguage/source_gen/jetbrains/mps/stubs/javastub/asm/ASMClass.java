@@ -12,6 +12,7 @@ import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.tree.InnerClassNode;
 import java.util.Collections;
 
 public class ASMClass {
@@ -116,6 +117,10 @@ public class ASMClass {
 
   public String getFqName() {
     return myNode.name.replace("/", ".");
+  }
+
+  public List<InnerClassNode> getInnerClasses() {
+    return myNode.innerClasses;
   }
 
   public List<ASMTypeVariable> getTypeParameters() {

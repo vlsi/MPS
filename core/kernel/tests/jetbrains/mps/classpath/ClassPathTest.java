@@ -37,6 +37,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -153,7 +154,7 @@ public class ClassPathTest extends BaseMPSTest {
     while (!packages.isEmpty()) {
       String some = packages.iterator().next();
       packages.remove(some);
-      packages.addAll(pathItem.getSubpackages(some));
+      packages.addAll(IterableUtil.asCollection(pathItem.getSubpackages(some)));
 
       for (String shortClassName : pathItem.getAvailableRootClasses(some)) {
         classNames.add(some + "." + shortClassName);

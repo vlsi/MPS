@@ -36,11 +36,9 @@ public interface IClassPathItem {
   @Nullable
   URL getResource(String name);
 
-  @NotNull
-  Set<String> getAvailableRootClasses(String namespace);
+  Iterable<String> getAvailableRootClasses(String namespace);
 
-  @NotNull
-  Set<String> getSubpackages(String namespace);
+  Iterable<String> getSubpackages(String namespace);
 
   long getClassesTimestamp(String namespace);
 

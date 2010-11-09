@@ -17,7 +17,6 @@ package jetbrains.mps.reloading;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
@@ -29,40 +28,16 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     return this;
   }
 
-  @NotNull
-  public final Set<String> getSubpackages(String namespace) {
-    Set<String> result = new HashSet<String>();
-    collectSubpackages(result, namespace);
-    return result;
-  }
-
-  @NotNull
-  public final Set<String> getAvailableRootClasses(String namespace) {
-    Set<String> result = new HashSet<String>();
-    collectAvailableRootClasses(result, namespace);
-    return result;
-  }
-
   protected boolean isInner(String className) {
-    if (className.contains("$")) {
-      for (String part : className.split("\\$")) {
-        if (part.matches("\\d+")) { return true; }
-      }
-    }
-    if (className.contains(".")) return true;
+    if (className.contains("$")) return true;
     return false;
   }
 
   private long getTimestamp(String namespace) {
     long result = getClassesTimestamp(namespace);
-    Set<String> subpackages = getSubpackages(namespace);
-    for (String subpackage : subpackages) {
+    for (String subpackage : getSubpackages(namespace)) {
       result = Math.max(result, getTimestamp(subpackage));
     }
     return result;
   }
-
-  protected abstract void collectSubpackages(Set<String> subpackages, String namespace);
-
-  protected abstract void collectAvailableRootClasses(Set<String> classes, String namespace);
 }

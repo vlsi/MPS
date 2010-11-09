@@ -5,7 +5,6 @@ package jetbrains.mps.stubs.javastub;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
-import java.util.Set;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
 import org.objectweb.asm.ClassReader;
@@ -29,6 +28,8 @@ import jetbrains.mps.baseLanguage.structure.GenericDeclaration;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.baseLanguage.structure.TypeVariableReference;
 import jetbrains.mps.baseLanguage.structure.PublicVisibility;
+import org.objectweb.asm.tree.InnerClassNode;
+import org.objectweb.asm.Opcodes;
 import jetbrains.mps.stubs.javastub.asm.ASMAnnotation;
 import jetbrains.mps.stubs.javastub.asm.ASMField;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
@@ -105,8 +106,7 @@ public abstract class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      final Set<String> classes = myCpItem.getAvailableRootClasses(pack);
-      for (String name : classes) {
+      for (String name : myCpItem.getAvailableRootClasses(pack)) {
         getClassifier(name);
       }
     } catch (Exception e) {
@@ -232,6 +232,7 @@ public abstract class ASMModelLoader {
       updateConstructors(ac, cls);
       updateInstanceMethods(ac, cls);
       updateStaticMethods(ac, cls);
+      updateInnerClassifiers(ac, cls);
       cls.setIsFinal(ac.isFinal());
     }
     if (clsfr instanceof Annotation) {
@@ -258,7 +259,17 @@ public abstract class ASMModelLoader {
       updateExtendsForInterface(ac, intfc);
       updateStaticFields(ac, intfc);
       updateInstanceMethods(ac, intfc);
+      updateInnerClassifiers(ac, intfc);
       intfc.setIsDeprecated(ac.isDeprecated());
+    }
+  }
+
+  public void updateInnerClassifiers(ASMClass ac, Classifier cls) {
+    for (InnerClassNode cn : ac.getInnerClasses()) {
+      if ((cn.access & Opcodes.ACC_PRIVATE) != 0) {
+        continue;
+      }
+      getClassifier(cn.innerName);
     }
   }
 
