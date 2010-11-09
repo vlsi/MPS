@@ -6,6 +6,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.BaseAdapter;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
@@ -13,7 +18,6 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.stubs.javastub.asm.ASMTypeVariable;
 import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
@@ -39,7 +43,6 @@ import jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.StubStatementList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
@@ -86,7 +89,6 @@ import jetbrains.mps.stubs.javastub.asm.ASMSuperType;
 import jetbrains.mps.baseLanguage.structure.LowerBoundType;
 import jetbrains.mps.stubs.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NodeNameUtil;
@@ -107,33 +109,61 @@ public abstract class ASMModelLoader {
     try {
       String pack = myModel.getLongName();
       for (String name : myCpItem.getAvailableRootClasses(pack)) {
-        getClassifier(name);
+        getRootClassifier(name);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
     }
   }
 
-  private Classifier getClassifier(String name) {
-    SModel model = myModel;
-    Classifier result = (Classifier) BaseAdapter.fromNode(model.getNodeById(ASMNodeId.createId(name)));
-    if (result == null) {
-      String pack = model.getLongName();
-      byte[] code = myCpItem.getClass((pack.length() == 0 ?
-        name :
-        pack + "." + name
-      ));
-      if (code == null) {
-        return null;
+  private Classifier getRootClassifier(String name) {
+    return getClassifier(name, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode n) {
+        myModel.addRoot(n);
       }
-      ClassReader reader = new ClassReader(code);
-      result = createClassifierForClass(name, model, reader);
-      if (result == null) {
-        return null;
-      }
-      model.addRoot(result.getNode());
-      updateClassifier(result, reader);
+    });
+  }
+
+  private Classifier getAnyClassifier(String fqName, String pack) {
+    String rootName = fqName.substring(pack.length() + 1);
+    int index = rootName.indexOf(".");
+    if (index == -1) {
+      return getRootClassifier(rootName);
     }
+
+    rootName = rootName.substring(0, index);
+    final Classifier rootClassifier = getRootClassifier(rootName);
+    if (rootClassifier == null) {
+      return null;
+    }
+
+    return getClassifier(NameUtil.shortNameFromLongName(fqName), new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode n) {
+        rootClassifier.addStaticInnerClassifiers(((Classifier) ((BaseConcept) SNodeOperations.getAdapter(n))));
+      }
+    });
+  }
+
+  private Classifier getClassifier(String name, _FunctionTypes._void_P1_E0<? super SNode> adder) {
+    Classifier result = (Classifier) BaseAdapter.fromNode(myModel.getNodeById(ASMNodeId.createId(name)));
+    if (result != null) {
+      return result;
+    }
+    String pack = myModel.getLongName();
+    byte[] code = myCpItem.getClass((pack.length() == 0 ?
+      name :
+      pack + "." + name
+    ));
+    if (code == null) {
+      return null;
+    }
+    ClassReader reader = new ClassReader(code);
+    result = createClassifierForClass(name, myModel, reader);
+    if (result == null) {
+      return null;
+    }
+    adder.invoke(result.getNode());
+    updateClassifier(result, reader);
     return result;
   }
 
@@ -264,12 +294,17 @@ public abstract class ASMModelLoader {
     }
   }
 
-  public void updateInnerClassifiers(ASMClass ac, Classifier cls) {
+  public void updateInnerClassifiers(ASMClass ac, final Classifier cls) {
     for (InnerClassNode cn : ac.getInnerClasses()) {
       if ((cn.access & Opcodes.ACC_PRIVATE) != 0) {
         continue;
       }
-      getClassifier(cn.innerName);
+      // todo remove synthetic classes (if atribute is set) 
+      getClassifier(cn.innerName, new _FunctionTypes._void_P1_E0<SNode>() {
+        public void invoke(SNode n) {
+          cls.addStaticInnerClassifiers(((Classifier) ((BaseConcept) SNodeOperations.getAdapter(n))));
+        }
+      });
     }
   }
 
@@ -771,7 +806,7 @@ public abstract class ASMModelLoader {
     SReference reference = null;
     SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
     if (sourceNode.getModel().getSModelReference().equals(targetModelRef)) {
-      Classifier classifier = getClassifier(NameUtil.shortNameFromLongName(clsType.getName()));
+      Classifier classifier = getAnyClassifier(clsType.getName(), sourceNode.getModel().getLongName());
       if (classifier != null) {
         SNode targetNode = classifier.getNode();
         reference = SReference.create(role, sourceNode, targetNode);
@@ -794,7 +829,7 @@ public abstract class ASMModelLoader {
 
     SReference reference = null;
     if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
-      Classifier classifier = getClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
+      Classifier classifier = getRootClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
       InstanceMethodDeclaration result = null;
       if (classifier instanceof Annotation) {
         Annotation annotation = (Annotation) classifier;
@@ -827,7 +862,7 @@ public abstract class ASMModelLoader {
 
     SReference reference = null;
     if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
-      Classifier classifier = getClassifier(NameUtil.shortNameFromLongName(classType.getName()));
+      Classifier classifier = getAnyClassifier(classType.getName(), sourceNode.getModel().getLongName());
       EnumConstantDeclaration constDcl = null;
       if (classifier instanceof EnumClass) {
         EnumClass ec = (EnumClass) classifier;

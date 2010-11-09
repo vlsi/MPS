@@ -16,6 +16,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Annotation" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression" />
@@ -68,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.VoidType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.WildCardType" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
