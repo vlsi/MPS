@@ -5,7 +5,6 @@ package jetbrains.mps.stubs.javastub;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -88,6 +87,7 @@ import jetbrains.mps.stubs.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Iterator;
@@ -105,8 +105,7 @@ public abstract class ASMModelLoader {
 
   public void updateModel() {
     try {
-      SModelReference reference = myModel.getSModelReference();
-      String pack = reference.getLongName();
+      String pack = myModel.getLongName();
       final Set<String> classes = getAvailableClasses(pack);
       for (String name : classes) {
         getClassifier(name);
@@ -844,15 +843,15 @@ public abstract class ASMModelLoader {
   public abstract SModelReference getModelReferenceFor(String packageName);
 
   private Set<String> getAvailableClasses(String namespace) {
-    Set<String> classes = myCpItem.getAvailableClasses(namespace);
-    Iterator<String> it = classes.iterator();
+    Set<String> startSet = myCpItem.getAvailableClasses(namespace);
+    Iterator<String> it = startSet.iterator();
     while (it.hasNext()) {
       String s = it.next();
       if (ASMModelLoader.isAnonymous(s)) {
         it.remove();
       }
     }
-    return classes;
+    return startSet;
   }
 
   private static boolean isAnonymous(String s) {
