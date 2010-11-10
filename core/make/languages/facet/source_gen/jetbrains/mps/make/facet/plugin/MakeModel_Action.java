@@ -12,15 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
@@ -29,10 +20,19 @@ import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.make.script.IMonitors;
+import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
-import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorAdapter;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.make.script.IResult;
 
 public class MakeModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -82,16 +82,6 @@ public class MakeModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ScriptBuilder scb = new ScriptBuilder();
-      final Wrappers._T<ProgressIndicator> ind = new Wrappers._T<ProgressIndicator>(null);
-      final IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
-        public void invoke(IParametersPool pool) {
-          Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, ProgressIndicator> vars = (Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, ProgressIndicator>) pool.parameters(new ITarget.Name("Parameters"), Object.class);
-          vars._0(MakeModel_Action.this.context.getProject());
-          vars._1(MakeModel_Action.this.context);
-          vars._2(MakeModel_Action.this.models);
-          vars._3(ind.value);
-        }
-      }).toScript();
       final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();
       final LoggingProgressStrategy logStrat = new LoggingProgressStrategy();
       final LoggingFeedbackStrategy feedbackStrat = new LoggingFeedbackStrategy();
@@ -104,19 +94,31 @@ public class MakeModel_Action extends GeneratedAction {
           return logStrat.currentProgress();
         }
       };
-      IConfigMonitor cmon = new IConfigMonitor() {
+      final IConfigMonitor cmon = new IConfigMonitor() {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
           return relayStrat.relayQuery(query, MakeModel_Action.this.context);
         }
       };
-      final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
-      ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-        public void run(ProgressIndicator realInd) {
-          ind.value = new ProgressIndicatorAdapter(realInd);
-          res.value = scr.execute();
+      IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
+        public void invoke(IParametersPool pool) {
+          Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> vars = (Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>>) pool.parameters(new ITarget.Name("Parameters"), Object.class);
+          vars._0(MakeModel_Action.this.context.getProject());
+          vars._1(MakeModel_Action.this.context);
+          vars._2(MakeModel_Action.this.models);
         }
-      }, "Script", true, MakeModel_Action.this.context.getProject());
-
+      }).withMonitors(new IMonitors.Stub(cmon, jmon) {
+        @Override
+        public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+          IdeEventQueue.getInstance().flushQueue();
+          ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
+            public void run(ProgressIndicator realInd) {
+              code.invoke(jmon);
+            }
+          }, "Script", true, MakeModel_Action.this.context.getProject());
+        }
+      }).toScript();
+      IResult res;
+      res = scr.execute();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeModel", t);
     }

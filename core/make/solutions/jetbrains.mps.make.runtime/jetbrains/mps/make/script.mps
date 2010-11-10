@@ -1093,6 +1093,123 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="4648565975300663454">
     <property name="name:3" value="IMonitors" />
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5646063728432391389">
+      <property name="name:3" value="Stub" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5646063728432391390" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5646063728432391391">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5646063728432391392" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5646063728432391393" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5646063728432391394">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5646063728432391404">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5646063728432391405">
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5646063728432391406">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5646063728432391407" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5646063728432391408">
+                  <link role="fieldDeclaration:3" targetNodeId="5646063728432391401" resolveInfo="cmon" />
+                </node>
+              </node>
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5646063728432391409">
+                <link role="variableDeclaration:3" targetNodeId="5646063728432391396" resolveInfo="cmon" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5646063728432391413">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5646063728432391414">
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5646063728432391415">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5646063728432391416" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5646063728432391417">
+                  <link role="fieldDeclaration:3" targetNodeId="5646063728432391410" resolveInfo="jmon" />
+                </node>
+              </node>
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5646063728432391418">
+                <link role="variableDeclaration:3" targetNodeId="5646063728432391398" resolveInfo="jmon" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5646063728432391396">
+          <property name="name:3" value="cmon" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391397">
+            <link role="classifier:3" targetNodeId="8339029394034910088" resolveInfo="IConfigMonitor" />
+          </node>
+        </node>
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5646063728432391398">
+          <property name="name:3" value="jmon" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391400">
+            <link role="classifier:3" targetNodeId="6168415856807657250" resolveInfo="IJobMonitor" />
+          </node>
+        </node>
+      </node>
+      <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391395">
+        <link role="classifier:3" targetNodeId="4648565975300663454" resolveInfo="IMonitors" />
+      </node>
+      <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5646063728432391401">
+        <property name="name:3" value="cmon" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5646063728432391402" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391403">
+          <link role="classifier:3" targetNodeId="8339029394034910088" resolveInfo="IConfigMonitor" />
+        </node>
+      </node>
+      <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5646063728432391410">
+        <property name="name:3" value="jmon" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5646063728432391411" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391412">
+          <link role="classifier:3" targetNodeId="6168415856807657250" resolveInfo="IJobMonitor" />
+        </node>
+      </node>
+      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5646063728432391419">
+        <property name="name:3" value="runJobWithMonitor" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5646063728432391420">
+          <property name="name:3" value="code" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType:3" id="5646063728432391421">
+            <node role="resultType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5646063728432391422" />
+            <node role="parameterType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391423">
+              <link role="classifier:3" targetNodeId="6168415856807657250" resolveInfo="IJobMonitor" />
+            </node>
+          </node>
+        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5646063728432391424" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5646063728432391425" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5646063728432391426">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5646063728432391435">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="5646063728432391437">
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5646063728432391440">
+                <link role="variableDeclaration:3" targetNodeId="5646063728432391410" resolveInfo="jmon" />
+              </node>
+              <node role="function:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5646063728432391438">
+                <link role="variableDeclaration:3" targetNodeId="5646063728432391420" resolveInfo="code" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5646063728432391427">
+        <property name="name:3" value="runConfigWithMonitor" />
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5646063728432391428" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5646063728432391429" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5646063728432391430">
+          <property name="name:3" value="code" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType:3" id="5646063728432391431">
+            <node role="resultType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5646063728432391432" />
+            <node role="parameterType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5646063728432391433">
+              <link role="classifier:3" targetNodeId="8339029394034910088" resolveInfo="IConfigMonitor" />
+            </node>
+          </node>
+        </node>
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5646063728432391434">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5646063728432391443">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="5646063728432391445">
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5646063728432391448">
+                <link role="variableDeclaration:3" targetNodeId="5646063728432391401" resolveInfo="cmon" />
+              </node>
+              <node role="function:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5646063728432391446">
+                <link role="variableDeclaration:3" targetNodeId="5646063728432391430" resolveInfo="code" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4648565975300663473">
       <property name="isAbstract:3" value="true" />
       <property name="name:3" value="runConfigWithMonitor" />

@@ -47,13 +47,36 @@
   <root nodeId="4648565975300663454">
     <nodeInfo nodeId="4648565975300663473" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitors.java" startLine="7" startPosition="28" endLine="8" endPosition="92" />
     <nodeInfo nodeId="4648565975300663456" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitors.java" startLine="8" startPosition="92" endLine="9" endPosition="86" />
+    <nodeInfo nodeId="5646063728432391401" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="IMonitors.java" startLine="10" startPosition="49" endLine="11" endPosition="32" />
+    <nodeInfo nodeId="5646063728432391410" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="IMonitors.java" startLine="11" startPosition="32" endLine="12" endPosition="29" />
+    <nodeInfo nodeId="5646063728432391404" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IMonitors.java" startLine="14" startPosition="56" endLine="15" endPosition="23" />
+    <nodeInfo nodeId="5646063728432391413" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IMonitors.java" startLine="15" startPosition="23" endLine="16" endPosition="23" />
+    <nodeInfo nodeId="5646063728432391435" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IMonitors.java" startLine="19" startPosition="89" endLine="20" endPosition="24" />
+    <nodeInfo nodeId="5646063728432391443" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IMonitors.java" startLine="23" startPosition="95" endLine="24" endPosition="24" />
+    <nodeInfo nodeId="5646063728432391391" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="IMonitors.java" startLine="13" startPosition="0" endLine="17" endPosition="5" />
+    <nodeInfo nodeId="5646063728432391419" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitors.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="5646063728432391427" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IMonitors.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4648565975300663473" fileName="IMonitors.java" startLine="7" startPosition="28" endLine="8" endPosition="92">
       <varInfo nodeId="4648565975300663477" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="4648565975300663456" fileName="IMonitors.java" startLine="8" startPosition="92" endLine="9" endPosition="86">
       <varInfo nodeId="4648565975300663460" varName="code" />
     </scopeInfo>
-    <unitInfo nodeId="4648565975300663454" fileName="IMonitors.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.script.IMonitors" />
+    <scopeInfo nodeId="5646063728432391426" fileName="IMonitors.java" startLine="19" startPosition="89" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="5646063728432391434" fileName="IMonitors.java" startLine="23" startPosition="95" endLine="24" endPosition="24" />
+    <scopeInfo nodeId="5646063728432391394" fileName="IMonitors.java" startLine="14" startPosition="56" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="5646063728432391391" fileName="IMonitors.java" startLine="13" startPosition="0" endLine="17" endPosition="5">
+      <varInfo nodeId="5646063728432391398" varName="jmon" />
+      <varInfo nodeId="5646063728432391396" varName="cmon" />
+    </scopeInfo>
+    <scopeInfo nodeId="5646063728432391419" fileName="IMonitors.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="5646063728432391420" varName="code" />
+    </scopeInfo>
+    <scopeInfo nodeId="5646063728432391427" fileName="IMonitors.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="5646063728432391430" varName="code" />
+    </scopeInfo>
+    <unitInfo nodeId="5646063728432391389" fileName="IMonitors.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.make.script.IMonitors$Stub" />
+    <unitInfo nodeId="4648565975300663454" fileName="IMonitors.java" startLine="7" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.script.IMonitors" />
   </root>
   <root nodeId="6168415856807657202">
     <nodeInfo nodeId="6168415856807657210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IJob.java" startLine="7" startPosition="23" endLine="8" endPosition="91" />
