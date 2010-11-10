@@ -13,23 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v6;
+package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jdom.Element;
 
-public class ModelWriter6 implements IModelWriter {
+public class ModelWriter7 implements IModelWriter {
   private VersionUtil myHelper;
   private SModel myModel;
 
   protected int getModelPersistenceVersion() {
-    return 6;
+    return 7;
   }
 
   public Document saveModel(SModel sourceModel) {
@@ -101,15 +103,15 @@ public class ModelWriter6 implements IModelWriter {
     Element element = new Element(ModelPersistence.NODE);
 
     DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, myHelper.genRole(node));
-    //DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node));
     element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
-    //DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
+    DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
     element.setAttribute(ModelPersistence.ID, node.getId());
 
     for (String propertyName : node.getProperties().keySet()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
-      //DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
       element.addContent(propertyElement);
     }
@@ -117,7 +119,7 @@ public class ModelWriter6 implements IModelWriter {
     for (SReference reference : node.getReferencesIterable()) {
       Element linkElement = new Element(ModelPersistence.LINK);
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
-      //DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
       element.addContent(linkElement);

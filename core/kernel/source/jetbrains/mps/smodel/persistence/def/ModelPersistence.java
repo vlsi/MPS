@@ -31,8 +31,8 @@ import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
+import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -98,7 +98,8 @@ public class ModelPersistence {
     new ModelPersistence3(),
     new ModelPersistence4(),
     new ModelPersistence5(),
-    new ModelPersistence6()
+    new ModelPersistence6(),
+    new ModelPersistence7()
   };
   private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
 

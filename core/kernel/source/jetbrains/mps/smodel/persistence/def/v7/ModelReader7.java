@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v6;
+package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -32,14 +33,14 @@ import java.util.List;
  * Time: 3:08:42 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ModelReader6 implements IModelReader {
-  private static final Logger LOG = Logger.getLogger(ModelReader6.class);
+public class ModelReader7 implements IModelReader {
+  private static final Logger LOG = Logger.getLogger(ModelReader7.class);
 
   private VersionUtil myHelper;
 
   @Override
   public int getVersion() {
-    return 6;
+    return 7;
   }
 
   public SModel readModel(Document document, String modelShortName, String stereotype) {

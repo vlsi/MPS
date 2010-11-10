@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -24,9 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class VersionUtil {
   private static final Logger LOG = Logger.getLogger(VersionUtil.class);
@@ -38,106 +35,74 @@ public class VersionUtil {
 
   private SModelReference myModelRef;
   private Map<SModelReference, ImportElement> myImports;
-  private Map<SModelReference, String> myImportIndex;
-  private Set<Integer> myUsedIndexes;
-  private final static int HASH_BASE = 10 + 26;
-  private final static int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
 
   public VersionUtil(SModel model) {
     myModelRef = model.getSModelReference();
     myImports = new HashMap<SModelReference, ImportElement>();
-    myImportIndex = new HashMap<SModelReference, String>();
-    myUsedIndexes = new HashSet<Integer>();
-
+    fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
     for (ImportElement elem : model.importedModels()) {
-      processImportElement(elem);
+      myImports.put(elem.getModelReference(), elem);
     }
     for (ImportElement elem : model.getAdditionalModelVersions()) {
-      processImportElement(elem);
+      myImports.put(elem.getModelReference(), elem);
     }
   }
 
-  private void processImportElement(ImportElement elem) {
-    myImports.put(elem.getModelReference(), elem);
-    int hash = (elem.getModelReference().hashCode() >>> 1) % HASH_SIZE;
-    while (myUsedIndexes.contains(hash))  hash = (hash + 1) % HASH_SIZE;
-    myUsedIndexes.add(hash);
-    myImportIndex.put(elem.getModelReference(), Integer.toString(hash, HASH_BASE));
+  // when upgrading to 6 persistence some of IDs can be -1 and need to be fixed
+  static void fillReferenceIDs(SModel model) {
+    for (ImportElement elem : model.importedModels()) {
+      fixReferenceID(model, elem);
+    }
+    for (ImportElement elem : model.getAdditionalModelVersions()) {
+      fixReferenceID(model, elem);
+    }
+  }
+
+  static void fixReferenceID(SModel model, ImportElement elem) {
+    if (elem.getReferenceID() < 0) {
+      int id = model.getMaxImportIndex();
+      model.setMaxImportIndex(++id);
+      elem.setReferenceID(id);
+    }
   }
 
   public String genImportIndex(ImportElement elem) {
-    return myImportIndex.get(elem.getModelReference());
-  }
-
-  private static String encode(String s) {
-    return s.replace("%", "%p").replace(":", "%c").replace(".", "%d");
-  }
-  private static String decode(String s) {
-    return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
+    return Integer.toString(elem.getReferenceID());
   }
 
   @NotNull
-  public String genReferenceString(@NotNull SModelReference ref, @NotNull String text, boolean useversion) {
+  public String genReferenceString(@NotNull SModelReference ref, @NotNull String text, boolean usemodel) {
     ImportElement impElem = myImports.get(ref);
     if (impElem == null) {
       LOG.error("model " + ref + " not found in imports");
-      return encode(text);
+      return text;
     }
     StringBuilder result = new StringBuilder();
-    if (!(myModelRef.equals(ref)))  result.append(myImportIndex.get(ref)).append(MODEL_SEPARATOR_CHAR);
-    result.append(encode(text));
-    if (useversion && impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
+    if (usemodel && !(myModelRef.equals(ref)))  result.append(impElem.getReferenceID()).append(MODEL_SEPARATOR_CHAR);
+    result.append(text);
+    if (impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
     return result.toString();
   }
   @NotNull
-  public String genConceptReferenceString(@Nullable SNode concept, @NotNull String fqName) {
-    // return fqName prefixed with "." if we can't find model or name of concept
-    fqName = MODEL_SEPARATOR_CHAR + fqName;   // to distinguish fqName from model + concept
-    if (concept == null)  return fqName;
-    SModelReference ref = concept.getModel().getSModelReference();
-    ImportElement impElem = myImports.get(ref);
-    if (impElem == null) {
-      LOG.error("model " + ref + " not found in imports");
-      return fqName;
-    }
-    String name = concept.getName();
-    if (name == null)  return fqName;
-    return new StringBuilder().append(myImportIndex.get(ref)).append(MODEL_SEPARATOR_CHAR).append(name).toString();
+  private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
+    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
   }
   @NotNull
-  public String genReferenceId(@NotNull SNode node) {
-    return genReferenceString(node.getModel().getSModelReference(), node.getId(), true);
-  }
-  @Nullable
-  public String genReferenceId(@Nullable BaseAdapter adapter) {
-    return adapter == null ? null : genReferenceId(adapter.getNode());
+  private String genReferenceString(@Nullable BaseAdapter node, @NotNull String text, boolean usemodel) {
+    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
   }
 
   public String genType(@NotNull SNode node) {
-    return genConceptReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName());
-  }
-  public String genTypeId(@NotNull SNode node) {
-    SNode concept = node.getConceptDeclarationNode();
-    return concept == null ? null : genReferenceId(concept);
+    return genReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName(), false);
   }
   public String genRole(@NotNull SNode node) {
-    return node.getRole_();
+    return node.getRole_() == null ? null : genReferenceString(node.isAttribute() ? null : node.getRoleLink(), node.getRole_(), true);
   }
   public String genRole(@NotNull SReference ref) {
-    return ref.getRole();
-  }
-  public String genRoleId(@NotNull SNode node) {
-    return genReferenceId(node.getRoleLink());
-  }
-  public String genRoleId(@NotNull SReference ref) {
-    return genReferenceId(ref.getSourceNode().getLinkDeclaration(ref.getRole()));
+    return genReferenceString(ref.getSourceNode().getLinkDeclaration(ref.getRole()), ref.getRole(), true);
   }
   public String genName(@NotNull SNode node, @NotNull String prop) {
-    return prop;
-  }
-  public String genNameId(@NotNull SNode node, @NotNull String prop) {
-    PropertyDeclaration propDecl = node.getPropertyDeclaration(prop);
-    return propDecl == null ? null : genReferenceId(propDecl.getNode());
+    return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
   }
   public String genTarget(@NotNull SReference ref) {
     String target = ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^";
@@ -146,14 +111,12 @@ public class VersionUtil {
   }
 
 
-
-  private Map<String, ImportElement> myImportByIx;
-  private int myMaxImportIndex = -1;
+  private Map<Integer, ImportElement> myImportByIx;
 
   public VersionUtil(SModelReference modelRef) {
     myModelRef = modelRef;
     myImports = new HashMap<SModelReference, ImportElement>();
-    myImportByIx = new HashMap<String, ImportElement>();
+    myImportByIx = new HashMap<Integer, ImportElement>();
   }
 
   public void addImport(SModel model, String index, String modelUID, int version, boolean implicit) {
@@ -161,73 +124,67 @@ public class VersionUtil {
       LOG.error("Error loading import element for index " + index + " in " + myModelRef);
       return;
     }
+    int ix = Integer.parseInt(index);
     SModelReference modelRef = ModelUtil.upgradeModelUID(SModelReference.fromString(modelUID));
-    ImportElement elem = new ImportElement(modelRef, ++myMaxImportIndex, version);
-    model.setMaxImportIndex(myMaxImportIndex);
+    ImportElement elem = new ImportElement(modelRef, ix, version);
+    if (model.getMaxImportIndex() < ix)  model.setMaxImportIndex(ix);
     myImports.put(modelRef, elem);
-    myImportByIx.put(index, elem);
+    myImportByIx.put(ix, elem);
     if (implicit)
       model.addAdditionalModelVersion(elem);
     else
       model.addModelImport(elem);
   }
 
+  public SModelReference getSModelReference(int ix) {
+    return ix == -1 ? myModelRef : myImportByIx.get(ix).getModelReference();
+  }
+
 
   private static class ParseResult {  // [modelID.]text[:version]
-    public String modelID;
+    public int modelID;
     public String text;
     public int version;
   }
 
-  public SModelReference getSModelReference(@NotNull String ix) {
-    if (ix.isEmpty())  return myModelRef;
-    ImportElement elem = myImportByIx.get(ix);
-    return elem == null ? null : elem.getModelReference();
-  }
-  
-  private ParseResult parse(String src) {
-    int i0 = src.indexOf(MODEL_SEPARATOR_CHAR), i1 = src.lastIndexOf(VERSION_SEPARATOR_CHAR);
+  private ParseResult parse(String src, boolean hasmodel) {
     ParseResult res = new ParseResult();
-    res.text = decode(src.substring(i0 + 1, i1 < 0 ? src.length() : i1));
-    res.modelID = i0 > 0 ? src.substring(0, i0) : "";
-    try {
-    res.version = i1 < 0 ? -1 : Integer.parseInt(src.substring(i1 + 1));
-    } catch(NumberFormatException e) {  // old V6 format without encoding
-      res.version = -1;
-      res.text = src.substring(i0+1);
+    char[] chars = src.toCharArray();
+    int i0 = -1, i1 = chars.length;
+    if (hasmodel) { // false means we shouldn't try to parse model id
+      while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
+      if (i0 == i1 || chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
     }
+    while (i0 < --i1)  if (!Character.isDigit(chars[i1]))  break;
+    if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
+    res.text = src.substring(i0 + 1, i1);
+    res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
+    res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
+
+    // check integrity except concepts and attribute roles
+    if (hasmodel && !AttributesRolesUtil.isAttributeRole(res.text)) {
+      ImportElement elem = myImports.get(getSModelReference(res.modelID));
+      if (elem == null || res.version != myImports.get(getSModelReference(res.modelID)).getUsedVersion()) {
+        LOG.error("wrong version of " + src + ", model=" + getSModelReference(res.modelID) + ". Possible reason: merge conflict was not resolved.");
+      }
+    }
+
     return res;
   }
 
-  private String getOldV6String(String s, boolean hasmodel) {
-    int i0 = s.indexOf(MODEL_SEPARATOR_CHAR), i1 = s.lastIndexOf(VERSION_SEPARATOR_CHAR);
-    return s.substring(hasmodel ? i0+1 : 0, i1<0 ? s.length() : i1);
-  }
-
   public String readType(String s) {
-    int ix = s.indexOf(MODEL_SEPARATOR_CHAR);
-    if (ix <= 0)  return s.substring(ix + 1);   // no model ID - fqName is here
-    SModelReference modelRef = getSModelReference(s.substring(0, ix));
-    if (modelRef == null) {
-//      LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
-//      LOG.warning(myModelRef.getSModelFqName().getLongName());
-      return getOldV6String(s, false);
-      //return s.substring(ix + 1);
-    } else {
-      return modelRef.getSModelFqName().getLongName() + "." + s.substring(ix + 1);
-    }
+    return parse(s, false).text;
   }
   public String readRole(String s) {
-    return getOldV6String(s, true);
-    //return s;
+    return parse(s, true).text;
   }
   public String readName(String s) {
-    return getOldV6String(s, true);
-    //return s;
+    return parse(s, true).text;
   }
+
   public SReference readLink(SNode node, String rawRole, String rawTarget, String resolveInfo) {
     String role = readRole(rawRole);
-    ParseResult target = parse(rawTarget);
+    ParseResult target = parse(rawTarget, true);
     SModelReference modelRef = getSModelReference(target.modelID);
     if (modelRef == null) {
       LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
