@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def.v6;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -80,36 +79,12 @@ public class ModelReader6 implements IModelReader {
     }
 
     // imports
-    int maxImportIndex = -1;
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.IMPORT_ELEMENT)) {
       String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
-      int importIndex = Integer.parseInt(indexValue);
-
-      String usedModelVersionString = element.getAttributeValue(ModelPersistence.VERSION, "-1");
-      int usedModelVersion = -1;
-      try {
-        usedModelVersion = Integer.parseInt(usedModelVersionString);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
+      int usedModelVersion = Integer.parseInt(element.getAttributeValue(ModelPersistence.VERSION, "-1"));
       String importedModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
-
-      if (importedModelUIDString == null) {
-        LOG.error("Error loading import element for index " + importIndex + " in " + model.getSModelReference());
-        continue;
-      }
-
-      SModelReference importedModelReference = upgradeModelUID(SModelReference.fromString(importedModelUIDString));
-      ImportElement impElem = new ImportElement(importedModelReference, importIndex, usedModelVersion);
-      myHelper.addImport(impElem);
-      if (element.getAttributeValue(ModelPersistence.IMPLICIT) == null)
-        model.addModelImport(impElem);
-      else
-        model.addAdditionalModelVersion(impElem);
-      if (maxImportIndex < importIndex)  maxImportIndex = importIndex;
+      myHelper.addImport(model, indexValue, importedModelUIDString, usedModelVersion, element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
     }
-    model.setMaxImportIndex(maxImportIndex);
 
     // nodes
     for (Element child : (List<Element>) rootElement.getChildren(ModelPersistence.NODE)) {

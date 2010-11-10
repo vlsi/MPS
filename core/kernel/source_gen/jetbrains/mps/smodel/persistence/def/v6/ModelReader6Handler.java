@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import jetbrains.mps.smodel.SReference;
 
 public class ModelReader6Handler extends DefaultHandler {
@@ -247,18 +246,8 @@ public class ModelReader6Handler extends DefaultHandler {
         return;
       }
       if ("import".equals(tagName)) {
-        SModel.ImportElement[] child = (SModel.ImportElement[]) value;
-        int ix = child[0].getReferenceID();
-        boolean implicit = child[1] != null;
-        fieldhelper.addImport(child[0]);
-        if (ix > result.o1.getMaxImportIndex()) {
-          result.o1.setMaxImportIndex(ix);
-        }
-        if (implicit) {
-          result.o1.addAdditionalModelVersion(child[0]);
-        } else {
-          result.o1.addModelImport(child[0]);
-        }
+        String[] child = (String[]) value;
+        fieldhelper.addImport(fieldmodel, child[0], child[1], Integer.parseInt(child[2]), child[3] != null);
         return;
       }
       if ("node".equals(tagName)) {
@@ -369,13 +358,8 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected SModel.ImportElement[] createObject(Attributes attrs) {
-      int indexValue = Integer.parseInt(attrs.getValue("index"));
-      int versionValue = Integer.parseInt(attrs.getValue("version"));
-      /*
-        new SModel.ImportElement(ModelUtil.upgradeModelUID(SModelReference.fromString(attrs.getValue("modelUID"))), indexValue, versionValue);
-      */
-      return new SModel.ImportElement[]{new SModel.ImportElement(ModelUtil.upgradeModelUID(SModelReference.fromString(attrs.getValue("modelUID"))), indexValue, versionValue), null};
+    protected String[] createObject(Attributes attrs) {
+      return new String[]{attrs.getValue("index"), attrs.getValue("modelUID"), attrs.getValue("version"), null};
     }
 
     @Override
@@ -385,7 +369,7 @@ public class ModelReader6Handler extends DefaultHandler {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
-      SModel.ImportElement[] result = (SModel.ImportElement[]) resultObject;
+      String[] result = (String[]) resultObject;
       if ("index".equals(name)) {
         return;
       }
@@ -396,7 +380,7 @@ public class ModelReader6Handler extends DefaultHandler {
         return;
       }
       if ("implicit".equals(name)) {
-        result[1] = new SModel.ImportElement(null, 0);
+        result[3] = value;
         return;
       }
       super.handleAttribute(resultObject, name, value);
