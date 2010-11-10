@@ -45,7 +45,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     for (EditorCell editorCell : cells) {
       PunctuationUtil.addGaps(editorCells, editorCell);
 
-      editorCell.setX(x + width);
+      editorCell.moveTo(x + width, editorCell.getY());
       editorCell.relayout();
       width += editorCell.getWidth();
 

@@ -241,6 +241,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   public void setText(String text) {
     myNoTextSet = (text == null || text.length() == 0);
     myTextLine.setText(myNoTextSet ? null : text);
+    requestRelayout();
   }
 
   public void setDefaultText(String text) {
@@ -412,7 +413,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (processMutableKeyPressed(keyEvent, allowErrors)) {
       getEditorContext().flushEvents();
 
-      getEditor().requestRelayout();
       return true;
     }
     return false;
@@ -438,8 +438,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         public void run() {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {
             getEditorContext().flushEvents();
-
-            getEditor().requestRelayout();
 
             if (isErrorState() && side != null) {
               if (allowsIntelligentInputKeyStroke(keyEvent)) {
@@ -663,7 +661,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myTextLine.setCaretPosition(stSel);
     editor.resetLastCaretX();
     ensureCaretVisible();
-    editor.requestRelayout();
   }
 
   public void changeText(final String text) {
@@ -781,8 +778,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
-        cell.changeText(myText);
-        cell.getEditorContext().getNodeEditorComponent().requestRelayout();
+        cell.changeText(myText);        
       }
     }
   }
@@ -907,8 +903,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       final String s = TextPasteUtil.getStringFromClipboard();
       cell.insertText(s);
       context.getNodeEditorComponent().resetLastCaretX();
-      cell.ensureCaretVisible();
-      context.getNodeEditorComponent().requestRelayout();
+      cell.ensureCaretVisible();      
     }
   }
 

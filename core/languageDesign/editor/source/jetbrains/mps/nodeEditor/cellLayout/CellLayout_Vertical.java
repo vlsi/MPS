@@ -55,8 +55,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     if (usesBraces) {
       closingBrace.relayout();
       openingBrace.relayout();
-      openingBrace.setX(editorCells.getX());
-      openingBrace.setY(editorCells.getY());
+      openingBrace.moveTo(editorCells.getX(), editorCells.getY());      
     }
 
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
@@ -66,8 +65,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     int width = 0;
     int height = 0;
     for (EditorCell editorCell : cells) {
-      editorCell.setX(x);
-      editorCell.setY(y + height);
+      editorCell.moveTo(x, y + height);      
       editorCell.relayout();
       int cellHeight = editorCell.getHeight();
       int indent = getBracesIndent(editorCell);
@@ -120,17 +118,14 @@ public class CellLayout_Vertical extends AbstractCellLayout {
             if (cellLayout instanceof CellLayout_Horizontal) {
               if (i < editorCellCollection.getChildCount()) {
                 EditorCell cell = editorCellCollection.getChildAt(i);
-                cell.setX(x0);
-                cell.relayout();
+                cell.moveTo(x0, cell.getY());                
                 maxWidth = Math.max(maxWidth, cell.getWidth());
                 maxHeights[j] = Math.max(maxHeights[j], cell.getHeight());
               }
-            } else {
-              editorCellCollection.relayout();
+            } else {              
               maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
             }
           } else {
-            editorCell.relayout();
             maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
           }
           j++;

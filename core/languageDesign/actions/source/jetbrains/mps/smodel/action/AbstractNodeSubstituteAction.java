@@ -175,8 +175,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
             EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
             if (selectedCell != null) {
               selectedCell.getContainingBigCell().synchronizeViewWithModel();
-            }
-            context.getNodeEditorComponent().requestRelayout();
+            }           
 
             // put caret at the end of text
             if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {

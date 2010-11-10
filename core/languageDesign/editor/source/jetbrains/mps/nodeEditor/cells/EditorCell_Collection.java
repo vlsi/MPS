@@ -444,6 +444,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   private void setFolded(boolean folded) {
     myFolded = folded;
     getEditor().setFolded(this, folded);
+    requestRelayout();
   }
 
   public void fold(boolean programmaticaly) {

@@ -80,6 +80,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   protected int myGapLeft;
   protected int myGapRight;
 
+  private boolean myIsNeedRelayout = true;
+
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
     myNode = node;
@@ -320,6 +322,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setY(int y) {
     myY = y;
+    requestRelayout();
   }
 
   public int getX() {
@@ -328,6 +331,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setX(int x) {
     myX = x;
+    requestRelayout();
   }
 
   public boolean isSelected() {
@@ -337,6 +341,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public boolean isWithinSelection() {
     return mySelected && getEditor().getDeepestSelectedCell() == this;
   }
+  
 
   public boolean isSelectable() {
     return getStyle().get(StyleAttributes.SELECTABLE);
@@ -837,6 +842,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public final void relayout() {
+    if (!myIsNeedRelayout) {
+      return;
+    }
     boolean drawBrackets = isDrawBrackets();
     if (drawBrackets) {
       myX += BRACKET_WIDTH;
@@ -851,6 +859,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     myX -= myGapLeft;
     myWidth += myGapLeft + myGapRight;
+    myIsNeedRelayout = false;
   }
 
   protected void relayoutImpl() {
@@ -1328,4 +1337,14 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void setRightGap(int gap) {
     myGapRight = gap;
   }
+  
+  protected void requestRelayout() {
+    if (!myIsNeedRelayout) {
+      myIsNeedRelayout = true;
+      if (getParent() != null) {
+        getParent().requestRelayout();
+      }
+    }
+  }
+  
 }

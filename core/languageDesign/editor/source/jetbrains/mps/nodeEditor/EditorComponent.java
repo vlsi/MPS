@@ -136,8 +136,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private CellTracker myCellTracker = new CellTracker();
-
-  private boolean myRelayoutRequested = false;
+  
   private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
@@ -1177,9 +1176,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (myRootCell != null) {
       ((EditorCell_Basic) myRootCell).onAdd();
-    }
-
-    requestRelayout();
+    }    
 
     Set<SModelDescriptor> oldModelsToDependOn = getModels(oldNodesToDependOn);
     Set<SModelDescriptor> newModelsToDependOn = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
@@ -1455,15 +1452,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myMessagesGutter.repaint();
   }
 
-  public void requestRelayout() {
-    myRelayoutRequested = true;
-  }
-
   public void relayoutIfNeeded() {
-    if (myRelayoutRequested) {
-      relayout();
-      myRelayoutRequested = false;
-    }
+    doRelayout();
+    revalidate();
+    repaint();
+    myMessagesGutter.repaint();        
   }
 
   public void revalidateAndRepaint() {
@@ -2668,8 +2661,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 cell.synchronizeViewWithModel();
                 fireCellSynchronized(cell);
               }
-            }
-            requestRelayout();
+            }            
           }
           relayoutIfNeeded();
           return;
@@ -2682,8 +2674,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           for (EditorCell_Property cell : editorCell_properties) {
             cell.synchronizeViewWithModel();
             fireCellSynchronized(cell);
-          }
-          requestRelayout();
+          }          
           revertErrorCells(events);
         }
       } else {
@@ -2868,10 +2859,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return false;
         }
       });
-    }
-    if (wereReverted[0]) {
-      requestRelayout();
-    }
+    }    
   }
 
   private void synchronizeWithModelWithinBigCell(EditorCell cell) {

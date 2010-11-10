@@ -105,8 +105,7 @@ class Memento {
     for (CellInfo collectionInfo : myFolded) {
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
-      ((EditorCell_Collection)collection).fold(true);
-      editor.requestRelayout();
+      ((EditorCell_Collection)collection).fold(true);      
     }
     
     restoreErrors(editor);
@@ -129,23 +128,17 @@ class Memento {
 
   }
 
-  private void restoreErrors(EditorComponent editor) {    
-    boolean needRelayout = false;
+  private void restoreErrors(EditorComponent editor) {
     for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
       EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(editor);
       if (cell != null) {
         String text = cell.getText();
         String oldText = entry.getValue();
         if (!EqualUtil.equals(text, oldText)) {
-          cell.changeText(entry.getValue());
-          needRelayout = true;
+          cell.changeText(entry.getValue());          
         }
       }
-    }
-
-    if (needRelayout) {
-      editor.requestRelayout();
-    }
+    }    
   }
 
   CellInfo getSelectedCellInfo() {
