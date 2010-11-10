@@ -16,45 +16,32 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.misc.hash.HashMap;
 
 import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
-import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
  * Date: 12.10.2010
  * Time: 16:46:30
- * To change this template use File | Settings | File Templates.
  */
-//todo look at com.intellij.openapi.editor.TextAnnotationGutterProvider
-public abstract class LeftTextColumn {
-  protected Set<NodeTextElement> myText = new HashSet<NodeTextElement>();
-  protected int myWidth = 0;
-  protected int myX = 0;
-  protected boolean myIsCloseable = true;
+// todo look at com.intellij.openapi.editor.TextAnnotationGutterProvider
+public abstract class AbstractLeftColumn {
+  private int myX = 0;
 
   public abstract void paint(Graphics g, EditorComponent editorComponent);
 
-  public void addEntry(NodeTextElement textElement) {
-    myText.add(textElement);
-  }
+  public abstract int getWidth();
 
-  public int getWidth() {
-    return myWidth;
-  }
-
-  public int getX() {
+  public final int getX() {
     return myX;
   }
 
-  public void setX(int x) {
+  // This method is only called from LeftEditorHighlighter
+  void setX(int x) {
     myX = x;
   }
 
@@ -67,11 +54,11 @@ public abstract class LeftTextColumn {
   public void mousePressed(MouseEvent e, final EditorComponent editorComponent) {
     if (e.getButton() == MouseEvent.BUTTON3) {
       JPopupMenu menu = getPopupMenu();
-      if (myIsCloseable) {
+      if (isCloseable()) {
         menu.add(new AbstractAction("Close " + getName()) {
           @Override
           public void actionPerformed(ActionEvent e) {
-            editorComponent.getLeftEditorHighlighter().removeTextColumn(LeftTextColumn.this);
+            editorComponent.getLeftEditorHighlighter().removeTextColumn(AbstractLeftColumn.this);
           }
         });
       }
@@ -84,6 +71,10 @@ public abstract class LeftTextColumn {
 
   public JPopupMenu getPopupMenu() {
     return new JPopupMenu();
+  }
+
+  protected boolean isCloseable() {
+    return true;
   }
 
   public abstract String getName();

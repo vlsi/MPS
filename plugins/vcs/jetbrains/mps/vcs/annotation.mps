@@ -364,7 +364,7 @@
               </node>
             </node>
             <node role="13.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="653763136285353387">
-              <link role="13.baseMethodDeclaration:3" targetNodeId="16.~LeftEditorHighlighter.addTextColumn(jetbrains.mps.nodeEditor.leftHighlighter.LeftTextColumn):void" resolveInfo="addTextColumn" />
+              <link role="13.baseMethodDeclaration:3" targetNodeId="16.~LeftEditorHighlighter.addTextColumn(jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn):void" resolveInfo="addTextColumn" />
               <node role="13.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="653763136285353388">
                 <node role="13.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="653763136285353390">
                   <link role="13.baseMethodDeclaration:3" targetNodeId="309173295241373955" resolveInfo="AnnotationColumn" />
@@ -693,7 +693,7 @@
           <node role="13.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5568344225641482511">
             <node role="13.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5568344225641482512">
               <node role="13.expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="5568344225641482513">
-                <link role="13.baseMethodDeclaration:3" targetNodeId="16.~LeftTextColumn.addEntry(jetbrains.mps.nodeEditor.leftHighlighter.NodeTextElement):void" resolveInfo="addEntry" />
+                <link role="13.baseMethodDeclaration:3" targetNodeId="16.~SimpleLeftTextColumn.addEntry(jetbrains.mps.nodeEditor.leftHighlighter.NodeTextElement):void" resolveInfo="addEntry" />
                 <node role="13.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="5568344225641482514">
                   <link role="18.variable:7" targetNodeId="5568344225641482509" resolveInfo="e" />
                 </node>

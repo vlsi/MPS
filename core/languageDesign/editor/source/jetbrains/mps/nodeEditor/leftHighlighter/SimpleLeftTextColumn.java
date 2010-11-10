@@ -24,7 +24,9 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.*;
 import java.util.*;
 
-public abstract class SimpleLeftTextColumn extends LeftTextColumn {
+public abstract class SimpleLeftTextColumn extends AbstractLeftColumn {
+  private Set<NodeTextElement> myText = new HashSet<NodeTextElement>();
+  private int myWidth;
   private Font myFont;
   private FontMetrics myFontMetrics;
   private Map<Integer, NodeTextElement> myRows = new HashMap<Integer, NodeTextElement>();
@@ -42,14 +44,24 @@ public abstract class SimpleLeftTextColumn extends LeftTextColumn {
     return myFontMetrics.getHeight();
   }
 
+  public void addEntry(NodeTextElement textElement) {
+    myText.add(textElement);
+  }
+
   @Override
   public void paint(Graphics g, EditorComponent editorComponent) {
     g.setColor(Color.BLACK);
+    g.setFont(myFont);
     Set<Integer> set = myRows.keySet();
     for (int y : set) {
       NodeTextElement textElement = myRows.get(y);
-      g.drawString(textElement.getText(), myX, y);
+      g.drawString(textElement.getText(), getX(), y);
     }
+  }
+
+  @Override
+  public int getWidth() {
+    return myWidth;
   }
 
   @Override

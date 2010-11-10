@@ -32,7 +32,7 @@
     <nodeInfo nodeId="309173295241211276" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationUtil.java" startLine="44" startPosition="82" endLine="47" endPosition="5" />
     <nodeInfo nodeId="309173295241211299" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationUtil.java" startLine="50" startPosition="57" endLine="53" endPosition="5" />
     <nodeInfo nodeId="309173295241211311" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationUtil.java" startLine="54" startPosition="78" endLine="57" endPosition="5" />
-    <nodeInfo nodeId="309173295241373945" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AnnotationUtil.java" startLine="63" startPosition="31" endLine="66" endPosition="7" />
+    <nodeInfo nodeId="309173295241373945" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationUtil.java" startLine="63" startPosition="31" endLine="66" endPosition="7" />
     <nodeInfo nodeId="309173295241211320" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AnnotationUtil.java" startLine="60" startPosition="34" endLine="69" endPosition="5" />
     <nodeInfo nodeId="309173295241211221" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="AnnotationUtil.java" startLine="30" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="309173295241211220" fileName="AnnotationUtil.java" startLine="28" startPosition="28" endLine="28" endPosition="28" />
