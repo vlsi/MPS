@@ -16,31 +16,31 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.presentation.difference.ShowTypeSystemTrace;
 
-public class ShowTypeSystemTrace_Action extends GeneratedAction {
+public class ShowTypeSystemTraceForNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowTypeSystemTrace_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowTypeSystemTraceForNode_Action.class);
 
   private IOperationContext context;
   private SNode node;
   private Frame frame;
   private EditorComponent editorComponent;
 
-  public ShowTypeSystemTrace_Action() {
-    super("Show Typesystem Trace", "", ICON);
+  public ShowTypeSystemTraceForNode_Action() {
+    super("Show Typesystem Trace for Node", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift Q";
+    return "ctrl shift W";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTrace", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTraceForNode", t);
       this.disable(event.getPresentation());
     }
   }
@@ -84,13 +84,13 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TypeCheckingContext typeCheckingContext;
-      typeCheckingContext = ShowTypeSystemTrace_Action.this.editorComponent.getTypeCheckingContext();
+      typeCheckingContext = ShowTypeSystemTraceForNode_Action.this.editorComponent.getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(t, ShowTypeSystemTrace_Action.this.context, ShowTypeSystemTrace_Action.this.frame, null);
+        new ShowTypeSystemTrace(t, ShowTypeSystemTraceForNode_Action.this.context, ShowTypeSystemTraceForNode_Action.this.frame, ShowTypeSystemTraceForNode_Action.this.node);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);
+      LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTraceForNode", t);
     }
   }
 }
