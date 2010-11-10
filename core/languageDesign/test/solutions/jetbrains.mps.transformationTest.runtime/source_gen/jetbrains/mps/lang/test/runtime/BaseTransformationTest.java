@@ -16,6 +16,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.commons.lang.StringUtils;
+import com.intellij.util.PathUtil;
+import java.io.File;
+import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -24,6 +30,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class BaseTransformationTest extends TestCase {
   private static ProjectContainer myContainer = new ProjectContainer();
+  public static final String PATH_MACRO_PREFIX = "path.macro.";
 
   private SModelDescriptor myModel;
   private SModelDescriptor myTransidentModel;
@@ -36,6 +43,8 @@ public class BaseTransformationTest extends TestCase {
   public void initTest(String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
+    // see MPS-10568 
+    readSystemMacro();
     this.myProject = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile) null)));
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
@@ -51,6 +60,23 @@ public class BaseTransformationTest extends TestCase {
 
   public void setProject(Project project) {
     this.myProject = project.getComponent(MPSProject.class);
+  }
+
+  public void readSystemMacro() {
+    for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
+      if (property.key() instanceof String) {
+        String key = (((String) property.key()));
+        if (StringUtils.isNotEmpty(key) && key.startsWith(PATH_MACRO_PREFIX)) {
+          if (property.value() instanceof String) {
+            String canonicalPath = PathUtil.getCanonicalPath(((String) property.value()));
+            File file = new File(canonicalPath);
+            if (file.exists() && file.isDirectory()) {
+              PathMacros.getInstance().setMacro(key.substring(PATH_MACRO_PREFIX.length()), canonicalPath);
+            }
+          }
+        }
+      }
+    }
   }
 
   public void setModelDescriptor(SModelDescriptor modelDescriptor) {

@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.lang.test.runtime.TransformationTestRuner;
 
 public class NodesTestCase_Behavior {
@@ -60,6 +62,10 @@ public class NodesTestCase_Behavior {
     result.setClassPath(NodesTestCase_Behavior.getIdeaClassPath_1217424542979());
     List<String> vmParams = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(vmParams).addElement("-Xmx1024m");
+    for (String key : SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames())) {
+      String value = PathMacros.getInstance().getValue(key);
+      ListSequence.fromList(vmParams).addElement("-D" + "path.macro." + key + "=" + value);
+    }
     result.setVmParameters(vmParams);
     result.setTestRunner(TransformationTestRuner.class.getName());
     return result;
