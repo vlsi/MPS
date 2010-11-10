@@ -17,9 +17,11 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templatereduce_InputNode_A implements TemplateDeclaration {
   private static SNodePointer loopMacroRef_9iqmnb_a0a0a1a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414161782");
-  private static SNodePointer includeMacroRef_9iqmnb_a0a0a6a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068639");
+  private static SNodePointer templateNode_9iqmnb_a0a0a3a2a2a1a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100171");
+  private static SNodePointer templateNode_9iqmnb_a0a0a3a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1391450457158185608");
+  private static SNodePointer includeMacroRef_9iqmnb_a0a0a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068639");
   private static SNodePointer includedTemplateNode = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
-  private static SNodePointer switchMacroRef_9iqmnb_a0a0a8a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310365");
+  private static SNodePointer switchMacroRef_9iqmnb_a0a0a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310365");
 
   public Templatereduce_InputNode_A() {
   }
@@ -39,9 +41,16 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
             environment.getTracer().pushInputNode(itnode1);
           }
           TemplateContext context1 = context.subContext(null, itnode1);
-          final SNode tnode2 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
-          // TODO notify environment 
-          tnode2.setProperty("text", "child #1");
+          final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+          try {
+            environment.getTracer().pushTemplateNode(templateNode_9iqmnb_a0a0a3a2a2a1a0);
+            environment.nodeCopied(context1.getInput(), tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");
+            tnode2.setProperty("text", "child #1");
+
+          } finally {
+            environment.getTracer().pushOutputNode(tnode2);
+            environment.getTracer().closeTemplateNode(templateNode_9iqmnb_a0a0a3a2a2a1a0);
+          }
           if (tnode2 != null) {
             tlist1.add(tnode2);
           }
@@ -55,12 +64,19 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     } finally {
       environment.getTracer().closeMacro(loopMacroRef_9iqmnb_a0a0a1a0);
     }
-    final SNode tnode3 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
-    // TODO notify environment 
-    tnode3.setProperty("text", "child #2");
+    final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+    try {
+      environment.getTracer().pushTemplateNode(templateNode_9iqmnb_a0a0a3a0);
+      environment.nodeCopied(context.getInput(), tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
+      tnode3.setProperty("text", "child #2");
+
+    } finally {
+      environment.getTracer().pushOutputNode(tnode3);
+      environment.getTracer().closeTemplateNode(templateNode_9iqmnb_a0a0a3a0);
+    }
     Collection<SNode> tlist4 = null;
     try {
-      environment.getTracer().pushMacro(includeMacroRef_9iqmnb_a0a0a6a0);
+      environment.getTracer().pushMacro(includeMacroRef_9iqmnb_a0a0a5a0);
       try {
         environment.getTracer().pushTemplateNode(includedTemplateNode);
         tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context);
@@ -69,11 +85,11 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
       }
 
     } finally {
-      environment.getTracer().closeMacro(includeMacroRef_9iqmnb_a0a0a6a0);
+      environment.getTracer().closeMacro(includeMacroRef_9iqmnb_a0a0a5a0);
     }
     Collection<SNode> tlist5 = null;
     try {
-      environment.getTracer().pushMacro(switchMacroRef_9iqmnb_a0a0a8a0);
+      environment.getTracer().pushMacro(switchMacroRef_9iqmnb_a0a0a7a0);
       try {
         environment.getTracer().pushSwitch(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366"));
         tlist5 = environment.processSwitch(null, context);
@@ -82,7 +98,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
         // TODO close switch node 
       }
     } finally {
-      environment.getTracer().closeMacro(switchMacroRef_9iqmnb_a0a0a8a0);
+      environment.getTracer().closeMacro(switchMacroRef_9iqmnb_a0a0a7a0);
     }
     return TemplateUtil.asList(tlist1, tnode3, tlist4, tlist5);
   }

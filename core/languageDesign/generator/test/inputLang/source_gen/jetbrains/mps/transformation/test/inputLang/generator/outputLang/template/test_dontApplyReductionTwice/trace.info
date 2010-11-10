@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.QueriesGenerated" />
-  <unitInfo fileName="TemplateoutputRoot.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateoutputRoot" />
   <unitInfo fileName="Mappingmain.java" startLine="32" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain$RootMappingRule0" />
+  <unitInfo fileName="TemplateoutputRoot.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateoutputRoot" />
   <unitInfo fileName="Mappingmain.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain" />
   <root nodeId="1209604518979">
     <nodeInfo nodeId="1209604582248" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="11" startPosition="146" endLine="12" endPosition="108" />
