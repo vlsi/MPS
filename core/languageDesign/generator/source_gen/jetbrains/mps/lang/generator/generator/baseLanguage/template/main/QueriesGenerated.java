@@ -380,7 +380,15 @@ public class QueriesGenerated {
     return "context" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
-  public static Object propertyMacro_GetPropertyValue_8294566892413500568(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8196331069071219038(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "inputChanged" + ((int[]) _context.getVariable("varindex"))[0];
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8196331069071255475(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8196331069071219364(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "mapSrcOutput" + ++((int[]) _context.getVariable("varindex"))[0];
   }
 
@@ -469,6 +477,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1940510396026567414(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "Switch" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8196331069071255561(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_2321430363679348482(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -616,39 +628,43 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodesQuery", true));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413500114(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219123(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_MapperFunction(SLinkOperations.getTarget(_context.getNode(), "mapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413500125(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219145(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413468267(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219235(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413468304(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219272(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413500401(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071255458(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
+  }
+
+  public static Object referenceMacro_GetReferent_8196331069071219302(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413500470(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219323(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413500543(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219395(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413500565(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219418(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
-  public static Object referenceMacro_GetReferent_8294566892413468319(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8196331069071219458(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
@@ -813,6 +829,10 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("resultVar"));
   }
 
+  public static Object referenceMacro_GetReferent_8196331069071255548(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
+  }
+
   public static Object referenceMacro_GetReferent_2321430363679348420(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true));
   }
@@ -883,11 +903,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5879407265495314363(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0qh(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0vh(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_195833869251699517(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0rh(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0wh(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_8285036680620207425(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1089,37 +1109,42 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8294566892413468151(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
   }
 
-  public static boolean ifMacro_Condition_8294566892413500169(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071219165(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true) != null);
   }
 
-  public static boolean ifMacro_Condition_8294566892413500188(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071219177(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mapperFunction", true) != null);
   }
 
-  public static boolean ifMacro_Condition_8294566892413500208(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071219187(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mapperFunction", true) == null);
   }
 
-  public static boolean ifMacro_Condition_8294566892413468279(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071219247(final IOperationContext operationContext, final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return innervar.startsWith("tnode");
   }
 
-  public static boolean ifMacro_Condition_8294566892413500433(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071255484(final IOperationContext operationContext, final IfMacroContext _context) {
+    String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
+    return innervar != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+  }
+
+  public static boolean ifMacro_Condition_8196331069071219336(final IOperationContext operationContext, final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return (SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true) != null) && innervar.startsWith("tnode");
   }
 
-  public static boolean ifMacro_Condition_8294566892413500495(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071219430(final IOperationContext operationContext, final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return (SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true) != null) && innervar.startsWith("tlist");
   }
 
-  public static boolean ifMacro_Condition_8294566892413500277(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8196331069071219470(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mapperFunction", true) == null) && GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip"))) != null;
   }
 
@@ -1382,6 +1407,11 @@ public class QueriesGenerated {
     return innervar.startsWith("tnode");
   }
 
+  public static boolean ifMacro_Condition_8196331069071255570(final IOperationContext operationContext, final IfMacroContext _context) {
+    String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
+    return innervar != null && (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
+  }
+
   public static boolean ifMacro_Condition_2321430363679348454(final IOperationContext operationContext, final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return (SLinkOperations.getTarget(_context.getNode(), "postMapperFunction", true) != null) && innervar.startsWith("tnode");
@@ -1504,7 +1534,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "template", false);
   }
 
-  public static SNode sourceNodeQuery_8294566892413500211(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8196331069071219221(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
 
@@ -1977,15 +2007,19 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_8294566892413500221(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8196331069071219030(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_8196331069071219197(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return "context" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
-  public static Object templateArgumentQuery_8294566892413500250(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8196331069071219208(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((int[]) _context.getVariable("varindex"));
   }
 
-  public static Object templateArgumentQuery_8294566892413500257(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_8196331069071219215(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((Integer) _context.getVariable("macrosToSkip"));
   }
 
@@ -2131,6 +2165,10 @@ public class QueriesGenerated {
     return ((Integer) _context.getVariable("macrosToSkip"));
   }
 
+  public static Object templateArgumentQuery_8196331069071255610(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ((String) _context.getVariable("contextVar"));
+  }
+
   public static Object templateArgumentQuery_2321430363679349156(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
@@ -2268,7 +2306,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0nt(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0wt(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2509,21 +2547,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0qh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0vh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0rh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0wh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0nt(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0wt(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

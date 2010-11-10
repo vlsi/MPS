@@ -28,101 +28,112 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
     tnode1.setProperty("name", "OutputRoot_1");
     tnode1.setProperty("text", "'getPrevInputTest' output root (1)");
     {
-      final Iterable<SNode> sourceList2 = QueriesGenerated.sourceNodesQuery_1233603475878(null, new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, null));
+      final Iterable<SNode> sourceList2 = QueriesGenerated.sourceNodesQuery_1233603475878(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, environment.getGenerator()));
       final List<SNode> tlist2 = new ArrayList();
       for (SNode itnode2 : sourceList2) {
         if (itnode2 == null) {
           continue;
         }
         TemplateContext context2 = context.subContext("LEVEL 1", itnode2);
-        final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2.getInput(), null, null, context2, environment.getGenerator()));
-        final List<SNode> tlist3 = new ArrayList();
-        for (SNode itnode3 : loopList3) {
-          if (itnode3 == null) {
-            continue;
+        boolean inputChanged2 = context.getInput() != itnode2;
+        try {
+          if (inputChanged2) {
+            environment.getTracer().pushInputNode(itnode2);
           }
-          boolean inputChanged3 = context2.getInput() != itnode3;
-          try {
-            if (inputChanged3) {
-              environment.getTracer().pushInputNode(itnode3);
+          final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2.getInput(), null, null, context2, environment.getGenerator()));
+          final List<SNode> tlist3 = new ArrayList();
+          for (SNode itnode3 : loopList3) {
+            if (itnode3 == null) {
+              continue;
             }
-            TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
-            final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context3.getInput(), null, null, context3, environment.getGenerator()));
-            final List<SNode> tlist4 = new ArrayList();
-            for (SNode itnode4 : loopList4) {
-              if (itnode4 == null) {
-                continue;
+            boolean inputChanged3 = context2.getInput() != itnode3;
+            try {
+              if (inputChanged3) {
+                environment.getTracer().pushInputNode(itnode3);
               }
-              boolean inputChanged4 = context3.getInput() != itnode4;
-              try {
-                if (inputChanged4) {
-                  environment.getTracer().pushInputNode(itnode4);
+              TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
+              final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context3.getInput(), null, null, context3, environment.getGenerator()));
+              final List<SNode> tlist4 = new ArrayList();
+              for (SNode itnode4 : loopList4) {
+                if (itnode4 == null) {
+                  continue;
                 }
-                TemplateContext context4 = context3.subContext(null, itnode4);
-                final SNode sourceNode5 = context.getInput();
-                final List<SNode> tlist5 = new ArrayList();
-                final SNode tnode6 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
-                // TODO notify environment 
-                tnode6.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
-                {
-                  final SNode tnode7 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                boolean inputChanged4 = context3.getInput() != itnode4;
+                try {
+                  if (inputChanged4) {
+                    environment.getTracer().pushInputNode(itnode4);
+                  }
+                  TemplateContext context4 = context3.subContext(null, itnode4);
+                  final SNode sourceNode5 = context.getInput();
+                  final List<SNode> tlist5 = new ArrayList();
+                  final SNode tnode6 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
                   // TODO notify environment 
-                  tnode7.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
-                  tnode6.addChild("outputChild", tnode7);
-                }
-                {
-                  Collection<SNode> tlist8 = null;
-                  if (QueriesGenerated.ifMacro_Condition_1202332796047(environment.getOperationContext(), new IfMacroContext(context4.getInput(), null, context4, environment.getGenerator()))) {
-                    final SNode tnode9 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                  tnode6.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
+                  {
+                    final SNode tnode7 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
                     // TODO notify environment 
-                    tnode9.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
-                    tlist8 = TemplateUtil.singletonList(tnode9);
+                    tnode7.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
+                    tnode6.addChild("outputChild", tnode7);
                   }
-                  for (SNode child10 : tlist8) {
-                    tnode6.addChild("outputChild", child10);
-                  }
-                }
-                {
-                  final SNode tnode11 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
-                  // TODO notify environment 
-                  tnode11.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
-                  tnode6.addChild("outputChild", tnode11);
-                }
-                if (tnode6 != null) {
-                  tlist5.add(tnode6);
-                  environment.postProcess(new PostProcessor() {
-                    public void process(SNode outputNode, TemplateContext postProcessContext) {
-                      QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+                  {
+                    Collection<SNode> tlist8 = null;
+                    if (QueriesGenerated.ifMacro_Condition_1202332796047(environment.getOperationContext(), new IfMacroContext(context4.getInput(), null, context4, environment.getGenerator()))) {
+                      final SNode tnode9 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                      // TODO notify environment 
+                      tnode9.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
+                      tlist8 = TemplateUtil.singletonList(tnode9);
                     }
-                  }, tnode6, context4);
-                }
-                if (tlist5 != null) {
-                  tlist4.addAll(tlist5);
-                }
-              } finally {
-                if (inputChanged4) {
-                  environment.getTracer().closeInputNode(itnode4);
+                    for (SNode child10 : tlist8) {
+                      tnode6.addChild("outputChild", child10);
+                    }
+                  }
+                  {
+                    final SNode tnode11 = new SNode(null, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+                    // TODO notify environment 
+                    tnode11.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
+                    tnode6.addChild("outputChild", tnode11);
+                  }
+                  if (tnode6 != null) {
+                    tlist5.add(tnode6);
+                    environment.postProcess(new PostProcessor() {
+                      public void process(SNode outputNode, TemplateContext postProcessContext) {
+                        QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+                      }
+                    }, tnode6, context4);
+                  }
+                  if (tlist5 != null) {
+                    tlist4.addAll(tlist5);
+                  }
+                } finally {
+                  if (inputChanged4) {
+                    environment.getTracer().closeInputNode(itnode4);
+                  }
                 }
               }
-            }
-            if (tlist4 != null) {
-              environment.registerLabel(itnode3, tlist4, "LEVEL 2");
-              tlist3.addAll(tlist4);
-            }
-          } finally {
-            if (inputChanged3) {
-              environment.getTracer().closeInputNode(itnode3);
+              if (tlist4 != null) {
+                environment.registerLabel(itnode3, tlist4, "LEVEL 2");
+                tlist3.addAll(tlist4);
+              }
+            } finally {
+              if (inputChanged3) {
+                environment.getTracer().closeInputNode(itnode3);
+              }
             }
           }
-        }
-        if (tlist3 != null) {
-          tlist2.addAll(tlist3);
-          for (SNode mapSrcOutput12 : tlist3) {
-            environment.postProcess(new PostProcessor() {
-              public void process(SNode outputNode, TemplateContext postProcessContext) {
-                QueriesGenerated.mapSrcMacro_post_mapper_1233603527948(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
-              }
-            }, mapSrcOutput12, context2);
+          if (tlist3 != null) {
+            tlist2.addAll(tlist3);
+            environment.registerLabel(itnode2, tlist3, "LEVEL 1");
+            for (SNode mapSrcOutput12 : tlist3) {
+              environment.postProcess(new PostProcessor() {
+                public void process(SNode outputNode, TemplateContext postProcessContext) {
+                  QueriesGenerated.mapSrcMacro_post_mapper_1233603527948(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, null));
+                }
+              }, mapSrcOutput12, context2);
+            }
+          }
+        } finally {
+          if (inputChanged2) {
+            environment.getTracer().closeInputNode(itnode2);
           }
         }
       }
