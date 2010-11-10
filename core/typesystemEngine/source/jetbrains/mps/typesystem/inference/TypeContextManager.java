@@ -95,6 +95,13 @@ public class TypeContextManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(TypeContextManager.class);
   }
 
+  public TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
+    if (useNewTypeSystem) {
+      return new TypeCheckingContextNew(node, myTypeChecker); //todo should be resolving
+    }
+    return new TypeCheckingContext(node, myTypeChecker, true);
+  }
+
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     if (useNewTypeSystem) {
       return new TypeCheckingContextNew(node, myTypeChecker);

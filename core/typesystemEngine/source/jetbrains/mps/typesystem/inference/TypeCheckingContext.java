@@ -41,10 +41,15 @@ public class TypeCheckingContext {
   public final Object TYPECHECKING_LOCK = new Object();
 
   private boolean myIsNonTypesystemComputation = false;
-  private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
-  private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
   private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
   private IOperationContext myOperationContext;
+  private boolean myIsInEditorQueries;
+
+  public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker, boolean isInEditorQueries) {
+    this(rootNode, typeChecker);
+    myIsInEditorQueries = isInEditorQueries;
+  }
+
 
   public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
@@ -82,19 +87,7 @@ public class TypeCheckingContext {
   }
 
   public boolean isInEditorQueries() {
-    return !myIsInEditorQueriesStack.isEmpty();
-  }
-
-  private void setInEditorQueriesMode() {
-    if (myIsNonTypesystemComputation) return;
-    myIsInEditorQueriesStack.push(true);
-  }
-
-  private void resetIsInEditorQueriesMode() {
-    if (myIsNonTypesystemComputation) return;
-    if (!myIsInEditorQueriesStack.isEmpty()) {
-      myIsInEditorQueriesStack.pop();
-    }
+    return myIsInEditorQueries && !myIsNonTypesystemComputation;
   }
 
   public void setIsNonTypesystemComputation() {
@@ -530,13 +523,8 @@ public class TypeCheckingContext {
     };
   }
 
-  public void dispose() { //todo more attentively
+  public void dispose() {
     getBaseNodeTypesComponent().dispose();
-    if (!myTemporaryComponentsStack.isEmpty()) {
-      for (NodeTypesComponent nodeTypesComponent : myTemporaryComponentsStack) {
-        nodeTypesComponent.dispose();
-      }
-    }
   }
 
   public SNode getNode() {
@@ -544,24 +532,11 @@ public class TypeCheckingContext {
   }
 
   public NodeTypesComponent getNodeTypesComponent() {
-    if (!myTemporaryComponentsStack.isEmpty()) {
-      return myTemporaryComponentsStack.peek();
-    }
     return myNodeTypesComponent;
   }
 
   public NodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
-  }
-
-  public NodeTypesComponent createTemporaryTypesComponent() {
-    NodeTypesComponent component = myNodeTypesComponent.copy(this);
-    myTemporaryComponentsStack.push(component);
-    return component;
-  }
-
-  public void popTemporaryTypesComponent() {
-    myTemporaryComponentsStack.pop();
   }
 
   public void setOperationContext(IOperationContext context) {
@@ -584,41 +559,18 @@ public class TypeCheckingContext {
     }
   }
 
-  public void runTypeCheckingActionInEditorQueries(Runnable r) {
-    synchronized (TYPECHECKING_LOCK) {
-      try {
-        setInEditorQueriesMode();
-        r.run();
-      } finally {
-        resetIsInEditorQueriesMode();
-      }
-    }
-  }
-
-  public <T> T runTypeCheckingActionInEditorQueries(Computable<T> c) {
-    synchronized (TYPECHECKING_LOCK) {
-      try {
-        setInEditorQueriesMode();
-        return c.compute();
-      } finally {
-        resetIsInEditorQueriesMode();
-      }
-    }
-  }
-
   public SNode computeTypeForResolve(SNode node) {
     if (myNodesToComputeDuringResolve.contains(node)) {
       // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
       return null;
     }
     final NodeTypesComponent temporaryComponent;
-    temporaryComponent = this.createTemporaryTypesComponent();
+    temporaryComponent = getNodeTypesComponent();
     myNodesToComputeDuringResolve.push(node);
     try {
       return temporaryComponent.computeTypesForNodeDuringResolving(node);
     } finally {
       temporaryComponent.dispose(); //in order to prevent memory leaks.
-      this.popTemporaryTypesComponent();
       SNode poppedNode = myNodesToComputeDuringResolve.pop();
       assert poppedNode == node;
     }
@@ -627,12 +579,11 @@ public class TypeCheckingContext {
   public SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
       final NodeTypesComponent temporaryComponent;
-      temporaryComponent = this.createTemporaryTypesComponent();
+      temporaryComponent = getNodeTypesComponent();
       try {
         return temporaryComponent.computeTypesForNodeInferenceMode(node);
       } finally {
         temporaryComponent.dispose(); //in order to prevent memory leaks.
-        this.popTemporaryTypesComponent();
       }
     }
   }

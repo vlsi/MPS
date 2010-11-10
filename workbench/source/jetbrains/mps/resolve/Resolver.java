@@ -101,9 +101,8 @@ public class Resolver {
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(referenceNode);
-    if (typeCheckingContext == null) return false;
-    return typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(referenceNode);
+    Boolean result = typeCheckingContext.runTypeCheckingAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
@@ -135,6 +134,8 @@ public class Resolver {
         return false;
       }
     });
+    typeCheckingContext.dispose();
+    return result;
   }
 
   public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext, EditorContext editorContext) {

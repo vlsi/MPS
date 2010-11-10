@@ -154,17 +154,6 @@ public class NodeTypesComponent {
     return myTypeChecker;
   }
 
-  public NodeTypesComponent copy(TypeCheckingContext typeCheckingContext) {
-    NodeTypesComponent result = new NodeTypesComponent(myRootNode, myTypeChecker, typeCheckingContext);
-    result.myIsSpecial = myIsSpecial;
-    result.mySlicer = mySlicer;
-    result.myIsSmartCompletion = myIsSmartCompletion;
-    result.myHole = myHole;
-    result.myHoleTypeWrapper = myHoleTypeWrapper;
-    result.myHoleIsAType = myHoleIsAType;
-    return result;
-  }
-
   public void clear() {
     clearEquationManager();
     clearNodesTypes();
