@@ -48,7 +48,6 @@ public class NodeMaps {
   }
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
-    myNodeToTypes.put(node, type);
     myTypesToNodes.put(type, node);
     myState.addDifference(new TypeDifference(node, type, myNodeToTypes, info), false);
   }
@@ -63,12 +62,6 @@ public class NodeMaps {
   }
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
-    List<IErrorReporter> errors = myNodesToErrors.get(node);
-    if (errors == null) {
-      errors = new LinkedList<IErrorReporter>();
-      myNodesToErrors.put(node, errors);
-    }
-    errors.add(error);
     myState.addDifference(new ErrorDifference(node, error, myNodesToErrors, info), false);
   }
 
@@ -181,5 +174,4 @@ public class NodeMaps {
     // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
     myState.addError(nodeWithError, errorReporter, equationInfo);
   }
-
 }

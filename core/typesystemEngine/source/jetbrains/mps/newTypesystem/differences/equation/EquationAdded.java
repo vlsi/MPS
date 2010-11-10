@@ -29,8 +29,7 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class EquationAdded extends EquationDifference {
-  private SNode myChild;
-  private SNode myParent;
+
 
   public EquationAdded(SNode child, SNode parent, SNode source, Equations equations, EquationInfo info) {
     super(equations);

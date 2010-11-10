@@ -47,7 +47,6 @@ public class NonConcreteMapPair {
 
   private void addAndTrack(WhenConcreteEntry e, SNode var) {
     myState.addDifference(new WhenConcreteDependencyAdded(e, var, this), false);
-    addDependency(e, var);
   }
 
   public void addDependency(WhenConcreteEntry e, SNode var) {
@@ -81,7 +80,7 @@ public class NonConcreteMapPair {
 
   private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
     myState.addDifference(new WhenConcreteDependencyRemoved(e, var, this), false);
-    removeDependency(e, var);
+
   }
 
   public void removeDependency(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {

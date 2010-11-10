@@ -36,11 +36,11 @@ public class SubTypingAdded extends InequalityDifference {
 
   @Override
   public void rollBack() {
-    myMapPair.remove(myKeyType, myValueType);
+    myMapPair.remove(mySubType, mySuperType);
   }
 
   public String getPresentation() {
-    return "SubTyping added " + myKeyType + (myMapPair.isWeak() ? " <= " : " < ") + myValueType;
+    return "SubTyping added " + mySubType + (myMapPair.isWeak() ? " <= " : " < ") + mySuperType;
   }
 
   public Color getColor() {
@@ -49,6 +49,6 @@ public class SubTypingAdded extends InequalityDifference {
 
   @Override
   public void play() {
-    myMapPair.add(myKeyType, myValueType, myEquationInfo);
+    myMapPair.add(mySubType, mySuperType, myEquationInfo);
   }
 }

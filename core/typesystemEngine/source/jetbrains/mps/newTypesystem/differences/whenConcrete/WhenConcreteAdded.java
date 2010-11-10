@@ -53,7 +53,7 @@ public class WhenConcreteAdded extends Difference {
 
   @Override
   public void rollBack() {
-    myMap.removeDependency(myEntry, myNode);
+   
   }
 
   @Override

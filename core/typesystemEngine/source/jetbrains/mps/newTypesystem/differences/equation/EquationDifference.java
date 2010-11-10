@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.differences.equation;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,6 +28,8 @@ import jetbrains.mps.newTypesystem.states.Equations;
  */
 public abstract class EquationDifference extends Difference {
   protected Equations myEquations;
+  protected SNode myChild;
+  protected SNode myParent;
 
   public EquationDifference(Equations equations) {
     myEquations = equations;

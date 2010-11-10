@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.HeadDifference;
@@ -27,6 +28,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -92,14 +94,19 @@ public class State {
     if (push || myDifferenceStack.empty()) {
       myDifferenceStack.push(difference);
     }
+    difference.play();
   }
 
   public void popDifference() {
     myDifferenceStack.pop();
   }
 
-  public boolean isConcrete(SNode wrapper) {
-    return myNonConcrete.isConcrete(wrapper);
+  public boolean isConcrete(SNode node) {
+    return myNonConcrete.isConcrete(node);
+  }
+
+  public boolean isConcrete(SNode node, boolean shallow) {
+    return (shallow && TypesUtil.isType(node) || isConcrete(node));
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
@@ -179,6 +186,10 @@ public class State {
 
   public SNode getRepresentative(SNode node) {
     return myEquations.getRepresentative(node);
+  }
+
+  public Set<SNode> getEquivalents(SNode node) {
+    return myEquations.getEquivalents(myNodeMaps.getType(node));
   }
 
   public SNode createNewRuntimeTypesVariable() {

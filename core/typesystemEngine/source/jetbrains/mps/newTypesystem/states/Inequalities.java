@@ -86,6 +86,7 @@ public class Inequalities {
     TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
+
       IsApplicable2Status status = inequalityReplacementRule.o2;
       ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
       myState.addDifference(new StringDifference(subType + " is subtype of " + superType + " by replacement rule"), false);
@@ -112,7 +113,6 @@ public class Inequalities {
       inequality = check ? myStrongCheckInequalities : myStrongInequalities;
     }
     if (!inequality.contains(subType, superType)) {
-      inequality.add(subType, superType, info);
       myState.addDifference(new SubTypingAdded(subType, superType, inequality, info), false);
     }
   }
@@ -121,36 +121,9 @@ public class Inequalities {
   public void solveInequalities() {
     myWeakInequalities.expand();
     myStrongInequalities.expand();
-    for (SNode var : getAllVariables()) {
-      // solveInequality(var);
-    }
-  }
 
-  public void solveInequality(SNode var) {
-    Map<SNode, EquationInfo> subTypes = myWeakInequalities.getSubTypes(var);
-    Map<SNode, EquationInfo> strongSubTypes = myStrongInequalities.getSubTypes(var);
-    Map<SNode, EquationInfo> superTypes = myWeakInequalities.getSuperTypes(var);
-    Map<SNode, EquationInfo> strongSuperTypes = myStrongInequalities.getSuperTypes(var);
-    if (emptyOrNull(subTypes) && emptyOrNull(strongSubTypes)) {
-      if (emptyOrNull(strongSuperTypes)) {
-        if (superTypes != null && superTypes.size() == 1) {
-          SNode type = superTypes.keySet().iterator().next();
-          myState.addEquation(var, superTypes.keySet().iterator().next(), superTypes.get(type));
-        }
-      }
-    }
-    if (emptyOrNull(superTypes) && emptyOrNull(strongSuperTypes)) {
-      if (emptyOrNull(strongSubTypes)) {
-        if (subTypes != null && subTypes.size() == 1) {
-          SNode type = subTypes.keySet().iterator().next();
-          myState.addEquation(var, type, subTypes.get(type));
-        }
-      }
-    }
-  }
-
-  private boolean emptyOrNull(Map<SNode, EquationInfo> map) {
-    return (map == null) || map.isEmpty();
+    myWeakInequalities.solve();
+    myStrongInequalities.solve();
   }
 
   public List<String> getListPresentation() {
@@ -173,8 +146,8 @@ public class Inequalities {
   }
 
   private Set<SNode> getAllVariables() {
-    Set<SNode> result = myWeakInequalities.getVariables();
-    result.addAll(myStrongInequalities.getVariables());
+    Set<SNode> result = myWeakInequalities.getVertices();
+    result.addAll(myStrongInequalities.getVertices());
     return result;
   }
 }

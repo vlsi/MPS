@@ -27,13 +27,13 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class InequalityDifference extends Difference {
-  InequalityMapPair myMapPair;
-  SNode myKeyType;
-  SNode myValueType;
+  protected InequalityMapPair myMapPair;
+  protected SNode mySubType;
+  protected SNode mySuperType;
 
-  public InequalityDifference(SNode keyType, SNode valueType, InequalityMapPair mapPair) {
-    myKeyType = keyType;
-    myValueType = valueType;
+  public InequalityDifference(SNode subType, SNode superType, InequalityMapPair mapPair) {
+    mySubType = subType;
+    mySuperType = superType;
     myMapPair = mapPair;
   }
   /*
@@ -41,4 +41,12 @@ public abstract class InequalityDifference extends Difference {
   public Icon getIcon() {
     return Icons.STRONG_SUBTYPE_ICON;
   } */
+
+  public SNode getSubType() {
+    return mySubType;
+  }
+
+  public SNode getSuperType() {
+    return mySuperType;
+  }
 }

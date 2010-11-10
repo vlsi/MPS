@@ -51,7 +51,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(typeChecker, myState);
+    mySubTyping = new SubTyping(myState);
   }
 
   public void rollBack() {
@@ -71,6 +71,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
                                              String errorString, String ruleModel, String ruleId, boolean checkOnly,
                                              int inequationPriority, QuickFixProvider intentionProvider) {
     myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+      ruleId, inequationPriority, intentionProvider));
+  }
+
+  @Override
+  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority, QuickFixProvider intentionProvider) {
+    myState.addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
       ruleId, inequationPriority, intentionProvider));
   }
 
@@ -125,8 +131,18 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public SNode getRepresentative(SNode node) {
+    return myState.getRepresentative(node);
+  }
+
+  @Override
   public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
     return myState.getNodeMaps().getNodeErrors(node);
+  }
+
+  @Override
+  public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    myState.addError(nodeWithError, errorReporter, null);
   }
 
   @Override

@@ -50,17 +50,16 @@ public class HUtil {
 
   public static SNode copyIfNecessary(SNode node, TypeCheckingContext typeCheckingContext) {
     if (node != null && (node.getParent() != null || node.isRoot())) {
-
-      // this method is used only when quotations create a type
-      // so it should not copy attributes, for instance generator macros of a certain type
-      SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
-
       if (typeCheckingContext != null) {
-        if (isRuntimeTypeVariable(copy)) {
-          typeCheckingContext.registerTypeVariable(copy);
+        if (isRuntimeTypeVariable(node)) {
+          SNode var = typeCheckingContext.createNewRuntimeTypesVariable();
+          typeCheckingContext.createEquation(var, node, null);
+          return var;
         }
       }
-      return copy;
+      // this method is used only when quotations create a type
+      // so it should not copy attributes, for instance generator macros of a certain type
+      return CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
     } else {
       return node;
     }

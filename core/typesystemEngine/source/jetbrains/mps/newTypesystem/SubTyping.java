@@ -34,8 +34,8 @@ public class SubTyping {
   private TypeChecker myTypeChecker;
   private State myState;
 
-  public SubTyping(TypeChecker typeChecker, State state) {
-    myTypeChecker = typeChecker;
+  public SubTyping(State state) {
+    myTypeChecker = state.getTypeCheckingContext().getTypeChecker();
     myState = state;
   }
 
@@ -97,7 +97,7 @@ public class SubTyping {
         for (SNode test : result) {
           boolean found = false;
           for (SNode anc : yetPassed) {
-            if (MatchingUtil.matchNodes(anc, test)) {
+            if (TypesUtil.match(anc, test, myState.getEquations(), info, checkOnly)) {
               found = true;
             }
           }
@@ -185,6 +185,20 @@ public class SubTyping {
     return result;
   }
 
+  public SNode createMeet(Set<SNode> types) {
+    if (types.size() == 1) {
+      return types.iterator().next();
+    }
+    return null;
+  }
+
+  public SNode createLCS(Set<SNode> types) {
+    if (types.size() == 1) {
+      return types.iterator().next();
+    }
+    return null;
+  }
+
   public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
     Set<SNode> result = new HashSet<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
@@ -200,6 +214,11 @@ public class SubTyping {
       result.removeAll(toRemove);
     }
     return result;
+  }
+
+  public SNode leastCommonSuperType(Set<SNode> types) {
+    //eliminate subTypes: double for
+    return null;
   }
 
 }

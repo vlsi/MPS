@@ -37,6 +37,7 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class TypesUtil {
+  private static TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
   public SNode leastCommonSuperType(SNode left, SNode right) {
     //left.isInstanceOfConcept()
     //if ()
@@ -64,29 +65,36 @@ public class TypesUtil {
     if (left == null || right == null) {
       return false;
     }
-    final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
-    boolean result = MatchingUtil.matchNodes(left, right, new IMatchModifier() {
-      public boolean accept(SNode node1, SNode node2) {
-        return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
-      }
-
-      public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
-        return false;
-      }
-
-      public void performAction(SNode node1, SNode node2) {
-        childEQs.add(new Pair<SNode, SNode>(node1, node2));
-      }
-
-      public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
-      }
-    }, false);
+    boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
     if (!checkOnly && result) {
       if (equations != null) {
-        equations.addEquations(childEQs, info);
+        equations.addEquations(typeMatchModifier.getChildEqs(), info);
       }
     }
     return result;
+  }
+
+  private static class TypeMatchModifier implements IMatchModifier {
+    final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
+
+    public boolean accept(SNode node1, SNode node2) {
+      return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
+    }
+
+    public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
+      return false;
+    }
+
+    public void performAction(SNode node1, SNode node2) {
+      childEQs.add(new Pair<SNode, SNode>(node1, node2));
+    }
+
+    public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
+    }
+
+    public Set<Pair<SNode, SNode>> getChildEqs() {
+      return childEQs;
+    }
   }
 }
 

@@ -7951,7 +7951,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5890845648943256">
               <link role="classConcept:3" targetNodeId="7.~CopyUtil" resolveInfo="CopyUtil" />
-              <link role="baseMethodDeclaration:3" targetNodeId="7.~CopyUtil.copy(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copy" />
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~CopyUtil.copy(jetbrains.mps.smodel.BaseAdapter):jetbrains.mps.smodel.BaseAdapter" resolveInfo="copy" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5890845648943257">
                 <link role="variableDeclaration:3" targetNodeId="5890845648943245" resolveInfo="node" />
               </node>

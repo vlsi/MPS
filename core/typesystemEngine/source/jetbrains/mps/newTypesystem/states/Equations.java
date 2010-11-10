@@ -71,7 +71,6 @@ public class Equations {
     }
     SNode source = myState.getNodeMaps().getNode(elem);
     myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, source, this), false);
-    myRepresentatives.put(elem, current);
   }
 
   public void remove(SNode elem) {
@@ -119,7 +118,6 @@ public class Equations {
   private void addAndTrack(SNode child, SNode parent, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(child);
     myState.addDifference(new EquationAdded(child, parent, source, this, info), true);
-    add(child, parent);
   }
 
   public void add(SNode child, SNode parent) {
@@ -230,6 +228,16 @@ public class Equations {
       result.add(entry.getKey() + " = " + entry.getValue());
     }
     Collections.sort(result);
+    return result;
+  }
+
+  public Set<SNode> getEquivalents(SNode node) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (SNode var : new HashSet<SNode>(myRepresentatives.keySet())) {
+      if (getRepresentative(var) == getRepresentative(node)) {
+        result.add(var);
+      }
+    }
     return result;
   }
 }

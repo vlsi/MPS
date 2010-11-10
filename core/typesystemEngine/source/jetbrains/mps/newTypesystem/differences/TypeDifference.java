@@ -60,4 +60,12 @@ public class TypeDifference extends Difference {
   public Color getColor() {
     return new Color(0x007700);
   }
+
+  public SNode getNode() {
+    return myNode;
+  }
+
+  public SNode getType() {
+    return myType;
+  }
 }
