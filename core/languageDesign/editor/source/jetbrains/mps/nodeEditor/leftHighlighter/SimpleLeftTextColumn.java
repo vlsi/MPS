@@ -18,18 +18,12 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.*;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.10.2010
- * Time: 20:49:58
- * To change this template use File | Settings | File Templates.
- */
 public abstract class SimpleLeftTextColumn extends LeftTextColumn {
   private Font myFont;
   private FontMetrics myFontMetrics;
@@ -59,8 +53,13 @@ public abstract class SimpleLeftTextColumn extends LeftTextColumn {
   }
 
   @Override
-  public void relayout(EditorComponent editorComponent) {
-    calculateTextPositions(editorComponent);
+  public void relayout(final EditorComponent editorComponent) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        calculateTextPositions(editorComponent);
+      }
+    });
   }
 
   //--------------------------------------------------------------------------------------------

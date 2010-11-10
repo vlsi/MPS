@@ -8,31 +8,16 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029c(jetbrains.mps.lang.editor.plugin)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
   <maxImportIndex value="22" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.resolve(jetbrains.mps.resolve@java_stub)" version="-1" />
@@ -1553,78 +1538,6 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="98380422618925940" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="98380422618925941" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="98380422618925942" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="874703101685312668">
-    <property name="name:23" value="ShowTextColumn" />
-    <property name="caption:23" value="Show Text Column (internal)" />
-    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="874703101685312669">
-      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="874703101685312670">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4750582999575696696">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4750582999575696697">
-            <property name="name:3" value="root" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4750582999575696698">
-              <link role="classifier:3" targetNodeId="2.~SNode" resolveInfo="SNode" />
-            </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4750582999575696699">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4750582999575696700">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4750582999575696701" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4750582999575696702">
-                  <link role="member:23" targetNodeId="4750582999575672590" resolveInfo="node" />
-                </node>
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4750582999575696703">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~SNode.getContainingRoot():jetbrains.mps.smodel.SNode" resolveInfo="getContainingRoot" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="874703101685331185">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685335006">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685332369">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="874703101685331186">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="874703101685331187" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="874703101685331188">
-                  <link role="member:23" targetNodeId="874703101685315657" resolveInfo="editor" />
-                </node>
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="874703101685335005">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~EditorComponent.getLeftEditorHighlighter():jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" resolveInfo="getLeftEditorHighlighter" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="874703101685336192">
-              <link role="baseMethodDeclaration:3" targetNodeId="22.~LeftEditorHighlighter.addTextColumn(jetbrains.mps.nodeEditor.leftHighlighter.LeftTextColumn):void" resolveInfo="addTextColumn" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="874703101685336193">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="874703101685450710">
-                  <link role="baseMethodDeclaration:3" targetNodeId="22.~DummyTextColumn2.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="DummyTextColumn2" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4750582999575696704">
-                    <link role="variableDeclaration:3" targetNodeId="4750582999575696697" resolveInfo="root" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="874703101685315657">
-      <property name="name:23" value="editor" />
-      <link role="key:23" targetNodeId="13.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
-    </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="4750582999575672590">
-      <property name="name:23" value="node" />
-      <link role="key:23" targetNodeId="13.~MPSDataKeys.NODE" resolveInfo="NODE" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="874703101685450718">
-    <property name="name:23" value="EditorInt" />
-    <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="874703101685450722">
-      <link role="modifiedGroup:23" targetNodeId="15.1204991232446" resolveInfo="EditorInternal" />
-    </node>
-    <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="874703101685450720">
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="874703101685450721">
-        <link role="action:23" targetNodeId="874703101685312668" resolveInfo="ShowTextColumn" />
-      </node>
     </node>
   </node>
 </model>
