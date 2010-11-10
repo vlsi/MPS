@@ -16,93 +16,46 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.Collection;
-import java.util.Collections;
 
 /**
  * Evgeny Gryaznov, 10/22/10
  */
-public class TemplateExecutionEnvironment {
+public interface TemplateExecutionEnvironment {
 
-  private final TemplateGenerator generator;
-  private final ReductionContext reductionContext;
-  private final IOperationContext operationContext;
-  private final IGenerationTracer tracer;
+  public IOperationContext getOperationContext();
 
-  public TemplateExecutionEnvironment(TemplateGenerator generator, ReductionContext reductionContext, IOperationContext operationContext, IGenerationTracer tracer) {
-    this.generator = generator;
-    this.reductionContext = reductionContext;
-    this.operationContext = operationContext;
-    this.tracer = tracer;
-  }
+  public SModel getOutputModel();
 
-  public IOperationContext getOperationContext() {
-    return operationContext;
-  }
+  public TemplateGenerator getGenerator();
 
-  public SModel getOutputModel() {
-    return generator.getOutputModel();
-  }
+  public IGenerationTracer getTracer();
 
-  public TemplateGenerator getGenerator() {
-    return generator;
-  }
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName);
 
-  public IGenerationTracer getTracer() {
-    return tracer;
-  }
+  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId);
 
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName) {
-    // TODO
-    return Collections.emptyList();
-  }
+  public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
 
-  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId) {
-//    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
-//    for (SNode historyInputNode : context.getInputHistory()) {
-//      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
-//    }
-//    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
-  }
+  public void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
 
-  public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
+  public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context);
 
-  }
+  public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context);
 
-  public void registerLabel(SNode inputNode, Iterable<SNode> outputNode, String mappingLabel) {
-
-  }
-
-  public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
-
-  }
-
-  public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
-
-  }
-
-  public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
-
-  }
+  public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
 
   /*
    *  returns temporary node
    */
-  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    return null;
-  }
+  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
-  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
+  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context);
 
-  }
-
-  public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {
-    return null;
-  }
+  public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context);
 }

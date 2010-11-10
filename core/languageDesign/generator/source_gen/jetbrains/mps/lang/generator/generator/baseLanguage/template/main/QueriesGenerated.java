@@ -771,16 +771,6 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
-  public static Object referenceMacro_GetReferent_1147906725605286093(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name;
-  }
-
-  public static Object referenceMacro_GetReferent_1147906725605286172(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name;
-  }
-
   public static Object referenceMacro_GetReferent_5412006700504157805(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.templateArgumentQuery(SLinkOperations.getTarget(_context.getNode(), "query", true));
   }
@@ -903,11 +893,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0vh(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0th(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0wh(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0uh(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_4155486055398184252(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1341,11 +1331,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1147906725605286101(final IOperationContext operationContext, final IfMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name.startsWith("tnode");
-  }
-
   public static boolean ifMacro_Condition_1147906725605361055(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
     return name != null;
@@ -1567,6 +1552,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1147906725605286191(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
+  }
+
+  public static SNode sourceNodeQuery_5809996624366819974(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
   }
 
@@ -2338,7 +2327,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0eu(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0cu(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2579,21 +2568,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0vh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0th(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0wh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0uh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0eu(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0cu(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
