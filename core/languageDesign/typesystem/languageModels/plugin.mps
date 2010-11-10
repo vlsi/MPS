@@ -2272,7 +2272,7 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4213432195536185602">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4213432195536185603">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4213432195536185604">
-                  <link role="baseMethodDeclaration:3" targetNodeId="54.~ShowTypeSystemTrace.&lt;init&gt;(jetbrains.mps.newTypesystem.TypeCheckingContextNew,jetbrains.mps.smodel.IOperationContext,java.awt.Frame)" resolveInfo="ShowTypeSystemTrace" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="54.~ShowTypeSystemTrace.&lt;init&gt;(jetbrains.mps.newTypesystem.TypeCheckingContextNew,jetbrains.mps.smodel.IOperationContext,java.awt.Frame,jetbrains.mps.smodel.SNode)" resolveInfo="ShowTypeSystemTrace" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6867415733702651125">
                     <link role="variableDeclaration:3" targetNodeId="6867415733702648394" resolveInfo="t" />
                   </node>
@@ -2288,6 +2288,7 @@
                       <link role="member:23" targetNodeId="8779663014757355883" resolveInfo="frame" />
                     </node>
                   </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6443015596764398881" />
                 </node>
               </node>
             </node>
