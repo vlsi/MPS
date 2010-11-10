@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.debug.api;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
@@ -23,6 +24,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.MyState;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.MPSBreakpointPainter;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
@@ -100,6 +103,37 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
     }
   };
+  private final SessionChangeListener myChangeListener = new SessionChangeAdapter() {
+    @Override
+    public void muted(AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater((new Runnable() {
+        @Override
+        public void run() {
+          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              editorComponent.repaint();
+            }
+          }
+        }
+      }));
+    }
+  };
+  private final DebugSessionListener myDebugSessionListener = new DebugSessionAdapter() {
+    @Override
+    public void registered(AbstractDebugSession session) {
+      session.addChangeListener(myChangeListener);
+    }
+
+    @Override
+    public void detached(AbstractDebugSession session) {
+      session.removeChangeListener(myChangeListener);
+    }
+  };
+
+  public static BreakpointManagerComponent getInstance(@NotNull Project project) {
+    return project.getComponent(BreakpointManagerComponent.class);
+  }
 
   public BreakpointManagerComponent(Project project, DebugInfoManager debugInfoManager) {
     myProject = project;
@@ -200,10 +234,14 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   @Override
   public void initComponent() {
+    DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
+    component.addCurrentDebugSessionListener(myDebugSessionListener);
   }
 
   @Override
   public void disposeComponent() {
+    DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
+    component.removeCurrentDebugSessionListener(myDebugSessionListener);
   }
 
   private void editorComponentOpened(@Nullable EditorComponent editorComponent) {
@@ -221,7 +259,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     if (breakpointsForRoot != null) {
       for (AbstractMPSBreakpoint breakpoint : breakpointsForRoot) {
         editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-        editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint));
+        editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
       }
       editorComponent.repaint(); //todo should it be executed in ED thread?
     }
@@ -296,7 +334,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
               SNode editedNode = editorComponent.getEditedNode();
               if (root == editedNode) {
                 editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-                editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint));
+                editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
                 editorComponent.repaint(); //todo should it be executed in ED thread?
               }
             }

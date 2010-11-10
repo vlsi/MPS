@@ -4,10 +4,7 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Splitter;
-import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.AbstractUiState;
-import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.debug.api.SessionChangeListener;
+import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
@@ -135,7 +132,7 @@ public class DebuggerToolPanel extends JPanel {
     });
   }
 
-  private class MySessionChangeListener implements SessionChangeListener {
+  private class MySessionChangeListener extends SessionChangeAdapter {
     @Override
     public void stateChanged(AbstractDebugSession session) {
       if (myDebugSession != session) return;

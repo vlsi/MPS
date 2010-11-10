@@ -145,7 +145,7 @@
     <nodeInfo nodeId="6185141366360333658" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="EvaluationDialog.java" startLine="163" startPosition="18" endLine="165" endPosition="13" />
     <nodeInfo nodeId="1931206442265367274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="EvaluationDialog.java" startLine="213" startPosition="14" endLine="215" endPosition="9" />
     <nodeInfo nodeId="1931206442265367065" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="EvaluationDialog.java" startLine="224" startPosition="10" endLine="226" endPosition="5" />
-    <nodeInfo nodeId="401530490754817417" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="EvaluationDialog.java" startLine="251" startPosition="74" endLine="253" endPosition="5" />
+    <nodeInfo nodeId="401530490754817417" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="EvaluationDialog.java" startLine="251" startPosition="70" endLine="253" endPosition="5" />
     <nodeInfo nodeId="278747144310564207" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="EvaluationDialog.java" startLine="280" startPosition="49" endLine="282" endPosition="5" />
     <nodeInfo nodeId="278747144310564212" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="EvaluationDialog.java" startLine="283" startPosition="0" endLine="285" endPosition="0" />
     <nodeInfo nodeId="278747144310564223" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="EvaluationDialog.java" startLine="287" startPosition="82" endLine="289" endPosition="5" />
@@ -297,7 +297,7 @@
     <scopeInfo nodeId="6185141366360331098" fileName="EvaluationDialog.java" startLine="179" startPosition="27" endLine="181" endPosition="19" />
     <scopeInfo nodeId="1931206442265367224" fileName="EvaluationDialog.java" startLine="192" startPosition="25" endLine="194" endPosition="30" />
     <scopeInfo nodeId="1931206442265367243" fileName="EvaluationDialog.java" startLine="201" startPosition="25" endLine="203" endPosition="30" />
-    <scopeInfo nodeId="401530490754817417" fileName="EvaluationDialog.java" startLine="251" startPosition="74" endLine="253" endPosition="5" />
+    <scopeInfo nodeId="401530490754817417" fileName="EvaluationDialog.java" startLine="251" startPosition="70" endLine="253" endPosition="5" />
     <scopeInfo nodeId="6412596033410564310" fileName="EvaluationDialog.java" startLine="261" startPosition="63" endLine="263" endPosition="44" />
     <scopeInfo nodeId="278747144310564207" fileName="EvaluationDialog.java" startLine="280" startPosition="49" endLine="282" endPosition="5" />
     <scopeInfo nodeId="278747144310564212" fileName="EvaluationDialog.java" startLine="283" startPosition="0" endLine="285" endPosition="0">

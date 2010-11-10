@@ -32,7 +32,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
     myProject = project;
   }
 
-  public static DebugSessionManagerComponent getInstance(Project project) {
+  public static DebugSessionManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(DebugSessionManagerComponent.class);
   }
 
@@ -154,6 +154,21 @@ public class DebugSessionManagerComponent implements ProjectComponent {
     public void currentSessionChanged(AbstractDebugSession session);
 
     public void detached(AbstractDebugSession session);
+    // todo registered vs detached????
+  }
+
+  public static abstract class DebugSessionAdapter implements DebugSessionListener {
+    @Override
+    public void registered(AbstractDebugSession session) {
+    }
+
+    @Override
+    public void currentSessionChanged(AbstractDebugSession session) {
+    }
+
+    @Override
+    public void detached(AbstractDebugSession session) {
+    }
   }
 
   private class MyRunContentListener implements RunContentListener {

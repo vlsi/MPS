@@ -240,7 +240,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     }
   }
 
-  private class MySessionChangeListener implements SessionChangeListener {
+  private class MySessionChangeListener extends SessionChangeAdapter {
     @Override
     public void stateChanged(AbstractDebugSession session) {
       detachPainter(session);

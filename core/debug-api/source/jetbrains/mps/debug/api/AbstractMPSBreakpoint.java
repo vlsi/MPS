@@ -76,7 +76,7 @@ public abstract class AbstractMPSBreakpoint {
         if (myIsEnabled) {
           enableInRunningSessions();
         } else {
-          disableInRunningSesions();
+          disableInRunningSessions();
         }
         return true;
       }
@@ -168,7 +168,7 @@ public abstract class AbstractMPSBreakpoint {
 
   public abstract void addToRunningSessions();
 
-  public void disableInRunningSesions() {
+  public void disableInRunningSessions() {
     removeFromRunningSessions();
   }
 

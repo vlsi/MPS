@@ -104,6 +104,12 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     }
   }
 
+  protected void fireSessionMuted(AbstractDebugSession debugSession) {
+    for (SessionChangeListener listener : myListeners) {
+      listener.muted(debugSession);
+    }
+  }
+
   public void addChangeListener(@NotNull SessionChangeListener listener) {
     myListeners.add(listener);
   }
@@ -136,11 +142,17 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   public abstract void showEvaluationDialog(IOperationContext operationContext);
 
   public void sessionRegistered(DebugSessionManagerComponent manager) {
-
   }
 
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
+  }
 
+  // todo make next two abstract in further versions (now we can not: will break users code)
+  public void muteBreakpoints(boolean mute) {
+  }
+
+  public boolean isMute() {
+    return false;
   }
 
   public Project getProject() {
