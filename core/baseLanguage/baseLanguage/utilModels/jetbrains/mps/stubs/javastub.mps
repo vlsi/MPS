@@ -1085,21 +1085,21 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7241381882860002546">
               <link role="baseMethodDeclaration:3" targetNodeId="5.~Classifier.setName(java.lang.String):void" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7241381882860002547">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860002548">
-                  <link role="classConcept:3" targetNodeId="6.~NameUtil" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860002549">
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860002548">
+                <link role="classConcept:3" targetNodeId="6.~NameUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4653865364587956123">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860002549">
                     <link role="variableDeclaration:3" targetNodeId="7241381882860002476" resolveInfo="fqName" />
                   </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7241381882860002550">
-                  <link role="baseMethodDeclaration:3" targetNodeId="11.~String.replace(char,char):java.lang.String" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="7241381882860002551">
-                    <property name="charConstant:3" value="$" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="7241381882860002552">
-                    <property name="charConstant:3" value="." />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4653865364587956127">
+                    <link role="baseMethodDeclaration:3" targetNodeId="11.~String.replace(char,char):java.lang.String" resolveInfo="replace" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="4653865364587956128">
+                      <property name="charConstant:3" value="$" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="4653865364587956129">
+                      <property name="charConstant:3" value="." />
+                    </node>
                   </node>
                 </node>
               </node>

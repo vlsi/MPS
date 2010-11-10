@@ -220,7 +220,7 @@ public abstract class ASMModelLoader {
     } else if (kind == ClassifierKind.UNKNOWN) {
       return null;
     }
-    result.setName(NameUtil.shortNameFromLongName(fqName).replace('$', '.'));
+    result.setName(NameUtil.shortNameFromLongName(fqName.replace('$', '.')));
     result.getNode().setId(ASMNodeId.createId(fqName));
     return result;
   }
