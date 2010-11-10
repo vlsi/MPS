@@ -17,6 +17,8 @@ import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import com.intellij.openapi.application.PathMacros;
 
 public class NodesTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -75,6 +77,10 @@ public class NodesTestCase_Behavior {
     result.setClassPath(NodesTestCase_Behavior.getIdeaClassPath_1217424542979());
     List<String> vmParams = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(vmParams).addElement("-Xmx1024m");
+    for (String key : SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames())) {
+      String value = PathMacros.getInstance().getValue(key);
+      ListSequence.fromList(vmParams).addElement("-D" + "path.macro." + key + "=" + value);
+    }
     result.setVmParameters(vmParams);
     // wtf, could not run tests because of typo 
     result.setTestRunner("jetbrains.mps.lang.test.runtime.TransformationTestRunner");
