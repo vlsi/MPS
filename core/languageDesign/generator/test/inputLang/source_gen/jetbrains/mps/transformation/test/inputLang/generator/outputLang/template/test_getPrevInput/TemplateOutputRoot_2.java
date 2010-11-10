@@ -24,6 +24,9 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
   private static SNodePointer loopMacroRef_rz5qmw_a0a0a1a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467104");
   private static SNodePointer loopMacroRef_rz5qmw_a0a0a3a2a2a1a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467111");
   private static SNodePointer loopMacroRef_rz5qmw_a0a0a3a2a2a3a2a2a1a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467118");
+  private static SNodePointer mapsrcMacroRef_rz5qmw_a0a0a1a5a2a2a3a2a2a3a2a2a1a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338527050");
+  private static SNodePointer mapsrcMacroRef_rz5qmw_a0a0a1a6a2a2a3a2a2a3a2a2a1a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338676108");
+  private static SNodePointer mapsrcMacroRef_rz5qmw_a0a0a1a7a2a2a3a2a2a3a2a2a1a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338727992");
 
   public TemplateOutputRoot_2() {
   }
@@ -80,45 +83,57 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
                         // TODO notify environment 
                         tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(null, new PropertyMacroContext(context4.getInput(), null, null, context4, null)));
                         {
-                          final SNode sourceNode6 = context.getInput();
                           final List<SNode> tlist6 = new ArrayList();
-                          tlist6.add(environment.insertLater(new NodeMapper() {
-                            public SNode map(SNode outputNode, TemplateContext mapContext) {
-                              return QueriesGenerated.mapSrcMacro_mapper_1202338546473(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, environment.getGenerator()));
-                            }
-                          }, new PostProcessor() {
-                            public void process(SNode outputNode, TemplateContext postProcessContext) {
-                              QueriesGenerated.mapSrcMacro_post_mapper_1225236090395(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, environment.getGenerator()));
-                            }
-                          }, context4));
+                          try {
+                            environment.getTracer().pushMacro(mapsrcMacroRef_rz5qmw_a0a0a1a5a2a2a3a2a2a3a2a2a1a4a0);
+                            tlist6.add(environment.insertLater(new NodeMapper() {
+                              public SNode map(SNode outputNode, TemplateContext mapContext) {
+                                return QueriesGenerated.mapSrcMacro_mapper_1202338546473(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, environment.getGenerator()));
+                              }
+                            }, new PostProcessor() {
+                              public void process(SNode outputNode, TemplateContext postProcessContext) {
+                                QueriesGenerated.mapSrcMacro_post_mapper_1225236090395(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, environment.getGenerator()));
+                              }
+                            }, context4));
+                          } finally {
+                            environment.getTracer().closeMacro(mapsrcMacroRef_rz5qmw_a0a0a1a5a2a2a3a2a2a3a2a2a1a4a0);
+                          }
                           for (SNode child7 : tlist6) {
                             tnode5.addChild("outputChild", child7);
                           }
                         }
                         {
-                          final SNode sourceNode8 = context.getInput();
                           final List<SNode> tlist8 = new ArrayList();
-                          tlist8.add(environment.insertLater(new NodeMapper() {
-                            public SNode map(SNode outputNode, TemplateContext mapContext) {
-                              return QueriesGenerated.mapSrcMacro_mapper_1202338683284(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, environment.getGenerator()));
-                            }
-                          }, null, context4));
+                          try {
+                            environment.getTracer().pushMacro(mapsrcMacroRef_rz5qmw_a0a0a1a6a2a2a3a2a2a3a2a2a1a4a0);
+                            tlist8.add(environment.insertLater(new NodeMapper() {
+                              public SNode map(SNode outputNode, TemplateContext mapContext) {
+                                return QueriesGenerated.mapSrcMacro_mapper_1202338683284(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, environment.getGenerator()));
+                              }
+                            }, null, context4));
+                          } finally {
+                            environment.getTracer().closeMacro(mapsrcMacroRef_rz5qmw_a0a0a1a6a2a2a3a2a2a3a2a2a1a4a0);
+                          }
                           for (SNode child9 : tlist8) {
                             tnode5.addChild("outputChild", child9);
                           }
                         }
                         {
-                          final SNode sourceNode10 = context.getInput();
                           final List<SNode> tlist10 = new ArrayList();
-                          tlist10.add(environment.insertLater(new NodeMapper() {
-                            public SNode map(SNode outputNode, TemplateContext mapContext) {
-                              return QueriesGenerated.mapSrcMacro_mapper_1202338740199(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, environment.getGenerator()));
-                            }
-                          }, new PostProcessor() {
-                            public void process(SNode outputNode, TemplateContext postProcessContext) {
-                              QueriesGenerated.mapSrcMacro_post_mapper_1225236639046(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, environment.getGenerator()));
-                            }
-                          }, context4));
+                          try {
+                            environment.getTracer().pushMacro(mapsrcMacroRef_rz5qmw_a0a0a1a7a2a2a3a2a2a3a2a2a1a4a0);
+                            tlist10.add(environment.insertLater(new NodeMapper() {
+                              public SNode map(SNode outputNode, TemplateContext mapContext) {
+                                return QueriesGenerated.mapSrcMacro_mapper_1202338740199(environment.getOperationContext(), new MapSrcMacroContext(mapContext.getInput(), null, outputNode.getParent(), mapContext, environment.getGenerator()));
+                              }
+                            }, new PostProcessor() {
+                              public void process(SNode outputNode, TemplateContext postProcessContext) {
+                                QueriesGenerated.mapSrcMacro_post_mapper_1225236639046(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), null, outputNode, postProcessContext, environment.getGenerator()));
+                              }
+                            }, context4));
+                          } finally {
+                            environment.getTracer().closeMacro(mapsrcMacroRef_rz5qmw_a0a0a1a7a2a2a3a2a2a3a2a2a1a4a0);
+                          }
                           for (SNode child11 : tlist10) {
                             tnode5.addChild("outputChild", child11);
                           }
