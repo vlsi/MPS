@@ -41,15 +41,15 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushSwitch(SNode node) {
+  public void pushSwitch(SNodePointer node) {
   }
 
   @Override
-  public void pushMacro(SNode node) {
+  public void pushMacro(SNodePointer node) {
   }
 
   @Override
-  public void closeMacro(SNode node) {
+  public void closeMacro(SNodePointer node) {
   }
 
   @Override

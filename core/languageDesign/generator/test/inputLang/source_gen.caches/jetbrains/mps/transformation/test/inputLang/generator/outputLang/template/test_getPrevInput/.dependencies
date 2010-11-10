@@ -51,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
@@ -72,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.QueriesGenerated" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />

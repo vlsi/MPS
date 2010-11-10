@@ -26,11 +26,11 @@ public interface IGenerationTracer {
 
   void pushRuleConsequence(SNode node);
 
-  void pushSwitch(SNode node);
+  void pushSwitch(SNodePointer node);
 
-  void pushMacro(SNode node);
+  void pushMacro(SNodePointer node);
 
-  void closeMacro(SNode node);
+  void closeMacro(SNodePointer node);
 
   void pushOutputNode(SNode node);
 

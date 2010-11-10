@@ -153,21 +153,21 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushSwitch(SNode node) {
+  public void pushSwitch(SNodePointer node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.SWITCH, new SNodePointer(node)));
+    push(new TracerNode(TracerNode.Kind.SWITCH, node));
   }
 
   @Override
-  public void pushMacro(SNode node) {
+  public void pushMacro(SNodePointer node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.MACRO, new SNodePointer(node)));
+    push(new TracerNode(TracerNode.Kind.MACRO, node));
   }
 
   @Override
-  public void closeMacro(SNode node) {
+  public void closeMacro(SNodePointer node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.MACRO, new SNodePointer(node));
+    closeBranch(TracerNode.Kind.MACRO, node);
   }
 
   @Override

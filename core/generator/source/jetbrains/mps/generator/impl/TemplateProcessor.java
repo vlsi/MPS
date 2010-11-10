@@ -100,11 +100,11 @@ public class TemplateProcessor {
       if (macroCount <= nodeMacrosToSkip) continue;
       NodeMacro nodeMacro = (NodeMacro) templateChildNode;
 
-      generationTracer.pushMacro(nodeMacro.getNode());
+      generationTracer.pushMacro(new SNodePointer(nodeMacro.getNode()));
       try {
         return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, context, nodeMacrosToSkip);
       } finally {
-        generationTracer.closeMacro(nodeMacro.getNode());
+        generationTracer.closeMacro(new SNodePointer(nodeMacro.getNode()));
       }
     }
 
@@ -345,7 +345,7 @@ public class TemplateProcessor {
       if (inputChanged) {
         generationTracer.pushInputNode(newInputNode);
       }
-      generationTracer.pushSwitch(templateSwitch.getNode());
+      generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
         List<SNode> _outputNodes = null;
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myReductionContext, myGenerator);
