@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;

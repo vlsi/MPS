@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;

@@ -17,30 +17,28 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.NullSlicer;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.annotation.UseCarefully;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
-import java.util.Map.Entry;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class NodeTypesComponent {
 

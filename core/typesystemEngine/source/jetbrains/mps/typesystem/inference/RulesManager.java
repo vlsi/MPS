@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.Pair;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public class RulesManager {
 

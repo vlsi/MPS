@@ -18,8 +18,8 @@ package jetbrains.mps.typesystem.inference.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public abstract class AbstractDependency_Runtime implements IDependency_Runtime {
   public SNode getSourceNode(SNode targetNode) {

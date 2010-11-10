@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public class InequationSystem {
   private HoleWrapper myHoleType;

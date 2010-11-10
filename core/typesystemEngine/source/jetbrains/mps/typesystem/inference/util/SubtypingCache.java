@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SubtypingCache {
   private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCache = new HashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();

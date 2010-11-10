@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 
-import java.util.*;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class StructuralCollectionUtil {
 
