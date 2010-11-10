@@ -45,11 +45,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3868725017587329779(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "variables", true), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variables", true), "name"));
+    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_3868725017587343025(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "variables", true), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variables", true), "name"));
+    return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5189627237350267984(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -81,27 +81,31 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3344436107830202786(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "variables", true), "VariablesDeclaration_class");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "parameters", true), "ParametersDeclaration_class");
   }
 
   public static Object referenceMacro_GetReferent_2146492603954953915(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "variables", true), "VariablesDeclaration_class");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "parameters", true), "ParametersDeclaration_class");
   }
 
   public static Object referenceMacro_GetReferent_6872280991287182654(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", false), "variables", true), "VariablesDeclaration_class");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", false), "parameters", true), "ParametersDeclaration_class");
   }
 
   public static Object referenceMacro_GetReferent_6872280991287182670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", false), "variables", true), "VariablesDeclaration_class");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", false), "parameters", true), "ParametersDeclaration_class");
   }
 
   public static boolean ifMacro_Condition_7320828025189279641(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "variables", true), "component", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "component", true)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_1977954644795426653(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "job", true), "config", true) != null);
   }
 
   public static boolean ifMacro_Condition_3868725017587322815(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "variables", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "parameters", true) != null);
   }
 
   public static boolean ifMacro_Condition_5189627237350267862(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -137,11 +141,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7320828025189279645(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "variables", true);
+    return SLinkOperations.getTarget(_context.getNode(), "parameters", true);
   }
 
   public static SNode sourceNodeQuery_3916013743093752820(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "job", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "job", true), "job", true);
+  }
+
+  public static SNode sourceNodeQuery_1977954644795426657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "job", true), "config", true);
   }
 
   public static Object templateArgumentQuery_5189627237350270329(final IOperationContext operationContext, final TemplateQueryContext _context) {

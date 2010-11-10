@@ -12,15 +12,17 @@ import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.unittest.Mockups;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.make.unittest.Mockups;
+import jetbrains.mps.make.script.IConfigMonitor;
 import org.jmock.Expectations;
-import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
+import jetbrains.mps.make.script.IQuery;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -39,7 +41,7 @@ public class Generator_Test extends MockTestCase {
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);
     Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    IResult res = scr.execute(Mockups.monitor(context, "mon"));
+    IResult res = scr.execute();
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -48,16 +50,32 @@ public class Generator_Test extends MockTestCase {
   @Test
   public void test_queryOk() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).toScript();
-    Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
-    Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    final IMonitor mon = Mockups.monitor(context, "mon");
+    final IMonitors mons = Mockups.monitors(context, "mons");
+    final IConfigMonitor cmon = context.mock(IConfigMonitor.class);
     context.checking(new Expectations() {
       {
+        final Object[] cfg = new Object[1];
+        exactly(1).of(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) with(new BaseMatcher<Object>() {
+          public boolean matches(Object o) {
+            cfg[0] = o;
+            return true;
+          }
+
+          public void describeTo(Description p0) {
+          }
+        }));
+        will(new Action() {
+          public Object invoke(Invocation invocation) throws Throwable {
+            ((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) cfg[0]).invoke(cmon);
+            return null;
+          }
+
+          public void describeTo(Description description) {
+          }
+        });
+
         final IQuery[] query = new IQuery[1];
-        exactly(1).of(mon).relayQuery(with(new BaseMatcher<IQuery>() {
+        exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
           public boolean matches(Object o) {
             if (o instanceof IQuery) {
               query[0] = (IQuery) o;
@@ -79,7 +97,13 @@ public class Generator_Test extends MockTestCase {
         });
       }
     });
-    IResult res = scr.execute(mon);
+    Mockups.allowing(context, mons);
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).withMonitors(mons).toScript();
+    Assert.assertTrue(scr.isValid());
+    ITarget dt = scr.defaultTarget();
+    Assert.assertNotNull(dt);
+    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    IResult res = scr.execute();
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
@@ -88,16 +112,32 @@ public class Generator_Test extends MockTestCase {
   @Test
   public void test_queryStop() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).toScript();
-    Assert.assertTrue(scr.isValid());
-    ITarget dt = scr.defaultTarget();
-    Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
-    final IMonitor mon = Mockups.monitor(context, "mon");
+    final IMonitors mons = Mockups.monitors(context, "mons");
+    final IConfigMonitor cmon = context.mock(IConfigMonitor.class);
     context.checking(new Expectations() {
       {
+        final Object[] cfg = new Object[1];
+        exactly(1).of(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) with(new BaseMatcher<Object>() {
+          public boolean matches(Object o) {
+            cfg[0] = o;
+            return true;
+          }
+
+          public void describeTo(Description p0) {
+          }
+        }));
+        will(new Action() {
+          public Object invoke(Invocation invocation) throws Throwable {
+            ((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) cfg[0]).invoke(cmon);
+            return null;
+          }
+
+          public void describeTo(Description description) {
+          }
+        });
+
         final IQuery[] query = new IQuery[1];
-        exactly(1).of(mon).relayQuery(with(new BaseMatcher<IQuery>() {
+        exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
           public boolean matches(Object o) {
             if (o instanceof IQuery) {
               query[0] = (IQuery) o;
@@ -119,7 +159,14 @@ public class Generator_Test extends MockTestCase {
         });
       }
     });
-    IResult res = scr.execute(mon);
+    Mockups.allowing(context, mons);
+
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).withMonitors(mons).toScript();
+    Assert.assertTrue(scr.isValid());
+    ITarget dt = scr.defaultTarget();
+    Assert.assertNotNull(dt);
+    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    IResult res = scr.execute();
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());

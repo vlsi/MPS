@@ -12,11 +12,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class JobDeclaration extends BaseConcept {
   public static final String concept = "jetbrains.mps.make.script.structure.JobDeclaration";
+  public static final String CONFIG = "config";
   public static final String JOB = "job";
   public static final String QUERY = "query";
 
   public JobDeclaration(SNode node) {
     super(node);
+  }
+
+  public ConfigDefinition getConfig() {
+    return (ConfigDefinition) this.getChild(ConfigDefinition.class, JobDeclaration.CONFIG);
+  }
+
+  public void setConfig(ConfigDefinition node) {
+    super.setChild(JobDeclaration.CONFIG, node);
   }
 
   public JobDefinition getJob() {

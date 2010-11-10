@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.make.script.IJob;
+import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
@@ -180,11 +181,15 @@ public class TargetRange {
       return first.getName();
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
 
     public IJob createJob() {
+      return null;
+    }
+
+    public IConfig createConfig() {
       return null;
     }
   }

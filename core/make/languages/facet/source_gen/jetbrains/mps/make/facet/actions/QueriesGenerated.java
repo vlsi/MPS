@@ -41,11 +41,11 @@ public class QueriesGenerated {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false) != null);
   }
 
-  public static void nodeFactory_NodeSetup_VariablesDeclaration_7320828025189345690(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SPropertyOperations.set(_context.getNewNode(), "name", "Variables");
+  public static void nodeFactory_NodeSetup_ParametersDeclaration_7320828025189345690(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SPropertyOperations.set(_context.getNewNode(), "name", "Parameters");
   }
 
-  public static void nodeFactory_NodeSetup_VariablesDeclaration_127305800529615845(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_ParametersDeclaration_127305800529615845(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.addNewChild(_context.getNewNode(), "component", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration");
   }
 
@@ -141,12 +141,12 @@ __switch__:
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_7320828025189375232(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "variables", true), "component", true);
+            return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "parameters", true), "component", true);
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
@@ -154,8 +154,8 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode lve = SConceptOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalVariablesExpression", null);
-                SNode lvce = SConceptOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression", null);
+                SNode lve = SConceptOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersExpression", null);
+                SNode lvce = SConceptOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", null);
                 SLinkOperations.setTarget(lvce, "operand", lve, true);
                 SLinkOperations.setTarget(lvce, "operation", new QueriesGenerated.QuotationClass_x583g4_a0a3a0a0a0a0a0a2a2a0a1a4().createNode((item)), true);
                 return lvce;
@@ -179,14 +179,14 @@ __switch__:
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3344436107830239664(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignVariablesComponentExpression");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
             return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "dependency", true)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode d) {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(d, "dependsOn", false), "variables", true);
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(d, "dependsOn", false), "parameters", true);
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode v) {
@@ -251,7 +251,7 @@ __switch__:
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignVariablesExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("target", (SNode) parameter_3);
         result = quotedNode1_2;
@@ -289,7 +289,7 @@ __switch__:
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignVariablesComponentExpression", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           quotedNode_2 = (SNode) parameter_7;

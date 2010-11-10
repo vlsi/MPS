@@ -18,17 +18,17 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
-import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IProgress;
+import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
@@ -83,9 +83,9 @@ public class MakeModel_Action extends GeneratedAction {
     try {
       ScriptBuilder scb = new ScriptBuilder();
       final Wrappers._T<ProgressIndicator> ind = new Wrappers._T<ProgressIndicator>(null);
-      final IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IVariablesPool>() {
-        public void invoke(IVariablesPool pool) {
-          Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, ProgressIndicator> vars = (Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, ProgressIndicator>) pool.variables(new ITarget.Name("Parameters"), Object.class);
+      final IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
+        public void invoke(IParametersPool pool) {
+          Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, ProgressIndicator> vars = (Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, ProgressIndicator>) pool.parameters(new ITarget.Name("Parameters"), Object.class);
           vars._0(MakeModel_Action.this.context.getProject());
           vars._1(MakeModel_Action.this.context);
           vars._2(MakeModel_Action.this.models);
@@ -95,28 +95,25 @@ public class MakeModel_Action extends GeneratedAction {
       final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();
       final LoggingProgressStrategy logStrat = new LoggingProgressStrategy();
       final LoggingFeedbackStrategy feedbackStrat = new LoggingFeedbackStrategy();
-      final IMonitor mon = new IMonitor() {
+      final IJobMonitor jmon = new IJobMonitor() {
         public boolean pleaseStop() {
           return false;
-        }
-
-        public <T extends IOption> T relayQuery(IQuery<T> query) {
-          return relayStrat.relayQuery(query, MakeModel_Action.this.context);
-        }
-
-        public void reportFeedback(IFeedback feedback) {
-          feedbackStrat.reportFeedback(feedback);
         }
 
         public IProgress currentProgress() {
           return logStrat.currentProgress();
         }
       };
+      IConfigMonitor cmon = new IConfigMonitor() {
+        public <T extends IOption> T relayQuery(IQuery<T> query) {
+          return relayStrat.relayQuery(query, MakeModel_Action.this.context);
+        }
+      };
       final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
       ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
         public void run(ProgressIndicator realInd) {
           ind.value = new ProgressIndicatorAdapter(realInd);
-          res.value = scr.execute(mon);
+          res.value = scr.execute();
         }
       }, "Script", true, MakeModel_Action.this.context.getProject());
 

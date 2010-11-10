@@ -12,6 +12,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)" version="-1" />
   <devkit namespace="e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
@@ -98,50 +99,6 @@
       <link role="concept:3" targetNodeId="1.2360002718792622184" resolveInfo="OutputResources" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="505095865854545152">
-    <property name="name:3" value="typeof_RelayQueryOperation" />
-    <property name="virtualPackage:3" value="job" />
-    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854545153">
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="505095865854545162">
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="505095865854545166">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="505095865854545167">
-            <node role="quotedNode:0" type="jetbrains.mps.make.script.structure.OptionType" id="505095865854545169">
-              <node role="referenceAntiquotation$link_attribute$expectedOption" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="505095865854545171">
-                <node role="expression:0" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="505095865854545185">
-                  <property name="asCast:16" value="true" />
-                  <link role="concept:16" targetNodeId="1.505095865854384059" resolveInfo="ExpectedOption" />
-                  <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="505095865854545180">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="505095865854545175">
-                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="505095865854545174">
-                        <link role="applicableNode:3" targetNodeId="505095865854545154" resolveInfo="rqo" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="505095865854545179">
-                        <link role="link:16" targetNodeId="1.505095865854383697" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="505095865854545184">
-                      <link role="link:16" targetNodeId="1.505095865854384068" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="505095865854545165">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="505095865854545156">
-            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="505095865854545159">
-              <link role="applicableNode:3" targetNodeId="505095865854545154" resolveInfo="rqo" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="505095865854545154">
-      <property name="name:3" value="rqo" />
-      <link role="concept:3" targetNodeId="1.505095865854377502" resolveInfo="RelayQueryOperation" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="505095865854557931">
     <property name="name:3" value="typeof_OptionExpression" />
     <property name="virtualPackage:3" value="query" />
@@ -181,6 +138,50 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="505095865854557933">
       <property name="name:3" value="oe" />
       <link role="concept:3" targetNodeId="1.505095865854384050" resolveInfo="OptionExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1977954644795311537">
+    <property name="name:3" value="typeof_RelayQueryExpression" />
+    <property name="virtualPackage:3" value="query" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1977954644795311538">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1977954644795311540">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1977954644795311541">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1977954644795311542">
+            <node role="quotedNode:0" type="jetbrains.mps.make.script.structure.OptionType" id="1977954644795311543">
+              <node role="referenceAntiquotation$link_attribute$expectedOption" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1977954644795311544">
+                <node role="expression:0" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1977954644795311545">
+                  <property name="asCast:16" value="true" />
+                  <link role="concept:16" targetNodeId="1.505095865854384059" resolveInfo="ExpectedOption" />
+                  <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1977954644795311546">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1977954644795311547">
+                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1977954644795311548">
+                        <link role="applicableNode:3" targetNodeId="1977954644795311539" resolveInfo="rqo" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1977954644795311554">
+                        <link role="link:16" targetNodeId="1.1977954644795311522" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1977954644795311550">
+                      <link role="link:16" targetNodeId="1.505095865854384068" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1977954644795311551">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1977954644795311552">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1977954644795311553">
+              <link role="applicableNode:3" targetNodeId="1977954644795311539" resolveInfo="rqo" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1977954644795311539">
+      <property name="name:3" value="rqe" />
+      <link role="concept:3" targetNodeId="1.1977954644795311519" resolveInfo="RelayQueryExpression" />
     </node>
   </node>
 </model>

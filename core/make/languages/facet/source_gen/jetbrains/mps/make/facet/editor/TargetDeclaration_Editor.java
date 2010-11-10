@@ -275,7 +275,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_xfdsch_a4b1e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("variables");
+    provider.setRole("parameters");
     provider.setNoTargetText("<no properties>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
@@ -338,11 +338,11 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_xfdsch_a3b1e0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "variables", true) != null);
+    return (SLinkOperations.getTarget(node, "parameters", true) != null);
   }
 
   private static boolean renderingCondition_xfdsch_a5b1e0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "variables", true) != null);
+    return (SLinkOperations.getTarget(node, "parameters", true) != null);
   }
 
   public static class _Inline_xfdsch_a3a extends InlineCellProvider {

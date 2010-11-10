@@ -5,5 +5,5 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.make.resources.IResource;
 
 public interface IJob {
-  public IResult execute(Iterable<IResource> input, IMonitor mon, IVariablesPool pool);
+  public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pool);
 }

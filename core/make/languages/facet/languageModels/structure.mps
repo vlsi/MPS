@@ -103,7 +103,7 @@
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7320828025189219295">
       <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="variables" />
+      <property name="role:0" value="parameters" />
       <link role="target:0" targetNodeId="7320828025189345662:1" resolveInfo="Variables" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6418371274763146553">
@@ -188,7 +188,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7320828025189345662">
-    <property name="name:0" value="VariablesDeclaration" />
+    <property name="name:0" value="ParametersDeclaration" />
     <property name="virtualPackage:0" value="target" />
     <link role="extends:0" targetNodeId="3.1239360506533:2" resolveInfo="NamedTupleDeclaration" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7320828025189357540">
@@ -201,7 +201,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7320828025189375154">
-    <property name="name:0" value="LocalVariablesExpression" />
+    <property name="name:0" value="LocalParametersExpression" />
     <property name="virtualPackage:0" value="target" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7320828025189444082">
@@ -209,7 +209,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7320828025189375155">
-    <property name="name:0" value="LocalVariablesComponentExpression" />
+    <property name="name:0" value="LocalParametersComponentExpression" />
     <property name="virtualPackage:0" value="target" />
     <link role="extends:0" targetNodeId="2.1197027756228:3" resolveInfo="DotExpression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7320828025189375156">
@@ -221,7 +221,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3344436107830227888">
     <property name="virtualPackage:0" value="target" />
-    <property name="name:0" value="ForeignVariablesExpression" />
+    <property name="name:0" value="ForeignParametersExpression" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3344436107830227902">
       <property name="metaClass:0" value="reference" />
@@ -235,7 +235,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3344436107830227889">
     <property name="virtualPackage:0" value="target" />
-    <property name="name:0" value="ForeignVariablesComponentExpression" />
+    <property name="name:0" value="ForeignParametersComponentExpression" />
     <link role="extends:0" targetNodeId="2.1197027756228:3" resolveInfo="DotExpression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3344436107830227890">
       <property name="metaClass:0" value="aggregation" />

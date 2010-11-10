@@ -8,11 +8,11 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ForeignVariablesExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ForeignParametersExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_LocalVariablesExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_LocalParametersExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }

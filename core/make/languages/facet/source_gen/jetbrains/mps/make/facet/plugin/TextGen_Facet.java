@@ -11,8 +11,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IMonitor;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
@@ -23,6 +23,7 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.make.script.IConfig;
 
 public class TextGen_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -60,7 +61,7 @@ public class TextGen_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
@@ -79,7 +80,7 @@ public class TextGen_Facet implements IFacet {
                   TraceInfoCache tic = TraceInfoCache.getInstance();
                   GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
                   boolean res;
-                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gr.data.status());
+                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gr.data.status());
                   if (!(res)) {
                     Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
@@ -95,6 +96,10 @@ public class TextGen_Facet implements IFacet {
           }
         }
       };
+    }
+
+    public IConfig createConfig() {
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -117,7 +122,7 @@ public class TextGen_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }

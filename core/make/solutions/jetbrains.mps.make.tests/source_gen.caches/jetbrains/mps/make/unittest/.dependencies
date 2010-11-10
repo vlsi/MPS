@@ -34,9 +34,9 @@
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.make.script.IMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.make.script.IVariablesPool" />
     <classNode dependClassName="jetbrains.mps.make.unittest.Mockups" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jmock.Expectations" />
@@ -90,16 +90,20 @@
   </dependency>
   <dependency className="jetbrains.mps.make.unittest.Mockups" file="Mockups.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.make.script.IMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.make.script.IVariablesPool" />
     <classNode dependClassName="org.jmock.Expectations" />
     <classNode dependClassName="org.jmock.Mockery" />
   </dependency>

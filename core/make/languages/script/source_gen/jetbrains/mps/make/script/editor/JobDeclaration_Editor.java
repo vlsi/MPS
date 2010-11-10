@@ -43,7 +43,14 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition_e0yr07_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_e0yr07_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_e0yr07_d0(editorContext, node));
+    if (renderingCondition_e0yr07_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_e0yr07_d0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createCollection_e0yr07_e0(editorContext, node));
+    if (renderingCondition_e0yr07_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_e0yr07_f0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_e0yr07_g0(editorContext, node));
     return editorCell;
   }
 
@@ -72,6 +79,31 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_e0yr07_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_e0yr07_e0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    if (renderingCondition_e0yr07_a0e0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_e0yr07_a4a(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_e0yr07_b4a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_e0yr07_a4a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_e0yr07_a4a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_e0yr07_a0e0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_e0yr07_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Queries:");
     editorCell.setCellId("Constant_e0yr07_a0");
@@ -97,6 +129,31 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_e0yr07_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Config:");
+    editorCell.setCellId("Constant_e0yr07_d0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_e0yr07_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    editorCell.setCellId("Constant_e0yr07_f0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.EDITABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_e0yr07_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new JobDeclaration_Editor.queryListHandler_e0yr07_b1a(node, "query", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -110,7 +167,29 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createRefNode_e0yr07_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_e0yr07_a0e0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createRefNode_e0yr07_b4a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("config");
+    provider.setNoTargetText("<no config>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_e0yr07_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("job");
     provider.setNoTargetText("<no job>");
@@ -137,6 +216,18 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_e0yr07_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "query", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_e0yr07_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "config", true) != null);
+  }
+
+  private static boolean renderingCondition_e0yr07_a0e0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "config", true) != null);
+  }
+
+  private static boolean renderingCondition_e0yr07_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "config", true) != null);
   }
 
   private static class queryListHandler_e0yr07_b1a extends RefNodeListHandler {

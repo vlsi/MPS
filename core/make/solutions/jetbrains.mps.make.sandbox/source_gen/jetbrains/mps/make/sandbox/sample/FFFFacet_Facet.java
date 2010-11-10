@@ -11,8 +11,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IMonitor;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IConfig;
 
 public class FFFFacet_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -52,11 +53,11 @@ public class FFFFacet_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
-              pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).bar(42);
+              pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).bar(42);
               _output_chixuw_a0a = Sequence.fromIterable(_output_chixuw_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(null)));
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
@@ -64,6 +65,10 @@ public class FFFFacet_Facet implements IFacet {
           }
         }
       };
+    }
+
+    public IConfig createConfig() {
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -86,7 +91,7 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }
@@ -99,7 +104,7 @@ public class FFFFacet_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_chixuw_a0b = null;
           switch (0) {
             case 0:
@@ -108,6 +113,10 @@ public class FFFFacet_Facet implements IFacet {
           }
         }
       };
+    }
+
+    public IConfig createConfig() {
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -130,7 +139,7 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }
@@ -143,7 +152,7 @@ public class FFFFacet_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_chixuw_a0c = null;
           switch (0) {
             case 0:
@@ -152,6 +161,10 @@ public class FFFFacet_Facet implements IFacet {
           }
         }
       };
+    }
+
+    public IConfig createConfig() {
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -174,7 +187,7 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }

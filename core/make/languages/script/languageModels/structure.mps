@@ -74,17 +74,9 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="2360002718792625580" resolveInfo="ResourcesParameter" />
     </node>
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="505095865854376383">
-      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target:0" targetNodeId="505095865854369491" resolveInfo="MonitorParameter" />
-    </node>
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="6872280991287275959">
-      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target:0" targetNodeId="6872280991287275952" resolveInfo="VariablesPoolParameter" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2360002718792625580">
-    <property name="name:0" value="ResourcesParameter" />
+    <property name="name:0" value="InputResourcesParameter" />
     <property name="virtualPackage:0" value="job" />
     <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3155650615182230903">
@@ -165,55 +157,6 @@
       <link role="dataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854369488">
-    <property name="name:0" value="MonitorType" />
-    <property name="virtualPackage:0" value="job" />
-    <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="505095865854369490">
-      <property name="value:0" value="monitor" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854369491">
-    <property name="name:0" value="MonitorParameter" />
-    <property name="virtualPackage:0" value="job" />
-    <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="505095865854369492">
-      <property name="value:0" value="monitor" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="505095865854369494">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="505095865854370838">
-      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
-      <node role="target:0" type="jetbrains.mps.make.script.structure.MonitorType" id="505095865854376381" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854377502">
-    <property name="name:0" value="RelayQueryOperation" />
-    <property name="virtualPackage:0" value="job" />
-    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="505095865854498413">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="parameter" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="505095865854383697">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="query" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="505095865854368555" resolveInfo="QueryDefinition" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="505095865854377503">
-      <link role="intfc:0" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="505095865854377504">
-      <property name="value:0" value="relay" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="505095865854384050">
     <property name="name:0" value="OptionExpression" />
     <property name="virtualPackage:0" value="query" />
@@ -286,6 +229,11 @@
     <property name="name:0" value="JobDeclaration" />
     <property name="virtualPackage:0" value="job" />
     <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1977954644795396329">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="config" />
+      <link role="target:0" targetNodeId="1977954644795375332" resolveInfo="ConfigDefinition" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="505095865854384110">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="job" />
@@ -303,27 +251,33 @@
     <property name="name:0" value="IExpected" />
     <property name="virtualPackage:0" value="query" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6872280991287275952">
-    <property name="virtualPackage:0" value="job" />
-    <property name="name:0" value="VariablesPoolParameter" />
-    <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3868725017587120379">
-      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
-      <node role="target:0" type="jetbrains.mps.make.script.structure.VariablesPoolType" id="3868725017587267326" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1977954644795311519">
+    <property name="virtualPackage:0" value="query" />
+    <property name="name:0" value="RelayQueryExpression" />
+    <link role="extends:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1977954644795311522">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="query" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="505095865854368555" resolveInfo="QueryDefinition" />
     </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6872280991287275953">
-      <property name="value:0" value="pool" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1977954644795311521">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="parameter" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1977954644795311520">
+      <property name="value:0" value="relay query" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1977954644795375335">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3868725017587120368">
-    <property name="virtualPackage:0" value="job" />
-    <property name="name:0" value="VariablesPoolType" />
-    <link role="extends:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3868725017587120375">
-      <property name="value:0" value="pool" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
-    </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1977954644795375332">
+    <property name="name:0" value="ConfigDefinition" />
+    <link role="extends:0" targetNodeId="2v.1137021947720:3" resolveInfo="ConceptFunction" />
   </node>
 </model>
 

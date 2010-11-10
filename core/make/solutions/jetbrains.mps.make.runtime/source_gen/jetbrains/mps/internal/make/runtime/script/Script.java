@@ -9,10 +9,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -28,11 +31,13 @@ public class Script implements IScript {
   private TargetRange targetRange;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private boolean validated = false;
-  private _FunctionTypes._void_P1_E0<? super IVariablesPool> init;
+  private _FunctionTypes._void_P1_E0<? super IParametersPool> init;
+  private IMonitors monitors;
 
-  public Script(TargetRange targetRange, ITarget.Name defaultTargetName, _FunctionTypes._void_P1_E0<? super IVariablesPool> init) {
+  public Script(TargetRange targetRange, ITarget.Name defaultTargetName, _FunctionTypes._void_P1_E0<? super IParametersPool> init, IMonitors mons) {
     this(targetRange, defaultTargetName);
     this.init = init;
+    this.monitors = mons;
   }
 
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
@@ -77,7 +82,7 @@ public class Script implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public IResult execute(IMonitor monit) {
+  public IResult execute() {
     validate();
     if (!(isValid())) {
       LOG.error("attempt to execute invalid script");
@@ -85,50 +90,87 @@ public class Script implements IScript {
     }
     LOG.info("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
-    Script.VariablesPool pool = new Script.VariablesPool();
+    final Script.VariablesPool pool = new Script.VariablesPool();
     LOG.info("Initializing");
     if (init != null) {
       init.invoke(pool);
     }
-    Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
-    for (ITarget trg : Sequence.fromIterable(toExecute)) {
-      LOG.info("Executing " + trg.getName());
-      Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).select(new ISelector<ITarget, IResult>() {
-        public IResult select(ITarget t) {
-          return results.getResult(t.getName());
-        }
-      }).translate(new ITranslator2<IResult, IResource>() {
-        public Iterable<IResource> translate(IResult r) {
-          return r.output();
-        }
-      });
-      IJob job = trg.createJob();
-      IResult jr = job.execute(input, monit, pool);
-      results.addResult(trg.getName(), jr);
-      if (!(jr.isSucessful()) || monit.pleaseStop()) {
-        LOG.info((jr.isSucessful() ?
-          "Stop requested" :
-          "Execution failed"
-        ));
-        break;
-      }
+    IMonitors mons = monitors;
+    if (mons == null) {
+      mons = new Script.Monitors();
     }
+    final Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
+    mons.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
+      public void invoke(IConfigMonitor cmon) {
+        for (ITarget trg : Sequence.fromIterable(toExecute)) {
+          LOG.info("Configuring" + trg.getName());
+          IConfig cfg = trg.createConfig();
+          if (cfg != null && !(cfg.configure(cmon, pool))) {
+            LOG.info("Configuration failed");
+            results.addResult(trg.getName(), new IResult.FAILURE(null));
+            return;
+          }
+        }
+      }
+    });
+    if (!(results.isSucessful())) {
+      return results;
+    }
+    mons.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
+      public void invoke(IJobMonitor monit) {
+        for (ITarget trg : Sequence.fromIterable(toExecute)) {
+          LOG.info("Executing " + trg.getName());
+          Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).select(new ISelector<ITarget, IResult>() {
+            public IResult select(ITarget t) {
+              return results.getResult(t.getName());
+            }
+          }).translate(new ITranslator2<IResult, IResource>() {
+            public Iterable<IResource> translate(IResult r) {
+              return r.output();
+            }
+          });
+          IJob job = trg.createJob();
+          IResult jr = job.execute(input, monit, pool);
+          results.addResult(trg.getName(), jr);
+          if (!(jr.isSucessful()) || monit.pleaseStop()) {
+            LOG.info((jr.isSucessful() ?
+              "Stop requested" :
+              "Execution failed"
+            ));
+            return;
+          }
+        }
+      }
+    });
     LOG.info("Finished executing script");
     return results;
   }
 
-  public class VariablesPool implements IVariablesPool {
+  public class VariablesPool implements IParametersPool {
     private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
 
     public VariablesPool() {
     }
 
-    public <T> T variables(ITarget.Name target, Class<T> cls) {
+    public <T> T parameters(ITarget.Name target, Class<T> cls) {
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
-        T vars = targetRange.getTarget(target).createVariables(cls);
+        T vars = targetRange.getTarget(target).createParameters(cls);
         MapSequence.fromMap(cache).put(target, vars);
       }
       return cls.cast(MapSequence.fromMap(cache).get(target));
+    }
+  }
+
+  private class Monitors implements IMonitors {
+    public Monitors() {
+    }
+
+    public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
+      code.invoke(new IJobMonitor.Stub());
+    }
+
+    public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
+      code.invoke(new IConfigMonitor.Stub());
     }
   }
 }

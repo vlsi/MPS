@@ -11,8 +11,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IMonitor;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
@@ -52,25 +54,37 @@ public class GenerateSpecial_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
-              pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
-              switch (monitor.<what_Option>relayQuery(new DOH_Query())) {
+              pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
+            default:
+              return new IResult.SUCCESS(_output_i03q2a_a0a);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return new IConfig() {
+        public boolean configure(final IConfigMonitor cmonitor, final IParametersPool pool) {
+          switch (0) {
+            case 0:
+              switch (cmonitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
-                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
+                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
                   break;
                 case IGNORE_i03q2a_c0a0a:
-                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
+                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
                   break;
                 case RETRY_i03q2a_b0a0a:
-                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>variables(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(true);
+                  pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(true);
                   break;
                 default:
               }
             default:
-              return new IResult.SUCCESS(_output_i03q2a_a0a);
+              return true;
           }
         }
       };
@@ -96,7 +110,7 @@ public class GenerateSpecial_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }
 

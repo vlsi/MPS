@@ -11,8 +11,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IMonitor;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import junit.framework.Assert;
@@ -54,16 +55,20 @@ public class Generator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_ixz87t_a0a = null;
           switch (0) {
             case 0:
-              pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).value("uninitialized");
+              pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(Target_ixz87t_a.this.getName(), Generator_Facet.Target_ixz87t_a.Variables.class).value("uninitialized");
             default:
               return new IResult.SUCCESS(_output_ixz87t_a0a);
           }
         }
       };
+    }
+
+    public IConfig createConfig() {
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -86,7 +91,7 @@ public class Generator_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }
 
@@ -122,12 +127,12 @@ public class Generator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_ixz87t_a0b = null;
           switch (0) {
             case 0:
-              Assert.assertEquals("uninitialized", pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value());
-              pool.<Generator_Facet.Target_ixz87t_a.Variables>variables(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value("VALUE");
+              Assert.assertEquals("uninitialized", pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value());
+              pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value("VALUE");
               for (IResource resource : input) {
                 _output_ixz87t_a0b = Sequence.fromIterable(_output_ixz87t_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
@@ -138,6 +143,10 @@ public class Generator_Facet implements IFacet {
           }
         }
       };
+    }
+
+    public IConfig createConfig() {
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -160,7 +169,7 @@ public class Generator_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }

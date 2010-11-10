@@ -16,57 +16,6 @@
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="505095865854377517">
-    <property name="virtualPackage" value="job" />
-    <link role="concept" targetNodeId="1.505095865854377502" resolveInfo="RelayQueryOperation" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="505095865854377518">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854377519" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="505095865854377520">
-      <property name="name" value="isDotExpressionLegalAsStatement" />
-      <property name="isVirtual" value="true" />
-      <link role="overriddenMethod" targetNodeId="2.1239212437413" resolveInfo="isDotExpressionLegalAsStatement" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="505095865854377521" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854377522">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="505095865854377558">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="505095865854377559">
-            <property name="value:3" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="505095865854377523" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="505095865854377524">
-      <property name="isVirtual" value="true" />
-      <property name="name" value="getVariableExpectedName" />
-      <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="2.1213877410087" resolveInfo="getVariableExpectedName" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="505095865854377525" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854377526">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="505095865854377552">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="505095865854377553">
-            <property name="value:3" value="option" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="505095865854377527" />
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="505095865854377532">
-      <property name="name" value="isLValue" />
-      <property name="isVirtual" value="true" />
-      <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="2.1213877410080" resolveInfo="isLValue" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="505095865854377533" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="505095865854377534">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="505095865854377556">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="505095865854377557">
-            <property name="value:3" value="false" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="505095865854377535" />
-    </node>
-  </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8853708281362145849">
     <property name="virtualPackage" value="query" />
@@ -201,6 +150,27 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4125795553994049048">
         <link role="concept:16" targetNodeId="3v.1107461130800:3" resolveInfo="Classifier" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1977954644795510055">
+    <property name="virtualPackage" value="query" />
+    <link role="concept" targetNodeId="1.1977954644795311519" resolveInfo="RelayQueryExpression" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1977954644795510056">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1977954644795510057" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1977954644795510058">
+      <property name="name" value="isLegalAsStatement" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="2.1239211900844" resolveInfo="isLegalAsStatement" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1977954644795510059" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1977954644795510060">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1977954644795510066">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1977954644795510067">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1977954644795510061" />
     </node>
   </node>
 </model>

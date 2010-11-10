@@ -16,9 +16,9 @@ import org.jmock.Expectations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.make.script.IMonitor;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IJob;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IParametersPool;
 
 @RunWith(JMock.class)
 public class Execute_Test extends MockTestCase {
@@ -34,7 +34,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute(Mockups.monitor(context, "mon"));
+    IResult res = sc.execute();
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());
@@ -74,7 +74,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(Mockups.monitor(context, "mon"));
+    IResult r = sc.execute();
     Assert.assertNotNull(r);
     Assert.assertTrue(r.isSucessful());
     Iterable<IResource> out = r.output();
@@ -129,7 +129,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult r = sc.execute(Mockups.monitor(context, "mon"));
+    IResult r = sc.execute();
     Assert.assertNotNull(r);
     Assert.assertFalse(r.isSucessful());
 
@@ -141,7 +141,7 @@ public class Execute_Test extends MockTestCase {
   public void test_variables() throws Exception {
     final ITarget make = Mockups.target(context, "make");
     final ITarget config = Mockups.target(context, "config");
-    final IMonitor monit = Mockups.monitor(context, "mon");
+    final IJobMonitor monit = Mockups.monitor(context, "mon");
     final String[] vars = new String[1];
     context.checking(new Expectations() {
       {
@@ -149,20 +149,20 @@ public class Execute_Test extends MockTestCase {
         will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         exactly(1).of(config).createJob();
         IJob cj = new IJob() {
-          public IResult execute(Iterable<IResource> res, IMonitor mon, IVariablesPool pool) {
-            String[] arr = pool.variables(new ITarget.Name("make"), (new String[0]).getClass());
+          public IResult execute(Iterable<IResource> res, IJobMonitor mon, IParametersPool pool) {
+            String[] arr = pool.parameters(new ITarget.Name("make"), (new String[0]).getClass());
             arr[0] = "BARFOO";
             return new IResult.SUCCESS(res);
           }
         };
         will(returnValue(cj));
 
-        exactly(1).of(make).createVariables(with(aNonNull(Class.class)));
+        exactly(1).of(make).createParameters(with(aNonNull(Class.class)));
         will(returnValue(vars));
         exactly(1).of(make).createJob();
         IJob mj = new IJob() {
-          public IResult execute(Iterable<IResource> res, IMonitor mon, IVariablesPool pool) {
-            String[] arr = pool.variables(new ITarget.Name("make"), (new String[0]).getClass());
+          public IResult execute(Iterable<IResource> res, IJobMonitor mon, IParametersPool pool) {
+            String[] arr = pool.parameters(new ITarget.Name("make"), (new String[0]).getClass());
             Assert.assertEquals("BARFOO", arr[0]);
             arr[0] = "FUBAR";
             return new IResult.SUCCESS(res);
@@ -182,7 +182,7 @@ public class Execute_Test extends MockTestCase {
     sc.validate();
     Assert.assertTrue(sc.isValid());
 
-    IResult res = sc.execute(monit);
+    IResult res = sc.execute();
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
     Assert.assertNotNull(res.output());

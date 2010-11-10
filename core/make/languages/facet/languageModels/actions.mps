@@ -249,7 +249,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeFactories:23" id="7320828025189345688">
-    <property name="name:23" value="Variables_name" />
+    <property name="name:23" value="Parameters_name" />
     <node role="nodeFactory:23" type="jetbrains.mps.lang.actions.structure.NodeFactory:23" id="7320828025189345689">
       <link role="applicableConcept:23" targetNodeId="1.7320828025189345662:1" resolveInfo="Variables" />
       <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="7320828025189345690">
@@ -257,7 +257,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7320828025189345692">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7320828025189345699">
               <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7320828025189345702">
-                <property name="value:3" value="Variables" />
+                <property name="value:3" value="Parameters" />
               </node>
               <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7320828025189345694">
                 <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode:23" id="7320828025189345693" />
@@ -272,7 +272,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="7320828025189375231">
-    <property name="name:23" value="LocalVariables" />
+    <property name="name:23" value="LocalParameters" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="7320828025189375232">
       <link role="applicableConcept:23" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="7320828025189375235">
@@ -417,7 +417,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="3344436107830239663">
-    <property name="name:23" value="ForeignVariables" />
+    <property name="name:23" value="ForeignParameters" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="3344436107830239664">
       <link role="applicableConcept:23" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="3344436107830239667">
@@ -525,7 +525,7 @@
                     <link role="concept:16" targetNodeId="1.3344436107830227888:1" resolveInfo="ForeignVarialblesExpression" />
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3344436107830251993">
-                    <node role="quotedNode:0" type="jetbrains.mps.make.facet.structure.ForeignVariablesExpression:1" id="3344436107830251994">
+                    <node role="quotedNode:0" type="jetbrains.mps.make.facet.structure.ForeignParametersExpression:1" id="3344436107830251994">
                       <node role="referenceAntiquotation$link_attribute$target:1" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="3344436107830251995">
                         <property name="label:0" value="ForeignVarialblesExpression" />
                         <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3344436107830251996">
@@ -561,8 +561,8 @@
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3344436107830252003">
                 <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3344436107830252004">
-                  <node role="quotedNode:0" type="jetbrains.mps.make.facet.structure.ForeignVariablesComponentExpression:1" id="3344436107830252006">
-                    <node role="operand:1" type="jetbrains.mps.make.facet.structure.ForeignVariablesExpression:1" id="3344436107830252007">
+                  <node role="quotedNode:0" type="jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression:1" id="3344436107830252006">
+                    <node role="operand:1" type="jetbrains.mps.make.facet.structure.ForeignParametersExpression:1" id="3344436107830252007">
                       <node role="_attr_$attribute:1" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="3344436107830252009">
                         <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3344436107830252011">
                           <link role="variableDeclaration:3" targetNodeId="3344436107830251991" resolveInfo="fve" />
@@ -623,7 +623,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeFactories:23" id="127305800529615843">
-    <property name="name:23" value="VariablesDeclaration_add_empty_var" />
+    <property name="name:23" value="ParametersDeclaration_add_empty_var" />
     <node role="nodeFactory:23" type="jetbrains.mps.lang.actions.structure.NodeFactory:23" id="127305800529615844">
       <link role="applicableConcept:23" targetNodeId="1.7320828025189345662:1" resolveInfo="VariablesDeclaration" />
       <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="127305800529615845">

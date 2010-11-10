@@ -38,17 +38,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.ForeignVariablesComponentExpression" file="ForeignVariablesComponentExpression.java">
+  <dependency className="jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression" file="ForeignParametersComponentExpression.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.DotExpression" />
-    <classNode dependClassName="jetbrains.mps.make.facet.structure.ForeignVariablesExpression" />
+    <classNode dependClassName="jetbrains.mps.make.facet.structure.ForeignParametersExpression" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.ForeignVariablesExpression" file="ForeignVariablesExpression.java">
+  <dependency className="jetbrains.mps.make.facet.structure.ForeignParametersExpression" file="ForeignParametersExpression.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
@@ -62,19 +62,28 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.LocalVariablesComponentExpression" file="LocalVariablesComponentExpression.java">
+  <dependency className="jetbrains.mps.make.facet.structure.LocalParametersComponentExpression" file="LocalParametersComponentExpression.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.DotExpression" />
-    <classNode dependClassName="jetbrains.mps.make.facet.structure.LocalVariablesExpression" />
+    <classNode dependClassName="jetbrains.mps.make.facet.structure.LocalParametersExpression" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.LocalVariablesExpression" file="LocalVariablesExpression.java">
+  <dependency className="jetbrains.mps.make.facet.structure.LocalParametersExpression" file="LocalParametersExpression.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.structure.ParametersDeclaration" file="ParametersDeclaration.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -95,8 +104,8 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.make.facet.structure.ParametersDeclaration" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependency" />
-    <classNode dependClassName="jetbrains.mps.make.facet.structure.VariablesDeclaration" />
     <classNode dependClassName="jetbrains.mps.make.script.structure.JobDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -126,15 +135,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.facet.structure.VariablesDeclaration" file="VariablesDeclaration.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
 </dependenciesRoot>
 

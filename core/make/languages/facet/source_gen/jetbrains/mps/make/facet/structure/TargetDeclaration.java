@@ -19,7 +19,7 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OVERRIDES = "overrides";
-  public static final String VARIABLES = "variables";
+  public static final String PARAMETERS = "parameters";
   public static final String JOB = "job";
   public static final String DEPENDENCY = "dependency";
 
@@ -67,12 +67,12 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept {
     super.setReferent(TargetDeclaration.OVERRIDES, node);
   }
 
-  public VariablesDeclaration getVariables() {
-    return (VariablesDeclaration) this.getChild(VariablesDeclaration.class, TargetDeclaration.VARIABLES);
+  public ParametersDeclaration getParameters() {
+    return (ParametersDeclaration) this.getChild(ParametersDeclaration.class, TargetDeclaration.PARAMETERS);
   }
 
-  public void setVariables(VariablesDeclaration node) {
-    super.setChild(TargetDeclaration.VARIABLES, node);
+  public void setParameters(ParametersDeclaration node) {
+    super.setChild(TargetDeclaration.PARAMETERS, node);
   }
 
   public JobDeclaration getJob() {

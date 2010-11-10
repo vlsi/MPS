@@ -19,7 +19,7 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="7320828025189375176">
-    <property name="name:3" value="typeof_LocalVariablesExpression" />
+    <property name="name:3" value="typeof_LocalParametersExpression" />
     <property name="virtualPackage:3" value="target" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7320828025189375177">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7320828025189375208">
@@ -84,7 +84,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3344436107830227913">
-    <property name="name:3" value="typeof_ForeignVariablesExpression" />
+    <property name="name:3" value="typeof_ForeignParametersExpression" />
     <property name="virtualPackage:3" value="target" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3344436107830227914">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3344436107830227917">

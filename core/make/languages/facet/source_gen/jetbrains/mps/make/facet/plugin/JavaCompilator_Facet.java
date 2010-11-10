@@ -11,12 +11,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IMonitor;
-import jetbrains.mps.make.script.IVariablesPool;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.make.script.IConfig;
 
 public class JavaCompilator_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -54,7 +55,7 @@ public class JavaCompilator_Facet implements IFacet {
 
     public IJob createJob() {
       return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IMonitor monitor, final IVariablesPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
           Iterable<IResource> _output_xl32vp_a0a = null;
           switch (0) {
             case 0:
@@ -79,6 +80,10 @@ public class JavaCompilator_Facet implements IFacet {
       };
     }
 
+    public IConfig createConfig() {
+      return null;
+    }
+
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
@@ -99,7 +104,7 @@ public class JavaCompilator_Facet implements IFacet {
       return name;
     }
 
-    public <T> T createVariables(Class<T> cls) {
+    public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }
