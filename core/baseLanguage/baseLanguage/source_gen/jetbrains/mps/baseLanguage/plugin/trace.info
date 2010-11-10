@@ -1157,83 +1157,85 @@
     <nodeInfo nodeId="4988944197752016616" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="9" endLine="143" endPosition="143" />
     <nodeInfo nodeId="4988944197752016801" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="145" startPosition="58" endLine="146" endPosition="13" />
     <nodeInfo nodeId="4988944197752016953" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="147" startPosition="5" endLine="148" endPosition="137" />
-    <nodeInfo nodeId="8312250104772460519" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="149" startPosition="118" endLine="150" endPosition="91" />
-    <nodeInfo nodeId="8312250104772460526" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="91" endLine="151" endPosition="53" />
-    <nodeInfo nodeId="8312250104772460540" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="155" startPosition="9" endLine="156" endPosition="28" />
-    <nodeInfo nodeId="8312250104772460545" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="156" startPosition="28" endLine="157" endPosition="29" />
-    <nodeInfo nodeId="1491958191742118922" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="158" startPosition="155" endLine="159" endPosition="43" />
-    <nodeInfo nodeId="8312250104772460557" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="159" startPosition="43" endLine="160" endPosition="39" />
-    <nodeInfo nodeId="8312250104772460562" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="160" startPosition="39" endLine="161" endPosition="85" />
-    <nodeInfo nodeId="8312250104772460571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="162" startPosition="69" endLine="163" endPosition="41" />
-    <nodeInfo nodeId="8312250104772460576" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="163" startPosition="41" endLine="164" endPosition="32" />
-    <nodeInfo nodeId="8312250104772460581" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="OverrideMethodsChecker.java" startLine="164" startPosition="32" endLine="165" endPosition="16" />
-    <nodeInfo nodeId="8312250104772460604" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="7" endLine="168" endPosition="135" />
-    <nodeInfo nodeId="4988944197752016902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="172" startPosition="150" endLine="173" endPosition="90" />
-    <nodeInfo nodeId="4717960406884226835" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="41" endLine="177" endPosition="57" />
-    <nodeInfo nodeId="4988944197752017095" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="11" endLine="180" endPosition="142" />
-    <nodeInfo nodeId="4988944197752062103" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="OverrideMethodsChecker.java" startLine="181" startPosition="37" endLine="182" endPosition="19" />
-    <nodeInfo nodeId="4988944197752062146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="185" startPosition="43" endLine="186" endPosition="115" />
-    <nodeInfo nodeId="4053237040709225123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="189" startPosition="38" endLine="190" endPosition="98" />
-    <nodeInfo nodeId="4988944197752062269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="190" startPosition="98" endLine="191" endPosition="85" />
-    <nodeInfo nodeId="4053237040709225464" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="84" endLine="193" endPosition="79" />
-    <nodeInfo nodeId="1491958191742118838" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="194" startPosition="64" endLine="195" endPosition="126" />
-    <nodeInfo nodeId="4053237040709225913" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="196" startPosition="68" endLine="197" endPosition="30" />
-    <nodeInfo nodeId="4988944197752016943" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="203" startPosition="5" endLine="204" endPosition="18" />
-    <nodeInfo nodeId="2374396819863378964" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="34" endLine="210" endPosition="18" />
-    <nodeInfo nodeId="1594966379432123429" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="213" startPosition="88" endLine="214" endPosition="20" />
-    <nodeInfo nodeId="1594966379432185661" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="46" endLine="217" endPosition="63" />
-    <nodeInfo nodeId="1594966379433195692" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="217" startPosition="63" endLine="218" endPosition="44" />
-    <nodeInfo nodeId="1594966379433196303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="218" startPosition="44" endLine="219" endPosition="53" />
-    <nodeInfo nodeId="1594966379433196321" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="219" startPosition="53" endLine="220" endPosition="48" />
-    <nodeInfo nodeId="1594966379433196384" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="221" startPosition="286" endLine="222" endPosition="22" />
-    <nodeInfo nodeId="1594966379433196324" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="223" startPosition="9" endLine="224" endPosition="63" />
-    <nodeInfo nodeId="1594966379433196299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="225" startPosition="273" endLine="226" endPosition="22" />
-    <nodeInfo nodeId="1594966379433196482" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="227" startPosition="9" endLine="228" endPosition="101" />
-    <nodeInfo nodeId="1594966379433196477" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="229" startPosition="610" endLine="230" endPosition="22" />
-    <nodeInfo nodeId="1594966379433199295" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="231" startPosition="9" endLine="232" endPosition="39" />
-    <nodeInfo nodeId="1594966379433199291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="233" startPosition="282" endLine="234" endPosition="22" />
-    <nodeInfo nodeId="1594966379433202433" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="121" endLine="237" endPosition="22" />
-    <nodeInfo nodeId="1594966379432185677" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="240" startPosition="50" endLine="241" endPosition="75" />
-    <nodeInfo nodeId="7326920176342419281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="241" startPosition="75" endLine="242" endPosition="61" />
-    <nodeInfo nodeId="7326920176342419316" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="242" startPosition="61" endLine="243" endPosition="53" />
-    <nodeInfo nodeId="7326920176342419331" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="243" startPosition="53" endLine="244" endPosition="51" />
-    <nodeInfo nodeId="7326920176342419837" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="245" startPosition="403" endLine="246" endPosition="22" />
-    <nodeInfo nodeId="7326920176342419809" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="279" endLine="249" endPosition="22" />
-    <nodeInfo nodeId="7326920176342419762" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="131" endLine="252" endPosition="22" />
-    <nodeInfo nodeId="2090290412713904634" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="255" startPosition="49" endLine="256" endPosition="72" />
-    <nodeInfo nodeId="2090290412713988194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="256" startPosition="72" endLine="257" endPosition="45" />
-    <nodeInfo nodeId="2090290412713988240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="111" endLine="259" endPosition="22" />
-    <nodeInfo nodeId="1594966379432123414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="262" startPosition="5" endLine="263" endPosition="17" />
-    <nodeInfo nodeId="1491958191742118865" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="267" startPosition="96" endLine="268" endPosition="118" />
-    <nodeInfo nodeId="1491958191742118884" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="109" endLine="271" endPosition="133" />
-    <nodeInfo nodeId="1491958191742118893" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="272" startPosition="5" endLine="273" endPosition="73" />
-    <nodeInfo nodeId="7523932196475815266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="276" startPosition="62" endLine="277" endPosition="75" />
-    <nodeInfo nodeId="7770368474366338979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="280" startPosition="77" endLine="281" endPosition="88" />
-    <nodeInfo nodeId="7326920176342413343" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="284" startPosition="54" endLine="285" endPosition="51" />
-    <nodeInfo nodeId="7326920176342413367" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="286" startPosition="108" endLine="287" endPosition="18" />
-    <nodeInfo nodeId="7326920176342413383" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="92" endLine="290" endPosition="37" />
-    <nodeInfo nodeId="7326920176342413390" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="291" startPosition="5" endLine="292" endPosition="17" />
+    <nodeInfo nodeId="915525566468219030" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="71" endLine="151" endPosition="17" />
+    <nodeInfo nodeId="8312250104772460519" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="152" startPosition="7" endLine="153" endPosition="91" />
+    <nodeInfo nodeId="8312250104772460526" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="153" startPosition="91" endLine="154" endPosition="53" />
+    <nodeInfo nodeId="8312250104772460540" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="158" startPosition="9" endLine="159" endPosition="28" />
+    <nodeInfo nodeId="8312250104772460545" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="159" startPosition="28" endLine="160" endPosition="29" />
+    <nodeInfo nodeId="1491958191742118922" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="161" startPosition="155" endLine="162" endPosition="43" />
+    <nodeInfo nodeId="8312250104772460557" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="162" startPosition="43" endLine="163" endPosition="39" />
+    <nodeInfo nodeId="8312250104772460562" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="163" startPosition="39" endLine="164" endPosition="85" />
+    <nodeInfo nodeId="8312250104772460571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="165" startPosition="69" endLine="166" endPosition="41" />
+    <nodeInfo nodeId="8312250104772460576" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="166" startPosition="41" endLine="167" endPosition="32" />
+    <nodeInfo nodeId="8312250104772460581" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="32" endLine="168" endPosition="16" />
+    <nodeInfo nodeId="8312250104772460604" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="170" startPosition="7" endLine="171" endPosition="135" />
+    <nodeInfo nodeId="4988944197752016902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="150" endLine="176" endPosition="90" />
+    <nodeInfo nodeId="4717960406884226835" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="41" endLine="180" endPosition="57" />
+    <nodeInfo nodeId="4988944197752017095" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="11" endLine="183" endPosition="142" />
+    <nodeInfo nodeId="4988944197752062103" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="37" endLine="185" endPosition="19" />
+    <nodeInfo nodeId="4988944197752062146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="43" endLine="189" endPosition="115" />
+    <nodeInfo nodeId="4053237040709225123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="38" endLine="193" endPosition="98" />
+    <nodeInfo nodeId="4988944197752062269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="193" startPosition="98" endLine="194" endPosition="85" />
+    <nodeInfo nodeId="4053237040709225464" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="195" startPosition="84" endLine="196" endPosition="79" />
+    <nodeInfo nodeId="1491958191742118838" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="197" startPosition="64" endLine="198" endPosition="126" />
+    <nodeInfo nodeId="4053237040709225913" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="68" endLine="200" endPosition="30" />
+    <nodeInfo nodeId="4988944197752016943" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="5" endLine="207" endPosition="18" />
+    <nodeInfo nodeId="2374396819863378964" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="34" endLine="213" endPosition="18" />
+    <nodeInfo nodeId="1594966379432123429" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="88" endLine="217" endPosition="20" />
+    <nodeInfo nodeId="1594966379432185661" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="219" startPosition="46" endLine="220" endPosition="63" />
+    <nodeInfo nodeId="1594966379433195692" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="220" startPosition="63" endLine="221" endPosition="44" />
+    <nodeInfo nodeId="1594966379433196303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="221" startPosition="44" endLine="222" endPosition="53" />
+    <nodeInfo nodeId="1594966379433196321" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="222" startPosition="53" endLine="223" endPosition="48" />
+    <nodeInfo nodeId="1594966379433196384" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="286" endLine="225" endPosition="22" />
+    <nodeInfo nodeId="1594966379433196324" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="226" startPosition="9" endLine="227" endPosition="63" />
+    <nodeInfo nodeId="1594966379433196299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="273" endLine="229" endPosition="22" />
+    <nodeInfo nodeId="1594966379433196482" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="230" startPosition="9" endLine="231" endPosition="101" />
+    <nodeInfo nodeId="1594966379433196477" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="610" endLine="233" endPosition="22" />
+    <nodeInfo nodeId="1594966379433199295" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="234" startPosition="9" endLine="235" endPosition="39" />
+    <nodeInfo nodeId="1594966379433199291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="282" endLine="237" endPosition="22" />
+    <nodeInfo nodeId="1594966379433202433" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="239" startPosition="121" endLine="240" endPosition="22" />
+    <nodeInfo nodeId="1594966379432185677" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="243" startPosition="50" endLine="244" endPosition="75" />
+    <nodeInfo nodeId="7326920176342419281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="244" startPosition="75" endLine="245" endPosition="61" />
+    <nodeInfo nodeId="7326920176342419316" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="245" startPosition="61" endLine="246" endPosition="53" />
+    <nodeInfo nodeId="7326920176342419331" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="246" startPosition="53" endLine="247" endPosition="51" />
+    <nodeInfo nodeId="7326920176342419837" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="403" endLine="249" endPosition="22" />
+    <nodeInfo nodeId="7326920176342419809" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="279" endLine="252" endPosition="22" />
+    <nodeInfo nodeId="7326920176342419762" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="254" startPosition="131" endLine="255" endPosition="22" />
+    <nodeInfo nodeId="2090290412713904634" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="49" endLine="259" endPosition="72" />
+    <nodeInfo nodeId="2090290412713988194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="259" startPosition="72" endLine="260" endPosition="45" />
+    <nodeInfo nodeId="2090290412713988240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="261" startPosition="111" endLine="262" endPosition="22" />
+    <nodeInfo nodeId="1594966379432123414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="265" startPosition="5" endLine="266" endPosition="17" />
+    <nodeInfo nodeId="1491958191742118865" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="96" endLine="271" endPosition="118" />
+    <nodeInfo nodeId="1491958191742118884" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="109" endLine="274" endPosition="133" />
+    <nodeInfo nodeId="1491958191742118893" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="275" startPosition="5" endLine="276" endPosition="73" />
+    <nodeInfo nodeId="7523932196475815266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="62" endLine="280" endPosition="75" />
+    <nodeInfo nodeId="7770368474366338979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="77" endLine="284" endPosition="88" />
+    <nodeInfo nodeId="7326920176342413343" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="287" startPosition="54" endLine="288" endPosition="51" />
+    <nodeInfo nodeId="7326920176342413367" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="108" endLine="290" endPosition="18" />
+    <nodeInfo nodeId="7326920176342413383" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="292" startPosition="92" endLine="293" endPosition="37" />
+    <nodeInfo nodeId="7326920176342413390" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="294" startPosition="5" endLine="295" endPosition="17" />
     <nodeInfo nodeId="5002400195357779996" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="OverrideMethodsChecker.java" startLine="46" startPosition="0" endLine="48" endPosition="3" />
     <nodeInfo nodeId="3859623152551848311" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="56" startPosition="104" endLine="59" endPosition="5" />
     <nodeInfo nodeId="1037184397602703809" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="108" startPosition="124" endLine="111" endPosition="5" />
     <nodeInfo nodeId="4988944197752016783" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="144" startPosition="5" endLine="147" endPosition="5" />
-    <nodeInfo nodeId="4988944197752062067" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="180" startPosition="142" endLine="183" endPosition="9" />
-    <nodeInfo nodeId="4053237040709225859" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="195" startPosition="126" endLine="198" endPosition="15" />
-    <nodeInfo nodeId="2374396819863378957" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="208" startPosition="63" endLine="211" endPosition="5" />
-    <nodeInfo nodeId="1594966379432123417" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="61" endLine="215" endPosition="7" />
-    <nodeInfo nodeId="1594966379433196330" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="220" startPosition="48" endLine="223" endPosition="9" />
-    <nodeInfo nodeId="1594966379433195768" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="63" endLine="227" endPosition="9" />
-    <nodeInfo nodeId="1594966379433196402" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="101" endLine="231" endPosition="9" />
-    <nodeInfo nodeId="1594966379433196484" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="39" endLine="235" endPosition="9" />
-    <nodeInfo nodeId="1594966379433202413" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="235" startPosition="9" endLine="238" endPosition="9" />
-    <nodeInfo nodeId="7326920176342419346" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="244" startPosition="51" endLine="247" endPosition="9" />
-    <nodeInfo nodeId="7326920176342419720" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="247" startPosition="9" endLine="250" endPosition="9" />
-    <nodeInfo nodeId="7326920176342419739" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="250" startPosition="9" endLine="253" endPosition="9" />
-    <nodeInfo nodeId="2090290412713988161" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="257" startPosition="45" endLine="260" endPosition="9" />
-    <nodeInfo nodeId="1491958191742118851" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="266" startPosition="46" endLine="269" endPosition="5" />
-    <nodeInfo nodeId="1491958191742118872" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="5" endLine="272" endPosition="5" />
-    <nodeInfo nodeId="7326920176342413355" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="285" startPosition="51" endLine="288" endPosition="5" />
-    <nodeInfo nodeId="7326920176342413371" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="288" startPosition="5" endLine="291" endPosition="5" />
+    <nodeInfo nodeId="915525566468217560" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="149" startPosition="118" endLine="152" endPosition="7" />
+    <nodeInfo nodeId="4988944197752062067" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="183" startPosition="142" endLine="186" endPosition="9" />
+    <nodeInfo nodeId="4053237040709225859" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="198" startPosition="126" endLine="201" endPosition="15" />
+    <nodeInfo nodeId="2374396819863378957" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="63" endLine="214" endPosition="5" />
+    <nodeInfo nodeId="1594966379432123417" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="215" startPosition="61" endLine="218" endPosition="7" />
+    <nodeInfo nodeId="1594966379433196330" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="223" startPosition="48" endLine="226" endPosition="9" />
+    <nodeInfo nodeId="1594966379433195768" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="227" startPosition="63" endLine="230" endPosition="9" />
+    <nodeInfo nodeId="1594966379433196402" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="231" startPosition="101" endLine="234" endPosition="9" />
+    <nodeInfo nodeId="1594966379433196484" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="235" startPosition="39" endLine="238" endPosition="9" />
+    <nodeInfo nodeId="1594966379433202413" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="238" startPosition="9" endLine="241" endPosition="9" />
+    <nodeInfo nodeId="7326920176342419346" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="247" startPosition="51" endLine="250" endPosition="9" />
+    <nodeInfo nodeId="7326920176342419720" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="250" startPosition="9" endLine="253" endPosition="9" />
+    <nodeInfo nodeId="7326920176342419739" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="253" startPosition="9" endLine="256" endPosition="9" />
+    <nodeInfo nodeId="2090290412713988161" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="260" startPosition="45" endLine="263" endPosition="9" />
+    <nodeInfo nodeId="1491958191742118851" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="46" endLine="272" endPosition="5" />
+    <nodeInfo nodeId="1491958191742118872" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="272" startPosition="5" endLine="275" endPosition="5" />
+    <nodeInfo nodeId="7326920176342413355" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="288" startPosition="51" endLine="291" endPosition="5" />
+    <nodeInfo nodeId="7326920176342413371" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="291" startPosition="5" endLine="294" endPosition="5" />
     <nodeInfo nodeId="3859623152551848450" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="204" endLine="55" endPosition="0" />
     <nodeInfo nodeId="1922058634759502454" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="81" startPosition="181" endLine="85" endPosition="0" />
     <nodeInfo nodeId="1922058634759503019" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="87" startPosition="51" endLine="91" endPosition="11" />
@@ -1242,43 +1244,43 @@
     <nodeInfo nodeId="1037184397602734876" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="119" startPosition="12" endLine="123" endPosition="9" />
     <nodeInfo nodeId="7770368474366338934" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="108" endLine="131" endPosition="11" />
     <nodeInfo nodeId="4988944197752016445" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="134" endLine="142" endPosition="0" />
-    <nodeInfo nodeId="8312250104772460532" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="151" startPosition="53" endLine="155" endPosition="9" />
-    <nodeInfo nodeId="4717960406884226833" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="167" endLine="179" endPosition="0" />
-    <nodeInfo nodeId="4988944197752062137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="105" endLine="188" endPosition="0" />
-    <nodeInfo nodeId="7523932196475726704" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="275" startPosition="0" endLine="279" endPosition="0" />
-    <nodeInfo nodeId="7770368474366338968" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="0" endLine="283" endPosition="0" />
+    <nodeInfo nodeId="8312250104772460532" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverrideMethodsChecker.java" startLine="154" startPosition="53" endLine="158" endPosition="9" />
+    <nodeInfo nodeId="4717960406884226833" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="167" endLine="182" endPosition="0" />
+    <nodeInfo nodeId="4988944197752062137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="105" endLine="191" endPosition="0" />
+    <nodeInfo nodeId="7523932196475726704" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="278" startPosition="0" endLine="282" endPosition="0" />
+    <nodeInfo nodeId="7770368474366338968" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="282" startPosition="0" endLine="286" endPosition="0" />
     <nodeInfo nodeId="3859623152551802603" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="175" endLine="55" endPosition="7" />
     <nodeInfo nodeId="1922058634759501911" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="80" startPosition="99" endLine="85" endPosition="22" />
-    <nodeInfo nodeId="8312250104772460569" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="161" startPosition="85" endLine="166" endPosition="9" />
-    <nodeInfo nodeId="4988944197752062109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="183" startPosition="9" endLine="188" endPosition="11" />
+    <nodeInfo nodeId="8312250104772460569" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="164" startPosition="85" endLine="169" endPosition="9" />
+    <nodeInfo nodeId="4988944197752062109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="186" startPosition="9" endLine="191" endPosition="11" />
     <nodeInfo nodeId="7770368474366338916" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="126" startPosition="80" endLine="132" endPosition="9" />
-    <nodeInfo nodeId="4053237040709225583" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="193" startPosition="79" endLine="199" endPosition="13" />
+    <nodeInfo nodeId="4053237040709225583" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="196" startPosition="79" endLine="202" endPosition="13" />
     <nodeInfo nodeId="1447667470348977854" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="OverrideMethodsChecker.java" startLine="62" startPosition="71" endLine="69" endPosition="7" />
     <nodeInfo nodeId="5249197957043259694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="94" startPosition="28" endLine="101" endPosition="9" />
     <nodeInfo nodeId="4988944197752016418" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="137" startPosition="102" endLine="144" endPosition="5" />
-    <nodeInfo nodeId="2090290412713904620" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="254" startPosition="7" endLine="261" endPosition="7" />
-    <nodeInfo nodeId="4053237040709225080" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="191" startPosition="85" endLine="200" endPosition="11" />
+    <nodeInfo nodeId="2090290412713904620" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="257" startPosition="7" endLine="264" endPosition="7" />
+    <nodeInfo nodeId="4053237040709225080" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="194" startPosition="85" endLine="203" endPosition="11" />
     <nodeInfo nodeId="1037184397602734884" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="123" startPosition="9" endLine="133" endPosition="7" />
-    <nodeInfo nodeId="8312250104772460549" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="OverrideMethodsChecker.java" startLine="157" startPosition="29" endLine="167" endPosition="7" />
-    <nodeInfo nodeId="1491958191742118815" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="265" startPosition="0" endLine="275" endPosition="0" />
+    <nodeInfo nodeId="8312250104772460549" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="OverrideMethodsChecker.java" startLine="160" startPosition="29" endLine="170" endPosition="7" />
+    <nodeInfo nodeId="1491958191742118815" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="268" startPosition="0" endLine="278" endPosition="0" />
     <nodeInfo nodeId="2326364852992438471" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="60" startPosition="82" endLine="71" endPosition="5" />
-    <nodeInfo nodeId="323605094887038193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="0" endLine="294" endPosition="0" />
-    <nodeInfo nodeId="4988944197752062252" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="11" endLine="201" endPosition="9" />
+    <nodeInfo nodeId="323605094887038193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="286" startPosition="0" endLine="297" endPosition="0" />
+    <nodeInfo nodeId="4988944197752062252" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="191" startPosition="11" endLine="204" endPosition="9" />
     <nodeInfo nodeId="1037184397602734874" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="OverrideMethodsChecker.java" startLine="119" startPosition="10" endLine="134" endPosition="5" />
-    <nodeInfo nodeId="1594966379432185646" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="239" startPosition="7" endLine="254" endPosition="7" />
+    <nodeInfo nodeId="1594966379432185646" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="242" startPosition="7" endLine="257" endPosition="7" />
     <nodeInfo nodeId="5249197957043259264" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="OverrideMethodsChecker.java" startLine="85" startPosition="22" endLine="102" endPosition="7" />
     <nodeInfo nodeId="1037184397602734859" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="113" startPosition="61" endLine="134" endPosition="5" />
-    <nodeInfo nodeId="8312250104772460434" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="137" endLine="169" endPosition="5" />
-    <nodeInfo nodeId="1594966379432185121" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="215" startPosition="7" endLine="239" endPosition="7" />
+    <nodeInfo nodeId="8312250104772460434" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="137" endLine="172" endPosition="5" />
+    <nodeInfo nodeId="1594966379432185121" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="OverrideMethodsChecker.java" startLine="218" startPosition="7" endLine="242" endPosition="7" />
     <nodeInfo nodeId="5002400195358006646" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="0" endLine="74" endPosition="0" />
     <nodeInfo nodeId="5249197957043258330" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="76" startPosition="76" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="4988944197752017014" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="79" endLine="202" endPosition="7" />
-    <nodeInfo nodeId="4988944197752017003" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="173" startPosition="90" endLine="203" endPosition="5" />
+    <nodeInfo nodeId="4988944197752017014" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="79" endLine="205" endPosition="7" />
+    <nodeInfo nodeId="4988944197752017003" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="90" endLine="206" endPosition="5" />
     <nodeInfo nodeId="427992486439366054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="0" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="4988944197752016811" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="171" startPosition="0" endLine="206" endPosition="0" />
-    <nodeInfo nodeId="1594966379432123406" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="5" endLine="262" endPosition="5" />
-    <nodeInfo nodeId="9033318990679763482" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="0" endLine="265" endPosition="0" />
-    <nodeInfo nodeId="2326364852992438480" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="106" startPosition="0" endLine="171" endPosition="0" />
+    <nodeInfo nodeId="4988944197752016811" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="0" endLine="209" endPosition="0" />
+    <nodeInfo nodeId="1594966379432123406" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverrideMethodsChecker.java" startLine="214" startPosition="5" endLine="265" endPosition="5" />
+    <nodeInfo nodeId="9033318990679763482" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="0" endLine="268" endPosition="0" />
+    <nodeInfo nodeId="2326364852992438480" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OverrideMethodsChecker.java" startLine="106" startPosition="0" endLine="174" endPosition="0" />
     <scopeInfo nodeId="5002400195357779999" fileName="OverrideMethodsChecker.java" startLine="47" startPosition="35" endLine="47" endPosition="35" />
     <scopeInfo nodeId="3859623152551848451" fileName="OverrideMethodsChecker.java" startLine="52" startPosition="39" endLine="53" endPosition="187" />
     <scopeInfo nodeId="3859623152551848312" fileName="OverrideMethodsChecker.java" startLine="57" startPosition="82" endLine="58" endPosition="51" />
@@ -1288,27 +1290,28 @@
     <scopeInfo nodeId="4988944197752016446" fileName="OverrideMethodsChecker.java" startLine="139" startPosition="39" endLine="140" endPosition="58" />
     <scopeInfo nodeId="4988944197752016421" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="9" endLine="143" endPosition="143" />
     <scopeInfo nodeId="4988944197752016784" fileName="OverrideMethodsChecker.java" startLine="145" startPosition="58" endLine="146" endPosition="13" />
-    <scopeInfo nodeId="4717960406884226834" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="41" endLine="177" endPosition="57" />
-    <scopeInfo nodeId="4988944197752062068" fileName="OverrideMethodsChecker.java" startLine="181" startPosition="37" endLine="182" endPosition="19" />
-    <scopeInfo nodeId="4988944197752062138" fileName="OverrideMethodsChecker.java" startLine="185" startPosition="43" endLine="186" endPosition="115" />
-    <scopeInfo nodeId="4053237040709225860" fileName="OverrideMethodsChecker.java" startLine="196" startPosition="68" endLine="197" endPosition="30" />
-    <scopeInfo nodeId="2374396819863378958" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="34" endLine="210" endPosition="18" />
-    <scopeInfo nodeId="1594966379432123419" fileName="OverrideMethodsChecker.java" startLine="213" startPosition="88" endLine="214" endPosition="20" />
-    <scopeInfo nodeId="1594966379433196331" fileName="OverrideMethodsChecker.java" startLine="221" startPosition="286" endLine="222" endPosition="22" />
-    <scopeInfo nodeId="1594966379433195769" fileName="OverrideMethodsChecker.java" startLine="225" startPosition="273" endLine="226" endPosition="22" />
-    <scopeInfo nodeId="1594966379433196403" fileName="OverrideMethodsChecker.java" startLine="229" startPosition="610" endLine="230" endPosition="22" />
-    <scopeInfo nodeId="1594966379433196485" fileName="OverrideMethodsChecker.java" startLine="233" startPosition="282" endLine="234" endPosition="22" />
-    <scopeInfo nodeId="1594966379433202414" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="121" endLine="237" endPosition="22" />
-    <scopeInfo nodeId="7326920176342419347" fileName="OverrideMethodsChecker.java" startLine="245" startPosition="403" endLine="246" endPosition="22" />
-    <scopeInfo nodeId="7326920176342419721" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="279" endLine="249" endPosition="22" />
-    <scopeInfo nodeId="7326920176342419740" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="131" endLine="252" endPosition="22" />
-    <scopeInfo nodeId="2090290412713988162" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="111" endLine="259" endPosition="22" />
-    <scopeInfo nodeId="1491958191742118853" fileName="OverrideMethodsChecker.java" startLine="267" startPosition="96" endLine="268" endPosition="118" />
-    <scopeInfo nodeId="1491958191742118873" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="109" endLine="271" endPosition="133" />
-    <scopeInfo nodeId="7523932196475726707" fileName="OverrideMethodsChecker.java" startLine="276" startPosition="62" endLine="277" endPosition="75" />
-    <scopeInfo nodeId="7770368474366338971" fileName="OverrideMethodsChecker.java" startLine="280" startPosition="77" endLine="281" endPosition="88" />
-    <scopeInfo nodeId="7326920176342413356" fileName="OverrideMethodsChecker.java" startLine="286" startPosition="108" endLine="287" endPosition="18" />
-    <scopeInfo nodeId="7326920176342413372" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="92" endLine="290" endPosition="37" />
+    <scopeInfo nodeId="915525566468217561" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="71" endLine="151" endPosition="17" />
+    <scopeInfo nodeId="4717960406884226834" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="41" endLine="180" endPosition="57" />
+    <scopeInfo nodeId="4988944197752062068" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="37" endLine="185" endPosition="19" />
+    <scopeInfo nodeId="4988944197752062138" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="43" endLine="189" endPosition="115" />
+    <scopeInfo nodeId="4053237040709225860" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="68" endLine="200" endPosition="30" />
+    <scopeInfo nodeId="2374396819863378958" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="34" endLine="213" endPosition="18" />
+    <scopeInfo nodeId="1594966379432123419" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="88" endLine="217" endPosition="20" />
+    <scopeInfo nodeId="1594966379433196331" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="286" endLine="225" endPosition="22" />
+    <scopeInfo nodeId="1594966379433195769" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="273" endLine="229" endPosition="22" />
+    <scopeInfo nodeId="1594966379433196403" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="610" endLine="233" endPosition="22" />
+    <scopeInfo nodeId="1594966379433196485" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="282" endLine="237" endPosition="22" />
+    <scopeInfo nodeId="1594966379433202414" fileName="OverrideMethodsChecker.java" startLine="239" startPosition="121" endLine="240" endPosition="22" />
+    <scopeInfo nodeId="7326920176342419347" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="403" endLine="249" endPosition="22" />
+    <scopeInfo nodeId="7326920176342419721" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="279" endLine="252" endPosition="22" />
+    <scopeInfo nodeId="7326920176342419740" fileName="OverrideMethodsChecker.java" startLine="254" startPosition="131" endLine="255" endPosition="22" />
+    <scopeInfo nodeId="2090290412713988162" fileName="OverrideMethodsChecker.java" startLine="261" startPosition="111" endLine="262" endPosition="22" />
+    <scopeInfo nodeId="1491958191742118853" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="96" endLine="271" endPosition="118" />
+    <scopeInfo nodeId="1491958191742118873" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="109" endLine="274" endPosition="133" />
+    <scopeInfo nodeId="7523932196475726707" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="62" endLine="280" endPosition="75" />
+    <scopeInfo nodeId="7770368474366338971" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="77" endLine="284" endPosition="88" />
+    <scopeInfo nodeId="7326920176342413356" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="108" endLine="290" endPosition="18" />
+    <scopeInfo nodeId="7326920176342413372" fileName="OverrideMethodsChecker.java" startLine="292" startPosition="92" endLine="293" endPosition="37" />
     <scopeInfo nodeId="5002400195357779996" fileName="OverrideMethodsChecker.java" startLine="46" startPosition="0" endLine="48" endPosition="3" />
     <scopeInfo nodeId="5249197957043259577" fileName="OverrideMethodsChecker.java" startLine="97" startPosition="55" endLine="99" endPosition="18" />
     <scopeInfo nodeId="7770368474366338937" fileName="OverrideMethodsChecker.java" startLine="128" startPosition="197" endLine="130" endPosition="85" />
@@ -1316,53 +1319,53 @@
       <varInfo nodeId="1447667470348977858" varName="indexNotReady" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470348977860" fileName="OverrideMethodsChecker.java" startLine="65" startPosition="54" endLine="68" endPosition="34" />
-    <scopeInfo nodeId="8312250104772460570" fileName="OverrideMethodsChecker.java" startLine="162" startPosition="69" endLine="165" endPosition="16" />
+    <scopeInfo nodeId="8312250104772460570" fileName="OverrideMethodsChecker.java" startLine="165" startPosition="69" endLine="168" endPosition="16" />
     <scopeInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="204" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="81" startPosition="181" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1037184397602734860" fileName="OverrideMethodsChecker.java" startLine="114" startPosition="81" endLine="118" endPosition="9" />
     <scopeInfo nodeId="7770368474366338917" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="108" endLine="131" endPosition="11" />
     <scopeInfo nodeId="7770368474366338934" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="108" endLine="131" endPosition="11" />
     <scopeInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="134" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="167" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="105" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="4053237040709225584" fileName="OverrideMethodsChecker.java" startLine="194" startPosition="64" endLine="198" endPosition="15" />
-    <scopeInfo nodeId="7523932196475726704" fileName="OverrideMethodsChecker.java" startLine="275" startPosition="0" endLine="279" endPosition="0">
+    <scopeInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="167" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="105" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="4053237040709225584" fileName="OverrideMethodsChecker.java" startLine="197" startPosition="64" endLine="201" endPosition="15" />
+    <scopeInfo nodeId="7523932196475726704" fileName="OverrideMethodsChecker.java" startLine="278" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="7523932196475740040" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7770368474366338968" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="0" endLine="283" endPosition="0">
+    <scopeInfo nodeId="7770368474366338968" fileName="OverrideMethodsChecker.java" startLine="282" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="7770368474366338977" varName="enumConstantDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5249197957043259695" fileName="OverrideMethodsChecker.java" startLine="95" startPosition="27" endLine="100" endPosition="11" />
-    <scopeInfo nodeId="2090290412713904621" fileName="OverrideMethodsChecker.java" startLine="255" startPosition="49" endLine="260" endPosition="9">
+    <scopeInfo nodeId="2090290412713904621" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="49" endLine="263" endPosition="9">
       <varInfo nodeId="2090290412713988195" varName="node" />
       <varInfo nodeId="2090290412713904635" varName="propertyEvent" />
     </scopeInfo>
     <scopeInfo nodeId="4988944197752016418" fileName="OverrideMethodsChecker.java" startLine="137" startPosition="102" endLine="144" endPosition="5" />
-    <scopeInfo nodeId="4053237040709225081" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="84" endLine="199" endPosition="13" />
-    <scopeInfo nodeId="1491958191742118818" fileName="OverrideMethodsChecker.java" startLine="266" startPosition="46" endLine="273" endPosition="73" />
+    <scopeInfo nodeId="4053237040709225081" fileName="OverrideMethodsChecker.java" startLine="195" startPosition="84" endLine="202" endPosition="13" />
+    <scopeInfo nodeId="1491958191742118818" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="46" endLine="276" endPosition="73" />
     <scopeInfo nodeId="1037184397602734887" fileName="OverrideMethodsChecker.java" startLine="124" startPosition="77" endLine="132" endPosition="9" />
-    <scopeInfo nodeId="8312250104772460550" fileName="OverrideMethodsChecker.java" startLine="158" startPosition="155" endLine="166" endPosition="9">
+    <scopeInfo nodeId="8312250104772460550" fileName="OverrideMethodsChecker.java" startLine="161" startPosition="155" endLine="169" endPosition="9">
       <varInfo nodeId="1491958191742118923" varName="overridingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379433202438" fileName="OverrideMethodsChecker.java" startLine="284" startPosition="54" endLine="292" endPosition="17">
+    <scopeInfo nodeId="1594966379433202438" fileName="OverrideMethodsChecker.java" startLine="287" startPosition="54" endLine="295" endPosition="17">
       <varInfo nodeId="7326920176342413344" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="2326364852992438474" fileName="OverrideMethodsChecker.java" startLine="61" startPosition="74" endLine="70" endPosition="60" />
     <scopeInfo nodeId="1037184397602734884" fileName="OverrideMethodsChecker.java" startLine="123" startPosition="9" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="8312250104772460549" fileName="OverrideMethodsChecker.java" startLine="157" startPosition="29" endLine="167" endPosition="7">
+    <scopeInfo nodeId="8312250104772460549" fileName="OverrideMethodsChecker.java" startLine="160" startPosition="29" endLine="170" endPosition="7">
       <varInfo nodeId="8312250104772460590" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1491958191742118815" fileName="OverrideMethodsChecker.java" startLine="265" startPosition="0" endLine="275" endPosition="0">
+    <scopeInfo nodeId="1491958191742118815" fileName="OverrideMethodsChecker.java" startLine="268" startPosition="0" endLine="278" endPosition="0">
       <varInfo nodeId="1491958191742118849" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2326364852992438471" fileName="OverrideMethodsChecker.java" startLine="60" startPosition="82" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="4988944197752062253" fileName="OverrideMethodsChecker.java" startLine="189" startPosition="38" endLine="200" endPosition="11">
+    <scopeInfo nodeId="4988944197752062253" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="38" endLine="203" endPosition="11">
       <varInfo nodeId="4053237040709225124" varName="overridingMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="323605094887038193" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="0" endLine="294" endPosition="0">
+    <scopeInfo nodeId="323605094887038193" fileName="OverrideMethodsChecker.java" startLine="286" startPosition="0" endLine="297" endPosition="0">
       <varInfo nodeId="7326920176342332039" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379432185647" fileName="OverrideMethodsChecker.java" startLine="240" startPosition="50" endLine="253" endPosition="9">
+    <scopeInfo nodeId="1594966379432185647" fileName="OverrideMethodsChecker.java" startLine="243" startPosition="50" endLine="256" endPosition="9">
       <varInfo nodeId="7326920176342419332" varName="referenceRole" />
       <varInfo nodeId="7326920176342419317" varName="sourceNode" />
       <varInfo nodeId="1594966379432185678" varName="referenceEvent" />
@@ -1375,25 +1378,25 @@
     <scopeInfo nodeId="5249197957043259264" fileName="OverrideMethodsChecker.java" startLine="85" startPosition="22" endLine="102" endPosition="7">
       <varInfo nodeId="5249197957043259267" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8312250104772460437" fileName="OverrideMethodsChecker.java" startLine="149" startPosition="118" endLine="168" endPosition="135">
-      <varInfo nodeId="8312250104772460520" varName="overriden" />
-      <varInfo nodeId="8312250104772460546" varName="messageCounter" />
-      <varInfo nodeId="8312250104772460527" varName="tooltip" />
-    </scopeInfo>
-    <scopeInfo nodeId="8312250104772460434" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="137" endLine="169" endPosition="5" />
     <scopeInfo nodeId="5002400195358006659" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="175" endLine="72" endPosition="18">
       <varInfo nodeId="5002400195358075953" varName="result" />
       <varInfo nodeId="3859623152551802604" varName="classifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752017017" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="11" endLine="201" endPosition="9">
+    <scopeInfo nodeId="8312250104772460437" fileName="OverrideMethodsChecker.java" startLine="149" startPosition="118" endLine="171" endPosition="135">
+      <varInfo nodeId="8312250104772460520" varName="overriden" />
+      <varInfo nodeId="8312250104772460546" varName="messageCounter" />
+      <varInfo nodeId="8312250104772460527" varName="tooltip" />
+    </scopeInfo>
+    <scopeInfo nodeId="4988944197752017017" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="11" endLine="204" endPosition="9">
       <varInfo nodeId="4988944197752017096" varName="similarMethods" />
       <varInfo nodeId="4988944197752062110" varName="overridenMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379432185122" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="46" endLine="238" endPosition="9">
+    <scopeInfo nodeId="1594966379432185122" fileName="OverrideMethodsChecker.java" startLine="219" startPosition="46" endLine="241" endPosition="9">
       <varInfo nodeId="1594966379433195693" varName="child" />
       <varInfo nodeId="1594966379433196304" varName="childRole" />
       <varInfo nodeId="1594966379432185662" varName="childEvent" />
     </scopeInfo>
+    <scopeInfo nodeId="8312250104772460434" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="137" endLine="172" endPosition="5" />
     <scopeInfo nodeId="5002400195358006646" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="3238664143031470885" varName="editorContext" />
       <varInfo nodeId="5002400195358006650" varName="rootNode" />
@@ -1408,46 +1411,46 @@
       <varInfo nodeId="5249197957043258398" varName="tooltip" />
     </scopeInfo>
     <scopeInfo nodeId="5249197957043258330" fileName="OverrideMethodsChecker.java" startLine="76" startPosition="76" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="4988944197752017006" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="79" endLine="202" endPosition="7" />
-    <scopeInfo nodeId="4988944197752017014" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="79" endLine="202" endPosition="7" />
+    <scopeInfo nodeId="4988944197752017006" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="79" endLine="205" endPosition="7" />
+    <scopeInfo nodeId="4988944197752017014" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="79" endLine="205" endPosition="7" />
     <scopeInfo nodeId="427992486439366057" fileName="OverrideMethodsChecker.java" startLine="75" startPosition="87" endLine="104" endPosition="5">
       <varInfo nodeId="1271531489078190431" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752017003" fileName="OverrideMethodsChecker.java" startLine="173" startPosition="90" endLine="203" endPosition="5" />
+    <scopeInfo nodeId="4988944197752017003" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="90" endLine="206" endPosition="5" />
     <scopeInfo nodeId="427992486439366054" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="427992486439388048" varName="container" />
       <varInfo nodeId="427992486439389544" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752016814" fileName="OverrideMethodsChecker.java" startLine="172" startPosition="150" endLine="204" endPosition="18">
+    <scopeInfo nodeId="4988944197752016814" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="150" endLine="207" endPosition="18">
       <varInfo nodeId="4988944197752016903" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752016811" fileName="OverrideMethodsChecker.java" startLine="171" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="4988944197752016811" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="4988944197752016850" varName="nameToMethodsMap" />
       <varInfo nodeId="4988944197752016857" varName="derivedClassifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379432123409" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="61" endLine="261" endPosition="7" />
-    <scopeInfo nodeId="1594966379432123406" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="5" endLine="262" endPosition="5" />
-    <scopeInfo nodeId="9033318990679763488" fileName="OverrideMethodsChecker.java" startLine="208" startPosition="63" endLine="263" endPosition="17" />
-    <scopeInfo nodeId="9033318990679763482" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="0" endLine="265" endPosition="0">
+    <scopeInfo nodeId="1594966379432123409" fileName="OverrideMethodsChecker.java" startLine="215" startPosition="61" endLine="264" endPosition="7" />
+    <scopeInfo nodeId="1594966379432123406" fileName="OverrideMethodsChecker.java" startLine="214" startPosition="5" endLine="265" endPosition="5" />
+    <scopeInfo nodeId="9033318990679763488" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="63" endLine="266" endPosition="17" />
+    <scopeInfo nodeId="9033318990679763482" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="9033318990679763485" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="2326364852992438483" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="86" endLine="169" endPosition="5">
+    <scopeInfo nodeId="2326364852992438483" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="86" endLine="172" endPosition="5">
       <varInfo nodeId="4988944197752016954" varName="overridenToOverridingMethodsMap" />
       <varInfo nodeId="4988944197752016191" varName="nameToMethodsMap" />
       <varInfo nodeId="1037184397602734848" varName="isInterface" />
       <varInfo nodeId="1037184397602703780" varName="derivedClassifiers" />
       <varInfo nodeId="1037184397602734855" varName="superClassifierTooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="2326364852992438480" fileName="OverrideMethodsChecker.java" startLine="106" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="2326364852992438480" fileName="OverrideMethodsChecker.java" startLine="106" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="2326364852992438525" varName="container" />
       <varInfo nodeId="2326364852992438533" varName="messages" />
     </scopeInfo>
     <unitInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="181" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$1" />
     <unitInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="81" startPosition="140" endLine="85" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$2" />
     <unitInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="111" endLine="142" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$3" />
-    <unitInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="144" endLine="179" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$5" />
-    <unitInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="82" endLine="188" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$4" />
-    <unitInfo nodeId="5002400195357779994" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
+    <unitInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="144" endLine="182" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$5" />
+    <unitInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="82" endLine="191" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$4" />
+    <unitInfo nodeId="5002400195357779994" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
   </root>
   <root nodeId="5002400195358095186">
     <nodeInfo nodeId="113917032267619129" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="OverridenMethodEditorMessage.java" startLine="14" startPosition="81" endLine="15" endPosition="123" />
@@ -1685,7 +1688,7 @@
     <nodeInfo nodeId="4717960406884198247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverridingMethodsFinder.java" startLine="142" startPosition="200" endLine="143" endPosition="135" />
     <nodeInfo nodeId="4717960406884198269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodsFinder.java" startLine="145" startPosition="5" endLine="146" endPosition="18" />
     <nodeInfo nodeId="6349997524910394833" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodsFinder.java" startLine="149" startPosition="51" endLine="150" endPosition="156" />
-    <nodeInfo nodeId="6349997524910650120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodsFinder.java" startLine="153" startPosition="54" endLine="154" endPosition="209" />
+    <nodeInfo nodeId="6349997524910650120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodsFinder.java" startLine="153" startPosition="54" endLine="154" endPosition="156" />
     <nodeInfo nodeId="6349997524910751387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverridingMethodsFinder.java" startLine="158" startPosition="55" endLine="159" endPosition="85" />
     <nodeInfo nodeId="6349997524910751414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodsFinder.java" startLine="160" startPosition="5" endLine="161" endPosition="45" />
     <nodeInfo nodeId="6349997524910645865" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverridingMethodsFinder.java" startLine="165" startPosition="69" endLine="166" endPosition="64" />
@@ -1755,7 +1758,7 @@
     <scopeInfo nodeId="4717960406884198287" fileName="OverridingMethodsFinder.java" startLine="137" startPosition="41" endLine="138" endPosition="80" />
     <scopeInfo nodeId="4717960406884198246" fileName="OverridingMethodsFinder.java" startLine="142" startPosition="200" endLine="143" endPosition="135" />
     <scopeInfo nodeId="6349997524910394832" fileName="OverridingMethodsFinder.java" startLine="149" startPosition="51" endLine="150" endPosition="156" />
-    <scopeInfo nodeId="6349997524910650119" fileName="OverridingMethodsFinder.java" startLine="153" startPosition="54" endLine="154" endPosition="209" />
+    <scopeInfo nodeId="6349997524910650119" fileName="OverridingMethodsFinder.java" startLine="153" startPosition="54" endLine="154" endPosition="156" />
     <scopeInfo nodeId="6349997524910751315" fileName="OverridingMethodsFinder.java" startLine="158" startPosition="55" endLine="159" endPosition="85" />
     <scopeInfo nodeId="2691300446671204141" fileName="OverridingMethodsFinder.java" startLine="121" startPosition="11" endLine="123" endPosition="78" />
     <scopeInfo nodeId="6349997524910645864" fileName="OverridingMethodsFinder.java" startLine="165" startPosition="69" endLine="167" endPosition="18" />

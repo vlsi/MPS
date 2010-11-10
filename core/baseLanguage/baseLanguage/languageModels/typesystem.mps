@@ -27034,5 +27034,146 @@
       <link role="concept:3" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1596333951698899849">
+    <property name="name:3" value="check_ClassifierOverridingFinalMethods" />
+    <property name="virtualPackage:3" value="classifier" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698899850">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1596333951698899857">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1596333951698899858">
+          <property name="name:3" value="finder" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1596333951698899859">
+            <link role="classifier:3" targetNodeId="53.6349997524910394660" resolveInfo="OverridingMethodsFinder" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1596333951698899860">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1596333951698899861">
+              <link role="baseMethodDeclaration:3" targetNodeId="53.6349997524910395904" resolveInfo="OverridingMethodsFinder" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1596333951698899862">
+                <link role="applicableNode:3" targetNodeId="1596333951698899851" resolveInfo="classifier" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1596333951698899863">
+        <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1596333951698899864">
+          <property name="name:7" value="overridingMethod" />
+        </node>
+        <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596333951698899865">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596333951698899866">
+            <link role="variableDeclaration:3" targetNodeId="1596333951698899858" resolveInfo="finder" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596333951698899867">
+            <link role="baseMethodDeclaration:3" targetNodeId="53.6349997524910443519" resolveInfo="getOverridingMethods" />
+          </node>
+        </node>
+        <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698899868">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1596333951698899869">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1596333951698899870">
+              <property name="name:3" value="overridenMethods" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="1596333951698899871">
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="1596333951698899872">
+                  <node role="componentType:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1596333951698899873">
+                    <link role="concept:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                  <node role="componentType:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1596333951698899874">
+                    <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+                  </node>
+                </node>
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596333951698899875">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596333951698899876">
+                  <link role="variableDeclaration:3" targetNodeId="1596333951698899858" resolveInfo="finder" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596333951698899877">
+                  <link role="baseMethodDeclaration:3" targetNodeId="53.6349997524910443531" resolveInfo="getOverridenMethods" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1596333951698899878">
+                    <link role="variable:7" targetNodeId="1596333951698899864" resolveInfo="overridingMethod" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="1596333951698899879">
+            <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698899880">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1596333951698899881">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1596333951698899882">
+                  <property name="name:3" value="overridenMethod" />
+                  <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1596333951698899883">
+                    <link role="concept:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="1596333951698899884">
+                    <node role="tuple:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596333951698899885">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596333951698899886">
+                        <link role="variableDeclaration:3" targetNodeId="1596333951698899903" resolveInfo="it" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596333951698899887">
+                        <link role="baseMethodDeclaration:3" targetNodeId="18.~Iterator.next():java.lang.Object" resolveInfo="next" />
+                      </node>
+                    </node>
+                    <node role="index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1596333951698899888">
+                      <property name="value:3" value="0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1596333951698899889">
+                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698899890">
+                  <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="1596333951698899891">
+                    <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1596333951698899892">
+                      <link role="variable:7" targetNodeId="1596333951698899864" resolveInfo="overridingMethod" />
+                    </node>
+                    <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1596333951698899893">
+                      <property name="value:3" value="method can not override final method" />
+                    </node>
+                  </node>
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BreakStatement:3" id="1596333951698899894" />
+                </node>
+                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596333951698909194">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596333951698909193">
+                    <link role="variableDeclaration:3" targetNodeId="1596333951698899882" resolveInfo="overridenMethod" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1596333951698909198">
+                    <link role="property:16" targetNodeId="1.1181808852946:3" resolveInfo="isFinal" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1596333951698899903">
+              <property name="name:3" value="it" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1596333951698899904">
+                <link role="classifier:3" targetNodeId="18.~Iterator" resolveInfo="Iterator" />
+                <node role="parameter:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="1596333951698899905">
+                  <node role="componentType:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1596333951698899906">
+                    <link role="concept:16" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                  <node role="componentType:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1596333951698899907">
+                    <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+                  </node>
+                </node>
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596333951698899908">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596333951698899909">
+                  <link role="variableDeclaration:3" targetNodeId="1596333951698899870" resolveInfo="overridenMethods" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation:7" id="1596333951698899910" />
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596333951698899911">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596333951698899912">
+                <link role="variableDeclaration:3" targetNodeId="1596333951698899903" resolveInfo="it" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596333951698899913">
+                <link role="baseMethodDeclaration:3" targetNodeId="18.~Iterator.hasNext():boolean" resolveInfo="hasNext" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1596333951698899851">
+      <property name="name:3" value="classifier" />
+      <link role="concept:3" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+    </node>
+  </node>
 </model>
 

@@ -147,6 +147,9 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     Map<SNode, Set<SNode>> overridenToOverridingMethodsMap = createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
     for (SNode overridenMethod : SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).keySet())) {
+      if (SPropertyOperations.getBoolean(overridenMethod, "isFinal")) {
+        continue;
+      }
       boolean overriden = !(SPropertyOperations.getBoolean(overridenMethod, "isAbstract"));
       StringBuffer tooltip = new StringBuffer("Is ");
       tooltip.append((overriden ?

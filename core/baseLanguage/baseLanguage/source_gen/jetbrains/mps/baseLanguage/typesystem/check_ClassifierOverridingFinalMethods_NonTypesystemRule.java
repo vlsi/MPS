@@ -12,16 +12,15 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Iterator;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_ClassifierOverridingMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_ClassifierOverridingMethods_NonTypesystemRule() {
+public class check_ClassifierOverridingFinalMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_ClassifierOverridingFinalMethods_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
@@ -30,11 +29,11 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
       Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenMethod = it.next()._0();
-        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(overridingMethod, "returnType", true), SLinkOperations.getTarget(overridenMethod, "returnType", true)))) {
+        if (SPropertyOperations.getBoolean(overridenMethod, "isFinal")) {
           {
             BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(overridingMethod, "method's return type is incompatible with overridden method ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2792291462223216211", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(overridingMethod, "method can not override final method", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1596333951698899891", intentionProvider, errorTarget);
           }
           break;
         }

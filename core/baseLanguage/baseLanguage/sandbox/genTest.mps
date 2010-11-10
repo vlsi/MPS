@@ -17,7 +17,8 @@
     <property name="name:3" value="Foo" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1596333951698689108">
       <property name="name:3" value="foo" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1596333951698702323" />
+      <property name="isFinal:3" value="true" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="915525566468069397" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1596333951698689110" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698689111" />
     </node>
