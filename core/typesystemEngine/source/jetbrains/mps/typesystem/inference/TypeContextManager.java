@@ -24,6 +24,7 @@ import java.util.Map.Entry;
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
   private static final boolean useNewTypeSystem = false;
+  //minor
   public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
 
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
