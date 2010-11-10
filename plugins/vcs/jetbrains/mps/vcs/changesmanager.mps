@@ -79,7 +79,7 @@
   <import index="72" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="77" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor.tabs(jetbrains.mps.ide.tabbedEditor.tabs@java_stub)" version="-1" />
   <import index="78" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
-  <import index="79" modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="-1" />
+  <import index="79" modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="0" />
   <import index="80" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <import index="81" modelUID="f:java_stub#jetbrains.mps.errors(jetbrains.mps.errors@java_stub)" version="-1" />
   <import index="82" modelUID="f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)" version="-1" />
@@ -28385,7 +28385,7 @@
                     <link role="variableDeclaration:3" targetNodeId="63.~ActionPlaces.UNKNOWN" resolveInfo="UNKNOWN" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.GroupAccessOperation:23" id="8182361383258462266">
-                    <link role="group:23" targetNodeId="79.6763225944573363022" resolveInfo="ChangesStrip" />
+                    <link role="group:23" targetNodeId="79.6763225944573363022:0" resolveInfo="ChangesStrip" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4957875527975108177">
                     <property name="value:3" value="true" />

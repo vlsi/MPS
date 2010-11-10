@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.vcs.annotation.AnnotationUtil;
 
 public class Annotate_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -64,7 +65,7 @@ public class Annotate_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      AnnotateUtil.annotate(Annotate_Action.this.editor, Annotate_Action.this.project);
+      AnnotationUtil.annotate(Annotate_Action.this.editor, Annotate_Action.this.project);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Annotate", t);
