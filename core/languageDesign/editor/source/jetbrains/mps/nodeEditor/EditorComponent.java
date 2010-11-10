@@ -1450,14 +1450,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     revalidate();
     repaint();
     myMessagesGutter.repaint();
-  }
-
-  public void relayoutIfNeeded() {
-    doRelayout();
-    revalidate();
-    repaint();
-    myMessagesGutter.repaint();        
-  }
+  }  
 
   public void revalidateAndRepaint() {
     myLeftHighlighter.relayout(false);
@@ -1598,7 +1591,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     clearUserData();
     rebuildEditorContent(null);
 
-    relayoutIfNeeded();
+    relayout();
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
@@ -2269,7 +2262,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myInsideOfCommand = false;
     }
 
-    relayoutIfNeeded();
+    relayout();
   }
 
   <T> T executeCommand(final Computable<T> c) {
@@ -2663,12 +2656,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               }
             }            
           }
-          relayoutIfNeeded();
+          relayout();
           return;
         }
         if (editorCells != null) {
           rebuildEditorContent(events);
-          relayoutIfNeeded();
+          relayout();
           updateSelection(events, lastSelectedNode);
         } else if (editorCell_properties != null) {
           for (EditorCell_Property cell : editorCell_properties) {
@@ -2688,12 +2681,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       revertErrorCells(events);
-      relayoutIfNeeded();
+      relayout();
       updateSelection(events, lastSelectedNode);
     }
 
     if (!myInsideOfCommand) {
-      relayoutIfNeeded();
+      relayout();
     }
   }
 
