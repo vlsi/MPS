@@ -15,6 +15,12 @@
   <import index="33" modelUID="r:00000000-0000-4000-0000-011c89590395(jetbrains.mps.baseLanguage.sandbox.helginsTest)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3073231036166300536">
     <property name="name:3" value="Foo" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1596333951698689108">
+      <property name="name:3" value="foo" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1596333951698702323" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1596333951698689110" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698689111" />
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166300537" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3073231036166300538">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3073231036166300539" />
@@ -30,12 +36,21 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3073231036166300542">
     <property name="name:3" value="Cls" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1596333951698689104">
+      <property name="name:3" value="foo" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1596333951698689105" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1596333951698689106" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596333951698689107" />
+    </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8974945326827873990">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8974945326827873991" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8974945326827873992" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8974945326827873993" />
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3073231036166300543" />
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1596333951698689103">
+      <link role="classifier:3" targetNodeId="3073231036166300536" resolveInfo="Foo" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3073231036166392859">
     <property name="name:3" value="Enumerator" />
