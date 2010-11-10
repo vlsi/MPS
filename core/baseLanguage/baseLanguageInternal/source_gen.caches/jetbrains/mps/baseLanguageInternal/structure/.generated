@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="1vlcw7u3fnudrpoi12n65mui6hqdyn0">
+  <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2eow8w3dx0bq7y0ns8phc8w0cvxf7k5" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="fpsx42yjiof0oq14edmp0m01ocy8mk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="az0pkolsrl0b6edhd9rgkr9j3ebghzb" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2spao3jcdelqpacv7od6cry260t4gbv" />
+  <common hash="-4zv6davvuxwpqy5y3makokntr3fahxg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="BaseLanguageInternal_Language.java" />
+  </common>
+  <source id="1173990517731" name="InternalStaticMethodCall" hash="cwr4ks6afe5pgkowqh1ptundp544gue">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalStaticMethodCall.java" />
+  </source>
+  <source id="1173995204289" name="InternalStaticFieldReference" hash="6ha70xup6x0s90xd8lquzjbufe1hyha">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalStaticFieldReference.java" />
+  </source>
+  <source id="1173996401517" name="InternalNewExpression" hash="-1lvuqab4lcjlark8klqancvr3ew6ma6">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalNewExpression.java" />
+  </source>
+  <source id="1174294166120" name="InternalPartialInstanceMethodCall" hash="3ot6shw8fif6ujtp0fbu1f3jnpux3aj">
+    <dep root="3196918548953109193" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalPartialInstanceMethodCall.java" />
+  </source>
+  <source id="1174478619261" name="InternalClassExpression" hash="8pnsaeljctfx08vb6rd9z6u2kdjwsz7">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalClassExpression.java" />
+  </source>
+  <source id="1174914042989" name="InternalClassifierType" hash="-36uj2gt7euu19iq6ahpbvxn4ud730jr">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalClassifierType.java" />
+  </source>
+  <source id="1176743162354" name="InternalVariableReference" hash="bnryrz2okypc3xae7gt33a82gkaqtls">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalVariableReference.java" />
+  </source>
+  <source id="1177590007607" name="InternalPartialFieldReference" hash="c0q6xhm1pyjvvw8l4hk17qmifqam4l6">
+    <dep root="3196918548953109193" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalPartialFieldReference.java" />
+  </source>
+  <source id="1199964756070" name="TypeHintExpression" hash="8fh3d1knyrdwgos34ry0rw490u72m90">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TypeHintExpression.java" />
+  </source>
+  <source id="1202838164916" name="InternalThisExpression" hash="-dced795axlfetrvg9y0y1usyriyzo56">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalThisExpression.java" />
+  </source>
+  <source id="1238251434034" name="ExtractToConstantExpression" hash="-ay6wh0epacosl3etlgh4hutox88b8nq">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractToConstantExpression.java" />
+  </source>
+  <source id="3196918548952765095" name="ExtractStatementListExpression" hash="bhysw68mkzwdt2tn57emsshdkboqvdz">
+    <dep root="3196918548953109193" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStatementListExpression.java" />
+  </source>
+  <source id="3196918548953109193" name="ExtractStatementListInnerExpression" hash="93orf4vknsmza476jxvxqbjcivx0gly">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStatementListInnerExpression.java" />
+  </source>
+  <source id="3585982959253588676" name="ExtractStaticMethodExpression" hash="evxf7vome5bkoexjjeerhdcpxcvcu8v">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStaticMethodExpression.java" />
+  </source>
+  <source id="3585982959253821850" name="ExtractStaticMethod_CallExpression" hash="96medsrkc0k2o92pbny1hi4iszkgb0q">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStaticMethod_CallExpression.java" />
+  </source>
+  <source id="7738261905749564104" name="ExtractStaticInnerClassExpression" hash="-332p6m6ifzs34s9abjtx8gglbujzn2q">
+    <dep root="937236280924494202" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStaticInnerClassExpression.java" />
+  </source>
+  <source id="5822086619725599105" name="ExtractStaticInnerClassCreator" hash="-7qn6k825sjmiq1dhm9039psq4tm1qm8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStaticInnerClassCreator.java" />
+  </source>
+  <source id="937236280924494202" name="ExtractStaticInnerClassConcept" hash="-4voptm1vny9mfpg8f4f5j1mlvk7y5aj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractStaticInnerClassConcept.java" />
+  </source>
+  <source id="99767819676010097" name="ExtractToConstantRefExpression" hash="-dukjicvugq5myea4ezg8qv5a4dj8f6o">
+    <dep root="1238251434034" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtractToConstantRefExpression.java" />
+  </source>
+</dependencies>
+

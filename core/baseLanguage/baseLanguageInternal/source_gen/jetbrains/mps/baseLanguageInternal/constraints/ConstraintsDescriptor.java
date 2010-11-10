@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ExtractStaticInnerClassConcept_resolveInfo_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ExtractToConstantRefExpression_original_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint());
   }
