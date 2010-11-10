@@ -14,6 +14,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -177,7 +178,7 @@ public class WeavingProcessor {
           if (ruleConsequence == null) {
             myGenerator.showErrorMessage(applicableNode, null, rule.getNode(), "weaving rule: no rule consequence");
           } else {
-            myGenerationTracer.pushRuleConsequence(ruleConsequence.getNode());
+            myGenerationTracer.pushRuleConsequence(new SNodePointer(ruleConsequence.getNode()));
             if (ruleConsequence instanceof TemplateDeclarationReference) {
               TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
               weaveTemplateDeclaration(template, outputContextNode, rule,

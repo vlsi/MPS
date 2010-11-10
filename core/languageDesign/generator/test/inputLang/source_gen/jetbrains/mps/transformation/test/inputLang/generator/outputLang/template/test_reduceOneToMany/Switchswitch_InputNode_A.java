@@ -10,6 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collections;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
   public Switchswitch_InputNode_A() {
@@ -33,6 +34,7 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311962"));
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A_switch().apply(environment, context);
       return tlist1;
     }

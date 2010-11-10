@@ -37,7 +37,7 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushRuleConsequence(SNode node) {
+  public void pushRuleConsequence(SNodePointer node) {
   }
 
   @Override

@@ -16,8 +16,8 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
-  private static SNodePointer templateNode_417xrn_a0a0a2a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150725887");
-  private static SNodePointer templateNode_417xrn_a0a0a1a3a2a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150737045");
+  private static SNodePointer templateNode_417xrn_a0a0a3a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150725887");
+  private static SNodePointer templateNode_417xrn_a0a0a1a3a3a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150737045");
 
   public Mappingmain() {
   }
@@ -42,28 +42,29 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (!(QueriesGenerated.baseMappingRule_Condition_1209150617830(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
         return null;
       }
+      environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150677803"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
       try {
-        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0a);
+        environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a3a0a);
         environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150725887");
 
         {
           final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
           try {
-            environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a2a0a);
+            environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a3a0a);
             environment.nodeCopied(context.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150737045");
             tnode2.setProperty("value", "my expression");
 
           } finally {
             environment.getTracer().pushOutputNode(tnode2);
-            environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a0a);
+            environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a3a0a);
           }
           tnode1.addChild("expression", tnode2);
           // TODO validate child 
         }
       } finally {
         environment.getTracer().pushOutputNode(tnode1);
-        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a0a);
+        environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a3a0a);
       }
       return TemplateUtil.singletonList(tnode1);
     }

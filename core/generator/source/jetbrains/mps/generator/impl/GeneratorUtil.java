@@ -154,7 +154,7 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
     }
-    generator.getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
+    generator.getGenerationTracer().pushRuleConsequence(new SNodePointer(ruleConsequence.getNode()));
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();

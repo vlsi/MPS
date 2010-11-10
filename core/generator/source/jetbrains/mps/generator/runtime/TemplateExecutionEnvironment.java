@@ -64,7 +64,11 @@ public class TemplateExecutionEnvironment {
   }
 
   public void nodeCopied(SNode node, SNode outputNode, String templateNodeId) {
-
+//    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
+//    for (SNode historyInputNode : context.getInputHistory()) {
+//      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
+//    }
+//    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
   }
 
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {

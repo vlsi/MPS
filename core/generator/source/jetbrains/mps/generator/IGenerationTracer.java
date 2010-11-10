@@ -24,7 +24,7 @@ public interface IGenerationTracer {
 
   void closeRule(SNode node);
 
-  void pushRuleConsequence(SNode node);
+  void pushRuleConsequence(SNodePointer node);
 
   void pushSwitch(SNodePointer node);
 

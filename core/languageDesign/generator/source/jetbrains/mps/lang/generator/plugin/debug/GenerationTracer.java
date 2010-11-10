@@ -147,9 +147,9 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushRuleConsequence(SNode node) {
+  public void pushRuleConsequence(SNodePointer node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.RULE_CONSEQUENCE, new SNodePointer(node)));
+    push(new TracerNode(TracerNode.Kind.RULE_CONSEQUENCE, node));
   }
 
   @Override
