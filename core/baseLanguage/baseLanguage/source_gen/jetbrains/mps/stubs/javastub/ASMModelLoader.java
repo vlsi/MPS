@@ -148,10 +148,14 @@ public abstract class ASMModelLoader {
     }
 
     List<InnerClassNode> innerClasses = MapSequence.fromMap(myClassChildInfo).get(outerName);
-    assert innerClasses != null;
+    if (innerClasses == null) {
+      LOG.error(outerName);
+      return null;
+    }
+    assert innerClasses != null : outerName;
     String classifierNameSlashed = (packPrefix + name).replaceAll("\\.", "/");
     for (InnerClassNode node : innerClasses) {
-      if (eq_fw13fk_a0a0p0b(node.name, classifierNameSlashed)) {
+      if (eq_fw13fk_a0a0q0b(node.name, classifierNameSlashed)) {
         isStatic.value = (node.access & Opcodes.ACC_STATIC) != 0;
         isPrivate = (node.access & Opcodes.ACC_PRIVATE) != 0;
         break;
@@ -930,7 +934,7 @@ public abstract class ASMModelLoader {
 
   public abstract SModelReference getModelReferenceFor(String packageName);
 
-  private static boolean eq_fw13fk_a0a0p0b(Object a, Object b) {
+  private static boolean eq_fw13fk_a0a0q0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
