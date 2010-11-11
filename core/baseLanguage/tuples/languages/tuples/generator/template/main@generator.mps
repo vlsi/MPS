@@ -8039,8 +8039,8 @@
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239703523482">
                               <link role="variableDeclaration:3" targetNodeId="1239703523493" resolveInfo="ifc" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1239703523483">
-                              <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6906870028228336765">
+                              <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239703523484">
@@ -8354,8 +8354,8 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239636851215">
                           <link role="variableDeclaration:3" targetNodeId="1239636851226" resolveInfo="ifc" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1239636851216">
-                          <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6906870028228299419">
+                          <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239636851217">
