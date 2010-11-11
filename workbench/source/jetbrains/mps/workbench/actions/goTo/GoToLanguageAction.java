@@ -23,17 +23,18 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GoToLanguageAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -44,18 +45,22 @@ public class GoToLanguageAction extends BaseAction {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseModuleItem(module) {
+      public NavigationItem doGetNavigationItem(final ModuleReference ref) {
+        return new BaseModuleItem(ref) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
+            IModule module = MPSModuleRepository.getInstance().getModule(ref);
             projectPane.selectModule(module, true);
           }
         };
       }
 
-      public Language[] find(IScope scope) {
-        Collection<Language> res = IterableUtil.asCollection(scope.getVisibleLanguages());
-        return res.toArray(new Language[res.size()]);
+      public ModuleReference[] find(IScope scope) {
+        List<ModuleReference> result = new ArrayList<ModuleReference>();
+        for (Language l : scope.getVisibleLanguages()) {
+          result.add(l.getModuleReference());
+        }
+        return result.toArray(new ModuleReference[result.size()]);
       }
 
       public String getPromptText() {

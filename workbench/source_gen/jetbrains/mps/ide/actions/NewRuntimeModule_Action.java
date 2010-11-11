@@ -20,7 +20,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -108,11 +110,15 @@ public class NewRuntimeModule_Action extends GeneratedAction {
         }
       });
       BaseModuleModel baseSolutionModel = new BaseModuleModel(NewRuntimeModule_Action.this.project, "runtime module") {
-        public IModule[] find(IScope p0) {
-          return ListSequence.fromList(modules).toGenericArray(IModule.class);
+        public ModuleReference[] find(IScope p0) {
+          return ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
+            public ModuleReference select(IModule it) {
+              return it.getModuleReference();
+            }
+          }).toGenericArray(ModuleReference.class);
         }
 
-        public NavigationItem doGetNavigationItem(final IModule module) {
+        public NavigationItem doGetNavigationItem(final ModuleReference module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean p0) {
               if (module == null) {
@@ -120,7 +126,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
               }
               Language language = (Language) NewRuntimeModule_Action.this.contextModule;
               Dependency dependency = new Dependency();
-              dependency.setModuleRef(module.getModuleReference());
+              dependency.setModuleRef(module);
               language.getModuleDescriptor().getRuntimeModules().add(dependency);
               language.save();
               ((MPSTreeNode) NewRuntimeModule_Action.this.treeNode).getTree().rebuildLater();

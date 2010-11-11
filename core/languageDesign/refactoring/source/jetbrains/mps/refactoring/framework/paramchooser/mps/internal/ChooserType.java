@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.SelectMembersDialog;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.*;
@@ -99,21 +100,24 @@ public abstract class ChooserType<T> {
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModuleModel(project, "module") {
-        public NavigationItem doGetNavigationItem(final IModule module) {
+        public NavigationItem doGetNavigationItem(final ModuleReference module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean requestFocus) {
-              context.setParameter(paramName, module);
+              context.setParameter(paramName, MPSModuleRepository.getInstance().getModule(module));
             }
           };
         }
 
-        public IModule[] find(boolean checkboxState) {
+        public ModuleReference[] find(boolean checkboxState) {
           List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-          List<IModule> filteredModules = filter(settings, modules);
-          return filteredModules.toArray(new IModule[filteredModules.size()]);
+          List<ModuleReference> filteredModules = new ArrayList<ModuleReference>();
+          for (IModule module : filter(settings, modules)){
+            filteredModules.add(module.getModuleReference());
+          }
+          return filteredModules.toArray(new ModuleReference[filteredModules.size()]);
         }
 
-        public IModule[] find(IScope scope) {
+        public ModuleReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 

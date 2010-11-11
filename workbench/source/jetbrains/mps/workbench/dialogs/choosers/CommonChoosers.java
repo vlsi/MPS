@@ -58,7 +58,7 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  private static <T extends IModule> List<T> showDialogModuleChooser_internal(final Component parent, String entityString, final List<T> modules,
+  private static <T extends ModuleReference> List<T> showDialogModuleChooser_internal(final Component parent, String entityString, final List<T> modules,
                                                                               @Nullable List<T> nonProjectModules,
                                                                               boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
@@ -94,13 +94,13 @@ public class CommonChoosers {
     return result.get(0);
   }
 
-  public static <T extends IModule> T showDialogModuleChooser(Component parent, String entityString, List<T> modules, @Nullable List<T> nonProjectModules) {
+  public static <T extends ModuleReference> T showDialogModuleChooser(Component parent, String entityString, List<T> modules, @Nullable List<T> nonProjectModules) {
     List<T> result = showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
   }
 
-  public static <T extends IModule> List<T> showDialogModuleCollectionChooser(Component parent, String entityString, List<T> modules, @Nullable List<T> nonProjectModules) {
+  public static <T extends ModuleReference> List<T> showDialogModuleCollectionChooser(Component parent, String entityString, List<T> modules, @Nullable List<T> nonProjectModules) {
     return showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, true);
   }
 

@@ -30,15 +30,17 @@ import javax.swing.border.CompoundBorder;
 import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelReference;
 import org.jdesktop.observablecollections.ObservableCollections;
 import java.util.ArrayList;
@@ -50,8 +52,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JScrollPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -229,12 +229,26 @@ public class TestConfigurationDialog extends BaseDialog {
       myModuleUID = new JTextField();
       JButton button = new JButton(new AbstractAction("Select") {
         public void actionPerformed(ActionEvent e) {
-          List<IModule> modules = ModelAccess.instance().runReadAction(new Computable<List<IModule>>() {
-            public List<IModule> compute() {
-              return MPSModuleRepository.getInstance().getAllModules();
+          final Wrappers._T<List<IModule>> modules = new Wrappers._T<List<IModule>>();
+          final Wrappers._T<List<IModule>> projectModules = new Wrappers._T<List<IModule>>();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              modules.value = MPSModuleRepository.getInstance().getAllModules();
+              projectModules.value = myProject.getComponent(MPSProject.class).getModules();
             }
           });
-          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, myProject.getComponent(MPSProject.class).getModules(), modules);
+          List<ModuleReference> projectModuleRefs = ListSequence.fromList(projectModules.value).select(new ISelector<IModule, ModuleReference>() {
+            public ModuleReference select(IModule it) {
+              return it.getModuleReference();
+            }
+          }).toListSequence();
+          List<ModuleReference> moduleRefs = ListSequence.fromList(modules.value).select(new ISelector<IModule, ModuleReference>() {
+            public ModuleReference select(IModule it) {
+              return it.getModuleReference();
+            }
+          }).toListSequence();
+
+          ModuleReference module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
           if (module == null) {
             return;
           }

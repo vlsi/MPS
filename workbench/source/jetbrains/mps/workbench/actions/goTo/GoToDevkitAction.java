@@ -25,14 +25,16 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.modules.BaseDevkitModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GoToDevkitAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -43,18 +45,23 @@ public class GoToDevkitAction extends BaseAction {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseDevkitModel goToDevkitModel = new BaseDevkitModel(project) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseModuleItem(module) {
+      public NavigationItem doGetNavigationItem(final ModuleReference ref) {
+        return new BaseModuleItem(ref) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
+            IModule module = MPSModuleRepository.getInstance().getModule(ref);
+            if (module == null) return;
             projectPane.selectModule(module, true);
           }
         };
       }
 
-      public DevKit[] find(IScope scope) {
-        Collection<DevKit> res = IterableUtil.asCollection(scope.getVisibleDevkits());
-        return res.toArray(new DevKit[res.size()]);
+      public ModuleReference[] find(IScope scope) {
+        List<ModuleReference> result = new ArrayList<ModuleReference>();
+        for (DevKit dk : scope.getVisibleDevkits()) {
+          result.add(dk.getModuleReference());
+        }
+        return result.toArray(new ModuleReference[result.size()]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, DefaultMatcherFactory.createAllMatcher(goToDevkitModel));

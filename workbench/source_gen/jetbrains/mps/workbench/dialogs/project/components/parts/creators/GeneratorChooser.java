@@ -6,11 +6,13 @@ import com.intellij.openapi.util.Computable;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import java.util.ArrayList;
 
 public class GeneratorChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
@@ -20,19 +22,17 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
   }
 
   public List<ModuleReference> compute() {
-    List<Generator> generators = ModelAccess.instance().runReadAction(new Computable<List<Generator>>() {
-      public List<Generator> compute() {
-        return MPSModuleRepository.getInstance().getAllGenerators();
+    final Wrappers._T<List<ModuleReference>> genRefs = new Wrappers._T<List<ModuleReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<Generator> generators = MPSModuleRepository.getInstance().getAllGenerators();
+        genRefs.value = ListSequence.fromList(generators).select(new ISelector<Generator, ModuleReference>() {
+          public ModuleReference select(Generator it) {
+            return it.getModuleReference();
+          }
+        }).toListSequence();
       }
     });
-    List<Generator> generator = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "generator", generators, null);
-    if (generator == null) {
-      return null;
-    }
-    List<ModuleReference> references = new ArrayList<ModuleReference>();
-    for (Generator g : generator) {
-      references.add(g.getModuleReference());
-    }
-    return references;
+    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "generator", genRefs.value, null);
   }
 }

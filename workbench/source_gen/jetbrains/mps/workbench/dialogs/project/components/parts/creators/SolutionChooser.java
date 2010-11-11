@@ -6,11 +6,13 @@ import com.intellij.openapi.util.Computable;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import java.util.ArrayList;
 
 public class SolutionChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
@@ -20,19 +22,17 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
   }
 
   public List<ModuleReference> compute() {
-    List<Solution> solutions = ModelAccess.instance().runReadAction(new Computable<List<Solution>>() {
-      public List<Solution> compute() {
-        return MPSModuleRepository.getInstance().getAllSolutions();
+    final Wrappers._T<List<ModuleReference>> solRefs = new Wrappers._T<List<ModuleReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<Solution> solutions = MPSModuleRepository.getInstance().getAllSolutions();
+        solRefs.value = ListSequence.fromList(solutions).select(new ISelector<Solution, ModuleReference>() {
+          public ModuleReference select(Solution it) {
+            return it.getModuleReference();
+          }
+        }).toListSequence();
       }
     });
-    List<Solution> solution = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "solution", solutions, null);
-    if (solution == null) {
-      return null;
-    }
-    List<ModuleReference> references = new ArrayList<ModuleReference>();
-    for (Solution s : solution) {
-      references.add(s.getModuleReference());
-    }
-    return references;
+    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "solution", solRefs.value, null);
   }
 }
