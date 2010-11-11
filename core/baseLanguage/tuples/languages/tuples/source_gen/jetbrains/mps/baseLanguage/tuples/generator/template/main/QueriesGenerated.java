@@ -303,7 +303,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1238933287426(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0hc().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentType", true)).count())) {
+      if (SPropertyOperations.getString(ifc, "nestedName").equals("Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentType", true)).count())) {
         return ifc;
       }
     }
@@ -592,7 +592,7 @@ public class QueriesGenerated {
       }
     });
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("MultiTuple._" + cmpSize)) {
+      if (SPropertyOperations.getString(ifc, "nestedName").equals("MultiTuple._" + cmpSize)) {
         return ifc;
       }
     }
@@ -607,7 +607,7 @@ public class QueriesGenerated {
       }
     });
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + cmpSize)) {
+      if (SPropertyOperations.getString(ifc, "nestedName").equals("Tuples._" + cmpSize)) {
         return ifc;
       }
     }
@@ -622,7 +622,7 @@ public class QueriesGenerated {
       }
     });
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + idx)) {
+      if (SPropertyOperations.getString(ifc, "nestedName").equals("Tuples._" + idx)) {
         return ifc;
       }
     }
@@ -637,7 +637,7 @@ public class QueriesGenerated {
       }
     });
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + idx)) {
+      if (SPropertyOperations.getString(ifc, "nestedName").equals("Tuples._" + idx)) {
         return ifc;
       }
     }
@@ -647,7 +647,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_247710080512637114(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0ue().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).count())) {
+      if (SPropertyOperations.getString(ifc, "nestedName").equals("Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).count())) {
         return ifc;
       }
     }
@@ -666,7 +666,7 @@ public class QueriesGenerated {
       }
     });
     for (SNode cc : ifcs) {
-      if (SPropertyOperations.getString(cc, "name").equals("MultiTuple._" + cmpSize)) {
+      if (SPropertyOperations.getString(cc, "nestedName").equals("MultiTuple._" + cmpSize)) {
         return ListSequence.fromList(SLinkOperations.getTargets(cc, "constructor", true)).first();
       }
     }

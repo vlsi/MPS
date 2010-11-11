@@ -36,7 +36,6 @@
   <import index="18" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="20" modelUID="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1238919387774">
     <property name="name:2" value="indexedTuples" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1238933168676">
@@ -88,8 +87,8 @@
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238935338720">
                             <link role="variableDeclaration:3" targetNodeId="1238935308529" resolveInfo="ifc" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1238935339804">
-                            <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102550753">
+                            <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238935341251">
@@ -6226,6 +6225,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1239630966553">
     <property name="name:2" value="namedTuples" />
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1239631263645">
@@ -8628,8 +8628,8 @@
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="247710080512637743">
                             <link role="variableDeclaration:3" targetNodeId="247710080512637750" resolveInfo="ifc" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="247710080512637744">
-                            <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102551186">
+                            <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="247710080512637745">
@@ -8759,8 +8759,8 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="247710080512637370">
                           <link role="variableDeclaration:3" targetNodeId="247710080512637381" resolveInfo="ifc" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="247710080512637371">
-                          <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102551156">
+                          <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="247710080512637372">
@@ -9835,8 +9835,8 @@
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6392574240232855497">
                               <link role="variableDeclaration:3" targetNodeId="6392574240232855504" resolveInfo="ifc" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6392574240232855498">
-                              <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102551263">
+                              <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6392574240232855499">
@@ -10251,8 +10251,8 @@
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6392574240232854753">
                             <link role="variableDeclaration:3" targetNodeId="6392574240232854760" resolveInfo="ifc" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6392574240232854754">
-                            <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102551262">
+                            <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6392574240232854755">
@@ -10351,8 +10351,8 @@
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="247710080512637135">
                               <link role="variableDeclaration:3" targetNodeId="247710080512637146" resolveInfo="ifc" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="247710080512637136">
-                              <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102551264">
+                              <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="247710080512637137">
@@ -10822,8 +10822,8 @@
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="247710080512639285">
                                     <link role="variableDeclaration:3" targetNodeId="247710080512639292" resolveInfo="ifc" />
                                   </node>
-                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="247710080512639286">
-                                    <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3533009344102551261">
+                                    <link role="property:16" targetNodeId="19.1211504562189:3" resolveInfo="nestedName" />
                                   </node>
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="247710080512639287">
