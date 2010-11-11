@@ -19,27 +19,27 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModuleItem implements NavigationItem {
-  private IModule myModule;
+  private ModuleReference myModuleReference;
 
-  public BaseModuleItem(IModule module) {
-    myModule = module;
+  public BaseModuleItem(ModuleReference moduleReference) {
+    myModuleReference = moduleReference;
   }
 
-  public IModule getModule() {
-    return myModule;
+  public ModuleReference getModuleReference() {
+    return myModuleReference;
   }
 
   public String getName() {
-    return myModule.getModuleFqName();
+    return myModuleReference.getModuleFqName();
   }
 
   @Nullable
   public ItemPresentation getPresentation() {
-    return new ModulePresentation(myModule);
+    return new ModulePresentation(myModuleReference);
   }
 
   public FileStatus getFileStatus() {
