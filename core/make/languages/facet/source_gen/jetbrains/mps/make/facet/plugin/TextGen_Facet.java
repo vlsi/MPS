@@ -23,6 +23,7 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.script.IConfig;
 
 public class TextGen_Facet implements IFacet {
@@ -65,7 +66,7 @@ public class TextGen_Facet implements IFacet {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
-              FileProcessor fileProc = new FileProcessor();
+              final FileProcessor fileProc = new FileProcessor();
               for (IResource resource : input) {
                 GResource gr = (GResource) resource;
                 if (!(gr.data.status().isOk())) {
@@ -90,7 +91,11 @@ public class TextGen_Facet implements IFacet {
                   javaStreamHandler.dispose();
                 }
               }
-              fileProc.saveGeneratedFiles();
+              ModelAccess.instance().writeFilesInEDT(new Runnable() {
+                public void run() {
+                  fileProc.saveGeneratedFiles();
+                }
+              });
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }

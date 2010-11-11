@@ -29,6 +29,7 @@ import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -360,13 +361,15 @@ public class Generator_Facet implements IFacet {
           final Wrappers._T<Iterable<IResource>> _output_ixz87t_a0d = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
-              SModelRepository.getInstance().saveAll();
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                public void run() {
+                  SModelRepository.getInstance().saveAll();
+                }
+              });
               MessagesViewTool mvt = pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project().getComponent(MessagesViewTool.class);
               if (mvt != null) {
                 mvt.openToolLater(false);
               }
-              // <node> 
-              // <node> 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource.Data>() {
                 public Boolean invoke(GResource.Data data) {
                   _output_ixz87t_a0d.value = Sequence.fromIterable(_output_ixz87t_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new GResource(data))));
@@ -378,7 +381,12 @@ public class Generator_Facet implements IFacet {
               if (!(pool.<Generator_Facet.Target_ixz87t_c.Variables>parameters(new ITarget.Name("ConfigureGenerator"), Generator_Facet.Target_ixz87t_c.Variables.class).saveTransient())) {
                 pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
               }
-              generationOk = gm.generateModels(Sequence.fromIterable(pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).models()).toListSequence(), pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gh, ProgressManager.getInstance().getProgressIndicator(), new DefaultMessageHandler(pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project()), pool.<Generator_Facet.Target_ixz87t_c.Variables>parameters(new ITarget.Name("ConfigureGenerator"), Generator_Facet.Target_ixz87t_c.Variables.class).generationOptions().create());
+              generationOk = gm.generateModels(Sequence.fromIterable(pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).models()).toListSequence(), pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gh, ProgressManager.getInstance().getProgressIndicator(), new DefaultMessageHandler(pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project()) {
+                @Override
+                public void clear() {
+                  // XPEH BAM 
+                }
+              }, pool.<Generator_Facet.Target_ixz87t_c.Variables>parameters(new ITarget.Name("ConfigureGenerator"), Generator_Facet.Target_ixz87t_c.Variables.class).generationOptions().create());
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_ixz87t_a0d.value);
               }
