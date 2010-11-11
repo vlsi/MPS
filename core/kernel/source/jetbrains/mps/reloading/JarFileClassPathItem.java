@@ -144,7 +144,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long timestamp = 0;
-    for (String cls : getAvailableClasses(namespace)) {
+    for (String cls : getRootClasses(namespace)) {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
     }
     return timestamp;

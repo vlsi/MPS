@@ -107,7 +107,7 @@ public class UIComponents {
       myAdditionalClasspaths.add(classPath);
       for (String unresolvedFQName : new ArrayList<String>(myUnresolvedFQNames)) {
         if (classPath.getClass(unresolvedFQName) != null ||
-          classPath.getAvailableClasses(unresolvedFQName).iterator().hasNext() ||
+          classPath.getRootClasses(unresolvedFQName).iterator().hasNext() ||
           classPath.getSubpackages(unresolvedFQName).iterator().hasNext()) {
           addClassInClassPath(classPath, unresolvedFQName);
         }

@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
+
 import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
@@ -26,6 +29,17 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   public IClassPathItem optimize() {
     return this;
+  }
+
+  //todo can make it faster
+
+
+  public Iterable<String> getRootClasses(String namespace) {
+    return new ConditionalIterable<String>(getAvailableClasses(namespace),new Condition<String>() {
+      public boolean met(String className) {
+        return !(className.contains("$"));
+      }
+    });
   }
 
   public static boolean isAnonymous(String className) {

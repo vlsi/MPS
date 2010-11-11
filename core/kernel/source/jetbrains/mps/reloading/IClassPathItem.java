@@ -36,6 +36,8 @@ public interface IClassPathItem {
   @Nullable
   URL getResource(String name);
 
+  Iterable<String> getRootClasses(String namespace);
+
   Iterable<String> getAvailableClasses(String namespace);
 
   Iterable<String> getSubpackages(String namespace);

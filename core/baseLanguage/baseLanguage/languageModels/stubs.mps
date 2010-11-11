@@ -386,7 +386,7 @@
                       <link role="variableDeclaration:3" targetNodeId="6209672816070764686" resolveInfo="cpItem" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6962464904663130211">
-                      <link role="baseMethodDeclaration:3" targetNodeId="6.~IClassPathItem.getAvailableClasses(java.lang.String):java.lang.Iterable" resolveInfo="getAvailableClasses" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~IClassPathItem.getRootClasses(java.lang.String):java.lang.Iterable" resolveInfo="getRootClasses" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6962464904663130212">
                         <link role="variableDeclaration:3" targetNodeId="6209672816070764714" resolveInfo="subpackage" />
                       </node>
@@ -527,7 +527,7 @@
               <link role="variableDeclaration:3" targetNodeId="8818697550806799741" resolveInfo="item" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6962464904663134540">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~IClassPathItem.getAvailableClasses(java.lang.String):java.lang.Iterable" resolveInfo="getAvailableClasses" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~IClassPathItem.getRootClasses(java.lang.String):java.lang.Iterable" resolveInfo="getRootClasses" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6962464904663134541">
                 <link role="variableDeclaration:3" targetNodeId="8818697550806799754" resolveInfo="pack" />
               </node>
