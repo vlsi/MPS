@@ -47,7 +47,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class ImportHelper {
@@ -112,16 +111,13 @@ public class ImportHelper {
     };
 
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
-      public NavigationItem doGetNavigationItem(ModuleReference ref) {
-        return new AddLanguageItem(ref, contextModule, model);
+      public NavigationItem doGetNavigationItem(IModule module) {
+        return new AddLanguageItem((Language) module, contextModule, model);
       }
 
-      public ModuleReference[] find(IScope scope) {
-        ArrayList<ModuleReference> res = new ArrayList<ModuleReference>();
-        for (Language l:scope.getVisibleLanguages()){
-          res.add(l.getModuleReference());
-        }
-        return res.toArray(new ModuleReference[res.size()]);
+      public Language[] find(IScope scope) {
+        ArrayList<Language> res = new ArrayList<Language>(IterableUtil.asCollection(scope.getVisibleLanguages()));
+        return res.toArray(new Language[res.size()]);
       }
 
       @Nullable
@@ -146,7 +142,7 @@ public class ImportHelper {
     private IModule myContextModule;
     private SModelDescriptor myModel;
 
-    public AddLanguageItem(ModuleReference language, IModule contextModule, SModelDescriptor model) {
+    public AddLanguageItem(Language language, IModule contextModule, SModelDescriptor model) {
       super(language);
       myContextModule = contextModule;
       myModel = model;
@@ -155,11 +151,11 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          ModuleReference ref = getModuleReference();
-          if (myContextModule.getScope().getLanguage(ref)==null) {
-            myContextModule.addUsedLanguage(ref);
+          Language lang = (Language) getModule();
+          if (myContextModule.getScope().getLanguage(lang.getModuleReference())==null) {
+            myContextModule.addUsedLanguage(lang.getModuleReference());
           }
-          myModel.getSModel().addLanguage(ref);
+          myModel.getSModel().addLanguage(lang.getModuleReference());
         }
       });
     }

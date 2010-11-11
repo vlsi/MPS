@@ -23,7 +23,6 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
@@ -185,13 +184,13 @@ public class CommonChoosers {
     }, ModalityState.current(), true);
   }
 
-  public static <T extends ModuleReference> void showSimpleModuleChooser(final List<T> modules, final String entityString, final ChooserCallback<T> callback) {
+  public static <T extends IModule> void showSimpleModuleChooser(final List<T> modules, final String entityString, final ChooserCallback<T> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(project, entityString) {
       public String doGetFullName(Object element) {
-        return ((BaseModuleItem) element).getModuleReference().getModuleFqName();
+        return ((BaseModuleItem) element).getModule().getModuleFqName();
       }
 
       public String doGetObjectName(T module) {

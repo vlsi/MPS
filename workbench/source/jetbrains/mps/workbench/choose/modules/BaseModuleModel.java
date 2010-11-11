@@ -17,32 +17,29 @@ package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
-public abstract class BaseModuleModel extends BaseMPSChooseModel<ModuleReference> {
+public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   public BaseModuleModel(Project project, String entityName) {
     super(project, entityName);
   }
 
   public String doGetFullName(Object element) {
-    ModuleReference module = ((BaseModuleItem) element).getModuleReference();
+    IModule module = ((BaseModuleItem) element).getModule();
     return getModuleLongName(module);
   }
 
-  public String doGetObjectName(ModuleReference module) {
+  public String doGetObjectName(IModule module) {
     return NameUtil.shortNameFromLongName(getModuleLongName(module));
   }
 
-  private String getModuleLongName(ModuleReference ref) {
-    IModule module = MPSModuleRepository.getInstance().getModule(ref);
+  private String getModuleLongName(IModule module) {
     if (module instanceof Generator) {
       Generator gen = (Generator) module;
       return gen.getAlias();
     }
-    return ref.getModuleFqName();
+    return module.getModuleFqName();
   }
 }
