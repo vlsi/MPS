@@ -70,6 +70,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.VoidType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.WildCardType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
