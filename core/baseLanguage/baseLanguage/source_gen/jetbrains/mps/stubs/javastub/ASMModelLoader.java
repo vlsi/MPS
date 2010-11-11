@@ -152,10 +152,9 @@ public abstract class ASMModelLoader {
       LOG.error(outerName);
       return null;
     }
-    assert innerClasses != null : outerName;
     String classifierNameSlashed = (packPrefix + name).replaceAll("\\.", "/");
     for (InnerClassNode node : innerClasses) {
-      if (eq_fw13fk_a0a0q0b(node.name, classifierNameSlashed)) {
+      if (eq_fw13fk_a0a0p0b(node.name, classifierNameSlashed)) {
         isStatic.value = (node.access & Opcodes.ACC_STATIC) != 0;
         isPrivate = (node.access & Opcodes.ACC_PRIVATE) != 0;
         break;
@@ -164,7 +163,6 @@ public abstract class ASMModelLoader {
     if (isPrivate && SKIP_PRIVATE) {
       return null;
     }
-
 
     return getClassifier(name, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode n) {
@@ -295,6 +293,7 @@ public abstract class ASMModelLoader {
       }
       cls.setAbstractClass(ac.isAbstract());
       cls.setIsDeprecated(ac.isDeprecated());
+      updateInnerClassifiers(ac, cls);
       updateAnnotations(ac, cls);
       updateTypeVariables(ac, cls.getModel(), cls);
       updateExtendsAndImplements(ac, cls);
@@ -303,7 +302,6 @@ public abstract class ASMModelLoader {
       updateConstructors(ac, cls);
       updateInstanceMethods(ac, cls);
       updateStaticMethods(ac, cls);
-      updateInnerClassifiers(ac, cls);
       cls.setIsFinal(ac.isFinal());
     }
     if (clsfr instanceof Annotation) {
@@ -323,12 +321,12 @@ public abstract class ASMModelLoader {
       } else {
         intfc.setVisibility(null);
       }
+      updateInnerClassifiers(ac, intfc);
       updateAnnotations(ac, intfc);
       updateTypeVariables(ac, intfc.getModel(), intfc);
       updateExtendsForInterface(ac, intfc);
       updateStaticFields(ac, intfc);
       updateInstanceMethods(ac, intfc);
-      updateInnerClassifiers(ac, intfc);
       intfc.setIsDeprecated(ac.isDeprecated());
     }
   }
@@ -934,7 +932,7 @@ public abstract class ASMModelLoader {
 
   public abstract SModelReference getModelReferenceFor(String packageName);
 
-  private static boolean eq_fw13fk_a0a0q0b(Object a, Object b) {
+  private static boolean eq_fw13fk_a0a0p0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
