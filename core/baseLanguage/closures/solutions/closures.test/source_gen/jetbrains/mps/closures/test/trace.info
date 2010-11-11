@@ -11,7 +11,7 @@
   <unitInfo fileName="SequenceFunctionTypes_Test.java" startLine="14" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.closures.test.SequenceFunctionTypes_Test" />
   <unitInfo fileName="FunctionTypes_Test.java" startLine="13" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.closures.test.FunctionTypes_Test" />
   <unitInfo fileName="ClassifierAdapters_Test.java" startLine="24" startPosition="0" endLine="492" endPosition="0" unitName="jetbrains.mps.closures.test.ClassifierAdapters_Test" />
-  <unitInfo fileName="YieldClosures_Test.java" startLine="22" startPosition="0" endLine="1969" endPosition="0" unitName="jetbrains.mps.closures.test.YieldClosures_Test" />
+  <unitInfo fileName="YieldClosures_Test.java" startLine="22" startPosition="0" endLine="2051" endPosition="0" unitName="jetbrains.mps.closures.test.YieldClosures_Test" />
   <root nodeId="1201432919093">
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="100" startPosition="27" endLine="100" endPosition="27" />
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="103" startPosition="27" endLine="103" endPosition="27" />
@@ -71,6 +71,10 @@
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1785" startPosition="28" endLine="1785" endPosition="28" />
     <nodeInfo nodeId="1229428853863" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1826" startPosition="27" endLine="1826" endPosition="27" />
     <nodeInfo nodeId="1229443175163" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1885" startPosition="27" endLine="1885" endPosition="27" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1987" startPosition="27" endLine="1987" endPosition="27" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1990" startPosition="27" endLine="1990" endPosition="27" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1993" startPosition="27" endLine="1993" endPosition="27" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1996" startPosition="28" endLine="1996" endPosition="28" />
     <nodeInfo nodeId="1201433515826" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="25" startPosition="45" endLine="26" endPosition="49" />
     <nodeInfo nodeId="1201433525639" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="27" startPosition="19" endLine="28" endPosition="51" />
     <nodeInfo nodeId="1201433541143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="30" startPosition="20" endLine="31" endPosition="51" />
@@ -1002,26 +1006,67 @@
     <nodeInfo nodeId="1229445373089" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1923" startPosition="9" endLine="1924" endPosition="16" />
     <nodeInfo nodeId="1229445373093" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1924" startPosition="16" endLine="1925" endPosition="31" />
     <nodeInfo nodeId="7376433222636453179" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="YieldClosures_Test.java" startLine="1926" startPosition="40" endLine="1927" endPosition="13" />
-    <nodeInfo nodeId="1229107197835" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1931" startPosition="87" endLine="1932" endPosition="94" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1933" startPosition="5" endLine="1934" endPosition="28" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1934" startPosition="28" endLine="1935" endPosition="28" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1935" startPosition="28" endLine="1936" endPosition="87" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1936" startPosition="87" endLine="1937" endPosition="87" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1939" startPosition="40" endLine="1940" endPosition="16" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1942" startPosition="40" endLine="1943" endPosition="16" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1944" startPosition="9" endLine="1945" endPosition="34" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1945" startPosition="34" endLine="1946" endPosition="34" />
-    <nodeInfo nodeId="1229107197854" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1946" startPosition="34" endLine="1947" endPosition="98" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1948" startPosition="9" endLine="1949" endPosition="20" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1949" startPosition="20" endLine="1950" endPosition="20" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1950" startPosition="20" endLine="1951" endPosition="79" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1951" startPosition="79" endLine="1952" endPosition="79" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1954" startPosition="42" endLine="1955" endPosition="20" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1957" startPosition="42" endLine="1958" endPosition="20" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1959" startPosition="13" endLine="1960" endPosition="34" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1960" startPosition="34" endLine="1961" endPosition="34" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1961" startPosition="34" endLine="1962" endPosition="36" />
-    <nodeInfo nodeId="1229107197871" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1961" startPosition="34" endLine="1962" endPosition="36" />
+    <nodeInfo nodeId="8867458942910670604" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1931" startPosition="48" endLine="1932" endPosition="66" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="YieldClosures_Test.java" startLine="1937" startPosition="51" endLine="1938" endPosition="37" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="YieldClosures_Test.java" startLine="1938" startPosition="37" endLine="1939" endPosition="35" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="YieldClosures_Test.java" startLine="1939" startPosition="35" endLine="1940" endPosition="36" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="YieldClosures_Test.java" startLine="1940" startPosition="36" endLine="1941" endPosition="61" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="YieldClosures_Test.java" startLine="1941" startPosition="61" endLine="1942" endPosition="74" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="YieldClosures_Test.java" startLine="1949" startPosition="28" endLine="1950" endPosition="54" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1950" startPosition="54" endLine="1951" endPosition="35" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1952" startPosition="27" endLine="1953" endPosition="112" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1955" startPosition="81" endLine="1956" endPosition="40" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1956" startPosition="40" endLine="1957" endPosition="30" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1958" startPosition="23" endLine="1959" endPosition="108" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1959" startPosition="108" endLine="1960" endPosition="39" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1960" startPosition="39" endLine="1961" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1962" startPosition="27" endLine="1963" endPosition="41" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1965" startPosition="68" endLine="1966" endPosition="40" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1966" startPosition="40" endLine="1967" endPosition="30" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1968" startPosition="23" endLine="1969" endPosition="68" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1969" startPosition="68" endLine="1970" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1970" startPosition="38" endLine="1971" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1973" startPosition="50" endLine="1974" endPosition="40" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1974" startPosition="40" endLine="1975" endPosition="30" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1976" startPosition="23" endLine="1977" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1977" startPosition="38" endLine="1978" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1979" startPosition="27" endLine="1980" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1980" startPosition="38" endLine="1981" endPosition="36" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1981" startPosition="36" endLine="1982" endPosition="34" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1983" startPosition="28" endLine="1984" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1984" startPosition="38" endLine="1985" endPosition="66" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1985" startPosition="66" endLine="1986" endPosition="34" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1987" startPosition="27" endLine="1988" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1988" startPosition="38" endLine="1989" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1990" startPosition="27" endLine="1991" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1991" startPosition="38" endLine="1992" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1993" startPosition="27" endLine="1994" endPosition="38" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1994" startPosition="38" endLine="1995" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1996" startPosition="28" endLine="1997" endPosition="39" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1997" startPosition="39" endLine="1998" endPosition="28" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="1999" startPosition="28" endLine="2000" endPosition="37" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="2002" startPosition="31" endLine="2003" endPosition="29" />
+    <nodeInfo nodeId="8867458942910706625" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2009" startPosition="20" endLine="2010" endPosition="147" />
+    <nodeInfo nodeId="1229107197835" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2013" startPosition="87" endLine="2014" endPosition="94" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2015" startPosition="5" endLine="2016" endPosition="28" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2016" startPosition="28" endLine="2017" endPosition="28" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2017" startPosition="28" endLine="2018" endPosition="87" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2018" startPosition="87" endLine="2019" endPosition="87" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="2021" startPosition="40" endLine="2022" endPosition="16" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="2024" startPosition="40" endLine="2025" endPosition="16" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2026" startPosition="9" endLine="2027" endPosition="34" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2027" startPosition="34" endLine="2028" endPosition="34" />
+    <nodeInfo nodeId="1229107197854" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2028" startPosition="34" endLine="2029" endPosition="98" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2030" startPosition="9" endLine="2031" endPosition="20" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2031" startPosition="20" endLine="2032" endPosition="20" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2032" startPosition="20" endLine="2033" endPosition="79" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="2033" startPosition="79" endLine="2034" endPosition="79" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="2036" startPosition="42" endLine="2037" endPosition="20" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="YieldClosures_Test.java" startLine="2039" startPosition="42" endLine="2040" endPosition="20" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2041" startPosition="13" endLine="2042" endPosition="34" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2042" startPosition="34" endLine="2043" endPosition="34" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="2043" startPosition="34" endLine="2044" endPosition="36" />
+    <nodeInfo nodeId="1229107197871" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="2043" startPosition="34" endLine="2044" endPosition="36" />
     <nodeInfo nodeId="1201433546973" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="32" startPosition="14" endLine="34" endPosition="9" />
     <nodeInfo nodeId="1203355537892" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="613" startPosition="28" endLine="615" endPosition="28" />
     <nodeInfo nodeId="1203356455705" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="613" startPosition="28" endLine="615" endPosition="28" />
@@ -1050,10 +1095,10 @@
     <nodeInfo nodeId="1210769616695" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="996" startPosition="9" endLine="999" endPosition="9" />
     <nodeInfo nodeId="3376587159404841410" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1081" startPosition="16" endLine="1084" endPosition="15" />
     <nodeInfo nodeId="1229277797328" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="YieldClosures_Test.java" startLine="1670" startPosition="46" endLine="1673" endPosition="5" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1938" startPosition="20" endLine="1941" endPosition="9" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1941" startPosition="9" endLine="1944" endPosition="9" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1953" startPosition="24" endLine="1956" endPosition="13" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1956" startPosition="13" endLine="1959" endPosition="13" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="2020" startPosition="20" endLine="2023" endPosition="9" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="2023" startPosition="9" endLine="2026" endPosition="9" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="2035" startPosition="24" endLine="2038" endPosition="13" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="2038" startPosition="13" endLine="2041" endPosition="13" />
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="55" startPosition="27" endLine="59" endPosition="23" />
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="62" startPosition="27" endLine="66" endPosition="23" />
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="69" startPosition="28" endLine="73" endPosition="23" />
@@ -1105,6 +1150,9 @@
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1746" startPosition="27" endLine="1750" endPosition="23" />
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1756" startPosition="28" endLine="1760" endPosition="23" />
     <nodeInfo nodeId="1229443175163" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1870" startPosition="27" endLine="1874" endPosition="23" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1954" startPosition="27" endLine="1958" endPosition="23" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1964" startPosition="27" endLine="1968" endPosition="23" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="1972" startPosition="27" endLine="1976" endPosition="23" />
     <nodeInfo nodeId="1201433536337" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="29" startPosition="9" endLine="34" endPosition="9" />
     <nodeInfo nodeId="1201528305866" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="241" startPosition="51" endLine="246" endPosition="26" />
     <nodeInfo nodeId="1209326050090" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="754" startPosition="16" endLine="759" endPosition="11" />
@@ -1130,7 +1178,7 @@
     <nodeInfo nodeId="1201535652897" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="437" startPosition="77" endLine="448" endPosition="0" />
     <nodeInfo nodeId="1203355552935" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="YieldClosures_Test.java" startLine="528" startPosition="18" endLine="539" endPosition="9" />
     <nodeInfo nodeId="1201785509884" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="678" startPosition="27" endLine="689" endPosition="23" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="YieldClosures_Test.java" startLine="1952" startPosition="79" endLine="1963" endPosition="11" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="YieldClosures_Test.java" startLine="2034" startPosition="79" endLine="2045" endPosition="11" />
     <nodeInfo nodeId="1201785597953" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="636" startPosition="99" endLine="648" endPosition="11" />
     <nodeInfo nodeId="1209326018926" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="747" startPosition="39" endLine="759" endPosition="11" />
     <nodeInfo nodeId="6654551869131341601" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="YieldClosures_Test.java" startLine="872" startPosition="45" endLine="885" endPosition="9" />
@@ -1146,9 +1194,9 @@
     <nodeInfo nodeId="1201439804502" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="129" startPosition="77" endLine="146" endPosition="0" />
     <nodeInfo nodeId="1201785477030" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="634" startPosition="77" endLine="651" endPosition="0" />
     <nodeInfo nodeId="1209325983791" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="745" startPosition="77" endLine="762" endPosition="0" />
-    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1947" startPosition="98" endLine="1964" endPosition="9" />
+    <nodeInfo nodeId="1229107197861" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="2029" startPosition="98" endLine="2046" endPosition="9" />
     <nodeInfo nodeId="5997054828945109591" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="1685" startPosition="46" endLine="1703" endPosition="31" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1946" startPosition="34" endLine="1964" endPosition="9" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="2028" startPosition="34" endLine="2046" endPosition="9" />
     <nodeInfo nodeId="1201519068369" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="234" startPosition="77" endLine="253" endPosition="0" />
     <nodeInfo nodeId="1229086530164" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="1524" startPosition="24" endLine="1543" endPosition="23" />
     <nodeInfo nodeId="1229428853863" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="1812" startPosition="20" endLine="1831" endPosition="19" />
@@ -1164,7 +1212,7 @@
     <nodeInfo nodeId="1229087132438" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="1571" startPosition="50" endLine="1599" endPosition="35" />
     <nodeInfo nodeId="5997054828945109591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1680" startPosition="39" endLine="1708" endPosition="0" />
     <nodeInfo nodeId="1229443175163" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="1864" startPosition="20" endLine="1892" endPosition="19" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="YieldClosures_Test.java" startLine="1937" startPosition="87" endLine="1965" endPosition="7" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="YieldClosures_Test.java" startLine="2019" startPosition="87" endLine="2047" endPosition="7" />
     <nodeInfo nodeId="1229086530164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1518" startPosition="51" endLine="1547" endPosition="18" />
     <nodeInfo nodeId="5997054828945109591" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1679" startPosition="42" endLine="1708" endPosition="10" />
     <nodeInfo nodeId="1229428853863" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1806" startPosition="47" endLine="1835" endPosition="14" />
@@ -1179,7 +1227,7 @@
     <nodeInfo nodeId="1229086530164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1516" startPosition="61" endLine="1549" endPosition="14" />
     <nodeInfo nodeId="5997054828945109581" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1677" startPosition="48" endLine="1710" endPosition="7" />
     <nodeInfo nodeId="1229428853863" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1804" startPosition="43" endLine="1837" endPosition="10" />
-    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="1932" startPosition="94" endLine="1966" endPosition="5" />
+    <nodeInfo nodeId="1229107197842" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="YieldClosures_Test.java" startLine="2014" startPosition="94" endLine="2048" endPosition="5" />
     <nodeInfo nodeId="1229019599670" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="1258" startPosition="46" endLine="1293" endPosition="31" />
     <nodeInfo nodeId="1229019522329" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="1317" startPosition="46" endLine="1352" endPosition="31" />
     <nodeInfo nodeId="1229087132438" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1567" startPosition="51" endLine="1602" endPosition="18" />
@@ -1191,7 +1239,7 @@
     <nodeInfo nodeId="1229428008710" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1802" startPosition="49" endLine="1839" endPosition="7" />
     <nodeInfo nodeId="1229087132438" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1566" startPosition="44" endLine="1604" endPosition="0" />
     <nodeInfo nodeId="1229443175163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1858" startPosition="47" endLine="1896" endPosition="14" />
-    <nodeInfo nodeId="1229107197823" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1930" startPosition="0" endLine="1968" endPosition="0" />
+    <nodeInfo nodeId="1229107197823" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="2012" startPosition="0" endLine="2050" endPosition="0" />
     <nodeInfo nodeId="1229019599670" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1257" startPosition="0" endLine="1296" endPosition="0" />
     <nodeInfo nodeId="1229019522329" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1316" startPosition="0" endLine="1355" endPosition="0" />
     <nodeInfo nodeId="1229087132438" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1565" startPosition="61" endLine="1604" endPosition="14" />
@@ -1234,12 +1282,14 @@
     <nodeInfo nodeId="1229277702711" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1615" startPosition="175" endLine="1669" endPosition="0" />
     <nodeInfo nodeId="1229087101147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1556" startPosition="0" endLine="1611" endPosition="0" />
     <nodeInfo nodeId="1229277681790" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1614" startPosition="78" endLine="1669" endPosition="6" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="1946" startPosition="20" endLine="2001" endPosition="19" />
     <nodeInfo nodeId="1201535652936" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="459" startPosition="46" endLine="515" endPosition="31" />
     <nodeInfo nodeId="1210769642288" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1009" startPosition="0" endLine="1065" endPosition="0" />
     <nodeInfo nodeId="1229019599657" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1244" startPosition="48" endLine="1300" endPosition="7" />
     <nodeInfo nodeId="1229019522316" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1303" startPosition="53" endLine="1359" endPosition="7" />
     <nodeInfo nodeId="1229019752410" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1444" startPosition="47" endLine="1501" endPosition="14" />
     <nodeInfo nodeId="1201534555460" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="369" startPosition="0" endLine="427" endPosition="0" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="1944" startPosition="46" endLine="2002" endPosition="31" />
     <nodeInfo nodeId="1229019593360" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1243" startPosition="0" endLine="1302" endPosition="0" />
     <nodeInfo nodeId="1229019509210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1302" startPosition="0" endLine="1361" endPosition="0" />
     <nodeInfo nodeId="1229019676427" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1370" startPosition="47" endLine="1429" endPosition="14" />
@@ -1249,6 +1299,7 @@
     <nodeInfo nodeId="1229019752410" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1442" startPosition="41" endLine="1503" endPosition="10" />
     <nodeInfo nodeId="1229019676427" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1369" startPosition="40" endLine="1431" endPosition="0" />
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="1728" startPosition="20" endLine="1790" endPosition="19" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1943" startPosition="0" endLine="2005" endPosition="0" />
     <nodeInfo nodeId="1201534555460" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="364" startPosition="47" endLine="427" endPosition="14" />
     <nodeInfo nodeId="1229019676427" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1368" startPosition="41" endLine="1431" endPosition="10" />
     <nodeInfo nodeId="1210769642288" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1003" startPosition="40" endLine="1067" endPosition="0" />
@@ -1267,6 +1318,7 @@
     <nodeInfo nodeId="1203355537892" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="553" startPosition="20" endLine="622" endPosition="19" />
     <nodeInfo nodeId="1229019752396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="YieldClosures_Test.java" startLine="1436" startPosition="55" endLine="1505" endPosition="7" />
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1725" startPosition="0" endLine="1794" endPosition="0" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1936" startPosition="46" endLine="2005" endPosition="14" />
     <nodeInfo nodeId="1201534555460" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="361" startPosition="62" endLine="431" endPosition="0" />
     <nodeInfo nodeId="1201535652936" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="450" startPosition="40" endLine="520" endPosition="0" />
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="47" startPosition="46" endLine="118" endPosition="31" />
@@ -1276,6 +1328,8 @@
     <nodeInfo nodeId="1201439820459" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="154" startPosition="0" endLine="226" endPosition="0" />
     <nodeInfo nodeId="1203355537892" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="551" startPosition="46" endLine="623" endPosition="31" />
     <nodeInfo nodeId="1229019750423" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1435" startPosition="0" endLine="1507" endPosition="0" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1935" startPosition="39" endLine="2007" endPosition="0" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1934" startPosition="54" endLine="2007" endPosition="10" />
     <nodeInfo nodeId="1201535652936" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="448" startPosition="62" endLine="522" endPosition="0" />
     <nodeInfo nodeId="1201785509884" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="660" startPosition="46" endLine="734" endPosition="31" />
     <nodeInfo nodeId="6654551869131341513" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="901" startPosition="20" endLine="975" endPosition="19" />
@@ -1283,9 +1337,11 @@
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="46" startPosition="0" endLine="121" endPosition="0" />
     <nodeInfo nodeId="1201519088406" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="YieldClosures_Test.java" startLine="264" startPosition="20" endLine="340" endPosition="19" />
     <nodeInfo nodeId="1203355537892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="550" startPosition="0" endLine="626" endPosition="0" />
+    <nodeInfo nodeId="8867458942910706579" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1933" startPosition="92" endLine="2009" endPosition="0" />
     <nodeInfo nodeId="1201439820459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="149" startPosition="47" endLine="226" endPosition="14" />
     <nodeInfo nodeId="6654551869131341513" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="YieldClosures_Test.java" startLine="899" startPosition="46" endLine="976" endPosition="31" />
     <nodeInfo nodeId="1229443148776" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1853" startPosition="0" endLine="1930" endPosition="0" />
+    <nodeInfo nodeId="8867458942910706574" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="YieldClosures_Test.java" startLine="1932" startPosition="66" endLine="2009" endPosition="20" />
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="43" startPosition="47" endLine="121" endPosition="14" />
     <nodeInfo nodeId="1201785509884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="659" startPosition="0" endLine="737" endPosition="0" />
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1716" startPosition="46" endLine="1794" endPosition="14" />
@@ -1299,6 +1355,7 @@
     <nodeInfo nodeId="1201433490822" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="41" startPosition="41" endLine="123" endPosition="10" />
     <nodeInfo nodeId="1203355537892" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="544" startPosition="47" endLine="626" endPosition="14" />
     <nodeInfo nodeId="5997054828945109651" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="1714" startPosition="42" endLine="1796" endPosition="10" />
+    <nodeInfo nodeId="8867458942910670549" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="1930" startPosition="0" endLine="2012" endPosition="0" />
     <nodeInfo nodeId="1201519088406" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="261" startPosition="0" endLine="344" endPosition="0" />
     <nodeInfo nodeId="1201534528112" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="YieldClosures_Test.java" startLine="350" startPosition="0" endLine="433" endPosition="0" />
     <nodeInfo nodeId="1201785509884" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="YieldClosures_Test.java" startLine="654" startPosition="47" endLine="737" endPosition="14" />
@@ -1413,6 +1470,10 @@
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1785" startPosition="28" endLine="1785" endPosition="28" />
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1826" startPosition="27" endLine="1826" endPosition="27" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1885" startPosition="27" endLine="1885" endPosition="27" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1987" startPosition="27" endLine="1987" endPosition="27" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1990" startPosition="27" endLine="1990" endPosition="27" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1993" startPosition="27" endLine="1993" endPosition="27" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1996" startPosition="28" endLine="1996" endPosition="28" />
     <scopeInfo nodeId="1201433520318" fileName="YieldClosures_Test.java" startLine="27" startPosition="19" endLine="28" endPosition="51" />
     <scopeInfo nodeId="1201433536338" fileName="YieldClosures_Test.java" startLine="30" startPosition="20" endLine="31" endPosition="51" />
     <scopeInfo nodeId="1201433546974" fileName="YieldClosures_Test.java" startLine="32" startPosition="16" endLine="33" endPosition="51" />
@@ -1528,11 +1589,14 @@
       <varInfo nodeId="1229445373096" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1229445373098" fileName="YieldClosures_Test.java" startLine="1926" startPosition="40" endLine="1927" endPosition="13" />
-    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="1939" startPosition="40" endLine="1940" endPosition="16" />
-    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="1942" startPosition="40" endLine="1943" endPosition="16" />
-    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="1954" startPosition="42" endLine="1955" endPosition="20" />
-    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="1957" startPosition="42" endLine="1958" endPosition="20" />
-    <scopeInfo nodeId="1229107197870" fileName="YieldClosures_Test.java" startLine="1961" startPosition="34" endLine="1962" endPosition="36" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1952" startPosition="27" endLine="1953" endPosition="112" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1962" startPosition="27" endLine="1963" endPosition="41" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1999" startPosition="28" endLine="2000" endPosition="37" />
+    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="2021" startPosition="40" endLine="2022" endPosition="16" />
+    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="2024" startPosition="40" endLine="2025" endPosition="16" />
+    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="2036" startPosition="42" endLine="2037" endPosition="20" />
+    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="2039" startPosition="42" endLine="2040" endPosition="20" />
+    <scopeInfo nodeId="1229107197870" fileName="YieldClosures_Test.java" startLine="2043" startPosition="34" endLine="2044" endPosition="36" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="52" startPosition="28" endLine="54" endPosition="35" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="56" startPosition="33" endLine="58" endPosition="30" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="63" startPosition="34" endLine="65" endPosition="30" />
@@ -1696,6 +1760,14 @@
     <scopeInfo nodeId="1229445328504" fileName="YieldClosures_Test.java" startLine="1909" startPosition="9" endLine="1911" endPosition="31" />
     <scopeInfo nodeId="1229445364490" fileName="YieldClosures_Test.java" startLine="1917" startPosition="9" endLine="1919" endPosition="31" />
     <scopeInfo nodeId="1229445373088" fileName="YieldClosures_Test.java" startLine="1923" startPosition="9" endLine="1925" endPosition="31" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1949" startPosition="28" endLine="1951" endPosition="35" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1955" startPosition="81" endLine="1957" endPosition="30" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1965" startPosition="68" endLine="1967" endPosition="30" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1973" startPosition="50" endLine="1975" endPosition="30" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1987" startPosition="27" endLine="1989" endPosition="28" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1990" startPosition="27" endLine="1992" endPosition="28" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1993" startPosition="27" endLine="1995" endPosition="28" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1996" startPosition="28" endLine="1998" endPosition="28" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="76" startPosition="27" endLine="79" endPosition="34" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="80" startPosition="27" endLine="83" endPosition="34" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="84" startPosition="27" endLine="87" endPosition="34" />
@@ -1793,6 +1865,8 @@
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1822" startPosition="27" endLine="1825" endPosition="34" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1877" startPosition="27" endLine="1880" endPosition="34" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1881" startPosition="27" endLine="1884" endPosition="34" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1979" startPosition="27" endLine="1982" endPosition="34" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1983" startPosition="28" endLine="1986" endPosition="34" />
     <scopeInfo nodeId="1201534562500" fileName="YieldClosures_Test.java" startLine="354" startPosition="37" endLine="358" endPosition="11" />
     <scopeInfo nodeId="1201534588348" fileName="YieldClosures_Test.java" startLine="354" startPosition="37" endLine="358" endPosition="11">
       <varInfo nodeId="1201534588349" varName="j" />
@@ -1842,6 +1916,7 @@
     <scopeInfo nodeId="1229087132438" fileName="YieldClosures_Test.java" startLine="1579" startPosition="31" endLine="1585" endPosition="32" />
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1633" startPosition="27" endLine="1639" endPosition="28" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1870" startPosition="27" endLine="1876" endPosition="28" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1972" startPosition="27" endLine="1978" endPosition="28" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="469" startPosition="27" endLine="476" endPosition="28" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="479" startPosition="27" endLine="486" endPosition="28" />
     <scopeInfo nodeId="1203355592309" fileName="YieldClosures_Test.java" startLine="530" startPosition="40" endLine="537" endPosition="13" />
@@ -1856,6 +1931,8 @@
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1736" startPosition="27" endLine="1743" endPosition="28" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1746" startPosition="27" endLine="1753" endPosition="28" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1756" startPosition="28" endLine="1763" endPosition="28" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1954" startPosition="27" endLine="1961" endPosition="28" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1964" startPosition="27" endLine="1971" endPosition="28" />
     <scopeInfo nodeId="1201439831164" fileName="YieldClosures_Test.java" startLine="133" startPosition="23" endLine="141" endPosition="14">
       <varInfo nodeId="1201439846710" varName="j" />
     </scopeInfo>
@@ -1874,7 +1951,7 @@
     <scopeInfo nodeId="6654551869131342276" fileName="YieldClosures_Test.java" startLine="875" startPosition="16" endLine="884" endPosition="11">
       <varInfo nodeId="6654551869131342290" varName="ll" />
     </scopeInfo>
-    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="1953" startPosition="24" endLine="1962" endPosition="36" />
+    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="2035" startPosition="24" endLine="2044" endPosition="36" />
     <scopeInfo nodeId="1229002084021" fileName="YieldClosures_Test.java" startLine="1231" startPosition="52" endLine="1241" endPosition="7" />
     <scopeInfo nodeId="1201535652897" fileName="YieldClosures_Test.java" startLine="437" startPosition="77" endLine="448" endPosition="0" />
     <scopeInfo nodeId="1203355552935" fileName="YieldClosures_Test.java" startLine="528" startPosition="18" endLine="539" endPosition="9">
@@ -1908,7 +1985,7 @@
     <scopeInfo nodeId="3376587159404841515" fileName="YieldClosures_Test.java" startLine="1141" startPosition="28" endLine="1155" endPosition="23" />
     <scopeInfo nodeId="1203355520123" fileName="YieldClosures_Test.java" startLine="526" startPosition="77" endLine="541" endPosition="0" />
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1687" startPosition="20" endLine="1702" endPosition="19" />
-    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="1948" startPosition="9" endLine="1963" endPosition="11">
+    <scopeInfo nodeId="1229107197861" fileName="YieldClosures_Test.java" startLine="2030" startPosition="9" endLine="2045" endPosition="11">
       <varInfo nodeId="1229107197867" varName="b" />
       <varInfo nodeId="1229107197863" varName="a" />
     </scopeInfo>
@@ -1920,7 +1997,7 @@
     <scopeInfo nodeId="1201439804502" fileName="YieldClosures_Test.java" startLine="129" startPosition="77" endLine="146" endPosition="0" />
     <scopeInfo nodeId="1201785477030" fileName="YieldClosures_Test.java" startLine="634" startPosition="77" endLine="651" endPosition="0" />
     <scopeInfo nodeId="1209325983791" fileName="YieldClosures_Test.java" startLine="745" startPosition="77" endLine="762" endPosition="0" />
-    <scopeInfo nodeId="1229107197853" fileName="YieldClosures_Test.java" startLine="1946" startPosition="34" endLine="1964" endPosition="9" />
+    <scopeInfo nodeId="1229107197853" fileName="YieldClosures_Test.java" startLine="2028" startPosition="34" endLine="2046" endPosition="9" />
     <scopeInfo nodeId="1201519068369" fileName="YieldClosures_Test.java" startLine="234" startPosition="77" endLine="253" endPosition="0" />
     <scopeInfo nodeId="3376587159404838416" fileName="YieldClosures_Test.java" startLine="1079" startPosition="44" endLine="1098" endPosition="53" />
     <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1524" startPosition="24" endLine="1543" endPosition="23" />
@@ -1937,7 +2014,7 @@
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1681" startPosition="46" endLine="1706" endPosition="14" />
     <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1521" startPosition="0" endLine="1547" endPosition="0" />
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1809" startPosition="0" endLine="1835" endPosition="0" />
-    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="1938" startPosition="20" endLine="1964" endPosition="9" />
+    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="2020" startPosition="20" endLine="2046" endPosition="9" />
     <scopeInfo nodeId="3376587159404838393" fileName="YieldClosures_Test.java" startLine="1074" startPosition="45" endLine="1102" endPosition="9">
       <varInfo nodeId="3376587159404838400" varName="i" />
     </scopeInfo>
@@ -1955,7 +2032,7 @@
     <scopeInfo nodeId="5997054828945109591" fileName="YieldClosures_Test.java" startLine="1678" startPosition="85" endLine="1710" endPosition="0" />
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1805" startPosition="40" endLine="1837" endPosition="0" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1862" startPosition="46" endLine="1894" endPosition="29" />
-    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="1933" startPosition="5" endLine="1965" endPosition="7">
+    <scopeInfo nodeId="1229107197842" fileName="YieldClosures_Test.java" startLine="2015" startPosition="5" endLine="2047" endPosition="7">
       <varInfo nodeId="1229107197844" varName="foo" />
       <varInfo nodeId="1229107197849" varName="bar" />
     </scopeInfo>
@@ -1963,7 +2040,7 @@
     <scopeInfo nodeId="1229428853863" fileName="YieldClosures_Test.java" startLine="1804" startPosition="43" endLine="1837" endPosition="10" />
     <scopeInfo nodeId="1229087132438" fileName="YieldClosures_Test.java" startLine="1567" startPosition="51" endLine="1602" endPosition="18" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1861" startPosition="0" endLine="1896" endPosition="0" />
-    <scopeInfo nodeId="1229107197834" fileName="YieldClosures_Test.java" startLine="1931" startPosition="87" endLine="1966" endPosition="5" />
+    <scopeInfo nodeId="1229107197834" fileName="YieldClosures_Test.java" startLine="2013" startPosition="87" endLine="2048" endPosition="5" />
     <scopeInfo nodeId="1229019599670" fileName="YieldClosures_Test.java" startLine="1258" startPosition="46" endLine="1294" endPosition="29" />
     <scopeInfo nodeId="1229019522329" fileName="YieldClosures_Test.java" startLine="1317" startPosition="46" endLine="1353" endPosition="29" />
     <scopeInfo nodeId="1229086530164" fileName="YieldClosures_Test.java" startLine="1515" startPosition="96" endLine="1551" endPosition="0" />
@@ -1972,7 +2049,7 @@
     <scopeInfo nodeId="1229086530159" fileName="YieldClosures_Test.java" startLine="1514" startPosition="52" endLine="1551" endPosition="11" />
     <scopeInfo nodeId="1229087132438" fileName="YieldClosures_Test.java" startLine="1566" startPosition="44" endLine="1604" endPosition="0" />
     <scopeInfo nodeId="1229443175163" fileName="YieldClosures_Test.java" startLine="1858" startPosition="47" endLine="1896" endPosition="14" />
-    <scopeInfo nodeId="1229107197823" fileName="YieldClosures_Test.java" startLine="1930" startPosition="0" endLine="1968" endPosition="0">
+    <scopeInfo nodeId="1229107197823" fileName="YieldClosures_Test.java" startLine="2012" startPosition="0" endLine="2050" endPosition="0">
       <varInfo nodeId="1229107197830" varName="res" />
       <varInfo nodeId="1229107197826" varName="exp" />
     </scopeInfo>
@@ -2028,6 +2105,7 @@
     <scopeInfo nodeId="1229277702711" fileName="YieldClosures_Test.java" startLine="1615" startPosition="175" endLine="1669" endPosition="0" />
     <scopeInfo nodeId="1201534555460" fileName="YieldClosures_Test.java" startLine="370" startPosition="46" endLine="425" endPosition="29" />
     <scopeInfo nodeId="1229087101147" fileName="YieldClosures_Test.java" startLine="1556" startPosition="0" endLine="1611" endPosition="0" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1946" startPosition="20" endLine="2001" endPosition="19" />
     <scopeInfo nodeId="1210769642288" fileName="YieldClosures_Test.java" startLine="1009" startPosition="0" endLine="1065" endPosition="0" />
     <scopeInfo nodeId="1229019593362" fileName="YieldClosures_Test.java" startLine="1244" startPosition="48" endLine="1300" endPosition="7" />
     <scopeInfo nodeId="1229019509212" fileName="YieldClosures_Test.java" startLine="1303" startPosition="53" endLine="1359" endPosition="7" />
@@ -2037,6 +2115,7 @@
     <scopeInfo nodeId="1229019593360" fileName="YieldClosures_Test.java" startLine="1243" startPosition="0" endLine="1302" endPosition="0" />
     <scopeInfo nodeId="1229019509210" fileName="YieldClosures_Test.java" startLine="1302" startPosition="0" endLine="1361" endPosition="0" />
     <scopeInfo nodeId="1229019676427" fileName="YieldClosures_Test.java" startLine="1370" startPosition="47" endLine="1429" endPosition="14" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1944" startPosition="46" endLine="2003" endPosition="29" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="458" startPosition="0" endLine="518" endPosition="0" />
     <scopeInfo nodeId="1229019752410" fileName="YieldClosures_Test.java" startLine="1443" startPosition="40" endLine="1503" endPosition="0" />
     <scopeInfo nodeId="1210769642288" fileName="YieldClosures_Test.java" startLine="1004" startPosition="47" endLine="1065" endPosition="14" />
@@ -2049,6 +2128,7 @@
       <varInfo nodeId="1229277770993" varName="out" />
     </scopeInfo>
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1728" startPosition="20" endLine="1790" endPosition="19" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1943" startPosition="0" endLine="2005" endPosition="0" />
     <scopeInfo nodeId="1201534555460" fileName="YieldClosures_Test.java" startLine="364" startPosition="47" endLine="427" endPosition="14" />
     <scopeInfo nodeId="1229019676427" fileName="YieldClosures_Test.java" startLine="1368" startPosition="41" endLine="1431" endPosition="10" />
     <scopeInfo nodeId="1210769642288" fileName="YieldClosures_Test.java" startLine="1003" startPosition="40" endLine="1067" endPosition="0" />
@@ -2067,6 +2147,7 @@
     <scopeInfo nodeId="1203355537892" fileName="YieldClosures_Test.java" startLine="553" startPosition="20" endLine="622" endPosition="19" />
     <scopeInfo nodeId="1229019750425" fileName="YieldClosures_Test.java" startLine="1436" startPosition="55" endLine="1505" endPosition="7" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1725" startPosition="0" endLine="1794" endPosition="0" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1936" startPosition="46" endLine="2005" endPosition="14" />
     <scopeInfo nodeId="1201534555460" fileName="YieldClosures_Test.java" startLine="361" startPosition="62" endLine="431" endPosition="0" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="450" startPosition="40" endLine="520" endPosition="0" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="449" startPosition="41" endLine="520" endPosition="10" />
@@ -2075,7 +2156,9 @@
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="47" startPosition="46" endLine="119" endPosition="29" />
     <scopeInfo nodeId="1201439820459" fileName="YieldClosures_Test.java" startLine="154" startPosition="0" endLine="226" endPosition="0" />
     <scopeInfo nodeId="1229019750423" fileName="YieldClosures_Test.java" startLine="1435" startPosition="0" endLine="1507" endPosition="0" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1935" startPosition="39" endLine="2007" endPosition="0" />
     <scopeInfo nodeId="1203355537892" fileName="YieldClosures_Test.java" startLine="551" startPosition="46" endLine="624" endPosition="29" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1934" startPosition="54" endLine="2007" endPosition="10" />
     <scopeInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="448" startPosition="62" endLine="522" endPosition="0" />
     <scopeInfo nodeId="6654551869131341513" fileName="YieldClosures_Test.java" startLine="901" startPosition="20" endLine="975" endPosition="19" />
     <scopeInfo nodeId="1229019661538" fileName="YieldClosures_Test.java" startLine="1361" startPosition="0" endLine="1435" endPosition="0" />
@@ -2087,12 +2170,17 @@
     <scopeInfo nodeId="1201785509884" fileName="YieldClosures_Test.java" startLine="660" startPosition="46" endLine="735" endPosition="29" />
     <scopeInfo nodeId="1201519088406" fileName="YieldClosures_Test.java" startLine="264" startPosition="20" endLine="340" endPosition="19" />
     <scopeInfo nodeId="1203355537892" fileName="YieldClosures_Test.java" startLine="550" startPosition="0" endLine="626" endPosition="0" />
+    <scopeInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1933" startPosition="92" endLine="2009" endPosition="0" />
     <scopeInfo nodeId="1201439820459" fileName="YieldClosures_Test.java" startLine="149" startPosition="47" endLine="226" endPosition="14" />
     <scopeInfo nodeId="1229443148776" fileName="YieldClosures_Test.java" startLine="1853" startPosition="0" endLine="1930" endPosition="0" />
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="43" startPosition="47" endLine="121" endPosition="14" />
     <scopeInfo nodeId="1201785509884" fileName="YieldClosures_Test.java" startLine="659" startPosition="0" endLine="737" endPosition="0" />
     <scopeInfo nodeId="6654551869131341513" fileName="YieldClosures_Test.java" startLine="899" startPosition="46" endLine="977" endPosition="29" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1716" startPosition="46" endLine="1794" endPosition="14" />
+    <scopeInfo nodeId="8867458942910670552" fileName="YieldClosures_Test.java" startLine="1931" startPosition="48" endLine="2010" endPosition="147">
+      <varInfo nodeId="8867458942910670605" varName="input" />
+      <varInfo nodeId="8867458942910706575" varName="output" />
+    </scopeInfo>
     <scopeInfo nodeId="1201439820459" fileName="YieldClosures_Test.java" startLine="148" startPosition="40" endLine="228" endPosition="0" />
     <scopeInfo nodeId="1201519088406" fileName="YieldClosures_Test.java" startLine="262" startPosition="46" endLine="342" endPosition="29" />
     <scopeInfo nodeId="1201534528114" fileName="YieldClosures_Test.java" startLine="351" startPosition="52" endLine="431" endPosition="7" />
@@ -2103,6 +2191,7 @@
     <scopeInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="41" startPosition="41" endLine="123" endPosition="10" />
     <scopeInfo nodeId="1203355537892" fileName="YieldClosures_Test.java" startLine="544" startPosition="47" endLine="626" endPosition="14" />
     <scopeInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1714" startPosition="42" endLine="1796" endPosition="10" />
+    <scopeInfo nodeId="8867458942910670549" fileName="YieldClosures_Test.java" startLine="1930" startPosition="0" endLine="2012" endPosition="0" />
     <scopeInfo nodeId="1201519088406" fileName="YieldClosures_Test.java" startLine="261" startPosition="0" endLine="344" endPosition="0" />
     <scopeInfo nodeId="1201534528112" fileName="YieldClosures_Test.java" startLine="350" startPosition="0" endLine="433" endPosition="0" />
     <scopeInfo nodeId="1201785509884" fileName="YieldClosures_Test.java" startLine="654" startPosition="47" endLine="737" endPosition="14" />
@@ -2225,10 +2314,13 @@
     <unitInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="452" startPosition="23" endLine="518" endPosition="13" unitName="jetbrains.mps.closures.test.YieldClosures_Test$12" />
     <unitInfo nodeId="1229019676427" fileName="YieldClosures_Test.java" startLine="1367" startPosition="11" endLine="1433" endPosition="5" unitName="jetbrains.mps.closures.test.YieldClosures_Test$30" />
     <unitInfo nodeId="1210769642288" fileName="YieldClosures_Test.java" startLine="1001" startPosition="11" endLine="1069" endPosition="5" unitName="jetbrains.mps.closures.test.YieldClosures_Test$20" />
+    <unitInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1937" startPosition="23" endLine="2005" endPosition="13" unitName="jetbrains.mps.closures.test.YieldClosures_Test$42" />
     <unitInfo nodeId="1201534555460" fileName="YieldClosures_Test.java" startLine="361" startPosition="11" endLine="431" endPosition="5" unitName="jetbrains.mps.closures.test.YieldClosures_Test$8" />
     <unitInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="450" startPosition="19" endLine="520" endPosition="9" unitName="jetbrains.mps.closures.test.YieldClosures_Test$11" />
+    <unitInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1935" startPosition="19" endLine="2007" endPosition="9" unitName="jetbrains.mps.closures.test.YieldClosures_Test$41" />
     <unitInfo nodeId="1201535652936" fileName="YieldClosures_Test.java" startLine="448" startPosition="11" endLine="522" endPosition="5" unitName="jetbrains.mps.closures.test.YieldClosures_Test$10" />
     <unitInfo nodeId="1201439820459" fileName="YieldClosures_Test.java" startLine="150" startPosition="23" endLine="226" endPosition="13" unitName="jetbrains.mps.closures.test.YieldClosures_Test$6" />
+    <unitInfo nodeId="8867458942910706579" fileName="YieldClosures_Test.java" startLine="1933" startPosition="34" endLine="2009" endPosition="5" unitName="jetbrains.mps.closures.test.YieldClosures_Test$40" />
     <unitInfo nodeId="1201433490822" fileName="YieldClosures_Test.java" startLine="44" startPosition="23" endLine="121" endPosition="13" unitName="jetbrains.mps.closures.test.YieldClosures_Test$4" />
     <unitInfo nodeId="5997054828945109651" fileName="YieldClosures_Test.java" startLine="1717" startPosition="23" endLine="1794" endPosition="13" unitName="jetbrains.mps.closures.test.YieldClosures_Test$39" />
     <unitInfo nodeId="1201439820459" fileName="YieldClosures_Test.java" startLine="148" startPosition="19" endLine="228" endPosition="9" unitName="jetbrains.mps.closures.test.YieldClosures_Test$5" />
@@ -2984,14 +3076,14 @@
       <varInfo nodeId="1201780023572" varName="fun3" />
     </scopeInfo>
     <scopeInfo nodeId="1201777876283" fileName="AdvancedFunctionTypes_Test.java" startLine="9" startPosition="58" endLine="40" endPosition="0" />
-    <unitInfo nodeId="1201777947111" fileName="AdvancedFunctionTypes_Test.java" startLine="13" startPosition="19" endLine="17" endPosition="9" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="1201778635410" fileName="AdvancedFunctionTypes_Test.java" startLine="24" startPosition="23" endLine="28" endPosition="13" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="1201777947111" fileName="AdvancedFunctionTypes_Test.java" startLine="13" startPosition="19" endLine="17" endPosition="9" unitName="jetbrains.mps.closures.test._return_P0_E0$anonymous" />
+    <unitInfo nodeId="1201778635410" fileName="AdvancedFunctionTypes_Test.java" startLine="24" startPosition="23" endLine="28" endPosition="13" unitName="jetbrains.mps.closures.test._return_P0_E0$anonymous" />
     <unitInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="119" endLine="46" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$3" />
     <unitInfo nodeId="1201779035291" fileName="AdvancedFunctionTypes_Test.java" startLine="47" startPosition="96" endLine="51" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$4" />
     <unitInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="85" endLine="56" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$5" />
     <unitInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="15" endLine="66" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$6" />
     <unitInfo nodeId="1201777932247" fileName="AdvancedFunctionTypes_Test.java" startLine="11" startPosition="103" endLine="19" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$1" />
-    <unitInfo nodeId="1201778623496" fileName="AdvancedFunctionTypes_Test.java" startLine="22" startPosition="19" endLine="30" endPosition="9" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="1201778623496" fileName="AdvancedFunctionTypes_Test.java" startLine="22" startPosition="19" endLine="30" endPosition="9" unitName="jetbrains.mps.closures.test._return_P0_E0$anonymous" />
     <unitInfo nodeId="1201778621562" fileName="AdvancedFunctionTypes_Test.java" startLine="20" startPosition="143" endLine="32" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$2" />
   </root>
   <root nodeId="1201785418374">
@@ -3933,8 +4025,8 @@
     <scopeInfo nodeId="1226422508782" fileName="Functions.java" startLine="19" startPosition="94" endLine="24" endPosition="6" />
     <scopeInfo nodeId="1226422483076" fileName="Functions.java" startLine="10" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1226422508779" fileName="Functions.java" startLine="18" startPosition="0" endLine="26" endPosition="0" />
-    <unitInfo nodeId="1226422583666" fileName="Functions.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P1_E0$anonymous" />
-    <unitInfo nodeId="1226422606518" fileName="Functions.java" startLine="20" startPosition="15" endLine="24" endPosition="5" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P1_E0$anonymous" />
+    <unitInfo nodeId="1226422583666" fileName="Functions.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test._return_P1_E0$anonymous" />
+    <unitInfo nodeId="1226422606518" fileName="Functions.java" startLine="20" startPosition="15" endLine="24" endPosition="5" unitName="jetbrains.mps.closures.test._return_P1_E0$anonymous" />
     <unitInfo nodeId="1226422463301" fileName="Functions.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.closures.test.Functions" />
   </root>
   <root nodeId="191691165076055588">
@@ -4274,7 +4366,7 @@
     <scopeInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="12" startPosition="55" endLine="16" endPosition="0" />
     <scopeInfo nodeId="7706726851185799237" fileName="MPS9760.java" startLine="11" startPosition="23" endLine="16" endPosition="15" />
     <scopeInfo nodeId="7706726851185799234" fileName="MPS9760.java" startLine="10" startPosition="0" endLine="18" endPosition="0" />
-    <unitInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7706726851185802212" fileName="MPS9760.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.closures.test._return_P0_E0$anonymous" />
     <unitInfo nodeId="7706726851185799228" fileName="MPS9760.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9760" />
   </root>
   <root nodeId="7789098498783517693">

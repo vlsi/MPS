@@ -8,28 +8,12 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903e4(jetbrains.mps.internal.collections.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" />
+  <languageAspect modelUID="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)" version="-1" />
   <maxImportIndex value="32" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -3712,35 +3696,36 @@
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1228998160752">
         <property name="name:3" value="elementType" />
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="1228998112076">
-        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1228998118191">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1228998118192">
-            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228998121357">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1228998120254">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5050026341848553735">
+        <property name="inequationPriority:3" value="3" />
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5050026341848553736">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5050026341848553737">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5050026341848553738">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5050026341848553739">
                 <link role="applicableNode:3" targetNodeId="1228998025050" resolveInfo="statement" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1228998121849">
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5050026341848553740">
                 <link role="link:16" targetNodeId="1.1228997959377:3" />
               </node>
             </node>
           </node>
         </node>
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1228998129477">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1228998129478">
-            <node role="quotedNode:0" type="jetbrains.mps.lang.typesystem.structure.JoinType:3" id="1228998131598">
-              <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="1228998142752">
-                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1228998142753">
-                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="1228998170708">
-                    <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="1228998172652">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5050026341848553741">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5050026341848553742">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.typesystem.structure.JoinType:3" id="5050026341848553748">
+              <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="5050026341848553750">
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="5050026341848553751">
+                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="5050026341848553752">
+                    <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="5050026341848553753">
                       <link role="typeVarDeclaration:3" targetNodeId="1228998160752" resolveInfo="elementType" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node role="argument:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="1228998155900">
-                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1228998155901">
-                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="1228998174789">
-                    <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="1228998175978">
+              <node role="argument:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="5050026341848553755">
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.Type:3" id="5050026341848553756">
+                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="5050026341848553757">
+                    <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="5050026341848553758">
                       <link role="typeVarDeclaration:3" targetNodeId="1228998160752" resolveInfo="elementType" />
                     </node>
                   </node>
@@ -3749,7 +3734,7 @@
             </node>
           </node>
         </node>
-        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5970100369440882765" />
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5050026341848553747" />
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1228998025050">

@@ -1928,6 +1928,88 @@ __switch__:
     }
   }
 
+  public void test_mps10640() throws Exception {
+    Object input = new Object[]{"a", "b", new Object[]{"c", "d"}};
+    Iterable<Object> output = new _FunctionTypes._return_P1_E0<Iterable<Object>, Object>() {
+      public Iterable<Object> invoke(final Object o) {
+        return new Iterable<Object>() {
+          public Iterator<Object> iterator() {
+            return new YieldingIterator<Object>() {
+              private int __CP__ = 0;
+              private Object _5_os;
+              private int _5_os_idx;
+              private Object _8__yield_75e5vq_a0a0b0a0a1a22a;
+              private Iterator<Object> _8__yield_75e5vq_a0a0b0a0a1a22a_it;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 8:
+                      this._8__yield_75e5vq_a0a0b0a0a1a22a_it = Sequence.fromIterable(invoke(_5_os)).iterator();
+                    case 9:
+                      if (!(this._8__yield_75e5vq_a0a0b0a0a1a22a_it.hasNext())) {
+                        this.__CP__ = 6;
+                        break;
+                      }
+                      this._8__yield_75e5vq_a0a0b0a0a1a22a = this._8__yield_75e5vq_a0a0b0a0a1a22a_it.next();
+                      this.__CP__ = 10;
+                      break;
+                    case 5:
+                      this._5_os_idx = 0;
+                    case 6:
+                      if (this._5_os_idx >= ((Object[]) o).length) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._5_os = ((Object[]) o)[this._5_os_idx++];
+                      this.__CP__ = 7;
+                      break;
+                    case 3:
+                      if (o instanceof Object[]) {
+                        this.__CP__ = 4;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(o);
+                      return true;
+                    case 11:
+                      this.__CP__ = 9;
+                      this.yield(_8__yield_75e5vq_a0a0b0a0a1a22a);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      break;
+                    case 7:
+                      this.__CP__ = 8;
+                      break;
+                    case 10:
+                      this.__CP__ = 11;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    }.invoke(input);
+    Sequence.fromIterable(output).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), "a", "b", "c", "d"))).isEmpty();
+  }
+
   private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {
     Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
     {

@@ -2508,7 +2508,16 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_608109309169980431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true), "elementType", true);
+    SNode st;
+    SNode t = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    st = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+    if ((st == null)) {
+      st = TypeChecker.getInstance().getRuntimeSupport().coerce_(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(t, "jetbrains.mps.lang.typesystem.structure.JoinType"), "argument", true)).getElement(0), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+    }
+    if ((st == null)) {
+      st = TypeChecker.getInstance().getRuntimeSupport().coerce_(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(t, "jetbrains.mps.lang.typesystem.structure.JoinType"), "argument", true)).getElement(1), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+    }
+    return SLinkOperations.getTarget(st, "elementType", true);
   }
 
   public static SNode sourceNodeQuery_9117832275706131042(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
