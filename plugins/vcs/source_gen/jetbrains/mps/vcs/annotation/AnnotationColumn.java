@@ -35,6 +35,7 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import java.awt.event.MouseEvent;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Cursor;
+import com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter;
 
 public class AnnotationColumn extends AbstractLeftColumn {
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
@@ -93,6 +94,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   public void relayout(final EditorComponent component) {
+    if (component == null || component.isDisposed()) {
+      return;
+    }
     Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(AnnotationUtil.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
       public boolean accept(EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
@@ -161,23 +165,46 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   @Override
   public String getTooltipText(MouseEvent event) {
-    String result;
-    int y = event.getY();
-    int pseudoLine = Collections.binarySearch(myPseudoLinesY, y);
-    if (pseudoLine < 0) {
-      pseudoLine = -pseudoLine - 2;
+    int fileLine = findFileLineByY(event.getY());
+    if (fileLine != -1) {
+      return myFileAnnotation.getToolTip(fileLine);
     }
-    if (pseudoLine >= 0 && pseudoLine < ListSequence.fromList(myPseudoLinesToFileLines).count()) {
-      result = myFileAnnotation.getToolTip(ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine));
-    } else {
-      result = null;
-    }
-    return result;
+    return null;
   }
 
   @Nullable
   @Override
   public Cursor getCursor(MouseEvent event, EditorComponent component) {
     return new Cursor(Cursor.HAND_CURSOR);
+  }
+
+  @Override
+  public void mousePressed(MouseEvent event, EditorComponent component) {
+    if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_RELEASED) {
+      event.consume();
+      int fileLine = findFileLineByY(event.getY());
+      ((LineAnnotationAspectAdapter) myFileAnnotation.getAspects()[0]).doAction(fileLine);
+    } else {
+      super.mousePressed(event, component);
+    }
+  }
+
+  private int findPseudoLineByY(int y) {
+    int pseudoLine = Collections.binarySearch(myPseudoLinesY, y);
+    if (pseudoLine < 0) {
+      pseudoLine = -pseudoLine - 2;
+    }
+    if (pseudoLine < 0 || pseudoLine >= ListSequence.fromList(myPseudoLinesToFileLines).count()) {
+      return -1;
+    }
+    return pseudoLine;
+  }
+
+  private int findFileLineByY(int y) {
+    int pseudoLine = findPseudoLineByY(y);
+    if (pseudoLine != -1) {
+      return ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
+    }
+    return -1;
   }
 }

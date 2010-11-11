@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.vcs.annotation.AnnotationColumn" file="AnnotationColumn.java">
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
+    <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Cursor" />
