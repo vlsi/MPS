@@ -51,4 +51,9 @@ public interface IGenerationTaskPool {
     public void dispose() {
     }
   }
+
+  public interface ITaskPoolProvider {
+
+    IGenerationTaskPool getTaskPool();
+  }
 }

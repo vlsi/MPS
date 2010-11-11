@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -44,11 +45,12 @@ import java.util.List;
  * Created once per model generation.
  */
 public class GenerationSession {
-  private final GenerationController myController;
+  private final ITaskPoolProvider myTaskPoolProvider;
   private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
   private final IOperationContext myInvocationContext;
+  private final TransientModelsModule myTransientModelsModule;
   private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
   private final ProgressIndicator myProgressMonitor;
@@ -64,12 +66,13 @@ public class GenerationSession {
   private int myMinorStep = -1;
   private GenerationOptions myGenerationOptions;
 
-  public GenerationSession(GenerationController controller, @NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
-                           ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
+  public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
+                           ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
                            IPerformanceTracer tracer, GenerationOptions generationOptions) {
-    myController = controller;
+    myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
+    myTransientModelsModule = transientModelsModule;
     myGenerationTracer = generationOptions.getGenerationTracer();
     myDiscardTransients = !generationOptions.isSaveTransientModels();
     myProgressMonitor = progressMonitor;
@@ -195,7 +198,7 @@ public class GenerationSession {
     }
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, inputModel, myGenerationPlan, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan, mySessionContext);
     myLogger.setOperationContext(mySessionContext);
 
     // -- prepare generator
@@ -306,7 +309,7 @@ public class GenerationSession {
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     final TemplateGenerator tg =
       myGenerationOptions.isGenerateInParallel()
-        ? new ParallelTemplateGenerator(myController, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
+        ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
     if (tg instanceof ParallelTemplateGenerator) {
       hasChanges = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {

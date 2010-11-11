@@ -38,7 +38,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
   private Project myProject;
-  private IModule myInvocationContext;
+  private IModule myOriginalModule;
   private int myModelsToKeepMax = 0 /* unlimited */;
 
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
@@ -87,15 +87,15 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     });
   }
 
-  public void setInvocationContext(IModule invocationContext) {
-    myInvocationContext = invocationContext;
+  public void setOriginalModule(IModule originalModule) {
+    myOriginalModule = originalModule;
   }
 
   public Class getClass(String fqName) {
-    if (myInvocationContext == null) {
+    if (myOriginalModule == null) {
       throw new IllegalStateException();
     }
-    return myInvocationContext.getClass(fqName);
+    return myOriginalModule.getClass(fqName);
   }
 
   public ModuleDescriptor getModuleDescriptor() {
@@ -132,7 +132,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().removeUnusedDescriptors();
     invalidateCaches();
-    setInvocationContext(null);
+    setOriginalModule(null);
     myModelsToKeep.clear();
     myPublished.clear();
     myModels.clear();

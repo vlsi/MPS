@@ -6,6 +6,7 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -32,14 +33,14 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private Map<SNode, RootBasedQueryExectionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
-  public ParallelTemplateGenerator(GenerationController controller, GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
+  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
                                    SModel inputModel, SModel outputModel, GenerationOptions options,
                                    DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
     super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, options, dependenciesBuilder, performanceTracer);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
-    myPool = controller.getTaskPool();
+    myPool = taskPoolProvider.getTaskPool();
   }
 
   @Override
