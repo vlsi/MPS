@@ -260,6 +260,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
         collection.setWidth(x1 - x0);
         collection.setHeight(y1 - y0);
 
+        //collection is implicitly laid out
+        collection.unrequestLayout();
+
         if (collection != myCell) {
           int ascent = getAscent(collection);
           int descent = collection.getHeight() - ascent;

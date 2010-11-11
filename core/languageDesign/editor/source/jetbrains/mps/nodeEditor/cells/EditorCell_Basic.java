@@ -1346,5 +1346,9 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
     }
   }
+
+  public void unrequestLayout() {
+    myIsNeedRelayout = false;
+  }
   
 }
