@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-bu9mgf3qjingy6miea7hkwj1s8l2bs5">
+  <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2eow8w3dx0bq7y0ns8phc8w0cvxf7k5" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="fpsx42yjiof0oq14edmp0m01ocy8mk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="az0pkolsrl0b6edhd9rgkr9j3ebghzb" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2spao3jcdelqpacv7od6cry260t4gbv" />
+  <common hash="2bgckhrtzv7gdnuvp6vjiaro7d7losp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="UnitTest_Language.java" />
+  </common>
+  <source id="1171931690126" name="TestMethod" hash="-eiyup55aqaw8lyz4zx4enwsqklmv1rk">
+    <dep root="1215620452633" />
+    <dep root="1216134482493" />
+    <dep root="8427750732757990717" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TestMethod.java" />
+  </source>
+  <source id="1171931851043" name="BTestCase" hash="ch6kvarmq950atsqx9bhcvore7ktoja">
+    <dep root="1171931858461" />
+    <dep root="1215620452633" />
+    <dep root="1216130694486" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BTestCase.java" />
+  </source>
+  <source id="1171931858461" name="TestMethodList" hash="-934e477moec7i118yzmlyga73anacls">
+    <dep root="1171931690126" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TestMethodList.java" />
+  </source>
+  <source id="1171978097730" name="AssertEquals" hash="dokzq3c0sr5hqfafed5t7bu7m47ybne">
+    <dep root="8427750732757990717" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertEquals.java" />
+  </source>
+  <source id="1171981022339" name="AssertTrue" hash="-28dics1uj60f6bcjymgtfvsdo4qveuj">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertTrue.java" />
+  </source>
+  <source id="1171983834376" name="AssertFalse" hash="5db067hpxb7mnsvfhkti7dh0uazepcf">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertFalse.java" />
+  </source>
+  <source id="1171985735491" name="AssertSame" hash="-71lr9rgn70stlcvnxg10p4z9od0e749">
+    <dep root="8427750732757990717" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertSame.java" />
+  </source>
+  <source id="1172017222794" name="Fail" hash="ejku593nni6955ftobdei8tsnqlv3dl">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Fail.java" />
+  </source>
+  <source id="1172028177041" name="AssertIsNull" hash="-7lobnzbqp9rtldm1mblpcto239k0dbt">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertIsNull.java" />
+  </source>
+  <source id="1172069869612" name="AssertThrows" hash="9i07azm0s913nnkgvjokn3s8j9ukq62">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertThrows.java" />
+  </source>
+  <source id="1172073500303" name="Message" hash="15d7x0lxnsxfyd1wdrk2ln8ajje6xcd">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Message.java" />
+  </source>
+  <source id="1172075514136" name="MessageHolder" hash="-9xneq1rhbjohihbl04gv1i8gcaj39gm">
+    <dep root="1172073500303" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="MessageHolder.java" />
+  </source>
+  <source id="1215620452633" name="ITestable" hash="ankz0tgcef9pe2qbqh15yucbyk84vb6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="ITestable.java" />
+  </source>
+  <source id="1216130694486" name="ITestCase" hash="-3umj3ff68nb6rc9d96kxyzipiapcvdi">
+    <dep root="1215620452633" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="ITestCase.java" />
+  </source>
+  <source id="1216134482493" name="ITestMethod" hash="mdgj0de38wm8l4cjz4nypqdoi75sfb">
+    <dep root="1215620452633" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <file name="ITestMethod.java" />
+  </source>
+  <source id="7080278351417106679" name="AssertInNotNull" hash="2fogbqycx4ctlgy8edtc2ubiaymu68k">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep root="8427750732757990717" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AssertInNotNull.java" />
+  </source>
+  <source id="8427750732757990717" name="BinaryAssert" hash="3g9c8zsf2080t8z8ysnpeukcsem9c64">
+    <dep root="1172073500303" />
+    <dep root="1172075514136" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BinaryAssert.java" />
+  </source>
+</dependencies>
+

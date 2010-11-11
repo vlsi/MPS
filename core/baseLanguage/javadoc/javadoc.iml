@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="baseLanguage" />
+    <orderEntry type="module" module-name="xmlSchema" />
   </component>
 </module>
 
