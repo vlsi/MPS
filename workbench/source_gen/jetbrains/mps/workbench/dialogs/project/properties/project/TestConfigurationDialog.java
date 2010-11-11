@@ -50,6 +50,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JScrollPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -311,14 +313,22 @@ public class TestConfigurationDialog extends BaseDialog {
         @Override
         protected int doAdd(AnActionEvent e) {
           List<SModelDescriptor> models = myProject.getComponent(MPSProject.class).getProjectModels();
-          SModelDescriptor sModelDescriptor = CommonChoosers.showDialogModelChooser(ModelsPanel.this, models, SModelRepository.getInstance().getModelDescriptors());
-          if (sModelDescriptor == null) {
+          List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
+          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelsPanel.this, ListSequence.fromList(models).select(new ISelector<SModelDescriptor, SModelReference>() {
+            public SModelReference select(SModelDescriptor it) {
+              return it.getSModelReference();
+            }
+          }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModelDescriptor, SModelReference>() {
+            public SModelReference select(SModelDescriptor it) {
+              return it.getSModelReference();
+            }
+          }).toListSequence());
+          if (modelRef == null) {
             return -1;
           }
-          SModelReference modelRef = sModelDescriptor.getSModelReference();
           myModels.add(modelRef);
           if (!(myNamePanel.isConfigNameSet())) {
-            String name = NameUtil.shortNameFromLongName(sModelDescriptor.getLongName());
+            String name = NameUtil.shortNameFromLongName(modelRef.getLongName());
             myNamePanel.setConfigName(name);
           }
           return myModels.indexOf(modelRef);

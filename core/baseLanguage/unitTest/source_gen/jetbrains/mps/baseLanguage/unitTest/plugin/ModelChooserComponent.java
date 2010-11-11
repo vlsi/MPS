@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseChooserComponent;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
@@ -22,7 +22,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.smodel.SModel;
 
 public class ModelChooserComponent extends BaseChooserComponent {
-  private final List<SModelDescriptor> myCheckedModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+  private final List<SModelReference> myCheckedModels = ListSequence.fromList(new ArrayList<SModelReference>());
 
   public ModelChooserComponent() {
     super();
@@ -30,9 +30,9 @@ public class ModelChooserComponent extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModelChooserComponent.this.collectModels();
         StringBuilder result = new StringBuilder();
-        SModelDescriptor modelDescriptor = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, ModelChooserComponent.this.myCheckedModels, Collections.EMPTY_LIST);
-        if (modelDescriptor != null) {
-          result.append(modelDescriptor.getLongName());
+        SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, ModelChooserComponent.this.myCheckedModels, Collections.EMPTY_LIST);
+        if (modelRef != null) {
+          result.append(modelRef.getLongName());
           ModelChooserComponent.this.setText(result.toString());
         }
       }
@@ -46,7 +46,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
         List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
-          SModelDescriptor md = model.getModelDescriptor();
+          SModelReference md = model.getSModelReference();
           if (ListSequence.fromList(ModelChooserComponent.this.myCheckedModels).contains(md)) {
             continue;
           }

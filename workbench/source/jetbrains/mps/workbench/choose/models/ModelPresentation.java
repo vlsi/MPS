@@ -18,25 +18,23 @@ package jetbrains.mps.workbench.choose.models;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
 public class ModelPresentation extends BasePresentation {
-  private SModelDescriptor myModelDescriptor;
+  private SModelReference myModelReference;
 
-  public ModelPresentation(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+  public ModelPresentation(SModelReference modelReference) {
+    myModelReference = modelReference;
   }
 
   @NotNull
   public String doGetPresentableText() {
-    return myModelDescriptor.getSModelReference().getSModelFqName().toString();
-  }
-
-  public String getParentLocation() {
-    return getModuleUID();
+    return myModelReference.getSModelFqName().toString();
   }
 
   public String doGetLocationString() {
@@ -44,12 +42,16 @@ public class ModelPresentation extends BasePresentation {
   }
 
   public Icon doGetIcon() {
-    return IconManager.getIconFor(myModelDescriptor);
+    return IconManager.getIconFor(getModelDescriptor());
   }
 
   private String getModuleUID() {
-    IModule module = myModelDescriptor.getModule();
+    IModule module = getModelDescriptor().getModule();
     if (module == null) return "no module";
     return module.getModuleFqName();
+  }
+
+  private SModelDescriptor getModelDescriptor() {
+    return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 }

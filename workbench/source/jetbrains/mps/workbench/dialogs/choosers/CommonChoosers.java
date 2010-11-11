@@ -23,10 +23,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -46,8 +43,8 @@ import java.awt.Window;
 import java.util.List;
 
 public class CommonChoosers {
-  private static List<SModelDescriptor> showDialogModelChooser_internal(final Component parent, final List<SModelDescriptor> models,
-                                                                        @Nullable List<SModelDescriptor> nonProjectModels,
+  private static List<SModelReference> showDialogModelChooser_internal(final Component parent, final List<SModelReference> models,
+                                                                        @Nullable List<SModelReference> nonProjectModels,
                                                                         boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
@@ -86,12 +83,12 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static List<SModelDescriptor> showDialogModelCollectionChooser(Component parent, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
+  public static List<SModelReference> showDialogModelCollectionChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
     return showDialogModelChooser_internal(parent, models, nonProjectModels, true);
   }
 
-  public static SModelDescriptor showDialogModelChooser(Component parent, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
-    List<SModelDescriptor> result = showDialogModelChooser_internal(parent, models, nonProjectModels, false);
+  public static SModelReference showDialogModelChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
+    List<SModelReference> result = showDialogModelChooser_internal(parent, models, nonProjectModels, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
   }
@@ -153,21 +150,21 @@ public class CommonChoosers {
   }
 
   // todo: unused?
-  public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
+  public static void showSimpleModelChooser(final List<SModelReference> models, final ChooserCallback<SModelReference> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new BaseModelItem(modelDescriptor) {
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new BaseModelItem(modelReference) {
           public void navigate(boolean requestFocus) {
-            callback.execute(getModelDescriptor());
+            callback.execute(getModelReference());
           }
         };
       }
 
-      public SModelDescriptor[] find(IScope scope) {
-        return models.toArray(new SModelDescriptor[models.size()]);
+      public SModelReference[] find(IScope scope) {
+        return models.toArray(new SModelReference[models.size()]);
       }
     };
 

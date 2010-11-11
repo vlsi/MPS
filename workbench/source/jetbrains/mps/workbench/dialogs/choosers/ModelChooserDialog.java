@@ -17,8 +17,6 @@ package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import com.intellij.ide.util.gotoByName.matchers.DefaultMatcher;
-import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
@@ -27,11 +25,9 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.CompositeMatcher;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.actions.goTo.matcher.MPSMatcher;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.Nullable;
@@ -45,26 +41,26 @@ import java.util.Collections;
 import java.util.List;
 
 class ModelChooserDialog extends BaseDialog {
-  private List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
-  private List<SModelDescriptor> myNonProjectModels = new ArrayList<SModelDescriptor>();
+  private List<SModelReference> myModels = new ArrayList<SModelReference>();
+  private List<SModelReference> myNonProjectModels = new ArrayList<SModelReference>();
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
   private boolean myIsMultipleSelection = false;
 
-  ModelChooserDialog(Frame owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels, boolean multiSelection) throws HeadlessException {
+  ModelChooserDialog(Frame owner, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose Model");
     myIsMultipleSelection = multiSelection;
     doInit(models, nonProjectModels);
   }
 
-  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels, boolean multiSelection) throws HeadlessException {
+  ModelChooserDialog(Dialog owner, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose Model");
     myIsMultipleSelection = multiSelection;
     doInit(models, nonProjectModels);
   }
 
-  private void doInit(final List<SModelDescriptor> options, @Nullable List<SModelDescriptor> nonProjectModels) {
+  private void doInit(final List<SModelReference> options, @Nullable List<SModelReference> nonProjectModels) {
     setModal(true);
     myModels.addAll(options);
     if (nonProjectModels != null) {
@@ -75,23 +71,23 @@ class ModelChooserDialog extends BaseDialog {
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new BaseModelItem(modelDescriptor) {
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new BaseModelItem(modelReference) {
           public void navigate(boolean requestFocus) {
           }
         };
       }
 
       @Override
-      public SModelDescriptor[] find(boolean checkboxState) {
+      public SModelReference[] find(boolean checkboxState) {
         if (checkboxState) {
-          return myNonProjectModels.toArray(new SModelDescriptor[myNonProjectModels.size()]);
+          return myNonProjectModels.toArray(new SModelReference[myNonProjectModels.size()]);
         } else {
-          return myModels.toArray(new SModelDescriptor[myModels.size()]);
+          return myModels.toArray(new SModelReference[myModels.size()]);
         }
       }
 
-      public SModelDescriptor[] find(IScope scope) {
+      public SModelReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
@@ -124,14 +120,14 @@ class ModelChooserDialog extends BaseDialog {
     return myChooser.getPanel();
   }
 
-  public List<SModelDescriptor> getResult() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+  public List<SModelReference> getResult() {
+    List<SModelReference> result = new ArrayList<SModelReference>();
     if (myIsCancelled) return result;
     List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
     for (Object item : choosen) {
       if (item instanceof BaseModelItem) {
         BaseModelItem modelItem = (BaseModelItem) item;
-        result.add(modelItem.getModelDescriptor());
+        result.add(modelItem.getModelReference());
       }
     }
     return result;

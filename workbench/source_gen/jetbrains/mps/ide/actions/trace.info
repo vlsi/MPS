@@ -257,11 +257,11 @@
   <unitInfo fileName="GenerateTextFromSolution_Action.java" startLine="26" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateTextFromSolution_Action" />
   <unitInfo fileName="DeleteNode_Action.java" startLine="22" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteNode_Action" />
   <unitInfo fileName="NewSubModel_Action.java" startLine="24" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSubModel_Action" />
-  <unitInfo fileName="AddAccessoryModel_Action.java" startLine="28" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action" />
   <unitInfo fileName="CheckModule_Action.java" startLine="20" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.actions.CheckModule_Action" />
   <unitInfo fileName="GenerateTemplateQueries_Action.java" startLine="28" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
   <unitInfo fileName="CutNode_Action.java" startLine="24" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.actions.CutNode_Action" />
   <unitInfo fileName="MoveFileOrDirectory_Action.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
+  <unitInfo fileName="AddAccessoryModel_Action.java" startLine="31" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action" />
   <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="28" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
   <unitInfo fileName="RenameFileOrDirectory_Action.java" startLine="22" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
   <unitInfo fileName="GetModelContentsFromSource_Action.java" startLine="26" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModelContentsFromSource_Action" />
@@ -4030,44 +4030,55 @@
     <scopeInfo nodeId="3906874221886749860" fileName="FileDelete_Action.java" startLine="88" startPosition="54" endLine="89" endPosition="14" />
   </root>
   <root nodeId="4030523878157533636">
-    <nodeInfo nodeId="4030523878157572885" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="22" />
-    <nodeInfo nodeId="4030523878157572887" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="32" startPosition="22" endLine="33" endPosition="25" />
-    <nodeInfo nodeId="6664128178614168092" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="33" startPosition="25" endLine="34" endPosition="26" />
-    <nodeInfo nodeId="1588383322771345914" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="34" startPosition="26" endLine="35" endPosition="28" />
-    <nodeInfo nodeId="4030523878157572896" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="91" startPosition="9" endLine="92" endPosition="82" />
-    <nodeInfo nodeId="6066624155710587835" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="92" startPosition="82" endLine="93" endPosition="101" />
-    <nodeInfo nodeId="6066624155710587847" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="95" startPosition="27" endLine="96" endPosition="124" />
-    <nodeInfo nodeId="6066624155710587876" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="127" />
-    <nodeInfo nodeId="6066624155710587897" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddAccessoryModel_Action.java" startLine="100" startPosition="27" endLine="101" endPosition="15" />
-    <nodeInfo nodeId="4030523878157572997" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="104" startPosition="27" endLine="105" endPosition="40" />
-    <nodeInfo nodeId="2391621100990002766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="105" startPosition="40" endLine="106" endPosition="54" />
-    <nodeInfo nodeId="4030523878157573003" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="106" startPosition="54" endLine="107" endPosition="75" />
-    <nodeInfo nodeId="4030523878157573023" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="107" startPosition="75" endLine="108" endPosition="59" />
-    <nodeInfo nodeId="4373696127818073696" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="108" startPosition="59" endLine="109" endPosition="45" />
-    <nodeInfo nodeId="4373696127818162101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="110" startPosition="78" endLine="111" endPosition="283" />
-    <nodeInfo nodeId="4373696127818074134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="112" startPosition="48" endLine="113" endPosition="85" />
-    <nodeInfo nodeId="4030523878157573028" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="115" startPosition="11" endLine="116" endPosition="26" />
-    <nodeInfo nodeId="6066624155710587888" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddAccessoryModel_Action.java" startLine="99" startPosition="127" endLine="102" endPosition="7" />
-    <nodeInfo nodeId="4373696127818162117" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddAccessoryModel_Action.java" startLine="111" startPosition="283" endLine="114" endPosition="13" />
-    <nodeInfo nodeId="4030523878157572909" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AddAccessoryModel_Action.java" startLine="94" startPosition="59" endLine="98" endPosition="0" />
-    <nodeInfo nodeId="4030523878157572908" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="93" startPosition="101" endLine="98" endPosition="9" />
-    <nodeInfo nodeId="4373696127818008264" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddAccessoryModel_Action.java" startLine="109" startPosition="45" endLine="115" endPosition="11" />
-    <nodeInfo nodeId="2391621100989858636" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AddAccessoryModel_Action.java" startLine="103" startPosition="69" endLine="118" endPosition="0" />
-    <nodeInfo nodeId="2391621100989858635" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="102" startPosition="7" endLine="118" endPosition="9" />
-    <scopeInfo nodeId="4030523878157572910" fileName="AddAccessoryModel_Action.java" startLine="95" startPosition="27" endLine="96" endPosition="124" />
-    <scopeInfo nodeId="6066624155710587889" fileName="AddAccessoryModel_Action.java" startLine="100" startPosition="27" endLine="101" endPosition="15" />
-    <scopeInfo nodeId="4373696127818162118" fileName="AddAccessoryModel_Action.java" startLine="112" startPosition="48" endLine="113" endPosition="85" />
-    <scopeInfo nodeId="4030523878157572909" fileName="AddAccessoryModel_Action.java" startLine="94" startPosition="59" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="4373696127818008265" fileName="AddAccessoryModel_Action.java" startLine="110" startPosition="78" endLine="114" endPosition="13">
+    <nodeInfo nodeId="4030523878157572885" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="34" startPosition="0" endLine="35" endPosition="22" />
+    <nodeInfo nodeId="4030523878157572887" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="35" startPosition="22" endLine="36" endPosition="25" />
+    <nodeInfo nodeId="6664128178614168092" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="36" startPosition="25" endLine="37" endPosition="26" />
+    <nodeInfo nodeId="1588383322771345914" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddAccessoryModel_Action.java" startLine="37" startPosition="26" endLine="38" endPosition="28" />
+    <nodeInfo nodeId="4030523878157572896" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="94" startPosition="9" endLine="95" endPosition="82" />
+    <nodeInfo nodeId="6066624155710587835" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="95" startPosition="82" endLine="96" endPosition="99" />
+    <nodeInfo nodeId="8715098193949419172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="98" startPosition="27" endLine="99" endPosition="95" />
+    <nodeInfo nodeId="8715098193949457089" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddAccessoryModel_Action.java" startLine="101" startPosition="64" endLine="102" endPosition="45" />
+    <nodeInfo nodeId="6066624155710587876" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="106" startPosition="9" endLine="107" endPosition="126" />
+    <nodeInfo nodeId="6066624155710587897" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddAccessoryModel_Action.java" startLine="108" startPosition="27" endLine="109" endPosition="15" />
+    <nodeInfo nodeId="4030523878157572997" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="112" startPosition="27" endLine="113" endPosition="40" />
+    <nodeInfo nodeId="2391621100990002766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="113" startPosition="40" endLine="114" endPosition="54" />
+    <nodeInfo nodeId="4030523878157573003" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="114" startPosition="54" endLine="115" endPosition="54" />
+    <nodeInfo nodeId="4030523878157573023" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="115" startPosition="54" endLine="116" endPosition="59" />
+    <nodeInfo nodeId="4373696127818073696" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="116" startPosition="59" endLine="117" endPosition="45" />
+    <nodeInfo nodeId="4373696127818162101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="118" startPosition="57" endLine="119" endPosition="283" />
+    <nodeInfo nodeId="8715098193949457106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddAccessoryModel_Action.java" startLine="120" startPosition="48" endLine="121" endPosition="94" />
+    <nodeInfo nodeId="4373696127818074134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="121" startPosition="94" endLine="122" endPosition="81" />
+    <nodeInfo nodeId="4030523878157573028" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="124" startPosition="11" endLine="125" endPosition="26" />
+    <nodeInfo nodeId="6066624155710587888" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddAccessoryModel_Action.java" startLine="107" startPosition="126" endLine="110" endPosition="7" />
+    <nodeInfo nodeId="8715098193949457085" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AddAccessoryModel_Action.java" startLine="100" startPosition="146" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="4373696127818162117" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddAccessoryModel_Action.java" startLine="119" startPosition="283" endLine="123" endPosition="13" />
+    <nodeInfo nodeId="6066624155710587847" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="99" startPosition="95" endLine="104" endPosition="14" />
+    <nodeInfo nodeId="4373696127818008264" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddAccessoryModel_Action.java" startLine="117" startPosition="45" endLine="124" endPosition="11" />
+    <nodeInfo nodeId="4030523878157572909" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AddAccessoryModel_Action.java" startLine="97" startPosition="59" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="4030523878157572908" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="96" startPosition="99" endLine="106" endPosition="9" />
+    <nodeInfo nodeId="2391621100989858636" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AddAccessoryModel_Action.java" startLine="111" startPosition="69" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="2391621100989858635" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddAccessoryModel_Action.java" startLine="110" startPosition="7" endLine="127" endPosition="9" />
+    <scopeInfo nodeId="8715098193949457086" fileName="AddAccessoryModel_Action.java" startLine="101" startPosition="64" endLine="102" endPosition="45" />
+    <scopeInfo nodeId="6066624155710587889" fileName="AddAccessoryModel_Action.java" startLine="108" startPosition="27" endLine="109" endPosition="15" />
+    <scopeInfo nodeId="4373696127818162118" fileName="AddAccessoryModel_Action.java" startLine="120" startPosition="48" endLine="122" endPosition="81">
+      <varInfo nodeId="8715098193949457107" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="8715098193949457085" fileName="AddAccessoryModel_Action.java" startLine="100" startPosition="146" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="4373696127818008265" fileName="AddAccessoryModel_Action.java" startLine="118" startPosition="57" endLine="123" endPosition="13">
       <varInfo nodeId="4373696127818162102" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="2391621100989858637" fileName="AddAccessoryModel_Action.java" startLine="104" startPosition="27" endLine="116" endPosition="26">
+    <scopeInfo nodeId="4030523878157572910" fileName="AddAccessoryModel_Action.java" startLine="98" startPosition="27" endLine="104" endPosition="14">
+      <varInfo nodeId="8715098193949419173" varName="descriptors" />
+    </scopeInfo>
+    <scopeInfo nodeId="4030523878157572909" fileName="AddAccessoryModel_Action.java" startLine="97" startPosition="59" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="2391621100989858637" fileName="AddAccessoryModel_Action.java" startLine="112" startPosition="27" endLine="125" endPosition="26">
       <varInfo nodeId="4373696127818073697" varName="scope" />
       <varInfo nodeId="4030523878157572998" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2391621100989858636" fileName="AddAccessoryModel_Action.java" startLine="103" startPosition="69" endLine="118" endPosition="0" />
-    <unitInfo nodeId="4030523878157572909" fileName="AddAccessoryModel_Action.java" startLine="94" startPosition="47" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action$1" />
-    <unitInfo nodeId="2391621100989858636" fileName="AddAccessoryModel_Action.java" startLine="103" startPosition="57" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action$2" />
+    <scopeInfo nodeId="2391621100989858636" fileName="AddAccessoryModel_Action.java" startLine="111" startPosition="69" endLine="127" endPosition="0" />
+    <unitInfo nodeId="8715098193949457085" fileName="AddAccessoryModel_Action.java" startLine="100" startPosition="98" endLine="104" endPosition="11" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action$2" />
+    <unitInfo nodeId="4030523878157572909" fileName="AddAccessoryModel_Action.java" startLine="97" startPosition="47" endLine="106" endPosition="7" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action$1" />
+    <unitInfo nodeId="2391621100989858636" fileName="AddAccessoryModel_Action.java" startLine="111" startPosition="57" endLine="127" endPosition="7" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action$2" />
   </root>
   <root nodeId="4071906384529164314">
     <nodeInfo nodeId="4071906384529164315" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="PasteAsJavaStatements_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="45" />

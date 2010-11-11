@@ -15,15 +15,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.JOptionPane;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class AddAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -90,13 +93,18 @@ public class AddAccessoryModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Language language = ((Language) AddAccessoryModel_Action.this.module);
-      final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+      final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(GlobalScope.getInstance().getModelDescriptors()));
+          List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
+          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
+            public SModelReference select(SModelDescriptor it) {
+              return it.getSModelReference();
+            }
+          }));
         }
       });
-      final SModelDescriptor result = CommonChoosers.showDialogModelChooser(AddAccessoryModel_Action.this.frame, models, null);
+      final SModelReference result = CommonChoosers.showDialogModelChooser(AddAccessoryModel_Action.this.frame, models, null);
       if (result == null) {
         return;
       }
@@ -104,13 +112,14 @@ public class AddAccessoryModel_Action extends GeneratedAction {
         public void run() {
           LanguageDescriptor descriptor;
           descriptor = language.getModuleDescriptor();
-          descriptor.getAccessoryModels().add(result.getSModelReference());
+          descriptor.getAccessoryModels().add(result);
           language.setLanguageDescriptor(descriptor, true);
           IScope scope = language.getScope();
-          if (scope.getModelDescriptor(result.getSModelReference()) == null) {
+          if (scope.getModelDescriptor(result) == null) {
             int res = JOptionPane.showConfirmDialog(AddAccessoryModel_Action.this.frame, "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
             if (res == JOptionPane.YES_OPTION) {
-              language.addDependency(result.getModule().getModuleReference(), false);
+              SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(result);
+              language.addDependency(md.getModule().getModuleReference(), false);
             }
           }
           language.save();
