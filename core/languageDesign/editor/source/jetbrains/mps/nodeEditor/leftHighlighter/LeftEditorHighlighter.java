@@ -68,7 +68,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 4;
   private static final int GAP_BETWEEN_ICONS = 3;
   private static final int LEFT_GAP = 1;
-  private static final Comparator<AbstractFoldingAreaPainter> FOLDING_ARAE_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
+  private static final Comparator<AbstractFoldingAreaPainter> FOLDING_AREA_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
     @Override
     public int compare(AbstractFoldingAreaPainter afap1, AbstractFoldingAreaPainter afap2) {
       if (afap1.getWeight() == afap2.getWeight() && !afap1.equals(afap2)) {
@@ -79,7 +79,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   };
 
   private EditorComponent myEditorComponent;
-  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_ARAE_PAINTERS_COMPARATOR);
+  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_AREA_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
 
   private List<AbstractLeftColumn> myTextColumns = new ArrayList<AbstractLeftColumn>();

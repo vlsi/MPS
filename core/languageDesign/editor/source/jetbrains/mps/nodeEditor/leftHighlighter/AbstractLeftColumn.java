@@ -60,24 +60,25 @@ public abstract class AbstractLeftColumn {
   public abstract void relayout(EditorComponent editorComponent);
 
   public void mousePressed(MouseEvent e, final EditorComponent editorComponent) {
-    if (e.getButton() == MouseEvent.BUTTON3) {
-      JPopupMenu menu = getPopupMenu();
+    if (e.isPopupTrigger()) {
+      JPopupMenu menu = getPopupMenu(e);
       if (isCloseable()) {
-        menu.add(new AbstractAction("Close " + getName()) {
+        menu.insert(new AbstractAction("Close " + getName()) {
           @Override
           public void actionPerformed(ActionEvent e) {
             editorComponent.getLeftEditorHighlighter().removeTextColumn(AbstractLeftColumn.this);
           }
-        });
+        }, 0);
+        menu.insert(new JPopupMenu.Separator(), 1);
       }
       if (menu.getSubElements().length > 0) {
         LeftEditorHighlighter editorHighlighter = editorComponent.getLeftEditorHighlighter();
-        menu.show(editorComponent, e.getX() - editorHighlighter.getWidth(), e.getY());
+        menu.show(editorHighlighter, e.getX(), e.getY());
       }
     }
   }
 
-  public JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu(MouseEvent event) {
     return new JPopupMenu();
   }
 
