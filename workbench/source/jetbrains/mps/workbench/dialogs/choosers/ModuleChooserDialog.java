@@ -17,8 +17,6 @@ package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import com.intellij.ide.util.gotoByName.matchers.DefaultMatcher;
-import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
@@ -26,13 +24,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.matcher.CompositeMatcher;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
-import jetbrains.mps.workbench.actions.goTo.matcher.MPSMatcher;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.annotations.Nullable;
@@ -45,7 +41,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class ModuleChooserDialog<T> extends BaseDialog {
+class ModuleChooserDialog<T extends ModuleReference> extends BaseDialog {
   private List<T> myModules = new ArrayList<T>();
   private List<T> myNonProjectModules = new ArrayList<T>();
   private SmartChooseByNamePanel myChooser;
@@ -76,22 +72,22 @@ class ModuleChooserDialog<T> extends BaseDialog {
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseModuleModel goToModuleModel = new BaseModuleModel(project, entityString) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
+      public NavigationItem doGetNavigationItem(final ModuleReference module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
           }
         };
       }
 
-      public IModule[] find(boolean checkboxState) {
+      public ModuleReference[] find(boolean checkboxState) {
         if (checkboxState) {
-          return myNonProjectModules.toArray(new IModule[myNonProjectModules.size()]);
+          return myNonProjectModules.toArray(new ModuleReference[myNonProjectModules.size()]);
         } else {
-          return myModules.toArray(new IModule[myModules.size()]);
+          return myModules.toArray(new ModuleReference[myModules.size()]);
         }
       }
 
-      public IModule[] find(IScope scope) {
+      public ModuleReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
@@ -131,7 +127,7 @@ class ModuleChooserDialog<T> extends BaseDialog {
     for (Object item : choosen) {
       if (item instanceof BaseModuleItem) {
         BaseModuleItem moduleItem = (BaseModuleItem) item;
-        result.add((T) moduleItem.getModule());
+        result.add((T) moduleItem.getModuleReference());
       }
     }
     return result;
