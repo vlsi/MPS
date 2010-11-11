@@ -118,7 +118,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
             if (cellLayout instanceof CellLayout_Horizontal) {
               if (i < editorCellCollection.getChildCount()) {
                 EditorCell cell = editorCellCollection.getChildAt(i);
-                cell.moveTo(x0, cell.getY());                
+                cell.setX(x0);
+                cell.relayout();
                 maxWidth = Math.max(maxWidth, cell.getWidth());
                 maxHeights[j] = Math.max(maxHeights[j], cell.getHeight());
               }
