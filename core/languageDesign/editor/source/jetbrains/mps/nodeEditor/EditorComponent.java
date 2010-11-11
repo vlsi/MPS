@@ -1700,7 +1700,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               String s = message.getMessage();
-              final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
+              final MPSErrorDialog dialog = new MPSErrorDialog(myEditorContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
               if (herror.getRuleModel() != null && herror.getRuleId() != null) {
                 final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
                 final JButton button = new JButton();

@@ -89,7 +89,7 @@ public class OverrideMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Project project = OverrideMethod_Action.this.operationContext.getProject();
-      Frame frame = OverrideMethod_Action.this.operationContext.getMainFrame();
+      Frame frame = OverrideMethod_Action.this.editorContext.getMainFrame();
       new StratergyAddMethodDialog(OverrideMethod_Action.this.editorContext, frame, new AddClassMethodStrategy(OverrideMethod_Action.this.selectedNode), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);

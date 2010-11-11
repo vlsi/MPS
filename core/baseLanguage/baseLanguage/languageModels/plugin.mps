@@ -13469,12 +13469,12 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4670094048336776400">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4670094048336778307">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4670094048336778308" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4670094048336778309">
-                  <link role="member:23" targetNodeId="4670094048336778301" resolveInfo="operationContext" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="5263476397865189941">
+                  <link role="member:23" targetNodeId="4670094048336778296" resolveInfo="editorContext" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4670094048336776404">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
               </node>
             </node>
           </node>
@@ -13602,15 +13602,15 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4670094048336778352">
               <link role="classifier:3" targetNodeId="17.~Frame" resolveInfo="Frame" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4670094048336778353">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4670094048336778384">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4670094048336778385" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4670094048336778386">
-                  <link role="member:23" targetNodeId="4670094048336778325" resolveInfo="operationContext" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5263476397865189936">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5263476397865189878">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5263476397865189879" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="5263476397865189880">
+                  <link role="member:23" targetNodeId="4670094048336778324" resolveInfo="editorContext" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4670094048336778357">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5263476397865189940">
+                <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
               </node>
             </node>
           </node>

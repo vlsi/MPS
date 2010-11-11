@@ -106,7 +106,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getOperationContext().getMainFrame(), node);
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
     selectFieldsDialog.showDialog();
     intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
     return selectFieldsDialog.getAnswer();

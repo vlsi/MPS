@@ -89,7 +89,7 @@ public class ImplementMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Project project = ImplementMethod_Action.this.operationContext.getProject();
-      Frame frame = ImplementMethod_Action.this.operationContext.getMainFrame();
+      Frame frame = ImplementMethod_Action.this.editorContext.getMainFrame();
       new StratergyAddMethodDialog(ImplementMethod_Action.this.editorContext, frame, new AddClassMethodStrategy(ImplementMethod_Action.this.selectedNode), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ImplementMethod", t);

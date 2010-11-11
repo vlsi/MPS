@@ -56,7 +56,7 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Frame frame = editorContext.getOperationContext().getMainFrame();
+        Frame frame = editorContext.getMainFrame();
         Project project = editorContext.getOperationContext().getProject();
         new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
       }

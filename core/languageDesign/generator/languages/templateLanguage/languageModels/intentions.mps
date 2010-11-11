@@ -3424,11 +3424,9 @@
                           <link role="variableDeclaration:3" targetNodeId="1227316931919" resolveInfo="existingLabels" />
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1227316931951">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1227316931952">
-                            <link role="variableDeclaration:3" targetNodeId="1227315087491" resolveInfo="operationContext" />
-                          </node>
+                          <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="5263476397865390864" />
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1227316931953">
-                            <link role="baseMethodDeclaration:3" targetNodeId="6.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="5.~EditorContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="1227316931954" />
