@@ -70,7 +70,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     if (!(UIUtil.isReallyTypedEvent(p0))) {
       return false;
     }
-    this.myCaretVisible = true;    
+    this.myCaretVisible = true;
     final String symbol = "" + p0.getKeyChar();
     if (this.isFirstCaretPosition()) {
       side = CellSide.LEFT;
