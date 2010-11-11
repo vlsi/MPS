@@ -24,8 +24,8 @@
     <nodeInfo nodeId="1810702278396504112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMModelLoader.java" startLine="146" startPosition="34" endLine="147" endPosition="18" />
     <nodeInfo nodeId="1810702278396504102" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ASMModelLoader.java" startLine="148" startPosition="5" endLine="149" endPosition="0" />
     <nodeInfo nodeId="1810702278396504055" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ASMModelLoader.java" startLine="149" startPosition="0" endLine="150" endPosition="93" />
-    <nodeInfo nodeId="1596566745110976744" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="151" startPosition="31" endLine="152" endPosition="27" />
-    <nodeInfo nodeId="1596566745110976530" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMModelLoader.java" startLine="152" startPosition="27" endLine="153" endPosition="18" />
+    <nodeInfo nodeId="5763617830248139222" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ASMModelLoader.java" startLine="151" startPosition="31" endLine="152" endPosition="16" />
+    <nodeInfo nodeId="1596566745110976530" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMModelLoader.java" startLine="152" startPosition="16" endLine="153" endPosition="18" />
     <nodeInfo nodeId="463446888373974300" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ASMModelLoader.java" startLine="154" startPosition="5" endLine="155" endPosition="78" />
     <nodeInfo nodeId="774742617971792301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="157" startPosition="64" endLine="158" endPosition="65" />
     <nodeInfo nodeId="4460704001198245183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="158" startPosition="65" endLine="159" endPosition="61" />

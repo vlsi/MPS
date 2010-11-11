@@ -395,15 +395,19 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1596566745110976510">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1596566745110976511">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1596566745110976744">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596566745110976747">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="1596566745110976745">
-                  <link role="variableDeclaration:3" targetNodeId="7241381882860002266" resolveInfo="LOG" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596566745110976752">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Logger.error(java.lang.String):void" resolveInfo="error" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596566745110976754">
-                    <link role="variableDeclaration:3" targetNodeId="7711515926452114748" resolveInfo="outerName" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="5763617830248139222">
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="5763617830248139223">
+                <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1596566745110976744">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596566745110976747">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="1596566745110976745">
+                      <link role="variableDeclaration:3" targetNodeId="7241381882860002266" resolveInfo="LOG" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596566745110976752">
+                      <link role="baseMethodDeclaration:3" targetNodeId="1.~Logger.error(java.lang.String):void" resolveInfo="error" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1596566745110976754">
+                        <link role="variableDeclaration:3" targetNodeId="7711515926452114748" resolveInfo="outerName" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

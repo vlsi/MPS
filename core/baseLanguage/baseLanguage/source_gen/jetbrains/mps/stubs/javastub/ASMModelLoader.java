@@ -149,7 +149,7 @@ public abstract class ASMModelLoader {
 
     List<InnerClassNode> innerClasses = MapSequence.fromMap(myClassChildInfo).get(outerName);
     if (innerClasses == null) {
-      LOG.error(outerName);
+      // <node> 
       return null;
     }
     String classifierNameSlashed = (packPrefix + name).replaceAll("\\.", "/");
