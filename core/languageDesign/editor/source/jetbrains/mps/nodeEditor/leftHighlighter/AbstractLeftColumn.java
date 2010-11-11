@@ -16,9 +16,11 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
@@ -45,7 +47,13 @@ public abstract class AbstractLeftColumn {
     myX = x;
   }
 
+  @Nullable
   public String getTooltipText(MouseEvent e) {
+    return null;
+  }
+
+  @Nullable
+  public Cursor getCursor(MouseEvent e, EditorComponent editorComponent) {
     return null;
   }
 

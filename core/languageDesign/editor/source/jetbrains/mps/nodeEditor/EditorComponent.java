@@ -1519,6 +1519,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     changeSelection(cell.getLastLeaf(CellConditions.SELECTABLE));
   }
 
+  @Nullable
   public EditorCell findNodeCell(final SNode node) {
     WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;

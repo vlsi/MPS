@@ -82,7 +82,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_ARAE_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
 
-  private Set<AbstractLeftColumn> myTextColumns = new HashSet<AbstractLeftColumn>();
+  private List<AbstractLeftColumn> myTextColumns = new ArrayList<AbstractLeftColumn>();
 
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
@@ -110,13 +110,15 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       @Override
       public void mouseExited(MouseEvent e) {
         mouseExitedFoldingArea(e);
-        mouseExitedIconsArea();
+        mouseExitedIconsArea(e);
       }
 
       @Override
       public void mouseEntered(MouseEvent e) {
         if (isInFoldingArea(e)) {
           mouseMovedInFoldingArea(e);
+        } if (isInTextArea(e)) {
+          mouseMovedInTextArea(e);
         } else {
           mouseMovedInIconsArea(e);
         }
@@ -125,8 +127,12 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseMoved(MouseEvent e) {
         if (isInFoldingArea(e)) {
-          mouseExitedIconsArea();
+          mouseExitedIconsArea(e);
           mouseMovedInFoldingArea(e);
+        } else if (isInTextArea(e)) {
+          mouseExitedFoldingArea(e);
+          mouseExitedIconsArea(e);
+          mouseMovedInTextArea(e);
         } else {
           mouseExitedFoldingArea(e);
           mouseMovedInIconsArea(e);
@@ -291,6 +297,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         continue;
       }
       column.paint(g, myEditorComponent);
+      UIUtil.drawVDottedLine((Graphics2D) g, column.getX() + column.getWidth(),
+        (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
   }
 
@@ -663,8 +671,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
   }
 
-  private void mouseExitedIconsArea() {
-    if (!myMouseIsInFoldingArea && myRendererUnderMouse != null) {
+  private void mouseExitedIconsArea(MouseEvent e) {
+    if (!myMouseIsInFoldingArea && myRendererUnderMouse != null && !isInTextArea(e)) {
       setCursor(null);
     }
   }
@@ -678,6 +686,16 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       setCursor(null);
     }
     myRendererUnderMouse = newRendererUnderMouse;
+  }
+
+  private void mouseMovedInTextArea(MouseEvent e) {
+    myMouseIsInFoldingArea = false;
+    AbstractLeftColumn textColumn = getTextColumnByX(e.getX());
+    if (textColumn != null) {
+      setCursor(textColumn.getCursor(e, myEditorComponent));
+    } else {
+      setCursor(null);
+    }
   }
 
   private boolean isInFoldingArea(MouseEvent e) {
