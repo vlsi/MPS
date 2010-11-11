@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.states;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
@@ -38,19 +39,33 @@ import java.util.*;
  */
 public class Equations {
   private Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
+  private Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
   private State myState;
 
   public Equations(State state) {
     myState = state;
   }
 
-  public SNode getRepresentative(SNode node) {
-    SNode parent = myRepresentatives.get(node);
-    SNode current = node;
+  private SNode getNameRepresentative(SNode node) {
+    String name = node.getName();
+    SNode result = myNamesToNodes.get(name);
+    if (result == null) {
+      myNamesToNodes.put(name, node);
+    }
+    return result;
+  }
+
+  public SNode getRepresentative(final SNode node) {
+    if (node == null || TypesUtil.isType(node)) {
+      return node;
+    }
+    SNode nameRepresentative = getNameRepresentative(node);
+    SNode parent = myRepresentatives.get(nameRepresentative);
+    SNode current = nameRepresentative;
     if (parent != null) {
       List<SNode> path = new LinkedList<SNode>();
       while (parent != null) {
-        if (current != node) {
+        if (current != nameRepresentative) {
           path.add(current);
         }
         current = parent;

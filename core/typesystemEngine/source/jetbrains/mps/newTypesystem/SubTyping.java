@@ -16,6 +16,8 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.newTypesystem.states.State;
@@ -39,14 +41,22 @@ public class SubTyping {
     myState = state;
   }
 
+  boolean isSubTypeByReplacementRules(SNode subType, SNode superType) {
+    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+      if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
     if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
-        /* if (state.isConc) {
-         if (isSubTypeByReplacementRules(subType, argument)) {
-           return true;
-         }
-       } */
+        if (myState.isConcrete(argument) && isSubTypeByReplacementRules(subType, argument)) {
+          return true;
+        }
         if (isSubType(subType, argument, info, isWeak, checkOnly)) {
           return true;
         }
@@ -54,7 +64,9 @@ public class SubTyping {
     }
     if (LatticeUtil.isMeet(subType)) {
       for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
-
+        if (myState.isConcrete(argument) && isSubTypeByReplacementRules(argument, superType)) {
+          return true;
+        }
         if (isSubType(argument, superType, info, isWeak, checkOnly)) {
           return true;
         }
@@ -68,6 +80,7 @@ public class SubTyping {
   }
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
+    checkOnly = false;                   //todo
     if (meetsAndJoins(subType, superType, info, isWeak, checkOnly)) {
       return true;
     }
@@ -186,17 +199,17 @@ public class SubTyping {
   }
 
   public SNode createMeet(Set<SNode> types) {
-    if (types.size() == 1) {
+   // if (types.size() == 1) {
       return types.iterator().next();
-    }
-    return null;
+   // }
+   // todo implement check line & meet
   }
 
   public SNode createLCS(Set<SNode> types) {
-    if (types.size() == 1) {
+  //  if (types.size() == 1) {
       return types.iterator().next();
-    }
-    return null;
+   // }
+    // todo implement least common supertype
   }
 
   public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {

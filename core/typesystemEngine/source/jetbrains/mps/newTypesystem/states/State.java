@@ -69,7 +69,7 @@ public class State {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    myInequalities.addInequality(subType, superType, isWeak, check, info);
+    myInequalities.addInequality(subType, superType, isWeak, check, info, true);
   }
 
   public NodeMaps getNodeMaps() {
@@ -95,6 +95,18 @@ public class State {
       myDifferenceStack.push(difference);
     }
     difference.play();
+  }
+
+  public void removeLastDifference(Difference difference) {
+    if (difference == null) {
+      return;
+    }
+    if (myDifferenceStack.peek() == difference) {
+      myDifferenceStack.pop();
+    }
+    myDifferenceStack.peek().removeChildDifference(difference);
+
+    difference.rollBack();
   }
 
   public void popDifference() {

@@ -115,6 +115,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public void createGreaterThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
+    myState.addInequality(node2, node1, true, checkOnly, equationInfo);
+  }
+
+  @Override
   public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
     myState.addEquation(node1, node2, equationInfo);
   }

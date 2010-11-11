@@ -70,7 +70,7 @@ public class Inequalities {
     myStrongCheckInequalities.substitute(var, type);
   }
 
-  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
+  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean solveOnlyConcrete) {
     subType = myState.getRepresentative(subType);
     superType = myState.getRepresentative(superType);
 
@@ -78,7 +78,7 @@ public class Inequalities {
       return;
     }
     //Variables inside
-    if (!myState.isConcrete(subType) || TypesUtil.isVariable(superType)) {
+    if (!myState.isConcrete(subType) && solveOnlyConcrete || TypesUtil.isVariable(superType)) {
       addSubTyping(subType, superType, isWeak, check, info);
       return;
     }
@@ -88,21 +88,24 @@ public class Inequalities {
       InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
 
       IsApplicable2Status status = inequalityReplacementRule.o2;
+      myState.addDifference(new StringDifference(subType + " is subtype of " + superType + " by replacement rule"), true);
       ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
-      myState.addDifference(new StringDifference(subType + " is subtype of " + superType + " by replacement rule"), false);
+      myState.popDifference();
       return;
     }
-    // todo kill for
-    // //    comparison rules?
-
+    
     subType = myState.getEquations().expandNode(subType);
     superType = myState.getEquations().expandNode(superType);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+
+    StringDifference difference = new StringDifference(subType + " is subtype of " + superType);
+    myState.addDifference(difference, true);
     if (subTyping.isSubType(subType, superType, info, isWeak, true)) {
-      myState.addDifference(new StringDifference(subType + " is subtype of " + superType), false);
-      return;
+      myState.popDifference();
+    } else {
+      myState.removeLastDifference(difference);
+      myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
     }
-    myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
   }
 
   public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {

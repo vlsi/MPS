@@ -82,7 +82,7 @@ public class InequalityMapPair {
                               SNode var, SNode type, boolean reversed) {
     Map<SNode, EquationInfo> values = baseMap.remove(var);
     if (values == null) return;
-    for (final SNode value : values.keySet()) {
+    for (final SNode value : new HashSet<SNode>(values.keySet())) {
       Map<SNode, EquationInfo> map = pairMap.get(value);
       EquationInfo info = map.get(var);
       if (reversed) {
@@ -162,16 +162,20 @@ public class InequalityMapPair {
     expandKeySet(mySubToSuper);
   }
 
+  private void removeAndTrack(SNode subType, SNode superType) {
+    EquationInfo info = mySubToSuper.get(subType).get(superType);
+    remove(subType, superType);
+    myState.addDifference(new SubTypingRemoved(subType, superType, info, this), false);
+  }
+
   public void check() {
     expand();
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
-    for (SNode subType : mySubToSuper.keySet()) {
-      if (TypesUtil.isVariable(subType)) {
-        continue;
-      }
+    for (SNode subType : new HashSet<SNode>(mySubToSuper.keySet())) {
       Map<SNode, EquationInfo> map = mySubToSuper.get(subType);
       for (SNode superType : map.keySet()) {
-        if (TypesUtil.isVariable(superType)) {
+        removeAndTrack(subType, superType);
+        if (TypesUtil.isVariable(superType) || TypesUtil.isVariable(subType)) {
           continue;
         }
         EquationInfo info = map.get(superType);
@@ -198,10 +202,12 @@ public class InequalityMapPair {
   }
 
   public void solve(boolean shallow) {
-    iteration(shallow, true);
-    iteration(shallow, false);
+    for (int i = 1; i < 7; i++) {
+      //todo more sensible loop, this is for debug 
+      iteration(shallow, true);
+      iteration(shallow, false);
+    }
   }
-
 
   /*
     Solving iteration
@@ -212,23 +218,34 @@ public class InequalityMapPair {
     SubTyping subTyping = new SubTyping(myState);
     boolean stateChanged = false;
     for (SNode node : new HashSet<SNode>(map.keySet())) {
-      Set<SNode> concreteTypes = getConcrete(map.get(node).keySet(), shallow);
-
+      Map<SNode, EquationInfo> otherMap = map.get(node);
+      if (otherMap == null) {
+        continue;
+      }
+      Set<SNode> concreteTypes = getConcrete(otherMap.keySet(), shallow);
       if (concreteTypes == null || concreteTypes.isEmpty()) {
         continue;
       }
       if (TypesUtil.isVariable(node)) {
         SNode type = sub ? subTyping.createMeet(concreteTypes) : subTyping.createLCS(concreteTypes);
+        for (SNode concreteType : concreteTypes) {
+          EquationInfo info = map.get(node).get(concreteType);
+          if (sub) {
+            removeAndTrack(node, concreteType);
+          } else {
+            removeAndTrack(concreteType, node);         
+          }
+        }
         myState.addEquation(node, type, null);
       } else if (myState.isConcrete(node, shallow)) {
         for (SNode concreteType : concreteTypes) {
           EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
-            myState.addInequality(node, concreteType, isWeak, checkOnly, info);
-            remove(node, concreteType);
+            removeAndTrack(node, concreteType);
+            myState.getInequalities().addInequality(node, concreteType, isWeak, checkOnly, info, false);
           } else {
-            myState.addInequality(concreteType, node, isWeak, checkOnly, info);
-            remove(concreteType, node);
+            removeAndTrack(concreteType, node);
+            myState.getInequalities().addInequality(concreteType, node, isWeak, checkOnly, info, false);
           }
         }
       }

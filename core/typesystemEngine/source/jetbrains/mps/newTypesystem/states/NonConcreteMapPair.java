@@ -118,6 +118,9 @@ public class NonConcreteMapPair {
   }
 
   private List<SNode> getChildAndReferentVariables(SNode node) {
+    if (node == null) {
+      return new LinkedList<SNode>();
+    }
     if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
       return Arrays.asList(node);
     }

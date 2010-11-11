@@ -47,6 +47,10 @@ public abstract class Difference {
     return myChildren;
   }
 
+  public void removeChildDifference(Difference child) {
+    myChildren.remove(child);
+  }
+
   public abstract void rollBack();
 
   public abstract void play();

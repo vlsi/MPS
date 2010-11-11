@@ -37,7 +37,7 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class TypesUtil {
-  private static TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
+
   public SNode leastCommonSuperType(SNode left, SNode right) {
     //left.isInstanceOfConcept()
     //if ()
@@ -65,6 +65,13 @@ public class TypesUtil {
     if (left == null || right == null) {
       return false;
     }
+    if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
+      if (!checkOnly) {
+        equations.addEquation(left, right, info);
+      }
+      return true;
+    }
+    TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
     boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
     if (!checkOnly && result) {
       if (equations != null) {
@@ -94,6 +101,10 @@ public class TypesUtil {
 
     public Set<Pair<SNode, SNode>> getChildEqs() {
       return childEQs;
+    }
+
+    public void clear() {
+      childEQs.clear();
     }
   }
 }
