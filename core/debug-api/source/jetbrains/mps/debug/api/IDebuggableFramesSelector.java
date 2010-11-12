@@ -11,7 +11,7 @@ import java.util.List;
 
 // this ^ will be necessary in only one case: if we're going to debug not on SModel roots only but also
 // on text files and other files which represent Java.
-// but for that purpose at least MPSBreakpoint and Breakpoint Manager and CurrentLinePositionComponent
+// but for that purpose at least LineBreakpoint and Breakpoint Manager and CurrentLinePositionComponent
 // should also be refactored.
 // currently there's no such task.
 

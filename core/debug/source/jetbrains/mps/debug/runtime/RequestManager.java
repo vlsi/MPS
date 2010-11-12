@@ -32,13 +32,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 17.12.2009
- * Time: 16:44:31
- * To change this template use File | Settings | File Templates.
- */
 public class RequestManager implements DebugProcessListener {
   private static final Logger LOG = Logger.getLogger(RequestManager.class);
 
@@ -133,6 +126,14 @@ public class RequestManager implements DebugProcessListener {
     req.setSuspendPolicy(EventRequest.SUSPEND_ALL);
     registerRequestInternal(requestor, req);
     return req;
+  }
+
+  public ExceptionRequest createExceptionRequest(ExceptionBreakpoint requestor, ReferenceType reference) {
+    DebuggerManagerThread.assertIsManagerThread();
+    ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
+    request.setSuspendPolicy(EventRequest.SUSPEND_ALL);
+    registerRequestInternal(requestor, request);
+    return request;
   }
 
   void deleteStepRequests() {
@@ -244,8 +245,8 @@ public class RequestManager implements DebugProcessListener {
       protected void action() throws Exception {
         BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
         for (AbstractMPSBreakpoint breakpoint : breakpointManager.getAllBreakpoints()) {
-          if (breakpoint instanceof MPSBreakpoint) {
-            ((MPSBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
+          if (breakpoint instanceof JavaBreakpoint) {
+            ((JavaBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
           }
         }
       }
@@ -266,7 +267,7 @@ public class RequestManager implements DebugProcessListener {
     }
   }
 
-  public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
+  public static void createClassPrepareRequests(final JavaBreakpoint breakpoint) {
     VMEventsProcessorManagerComponent
       .getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
@@ -278,7 +279,7 @@ public class RequestManager implements DebugProcessListener {
     });
   }
 
-  public static void removeClassPrepareRequests(final MPSBreakpoint breakpoint) {
+  public static void removeClassPrepareRequests(final JavaBreakpoint breakpoint) {
     VMEventsProcessorManagerComponent
       .getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override

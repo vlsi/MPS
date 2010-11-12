@@ -9,7 +9,6 @@ import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -137,12 +136,12 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
             Set<AbstractMPSBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllBreakpoints();
             RequestManager requestManager = myEventsProcessor.getRequestManager();
             for (AbstractMPSBreakpoint bp : breakpoints) {
-              if (bp instanceof MPSBreakpoint) {
-                MPSBreakpoint mpsBreakpoint = (MPSBreakpoint) bp;
+              if (bp instanceof JavaBreakpoint) {
+                JavaBreakpoint breakpoint = (JavaBreakpoint) bp;
                 if (mute) {
-                  requestManager.deleteRequest(mpsBreakpoint); // todo enabling and disabling breakpoints should be symmetrical
+                  requestManager.deleteRequest(breakpoint); // todo enabling and disabling breakpoints should be symmetrical
                 } else {
-                  mpsBreakpoint.createOrWaitPrepare(getEventsProcessor());
+                  breakpoint.createOrWaitPrepare(getEventsProcessor());
                 }
               }
             }

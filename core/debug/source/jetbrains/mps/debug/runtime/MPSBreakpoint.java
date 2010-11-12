@@ -19,9 +19,6 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -29,14 +26,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.12.2009
- * Time: 15:25:56
- * To change this template use File | Settings | File Templates.
- */
-public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
+public class MPSBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = Logger.getLogger(MPSBreakpoint.class);
 
   public MPSBreakpoint(SNodePointer nodePointer, Project project) {
@@ -47,59 +37,7 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
     super(node, project);
   }
 
-//this should be called on every breakpoint when DebugEventsProcessor is attached
-
-  public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
-    DebuggerManagerThread.assertIsManagerThread();
-
-    // check is this breakpoint is enabled, vm reference is valid and there're no requests created yet
-    if (!myIsEnabled /*|| !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty()*/) {
-      return;
-    }
-
-    if (!isValid()) {
-      return;
-    }
-    createOrWaitPrepare(debugProcess);
-    // updateUI();
-  }
-
-  protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
-
-    String className = getTargetUnitName();
-
-    if (className == null) {
-      String fileName = getFileName();
-      if (fileName.endsWith(".java")) {
-        fileName = fileName.substring(0, fileName.length() - ".java".length());
-      }
-      className = myNodePointer.getModelReference().getLongName() + "." + fileName;
-    }
-
-    //add requests for not prepared classes
-    debugProcess.getRequestManager().callbackOnPrepareClasses(this, className);
-    //and get all already prepared classes for a SNode
-    List<ReferenceType> list = debugProcess.getVirtualMachine().classesByName(className);
-    for (final ReferenceType refType : list) {
-      if (refType.isPrepared()) {
-        processClassPrepare(debugProcess, refType);
-      }
-    }
-  }
-
-
   @Override
-  //this is called when a class for this ClassPrepareRequestor is prepared
-  public void processClassPrepare(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
-    if (!myIsEnabled || !isValid()) {
-      return;
-    }
-    createRequestForPreparedClass(debugProcess, classType);
-  }
-
-
-  //this is called when a class for this BP is prepared
-
   protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
 
@@ -170,18 +108,16 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
     return true;
   }
 
-  @Override
-  public void removeFromRunningSessions() {
-    RequestManager.removeClassPrepareRequests(this);
-  }
+  protected String getClassNameToPrepare() {
+    String className = getTargetUnitName();
 
-  @Override
-  public void addToRunningSessions() {
-    RequestManager.createClassPrepareRequests(this);
-  }
-
-  @Override
-  public boolean supportsDisable() {
-    return true;
+    if (className == null) {
+      String fileName = getFileName();
+      if (fileName.endsWith(".java")) {
+        fileName = fileName.substring(0, fileName.length() - ".java".length());
+      }
+      className = myNodePointer.getModelReference().getLongName() + "." + fileName;
+    }
+    return className;
   }
 }

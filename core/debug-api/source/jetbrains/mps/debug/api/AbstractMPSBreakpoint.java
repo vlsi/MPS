@@ -10,13 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.04.2010
- * Time: 21:48:52
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractMPSBreakpoint {
   protected Project myProject;
   protected SNodePointer myNodePointer;
