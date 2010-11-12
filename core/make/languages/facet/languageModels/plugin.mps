@@ -290,7 +290,7 @@
                           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5646063728432378413">
                             <link role="baseMethodDeclaration:3" targetNodeId="5.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5646063728432378414">
-                              <property name="value:3" value="Generator" />
+                              <property name="value:3" value="Generate" />
                             </node>
                           </node>
                         </node>
@@ -306,7 +306,7 @@
                           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5646063728432378419">
                             <link role="baseMethodDeclaration:3" targetNodeId="5.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5646063728432378420">
-                              <property name="value:3" value="JavaCompilator" />
+                              <property name="value:3" value="JavaCompile" />
                             </node>
                           </node>
                         </node>
@@ -382,7 +382,7 @@
                                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5646063728432378452">
                                       <link role="baseMethodDeclaration:3" targetNodeId="5.6168415856807657137" resolveInfo="ITarget.Name" />
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5646063728432378453">
-                                        <property name="value:3" value="Parameters" />
+                                        <property name="value:3" value="checkParameters" />
                                       </node>
                                     </node>
                                   </node>
@@ -719,13 +719,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="4853833103870841534">
-    <property name="name:1" value="Generator" />
+    <property name="name:1" value="Generate" />
     <property name="virtualPackage:1" value="facets" />
     <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="2383991756720456899">
       <link role="facet:1" targetNodeId="2383991756720431443" resolveInfo="Make" />
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="2340850238541827739">
-      <property name="name:1" value="Parameters" />
+      <property name="name:1" value="checkParameters" />
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="2340850238541827740">
         <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="2340850238541827741">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2340850238541827742">
@@ -863,7 +863,7 @@
       </node>
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="2340850238541204743">
-      <property name="name:1" value="CheckDumbMode" />
+      <property name="name:1" value="checkDumbMode" />
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="2340850238541204744">
         <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="2340850238541204745">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2340850238541204746">
@@ -922,7 +922,7 @@
       </node>
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="4853833103870841535">
-      <property name="name:1" value="ConfigureGenerator" />
+      <property name="name:1" value="configure" />
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="4853833103870841536">
         <node role="query" type="jetbrains.mps.make.script.structure.QueryDefinition" id="4853833103870841539">
           <property name="name" value="SaveTransientModels" />
@@ -1373,7 +1373,7 @@
       </node>
     </node>
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="4853833103871058541">
-      <property name="name:1" value="GenerateFiles" />
+      <property name="name:1" value="generate" />
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="4853833103871058542">
         <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="4853833103871058543">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4853833103871058544">
@@ -2016,7 +2016,7 @@
     <property name="name:1" value="TextGen" />
     <property name="virtualPackage:1" value="facets" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="4328738523548214513">
-      <property name="name:1" value="TextGen" />
+      <property name="name:1" value="textGen" />
       <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="4328738523548214514">
         <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="4328738523548214515">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4328738523548214516">
@@ -2485,10 +2485,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="4328738523548357342">
-    <property name="name:1" value="JavaCompilator" />
+    <property name="name:1" value="JavaCompile" />
     <property name="virtualPackage:1" value="facets" />
     <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="4328738523548357345">
-      <property name="name:1" value="Compile" />
+      <property name="name:1" value="compile" />
       <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="4328738523548357350">
         <property name="qualifier:1" value="AFTER" />
         <link role="dependsOn:1" targetNodeId="4328738523548214513" resolveInfo="TextGen" />
@@ -2658,44 +2658,22 @@
         </node>
       </node>
     </node>
-    <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="4328738523548357344">
-      <link role="facet:1" targetNodeId="4328738523548214510" resolveInfo="TextGen" />
-    </node>
-    <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="2383991756720456896">
-      <link role="facet:1" targetNodeId="2383991756720431443" resolveInfo="Make" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="4328738523548357351">
-    <property name="name:1" value="ClassesReloader" />
-    <property name="virtualPackage:1" value="facets" />
-    <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="4328738523548357355">
-      <property name="name:1" value="ReloadAll" />
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="4328738523548357360">
-        <property name="qualifier:1" value="AFTER" />
-        <link role="dependsOn:1" targetNodeId="4328738523548357345" resolveInfo="Compile" />
-      </node>
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="4328738523548357356">
-        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="4328738523548357357">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4328738523548357358">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4328738523548357361">
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4328738523548357365">
-                <node role="operand:3" type="jetbrains.mps.make.script.structure.InputResourcesParameter" id="4328738523548357364" />
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="4328738523548357369" />
-              </node>
-              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4328738523548357363">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4328738523548357370">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4328738523548357371">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4328738523548357372">
-                      <link role="classConcept:3" targetNodeId="30.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="30.~ClassLoaderManager.getInstance():jetbrains.mps.reloading.ClassLoaderManager" resolveInfo="getInstance" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4328738523548357373">
-                      <link role="baseMethodDeclaration:3" targetNodeId="30.~ClassLoaderManager.reloadAll(com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="reloadAll" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4328738523548357374">
-                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4328738523548357375">
-                          <link role="baseMethodDeclaration:3" targetNodeId="21.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
-                        </node>
-                      </node>
+    <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="5134337646033755399">
+      <property name="name:1" value="reloadClasses" />
+      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="5134337646033755400">
+        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="5134337646033755401">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5134337646033755402">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5134337646033755405">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5134337646033755406">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5134337646033755407">
+                  <link role="classConcept:3" targetNodeId="30.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="30.~ClassLoaderManager.getInstance():jetbrains.mps.reloading.ClassLoaderManager" resolveInfo="getInstance" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5134337646033755408">
+                  <link role="baseMethodDeclaration:3" targetNodeId="30.~ClassLoaderManager.reloadAll(com.intellij.openapi.progress.ProgressIndicator):void" resolveInfo="reloadAll" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5134337646033755409">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5134337646033755410">
+                      <link role="baseMethodDeclaration:3" targetNodeId="21.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
                     </node>
                   </node>
                 </node>
@@ -2704,9 +2682,19 @@
           </node>
         </node>
       </node>
+      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="5134337646033755403">
+        <property name="qualifier:1" value="AFTER" />
+        <link role="dependsOn:1" targetNodeId="4328738523548357345" resolveInfo="Compile" />
+      </node>
+      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="5134337646033755404">
+        <link role="dependsOn:1" targetNodeId="2383991756720456890" resolveInfo="make" />
+      </node>
     </node>
-    <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="4328738523548357354">
-      <link role="facet:1" targetNodeId="4328738523548357342" resolveInfo="JavaCompilator" />
+    <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="4328738523548357344">
+      <link role="facet:1" targetNodeId="4328738523548214510" resolveInfo="TextGen" />
+    </node>
+    <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="2383991756720456896">
+      <link role="facet:1" targetNodeId="2383991756720431443" resolveInfo="Make" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2383991756720270095">
@@ -2970,24 +2958,6 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2383991756720456893" />
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.make.facet.structure.FacetDeclaration:1" id="7324968152575118474">
-    <property name="virtualPackage:1" value="facets" />
-    <property name="name:1" value="CheckModels" />
-    <node role="targetDeclaration:1" type="jetbrains.mps.make.facet.structure.TargetDeclaration:1" id="7324968152575118477">
-      <property name="name:1" value="checkModels" />
-      <node role="dependency:1" type="jetbrains.mps.make.facet.structure.TargetDependency:1" id="7324968152575118481">
-        <link role="dependsOn:1" targetNodeId="2383991756720456890" resolveInfo="make" />
-      </node>
-      <node role="job:1" type="jetbrains.mps.make.script.structure.JobDeclaration" id="7324968152575118478">
-        <node role="job" type="jetbrains.mps.make.script.structure.JobDefinition" id="7324968152575118479">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7324968152575118480" />
-        </node>
-      </node>
-    </node>
-    <node role="required:1" type="jetbrains.mps.make.facet.structure.RelatedFacetReference:1" id="7324968152575118476">
-      <link role="facet:1" targetNodeId="2383991756720431443" resolveInfo="Make" />
     </node>
   </node>
 </model>

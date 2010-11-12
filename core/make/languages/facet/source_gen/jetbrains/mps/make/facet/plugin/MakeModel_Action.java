@@ -103,9 +103,9 @@ public class MakeModel_Action extends GeneratedAction {
           return relayStrat.relayQuery(query, MakeModel_Action.this.context);
         }
       };
-      final IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
+      final IScript scr = scb.withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
         public void invoke(IParametersPool pool) {
-          Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> vars = (Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>>) pool.parameters(new ITarget.Name("Parameters"), Object.class);
+          Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> vars = (Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
           vars._0(MakeModel_Action.this.context.getProject());
           vars._1(MakeModel_Action.this.context);
           vars._2(MakeModel_Action.this.models);

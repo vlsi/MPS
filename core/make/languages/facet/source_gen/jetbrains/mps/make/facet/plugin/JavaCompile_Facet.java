@@ -18,13 +18,15 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
-public class JavaCompilator_Facet implements IFacet {
+public class JavaCompile_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("JavaCompilator");
+  private IFacet.Name name = new IFacet.Name("JavaCompile");
 
-  public JavaCompilator_Facet() {
-    ListSequence.fromList(targets).addElement(new JavaCompilator_Facet.Target_xl32vp_a());
+  public JavaCompile_Facet() {
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_a());
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_b());
   }
 
   public Iterable<ITarget> targets() {
@@ -47,34 +49,34 @@ public class JavaCompilator_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_xl32vp_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("Compile");
+  public static class Target_wf1ya0_a implements ITarget {
+    private ITarget.Name name = new ITarget.Name("compile");
 
-    public Target_xl32vp_a() {
+    public Target_wf1ya0_a() {
     }
 
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          Iterable<IResource> _output_xl32vp_a0a = null;
+          Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
               for (IResource resource : input) {
                 GResource gr = (GResource) resource;
                 if (gr.data.module() == null) {
-                  return new IResult.FAILURE(_output_xl32vp_a0a);
+                  return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
                 CompilationResult compilationResult;
                 compilationResult = new ModuleMaker().make(CollectionUtil.set(gr.data.module()), new EmptyProgressIndicator());
                 if (compilationResult != null && compilationResult.getErrors() > 0) {
-                  return new IResult.FAILURE(_output_xl32vp_a0a);
+                  return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
                 if (gr.data.module().reloadClassesAfterGeneration()) {
-                  _output_xl32vp_a0a = Sequence.fromIterable(_output_xl32vp_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(gr)));
+                  _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(gr)));
                 }
               }
             default:
-              return new IResult.SUCCESS(_output_xl32vp_a0a);
+              return new IResult.SUCCESS(_output_wf1ya0_a0a);
           }
         }
       };
@@ -89,7 +91,56 @@ public class JavaCompilator_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("TextGen")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("textGen")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_wf1ya0_b implements ITarget {
+    private ITarget.Name name = new ITarget.Name("reloadClasses");
+
+    public Target_wf1ya0_b() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_wf1ya0_a0b = null;
+          switch (0) {
+            case 0:
+              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+            default:
+              return new IResult.SUCCESS(_output_wf1ya0_a0b);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("compile")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

@@ -43,7 +43,7 @@ public class TextGen_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generator"), new IFacet.Name("Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -55,7 +55,7 @@ public class TextGen_Facet implements IFacet {
   }
 
   public static class Target_21gswx_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("TextGen");
+    private ITarget.Name name = new ITarget.Name("textGen");
 
     public Target_21gswx_a() {
     }
@@ -81,7 +81,7 @@ public class TextGen_Facet implements IFacet {
                   TraceInfoCache tic = TraceInfoCache.getInstance();
                   GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
                   boolean res;
-                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).operationContext(), gr.data.status());
+                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.<Generate_Facet.Target_fi61u2_a.Variables>parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gr.data.status());
                   if (!(res)) {
                     Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
@@ -112,7 +112,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateFiles"), new ITarget.Name("Parameters")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate"), new ITarget.Name("checkParameters")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

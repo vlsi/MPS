@@ -60,7 +60,6 @@ public class GenerateSpecial_Facet implements IFacet {
             case 0:
               pool.<GenerateSpecial_Facet.Target_i03q2a_a.Variables>parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
               return new IResult.SUCCESS(_output_i03q2a_a0a);
-              return new IResult.FAILURE(_output_i03q2a_a0a);
             default:
               return new IResult.SUCCESS(_output_i03q2a_a0a);
           }

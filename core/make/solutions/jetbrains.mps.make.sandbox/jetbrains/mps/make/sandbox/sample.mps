@@ -143,9 +143,6 @@
             <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="7324968152575143034">
               <property name="result" value="SUCCESS" />
             </node>
-            <node role="statement:3" type="jetbrains.mps.make.script.structure.ResultStatement" id="7324968152575143036">
-              <property name="result" value="FAILURE" />
-            </node>
           </node>
         </node>
         <node role="config" type="jetbrains.mps.make.script.structure.ConfigDefinition" id="1977954644795407264">
