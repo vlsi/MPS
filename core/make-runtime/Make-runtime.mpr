@@ -9,12 +9,11 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="" />
     </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/facet/facet.mpl" />
-      <languagePath path="${project}/languages/script/script.mpl" folder="" />
-    </projectLanguages>
+    <projectLanguages />
     <projectDevkits />
     <genConfs>
+      <genConfModule name="make" moduleRef="jetbrains.mps.make" />
+      <genConfModule name="runtime" moduleRef="jetbrains.mps.make.runtime" />
     </genConfs>
   </component>
   <component name="ProjectModuleManager">

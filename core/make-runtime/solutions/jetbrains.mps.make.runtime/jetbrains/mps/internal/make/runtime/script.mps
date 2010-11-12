@@ -20,8 +20,6 @@
   <import index="7" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#com.intellij.util.ui(com.intellij.util.ui@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6168415856807657427">
     <property name="name:3" value="InvalidScript" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6168415856807657428" />

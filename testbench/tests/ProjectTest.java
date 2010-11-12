@@ -35,6 +35,8 @@ public class ProjectTest {
 
   public static String[] PROJECTS = new String[]  {
       // Bootstrap tests
+
+
       "/core/baseLanguage/baseLanguage/baseLanguage.mpr",
       "/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr",
       "/core/baseLanguage/closures/closures.mpr",
@@ -65,6 +67,7 @@ public class ProjectTest {
       "/core/languageDesign/stubs/stubs.mpr",
       "/core/languageDesign/test/test.mpr",
       "/core/languageDesign/typesystem/typesystem.mpr",
+      "/core/languageDesign/make/Make.mpr",
       "/platform/builders/builders.mpr",
       "/platform/buildlanguage/BuildLanguage.mpr",
       "/platform/gtext/gtext.mpr",
@@ -75,6 +78,7 @@ public class ProjectTest {
       "/platform/xmlUnitTest/xmlUnitTest.mpr",
 
       // Applications tests
+      "/core/make-runtime/Make-runtime.mpr",
       "/core/kernel/kernelSolution/kernel.mpr",
       "/core/debug/debugProject/debugProject.mpr",
       "/core/kernel/traceinfo/traceInfo.mpr",

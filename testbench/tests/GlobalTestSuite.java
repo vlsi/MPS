@@ -1,9 +1,10 @@
-import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import junit.framework.TestSuite;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
+
 
 @SuiteClasses({jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
 jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test.class,
@@ -40,7 +41,15 @@ jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test.class,
 jetbrains.mps.internalCollections.test.closures.Find_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test.class,
+jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,
+jetbrains.mps.make.unittest.FacetRegistry_Test.class,
+jetbrains.mps.make.unittest.Execute_Test.class,
+jetbrains.mps.make.generator.Generator_Test.class,
+jetbrains.mps.make.unittest.ScriptBuilder_Test.class,
+jetbrains.mps.make.unittest.LogReporting_Test.class,
+jetbrains.mps.make.unittest.Targets_Test.class,
+jetbrains.mps.make.unittest.Cycles_Test.class,
 jetbrains.mps.lang.pattern.test.Patternv3_Test.class,
 jetbrains.mps.lang.pattern.test.PatternOrPattern_Test.class,
 jetbrains.mps.lang.pattern.test.Patternv2_Test.class,
