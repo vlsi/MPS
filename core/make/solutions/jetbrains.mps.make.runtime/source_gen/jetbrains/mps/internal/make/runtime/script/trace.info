@@ -130,8 +130,8 @@
     <nodeInfo nodeId="5646063728432304704" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="97" startPosition="5" endLine="98" endPosition="30" />
     <nodeInfo nodeId="5646063728432304768" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="99" startPosition="23" endLine="100" endPosition="35" />
     <nodeInfo nodeId="1291978361072209306" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="101" startPosition="5" endLine="102" endPosition="97" />
-    <nodeInfo nodeId="1977954644795665065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="105" startPosition="62" endLine="106" endPosition="50" />
-    <nodeInfo nodeId="1977954644795665107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="106" startPosition="50" endLine="107" endPosition="43" />
+    <nodeInfo nodeId="1977954644795665065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="105" startPosition="62" endLine="106" endPosition="51" />
+    <nodeInfo nodeId="1977954644795665107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="106" startPosition="51" endLine="107" endPosition="43" />
     <nodeInfo nodeId="1977954644795671633" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="108" startPosition="60" endLine="109" endPosition="45" />
     <nodeInfo nodeId="1977954644795799379" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="109" startPosition="45" endLine="110" endPosition="72" />
     <nodeInfo nodeId="4648565975300837029" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="110" startPosition="72" endLine="111" endPosition="19" />

@@ -32,7 +32,11 @@ import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class MakeModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -99,7 +103,7 @@ public class MakeModel_Action extends GeneratedAction {
           return relayStrat.relayQuery(query, MakeModel_Action.this.context);
         }
       };
-      IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
+      final IScript scr = scb.withFacets(new IFacet.Name("Generator"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompilator"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
         public void invoke(IParametersPool pool) {
           Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> vars = (Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>>) pool.parameters(new ITarget.Name("Parameters"), Object.class);
           vars._0(MakeModel_Action.this.context.getProject());
@@ -117,8 +121,32 @@ public class MakeModel_Action extends GeneratedAction {
           }, "Script", true, MakeModel_Action.this.context.getProject());
         }
       }).toScript();
-      IResult res;
-      res = scr.execute();
+      if (!(scr.isValid())) {
+        return;
+      }
+
+      // save all before launching the script 
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          SModelRepository.getInstance().saveAll();
+        }
+      });
+
+      final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
+
+      ModelCheckerTool_Tool mct = MakeModel_Action.this.context.getProject().getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
+      if (mct.checkModelsBeforeGenerationIfNeeded(MakeModel_Action.this.context, MakeModel_Action.this.models, new Runnable() {
+        public void run() {
+          res.value = scr.execute();
+        }
+      })) {
+        //  this is insanity! really call this _again_? 
+        new _FunctionTypes._return_P0_E0<IResult>() {
+          public IResult invoke() {
+            return res.value = scr.execute();
+          }
+        }.invoke();
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeModel", t);
     }

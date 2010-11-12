@@ -29,8 +29,6 @@ import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.generator.GeneratorManager;
@@ -361,11 +359,6 @@ public class Generator_Facet implements IFacet {
           final Wrappers._T<Iterable<IResource>> _output_ixz87t_a0d = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                public void run() {
-                  SModelRepository.getInstance().saveAll();
-                }
-              });
               MessagesViewTool mvt = pool.<Generator_Facet.Target_ixz87t_a.Variables>parameters(new ITarget.Name("Parameters"), Generator_Facet.Target_ixz87t_a.Variables.class).project().getComponent(MessagesViewTool.class);
               if (mvt != null) {
                 mvt.openToolLater(false);

@@ -103,7 +103,7 @@ public class Script implements IScript {
     mons.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
-          LOG.info("Configuring" + trg.getName());
+          LOG.info("Configuring " + trg.getName());
           IConfig cfg = trg.createConfig();
           if (cfg != null && !(cfg.configure(cmon, pool))) {
             LOG.info("Configuration failed");

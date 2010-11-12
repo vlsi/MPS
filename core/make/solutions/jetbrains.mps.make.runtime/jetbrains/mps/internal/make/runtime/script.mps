@@ -853,7 +853,7 @@
                                 </node>
                               </node>
                               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1977954644795665073">
-                                <property name="value:3" value="Configuring" />
+                                <property name="value:3" value="Configuring " />
                               </node>
                             </node>
                           </node>
