@@ -19,7 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
-import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -119,5 +121,10 @@ public class MPSBreakpoint extends JavaBreakpoint {
       className = myNodePointer.getModelReference().getLongName() + "." + fileName;
     }
     return className;
+  }
+
+  @Override
+  public IBreakpointKind getKind() {
+    return JavaBreakpointKind.LINE_BREAKPOINT;
   }
 }

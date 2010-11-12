@@ -221,6 +221,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.debug.breakpoints.JavaBreakpointsProvider</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
     </component>
 

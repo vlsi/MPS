@@ -6,6 +6,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;

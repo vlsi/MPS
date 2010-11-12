@@ -10,13 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.04.2010
- * Time: 15:41:46
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractDebugSession<State extends AbstractUiState> {
 
   protected ProcessHandler myProcessHandler;

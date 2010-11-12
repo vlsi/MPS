@@ -51,13 +51,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.12.2009
- * Time: 15:24:44
- * To change this template use File | Settings | File Templates.
- */
 @State(
   name = "BreakpointManager",
   storages = {

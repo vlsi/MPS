@@ -42,6 +42,7 @@ public class C extends BaseC {
       }
     }).first();
     new C();
+    throw new RuntimeException();
   }
 
   private static int getOne() {

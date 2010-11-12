@@ -23,6 +23,8 @@ import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.Requestor;

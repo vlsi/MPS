@@ -2,6 +2,7 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
@@ -10,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class AbstractMPSBreakpoint {
+public abstract class AbstractMPSBreakpoint implements IBreakpoint {
   protected Project myProject;
   protected SNodePointer myNodePointer;
   protected boolean myIsEnabled = true;

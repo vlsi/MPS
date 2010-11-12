@@ -159,17 +159,18 @@
     <nodeInfo nodeId="792512149230421480" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="C.java" startLine="39" startPosition="41" endLine="40" endPosition="29" />
     <nodeInfo nodeId="792512149230422165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="C.java" startLine="40" startPosition="29" endLine="41" endPosition="23" />
     <nodeInfo nodeId="4060685206781456064" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="C.java" startLine="43" startPosition="15" endLine="44" endPosition="12" />
-    <nodeInfo nodeId="5661655420496807181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="C.java" startLine="47" startPosition="31" endLine="48" endPosition="13" />
+    <nodeInfo nodeId="934164535363466041" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="C.java" startLine="44" startPosition="12" endLine="45" endPosition="33" />
+    <nodeInfo nodeId="5661655420496807181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="C.java" startLine="48" startPosition="31" endLine="49" endPosition="13" />
     <nodeInfo nodeId="4060685206781456019" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="C.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
     <nodeInfo nodeId="5661655420496807167" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="C.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <nodeInfo nodeId="9020439274434605518" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="C.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="5661655420496807176" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="C.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="5661655420496807176" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="C.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <nodeInfo nodeId="792512149230421398" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="C.java" startLine="38" startPosition="67" endLine="43" endPosition="0" />
     <nodeInfo nodeId="792512149230421391" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="C.java" startLine="37" startPosition="46" endLine="43" endPosition="15" />
-    <nodeInfo nodeId="4060685206781456033" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="C.java" startLine="28" startPosition="0" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="4060685206781456033" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="C.java" startLine="28" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="5661655420496807170" fileName="C.java" startLine="21" startPosition="31" endLine="22" endPosition="13" />
     <scopeInfo nodeId="9020439274434605521" fileName="C.java" startLine="25" startPosition="29" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="5661655420496807179" fileName="C.java" startLine="47" startPosition="31" endLine="48" endPosition="13" />
+    <scopeInfo nodeId="5661655420496807179" fileName="C.java" startLine="48" startPosition="31" endLine="49" endPosition="13" />
     <scopeInfo nodeId="4060685206781456022" fileName="C.java" startLine="16" startPosition="14" endLine="18" endPosition="8">
       <varInfo nodeId="4060685206781456024" varName="y" />
     </scopeInfo>
@@ -179,17 +180,17 @@
       <varInfo nodeId="7745058440407989502" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="9020439274434605518" fileName="C.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5661655420496807176" fileName="C.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5661655420496807176" fileName="C.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="792512149230421398" fileName="C.java" startLine="38" startPosition="67" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4060685206781456036" fileName="C.java" startLine="29" startPosition="42" endLine="44" endPosition="12">
+    <scopeInfo nodeId="4060685206781456036" fileName="C.java" startLine="29" startPosition="42" endLine="45" endPosition="33">
       <varInfo nodeId="792512149230421367" varName="list" />
       <varInfo nodeId="4060685206781456042" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4060685206781456033" fileName="C.java" startLine="28" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="4060685206781456033" fileName="C.java" startLine="28" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="4060685206781456037" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="792512149230421398" fileName="C.java" startLine="38" startPosition="42" endLine="43" endPosition="5" unitName="jetbrains.mps.debug.run.sandbox.C$1" />
-    <unitInfo nodeId="4060685206781456017" fileName="C.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.C" />
+    <unitInfo nodeId="4060685206781456017" fileName="C.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.C" />
   </root>
   <root nodeId="4495133539197110684">
     <nodeInfo nodeId="6084657294691509231" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugCollections.java" startLine="24" startPosition="42" endLine="25" endPosition="21" />

@@ -45,10 +45,10 @@
   <unitInfo fileName="LanguageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
   <unitInfo fileName="Generate_ActionGroup.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.Generate_ActionGroup" />
   <unitInfo fileName="DevkitActions_ActionGroup.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
-  <unitInfo fileName="DebugRunMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup" />
   <unitInfo fileName="Edit_ActionGroup.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
   <unitInfo fileName="ProjectActions_ActionGroup.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
   <unitInfo fileName="Mac_KeymapChanges.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
+  <unitInfo fileName="DebugRunMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup" />
   <unitInfo fileName="Favorites_ActionGroup.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
   <unitInfo fileName="EditorInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
   <unitInfo fileName="AbstractFileActions_ActionGroup.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
@@ -104,6 +104,7 @@
   <unitInfo fileName="StepOver_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOver_Action" />
   <unitInfo fileName="Pause_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Pause_Action" />
   <unitInfo fileName="Resume_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Resume_Action" />
+  <unitInfo fileName="AddRuntimeExceptionBreakpoint_Action.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.AddRuntimeExceptionBreakpoint_Action" />
   <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
   <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="NamespaceInternalActions_ActionGroup.java" startLine="24" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" />
@@ -2819,6 +2820,7 @@
     <nodeInfo nodeId="6009788376415891759" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugRunMenu_ActionGroup.java" startLine="24" startPosition="117" endLine="25" endPosition="51" />
     <nodeInfo nodeId="6009788376415891760" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugRunMenu_ActionGroup.java" startLine="25" startPosition="51" endLine="26" endPosition="120" />
     <nodeInfo nodeId="4759505090531800554" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugRunMenu_ActionGroup.java" startLine="26" startPosition="120" endLine="27" endPosition="119" />
+    <nodeInfo nodeId="2907801717480925001" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugRunMenu_ActionGroup.java" startLine="27" startPosition="119" endLine="28" endPosition="133" />
   </root>
   <root nodeId="2589658255268083871">
     <nodeInfo nodeId="2589658255268083876" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="RenameFileOrDirectory_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="35" />
@@ -3115,6 +3117,13 @@
     <scopeInfo nodeId="2841218117793490430" fileName="GoToUsageInMappingConfig_Action.java" startLine="49" startPosition="180" endLine="50" endPosition="19" />
     <scopeInfo nodeId="2841218117793490460" fileName="GoToUsageInMappingConfig_Action.java" startLine="52" startPosition="78" endLine="53" endPosition="19" />
     <scopeInfo nodeId="2841218117793490405" fileName="GoToUsageInMappingConfig_Action.java" startLine="42" startPosition="52" endLine="55" endPosition="16" />
+  </root>
+  <root nodeId="2907801717480675561">
+    <nodeInfo nodeId="2907801717480675565" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AddRuntimeExceptionBreakpoint_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="26" />
+    <nodeInfo nodeId="934164535363611784" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddRuntimeExceptionBreakpoint_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="166" />
+    <nodeInfo nodeId="934164535363612031" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddRuntimeExceptionBreakpoint_Action.java" startLine="66" startPosition="23" endLine="67" endPosition="140" />
+    <nodeInfo nodeId="934164535363611795" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddRuntimeExceptionBreakpoint_Action.java" startLine="65" startPosition="166" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="934164535363611796" fileName="AddRuntimeExceptionBreakpoint_Action.java" startLine="66" startPosition="23" endLine="67" endPosition="140" />
   </root>
   <root nodeId="2921528350547793592">
     <nodeInfo nodeId="2921528350547793595" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorTabActions_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="118" />
