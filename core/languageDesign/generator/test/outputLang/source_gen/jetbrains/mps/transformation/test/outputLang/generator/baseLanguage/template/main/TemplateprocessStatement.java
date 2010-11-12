@@ -34,6 +34,7 @@ public class TemplateprocessStatement implements TemplateDeclaration {
   private static SNodePointer templateNode_slzep9_a0a0a1a3a1a4a1a3a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980649138");
   private static SNodePointer templateNode_slzep9_a0a0a1a3a1a3a1a4a1a3a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980649137");
   private static SNodePointer templateNode_slzep9_a0a0a1a4a1a3a1a4a1a3a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980649141");
+  private static SNodePointer callMacroRef_slzep9_a0a0a6a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5005282049926092705");
 
   private String myName;
   private String myName2;
@@ -284,6 +285,20 @@ public class TemplateprocessStatement implements TemplateDeclaration {
       environment.getTracer().pushOutputNode(tnode11);
       environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a4a0);
     }
-    return TemplateUtil.asList(tnode1, tnode11);
+    Collection<SNode> tlist20 = null;
+    try {
+      environment.getTracer().pushMacro(callMacroRef_slzep9_a0a0a6a0);
+      final SNodePointer templateNode20 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
+      try {
+        environment.getTracer().pushTemplateNode(templateNode20);
+        tlist20 = new Templateaaaaa(((SNode) contextWithParameters.getVariable("expr"))).apply(environment, contextWithParameters);
+      } finally {
+        environment.getTracer().pushTemplateNode(templateNode20);
+      }
+
+    } finally {
+      environment.getTracer().closeMacro(callMacroRef_slzep9_a0a0a6a0);
+    }
+    return TemplateUtil.asList(tnode1, tnode11, tlist20);
   }
 }

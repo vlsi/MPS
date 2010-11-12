@@ -41,6 +41,7 @@
   <unitInfo fileName="ReferenceMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.ReferenceMacro" />
   <unitInfo fileName="NodeMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.NodeMacro" />
   <unitInfo fileName="PropertyMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.PropertyMacro" />
+  <unitInfo fileName="TemplateArgumentParameterExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression" />
   <unitInfo fileName="GeneratorParameterReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorParameterReference" />
   <unitInfo fileName="InlineTemplateWithContext_RuleConsequence.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression" />

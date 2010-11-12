@@ -16,8 +16,8 @@
   </root>
   <root nodeId="8421689336187916450">
     <nodeInfo nodeId="8421689336187917112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="32" startPosition="190" endLine="33" endPosition="122" />
-    <nodeInfo nodeId="8421689336187928120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="74" startPosition="43" endLine="75" endPosition="697" />
-    <nodeInfo nodeId="8421689336188156509" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="QueriesGenerated.java" startLine="75" startPosition="697" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="8421689336187928120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="74" startPosition="43" endLine="75" endPosition="831" />
+    <nodeInfo nodeId="8421689336188156509" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="QueriesGenerated.java" startLine="75" startPosition="831" endLine="76" endPosition="0" />
     <scopeInfo nodeId="8421689336187916453" fileName="QueriesGenerated.java" startLine="32" startPosition="190" endLine="33" endPosition="122" />
     <scopeInfo nodeId="8421689336187917125" fileName="QueriesGenerated.java" startLine="74" startPosition="43" endLine="76" endPosition="0" />
   </root>

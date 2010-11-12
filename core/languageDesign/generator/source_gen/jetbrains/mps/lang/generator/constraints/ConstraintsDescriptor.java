@@ -18,6 +18,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentParameterExpression_parameter_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new GeneratorParameterReference_declaration_ReferentConstraint());
   }
 

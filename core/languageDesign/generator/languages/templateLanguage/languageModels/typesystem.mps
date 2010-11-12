@@ -3483,5 +3483,65 @@
       <link role="concept:3" targetNodeId="3.1118786554307:2" resolveInfo="LoopMacro" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5005282049925943809">
+    <property name="name:3" value="typeof_TemplateArgumentParameterExpression" />
+    <property name="virtualPackage:3" value="rule.argument" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5005282049925943810">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="5005282049925943816">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5659786285834464494">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5659786285834464495">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5659786285834464498">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5659786285834464497">
+                <link role="applicableNode:3" targetNodeId="5005282049925943811" resolveInfo="arg" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5659786285834495240">
+                <link role="link:16" targetNodeId="3.5005282049925926522:2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5005282049925943819">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5005282049925943813">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5005282049925943815">
+              <link role="applicableNode:3" targetNodeId="5005282049925943811" resolveInfo="arg" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5005282049925943811">
+      <property name="name:3" value="arg" />
+      <link role="concept:3" targetNodeId="3.5005282049925926521:2" resolveInfo="TemplateArgumentParameterExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5659786285834495241">
+    <property name="name:3" value="typeof_TemplateParameterDeclaration" />
+    <property name="virtualPackage:3" value="template" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5659786285834495242">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="5659786285834507295">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5659786285834507299">
+          <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5659786285834507301">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5659786285834507300">
+              <link role="applicableNode:3" targetNodeId="5659786285834495243" resolveInfo="tpd" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5659786285834507305">
+              <link role="link:16" targetNodeId="3.1805153994415893199:2" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5659786285834507298">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5659786285834495245">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5659786285834507292">
+              <link role="applicableNode:3" targetNodeId="5659786285834495243" resolveInfo="tpd" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5659786285834495243">
+      <property name="name:3" value="tpd" />
+      <link role="concept:3" targetNodeId="3.1805153994415891174:2" resolveInfo="TemplateParameterDeclaration" />
+    </node>
+  </node>
 </model>
 

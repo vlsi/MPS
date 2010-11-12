@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateFunctionParameter_sourceNode_InferenceRule" />
+  <unitInfo fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateParameterDeclaration_InferenceRule" />
+  <unitInfo fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentParameterExpression_InferenceRule" />
   <unitInfo fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule" />
   <unitInfo fileName="typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentPropertyPatternRefExpression_InferenceRule" />
   <unitInfo fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentPatternVarRefExpression_InferenceRule" />
@@ -24,7 +26,7 @@
   <unitInfo fileName="typeof_ITemplateCall_InferenceRule.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_ITemplateCall_InferenceRule" />
   <unitInfo fileName="check_WeaveEach_RuleConsequence_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_WeaveEach_RuleConsequence_NonTypesystemRule" />
   <unitInfo fileName="typeof_IncludeMacro_InferenceRule.java" startLine="24" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_IncludeMacro_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_CreateRootRule_InferenceRule.java" startLine="19" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_CreateRootRule_InferenceRule" />
   <unitInfo fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="24" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_BaseMappingRule_InferenceRule" />
   <unitInfo fileName="typeof_PatternReduction_MappingRule_InferenceRule.java" startLine="24" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_PatternReduction_MappingRule_InferenceRule" />
@@ -895,6 +897,24 @@
     <nodeInfo nodeId="4816349095291153412" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="19" startPosition="153" endLine="25" endPosition="5" />
     <scopeInfo nodeId="4816349095291153412" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="474" />
     <scopeInfo nodeId="4816349095291153406" fileName="typeof_TemplateArgumentLinkPatternRefExpression_InferenceRule.java" startLine="19" startPosition="153" endLine="25" endPosition="5" />
+  </root>
+  <root nodeId="5005282049925943809">
+    <nodeInfo nodeId="5005282049925943816" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="45" />
+    <nodeInfo nodeId="5005282049925943816" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="21" startPosition="45" endLine="22" endPosition="52" />
+    <nodeInfo nodeId="5005282049925943816" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="218" />
+    <nodeInfo nodeId="5005282049925943816" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="23" startPosition="218" endLine="24" endPosition="436" />
+    <nodeInfo nodeId="5005282049925943816" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="19" startPosition="116" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="5005282049925943816" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="436" />
+    <scopeInfo nodeId="5005282049925943810" fileName="typeof_TemplateArgumentParameterExpression_InferenceRule.java" startLine="19" startPosition="116" endLine="25" endPosition="5" />
+  </root>
+  <root nodeId="5659786285834495241">
+    <nodeInfo nodeId="5659786285834507295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="45" />
+    <nodeInfo nodeId="5659786285834507295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="21" startPosition="45" endLine="22" endPosition="52" />
+    <nodeInfo nodeId="5659786285834507295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="218" />
+    <nodeInfo nodeId="5659786285834507295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="23" startPosition="218" endLine="24" endPosition="290" />
+    <nodeInfo nodeId="5659786285834507295" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="19" startPosition="116" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="5659786285834507295" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="290" />
+    <scopeInfo nodeId="5659786285834495242" fileName="typeof_TemplateParameterDeclaration_InferenceRule.java" startLine="19" startPosition="116" endLine="25" endPosition="5" />
   </root>
   <root nodeId="7648411942405144477">
     <nodeInfo nodeId="7648411942405232793" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="22" startPosition="122" endLine="23" endPosition="64" />

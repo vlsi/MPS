@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenUtil {
   private static final String KEY = "VarName";
@@ -53,6 +54,10 @@ public class GenUtil {
     }).isNotEmpty()) {
       return false;
     }
-    return SModelOperations.getModelName(model).startsWith("jetbrains.mps.transformation.test");
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.GeneratorDescriptor")).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "generate");
+      }
+    });
   }
 }

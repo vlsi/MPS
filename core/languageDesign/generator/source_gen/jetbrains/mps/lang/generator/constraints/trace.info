@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TemplateArgumentParameterExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentParameterExpression_Constraints" />
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints" />
   <unitInfo fileName="TemplateArgumentQueryExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentQueryExpression_Constraints" />
   <unitInfo fileName="ITemplateCall_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ITemplateCall_Constraints" />
@@ -7,10 +8,11 @@
   <unitInfo fileName="CreateRootRule_templateNode_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.CreateRootRule_templateNode_ReferentConstraint" />
   <unitInfo fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.Root_MappingRule_template_ReferentConstraint" />
   <unitInfo fileName="GeneratorDescriptor_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.GeneratorDescriptor_name_PropertyConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="TemplateArgumentParameterExpression_parameter_ReferentConstraint.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentParameterExpression_parameter_ReferentConstraint" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint" />
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint" />
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsDescriptor" />
   <root nodeId="1213104837507">
     <nodeInfo nodeId="1213104837922" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
     <scopeInfo nodeId="1213104837921" fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
@@ -20,10 +22,10 @@
     <scopeInfo nodeId="1213104840280" fileName="CreateRootRule_templateNode_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
   </root>
   <root nodeId="4035562641222622456">
-    <nodeInfo nodeId="4035562641222637893" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ITemplateCall_Constraints.java" startLine="12" startPosition="142" endLine="13" endPosition="801" />
+    <nodeInfo nodeId="4035562641222637893" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ITemplateCall_Constraints.java" startLine="12" startPosition="142" endLine="13" endPosition="954" />
     <nodeInfo nodeId="4035562641222637881" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ITemplateCall_Constraints.java" startLine="14" startPosition="5" endLine="15" endPosition="17" />
     <nodeInfo nodeId="4035562641222637872" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ITemplateCall_Constraints.java" startLine="11" startPosition="116" endLine="14" endPosition="5" />
-    <scopeInfo nodeId="4035562641222637874" fileName="ITemplateCall_Constraints.java" startLine="12" startPosition="142" endLine="13" endPosition="801" />
+    <scopeInfo nodeId="4035562641222637874" fileName="ITemplateCall_Constraints.java" startLine="12" startPosition="142" endLine="13" endPosition="954" />
     <scopeInfo nodeId="4035562641222637871" fileName="ITemplateCall_Constraints.java" startLine="11" startPosition="116" endLine="15" endPosition="17" />
   </root>
   <root nodeId="4035562641222625939">
@@ -67,6 +69,15 @@
       <varInfo nodeId="4816349095291149874" varName="result" />
       <varInfo nodeId="4816349095291149880" varName="rule" />
     </scopeInfo>
+  </root>
+  <root nodeId="5005282049925940094">
+    <nodeInfo nodeId="5005282049925943772" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TemplateArgumentParameterExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
+    <nodeInfo nodeId="5005282049925943790" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TemplateArgumentParameterExpression_parameter_ReferentConstraint.java" startLine="29" startPosition="165" endLine="30" endPosition="207" />
+    <nodeInfo nodeId="5005282049925943781" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TemplateArgumentParameterExpression_parameter_ReferentConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="34" />
+    <nodeInfo nodeId="5005282049925943757" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TemplateArgumentParameterExpression_parameter_ReferentConstraint.java" startLine="28" startPosition="132" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="5005282049925943771" fileName="TemplateArgumentParameterExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
+    <scopeInfo nodeId="5005282049925943759" fileName="TemplateArgumentParameterExpression_parameter_ReferentConstraint.java" startLine="29" startPosition="165" endLine="30" endPosition="207" />
+    <scopeInfo nodeId="5005282049925940097" fileName="TemplateArgumentParameterExpression_parameter_ReferentConstraint.java" startLine="28" startPosition="132" endLine="32" endPosition="34" />
   </root>
   <root nodeId="5023471013036170874">
     <nodeInfo nodeId="5023471013036171784" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GeneratorDescriptor_name_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="24" />

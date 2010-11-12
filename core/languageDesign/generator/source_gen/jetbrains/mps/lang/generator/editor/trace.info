@@ -19,6 +19,7 @@
   <unitInfo fileName="MacroSymbol_Actions.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacroSymbol_Actions" />
   <unitInfo fileName="PropertyMacroActions.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions" />
   <unitInfo fileName="TemplateArgumentQueryExpression_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentQueryExpression_Editor" />
+  <unitInfo fileName="TemplateArgumentParameterExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor$_Inline_k33vz5_a0a" />
   <unitInfo fileName="GeneratorParameterReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor$_Inline_p6qpij_a0a" />
   <unitInfo fileName="TemplateSwitchReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_Editor$_Inline_a3kslj_a0a" />
   <unitInfo fileName="DropRootRule_Editor.java" startLine="104" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.DropRootRule_Editor$_Inline_fdnaen_a0a" />
@@ -90,6 +91,7 @@
   <unitInfo fileName="CopySrcNodeMacro_Editor.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcNodeMacro_Editor" />
   <unitInfo fileName="RootTemplateAnnotation_KeyMap.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap" />
   <unitInfo fileName="TemplateParameterDeclaration_Editor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateParameterDeclaration_Editor" />
+  <unitInfo fileName="TemplateArgumentParameterExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor" />
   <unitInfo fileName="GeneratorParameterReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor" />
   <unitInfo fileName="TemplateSwitchReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_Editor" />
   <unitInfo fileName="MappingScriptReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScriptReference_Editor" />

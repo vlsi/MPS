@@ -807,6 +807,15 @@
           </node>
           <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7870321878389838429" />
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="5005282049926092702">
+          <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="5005282049926092703" />
+          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateCallMacro:2" id="5005282049926092705">
+            <link role="template:2" targetNodeId="933643154466320524" resolveInfo="aaaaa" />
+            <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression:2" id="5005282049926275814">
+              <link role="parameter:2" targetNodeId="2681305894288695012" resolveInfo="expr" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

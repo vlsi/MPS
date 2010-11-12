@@ -1788,5 +1788,16 @@
       <link role="target:0" targetNodeId="650531548511609556:2" resolveInfo="IGeneratorParameter" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5005282049925926521">
+    <property name="virtualPackage:0" value="rule.argument" />
+    <property name="name:0" value="TemplateArgumentParameterExpression" />
+    <link role="extends:0" targetNodeId="6.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5005282049925926522">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="parameter" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1805153994415891174:2" resolveInfo="TemplateParameterDeclaration" />
+    </node>
+  </node>
 </model>
 

@@ -6772,5 +6772,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5005282049925926523">
+    <property name="virtualPackage:32" value="rule.argument" />
+    <link role="conceptDeclaration:32" targetNodeId="1.5005282049925926521:2" resolveInfo="TemplateArgumentParameterExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5005282049925940087">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="5005282049925940090">
+        <link role="relationDeclaration:32" targetNodeId="1.5005282049925926522:2" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="5005282049925940091">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5005282049925940093">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="4.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5005282049925940089" />
+    </node>
+  </node>
 </model>
 

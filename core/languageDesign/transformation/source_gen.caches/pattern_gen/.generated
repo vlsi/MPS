@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-a7ff94ytxdpekiii2fbn9bnhi92acg1">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="az0pkolsrl0b6edhd9rgkr9j3ebghzb" />
+  <dep model="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)" hash="cmie4haqkgtigrarzlan4zbcxlplwyv" />
+  <common hash="31mks45t13scdr6drdo05kvxrf2dc5w" />
+  <source id="4146564171992399879" hash="-e5pjwejqz7hmp5safiqpjyktf8u9dww">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)" />
+    <file name="RootCustom.java" />
+  </source>
+</dependencies>
+

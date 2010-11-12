@@ -288,6 +288,13 @@ public class GeneratorUtil {
         value = ((StringLiteral) expr).getValue();
       } else if (expr instanceof NullLiteral) {
         /* ok */
+      } else if (expr instanceof TemplateArgumentParameterExpression && outerContext != null) {
+        TemplateParameterDeclaration parameter = ((TemplateArgumentParameterExpression) expr).getParameter();
+        if (parameter == null) {
+          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
+        } else {
+          value = outerContext.getVariable(parameter.getName());
+        }
       } else if (expr instanceof TemplateArgumentPatternRef && outerContext != null) {
         BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
         if (patternVar == null) {
