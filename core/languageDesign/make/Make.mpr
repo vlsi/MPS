@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSFavoritesManager">
+    <favorites_list name="Make actions">
+      <favorite_root model_ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" node_pointer="1204991218714" />
+    </favorites_list>
+  </component>
+  <component name="MPSProject">
+    <projectSolutions>
+      <solutionPath path="${project}/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" />
+      <solutionPath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
+      <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}/languages/facet/facet.mpl" />
+      <languagePath path="${project}/languages/script/script.mpl" folder="" />
+    </projectLanguages>
+    <projectDevkits />
+    <genConfs>
+      <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />
+      <genConfModule name="script" moduleRef="jetbrains.mps.make.script" />
+    </genConfs>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
+</project>
+

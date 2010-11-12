@@ -95,6 +95,11 @@ public class CommonPaths {
       result.add(generatorClassPath);
     }
 
+    IClassPathItem makeClassPath = getMakeRuntimeClasspath();
+    if (makeClassPath != null) {
+      result.add(makeClassPath);
+    }
+
     IClassPathItem typesystemEngineClassPath = getTypesystemEngineClasspath();
     if (typesystemEngineClassPath != null) {
       result.add(typesystemEngineClassPath);
@@ -307,6 +312,17 @@ public class CommonPaths {
       + File.separator + "classes";
     if (new File(generatorClasses).exists()) {
       return ClassPathFactory.getInstance().createFromPath(generatorClasses);
+    }
+
+    return null;
+  }
+
+  private static IClassPathItem getMakeRuntimeClasspath() {
+    String makeClasses = PathManager.getHomePath() + File.separator + "core"
+      + File.separator + "make-runtime"
+      + File.separator + "classes";
+    if (new File(makeClasses).exists()) {
+      return ClassPathFactory.getInstance().createFromPath(makeClasses);
     }
 
     return null;
