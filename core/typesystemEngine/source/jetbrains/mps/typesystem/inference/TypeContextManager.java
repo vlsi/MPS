@@ -30,6 +30,7 @@ public class TypeContextManager implements ApplicationComponent {
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new HashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
+  private Map<SNode, Stack<TypeCheckingContext>> myResolveTypeCheckingContexts = new HashMap<SNode, Stack<TypeCheckingContext>>();
 
   Timer myTimer;
 
@@ -96,10 +97,29 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
+    final SNode root = node.getContainingRoot();
     if (useNewTypeSystem) {
-      return new TypeCheckingContextNew(node, myTypeChecker); //todo should be resolving
+      return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
     }
-    return new TypeCheckingContext(node, myTypeChecker, true);
+    TypeCheckingContext typeCheckingContext = new TypeCheckingContext(root, myTypeChecker, true) {
+      @Override
+      public void dispose() {
+        super.dispose();
+        Stack<TypeCheckingContext> contextStack = myResolveTypeCheckingContexts.get(root);
+        TypeCheckingContext popped = contextStack.pop();
+        assert this == popped;
+        if (contextStack.isEmpty()) {
+          myResolveTypeCheckingContexts.remove(root);
+        }
+      }
+    };
+    Stack<TypeCheckingContext> contextStack = myResolveTypeCheckingContexts.get(root);
+    if (contextStack == null) {
+      contextStack = new Stack<TypeCheckingContext>();
+      myResolveTypeCheckingContexts.put(root, contextStack);
+    }
+    contextStack.push(typeCheckingContext);
+    return typeCheckingContext;
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
@@ -118,6 +138,13 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner) {
+    assert node.isRoot();
+    if (owner == DEFAULT_OWNER) {
+      Stack<TypeCheckingContext> contextStack = myResolveTypeCheckingContexts.get(node);
+      if (contextStack != null && !contextStack.isEmpty()) {
+        return contextStack.peek();
+      }
+    }
     return getContextForEditedRootNode(node, owner, false);
   }
 
