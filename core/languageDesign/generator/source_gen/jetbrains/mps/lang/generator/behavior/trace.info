@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_Behavior" />
   <unitInfo fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
   <unitInfo fileName="IfMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_Behavior" />
   <unitInfo fileName="Root_MappingRule_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Root_MappingRule_Behavior" />
@@ -393,6 +394,9 @@
       <varInfo nodeId="4035562641222665316" varName="index" />
       <varInfo nodeId="4035562641222637926" varName="expr" />
     </scopeInfo>
+  </root>
+  <root nodeId="5023471013036171786">
+    <scopeInfo nodeId="5023471013036171788" fileName="GeneratorDescriptor_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="650531548511609558">
     <scopeInfo nodeId="650531548511609564" fileName="IGeneratorParameter_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />

@@ -14,7 +14,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8484425748929510068">
     <property name="name:0" value="DefaultGeneratorParameter" />
-    <property name="package:0" value="parameter" />
+    <property name="virtualPackage:0" value="parameter" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8484425748929510069">
       <link role="intfc:0" targetNodeId="3.650531548511609556:2" resolveInfo="IGeneratorParameter" />
@@ -28,10 +28,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8484425748929510072">
-    <property name="package:0" value="parameter" />
     <property name="name:0" value="DefaultGeneratorParameterContainer" />
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}/icons/parameters.png" />
+    <property name="virtualPackage:0" value="parameter" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="650531548512004879">
       <property name="value:0" value="generator parameters" />

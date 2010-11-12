@@ -445,5 +445,43 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5023471013036170874">
+    <link role="concept:8" targetNodeId="1.650531548511911817:2" resolveInfo="GeneratorDescriptor" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="5023471013036170875">
+      <link role="applicableProperty:8" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="5023471013036170876">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5023471013036170877">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5023471013036171784">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5023471013036171785">
+              <property name="value:3" value="@generator" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="propertySetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter:8" id="5023471013036170878">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5023471013036170879" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7941504602772991213">
+    <property name="virtualPackage:8" value="parameter" />
+    <link role="concept:8" targetNodeId="1.650531548511911818:2" resolveInfo="GeneratorParameterReference" />
+    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="7941504602773013620">
+      <link role="applicableLink:8" targetNodeId="1.650531548511911820:2" />
+      <node role="presentation:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation:8" id="7941504602773013621">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7941504602773013622">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7941504602773108992">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7941504602773108994">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode:8" id="7941504602773108993" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7941504602773137857">
+                <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

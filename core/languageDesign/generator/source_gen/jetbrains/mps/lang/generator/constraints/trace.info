@@ -3,9 +3,11 @@
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints" />
   <unitInfo fileName="TemplateArgumentQueryExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentQueryExpression_Constraints" />
   <unitInfo fileName="ITemplateCall_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ITemplateCall_Constraints" />
+  <unitInfo fileName="GeneratorParameterReference_declaration_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_declaration_ReferentConstraint" />
   <unitInfo fileName="CreateRootRule_templateNode_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.CreateRootRule_templateNode_ReferentConstraint" />
   <unitInfo fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.Root_MappingRule_template_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="GeneratorDescriptor_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.GeneratorDescriptor_name_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint" />
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint" />
   <unitInfo fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint" />
@@ -65,6 +67,15 @@
       <varInfo nodeId="4816349095291149874" varName="result" />
       <varInfo nodeId="4816349095291149880" varName="rule" />
     </scopeInfo>
+  </root>
+  <root nodeId="5023471013036170874">
+    <nodeInfo nodeId="5023471013036171784" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GeneratorDescriptor_name_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="24" />
+    <scopeInfo nodeId="5023471013036170879" fileName="GeneratorDescriptor_name_PropertyConstraint.java" startLine="30" startPosition="124" endLine="30" endPosition="124" />
+    <scopeInfo nodeId="5023471013036170877" fileName="GeneratorDescriptor_name_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="24" />
+  </root>
+  <root nodeId="7941504602772991213">
+    <nodeInfo nodeId="7941504602773108992" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GeneratorParameterReference_declaration_ReferentConstraint.java" startLine="28" startPosition="129" endLine="29" endPosition="78" />
+    <scopeInfo nodeId="7941504602773013622" fileName="GeneratorParameterReference_declaration_ReferentConstraint.java" startLine="28" startPosition="129" endLine="29" endPosition="78" />
   </root>
 </debugInfo>
 

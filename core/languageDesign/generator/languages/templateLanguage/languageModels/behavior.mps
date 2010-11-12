@@ -2665,7 +2665,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="650531548511609558">
-    <property name="package" value="parameter" />
+    <property name="virtualPackage" value="parameter" />
     <link role="concept" targetNodeId="1.650531548511609556:2" resolveInfo="IGeneratorParameter" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="650531548511609559">
       <property name="isAbstract" value="true" />
@@ -2677,6 +2677,12 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="650531548511609563">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="650531548511609564" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5023471013036171786">
+    <link role="concept" targetNodeId="1.650531548511911817:2" resolveInfo="GeneratorDescriptor" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5023471013036171787">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5023471013036171788" />
     </node>
   </node>
 </model>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3wd4m755sd8xwc5nyuw5lh9vilzcubd">
+<dependencies version="2" modelHash="-amro2397aqftxd7vhuwe8mkzkmnl299">
   <dep model="f:java_stub#java.io(java.io@java_stub)" />
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.lang.sharedConcepts.structure(jetbrains.mps.lang.sharedConcepts.structure@java_stub)" />
@@ -11,7 +11,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="-b329psj0og3q6gajqk80psil4t3c41i" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="az0pkolsrl0b6edhd9rgkr9j3ebghzb" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-6a5ro4ka57pfl3m3qpyqjr1b4zy5pxn" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2spao3jcdelqpacv7od6cry260t4gbv" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="3ugyhgv66vdea0ua6gz9q90hy7hahxx" />
   <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-2fhxuzidv5teaobh7ko606osojl3uaf" />
   <common hash="35slut7zv46ymwgubfxg6yyau819pql">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -48,8 +48,8 @@
     <file name="ReferenceMacro.java" />
   </source>
   <source id="1092059087312" name="TemplateDeclaration" hash="5wahqji1ur3y8u008ykx558wvcgs1b7">
-    <dep root="1510949579266781519" />
     <dep root="1805153994415891174" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -66,9 +66,8 @@
     <dep root="1195502151594" />
     <dep root="1200911316486" />
     <dep root="1219952072943" />
-    <dep root="1510949579266781519" />
-    <dep root="1805153994415891174" />
     <dep root="1805153994416516020" />
+    <dep root="650531548511911817" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -89,8 +88,7 @@
     <dep root="1167327847730" />
     <dep root="1168559098955" />
     <dep root="1169670156577" />
-    <dep root="1510949579266781519" />
-    <dep root="1805153994415891174" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -255,8 +253,8 @@
   <source id="1167327847730" name="Reduction_MappingRule" hash="-764tfb95lamtsjq2jtjpbcx903fmdeh">
     <dep root="1167169308231" />
     <dep root="1168559098955" />
-    <dep root="1510949579266781519" />
     <dep root="3860274746541219069" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -332,6 +330,7 @@
     <dep root="1168559098955" />
     <dep root="1510949579266781519" />
     <dep root="1722980698497626400" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -544,8 +543,7 @@
   <source id="1195499912406" name="MappingScript" hash="-39f7y1rk55opfcinqb7aultn6jt0iod">
     <dep root="1195500722856" />
     <dep root="1195595264961" />
-    <dep root="1510949579266781519" />
-    <dep root="1805153994415891174" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.io(java.io@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -579,8 +577,7 @@
     <file name="MappingScriptKind_PropertySupport.java" />
   </source>
   <source id="1200911316486" name="MappingLabelDeclaration" hash="6ewnufxads45miq6x5sehf8xdvzrn">
-    <dep root="1510949579266781519" />
-    <dep root="1805153994415891174" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -629,7 +626,7 @@
     <file name="AbstractMacro.java" />
   </source>
   <source id="1805153994415891174" name="TemplateParameterDeclaration" hash="7jiiy4p2itzld7yfdgj1wstfu47fs63">
-    <dep root="1510949579266781519" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -641,8 +638,8 @@
     <dep root="1167168920554" />
     <dep root="1168559098955" />
     <dep root="1200911316486" />
-    <dep root="1510949579266781519" />
     <dep root="3860274746541219069" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -712,6 +709,7 @@
     <dep root="1167951328751" />
     <dep root="1168024337012" />
     <dep root="1722980698497626400" />
+    <dep root="650531548511911817" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -728,19 +726,20 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="InlineTemplateWithContext_RuleConsequence.java" />
   </source>
-  <source id="650531548511609556" name="IGeneratorParameter" hash="-eokgh9a4if6xcy1c18am0u1zrowq95w">
+  <source id="650531548511609556" name="IGeneratorParameter" hash="-ehezg2vtqe4nsjb6bw759yltxndcfm3">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IGeneratorParameter.java" />
   </source>
-  <source id="650531548511911817" name="GeneratorDescriptor" hash="cabxm4nzi8jynx0173v8bl7sekdlkl3">
+  <source id="650531548511911817" name="GeneratorDescriptor" hash="-dg7qjulekswhpch5m5gpmgr3vsz0nzh">
     <dep root="650531548511911818" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GeneratorDescriptor.java" />
   </source>
-  <source id="650531548511911818" name="GeneratorParameterReference" hash="aqrwzl39jo3lawg7gi7uyx72iryi5ty">
+  <source id="650531548511911818" name="GeneratorParameterReference" hash="-cp0h7ayd5wrly6j4xc8g40lf3r2b0xq">
     <dep root="650531548511609556" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
