@@ -117,30 +117,30 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.dates_m2f0">
-    <mkdir dir="core/baseLanguage/dates/classes_gen" />
+    <mkdir dir="platform/dates/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/dates/dates.mpl" prefix="module" />
-      <zipfileset dir="core/baseLanguage/dates" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/dates/classes_gen" />
+      <zipfileset file="platform/dates/dates.mpl" prefix="module" />
+      <zipfileset dir="platform/dates" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/dates/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.datesInternal_n2f0">
-    <mkdir dir="core/baseLanguage/dates/internal/classes_gen" />
+    <mkdir dir="platform/dates/internal/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.datesInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/dates/internal/internal.mpl" prefix="module" />
-      <zipfileset dir="core/baseLanguage/dates/internal" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/dates/internal/classes_gen" />
+      <zipfileset file="platform/dates/internal/internal.mpl" prefix="module" />
+      <zipfileset dir="platform/dates/internal" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/dates/internal/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.dates.runtime_o2f0">
-    <mkdir dir="core/baseLanguage/dates/runtime/classes_gen" />
-    <mkdir dir="core/baseLanguage/dates/runtime/classes_gen" />
+    <mkdir dir="platform/dates/runtime/classes_gen" />
+    <mkdir dir="platform/dates/runtime/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/dates/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/dates/runtime/classes_gen" />
-      <zipfileset file="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
-      <zipfileset dir="core/baseLanguage/dates/runtime/classes_gen" />
+      <zipfileset file="platform/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
+      <zipfileset dir="platform/dates/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/dates/runtime/classes_gen" />
+      <zipfileset file="platform/dates/runtime/lib/joda-time-1.6.jar" />
+      <zipfileset dir="platform/dates/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.index_p2f0">
@@ -166,25 +166,19 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.math_s2f0">
-    <mkdir dir="core/baseLanguage/math/classes" />
+    <mkdir dir="platform/math/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.math.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/math/math.mpl" prefix="module" />
-      <zipfileset dir="core/baseLanguage/math" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/math/classes" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.math.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/baseLanguage/math/runtime/classes" />
+      <zipfileset file="platform/math/math.mpl" prefix="module" />
+      <zipfileset dir="platform/math" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/math/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.money_t2f0">
-    <mkdir dir="core/baseLanguage/money/classes" />
+    <mkdir dir="platform/money/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.money.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/money/money.mpl" prefix="module" />
-      <zipfileset dir="core/baseLanguage/money" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/money/classes" />
-    </jar>
-    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.money.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/baseLanguage/money/runtime/classes" />
+      <zipfileset file="platform/money/money.mpl" prefix="module" />
+      <zipfileset dir="platform/money" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/money/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.refactoring_u2f0">
@@ -385,17 +379,15 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mpslite_m3f0">
-    <mkdir dir="core/languageDesign/mps-lite/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mpslite.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/mps-lite/languages/mpslite/mpslite.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/mps-lite/languages/mpslite" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/mps-lite/classes" />
+      <zipfileset file="platform/mps-lite/languages/mpslite/mpslite.mpl" prefix="module" />
+      <zipfileset dir="platform/mps-lite/languages/mpslite" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.nanoj_n3f0">
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.nanoj.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/mps-lite/languages/nanoj/nanoj.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/mps-lite/languages/nanoj" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="platform/mps-lite/languages/nanoj/nanoj.mpl" prefix="module" />
+      <zipfileset dir="platform/mps-lite/languages/nanoj" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.pattern_o3f0">
@@ -546,6 +538,25 @@
       <zipfileset dir="core/languageDesign/smodel/languages/smodelTests" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.make.facet_fb3f0">
+    <mkdir dir="core/languageDesign/make/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.make.facet.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/make/languages/facet/facet.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/make/languages/facet" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/make/classes" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.make.script_gb3f0">
+    <mkdir dir="core/languageDesign/make/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.make.script.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/make/languages/script/script.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/make/languages/script" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/make/classes" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.make.script.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="core/languageDesign/make/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.devkit.general-purpose_a4f0">
     <jar destfile="${deploy.dir}/MPS/core/devkits/jetbrains.mps.devkit.general-purpose.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/devkits/jetbrains.mps.devkit.general-purpose.devkit" prefix="module" />
@@ -604,7 +615,13 @@
       <zipfileset dir="core/debug-api/debugApiProject/languages/api/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.kernel_l5a">
+  <target name="pack.jetbrains.mps.make.runtime_l5a">
+    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.make.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" prefix="module" />
+      <zipfileset dir="core/make-runtime/solutions/jetbrains.mps.make.runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.kernel_m5a">
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="module" />
       <zipfileset dir="core/kernel/kernelSolution" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
@@ -875,11 +892,11 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.contracts_v6a">
-    <mkdir dir="core/baseLanguage/contracts/languages/contracts/classes_gen" />
+    <mkdir dir="platform/contracts/languages/contracts/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.contracts.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/contracts/languages/contracts/contracts.mpl" prefix="module" />
-      <zipfileset dir="core/baseLanguage/contracts/languages/contracts" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/contracts/languages/contracts/classes_gen" />
+      <zipfileset file="platform/contracts/languages/contracts/contracts.mpl" prefix="module" />
+      <zipfileset dir="platform/contracts/languages/contracts" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/contracts/languages/contracts/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.overloadedOperators_w6a">
@@ -898,7 +915,23 @@
       <zipfileset dir="core/baseLanguage/constructors/classes_gen" />
     </jar>
   </target>
-  <target name="pack.ypath.main_y6a">
+  <target name="pack.jetbrains.mps.baseLanguage.math.runtime_y6a">
+    <mkdir dir="platform/math/runtimeSolution/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.math.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/math/runtimeSolution/jetbrains.mps.baseLanguage.math.runtime.msd" prefix="module" />
+      <zipfileset dir="platform/math/runtimeSolution" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/math/runtimeSolution/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.baseLanguage.money.runtime_z6a">
+    <mkdir dir="platform/money/runtimeSolution/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.money.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/money/runtimeSolution/jetbrains.mps.baseLanguage.money.runtime.msd" prefix="module" />
+      <zipfileset dir="platform/money/runtimeSolution" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/money/runtimeSolution/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.ypath.main_ab6a">
     <mkdir dir="platform/ypath/solutions/main/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/ypath.main.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ypath/solutions/main/main.msd" prefix="module" />
@@ -906,7 +939,7 @@
       <zipfileset dir="platform/ypath/solutions/main/classes_gen" />
     </jar>
   </target>
-  <target name="pack.ypath.test_z6a">
+  <target name="pack.ypath.test_bb6a">
     <mkdir dir="platform/ypath/solutions/test/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/ypath.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/ypath/solutions/test/test.msd" prefix="module" />
@@ -914,7 +947,7 @@
       <zipfileset dir="platform/ypath/solutions/test/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.ypath_ab6a">
+  <target name="pack.jetbrains.mps.ypath_cb6a">
     <mkdir dir="platform/ypath/classes_gen" />
     <mkdir dir="platform/ypath/runtime/classes" />
     <mkdir dir="platform/ypath/classes_gen" />
@@ -929,7 +962,7 @@
       <fileset dir="platform/ypath/runtime/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.bash_bb6a">
+  <target name="pack.jetbrains.mps.bash_db6a">
     <mkdir dir="platform/bash/languages/bash/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.bash.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/bash/languages/bash/bash.mpl" prefix="module" />
@@ -937,7 +970,7 @@
       <zipfileset dir="platform/bash/languages/bash/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.quickQueryLanguage_cb6a">
+  <target name="pack.jetbrains.mps.quickQueryLanguage_eb6a">
     <mkdir dir="platform/quickQueryLanguage/classes" />
     <mkdir dir="platform/quickQueryLanguage/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.quickQueryLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -947,7 +980,7 @@
       <zipfileset dir="platform/quickQueryLanguage/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.gwt.client_db6a">
+  <target name="pack.jetbrains.mps.gwt.client_fb6a">
     <mkdir dir="platform/gwtsupport/languages/client/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gwt.client.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/gwtsupport/languages/client/client.mpl" prefix="module" />
@@ -958,7 +991,7 @@
       <zipfileset dir="platform/gwtsupport/languages/client/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.gtext_eb6a">
+  <target name="pack.jetbrains.mps.gtext_gb6a">
     <mkdir dir="platform/gtext/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gtext.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/gtext/gtext.mpl" prefix="module" />
@@ -966,7 +999,7 @@
       <zipfileset dir="platform/gtext/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.gtext.runtime_fb6a">
+  <target name="pack.jetbrains.mps.gtext.runtime_hb6a">
     <mkdir dir="platform/gtext/runtime/classes_gen" />
     <mkdir dir="platform/gtext/runtime/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gtext.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -976,7 +1009,7 @@
       <zipfileset dir="platform/gtext/runtime/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.analyzers_gb6a">
+  <target name="pack.jetbrains.mps.analyzers_ib6a">
     <mkdir dir="platform/analyzers/languages/analyzers/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.analyzers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/analyzers/languages/analyzers/analyzers.mpl" prefix="module" />
@@ -984,7 +1017,7 @@
       <zipfileset dir="platform/analyzers/languages/analyzers/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.analyzers.runtime_hb6a">
+  <target name="pack.jetbrains.mps.analyzers.runtime_jb6a">
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.analyzers.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" prefix="module" />

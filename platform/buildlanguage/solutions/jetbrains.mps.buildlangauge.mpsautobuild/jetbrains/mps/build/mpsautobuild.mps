@@ -1194,6 +1194,26 @@
           </node>
         </node>
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="3646513537108689199">
+        <property name="name:7" value="" />
+        <property name="excludes:7" value="" />
+        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="3646513537108689200">
+          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="3646513537108689203">
+            <property name="name:7" value="mps_home" />
+          </node>
+          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="3646513537108689202">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3646513537108689204">
+              <property name="path:7" value="core" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3646513537108689206">
+              <property name="path:7" value="make-runtime" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3646513537108689208">
+              <property name="path:7" value="classes" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8431776905956472773">
         <property name="file:7" value="false" />
         <property name="excludes:7" value="idea/IdeaApplicationInfo.xml" />
@@ -1315,6 +1335,9 @@
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8431776905956472863">
       <link role="block:7" targetNodeId="8431776905956472896" resolveInfo="core.debug" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="3646513537109008773">
+      <link role="block:7" targetNodeId="3646513537109008769" resolveInfo="core.make" />
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472864">
       <property name="id:7" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
@@ -1564,6 +1587,14 @@
         <property name="id:7" value="b02ae39f-4c16-4545-8dfa-88df16804e7e" />
         <property name="name:7" value="jetbrains.mps.lang.smodelTests" />
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="3646513537108689210">
+        <property name="id:7" value="696c1165-4a59-463b-bc5d-902caab85dd0" />
+        <property name="name:7" value="jetbrains.mps.make.facet" />
+      </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="3646513537108689213">
+        <property name="id:7" value="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" />
+        <property name="name:7" value="jetbrains.mps.make.script" />
+      </node>
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472939">
         <property name="name:7" value="languageDesign" />
       </node>
@@ -1651,6 +1682,14 @@
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472971">
       <property name="id:7" value="0ae47ad3-5abd-486c-ac0f-298884f39393" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="3646513537109043097">
+      <property name="id:7" value="b98999bc-8369-4b20-9510-598d4eb5ace6" />
+      <property name="name:7" value="jetbrains.mps.baseLanguage.math.runtime" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="3646513537109043099">
+      <property name="id:7" value="4df1d09b-d6ae-453e-8622-14c0d6e4c038" />
+      <property name="name:7" value="jetbrains.mps.baseLanguage.money.runtime" />
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472972">
@@ -1746,6 +1785,14 @@
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956473001">
       <property name="id:7" value="f85adbd8-2ec2-4572-bcfc-8dd799a7f025" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="3646513537109008769">
+    <property name="virtualPackage:7" value="modules.core" />
+    <property name="name:7" value="core.make" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="3646513537109008771">
+      <property name="id:7" value="a1250a4d-c090-42c3-ad7c-d298a3357dd4" />
+      <property name="name:7" value="jetbrains.mps.make.runtime" />
     </node>
   </node>
 </model>
