@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ant" />
     <orderEntry type="module" module-name="Closures" />
@@ -16,7 +17,6 @@
     <orderEntry type="module" module-name="dataFlow-runtime" />
     <orderEntry type="module" module-name="generator" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="regexp" />
     <orderEntry type="module" module-name="runtime" />
     <orderEntry type="module" module-name="workbench" />
@@ -45,7 +45,6 @@
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="editor" />
     <orderEntry type="module" module-name="findUsages" />
-    <orderEntry type="module" module-name="idea-patch" />
     <orderEntry type="module" module-name="ideUiLanguage" />
     <orderEntry type="module" module-name="intentions" />
     <orderEntry type="module" module-name="javadoc" />
