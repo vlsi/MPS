@@ -172,7 +172,6 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                           }
                         }
                       }
-
                     } finally {
                       environment.getTracer().closeMacro(loopMacroRef_rz5qmv_a0a0a3a2a2a2a3a2a1a5a1a0);
                     }
@@ -186,7 +185,6 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                     }
                   }
                 }
-
               } finally {
                 environment.getTracer().closeMacro(loopMacroRef_rz5qmv_a0a0a2a3a2a1a5a1a0);
               }

@@ -60,7 +60,6 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
           }
         }
       }
-
     } finally {
       environment.getTracer().closeMacro(loopMacroRef_9iqmnb_a0a0a1a0);
     }

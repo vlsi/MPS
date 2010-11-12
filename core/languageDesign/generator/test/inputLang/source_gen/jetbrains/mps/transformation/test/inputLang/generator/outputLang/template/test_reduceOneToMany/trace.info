@@ -9,7 +9,7 @@
   <unitInfo fileName="Switchswitch_InputNode_A.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A" />
   <unitInfo fileName="TemplateOutputRoot.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
   <unitInfo fileName="Mappingmain.java" startLine="17" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
-  <unitInfo fileName="Templatereduce_InputNode_A.java" startLine="18" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A" />
+  <unitInfo fileName="Templatereduce_InputNode_A.java" startLine="18" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A" />
   <root nodeId="3893401255414084744">
     <nodeInfo nodeId="3893401255414132236" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="16" startPosition="152" endLine="17" endPosition="224" />
     <nodeInfo nodeId="3893401255414131864" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="20" startPosition="152" endLine="21" endPosition="100" />
