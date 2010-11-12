@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.BreakParseSAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
@@ -41,7 +42,7 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
         myIgnoreState = false;
       } else {
         super.endElement(null,"model","model");
-        throw new SAXException();
+        throw new BreakParseSAXException();
       }
     } else {
       if (myIgnoreState) return;

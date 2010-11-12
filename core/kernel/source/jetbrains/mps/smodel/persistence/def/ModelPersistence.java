@@ -140,12 +140,12 @@ public class ModelPersistence {
             }
           }
         } else {
-          throw new SAXException();
+          throw new BreakParseSAXException();
         }
       }
 
       public void endElement(String uri, String localName, String qName) throws SAXException {
-        throw new SAXException();
+        throw new BreakParseSAXException();
       }
     };
 
@@ -185,36 +185,29 @@ public class ModelPersistence {
   }
 
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
-    if (version > PersistenceSettings.MAX_VERSION) {
-      SModel model = handleNullReaderForPersistence(name);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
-    } else if (version > 5) {
-      try {
-        SAXParser parser = JDOMUtil.createSAXParser();
-        DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
+    if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
+      // first try to use SAX parser
+      DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
+      if (handler != null) {
         boolean partial = handler.setPartialLoading(state);
         try {
-          parser.parse(source, (DefaultHandler) handler);
-        } catch (SAXException e) {
+          JDOMUtil.createSAXParser().parse(source, (DefaultHandler) handler);
+        } catch (BreakParseSAXException e) {
           //this is normal
+        } catch (Throwable t) {
+          LOG.error(t);
+          return new ModelLoadResult(new StubModel(new SModelReference(name, stereotype)), ModelLoadingState.NOT_LOADED);
         }
-        ModelLoadingState loadingState = partial ? state : ModelLoadingState.FULLY_LOADED;
-        return new ModelLoadResult(handler.getModel(), loadingState);
-      } catch (Throwable t) {
-        LOG.error(t);
-        StubModel model = new StubModel(new SModelReference(name, stereotype));
-        return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+        return new ModelLoadResult(handler.getModel(), partial ? state : ModelLoadingState.FULLY_LOADED);
       }
-    } else {
-      Document document = loadModelDocument(source);
-      IModelReader modelReader = getModelPersistence(version).getModelReader();
-      if (modelReader == null) {
-        SModel model = handleNullReaderForPersistence(name);
-        return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+      // then try to use DOM reader
+      IModelReader reader = getModelPersistence(version).getModelReader();
+      if (reader != null) {
+        Document document = loadModelDocument(source);
+        return new ModelLoadResult(reader.readModel(document, name, stereotype), ModelLoadingState.FULLY_LOADED);
       }
-      SModel model = modelReader.readModel(document, name, stereotype);
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
+    return handleNullReaderForPersistence(name);
   }
 
   @Nullable
@@ -345,15 +338,13 @@ public class ModelPersistence {
 
   @NotNull
   private static Document loadModelDocument(@NotNull InputSource source) {
-    Document document;
     try {
-      document = JDOMUtil.loadDocument(source);
+      return JDOMUtil.loadDocument(source);
     } catch (JDOMException e) {
       throw new ModelFileReadException("Exception in file " + source, e);
     } catch (IOException e) {
       throw new ModelFileReadException("Exception in file " + source, e);
     }
-    return document;
   }
 
   public static int getCurrentPersistenceVersion() {
@@ -386,7 +377,7 @@ public class ModelPersistence {
     return false;
   }
 
-  private static SModel handleNullReaderForPersistence(String modelTitle) {
+  private static ModelLoadResult handleNullReaderForPersistence(String modelTitle) {
     throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + modelTitle + "\n" +
       " Use newer version of JetBrains MPS to load this model.");
   }
@@ -493,12 +484,12 @@ public class ModelPersistence {
               }
             }
           } else {
-            throw new SAXException();
+            throw new BreakParseSAXException();
           }
         }
 
         public void endElement(String uri, String localName, String qName) throws SAXException {
-          throw new SAXException();
+          throw new BreakParseSAXException();
         }
       });
     } catch (SAXException ex) {
