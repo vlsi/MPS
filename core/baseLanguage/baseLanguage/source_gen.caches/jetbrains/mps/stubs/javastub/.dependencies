@@ -73,7 +73,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -98,7 +97,6 @@
     <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMUnboundedType" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMVarArgType" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.NodeNameUtil" />
     <classNode dependClassName="org.objectweb.asm.ClassReader" />
   </dependency>

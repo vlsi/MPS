@@ -83,12 +83,10 @@ import jetbrains.mps.stubs.javastub.asm.ASMSuperType;
 import jetbrains.mps.baseLanguage.structure.LowerBoundType;
 import jetbrains.mps.stubs.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SReference;
 
 public abstract class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
@@ -719,32 +717,15 @@ public abstract class ASMModelLoader {
     }
   }
 
-  private Classifier getExistingClassifier(final String name) {
-    SNode node = myModel.getNodeById(ASMNodeId.createId(name));
-    return (Classifier) BaseAdapter.fromNode(node);
-  }
-
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
     if (sourceNode.getReferent(role) != null) {
       return;
     }
 
-    SReference reference = null;
     SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
-    if (sourceNode.getModel().getSModelReference().equals(targetModelRef)) {
-      String className = NameUtil.shortNameFromLongName(clsType.getName());
-      Classifier classifier = getExistingClassifier(className);
-      if (classifier != null) {
-        SNode targetNode = classifier.getNode();
-        reference = SReference.create(role, sourceNode, targetNode);
-      }
-    }
-    if (reference == null) {
-      SNodeId nodeId = ASMNodeId.createId(clsType.getName());
-      reference = SReference.create(role, sourceNode, targetModelRef, nodeId);
-    }
+    SNodeId nodeId = ASMNodeId.createId(clsType.getName());
 
-    sourceNode.addReference(reference);
+    sourceNode.addReference(SReference.create(role, sourceNode, targetModelRef, nodeId));
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
@@ -753,30 +734,9 @@ public abstract class ASMModelLoader {
     }
 
     SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()));
+    SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
 
-    SReference reference = null;
-    if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
-      Classifier classifier = getExistingClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
-      InstanceMethodDeclaration result = null;
-      if (classifier instanceof Annotation) {
-        Annotation annotation = (Annotation) classifier;
-        for (InstanceMethodDeclaration m : annotation.getMethods()) {
-          if (method.equals(m.getName())) {
-            result = m;
-            break;
-          }
-        }
-      }
-      if (result != null) {
-        reference = SReference.create(role, sourceNode, BaseAdapter.fromAdapter(result));
-      }
-    }
-    if (reference == null) {
-      SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
-      reference = SReference.create(role, sourceNode, targetRef, nodeId);
-    }
-
-    sourceNode.addReference(reference);
+    sourceNode.addReference(SReference.create(role, sourceNode, targetRef, nodeId));
   }
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
@@ -786,31 +746,9 @@ public abstract class ASMModelLoader {
 
     ASMClassType classType = (ASMClassType) enumValue.getType();
     SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()));
+    SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
 
-    SReference reference = null;
-    if (sourceNode.getModel().getSModelReference().equals(targetRef)) {
-      String className = NameUtil.shortNameFromLongName(classType.getName());
-      Classifier classifier = getExistingClassifier(className);
-      EnumConstantDeclaration constDcl = null;
-      if (classifier instanceof EnumClass) {
-        EnumClass ec = (EnumClass) classifier;
-        for (EnumConstantDeclaration dcl : ec.getEnumConstants()) {
-          if (enumValue.getConstant().equals(dcl.getName())) {
-            constDcl = dcl;
-            break;
-          }
-        }
-      }
-      if (constDcl != null) {
-        reference = SReference.create(role, sourceNode, BaseAdapter.fromAdapter(constDcl));
-      }
-    }
-    if (reference == null) {
-      SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
-      reference = SReference.create(role, sourceNode, targetRef, nodeId);
-    }
-
-    sourceNode.addReference(reference);
+    sourceNode.addReference(SReference.create(role, sourceNode, targetRef, nodeId));
   }
 
   public abstract SModelReference getModelReferenceFor(String packageName);
