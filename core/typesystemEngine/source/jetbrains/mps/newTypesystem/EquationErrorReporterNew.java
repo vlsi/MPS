@@ -22,8 +22,8 @@ import jetbrains.mps.errors.AbstractErrorReporter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.uiActions.PresentationManager;
 
 public class EquationErrorReporterNew extends AbstractErrorReporter implements IErrorReporter {
   private State myState;

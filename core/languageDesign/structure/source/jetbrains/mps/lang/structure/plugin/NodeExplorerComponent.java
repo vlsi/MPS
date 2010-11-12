@@ -16,8 +16,8 @@
 package jetbrains.mps.lang.structure.plugin;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.uiActions.PresentationManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;

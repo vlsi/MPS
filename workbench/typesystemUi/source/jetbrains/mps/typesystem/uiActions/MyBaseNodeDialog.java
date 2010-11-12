@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.nodes;
+package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
+import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;

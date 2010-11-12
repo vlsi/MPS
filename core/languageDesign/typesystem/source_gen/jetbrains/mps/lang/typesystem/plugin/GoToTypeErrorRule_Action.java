@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
 
 public class GoToTypeErrorRule_Action extends GeneratedAction {
