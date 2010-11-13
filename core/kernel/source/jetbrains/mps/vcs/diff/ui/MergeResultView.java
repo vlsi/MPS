@@ -42,6 +42,7 @@ import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 
+
 class MergeResultView extends JPanel {
   private static final Logger LOG = Logger.getLogger(MergeResultView.class);
   private MPSTree myResultTree;
