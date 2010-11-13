@@ -15,6 +15,8 @@ import junit.framework.Assert;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.testbench.junit.ExpectLogEvent;
+import org.apache.log4j.Priority;
 import org.junit.After;
 import jetbrains.mps.make.facet.FacetRegistry;
 import org.junit.Before;
@@ -65,6 +67,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   }
 
   @Test
+  @ExpectLogEvent(text = "target not found: ITarget.Name[none]", level = Priority.ERROR_INT)
   public void test_none() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).select(new ISelector<IFacet, IFacet.Name>() {

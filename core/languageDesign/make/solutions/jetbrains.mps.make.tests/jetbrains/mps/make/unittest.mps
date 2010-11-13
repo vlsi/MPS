@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <languageAspect modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <languageAspect modelUID="f:java_stub#org.junit.runner.notification(org.junit.runner.notification@java_stub)" version="-1" />
-  <maxImportIndex value="29" />
+  <maxImportIndex value="30" />
   <import index="7" modelUID="f:java_stub#org.jmock(org.jmock@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#org.jmock.syntax(org.jmock.syntax@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
@@ -30,6 +30,7 @@
   <import index="27" modelUID="f:java_stub#org.junit.runner(org.junit.runner@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#org.jmock.integration.junit4(org.jmock.integration.junit4@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#jetbrains.mps.testbench.junit(jetbrains.mps.testbench.junit@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3564492719942580100">
     <property name="name:3" value="Mockups" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="1977954644795796060">
@@ -2124,6 +2125,22 @@
         </node>
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2383991756720167544">
           <link role="annotation:3" targetNodeId="29.~Test" resolveInfo="Test" />
+        </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3104510729105059304">
+          <link role="annotation:3" targetNodeId="30.~ExpectLogEvent" resolveInfo="ExpectLogEvent" />
+          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="3104510729105061769">
+            <link role="key:3" targetNodeId="30.~ExpectLogEvent.text()" resolveInfo="text" />
+            <node role="value:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3104510729105064234">
+              <property name="value:3" value="target not found: ITarget.Name[none]" />
+            </node>
+          </node>
+          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="3104510729105061776">
+            <link role="key:3" targetNodeId="30.~ExpectLogEvent.level()" resolveInfo="level" />
+            <node role="value:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3104510729105061778">
+              <link role="classifier:3" targetNodeId="19.~Priority" resolveInfo="Priority" />
+              <link role="variableDeclaration:3" targetNodeId="19.~Priority.ERROR_INT" resolveInfo="ERROR_INT" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
