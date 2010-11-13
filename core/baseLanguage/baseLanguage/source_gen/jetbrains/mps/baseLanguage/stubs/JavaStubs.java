@@ -15,11 +15,11 @@ import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.ASMModelLoader;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.StubDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -50,11 +50,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     if (cpItem == null) {
       return;
     }
-    new ASMModelLoader(cpItem, model) {
-      public SModelReference getModelReferenceFor(String packageName) {
-        return StubHelper.uidForPackageInStubs(packageName);
-      }
-    }.updateModel();
+    new ASMModelLoader(cpItem, model).updateModel();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {

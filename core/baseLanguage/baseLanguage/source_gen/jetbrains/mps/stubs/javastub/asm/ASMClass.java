@@ -154,30 +154,6 @@ public class ASMClass {
     return Collections.unmodifiableList(myConstructors);
   }
 
-  private class ClassifierSignatureVisitor_old extends SignatureVisitorAdapter {
-    /*package*/ String myName;
-    /*package*/ List<ASMType> myParameters = new ArrayList<ASMType>();
-
-    private ClassifierSignatureVisitor_old() {
-    }
-
-    public SignatureVisitor visitTypeArgument(char wildcard) {
-      return new SignatureVisitorAdapter() {
-        public void visitClassType(String name) {
-          myParameters.add(new ASMClassType(name.replace('/', '.')));
-        }
-
-        public void visitTypeVariable(String name) {
-          myParameters.add(new ASMTypeVariable(name));
-        }
-      };
-    }
-
-    public void visitClassType(String name) {
-      myName = name.replace('/', '.');
-    }
-  }
-
   private class ClassifierSignatureVisitor extends SignatureVisitorAdapter {
     /*package*/ String myName;
     /*package*/ List<ASMType> myParameters;

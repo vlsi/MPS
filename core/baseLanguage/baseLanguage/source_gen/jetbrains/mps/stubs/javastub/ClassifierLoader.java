@@ -4,18 +4,17 @@ package jetbrains.mps.stubs.javastub;
 
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
-import java.util.List;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.stubs.javastub.asm.ASMClass;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.objectweb.asm.tree.InnerClassNode;
 import org.objectweb.asm.Opcodes;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
@@ -26,29 +25,25 @@ import jetbrains.mps.util.NameUtil;
 public class ClassifierLoader {
   private IClassPathItem myCpItem;
   private SModel myModel;
-  private List<Classifier> myClassifiers = ListSequence.fromList(new ArrayList<Classifier>());
+  private ClassifierUpdater myUpdater;
 
-  public ClassifierLoader(SModel model, IClassPathItem cpItem) {
+  public ClassifierLoader(SModel model, IClassPathItem cpItem, ClassifierUpdater updater) {
     myModel = model;
     myCpItem = cpItem;
+    myUpdater = updater;
   }
 
-  public List<Classifier> getLoadedClassifiers() {
-    return myClassifiers;
+  public void loadRootClassifier(String name) {
+    getClassifier(name, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode n) {
+        myModel.addRoot(n);
+      }
+    });
   }
 
-  public Classifier getRootClassifier(String name) {
-    Classifier c = getClassifier(name);
-    if (c == null) {
-      return null;
-    }
-    myModel.addRoot(c.getNode());
-    return c;
-  }
-
-  private Classifier getClassifier(String name) {
+  private void getClassifier(String name, _FunctionTypes._void_P1_E0<? super SNode> adder) {
     if (AbstractClassPathItem.isAnonymous(name)) {
-      return null;
+      return;
     }
 
     String pack = myModel.getLongName();
@@ -57,16 +52,17 @@ public class ClassifierLoader {
       pack + "." + name
     ));
     if (code == null) {
-      return null;
+      return;
     }
     ClassReader reader = new ClassReader(code);
+    ASMClass ac = new ASMClass(reader);
     Classifier res = createClassifierForClass(name, myModel, reader);
-    ListSequence.fromList(myClassifiers).addElement(res);
-    updateInnerClassifiers(new ASMClass(reader), res);
-    return res;
+    adder.invoke(res.getNode());
+    myUpdater.updateClassifier(res, ac);
+    updateInnerClassifiers(ac, res);
   }
 
-  public void updateInnerClassifiers(ASMClass ac, Classifier cls) {
+  public void updateInnerClassifiers(ASMClass ac, final Classifier cls) {
     for (InnerClassNode cn : ac.getInnerClasses()) {
       if ((cn.access & Opcodes.ACC_SYNTHETIC) != 0) {
         continue;
@@ -90,16 +86,13 @@ public class ClassifierLoader {
         name = name.substring(index + 1);
       }
 
-      boolean isStatic = (cn.access & Opcodes.ACC_STATIC) != 0;
-
-      Classifier c = getClassifier(name);
-      if (c == null) {
-        continue;
-      }
-
-      SNode n = c.getNode();
-      SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + !(isStatic));
-      cls.addStaticInnerClassifiers(c);
+      final boolean isStatic = (cn.access & Opcodes.ACC_STATIC) != 0;
+      getClassifier(name, new _FunctionTypes._void_P1_E0<SNode>() {
+        public void invoke(SNode n) {
+          SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + !(isStatic));
+          cls.addStaticInnerClassifiers(((Classifier) ((BaseConcept) SNodeOperations.getAdapter(n))));
+        }
+      });
     }
   }
 

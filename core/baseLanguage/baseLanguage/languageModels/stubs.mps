@@ -92,43 +92,17 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5516999836374121118">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121119">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5516999836374121120">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5516999836374121121">
-                <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="5516999836374121122">
-                  <property name="name:3" value="" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="4.7241381882860002280" resolveInfo="ASMModelLoader" />
-                  <link role="classifier:3" targetNodeId="4.7241381882860001930" resolveInfo="ASMModelLoader" />
-                  <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4370403881279790512">
-                    <property name="name:3" value="getModelReferenceFor" />
-                    <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4370403881279790513">
-                      <link role="classifier:3" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
-                    </node>
-                    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4370403881279790514" />
-                    <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4370403881279790515">
-                      <property name="name:3" value="packageName" />
-                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6209672816070764867" />
-                    </node>
-                    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4370403881279790517">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4370403881279790520">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4370403881279790521">
-                          <link role="classConcept:3" targetNodeId="18.~StubHelper" resolveInfo="StubHelper" />
-                          <link role="baseMethodDeclaration:3" targetNodeId="18.~StubHelper.uidForPackageInStubs(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="uidForPackageInStubs" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4370403881279790522">
-                            <link role="variableDeclaration:3" targetNodeId="4370403881279790515" resolveInfo="packageName" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374731598">
-                    <link role="variableDeclaration:3" targetNodeId="5516999836375057049" resolveInfo="cpItem" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" id="5516999836374121340" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2566197375814061431">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2566197375814048734">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2566197375814061427">
+                <link role="baseMethodDeclaration:3" targetNodeId="4.7241381882860002280" resolveInfo="ASMModelLoader" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2566197375814061428">
+                  <link role="variableDeclaration:3" targetNodeId="5516999836375057049" resolveInfo="cpItem" />
                 </node>
+                <node role="actualArgument:3" type="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" id="2566197375814061430" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5516999836374121177">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2566197375814061435">
               <link role="baseMethodDeclaration:3" targetNodeId="4.7241381882860002307" resolveInfo="updateModel" />
             </node>
           </node>
