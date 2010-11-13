@@ -95,7 +95,7 @@ public final class CopyUtil {
     }
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
-    addReferences(nodes, mapping, true, true);
+    addReferences(nodes, mapping, true, false);
     return result;
   }
 
