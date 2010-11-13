@@ -823,7 +823,7 @@ __switch__:
     // it resets other nodes with overlapping ids, making this node and its children ids 
     // be the same as in base version model. 
     SNode baseNode = myBaseVersionModel.getNodeById(childId);
-    SNode copyOfBaseNode = CopyUtil.copyAndPreserveId(baseNode);
+    SNode copyOfBaseNode = CopyUtil.copyAndPreserveId(baseNode, true);
     SModel model = getModel();
     List<SNode> nodesToChangeId = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(baseNode, null, true, new String[]{}))) {

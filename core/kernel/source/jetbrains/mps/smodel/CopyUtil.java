@@ -40,7 +40,7 @@ public final class CopyUtil {
 //      for (SNode sourceNode : mapping.keySet()) {
 //        mapping.get(sourceNode).setId(sourceNode.getSNodeId());
 //      }
-      to.addRoot(copyAndPreserveId(root));
+      to.addRoot(copyAndPreserveId(root, true));
     }
   }
 
@@ -88,6 +88,10 @@ public final class CopyUtil {
   }
 
   public static SNode copyAndPreserveId(SNode node) {
+    return copyAndPreserveId (node, false);
+  }
+  
+  public static SNode copyAndPreserveId(SNode node, boolean cloneRefs) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
@@ -95,7 +99,7 @@ public final class CopyUtil {
     }
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
-    addReferences(nodes, mapping, true, false);
+    addReferences(nodes, mapping, true, cloneRefs);
     return result;
   }
 
