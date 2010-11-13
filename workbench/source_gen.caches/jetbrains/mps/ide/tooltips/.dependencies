@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.tooltips.MPSToolTipManager" file="MPSToolTipManager.java">
     <classNode dependClassName="com.intellij.ide.IdeTooltip" />
     <classNode dependClassName="com.intellij.ide.IdeTooltipManager" />
+    <classNode dependClassName="com.intellij.ide.TooltipEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Frame" />
