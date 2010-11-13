@@ -33,7 +33,7 @@ public class RefactoringTest extends BaseMPSTest {
   }
 
   public void testRenameLinkRefactoring_Hierarchy() {
-    if (Calendar.getInstance().before(new GregorianCalendar(2010, Calendar.NOVEMBER, 13))) {
+    if (Calendar.getInstance().before(new GregorianCalendar(2010, Calendar.NOVEMBER, 17))) {
       return;
     }
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Hierarchy"));
