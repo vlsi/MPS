@@ -200,16 +200,12 @@ public class IntelligentInputUtil {
   private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail, final EditorCell cellForNewNode, SNode newNode) {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(cellForNewNode.getSNode());
-    // For: http://youtrack.jetbrains.net/issue/MPS-7757
-    assert typeCheckingContext != null : cellForNewNode.getSNode() == null ? "cellForNewNode.getSNode() == null" : "cellForNewNode.getSNode().isDisposed(): " + cellForNewNode.getSNode().isDisposed();
-    boolean hasSideActions = typeCheckingContext.runTypeCheckingAction(new Computable<Boolean>() {
+    boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
       }
     });
-    typeCheckingContext.dispose();
 
     if (rtAction == null || !hasSideActions) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
@@ -229,16 +225,13 @@ public class IntelligentInputUtil {
     if (rtHintCell != null) {
       final NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
-      typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(newNode);
       List<INodeSubstituteAction> rtMatchingActions =
-        typeCheckingContext.runTypeCheckingAction(new Computable<List<INodeSubstituteAction>>(){
+        TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>(){
           @Override
           public List<INodeSubstituteAction> compute() {
             return rtSubstituteInfo.getMatchingActions(tail, true);
           }
         });
-
-      typeCheckingContext.dispose();
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
@@ -329,14 +322,12 @@ public class IntelligentInputUtil {
 
   private static boolean applyLeftTransform(EditorContext editorContext, final String head, String smallPattern, final EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
     EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(cellForNewNode.getSNode());
-    boolean hasSideActions = typeCheckingContext.runTypeCheckingAction(new Computable<Boolean>() {
+    boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return hasSideActions(cellForNewNode, CellSide.LEFT, head);
       }
     });
-    typeCheckingContext.dispose();
 
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();

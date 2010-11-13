@@ -456,15 +456,15 @@ public class NodeTypesComponent {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, true, new ArrayList<SNode>(0), false);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(0), false);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
   }
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(0), true);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), true);
   }
 
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
@@ -475,7 +475,7 @@ public class NodeTypesComponent {
       myIsSmartCompletion = true;
       myHole = hole;
       myHoleIsAType = holeIsAType;
-      computeTypesForNode_special(hole.getParent(), false, additionalNodes, false);
+      computeTypesForNode_special(hole.getParent(), additionalNodes, false);
       return myHoleTypeWrapper.getInequationSystem();
     } finally {
       myIsSmartCompletion = false;
@@ -498,7 +498,7 @@ public class NodeTypesComponent {
     return null;
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  private SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -509,14 +509,14 @@ public class NodeTypesComponent {
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
-        computeTypes(node, refreshTypes, false, additionalNodes, inferenceMode);
+        computeTypes(node, true, false, additionalNodes, inferenceMode);
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
           (type.getAdapter() instanceof RuntimeHoleType && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, refreshTypes, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
+            computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
             type = getType(initialNode);
             return type;
           }

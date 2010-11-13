@@ -67,8 +67,7 @@ public class ModelConstraintsUtil {
           contextNode = referenceNode;
         }
         // todo: if inside non-typesystem rules, do not create a new context
-        TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(contextNode);
-        typeCheckingContext.runTypeCheckingAction(new Runnable() {
+        TypeContextManager.getInstance().runResolveAction(new Runnable() {
           @Override
           public void run() {
             try {
@@ -79,7 +78,6 @@ public class ModelConstraintsUtil {
             }
           }
         });
-        typeCheckingContext.dispose();
       }
     });
     return status[0];

@@ -41,13 +41,12 @@ public class TypeCheckingContext {
   public final Object TYPECHECKING_LOCK = new Object();
 
   private boolean myIsNonTypesystemComputation = false;
-  private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
   private IOperationContext myOperationContext;
-  private boolean myIsInEditorQueries;
+  private boolean myIsResolving = false;
 
-  public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker, boolean isInEditorQueries) {
+  public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker, boolean isResolving) {
     this(rootNode, typeChecker);
-    myIsInEditorQueries = isInEditorQueries;
+    myIsResolving = isResolving;
   }
 
 
@@ -87,7 +86,7 @@ public class TypeCheckingContext {
   }
 
   public boolean isInEditorQueries() {
-    return myIsInEditorQueries && !myIsNonTypesystemComputation;
+    return myIsResolving;
   }
 
   public void setIsNonTypesystemComputation() {
@@ -96,6 +95,10 @@ public class TypeCheckingContext {
 
   public void resetIsNonTypesystemComputation() {
     myIsNonTypesystemComputation = false;
+  }
+
+  public boolean isNonTypesystemComputation() {
+    return myIsNonTypesystemComputation;
   }
 
   public ISlicer getCurrentSlicer() {
@@ -559,32 +562,11 @@ public class TypeCheckingContext {
     }
   }
 
-  public SNode computeTypeForResolve(SNode node) {
-    if (myNodesToComputeDuringResolve.contains(node)) {
-      // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
-      return null;
-    }
-    final NodeTypesComponent temporaryComponent;
-    temporaryComponent = getNodeTypesComponent();
-    myNodesToComputeDuringResolve.push(node);
-    try {
-      return temporaryComponent.computeTypesForNodeDuringResolving(node);
-    } finally {
-      temporaryComponent.dispose(); //in order to prevent memory leaks.
-      SNode poppedNode = myNodesToComputeDuringResolve.pop();
-      assert poppedNode == node;
-    }
-  }
-
-  public SNode computeTypeInferenceMode(SNode node) {
+  /*package*/ SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
       final NodeTypesComponent temporaryComponent;
       temporaryComponent = getNodeTypesComponent();
-      try {
-        return temporaryComponent.computeTypesForNodeInferenceMode(node);
-      } finally {
-        temporaryComponent.dispose(); //in order to prevent memory leaks.
-      }
+      return temporaryComponent.computeTypesForNodeInferenceMode(node);
     }
   }
 
@@ -620,7 +602,7 @@ public class TypeCheckingContext {
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = computeTypeForResolve(node);
+    SNode resultType = getNodeTypesComponent().computeTypesForNodeDuringResolving(node);
     typeChecker.putTypeComputedForCompletion(node, resultType);
     return resultType;
   }

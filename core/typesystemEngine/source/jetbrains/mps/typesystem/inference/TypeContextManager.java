@@ -2,6 +2,7 @@ package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -10,7 +11,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -30,7 +33,8 @@ public class TypeContextManager implements ApplicationComponent {
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new HashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
-  private Map<SNode, Stack<TypeCheckingContext>> myResolveTypeCheckingContexts = new HashMap<SNode, Stack<TypeCheckingContext>>();
+
+  private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
 
   Timer myTimer;
 
@@ -96,30 +100,36 @@ public class TypeContextManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(TypeContextManager.class);
   }
 
-  public TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
-    final SNode root = node.getContainingRoot();
-    if (useNewTypeSystem) {
-      return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
+  public void runResolveAction(Runnable r) {
+    Object o = new Object();
+    Stack<Object> stack = myResolveStack.get();
+    if (stack == null) {
+      stack = new Stack<Object>();
+      myResolveStack.set(stack);
     }
-    TypeCheckingContext typeCheckingContext = new TypeCheckingContext(root, myTypeChecker, true) {
-      @Override
-      public void dispose() {
-        super.dispose();
-        Stack<TypeCheckingContext> contextStack = myResolveTypeCheckingContexts.get(root);
-        TypeCheckingContext popped = contextStack.pop();
-        assert this == popped;
-        if (contextStack.isEmpty()) {
-          myResolveTypeCheckingContexts.remove(root);
-        }
-      }
-    };
-    Stack<TypeCheckingContext> contextStack = myResolveTypeCheckingContexts.get(root);
-    if (contextStack == null) {
-      contextStack = new Stack<TypeCheckingContext>();
-      myResolveTypeCheckingContexts.put(root, contextStack);
+    stack.push(o);
+    try {
+      r.run();
+    } finally {
+      Object popped = stack.pop();
+      assert o == popped;
     }
-    contextStack.push(typeCheckingContext);
-    return typeCheckingContext;
+  }
+
+  public <T> T runResolveAction(Computable<T> computable) {
+    Object o = new Object();
+    Stack<Object> stack = myResolveStack.get();
+    if (stack == null) {
+      stack = new Stack<Object>();
+      myResolveStack.set(stack);
+    }
+    stack.push(o);
+    try {
+      return computable.compute();
+    } finally {
+      Object popped = stack.pop();
+      assert o == popped;
+    }
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
@@ -138,13 +148,6 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner) {
-    assert node.isRoot();
-    if (owner == DEFAULT_OWNER) {
-      Stack<TypeCheckingContext> contextStack = myResolveTypeCheckingContexts.get(node);
-      if (contextStack != null && !contextStack.isEmpty()) {
-        return contextStack.peek();
-      }
-    }
     return getContextForEditedRootNode(node, owner, false);
   }
 
@@ -225,5 +228,49 @@ public class TypeContextManager implements ApplicationComponent {
         }
       }
     }
+  }
+
+  private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
+    final SNode root = node.getContainingRoot();
+    if (useNewTypeSystem) {
+      return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
+    }
+    return new TypeCheckingContext(root, myTypeChecker, true);
+  }
+
+  @Nullable
+  public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
+    if (node == null) return null;
+    TypeCheckingContext context;
+    Stack<Object> resolve = myResolveStack.get();
+    if (resolve == null) {
+      resolve = new Stack<Object>();
+      myResolveStack.set(resolve);
+    }
+    if (!resolve.isEmpty()) {
+      context = getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
+      if (context == null || !context.isNonTypesystemComputation()) {
+        //resolve mode
+        context = createTypeCheckingContextForResolve(node);
+        SNode type = context.getTypeOf(node, myTypeChecker);
+        context.dispose();
+        return type;
+      }
+    }
+    if (generationMode) {
+      if (tracer == null) {
+        context = createTypeCheckingContext(node);
+      } else {
+        context = createTracingTypeCheckingContext(node);
+      }
+    } else {
+      context = getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
+    }
+    if (context == null) return null;
+    SNode type = context.getTypeOf(node, myTypeChecker);
+    if (generationMode) {
+      context.dispose();
+    }
+    return type;
   }
 }

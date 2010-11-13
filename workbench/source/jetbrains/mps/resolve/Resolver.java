@@ -101,8 +101,7 @@ public class Resolver {
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(referenceNode);
-    Boolean result = typeCheckingContext.runTypeCheckingAction(new Computable<Boolean>() {
+    Boolean result = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
@@ -134,7 +133,6 @@ public class Resolver {
         return false;
       }
     });
-    typeCheckingContext.dispose();
     return result;
   }
 

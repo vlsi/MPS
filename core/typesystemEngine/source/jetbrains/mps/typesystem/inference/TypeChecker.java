@@ -255,24 +255,7 @@ public class TypeChecker implements ApplicationComponent {
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
-    TypeCheckingContext context;
-    boolean generationMode = isGenerationMode();
-    if (generationMode) {
-      if (myPerformanceTracer == null) {
-        context = TypeContextManager.getInstance().createTypeCheckingContext(node);
-      } else {
-        context = TypeContextManager.getInstance().createTracingTypeCheckingContext(node);
-      }
-    } else {
-      context = TypeContextManager.getInstance().getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
-      //todo provide owner
-    }
-    if (context == null) return null;
-    SNode type = context.getTypeOf(node, this);
-    if (generationMode) {
-      context.dispose();
-    }
-    return type;
+    return TypeContextManager.getInstance().getTypeOf(node, isGenerationMode(), myPerformanceTracer);
   }
 
 

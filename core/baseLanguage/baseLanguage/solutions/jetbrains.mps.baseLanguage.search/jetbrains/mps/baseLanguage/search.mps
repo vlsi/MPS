@@ -15832,43 +15832,14 @@
                   </node>
                   <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3161373106581142705">
                     <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3161373106581142706">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3161373106581142682">
-                        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3161373106581142683">
-                          <property name="name:3" value="typeCheckingContext" />
-                          <property name="isFinal:3" value="true" />
-                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3161373106581142684">
-                            <link role="classifier:3" targetNodeId="14.~TypeCheckingContext" />
-                          </node>
-                          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3161373106581142685">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8042441407353521025">
-                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolveInfo="getInstance" />
-                              <link role="classConcept:3" targetNodeId="14.~TypeContextManager" resolveInfo="TypeContextManager" />
-                            </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3161373106581142687">
-                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeContextManager.createTypeCheckingContextForResolve(jetbrains.mps.smodel.SNode):jetbrains.mps.typesystem.inference.TypeCheckingContext" resolveInfo="createTypeCheckingContextForResolve" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3161373106581142688">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3161373106581142689">
-                                  <link role="variableDeclaration:3" targetNodeId="3161373106581142679" resolveInfo="actualArg" />
-                                </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3161373106581142690">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="3.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2792291462223105037">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2792291462223105038">
                           <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2792291462223105039">
                             <link role="variableDeclaration:3" targetNodeId="3161373106581142698" resolveInfo="typeOfArg" />
                           </node>
                           <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2792291462223105040">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2792291462223105041">
-                              <link role="variableDeclaration:3" targetNodeId="3161373106581142683" resolveInfo="typeCheckingContext" />
-                            </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2792291462223105042">
-                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeCheckingContext.runTypeCheckingAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runTypeCheckingAction" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeContextManager.runResolveAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runResolveAction" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2792291462223105043">
                                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="2792291462223105044">
                                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="2792291462223105045">
@@ -15886,18 +15857,15 @@
                                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2792291462223105050">
                                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2792291462223105051">
                                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2792291462223105052">
-                                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2792291462223105053">
-                                              <link role="variableDeclaration:3" targetNodeId="3161373106581142683" resolveInfo="typeCheckingContext" />
-                                            </node>
                                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2792291462223105054">
-                                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeCheckingContext.getTypeOf(jetbrains.mps.smodel.SNode,jetbrains.mps.typesystem.inference.TypeChecker):jetbrains.mps.smodel.SNode" resolveInfo="getTypeOf" />
+                                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeChecker.getTypeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTypeOf" />
                                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2792291462223105055">
                                                 <link role="variableDeclaration:3" targetNodeId="3161373106581142692" resolveInfo="term" />
                                               </node>
-                                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2792291462223105056">
-                                                <link role="classConcept:3" targetNodeId="14.~TypeChecker" resolveInfo="TypeChecker" />
-                                                <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                                              </node>
+                                            </node>
+                                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1712146268343488017">
+                                              <link role="classConcept:3" targetNodeId="14.~TypeChecker" resolveInfo="TypeChecker" />
+                                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
                                             </node>
                                           </node>
                                         </node>
@@ -15910,16 +15878,10 @@
                                 </node>
                               </node>
                             </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2792291462223105058">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2792291462223105059">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2792291462223105060">
-                            <link role="variableDeclaration:3" targetNodeId="3161373106581142683" resolveInfo="typeCheckingContext" />
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2792291462223105061">
-                            <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeCheckingContext.dispose():void" resolveInfo="dispose" />
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1712146268343477437">
+                              <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolveInfo="getInstance" />
+                              <link role="classConcept:3" targetNodeId="14.~TypeContextManager" resolveInfo="TypeContextManager" />
+                            </node>
                           </node>
                         </node>
                       </node>

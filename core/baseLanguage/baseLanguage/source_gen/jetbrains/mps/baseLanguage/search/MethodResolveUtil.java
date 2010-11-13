@@ -21,7 +21,6 @@ import java.util.Map;
 import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -148,19 +147,16 @@ public class MethodResolveUtil {
     for (boolean mostSpecific = false; i <= 2; mostSpecific = !(mostSpecific), i++) {
       int indexOfArg = 0;
       for (Expression actualArg : actualArgs) {
-
         final SNode term = actualArg.getNode();
         SNode typeOfArg;
         if (nodesAndTypes.containsKey(term)) {
           typeOfArg = nodesAndTypes.get(term);
         } else {
-          final TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContextForResolve(actualArg.getNode());
-          typeOfArg = typeCheckingContext.runTypeCheckingAction(new Computable<SNode>() {
+          typeOfArg = TypeContextManager.getInstance().runResolveAction(new Computable<SNode>() {
             public SNode compute() {
-              return typeCheckingContext.getTypeOf(term, TypeChecker.getInstance());
+              return TypeChecker.getInstance().getTypeOf(term);
             }
           });
-          typeCheckingContext.dispose();
           nodesAndTypes.put(term, typeOfArg);
         }
         List<? extends BaseMethodDeclaration> candidates1 = MethodResolveUtil.selectByParameterType(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific);
