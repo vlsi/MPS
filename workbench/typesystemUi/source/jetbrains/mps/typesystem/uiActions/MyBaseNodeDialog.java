@@ -133,7 +133,9 @@ public class
   }
 
   public void dispose() {
-    mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
+    if (mySupertypesViewComponent != null && mySupertypesViewComponent.getParent() != null) {
+      mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
+    }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
