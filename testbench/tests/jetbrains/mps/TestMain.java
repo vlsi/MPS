@@ -205,15 +205,15 @@ public class TestMain {
     return  project.getProject().getComponent(ProjectScope.class);
   }
 
-  private static SModelDescriptor getModel(MPSProject project, String modelName) {
+  public static SModelDescriptor getModel(MPSProject project, String modelName) {
     return getProjectScope(project).getModelDescriptor(SModelReference.fromString(modelName));
   }
 
-  private static Language getLanguage(MPSProject project, String languageName) {
+  public static Language getLanguage(MPSProject project, String languageName) {
     return getProjectScope(project).getLanguage(languageName);
   }
 
-  private static void updateLanguageClasspath(Language l, String classpath) {
+  public static void updateLanguageClasspath(Language l, String classpath) {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
     ClassPathEntry cpEntry = new ClassPathEntry();
     cpEntry.setPath(classpath);
