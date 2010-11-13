@@ -74,7 +74,7 @@ public class AnnotationUtil {
       return;
     }
     List<SNodeId> lineToId = LineToIdMapper.getLineNumberToNodeIdMap(fileAnnotation.getAnnotatedContent());
-    editorComponent.getLeftEditorHighlighter().addTextColumn(new AnnotationColumn(root, fileAnnotation, lineToId));
+    editorComponent.getLeftEditorHighlighter().addTextColumn(new AnnotationColumn(root, fileAnnotation, lineToId, vcs, file));
   }
 
   /*package*/ static Iterable<EditorCell> getCellDescendants(EditorCell cell) {

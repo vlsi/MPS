@@ -11,6 +11,9 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.vcs.annotate.FileAnnotation;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -36,6 +39,37 @@ import java.awt.event.MouseEvent;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Cursor;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter;
+import javax.swing.JPopupMenu;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import com.intellij.openapi.ide.CopyPasteManager;
+import com.intellij.openapi.vcs.history.TextTransferrable;
+import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.vcs.CommittedChangesProvider;
+import com.intellij.openapi.vcs.FilePathImpl;
+import com.intellij.openapi.vcs.changes.ui.ChangesViewBalloonProblemNotifier;
+import com.intellij.openapi.ui.MessageType;
+import com.intellij.openapi.vcs.changes.Change;
+import com.intellij.openapi.vcs.changes.ChangesUtil;
+import java.io.File;
+import com.intellij.openapi.vcs.changes.ContentRevision;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.plugin.VcsActionsHelper;
+import javax.swing.JFrame;
+import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
+import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
@@ -44,17 +78,21 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private List<Integer> myPseudoLinesToFileLines;
   private Map<SNodeId, Integer> myNodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
   private FileAnnotation myFileAnnotation;
+  private AbstractVcs myVcs;
+  private VirtualFile myModelVirtualFile;
+  private SModelDescriptor myModelDescriptor;
+  private List<SNodeId> myFileLineToId;
 
-  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, List<SNodeId> lineToId) {
+  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, List<SNodeId> fileLineToId, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
       }
     }));
     SModel model = SNodeOperations.getModel(root);
-    for (int line = 0; line < ListSequence.fromList(lineToId).count(); line++) {
+    for (int line = 0; line < ListSequence.fromList(fileLineToId).count(); line++) {
       SNode node = null;
-      SNodeId id = ListSequence.fromList(lineToId).getElement(line);
+      SNodeId id = ListSequence.fromList(fileLineToId).getElement(line);
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
@@ -64,10 +102,14 @@ public class AnnotationColumn extends AbstractLeftColumn {
       MapSequence.fromMap(myNodeIdToFileLine).put(id, line);
     }
     myFileAnnotation = fileAnnotation;
+    myModelVirtualFile = modelVirtualFile;
+    myModelDescriptor = model.getModelDescriptor();
+    myFileLineToId = fileLineToId;
+    myVcs = vcs;
   }
 
   public String getName() {
-    return "Annotation";
+    return "Annotations";
   }
 
   public void paint(Graphics graphics, EditorComponent component) {
@@ -206,5 +248,173 @@ public class AnnotationColumn extends AbstractLeftColumn {
       return ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
     }
     return -1;
+  }
+
+  @Override
+  public JPopupMenu getPopupMenu(MouseEvent event) {
+    JPopupMenu menu = new JPopupMenu();
+    final int fileLine = findFileLineByY(event.getY());
+    menu.add(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
+    menu.add(new AbstractAction("Copy revision number") {
+      public void actionPerformed(ActionEvent e) {
+        String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
+        CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
+      }
+    });
+    return menu;
+  }
+
+  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0a(Pair<CommittedChangeList, FilePath> p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSecond();
+  }
+
+  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0a0(Pair<CommittedChangeList, FilePath> p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSecond();
+  }
+
+  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0a0(Pair<CommittedChangeList, FilePath> p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getFirst();
+  }
+
+  private class ShowDiffFromAnnotationAction extends AbstractAction {
+    private int myFileLine;
+
+    public ShowDiffFromAnnotationAction(int fileLine) {
+      super("Show Diff");
+      myFileLine = fileLine;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
+      if (revisionNumber != null) {
+        final Project project = myVcs.getProject();
+        ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
+          public void run(@NotNull ProgressIndicator pi) {
+            CommittedChangesProvider provider = myVcs.getCommittedChangesProvider();
+
+            try {
+              Pair<CommittedChangeList, FilePath> pair = null;
+              if (provider != null) {
+                pair = provider.getOneList(myModelVirtualFile, revisionNumber);
+              }
+              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0a0(pair) == null ?
+                new FilePathImpl(myModelVirtualFile) :
+                check_5mnya_a0a2a2a0a0a0a1a1a0a(pair)
+              );
+              CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0a0(pair);
+              if (cl == null) {
+                ChangesViewBalloonProblemNotifier.showMe(project, "Cannot load data for showing diff", MessageType.ERROR);
+                return;
+              }
+              List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
+                public Comparable<?> select(Change c) {
+                  return ChangesUtil.getFilePath(c).getName().toLowerCase();
+                }
+              }, true).toListSequence();
+              final File ioFile = targetPath.getIOFile();
+              Change change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
+                public boolean accept(Change c) {
+                  return c.getAfterRevision() != null && c.getAfterRevision().getFile().getIOFile().equals(ioFile);
+                }
+              });
+              if (change != null) {
+                final String name = ioFile.getName();
+                change = ListSequence.fromList(changes).findFirst(new IWhereFilter<Change>() {
+                  public boolean accept(Change c) {
+                    return c.getAfterRevision() != null && c.getAfterRevision().getFile().getName().equals(name);
+                  }
+                });
+
+                ContentRevision before = change.getBeforeRevision();
+                ContentRevision after = change.getAfterRevision();
+
+                if (pi.isCanceled()) {
+                  return;
+                }
+                pi.setText("Loading model before change");
+
+                final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
+                if (before == null) {
+                  beforeModel.value = new SModel(myModelDescriptor.getSModelReference());
+                } else {
+                  beforeModel.value = VcsActionsHelper.loadModel(before.getContent(), myModelDescriptor);
+                }
+
+                if (pi.isCanceled()) {
+                  return;
+                }
+
+                pi.setText("Loading model after change");
+                assert after != null;
+                final SModel afterModel = VcsActionsHelper.loadModel(after.getContent(), myModelDescriptor);
+
+                final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    SNodeId nodeId = ListSequence.fromList(myFileLineToId).getElement(myFileLine);
+                    node.value = afterModel.getNodeById(nodeId);
+                    if ((node.value == null)) {
+                      node.value = beforeModel.value.getNodeById(nodeId);
+                    }
+                    node.value = SNodeOperations.getContainingRoot(node.value);
+                  }
+                });
+
+                final JFrame frame = WindowManager.getInstance().getFrame(project);
+                final ModuleContext operationContext = new ModuleContext(myModelDescriptor.getModule(), project);
+                final String beforeRevNumber = (before == null ?
+                  "<no revision>" :
+                  before.getRevisionNumber().asString()
+                );
+                final String afterRevNumber = after.getRevisionNumber().asString();
+                if (node.value == null) {
+                  ModelAccess.instance().runReadInEDT(new Runnable() {
+                    public void run() {
+                      final ModelDifferenceDialog dialog = new ModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
+                      ApplicationManager.getApplication().invokeLater(new Runnable() {
+                        public void run() {
+                          dialog.showDialog();
+                        }
+                      });
+                    }
+                  });
+
+                } else {
+                  ModelAccess.instance().runReadInEDT(new Runnable() {
+                    public void run() {
+                      final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, afterModel, beforeModel.value, false, false);
+                      dialog.init(operationContext, node.value, afterRevNumber, beforeRevNumber);
+                      ApplicationManager.getApplication().invokeLater(new Runnable() {
+                        public void run() {
+                          dialog.showDialog();
+                        }
+                      });
+                    }
+                  });
+                }
+              }
+            } catch (final VcsException ve) {
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                public void run() {
+                  ChangesViewBalloonProblemNotifier.showMe(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
+                }
+              });
+            }
+          }
+        });
+      }
+    }
+
+    private void showDiffForChange() {
+    }
   }
 }
