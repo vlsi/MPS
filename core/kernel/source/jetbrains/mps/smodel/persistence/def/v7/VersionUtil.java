@@ -58,11 +58,12 @@ public class VersionUtil {
   }
 
   private void processImportElement(ImportElement elem) {
-    myImports.put(elem.getModelReference(), elem);
-    int hash = (elem.getModelReference().hashCode() >>> 1) % HASH_SIZE;
+    SModelReference modelRef = elem.getModelReference();
+    int hash = (modelRef.hashCode() >>> 1) % HASH_SIZE;
     while (myUsedIndexes.contains(hash))  hash = (hash + 1) % HASH_SIZE;
     myUsedIndexes.add(hash);
-    myImportIndex.put(elem.getModelReference(), Integer.toString(hash, HASH_BASE));
+    myImportIndex.put(modelRef, Integer.toString(hash, HASH_BASE));
+    myImports.put(modelRef, elem);
   }
 
   public String genImportIndex(ImportElement elem) {
@@ -146,7 +147,6 @@ public class VersionUtil {
   }
 
 
-
   private Map<String, ImportElement> myImportByIx;
   private int myMaxImportIndex = -1;
 
@@ -189,7 +189,7 @@ public class VersionUtil {
     int i0 = src.indexOf(MODEL_SEPARATOR_CHAR), i1 = src.lastIndexOf(VERSION_SEPARATOR_CHAR);
     ParseResult res = new ParseResult();
     res.text = decode(src.substring(i0 + 1, i1 < 0 ? src.length() : i1));
-    res.modelID = i0 > 0 ? src.substring(0, i0) : "";
+    res.modelID = i0 < 0 ? "" : src.substring(0, i0);
     res.version = i1 < 0 ? -1 : Integer.parseInt(src.substring(i1 + 1));
     return res;
   }
@@ -205,12 +205,15 @@ public class VersionUtil {
       return modelRef.getSModelFqName().getLongName() + "." + s.substring(ix + 1);
     }
   }
+
   public String readRole(String s) {
     return s;
   }
+
   public String readName(String s) {
     return s;
   }
+
   public SReference readLink(SNode node, String rawRole, String rawTarget, String resolveInfo) {
     String role = readRole(rawRole);
     ParseResult target = parse(rawTarget);
