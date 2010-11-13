@@ -106,7 +106,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
-    if (!(sm instanceof EditableSModelDescriptor)) return false;
+     return false; //todo for performance purposes - false until IndexBasedModelDigest is fixed
+    /*if (!(sm instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
@@ -120,7 +121,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
-    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
+    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));*/
   }
 
   private boolean isEmpty(SModelDescriptor sm) {
