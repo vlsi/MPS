@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.INodeBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.GroupedTree.GroupKind;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
@@ -97,7 +98,7 @@ public class BreakpointsTree extends BreakpointsView {
 
   private void updateBreakpointsData() {
     Collection<BreakpointNodeData> data = new ArrayList<BreakpointNodeData>();
-    for (AbstractMPSBreakpoint bp : getBreakpointsList()) {
+    for (IBreakpoint bp : getBreakpointsList()) {
       data.add(new BreakpointNodeData(bp));
     }
     myData = data;
@@ -197,8 +198,13 @@ public class BreakpointsTree extends BreakpointsView {
 
   private class ModuleGroupKind extends GroupKind<BreakpointNodeData, IModule> {
     @Override
-    public IModule getGroup(BreakpointNodeData breakpoint) {
-      return SModelRepository.getInstance().getModelDescriptor(breakpoint.getBreakpoint().getNodePointer().getModelReference()).getModule();
+    public IModule getGroup(BreakpointNodeData breakpointData) {
+      IBreakpoint breakpoint = breakpointData.getBreakpoint();
+      if (breakpoint instanceof INodeBreakpoint) {
+        return SModelRepository.getInstance().getModelDescriptor(((INodeBreakpoint) breakpoint).getNodePointer().getModelReference()).getModule();
+      } else {
+        return null;
+      }
     }
 
     @Override
@@ -214,8 +220,13 @@ public class BreakpointsTree extends BreakpointsView {
 
   private class ModelGroupKind extends GroupKind<BreakpointNodeData, SModelReference> {
     @Override
-    public SModelReference getGroup(BreakpointNodeData breakpoint) {
-      return breakpoint.getBreakpoint().getNodePointer().getModelReference();
+    public SModelReference getGroup(BreakpointNodeData breakpointNodeData) {
+      IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
+      if (breakpoint instanceof INodeBreakpoint) {
+        return ((INodeBreakpoint) breakpoint).getNodePointer().getModelReference();
+      } else {
+        return null;
+      }
     }
 
     @Override
@@ -236,8 +247,13 @@ public class BreakpointsTree extends BreakpointsView {
 
   private class RootGroupKind extends GroupKind<BreakpointNodeData, SNodePointer> {
     @Override
-    public SNodePointer getGroup(BreakpointNodeData breakpoint) {
-      return new SNodePointer(breakpoint.getBreakpoint().getNodePointer().getNode().getContainingRoot());
+    public SNodePointer getGroup(BreakpointNodeData breakpointNodeData) {
+      IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
+      if (breakpoint instanceof INodeBreakpoint) {
+        return new SNodePointer(((INodeBreakpoint) breakpoint).getNodePointer().getNode().getContainingRoot());
+      } else {
+        return null;
+      }
     }
 
     @Override
@@ -247,9 +263,9 @@ public class BreakpointsTree extends BreakpointsView {
   }
 
   private class BreakpointNodeData implements NodeData {
-    private final AbstractMPSBreakpoint myBreakpoint;
+    private final IBreakpoint myBreakpoint;
 
-    public BreakpointNodeData(AbstractMPSBreakpoint breakpoint) {
+    public BreakpointNodeData(IBreakpoint breakpoint) {
       myBreakpoint = breakpoint;
     }
 
@@ -278,7 +294,7 @@ public class BreakpointsTree extends BreakpointsView {
       myBreakpoint.setEnabled(selected);
     }
 
-    public AbstractMPSBreakpoint getBreakpoint() {
+    public IBreakpoint getBreakpoint() {
       return myBreakpoint;
     }
   }

@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.actions.DebugActionsUtil;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
@@ -39,7 +40,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     return bigCell;
   }
 
-  public static Icon getIconFor(@NotNull AbstractMPSBreakpoint breakpoint) {
+  public static Icon getIconFor(@NotNull IBreakpoint breakpoint) {
     return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
   }
 

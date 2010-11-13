@@ -17,11 +17,12 @@ package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Set;
+import java.util.prefs.BackingStoreException;
 
 public interface ILanguageBreakpointsProvider {
   @NotNull
@@ -29,4 +30,8 @@ public interface ILanguageBreakpointsProvider {
   boolean canCreateFromUi(@NotNull IBreakpointKind kind);
   @Nullable
   IBreakpoint createFromUi(@NotNull IBreakpointKind kind, Project project);
+  @Nullable
+  IBreakpoint loadFromState(BreakpointState state, Project project);
+  @Nullable
+  BreakpointState saveToState(IBreakpoint breakpoint);
 }

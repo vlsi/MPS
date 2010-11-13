@@ -16,31 +16,30 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.INodeBreakpoint;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.12.2009
- * Time: 18:46:32
- * To change this template use File | Settings | File Templates.
- */
-public class MPSBreakpointPainter extends EditorCellPainter<AbstractMPSBreakpoint> {
+public class MPSBreakpointPainter extends EditorCellPainter<IBreakpoint> {
   private static final Color CELL_BACKGROUND_COLOR = new Color(255, 200, 200, 50);
   private static final Color STRIPE_BACKGROUND_COLOR = new Color(255, 200, 200);
   private static final Color FRAME_COLOR = new Color(255, 100, 100);
 
-  private final AbstractMPSBreakpoint myBreakpoint;
+  private final IBreakpoint myBreakpoint;
 
-  public MPSBreakpointPainter(AbstractMPSBreakpoint mpsBreakpoint) {
+  public MPSBreakpointPainter(IBreakpoint mpsBreakpoint) {
     myBreakpoint = mpsBreakpoint;
   }
 
   @Override
   protected SNode getSNode() {
-    return myBreakpoint.getSNode();
+    if (myBreakpoint instanceof INodeBreakpoint) {
+      return ((INodeBreakpoint) myBreakpoint).getNodePointer().getNode();
+    } else {
+      return null;
+    }
   }
 
   @Override
@@ -59,7 +58,7 @@ public class MPSBreakpointPainter extends EditorCellPainter<AbstractMPSBreakpoin
   }
 
   @Override
-  public AbstractMPSBreakpoint getItem() {
+  public IBreakpoint getItem() {
     return myBreakpoint;
   }
 

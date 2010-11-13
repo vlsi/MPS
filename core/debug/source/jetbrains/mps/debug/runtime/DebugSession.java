@@ -5,6 +5,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
@@ -134,9 +135,9 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
         @Override
         protected void action() throws Exception {
           if (myIsMute != mute) {
-            Set<AbstractMPSBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllBreakpoints();
+            Set<IBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllBreakpoints();
             RequestManager requestManager = myEventsProcessor.getRequestManager();
-            for (AbstractMPSBreakpoint bp : breakpoints) {
+            for (IBreakpoint bp : breakpoints) {
               if (bp instanceof JavaBreakpoint) {
                 JavaBreakpoint breakpoint = (JavaBreakpoint) bp;
                 if (mute) {

@@ -15,29 +15,13 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+public class BreakpointState {
+  public IBreakpointKind myKind;
 
-public interface IBreakpoint {
-  @NotNull
-  IBreakpointKind getKind();
+  public BreakpointState(IBreakpointKind kind) {
+    myKind = kind;
+  }
 
-  void removeFromRunningSessions();
-
-  void addToRunningSessions();
-
-  boolean isEnabled();
-
-  long getCreationTime();
-
-  boolean isValid();
-
-  boolean supportsDisable();
-
-  void setEnabled(boolean value);
-
-  @NonNls
-  String getPresentation();
-
-  void setCreationTime(long creationTime);
+  public BreakpointState() {
+  }
 }

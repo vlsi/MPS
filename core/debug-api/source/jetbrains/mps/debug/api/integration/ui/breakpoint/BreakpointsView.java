@@ -19,13 +19,14 @@ import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 
 import javax.swing.JComponent;
 import java.util.*;
 
 public abstract class BreakpointsView implements DataProvider {
   public static DataKey<AbstractMPSBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
-  private List<AbstractMPSBreakpoint> myBreakpointsList;
+  private List<IBreakpoint> myBreakpointsList;
   private final BreakpointManagerComponent myBreakpointsManager;
 
   public BreakpointsView(BreakpointManagerComponent breakpointsManager) {
@@ -37,24 +38,24 @@ public abstract class BreakpointsView implements DataProvider {
     myBreakpointsList = loadBreakpoints();
   }
 
-  protected List<AbstractMPSBreakpoint> getBreakpointsList() {
+  protected List<IBreakpoint> getBreakpointsList() {
     return myBreakpointsList;
   }
 
-  protected List<AbstractMPSBreakpoint> loadBreakpoints() {
-    Set<AbstractMPSBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllBreakpoints();
-    final List<AbstractMPSBreakpoint> bpList = new ArrayList<AbstractMPSBreakpoint>(mpsBreakpoints);
+  protected List<IBreakpoint> loadBreakpoints() {
+    Set<IBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllBreakpoints();
+    final List<IBreakpoint> bpList = new ArrayList<IBreakpoint>(mpsBreakpoints);
 
-    Collections.sort(bpList, new Comparator<AbstractMPSBreakpoint>() {
+    Collections.sort(bpList, new Comparator<IBreakpoint>() {
       @Override
-      public int compare(AbstractMPSBreakpoint o1, AbstractMPSBreakpoint o2) {
+      public int compare(IBreakpoint o1, IBreakpoint o2) {
         return (int) (o1.getCreationTime() - o2.getCreationTime());
       }
     });
     return bpList;
   }
 
-  public void breakpointDeleted(AbstractMPSBreakpoint breakpoint){
+  public void breakpointDeleted(IBreakpoint breakpoint){
     update();
   }
 

@@ -59,6 +59,7 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
   public static abstract class GroupKind<D, T> {
     private boolean myIsVisible = true;
 
+    @Nullable
     public abstract T getGroup(D data);
 
     @Nullable
@@ -80,12 +81,12 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
 
       for (D data : dataToSort) {
         T group = getGroup(data);
-        Set<D> dataFopGroup = result.get(group);
-        if (dataFopGroup == null) {
-          dataFopGroup = new HashSet<D>();
-          result.put(group, dataFopGroup);
+        Set<D> dataForGroup = result.get(group);
+        if (dataForGroup == null) {
+          dataForGroup = new HashSet<D>();
+          result.put(group, dataForGroup);
         }
-        dataFopGroup.add(data);
+        dataForGroup.add(data);
       }
 
       return result;

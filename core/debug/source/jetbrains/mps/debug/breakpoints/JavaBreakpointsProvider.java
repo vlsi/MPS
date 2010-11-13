@@ -18,18 +18,25 @@ package jetbrains.mps.debug.breakpoints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
-import jetbrains.mps.debug.api.breakpoints.ILanguageBreakpointsProvider;
+import jetbrains.mps.debug.api.BreakpointInfo;
+import jetbrains.mps.debug.api.breakpoints.*;
+import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, ApplicationComponent {
+  private final BreakpointProvidersManager myProvidersManager;
+
   public static JavaBreakpointsProvider getInstance() {
     return ApplicationManager.getApplication().getComponent(JavaBreakpointsProvider.class);
+  }
+
+  public JavaBreakpointsProvider(BreakpointProvidersManager providersManager) {
+    myProvidersManager = providersManager;
   }
 
   @NotNull
@@ -49,6 +56,34 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
     return new ExceptionBreakpoint(new SNodePointer("java.lang@java_stub", "~RuntimeException"), project);
   }
 
+  @Override
+  @Nullable
+  public IBreakpoint loadFromState(BreakpointState state, Project project) {
+    if (! (state.myKind instanceof JavaBreakpointKind)) {
+      return null;
+    }
+    JavaBreakpointKind kind = (JavaBreakpointKind) state.myKind;
+    switch (kind) {
+      case EXCEPTION_BREAKPOINT:
+        break;
+      case LINE_BREAKPOINT:
+        return MPSBreakpoint.fromBreakpointInfo((BreakpointInfo) state, project);
+    }
+    return null;
+  }
+
+  @Override
+  @Nullable
+  public BreakpointState saveToState(IBreakpoint breakpoint) {
+    switch ((JavaBreakpointKind)breakpoint.getKind()){
+      case EXCEPTION_BREAKPOINT:
+        return null;
+      case LINE_BREAKPOINT:
+        return ((MPSBreakpoint)breakpoint).createBreakpointInfo();
+    }
+    return null;
+  }
+
   @NotNull
   @Override
   public String getComponentName() {
@@ -57,9 +92,11 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
 
   @Override
   public void initComponent() {
+    myProvidersManager.registerProvider(this);
   }
 
   @Override
   public void disposeComponent() {
+    myProvidersManager.unregisterProvider(this);
   }
 }

@@ -15,29 +15,8 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNodePointer;
 
-public interface IBreakpoint {
-  @NotNull
-  IBreakpointKind getKind();
-
-  void removeFromRunningSessions();
-
-  void addToRunningSessions();
-
-  boolean isEnabled();
-
-  long getCreationTime();
-
-  boolean isValid();
-
-  boolean supportsDisable();
-
-  void setEnabled(boolean value);
-
-  @NonNls
-  String getPresentation();
-
-  void setCreationTime(long creationTime);
+public interface INodeBreakpoint {
+  SNodePointer getNodePointer();
 }

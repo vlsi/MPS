@@ -21,6 +21,7 @@ import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.request.*;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint;
@@ -246,7 +247,7 @@ public class RequestManager implements DebugProcessListener {
       @Override
       protected void action() throws Exception {
         BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
-        for (AbstractMPSBreakpoint breakpoint : breakpointManager.getAllBreakpoints()) {
+        for (IBreakpoint breakpoint : breakpointManager.getAllBreakpoints()) {
           if (breakpoint instanceof JavaBreakpoint) {
             ((JavaBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
           }
