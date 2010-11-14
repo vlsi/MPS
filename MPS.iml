@@ -61,6 +61,7 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="typesystemIntegration" exported="" />
     <orderEntry type="library" scope="PROVIDED" name="IDEA-vcs-plugins" level="project" />
+    <orderEntry type="module" module-name="make-runtime" exported="" />
   </component>
   <component name="copyright">
     <Base>
