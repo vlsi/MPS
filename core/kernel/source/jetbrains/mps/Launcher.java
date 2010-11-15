@@ -20,6 +20,7 @@ import com.intellij.ide.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class Launcher {
       cp.append(File.pathSeparatorChar).append(p.getPath());
     }
     System.setProperty("idea.additional.classpath", cp.toString());
-
+    System.out.println ("*** CP: "+cp);
 
     Bootstrap.main(args, MPSMainImpl.class.getName(), "start");
   }
@@ -58,9 +59,37 @@ public class Launcher {
 
       File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
       ClassloaderUtil.addLibraries(classPath, languageDesignFolder, selfRootUrl);
+
+      if (classPath.isEmpty()) {
+        // we're probably running from the sources, let's add the class dirs to the classpath
+        addClasses(classPath, baseLanguageFolder, selfRootUrl);
+        addClasses(classPath, languageDesignFolder, selfRootUrl);
+      }
     }
     catch (MalformedURLException e) {
 
     }
   }
+
+  private static void addClasses(List<URL> classPath, File fromDir, final URL selfRootUrl) throws MalformedURLException {
+    final File[] files = fromDir.listFiles();
+    if (files != null) {
+      for (final File file : files) {
+        if (!file.isDirectory()) continue;
+        for (final File dir: file.listFiles(new FileFilter(){
+          @Override
+          public boolean accept(File f) {
+            return f.isDirectory() && f.getName().startsWith("classes") && !f.getName().contains("test");
+          }
+        })) {
+          final URL url = dir.toURI().toURL();
+          if (selfRootUrl.equals(url)) {
+            continue;
+          }
+          classPath.add(url);
+        }
+      }
+    }
+  }
+
 }

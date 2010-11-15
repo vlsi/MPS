@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$" />
+    <output-test url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library name="idea-patch">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../core/idea-patch/classes" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library name="mps-startup">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../core/kernel/classes" />
+          <root url="file://$MODULE_DIR$/../core/typesystemEngine/classes" />
+          <root url="file://$MODULE_DIR$/../core/debug/classes" />
+          <root url="file://$MODULE_DIR$/../core/make-runtime/classes" />
+          <root url="file://$MODULE_DIR$/../core/generator/classes" />
+          <root url="file://$MODULE_DIR$/../core/javaParser/classes" />
+          <root url="file://$MODULE_DIR$/../core/kernel/xmlQuery/runtime/classes" />
+          <root url="file://$MODULE_DIR$/../workbench/classes" />
+          <root url="file://$MODULE_DIR$/../core/debug-api/classes" />
+          <root url="file://$MODULE_DIR$/../core/runtime/classes" />
+          <root url="file://$MODULE_DIR$/../MPSPlugin/apiclasses" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="RUNTIME" name="JDOM" level="project" />
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library name="idea-startup">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/util.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/boot.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/extensions.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/bootstrap.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="RUNTIME" name="JUnit4" level="project" />
+  </component>
+</module>
+
