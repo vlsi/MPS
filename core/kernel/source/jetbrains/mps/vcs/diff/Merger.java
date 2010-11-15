@@ -460,10 +460,6 @@ public class Merger {
     if (myExcludedChanges.contains(change) || isChangeUnresolved(change)) { return false; }
     if (myAppliedChanges.contains(change)) { return true; }
 
-    if (new Throwable().getStackTrace().length == 100) { // TODO THIS IS FOR DEBUG
-      System.exit(1);
-    }
-
     for (SNodeId dependency : getRealDependencies(nodeIdToChangeMap, change)) {
       if (!nodeIdToChangeMap.containsKey(dependency)) {
         continue;
