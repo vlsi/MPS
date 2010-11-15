@@ -103,8 +103,8 @@ public class NodeTypesComponent {
     new HashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   // properties to rules which depend on this nodes' properties
-  private Map<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myPropertiesToDependentNodesWithNTRules =
-    new HashMap<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+  private Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myPropertiesToDependentNodesWithNTRules =
+    new HashMap<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   // typed terms to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myTypedTermsToDependentNodesWithNTRules =
@@ -643,21 +643,21 @@ public class NodeTypesComponent {
   }
 
   private void addDepedentPropertiesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<Pair<SNode, String>> propertiesToDependOn) {
-    Map<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> mapToNodesWithNTRules
+    Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules
       = myPropertiesToDependentNodesWithNTRules;
     for (Pair<SNode, String> propertyToDependOn : propertiesToDependOn) {
       if (propertyToDependOn == null) continue;
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>(1);
+        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
         mapToNodesWithNTRules.put(propertyToDependOn, dependentNodes);
       }
-      Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
-      if (rules == null) {
-        rules = new HashSet<NonTypesystemRule_Runtime>(1);
-        dependentNodes.put(sNode, rules);
+      WeakSet<SNode> nodes = dependentNodes.get(rule);
+      if (nodes == null) {
+        nodes = new WeakSet<SNode>(1);
+        dependentNodes.put(rule, nodes);
       }
-      rules.add(rule);
+      nodes.add(sNode);
     }
   }
 
@@ -941,13 +941,13 @@ public class NodeTypesComponent {
 
     //properties
     for (Pair<SNode, String> pair : myCurrentPropertiesToInvalidateNonTypesystem) {
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myPropertiesToDependentNodesWithNTRules.get(pair);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myPropertiesToDependentNodesWithNTRules.get(pair);
       if (nodesAndRules != null) {
-        for (SNode nodeOfRule : nodesAndRules.keySet()) {
-          Set<NonTypesystemRule_Runtime> rules = nodesAndRules.get(nodeOfRule);
-          if (rules != null) {
-            for (NonTypesystemRule_Runtime rule : rules) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
+          WeakSet<SNode> nodes = nodesAndRules.get(ruleOfNode);
+          if (nodes != null) {
+            for (SNode depNode : nodes) {
+              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
             }
           }
         }
