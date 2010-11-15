@@ -148,7 +148,7 @@ public class VersionUtil {
 
 
   private Map<String, ImportElement> myImportByIx;
-  private int myMaxImportIndex = -1;
+  private int myMaxImportIndex = 0;
 
   public VersionUtil(SModelReference modelRef) {
     myModelRef = modelRef;

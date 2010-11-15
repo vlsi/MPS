@@ -416,31 +416,6 @@
         <link role="classifier:3" targetNodeId="3.~Integer" resolveInfo="Integer" />
       </node>
     </node>
-    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="7319439566871678530">
-      <property name="name:4" value="maxImportIndex" />
-      <property name="tagName:4" value="maxImportIndex" />
-      <property name="isCompact:4" value="true" />
-      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="7319439566871678531">
-        <property name="isRequired:4" value="true" />
-        <property name="name:4" value="value" />
-      </node>
-      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7319439566871678532">
-        <link role="classifier:3" targetNodeId="3.~Integer" resolveInfo="Integer" />
-      </node>
-      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="7319439566871678533">
-        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7319439566871678534">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7319439566871678535">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7319439566871678536">
-              <link role="classConcept:3" targetNodeId="3.~Integer" resolveInfo="Integer" />
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
-              <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="7319439566871678537">
-                <link role="attribute:4" targetNodeId="7319439566871678531" resolveInfo="value" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="7319439566871678551">
       <property name="name:4" value="tag_with_namespace" />
       <property name="isCompact:4" value="true" />

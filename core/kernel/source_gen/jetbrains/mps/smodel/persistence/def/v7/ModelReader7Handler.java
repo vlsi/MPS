@@ -31,7 +31,6 @@ public class ModelReader7Handler extends DefaultHandler {
 
   private ModelReader7Handler.modelElementHandler modelhandler = new ModelReader7Handler.modelElementHandler();
   private ModelReader7Handler.persistenceElementHandler persistencehandler = new ModelReader7Handler.persistenceElementHandler();
-  private ModelReader7Handler.maxImportIndexElementHandler maxImportIndexhandler = new ModelReader7Handler.maxImportIndexElementHandler();
   private ModelReader7Handler.tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader7Handler.tag_with_namespaceElementHandler();
   private ModelReader7Handler.importElementHandler importhandler = new ModelReader7Handler.importElementHandler();
   private ModelReader7Handler.nodeElementHandler nodehandler = new ModelReader7Handler.nodeElementHandler();
@@ -293,32 +292,6 @@ public class ModelReader7Handler extends DefaultHandler {
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
       Integer result = (Integer) resultObject;
       if ("version".equals(name)) {
-        return;
-      }
-      super.handleAttribute(resultObject, name, value);
-    }
-  }
-
-  public class maxImportIndexElementHandler extends ModelReader7Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"value"};
-
-    public maxImportIndexElementHandler() {
-    }
-
-    @Override
-    protected Integer createObject(Attributes attrs) {
-      return Integer.parseInt(attrs.getValue("value"));
-    }
-
-    @Override
-    protected String[] requiredAttributes() {
-      return requiredAttributes;
-    }
-
-    @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
-      Integer result = (Integer) resultObject;
-      if ("value".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
