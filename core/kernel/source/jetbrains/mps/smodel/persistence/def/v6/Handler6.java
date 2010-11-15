@@ -37,7 +37,7 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
   }
 
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    if (qName.equals(ModelPersistence.ROOTS)) {
+    if (qName.equals(ModelPersistence.ROOT_STUBS)) {
       if (myState == ModelLoadingState.FULLY_LOADED) {
         myIgnoreState = false;
       } else {
@@ -51,7 +51,7 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
   }
 
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    if (qName.equals(ModelPersistence.ROOTS)) {
+    if (qName.equals(ModelPersistence.ROOT_STUBS)) {
       if (myState == ModelLoadingState.FULLY_LOADED) {
         myIgnoreState = true;
       }

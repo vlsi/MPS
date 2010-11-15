@@ -85,7 +85,12 @@ public class ModelWriter7 implements IModelWriter {
     // roots
     saveRootStubs(rootElement, sourceModel);   // only for quick roots access
     for (SNode root : sourceModel.roots()) {
-      saveNode(rootElement, root, true);
+      Element element = new Element(ModelPersistence.ROOT_CONTENT);
+      element.setAttribute(ModelPersistence.ID, root.getId());
+      for (SNode childNode : root.getChildren()) {
+        saveNode(element, childNode, true);
+      }
+      rootElement.addContent(element);
     }
 
     return new Document(rootElement);

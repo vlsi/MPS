@@ -6,6 +6,7 @@
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="a8fdde77-2e6c-41f6-ac79-8e9b6449c271(jetbrains.mps.xmlQuery)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)" version="-1" />
   <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -13,16 +14,17 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:bd6e2c7d-3a5d-4eed-9ff9-27f23ecb34e2(jetbrains.mps.xmlQuery.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def.v7(jetbrains.mps.smodel.persistence.def.v7@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#org.xml.sax(org.xml.sax@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.xmlQuery.structure.XMLSAXParser:4" id="286176397450364062">
-    <property name="name:4" value="ModelReader7" />
+    <property name="name:4" value="ModelReader7Full" />
     <link role="root:4" targetNodeId="286176397450364075" resolveInfo="model" />
     <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="286176397450364063">
       <property name="name:4" value="model" />
@@ -55,6 +57,12 @@
     <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="286176397450364073">
       <property name="name:4" value="nodeEnded" />
       <node role="type:4" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="286176397450364074" />
+    </node>
+    <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="2301870845769311876">
+      <property name="name:4" value="currentRoot" />
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769311931">
+        <link role="classifier:3" targetNodeId="6.~SNode" resolveInfo="SNode" />
+      </node>
     </node>
     <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="286176397450364075">
       <property name="name:4" value="model" />
@@ -195,34 +203,11 @@
           </node>
         </node>
       </node>
-      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="286176397450364134">
-        <link role="rule:4" targetNodeId="286176397450364263" resolveInfo="node" />
-        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="286176397450364135">
-          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="286176397450364136">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="286176397450364137">
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="286176397450364138">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="286176397450364139" />
-                <node role="leftExpression:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="286176397450364140" />
-              </node>
-              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="286176397450364141">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="286176397450364142">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="286176397450364143">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="286176397450364144">
-                      <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="286176397450364145" />
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="286176397450364146">
-                        <link role="fieldDeclaration:3" targetNodeId="2.~Pair.o1" resolveInfo="o1" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="286176397450364147">
-                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.addRoot(jetbrains.mps.smodel.SNode):void" resolveInfo="addRoot" />
-                      <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="286176397450364148" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769287142">
+        <link role="rule:4" targetNodeId="2301870845769287143" resolveInfo="roots" />
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769311899">
+        <link role="rule:4" targetNodeId="2301870845769311879" resolveInfo="rootContent" />
       </node>
       <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="286176397450364149">
         <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="286176397450364150">
@@ -489,6 +474,124 @@
       </node>
       <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="286176397450364261">
         <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="286176397450364262" />
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769287143">
+      <property name="name:4" value="roots" />
+      <property name="tagName:4" value="roots" />
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769311855">
+        <link role="rule:4" targetNodeId="286176397450364263" resolveInfo="node" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769311858">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311859">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769311860">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2301870845769311864">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769311867" />
+                <node role="leftExpression:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311863" />
+              </node>
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311862">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769311868">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769311870">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311869">
+                      <link role="declaration:4" targetNodeId="286176397450364063" resolveInfo="model" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769311874">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.addRoot(jetbrains.mps.smodel.SNode):void" resolveInfo="addRoot" />
+                      <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311875" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769311944">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769311946">
+                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2301870845769311949">
+                      <property name="value:3" value="true" />
+                    </node>
+                    <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311945">
+                      <link role="declaration:4" targetNodeId="286176397450364073" resolveInfo="nodeEnded" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769318854">
+        <link role="classifier:3" targetNodeId="2v.~Object" resolveInfo="Object" />
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769311879">
+      <property name="name:4" value="rootContent" />
+      <property name="tagName:4" value="root" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769311919">
+        <property name="name:4" value="id" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769311881">
+        <link role="rule:4" targetNodeId="286176397450364263" resolveInfo="node" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769311882">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311883">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769311884">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2301870845769311885">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769311886" />
+                <node role="leftExpression:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311887" />
+              </node>
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311888">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769311889">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769311890">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311929">
+                      <link role="declaration:4" targetNodeId="2301870845769311876" resolveInfo="currentRoot" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769311894">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.addChild(java.lang.String,jetbrains.mps.smodel.SNode):void" resolveInfo="addChild" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769311933">
+                        <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311934" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769311935">
+                          <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+                        </node>
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311895" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769311937">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769311939">
+                    <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311938">
+                      <link role="declaration:4" targetNodeId="286176397450364073" resolveInfo="nodeEnded" />
+                    </node>
+                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2301870845769311942">
+                      <property name="value:3" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769311920">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311921">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769311922">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769311923">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769311924">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311925">
+                  <link role="declaration:4" targetNodeId="286176397450364063" resolveInfo="model" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769311926">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.getNodeById(java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
+                  <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769311927">
+                    <link role="attribute:4" targetNodeId="2301870845769311919" resolveInfo="id" />
+                  </node>
+                </node>
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311928">
+                <link role="declaration:4" targetNodeId="2301870845769311876" resolveInfo="currentRoot" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769318855">
+        <link role="classifier:3" targetNodeId="2v.~Object" resolveInfo="Object" />
       </node>
     </node>
     <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="286176397450364263">
@@ -1020,6 +1123,868 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.xmlQuery.structure.XMLSAXParser:4" id="2301870845769286693">
+    <property name="name:4" value="ModelReader7Fast" />
+    <link role="root:4" targetNodeId="2301870845769286706" resolveInfo="model" />
+    <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="2301870845769286694">
+      <property name="name:4" value="model" />
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286695">
+        <link role="classifier:3" targetNodeId="6.~SModel" resolveInfo="SModel" />
+      </node>
+    </node>
+    <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="2301870845769286696">
+      <property name="name:4" value="helper" />
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286697">
+        <link role="classifier:3" targetNodeId="1.~VersionUtil" resolveInfo="VersionUtil" />
+      </node>
+    </node>
+    <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="2301870845769286698">
+      <property name="name:4" value="nodeIdStack" />
+      <node role="type:4" type="jetbrains.mps.baseLanguage.collections.structure.StackType:7" id="2301870845769286699">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286700">
+          <link role="classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+        </node>
+      </node>
+    </node>
+    <node role="fields:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldDeclaration:4" id="2301870845769286704">
+      <property name="name:4" value="nodeEnded" />
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="2301870845769286705" />
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769286706">
+      <property name="name:4" value="model" />
+      <property name="tagName:4" value="model" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286707">
+        <property name="name:4" value="modelUID" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286708">
+        <link role="rule:4" targetNodeId="2301870845769286846" resolveInfo="persistence" />
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286709">
+        <property name="tagName:4" value="language" />
+        <link role="rule:4" targetNodeId="2301870845769286854" resolveInfo="tag_with_namespace" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769286710">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286711">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286712">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286713">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286714">
+                  <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286715" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2301870845769286716">
+                    <link role="fieldDeclaration:3" targetNodeId="2.~Pair.o1" resolveInfo="o1" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286717">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addLanguage" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286718">
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
+                    <link role="classConcept:3" targetNodeId="4.~ModuleReference" resolveInfo="ModuleReference" />
+                    <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286719" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286720">
+        <property name="tagName:4" value="language-engaged-on-generation" />
+        <link role="rule:4" targetNodeId="2301870845769286854" resolveInfo="tag_with_namespace" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769286721">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286722">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286723">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286724">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286725">
+                  <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286726" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2301870845769286727">
+                    <link role="fieldDeclaration:3" targetNodeId="2.~Pair.o1" resolveInfo="o1" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286728">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.addEngagedOnGenerationLanguage(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addEngagedOnGenerationLanguage" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286729">
+                    <link role="classConcept:3" targetNodeId="4.~ModuleReference" resolveInfo="ModuleReference" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
+                    <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286730" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286731">
+        <property name="tagName:4" value="devkit" />
+        <link role="rule:4" targetNodeId="2301870845769286854" resolveInfo="tag_with_namespace" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769286732">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286733">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286734">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286735">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286736">
+                  <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286737" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2301870845769286738">
+                    <link role="fieldDeclaration:3" targetNodeId="2.~Pair.o1" resolveInfo="o1" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286739">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="addDevKit" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286740">
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
+                    <link role="classConcept:3" targetNodeId="4.~ModuleReference" resolveInfo="ModuleReference" />
+                    <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286741" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286742">
+        <link role="rule:4" targetNodeId="2301870845769286861" resolveInfo="import" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769286743">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286744">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286745">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286746">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286747">
+                  <link role="declaration:4" targetNodeId="2301870845769286696" resolveInfo="helper" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286748">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~VersionUtil.addImport(jetbrains.mps.smodel.SModel,java.lang.String,java.lang.String,int,boolean):void" resolveInfo="addImport" />
+                  <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286749">
+                    <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286750">
+                    <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286751">
+                      <property name="value:3" value="0" />
+                    </node>
+                    <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286752" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286753">
+                    <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286754">
+                      <property name="value:3" value="1" />
+                    </node>
+                    <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286755" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286756">
+                    <link role="classConcept:3" targetNodeId="2v.~Integer" resolveInfo="Integer" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="2v.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286757">
+                      <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286758">
+                        <property name="value:3" value="2" />
+                      </node>
+                      <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286759" />
+                    </node>
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2301870845769286760">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286761" />
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286762">
+                      <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286763">
+                        <property name="value:3" value="3" />
+                      </node>
+                      <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286764" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769287137">
+        <link role="rule:4" targetNodeId="2301870845769287133" resolveInfo="roots" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="3993139870011824011">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3993139870011824012">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="7637669107549540225">
+              <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7637669107549540227">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7637669107549553891">
+                  <link role="baseMethodDeclaration:3" targetNodeId="7.~BreakParseSAXException.&lt;init&gt;()" resolveInfo="BreakParseSAXException" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769286780">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286781">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286782">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769286783">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769286784">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator:7" id="2301870845769286785">
+                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286786">
+                    <link role="classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+                  </node>
+                </node>
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286787">
+                <link role="declaration:4" targetNodeId="2301870845769286698" resolveInfo="nodeIdStack" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286794">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769286795">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2301870845769286796">
+                <property name="value:3" value="false" />
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286797">
+                <link role="declaration:4" targetNodeId="2301870845769286704" resolveInfo="nodeEnded" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286798">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769286799">
+              <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286800">
+                <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+              </node>
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769286801">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2301870845769286802">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.&lt;init&gt;(jetbrains.mps.smodel.SModelReference)" resolveInfo="SModel" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286803">
+                    <link role="classConcept:3" targetNodeId="6.~SModelReference" resolveInfo="SModelReference" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="6.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
+                    <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769286804">
+                      <link role="attribute:4" targetNodeId="2301870845769286707" resolveInfo="modelUID" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286805">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286806">
+              <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286807">
+                <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286808">
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.setPersistenceVersion(int):void" resolveInfo="setPersistenceVersion" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286809">
+                  <property name="value:3" value="7" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286810">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286811">
+              <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286812">
+                <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286813">
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.setLoading(boolean):boolean" resolveInfo="setLoading" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2301870845769286814">
+                  <property name="value:3" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286815">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769286816">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769286817">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2301870845769286818">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~VersionUtil.&lt;init&gt;(jetbrains.mps.smodel.SModelReference)" resolveInfo="VersionUtil" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286819">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286820">
+                      <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286821">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286822">
+                <link role="declaration:4" targetNodeId="2301870845769286696" resolveInfo="helper" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2301870845769286823">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769286824">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2301870845769286825">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
+                <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286826">
+                  <link role="classifier:3" targetNodeId="6.~SModel" resolveInfo="SModel" />
+                </node>
+                <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="2301870845769286827">
+                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286828">
+                    <link role="classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+                  </node>
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286829">
+                  <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769287130">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="2301870845769287131">
+                    <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769287132">
+                      <link role="classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="validator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeValidator:4" id="2301870845769286831">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286832">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286833">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286834">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286835">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286836" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2301870845769286837">
+                  <link role="fieldDeclaration:3" targetNodeId="2.~Pair.o1" resolveInfo="o1" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286838">
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.setLoading(boolean):boolean" resolveInfo="setLoading" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2301870845769286839">
+                  <property name="value:3" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2301870845769286840">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2301870845769286841">
+              <property name="value:3" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286842">
+        <link role="classifier:3" targetNodeId="2.~Pair" resolveInfo="Pair" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286843">
+          <link role="classifier:3" targetNodeId="6.~SModel" resolveInfo="SModel" />
+        </node>
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="2301870845769286844">
+          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286845">
+            <link role="classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769286846">
+      <property name="name:4" value="persistence" />
+      <property name="tagName:4" value="persistence" />
+      <property name="isCompact:4" value="true" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286847">
+        <property name="name:4" value="version" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769286848">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286849">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286850">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286851">
+              <link role="classConcept:3" targetNodeId="2v.~Integer" resolveInfo="Integer" />
+              <link role="baseMethodDeclaration:3" targetNodeId="2v.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
+              <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769286852">
+                <link role="attribute:4" targetNodeId="2301870845769286847" resolveInfo="version" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286853">
+        <link role="classifier:3" targetNodeId="2v.~Integer" resolveInfo="Integer" />
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769286854">
+      <property name="name:4" value="tag_with_namespace" />
+      <property name="isCompact:4" value="true" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286855">
+        <property name="name:4" value="namespace" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769286856" />
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769286857">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286858">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286859">
+            <node role="expression:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769286860">
+              <link role="attribute:4" targetNodeId="2301870845769286855" resolveInfo="namespace" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769286861">
+      <property name="name:4" value="import" />
+      <property name="tagName:4" value="import" />
+      <property name="isCompact:4" value="true" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286862">
+        <property name="name:4" value="index" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286863">
+        <property name="name:4" value="version" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286864">
+        <property name="name:4" value="modelUID" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286865">
+        <property name="name:4" value="implicit" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769286866">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286867">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286868">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769286869">
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286870">
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286871" />
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286872">
+                    <property name="value:3" value="3" />
+                  </node>
+                </node>
+                <node role="rValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769286873" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769286874">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286875">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286876">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769286877">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="2301870845769286878">
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769286879" />
+                <node role="initValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769286880">
+                  <link role="attribute:4" targetNodeId="2301870845769286862" resolveInfo="index" />
+                </node>
+                <node role="initValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769286881">
+                  <link role="attribute:4" targetNodeId="2301870845769286864" resolveInfo="modelUID" />
+                </node>
+                <node role="initValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769286882">
+                  <link role="attribute:4" targetNodeId="2301870845769286863" resolveInfo="version" />
+                </node>
+                <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286883" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="2301870845769286884">
+        <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769286885" />
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769287133">
+      <property name="name:4" value="roots" />
+      <property name="tagName:4" value="roots" />
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769287141">
+        <link role="rule:4" targetNodeId="2301870845769286886" resolveInfo="node" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769311294">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311295">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769311296">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2301870845769311300">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769311303" />
+                <node role="leftExpression:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311299" />
+              </node>
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769311298">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769311304">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769311306">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769311854">
+                      <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769311846">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SModel.addRoot(jetbrains.mps.smodel.SNode):void" resolveInfo="addRoot" />
+                      <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769311847" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769322270">
+        <link role="classifier:3" targetNodeId="2v.~Object" resolveInfo="Object" />
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769286886">
+      <property name="name:4" value="node" />
+      <property name="tagName:4" value="node" />
+      <property name="isCompact:4" value="false" />
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286887">
+        <link role="rule:4" targetNodeId="2301870845769287021" resolveInfo="property" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769286888">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286889">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769286890">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286891">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286892">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286893">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286894" />
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286895">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.setProperty(java.lang.String,java.lang.String):void" resolveInfo="setProperty" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286896">
+                        <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286897">
+                          <link role="declaration:4" targetNodeId="2301870845769286696" resolveInfo="helper" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286898">
+                          <link role="baseMethodDeclaration:3" targetNodeId="1.~VersionUtil.readName(java.lang.String):java.lang.String" resolveInfo="readName" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286899">
+                            <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286900">
+                              <property name="value:3" value="0" />
+                            </node>
+                            <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286901" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286902">
+                        <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286903">
+                          <property name="value:3" value="1" />
+                        </node>
+                        <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286904" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2301870845769286905">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286906">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286907">
+                    <property name="value:3" value="1" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286908" />
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286909" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="children:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildRule:4" id="2301870845769286910">
+        <link role="rule:4" targetNodeId="2301870845769287042" resolveInfo="link" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler:4" id="2301870845769286911">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286912">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769286913">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286914">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement:0" id="2301870845769286915">
+                  <property name="severity:0" value="error" />
+                  <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2301870845769286916">
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2301870845769286917">
+                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286918">
+                        <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286919">
+                          <property name="value:3" value="0" />
+                        </node>
+                        <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286920" />
+                      </node>
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2301870845769286921">
+                        <property name="value:3" value="couldn't create reference '" />
+                      </node>
+                    </node>
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2301870845769286922">
+                      <property name="value:3" value="' : traget node id is null" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2301870845769286923" />
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="2301870845769286924">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286925" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286926">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286927">
+                    <property name="value:3" value="2" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286928" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2301870845769286929">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2301870845769286930">
+                <property name="name:3" value="ref" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286931">
+                  <link role="classifier:3" targetNodeId="6.~SReference" resolveInfo="SReference" />
+                </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286932">
+                  <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286933">
+                    <link role="declaration:4" targetNodeId="2301870845769286696" resolveInfo="helper" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286934">
+                    <link role="baseMethodDeclaration:3" targetNodeId="1.~VersionUtil.readLink(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.SReference" resolveInfo="readLink" />
+                    <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286935" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286936">
+                      <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286937">
+                        <property name="value:3" value="0" />
+                      </node>
+                      <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286938" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286939">
+                      <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286940">
+                        <property name="value:3" value="2" />
+                      </node>
+                      <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286941" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769286942">
+                      <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769286943">
+                        <property name="value:3" value="1" />
+                      </node>
+                      <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler_childObject:4" id="2301870845769286944" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769286945">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286946">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286947">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286948">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286949" />
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286950">
+                      <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.addReference(jetbrains.mps.smodel.SReference):void" resolveInfo="addReference" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2301870845769286951">
+                        <link role="variableDeclaration:3" targetNodeId="2301870845769286930" resolveInfo="ref" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="2301870845769286952">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286953" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2301870845769286954">
+                  <link role="variableDeclaration:3" targetNodeId="2301870845769286930" resolveInfo="ref" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286970">
+        <property name="name:4" value="type" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286971">
+        <property name="name:4" value="role" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769286972">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286973">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769286974">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286975">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769286976" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286977">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.setRoleInParent(java.lang.String):void" resolveInfo="setRoleInParent" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769286978">
+                    <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769286979">
+                      <link role="declaration:4" targetNodeId="2301870845769286696" resolveInfo="helper" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769286980">
+                      <link role="baseMethodDeclaration:3" targetNodeId="1.~VersionUtil.readRole(java.lang.String):java.lang.String" resolveInfo="readRole" />
+                      <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769286981" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769286982">
+        <property name="name:4" value="id" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769286983">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286984">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2301870845769286985">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2301870845769286986">
+                <property name="name:3" value="id" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769286987">
+                  <link role="classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+                </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2301870845769286988">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolveInfo="fromString" />
+                  <link role="classConcept:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
+                  <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769286989" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2301870845769286990">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769286991">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="2301870845769286992">
+                  <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769286993">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2301870845769286994">
+                      <link role="baseMethodDeclaration:3" targetNodeId="5.~SAXParseException.&lt;init&gt;(java.lang.String,org.xml.sax.Locator)" resolveInfo="SAXParseException" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2301870845769286995">
+                        <property name="value:3" value="bad node ID" />
+                      </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286996" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="2301870845769286997">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769286998" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2301870845769286999">
+                  <link role="variableDeclaration:3" targetNodeId="2301870845769286986" resolveInfo="id" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287000">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769287001">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769287002">
+                  <link role="declaration:4" targetNodeId="2301870845769286698" resolveInfo="nodeIdStack" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.PushOperation:7" id="2301870845769287003">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2301870845769287004">
+                    <link role="variableDeclaration:3" targetNodeId="2301870845769286986" resolveInfo="id" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287005">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769287006">
+                <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769287007" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769287008">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.setId(jetbrains.mps.smodel.SNodeId):void" resolveInfo="setId" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2301870845769287009">
+                    <link role="variableDeclaration:3" targetNodeId="2301870845769286986" resolveInfo="id" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2301870845769287010">
+        <link role="classifier:3" targetNodeId="6.~SNode" resolveInfo="SNode" />
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769287011">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287012">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287013">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769287014">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2301870845769287015">
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~SNode.&lt;init&gt;(jetbrains.mps.smodel.SModel,java.lang.String)" resolveInfo="SNode" />
+                <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769287016">
+                  <link role="declaration:4" targetNodeId="2301870845769286694" resolveInfo="model" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2301870845769287017">
+                  <node role="operand:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference:4" id="2301870845769287018">
+                    <link role="declaration:4" targetNodeId="2301870845769286696" resolveInfo="helper" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2301870845769287019">
+                    <link role="baseMethodDeclaration:3" targetNodeId="1.~VersionUtil.readType(java.lang.String):java.lang.String" resolveInfo="readType" />
+                    <node role="actualArgument:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769287020">
+                      <link role="attribute:4" targetNodeId="2301870845769286970" resolveInfo="type" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769287021">
+      <property name="name:4" value="property" />
+      <property name="tagName:4" value="property" />
+      <property name="isCompact:4" value="true" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769287022">
+        <property name="name:4" value="name" />
+        <property name="isRequired:4" value="true" />
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769287023">
+        <property name="name:4" value="value" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769287024">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287025">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287026">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769287027">
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769287028">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769287029">
+                    <property name="value:3" value="1" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769287030" />
+                </node>
+                <node role="rValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769287031" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="2301870845769287032">
+        <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769287033" />
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769287034">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287035">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287036">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769287037">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="2301870845769287038">
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769287039" />
+                <node role="initValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeReference:4" id="2301870845769287040">
+                  <link role="attribute:4" targetNodeId="2301870845769287022" resolveInfo="name" />
+                </node>
+                <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769287041" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodes:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeRule:4" id="2301870845769287042">
+      <property name="name:4" value="link" />
+      <property name="tagName:4" value="link" />
+      <property name="isCompact:4" value="true" />
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769287043">
+        <property name="name:4" value="role" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769287044">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287045">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287046">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769287047">
+                <node role="rValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769287048" />
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769287049">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769287050">
+                    <property name="value:3" value="0" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769287051" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769287052">
+        <property name="name:4" value="resolveInfo" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769287053">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287054">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287055">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769287056">
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769287057">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769287058">
+                    <property name="value:3" value="1" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769287059" />
+                </node>
+                <node role="rValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769287060" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="attrs:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeRule:4" id="2301870845769287061">
+        <property name="name:4" value="targetNodeId" />
+        <node role="handler:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler:4" id="2301870845769287062">
+          <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287063">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287064">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2301870845769287065">
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="2301870845769287066">
+                  <node role="index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2301870845769287067">
+                    <property name="value:3" value="2" />
+                  </node>
+                  <node role="array:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXHandler_resultObject:4" id="2301870845769287068" />
+                </node>
+                <node role="rValue:3" type="jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value:4" id="2301870845769287069" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:4" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="2301870845769287070">
+        <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769287071" />
+      </node>
+      <node role="creator:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator:4" id="2301870845769287072">
+        <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2301870845769287073">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2301870845769287074">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2301870845769287075">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="2301870845769287076">
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2301870845769287077" />
+                <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769287078" />
+                <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769287079" />
+                <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2301870845769287080" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="globalText:4" type="jetbrains.mps.xmlQuery.structure.XMLSAXTextRule:4" id="2301870845769287081" />
   </node>
 </model>
 

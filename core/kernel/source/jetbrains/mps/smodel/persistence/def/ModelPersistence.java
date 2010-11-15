@@ -86,7 +86,11 @@ public class ModelPersistence {
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
   public static final String IMPLICIT = "implicit";
-  public static final String ROOTS = "root_stubs";
+  public static final String ROOTS = "roots";
+  public static final String ROOT_CONTENT = "root";
+
+  @Deprecated
+  public static final String ROOT_STUBS = "root_stubs";
 
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";

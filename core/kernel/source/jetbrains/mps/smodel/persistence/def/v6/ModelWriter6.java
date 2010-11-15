@@ -90,7 +90,7 @@ public class ModelWriter6 implements IModelWriter {
   }
 
   protected void saveRootStubs(Element parent, SModel model) {
-    Element roots = new Element(ModelPersistence.ROOTS);
+    Element roots = new Element(ModelPersistence.ROOT_STUBS);
     for (SNode root : model.roots()) {
       saveNode(roots, root, false);
     }
