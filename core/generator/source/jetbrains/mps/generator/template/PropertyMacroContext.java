@@ -28,7 +28,7 @@ public class PropertyMacroContext extends TemplateQueryContextWithMacro {
     myTemplateValue = templateValue;
   }
 
-  public PropertyMacroContext(SNode node, String templateValue, SNodePointer macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
+  public PropertyMacroContext(SNode node, String templateValue, @NotNull SNodePointer macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myTemplateValue = templateValue;
   }

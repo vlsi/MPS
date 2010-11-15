@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
@@ -32,6 +33,7 @@ public interface TemplateExecutionEnvironment {
 
   public SModel getOutputModel();
 
+  @NotNull
   public TemplateGenerator getGenerator();
 
   public IGenerationTracer getTracer();

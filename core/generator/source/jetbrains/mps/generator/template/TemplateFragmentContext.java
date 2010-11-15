@@ -28,7 +28,7 @@ public class TemplateFragmentContext extends TemplateQueryContextWithMacro {
     myMainContextNode = mainContextNode;
   }
 
-  public TemplateFragmentContext(SNode mainContextNode, SNodePointer tfMacro, @NotNull TemplateContext context, ITemplateGenerator generator) {
+  public TemplateFragmentContext(SNode mainContextNode, @NotNull SNodePointer tfMacro, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(context.getInput(), tfMacro, context, generator);
     myMainContextNode = mainContextNode;
   }

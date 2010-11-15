@@ -28,7 +28,7 @@ public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
     myOutputNode = outputNode;
   }
 
-  public MapSrcMacroPostProcContext(SNode node, SNodePointer macroNode, SNode outputNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
+  public MapSrcMacroPostProcContext(SNode node, @NotNull SNodePointer macroNode, SNode outputNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
   }

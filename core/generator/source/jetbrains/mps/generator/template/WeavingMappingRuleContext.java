@@ -17,13 +17,14 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 public class WeavingMappingRuleContext extends TemplateQueryContextWithRule {
   public WeavingMappingRuleContext(SNode node, SNode ruleNode, ITemplateGenerator generator) {
     super(node, ruleNode, generator);
   }
 
-  public WeavingMappingRuleContext(SNode node, SNodePointer ruleNode, ITemplateGenerator generator) {
+  public WeavingMappingRuleContext(SNode node, @NotNull SNodePointer ruleNode, @NotNull ITemplateGenerator generator) {
     super(node, ruleNode, generator);
   }
 }

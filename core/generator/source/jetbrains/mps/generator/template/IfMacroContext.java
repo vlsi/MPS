@@ -18,6 +18,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 public class IfMacroContext extends TemplateQueryContextWithMacro {
 
@@ -25,7 +26,7 @@ public class IfMacroContext extends TemplateQueryContextWithMacro {
     super(node, ifMacro, context, generator);
   }
 
-  public IfMacroContext(SNode node, SNodePointer ifMacro, TemplateContext context, ITemplateGenerator generator) {
+  public IfMacroContext(SNode node, @NotNull SNodePointer ifMacro, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, ifMacro, context, generator);
   }
 

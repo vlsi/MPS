@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 public class CreateRootRuleContext extends TemplateQueryContextWithRule {
 
@@ -24,7 +25,7 @@ public class CreateRootRuleContext extends TemplateQueryContextWithRule {
     super(null, ruleNode, generator);
   }
 
-  public CreateRootRuleContext(SNodePointer ruleNode, ITemplateGenerator generator) {
+  public CreateRootRuleContext(@NotNull SNodePointer ruleNode, @NotNull ITemplateGenerator generator) {
     super(null, ruleNode, generator);
   }
 }

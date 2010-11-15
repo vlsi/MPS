@@ -17,13 +17,14 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 public class BaseMappingRuleContext extends TemplateQueryContextWithRule {
   public BaseMappingRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 
-  public BaseMappingRuleContext(SNode inputNode, SNodePointer ruleNode, ITemplateGenerator generator) {
+  public BaseMappingRuleContext(SNode inputNode, @NotNull SNodePointer ruleNode, @NotNull ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 }

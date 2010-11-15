@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
     myRole = macroNode.getRole_();
   }
 
-  public ReferenceMacroContext(SNode node, SNode outputNode, SNodePointer macroNode, String role, TemplateContext context, ITemplateGenerator generator) {
+  public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodePointer macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
     myRole = role;
