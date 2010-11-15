@@ -18,12 +18,28 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class WeavingMappingRuleContext extends TemplateQueryContextWithRule {
-  public WeavingMappingRuleContext(SNode node, SNode ruleNode, ITemplateGenerator generator) {
-    super(node, ruleNode, generator);
+/**
+ * Evgeny Gryaznov, 11/15/10
+ */
+public class TemplateQueryContextWithRule extends TemplateQueryContext {
+  private final SNode myRule;
+  private final SNodePointer myRulePointer;
+
+  public TemplateQueryContextWithRule(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+    super(inputNode, null, null, generator);
+    myRule = ruleNode;
+    myRulePointer = null;
   }
 
-  public WeavingMappingRuleContext(SNode node, SNodePointer ruleNode, ITemplateGenerator generator) {
-    super(node, ruleNode, generator);
+  public TemplateQueryContextWithRule(SNode inputNode, SNodePointer ruleNode, ITemplateGenerator generator) {
+    super(inputNode, null, null, generator);
+    myRule = null;
+    myRulePointer = ruleNode;
   }
+
+  public SNode getRuleNodeForLogging() {
+    return myRule != null ? myRule :
+      myRulePointer != null ? myRulePointer.getNode() : null;
+  }
+
 }

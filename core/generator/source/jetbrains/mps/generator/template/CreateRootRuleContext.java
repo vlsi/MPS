@@ -16,16 +16,15 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
-public class CreateRootRuleContext extends TemplateQueryContext {
-  private SNode myRule;
+public class CreateRootRuleContext extends TemplateQueryContextWithRule {
 
   public CreateRootRuleContext(SNode ruleNode, ITemplateGenerator generator) {
-    super(null, null, null, generator);
-    myRule = ruleNode;
+    super(null, ruleNode, generator);
   }
 
-  public SNode getRuleNodeForLogging() {
-    return myRule;
+  public CreateRootRuleContext(SNodePointer ruleNode, ITemplateGenerator generator) {
+    super(null, ruleNode, generator);
   }
 }

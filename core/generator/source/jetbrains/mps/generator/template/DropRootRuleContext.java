@@ -16,16 +16,15 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
-public class DropRootRuleContext extends TemplateQueryContext {
-  private SNode myRule;
+public class DropRootRuleContext extends TemplateQueryContextWithRule {
 
   public DropRootRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    super(inputNode, null, null, generator);
-    myRule = ruleNode;
+    super(inputNode, ruleNode, generator);
   }
 
-  public SNode getRuleNodeForLogging() {
-    return myRule;
+  public DropRootRuleContext(SNode inputNode, SNodePointer ruleNode, ITemplateGenerator generator) {
+    super(inputNode, ruleNode, generator);
   }
 }
