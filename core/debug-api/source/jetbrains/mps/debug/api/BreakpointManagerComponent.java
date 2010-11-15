@@ -71,6 +71,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
   private final SessionChangeListener myChangeListener = new MySessionChangeAdapter();
   private final DebugSessionListener myDebugSessionListener = new MyDebugSessionAdapter();
+  private final List<IBreakpointManagerListener> myListeners = new ArrayList<IBreakpointManagerListener>();
 
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(BreakpointManagerComponent.class);
@@ -281,6 +282,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       breakpoint.addBreakpointListener(myBreakpointListener);
       breakpoint.addToRunningSessions();
     }
+    fireBreakpointsChanged();
   }
 
   public void removeBreakpoint(final IBreakpoint breakpoint) {
@@ -320,6 +322,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         }
       }
     });
+    fireBreakpointsChanged();
   }
 
   public void clear() {
@@ -380,6 +383,28 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public Set<IBreakpoint> getAllBreakpoints() {
     synchronized (myBreakpoints) {
       return new HashSet<IBreakpoint>(myBreakpoints);
+    }
+  }
+
+  public void addChangeListener(IBreakpointManagerListener listener) {
+    synchronized (myListeners) {
+      myListeners.add(listener);
+    }
+  }
+
+  public void removeChangeListener(IBreakpointManagerListener listener) {
+    synchronized (myListeners) {
+      myListeners.remove(listener);
+    }
+  }
+
+  private void fireBreakpointsChanged() {
+    List<IBreakpointManagerListener> listeners;
+    synchronized (myListeners) {
+      listeners = new ArrayList<IBreakpointManagerListener>(myListeners);
+    }
+    for (IBreakpointManagerListener listener : listeners) {
+      listener.breakpointsChanged();
     }
   }
 
@@ -479,5 +504,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     public void editorClosed(MPSFileNodeEditor editor) {
       editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
     }
+  }
+
+  public interface IBreakpointManagerListener {
+    void breakpointsChanged();
   }
 }

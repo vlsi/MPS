@@ -50,7 +50,6 @@ public class BreakpointsTable extends BreakpointsView {
     return myBreakpointsTable;
   }
 
-  @Override
   public void breakpointDeleted(IBreakpoint breakpoint) {
     // do not know why, but update does not work here
     int row = getBreakpointsList().indexOf(breakpoint);

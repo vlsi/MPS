@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 
 import javax.swing.JComponent;
@@ -28,10 +29,21 @@ public abstract class BreakpointsView implements DataProvider {
   public static DataKey<AbstractMPSBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<IBreakpoint> myBreakpointsList;
   private final BreakpointManagerComponent myBreakpointsManager;
+  private final IBreakpointManagerListener myListener = new IBreakpointManagerListener() {
+    @Override
+    public void breakpointsChanged() {
+      update();
+    }
+  };
 
   public BreakpointsView(BreakpointManagerComponent breakpointsManager) {
     myBreakpointsManager = breakpointsManager;
+    myBreakpointsManager.addChangeListener(myListener);
     updateBreakpoints();
+  }
+
+  public void dispose() {
+    myBreakpointsManager.removeChangeListener(myListener);
   }
 
   protected final void updateBreakpoints() {
@@ -55,13 +67,12 @@ public abstract class BreakpointsView implements DataProvider {
     return bpList;
   }
 
-  public void breakpointDeleted(IBreakpoint breakpoint){
-    update();
+  public void saveState() {
   }
 
-  public void saveState(){}
-  
   public abstract String getTitle();
+
   public abstract void update();
+
   public abstract JComponent getMainComponent();
 }

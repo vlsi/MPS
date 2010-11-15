@@ -108,7 +108,6 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
             myBreakpointsManager.removeBreakpoint(breakpoint);
           }
         });
-        myViews[myCurrentViewIndex].breakpointDeleted(breakpoint); //todo get rid of that!
       }
 
       @Override
@@ -324,5 +323,13 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Nullable
   public Object getData(@NonNls String dataId) {
     return myViews[myCurrentViewIndex].getData(dataId);
+  }
+
+  @Override
+  public void dispose() {
+    for (BreakpointsView view : myViews){
+      view.dispose();
+    }
+    super.dispose();
   }
 }
