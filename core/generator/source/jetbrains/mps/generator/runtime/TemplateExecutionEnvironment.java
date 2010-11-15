@@ -20,7 +20,6 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
@@ -33,14 +32,14 @@ public interface TemplateExecutionEnvironment {
 
   public SModel getOutputModel();
 
-  @NotNull
+
   public TemplateGenerator getGenerator();
 
   public IGenerationTracer getTracer();
 
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName);
 
-  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId);
+  public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
 

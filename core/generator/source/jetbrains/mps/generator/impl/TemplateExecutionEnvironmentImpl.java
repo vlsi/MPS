@@ -61,12 +61,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return Collections.emptyList();
   }
 
-  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId) {
-//    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
-//    for (SNode historyInputNode : context.getInputHistory()) {
-//      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
-//    }
-//    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
+  public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
+    GeneratorMappings mappings = generator.getMappings();
+    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
+    for (SNode historyInputNode : context.getInputHistory()) {
+      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNodeId, outputNode);
+    }
+    mappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
   }
 
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
@@ -80,29 +81,31 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
-
+    // TODO
   }
 
   public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
-
+    // TODO
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
-
+    // TODO
   }
 
   /*
   *  returns temporary node
   */
   public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
+    // TODO
     return null;
   }
 
   public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
-
+    // TODO
   }
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {
+    // TODO
     return null;
   }
 }

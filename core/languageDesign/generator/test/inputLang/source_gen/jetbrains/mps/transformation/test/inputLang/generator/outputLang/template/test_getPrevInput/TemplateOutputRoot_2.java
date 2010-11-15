@@ -41,7 +41,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_rz5qmw_a0a0a1a0);
-      environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338159177");
+      environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338159177");
       tnode1.setProperty("name", "OutputRoot_2");
       tnode1.setProperty("text", "'getPrevInputTest' output root (2)");
 
@@ -91,7 +91,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
                           final SNode tnode5 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_rz5qmw_a0a0a3a2a2a3a2a2a3a2a2a1a5a1a0);
-                            environment.nodeCopied(context4.getInput(), tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");
+                            environment.nodeCopied(context4, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");
                             tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_rz5qmw_c0b0b0a2a3a2a2a3a2a2a3a2a2a1a5a1a0, context4, environment.getGenerator())));
 
                             {

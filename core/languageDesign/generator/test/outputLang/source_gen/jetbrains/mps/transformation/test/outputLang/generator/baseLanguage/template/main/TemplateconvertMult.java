@@ -33,13 +33,13 @@ public class TemplateconvertMult implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_eum2xg_a0a0a2a0);
-      environment.nodeCopied(contextWithParameters.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617074");
+      environment.nodeCopied(contextWithParameters, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617074");
 
       {
         final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_eum2xg_a0a0a1a3a2a0);
-          environment.nodeCopied(contextWithParameters.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617076");
+          environment.nodeCopied(contextWithParameters, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617076");
 
           {
             Collection<SNode> tlist3 = null;

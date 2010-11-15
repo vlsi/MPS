@@ -23,7 +23,7 @@ public class TemplateoutputRoot implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_9pkn2m_a0a0a1a0);
-      environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605205934");
+      environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605205934");
       tnode1.setProperty("name", "outputRoot");
       tnode1.setProperty("text", "output for 'don't apply reduction rule twice' test");
 
@@ -31,7 +31,7 @@ public class TemplateoutputRoot implements TemplateDeclaration {
         final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_9pkn2m_a0a0a1a5a1a0);
-          environment.nodeCopied(context.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605724998");
+          environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605724998");
           tnode2.setProperty("text", "this is OutputNode_forDontApplyReductionTwice_test actually");
 
         } finally {

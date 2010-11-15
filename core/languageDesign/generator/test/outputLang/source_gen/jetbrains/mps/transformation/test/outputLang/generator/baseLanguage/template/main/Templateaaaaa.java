@@ -27,13 +27,13 @@ public class Templateaaaaa implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.BlockStatement", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_54ml0j_a0a0a2a0);
-      environment.nodeCopied(contextWithParameters.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731890");
+      environment.nodeCopied(contextWithParameters, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731890");
 
       {
         final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StatementList", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_54ml0j_a0a0a1a3a2a0);
-          environment.nodeCopied(contextWithParameters.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731891");
+          environment.nodeCopied(contextWithParameters, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731891");
 
         } finally {
           environment.getTracer().pushOutputNode(tnode2);

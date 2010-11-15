@@ -22,7 +22,7 @@ public class TemplateOutputRoot_By_RootRule implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_yy1eeq_a0a0a1a0);
-      environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195166061402");
+      environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195166061402");
       tnode1.setProperty("name", "OutputRoot_By_RootRule");
       tnode1.setProperty("text", "OutputRoot by RootRule");
 

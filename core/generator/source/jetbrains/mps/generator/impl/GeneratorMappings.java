@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl;
 
+import com.sun.xml.internal.bind.v2.util.QNameMap;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.cache.BrokenCacheException;
@@ -31,21 +32,31 @@ public class GeneratorMappings {
   /* Object means multiple nodes for the template */
   private final ConcurrentMap<SNode, Object> myTemplateNodeToOutputNodeMap = new ConcurrentHashMap<SNode, Object>();
 
+  /* new style map: Object means multiple nodes for the template */
+  private final ConcurrentMap<String, Object> myTemplateNodeIdToOutputNodeMap = new ConcurrentHashMap<String, Object>();
+
   /* template,input -> output */
   private final ConcurrentMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<SNode, SNode>, SNode>();
+
+  /* new style map: template,input -> output */
+  private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
 
   public GeneratorMappings(int numberOfNodesInModel) {
     /* we use non-default load factor to reduce memory usage */
     myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel, 2);
   }
 
+  // add methods
+
   void addOutputNodeByTemplateNode(SNode templateNode, @NotNull SNode outputNode) {
-    synchronized (templateNode) {
-      if (myTemplateNodeToOutputNodeMap.containsKey(templateNode)) {
-        myTemplateNodeToOutputNodeMap.put(templateNode, this);
-        return;
-      }
-      myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
+    if(myTemplateNodeToOutputNodeMap.putIfAbsent(templateNode, outputNode) != null) {
+      myTemplateNodeToOutputNodeMap.put(templateNode, this);
+    }
+  }
+
+  void addOutputNodeByTemplateNode(String templateNodeId, @NotNull SNode outputNode) {
+    if(myTemplateNodeIdToOutputNodeMap.putIfAbsent(templateNodeId, outputNode) != null) {
+      myTemplateNodeIdToOutputNodeMap.put(templateNodeId, this);
     }
   }
 
@@ -99,6 +110,14 @@ public class GeneratorMappings {
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
+  void addOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId, SNode outputNode) {
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should report error on attempt to obtain not unique output-node
+    if (templateNodeId == null) return;
+    myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair(templateNodeId, inputNode), outputNode);
+  }
+  
   void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
@@ -107,12 +126,21 @@ public class GeneratorMappings {
     myTemplateNodeAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
   }
 
+  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, String templateNodeId, SNode outputNode) {
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should report error on attempt to obtain not unique output-node
+    Pair key = new Pair(templateNodeId, inditectInputNode);
+    myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
+  }
+
   // find methods
 
   public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
     Object o = myTemplateNodeToOutputNodeMap.get(templateNode);
     return o instanceof SNode ? (SNode) o : null;
   }
+
 
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, IGeneratorLogger logger) {
     if (mappingName == null) return null;
@@ -155,6 +183,10 @@ public class GeneratorMappings {
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     return myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
+  }
+
+  public SNode findOutputNodeByInputAndTemplateNodeId(SNode inputNode, String templateNodeId) {
+    return myTemplateNodeIdAndInputNodeToOutputNodeMap.get(new Pair(templateNodeId, inputNode));
   }
 
   public boolean isInputNodeHasUniqueCopiedOutputNode(SNode inputNode) {
