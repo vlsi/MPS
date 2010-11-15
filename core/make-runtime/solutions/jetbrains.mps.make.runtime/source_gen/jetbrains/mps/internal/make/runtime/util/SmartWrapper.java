@@ -6,11 +6,10 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.regex.Pattern;
-import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
 public class SmartWrapper<T> {
   private static Map<String, String> WRAPPERS_CACHE = MapSequence.fromMap(new HashMap<String, String>());
-  private static Pattern REGEXP_awov2t_b0a2a2 = Pattern.compile(".+\\.(.+)$", 0);
+  private static Pattern PATTERN = Pattern.compile(".+\\.(.+)$");
 
   private final T towrap;
 
@@ -31,7 +30,7 @@ public class SmartWrapper<T> {
     if (MapSequence.fromMap(WRAPPERS_CACHE).containsKey(name)) {
       return MapSequence.fromMap(WRAPPERS_CACHE).get(name);
     }
-    String sn = RegexpOperations.replace(name, REGEXP_awov2t_b0a2a2, new _Replacer_a0a0c0c(SmartWrapper.this, null));
+    String sn = PATTERN.matcher(name).replaceAll("$1");
     String toCache = sn.replace("$", ".");
     MapSequence.fromMap(WRAPPERS_CACHE).put(name, toCache);
     return toCache;
