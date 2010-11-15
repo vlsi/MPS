@@ -1,69 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895903b1(closures.sandbox.misc)">
-  <persistence version="4" />
-  <refactoringHistory />
+  <persistence version="7" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="11" />
-  <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="7" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="11" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1221651112606">
-    <property name="name:3" value="Debug" />
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1221651191297">
-      <property name="name:3" value="debugThis" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1221651191298" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221651191299">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1222775672898">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1222775672899">
-            <property name="name:3" value="meet" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType:3" id="1222775672900">
-              <node role="parameterType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1222775672901" />
-              <node role="resultType:3" type="jetbrains.mps.lang.typesystem.structure.MeetType:3" id="1222775672902">
-                <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1222775672903" />
-                <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1222775672904" />
+  <import index="vhgx" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="2uit" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="tiz1" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="zevl" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
+  <import index="yviq" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
+  <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="yvix" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="yvo4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
+  <import index="yvkm" modelUID="r:00000000-0000-4000-0000-011c895903b1(closures.sandbox.misc)" version="-1" implicit="yes" />
+  <roots>
+    <node type="yvor.ClassConcept" typeId="yvor.1068390468198:3" id="1221651112606">
+      <property name="name" nameId="yvnu.1169194664001:0" value="Debug" />
+    </node>
+    <node type="yvor.Interface" typeId="yvor.1107796713796:3" id="1221651222638">
+      <property name="name" nameId="yvnu.1169194664001:0" value="Worker" />
+    </node>
+    <node type="yvor.ClassConcept" typeId="yvor.1068390468198:3" id="1222958673994">
+      <property name="name" nameId="yvnu.1169194664001:0" value="MyWorker" />
+    </node>
+    <node type="yvor.ClassConcept" typeId="yvor.1068390468198:3" id="3329614760086819472">
+      <property name="name" nameId="yvnu.1169194664001:0" value="Jabberwocky" />
+    </node>
+  </roots>
+  <root id="1221651112606">
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="1221651191297">
+      <property name="name" nameId="yvnu.1169194664001:0" value="debugThis" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1221651191298" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1221651191299">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="1222775672898">
+          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="1222775672899">
+            <property name="name" nameId="yvnu.1169194664001:0" value="meet" />
+            <node role="type" roleId="yvor.5680397130376446158:3" type="yviq.FunctionType" typeId="yviq.1199542442495:3" id="1222775672900">
+              <node role="parameterType" roleId="yviq.1199542501692:3" type="yvor.IntegerType" typeId="yvor.1070534370425:3" id="1222775672901" />
+              <node role="resultType" roleId="yviq.1199542457201:3" type="yvo4.MeetType" typeId="yvo4.1188473524530:3" id="1222775672902">
+                <node role="argument" roleId="yvo4.1188473537547:3" type="yvor.IntegerType" typeId="yvor.1070534370425:3" id="1222775672903" />
+                <node role="argument" roleId="yvo4.1188473537547:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="1222775672904" />
               </node>
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1222775700761" />
+            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="1222775700761" />
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1222765452529">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222765912053">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222765452530">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1222765452531">
-                <link role="classConcept:3" targetNodeId="11.6543581031674023524" resolveInfo="Sequence" />
-                <link role="baseMethodDeclaration:3" targetNodeId="11.6543581031674023610" resolveInfo="fromIterable" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1222765996269">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator:7" id="1227876790336">
-                    <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1227876790337" />
-                    <node role="initializer:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="1227876790338">
-                      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227876790339">
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement:3" id="1227876819233">
-                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1227876819234">
-                            <property name="value:3" value="3" />
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="1222765452529">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1222765912053">
+            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1222765452530">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="1222765452531">
+                <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="zevl.6543581031674023524" resolveInfo="Sequence" />
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="zevl.6543581031674023610" resolveInfo="fromIterable" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="1222765996269">
+                  <node role="creator" roleId="yvor.1145553007750:3" type="yvix.SequenceCreator" typeId="yvix.1224414427926:7" id="1227876790336">
+                    <node role="elementType" roleId="yvix.1224414456414:7" type="yvor.IntegerType" typeId="yvor.1070534370425:3" id="1227876790337" />
+                    <node role="initializer" roleId="yvix.1224414466839:7" type="yviq.ClosureLiteral" typeId="yviq.1199569711397:3" id="1227876790338">
+                      <node role="body" roleId="yviq.1199569916463:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1227876790339">
+                        <node role="statement" roleId="yvor.1068581517665:3" type="yviq.YieldStatement" typeId="yviq.1200830824066:3" id="1227876819233">
+                          <node role="expression" roleId="yviq.1200830928149:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="1227876819234">
+                            <property name="value" nameId="yvor.1068580320021:3" value="3" />
                           </node>
                         </node>
                       </node>
@@ -71,27 +68,27 @@
                   </node>
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222765452535">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.6543581031674024374" resolveInfo="select" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1222775672914">
-                  <link role="variableDeclaration:3" targetNodeId="1222775672899" resolveInfo="meet" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="1222765452535">
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="zevl.6543581031674024374" resolveInfo="select" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="1222775672914">
+                  <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="1222775672899" resolveInfo="meet" />
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222765914152">
-              <link role="baseMethodDeclaration:3" targetNodeId="11.6543581031674024364" resolveInfo="translate" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="1222765975373">
-                <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1222765975374">
-                  <property name="name:7" value="it" />
-                  <node role="type:7" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="1222765975375" />
+            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="1222765914152">
+              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="zevl.6543581031674024364" resolveInfo="translate" />
+              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yviq.ClosureLiteral" typeId="yviq.1199569711397:3" id="1222765975373">
+                <node role="parameter" roleId="yviq.1199569906740:3" type="yvix.SmartClosureParameterDeclaration" typeId="yvix.1203518072036:7" id="1222765975374">
+                  <property name="name" nameId="yvnu.1169194664001:0" value="it" />
+                  <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.WildCardType" typeId="yvor.1171903607971:3" id="1222765975375" />
                 </node>
-                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222765975376">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement:3" id="1222765975377">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1222765975378">
-                      <link role="classConcept:3" targetNodeId="1.~String" resolveInfo="String" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="1.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1222765975379">
-                        <link role="variableDeclaration:3" targetNodeId="1222765975374" resolveInfo="it" />
+                <node role="body" roleId="yviq.1199569916463:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1222765975376">
+                  <node role="statement" roleId="yvor.1068581517665:3" type="yviq.YieldStatement" typeId="yviq.1200830824066:3" id="1222765975377">
+                    <node role="expression" roleId="yviq.1200830928149:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="1222765975378">
+                      <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="vhgx.~String" resolveInfo="String" />
+                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~String%dvalueOf(int)%cjava%dlang%dString" resolveInfo="valueOf" />
+                      <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="1222765975379">
+                        <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="1222765975374" resolveInfo="it" />
                       </node>
                     </node>
                   </node>
@@ -101,205 +98,202 @@
           </node>
         </node>
       </node>
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1222428896159" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="1222428896159" />
     </node>
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1221651112607" />
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="1221651222638">
-    <property name="name:3" value="Worker" />
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1221651222639">
-      <property name="name:3" value="doWork" />
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1221651222640">
-        <property name="name:3" value="duration" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1221651222641">
-          <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
+    <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1221651112607" />
+  </root>
+  <root id="1221651222638">
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="1221651222639">
+      <property name="name" nameId="yvnu.1169194664001:0" value="doWork" />
+      <node role="parameter" roleId="yvor.1068580123134:3" type="yvor.ParameterDeclaration" typeId="yvor.1068498886292:3" id="1221651222640">
+        <property name="name" nameId="yvnu.1169194664001:0" value="duration" />
+        <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="1221651222641">
+          <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="vhgx.~Integer" resolveInfo="Integer" />
         </node>
       </node>
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225209590375" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1221651222643" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221651222644" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.StringType" typeId="yvor.1225271177708:3" id="1225209590375" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1221651222643" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1221651222644" />
     </node>
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1221651222645" />
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1222958673994">
-    <property name="name:3" value="MyWorker" />
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1222958673995" />
-    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1222958673996">
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1222958673997" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1222958673998" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222958673999" />
+    <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1221651222645" />
+  </root>
+  <root id="1222958673994">
+    <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1222958673995" />
+    <node role="constructor" roleId="yvor.1068390468201:3" type="yvor.ConstructorDeclaration" typeId="yvor.1068580123140:3" id="1222958673996">
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="1222958673997" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1222958673998" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1222958673999" />
     </node>
-    <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1222958682313">
-      <link role="classifier:3" targetNodeId="1221651222638" resolveInfo="Worker" />
+    <node role="implementedInterface" roleId="yvor.1095933932569:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="1222958682313">
+      <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="1221651222638" resolveInfo="Worker" />
     </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1222958686689">
-      <property name="name:3" value="doWork" />
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1222958686690">
-        <property name="name:3" value="duration" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1222958686691">
-          <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="1222958686689">
+      <property name="name" nameId="yvnu.1169194664001:0" value="doWork" />
+      <node role="parameter" roleId="yvor.1068580123134:3" type="yvor.ParameterDeclaration" typeId="yvor.1068498886292:3" id="1222958686690">
+        <property name="name" nameId="yvnu.1169194664001:0" value="duration" />
+        <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="1222958686691">
+          <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="vhgx.~Integer" resolveInfo="Integer" />
         </node>
       </node>
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225209590533" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1222958686693" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222958686694">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4816492477345853494">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4816492477345853495" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.StringType" typeId="yvor.1225271177708:3" id="1225209590533" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="1222958686693" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1222958686694">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="4816492477345853494">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4816492477345853495" />
         </node>
       </node>
     </node>
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3329614760086819472">
-    <property name="name:3" value="Jabberwocky" />
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3329614760086819478">
-      <property name="name:3" value="testing" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3329614760086819479" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086819480" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3329614760086819481">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3329614760086841984">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3329614760086841985">
-            <property name="name:3" value="rec" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3329614760086841986">
-              <link role="classifier:3" targetNodeId="7.~Rectangle" resolveInfo="Rectangle" />
+  </root>
+  <root id="3329614760086819472">
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="3329614760086819478">
+      <property name="name" nameId="yvnu.1169194664001:0" value="testing" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="3329614760086819479" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086819480" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="3329614760086819481">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="3329614760086841984">
+          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="3329614760086841985">
+            <property name="name" nameId="yvnu.1169194664001:0" value="rec" />
+            <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="3329614760086841986">
+              <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="2uit.~Rectangle" resolveInfo="Rectangle" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3329614760086841988">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3329614760086841989">
-                <link role="baseMethodDeclaration:3" targetNodeId="7.~Rectangle.&lt;init&gt;(int,int,int,int)" resolveInfo="Rectangle" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3329614760086841990">
-                  <property name="value:3" value="0" />
+            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="3329614760086841988">
+              <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="3329614760086841989">
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="2uit.~Rectangle%d&lt;init&gt;(int,int,int,int)" resolveInfo="Rectangle" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="3329614760086841990">
+                  <property name="value" nameId="yvor.1068580320021:3" value="0" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3329614760086841992">
-                  <property name="value:3" value="0" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="3329614760086841992">
+                  <property name="value" nameId="yvor.1068580320021:3" value="0" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3329614760086841994">
-                  <property name="value:3" value="1" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="3329614760086841994">
+                  <property name="value" nameId="yvor.1068580320021:3" value="1" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3329614760086841996">
-                  <property name="value:3" value="1" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="3329614760086841996">
+                  <property name="value" nameId="yvor.1068580320021:3" value="1" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3329614760086836878">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3329614760086836879">
-            <property name="name:3" value="dim" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3329614760086836880">
-              <link role="classifier:3" targetNodeId="7.~Dimension" resolveInfo="Dimension" />
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="3329614760086836878">
+          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="3329614760086836879">
+            <property name="name" nameId="yvnu.1169194664001:0" value="dim" />
+            <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="3329614760086836880">
+              <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="2uit.~Dimension" resolveInfo="Dimension" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3329614760086836882">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3329614760086836883">
-                <link role="baseMethodDeclaration:3" targetNodeId="7.~Dimension.&lt;init&gt;(int,int)" resolveInfo="Dimension" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3329614760086836884">
-                  <property name="value:3" value="0" />
+            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="3329614760086836882">
+              <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="3329614760086836883">
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="2uit.~Dimension%d&lt;init&gt;(int,int)" resolveInfo="Dimension" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="3329614760086836884">
+                  <property name="value" nameId="yvor.1068580320021:3" value="0" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3329614760086836886">
-                  <property name="value:3" value="0" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="3329614760086836886">
+                  <property name="value" nameId="yvor.1068580320021:3" value="0" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3329614760086841997">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression:3" id="3329614760086842004">
-            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086842008">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3329614760086842007">
-                <link role="variableDeclaration:3" targetNodeId="3329614760086836879" resolveInfo="dim" />
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="3329614760086841997">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.PlusAssignmentExpression" typeId="yvor.1215695189714:3" id="3329614760086842004">
+            <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086842008">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="3329614760086842007">
+                <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="3329614760086836879" resolveInfo="dim" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3329614760086842012">
-                <link role="fieldDeclaration:3" targetNodeId="7.~Dimension.width" resolveInfo="width" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.FieldReferenceOperation" typeId="yvor.1197029447546:3" id="3329614760086842012">
+                <link role="fieldDeclaration" roleId="yvor.1197029500499:3" targetNodeId="2uit.~Dimension%dwidth" resolveInfo="width" />
               </node>
             </node>
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086841999">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3329614760086841998">
-                <link role="variableDeclaration:3" targetNodeId="3329614760086841985" resolveInfo="rec" />
+            <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086841999">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="3329614760086841998">
+                <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="3329614760086841985" resolveInfo="rec" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3329614760086842003">
-                <link role="fieldDeclaration:3" targetNodeId="7.~Rectangle.x" resolveInfo="x" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.FieldReferenceOperation" typeId="yvor.1197029447546:3" id="3329614760086842003">
+                <link role="fieldDeclaration" roleId="yvor.1197029500499:3" targetNodeId="2uit.~Rectangle%dx" resolveInfo="x" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3329614760086842014">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression:3" id="3329614760086842021">
-            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086842025">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3329614760086842024">
-                <link role="variableDeclaration:3" targetNodeId="3329614760086836879" resolveInfo="dim" />
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="3329614760086842014">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.PlusAssignmentExpression" typeId="yvor.1215695189714:3" id="3329614760086842021">
+            <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086842025">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="3329614760086842024">
+                <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="3329614760086836879" resolveInfo="dim" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3329614760086842029">
-                <link role="fieldDeclaration:3" targetNodeId="7.~Dimension.height" resolveInfo="height" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.FieldReferenceOperation" typeId="yvor.1197029447546:3" id="3329614760086842029">
+                <link role="fieldDeclaration" roleId="yvor.1197029500499:3" targetNodeId="2uit.~Dimension%dheight" resolveInfo="height" />
               </node>
             </node>
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086842016">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3329614760086842015">
-                <link role="variableDeclaration:3" targetNodeId="3329614760086841985" resolveInfo="rec" />
+            <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086842016">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="3329614760086842015">
+                <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="3329614760086841985" resolveInfo="rec" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3329614760086842020">
-                <link role="fieldDeclaration:3" targetNodeId="7.~Rectangle.y" resolveInfo="y" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.FieldReferenceOperation" typeId="yvor.1197029447546:3" id="3329614760086842020">
+                <link role="fieldDeclaration" roleId="yvor.1197029500499:3" targetNodeId="2uit.~Rectangle%dy" resolveInfo="y" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3329614760086842032">
-      <property name="name:3" value="testing2" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3329614760086842033" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086842034" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3329614760086842035">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3329614760086842038">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3329614760086842039">
-            <property name="name:3" value="o" />
-            <property name="isFinal:3" value="true" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3329614760086856939">
-              <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="3329614760086842032">
+      <property name="name" nameId="yvnu.1169194664001:0" value="testing2" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="3329614760086842033" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086842034" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="3329614760086842035">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="3329614760086842038">
+          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="3329614760086842039">
+            <property name="name" nameId="yvnu.1169194664001:0" value="o" />
+            <property name="isFinal" nameId="yvor.1176718929932:3" value="true" />
+            <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="3329614760086856939">
+              <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="vhgx.~Object" resolveInfo="Object" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3329614760086842042">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3329614760086842043">
-                <link role="baseMethodDeclaration:3" targetNodeId="1.~Object.&lt;init&gt;()" resolveInfo="Object" />
+            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="3329614760086842042">
+              <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="3329614760086842043">
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~Object%d&lt;init&gt;()" resolveInfo="Object" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3329614760086842045">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3329614760086842046">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3329614760086842048">
-              <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3329614760086842049">
-                <property name="nonStatic:3" value="true" />
-                <link role="baseMethodDeclaration:3" targetNodeId="1.~Object.&lt;init&gt;()" resolveInfo="Object" />
-                <link role="classifier:3" targetNodeId="1.~Runnable" resolveInfo="Runnable" />
-                <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086842050" />
-                <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3329614760086842067">
-                  <property name="name:3" value="h" />
-                  <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086856946" />
-                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086856941">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3329614760086848604">
-                      <link role="variableDeclaration:3" targetNodeId="3329614760086842039" resolveInfo="jp" />
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="3329614760086842045">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="3329614760086842046">
+            <node role="creator" roleId="yvor.1145553007750:3" type="yvor.AnonymousClassCreator" typeId="yvor.1182160077978:3" id="3329614760086842048">
+              <node role="cls" roleId="yvor.1182160096073:3" type="yvor.AnonymousClass" typeId="yvor.1170345865475:3" id="3329614760086842049">
+                <property name="nonStatic" nameId="yvor.521412098689998745:3" value="true" />
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                <link role="classifier" roleId="yvor.1170346070688:3" targetNodeId="vhgx.~Runnable" resolveInfo="Runnable" />
+                <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086842050" />
+                <node role="field" roleId="yvor.1068390468199:3" type="yvor.FieldDeclaration" typeId="yvor.1068390468200:3" id="3329614760086842067">
+                  <property name="name" nameId="yvnu.1169194664001:0" value="h" />
+                  <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086856946" />
+                  <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086856941">
+                    <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="3329614760086848604">
+                      <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="3329614760086842039" resolveInfo="jp" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3329614760086856945">
-                      <link role="baseMethodDeclaration:3" targetNodeId="1.~Object.hashCode():int" resolveInfo="hashCode" />
+                    <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="3329614760086856945">
+                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~Object%dhashCode()%cint" resolveInfo="hashCode" />
                     </node>
                   </node>
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3329614760086856940" />
+                  <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.IntegerType" typeId="yvor.1070534370425:3" id="3329614760086856940" />
                 </node>
-                <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3329614760086856947">
-                  <property name="name:3" value="run" />
-                  <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086856948" />
-                  <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3329614760086856949" />
-                  <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3329614760086856950">
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3329614760086856951">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086856952">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3329614760086856953">
-                          <link role="classifier:3" targetNodeId="1.~System" />
-                          <link role="variableDeclaration:3" targetNodeId="1.~System.out" />
+                <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="3329614760086856947">
+                  <property name="name" nameId="yvnu.1169194664001:0" value="run" />
+                  <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086856948" />
+                  <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="3329614760086856949" />
+                  <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="3329614760086856950">
+                    <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="3329614760086856951">
+                      <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086856952">
+                        <node role="operand" roleId="yvor.1197027771414:3" type="yvor.StaticFieldReference" typeId="yvor.1070533707846:3" id="3329614760086856953">
+                          <link role="classifier" roleId="yvor.1144433057691:3" targetNodeId="vhgx.~System" />
+                          <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="vhgx.~System%dout" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3329614760086856954">
-                          <link role="baseMethodDeclaration:3" targetNodeId="10.~PrintStream.println(int):void" resolveInfo="println" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3329614760086856962">
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3329614760086856963">
-                              <link role="fieldDeclaration:3" targetNodeId="3329614760086842067" resolveInfo="h" />
+                        <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="3329614760086856954">
+                          <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="tiz1.~PrintStream%dprintln(int)%cvoid" resolveInfo="println" />
+                          <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3329614760086856962">
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.FieldReferenceOperation" typeId="yvor.1197029447546:3" id="3329614760086856963">
+                              <link role="fieldDeclaration" roleId="yvor.1197029500499:3" targetNodeId="3329614760086842067" resolveInfo="h" />
                             </node>
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3329614760086856964" />
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.ThisExpression" typeId="yvor.1070475354124:3" id="3329614760086856964" />
                           </node>
                         </node>
                       </node>
@@ -310,15 +304,15 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3329614760086856938" />
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.Statement" typeId="yvor.1068580123157:3" id="3329614760086856938" />
       </node>
     </node>
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086819473" />
-    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3329614760086819474">
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3329614760086819475" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3329614760086819476" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3329614760086819477" />
+    <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086819473" />
+    <node role="constructor" roleId="yvor.1068390468201:3" type="yvor.ConstructorDeclaration" typeId="yvor.1068580123140:3" id="3329614760086819474">
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="3329614760086819475" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="3329614760086819476" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="3329614760086819477" />
     </node>
-  </node>
+  </root>
 </model>
 
