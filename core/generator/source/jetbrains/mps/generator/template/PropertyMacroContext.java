@@ -17,16 +17,20 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-public class PropertyMacroContext extends TemplateQueryContext {
+public class PropertyMacroContext extends TemplateQueryContextWithMacro {
   private String myTemplateValue;
-  private SNode myMacro;
 
   public PropertyMacroContext(SNode node, String templateValue, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
-    super(node, macroNode.getParent(), context, generator);
+    super(node, macroNode, context, generator);
     myTemplateValue = templateValue;
-    myMacro = macroNode;
+  }
+
+  public PropertyMacroContext(SNode node, String templateValue, SNodePointer macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
+    super(node, macroNode, context, generator);
+    myTemplateValue = templateValue;
   }
 
   /**
@@ -35,10 +39,4 @@ public class PropertyMacroContext extends TemplateQueryContext {
   public String getTemplateValue() {
     return myTemplateValue;
   }
-
-
-  public SNode getTemplateNodeForLogging() {
-    return myMacro;
-  }
-
 }

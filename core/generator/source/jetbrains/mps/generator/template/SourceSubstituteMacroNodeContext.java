@@ -17,17 +17,15 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNodePointer;
 
-public class SourceSubstituteMacroNodeContext extends TemplateQueryContext {
-  private SNode myMacro;
+public class SourceSubstituteMacroNodeContext extends TemplateQueryContextWithMacro {
 
-  public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, macroNode.getParent(), context, generator);
-    myMacro = macroNode;
+  public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
+    super(inputNode, macroNode, context, generator);
   }
 
-  public SNode getTemplateNodeForLogging() {
-    return myMacro;
+  public SourceSubstituteMacroNodeContext(SNode inputNode, SNodePointer macroNode, TemplateContext context, ITemplateGenerator generator) {
+    super(inputNode, macroNode, context, generator);
   }
 }

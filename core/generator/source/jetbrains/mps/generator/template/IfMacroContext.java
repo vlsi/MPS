@@ -17,13 +17,16 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
-public class IfMacroContext extends TemplateQueryContext {
-  private SNode myMacro;
+public class IfMacroContext extends TemplateQueryContextWithMacro {
 
   public IfMacroContext(SNode node, SNode ifMacro, TemplateContext context, ITemplateGenerator generator) {
-    super(node, ifMacro.getParent(), context, generator);
-    myMacro = ifMacro;
+    super(node, ifMacro, context, generator);
+  }
+
+  public IfMacroContext(SNode node, SNodePointer ifMacro, TemplateContext context, ITemplateGenerator generator) {
+    super(node, ifMacro, context, generator);
   }
 
   /**
@@ -31,9 +34,5 @@ public class IfMacroContext extends TemplateQueryContext {
    */
   public SNode getNode() {
     return getInputNode();
-  }
-
-  public SNode getTemplateNodeForLogging() {
-    return myMacro;
   }
 }
