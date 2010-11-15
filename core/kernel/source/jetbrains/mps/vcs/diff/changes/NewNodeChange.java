@@ -58,4 +58,24 @@ public abstract class NewNodeChange extends Change {
   public MessageTarget getMessageTarget() {
     return new NodeMessageTarget();
   }
+
+  @Override
+  public boolean isSameChange(Change c) {
+    if (this == c) return true;
+    if (c == null || getClass() != c.getClass()) return false;
+
+    NewNodeChange that = (NewNodeChange) c;
+
+    if (!myConceptFqName.equals(that.myConceptFqName)) return false;
+    if (!myNodeId.equals(that.myNodeId)) return false;
+    if (myNodeParent != null ? !myNodeParent.equals(that.myNodeParent) : that.myNodeParent != null) return false;
+    if (myNodeRole != null ? !myNodeRole.equals(that.myNodeRole) : that.myNodeRole != null) return false;
+
+    return true;
+  }
+
+  @Override
+  public Object getChangeKey() {
+    return myNodeId;
+  }
 }

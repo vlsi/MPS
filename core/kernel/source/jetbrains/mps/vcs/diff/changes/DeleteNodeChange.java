@@ -27,6 +27,20 @@ import java.util.List;
 public class DeleteNodeChange extends Change {
   private SNodeId myNodeId;
   private List<SNodeId> myChildren;
+
+  @Override
+  public boolean isSameChange(Change c) {
+    if (this == c) return true;
+    if (c == null || getClass() != c.getClass()) return false;
+
+    DeleteNodeChange that = (DeleteNodeChange) c;
+
+    if (myChildren != null ? !myChildren.equals(that.myChildren) : that.myChildren != null) return false;
+    if (myNodeId != null ? !myNodeId.equals(that.myNodeId) : that.myNodeId != null) return false;
+
+    return true;
+  }
+
   private SNodeId myParentId = null;
   private String myRole = null;
   private int myNextChildIndex = -1;
@@ -97,5 +111,10 @@ public class DeleteNodeChange extends Change {
     } else {
       return new NodeMessageTarget();
     }
+  }
+
+  @Override
+  public Object getChangeKey() {
+    return myNodeId;
   }
 }

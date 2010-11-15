@@ -79,4 +79,18 @@ public class SetPropertyChange extends Change {
   public Object getChangeKey() {
     return new Pair<SNodeId, String>(getAffectedNodeId(), getProperty());
   }
+
+  @Override
+  public boolean isSameChange(Change c) {
+    if (this == c) return true;
+    if (c == null || getClass() != c.getClass()) return false;
+
+    SetPropertyChange that = (SetPropertyChange) c;
+
+    if (myNewValue != null ? !myNewValue.equals(that.myNewValue) : that.myNewValue != null) return false;
+    if (myNodeId != null ? !myNodeId.equals(that.myNodeId) : that.myNodeId != null) return false;
+    if (myProperty != null ? !myProperty.equals(that.myProperty) : that.myProperty != null) return false;
+
+    return true;
+  }
 }
