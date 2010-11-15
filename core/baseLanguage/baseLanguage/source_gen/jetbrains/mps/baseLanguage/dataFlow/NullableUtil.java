@@ -31,6 +31,24 @@ public class NullableUtil {
     ListSequence.fromList(result).addElement(expression);
   }
 
+  public static List<SNode> getAndConditions(SNode ifStatement) {
+    List<SNode> result = new ArrayList<SNode>();
+    getAndExpressions(SLinkOperations.getTarget(ifStatement, "condition", true), result);
+    return result;
+  }
+
+  public static void getAndExpressions(SNode expression, List<SNode> result) {
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
+      return;
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
+      SNode and = SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.AndExpression");
+      getAndExpressions(SLinkOperations.getTarget(and, "leftExpression", true), result);
+      getAndExpressions(SLinkOperations.getTarget(and, "rightExpression", true), result);
+    }
+    ListSequence.fromList(result).addElement(expression);
+  }
+
   public static SNode getOtherThanNull(SNode equals) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(equals, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
       return SLinkOperations.getTarget(equals, "rightExpression", true);
