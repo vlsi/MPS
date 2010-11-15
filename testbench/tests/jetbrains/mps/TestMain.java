@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
@@ -136,7 +137,10 @@ public class TestMain {
       // clean up
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
-          if (project[0] != null)  project[0].dispose();
+          if (project[0] != null) {
+            ProjectManager.getInstance().closeProject(project[0].getProject());
+            project[0].dispose();
+          }
           FileUtil.delete(destinationDir);
         }
       });

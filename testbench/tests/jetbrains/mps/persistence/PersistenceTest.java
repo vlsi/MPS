@@ -28,11 +28,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.ui.PersistenceUpdater;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -71,5 +74,50 @@ public class PersistenceTest extends BaseMPSTest {
       }
     });
     assertTrue(result);
+  }
+
+  public void testPersistenceUpgrade() {
+    final int version[] = { 3, 3 };
+    for (; version[0] < PersistenceSettings.MAX_VERSION; ++version[0])
+    for (version[1] = version[0] + 1; version[1] <= PersistenceSettings.MAX_VERSION; ++version[1]) {
+      boolean result = TestMain.testOnProjectCopy(sourceDir, tempDir, TEST_PERSISTENCE_PROJECT,
+        new ProjectRunnable() {
+          public boolean execute(final MPSProject project) {
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+              public void run() {
+                EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
+                testModel.reloadFromDisk();   // doesn't work properly without this!
+                assert testModel.getPersistenceVersion() == 3;
+
+                PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
+                List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
+                list.add(testModel);
+
+                if (version[0] > 3)
+                  persistenceUpdater.upgradePersistence(list, version[0]);
+                assertTrue(testModel.getModelFile() != null);
+                assertTrue(testModel.getPersistenceVersion() == version[0]);
+
+                ModelLoadResult resultFrom = ModelPersistence.readModel(version[0], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                assertTrue(resultFrom.getState() == ModelLoadingState.FULLY_LOADED);
+
+                persistenceUpdater.upgradePersistence(list, version[1]);
+                assertTrue(testModel.getModelFile() != null);
+                assertTrue(testModel.getPersistenceVersion() == version[1]);
+
+                ModelLoadResult resultTo = ModelPersistence.readModel(version[1], testModel.getModelFile(), ModelLoadingState.FULLY_LOADED);
+                assertTrue(resultTo.getState() == ModelLoadingState.FULLY_LOADED);
+
+                ModelAssert.assertDeepModelEquals(resultFrom.getModel(), resultTo.getModel());
+
+                resultFrom.getModel().dispose();
+                resultTo.getModel().dispose();
+              }
+            });
+            return true;
+        }
+      });
+      assertTrue(result);
+    }
   }
 }
