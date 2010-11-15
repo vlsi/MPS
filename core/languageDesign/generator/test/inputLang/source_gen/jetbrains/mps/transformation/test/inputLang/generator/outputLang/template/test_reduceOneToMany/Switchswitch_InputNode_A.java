@@ -46,5 +46,10 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
     }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) {
+
+      return true;
+    }
   }
 }

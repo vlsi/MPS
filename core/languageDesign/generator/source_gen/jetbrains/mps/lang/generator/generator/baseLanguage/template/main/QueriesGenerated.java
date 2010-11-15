@@ -443,10 +443,6 @@ public class QueriesGenerated {
     ));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1147906725605285885(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1147906725605225631(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "applyToConceptInheritors");
   }
@@ -771,7 +767,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "template", false), "templDeclarationClass"), "constructor", true)).first();
   }
 
-  public static Object referenceMacro_GetReferent_1147906725605232563(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4484796796238903611(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
@@ -897,11 +893,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0uh(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0th(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0vh(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0uh(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_4155486055398184252(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1327,17 +1323,13 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1147906725605285901(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
-  }
-
-  public static boolean ifMacro_Condition_1147906725605232576(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
-  }
-
   public static boolean ifMacro_Condition_1147906725605361055(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
     return name != null;
+  }
+
+  public static boolean ifMacro_Condition_4484796796238903629(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
 
   public static boolean ifMacro_Condition_5412006700504157845(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1987,7 +1979,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0vq(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0tq(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2228,6 +2220,13 @@ public class QueriesGenerated {
     }
   }
 
+  private static boolean eq_x583g4_a0a0th(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   private static boolean eq_x583g4_a0a0uh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -2235,14 +2234,7 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean eq_x583g4_a0a0vh(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_x583g4_a0a0c0d0b0vq(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0tq(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

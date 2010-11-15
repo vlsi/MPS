@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   public Mappingmain() {
@@ -35,9 +35,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414132234(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
-        return null;
-      }
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169"));
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;
@@ -49,6 +46,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
+    }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414132234(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, environment.getGenerator())))) {
+        return false;
+      }
+
+      return true;
     }
   }
 
