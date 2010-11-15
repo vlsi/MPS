@@ -17,16 +17,20 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-public class TemplateFragmentContext extends TemplateQueryContext {
+public class TemplateFragmentContext extends TemplateQueryContextWithMacro {
   private SNode myMainContextNode;
-  private SNode myFragmentNode;
 
-  public TemplateFragmentContext(SNode mainContextNode, SNode templateFragmentNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
-    super(context.getInput(), templateFragmentNode.getParent(), context, generator);
+  public TemplateFragmentContext(SNode mainContextNode, SNode tfMacro, @NotNull TemplateContext context, ITemplateGenerator generator) {
+    super(context.getInput(), tfMacro, context, generator);
     myMainContextNode = mainContextNode;
-    myFragmentNode = templateFragmentNode;
+  }
+
+  public TemplateFragmentContext(SNode mainContextNode, SNodePointer tfMacro, @NotNull TemplateContext context, ITemplateGenerator generator) {
+    super(context.getInput(), tfMacro, context, generator);
+    myMainContextNode = mainContextNode;
   }
 
   /**
@@ -34,9 +38,5 @@ public class TemplateFragmentContext extends TemplateQueryContext {
    */
   public SNode getMainContextNode() {
     return myMainContextNode;
-  }
-
-  public SNode getTemplateNodeForLogging() {
-    return myFragmentNode;
   }
 }
