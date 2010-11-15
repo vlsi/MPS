@@ -96,6 +96,9 @@
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1230216511092">
         <link role="action:23" targetNodeId="1230214426481" resolveInfo="ShowInequationsForCell" />
       </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3924602344979582140">
+        <link role="action:23" targetNodeId="8779663014757326680" resolveInfo="ShowTypeSystemTrace" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1206101816406">
@@ -553,7 +556,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1230214426481">
     <property name="name:23" value="ShowInequationsForCell" />
-    <property name="caption:23" value="Show Inequations for Cell" />
+    <property name="caption:23" value="Show Inequalities for Cell" />
     <property name="virtualPackage:23" value="Actions" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1230214590204">
       <property name="name:23" value="selectedCell" />

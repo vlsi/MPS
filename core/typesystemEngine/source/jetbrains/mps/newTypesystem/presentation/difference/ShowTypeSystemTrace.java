@@ -17,13 +17,15 @@ package jetbrains.mps.newTypesystem.presentation.difference;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.differences.TypeDifference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Frame;
 
 public class ShowTypeSystemTrace extends JDialog {
 

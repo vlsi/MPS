@@ -29,7 +29,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -100,7 +99,7 @@ public class Inequalities {
 
     StringDifference difference = new StringDifference(subType + " is subtype of " + superType);
     myState.addDifference(difference, true);
-    if (subTyping.isSubType(subType, superType, info, isWeak, true)) {
+    if (subTyping.isSubType(subType, superType, info, isWeak, false)) {
       myState.popDifference();
     } else {
       myState.removeLastDifference(difference);

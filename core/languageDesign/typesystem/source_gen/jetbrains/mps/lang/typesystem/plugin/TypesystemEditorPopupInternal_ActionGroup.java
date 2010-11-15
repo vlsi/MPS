@@ -16,6 +16,7 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
     this.setPopup(false);
     try {
       TypesystemEditorPopupInternal_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action", "jetbrains.mps.lang.typesystem");
+      TypesystemEditorPopupInternal_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action", "jetbrains.mps.lang.typesystem");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

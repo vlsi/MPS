@@ -46,7 +46,7 @@ public class TypesUtil {
   }
 
   public static boolean isVariable(SNode node) {
-    return RuntimeTypeVariable.concept.equals(node.getConceptFqName());
+    return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
   public static boolean isType(SNode node) {

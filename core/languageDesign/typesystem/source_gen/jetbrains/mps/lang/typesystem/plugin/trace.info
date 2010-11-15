@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
   <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
-  <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="TypesystemNodeActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
+  <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
   <unitInfo fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
   <unitInfo fileName="ShowInequationsForCell_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" />
@@ -25,6 +25,7 @@
   </root>
   <root nodeId="1205245331359">
     <nodeInfo nodeId="1230216511092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="166" />
+    <nodeInfo nodeId="3924602344979582140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="18" startPosition="166" endLine="19" endPosition="163" />
   </root>
   <root nodeId="1206101816406">
     <nodeInfo nodeId="1217420647246" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="GoToTypeErrorRule_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="45" />

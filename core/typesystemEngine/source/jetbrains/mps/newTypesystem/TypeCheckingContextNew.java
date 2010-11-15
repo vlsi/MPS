@@ -17,14 +17,13 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -44,6 +43,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private NodeTypesComponentNew myNodeTypesComponent;
   private TypeChecker myTypeChecker;
   private SubTyping mySubTyping;
+  private boolean checked = false;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -83,8 +83,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot() {
-    myNodeTypesComponent.checkNode(myRootNode, false);
-    // myState.solveInequalities();
+    if (!checked) {
+      checked = true;
+      checkRoot(true);
+    }
+ // myState.solveInequalities();
   }
 
   @Override
@@ -92,6 +95,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return myState.typeOf(node, null);
   }
 
+                               /*
+  @Override
+  public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    SNode left = myState.expand(leftOperandType);
+    SNode right = myState.expand(rightOperandType);
+    return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
+  }
+                                 */
   @Override
   public void checkRoot(final boolean refreshTypes) {
     if (refreshTypes) {
@@ -192,4 +203,55 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode createNewRuntimeTypesVariable() {
     return myState.createNewRuntimeTypesVariable();
   }
+                  /*
+  @Override
+  public void clear() {
+    myState.clear(true);
+  }
+
+  @Override
+  public NodeTypesComponent getNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
+  @Override
+  public EquationManager getEquationManager() {
+    return null;
+  }
+
+  @Override
+  public boolean isIncrementalMode() {
+    return false;
+  }
+
+  @Override
+  public SNode computeTypeInferenceMode(SNode node) {
+    return super.computeTypeInferenceMode(node);    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo) {
+    createEquation(node1, wrapper2.getNode(), equationInfo);
+  }
+
+  @Override
+  public void createEquation(IWrapper wrapper1, SNode node2, EquationInfo equationInfo) {
+    createEquation(wrapper1.getNode(), node2, equationInfo);
+  }
+
+  @Override
+  public void createEquation(IWrapper wrapper1, IWrapper wrapper2, EquationInfo equationInfo) {
+    createEquation(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
+  }
+
+  @Override
+  public NodeTypesComponent getBaseNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
+  @Override
+  public SNode typeOf(SNode node) {
+    return typeOf(node, null, null, true);
+  }
+                                                */
 }

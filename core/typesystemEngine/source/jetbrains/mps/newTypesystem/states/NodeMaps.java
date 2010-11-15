@@ -19,11 +19,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
-import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.differences.ErrorDifference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
@@ -91,6 +88,7 @@ public class NodeMaps {
   public void clear() {
     myNodesToErrors.clear();
     myNodeToTypes.clear();
+    myTypesToNodes.clear();
   }
 
   public SNode getType(SNode node) {

@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem.states;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
@@ -51,6 +50,7 @@ public class Equations {
     SNode result = myNamesToNodes.get(name);
     if (result == null) {
       myNamesToNodes.put(name, node);
+      return node;
     }
     return result;
   }
@@ -235,6 +235,7 @@ public class Equations {
 
   public void clear() {
     myRepresentatives.clear();
+    myNamesToNodes.clear();
   }
 
   public List<String> getListPresentation() {

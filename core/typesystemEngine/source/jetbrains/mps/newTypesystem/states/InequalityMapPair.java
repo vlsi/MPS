@@ -173,7 +173,7 @@ public class InequalityMapPair {
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     for (SNode subType : new HashSet<SNode>(mySubToSuper.keySet())) {
       Map<SNode, EquationInfo> map = mySubToSuper.get(subType);
-      for (SNode superType : map.keySet()) {
+      for (SNode superType : new ArrayList<SNode>(map.keySet())) {
         removeAndTrack(subType, superType);
         if (TypesUtil.isVariable(superType) || TypesUtil.isVariable(subType)) {
           continue;

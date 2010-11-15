@@ -159,7 +159,11 @@ public class State {
   }
 
   public void checkWhenConcrete() {
+    // todo
+  }
 
+  public SNode expand(SNode node) {
+    return myEquations.expandNode(node);
   }
 
   public Stack<Difference> getDifferenceStack() {
