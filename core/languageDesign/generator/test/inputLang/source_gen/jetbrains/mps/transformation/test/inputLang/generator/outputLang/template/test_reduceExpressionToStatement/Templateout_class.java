@@ -69,7 +69,7 @@ public class Templateout_class implements TemplateDeclaration {
             Collection<SNode> tlist5 = null;
             try {
               environment.getTracer().pushMacro(copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a0);
-              final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1209150187921(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), null, context, environment.getGenerator()));
+              final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1209150187921(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a0, context, environment.getGenerator()));
               tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), null);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a0);

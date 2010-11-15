@@ -42,6 +42,7 @@ public class Templategen_static_method implements TemplateDeclaration {
   private static SNodePointer templateNode_1s1jok_a0a0a1a6a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987357");
   private static SNodePointer templateNode_1s1jok_a0a0a1a3a1a6a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987359");
   private static SNodePointer templateNode_1s1jok_a0a0a1a3a1a3a1a6a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987360");
+  private static SNodePointer referenceMacro_1s1jok_c0b0a0a0a0a0c0b0d0b0d0b0g0e0a = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362");
   private static SNodePointer templateNode_1s1jok_a0a0a1a4a1a3a1a3a1a6a4a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987361");
 
   public Templategen_static_method() {
@@ -365,7 +366,7 @@ public class Templategen_static_method implements TemplateDeclaration {
                   environment.nodeCopied(context.getInput(), tnode27, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987360");
                   environment.resolve(new ReferenceResolver() {
                     public Object resolve(SNode outputNode, TemplateContext context, ITemplateGenerator generator) {
-                      return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode27, null, context, generator));
+                      return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode27, referenceMacro_1s1jok_c0b0a0a0a0a0c0b0d0b0d0b0g0e0a, "baseMethodDeclaration", context, generator));
                     }
                   }, tnode27, "baseMethodDeclaration", context);
 

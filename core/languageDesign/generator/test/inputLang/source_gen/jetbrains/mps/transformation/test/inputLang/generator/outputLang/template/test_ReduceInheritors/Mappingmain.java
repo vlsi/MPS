@@ -17,8 +17,12 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templateNode_417xrn_a0a0a2a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460409521");
+  private static SNodePointer reductionRule_417xrn_b0b0a0a3a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460378545");
   private static SNodePointer templateNode_417xrn_a0a0a2a0b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461864724");
+  private static SNodePointer reductionRule_417xrn_b0b0a0a3b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461848250");
   private static SNodePointer templateNode_417xrn_a0a0a2a0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460444836");
+  private static SNodePointer reductionRule_417xrn_b0b0a0a3c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460387609");
+  private static SNodePointer rootMappingRule_417xrn_b0b0a0a0d = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460083385");
 
   public Mappingmain() {
   }
@@ -63,7 +67,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1206461124351(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1206461124351(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_417xrn_b0b0a0a3a, environment.getGenerator())))) {
         return false;
       }
 
@@ -99,7 +103,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1206461877475(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1206461877475(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_417xrn_b0b0a0a3b, environment.getGenerator())))) {
         return false;
       }
 
@@ -135,7 +139,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1206461190505(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1206461190505(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_417xrn_b0b0a0a3c, environment.getGenerator())))) {
         return false;
       }
 
@@ -148,7 +152,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1206460092545(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), null, null)))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1206460092545(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a0d, environment.getGenerator())))) {
         return null;
       }
       return new TemplateOutputRoot().apply(environment, context);

@@ -19,8 +19,8 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
   private static SNodePointer loopMacroRef_9iqmnb_a0a0a1a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414161782");
   private static SNodePointer templateNode_9iqmnb_a0a0a3a2a2a1a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100171");
   private static SNodePointer templateNode_9iqmnb_a0a0a3a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1391450457158185608");
-  private static SNodePointer includeMacroRef_9iqmnb_a0a0a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068639");
-  private static SNodePointer includedTemplateNode = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
+  private static SNodePointer includeMacro_9iqmnb_a0a0a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068639");
+  private static SNodePointer includedTemplateNode_9iqmnb_a0a0a1a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
   private static SNodePointer switchMacroRef_9iqmnb_a0a0a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310365");
 
   public Templatereduce_InputNode_A() {
@@ -30,7 +30,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     final List<SNode> tlist1 = new ArrayList();
     try {
       environment.getTracer().pushMacro(loopMacroRef_9iqmnb_a0a0a1a0);
-      final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, environment.getGenerator()));
+      final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_9iqmnb_a0a0a1a0, context, environment.getGenerator()));
       for (SNode itnode1 : loopList1) {
         if (itnode1 == null) {
           continue;
@@ -75,16 +75,16 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     }
     Collection<SNode> tlist4 = null;
     try {
-      environment.getTracer().pushMacro(includeMacroRef_9iqmnb_a0a0a5a0);
+      environment.getTracer().pushMacro(includeMacro_9iqmnb_a0a0a5a0);
       try {
-        environment.getTracer().pushTemplateNode(includedTemplateNode);
+        environment.getTracer().pushTemplateNode(includedTemplateNode_9iqmnb_a0a0a1a5a0);
         tlist4 = new Templatereduce_InputNode_A_included().apply(environment, context);
       } finally {
-        environment.getTracer().pushTemplateNode(includedTemplateNode);
+        environment.getTracer().pushTemplateNode(includedTemplateNode_9iqmnb_a0a0a1a5a0);
       }
 
     } finally {
-      environment.getTracer().closeMacro(includeMacroRef_9iqmnb_a0a0a5a0);
+      environment.getTracer().closeMacro(includeMacro_9iqmnb_a0a0a5a0);
     }
     Collection<SNode> tlist5 = null;
     try {

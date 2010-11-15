@@ -22,6 +22,7 @@ public class Templateprocess42 implements TemplateDeclaration {
   private static SNodePointer templateNode_nofsa1_a0a0a1a4a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039199");
   private static SNodePointer templateNode_nofsa1_a0a0a1a3a1a4a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039202");
   private static SNodePointer templateNode_nofsa1_a0a0a1a3a1a3a1a4a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039201");
+  private static SNodePointer propertyMacro_nofsa1_c0b0b0a2a1a3a1a3a1a4a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039218");
   private static SNodePointer templateNode_nofsa1_a0a0a1a4a1a3a1a4a2a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039206");
 
   private SNode myNode;
@@ -68,7 +69,7 @@ public class Templateprocess42 implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a3a1a3a1a4a2a0);
                   environment.nodeCopied(contextWithParameters.getInput(), tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039201");
-                  tnode5.setProperty("value", (String) QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(null, new PropertyMacroContext(contextWithParameters.getInput(), null, null, contextWithParameters, null)));
+                  tnode5.setProperty("value", (String) QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(environment.getOperationContext(), new PropertyMacroContext(contextWithParameters.getInput(), null, propertyMacro_nofsa1_c0b0b0a2a1a3a1a3a1a4a2a0, contextWithParameters, environment.getGenerator())));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode5);

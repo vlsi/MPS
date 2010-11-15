@@ -45,7 +45,7 @@ public class TemplateconvertMult implements TemplateDeclaration {
             Collection<SNode> tlist3 = null;
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0);
-              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, environment.getGenerator()));
+              final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0, contextWithParameters, environment.getGenerator()));
               tlist3 = environment.copyNodes(Collections.singletonList(copySrcInput3), null);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0);
@@ -59,7 +59,7 @@ public class TemplateconvertMult implements TemplateDeclaration {
             Collection<SNode> tlist5 = null;
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0);
-              final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992617085(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), null, contextWithParameters, environment.getGenerator()));
+              final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992617085(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0, contextWithParameters, environment.getGenerator()));
               tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), null);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0);

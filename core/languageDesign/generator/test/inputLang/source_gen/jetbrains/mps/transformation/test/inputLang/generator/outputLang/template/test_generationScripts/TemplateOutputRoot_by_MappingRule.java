@@ -16,6 +16,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
   private static SNodePointer templateNode_jwmwuq_a0a0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
+  private static SNodePointer propertyMacro_jwmwuq_c0b0b0a3a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195598330257");
   private static SNodePointer copySrcListMacro_jwmwuq_a0a0a1a5a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170582046");
 
   public TemplateOutputRoot_by_MappingRule() {
@@ -27,13 +28,13 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
       environment.getTracer().pushTemplateNode(templateNode_jwmwuq_a0a0a1a0);
       environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
       tnode1.setProperty("name", "OutputRoot_by_MappingRule");
-      tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(null, new PropertyMacroContext(context.getInput(), null, null, context, null)));
+      tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "OutputRoot by MappingRule", propertyMacro_jwmwuq_c0b0b0a3a1a0, context, environment.getGenerator())));
 
       {
         Collection<SNode> tlist2 = null;
         try {
           environment.getTracer().pushMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a0);
-          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, null, context, environment.getGenerator()));
+          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, copySrcListMacro_jwmwuq_a0a0a1a5a1a0, context, environment.getGenerator()));
           tlist2 = environment.copyNodes(copyListInput2, null);
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a0);
