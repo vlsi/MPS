@@ -19,5 +19,10 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 
 public enum JavaBreakpointKind implements IBreakpointKind {
   LINE_BREAKPOINT,
-  EXCEPTION_BREAKPOINT
+  EXCEPTION_BREAKPOINT;
+
+  @Override
+  public boolean supportsDisable() {
+    return true;
+  }
 }

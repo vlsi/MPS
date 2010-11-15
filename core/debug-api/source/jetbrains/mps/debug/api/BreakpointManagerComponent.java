@@ -66,6 +66,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private final EditorsProvider myEditorsProvider;
   private final Map<SNodePointer, Set<IBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<IBreakpoint>>();
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
+  private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
 
   private LeftMarginMouseListener myMouseListener = new LeftMarginMouseListener() {
     @Override
@@ -308,7 +309,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public void addBreakpoint(IBreakpoint breakpoint) {
     synchronized (myBreakpoints) {
       if (breakpoint instanceof INodeBreakpoint) {
-        SNode node = ((INodeBreakpoint)breakpoint).getNodePointer().getNode();
+        SNode node = ((INodeBreakpoint) breakpoint).getNodePointer().getNode();
         if (node != null) {
           SNode root = node.getContainingRoot();
           if (root != null) {
@@ -327,7 +328,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
                 SNode editedNode = editorComponent.getEditedNode();
                 if (root == editedNode) {
                   editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-                  editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer((AbstractMPSBreakpoint)breakpoint, editorComponent));
+                  editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer((AbstractMPSBreakpoint) breakpoint, editorComponent));
                   editorComponent.repaint(); //todo should it be executed in ED thread?
                 }
               }
@@ -335,6 +336,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           }
         }
       }
+      breakpoint.addBreakpointListener(myBreakpointListener);
       breakpoint.addToRunningSessions();
     }
   }
@@ -368,30 +370,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           }
         }
       }
+      breakpoint.removeBreakpointListener(myBreakpointListener);
       breakpoint.removeFromRunningSessions();
-    }
-  }
-
-  //toggles breakpoint and repaints if necessary
-
-  public void setBreakpointEnabled(AbstractMPSBreakpoint breakpoint, boolean enabled) {
-    boolean toggled = breakpoint.setEnabledInternal(enabled);
-    if (toggled) {
-      SNode node = breakpoint.getSNode();
-      if (node != null) {
-        SNode root = node.getContainingRoot();
-        if (root != null) {
-          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              SNode editedNode = editorComponent.getEditedNode();
-              if (root == editedNode) {
-                editorComponent.repaint(); //todo should it be executed in ED thread?
-              }
-            }
-          }
-        }
-      }
     }
   }
 
@@ -458,5 +438,28 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   public static class MyState {
     public BreakpointState[] myBreakpointStates = new BreakpointState[0];
+  }
+
+  private class MyBreakpointListener implements IBreakpointListener {
+    @Override
+    public void breakpointToggled(IBreakpoint breakpoint, boolean enabled) {
+      if (breakpoint instanceof INodeBreakpoint) {
+        SNode node = ((INodeBreakpoint)breakpoint).getNodePointer().getNode();
+        if (node != null) {
+          SNode root = node.getContainingRoot();
+          if (root != null) {
+            for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
+              EditorComponent editorComponent = editor.getCurrentEditorComponent();
+              if (editorComponent != null) {
+                SNode editedNode = editorComponent.getEditedNode();
+                if (root == editedNode) {
+                  editorComponent.repaint(); //todo should it be executed in ED thread?
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

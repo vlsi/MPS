@@ -176,7 +176,7 @@ public class BreakpointsTable extends BreakpointsView {
       if (columnIndex != 0) return;
       if (rowIndex >= getBreakpointsList().size()) return;
       IBreakpoint breakpoint = getBreakpointsList().get(rowIndex);
-      if (breakpoint.supportsDisable()) {
+      if (breakpoint.getKind().supportsDisable()) {
         breakpoint.setEnabled((Boolean) value);
       }
     }
@@ -184,7 +184,7 @@ public class BreakpointsTable extends BreakpointsView {
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
       if (columnIndex != 0) return false;
-      return getBreakpointsList().get(rowIndex).supportsDisable();
+      return getBreakpointsList().get(rowIndex).getKind().supportsDisable();
     }
 
     public IBreakpoint getBreakpointAt(int row) {

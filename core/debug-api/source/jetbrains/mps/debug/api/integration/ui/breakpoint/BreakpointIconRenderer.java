@@ -93,7 +93,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     if (!myBreakpoint.isValid()) {
       return null;
     }
-    if (!myBreakpoint.supportsDisable()) {
+    if (!myBreakpoint.getKind().supportsDisable()) {
       return null;
     }
     JPopupMenu menu = new JPopupMenu();

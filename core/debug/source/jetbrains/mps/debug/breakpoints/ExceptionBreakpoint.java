@@ -26,6 +26,7 @@ import jetbrains.mps.debug.runtime.SuspendContextCommand;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 public class ExceptionBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = Logger.getLogger(ExceptionBreakpoint.class);
@@ -72,6 +73,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
     return true;
   }
 
+  @NotNull
   @Override
   public IBreakpointKind getKind() {
     return JavaBreakpointKind.EXCEPTION_BREAKPOINT;

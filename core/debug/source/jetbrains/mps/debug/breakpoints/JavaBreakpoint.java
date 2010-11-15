@@ -90,9 +90,4 @@ public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements Cl
   public void addToRunningSessions() {
     RequestManager.createClassPrepareRequests(this);
   }
-
-  @Override
-  public boolean supportsDisable() {
-    return true;
-  }
 }

@@ -15,6 +15,6 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
-public interface IBreakpointKind {
-  boolean supportsDisable();
+public interface IBreakpointListener {
+  public void breakpointToggled(IBreakpoint breakpoint, boolean enabled);
 }

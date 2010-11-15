@@ -25,6 +25,7 @@ import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -123,6 +124,7 @@ public class MPSBreakpoint extends JavaBreakpoint {
     return className;
   }
 
+  @NotNull
   @Override
   public IBreakpointKind getKind() {
     return JavaBreakpointKind.LINE_BREAKPOINT;

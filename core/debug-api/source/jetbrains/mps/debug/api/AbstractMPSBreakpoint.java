@@ -3,20 +3,25 @@ package jetbrains.mps.debug.api;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
 import jetbrains.mps.debug.api.breakpoints.INodeBreakpoint;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.traceInfo.PositionInfo;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpoint {
-  protected Project myProject;
-  protected SNodePointer myNodePointer;
+  protected final Project myProject;
+  protected final SNodePointer myNodePointer;
   protected boolean myIsEnabled = true;
   protected long myCreationTime = -1;
+  private final List<IBreakpointListener> myListeners = new ArrayList<IBreakpointListener>();
 
   protected AbstractMPSBreakpoint(SNodePointer nodePointer, Project project) {
     myNodePointer = nodePointer;
@@ -49,24 +54,34 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     myCreationTime = time;
   }
 
+  @Override
+  public void addBreakpointListener(@NotNull IBreakpointListener listener) {
+    myListeners.add(listener);
+  }
+
+  @Override
+  public void removeBreakpointListener(IBreakpointListener listener) {
+    myListeners.remove(listener);
+  }
+
   public long getCreationTime() {
     return myCreationTime;
   }
 
   public void setEnabled(final boolean enabled) {
-    final BreakpointManagerComponent breakpointManager = myProject.getComponent(BreakpointManagerComponent.class);
-    if (breakpointManager != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          breakpointManager.setBreakpointEnabled(AbstractMPSBreakpoint.this, enabled);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        boolean toggled = setEnabledInternal(enabled);
+        if (toggled) {
+          fireBreakpointToggled(enabled);
         }
-      });
-    }
+      }
+    });
   }
 
-  boolean setEnabledInternal(boolean enabled) {
-    if (supportsDisable()) {
+  private boolean setEnabledInternal(boolean enabled) {
+    if (getKind().supportsDisable()) {
       if (myIsEnabled != enabled) {
         myIsEnabled = enabled;
         if (myIsEnabled) {
@@ -184,7 +199,9 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     });
   }
 
-  public boolean supportsDisable() {
-    return false;
+  protected void fireBreakpointToggled(boolean enabled) {
+    for (IBreakpointListener listener : myListeners) {
+      listener.breakpointToggled(this, enabled);
+    }
   }
 }

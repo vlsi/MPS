@@ -32,12 +32,13 @@ public interface IBreakpoint {
 
   boolean isValid();
 
-  boolean supportsDisable();
-
   void setEnabled(boolean value);
 
   @NonNls
   String getPresentation();
 
   void setCreationTime(long creationTime);
+
+  void addBreakpointListener(@NotNull IBreakpointListener listener);
+  void removeBreakpointListener(IBreakpointListener listener);
 }
