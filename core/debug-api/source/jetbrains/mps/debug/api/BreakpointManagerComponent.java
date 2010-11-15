@@ -68,57 +68,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
   private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
 
-  private LeftMarginMouseListener myMouseListener = new LeftMarginMouseListener() {
-    @Override
-    public void mousePressed(MouseEvent e, EditorComponent editorComponent) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e, EditorComponent editorComponent) {
-    }
-
-    @Override
-    public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
-      if (e.getButton() == MouseEvent.BUTTON1) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
-            if (node != null) {
-              toggleBreakpoint(node, false);
-            }
-          }
-        });
-      }
-    }
-  };
-  private final SessionChangeListener myChangeListener = new SessionChangeAdapter() {
-    @Override
-    public void muted(AbstractDebugSession session) {
-      ApplicationManager.getApplication().invokeLater((new Runnable() {
-        @Override
-        public void run() {
-          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              editorComponent.repaint();
-            }
-          }
-        }
-      }));
-    }
-  };
-  private final DebugSessionListener myDebugSessionListener = new DebugSessionAdapter() {
-    @Override
-    public void registered(AbstractDebugSession session) {
-      session.addChangeListener(myChangeListener);
-    }
-
-    @Override
-    public void detached(AbstractDebugSession session) {
-      session.removeChangeListener(myChangeListener);
-    }
-  };
+  private LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
+  private final SessionChangeListener myChangeListener = new MySessionChangeAdapter();
+  private final DebugSessionListener myDebugSessionListener = new MyDebugSessionAdapter();
 
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(BreakpointManagerComponent.class);
@@ -128,17 +80,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     myProject = project;
     myDebugInfoManager = debugInfoManager;
     myEditorsProvider = new EditorsProvider(project);
-    myEditorsProvider.addEditorOpenListener(new EditorOpenListener() {
-      @Override
-      public void editorOpened(MPSFileNodeEditor editor) {
-        editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
-      }
-
-      @Override
-      public void editorClosed(MPSFileNodeEditor editor) {
-        editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
-      }
-    });
+    myEditorsProvider.addEditorOpenListener(new MyEditorOpenListener());
   }
 
   public void toggleBreakpoint(EditorCell cell) {
@@ -470,6 +412,72 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           }
         }
       });
+    }
+  }
+
+  private class MyLeftMarginMouseListener implements LeftMarginMouseListener {
+    @Override
+    public void mousePressed(MouseEvent e, EditorComponent editorComponent) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e, EditorComponent editorComponent) {
+    }
+
+    @Override
+    public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
+      if (e.getButton() == MouseEvent.BUTTON1) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
+            if (node != null) {
+              toggleBreakpoint(node, false);
+            }
+          }
+        });
+      }
+    }
+  }
+
+  private class MySessionChangeAdapter extends SessionChangeAdapter {
+    @Override
+    public void muted(AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater((new Runnable() {
+        @Override
+        public void run() {
+          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              editorComponent.repaint();
+            }
+          }
+        }
+      }));
+    }
+  }
+
+  private class MyDebugSessionAdapter extends DebugSessionAdapter {
+    @Override
+    public void registered(AbstractDebugSession session) {
+      session.addChangeListener(myChangeListener);
+    }
+
+    @Override
+    public void detached(AbstractDebugSession session) {
+      session.removeChangeListener(myChangeListener);
+    }
+  }
+
+  private class MyEditorOpenListener implements EditorOpenListener {
+    @Override
+    public void editorOpened(MPSFileNodeEditor editor) {
+      editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
+    }
+
+    @Override
+    public void editorClosed(MPSFileNodeEditor editor) {
+      editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
     }
   }
 }
