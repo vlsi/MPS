@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.actions.DebugActionsUtil;
@@ -65,7 +66,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
 
   @Override
   public SNode getNode() {
-    return myBreakpoint.getSNode();
+    return myBreakpoint.getNodePointer().getNode();
   }
 
   @Override
@@ -106,7 +107,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     menu.add(new AbstractAction("Remove") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        myBreakpoint.remove();
+        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
       }
     });
     return menu;

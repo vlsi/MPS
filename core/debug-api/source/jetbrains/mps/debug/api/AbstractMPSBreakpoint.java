@@ -38,7 +38,7 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     return myNodePointer;
   }
 
-  public SNode getSNode() {
+  protected SNode getSNode() {
     return myNodePointer.getNode();
   }
 
@@ -69,15 +69,10 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
   }
 
   public void setEnabled(final boolean enabled) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        boolean toggled = setEnabledInternal(enabled);
-        if (toggled) {
-          fireBreakpointToggled(enabled);
-        }
-      }
-    });
+    boolean toggled = setEnabledInternal(enabled);
+    if (toggled) {
+      fireBreakpointToggled(enabled);
+    }
   }
 
   private boolean setEnabledInternal(boolean enabled) {
@@ -127,7 +122,7 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     return DebugInfoManager.getInstance().createBreakpoint(node, project);
   }
 
-  public PositionInfo getTargetCodePosition() {
+  protected PositionInfo getTargetCodePosition() {
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
     if (debugInfo == null) {
       return null;
@@ -135,7 +130,7 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     return debugInfo.getPositionForNode(myNodePointer.getNodeId().toString());
   }
 
-  public String getTargetUnitName() {
+  protected String getTargetUnitName() {
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
     if (debugInfo == null) {
       return null;
@@ -147,13 +142,13 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     return getTargetCodePosition() != null;
   }
 
-  public int getLineIndexInFile() {
+  protected int getLineIndexInFile() {
     PositionInfo position = getTargetCodePosition();
     if (position == null) return -1;
     return position.getStartLine() + 1;
   }
 
-  public String getFileName() {
+  protected String getFileName() {
     PositionInfo positionInfo = getTargetCodePosition();
     if (positionInfo == null) return null;
     return positionInfo.getFileName();
@@ -163,23 +158,11 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
     return myProject;
   }
 
-  public void remove() {
-    final BreakpointManagerComponent breakpointManager = myProject.getComponent(BreakpointManagerComponent.class);
-    if (breakpointManager != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          breakpointManager.removeBreakpoint(AbstractMPSBreakpoint.this);
-        }
-      });
-    }
-  }
-
-  public void disableInRunningSessions() {
+  protected void disableInRunningSessions() {
     removeFromRunningSessions();
   }
 
-  public void enableInRunningSessions() {
+  protected void enableInRunningSessions() {
     addToRunningSessions();
   }
 

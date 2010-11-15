@@ -341,38 +341,43 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  public void removeBreakpoint(IBreakpoint breakpoint) {
-    synchronized (myBreakpoints) {
-      myBreakpoints.remove(breakpoint);
-      if (breakpoint instanceof AbstractMPSBreakpoint) {
-        AbstractMPSBreakpoint abstractMPSBreakpoint = (AbstractMPSBreakpoint) breakpoint;
-        SNode node = abstractMPSBreakpoint.getSNode();
-        if (node != null) {
-          SNode root = node.getContainingRoot();
-          if (root != null) {
-            SNodePointer rootPointer = new SNodePointer(root);
-            Set<IBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-            if (breakpointsForRoot != null) {
-              breakpointsForRoot.remove(breakpoint);
-            }
+  public void removeBreakpoint(final IBreakpoint breakpoint) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        synchronized (myBreakpoints) {
+          myBreakpoints.remove(breakpoint);
+          if (breakpoint instanceof AbstractMPSBreakpoint) {
+            AbstractMPSBreakpoint abstractMPSBreakpoint = (AbstractMPSBreakpoint) breakpoint;
+            SNode node = abstractMPSBreakpoint.getSNode();
+            if (node != null) {
+              SNode root = node.getContainingRoot();
+              if (root != null) {
+                SNodePointer rootPointer = new SNodePointer(root);
+                Set<IBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
+                if (breakpointsForRoot != null) {
+                  breakpointsForRoot.remove(breakpoint);
+                }
 
-            for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-              EditorComponent editorComponent = editor.getCurrentEditorComponent();
-              if (editorComponent != null) {
-                SNode editedNode = editorComponent.getEditedNode();
-                if (root == editedNode) {
-                  editorComponent.removeAdditionalPainterByItem(breakpoint);
-                  editorComponent.getLeftEditorHighlighter().removeIconRenderer(abstractMPSBreakpoint.getSNode(), BreakpointIconRenderer.TYPE);
-                  editorComponent.repaint(); //todo should it be executed in ED thread?
+                for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
+                  EditorComponent editorComponent = editor.getCurrentEditorComponent();
+                  if (editorComponent != null) {
+                    SNode editedNode = editorComponent.getEditedNode();
+                    if (root == editedNode) {
+                      editorComponent.removeAdditionalPainterByItem(breakpoint);
+                      editorComponent.getLeftEditorHighlighter().removeIconRenderer(abstractMPSBreakpoint.getSNode(), BreakpointIconRenderer.TYPE);
+                      editorComponent.repaint(); //todo should it be executed in ED thread?
+                    }
+                  }
                 }
               }
             }
           }
+          breakpoint.removeBreakpointListener(myBreakpointListener);
+          breakpoint.removeFromRunningSessions();
         }
       }
-      breakpoint.removeBreakpointListener(myBreakpointListener);
-      breakpoint.removeFromRunningSessions();
-    }
+    });
   }
 
   public void clear() {
@@ -442,24 +447,29 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   private class MyBreakpointListener implements IBreakpointListener {
     @Override
-    public void breakpointToggled(IBreakpoint breakpoint, boolean enabled) {
-      if (breakpoint instanceof INodeBreakpoint) {
-        SNode node = ((INodeBreakpoint)breakpoint).getNodePointer().getNode();
-        if (node != null) {
-          SNode root = node.getContainingRoot();
-          if (root != null) {
-            for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-              EditorComponent editorComponent = editor.getCurrentEditorComponent();
-              if (editorComponent != null) {
-                SNode editedNode = editorComponent.getEditedNode();
-                if (root == editedNode) {
-                  editorComponent.repaint(); //todo should it be executed in ED thread?
+    public void breakpointToggled(final IBreakpoint breakpoint, boolean enabled) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          if (breakpoint instanceof INodeBreakpoint) {
+            SNode node = ((INodeBreakpoint) breakpoint).getNodePointer().getNode();
+            if (node != null) {
+              SNode root = node.getContainingRoot();
+              if (root != null) {
+                for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
+                  EditorComponent editorComponent = editor.getCurrentEditorComponent();
+                  if (editorComponent != null) {
+                    SNode editedNode = editorComponent.getEditedNode();
+                    if (root == editedNode) {
+                      editorComponent.repaint(); //todo should it be executed in ED thread?
+                    }
+                  }
                 }
               }
             }
           }
         }
-      }
+      });
     }
   }
 }
