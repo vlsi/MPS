@@ -91,7 +91,7 @@ public abstract class AbstractMPSBreakpoint implements IBreakpoint, INodeBreakpo
   }
 
   public BreakpointInfo createBreakpointInfo() {
-    return new BreakpointInfo(getKind(), myNodePointer.getModelReference().toString(),
+    return new BreakpointInfo(myNodePointer.getModelReference().toString(),
       myNodePointer.getNodeId().toString(), myCreationTime);
   }
 

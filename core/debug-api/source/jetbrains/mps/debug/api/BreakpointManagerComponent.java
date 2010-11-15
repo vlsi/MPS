@@ -22,7 +22,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.BreakpointManagerComponent.MyState;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.breakpoints.*;
@@ -42,6 +41,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import org.jdom.Attribute;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -57,8 +58,11 @@ import java.util.*;
     )
   }
 )
-public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<MyState> {
+public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private static final Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
+  private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
+  private static final String BREAKPOINT_ELEMENT = "breakpoint";
+  private static final String KIND_TAG = "kind";
 
   private final Project myProject;
   private final DebugInfoManager myDebugInfoManager;
@@ -332,45 +336,53 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  public void loadState(MyState state) {
+  public void loadState(Element state) {
     synchronized (myBreakpoints) {
       clear();
-      for (BreakpointState s : state.myBreakpointStates) {
-        ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(s.myKind);
+      List breakpointsElement = state.getChildren(BREAKPOINT_ELEMENT);
+      for (ListIterator it = breakpointsElement.listIterator(); it.hasNext(); ) {
+        Element breakpointElement = (Element) it.next();
+        String kindName = breakpointElement.getAttributeValue(KIND_TAG);
+
+        IBreakpointKind kind = BreakpointProvidersManager.getInstance().getKind(kindName);
+        if (kind == null) {
+          // todo we might save whatever we cant read for later?
+          continue;
+        }
+
+        ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kind);
         if (provider == null) {
           continue;
         }
-        IBreakpoint breakpoint = provider.loadFromState(s, myProject);
-        myBreakpoints.add(breakpoint);
+
+        IBreakpoint breakpoint = provider.loadFromState((Element) breakpointElement.getChildren().get(0), kind, myProject);
+        if (breakpoint != null) {
+          myBreakpoints.add(breakpoint);
+        }
       }
     }
   }
 
-  public MyState getState() {
+  public Element getState() {
     synchronized (myBreakpoints) {
-      List<BreakpointState> states = new ArrayList<BreakpointState>();
+      Element rootElement = new Element(BREAKPOINTS_LIST_ELEMENT);
 
       for (IBreakpoint breakpoint : myBreakpoints) {
-        ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(breakpoint.getKind());
+        IBreakpointKind kind = breakpoint.getKind();
+        ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kind);
         if (provider == null) {
           continue;
         }
 
-        BreakpointState state = provider.saveToState(breakpoint);
-        if (state != null) {
-          states.add(state);
+        Element element = provider.saveToState(breakpoint);
+        if (element != null) {
+          Element breakpointElement = new Element(BREAKPOINT_ELEMENT);
+          breakpointElement.setAttribute(new Attribute(KIND_TAG, kind.getName()));
+          breakpointElement.addContent(element);
+          rootElement.addContent(breakpointElement);
         }
       }
-
-      MyState state = new MyState();
-      state.myBreakpointStates = new BreakpointState[states.size()];
-      int i = 0;
-      for (BreakpointState s : states) {
-        state.myBreakpointStates[i] = s;
-        i++;
-      }
-
-      return state;
+      return rootElement;
     }
   }
 
@@ -406,10 +418,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     for (IBreakpointManagerListener listener : listeners) {
       listener.breakpointsChanged();
     }
-  }
-
-  public static class MyState {
-    public BreakpointState[] myBreakpointStates = new BreakpointState[0];
   }
 
   private class MyBreakpointListener implements IBreakpointListener {

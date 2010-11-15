@@ -18,10 +18,17 @@ package jetbrains.mps.debug.breakpoints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import com.intellij.util.xmlb.XmlSerializer;
+import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointInfo;
+import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,28 +65,35 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
 
   @Override
   @Nullable
-  public IBreakpoint loadFromState(BreakpointState state, Project project) {
-    if (! (state.myKind instanceof JavaBreakpointKind)) {
-      return null;
-    }
-    JavaBreakpointKind kind = (JavaBreakpointKind) state.myKind;
-    switch (kind) {
-      case EXCEPTION_BREAKPOINT:
-        break;
+  public IBreakpoint loadFromState(Element state, IBreakpointKind kind, final Project project) {
+    if (!(kind instanceof JavaBreakpointKind)) return null;
+    JavaBreakpointKind javaKind = (JavaBreakpointKind) kind;
+    switch (javaKind) {
       case LINE_BREAKPOINT:
-        return MPSBreakpoint.fromBreakpointInfo((BreakpointInfo) state, project);
+        final BreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, BreakpointInfo.class);
+        MPSBreakpoint breakpoint = ModelAccess.instance().runReadAction(new Computable<MPSBreakpoint>() {
+          @Override
+          public MPSBreakpoint compute() {
+            SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
+            return new MPSBreakpoint(pointer.getNode(), project);
+          }
+        });
+        breakpoint.setCreationTime(breakpointInfo.myCreationTime);
+        return breakpoint;
+      case EXCEPTION_BREAKPOINT:
     }
     return null;
   }
 
   @Override
   @Nullable
-  public BreakpointState saveToState(IBreakpoint breakpoint) {
+  public Element saveToState(IBreakpoint breakpoint) {
     switch ((JavaBreakpointKind)breakpoint.getKind()){
       case EXCEPTION_BREAKPOINT:
         return null;
       case LINE_BREAKPOINT:
-        return ((MPSBreakpoint)breakpoint).createBreakpointInfo();
+        BreakpointInfo breakpointInfo = ((MPSBreakpoint) breakpoint).createBreakpointInfo();
+        return XmlSerializer.serialize(breakpointInfo);
     }
     return null;
   }

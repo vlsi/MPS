@@ -126,7 +126,7 @@ public class MPSBreakpoint extends JavaBreakpoint {
 
   @NotNull
   @Override
-  public IBreakpointKind getKind() {
+  public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.LINE_BREAKPOINT;
   }
 }

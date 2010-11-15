@@ -31,7 +31,7 @@ public interface ILanguageBreakpointsProvider {
   @Nullable
   IBreakpoint createFromUi(@NotNull IBreakpointKind kind, Project project);
   @Nullable
-  IBreakpoint loadFromState(BreakpointState state, Project project);
+  IBreakpoint loadFromState(Element state, IBreakpointKind kind, Project project);
   @Nullable
-  BreakpointState saveToState(IBreakpoint breakpoint);
+  Element saveToState(IBreakpoint breakpoint);
 }

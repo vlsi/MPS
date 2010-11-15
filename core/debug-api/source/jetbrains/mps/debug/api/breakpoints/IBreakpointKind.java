@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
+import org.jetbrains.annotations.NonNls;
+
 public interface IBreakpointKind {
   boolean supportsDisable();
+  @NonNls
+  String getName();
 }

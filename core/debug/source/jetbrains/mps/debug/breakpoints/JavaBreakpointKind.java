@@ -25,4 +25,11 @@ public enum JavaBreakpointKind implements IBreakpointKind {
   public boolean supportsDisable() {
     return true;
   }
+
+  @Override
+  public String getName() {
+    return toString();
+  }
+
+
 }

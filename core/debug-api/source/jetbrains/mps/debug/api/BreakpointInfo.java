@@ -1,21 +1,16 @@
 package jetbrains.mps.debug.api;
 
-import jetbrains.mps.debug.api.breakpoints.BreakpointState;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
-
-public class BreakpointInfo extends BreakpointState {
+public class BreakpointInfo {
   public String myModelReference;
   public String myNodeId;
   public long myCreationTime = -1;
 
-  public BreakpointInfo(IBreakpointKind kind, String modelReference, String nodeId) {
-    super(kind);
+  public BreakpointInfo(String modelReference, String nodeId) {
     myModelReference = modelReference;
     myNodeId = nodeId;
   }
 
-  public BreakpointInfo(IBreakpointKind kind, String modelReference, String nodeId, long creationTime) {
-    super(kind);
+  public BreakpointInfo(String modelReference, String nodeId, long creationTime) {
     myModelReference = modelReference;
     myNodeId = nodeId;
     myCreationTime = creationTime;
