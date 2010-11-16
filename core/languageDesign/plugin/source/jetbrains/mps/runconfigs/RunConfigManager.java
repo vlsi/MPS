@@ -22,6 +22,7 @@ import com.intellij.execution.impl.ProjectRunConfigurationManager;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.ui.RunContentDescriptor;
+import com.intellij.execution.ui.RunContentManagerImpl;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
