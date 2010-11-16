@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.INodeBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
@@ -294,12 +294,12 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
   private void openNode(final IBreakpoint breakpoint, final boolean focus, final boolean select) {
     final Project project = myContext.getProject();
-    if (!(breakpoint instanceof INodeBreakpoint)) return;
+    if (!(breakpoint instanceof ILocationBreakpoint)) return;
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
         MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
         assert opener != null;
-        opener.openNode(((INodeBreakpoint)breakpoint).getNodePointer().getNode(), myContext, focus, select);
+        opener.openNode(((ILocationBreakpoint)breakpoint).getNodePointer().getNode(), myContext, focus, select);
       }
     }, project);
   }

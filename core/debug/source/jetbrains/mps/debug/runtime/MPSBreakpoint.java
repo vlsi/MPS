@@ -19,7 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
+import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.logging.Logger;
@@ -29,15 +31,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class MPSBreakpoint extends JavaBreakpoint {
+public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint{
   private static final Logger LOG = Logger.getLogger(MPSBreakpoint.class);
+  private final BreakpointLocation myLocation;
 
   public MPSBreakpoint(SNodePointer nodePointer, Project project) {
-    super(nodePointer, project);
+    super(project);
+    myLocation = new BreakpointLocation(nodePointer);
   }
 
   public MPSBreakpoint(SNode node, Project project) {
-    super(node, project);
+    this(new SNodePointer(node), project);
   }
 
   @Override
@@ -45,7 +49,7 @@ public class MPSBreakpoint extends JavaBreakpoint {
     RequestManager requestManager = debugProcess.getRequestManager();
 
     try {
-      int lineIndex = getLineIndexInFile();
+      int lineIndex = myLocation.getLineIndexInFile();
       List<Location> locs = classType.locationsOfLine(lineIndex);
       if (locs.size() > 0) {
         for (final Location location : locs) {
@@ -55,7 +59,7 @@ public class MPSBreakpoint extends JavaBreakpoint {
       } else {
         // there's no executable code in this class
         requestManager.setInvalid(this, "no executable code found");
-        String message = "No locations of type " + classType.name() + " found at line " + getLineIndexInFile();
+        String message = "No locations of type " + classType.name() + " found at line " + myLocation.getLineIndexInFile();
         LOG.warning(message);
       }
     } catch (ClassNotPreparedException ex) {
@@ -112,14 +116,14 @@ public class MPSBreakpoint extends JavaBreakpoint {
   }
 
   protected String getClassNameToPrepare() {
-    String className = getTargetUnitName();
+    String className = myLocation.getTargetUnitName();
 
     if (className == null) {
-      String fileName = getFileName();
+      String fileName = myLocation.getFileName();
       if (fileName.endsWith(".java")) {
         fileName = fileName.substring(0, fileName.length() - ".java".length());
       }
-      className = myNodePointer.getModelReference().getLongName() + "." + fileName;
+      className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;
     }
     return className;
   }
@@ -128,5 +132,30 @@ public class MPSBreakpoint extends JavaBreakpoint {
   @Override
   public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.LINE_BREAKPOINT;
+  }
+
+  @Override
+  public boolean isValid() {
+    return myLocation.getTargetCodePosition() != null;
+  }
+
+  @Override
+  public String getPresentation() {
+    return myLocation.getPresentation();
+  }
+
+  @Override
+  public SNodePointer getNodePointer() {
+    return myLocation.getNodePointer();
+  }
+
+  @Override
+  public SNode getSNode() {
+    return myLocation.getNodePointer().getNode();
+  }
+
+  @Override
+  public BreakpointLocation getLocation() {
+    return myLocation;
   }
 }

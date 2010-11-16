@@ -29,12 +29,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
 
 public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
-  protected JavaBreakpoint(SNodePointer nodePointer, Project project) {
-    super(nodePointer, project);
-  }
-
-  protected JavaBreakpoint(SNode node, Project project) {
-    super(node, project);
+  protected JavaBreakpoint(Project project) {
+    super(project);
   }
 
   //this should be called on every breakpoint when DebugEventsProcessor is attached

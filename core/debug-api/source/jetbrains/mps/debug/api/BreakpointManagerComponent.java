@@ -194,9 +194,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     Set<IBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
     if (breakpointsForRoot != null) {
       for (IBreakpoint breakpoint : breakpointsForRoot) {
-        if (breakpoint instanceof AbstractMPSBreakpoint) {
+        if (breakpoint instanceof ILocationBreakpoint) {
           editorComponent.addAdditionalPainter(new MPSBreakpointPainter((AbstractMPSBreakpoint) breakpoint));
-          editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer((AbstractMPSBreakpoint) breakpoint, editorComponent));
+          editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer((ILocationBreakpoint) breakpoint, editorComponent));
         }
       }
       editorComponent.repaint(); //todo should it be executed in ED thread?
@@ -218,8 +218,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     if (mpsBreakpointSet != null) {
       hasBreakpoint = false;
       for (IBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-        if (mpsBreakpoint instanceof AbstractMPSBreakpoint) {
-          if (((AbstractMPSBreakpoint) mpsBreakpoint).getSNode() == node) {
+        if (mpsBreakpoint instanceof ILocationBreakpoint) {
+          if (((ILocationBreakpoint) mpsBreakpoint).getSNode() == node) {
             hasBreakpoint = true;
             breakpoint = mpsBreakpoint;
             break;
@@ -234,7 +234,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         removeBreakpoint(breakpoint);
       }
     } else {
-      IBreakpoint newBreakpoint = createNewBreakpoint(node);
+      IBreakpoint newBreakpoint = DebugInfoManager.getInstance().createBreakpoint(node, myProject);
       if (newBreakpoint != null) {
         addBreakpoint(newBreakpoint);
       } else if (myDebugInfoManager.isDebuggableNode(node)) {
@@ -245,22 +245,13 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  private IBreakpoint createNewBreakpoint(SNode node) {
-    IBreakpoint abstractMPSBreakpoint = AbstractMPSBreakpoint.fromNode(node, myProject);
-    if (abstractMPSBreakpoint != null) {
-      abstractMPSBreakpoint.setCreationTime(System.currentTimeMillis());
-    }
-    return abstractMPSBreakpoint;
-  }
-
-  public void addBreakpoint(IBreakpoint breakpoint) {
+  public void addBreakpoint(@NotNull IBreakpoint breakpoint) {
     synchronized (myBreakpoints) {
-      if (breakpoint instanceof INodeBreakpoint) {
-        SNode node = ((INodeBreakpoint) breakpoint).getNodePointer().getNode();
+      if (breakpoint instanceof ILocationBreakpoint) {
+        SNode node = ((ILocationBreakpoint) breakpoint).getNodePointer().getNode();
         if (node != null) {
           SNode root = node.getContainingRoot();
           if (root != null) {
-            myBreakpoints.add(breakpoint);
             SNodePointer rootPointer = new SNodePointer(root);
             Set<IBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
             if (breakpointsForRoot == null) {
@@ -275,7 +266,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
                 SNode editedNode = editorComponent.getEditedNode();
                 if (root == editedNode) {
                   editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-                  editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer((AbstractMPSBreakpoint) breakpoint, editorComponent));
+                  editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer((ILocationBreakpoint) breakpoint, editorComponent));
                   editorComponent.repaint(); //todo should it be executed in ED thread?
                 }
               }
@@ -283,21 +274,23 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           }
         }
       }
+      breakpoint.setCreationTime(System.currentTimeMillis());
+      myBreakpoints.add(breakpoint);
       breakpoint.addBreakpointListener(myBreakpointListener);
       breakpoint.addToRunningSessions();
     }
     fireBreakpointsChanged();
   }
 
-  public void removeBreakpoint(final IBreakpoint breakpoint) {
+  public void removeBreakpoint(@NotNull final IBreakpoint breakpoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
         synchronized (myBreakpoints) {
           myBreakpoints.remove(breakpoint);
-          if (breakpoint instanceof AbstractMPSBreakpoint) {
-            AbstractMPSBreakpoint abstractMPSBreakpoint = (AbstractMPSBreakpoint) breakpoint;
-            SNode node = abstractMPSBreakpoint.getSNode();
+          if (breakpoint instanceof ILocationBreakpoint) {
+            ILocationBreakpoint locationBreakpoint = (ILocationBreakpoint) breakpoint;
+            SNode node = locationBreakpoint.getSNode();
             if (node != null) {
               SNode root = node.getContainingRoot();
               if (root != null) {
@@ -313,7 +306,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
                     SNode editedNode = editorComponent.getEditedNode();
                     if (root == editedNode) {
                       editorComponent.removeAdditionalPainterByItem(breakpoint);
-                      editorComponent.getLeftEditorHighlighter().removeIconRenderer(abstractMPSBreakpoint.getSNode(), BreakpointIconRenderer.TYPE);
+                      editorComponent.getLeftEditorHighlighter().removeIconRenderer(locationBreakpoint.getSNode(), BreakpointIconRenderer.TYPE);
                       editorComponent.repaint(); //todo should it be executed in ED thread?
                     }
                   }
@@ -426,8 +419,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          if (breakpoint instanceof INodeBreakpoint) {
-            SNode node = ((INodeBreakpoint) breakpoint).getNodePointer().getNode();
+          if (breakpoint instanceof ILocationBreakpoint) {
+            SNode node = ((ILocationBreakpoint) breakpoint).getNodePointer().getNode();
             if (node != null) {
               SNode root = node.getContainingRoot();
               if (root != null) {

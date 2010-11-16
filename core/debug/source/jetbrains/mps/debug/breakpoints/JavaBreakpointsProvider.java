@@ -24,6 +24,7 @@ import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.debug.api.breakpoints.*;
+import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -60,7 +61,7 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
   @Override
   public IBreakpoint createFromUi(@NotNull IBreakpointKind kind, Project project) {
     // todo show dialog and ask about exception
-    return new ExceptionBreakpoint(new SNodePointer("java.lang@java_stub", "~RuntimeException"), project);
+    return new ExceptionBreakpoint("java.lang.RuntimeException", project);
   }
 
   @Override
@@ -81,6 +82,10 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
         breakpoint.setCreationTime(breakpointInfo.myCreationTime);
         return breakpoint;
       case EXCEPTION_BREAKPOINT:
+        ExceptionBreakpointInfo exceptionBreakpointInfo = XmlSerializer.deserialize(state, ExceptionBreakpointInfo.class);
+        ExceptionBreakpoint exceptionBreakpoint = new ExceptionBreakpoint(exceptionBreakpointInfo.myExceptionName, project);
+        exceptionBreakpoint.setCreationTime(exceptionBreakpointInfo.myCreationTime);
+        return exceptionBreakpoint;
     }
     return null;
   }
@@ -90,9 +95,12 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
   public Element saveToState(IBreakpoint breakpoint) {
     switch ((JavaBreakpointKind)breakpoint.getKind()){
       case EXCEPTION_BREAKPOINT:
-        return null;
+        ExceptionBreakpointInfo info = new ExceptionBreakpointInfo((ExceptionBreakpoint) breakpoint);
+        return XmlSerializer.serialize(info);
       case LINE_BREAKPOINT:
-        BreakpointInfo breakpointInfo = ((MPSBreakpoint) breakpoint).createBreakpointInfo();
+        ILocationBreakpoint javaBreakpoint = (ILocationBreakpoint) breakpoint;
+        SNodePointer nodePointer = javaBreakpoint.getNodePointer();
+        BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime());
         return XmlSerializer.serialize(breakpointInfo);
     }
     return null;

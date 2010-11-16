@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.INodeBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
@@ -35,8 +34,8 @@ public class MPSBreakpointPainter extends EditorCellPainter<IBreakpoint> {
 
   @Override
   protected SNode getSNode() {
-    if (myBreakpoint instanceof INodeBreakpoint) {
-      return ((INodeBreakpoint) myBreakpoint).getNodePointer().getNode();
+    if (myBreakpoint instanceof ILocationBreakpoint) {
+      return ((ILocationBreakpoint) myBreakpoint).getNodePointer().getNode();
     } else {
       return null;
     }

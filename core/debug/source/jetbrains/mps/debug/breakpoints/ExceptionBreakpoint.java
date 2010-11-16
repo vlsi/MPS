@@ -32,14 +32,9 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = Logger.getLogger(ExceptionBreakpoint.class);
   private final String myExceptionName;
 
-  ExceptionBreakpoint(SNodePointer nodePointer, Project project) {
-    super(nodePointer, project);
-    myExceptionName = myNodePointer.getModelReference().getLongName() + "." + myNodePointer.getNode().getName();
-  }
-
-  protected ExceptionBreakpoint(SNode node, Project project) {
-    super(node, project);
-    myExceptionName = myNodePointer.getModelReference().getLongName() + "." + myNodePointer.getNode().getName();
+  ExceptionBreakpoint(String exceptionName, Project project) {
+    super(project);
+    myExceptionName = exceptionName;
   }
 
   @Override
@@ -82,5 +77,27 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   @Override
   public boolean isValid() {
     return true;
+  }
+
+  @Override
+  public String getPresentation() {
+    return myExceptionName;
+  }
+
+  public static class ExceptionBreakpointInfo {
+    public String myExceptionName;
+    public long myCreationTime;
+
+    public ExceptionBreakpointInfo(ExceptionBreakpoint breakpoint) {
+      this(breakpoint.myExceptionName, breakpoint.myCreationTime);
+    }
+
+    public ExceptionBreakpointInfo(String exceptionName, long creationTime) {
+      myExceptionName = exceptionName;
+      myCreationTime = creationTime;
+    }
+
+    public ExceptionBreakpointInfo() {
+    }
   }
 }

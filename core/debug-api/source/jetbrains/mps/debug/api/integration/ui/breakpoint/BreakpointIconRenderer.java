@@ -7,6 +7,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.actions.DebugActionsUtil;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
@@ -30,7 +31,7 @@ import java.awt.event.ActionEvent;
  */
 public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   public static final IconRendererType TYPE = new IconRendererType(4);
-  private final AbstractMPSBreakpoint myBreakpoint;
+  private final ILocationBreakpoint myBreakpoint;
   private final Component myComponent;
 
   public static EditorCell getBreakpointIconAnchorCell(EditorCell bigCell) {
@@ -45,7 +46,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
   }
 
-  public BreakpointIconRenderer(AbstractMPSBreakpoint breakpoint, Component component) {
+  public BreakpointIconRenderer(ILocationBreakpoint breakpoint, Component component) {
     myBreakpoint = breakpoint;
     myComponent = component;
   }
@@ -101,13 +102,15 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     menu.add(new AbstractAction(myBreakpoint.isEnabled() ? "Disable" : "Enable") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        myBreakpoint.toggleEnabled();
+// todo
+//        myBreakpoint.toggleEnabled();
       }
     });
     menu.add(new AbstractAction("Remove") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
+// todo
+//        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
       }
     });
     return menu;

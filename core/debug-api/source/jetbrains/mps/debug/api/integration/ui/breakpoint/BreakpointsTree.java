@@ -17,7 +17,7 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.INodeBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.GroupedTree.GroupKind;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
@@ -200,8 +200,8 @@ public class BreakpointsTree extends BreakpointsView {
     @Override
     public IModule getGroup(BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
-      if (breakpoint instanceof INodeBreakpoint) {
-        return SModelRepository.getInstance().getModelDescriptor(((INodeBreakpoint) breakpoint).getNodePointer().getModelReference()).getModule();
+      if (breakpoint instanceof ILocationBreakpoint) {
+        return SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getNodePointer().getModelReference()).getModule();
       } else {
         return null;
       }
@@ -222,8 +222,8 @@ public class BreakpointsTree extends BreakpointsView {
     @Override
     public SModelReference getGroup(BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
-      if (breakpoint instanceof INodeBreakpoint) {
-        return ((INodeBreakpoint) breakpoint).getNodePointer().getModelReference();
+      if (breakpoint instanceof ILocationBreakpoint) {
+        return ((ILocationBreakpoint) breakpoint).getNodePointer().getModelReference();
       } else {
         return null;
       }
@@ -249,8 +249,8 @@ public class BreakpointsTree extends BreakpointsView {
     @Override
     public SNodePointer getGroup(BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
-      if (breakpoint instanceof INodeBreakpoint) {
-        return new SNodePointer(((INodeBreakpoint) breakpoint).getNodePointer().getNode().getContainingRoot());
+      if (breakpoint instanceof ILocationBreakpoint) {
+        return new SNodePointer(((ILocationBreakpoint) breakpoint).getNodePointer().getNode().getContainingRoot());
       } else {
         return null;
       }
