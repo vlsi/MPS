@@ -302,6 +302,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -346,6 +347,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -376,6 +378,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.classpaths">
@@ -405,6 +408,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -449,6 +453,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -479,6 +484,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers.runtime_tjc.classpaths">
@@ -508,6 +514,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -552,6 +559,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -582,6 +590,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.builders_tjc.classpaths">
@@ -611,6 +620,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -655,6 +665,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -685,6 +696,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.checkedDots_tjc.classpaths">
@@ -714,6 +726,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -758,6 +771,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -788,6 +802,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths">
@@ -817,6 +832,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -861,6 +877,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -891,6 +908,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths">
@@ -920,6 +938,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -964,6 +983,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -995,6 +1015,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths">
@@ -1025,6 +1046,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1069,6 +1091,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1103,6 +1126,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.classpaths">
@@ -1140,6 +1164,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1184,6 +1209,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1214,6 +1240,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.javadoc_tjc.classpaths">
@@ -1243,6 +1270,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1287,6 +1315,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1317,6 +1346,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.logging_tjc.classpaths">
@@ -1346,6 +1376,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1390,6 +1421,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1420,6 +1452,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths">
@@ -1450,6 +1483,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1494,6 +1528,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1526,6 +1561,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths">
@@ -1556,6 +1592,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1600,6 +1637,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1631,6 +1669,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths">
@@ -1660,6 +1699,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1704,6 +1744,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1736,6 +1777,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths">
@@ -1765,6 +1807,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1809,6 +1852,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1840,6 +1884,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths">
@@ -1869,6 +1914,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1913,6 +1959,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -1943,6 +1990,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp_tjc.classpaths">
@@ -1974,6 +2022,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2018,6 +2067,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2048,6 +2098,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
@@ -2077,6 +2128,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2121,6 +2173,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2152,6 +2205,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.tuples_tjc.classpaths">
@@ -2187,6 +2241,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2231,6 +2286,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2261,6 +2317,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest_tjc.classpaths">
@@ -2292,6 +2349,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2336,6 +2394,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2366,9 +2425,11 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2377,6 +2438,7 @@
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2415,6 +2477,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2459,6 +2522,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -2490,10 +2554,12 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
+    <path path="platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -2519,6 +2585,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2563,6 +2630,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
@@ -2584,6 +2652,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2606,6 +2675,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.classpaths">
@@ -2637,6 +2707,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2681,6 +2752,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
@@ -2721,6 +2793,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.distrib_tjc.classpaths">
@@ -2750,6 +2823,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2794,6 +2868,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
@@ -2835,6 +2910,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.generictasks_tjc.classpaths">
@@ -2867,6 +2943,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2911,6 +2988,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant/lib/ant.jar" />
     <path path="lib/asm.jar" />
@@ -2948,6 +3026,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.apiLang_tjc.classpaths">
@@ -2977,6 +3056,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3021,6 +3101,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3051,6 +3132,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths">
@@ -3080,6 +3162,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3124,6 +3207,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3154,6 +3238,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.editor.runtime_tjc.classpaths">
@@ -3183,6 +3268,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3227,6 +3313,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3257,6 +3344,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.gtext_tjc.classpaths">
@@ -3286,6 +3374,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3330,6 +3419,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3360,6 +3450,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.gtext.runtime_tjc.classpaths">
@@ -3396,6 +3487,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3440,6 +3532,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3470,6 +3563,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.classpaths">
@@ -3504,6 +3598,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3548,6 +3643,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3578,6 +3674,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.stubs_tjc.classpaths">
@@ -3607,6 +3704,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3651,6 +3749,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3681,6 +3780,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths">
@@ -3711,6 +3811,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3755,6 +3856,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3785,6 +3887,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui_tjc.classpaths">
@@ -3819,6 +3922,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3863,6 +3967,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -3904,6 +4009,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.gwt_tjc.classpaths">
@@ -3933,6 +4039,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3977,6 +4084,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4018,6 +4126,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing_tjc.classpaths">
@@ -4048,6 +4157,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4092,6 +4202,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4133,6 +4244,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths">
@@ -4170,6 +4282,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4214,6 +4327,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4244,6 +4358,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xml_tjc.classpaths">
@@ -4275,6 +4390,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4319,6 +4435,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4349,6 +4466,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths">
@@ -4379,6 +4497,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4423,6 +4542,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4455,6 +4575,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
@@ -4484,6 +4605,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4528,6 +4650,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4558,6 +4681,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths">
@@ -4587,6 +4711,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4631,6 +4756,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4662,6 +4788,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ypath_tjc.classpaths">
@@ -4693,6 +4820,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4737,6 +4865,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4767,6 +4896,7 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.main_tjc.classpaths">
@@ -4796,6 +4926,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4840,6 +4971,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4871,6 +5003,7 @@
     <path path="platform/ypath/runtime/classes" />
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.test_tjc.classpaths">
@@ -4900,6 +5033,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4944,6 +5078,7 @@
     <path path="core/languageDesign/test/testclasses" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/typesystemIntegration/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm.jar" />
     <path path="lib/beansbinding-1.2.1.jar" />
@@ -4976,6 +5111,7 @@
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="platform/ypath/solutions/test/classes_gen" />
     <path path="workbench/ideUiLanguage/classes_gen" />
+    <path path="workbench/typesystemUi/classes" />
     <path refid="common.classpath" />
   </path>
   <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.javadoc_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.tuples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.apiLang_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.editor.runtime_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />

@@ -1262,6 +1262,26 @@
           </node>
         </node>
       </node>
+      <node role="entry" roleId="yvvm.1203617897549:7" type="yvvm.Copy" typeId="yvvm.1204015075559:7" id="3956519295465648157">
+        <property name="name" nameId="yvnu.1169194664001:0" value="" />
+        <property name="excludes" nameId="yvvm.1204107538752:7" value="" />
+        <node role="sourcePath" roleId="yvvm.1220974847213:7" type="yvvm.Path" typeId="yvvm.1220973916698:7" id="3956519295465648158">
+          <node role="macro" roleId="yvvm.1220976095387:7" type="yvvm.MacroReference" typeId="yvvm.1220976052975:7" id="3956519295465648159">
+            <property name="name" nameId="yvvm.1220976068141:7" value="mps_home" />
+          </node>
+          <node role="compositePathComponent" roleId="yvvm.1220974249696:7" type="yvvm.CompositePathComponent" typeId="yvvm.1220973992845:7" id="3956519295465648160">
+            <node role="pathComponent" roleId="yvvm.1220978161990:7" type="yvvm.PathComponent" typeId="yvvm.1220973955905:7" id="3956519295465648161">
+              <property name="path" nameId="yvvm.1220974398640:7" value="core" />
+            </node>
+            <node role="pathComponent" roleId="yvvm.1220978161990:7" type="yvvm.PathComponent" typeId="yvvm.1220973955905:7" id="3956519295465648164">
+              <property name="path" nameId="yvvm.1220974398640:7" value="typesystemIntegration" />
+            </node>
+            <node role="pathComponent" roleId="yvvm.1220978161990:7" type="yvvm.PathComponent" typeId="yvvm.1220973955905:7" id="3956519295465648163">
+              <property name="path" nameId="yvvm.1220974398640:7" value="classes" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="entry" roleId="yvvm.1203617897549:7" type="yvvm.Copy" typeId="yvvm.1204015075559:7" id="3646513537108689199">
         <property name="name" nameId="yvnu.1169194664001:0" value="" />
         <property name="excludes" nameId="yvvm.1204107538752:7" value="" />
