@@ -381,7 +381,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   //this is called when a breakpoint is hit
 
-  public void processBreakpointHit(AbstractMPSBreakpoint breakpoint) {
+  public void processBreakpointHit(IBreakpoint breakpoint) {
     //todo do something later if necessary (like highlihgting a line, etc)
   }
 

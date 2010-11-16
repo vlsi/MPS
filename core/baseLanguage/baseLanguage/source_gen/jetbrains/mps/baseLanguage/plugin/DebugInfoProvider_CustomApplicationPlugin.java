@@ -8,7 +8,7 @@ import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
@@ -20,8 +20,8 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
     {
-      Mapper2<SNode, Project, IBreakpoint> creator = new Mapper2<SNode, Project, IBreakpoint>() {
-        public IBreakpoint value(SNode debuggableNode, Project project) {
+      Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
+        public ILocationBreakpoint value(SNode debuggableNode, Project project) {
           return new MPSBreakpoint(debuggableNode, project);
         }
       };

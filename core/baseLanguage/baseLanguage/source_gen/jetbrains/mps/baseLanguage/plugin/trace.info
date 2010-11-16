@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="57" endLine="27" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="65" endLine="27" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="30" startPosition="103" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$1" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="46" startPosition="98" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$3" />
@@ -824,8 +824,8 @@
     <unitInfo nodeId="155142699038773182" fileName="ParenthesisUtil.java" startLine="16" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ParenthesisUtil" />
   </root>
   <root nodeId="2566194812863059400">
-    <nodeInfo nodeId="2566194812863059404" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="73" endLine="25" endPosition="60" />
-    <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="73" endLine="25" endPosition="60" />
+    <nodeInfo nodeId="2566194812863059404" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="81" endLine="25" endPosition="60" />
+    <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="81" endLine="25" endPosition="60" />
   </root>
   <root nodeId="3331861101285339078">
     <nodeInfo nodeId="3331861101285428311" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="164" />

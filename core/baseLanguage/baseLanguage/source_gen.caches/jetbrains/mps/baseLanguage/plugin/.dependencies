@@ -203,7 +203,7 @@
   <dependency className="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" file="DebugInfoProvider_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
-    <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.MPSBreakpoint" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

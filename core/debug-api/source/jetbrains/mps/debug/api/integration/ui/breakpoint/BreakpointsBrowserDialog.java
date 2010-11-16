@@ -71,7 +71,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myGotoNodeAction = new AnAction("Go To", "Go To Source", jetbrains.mps.ide.projectPane.Icons.REFERENCE_ICON) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = getBreakpoint(e);
+        IBreakpoint breakpoint = getBreakpoint(e);
         if (breakpoint == null) return;
         dispose();
         openNode(breakpoint, true, true);
@@ -86,7 +86,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myShowNodeAction = new AnAction("View Source", "View Source", jetbrains.mps.ide.projectPane.Icons.TEXT_ICON) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = getBreakpoint(e);
+        IBreakpoint breakpoint = getBreakpoint(e);
         if (breakpoint == null) return;
         openNode(breakpoint, false, true);
       }
@@ -100,7 +100,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        final AbstractMPSBreakpoint breakpoint = getBreakpoint(e);
+        final IBreakpoint breakpoint = getBreakpoint(e);
         if (breakpoint == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
@@ -234,7 +234,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     return group;
   }
 
-  private AbstractMPSBreakpoint getBreakpoint(AnActionEvent e) {
+  private IBreakpoint getBreakpoint(AnActionEvent e) {
     return BreakpointsView.MPS_BREAKPOINT.getData(e.getDataContext());
   }
 
@@ -278,7 +278,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
-            AbstractMPSBreakpoint breakpoint = BreakpointsView.MPS_BREAKPOINT.getData(myViews[myCurrentViewIndex]);
+            IBreakpoint breakpoint = BreakpointsView.MPS_BREAKPOINT.getData(myViews[myCurrentViewIndex]);
             if (breakpoint == null) return;
             dispose();
             openNode(breakpoint, true, true);

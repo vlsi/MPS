@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,7 +47,7 @@ public class DebugInfoManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
   }
 
-  private final Map<String, Mapper2<SNode, Project, IBreakpoint>> myDebuggableConcepts = new HashMap<String, Mapper2<SNode, Project, IBreakpoint>>();
+  private final Map<String, Mapper2<SNode, Project, ILocationBreakpoint>> myDebuggableConcepts = new HashMap<String, Mapper2<SNode, Project, ILocationBreakpoint>>();
 
   @NotNull
   public String getComponentName() {
@@ -62,7 +63,7 @@ public class DebugInfoManager implements ApplicationComponent {
     addConceptBreakpointCreator(fqName, null);
   }
 
-  public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, IBreakpoint> breakpointCreator) {
+  public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
     myDebuggableConcepts.put(fqName, breakpointCreator);
   }
 
@@ -97,8 +98,8 @@ public class DebugInfoManager implements ApplicationComponent {
     return false;
   }
 
-  private IBreakpoint createBreakpoint(String concept, SNode node, Project project) {
-    Mapper2<SNode, Project, IBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
+  private ILocationBreakpoint createBreakpoint(String concept, SNode node, Project project) {
+    Mapper2<SNode, Project, ILocationBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
     if (mapper2 == null) {
       LOG.warning("Could not create breakpoint for node " + node);
       return null;
@@ -107,7 +108,7 @@ public class DebugInfoManager implements ApplicationComponent {
   }
 
   @Nullable
-  public IBreakpoint createBreakpoint(SNode node, Project project) {
+  public ILocationBreakpoint createBreakpoint(SNode node, Project project) {
     for (String concept : myDebuggableConcepts.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) {
         return createBreakpoint(concept, node, project);

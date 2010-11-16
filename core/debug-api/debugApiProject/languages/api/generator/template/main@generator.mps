@@ -12,6 +12,7 @@
   <import index="yvnz" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="a0fo" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="k0wy" modelUID="f:java_stub#jetbrains.mps.debug.api.breakpoints(jetbrains.mps.debug.api.breakpoints@java_stub)" version="-1" />
   <import index="yvp6" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="yvim" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -63,8 +64,8 @@
                   <node role="parameter" roleId="yvor.1109201940907:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="933053558709992570">
                     <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="a0fo.~Project" resolveInfo="Project" />
                   </node>
-                  <node role="parameter" roleId="yvor.1109201940907:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="933053558709993731">
-                    <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="5evc.~AbstractMPSBreakpoint" resolveInfo="AbstractMPSBreakpoint" />
+                  <node role="parameter" roleId="yvor.1109201940907:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="7124610299183011938">
+                    <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="k0wy.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
                   </node>
                 </node>
                 <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="933053558709993733">
@@ -78,8 +79,8 @@
                         <property name="isAbstract" nameId="yvor.1178608670077:3" value="false" />
                         <property name="name" nameId="yvnu.1169194664001:0" value="value" />
                         <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="933053558709993738" />
-                        <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="933053558709993739">
-                          <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="5evc.~AbstractMPSBreakpoint" resolveInfo="AbstractMPSBreakpoint" />
+                        <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="7124610299183011937">
+                          <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="k0wy.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
                         </node>
                         <node role="parameter" roleId="yvor.1068580123134:3" type="yvor.ParameterDeclaration" typeId="yvor.1068498886292:3" id="933053558709993740">
                           <property name="name" nameId="yvnu.1169194664001:0" value="debuggableNode" />
@@ -121,8 +122,8 @@
                       <node role="typeParameter" roleId="yvor.1201186121363:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="933053558709993755">
                         <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="a0fo.~Project" resolveInfo="Project" />
                       </node>
-                      <node role="typeParameter" roleId="yvor.1201186121363:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="933053558709993756">
-                        <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="5evc.~AbstractMPSBreakpoint" resolveInfo="AbstractMPSBreakpoint" />
+                      <node role="typeParameter" roleId="yvor.1201186121363:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="7124610299183011936">
+                        <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="k0wy.~ILocationBreakpoint" resolveInfo="ILocationBreakpoint" />
                       </node>
                     </node>
                   </node>
@@ -192,12 +193,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6607845453550402288">
-          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="6607845453550402289">
-            <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="5evc.~BreakpointManagerComponent" resolveInfo="BreakpointManagerComponent" />
-            <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="5evc.~BreakpointManagerComponent%dnotifyDebuggableConceptsAdded()%cvoid" resolveInfo="notifyDebuggableConceptsAdded" />
           </node>
         </node>
       </node>

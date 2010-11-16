@@ -26,7 +26,7 @@ import javax.swing.JComponent;
 import java.util.*;
 
 public abstract class BreakpointsView implements DataProvider {
-  public static DataKey<AbstractMPSBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
+  public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<IBreakpoint> myBreakpointsList;
   private final BreakpointManagerComponent myBreakpointsManager;
   private final IBreakpointManagerListener myListener = new IBreakpointManagerListener() {
