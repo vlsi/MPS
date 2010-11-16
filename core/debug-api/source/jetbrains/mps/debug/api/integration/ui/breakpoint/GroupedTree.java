@@ -48,7 +48,9 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
   }
 
   protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D data);
+
   protected abstract GroupKind<D, Object> createRootGroupKind();
+
   protected abstract Collection<D> getData();
 
   @Override
@@ -81,12 +83,14 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
 
       for (D data : dataToSort) {
         T group = getGroup(data);
-        Set<D> dataForGroup = result.get(group);
-        if (dataForGroup == null) {
-          dataForGroup = new HashSet<D>();
-          result.put(group, dataForGroup);
+        if (group != null) {
+          Set<D> dataForGroup = result.get(group);
+          if (dataForGroup == null) {
+            dataForGroup = new HashSet<D>();
+            result.put(group, dataForGroup);
+          }
+          dataForGroup.add(data);
         }
-        dataForGroup.add(data);
       }
 
       return result;
@@ -102,9 +106,13 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
   }
 
   private class GroupData<D extends NodeData, T> implements NodeData {
-   private final @NotNull GroupKind<D, T> myKind;
-   private final @NotNull T myGroup;
-   private final Collection<D> myData;
+    private final
+    @NotNull
+    GroupKind<D, T> myKind;
+    private final
+    @NotNull
+    T myGroup;
+    private final Collection<D> myData;
 
     public GroupData(T group, GroupKind<D, T> kind, Collection<D> data) {
       myGroup = group;
@@ -165,7 +173,7 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
       while (subGroupKind != null && !subGroupKind.isVisible()) {
         subGroupKind = subGroupKind.getSubGroupKind();
       }
-      
+
       if (subGroupKind == null) {
         for (D d : myData) {
           add(createDataNode(operationContext, d));
