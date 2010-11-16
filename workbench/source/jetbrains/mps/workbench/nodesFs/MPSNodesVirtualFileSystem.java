@@ -25,7 +25,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.ConditionalIterator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -213,8 +212,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (vf == null) continue;
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            fireBeforeFileDeletion(this, vf);
-            fireFileDeleted(this, vf, vf.getName(), null);
+            if (vf.isValid()) {
+              fireBeforeFileDeletion(this, vf);
+              fireFileDeleted(this, vf, vf.getName(), null);
+            }
             myVirtualFiles.remove(pointer);
           }
         });
