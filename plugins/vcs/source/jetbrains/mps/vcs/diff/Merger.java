@@ -133,8 +133,8 @@ public class Merger {
     myConflictingChanges.clear();
 
     collectLanguageAspectChangeConflict();
-    collectPropertyConflicts();
-    collectReferenceConflicts();
+    collectConflictsByClass(SetPropertyChange.class);
+    collectConflictsByClass(SetReferenceChange.class);
     collectSetNodeConflicts();
     collectAddAndDeleteConflicts();
     collectMoveConflicts();
@@ -229,46 +229,23 @@ public class Merger {
     }
   }
 
-  private void collectPropertyConflicts() {
-    Map<Pair<SNodeId, String>, Set<SetPropertyChange>> changes = new HashMap<Pair<SNodeId, String>, Set<SetPropertyChange>>();
+  private <C extends Change> void collectConflictsByClass(Class<C> changeClass) {
+    Map<Object, Set<C>> changesMap = new HashMap<Object, Set<C>>();
 
-    List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
+    List<C> changes = getChanges(changeClass);
 
-    for (SetPropertyChange spc : sets) {
-      if (changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getProperty())) == null) {
-        changes.put(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getProperty()), new HashSet<SetPropertyChange>());
+    for (C change : changes) {
+      Object key = change.getChangeKey();
+      if (changesMap.get(key) == null) {
+        changesMap.put(key, new HashSet<C>());
       }
 
-      changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getProperty())).add(spc);
+      changesMap.get(key).add(change);
     }
 
-    for (Pair p : changes.keySet()) {
-      if (changes.get(p).size() > 1) {
-        List<SetPropertyChange> cs = new ArrayList<SetPropertyChange>(changes.get(p));
-        assert cs.size() == 2;
-        myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
-        myConflictingChanges.add(cs.get(0));
-        myConflictingChanges.add(cs.get(1));
-      }
-    }
-  }
-
-  private void collectReferenceConflicts() {
-    Map<Pair<SNodeId, String>, Set<SetReferenceChange>> changes = new HashMap<Pair<SNodeId, String>, Set<SetReferenceChange>>();
-
-    List<SetReferenceChange> sets = getChanges(SetReferenceChange.class);
-
-    for (SetReferenceChange spc : sets) {
-      if (changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getRole())) == null) {
-        changes.put(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getRole()), new HashSet<SetReferenceChange>());
-      }
-
-      changes.get(new Pair<SNodeId, String>(spc.getAffectedNodeId(), spc.getRole())).add(spc);
-    }
-
-    for (Pair p : changes.keySet()) {
-      if (changes.get(p).size() > 1) {
-        List<SetReferenceChange> cs = new ArrayList<SetReferenceChange>(changes.get(p));
+    for (Object k : changesMap.keySet()) {
+      if (changesMap.get(k).size() > 1) {
+        List<C> cs = new ArrayList<C>(changesMap.get(k));
         assert cs.size() == 2;
         myConflicts.add(new Conflict(cs.get(0), cs.get(1)));
         myConflictingChanges.add(cs.get(0));
@@ -412,12 +389,11 @@ public class Merger {
         myUnresolvedConflictingChanges.addAll(getChangeGroupOf(change));
       }
 
-      applyImportLanguages();
-      applyImportModels();
-      applyLanguageAspectChange();
+      applyChangesByClass(UsedLanguagesChange.class);
+      applyChangesByClass(ModelImportChange.class);
+      applyChangesByClass(AddLanguageAspectChange.class);
+
       applyNewNodes();
-      applyProperties();
-      applyReferences();
 
       //move all nodes which are to move into tmp root
       for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
@@ -435,50 +411,15 @@ public class Merger {
 
       applyDeletes();
       applyMoves();
-      applyConceptChanges();
+
+      applyChangesByClass(ChangeConceptChange.class);
+      applyChangesByClass(SetPropertyChange.class);
+      applyChangesByClass(SetReferenceChange.class);
 
       myResultModel.removeRoot(tmp);
       if (!notRemoveLanguage) myResultModel.deleteLanguage(languageNamespace);
     } finally {
       myResultModel.setLoading(wasLoading);
-    }
-  }
-
-  private void applyImportModels() {
-    List<ModelImportChange> importChangeList = getChanges(ModelImportChange.class);
-    for (ModelImportChange ch : importChangeList) {
-      if (isChangeUnresolved(ch)) continue;
-      ch.apply(myResultModel);
-    }
-  }
-
-  private void applyLanguageAspectChange() {
-    List<AddLanguageAspectChange> aspectChangeList = getChanges(AddLanguageAspectChange.class);
-    for (AddLanguageAspectChange ch : aspectChangeList) {
-      if (!myExcludedChanges.contains(ch)) {
-        if (isChangeUnresolved(ch)) continue;
-        ch.apply(myResultModel);
-      }
-    }
-  }
-
-  private void applyConceptChanges() {
-    List<ChangeConceptChange> conceptChangeList = getChanges(ChangeConceptChange.class);
-    for (ChangeConceptChange ch : conceptChangeList) {
-      if (!myExcludedChanges.contains(ch)) {
-        if (myPreviewMode && !myAppliedChanges.contains(ch)) continue;
-        if (isChangeUnresolved(ch)) continue;
-        ch.apply(myResultModel);
-      }
-    }
-  }
-
-  private void applyImportLanguages() {
-    List<UsedLanguagesChange> usedLanguagesChanges = getChanges(UsedLanguagesChange.class);
-
-    for (UsedLanguagesChange ch : usedLanguagesChanges) {
-      if (isChangeUnresolved(ch)) continue;
-      ch.apply(myResultModel);
     }
   }
 
@@ -544,9 +485,8 @@ public class Merger {
     assert result;
   }
 
-  private void applyProperties() {
-    List<SetPropertyChange> sets = getChanges(SetPropertyChange.class);
-    for (SetPropertyChange sp : sets) {
+  private void applyChangesByClass(Class<? extends Change> changeClass) {
+    for (Change sp : getChanges(changeClass)) {
       if (myPreviewMode && !myAppliedChanges.contains(sp)) continue;
       if (myExcludedChanges.contains(sp)) continue;
       if (isChangeUnresolved(sp)) continue;
@@ -554,24 +494,8 @@ public class Merger {
     }
   }
 
-  private void applyReferences() {
-    List<SetReferenceChange> refs = getChanges(SetReferenceChange.class);
-    for (SetReferenceChange ref : refs) {
-      if (myPreviewMode && !myAppliedChanges.contains(ref)) continue;
-      if (myExcludedChanges.contains(ref)) continue;
-      if (isChangeUnresolved(ref)) continue;
-      ref.apply(myResultModel);
-    }
-
-  }
-
   private void applyDeletes() {
-    for (DeleteNodeChange del : getChanges(DeleteNodeChange.class)) {
-      if (myPreviewMode && !myAppliedChanges.contains(del)) continue;
-      if (myExcludedChanges.contains(del)) continue;
-      if (isChangeUnresolved(del)) continue;
-      del.apply(myResultModel);
-    }
+    applyChangesByClass(DeleteNodeChange.class);
 
     for (SetNodeChange snc : getChanges(SetNodeChange.class)) {
       if (isChangeUnresolved(snc)) continue;

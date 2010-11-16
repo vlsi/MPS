@@ -56,5 +56,9 @@ public abstract class Change {
 
   public MessageTarget getMessageTarget() {
     return null;
+ }
+
+  public Object getChangeKey() {
+    return null;
   }
 }

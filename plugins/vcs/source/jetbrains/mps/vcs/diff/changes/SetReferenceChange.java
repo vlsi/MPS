@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.*;
@@ -113,6 +114,11 @@ public class SetReferenceChange extends Change {
   @Override
   public MessageTarget getMessageTarget() {
     return new ReferenceMessageTarget(myRole);
+  }
+
+  @Override
+  public Object getChangeKey() {
+    return new Pair<SNodeId, String>(getAffectedNodeId(), getRole());
   }
 }
 

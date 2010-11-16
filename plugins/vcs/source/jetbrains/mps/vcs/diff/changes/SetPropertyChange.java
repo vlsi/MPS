@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.smodel.SModel;
@@ -72,5 +73,10 @@ public class SetPropertyChange extends Change {
   @Override
   public MessageTarget getMessageTarget() {
     return new PropertyMessageTarget(myProperty);
+  }
+
+  @Override
+  public Object getChangeKey() {
+    return new Pair<SNodeId, String>(getAffectedNodeId(), getProperty());
   }
 }
