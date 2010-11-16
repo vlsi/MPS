@@ -158,7 +158,7 @@
       <node role="reference" roleId="yvju.1207145201301:23" type="yvju.ActionInstance" typeId="yvju.1203088046679:23" id="3924602344979582140">
         <link role="action" roleId="yvju.1203088061055:23" targetNodeId="8779663014757326680" resolveInfo="ShowTypeSystemTrace" />
       </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="7257393859282347890">
+      <node role="reference:23" type="yvju.ActionInstance:23" id="7257393859282347890">
         <link role="action:23" targetNodeId="7257393859282257443" resolveInfo="ShowTypeSystemTraceForNode" />
       </node>
     </node>
@@ -1581,28 +1581,28 @@
       <property name="modifiers" nameId="yvju.1207318242773:23" value="ctrl+shift" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="7257393859282257443">
+  <node type="yvju.ActionDeclaration:23" id="7257393859282257443">
     <property name="name:23" value="ShowTypeSystemTraceForNode" />
     <property name="caption:23" value="Show Typesystem Trace for Node" />
     <property name="virtualPackage:23" value="Actions" />
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="7257393859282257444">
+    <node role="parameter:23" type="yvju.ActionDataParameterDeclaration:23" id="7257393859282257444">
       <property name="name:23" value="context" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration:23" id="7257393859282257445">
+    <node role="parameter:23" type="yvju.ActionParameterDeclaration:23" id="7257393859282257445">
       <property name="name:23" value="node" />
       <node role="visibility:23" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7257393859282257446" />
       <node role="type:23" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7257393859282257447" />
     </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="7257393859282257448">
+    <node role="parameter:23" type="yvju.ActionDataParameterDeclaration:23" id="7257393859282257448">
       <property name="name:23" value="frame" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
     </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="7257393859282257449">
+    <node role="parameter:23" type="yvju.ActionDataParameterDeclaration:23" id="7257393859282257449">
       <property name="name:23" value="editorComponent" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
     </node>
-    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="7257393859282257450">
+    <node role="executeFunction:23" type="yvju.ExecuteBlock:23" id="7257393859282257450">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7257393859282257451">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7257393859282257452">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7257393859282257453">
@@ -1620,7 +1620,7 @@
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7257393859282257458">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7257393859282257459">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7257393859282257460" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="7257393859282257461">
+                <node role="operation:3" type="yvju.ActionDataParameterReferenceOperation:23" id="7257393859282257461">
                   <link role="member:23" targetNodeId="7257393859282257449" resolveInfo="editorComponent" />
                 </node>
               </node>
@@ -1657,19 +1657,19 @@
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7257393859282257475">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7257393859282257476" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="7257393859282257477">
+                    <node role="operation:3" type="yvju.ActionDataParameterReferenceOperation:23" id="7257393859282257477">
                       <link role="member:23" targetNodeId="7257393859282257444" resolveInfo="context" />
                     </node>
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7257393859282257478">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7257393859282257479" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="7257393859282257480">
+                    <node role="operation:3" type="yvju.ActionDataParameterReferenceOperation:23" id="7257393859282257480">
                       <link role="member:23" targetNodeId="7257393859282257448" resolveInfo="frame" />
                     </node>
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7257393859282347886">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7257393859282347887" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="7257393859282347888">
+                    <node role="operation:3" type="yvju.ActionParameterReferenceOperation:23" id="7257393859282347888">
                       <link role="member:23" targetNodeId="7257393859282257445" resolveInfo="node" />
                     </node>
                   </node>
@@ -1688,7 +1688,7 @@
         </node>
       </node>
     </node>
-    <node role="keystroke:23" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="7257393859282257485">
+    <node role="keystroke:23" type="yvju.KeyMapKeystroke:23" id="7257393859282257485">
       <property name="keycode:23" value="VK_W" />
       <property name="modifiers:23" value="ctrl+shift" />
     </node>
