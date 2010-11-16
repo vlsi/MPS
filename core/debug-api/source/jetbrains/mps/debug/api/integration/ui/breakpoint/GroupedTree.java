@@ -26,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.UIManager;
+import javax.xml.soap.Node;
 import java.awt.Color;
 import java.util.*;
 
@@ -83,14 +84,12 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
 
       for (D data : dataToSort) {
         T group = getGroup(data);
-        if (group != null) {
-          Set<D> dataForGroup = result.get(group);
-          if (dataForGroup == null) {
-            dataForGroup = new HashSet<D>();
-            result.put(group, dataForGroup);
-          }
-          dataForGroup.add(data);
+        Set<D> dataForGroup = result.get(group);
+        if (dataForGroup == null) {
+          dataForGroup = new HashSet<D>();
+          result.put(group, dataForGroup);
         }
+        dataForGroup.add(data);
       }
 
       return result;
@@ -181,7 +180,13 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
       } else {
         Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(myData);
         for (Object subGroup : sorted.keySet()) {
-          add(new GroupTreeNode<Object>(operationContext, subGroupKind, subGroup, sorted.get(subGroup)));
+          if (subGroup != null) {
+            add(new GroupTreeNode<Object>(operationContext, subGroupKind, subGroup, sorted.get(subGroup)));
+          } else {
+            for (D d : sorted.get(subGroup)) {
+              add(createDataNode(operationContext, d));
+            }
+          }
         }
       }
 
