@@ -42,11 +42,7 @@ public class ShowTypeSystemTrace extends JDialog {
     tree.setForeground(new Color(0x07025D));
     this.setSize(500, 600);
     this.setPreferredSize(new Dimension(500, 900));
-    String title = "TypeSystem trace";
-    if (node != null) {
-      title = title.concat(" for node (" + node + ")");
-    }
-    setTitle(title);
+    setTitle("TypeSystem trace");
     this.pack();
     this.setModal(true);
     this.setVisible(true);

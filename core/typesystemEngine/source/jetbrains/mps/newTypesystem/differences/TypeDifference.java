@@ -29,9 +29,9 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class TypeDifference extends Difference {
-  protected SNode myNode;
-  protected SNode myType;
-  protected Map<SNode, SNode> myMap;
+  private SNode myNode;
+  private SNode myType;
+  private Map<SNode, SNode> myMap;
 
   public TypeDifference(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info) {
     myNode = node;
