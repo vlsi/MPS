@@ -113,7 +113,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setErrorState(ErrorState.ERROR);
     }
 
-    setText(caclulateNodeTextPresentation());
+    setText(calculateNodeTextPresentation());
     setAutoExpandable(myNode != null && !myNode.isRoot());
   }
 
@@ -219,7 +219,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return md;
   }
 
-  private String caclulateNodeTextPresentation() {
+  private String calculateNodeTextPresentation() {
     StringBuffer output = new StringBuffer();
 
     if (myRole != null) {

@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
@@ -37,6 +38,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.JPopupMenu;
 import java.awt.Frame;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -68,27 +71,46 @@ public class TypeSystemTraceTree extends MPSTree {
     expandAll();
   }
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, ShowTypeSystemTrace parent) {
-    this(operationContext,tcc, frame, parent, null);
-  }
-
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
+    if (mySelectedNode != null) {
+      return createListTraceForNode();
+    }
     return createNode(myDifference);
   }
 
   private TypeSystemTraceTreeNode createNode(Difference diff) {
+
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
     if (diff.getChildren() != null) {
       for (Difference child : diff.getChildren()) {
         TypeSystemTraceTreeNode node = createNode(child);
-        if (showNode(child)) {
-          result.add(node);
-        }
+        result.add(node);
       }
     }
     return result;
+  }
+
+  private MPSTreeNode createListTraceForNode() {
+    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myDifference, myOperationContext);
+    List<TypeSystemTraceTreeNode> result = new LinkedList<TypeSystemTraceTreeNode>();
+    createList(myDifference, result);
+    for (TypeSystemTraceTreeNode node : result) {
+      root.add(node);
+    }
+    return root;
+  }
+
+  private void createList(Difference diff, List<TypeSystemTraceTreeNode> result) {
+    if (showNode(diff)) {
+      result.add(new TypeSystemTraceTreeNode(diff, myOperationContext));
+    }
+    if (diff.getChildren() != null) {
+      for (Difference child : diff.getChildren()) {
+        createList(child, result);
+      }
+    }
   }
 
   private boolean showNode(Difference diff) {
@@ -107,7 +129,7 @@ public class TypeSystemTraceTree extends MPSTree {
       if (myNodes.contains(eq.getChild())) {
         myNodes.add(eq.getParent());
         return true;
-      }
+      } 
     }
     if (diff instanceof InequalityDifference) {
       InequalityDifference d = (InequalityDifference) diff;

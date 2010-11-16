@@ -18,54 +18,30 @@ package jetbrains.mps.newTypesystem.differences;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.awt.Color;
 import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Nov 15, 2010
+ * Time: 7:09:20 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TypeDifference extends Difference {
-  protected SNode myNode;
-  protected SNode myType;
-  protected Map<SNode, SNode> myMap;
+public class TypeExpanded extends TypeDifference {
+  private final SNode myOldType;
 
-  public TypeDifference(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info) {
-    myNode = node;
-    myType = type;
-    myMap = map;
-    mySource = node;
-    myEquationInfo = info;
+  public TypeExpanded(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info, SNode oldType) {
+    super(node, type, map, info);
+    myOldType = oldType;
   }
 
   @Override
   public void rollBack() {
-    myMap.remove(myNode);
-  }
-
-  @Override
-  public void play() {
-    myMap.put(myNode, myType);
+    myMap.put(myNode, myOldType);
   }
 
   @Override
   public String getPresentation() {
-    return "Type added (" + myNode + " : " + myType + ")";
-  }
-
-  @Override
-  public Color getColor() {
-    return new Color(0x007700);
-  }
-
-  public SNode getNode() {
-    return myNode;
-  }
-
-  public SNode getType() {
-    return myType;
+    return "Type expanded " + "(" + myNode + " : " + myType + ")";
   }
 }

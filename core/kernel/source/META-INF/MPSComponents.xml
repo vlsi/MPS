@@ -293,6 +293,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.actions.TypeSystemSettings</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.smodel.ImmatureReferences</implementation-class>
     </component>
 

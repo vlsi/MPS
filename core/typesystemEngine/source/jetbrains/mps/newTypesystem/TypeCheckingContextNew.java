@@ -203,7 +203,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode createNewRuntimeTypesVariable() {
     return myState.createNewRuntimeTypesVariable();
   }
-                  /*
+  
   @Override
   public void clear() {
     myState.clear(true);
@@ -215,6 +215,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    SNode left = myState.expand(leftOperandType);
+    SNode right = myState.expand(rightOperandType);
+    return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
+  }
+
+  @Override
   public EquationManager getEquationManager() {
     return null;
   }
@@ -223,11 +230,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public boolean isIncrementalMode() {
     return false;
   }
-
+  /*
   @Override
   public SNode computeTypeInferenceMode(SNode node) {
     return super.computeTypeInferenceMode(node);    //To change body of overridden methods use File | Settings | File Templates.
-  }
+  } */
 
   @Override
   public void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo) {
@@ -253,5 +260,5 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode typeOf(SNode node) {
     return typeOf(node, null, null, true);
   }
-                                                */
+
 }
