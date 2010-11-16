@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,4 +42,6 @@ public interface IBreakpoint {
 
   void addBreakpointListener(@NotNull IBreakpointListener listener);
   void removeBreakpointListener(IBreakpointListener listener);
+
+  Project getProject();
 }

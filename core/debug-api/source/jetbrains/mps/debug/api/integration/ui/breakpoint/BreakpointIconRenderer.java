@@ -102,15 +102,13 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     menu.add(new AbstractAction(myBreakpoint.isEnabled() ? "Disable" : "Enable") {
       @Override
       public void actionPerformed(ActionEvent e) {
-// todo
-//        myBreakpoint.toggleEnabled();
+        myBreakpoint.setEnabled(!myBreakpoint.isEnabled());
       }
     });
     menu.add(new AbstractAction("Remove") {
       @Override
       public void actionPerformed(ActionEvent e) {
-// todo
-//        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
+        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
       }
     });
     return menu;
