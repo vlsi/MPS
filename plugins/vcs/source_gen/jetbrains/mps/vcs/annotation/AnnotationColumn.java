@@ -139,7 +139,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     if (component == null || component.isDisposed()) {
       return;
     }
-    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(AnnotationUtil.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
+    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
       public boolean accept(EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
       }

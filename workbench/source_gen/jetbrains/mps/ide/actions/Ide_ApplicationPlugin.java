@@ -31,6 +31,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DevkitActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Edit_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorInternal_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorTabActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup");

@@ -16,15 +16,13 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
+import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -41,6 +39,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -603,7 +603,14 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         } else {
           mousePressedInIconsArea(e);
         }
+        if (!e.isConsumed() && e.isPopupTrigger()) {
+          BaseGroup actionGroup = ActionUtils.getGroup(EditorLeftPanelMenu_ActionGroup.ID);
+          ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
+          popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());
+          e.consume();
+        }
     }
+
     // suppressing future event processig in case event was consumed by one of LeftHighlighter elements
     if (!e.isConsumed()) {
       super.processMouseEvent(e);
@@ -613,7 +620,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void mousePressedInIconsArea(MouseEvent e) {
     EditorMessageIconRenderer iconRenderer = getIconRendererUnderMouse(e);
     if (iconRenderer != null) {
-      if (e.getButton() == MouseEvent.BUTTON3) {
+      if (e.isPopupTrigger()) {
         JPopupMenu popupMenu = iconRenderer.getPopupMenu();
         if (popupMenu != null && e.getID() == MouseEvent.MOUSE_CLICKED) {
           e.consume();

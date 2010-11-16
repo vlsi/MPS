@@ -998,6 +998,12 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" file="EditorLeftPanelMenu_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" file="EditorPopup_ActionGroup.java">
     <classNode dependClassName="com.intellij.ide.actions.SelectInAction" />
     <classNode dependClassName="java.lang.String" />
