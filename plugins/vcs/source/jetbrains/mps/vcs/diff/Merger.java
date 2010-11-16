@@ -136,8 +136,8 @@ public class Merger {
     collectConflictsByClass(SetPropertyChange.class);
     collectConflictsByClass(SetReferenceChange.class);
     collectSetNodeConflicts();
-    collectAddAndDeleteConflicts();
-    collectMoveConflicts();
+    collectDeleteDependencyConflicts();
+    collectMoveConflicts(); // moving same node to different places
     collectConceptConflicts();
 
     for (Change change : new ArrayList<Change>(myConflictingChanges)) {
@@ -311,32 +311,18 @@ public class Merger {
     return ld.getSourceCardinality() != Cardinality._0__1 && ld.getSourceCardinality() != Cardinality._1;
   }
 
-  private void collectAddAndDeleteConflicts() {
-    for (AddNodeChange c : getChanges(AddNodeChange.class)) {
-      for (DeleteNodeChange d : getChanges(DeleteNodeChange.class)) {
-        if (d.getAffectedNodeId().equals(c.getNodeParent())) {
+  private void collectDeleteDependencyConflicts() {
+    collectDeleteDependencyConflicts(myBaseMineChanges, myBaseRepoChanges);
+    collectDeleteDependencyConflicts(myBaseRepoChanges, myBaseMineChanges);
+  }
+
+  private void collectDeleteDependencyConflicts(List<Change> list1, List<Change> list2) {
+    for (Change c : list1) {
+      for (DeleteNodeChange d : CollectionUtil.filter(DeleteNodeChange.class, list2)) {
+        if (c.getDependencies().contains(d.getAffectedNodeId())) {
           myConflicts.add(new Conflict(c, d));
           myConflictingChanges.add(c);
           myConflictingChanges.add(d);
-        }
-      }
-    }
-
-    for (SetNodeChange c : getChanges(SetNodeChange.class)) {
-      SNode oldParent = getBase(mySourceModels).getNodeById(c.getNodeParent());
-      if (oldParent == null) {
-        continue;
-      }
-      SNode child = oldParent.getChild(c.getNodeRole());
-      if (child == null) {
-        continue;
-      }
-      SNodeId prevId = child.getSNodeId();
-      for (AddNodeChange ac : getChanges(AddNodeChange.class)) {
-        if (ac.getNodeParent().equals(prevId)) {
-          myConflicts.add(new Conflict(c, ac));
-          myConflictingChanges.add(c);
-          myConflictingChanges.add(ac);
         }
       }
     }
@@ -393,24 +379,7 @@ public class Merger {
       applyChangesByClass(ModelImportChange.class);
       applyChangesByClass(AddLanguageAspectChange.class);
 
-      applyNewNodes();
-
-      //move all nodes which are to move into tmp root
-      for (MoveNodeChange mnc : getChanges(MoveNodeChange.class)) {
-        SNode node = myResultModel.getNodeById(mnc.getAffectedNodeId());
-        if (node != null) {
-          if (node.isRoot()) {
-            myResultModel.removeRoot(node);
-          } else {
-            node.getParent().removeChild(node);
-          }
-
-          tmp.addChild("tmp", node);
-        }
-      }
-
-      applyDeletes();
-      applyMoves();
+      applyStructuralChanges();
 
       applyChangesByClass(ChangeConceptChange.class);
       applyChangesByClass(SetPropertyChange.class);
@@ -423,105 +392,85 @@ public class Merger {
     }
   }
 
-  private void applyNewNodes() {
-    List<NewNodeChange> newNodeChanges = getChanges(NewNodeChange.class);
-
-    Map<SNodeId, NewNodeChange> changesMap = new HashMap<SNodeId, NewNodeChange>();
-    for (NewNodeChange c : newNodeChanges) {
-      if (myPreviewMode && !myAppliedChanges.contains(c)) continue;
-      if (myExcludedChanges.contains(c) || isChangeUnresolved(c)) continue;
-      changesMap.put(c.getAffectedNodeId(), c);
-    }
-
-    for (NewNodeChange c : newNodeChanges) {
-      applyNewNodeChange(c, changesMap);
-    }
+  private boolean isChangeApplicable(Change change) {
+    if (myPreviewMode && !myAppliedChanges.contains(change)) return false;
+    if (myExcludedChanges.contains(change)) return false;
+    if (isChangeUnresolved(change)) return false;
+    return true;
   }
 
-  private void applyNewNodeChange(NewNodeChange change, Map<SNodeId, NewNodeChange> affectedNodeToChangeMap) {
-    if (myPreviewMode && !myAppliedChanges.contains(change)) {
-      return;
-    }
-    if (myExcludedChanges.contains(change) || isChangeUnresolved(change)) {
-      return;
-    }
-
-    if (myResultModel.getNodeById(change.getAffectedNodeId()) != null) {
-      return;
-    }
-
-    if (change.getNodeParent() == null) { //i.e. add root
-      boolean result = change.apply(myResultModel);
-      assert result;
-      return;
-    }
-
-    if (myResultModel.getNodeById(change.getNodeParent()) == null) {
-      NewNodeChange parentNodeChange = affectedNodeToChangeMap.get(change.getNodeParent());
-      if (parentNodeChange != null) {
-        applyNewNodeChange(parentNodeChange, affectedNodeToChangeMap);
-      }
-
-      if (myResultModel.getNodeById(change.getNodeParent()) == null) {
-        //we wasn't able to find a parent (probably because it was excluded) so return
-        return;
+  private <C extends Change> List<C> getApplicableChanges(Class<C> changeClass) {
+    List<C> result = new ArrayList<C>();
+    for (C change : getChanges(changeClass)) {
+      if (isChangeApplicable(change)) {
+        result.add(change);
       }
     }
-
-    if (change instanceof AddNodeChange) {
-      AddNodeChange addNodeChange = (AddNodeChange) change;
-
-      if (addNodeChange.getPreviousNode() != null) {
-        NewNodeChange previousNodeChange = affectedNodeToChangeMap.get(addNodeChange.getPreviousNode());
-        if (previousNodeChange != null) {
-          applyNewNodeChange(previousNodeChange, affectedNodeToChangeMap);
-        }
-      }
-    }
-
-    assert myResultModel.getNodeById(change.getAffectedNodeId()) == null;
-    boolean result = change.apply(myResultModel);
-
-    assert result;
+    return result;
   }
 
   private void applyChangesByClass(Class<? extends Change> changeClass) {
-    for (Change sp : getChanges(changeClass)) {
-      if (myPreviewMode && !myAppliedChanges.contains(sp)) continue;
-      if (myExcludedChanges.contains(sp)) continue;
-      if (isChangeUnresolved(sp)) continue;
-      sp.apply(myResultModel);
+    for (Change change : getApplicableChanges(changeClass)) {
+      change.apply(myResultModel);
     }
   }
 
-  private void applyDeletes() {
-    applyChangesByClass(DeleteNodeChange.class);
+  private void applyStructuralChanges() {
+    List<Change> structuralChanges = new ArrayList<Change>();
+    structuralChanges.addAll(getApplicableChanges(NewNodeChange.class));
+    structuralChanges.addAll(getApplicableChanges(DeleteNodeChange.class));
+    structuralChanges.addAll(getApplicableChanges(MoveNodeChange.class));
+    Map<SNodeId, Change> nodeIdToChangeMap = new HashMap<SNodeId, Change>();
+    for (Change structuralChange : structuralChanges) {
+      SNodeId nodeId = structuralChange.getAffectedNodeId();
 
-    for (SetNodeChange snc : getChanges(SetNodeChange.class)) {
-      if (isChangeUnresolved(snc)) continue;
-      snc.secondApply(myResultModel);
+      // This is a hack
+      Change sameChange = nodeIdToChangeMap.get(nodeId);
+      if (sameChange != null) {
+        if (structuralChange instanceof DeleteNodeChange && sameChange instanceof DeleteNodeChange) {
+        } else {
+          assert false;
+        }
+      }
+      nodeIdToChangeMap.put(nodeId, structuralChange);
+    }
+    for (Change change : structuralChanges) {
+      applyStructurualChange(nodeIdToChangeMap, change);
     }
   }
 
-  private void applyMoves() {
-    Set<MoveNodeChange> moves = new LinkedHashSet<MoveNodeChange>(getChanges(MoveNodeChange.class));
-
-    Map<SNodeId, MoveNodeChange> idsToMoves = new HashMap<SNodeId, MoveNodeChange>();
-    for (MoveNodeChange mnc : moves) {
-      idsToMoves.put(mnc.getAffectedNodeId(), mnc);
-    }
-
-    while (!moves.isEmpty()) {
-      executeMove(moves.iterator().next(), moves, idsToMoves);
+  private List<SNodeId> getRealDependencies(Map<SNodeId, Change> nodeIdToChangeMap, Change change) {
+    if (change instanceof DeleteNodeChange) {
+      ArrayList<SNodeId> result = new ArrayList<SNodeId>();
+      for (SNodeId nodeId : change.getDependencies()) {
+        if (nodeIdToChangeMap.get(nodeId) instanceof DeleteNodeChange) {
+          result.add(nodeId);
+        }
+      }
+      return result;
+    } else {
+      return change.getDependencies();
     }
   }
 
-  private void executeMove(MoveNodeChange current, Set<MoveNodeChange> notExecuted, Map<SNodeId, MoveNodeChange> map) {
-    notExecuted.remove(current);
-    if (current.getPrevSibling() != null && map.containsKey(current.getPrevSibling())) {
-      executeMove(map.get(current.getPrevSibling()), notExecuted, map);
+  private boolean applyStructurualChange(Map<SNodeId, Change> nodeIdToChangeMap, Change change) {
+    if (myPreviewMode && !myAppliedChanges.contains(change)) { return false; }
+    if (myExcludedChanges.contains(change) || isChangeUnresolved(change)) { return false; }
+    if (myAppliedChanges.contains(change)) { return true; }
+
+    for (SNodeId dependency : getRealDependencies(nodeIdToChangeMap, change)) {
+      if (!nodeIdToChangeMap.containsKey(dependency)) {
+        continue;
+      }
+      if (!applyStructurualChange(nodeIdToChangeMap, nodeIdToChangeMap.get(dependency))) {
+        return false;
+      }
     }
-    current.apply(myResultModel);
+    boolean applied = change.apply(myResultModel);
+    if (applied) {
+      myAppliedChanges.add(change);
+    }
+    return applied;
   }
 
   private boolean isChangeUnresolved(Change ch) {
