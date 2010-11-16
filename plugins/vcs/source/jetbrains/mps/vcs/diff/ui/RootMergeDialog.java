@@ -134,7 +134,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     final SNode[] resultNode = new SNode[1];
     final SNode[] change2Node = new SNode[1];
 
-    merger.setPreviewMode(true);
+    //merger.setPreviewMode(true);
     merger.rebuldResultModel();
 
     final SModel resultModel = merger.getResultModel();

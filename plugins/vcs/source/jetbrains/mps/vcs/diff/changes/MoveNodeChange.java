@@ -58,8 +58,28 @@ public class MoveNodeChange extends Change {
   }
 
   @Override
+  public boolean isSameChange(Change c) {
+    if (this == c) return true;
+    if (c == null || getClass() != c.getClass()) return false;
+
+    MoveNodeChange that = (MoveNodeChange) c;
+
+    if (myNewParent != null ? !myNewParent.equals(that.myNewParent) : that.myNewParent != null) return false;
+    if (myNewRole != null ? !myNewRole.equals(that.myNewRole) : that.myNewRole != null) return false;
+    if (!myNodeId.equals(that.myNodeId)) return false;
+    if (myPrevSibling != null ? !myPrevSibling.equals(that.myPrevSibling) : that.myPrevSibling != null) return false;
+
+    return true;
+  }
+
+  @Override
   public List<SNodeId> getDependencies() {
     return Arrays.asList(myPrevSibling, myNewParent);
+  }
+
+  @Override
+  public Object getChangeKey() {
+    return myNodeId;
   }
 
   public boolean apply(SModel m) {

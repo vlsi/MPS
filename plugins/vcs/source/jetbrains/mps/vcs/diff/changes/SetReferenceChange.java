@@ -120,5 +120,22 @@ public class SetReferenceChange extends Change {
   public Object getChangeKey() {
     return new Pair<SNodeId, String>(getAffectedNodeId(), getRole());
   }
+
+  @Override
+  public boolean isSameChange(Change c) {
+    if (this == c) return true;
+    if (c == null || getClass() != c.getClass()) return false;
+
+    SetReferenceChange that = (SetReferenceChange) c;
+
+    if (myInternal != that.myInternal) return false;
+    if (myNodeId != null ? !myNodeId.equals(that.myNodeId) : that.myNodeId != null) return false;
+    if (myResolveInfo != null ? !myResolveInfo.equals(that.myResolveInfo) : that.myResolveInfo != null) return false;
+    if (myRole != null ? !myRole.equals(that.myRole) : that.myRole != null) return false;
+    if (myTargetId != null ? !myTargetId.equals(that.myTargetId) : that.myTargetId != null) return false;
+    if (myTargetModel != null ? !myTargetModel.equals(that.myTargetModel) : that.myTargetModel != null) return false;
+
+    return true;
+  }
 }
 

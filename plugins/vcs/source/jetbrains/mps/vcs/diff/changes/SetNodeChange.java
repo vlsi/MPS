@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.Pair;
 
 import java.util.List;
 import java.util.Arrays;
@@ -75,6 +76,11 @@ public class SetNodeChange extends NewNodeChange {
 
   public SNodeId getOldChildId() {
     return myOldChildId;
+  }
+
+  @Override
+  public Object getChangeKey() {
+    return new Pair<SNodeId, String>(getNodeParent(), getNodeRole());
   }
 
   @Override
