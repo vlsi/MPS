@@ -64,6 +64,7 @@ public class TypeContextManager implements ApplicationComponent {
     }
   };
   private static final long TIMEOUT = 60000;
+  private SModelRepositoryAdapter mySModelRepositoryListener;
 
   public TypeContextManager(TypeChecker typeChecker, ClassLoaderManager classLoaderManager) {
     myTypeChecker = typeChecker;
@@ -90,10 +91,23 @@ public class TypeContextManager implements ApplicationComponent {
         clearDefaultOwners();
       }
     }, TIMEOUT, TIMEOUT);
+    mySModelRepositoryListener = new SModelRepositoryAdapter() {
+      @Override
+      public void modelDeleted(SModelDescriptor modelDescriptor) {
+        myListeningForModels.remove(modelDescriptor);
+      }
+
+      @Override
+      public void modelRemoved(SModelDescriptor modelDescriptor) {
+        myListeningForModels.remove(modelDescriptor);
+      }
+    };
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
   @Override
   public void disposeComponent() {
+     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
   }
 
   public static TypeContextManager getInstance() {
