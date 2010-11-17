@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -39,7 +40,12 @@ public class ModelPersistence7 extends ModelPersistence5 {
   }
 
   @Override
-  public DefaultMPSHandler getModelReaderHandler() {
-    return new Handler7();
+  public DefaultMPSHandler getModelReaderHandler(ModelLoadingState state) {
+    return state == ModelLoadingState.ROOTS_LOADED || state == ModelLoadingState.FULLY_LOADED ? new Handler7(state) : null;
+  }
+
+  @Override
+  public DefaultMPSHandler getAnnotationReaderHandler() {
+    return new Handler7(ModelLoadingState.FULLY_LOADED);
   }
 }

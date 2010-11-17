@@ -191,18 +191,21 @@ public class ModelPersistence {
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       // first try to use SAX parser
-      DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
+      DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler(state);
+      if (handler == null && state == ModelLoadingState.ROOTS_LOADED) { // try SAX parser for full load
+        state = ModelLoadingState.FULLY_LOADED;
+        handler = getModelPersistence(version).getModelReaderHandler(state);
+      }
       if (handler != null) {
-        boolean partial = handler.setPartialLoading(state);
         try {
           JDOMUtil.createSAXParser().parse(source, (DefaultHandler) handler);
         } catch (BreakParseSAXException e) {
-          //this is normal
+          //this is normal for ROOTS_LOADED
         } catch (Throwable t) {
           LOG.error(t);
           return new ModelLoadResult(new StubModel(new SModelReference(name, stereotype)), ModelLoadingState.NOT_LOADED);
         }
-        return new ModelLoadResult(handler.getModel(), partial ? state : ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult(handler.getModel(), state);
       }
       // then try to use DOM reader
       IModelReader reader = getModelPersistence(version).getModelReader();
@@ -216,23 +219,19 @@ public class ModelPersistence {
 
   @Nullable
   public static List<SNodeId> getLineNumberToNodeIdMap(int version, String content) {
-    if (version >= 5) {
-      try {
-        SAXParser parser = JDOMUtil.createSAXParser();
-        DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
+    if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
+      DefaultMPSHandler handler = getModelPersistence(version).getAnnotationReaderHandler();
+      if (handler != null) {
         try {
+          SAXParser parser = JDOMUtil.createSAXParser();
           parser.parse(new ByteArrayInputStream(content.getBytes("UTF-8")), (DefaultHandler) handler);
-        } catch (SAXException e) {
-          //this is normal
+          return handler.getLineToIdMap();
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-        return handler.getLineToIdMap();
-      } catch (Throwable t) {
-        LOG.error(t);
-        return null;
       }
-    } else {
-      return null;
     }
+    return null;
   }
 
   //--------write--------

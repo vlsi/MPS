@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -79,12 +80,22 @@ public class ModelReader7 implements IModelReader {
       myHelper.addImport(model, indexValue, importedModelUIDString, usedModelVersion, element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
     }
 
-    // nodes
-    for (Element child : (List<Element>) rootElement.getChildren(ModelPersistence.NODE)) {
-      SNode snode = readNode(child, model);
-      if (snode != null) {
-        model.addRoot(snode);
+    // roots
+    Element roots = rootElement.getChild(ModelPersistence.ROOTS);
+    for (Element element : (List<Element>) roots.getChildren(ModelPersistence.NODE)) {
+      SNode node = readNode(element, model, true);
+      if (node != null) {
+        model.addRoot(node);
       }
+    }
+    // nodes
+    for (Element root : (List<Element>) rootElement.getChildren(ModelPersistence.ROOT_CONTENT)) {
+      SNode node = model.getNodeById(SNodeId.fromString(root.getAttributeValue(ModelPersistence.ID)));
+      if (node == null) {
+        LOG.errorWithTrace("Cannot find root for " + root.getAttributeValue(ModelPersistence.ID));
+        continue;
+      }
+      readChildren(node, root);
     }
 
     model.setLoading(false);
@@ -92,7 +103,7 @@ public class ModelReader7 implements IModelReader {
   }
 
   @Nullable
-  protected SNode readNode(Element nodeElement, SModel model) {
+  protected SNode readNode(Element nodeElement, SModel model, boolean isRootStub) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
     SNode node = new SNode(model, conceptFqName);
 
@@ -122,16 +133,21 @@ public class ModelReader7 implements IModelReader {
       if (reference != null) node.addReference(reference);
     }
 
+    if (!isRootStub)
+      readChildren(node, nodeElement);
+
+    return node;
+  }
+
+  protected void readChildren(@NotNull SNode node, @NotNull Element nodeElement) {
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
       String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
-      SNode childNode = readNode(child, model);
+      SNode childNode = readNode(child, node.getModel(), false);
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {
         node.addChild(role, childNode);
       }
     }
-
-    return node;
   }
 }

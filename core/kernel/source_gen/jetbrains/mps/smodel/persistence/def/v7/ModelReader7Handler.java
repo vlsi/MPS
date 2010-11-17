@@ -11,8 +11,8 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
-import jetbrains.mps.smodel.SNode;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
@@ -23,33 +23,38 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.persistence.def.BreakParseSAXException;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
-public class ModelReader7FullHandler extends DefaultHandler {
+public class ModelReader7Handler extends DefaultHandler {
   private static String[] EMPTY_ARRAY = new String[0];
-  protected static Log log = LogFactory.getLog(ModelReader7FullHandler.class);
+  protected static Log log = LogFactory.getLog(ModelReader7Handler.class);
 
-  private ModelReader7FullHandler.modelElementHandler modelhandler = new ModelReader7FullHandler.modelElementHandler();
-  private ModelReader7FullHandler.persistenceElementHandler persistencehandler = new ModelReader7FullHandler.persistenceElementHandler();
-  private ModelReader7FullHandler.tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader7FullHandler.tag_with_namespaceElementHandler();
-  private ModelReader7FullHandler.importElementHandler importhandler = new ModelReader7FullHandler.importElementHandler();
-  private ModelReader7FullHandler.rootsElementHandler rootshandler = new ModelReader7FullHandler.rootsElementHandler();
-  private ModelReader7FullHandler.rootContentElementHandler rootContenthandler = new ModelReader7FullHandler.rootContentElementHandler();
-  private ModelReader7FullHandler.nodeElementHandler nodehandler = new ModelReader7FullHandler.nodeElementHandler();
-  private ModelReader7FullHandler.propertyElementHandler propertyhandler = new ModelReader7FullHandler.propertyElementHandler();
-  private ModelReader7FullHandler.linkElementHandler linkhandler = new ModelReader7FullHandler.linkElementHandler();
-  private Stack<ModelReader7FullHandler.ElementHandler> myHandlersStack = new Stack<ModelReader7FullHandler.ElementHandler>();
+  private ModelReader7Handler.modelElementHandler modelhandler = new ModelReader7Handler.modelElementHandler();
+  private ModelReader7Handler.persistenceElementHandler persistencehandler = new ModelReader7Handler.persistenceElementHandler();
+  private ModelReader7Handler.tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader7Handler.tag_with_namespaceElementHandler();
+  private ModelReader7Handler.importElementHandler importhandler = new ModelReader7Handler.importElementHandler();
+  private ModelReader7Handler.rootsElementHandler rootshandler = new ModelReader7Handler.rootsElementHandler();
+  private ModelReader7Handler.rootContentElementHandler rootContenthandler = new ModelReader7Handler.rootContentElementHandler();
+  private ModelReader7Handler.nodeElementHandler nodehandler = new ModelReader7Handler.nodeElementHandler();
+  private ModelReader7Handler.propertyElementHandler propertyhandler = new ModelReader7Handler.propertyElementHandler();
+  private ModelReader7Handler.linkElementHandler linkhandler = new ModelReader7Handler.linkElementHandler();
+  private Stack<ModelReader7Handler.ElementHandler> myHandlersStack = new Stack<ModelReader7Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private Pair<SModel, List<SNodeId>> myResult;
+  private ModelLoadingState fieldstate;
+  private SModel fieldtoModel;
   private SModel fieldmodel;
   private VersionUtil fieldhelper;
   private Deque<SNodeId> fieldnodeIdStack;
   private List<SNodeId> fieldlineToIdMap;
   private boolean fieldnodeEnded;
-  private SNode fieldcurrentRoot;
 
-  public ModelReader7FullHandler() {
+  public ModelReader7Handler(ModelLoadingState state, SModel toModel) {
+    fieldstate = state;
+    fieldtoModel = toModel;
   }
 
   public Pair<SModel, List<SNodeId>> getResult() {
@@ -64,8 +69,8 @@ public class ModelReader7FullHandler extends DefaultHandler {
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
     globalHandleText(myValues.firstElement(), new String(array, start, len));
-    ModelReader7FullHandler.ElementHandler current = (myHandlersStack.empty() ?
-      (ModelReader7FullHandler.ElementHandler) null :
+    ModelReader7Handler.ElementHandler current = (myHandlersStack.empty() ?
+      (ModelReader7Handler.ElementHandler) null :
       myHandlersStack.peek()
     );
     if (current != null) {
@@ -75,12 +80,12 @@ public class ModelReader7FullHandler extends DefaultHandler {
 
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    ModelReader7FullHandler.ElementHandler current = myHandlersStack.pop();
+    ModelReader7Handler.ElementHandler current = myHandlersStack.pop();
     Object childValue = myValues.pop();
     if (current != null) {
       current.validate(childValue);
-      ModelReader7FullHandler.ElementHandler parent = (myHandlersStack.empty() ?
-        (ModelReader7FullHandler.ElementHandler) null :
+      ModelReader7Handler.ElementHandler parent = (myHandlersStack.empty() ?
+        (ModelReader7Handler.ElementHandler) null :
         myHandlersStack.peek()
       );
       if (parent != null) {
@@ -93,8 +98,8 @@ public class ModelReader7FullHandler extends DefaultHandler {
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    ModelReader7FullHandler.ElementHandler current = (myHandlersStack.empty() ?
-      (ModelReader7FullHandler.ElementHandler) null :
+    ModelReader7Handler.ElementHandler current = (myHandlersStack.empty() ?
+      (ModelReader7Handler.ElementHandler) null :
       myHandlersStack.peek()
     );
     if (current == null) {
@@ -112,6 +117,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     Object result = current.createObject(attributes);
+    if (myHandlersStack.empty())  myResult = (Pair<SModel, List<SNodeId>>) result;
 
     // handle attributes 
     for (int i = 0; i < attributes.getLength(); i++) {
@@ -145,18 +151,18 @@ public class ModelReader7FullHandler extends DefaultHandler {
       return null;
     }
 
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected ModelReader7FullHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader7Handler.ElementHandler createChild(String tagName) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       throw new SAXParseException("unknown child: " + tagName, null);
     }
 
-    protected void handleText(Object resultObject, String value) throws SAXParseException {
+    protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
@@ -164,14 +170,14 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     protected String[] requiredAttributes() {
-      return ModelReader7FullHandler.EMPTY_ARRAY;
+      return ModelReader7Handler.EMPTY_ARRAY;
     }
 
-    protected void validate(Object resultObject) throws SAXParseException {
+    protected void validate(Object resultObject) throws SAXException {
     }
   }
 
-  public class modelElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class modelElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"modelUID"};
 
     public modelElementHandler() {
@@ -182,7 +188,11 @@ public class ModelReader7FullHandler extends DefaultHandler {
       fieldnodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
       fieldlineToIdMap = ListSequence.fromList(new ArrayList<SNodeId>());
       fieldnodeEnded = false;
-      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      if (fieldtoModel == null) {
+        fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      } else {
+        fieldmodel = fieldtoModel;
+      }
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
@@ -195,7 +205,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
       if ("modelUID".equals(name)) {
         return;
@@ -204,7 +214,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected ModelReader7FullHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader7Handler.ElementHandler createChild(String tagName) throws SAXException {
       if ("persistence".equals(tagName)) {
         return persistencehandler;
       }
@@ -230,24 +240,24 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
       if ("persistence".equals(tagName)) {
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        result.o1.addLanguage(ModuleReference.fromString(child));
+        fieldmodel.addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        result.o1.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        fieldmodel.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        result.o1.addDevKit(ModuleReference.fromString(child));
+        fieldmodel.addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
@@ -256,6 +266,11 @@ public class ModelReader7FullHandler extends DefaultHandler {
         return;
       }
       if ("roots".equals(tagName)) {
+        Object child = (Object) value;
+        if (fieldstate == ModelLoadingState.ROOTS_LOADED) {
+          fieldmodel.setLoading(false);
+          throw new BreakParseSAXException();
+        }
         return;
       }
       if ("root".equals(tagName)) {
@@ -265,19 +280,19 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void validate(Object resultObject) throws SAXParseException {
+    protected void validate(Object resultObject) throws SAXException {
       if (!(validateInternal((Pair<SModel, List<SNodeId>>) resultObject))) {
         throw new SAXParseException("missing tags", null);
       }
     }
 
-    private boolean validateInternal(Pair<SModel, List<SNodeId>> result) throws SAXParseException {
-      result.o1.setLoading(false);
+    private boolean validateInternal(Pair<SModel, List<SNodeId>> result) throws SAXException {
+      fieldmodel.setLoading(false);
       return true;
     }
   }
 
-  public class persistenceElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class persistenceElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"version"};
 
     public persistenceElementHandler() {
@@ -294,7 +309,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Integer result = (Integer) resultObject;
       if ("version".equals(name)) {
         return;
@@ -303,7 +318,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class tag_with_namespaceElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class tag_with_namespaceElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"namespace"};
 
     public tag_with_namespaceElementHandler() {
@@ -320,7 +335,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
       if ("namespace".equals(name)) {
         return;
@@ -329,7 +344,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class importElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class importElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "version", "modelUID"};
 
     public importElementHandler() {
@@ -346,7 +361,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("index".equals(name)) {
         return;
@@ -365,14 +380,14 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class rootsElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class rootsElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
     public rootsElementHandler() {
     }
 
     @Override
-    protected ModelReader7FullHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader7Handler.ElementHandler createChild(String tagName) throws SAXException {
       if ("node".equals(tagName)) {
         return nodehandler;
       }
@@ -380,11 +395,11 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       Object result = (Object) resultObject;
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        if (child != null) {
+        if (fieldtoModel == null && child != null) {
           fieldmodel.addRoot(child);
           fieldnodeEnded = true;
         }
@@ -394,15 +409,15 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class rootContentElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class rootContentElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"id"};
 
     public rootContentElementHandler() {
     }
 
     @Override
-    protected Object createObject(Attributes attrs) {
-      return fieldcurrentRoot = fieldmodel.getNodeById(attrs.getValue("id"));
+    protected SNode createObject(Attributes attrs) {
+      return fieldmodel.getNodeById(attrs.getValue("id"));
     }
 
     @Override
@@ -411,8 +426,8 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
-      Object result = (Object) resultObject;
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
+      SNode result = (SNode) resultObject;
       if ("id".equals(name)) {
         return;
       }
@@ -420,7 +435,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected ModelReader7FullHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader7Handler.ElementHandler createChild(String tagName) throws SAXException {
       if ("node".equals(tagName)) {
         return nodehandler;
       }
@@ -428,12 +443,12 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
-      Object result = (Object) resultObject;
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+      SNode result = (SNode) resultObject;
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          fieldcurrentRoot.addChild(child.getRole_(), child);
+          result.addChild(child.getRole_(), child);
           fieldnodeEnded = true;
         }
         return;
@@ -442,7 +457,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class nodeElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class nodeElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
 
     public nodeElementHandler() {
@@ -459,7 +474,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SNode result = (SNode) resultObject;
       if ("type".equals(name)) {
         return;
@@ -481,7 +496,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected ModelReader7FullHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader7Handler.ElementHandler createChild(String tagName) throws SAXException {
       if ("property".equals(tagName)) {
         return propertyhandler;
       }
@@ -495,7 +510,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
@@ -528,7 +543,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class propertyElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class propertyElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
 
     public propertyElementHandler() {
@@ -545,7 +560,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("name".equals(name)) {
         return;
@@ -558,7 +573,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
   }
 
-  public class linkElementHandler extends ModelReader7FullHandler.ElementHandler {
+  public class linkElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
 
     public linkElementHandler() {
@@ -570,7 +585,7 @@ public class ModelReader7FullHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("role".equals(name)) {
         result[0] = value;

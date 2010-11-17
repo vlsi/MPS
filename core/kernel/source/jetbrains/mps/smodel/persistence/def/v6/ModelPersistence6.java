@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -39,7 +40,8 @@ public class ModelPersistence6 extends ModelPersistence5 {
   }
 
   @Override
-  public DefaultMPSHandler getModelReaderHandler() {
-    return new Handler6();
+  public DefaultMPSHandler getModelReaderHandler(ModelLoadingState state) {
+    Handler6 handler = new Handler6();
+    return handler.setPartialLoading(state) ? handler : null;
   }
 }
