@@ -917,7 +917,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void processPopupMenu(final MouseEvent e) {
     EditorCell selectedCell = getSelectedCell();
-    if (!e.isConsumed()) return;
     if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
