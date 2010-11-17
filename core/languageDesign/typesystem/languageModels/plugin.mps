@@ -116,6 +116,11 @@
       <property name="caption" nameId="yvju.1205250923097:23" value="Show Typesystem Trace" />
       <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="Actions" />
     </node>
+    <node type="yvju.ActionDeclaration" typeId="yvju.1203071646776:23" id="4926394400706919977">
+      <property name="name" nameId="yvnu.1169194664001:0" value="ShowTypeSystemTraceForNode" />
+      <property name="caption" nameId="yvju.1205250923097:23" value="Show Typesystem Trace for Node" />
+      <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="Actions" />
+    </node>
   </roots>
   <root id="1205244087094">
     <node role="modifier" roleId="yvju.1204991552650:23" type="yvju.ModificationStatement" typeId="yvju.1203092361741:23" id="1205245247513">
@@ -157,6 +162,9 @@
       </node>
       <node role="reference" roleId="yvju.1207145201301:23" type="yvju.ActionInstance" typeId="yvju.1203088046679:23" id="3924602344979582140">
         <link role="action" roleId="yvju.1203088061055:23" targetNodeId="8779663014757326680" resolveInfo="ShowTypeSystemTrace" />
+      </node>
+      <node role="reference" roleId="yvju.1207145201301:23" type="yvju.ActionInstance" typeId="yvju.1203088046679:23" id="4926394400706924526">
+        <link role="action" roleId="yvju.1203088061055:23" targetNodeId="4926394400706919977" resolveInfo="ShowTypeSystemTraceForNode" />
       </node>
     </node>
   </root>
@@ -1575,6 +1583,115 @@
     </node>
     <node role="keystroke" roleId="yvju.1207318392425:23" type="yvju.KeyMapKeystroke" typeId="yvju.1207318242772:23" id="4187171894114553081">
       <property name="keycode" nameId="yvju.1207318242774:23" value="VK_Q" />
+      <property name="modifiers" nameId="yvju.1207318242773:23" value="ctrl+shift" />
+    </node>
+  </root>
+  <root id="4926394400706919977">
+    <node role="parameter" roleId="yvju.1217413222820:23" type="yvju.ActionDataParameterDeclaration" typeId="yvju.1217252042208:23" id="4926394400706919978">
+      <property name="name" nameId="yvnu.1169194664001:0" value="context" />
+      <link role="key" roleId="yvju.1217252646389:23" targetNodeId="9xt4.~MPSDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
+    </node>
+    <node role="parameter" roleId="yvju.1217413222820:23" type="yvju.ActionParameterDeclaration" typeId="yvju.1205679047295:23" id="4926394400706919979">
+      <property name="name" nameId="yvnu.1169194664001:0" value="node" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="4926394400706919980" />
+      <node role="type" roleId="yvor.5680397130376446158:3" type="yvim.SNodeType" typeId="yvim.1138055754698:16" id="4926394400706919981" />
+    </node>
+    <node role="parameter" roleId="yvju.1217413222820:23" type="yvju.ActionDataParameterDeclaration" typeId="yvju.1217252042208:23" id="4926394400706919982">
+      <property name="name" nameId="yvnu.1169194664001:0" value="frame" />
+      <link role="key" roleId="yvju.1217252646389:23" targetNodeId="9xt4.~MPSDataKeys%dFRAME" resolveInfo="FRAME" />
+    </node>
+    <node role="parameter" roleId="yvju.1217413222820:23" type="yvju.ActionDataParameterDeclaration" typeId="yvju.1217252042208:23" id="4926394400706919983">
+      <property name="name" nameId="yvnu.1169194664001:0" value="editorComponent" />
+      <link role="key" roleId="yvju.1217252646389:23" targetNodeId="9xt4.~MPSDataKeys%dEDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+    <node role="executeFunction" roleId="yvju.1203083461638:23" type="yvju.ExecuteBlock" typeId="yvju.1203083511112:23" id="4926394400706919984">
+      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="4926394400706919985">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="4926394400706919986">
+          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="4926394400706919987">
+            <property name="name" nameId="yvnu.1169194664001:0" value="typeCheckingContext" />
+            <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="4926394400706919988">
+              <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="tou9.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="4926394400706919989">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="4926394400706919990">
+            <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="4926394400706919991">
+              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="4926394400706919987" resolveInfo="typeCheckingContext" />
+            </node>
+            <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="4926394400706919992">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="4926394400706919993">
+                <node role="operand" roleId="yvor.1197027771414:3" type="yvjr.ThisClassifierExpression" typeId="yvjr.1205752633985:0" id="4926394400706919994" />
+                <node role="operation" roleId="yvor.1197027833540:3" type="yvju.ActionDataParameterReferenceOperation" typeId="yvju.1217252428768:23" id="4926394400706919995">
+                  <link role="member" roleId="yvjr.1205756909548:0" targetNodeId="4926394400706919983" resolveInfo="editorComponent" />
+                </node>
+              </node>
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="4926394400706919996">
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="p1ge.~EditorComponent%dgetTypeCheckingContext()%cjetbrains%dmps%dtypesystem%dinference%dTypeCheckingContext" resolveInfo="getTypeCheckingContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="4926394400706919997">
+          <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="4926394400706919998">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="4926394400706919999">
+              <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="4926394400706920000">
+                <property name="name" nameId="yvnu.1169194664001:0" value="t" />
+                <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="4926394400706920001">
+                  <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="ek7x.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+                </node>
+                <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.CastExpression" typeId="yvor.1070534934090:3" id="4926394400706920002">
+                  <node role="type" roleId="yvor.1070534934091:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="4926394400706920003">
+                    <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="ek7x.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+                  </node>
+                  <node role="expression" roleId="yvor.1070534934092:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="4926394400706920004">
+                    <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="4926394400706919987" resolveInfo="typeCheckingContext" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="4926394400706920005">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="4926394400706920006">
+                <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="4926394400706920007">
+                  <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="pmen.~ShowTypeSystemTrace%d&lt;init&gt;(jetbrains%dmps%dnewTypesystem%dTypeCheckingContextNew,jetbrains%dmps%dsmodel%dIOperationContext,java%dawt%dFrame,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="ShowTypeSystemTrace" />
+                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="4926394400706920008">
+                    <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="4926394400706920000" resolveInfo="t" />
+                  </node>
+                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="4926394400706920009">
+                    <node role="operand" roleId="yvor.1197027771414:3" type="yvjr.ThisClassifierExpression" typeId="yvjr.1205752633985:0" id="4926394400706920010" />
+                    <node role="operation" roleId="yvor.1197027833540:3" type="yvju.ActionDataParameterReferenceOperation" typeId="yvju.1217252428768:23" id="4926394400706920011">
+                      <link role="member" roleId="yvjr.1205756909548:0" targetNodeId="4926394400706919978" resolveInfo="context" />
+                    </node>
+                  </node>
+                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="4926394400706920012">
+                    <node role="operand" roleId="yvor.1197027771414:3" type="yvjr.ThisClassifierExpression" typeId="yvjr.1205752633985:0" id="4926394400706920013" />
+                    <node role="operation" roleId="yvor.1197027833540:3" type="yvju.ActionDataParameterReferenceOperation" typeId="yvju.1217252428768:23" id="4926394400706920014">
+                      <link role="member" roleId="yvjr.1205756909548:0" targetNodeId="4926394400706919982" resolveInfo="frame" />
+                    </node>
+                  </node>
+                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="4926394400706924522">
+                    <node role="operand" roleId="yvor.1197027771414:3" type="yvjr.ThisClassifierExpression" typeId="yvjr.1205752633985:0" id="4926394400706924523" />
+                    <node role="operation" roleId="yvor.1197027833540:3" type="yvju.ActionParameterReferenceOperation" typeId="yvju.1206092561075:23" id="4926394400706924524">
+                      <link role="member" roleId="yvjr.1205756909548:0" targetNodeId="4926394400706919979" resolveInfo="node" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="yvor.1068580123160:3" type="yvor.InstanceOfExpression" typeId="yvor.1081256982272:3" id="4926394400706920016">
+            <node role="classType" roleId="yvor.1081256993305:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="4926394400706920017">
+              <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="ek7x.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+            </node>
+            <node role="leftExpression" roleId="yvor.1081256993304:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="4926394400706920018">
+              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="4926394400706919987" resolveInfo="typeCheckingContext" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke" roleId="yvju.1207318392425:23" type="yvju.KeyMapKeystroke" typeId="yvju.1207318242772:23" id="4926394400706920019">
+      <property name="keycode" nameId="yvju.1207318242774:23" value="VK_W" />
       <property name="modifiers" nameId="yvju.1207318242773:23" value="ctrl+shift" />
     </node>
   </root>

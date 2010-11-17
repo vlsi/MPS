@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -39,7 +40,7 @@ import java.util.Set;
  * Time: 5:36:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponentNew {
+public class NodeTypesComponentNew extends NodeTypesComponent {
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
   private TypeCheckingContext myTypeCheckingContext;
@@ -49,6 +50,7 @@ public class NodeTypesComponentNew {
 
 
   public NodeTypesComponentNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
+    super(rootNode, typeChecker, typeCheckingContext);
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;

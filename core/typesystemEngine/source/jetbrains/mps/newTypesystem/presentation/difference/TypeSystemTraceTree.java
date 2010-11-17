@@ -37,6 +37,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.JPopupMenu;
 import java.awt.Frame;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -72,23 +74,47 @@ public class TypeSystemTraceTree extends MPSTree {
     this(operationContext,tcc, frame, parent, null);
   }
 
+
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
+    if (mySelectedNode != null) {
+      return createListTraceForNode();
+    }
     return createNode(myDifference);
   }
 
   private TypeSystemTraceTreeNode createNode(Difference diff) {
+
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
     if (diff.getChildren() != null) {
       for (Difference child : diff.getChildren()) {
         TypeSystemTraceTreeNode node = createNode(child);
-        if (showNode(child)) {
-          result.add(node);
-        }
+        result.add(node);
       }
     }
     return result;
+  }
+
+  private MPSTreeNode createListTraceForNode() {
+    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myDifference, myOperationContext);
+    List<TypeSystemTraceTreeNode> result = new LinkedList<TypeSystemTraceTreeNode>();
+    createList(myDifference, result);
+    for (TypeSystemTraceTreeNode node : result) {
+      root.add(node);
+    }
+    return root;
+  }
+
+  private void createList(Difference diff, List<TypeSystemTraceTreeNode> result) {
+    if (showNode(diff)) {
+      result.add(new TypeSystemTraceTreeNode(diff, myOperationContext));
+    }
+    if (diff.getChildren() != null) {
+      for (Difference child : diff.getChildren()) {
+        createList(child, result);
+      }
+    }
   }
 
   private boolean showNode(Difference diff) {
