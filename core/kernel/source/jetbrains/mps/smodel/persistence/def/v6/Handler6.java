@@ -68,11 +68,11 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
 
   @Override
   public SModel getModel() {
-    return getResult().o1;
+    return getResult();
   }
 
   @Override
   public List<SNodeId> getLineToIdMap() {
-    return getResult().o2;
+    return null;
   }
 }

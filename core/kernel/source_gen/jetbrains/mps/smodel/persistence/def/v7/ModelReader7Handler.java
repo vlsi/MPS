@@ -7,24 +7,16 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.Stack;
 import org.xml.sax.Locator;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModel;
-import java.util.List;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.persistence.def.BreakParseSAXException;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 
 public class ModelReader7Handler extends DefaultHandler {
@@ -43,21 +35,18 @@ public class ModelReader7Handler extends DefaultHandler {
   private Stack<ModelReader7Handler.ElementHandler> myHandlersStack = new Stack<ModelReader7Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
-  private Pair<SModel, List<SNodeId>> myResult;
+  private SModel myResult;
   private ModelLoadingState fieldstate;
   private SModel fieldtoModel;
   private SModel fieldmodel;
   private VersionUtil fieldhelper;
-  private Deque<SNodeId> fieldnodeIdStack;
-  private List<SNodeId> fieldlineToIdMap;
-  private boolean fieldnodeEnded;
 
   public ModelReader7Handler(ModelLoadingState state, SModel toModel) {
     fieldstate = state;
     fieldtoModel = toModel;
   }
 
-  public Pair<SModel, List<SNodeId>> getResult() {
+  public SModel getResult() {
     return myResult;
   }
 
@@ -68,7 +57,6 @@ public class ModelReader7Handler extends DefaultHandler {
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    globalHandleText(myValues.firstElement(), new String(array, start, len));
     ModelReader7Handler.ElementHandler current = (myHandlersStack.empty() ?
       (ModelReader7Handler.ElementHandler) null :
       myHandlersStack.peek()
@@ -91,7 +79,7 @@ public class ModelReader7Handler extends DefaultHandler {
       if (parent != null) {
         parent.handleChild(myValues.peek(), qName, childValue);
       } else {
-        myResult = (Pair<SModel, List<SNodeId>>) childValue;
+        myResult = (SModel) childValue;
       }
     }
   }
@@ -117,7 +105,9 @@ public class ModelReader7Handler extends DefaultHandler {
     }
 
     Object result = current.createObject(attributes);
-    if (myHandlersStack.empty())  myResult = (Pair<SModel, List<SNodeId>>) result;
+    if (myHandlersStack.empty()) {
+      myResult = (SModel) result;
+    }
 
     // handle attributes 
     for (int i = 0; i < attributes.getLength(); i++) {
@@ -127,20 +117,6 @@ public class ModelReader7Handler extends DefaultHandler {
     }
     myHandlersStack.push(current);
     myValues.push(result);
-  }
-
-  public void globalHandleText(Object resultObject, String value) {
-    Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
-    for (int i = 0; i < StringUtils.countMatches(value, "\n"); i++) {
-      int line = myLocator.getLineNumber() - 1;
-      while (line > ListSequence.fromList(fieldlineToIdMap).count()) {
-        ListSequence.fromList(fieldlineToIdMap).addElement(DequeSequence.fromDeque(fieldnodeIdStack).peekElement());
-        if (fieldnodeEnded) {
-          DequeSequence.fromDeque(fieldnodeIdStack).popElement();
-          fieldnodeEnded = false;
-        }
-      }
-    }
   }
 
   private class ElementHandler {
@@ -184,10 +160,7 @@ public class ModelReader7Handler extends DefaultHandler {
     }
 
     @Override
-    protected Pair<SModel, List<SNodeId>> createObject(Attributes attrs) {
-      fieldnodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
-      fieldlineToIdMap = ListSequence.fromList(new ArrayList<SNodeId>());
-      fieldnodeEnded = false;
+    protected SModel createObject(Attributes attrs) {
       if (fieldtoModel == null) {
         fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       } else {
@@ -196,7 +169,7 @@ public class ModelReader7Handler extends DefaultHandler {
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
-      return new Pair<SModel, List<SNodeId>>(fieldmodel, fieldlineToIdMap);
+      return fieldmodel;
     }
 
     @Override
@@ -206,7 +179,7 @@ public class ModelReader7Handler extends DefaultHandler {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
+      SModel result = (SModel) resultObject;
       if ("modelUID".equals(name)) {
         return;
       }
@@ -241,7 +214,7 @@ public class ModelReader7Handler extends DefaultHandler {
 
     @Override
     protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
+      SModel result = (SModel) resultObject;
       if ("persistence".equals(tagName)) {
         return;
       }
@@ -281,12 +254,12 @@ public class ModelReader7Handler extends DefaultHandler {
 
     @Override
     protected void validate(Object resultObject) throws SAXException {
-      if (!(validateInternal((Pair<SModel, List<SNodeId>>) resultObject))) {
+      if (!(validateInternal((SModel) resultObject))) {
         throw new SAXParseException("missing tags", null);
       }
     }
 
-    private boolean validateInternal(Pair<SModel, List<SNodeId>> result) throws SAXException {
+    private boolean validateInternal(SModel result) throws SAXException {
       fieldmodel.setLoading(false);
       return true;
     }
@@ -401,7 +374,6 @@ public class ModelReader7Handler extends DefaultHandler {
         SNode child = (SNode) value;
         if (fieldtoModel == null && child != null) {
           fieldmodel.addRoot(child);
-          fieldnodeEnded = true;
         }
         return;
       }
@@ -449,7 +421,6 @@ public class ModelReader7Handler extends DefaultHandler {
         SNode child = (SNode) value;
         if (child != null) {
           result.addChild(child.getRole_(), child);
-          fieldnodeEnded = true;
         }
         return;
       }
@@ -488,7 +459,6 @@ public class ModelReader7Handler extends DefaultHandler {
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
-        DequeSequence.fromDeque(fieldnodeIdStack).pushElement(id);
         result.setId(id);
         return;
       }
@@ -536,7 +506,6 @@ public class ModelReader7Handler extends DefaultHandler {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         result.addChild(child.getRole_(), child);
-        fieldnodeEnded = true;
         return;
       }
       super.handleChild(resultObject, tagName, value);

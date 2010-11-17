@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" file="ModelReader5Handler.java">
-    <classNode dependClassName="java.lang.Integer" />
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" file="LineToContentMapReader5Handler.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -12,6 +11,22 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.xml.sax.Attributes" />
+    <classNode dependClassName="org.xml.sax.Locator" />
+    <classNode dependClassName="org.xml.sax.SAXException" />
+    <classNode dependClassName="org.xml.sax.SAXParseException" />
+    <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v5.ElementHandler" />
+    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" file="ModelReader5Handler.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -23,8 +38,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
     <classNode dependClassName="org.xml.sax.SAXException" />

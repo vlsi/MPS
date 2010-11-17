@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 
 /**
- * Created by IntelliJ IDEA.
  * User: Michael.Vlassiev
  * Date: Nov 2, 2010
  * Time: 5:02:26 PM
@@ -46,6 +45,6 @@ public class ModelPersistence7 extends ModelPersistence5 {
 
   @Override
   public DefaultMPSHandler getAnnotationReaderHandler() {
-    return new Handler7(ModelLoadingState.FULLY_LOADED);
+    return new LineToContentHandler7();
   }
 }

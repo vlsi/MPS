@@ -43,4 +43,9 @@ public class ModelPersistence5 extends ModelPersistence4 {
   public DefaultMPSHandler getModelReaderHandler(ModelLoadingState state) {
     return state == ModelLoadingState.FULLY_LOADED ? new Handler5() : null;
   }
+
+  @Override
+  public DefaultMPSHandler getAnnotationReaderHandler() {
+    return new LineToContentHandler5();
+  }
 }

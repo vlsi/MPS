@@ -28,10 +28,10 @@ public class Handler7 extends ModelReader7Handler implements DefaultMPSHandler {
   }
 
   public SModel getModel() {
-    return getResult().o1;
+    return getResult();
   }
 
   public List<SNodeId> getLineToIdMap() {
-    return getResult().o2;
+    return null;
   }
 }

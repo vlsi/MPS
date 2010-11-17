@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v5;
+package jetbrains.mps.smodel.persistence.def.v7;
 
-import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 
 import java.util.List;
 
-public class Handler5 extends ModelReader5Handler implements DefaultMPSHandler {
-  public boolean setPartialLoading(ModelLoadingState state){
-    return state == ModelLoadingState.FULLY_LOADED;
-  }
-
-  @Override
+/**
+ * @author Evgeny Gerashchenko
+ * @since 17 Nov 2010
+ */
+public class LineToContentHandler7 extends LineToContentMapReader7Handler implements DefaultMPSHandler {
   public SModel getModel() {
-    return getResult();
+    return null;
   }
 
-  @Override
   public List<SNodeId> getLineToIdMap() {
-    return null;
+    return getResult();
   }
 }

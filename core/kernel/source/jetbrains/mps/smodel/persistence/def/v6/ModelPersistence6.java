@@ -44,4 +44,9 @@ public class ModelPersistence6 extends ModelPersistence5 {
     Handler6 handler = new Handler6();
     return handler.setPartialLoading(state) ? handler : null;
   }
+
+  @Override
+  public DefaultMPSHandler getAnnotationReaderHandler() {
+    return new LineToContentHandler6();
+  }
 }
