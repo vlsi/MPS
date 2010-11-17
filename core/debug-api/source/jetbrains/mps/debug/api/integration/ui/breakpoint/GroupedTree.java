@@ -26,7 +26,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.UIManager;
-import javax.xml.soap.Node;
 import java.awt.Color;
 import java.util.*;
 
