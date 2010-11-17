@@ -19,6 +19,7 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ROOT = "root";
   public static final String GLOBAL_TEXT = "globalText";
+  public static final String PARAMETERS = "parameters";
   public static final String NODES = "nodes";
   public static final String FIELDS = "fields";
 
@@ -72,6 +73,26 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
 
   public void setGlobalText(XMLSAXTextRule node) {
     super.setChild(XMLSAXParser.GLOBAL_TEXT, node);
+  }
+
+  public int getParametersesCount() {
+    return this.getChildCount(XMLSAXParser.PARAMETERS);
+  }
+
+  public Iterator<XMLSAXFieldDeclaration> parameterses() {
+    return this.children(XMLSAXFieldDeclaration.class, XMLSAXParser.PARAMETERS);
+  }
+
+  public List<XMLSAXFieldDeclaration> getParameterses() {
+    return this.getChildren(XMLSAXFieldDeclaration.class, XMLSAXParser.PARAMETERS);
+  }
+
+  public void addParameters(XMLSAXFieldDeclaration node) {
+    this.addChild(XMLSAXParser.PARAMETERS, node);
+  }
+
+  public void insertParameters(XMLSAXFieldDeclaration prev, XMLSAXFieldDeclaration node) {
+    this.insertChild(prev, XMLSAXParser.PARAMETERS, node);
   }
 
   public int getNodesesCount() {

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -27,7 +28,7 @@ public class XMLSAXFieldReference_declaration_ReferentConstraint extends BaseNod
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode n = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xmlQuery.structure.XMLSAXParser", true, false);
     if ((n != null)) {
-      return SLinkOperations.getTargets(n, "fields", true);
+      return ListSequence.fromList(SLinkOperations.getTargets(n, "fields", true)).concat(ListSequence.fromList(SLinkOperations.getTargets(n, "parameters", true)));
     }
     return null;
   }
