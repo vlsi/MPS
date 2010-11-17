@@ -60,12 +60,24 @@ public class ASMField {
     return (Opcodes.ACC_STATIC & myField.access) != 0;
   }
 
+  public boolean isFinal() {
+    return (Opcodes.ACC_FINAL & myField.access) != 0;
+  }
+
   public boolean isEnumConstant() {
     return (Opcodes.ACC_ENUM & myField.access) != 0;
   }
 
   public boolean isCompilerGenerated() {
     return myField.name.equals("$assertionsDisabled");
+  }
+
+  public boolean hasValue() {
+    return null != myField.value;
+  }
+
+  public Object getValue() {
+    return myField.value;
   }
 
   public ASMType getType() {

@@ -419,10 +419,13 @@
     <nodeInfo nodeId="7241381882860006967" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="51" startPosition="33" endLine="52" endPosition="58" />
     <nodeInfo nodeId="7241381882860006982" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="55" startPosition="39" endLine="56" endPosition="63" />
     <nodeInfo nodeId="7241381882860007001" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="59" startPosition="29" endLine="60" endPosition="54" />
-    <nodeInfo nodeId="7241381882860007016" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="63" startPosition="35" endLine="64" endPosition="52" />
-    <nodeInfo nodeId="7241381882860007031" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="67" startPosition="40" endLine="68" endPosition="54" />
-    <nodeInfo nodeId="7241381882860007044" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="71" startPosition="28" endLine="72" endPosition="18" />
-    <nodeInfo nodeId="7241381882860007052" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="75" startPosition="35" endLine="76" endPosition="25" />
+    <nodeInfo nodeId="8782008374435591548" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="63" startPosition="28" endLine="64" endPosition="53" />
+    <nodeInfo nodeId="7241381882860007016" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="67" startPosition="35" endLine="68" endPosition="52" />
+    <nodeInfo nodeId="7241381882860007031" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="71" startPosition="40" endLine="72" endPosition="54" />
+    <nodeInfo nodeId="1507995828870743750" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="75" startPosition="29" endLine="76" endPosition="33" />
+    <nodeInfo nodeId="1507995828870743795" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="79" startPosition="28" endLine="80" endPosition="25" />
+    <nodeInfo nodeId="7241381882860007044" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="83" startPosition="28" endLine="84" endPosition="18" />
+    <nodeInfo nodeId="7241381882860007052" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="87" startPosition="35" endLine="88" endPosition="25" />
     <nodeInfo nodeId="7241381882860006886" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ASMField.java" startLine="30" startPosition="10" endLine="32" endPosition="5" />
     <nodeInfo nodeId="7241381882860006842" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ASMField.java" startLine="21" startPosition="86" endLine="25" endPosition="7" />
     <nodeInfo nodeId="7241381882860006908" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
@@ -432,14 +435,17 @@
     <nodeInfo nodeId="7241381882860006963" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <nodeInfo nodeId="7241381882860006978" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <nodeInfo nodeId="7241381882860006997" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="7241381882860007012" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="7241381882860007027" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="7241381882860007040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="7241381882860007048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="7241381882860007061" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="79" startPosition="47" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="8782008374435591544" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="7241381882860007012" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="7241381882860007027" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="1507995828870743745" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="1507995828870743790" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="7241381882860007040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="7241381882860007048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="7241381882860007061" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ASMField.java" startLine="91" startPosition="47" endLine="95" endPosition="7" />
     <nodeInfo nodeId="7241381882860006878" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMField.java" startLine="27" startPosition="51" endLine="32" endPosition="5" />
     <nodeInfo nodeId="7241381882860006818" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMField.java" startLine="19" startPosition="20" endLine="26" endPosition="5" />
-    <nodeInfo nodeId="7241381882860007056" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="78" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="7241381882860007056" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMField.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
     <nodeInfo nodeId="7241381882860006808" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ASMField.java" startLine="17" startPosition="0" endLine="33" endPosition="3" />
     <scopeInfo nodeId="7241381882860006896" fileName="ASMField.java" startLine="28" startPosition="36" endLine="29" endPosition="63" />
     <scopeInfo nodeId="7241381882860006887" fileName="ASMField.java" startLine="30" startPosition="12" endLine="31" endPosition="29" />
@@ -450,10 +456,13 @@
     <scopeInfo nodeId="7241381882860006966" fileName="ASMField.java" startLine="51" startPosition="33" endLine="52" endPosition="58" />
     <scopeInfo nodeId="7241381882860006981" fileName="ASMField.java" startLine="55" startPosition="39" endLine="56" endPosition="63" />
     <scopeInfo nodeId="7241381882860007000" fileName="ASMField.java" startLine="59" startPosition="29" endLine="60" endPosition="54" />
-    <scopeInfo nodeId="7241381882860007015" fileName="ASMField.java" startLine="63" startPosition="35" endLine="64" endPosition="52" />
-    <scopeInfo nodeId="7241381882860007030" fileName="ASMField.java" startLine="67" startPosition="40" endLine="68" endPosition="54" />
-    <scopeInfo nodeId="7241381882860007043" fileName="ASMField.java" startLine="71" startPosition="28" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="7241381882860007051" fileName="ASMField.java" startLine="75" startPosition="35" endLine="76" endPosition="25" />
+    <scopeInfo nodeId="8782008374435591547" fileName="ASMField.java" startLine="63" startPosition="28" endLine="64" endPosition="53" />
+    <scopeInfo nodeId="7241381882860007015" fileName="ASMField.java" startLine="67" startPosition="35" endLine="68" endPosition="52" />
+    <scopeInfo nodeId="7241381882860007030" fileName="ASMField.java" startLine="71" startPosition="40" endLine="72" endPosition="54" />
+    <scopeInfo nodeId="1507995828870743748" fileName="ASMField.java" startLine="75" startPosition="29" endLine="76" endPosition="33" />
+    <scopeInfo nodeId="1507995828870743793" fileName="ASMField.java" startLine="79" startPosition="28" endLine="80" endPosition="25" />
+    <scopeInfo nodeId="7241381882860007043" fileName="ASMField.java" startLine="83" startPosition="28" endLine="84" endPosition="18" />
+    <scopeInfo nodeId="7241381882860007051" fileName="ASMField.java" startLine="87" startPosition="35" endLine="88" endPosition="25" />
     <scopeInfo nodeId="7241381882860006853" fileName="ASMField.java" startLine="22" startPosition="83" endLine="24" endPosition="30">
       <varInfo nodeId="7241381882860006855" varName="aa" />
     </scopeInfo>
@@ -467,18 +476,21 @@
     <scopeInfo nodeId="7241381882860006963" fileName="ASMField.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="7241381882860006978" fileName="ASMField.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="7241381882860006997" fileName="ASMField.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007012" fileName="ASMField.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007027" fileName="ASMField.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007040" fileName="ASMField.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007048" fileName="ASMField.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007060" fileName="ASMField.java" startLine="79" startPosition="47" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="8782008374435591544" fileName="ASMField.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007012" fileName="ASMField.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007027" fileName="ASMField.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1507995828870743745" fileName="ASMField.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1507995828870743790" fileName="ASMField.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007040" fileName="ASMField.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007048" fileName="ASMField.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007060" fileName="ASMField.java" startLine="91" startPosition="47" endLine="95" endPosition="7" />
     <scopeInfo nodeId="7241381882860006826" fileName="ASMField.java" startLine="20" startPosition="45" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="7241381882860007056" fileName="ASMField.java" startLine="78" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007056" fileName="ASMField.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="7241381882860006811" fileName="ASMField.java" startLine="18" startPosition="41" endLine="32" endPosition="5" />
     <scopeInfo nodeId="7241381882860006808" fileName="ASMField.java" startLine="17" startPosition="0" endLine="33" endPosition="3">
       <varInfo nodeId="7241381882860006809" varName="field" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860006793" fileName="ASMField.java" startLine="12" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMField" />
+    <unitInfo nodeId="7241381882860006793" fileName="ASMField.java" startLine="12" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.stubs.javastub.asm.ASMField" />
   </root>
   <root nodeId="7241381882860007172">
     <nodeInfo nodeId="7241381882860007175" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ASMVarArgType.java" startLine="6" startPosition="44" endLine="7" endPosition="32" />
