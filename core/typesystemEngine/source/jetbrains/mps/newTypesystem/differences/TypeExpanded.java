@@ -24,48 +24,30 @@ import java.util.Map;
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Nov 17, 2010
+ * Time: 2:46:01 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TypeDifference extends Difference {
-  protected SNode myNode;
-  protected SNode myType;
-  protected Map<SNode, SNode> myMap;
+public class TypeExpanded extends TypeDifference {
+  private SNode myOldType;
 
-  public TypeDifference(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info) {
-    myNode = node;
-    myType = type;
-    myMap = map;
-    mySource = node;
-    myEquationInfo = info;
-  }
-
-  @Override
-  public void rollBack() {
-    myMap.remove(myNode);
-  }
-
-  @Override
-  public void play() {
-    myMap.put(myNode, myType);
-  }
-
-  @Override
-  public String getPresentation() {
-    return "Type added (" + myNode + " : " + myType + ")";
+  public TypeExpanded(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info, SNode oldType) {
+    super(node, type, map, info);
+    myOldType = oldType;
   }
 
   @Override
   public Color getColor() {
-    return new Color(0x007700);
+    return new Color(0x008704);
   }
 
-  public SNode getNode() {
-    return myNode;
+  @Override
+  public String getPresentation() {
+    return "Type expanded: "+ myNode + " ------> " + myType;
   }
 
-  public SNode getType() {
-    return myType;
+  @Override
+  public void rollBack() {
+    myMap.put(myNode, myOldType);
   }
 }

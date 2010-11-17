@@ -128,7 +128,7 @@ public class SubTyping {
 
       //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        if (TypesUtil.match(ancestor, superType, null, info, false)) {
+        if (TypesUtil.match(ancestor, superType, myState.getEquations(), info, false)) {
           return true;
         }
       }

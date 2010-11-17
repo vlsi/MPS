@@ -21,6 +21,7 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.differences.ErrorDifference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
+import jetbrains.mps.newTypesystem.differences.TypeExpanded;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
@@ -47,6 +48,11 @@ public class NodeMaps {
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
     myTypesToNodes.put(type, node);
     myState.addDifference(new TypeDifference(node, type, myNodeToTypes, info), false);
+  }
+
+  public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
+    SNode oldType = myNodeToTypes.get(node);
+    myState.addDifference(new TypeExpanded(node, type, myNodeToTypes, info, oldType), false);
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
@@ -118,8 +124,7 @@ public class NodeMaps {
     for (SNode node : myNodeToTypes.keySet()) {
       SNode var = myNodeToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var);
-
-      addNodeToType(node, type, null);
+      updateNodeToType(node, type, null);
     }
   }
 
