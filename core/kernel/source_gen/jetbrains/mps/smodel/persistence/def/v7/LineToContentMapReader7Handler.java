@@ -66,14 +66,10 @@ public class LineToContentMapReader7Handler extends DefaultHandler {
     Object childValue = myValues.pop();
     if (current != null) {
       current.validate(childValue);
-      LineToContentMapReader7Handler.ElementHandler parent = (myHandlersStack.empty() ?
-        (LineToContentMapReader7Handler.ElementHandler) null :
-        myHandlersStack.peek()
-      );
-      if (parent != null) {
-        parent.handleChild(myValues.peek(), qName, childValue);
-      } else {
+      if (myHandlersStack.empty()) {
         myResult = (List<SNodeId>) childValue;
+      } else {
+        myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
       }
     }
   }

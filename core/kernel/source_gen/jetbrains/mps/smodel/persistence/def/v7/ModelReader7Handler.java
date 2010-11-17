@@ -72,14 +72,10 @@ public class ModelReader7Handler extends DefaultHandler {
     Object childValue = myValues.pop();
     if (current != null) {
       current.validate(childValue);
-      ModelReader7Handler.ElementHandler parent = (myHandlersStack.empty() ?
-        (ModelReader7Handler.ElementHandler) null :
-        myHandlersStack.peek()
-      );
-      if (parent != null) {
-        parent.handleChild(myValues.peek(), qName, childValue);
-      } else {
+      if (myHandlersStack.empty()) {
         myResult = (SModel) childValue;
+      } else {
+        myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
       }
     }
   }

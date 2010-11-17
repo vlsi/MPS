@@ -64,14 +64,10 @@ public class ModelReader6Handler extends DefaultHandler {
     Object childValue = myValues.pop();
     if (current != null) {
       current.validate(childValue);
-      ModelReader6Handler.ElementHandler parent = (myHandlersStack.empty() ?
-        (ModelReader6Handler.ElementHandler) null :
-        myHandlersStack.peek()
-      );
-      if (parent != null) {
-        parent.handleChild(myValues.peek(), qName, childValue);
-      } else {
+      if (myHandlersStack.empty()) {
         myResult = (SModel) childValue;
+      } else {
+        myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
       }
     }
   }
