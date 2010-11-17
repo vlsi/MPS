@@ -21,4 +21,6 @@ public interface IBreakpointKind {
   boolean supportsDisable();
   @NonNls
   String getName();
+  @NonNls
+  String getPresentation();
 }

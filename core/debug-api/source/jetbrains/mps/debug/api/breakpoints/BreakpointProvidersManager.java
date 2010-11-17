@@ -21,7 +21,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class BreakpointProvidersManager implements ApplicationComponent {
   private final Map<IBreakpointKind, ILanguageBreakpointsProvider> myKindToProvider = new HashMap<IBreakpointKind, ILanguageBreakpointsProvider>();
@@ -67,5 +69,9 @@ public class BreakpointProvidersManager implements ApplicationComponent {
   @Nullable
   public IBreakpointKind getKind(String name) {
     return myNameToKind.get(name);
+  }
+
+  public Set<IBreakpointKind> getAllKinds(){
+    return myKindToProvider.keySet();
   }
 }

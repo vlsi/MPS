@@ -3,10 +3,9 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
@@ -19,6 +18,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
@@ -97,6 +99,35 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       }
     };
     group.add(myShowNodeAction);
+    AnAction addBreakpointAction = new AnAction("Add", "Add Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        Set<IBreakpointKind> allKinds = BreakpointProvidersManager.getInstance().getAllKinds();
+        List<IBreakpointKind> kindsToShow = new ArrayList<IBreakpointKind>();
+        List<String> kindNames = new ArrayList<String>();
+        for (IBreakpointKind kind : allKinds) {
+          ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kind);
+          if (provider == null) continue;
+          if (provider.canCreateFromUi(kind)) {
+            kindsToShow.add(kind);
+            kindNames.add(kind.getPresentation());
+          }
+        }
+        int index = Messages.showChooseDialog(myMainPanel, "Select the kind of breakpoint to add.", "Add Breakpoint", kindNames.toArray(new String[kindNames.size()]), kindNames.get(0), (Icon) null);
+        if (index >= 0) {
+          ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kindsToShow.get(index));
+          if (provider == null) {
+            Messages.showErrorDialog(myMainPanel, "Can not create " + kindNames.get(index) + ". Provider was not found.");
+          } else {
+            IBreakpoint breakpoint = provider.createFromUi(kindsToShow.get(index), myContext.getProject());
+            if (breakpoint != null) {
+              myBreakpointsManager.addBreakpoint(breakpoint);
+            }
+          }
+        }
+      }
+    };
+    group.add(addBreakpointAction);
     myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
       @Override
       public void actionPerformed(AnActionEvent e) {
@@ -200,7 +231,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         tree.update();
       }
     });
-    group.add(new AnAction("Expand All", "Expand All", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON){
+    group.add(new AnAction("Expand All", "Expand All", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON) {
       @Override
       public void update(AnActionEvent e) {
         // todo refactor actions: each view should provide their own actions 
@@ -216,7 +247,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         tree.expandAll();
       }
     });
-    group.add(new AnAction("Collapse All", "Collapse All", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON){
+    group.add(new AnAction("Collapse All", "Collapse All", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
       @Override
       public void update(AnActionEvent e) {
         e.getPresentation().setEnabled(isTreeView());
@@ -299,7 +330,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       public void run() {
         MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
         assert opener != null;
-        opener.openNode(((ILocationBreakpoint)breakpoint).getNodePointer().getNode(), myContext, focus, select);
+        opener.openNode(((ILocationBreakpoint) breakpoint).getNodePointer().getNode(), myContext, focus, select);
       }
     }, project);
   }
@@ -327,7 +358,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
   @Override
   public void dispose() {
-    for (BreakpointsView view : myViews){
+    for (BreakpointsView view : myViews) {
       view.dispose();
     }
     super.dispose();

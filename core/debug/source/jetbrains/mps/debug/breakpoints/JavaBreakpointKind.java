@@ -16,10 +16,17 @@
 package jetbrains.mps.debug.breakpoints;
 
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
+import org.jetbrains.annotations.NonNls;
 
 public enum JavaBreakpointKind implements IBreakpointKind {
-  LINE_BREAKPOINT,
-  EXCEPTION_BREAKPOINT;
+  LINE_BREAKPOINT("Java Line Breakpoint"),
+  EXCEPTION_BREAKPOINT("Java Exception Breakpoint");
+  private static final String LANGUAGE_PREFIX = "JAVA_";
+  private final String myPresentation;
+
+  JavaBreakpointKind(String presentation) {
+    myPresentation = presentation;
+  }
 
   @Override
   public boolean supportsDisable() {
@@ -28,8 +35,12 @@ public enum JavaBreakpointKind implements IBreakpointKind {
 
   @Override
   public String getName() {
-    return toString();
+    return LANGUAGE_PREFIX + toString(); // presentations should be unique
   }
 
-
+  @Override
+  @NonNls
+  public String getPresentation() {
+    return myPresentation;
+  }
 }
