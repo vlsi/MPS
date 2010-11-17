@@ -51,7 +51,9 @@
               class="com.intellij.openapi.editor.actions.MoveCaretLeftWithSelectionAction"/>
       <action id="EditorRightWithSelection"
               class="com.intellij.openapi.editor.actions.MoveCaretRightWithSelectionAction"/>
+<!--
       <action id="EditorIndentSelection" class="com.intellij.openapi.editor.actions.IndentSelectionAction"/>
+-->
       <action id="EditorUnindentSelection" class="com.intellij.openapi.editor.actions.UnindentSelectionAction"/>
       <action id="EditorTab" class="com.intellij.openapi.editor.actions.TabAction"/>
       <action id="EditorScrollUp" class="com.intellij.openapi.editor.actions.ScrollUpAction"/>
@@ -185,7 +187,6 @@
         <group id="EditSmartGroup">
           <reference ref="EditorJoinLines"/>
           <reference ref="EditorDuplicate"/>
-          <reference ref="EditorIndentSelection"/>
           <reference ref="EditorUnindentSelection"/>
           <reference ref="EditorToggleCase"/>
           <action id="ConvertIndentsToSpaces" class="com.intellij.openapi.editor.actions.ConvertIndentsToSpacesAction"/>
