@@ -47,11 +47,11 @@ import java.util.List;
 public class PersistenceTest extends BaseMPSTest {
   private static final String TEST_PERSISTENCE_PROJECT = "testPersistence" + MPSExtentions.DOT_MPS_PROJECT;
   private static final String TEST_MODEL = "testlanguage.structure";
-  private final static File sourceDir = new File("testbench/modules/testPersistence");
+  private final static File sourceZip = new File("testbench/modules/testPersistence.zip");
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_PERSISTENCE");
 
   public void testPersistenceWriteRead() {
-    boolean result = TestMain.testOnProjectCopy(sourceDir, tempDir, TEST_PERSISTENCE_PROJECT,
+    boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
       new ProjectRunnable() {
         public boolean execute(final MPSProject project) {
           final File tempFile = new File(tempDir,"testModel");
@@ -80,13 +80,12 @@ public class PersistenceTest extends BaseMPSTest {
     final int version[] = { 3, 3 };
     for (; version[0] < PersistenceSettings.MAX_VERSION; ++version[0])
     for (version[1] = version[0] + 1; version[1] <= PersistenceSettings.MAX_VERSION; ++version[1]) {
-      boolean result = TestMain.testOnProjectCopy(sourceDir, tempDir, TEST_PERSISTENCE_PROJECT,
+      boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
         new ProjectRunnable() {
           public boolean execute(final MPSProject project) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
                 EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                testModel.reloadFromDisk();   // doesn't work properly without this!
                 assert testModel.getPersistenceVersion() == 3;
 
                 PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
