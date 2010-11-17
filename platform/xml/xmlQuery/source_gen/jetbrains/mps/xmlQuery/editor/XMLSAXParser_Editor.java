@@ -43,14 +43,16 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pkrqbh_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_pkrqbh_e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pkrqbh_g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_pkrqbh_h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pkrqbh_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkrqbh_h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_i0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_pkrqbh_j0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_pkrqbh_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pkrqbh_l0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_pkrqbh_m0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pkrqbh_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkrqbh_m0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_n0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pkrqbh_o0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkrqbh_p0(editorContext, node));
     return editorCell;
   }
 
@@ -73,7 +75,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkrqbh_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variables");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
     editorCell.setCellId("Constant_pkrqbh_d0");
     {
       Style style = editorCell.getStyle();
@@ -85,34 +87,34 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pkrqbh_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variables");
     editorCell.setCellId("Constant_pkrqbh_f0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_pkrqbh_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
-    editorCell.setCellId("Constant_pkrqbh_g0");
+  private EditorCell createConstant_pkrqbh_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_pkrqbh_h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_pkrqbh_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_pkrqbh_i0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.setDefaultText("");
@@ -131,9 +133,21 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_pkrqbh_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkrqbh_m0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_pkrqbh_m0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_pkrqbh_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "global text handler");
-    editorCell.setCellId("Constant_pkrqbh_l0");
+    editorCell.setCellId("Constant_pkrqbh_n0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -142,15 +156,29 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_pkrqbh_n0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkrqbh_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_pkrqbh_n0");
+    editorCell.setCellId("Constant_pkrqbh_p0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createRefNodeList_pkrqbh_e0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new XMLSAXParser_Editor.fieldsListHandler_pkrqbh_e0(node, "fields", editorContext);
+    AbstractCellListHandler handler = new XMLSAXParser_Editor.parametersListHandler_pkrqbh_e0(node, "parameters", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_parameters");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_pkrqbh_g0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new XMLSAXParser_Editor.fieldsListHandler_pkrqbh_g0(node, "fields", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_fields");
     {
@@ -163,8 +191,8 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_pkrqbh_j0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new XMLSAXParser_Editor.nodesListHandler_pkrqbh_j0(node, "nodes", editorContext);
+  private EditorCell createRefNodeList_pkrqbh_l0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new XMLSAXParser_Editor.nodesListHandler_pkrqbh_l0(node, "nodes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_nodes");
     {
@@ -195,7 +223,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_pkrqbh_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pkrqbh_o0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("globalText");
     provider.setNoTargetText("<no globalText>");
@@ -216,12 +244,12 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_pkrqbh_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_pkrqbh_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("root");
     provider.setNoTargetText("<no root>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XMLSAXParser_Editor._Inline_pkrqbh_a7a());
+    provider.setAuxiliaryCellProvider(new XMLSAXParser_Editor._Inline_pkrqbh_a9a());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -238,8 +266,8 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_pkrqbh_a7a extends InlineCellProvider {
-    public _Inline_pkrqbh_a7a() {
+  public static class _Inline_pkrqbh_a9a extends InlineCellProvider {
+    public _Inline_pkrqbh_a9a() {
       super();
     }
 
@@ -248,10 +276,10 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_pkrqbh_a0h0(editorContext, node);
+      return this.createProperty_pkrqbh_a0j0(editorContext, node);
     }
 
-    private EditorCell createProperty_pkrqbh_a0h0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_pkrqbh_a0j0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -276,8 +304,8 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class fieldsListHandler_pkrqbh_e0 extends RefNodeListHandler {
-    public fieldsListHandler_pkrqbh_e0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parametersListHandler_pkrqbh_e0 extends RefNodeListHandler {
+    public parametersListHandler_pkrqbh_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -314,8 +342,46 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class nodesListHandler_pkrqbh_j0 extends RefNodeListHandler {
-    public nodesListHandler_pkrqbh_j0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fieldsListHandler_pkrqbh_g0 extends RefNodeListHandler {
+    public fieldsListHandler_pkrqbh_g0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+  }
+
+  private static class nodesListHandler_pkrqbh_l0 extends RefNodeListHandler {
+    public nodesListHandler_pkrqbh_l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
