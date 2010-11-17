@@ -79,7 +79,6 @@ public class SubTyping {
   }
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
-    checkOnly = false;                   //todo
     if (meetsAndJoins(subType, superType, info, isWeak, checkOnly)) {
       return true;
     }
@@ -129,7 +128,7 @@ public class SubTyping {
 
       //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        if (TypesUtil.match(ancestor, superType, null, info, false)) {
+        if (TypesUtil.match(ancestor, superType, myState.getEquations(), info, false)) {
           return true;
         }
       }
@@ -198,7 +197,10 @@ public class SubTyping {
   }
 
   public SNode createMeet(Set<SNode> types) {
-   // if (types.size() == 1) {
+    if (types.size() >1) {
+      System.out.println("meet");
+    }
+    // if (types.size() == 1) {
       return types.iterator().next();
    // }
    // todo implement check line & meet
@@ -206,6 +208,9 @@ public class SubTyping {
 
   public SNode createLCS(Set<SNode> types) {
   //  if (types.size() == 1) {
+    if (types.size() >1) {
+      System.out.println("lcs");
+    }
       return types.iterator().next();
    // }
     // todo implement least common supertype

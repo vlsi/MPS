@@ -27,7 +27,7 @@
   <root nodeId="1205245331359">
     <nodeInfo nodeId="1230216511092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="166" />
     <nodeInfo nodeId="3924602344979582140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="18" startPosition="166" endLine="19" endPosition="163" />
-    <nodeInfo nodeId="7257393859282347890" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="19" startPosition="163" endLine="20" endPosition="170" />
+    <nodeInfo nodeId="4926394400706924526" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="19" startPosition="163" endLine="20" endPosition="170" />
   </root>
   <root nodeId="1206101816406">
     <nodeInfo nodeId="1217420647246" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="GoToTypeErrorRule_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="45" />
@@ -132,6 +132,20 @@
       <varInfo nodeId="4290387479601583624" varName="firstId" />
     </scopeInfo>
   </root>
+  <root nodeId="4926394400706919977">
+    <nodeInfo nodeId="4926394400706919978" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="36" />
+    <nodeInfo nodeId="4926394400706919979" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="23" startPosition="36" endLine="24" endPosition="21" />
+    <nodeInfo nodeId="4926394400706919982" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="24" startPosition="21" endLine="25" endPosition="22" />
+    <nodeInfo nodeId="4926394400706919983" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="25" startPosition="22" endLine="26" endPosition="42" />
+    <nodeInfo nodeId="4926394400706919986" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="85" startPosition="9" endLine="86" endPosition="46" />
+    <nodeInfo nodeId="4926394400706919989" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="86" startPosition="46" endLine="87" endPosition="108" />
+    <nodeInfo nodeId="4926394400706919999" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="88" startPosition="66" endLine="89" endPosition="80" />
+    <nodeInfo nodeId="4926394400706920005" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="89" startPosition="80" endLine="90" endPosition="174" />
+    <nodeInfo nodeId="4926394400706919997" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="87" startPosition="108" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="4926394400706919998" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="88" startPosition="66" endLine="90" endPosition="174">
+      <varInfo nodeId="4926394400706920000" varName="t" />
+    </scopeInfo>
+  </root>
   <root nodeId="6359146168314435522">
     <nodeInfo nodeId="6359146168314435523" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowInferredNodeType_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="36" />
     <nodeInfo nodeId="6359146168314435524" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowInferredNodeType_Action.java" startLine="24" startPosition="36" endLine="25" endPosition="22" />
@@ -150,20 +164,6 @@
     <scopeInfo nodeId="6359146168314435544" fileName="ShowInferredNodeType_Action.java" startLine="82" startPosition="31" endLine="84" endPosition="15" />
     <scopeInfo nodeId="6359146168314435532" fileName="ShowInferredNodeType_Action.java" startLine="77" startPosition="59" endLine="81" endPosition="0" />
     <unitInfo nodeId="6359146168314435532" fileName="ShowInferredNodeType_Action.java" startLine="77" startPosition="47" endLine="81" endPosition="7" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action$1" />
-  </root>
-  <root nodeId="7257393859282257443">
-    <nodeInfo nodeId="7257393859282257444" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="36" />
-    <nodeInfo nodeId="7257393859282257445" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="23" startPosition="36" endLine="24" endPosition="21" />
-    <nodeInfo nodeId="7257393859282257448" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="24" startPosition="21" endLine="25" endPosition="22" />
-    <nodeInfo nodeId="7257393859282257449" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="25" startPosition="22" endLine="26" endPosition="42" />
-    <nodeInfo nodeId="7257393859282257452" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="85" startPosition="9" endLine="86" endPosition="46" />
-    <nodeInfo nodeId="7257393859282257455" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="86" startPosition="46" endLine="87" endPosition="108" />
-    <nodeInfo nodeId="7257393859282257465" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="88" startPosition="66" endLine="89" endPosition="80" />
-    <nodeInfo nodeId="7257393859282257471" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="89" startPosition="80" endLine="90" endPosition="174" />
-    <nodeInfo nodeId="7257393859282257463" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="87" startPosition="108" endLine="91" endPosition="7" />
-    <scopeInfo nodeId="7257393859282257464" fileName="ShowTypeSystemTraceForNode_Action.java" startLine="88" startPosition="66" endLine="90" endPosition="174">
-      <varInfo nodeId="7257393859282257466" varName="t" />
-    </scopeInfo>
   </root>
   <root nodeId="7796696880649589009">
     <nodeInfo nodeId="7796696880649589046" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowNodeType_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="36" />

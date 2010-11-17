@@ -261,4 +261,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return typeOf(node, null, null, true);
   }
 
+
+  @Override
+  protected SNode getTypeOf_generationMode(SNode node) {
+    checkRoot();
+    return getTypeOf(node, myTypeChecker);
+  }
+
+  @Override
+  protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+    checkRoot();
+    return getTypeOf(node, typeChecker);
+  }
 }

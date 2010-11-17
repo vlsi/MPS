@@ -114,7 +114,7 @@ public class ProjectCreationTest {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
-        ProjectUtil.closeProject(myProject);
+        ProjectUtil.closeAndDispose(myProject);
       }
     });
     checkFilePathList(myTmpDir, expectedPathList);

@@ -55,8 +55,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.CommittedChangesProvider;
 import com.intellij.openapi.vcs.FilePathImpl;
-import com.intellij.openapi.vcs.changes.ui.ChangesViewBalloonProblemNotifier;
-import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
@@ -139,7 +137,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     if (component == null || component.isDisposed()) {
       return;
     }
-    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(AnnotationUtil.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
+    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
       public boolean accept(EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
       }
@@ -312,7 +310,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
               );
               CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0a0(pair);
               if (cl == null) {
-                ChangesViewBalloonProblemNotifier.showMe(project, "Cannot load data for showing diff", MessageType.ERROR);
+                // <node> 
                 return;
               }
               List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
@@ -405,7 +403,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
             } catch (final VcsException ve) {
               ApplicationManager.getApplication().invokeLater(new Runnable() {
                 public void run() {
-                  ChangesViewBalloonProblemNotifier.showMe(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
+                  // <node> 
                 }
               });
             }

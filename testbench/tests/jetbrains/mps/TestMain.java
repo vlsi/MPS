@@ -22,7 +22,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
@@ -54,10 +53,7 @@ import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -99,7 +95,7 @@ public class TestMain {
     pr.execute(project);
   }
 
-  public static boolean testOnProjectCopy(final File sourceDir, final File destinationDir,
+  public static boolean testOnProjectCopy(final File source, final File destinationDir,
                                           final String projectName, ProjectRunnable pr) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
@@ -107,7 +103,17 @@ public class TestMain {
     if (destinationDir.exists()) {
       FileUtil.delete(destinationDir);
     }
-    FileUtil.copyDir(sourceDir, destinationDir);
+    if (source.isDirectory()) {
+      FileUtil.copyDir(source, destinationDir);
+    } else {  // it is allowed to have zipped directory here
+      try {
+        destinationDir.mkdir();
+        UnzipUtil.unzip(source, destinationDir);
+      } catch (IOException e) {
+        e.printStackTrace();
+        return false;
+      }
+    }
 
     final MPSProject[] project = new MPSProject[]{null};
     try {
@@ -138,7 +144,6 @@ public class TestMain {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           if (project[0] != null) {
-            ProjectManager.getInstance().closeProject(project[0].getProject());
             project[0].dispose();
           }
           FileUtil.delete(destinationDir);

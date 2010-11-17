@@ -55,7 +55,6 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     //drag support is alive while the tree is alive
     DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_MOVE, new MyDragGestureListener());
     new DropTarget(this, new ProjectPaneDnDListener(this, new MyTransferable(null).getTransferDataFlavors()[0]));
-    this.enableDnd(myProjectPane);
 
     MessageBusConnection connection = project.getMessageBus().connect();
     Disposer.register(this, connection);

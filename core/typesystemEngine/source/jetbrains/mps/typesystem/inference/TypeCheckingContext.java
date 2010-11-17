@@ -584,12 +584,12 @@ public class TypeCheckingContext {
   }
 
   @Nullable
-  private SNode getTypeOf_normalMode(SNode node) {
+  protected SNode getTypeOf_normalMode(SNode node) {
     if (!checkIfNotChecked(node, false)) return null;
     return getTypeDontCheck(node);
   }
 
-  private SNode getTypeOf_generationMode(final SNode node) {
+  protected SNode getTypeOf_generationMode(final SNode node) {
     try {
       return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
     } finally {
@@ -597,7 +597,7 @@ public class TypeCheckingContext {
     }
   }
 
-  private SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+  protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
     Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
     if (pair.o2) {
       return pair.o1;

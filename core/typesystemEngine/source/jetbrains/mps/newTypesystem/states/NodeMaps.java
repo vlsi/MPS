@@ -124,7 +124,6 @@ public class NodeMaps {
     for (SNode node : myNodeToTypes.keySet()) {
       SNode var = myNodeToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var);
-
       updateNodeToType(node, type, null);
     }
   }

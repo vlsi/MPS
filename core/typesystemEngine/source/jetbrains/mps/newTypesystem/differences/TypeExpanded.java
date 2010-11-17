@@ -18,17 +18,18 @@ package jetbrains.mps.newTypesystem.differences;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.awt.Color;
 import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Nov 15, 2010
- * Time: 7:09:20 PM
+ * Date: Nov 17, 2010
+ * Time: 2:46:01 PM
  * To change this template use File | Settings | File Templates.
  */
 public class TypeExpanded extends TypeDifference {
-  private final SNode myOldType;
+  private SNode myOldType;
 
   public TypeExpanded(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info, SNode oldType) {
     super(node, type, map, info);
@@ -36,12 +37,17 @@ public class TypeExpanded extends TypeDifference {
   }
 
   @Override
-  public void rollBack() {
-    myMap.put(myNode, myOldType);
+  public Color getColor() {
+    return new Color(0x008704);
   }
 
   @Override
   public String getPresentation() {
-    return "Type expanded " + "(" + myNode + " : " + myType + ")";
+    return "Type expanded: "+ myNode + " ------> " + myType;
+  }
+
+  @Override
+  public void rollBack() {
+    myMap.put(myNode, myOldType);
   }
 }

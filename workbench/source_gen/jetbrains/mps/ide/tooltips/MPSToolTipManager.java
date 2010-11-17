@@ -15,6 +15,7 @@ import java.awt.Frame;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.util.HtmlCharsUtil;
 import javax.swing.JLabel;
+import com.intellij.ide.TooltipEvent;
 import com.intellij.ide.IdeTooltipManager;
 import com.intellij.openapi.application.ApplicationManager;
 
@@ -138,11 +139,11 @@ public class MPSToolTipManager implements ApplicationComponent {
     label.setOpaque(false);
     myIdeTooltip = new IdeTooltip(component, point, label) {
       @Override
-      protected boolean canAutohideOn(MouseEvent event, boolean b) {
+      protected boolean canAutohideOn(TooltipEvent event) {
         return false;
       }
     };
-    IdeTooltipManager.getInstance().showTipNow(myIdeTooltip);
+    IdeTooltipManager.getInstance().show(myIdeTooltip, true);
   }
 
   public void hideToolTip() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,12 @@ package com.intellij.diagnostic;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.diagnostic.ErrorLogger;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
+import jetbrains.mps.runtime.BundleClassLoader;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
-
-import jetbrains.mps.runtime.BundleClassLoader;
-import jetbrains.mps.util.annotation.Patch;
 
 /**
  * @author kir
@@ -52,21 +51,18 @@ public class DefaultIdeaErrorLogger implements ErrorLogger {
   /**
    * @noinspection CallToPrintStackTrace
    */
-  @Patch
   public void handle(IdeaLoggingEvent event) {
     try {
       if (event.getThrowable() instanceof OutOfMemoryError) {
         processOOMError(event);
       } else if (!ourOomOccured) {
-        IdeaLoggingEvent eventToAdd = event;
         if (event.getThrowable().getClass().getClassLoader() instanceof BundleClassLoader) {
-          eventToAdd = new IdeaLoggingEvent(event.getMessage(), new MPSExceptionHolder(event.getThrowable()));
+          MessagePool.getInstance().addIdeFatalMessage(new IdeaLoggingEvent(event.getMessage(), new MPSExceptionHolder(event.getThrowable())));
+        } else {
+          MessagePool.getInstance().addIdeFatalMessage(event);
         }
-
-        MessagePool.getInstance().addIdeFatalMessage(eventToAdd);
       }
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
@@ -88,6 +84,7 @@ public class DefaultIdeaErrorLogger implements ErrorLogger {
       }
     });
   }
+
 
   @Patch
   private class MPSExceptionHolder extends Throwable {
