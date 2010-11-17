@@ -115,15 +115,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         }
         int index = Messages.showChooseDialog(myMainPanel, "Select the kind of breakpoint to add.", "Add Breakpoint", kindNames.toArray(new String[kindNames.size()]), kindNames.get(0), (Icon) null);
         if (index >= 0) {
-          ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kindsToShow.get(index));
-          if (provider == null) {
-            Messages.showErrorDialog(myMainPanel, "Can not create " + kindNames.get(index) + ". Provider was not found.");
-          } else {
-            IBreakpoint breakpoint = provider.createFromUi(kindsToShow.get(index), myContext.getProject());
-            if (breakpoint != null) {
-              myBreakpointsManager.addBreakpoint(breakpoint);
-            }
-          }
+          myBreakpointsManager.createFromUi(kindsToShow.get(index));
         }
       }
     };

@@ -21,6 +21,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
@@ -66,13 +67,14 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   private final Project myProject;
   private final DebugInfoManager myDebugInfoManager;
+  private final BreakpointProvidersManager myProvidersManager;
 
   private final EditorsProvider myEditorsProvider;
   private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
-  private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
 
-  private LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
+  private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
+  private final LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
   private final SessionChangeListener myChangeListener = new MySessionChangeAdapter();
   private final DebugSessionListener myDebugSessionListener = new MyDebugSessionAdapter();
   private final List<IBreakpointManagerListener> myListeners = new ArrayList<IBreakpointManagerListener>();
@@ -81,9 +83,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     return project.getComponent(BreakpointManagerComponent.class);
   }
 
-  public BreakpointManagerComponent(Project project, DebugInfoManager debugInfoManager) {
+  public BreakpointManagerComponent(Project project, DebugInfoManager debugInfoManager, BreakpointProvidersManager providersManager) {
     myProject = project;
     myDebugInfoManager = debugInfoManager;
+    myProvidersManager = providersManager;
     myEditorsProvider = new EditorsProvider(project);
     myEditorsProvider.addEditorOpenListener(new MyEditorOpenListener());
   }
@@ -194,8 +197,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
     if (breakpointsForRoot != null) {
       for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
-          editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-          editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
+        editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
+        editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
       }
       editorComponent.repaint(); //todo should it be executed in ED thread?
     }
@@ -216,11 +219,11 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     if (mpsBreakpointSet != null) {
       hasBreakpoint = false;
       for (ILocationBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-          if (mpsBreakpoint.getSNode() == node) {
-            hasBreakpoint = true;
-            breakpoint = mpsBreakpoint;
-            break;
-          }
+        if (mpsBreakpoint.getSNode() == node) {
+          hasBreakpoint = true;
+          breakpoint = mpsBreakpoint;
+          break;
+        }
       }
     } else {
       hasBreakpoint = false;
@@ -230,7 +233,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         removeBreakpoint(breakpoint);
       }
     } else {
-      ILocationBreakpoint newBreakpoint = DebugInfoManager.getInstance().createBreakpoint(node, myProject);
+      ILocationBreakpoint newBreakpoint = myDebugInfoManager.createBreakpoint(node, myProject);
       if (newBreakpoint != null) {
         addBreakpoint(newBreakpoint);
       } else if (myDebugInfoManager.isDebuggableNode(node)) {
@@ -244,7 +247,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public void addBreakpoint(@NotNull IBreakpoint breakpoint) {
     synchronized (myBreakpoints) {
       if (breakpoint instanceof ILocationBreakpoint) {
-        addLocationBreakpoint((ILocationBreakpoint)breakpoint);
+        addLocationBreakpoint((ILocationBreakpoint) breakpoint);
       }
       breakpoint.setCreationTime(System.currentTimeMillis());
       myBreakpoints.add(breakpoint);
@@ -332,21 +335,33 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
+  public void createFromUi(IBreakpointKind kind) {
+    ILanguageBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+    if (provider == null) {
+      Messages.showErrorDialog(myProject, "Can not create " + kind.getPresentation() + ". Provider was not found.", "Error Creating" + kind.getPresentation());
+    } else {
+      IBreakpoint breakpoint = provider.createFromUi(kind, myProject);
+      if (breakpoint != null) {
+        addBreakpoint(breakpoint);
+      }
+    }
+  }
+
   public void loadState(Element state) {
     synchronized (myBreakpoints) {
       clear();
       List breakpointsElement = state.getChildren(BREAKPOINT_ELEMENT);
-      for (ListIterator it = breakpointsElement.listIterator(); it.hasNext(); ) {
+      for (ListIterator it = breakpointsElement.listIterator(); it.hasNext();) {
         Element breakpointElement = (Element) it.next();
         String kindName = breakpointElement.getAttributeValue(KIND_TAG);
 
-        IBreakpointKind kind = BreakpointProvidersManager.getInstance().getKind(kindName);
+        IBreakpointKind kind = myProvidersManager.getKind(kindName);
         if (kind == null) {
           // todo we might save whatever we cant read for later?
           continue;
         }
 
-        ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kind);
+        ILanguageBreakpointsProvider provider = myProvidersManager.getProvider(kind);
         if (provider == null) {
           continue;
         }
@@ -363,7 +378,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         synchronized (myBreakpoints) {
           for (IBreakpoint breakpoint : myBreakpoints) {
             if (breakpoint instanceof ILocationBreakpoint) {
-              addLocationBreakpoint((ILocationBreakpoint)breakpoint);
+              addLocationBreakpoint((ILocationBreakpoint) breakpoint);
             }
           }
         }
@@ -377,7 +392,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
       for (IBreakpoint breakpoint : myBreakpoints) {
         IBreakpointKind kind = breakpoint.getKind();
-        ILanguageBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kind);
+        ILanguageBreakpointsProvider provider = myProvidersManager.getProvider(kind);
         if (provider == null) {
           continue;
         }
