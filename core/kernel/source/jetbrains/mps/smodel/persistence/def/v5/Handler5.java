@@ -29,11 +29,11 @@ public class Handler5 extends ModelReader5Handler implements DefaultMPSHandler {
 
   @Override
   public SModel getModel() {
-    return getResult().o1;
+    return getResult();
   }
 
   @Override
   public List<SNodeId> getLineToIdMap() {
-    return getResult().o2;
+    return null;
   }
 }

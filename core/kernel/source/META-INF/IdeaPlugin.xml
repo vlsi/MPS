@@ -17,8 +17,8 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
-    <xi:include href="/META-INF/PlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
-    <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
+    <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
+    <xi:include href="/META-INF/MPSVcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 

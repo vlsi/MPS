@@ -19,11 +19,12 @@ import com.intellij.ide.Bootstrap;
 import com.intellij.ide.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
 
-import java.io.File;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Launcher {
   public static void main(String[] args) {
@@ -42,7 +43,6 @@ public class Launcher {
     }
     System.setProperty("idea.additional.classpath", cp.toString());
 
-
     Bootstrap.main(args, MPSMainImpl.class.getName(), "start");
   }
 
@@ -58,9 +58,53 @@ public class Launcher {
 
       File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
       ClassloaderUtil.addLibraries(classPath, languageDesignFolder, selfRootUrl);
+
+      File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
+      if (classPath.isEmpty() && acp.exists()) {
+        // we're probably running from the sources, let's add the class dirs to the classpath
+        readPaths(classPath, acp, homePath, selfRootUrl);
+      }
     }
     catch (MalformedURLException e) {
 
     }
   }
+
+  private static void readPaths (List<URL> classPath, File paths, String homePath, final URL selfRootUrl) throws MalformedURLException {
+    try {
+      for (Scanner sc = new Scanner(paths, "UTF-8"); sc.hasNextLine();) {
+        File dir = new File (homePath, sc.nextLine());
+        if (dir.isDirectory()) {
+          final URL url = dir.toURI().toURL();
+          if (!selfRootUrl.equals(url)) {
+            classPath.add(url);
+          }
+        }
+      }
+    } catch (FileNotFoundException e) {
+
+    }
+  }
+
+  private static void addClasses(List<URL> classPath, File fromDir, final URL selfRootUrl) throws MalformedURLException {
+    final File[] files = fromDir.listFiles();
+    if (files != null) {
+      for (final File file : files) {
+        if (!file.isDirectory()) continue;
+        for (final File dir: file.listFiles(new FileFilter(){
+          @Override
+          public boolean accept(File f) {
+            return f.isDirectory() && f.getName().startsWith("classes") && !f.getName().contains("test");
+          }
+        })) {
+          final URL url = dir.toURI().toURL();
+          if (selfRootUrl.equals(url)) {
+            continue;
+          }
+          classPath.add(url);
+        }
+      }
+    }
+  }
+
 }

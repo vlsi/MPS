@@ -84,6 +84,9 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     Object result = current.createObject(attributes);
+    if (myHandlersStack.empty()) {
+      myResult = (ModelDependencies) result;
+    }
 
     // handle attributes 
     for (int i = 0; i < attributes.getLength(); i++) {
@@ -103,18 +106,18 @@ public class BLDependenciesHandler extends DefaultHandler {
       return null;
     }
 
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       throw new SAXParseException("unknown child: " + tagName, null);
     }
 
-    protected void handleText(Object resultObject, String value) throws SAXParseException {
+    protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
@@ -125,7 +128,7 @@ public class BLDependenciesHandler extends DefaultHandler {
       return BLDependenciesHandler.EMPTY_ARRAY;
     }
 
-    protected void validate(Object resultObject) throws SAXParseException {
+    protected void validate(Object resultObject) throws SAXException {
     }
   }
 
@@ -141,7 +144,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     @Override
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
       if ("dependency".equals(tagName)) {
         return dependencyhandler;
       }
@@ -149,7 +152,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       ModelDependencies result = (ModelDependencies) resultObject;
       if ("dependency".equals(tagName)) {
         RootDependencies child = (RootDependencies) value;
@@ -177,7 +180,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       RootDependencies result = (RootDependencies) resultObject;
       if ("className".equals(name)) {
         result.setClassName(value);
@@ -191,7 +194,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     @Override
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
       if ("classNode".equals(tagName)) {
         return classNodehandler;
       }
@@ -199,7 +202,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       RootDependencies result = (RootDependencies) resultObject;
       if ("classNode".equals(tagName)) {
         Object[] child = (Object[]) value;
@@ -230,7 +233,7 @@ public class BLDependenciesHandler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Object[] result = (Object[]) resultObject;
       if ("dependClassName".equals(name)) {
         result[0] = InternUtil.intern(value);

@@ -7,22 +7,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.Stack;
 import org.xml.sax.Locator;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModel;
-import java.util.List;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 
 public class ModelReader6Handler extends DefaultHandler {
@@ -39,17 +31,14 @@ public class ModelReader6Handler extends DefaultHandler {
   private Stack<ModelReader6Handler.ElementHandler> myHandlersStack = new Stack<ModelReader6Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
-  private Pair<SModel, List<SNodeId>> myResult;
+  private SModel myResult;
   private SModel fieldmodel;
   private VersionUtil fieldhelper;
-  private Deque<SNodeId> fieldnodeIdStack;
-  private List<SNodeId> fieldlineToIdMap;
-  private boolean fieldnodeEnded;
 
   public ModelReader6Handler() {
   }
 
-  public Pair<SModel, List<SNodeId>> getResult() {
+  public SModel getResult() {
     return myResult;
   }
 
@@ -60,7 +49,6 @@ public class ModelReader6Handler extends DefaultHandler {
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    globalHandleText(myValues.firstElement(), new String(array, start, len));
     ModelReader6Handler.ElementHandler current = (myHandlersStack.empty() ?
       (ModelReader6Handler.ElementHandler) null :
       myHandlersStack.peek()
@@ -83,7 +71,7 @@ public class ModelReader6Handler extends DefaultHandler {
       if (parent != null) {
         parent.handleChild(myValues.peek(), qName, childValue);
       } else {
-        myResult = (Pair<SModel, List<SNodeId>>) childValue;
+        myResult = (SModel) childValue;
       }
     }
   }
@@ -109,6 +97,9 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     Object result = current.createObject(attributes);
+    if (myHandlersStack.empty()) {
+      myResult = (SModel) result;
+    }
 
     // handle attributes 
     for (int i = 0; i < attributes.getLength(); i++) {
@@ -120,20 +111,6 @@ public class ModelReader6Handler extends DefaultHandler {
     myValues.push(result);
   }
 
-  public void globalHandleText(Object resultObject, String value) {
-    Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
-    for (int i = 0; i < StringUtils.countMatches(value, "\n"); i++) {
-      int line = myLocator.getLineNumber() - 1;
-      while (line > ListSequence.fromList(fieldlineToIdMap).count()) {
-        ListSequence.fromList(fieldlineToIdMap).addElement(DequeSequence.fromDeque(fieldnodeIdStack).peekElement());
-        if (fieldnodeEnded) {
-          DequeSequence.fromDeque(fieldnodeIdStack).popElement();
-          fieldnodeEnded = false;
-        }
-      }
-    }
-  }
-
   private class ElementHandler {
     private ElementHandler() {
     }
@@ -142,18 +119,18 @@ public class ModelReader6Handler extends DefaultHandler {
       return null;
     }
 
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       throw new SAXParseException("unknown child: " + tagName, null);
     }
 
-    protected void handleText(Object resultObject, String value) throws SAXParseException {
+    protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
@@ -164,7 +141,7 @@ public class ModelReader6Handler extends DefaultHandler {
       return ModelReader6Handler.EMPTY_ARRAY;
     }
 
-    protected void validate(Object resultObject) throws SAXParseException {
+    protected void validate(Object resultObject) throws SAXException {
     }
   }
 
@@ -175,15 +152,12 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected Pair<SModel, List<SNodeId>> createObject(Attributes attrs) {
-      fieldnodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
-      fieldlineToIdMap = ListSequence.fromList(new ArrayList<SNodeId>());
-      fieldnodeEnded = false;
+    protected SModel createObject(Attributes attrs) {
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
-      return new Pair<SModel, List<SNodeId>>(fieldmodel, fieldlineToIdMap);
+      return fieldmodel;
     }
 
     @Override
@@ -192,8 +166,8 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
-      Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
+      SModel result = (SModel) resultObject;
       if ("modelUID".equals(name)) {
         return;
       }
@@ -201,7 +175,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
       if ("persistence".equals(tagName)) {
         return persistencehandler;
       }
@@ -224,24 +198,24 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
-      Pair<SModel, List<SNodeId>> result = (Pair<SModel, List<SNodeId>>) resultObject;
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+      SModel result = (SModel) resultObject;
       if ("persistence".equals(tagName)) {
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        result.o1.addLanguage(ModuleReference.fromString(child));
+        result.addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        result.o1.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        result.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        result.o1.addDevKit(ModuleReference.fromString(child));
+        result.addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
@@ -252,7 +226,7 @@ public class ModelReader6Handler extends DefaultHandler {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          result.o1.addRoot(child);
+          result.addRoot(child);
         }
         return;
       }
@@ -260,14 +234,14 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void validate(Object resultObject) throws SAXParseException {
-      if (!(validateInternal((Pair<SModel, List<SNodeId>>) resultObject))) {
+    protected void validate(Object resultObject) throws SAXException {
+      if (!(validateInternal((SModel) resultObject))) {
         throw new SAXParseException("missing tags", null);
       }
     }
 
-    private boolean validateInternal(Pair<SModel, List<SNodeId>> result) throws SAXParseException {
-      result.o1.setLoading(false);
+    private boolean validateInternal(SModel result) throws SAXException {
+      result.setLoading(false);
       return true;
     }
   }
@@ -289,7 +263,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Integer result = (Integer) resultObject;
       if ("version".equals(name)) {
         return;
@@ -315,7 +289,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
       if ("namespace".equals(name)) {
         return;
@@ -341,7 +315,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("index".equals(name)) {
         return;
@@ -377,7 +351,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SNode result = (SNode) resultObject;
       if ("type".equals(name)) {
         return;
@@ -391,7 +365,6 @@ public class ModelReader6Handler extends DefaultHandler {
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
-        DequeSequence.fromDeque(fieldnodeIdStack).pushElement(id);
         result.setId(id);
         return;
       }
@@ -399,7 +372,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXParseException {
+    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
       if ("property".equals(tagName)) {
         return propertyhandler;
       }
@@ -413,7 +386,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXParseException {
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
@@ -439,7 +412,6 @@ public class ModelReader6Handler extends DefaultHandler {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         result.addChild(child.getRole_(), child);
-        fieldnodeEnded = true;
         return;
       }
       super.handleChild(resultObject, tagName, value);
@@ -463,7 +435,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("name".equals(name)) {
         return;
@@ -488,7 +460,7 @@ public class ModelReader6Handler extends DefaultHandler {
     }
 
     @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXParseException {
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("role".equals(name)) {
         result[0] = value;

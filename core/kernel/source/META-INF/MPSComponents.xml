@@ -93,6 +93,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.MessagesPoolClearer</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
     </component>
 

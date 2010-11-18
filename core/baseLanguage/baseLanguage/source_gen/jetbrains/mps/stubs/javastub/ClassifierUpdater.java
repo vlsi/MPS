@@ -28,6 +28,8 @@ import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
 import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
+import jetbrains.mps.baseLanguage.structure.IntegerConstant;
+import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
@@ -45,10 +47,8 @@ import jetbrains.mps.baseLanguage.structure.ProtectedVisibility;
 import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
 import jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue;
 import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.IntegerConstant;
 import jetbrains.mps.baseLanguage.structure.BooleanConstant;
 import jetbrains.mps.baseLanguage.structure.FloatingPointConstant;
-import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import jetbrains.mps.baseLanguage.structure.ArrayLiteral;
 import jetbrains.mps.stubs.javastub.asm.ASMEnumValue;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
@@ -272,6 +272,21 @@ public class ClassifierUpdater {
         decl.setIsDeprecated(field.isDeprecated());
         for (ASMAnnotation annotation : field.getAnnotations()) {
           decl.addAnnotation(createAnnotation(annotation, model));
+        }
+        if (field.isFinal()) {
+          decl.setIsFinal(true);
+          if (field.hasValue()) {
+            Object value = field.getValue();
+            if (value instanceof Integer) {
+              IntegerConstant initialValue = IntegerConstant.newInstance(model);
+              initialValue.setValue((Integer) value);
+              decl.setInitializer(initialValue);
+            } else if (value instanceof String) {
+              StringLiteral initialValue = StringLiteral.newInstance(model);
+              initialValue.setValue((String) value);
+              decl.setInitializer(initialValue);
+            }
+          }
         }
         cls.addStaticField(decl);
       }

@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Collections;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import java.awt.event.MouseEvent;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Cursor;
@@ -44,6 +43,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.vcs.history.TextTransferrable;
+import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
@@ -55,6 +55,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.CommittedChangesProvider;
 import com.intellij.openapi.vcs.FilePathImpl;
+import com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier;
+import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
@@ -88,6 +90,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     }));
     SModel model = SNodeOperations.getModel(root);
+    myFileAnnotation = fileAnnotation;
     for (int line = 0; line < ListSequence.fromList(fileLineToId).count(); line++) {
       SNode node = null;
       SNodeId id = ListSequence.fromList(fileLineToId).getElement(line);
@@ -97,9 +100,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
       if (node == null) {
         continue;
       }
-      MapSequence.fromMap(myNodeIdToFileLine).put(id, line);
+      if (MapSequence.fromMap(myNodeIdToFileLine).containsKey(id)) {
+        MapSequence.fromMap(myNodeIdToFileLine).put(id, getFileLineWithMaxRevision(MapSequence.fromMap(myNodeIdToFileLine).get(id), line));
+      } else {
+        MapSequence.fromMap(myNodeIdToFileLine).put(id, line);
+      }
     }
-    myFileAnnotation = fileAnnotation;
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myFileLineToId = fileLineToId;
@@ -186,15 +192,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
           }
           for (int pseudoLine = startPseudoLine; pseudoLine < endPseudoLine; pseudoLine++) {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-            if (currentFileLine != -1) {
-              VcsRevisionNumber currentRevision = myFileAnnotation.getLineRevisionNumber(currentFileLine);
-              VcsRevisionNumber newRevision = myFileAnnotation.getLineRevisionNumber(fileLine);
-              if (currentRevision == null) {
-              } else if (newRevision == null || newRevision.compareTo(currentRevision) <= 0) {
-                continue;
-              }
-            }
-            ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, fileLine);
+            ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }
           int widthCandidate = component.getGraphics().getFontMetrics(myFont).stringWidth(getTextForFileLine(fileLine)) + 3;
           myWidth = Math.max(myWidth, widthCandidate);
@@ -262,6 +260,28 @@ public class AnnotationColumn extends AbstractLeftColumn {
     return menu;
   }
 
+  private int getFileLineWithMaxRevision(int a, int b) {
+    if (b == -1) {
+      return a;
+    }
+    if (a == -1) {
+      return b;
+    }
+    VcsRevisionNumber aRevision = myFileAnnotation.getLineRevisionNumber(a);
+    VcsRevisionNumber bRevision = myFileAnnotation.getLineRevisionNumber(b);
+    if (bRevision == null) {
+      return a;
+    }
+    if (aRevision == null) {
+      return b;
+    }
+    int c = aRevision.compareTo(bRevision);
+    if (c < 0) {
+      return b;
+    }
+    return a;
+  }
+
   private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0a(Pair<CommittedChangeList, FilePath> p) {
     if (null == p) {
       return null;
@@ -310,7 +330,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
               );
               CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0a0(pair);
               if (cl == null) {
-                // <node> 
+                VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
                 return;
               }
               List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
@@ -403,16 +423,13 @@ public class AnnotationColumn extends AbstractLeftColumn {
             } catch (final VcsException ve) {
               ApplicationManager.getApplication().invokeLater(new Runnable() {
                 public void run() {
-                  // <node> 
+                  VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
                 }
               });
             }
           }
         });
       }
-    }
-
-    private void showDiffForChange() {
     }
   }
 }

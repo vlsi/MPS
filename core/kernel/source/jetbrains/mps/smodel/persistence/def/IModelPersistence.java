@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vfs.IFile;
 
@@ -30,7 +31,9 @@ public interface IModelPersistence {
 
   IModelReader getModelReader();
 
-  DefaultMPSHandler getModelReaderHandler();
+  DefaultMPSHandler getModelReaderHandler(ModelLoadingState state);
+
+  DefaultMPSHandler getAnnotationReaderHandler();
 
 
   SModelReference upgradeModelUID(SModelReference modelReference);

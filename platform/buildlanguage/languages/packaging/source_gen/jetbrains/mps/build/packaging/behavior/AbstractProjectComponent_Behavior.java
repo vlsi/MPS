@@ -4,10 +4,11 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.io.File;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static File call_getHomePath_1213877333764(SNode thisNode) {
-    return new File(ILayoutComponent_Behavior.call_getPath_1213877230696(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true)));
+    return new File(ILayoutComponent_Behavior.call_getPath_1213877230696(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.build.packaging.structure.MPSLayout")).first()));
   }
 
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {

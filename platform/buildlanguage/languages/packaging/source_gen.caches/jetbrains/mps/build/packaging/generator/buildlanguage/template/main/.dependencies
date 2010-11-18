@@ -10,11 +10,14 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Antcall_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior" />
@@ -41,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.WeavingMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -62,5 +66,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
+  <dependency className="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.idea.additional.classpath" file="idea.additional.classpath.txt" />
 </dependenciesRoot>
 
