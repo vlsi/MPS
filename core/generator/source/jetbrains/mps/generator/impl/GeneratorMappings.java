@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.impl;
 
-import com.sun.xml.internal.bind.v2.util.QNameMap;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.cache.BrokenCacheException;
