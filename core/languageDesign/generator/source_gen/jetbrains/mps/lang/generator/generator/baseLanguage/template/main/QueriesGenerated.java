@@ -394,6 +394,10 @@ public class QueriesGenerated {
     return "inputChanged" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
+  public static Object propertyMacro_GetPropertyValue_6612261708901109136(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getParent(_context.getNode()).getConceptFqName();
+  }
+
   public static Object propertyMacro_GetPropertyValue_99767819676504012(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name");
   }
@@ -483,6 +487,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1940510396026567414(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "Switch" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6612261708901143234(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getParent(_context.getNode()).getConceptFqName();
   }
 
   public static Object propertyMacro_GetPropertyValue_8196331069071255561(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -909,11 +917,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0wh(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0yh(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0xh(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0zh(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_4155486055398184252(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1963,7 +1971,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0oq(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0qq(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2204,21 +2212,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0wh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0yh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0xh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0zh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0oq(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0qq(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

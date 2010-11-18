@@ -19,6 +19,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
@@ -96,13 +97,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   /*
   *  returns temporary node
   */
-  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    // TODO
-    return null;
+  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
+    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(mapper.getConceptFqName(), generator.getOutputModel(), generator.getScope(), false);
+    tracer.pushOutputNodeToReplaceLater(childToReplaceLater);
+    generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, reductionContext);
+    return childToReplaceLater;
   }
 
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
-    generator.getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(processor, outputNode, context, reductionContext);
+    generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
   }
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {

@@ -55,7 +55,7 @@ public interface TemplateExecutionEnvironment {
   /*
    *  returns temporary node
    */
-  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
+  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 

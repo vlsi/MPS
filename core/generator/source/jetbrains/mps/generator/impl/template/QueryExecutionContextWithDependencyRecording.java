@@ -2,6 +2,7 @@ package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
+import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
@@ -188,6 +189,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       wrapped.executeInContext(outputNode, context, processor);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.executeInContext(outputNode, context, mapper);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
