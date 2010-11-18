@@ -91,9 +91,7 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
     String input = Messages.showInputDialog("Enter exception class", "Enter Exception Class", null, "java.lang.Throwable", new InputValidator() {
       @Override
       public boolean checkInput(final String inputString) {
-        if (inputString.length() <= 3) return true;
-
-        return findPossibleNodes(inputString, result) != null;
+        return inputString.length() <= 3 || findPossibleNodes(inputString, result) != null;
       }
 
       @Override
