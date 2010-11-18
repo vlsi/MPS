@@ -16,7 +16,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -125,8 +124,16 @@ public class Mappingmain implements TemplateMappingConfiguration {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a5a0b);
         environment.nodeCopied(context2, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/1473665232107455261");
         environment.resolve(new ReferenceResolver() {
-          public Object resolve(SNode outputNode, TemplateContext context, ITemplateGenerator generator) {
-            return QueriesGenerated.referenceMacro_GetReferent_1473665232107455264(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode3, referenceMacro_417xrn_c0b0a0a0a0a0c0f0a1, "variableDeclaration", context, generator));
+          public Object resolve(SNode outputNode, TemplateContext context) {
+            return QueriesGenerated.referenceMacro_GetReferent_1473665232107455264(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode3, referenceMacro_417xrn_c0b0a0a0a0a0c0f0a1, "variableDeclaration", context, environment.getGenerator()));
+          }
+
+          public String getDefaultResolveInfo() {
+            return "i";
+          }
+
+          public SNodePointer getTemplateNode() {
+            return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1473665232107455263");
           }
         }, tnode3, "variableDeclaration", context2);
 

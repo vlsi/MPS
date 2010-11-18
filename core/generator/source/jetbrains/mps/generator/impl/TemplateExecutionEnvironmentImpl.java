@@ -16,6 +16,9 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroResolver;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
@@ -91,7 +94,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
-    // TODO
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
+      resolver, outputNode,
+      role, context,
+      reductionContext);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
   /*

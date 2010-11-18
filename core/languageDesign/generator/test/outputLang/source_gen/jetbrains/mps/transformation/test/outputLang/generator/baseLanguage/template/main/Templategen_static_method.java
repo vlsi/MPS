@@ -11,7 +11,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
@@ -365,8 +364,16 @@ public class Templategen_static_method implements TemplateDeclaration {
                   environment.getTracer().pushTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a6a4a0);
                   environment.nodeCopied(context, tnode27, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987360");
                   environment.resolve(new ReferenceResolver() {
-                    public Object resolve(SNode outputNode, TemplateContext context, ITemplateGenerator generator) {
-                      return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode27, referenceMacro_1s1jok_c0b0a0a0a0a0c0b0d0b0d0b0g0e0a, "baseMethodDeclaration", context, generator));
+                    public Object resolve(SNode outputNode, TemplateContext context) {
+                      return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode27, referenceMacro_1s1jok_c0b0a0a0a0a0c0b0d0b0d0b0g0e0a, "baseMethodDeclaration", context, environment.getGenerator()));
+                    }
+
+                    public String getDefaultResolveInfo() {
+                      return "fact";
+                    }
+
+                    public SNodePointer getTemplateNode() {
+                      return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362");
                     }
                   }, tnode27, "baseMethodDeclaration", context);
 
