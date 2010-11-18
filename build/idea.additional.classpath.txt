@@ -14,15 +14,8 @@ core/baseLanguage/collections/runtime/classes
 core/baseLanguage/collections/runtime/classes_gen
 core/baseLanguage/collections/runtime/source_gen
 core/baseLanguage/collections/languages/trove/runtime/classes_gen
-platform/dates/classes_gen
-platform/dates/internal/classes_gen
-platform/dates/runtime/classes_gen
-platform/dates/runtime/lib/joda-time-1.6.jar
-platform/dates/runtime/classes_gen
 core/baseLanguage/javadoc/classes_gen
 core/baseLanguage/logging/classes_gen
-platform/math/classes_gen
-platform/money/classes_gen
 core/baseLanguage/unitTest/classes
 core/baseLanguage/unitTest/classes_gen
 core/baseLanguage/unitTest/solutions/runtime/classes_gen

@@ -60,4 +60,35 @@ public class InstanceMethodCallOperation_Behavior {
     }
     return result;
   }
+
+  public static boolean call_canBeConvertedToLocal_5311267937735225328(SNode thisNode) {
+    if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+      return false;
+    }
+    if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
+      return true;
+    }
+    SNode declaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
+    SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(thisNode);
+    SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+      return false;
+    }
+    int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
+    while (classifier != declarationClassifier) {
+      for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, thisNode, constraint)) {
+        if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
+          return false;
+        }
+      }
+      classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    }
+    return true;
+  }
+
+  public static void call_convertToLocal_5311267937735269230(SNode thisNode) {
+    SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
+    SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
+    ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
+  }
 }

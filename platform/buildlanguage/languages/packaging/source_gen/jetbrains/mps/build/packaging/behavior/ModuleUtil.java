@@ -22,18 +22,21 @@ public class ModuleUtil {
     if (path == null) {
       return "";
     }
-    if (basedir == null || basedir.length() == 0 || !(path.startsWith(basedir))) {
+    if (basedir == null || basedir.length() == 0) {
       return path;
     }
     if (basedir.endsWith("/") || basedir.endsWith("\\")) {
       basedir = basedir.substring(0, basedir.length() - 1);
+    }
+    if (!(path.startsWith(basedir + "/")) && !(path.startsWith(basedir + "\\"))) {
+      return path;
     }
     return path.substring(basedir.length() + 1);
   }
 
   public static void findMacro(SNode pathHolder, List<SNode> macro) {
     for (SNode m : ListSequence.fromList(macro)) {
-      if (SPropertyOperations.getString(pathHolder, "fullPath").startsWith(SPropertyOperations.getString(m, "path"))) {
+      if (SPropertyOperations.getString(pathHolder, "fullPath").startsWith(SPropertyOperations.getString(m, "path") + "/") || SPropertyOperations.getString(pathHolder, "fullPath").startsWith(SPropertyOperations.getString(m, "path") + "\\")) {
         SLinkOperations.setTarget(pathHolder, "macro", m, false);
         SPropertyOperations.set(pathHolder, "fullPath", getRelativePath(SPropertyOperations.getString(pathHolder, "fullPath"), SPropertyOperations.getString(m, "path")));
         break;

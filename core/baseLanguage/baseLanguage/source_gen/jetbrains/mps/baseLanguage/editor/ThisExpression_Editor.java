@@ -39,6 +39,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createConstant_xaaxob_a0(editorContext, node);
     }
+    ThisExpression_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
@@ -68,6 +69,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.EDITABLE, true);
     }
+    ThisExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
