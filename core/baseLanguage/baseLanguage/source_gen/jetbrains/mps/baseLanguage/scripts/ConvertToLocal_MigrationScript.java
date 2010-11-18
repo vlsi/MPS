@@ -6,17 +6,8 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import java.util.List;
-import jetbrains.mps.baseLanguage.search.ParameterScope;
-import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
 
 public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
   public ConvertToLocal_MigrationScript(IOperationContext operationContext) {
@@ -35,44 +26,11 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
-          return false;
-        }
-        List<SNode> param = new ParameterScope(node).getNodes();
-        List<SNode> vars = new LocalVariablesScope(node).getNodes();
-        vars.addAll(param);
-        SNode field = SLinkOperations.getTarget(node, "fieldDeclaration", false);
-        if (field == null) {
-          return false;
-        }
-        for (SNode var : vars) {
-          if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(field, "name")) && ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false))) {
-            return false;
-          }
-        }
-        if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
-          return true;
-        }
-        SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
-        SNode declarationClassifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
-          return false;
-        }
-        int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
-        while (classifier != declarationClassifier) {
-          for (SNode fieldDeclaration : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, node, constraint)) {
-            if (SPropertyOperations.getString(fieldDeclaration, "name") != null && SPropertyOperations.getString(fieldDeclaration, "name").equals(SPropertyOperations.getString(field, "name"))) {
-              return false;
-            }
-          }
-          classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        }
-        return true;
+        return FieldReferenceOperation_Behavior.call_canBeConvertedToLocal_5311267937735160942(node);
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference");
-        SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "fieldDeclaration", false), false);
+        FieldReferenceOperation_Behavior.call_convertToLocal_5311267937735269195(node);
       }
 
       public boolean isShowAsIntention() {
@@ -93,34 +51,11 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
-          return false;
-        }
-        if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
-          return true;
-        }
-        SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
-        SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
-        SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
-          return false;
-        }
-        int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
-        while (classifier != declarationClassifier) {
-          for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, node, constraint)) {
-            if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
-              return false;
-            }
-          }
-          classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        }
-        return true;
+        return InstanceMethodCallOperation_Behavior.call_canBeConvertedToLocal_5311267937735225328(node);
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
-        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
+        InstanceMethodCallOperation_Behavior.call_convertToLocal_5311267937735269230(node);
       }
 
       public boolean isShowAsIntention() {
