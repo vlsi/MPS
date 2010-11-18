@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
+import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -48,4 +49,6 @@ public interface QueryExecutionContext {
   SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule);
 
   Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context);
+
+  void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor);
 }

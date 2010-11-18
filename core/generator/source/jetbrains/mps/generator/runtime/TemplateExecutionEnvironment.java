@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
@@ -56,7 +57,7 @@ public interface TemplateExecutionEnvironment {
    */
   public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
-  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context);
+  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context);
 }

@@ -20,6 +20,7 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -100,8 +101,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return null;
   }
 
-  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
-    // TODO
+  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
+    generator.getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(processor, outputNode, context, reductionContext);
   }
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {

@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
+import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -390,6 +391,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       generator.getLogger().handleException(t);
     }
     return null;
+  }
+
+  @Override
+  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
+    processor.process(outputNode, context);
   }
 
   @Override
