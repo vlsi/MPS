@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import org.jetbrains.annotations.NonNls;
@@ -48,12 +46,6 @@ public class BreakpointsTable extends BreakpointsView {
   @Override
   public JComponent getMainComponent() {
     return myBreakpointsTable;
-  }
-
-  public void breakpointDeleted(IBreakpoint breakpoint) {
-    // do not know why, but update does not work here
-    int row = getBreakpointsList().indexOf(breakpoint);
-    myBreakpointsTableModel.breakpointDeleted(row);
   }
 
   @Override
@@ -133,23 +125,6 @@ public class BreakpointsTable extends BreakpointsView {
   }
 
   private class MyAbstractTableModel extends AbstractTableModel {
-
-    public void breakpointDeleted(int row) {
-      ApplicationManager.getApplication().assertIsDispatchThread();
-
-      updateBreakpoints();
-      fireTableRowsDeleted(row, row);
-      int count = getRowCount();
-      if (count == 0) return;
-      int index;
-      if (count <= row) {
-        index = row - 1;
-      } else {
-        index = row;
-      }
-      myBreakpointsTable.getSelectionModel().setSelectionInterval(index, index);
-    }
-
     @Override
     public int getRowCount() {
       return getBreakpointsList().size();
