@@ -19,11 +19,14 @@ import com.intellij.util.ui.AbstractTableCellEditor;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
@@ -104,8 +107,16 @@ public class BreakpointsTable extends BreakpointsView {
         return new JLabel();
       }
     });
+
+    myBreakpointsTable.getColumnModel().getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      @Override
+      public void valueChanged(ListSelectionEvent e) {
+        fireBreakpointSelected(getSelectedBreakpoint());
+      }
+    });
   }
 
+  @Nullable
   public IBreakpoint getSelectedBreakpoint() {
     MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
     int selectedRow = myBreakpointsTable.getSelectedRow();

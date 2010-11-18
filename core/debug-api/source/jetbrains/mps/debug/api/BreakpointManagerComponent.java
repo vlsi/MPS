@@ -336,7 +336,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   public void createFromUi(IBreakpointKind kind) {
-    ILanguageBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+    IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
     if (provider == null) {
       Messages.showErrorDialog(myProject, "Can not create " + kind.getPresentation() + ". Provider was not found.", "Error Creating" + kind.getPresentation());
     } else {
@@ -361,7 +361,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           continue;
         }
 
-        ILanguageBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+        IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
         if (provider == null) {
           continue;
         }
@@ -392,7 +392,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
       for (IBreakpoint breakpoint : myBreakpoints) {
         IBreakpointKind kind = breakpoint.getKind();
-        ILanguageBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+        IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
         if (provider == null) {
           continue;
         }

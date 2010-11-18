@@ -17,10 +17,11 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import java.util.*;
@@ -29,6 +30,7 @@ public abstract class BreakpointsView implements DataProvider {
   public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<IBreakpoint> myBreakpointsList;
   private final BreakpointManagerComponent myBreakpointsManager;
+  private final List<BreakpointSelectionListener> mySelectionListeners = new ArrayList<BreakpointSelectionListener>();
   private final IBreakpointManagerListener myListener = new IBreakpointManagerListener() {
     @Override
     public void breakpointsChanged() {
@@ -67,6 +69,20 @@ public abstract class BreakpointsView implements DataProvider {
     return bpList;
   }
 
+  public void addBreakpointSelectionListener(@NotNull BreakpointSelectionListener l){
+    mySelectionListeners.add(l);
+  }
+
+  public void removeBreakpointSelectionListener(@NotNull BreakpointSelectionListener l){
+    mySelectionListeners.remove(l);
+  }
+
+  protected void fireBreakpointSelected(@Nullable IBreakpoint breakpoint) {
+    for (BreakpointSelectionListener l : mySelectionListeners) {
+      l.breakpointSelected(breakpoint);
+    }
+  }
+
   public void saveState() {
   }
 
@@ -75,4 +91,11 @@ public abstract class BreakpointsView implements DataProvider {
   public abstract void update();
 
   public abstract JComponent getMainComponent();
+
+  @Nullable
+  public abstract IBreakpoint getSelectedBreakpoint();
+
+  public static interface BreakpointSelectionListener {
+    public void breakpointSelected(@Nullable IBreakpoint breakpoint);
+  }
 }

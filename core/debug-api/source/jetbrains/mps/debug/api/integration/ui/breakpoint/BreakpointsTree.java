@@ -32,10 +32,13 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.UIManager;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -73,6 +76,12 @@ public class BreakpointsTree extends BreakpointsView {
         return myData;
       }
     };
+    myTree.addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
+      public void valueChanged(TreeSelectionEvent e) {
+        fireBreakpointSelected(getSelectedBreakpoint(e.getPath()));
+      }
+    });
     myTree.setRootVisible(false);
     myTree.setShowsRootHandles(true);
     myTree.rebuildLater();
@@ -82,6 +91,24 @@ public class BreakpointsTree extends BreakpointsView {
     } else {
       expandAll();
     }
+  }
+
+  @Override
+  @Nullable
+  public IBreakpoint getSelectedBreakpoint() {
+    TreePath path = myTree.getSelectionPath();
+    return getSelectedBreakpoint(path);
+  }
+
+  @Nullable
+  private IBreakpoint getSelectedBreakpoint(@Nullable TreePath path) {
+    if (path != null) {
+      Object lastPathComponent = path.getLastPathComponent();
+      if (lastPathComponent instanceof BreakpointsTree.BreakpointTreeNode) {
+        return ((BreakpointsTree.BreakpointNodeData) ((BreakpointsTree.BreakpointTreeNode) lastPathComponent).getUserObject()).myBreakpoint;
+      }
+    }
+    return null;
   }
 
   @Override

@@ -21,7 +21,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.util.xmlb.XmlSerializer;
 import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.*;
@@ -30,7 +29,6 @@ import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -40,16 +38,17 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.JComponent;
+import javax.swing.JLabel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, ApplicationComponent {
+public class JavaBreakpointsProvider implements IBreakpointsProvider, ApplicationComponent {
   private final BreakpointProvidersManager myProvidersManager;
 
   public static JavaBreakpointsProvider getInstance() {
@@ -110,6 +109,23 @@ public class JavaBreakpointsProvider implements ILanguageBreakpointsProvider, Ap
       }
     });
     return new ExceptionBreakpoint(nodeName, project);
+  }
+
+  @Override
+  public IBreakpointPropertiesUi createPropertiesEditor(final IBreakpointKind kind) {
+    return new IBreakpointPropertiesUi() {
+      private JavaBreakpoint myBreakpoint;
+      private JLabel myUi = new JLabel(kind.getPresentation());
+      @Override
+      public void setBreakpoint(IBreakpoint breakpoint) {
+        myBreakpoint = (JavaBreakpoint) breakpoint;  // todo generics?
+      }
+
+      @Override
+      public JComponent getMainComponent() {
+        return myUi;
+      }
+    };
   }
 
   private SNode findException(final String inputString, final List<BaseSNodeDescriptor> result) {

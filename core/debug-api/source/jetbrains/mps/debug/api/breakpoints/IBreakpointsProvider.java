@@ -24,12 +24,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.prefs.BackingStoreException;
 
-public interface ILanguageBreakpointsProvider {
+public interface IBreakpointsProvider {
   @NotNull
   List<JavaBreakpointKind> getAllKinds();
   boolean canCreateFromUi(@NotNull IBreakpointKind kind);
   @Nullable
   IBreakpoint createFromUi(@NotNull IBreakpointKind kind, Project project);
+  @Nullable
+  IBreakpointPropertiesUi createPropertiesEditor(IBreakpointKind kind);
   @Nullable
   IBreakpoint loadFromState(Element state, IBreakpointKind kind, Project project);
   @Nullable

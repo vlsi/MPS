@@ -21,12 +21,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class BreakpointProvidersManager implements ApplicationComponent {
-  private final Map<IBreakpointKind, ILanguageBreakpointsProvider> myKindToProvider = new HashMap<IBreakpointKind, ILanguageBreakpointsProvider>();
+  private final Map<IBreakpointKind, IBreakpointsProvider> myKindToProvider = new HashMap<IBreakpointKind, IBreakpointsProvider>();
   private final Map<String, IBreakpointKind> myNameToKind = new HashMap<String, IBreakpointKind>();
 
   public static BreakpointProvidersManager getInstance() {
@@ -47,14 +46,14 @@ public class BreakpointProvidersManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  public void registerProvider(ILanguageBreakpointsProvider provider){
+  public void registerProvider(IBreakpointsProvider provider){
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.put(kind, provider);
       myNameToKind.put(kind.getName(), kind);
     }
   }
 
-  public void unregisterProvider(ILanguageBreakpointsProvider provider){
+  public void unregisterProvider(IBreakpointsProvider provider){
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.remove(kind);
       myNameToKind.remove(kind.getName());
@@ -62,7 +61,7 @@ public class BreakpointProvidersManager implements ApplicationComponent {
   }
 
   @Nullable
-  public ILanguageBreakpointsProvider getProvider(IBreakpointKind kind) {
+  public IBreakpointsProvider getProvider(IBreakpointKind kind) {
     return myKindToProvider.get(kind);
   }
 
