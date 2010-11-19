@@ -46,7 +46,7 @@ public class TemplateconvertMult implements TemplateDeclaration {
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0);
               final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0, contextWithParameters, environment.getGenerator()));
-              tlist3 = environment.copyNodes(Collections.singletonList(copySrcInput3), null);
+              tlist3 = environment.copyNodes(Collections.singletonList(copySrcInput3), copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0, null, contextWithParameters);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a2a0);
             }
@@ -60,7 +60,7 @@ public class TemplateconvertMult implements TemplateDeclaration {
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0);
               final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992617085(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0, contextWithParameters, environment.getGenerator()));
-              tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), null);
+              tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0, null, contextWithParameters);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a2a0);
             }

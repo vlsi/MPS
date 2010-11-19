@@ -218,11 +218,12 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
+      SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes =
           newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
-            ? myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myReductionContext, new boolean[]{false})
-            : myGenerator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, myReductionContext);
+            ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, newInputNode, myReductionContext, new boolean[]{false})
+            : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.

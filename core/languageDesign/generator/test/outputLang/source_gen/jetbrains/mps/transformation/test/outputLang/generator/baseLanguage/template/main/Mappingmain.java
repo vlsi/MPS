@@ -74,7 +74,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a0a);
             final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1209604320455(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_417xrn_a0a0a1a4a2a0a, context, environment.getGenerator()));
-            tlist2 = environment.copyNodes(Collections.singletonList(copySrcInput2), null);
+            tlist2 = environment.copyNodes(Collections.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a0a, null, context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a0a);
           }
@@ -114,7 +114,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       try {
         environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a2a0b);
         final SNode copySrcInput1 = QueriesGenerated.sourceNodeQuery_1473665232107485240(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_417xrn_a0a0a2a0b, context, environment.getGenerator()));
-        tlist1 = environment.copyNodes(Collections.singletonList(copySrcInput1), "sd");
+        tlist1 = environment.copyNodes(Collections.singletonList(copySrcInput1), copySrcMacro_417xrn_a0a0a2a0b, "sd", context);
       } finally {
         environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a2a0b);
       }
@@ -179,7 +179,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a0c);
             final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1209662301920(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_417xrn_a0a0a1a4a2a0c, context, environment.getGenerator()));
-            tlist2 = environment.copyNodes(Collections.singletonList(copySrcInput2), null);
+            tlist2 = environment.copyNodes(Collections.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a0c, null, context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a0c);
           }

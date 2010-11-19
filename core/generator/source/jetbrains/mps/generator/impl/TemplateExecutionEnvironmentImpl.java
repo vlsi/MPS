@@ -15,14 +15,18 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/10/10
@@ -56,9 +60,41 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return tracer;
   }
 
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName) {
-    // TODO
-    return Collections.emptyList();
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
+    List<SNode> outputNodes = null;
+    for (SNode newInputNode : inputNodes) {
+      List<SNode> _outputNodes =
+        newInputNode.getModel() == generator.getInputModel() && newInputNode.isRegistered()
+          ? generator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, reductionContext, new boolean[]{false})
+          : generator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, reductionContext);
+      if (_outputNodes != null) {
+        // check node languages : prevent 'input node' query from returning node, which language was not counted when
+        // planning the generation steps.
+        for (SNode outputNode : _outputNodes) {
+          Language outputNodeLang = outputNode.getNodeLanguage();
+          if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
+            if (!outputNodeLang.getGenerators().isEmpty()) {
+              SNode tNode = templateNode.getNode();
+              generator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
+                GeneratorUtil.describe(tNode, "template"),
+                GeneratorUtil.describe(templateContext.getInput(), "input"),
+                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+            }
+          }
+        }
+        if (outputNodes == null) {
+          outputNodes = Collections.unmodifiableList(_outputNodes);
+        } else if (!(outputNodes instanceof ArrayList)) {
+          List<SNode> old = outputNodes;
+          outputNodes = new ArrayList<SNode>(old.size() + _outputNodes.size() + 16);
+          outputNodes.addAll(old);
+          outputNodes.addAll(_outputNodes);
+        } else {
+          outputNodes.addAll(_outputNodes);
+        }
+      }
+    }
+    return outputNodes == null ? Collections.<SNode>emptyList() : outputNodes;
   }
 
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {

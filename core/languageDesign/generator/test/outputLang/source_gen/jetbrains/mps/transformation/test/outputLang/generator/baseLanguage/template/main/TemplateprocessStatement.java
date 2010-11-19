@@ -138,7 +138,7 @@ public class TemplateprocessStatement implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a2a0);
                       final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(contextWithParameters.getInput(), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a2a0, contextWithParameters, environment.getGenerator()));
-                      tlist9 = environment.copyNodes(Collections.singletonList(copySrcInput9), null);
+                      tlist9 = environment.copyNodes(Collections.singletonList(copySrcInput9), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a2a0, null, contextWithParameters);
                     } finally {
                       environment.getTracer().closeMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a2a0);
                     }

@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
@@ -39,7 +41,7 @@ public interface TemplateExecutionEnvironment {
 
   public IGenerationTracer getTracer();
 
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName);
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 

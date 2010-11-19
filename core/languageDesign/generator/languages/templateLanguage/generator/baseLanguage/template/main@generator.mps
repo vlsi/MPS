@@ -5246,7 +5246,7 @@
                         <property name="makeUnique" nameId="yvko.8835849473318867199:1" value="true" />
                         <node role="expression" roleId="yvko.1238251454130:1" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="4155486055398183420">
                           <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="4155486055398183421">
-                            <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                            <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                             <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4155486055398183422" />
                           </node>
                           <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="4155486055398183423">
@@ -5776,7 +5776,7 @@
                                 <property name="makeUnique" nameId="yvko.8835849473318867199:1" value="true" />
                                 <node role="expression" roleId="yvko.1238251454130:1" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="1503590073461952821">
                                   <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="1503590073461952823">
-                                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
                                     <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="1503590073461952824" />
                                   </node>
                                   <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="1503590073461952826">
@@ -6705,7 +6705,7 @@
                             </node>
                             <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="4565390460241594488">
                               <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="4565390460241594491">
-                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
                                 <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4565390460241594493" />
                               </node>
                               <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="4565390460241594506">
@@ -6915,7 +6915,7 @@
                                           <property name="makeUnique" nameId="yvko.8835849473318867199:1" value="true" />
                                           <node role="expression" roleId="yvko.1238251454130:1" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="1503590073461987853">
                                             <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="1503590073461987855">
-                                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
                                               <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="1503590073461987856" />
                                             </node>
                                             <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="1503590073461987858">
@@ -9300,7 +9300,7 @@
                     <property name="makeUnique" nameId="yvko.8835849473318867199:1" value="true" />
                     <node role="expression" roleId="yvko.1238251454130:1" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="4155486055398088810">
                       <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="4155486055398088812">
-                        <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                        <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                         <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4155486055398088813" />
                       </node>
                       <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="4155486055398088815">
@@ -9423,13 +9423,16 @@
                     <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="747214206848642857" resolveInfo="environment" />
                   </node>
                   <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="4155486055398088763">
-                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="yg7.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,java%dlang%dString)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
+                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="yg7.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,jetbrains%dmps%dsmodel%dSNodePointer,java%dlang%dString,jetbrains%dmps%dgenerator%druntime%dTemplateContext)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
                     <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="4155486055398088764">
                       <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="yjwb.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolveInfo="singletonList" />
                       <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="yjwb.~Collections" resolveInfo="Collections" />
                       <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="4155486055398088765">
                         <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="4155486055398088704" resolveInfo="inputNode" />
                       </node>
+                    </node>
+                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvko.ExtractToConstantRefExpression" typeId="yvko.99767819676010097:1" id="4341394098072499253">
+                      <link role="original" roleId="yvko.99767819676010098:1" targetNodeId="4155486055398088808" />
                     </node>
                     <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="4155486055398088766">
                       <property name="value" nameId="yvor.1070475926801:3" value="" />
@@ -9486,6 +9489,15 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="4341394098072499245">
+                      <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="747214206848642860" resolveInfo="context" />
+                      <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="4341394098072499247">
+                        <link role="template" roleId="yvp6.1722980698497626483:2" targetNodeId="8961331321403206046" resolveInfo="reduce_Context" />
+                        <node role="actualArgument" roleId="yvp6.1722980698497626405:2" type="yvp6.TemplateArgumentParameterExpression" typeId="yvp6.5005282049925926521:2" id="4341394098072499248">
+                          <link role="parameter" roleId="yvp6.5005282049925926522:2" targetNodeId="747214206848642843" resolveInfo="contextVar" />
                         </node>
                       </node>
                     </node>
@@ -9875,7 +9887,7 @@
                     <property name="makeUnique" nameId="yvko.8835849473318867199:1" value="true" />
                     <node role="expression" roleId="yvko.1238251454130:1" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="4155486055398088866">
                       <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="4155486055398088867">
-                        <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                        <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                         <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4155486055398088868" />
                       </node>
                       <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="4155486055398088869">
@@ -10013,9 +10025,12 @@
                     <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="6831954580247646281" resolveInfo="environment" />
                   </node>
                   <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="4155486055398089085">
-                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="yg7.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,java%dlang%dString)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
+                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="yg7.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,jetbrains%dmps%dsmodel%dSNodePointer,java%dlang%dString,jetbrains%dmps%dgenerator%druntime%dTemplateContext)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
                     <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="4155486055398089086">
                       <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="4155486055398088974" resolveInfo="copyListInput" />
+                    </node>
+                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvko.ExtractToConstantRefExpression" typeId="yvko.99767819676010097:1" id="4341394098072499255">
+                      <link role="original" roleId="yvko.99767819676010098:1" targetNodeId="4155486055398088865" />
                     </node>
                     <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="4155486055398089087">
                       <property name="value" nameId="yvor.1070475926801:3" value="" />
@@ -10072,6 +10087,15 @@
                         </node>
                         <node role="alternativeConsequence" roleId="yvp6.1194989344771:2" type="yvp6.InlineTemplate_RuleConsequence" typeId="yvp6.1177093525992:2" id="4155486055398089114">
                           <node role="templateNode" roleId="yvp6.1177093586806:2" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4155486055398089115" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="4341394098072499233">
+                      <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="6831954580247646284" resolveInfo="context" />
+                      <node role="nodeMacro$attribute" type="yvp6.TemplateCallMacro" typeId="yvp6.1510949579266781519:2" id="4341394098072499235">
+                        <link role="template" roleId="yvp6.1722980698497626483:2" targetNodeId="8961331321403206046" resolveInfo="reduce_Context" />
+                        <node role="actualArgument" roleId="yvp6.1722980698497626405:2" type="yvp6.TemplateArgumentParameterExpression" typeId="yvp6.5005282049925926521:2" id="4341394098072499236">
+                          <link role="parameter" roleId="yvp6.5005282049925926522:2" targetNodeId="344761564571002662" resolveInfo="contextVar" />
                         </node>
                       </node>
                     </node>

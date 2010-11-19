@@ -35,7 +35,7 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
         try {
           environment.getTracer().pushMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a0);
           final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, copySrcListMacro_jwmwuq_a0a0a1a5a1a0, context, environment.getGenerator()));
-          tlist2 = environment.copyNodes(copyListInput2, null);
+          tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_jwmwuq_a0a0a1a5a1a0, null, context);
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a0);
         }
