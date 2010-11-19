@@ -240,7 +240,7 @@ public class TemplateprocessStatement implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a4a1a3a4a0);
                       environment.nodeCopied(contextWithParameters, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649137");
-                      environment.resolveInTemplateLater(tnode18, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", contextWithParameters);
+                      environment.resolveInTemplateLater(tnode18, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980649137"), "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", "e", contextWithParameters);
 
                     } finally {
                       environment.getTracer().pushOutputNode(tnode18);

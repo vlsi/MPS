@@ -131,7 +131,7 @@ public class Templategen_static_method implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_1s1jok_a0a0a1a3a1a4a1a3a1a5a2a0);
                       environment.nodeCopied(context1, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724061");
-                      environment.resolveInTemplateLater(tnode10, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", context1);
+                      environment.resolveInTemplateLater(tnode10, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980724061"), "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
 
                     } finally {
                       environment.getTracer().pushOutputNode(tnode10);
@@ -185,7 +185,7 @@ public class Templategen_static_method implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a4a1a5a2a0);
                       environment.nodeCopied(context1, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724046");
-                      environment.resolveInTemplateLater(tnode14, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", context1);
+                      environment.resolveInTemplateLater(tnode14, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980724046"), "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
 
                     } finally {
                       environment.getTracer().pushOutputNode(tnode14);
@@ -199,7 +199,7 @@ public class Templategen_static_method implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_1s1jok_a0a0a1a4a1a3a1a4a1a5a2a0);
                       environment.nodeCopied(context1, tnode15, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724050");
-                      environment.resolveInTemplateLater(tnode15, "baseMethodDeclaration", 4, context1);
+                      environment.resolveInTemplateLater(tnode15, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980724050"), 4, "fact", context1);
 
                       {
                         final SNode tnode16 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.MinusExpression", false);
@@ -226,7 +226,7 @@ public class Templategen_static_method implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_1s1jok_a0a0a1a4a1a4a1a4a1a3a1a4a1a5a2a0);
                               environment.nodeCopied(context1, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724051");
-                              environment.resolveInTemplateLater(tnode18, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", context1);
+                              environment.resolveInTemplateLater(tnode18, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980724051"), "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
 
                             } finally {
                               environment.getTracer().pushOutputNode(tnode18);

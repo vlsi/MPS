@@ -16,14 +16,9 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroResolver;
+import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -85,12 +80,34 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
   }
 
-  public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
-    // TODO
+  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+    ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
+      outputNode,
+      role,
+      sourceNode,
+      parentIndex,
+      resolveInfo,
+      context);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
-  public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
-    // TODO
+  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
+    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
+      outputNode,
+      role,
+      sourceNode,
+      templateNodeId,
+      resolveInfo,
+      context);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {

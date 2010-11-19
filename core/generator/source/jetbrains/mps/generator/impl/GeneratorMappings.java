@@ -140,6 +140,10 @@ public class GeneratorMappings {
     return o instanceof SNode ? (SNode) o : null;
   }
 
+  public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
+    Object o = myTemplateNodeIdToOutputNodeMap.get(templateNode);
+    return o instanceof SNode ? (SNode) o : null;
+  }
 
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, IGeneratorLogger logger) {
     if (mappingName == null) return null;
@@ -184,7 +188,7 @@ public class GeneratorMappings {
     return myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
   }
 
-  public SNode findOutputNodeByInputAndTemplateNodeId(SNode inputNode, String templateNodeId) {
+  public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId) {
     return myTemplateNodeIdAndInputNodeToOutputNodeMap.get(new Pair(templateNodeId, inputNode));
   }
 

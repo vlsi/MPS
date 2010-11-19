@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -46,9 +47,9 @@ public interface TemplateExecutionEnvironment {
 
   public void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
 
-  public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context);
+  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
 
-  public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context);
+  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
 

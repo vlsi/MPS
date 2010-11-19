@@ -320,7 +320,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   try {
                     environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a1a5a1a3a4a0e);
                     environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681241");
-                    environment.resolveInTemplateLater(tnode8, "variableDeclaration", "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234", context);
+                    environment.resolveInTemplateLater(tnode8, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681241"), "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234", "i", context);
 
                   } finally {
                     environment.getTracer().pushOutputNode(tnode8);
