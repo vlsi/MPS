@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.highlighter;
 
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
+import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener.Before;
 import com.intellij.openapi.project.Project;
@@ -33,48 +33,32 @@ import java.util.List;
 public class EditorsProvider {
   private static Logger LOG = Logger.getLogger(EditorsProvider.class);
 
-  private Project myProject;
-
-  private List<MPSFileNodeEditor> mySelectedEditors = new ArrayList<MPSFileNodeEditor>();
-  private List<MPSFileNodeEditor> myEditors = new ArrayList<MPSFileNodeEditor>();
-
   private List<EditorOpenListener> myEditorOpenListeners = new ArrayList<EditorOpenListener>();
 
-  private final Object myLock = new Object();
-
   private MessageBusConnection myMessageBusConnection;
+  private FileEditorManager myFileEditorsManager;
 
   public EditorsProvider(Project project) {
-    myProject = project;
+    myFileEditorsManager = FileEditorManager.getInstance(project);
 
-    updateInformation();
 
-    myMessageBusConnection = myProject.getMessageBus().connect();
-    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerListener() {
+    myMessageBusConnection = project.getMessageBus().connect();
+    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
-        updateInformation();
         FileEditor selectedEditor = source.getSelectedEditor(file);
         if (selectedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
           fireEditorOpened(editor);
         }
       }
-
-      public void fileClosed(FileEditorManager source, VirtualFile file) {
-        updateInformation();
-      }
-
-      public void selectionChanged(FileEditorManagerEvent event) {
-        updateInformation();
-      }
     });
 
     myMessageBusConnection.subscribe(FileEditorManagerListener.Before.FILE_EDITOR_MANAGER, new Before() {
       public void beforeFileOpened(FileEditorManager source, VirtualFile file) {
+
       }
 
       public void beforeFileClosed(FileEditorManager source, VirtualFile file) {
-        updateInformation();
         FileEditor selectedEditor = source.getSelectedEditor(file);
         if (selectedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
@@ -85,11 +69,11 @@ public class EditorsProvider {
   }
 
   public List<MPSFileNodeEditor> getAllEditors() {
-    return myEditors;
+    return filterMPSEditors((myFileEditorsManager.getAllEditors()));
   }
 
   public List<IEditor> getSelectedEditors() {
-    return toMPSEditors(mySelectedEditors);
+    return toMPSEditors(filterMPSEditors(myFileEditorsManager.getSelectedEditors()));
   }
 
   //todo add synchronization if necessary
@@ -116,15 +100,6 @@ public class EditorsProvider {
     }
   }
 
-  private void updateInformation() {
-    synchronized (myLock) {
-      FileEditorManager fileEditorManager = FileEditorManager.getInstance(myProject);
-
-      mySelectedEditors = filterMPSEditors(fileEditorManager.getSelectedEditors());
-      myEditors = filterMPSEditors((fileEditorManager.getAllEditors()));
-    }
-  }
-
   private List<MPSFileNodeEditor> filterMPSEditors(FileEditor[] selectedEditors) {
     List<MPSFileNodeEditor> editors = new ArrayList<MPSFileNodeEditor>();
     for (FileEditor fileEditor : selectedEditors) {
@@ -142,14 +117,12 @@ public class EditorsProvider {
   private List<IEditor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
     List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
     List<IEditor> result = new ArrayList<IEditor>();
-    synchronized (myLock) {
-      for (MPSFileNodeEditor e : nodeEditors) {
-        IEditor editor = e.getNodeEditor();
-        if (editor != null) {
-          result.add(editor);
-        } else {
-          emptyEditors.add(e);
-        }
+    for (MPSFileNodeEditor e : nodeEditors) {
+      IEditor editor = e.getNodeEditor();
+      if (editor != null) {
+        result.add(editor);
+      } else {
+        emptyEditors.add(e);
       }
     }
     for (MPSFileNodeEditor emptyEditor : emptyEditors) {
