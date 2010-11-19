@@ -25,8 +25,8 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -73,7 +73,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
         Project project = myOperationContext.getProject();
-        IEditor currentEditor = EditorsProvider.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
+        IEditor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {

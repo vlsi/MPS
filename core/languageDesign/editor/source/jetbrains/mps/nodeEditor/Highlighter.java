@@ -36,7 +36,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -289,7 +289,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<EditorComponent> getAllEditorComponents() {
     final List<IEditor> list;
     synchronized (ADD_EDITORS_LOCK) {
-      list = EditorsProvider.getSelectedEditors(myFileEditorManager);
+      list = EditorsHelper.getSelectedEditors(myFileEditorManager);
       if (!myAdditionalEditors.isEmpty()) {
         list.addAll(myAdditionalEditors);
       }

@@ -37,7 +37,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -214,7 +214,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (MPSFileNodeEditor editor : EditorsProvider.getAllEditors(myManager)) {
+        for (MPSFileNodeEditor editor : EditorsHelper.getAllEditors(myManager)) {
           if (editor.isValid() && editor.getNodeEditor() instanceof TabbedEditor){
             editor.recreateEditor();
           }

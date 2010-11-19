@@ -42,6 +42,7 @@ import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -108,7 +109,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     public void muted(AbstractDebugSession session) {
       ApplicationManager.getApplication().invokeLater((new Runnable() {
         public void run() {
-          for (IEditor editor : EditorsProvider.getSelectedEditors(myFileEditorManager)) {
+          for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
             EditorComponent editorComponent = editor.getCurrentEditorComponent();
             if (editorComponent != null) {
               editorComponent.repaint();
@@ -328,7 +329,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           }
           breakpointsForRoot.add(breakpoint);
 
-          for (IEditor editor : EditorsProvider.getSelectedEditors(myFileEditorManager)) {
+          for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
             EditorComponent editorComponent = editor.getCurrentEditorComponent();
             if (editorComponent != null) {
               SNode editedNode = editorComponent.getEditedNode();
@@ -358,7 +359,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
             breakpointsForRoot.remove(breakpoint);
           }
 
-          for (IEditor editor : EditorsProvider.getSelectedEditors(myFileEditorManager)) {
+          for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
             EditorComponent editorComponent = editor.getCurrentEditorComponent();
             if (editorComponent != null) {
               SNode editedNode = editorComponent.getEditedNode();
@@ -384,7 +385,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       if (node != null) {
         SNode root = node.getContainingRoot();
         if (root != null) {
-          for (IEditor editor : EditorsProvider.getSelectedEditors(myFileEditorManager)) {
+          for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
             EditorComponent editorComponent = editor.getCurrentEditorComponent();
             if (editorComponent != null) {
               SNode editedNode = editorComponent.getEditedNode();

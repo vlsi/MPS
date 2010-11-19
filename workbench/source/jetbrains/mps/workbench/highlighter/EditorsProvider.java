@@ -31,16 +31,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EditorsProvider {
-  private static Logger LOG = Logger.getLogger(EditorsProvider.class);
-
   private List<EditorOpenListener> myEditorOpenListeners = new ArrayList<EditorOpenListener>();
-
   private MessageBusConnection myMessageBusConnection;
-  private FileEditorManager myFileEditorsManager;
 
   public EditorsProvider(Project project) {
-    myFileEditorsManager = FileEditorManager.getInstance(project);
-
     myMessageBusConnection = project.getMessageBus().connect();
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
@@ -95,42 +89,4 @@ public class EditorsProvider {
     }
   }
 
-  public static List<MPSFileNodeEditor> getAllEditors(FileEditorManager manager) {
-    return filterMPSEditors(manager.getAllEditors());
-  }
-
-  public static List<IEditor> getSelectedEditors(FileEditorManager manager) {
-    return toMPSEditors(filterMPSEditors(manager.getSelectedEditors()));
-  }
-
-  private static List<MPSFileNodeEditor> filterMPSEditors(FileEditor[] selectedEditors) {
-    List<MPSFileNodeEditor> editors = new ArrayList<MPSFileNodeEditor>();
-    for (FileEditor fileEditor : selectedEditors) {
-      if (fileEditor instanceof MPSFileNodeEditor) {
-        MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
-        IEditor nodeEditor = mpsFileNodeEditor.getNodeEditor();
-        if (nodeEditor != null) {
-          editors.add(mpsFileNodeEditor);
-        }
-      }
-    }
-    return editors;
-  }
-
-  private static List<IEditor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
-    List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
-    List<IEditor> result = new ArrayList<IEditor>();
-    for (MPSFileNodeEditor e : nodeEditors) {
-      IEditor editor = e.getNodeEditor();
-      if (editor != null) {
-        result.add(editor);
-      } else {
-        emptyEditors.add(e);
-      }
-    }
-    for (MPSFileNodeEditor emptyEditor : emptyEditors) {
-      LOG.error("MPSFileNodeEditor has null editor : " + emptyEditor);
-    }
-    return result;
-  }
 }
