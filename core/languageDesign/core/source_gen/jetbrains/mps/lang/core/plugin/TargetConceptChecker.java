@@ -26,8 +26,9 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
     })) {
       SNode link = SNodeOperations.getContainingLinkDeclaration(child);
       if (link != null && SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+        component.addDependency(link);
         if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))))) {
-          component.addError(node, "incompatible target concept in role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", SNodeOperations.getModel(link).getModelDescriptor());
+          component.addError(node, "incompatible target concept in role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", null);
         }
       }
     }
@@ -36,8 +37,9 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       SNode link = SLinkOperations.findLinkDeclaration(reference);
       if (link != null && SPropertyOperations.hasValue(link, "metaClass", "reference", "reference")) {
         SNode target = SLinkOperations.getTargetNode(reference);
+        component.addDependency(link);
         if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))))) {
-          component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\"", SNodeOperations.getModel(link).getModelDescriptor());
+          component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\"", null);
         }
       }
     }

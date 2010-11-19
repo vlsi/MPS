@@ -12,11 +12,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -28,14 +28,15 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = MapSequence.fromMap(new HashMap<SNode, Set<IErrorReporter>>());
-  private Map<SNode, Set<SNode>> myAdditionalToErrorNodes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-  private Map<SNode, Set<SNode>> myErrorNodesToAdditional = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
+  private Map<SNode, Set<SNode>> myDependenciesToNodes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
+  private Map<SNode, Set<SNode>> myNodesToDependecies = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
   private Set<SNode> myInvalidNodes = SetSequence.fromSet(new HashSet<SNode>());
   private Set<SNode> myInvalidation = SetSequence.fromSet(new HashSet<SNode>());
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
   private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
-  private Set<SModelDescriptor> myListenedModels;
+  private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
   private boolean myCheckedRoot = false;
+  private SNode myCurrentNode = null;
   private SNode myRoot;
 
   public LanguageErrorsComponent(SNode root) {
@@ -50,58 +51,48 @@ public class LanguageErrorsComponent {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
 
+  public void addDependency(SNode dependency) {
+    if (myCurrentNode != null) {
+      addDependency(myCurrentNode, dependency);
+    }
+  }
+
+  public void addDependency(SNode currentNode, SNode dependency) {
+    Set<SNode> errorNodes = MapSequence.fromMap(myDependenciesToNodes).get(dependency);
+    if (errorNodes == null) {
+      errorNodes = SetSequence.fromSet(new HashSet<SNode>());
+      MapSequence.fromMap(myDependenciesToNodes).put(dependency, errorNodes);
+    }
+    SetSequence.fromSet(errorNodes).addElement(currentNode);
+    Set<SNode> additional = MapSequence.fromMap(myNodesToDependecies).get(currentNode);
+    if (additional == null) {
+      additional = SetSequence.fromSet(new HashSet<SNode>());
+      MapSequence.fromMap(myNodesToDependecies).put(currentNode, additional);
+    }
+    SetSequence.fromSet(additional).addElement(dependency);
+    addModelListener(SNodeOperations.getModel(dependency).getModelDescriptor());
+  }
+
   public void addError(SNode node, String errorString, SNode ruleNode) {
-    addError(node, errorString, ruleNode, SetSequence.fromSet(new HashSet<SNode>()), new NodeMessageTarget());
+    addError(node, errorString, ruleNode, new NodeMessageTarget());
   }
 
-  public void addError(SNode node, String errorString, SNode ruleNode, Set<SNode> additionalNodes, MessageTarget messageTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, ruleNode.getModel() + "", ruleNode.getId(), MessageStatus.ERROR, messageTarget);
-    this.registerError(reporter, additionalNodes, ruleNode, null);
-  }
-
-  public void addError(SNode node, String errorString, SModelDescriptor ruleModel) {
-    addError(node, errorString, ruleModel, SetSequence.fromSet(new HashSet<SNode>()), new NodeMessageTarget());
-  }
-
-  public void addError(SNode node, String errorString, SModelDescriptor ruleModel, Set<SNode> additionalNodes, MessageTarget messageTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, null, null, MessageStatus.ERROR, messageTarget);
-    registerError(reporter, additionalNodes, null, ruleModel);
-  }
-
-  private void registerError(SimpleErrorReporter reporter, Set<SNode> additionalNodes, SNode ruleNode, SModelDescriptor modelDescriptor) {
-    SNode errorNode = reporter.getSNode();
-    // error 
+  public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget) {
+    String id = (ruleNode == null ?
+      null :
+      ruleNode.getId()
+    );
+    String modelId = (ruleNode == null ?
+      null :
+      ruleNode.getModel() + ""
+    );
+    SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
     Set<IErrorReporter> reporters = MapSequence.fromMap(myNodesToErrors).get(errorNode);
     if (reporters == null) {
       reporters = SetSequence.fromSet(new HashSet<IErrorReporter>());
       MapSequence.fromMap(myNodesToErrors).put(errorNode, reporters);
     }
     SetSequence.fromSet(reporters).addElement(reporter);
-
-    // listeners 
-    addModelListener(SNodeOperations.getModel(ruleNode).getModelDescriptor());
-    addModelListener(modelDescriptor);
-    for (SNode additional : additionalNodes) {
-      addModelListener(SNodeOperations.getModel(additional).getModelDescriptor());
-    }
-
-    // additional terms to depend on 
-    Set<SNode> dependencies = SetSequence.fromSetWithValues(new HashSet<SNode>(), additionalNodes);
-    SetSequence.fromSet(dependencies).addElement(reporter.getSNode());
-    for (SNode dependency : dependencies) {
-      Set<SNode> errorNodes = MapSequence.fromMap(myAdditionalToErrorNodes).get(dependency);
-      if (errorNodes == null) {
-        errorNodes = SetSequence.fromSet(new HashSet<SNode>());
-        MapSequence.fromMap(myAdditionalToErrorNodes).put(dependency, errorNodes);
-      }
-      SetSequence.fromSet(errorNodes).addElement(errorNode);
-    }
-    Set<SNode> additional = MapSequence.fromMap(myErrorNodesToAdditional).get(errorNode);
-    if (additional == null) {
-      additional = SetSequence.fromSet(new HashSet<SNode>());
-      MapSequence.fromMap(myErrorNodesToAdditional).put(errorNode, additional);
-    }
-    SetSequence.fromSet(additional).addSequence(SetSequence.fromSet(dependencies));
   }
 
   private void addModelListener(SModelDescriptor modelDescriptor) {
@@ -117,14 +108,14 @@ public class LanguageErrorsComponent {
   private void invalidate(SNode errorNode) {
     SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
     MapSequence.fromMap(myNodesToErrors).removeKey(errorNode);
-    Set<SNode> additionals = MapSequence.fromMap(myErrorNodesToAdditional).removeKey(errorNode);
+    Set<SNode> additionals = MapSequence.fromMap(myNodesToDependecies).removeKey(errorNode);
     if (additionals != null) {
       for (SNode additional : additionals) {
-        Set<SNode> errors = MapSequence.fromMap(myAdditionalToErrorNodes).get(additional);
+        Set<SNode> errors = MapSequence.fromMap(myDependenciesToNodes).get(additional);
         if (errors != null) {
           SetSequence.fromSet(errors).removeElement(errorNode);
           if (SetSequence.fromSet(errors).isEmpty()) {
-            MapSequence.fromMap(myAdditionalToErrorNodes).removeKey(additional);
+            MapSequence.fromMap(myDependenciesToNodes).removeKey(additional);
           }
         }
       }
@@ -143,8 +134,15 @@ public class LanguageErrorsComponent {
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
-          for (AbstractConstraintsChecker checker : checkers) {
-            checker.checkNode(node, this, operationContext);
+          try {
+            myCurrentNode = node;
+            addDependency(node);
+            for (AbstractConstraintsChecker checker : checkers) {
+              checker.checkNode(node, this, operationContext);
+            }
+          } finally {
+            myCurrentNode = null;
+            SetSequence.fromSet(myInvalidNodes).removeElement(node);
           }
         }
         SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
@@ -175,7 +173,7 @@ public class LanguageErrorsComponent {
   }
 
   private void processNodeChange(SNode affectedNode) {
-    Set<SNode> nodes = MapSequence.fromMap(myAdditionalToErrorNodes).removeKey(affectedNode);
+    Set<SNode> nodes = MapSequence.fromMap(myDependenciesToNodes).removeKey(affectedNode);
     if (nodes != null) {
       for (SNode errorNode : nodes) {
         invalidate(errorNode);
@@ -202,7 +200,7 @@ public class LanguageErrorsComponent {
     if (SNodeOperations.getModel(myRoot) == model) {
       return;
     }
-    for (SNode additional : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myAdditionalToErrorNodes).keySet())) {
+    for (SNode additional : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myDependenciesToNodes).keySet())) {
       if (SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }
@@ -234,6 +232,10 @@ public class LanguageErrorsComponent {
     }
 
     public void childAdded(SModelChildEvent event) {
+      processEvent(event);
+    }
+
+    public void propertyChanged(SModelPropertyEvent event) {
       processEvent(event);
     }
   }

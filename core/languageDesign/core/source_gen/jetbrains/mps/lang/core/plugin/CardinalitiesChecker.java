@@ -25,7 +25,9 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
     }
 
     SNode concept = SNodeOperations.getConceptDeclaration(node);
+    component.addDependency(concept);
     for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+      component.addDependency(link);
       if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
         if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
           if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
@@ -39,12 +41,12 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
         } else {
           if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
             SetSequence.fromSet(new HashSet<SNode>());
-            component.addError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", SNodeOperations.getModel(link).getModelDescriptor(), SetSequence.fromSet(new HashSet<SNode>()), new ReferenceMessageTarget(SPropertyOperations.getString(link, "role")));
+            component.addError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, "role")));
           }
         }
       } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(link)) {
         if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-          component.addError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", SNodeOperations.getModel(link).getModelDescriptor());
+          component.addError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
         }
       }
     }

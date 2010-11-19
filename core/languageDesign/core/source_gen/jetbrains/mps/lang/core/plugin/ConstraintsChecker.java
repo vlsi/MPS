@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
@@ -27,16 +24,19 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
 
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
     ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
+    if (SNodeOperations.getParent(node) != null) {
+      component.addDependency(SNodeOperations.getParent(node));
+    }
     if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.smodel.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
       SNode link = SNodeOperations.getContainingLinkDeclaration(node);
       if (link == null && !(node.isAttribute())) {
-        component.addError(node, "Child in a role with unknown link", (SNode) null, SetSequence.fromSetAndArray(new HashSet<SNode>(), SNodeOperations.getParent(node)), new NodeMessageTarget());
+        component.addError(node, "Child in a role with unknown link", null);
         return;
       }
 
       if (!(cm.canBeChild(node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link))) {
         SNode rule = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
-        component.addError(node, "Node isn't applicable in the context", rule, SetSequence.fromSetAndArray(new HashSet<SNode>(), SNodeOperations.getParent(node)), new NodeMessageTarget());
+        component.addError(node, "Node isn't applicable in the context", rule);
       }
     }
 
@@ -46,6 +46,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
 
     for (SNode child : SNodeOperations.getChildren(node)) {
+      component.addDependency(child);
       SNode childConcept = SNodeOperations.getConceptDeclaration(child);
       SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
       if (childLink == null) {
@@ -57,13 +58,17 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       SNode rule = cm.canBeAncestorReturnBlock(node, childConcept, operationContext);
       if (rule != null) {
-        component.addError(child, "Node isn't applicable in the context", rule, SetSequence.fromSetAndArray(new HashSet<SNode>(), node), new NodeMessageTarget());
+        component.addError(child, "Node isn't applicable in the context", rule);
       }
     }
 
     // Properties validation 
     SNode concept = SNodeOperations.getConceptDeclaration(node);
+    component.addDependency(concept);
     ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+    for (AbstractConceptDeclaration parentConcept : chs.getConcepts()) {
+      component.addDependency(parentConcept.getNode());
+    }
     List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
     for (PropertyDeclaration p : ListSequence.fromList(props)) {
       PropertySupport ps = PropertySupport.getPropertySupport(p);
@@ -79,7 +84,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
           continue;
         }
         // todo find a rule 
-        component.addError(node, "Property constraint violation for property \"" + p.getName() + "\"", (SNode) null, SetSequence.fromSet(new HashSet<SNode>()), new PropertyMessageTarget(p.getName()));
+        component.addError(node, "Property constraint violation for property \"" + p.getName() + "\"", null, new PropertyMessageTarget(p.getName()));
       }
     }
   }
