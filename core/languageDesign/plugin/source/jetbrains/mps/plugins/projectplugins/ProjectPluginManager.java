@@ -65,7 +65,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   @SuppressWarnings({"UnusedDeclaration"})
   public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker) {
     myProject = project;
-    myEditorsProvider = new EditorsProvider(myProject);    
   }
 
   public void projectOpened() {
@@ -166,11 +165,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void initComponent() {
-
+    myEditorsProvider = new EditorsProvider(myProject);
   }
 
   public void disposeComponent() {
-
+    myEditorsProvider.dispose();
   }
 
   //----------------STATE STUFF------------------------
