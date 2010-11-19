@@ -41,7 +41,6 @@ public class EditorsProvider {
   public EditorsProvider(Project project) {
     myFileEditorsManager = FileEditorManager.getInstance(project);
 
-
     myMessageBusConnection = project.getMessageBus().connect();
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
@@ -66,6 +65,10 @@ public class EditorsProvider {
         }
       }
     });
+  }
+
+  public void dispose(){
+    myMessageBusConnection.disconnect();
   }
 
   public List<MPSFileNodeEditor> getAllEditors() {
