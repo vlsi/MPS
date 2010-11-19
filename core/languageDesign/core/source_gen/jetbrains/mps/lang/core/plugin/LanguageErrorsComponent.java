@@ -8,9 +8,10 @@ import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.SimpleErrorReporter;
@@ -28,19 +29,25 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = MapSequence.fromMap(new HashMap<SNode, Set<IErrorReporter>>());
   private Map<SNode, Set<SNode>> myAdditionalToErrorNodes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-  private Map<SModelDescriptor, Set<SNode>> myAspectModelsToErrorNodes = MapSequence.fromMap(new HashMap<SModelDescriptor, Set<SNode>>());
-  private Map<SNode, Set<SNode>> myRuleRootsToErrorNodes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-  private Map<SNode, Set<SNode>> myErrorNodesToRules = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
   private Map<SNode, Set<SNode>> myErrorNodesToAdditional = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-  private Map<SNode, Set<SModelDescriptor>> myErrorNodesToAspects = MapSequence.fromMap(new HashMap<SNode, Set<SModelDescriptor>>());
   private Set<SNode> myInvalidNodes = SetSequence.fromSet(new HashSet<SNode>());
   private Set<SNode> myInvalidation = SetSequence.fromSet(new HashSet<SNode>());
-  private Set<SNode> myInvalidationChildren = SetSequence.fromSet(new HashSet<SNode>());
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
+  private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
   private Set<SModelDescriptor> myListenedModels;
   private boolean myCheckedRoot = false;
+  private SNode myRoot;
 
-  public LanguageErrorsComponent() {
+  public LanguageErrorsComponent(SNode root) {
+    myRoot = root;
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+  }
+
+  public void dispose() {
+    for (SModelDescriptor modelDescriptor : myListenedModels) {
+      modelDescriptor.removeModelListener(myModelListener);
+    }
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
 
   public void addError(SNode node, String errorString, SNode ruleNode) {
@@ -95,48 +102,9 @@ public class LanguageErrorsComponent {
       MapSequence.fromMap(myErrorNodesToAdditional).put(errorNode, additional);
     }
     SetSequence.fromSet(additional).addSequence(SetSequence.fromSet(dependencies));
-
-    // rules to depend on 
-    SModelDescriptor descriptor;
-    if (ruleNode == null) {
-      descriptor = modelDescriptor;
-    } else {
-      descriptor = SNodeOperations.getModel(ruleNode).getModelDescriptor();
-    }
-    SNode root = SNodeOperations.getContainingRoot(ruleNode);
-    if (root == null) {
-      if (descriptor != null) {
-        Set<SNode> errorNodes = MapSequence.fromMap(myAspectModelsToErrorNodes).get(descriptor);
-        if (errorNodes == null) {
-          errorNodes = SetSequence.fromSet(new HashSet<SNode>());
-          MapSequence.fromMap(myAspectModelsToErrorNodes).put(descriptor, errorNodes);
-        }
-        SetSequence.fromSet(errorNodes).addElement(errorNode);
-        Set<SModelDescriptor> aspects = MapSequence.fromMap(myErrorNodesToAspects).get(errorNode);
-        if (aspects == null) {
-          aspects = SetSequence.fromSet(new HashSet<SModelDescriptor>());
-          MapSequence.fromMap(myErrorNodesToAspects).put(errorNode, aspects);
-        }
-        SetSequence.fromSet(aspects).addElement(descriptor);
-
-      }
-    } else {
-      Set<SNode> errorNodes = MapSequence.fromMap(myRuleRootsToErrorNodes).get(root);
-      if (errorNodes == null) {
-        errorNodes = SetSequence.fromSet(new HashSet<SNode>());
-        MapSequence.fromMap(myRuleRootsToErrorNodes).put(root, errorNodes);
-      }
-      SetSequence.fromSet(errorNodes).addElement(errorNode);
-      Set<SNode> rulesRoots = MapSequence.fromMap(myErrorNodesToRules).get(errorNode);
-      if (rulesRoots == null) {
-        rulesRoots = SetSequence.fromSet(new HashSet<SNode>());
-        MapSequence.fromMap(myErrorNodesToRules).put(errorNode, rulesRoots);
-      }
-      SetSequence.fromSet(rulesRoots).addElement(root);
-    }
   }
 
-  public void addModelListener(SModelDescriptor modelDescriptor) {
+  private void addModelListener(SModelDescriptor modelDescriptor) {
     if (modelDescriptor == null) {
       return;
     }
@@ -146,33 +114,10 @@ public class LanguageErrorsComponent {
     }
   }
 
-  public void invalidate(SNode errorNode) {
+  private void invalidate(SNode errorNode) {
     SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
-    Set<SModelDescriptor> models = MapSequence.fromMap(myErrorNodesToAspects).removeKey(errorNode);
-    Set<SNode> rules = MapSequence.fromMap(myErrorNodesToRules).removeKey(errorNode);
+    MapSequence.fromMap(myNodesToErrors).removeKey(errorNode);
     Set<SNode> additionals = MapSequence.fromMap(myErrorNodesToAdditional).removeKey(errorNode);
-    if (models != null) {
-      for (SModelDescriptor model : models) {
-        Set<SNode> errors = MapSequence.fromMap(myAspectModelsToErrorNodes).get(model);
-        if (errors != null) {
-          SetSequence.fromSet(errors).removeElement(errorNode);
-          if (SetSequence.fromSet(errors).isEmpty()) {
-            MapSequence.fromMap(myAspectModelsToErrorNodes).removeKey(model);
-          }
-        }
-      }
-    }
-    if (rules != null) {
-      for (SNode rule : rules) {
-        Set<SNode> errors = MapSequence.fromMap(myRuleRootsToErrorNodes).get(rule);
-        if (errors != null) {
-          SetSequence.fromSet(errors).removeElement(errorNode);
-          if (SetSequence.fromSet(errors).isEmpty()) {
-            MapSequence.fromMap(myRuleRootsToErrorNodes).removeKey(rule);
-          }
-        }
-      }
-    }
     if (additionals != null) {
       for (SNode additional : additionals) {
         Set<SNode> errors = MapSequence.fromMap(myAdditionalToErrorNodes).get(additional);
@@ -220,34 +165,13 @@ public class LanguageErrorsComponent {
   }
 
   public void invalidate() {
-    if (SetSequence.fromSet(myInvalidation).isEmpty() && SetSequence.fromSet(myInvalidationChildren).isEmpty()) {
+    if (SetSequence.fromSet(myInvalidation).isEmpty()) {
       return;
     }
     for (SNode toInvalidate : myInvalidation) {
-      processModelDramaticChange(SNodeOperations.getModel(toInvalidate));
-      processRuleChange(toInvalidate);
-      processNodeChange(toInvalidate);
-    }
-    for (SNode toInvalidate : myInvalidationChildren) {
       processNodeChange(toInvalidate);
     }
     SetSequence.fromSet(myInvalidation).clear();
-    SetSequence.fromSet(myInvalidationChildren).clear();
-  }
-
-  public void processEvent(SModelChildEvent event) {
-    SetSequence.fromSet(myInvalidation).addElement(event.getParent());
-    if (event.isRemoved()) {
-      SetSequence.fromSet(myInvalidationChildren).addElement(event.getChild());
-    }
-  }
-
-  public void processEvent(SModelReferenceEvent event) {
-    SetSequence.fromSet(myInvalidation).addElement(event.getReference().getSourceNode());
-  }
-
-  public void processEvent(SModelPropertyEvent event) {
-    SetSequence.fromSet(myInvalidation).addElement(event.getNode());
   }
 
   private void processNodeChange(SNode affectedNode) {
@@ -259,40 +183,28 @@ public class LanguageErrorsComponent {
     }
   }
 
-  private void processRuleChange(SNode ruleNode) {
-    SNode root = SNodeOperations.getContainingRoot(ruleNode);
-    Set<SNode> nodes = MapSequence.fromMap(myRuleRootsToErrorNodes).removeKey(root);
-    if (nodes != null) {
-      for (SNode errorNode : nodes) {
-        invalidate(errorNode);
-      }
+  public void processEvent(SModelChildEvent event) {
+    SetSequence.fromSet(myInvalidation).addElement(event.getParent());
+    if (event.isRemoved()) {
+      SetSequence.fromSet(myInvalidation).addElement(event.getChild());
     }
   }
 
-  private void processModelDramaticChange(SModel model) {
-    SModelDescriptor descriptor = model.getModelDescriptor();
-    Set<SNode> nodes = MapSequence.fromMap(myAspectModelsToErrorNodes).removeKey(descriptor);
-    if (nodes != null) {
-      for (SNode errorNode : nodes) {
-        invalidate(errorNode);
-      }
-    }
+  public void processEvent(SModelReferenceEvent event) {
+    SetSequence.fromSet(myInvalidation).addElement(event.getReference().getSourceNode());
   }
 
-  public void processModelDisposed(SModel model) {
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    Set<SNode> errors = MapSequence.fromMap(myAspectModelsToErrorNodes).removeKey(modelDescriptor);
-    if (errors != null) {
-      for (SNode errorNode : errors) {
-        invalidate(errorNode);
-      }
+  public void processEvent(SModelPropertyEvent event) {
+    SetSequence.fromSet(myInvalidation).addElement(event.getNode());
+  }
+
+  public void processBeforeModelDisposed(SModel model) {
+    if (SNodeOperations.getModel(myRoot) == model) {
+      return;
     }
-    for (SNode root : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myRuleRootsToErrorNodes).keySet())) {
-      if (SNodeOperations.getModel(root) == model) {
-        Set<SNode> errorNodes = MapSequence.fromMap(myRuleRootsToErrorNodes).removeKey(root);
-        for (SNode errorNode : errorNodes) {
-          invalidate(errorNode);
-        }
+    for (SNode additional : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myAdditionalToErrorNodes).keySet())) {
+      if (SNodeOperations.getModel(additional) == model) {
+        processNodeChange(additional);
       }
     }
   }
@@ -306,7 +218,7 @@ public class LanguageErrorsComponent {
     }
 
     public void beforeModelDisposed(SModel model) {
-      processModelDisposed(model);
+      processBeforeModelDisposed(model);
     }
 
     public void referenceRemoved(SModelReferenceEvent event) {

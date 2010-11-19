@@ -36,13 +36,13 @@ public class Templateprocess42 implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PlusExpression", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a2a0);
-      environment.nodeCopied(contextWithParameters.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039171");
+      environment.nodeCopied(contextWithParameters, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039171");
 
       {
         final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a3a2a0);
-          environment.nodeCopied(contextWithParameters.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039163");
+          environment.nodeCopied(contextWithParameters, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039163");
           tnode2.setProperty("value", "58");
 
         } finally {
@@ -56,19 +56,19 @@ public class Templateprocess42 implements TemplateDeclaration {
         final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a4a2a0);
-          environment.nodeCopied(contextWithParameters.getInput(), tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039199");
+          environment.nodeCopied(contextWithParameters, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039199");
 
           {
             final SNode tnode4 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.DotExpression", false);
             try {
               environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a3a1a4a2a0);
-              environment.nodeCopied(contextWithParameters.getInput(), tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039202");
+              environment.nodeCopied(contextWithParameters, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039202");
 
               {
                 final SNode tnode5 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a3a1a3a1a4a2a0);
-                  environment.nodeCopied(contextWithParameters.getInput(), tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039201");
+                  environment.nodeCopied(contextWithParameters, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039201");
                   tnode5.setProperty("value", (String) QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(environment.getOperationContext(), new PropertyMacroContext(contextWithParameters.getInput(), null, propertyMacro_nofsa1_c0b0b0a2a1a3a1a3a1a4a2a0, contextWithParameters, environment.getGenerator())));
 
                 } finally {
@@ -82,7 +82,7 @@ public class Templateprocess42 implements TemplateDeclaration {
                 final SNode tnode6 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false);
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a4a1a3a1a4a2a0);
-                  environment.nodeCopied(contextWithParameters.getInput(), tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039206");
+                  environment.nodeCopied(contextWithParameters, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039206");
                   tnode6.addReference(SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~String.length():int")));
 
                 } finally {

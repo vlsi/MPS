@@ -33,14 +33,14 @@ public interface TemplateExecutionEnvironment {
 
   public SModel getOutputModel();
 
-  @NotNull
+
   public TemplateGenerator getGenerator();
 
   public IGenerationTracer getTracer();
 
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName);
 
-  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId);
+  public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
 
@@ -55,9 +55,9 @@ public interface TemplateExecutionEnvironment {
   /*
    *  returns temporary node
    */
-  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
+  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
-  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context);
+  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context);
 }

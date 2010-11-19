@@ -16,10 +16,15 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroResolver;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -61,12 +66,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return Collections.emptyList();
   }
 
-  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId) {
-//    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
-//    for (SNode historyInputNode : context.getInputHistory()) {
-//      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
-//    }
-//    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
+  public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
+    GeneratorMappings mappings = generator.getMappings();
+    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
+    for (SNode historyInputNode : context.getInputHistory()) {
+      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNodeId, outputNode);
+    }
+    mappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
   }
 
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
@@ -80,29 +86,41 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
-
+    // TODO
   }
 
   public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
-
+    // TODO
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
-
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
+      resolver, outputNode,
+      role, context,
+      reductionContext);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
   /*
   *  returns temporary node
   */
-  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    return null;
+  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
+    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(mapper.getConceptFqName(), generator.getOutputModel(), generator.getScope(), false);
+    tracer.pushOutputNodeToReplaceLater(childToReplaceLater);
+    generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, reductionContext);
+    return childToReplaceLater;
   }
 
-  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
-
+  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
+    generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
   }
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {
+    // TODO
     return null;
   }
 }

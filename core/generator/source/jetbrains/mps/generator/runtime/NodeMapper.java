@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Evgeny Gryaznov, 11/8/10
@@ -23,4 +24,8 @@ import jetbrains.mps.smodel.SNode;
 public interface NodeMapper {
 
   SNode map(SNode childToReplace, TemplateContext context);
+
+  String getConceptFqName();
+
+  SNodePointer getTemplateNode();
 }

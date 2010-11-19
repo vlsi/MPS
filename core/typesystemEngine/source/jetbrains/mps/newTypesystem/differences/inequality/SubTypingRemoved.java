@@ -46,7 +46,7 @@ public class SubTypingRemoved extends InequalityDifference {
   }
 
   public String getPresentation() {
-    return "SubTyping removed " + mySubType + (myMapPair.isWeak() ? " <= " : " < ") + mySuperType;
+    return myMapPair.getTitle() + "removed " + mySubType + myMapPair.getRelationSign() + mySuperType;
   }
 
   public Color getColor() {

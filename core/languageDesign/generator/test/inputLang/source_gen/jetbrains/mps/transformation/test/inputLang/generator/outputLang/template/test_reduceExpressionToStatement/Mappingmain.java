@@ -45,13 +45,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0a);
-        environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150725887");
+        environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150725887");
 
         {
           final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.StringLiteral", false);
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a3a2a0a);
-            environment.nodeCopied(context.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150737045");
+            environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150737045");
             tnode2.setProperty("value", "my expression");
 
           } finally {

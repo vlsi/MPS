@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -151,7 +152,7 @@ public class TemplateProcessor {
       if (templateChildNode instanceof PropertyMacro) {
         myReductionContext.getQueryExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, context.getInput(), templateNode, outputNode, context);
       } else if (templateChildNode instanceof ReferenceMacro) {
-        ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
+        ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroNode(
           outputNode, (ReferenceMacro) templateChildNode,
           templateNode,
           context, myReductionContext

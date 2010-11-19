@@ -33,14 +33,16 @@ import java.util.*;
 public class InequalityMapPair {
   protected State myState;
   private boolean isWeak;
-  private boolean checkOnly;
+  private boolean isCheckOnly;
+  private boolean isComparable;
   private Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
   private Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
-  public InequalityMapPair(State state, boolean weak, boolean checkOnly) {
+  public InequalityMapPair(State state, boolean weak, boolean checkOnly, boolean comparable) {
     myState = state;
     isWeak = weak;
-    this.checkOnly = checkOnly;
+    isCheckOnly = checkOnly;
+    isComparable = comparable;
   }
 
   public boolean contains(SNode key, SNode value) {
@@ -87,10 +89,10 @@ public class InequalityMapPair {
       EquationInfo info = map.get(var);
       if (reversed) {
         myState.addDifference(new SubTypingRemoved(var, value, info, this), false);
-        myState.addInequality(type, value, isWeak, checkOnly, info);
+        myState.addInequality(type, value, isWeak, isCheckOnly, isComparable, info);
       } else {
         myState.addDifference(new SubTypingRemoved(value, var, info, this), false);
-        myState.addInequality(value, type, isWeak, checkOnly, info);
+        myState.addInequality(value, type, isWeak, isCheckOnly, isComparable, info);
       }
     }
   }
@@ -103,7 +105,7 @@ public class InequalityMapPair {
   public void print() {
     for (SNode key : mySubToSuper.keySet()) {
       for (SNode value : mySubToSuper.get(key).keySet()) {
-        System.out.println(key + (isWeak ? " <= " : " < ") + value + (checkOnly ? " check only" : ""));
+        System.out.println(key + (isWeak ? " <= " : " < ") + value + (isCheckOnly ? " check only" : ""));
       }
     }
   }
@@ -130,22 +132,20 @@ public class InequalityMapPair {
     return isWeak;
   }
 
+  public boolean isComparable() {
+    return isComparable;
+  }
+
+  public boolean isCheckOnly() {
+    return isCheckOnly;
+  }
+
   public Map<SNode, EquationInfo> getSubTypes(SNode node) {
     return mySuperToSub.get(node);
   }
 
   public Map<SNode, EquationInfo> getSuperTypes(SNode node) {
     return mySubToSuper.get(node);
-  }
-
-  public List<String> getListPresentation() {
-    List<String> result = new LinkedList<String>();
-    for (SNode key : mySubToSuper.keySet()) {
-      for (SNode value : mySubToSuper.get(key).keySet()) {
-        result.add(key + (isWeak ? " <= " : " < ") + value + (checkOnly ? " check only" : ""));
-      }
-    }
-    return result;
   }
 
   private void expandKeySet(Map<SNode, Map<SNode, EquationInfo>> map) {
@@ -179,7 +179,7 @@ public class InequalityMapPair {
           continue;
         }
         EquationInfo info = map.get(superType);
-        if (!subTyping.isSubType(subType, superType, info, isWeak, checkOnly)) {
+        if (!subTyping.isSubType(subType, superType, info, isWeak, isCheckOnly)) {
           myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
         }
       }
@@ -242,16 +242,42 @@ public class InequalityMapPair {
           EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
             removeAndTrack(node, concreteType);
-            myState.getInequalities().addInequality(node, concreteType, isWeak, checkOnly, info, false);
+            myState.addInequality(node, concreteType, isWeak, isCheckOnly, isComparable, info);
           } else {
             removeAndTrack(concreteType, node);
-            myState.getInequalities().addInequality(concreteType, node, isWeak, checkOnly, info, false);
+            myState.addInequality(concreteType, node, isWeak, isCheckOnly, isComparable, info);
           }
         }
       }
       stateChanged = true;
     }
     return stateChanged;
+  }
+
+  public String getRelationSign() {
+    if (isComparable) {
+      return isWeak ? " ~ " : " ~~ ";
+    } else {
+      return isWeak ? " <= " : " < ";
+    }
+  }
+
+  public String getTitle() {
+    if (isComparable) {
+      return "Comparable";
+    } else {
+      return isCheckOnly ? "Check only subTyping" : "SubTyping";
+    }
+  }
+
+  public List<String> getListPresentation() {
+    List<String> result = new LinkedList<String>();
+    for (SNode key : mySubToSuper.keySet()) {
+      for (SNode value : mySubToSuper.get(key).keySet()) {
+        result.add(key + getRelationSign() + value + (isCheckOnly ? " check only" : ""));
+      }
+    }
+    return result;
   }
 
 }

@@ -20,16 +20,15 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.MapSrcListMacro;
 import jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction;
 import jetbrains.mps.lang.generator.structure.MapSrcNodeMacro;
 import jetbrains.mps.lang.generator.structure.NodeMacro;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -43,8 +42,8 @@ public class DelayedChanges {
 
   public static final String MAP_SRC_TEMP_NODE = "mapSrcTempNode";
 
-  private List<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
-  private List<ExecuteMapSrcNodeMacroPostProcChange> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<ExecuteMapSrcNodeMacroPostProcChange>();
+  private List<Change> myExecuteMapSrcNodeMacroChanges = new ArrayList<Change>();
+  private List<Change> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<Change>();
 
   private SNode attrsHolder = new SNode(null, BaseConcept.concept);
 
@@ -68,44 +67,57 @@ public class DelayedChanges {
     }
   }
 
-  public void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+  public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+    childToReplace.putUserObjects(attrsHolder);
+    myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, reductionContext));
+  }
+
+  public void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
     MapSrcMacro_PostMapperFunction postMapperFunction =
       (mapSrcMacro instanceof MapSrcNodeMacro)
         ? ((MapSrcNodeMacro) mapSrcMacro).getPostMapperFunction()
         : ((MapSrcListMacro) mapSrcMacro).getPostMapperFunction();
     if (postMapperFunction == null) return;
     synchronized (this) {
-      myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputChild, context, reductionContext));
+      myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputNode, context, reductionContext));
     }
   }
 
+  public void addExecutePostProcessor(@NotNull PostProcessor processor, SNode outputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+    synchronized (this) {
+      myExecuteMapSrcNodeMacroPostProcChanges.add(new PostProcessorChange(processor, outputNode, context, reductionContext));
+    }
+  }
 
   public void doAllChanges() {
-    for (ExecuteMapSrcNodeMacroChange executeMapSrcNodeMacroChange : myExecuteMapSrcNodeMacroChanges) {
+    for (Change executeMapSrcNodeMacroChange : myExecuteMapSrcNodeMacroChanges) {
       executeMapSrcNodeMacroChange.doChange();
     }
     myExecuteMapSrcNodeMacroChanges = null;
-    for (ExecuteMapSrcNodeMacroPostProcChange executeMapSrcNodeMacroPostProcChange : myExecuteMapSrcNodeMacroPostProcChanges) {
+    for (Change executeMapSrcNodeMacroPostProcChange : myExecuteMapSrcNodeMacroPostProcChanges) {
       executeMapSrcNodeMacroPostProcChange.doChange();
     }
   }
 
-  private class ExecuteMapSrcNodeMacroChange {
-    private final SNode myMapSrcMacro;
-    private final SNode myChildToReplace;
-    private final TemplateContext myContext;
-    private final ReductionContext myReductionContext;
+  private interface Change {
+    void doChange();
+  }
 
-    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-      myReductionContext = reductionContext;
-      myMapSrcMacro = mapSrcMacro.getNode();
+  private abstract class BaseMapNodeChange implements Change {
+
+    protected final SNode myChildToReplace;
+    protected final TemplateContext myContext;
+    protected final ReductionContext myReductionContext;
+
+    private BaseMapNodeChange(SNode childToReplace, TemplateContext context, ReductionContext reductionContext) {
       myChildToReplace = childToReplace;
       myContext = context;
+      myReductionContext = reductionContext;
     }
 
     public void doChange() {
       try {
-        SNode child = myReductionContext.getQueryExecutor().executeMapSrcNodeMacro(myContext.getInput(), myMapSrcMacro, myChildToReplace.getParent(), myContext);
+        SNode child = mapNode();
         if (child != null) {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
@@ -114,7 +126,7 @@ public class DelayedChanges {
             if (!childLang.getGenerators().isEmpty()) {
               myLogger.error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(myContext.getInput(), "input"),
-                GeneratorUtil.describe(myMapSrcMacro, "template"),
+                GeneratorUtil.describe(getMapSrcMacro(), "template"),
                 new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
             }
           }
@@ -140,17 +152,17 @@ public class DelayedChanges {
             if (status != null) {
               status.reportProblem(false, "",
                 GeneratorUtil.describe(myContext.getInput(), "input"),
-                GeneratorUtil.describe(myMapSrcMacro, "template"));
+                GeneratorUtil.describe(getMapSrcMacro(), "template"));
             }
             parent.replaceChild(myChildToReplace, child);
           }
           myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
 
           // post-processing
-          addExecuteMapSrcNodeMacroPostProcChange((NodeMacro) myMapSrcMacro.getAdapter(), child, myContext, myReductionContext);
+          postProcess(child);
         }
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
+        myGenerator.showErrorMessage(myContext.getInput(), getMapSrcMacro(), "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
       }
     }
@@ -179,9 +191,67 @@ public class DelayedChanges {
         reference.getSourceNode().replaceReference(reference, postponedReference);
       }
     }
+
+    protected abstract SNode getMapSrcMacro();
+
+    protected abstract SNode mapNode() throws GenerationFailureException;
+
+    protected abstract void postProcess(SNode child) throws GenerationFailureException;
   }
 
-  private class ExecuteMapSrcNodeMacroPostProcChange {
+  private class ExecuteMapSrcNodeMacroChange extends BaseMapNodeChange {
+    private final SNode myMapSrcMacro;
+
+    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+      super(childToReplace, context, reductionContext);
+      myMapSrcMacro = mapSrcMacro.getNode();
+    }
+
+    protected SNode getMapSrcMacro() {
+      return myMapSrcMacro;
+    }
+
+    protected SNode mapNode() throws GenerationFailureException {
+      return myReductionContext.getQueryExecutor().executeMapSrcNodeMacro(myContext.getInput(), getMapSrcMacro(), myChildToReplace.getParent(), myContext);
+    }
+
+    @Override
+    protected void postProcess(SNode child) throws GenerationFailureException {
+      addExecuteMapSrcNodeMacroPostProcChange((NodeMacro) myMapSrcMacro.getAdapter(), child, myContext, myReductionContext);
+    }
+  }
+
+  private class MapNodeChange extends BaseMapNodeChange {
+    private final NodeMapper myMapper;
+    private final PostProcessor myProcessor;
+
+    public MapNodeChange(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+      super(childToReplace, context, reductionContext);
+      myMapper = mapper;
+      myProcessor = processor;
+    }
+
+    protected SNode getMapSrcMacro() {
+      SNodePointer templateNode = myMapper.getTemplateNode();
+      if(templateNode != null) {
+        return templateNode.getNode();
+      }
+      return null;
+    }
+
+    protected SNode mapNode() throws GenerationFailureException {
+      return myReductionContext.getQueryExecutor().executeInContext(myChildToReplace, myContext, myMapper);
+    }
+
+    @Override
+    protected void postProcess(SNode child) throws GenerationFailureException {
+      if (myProcessor != null) {
+        addExecutePostProcessor(myProcessor, child, myContext, myReductionContext);
+      }
+    }
+  }
+
+  private class ExecuteMapSrcNodeMacroPostProcChange implements Change {
     private final SNode myMapSrcMacro;
     private final SNode myOutputChild;
     private final TemplateContext myContext;
@@ -199,6 +269,29 @@ public class DelayedChanges {
         myReductionContext.getQueryExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
+        myLogger.handleException(t);
+      }
+    }
+  }
+
+  private class PostProcessorChange implements Change {
+    private final PostProcessor myProcessor;
+    private final SNode myOutputChild;
+    private final TemplateContext myContext;
+    private ReductionContext myReductionContext;
+
+    public PostProcessorChange(PostProcessor processor, SNode outputChild, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+      myProcessor = processor;
+      myOutputChild = outputChild;
+      myContext = context;
+      myReductionContext = reductionContext;
+    }
+
+    public void doChange() {
+      try {
+        myReductionContext.getQueryExecutor().executeInContext(myOutputChild, myContext, myProcessor);
+      } catch (Throwable t) {
+        myGenerator.showErrorMessage(myContext.getInput(), null, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
       }
     }

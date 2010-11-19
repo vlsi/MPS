@@ -51,7 +51,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2a0a);
-          environment.nodeCopied(context.getInput(), tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172462490");
+          environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172462490");
           tnode2.setProperty("text", "<input option : 1>");
 
         } finally {
@@ -64,7 +64,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0c0a0);
-          environment.nodeCopied(context.getInput(), tnode3, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172359599");
+          environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172359599");
           tnode3.setProperty("text", "<input option : default>");
 
         } finally {

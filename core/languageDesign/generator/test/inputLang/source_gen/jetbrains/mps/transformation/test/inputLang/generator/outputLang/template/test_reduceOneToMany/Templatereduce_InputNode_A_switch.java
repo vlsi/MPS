@@ -23,7 +23,7 @@ public class Templatereduce_InputNode_A_switch implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_3wjedu_a0a0a1a0);
-      environment.nodeCopied(context.getInput(), tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311958");
+      environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311958");
       tnode1.setProperty("text", "child switch #1");
 
     } finally {
@@ -33,7 +33,7 @@ public class Templatereduce_InputNode_A_switch implements TemplateDeclaration {
     final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_3wjedu_a0a0a3a0);
-      environment.nodeCopied(context.getInput(), tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311960");
+      environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311960");
       tnode2.setProperty("text", "child switch #2");
 
     } finally {

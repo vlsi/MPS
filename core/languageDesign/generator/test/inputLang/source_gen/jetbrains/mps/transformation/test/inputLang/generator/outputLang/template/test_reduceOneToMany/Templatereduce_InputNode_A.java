@@ -44,7 +44,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
           final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
           try {
             environment.getTracer().pushTemplateNode(templateNode_9iqmnb_a0a0a3a2a2a1a0);
-            environment.nodeCopied(context1.getInput(), tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");
+            environment.nodeCopied(context1, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");
             tnode2.setProperty("text", "child #1");
 
           } finally {
@@ -66,7 +66,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_9iqmnb_a0a0a3a0);
-      environment.nodeCopied(context.getInput(), tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
+      environment.nodeCopied(context, tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
       tnode3.setProperty("text", "child #2");
 
     } finally {
