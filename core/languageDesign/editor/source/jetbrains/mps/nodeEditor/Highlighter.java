@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSCore;
@@ -55,6 +56,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object PENDING_LOCK = new Object();
 
   private boolean myStopThread = false;
+  private FileEditorManager myFileEditorManager;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
@@ -63,7 +65,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private Set<Object> myCheckedOnceInspectors = new WeakSet<Object>();
-  private EditorsProvider myEditorsProvider;
   private InspectorTool myInspectorTool;
   private List<Runnable> myPendingActions = new ArrayList<Runnable>();
 
@@ -110,8 +111,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
 
-  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
+  public Highlighter(Project project,FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
     myProject = project;
+    myFileEditorManager = fileEditorManager;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
     myInspectorTool = inspector;
@@ -146,11 +148,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void initComponent() {
-    myEditorsProvider = new EditorsProvider(myProject);
+
   }
 
   public void disposeComponent() {
-    myEditorsProvider.dispose();
+
   }
 
   public Thread getThread() {
@@ -287,7 +289,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<EditorComponent> getAllEditorComponents() {
     final List<IEditor> list;
     synchronized (ADD_EDITORS_LOCK) {
-      list = myEditorsProvider.getSelectedEditors();
+      list = EditorsProvider.getSelectedEditors(myFileEditorManager);
       if (!myAdditionalEditors.isEmpty()) {
         list.addAll(myAdditionalEditors);
       }

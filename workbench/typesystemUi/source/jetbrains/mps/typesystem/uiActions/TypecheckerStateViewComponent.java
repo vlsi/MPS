@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -52,7 +54,6 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   public TypecheckerStateViewComponent(IOperationContext operationContext) {
     myOperationContext = operationContext;
-    myEditorsProvider = new EditorsProvider(operationContext.getProject());
     rebuild();
   }
 
@@ -71,7 +72,8 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        IEditor currentEditor = myEditorsProvider.getSelectedEditors().get(0);
+        Project project = myOperationContext.getProject();
+        IEditor currentEditor = EditorsProvider.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
