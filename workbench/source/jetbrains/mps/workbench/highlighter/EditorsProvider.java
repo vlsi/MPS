@@ -67,16 +67,16 @@ public class EditorsProvider {
     });
   }
 
-  public void dispose(){
+  public void dispose() {
     myMessageBusConnection.disconnect();
   }
 
   public List<MPSFileNodeEditor> getAllEditors() {
-    return filterMPSEditors((myFileEditorsManager.getAllEditors()));
+    return getAllEditors(myFileEditorsManager);
   }
 
   public List<IEditor> getSelectedEditors() {
-    return toMPSEditors(filterMPSEditors(myFileEditorsManager.getSelectedEditors()));
+    return getSelectedEditors(myFileEditorsManager);
   }
 
   //todo add synchronization if necessary
@@ -103,7 +103,15 @@ public class EditorsProvider {
     }
   }
 
-  private List<MPSFileNodeEditor> filterMPSEditors(FileEditor[] selectedEditors) {
+  public static List<MPSFileNodeEditor> getAllEditors(FileEditorManager manager) {
+    return filterMPSEditors(manager.getAllEditors());
+  }
+
+  public static List<IEditor> getSelectedEditors(FileEditorManager manager) {
+    return toMPSEditors(filterMPSEditors(manager.getSelectedEditors()));
+  }
+
+  private static List<MPSFileNodeEditor> filterMPSEditors(FileEditor[] selectedEditors) {
     List<MPSFileNodeEditor> editors = new ArrayList<MPSFileNodeEditor>();
     for (FileEditor fileEditor : selectedEditors) {
       if (fileEditor instanceof MPSFileNodeEditor) {
@@ -117,7 +125,7 @@ public class EditorsProvider {
     return editors;
   }
 
-  private List<IEditor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
+  private static List<IEditor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
     List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
     List<IEditor> result = new ArrayList<IEditor>();
     for (MPSFileNodeEditor e : nodeEditors) {
