@@ -71,10 +71,6 @@ public class EditorsProvider {
     myMessageBusConnection.disconnect();
   }
 
-  public List<IEditor> getSelectedEditors() {
-    return getSelectedEditors(myFileEditorsManager);
-  }
-
   //todo add synchronization if necessary
   public void addEditorOpenListener(EditorOpenListener listener) {
     myEditorOpenListeners.add(listener);
