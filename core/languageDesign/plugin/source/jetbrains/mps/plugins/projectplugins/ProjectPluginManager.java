@@ -19,6 +19,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
@@ -60,11 +61,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private PluginsState myState = new PluginsState();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
-  private EditorsProvider myEditorsProvider;
+  private FileEditorManager myManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker) {
+  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager) {
     myProject = project;
+    myManager = manager;
   }
 
   public void projectOpened() {
@@ -165,11 +167,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void initComponent() {
-    myEditorsProvider = new EditorsProvider(myProject);
+
   }
 
   public void disposeComponent() {
-    myEditorsProvider.dispose();
+
   }
 
   //----------------STATE STUFF------------------------
@@ -212,7 +214,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (MPSFileNodeEditor editor : myEditorsProvider.getAllEditors()) {
+        for (MPSFileNodeEditor editor : EditorsProvider.getAllEditors(myManager)) {
           if (editor.isValid() && editor.getNodeEditor() instanceof TabbedEditor){
             editor.recreateEditor();
           }

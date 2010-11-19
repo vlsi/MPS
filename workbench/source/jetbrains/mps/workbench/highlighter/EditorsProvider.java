@@ -71,10 +71,6 @@ public class EditorsProvider {
     myMessageBusConnection.disconnect();
   }
 
-  public List<MPSFileNodeEditor> getAllEditors() {
-    return getAllEditors(myFileEditorsManager);
-  }
-
   public List<IEditor> getSelectedEditors() {
     return getSelectedEditors(myFileEditorsManager);
   }
