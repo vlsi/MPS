@@ -110,17 +110,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
 
-  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager) {
+  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
     myProject = project;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
-    myEditorsProvider = new EditorsProvider(project);
-    myInspectorTool = project.getComponent(InspectorTool.class);
+    myInspectorTool = inspector;
   }
 
   public void projectOpened() {
-    myEditorsProvider = new EditorsProvider(myProject);
-
     if (myThread != null && myThread.isAlive()) {
       LOG.error("trying to initialize a Highlighter being already initialized");
       return;
@@ -140,7 +137,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
-
   }
 
   @NonNls
@@ -149,8 +145,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return "MPS Higlighter";
   }
 
-  public void disposeComponent() {
+  public void initComponent() {
+    myEditorsProvider = new EditorsProvider(myProject);
+  }
 
+  public void disposeComponent() {
+    myEditorsProvider.dispose();
   }
 
   public Thread getThread() {
@@ -215,11 +215,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     synchronized (ADD_EDITORS_LOCK) {
       myAdditionalEditors.clear();
     }
-  }
-
-  public void initComponent() {
-
-
   }
 
   public void stopUpdater() {
