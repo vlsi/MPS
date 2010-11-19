@@ -252,6 +252,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public void createComparableEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
+    myState.addComparable(node1, node2, true, equationInfo);
+  }
+
+  @Override
+  public void createComparableEquationStrong(SNode node1, SNode node2, EquationInfo equationInfo) {
+    myState.addComparable(node1, node2, false, equationInfo);  
+  }
+
+  @Override
   public NodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
   }
@@ -273,4 +283,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     checkRoot();
     return getTypeOf(node, typeChecker);
   }
+
+
 }

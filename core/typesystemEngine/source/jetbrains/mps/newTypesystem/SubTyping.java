@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeOperations;
@@ -40,7 +37,7 @@ public class SubTyping {
     myState = state;
   }
 
-  boolean isSubTypeByReplacementRules(SNode subType, SNode superType) {
+  public boolean isSubTypeByReplacementRules(SNode subType, SNode superType) {
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2)) {
         return true;
@@ -48,8 +45,7 @@ public class SubTyping {
     }
     return false;
   }
-
-
+  
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
     if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
@@ -75,7 +71,7 @@ public class SubTyping {
   }
 
   public boolean isSubType(SNode subType, SNode superType) {
-    return isInSuperTypes(subType, superType, null, true, true);
+    return isInSuperTypes(subType, superType, null, true, true);  //todo
   }
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
@@ -236,6 +232,25 @@ public class SubTyping {
   public SNode leastCommonSuperType(Set<SNode> types) {
     //eliminate subTypes: double for
     return null;
+  }
+
+  public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
+    if (left == null || right == null) {
+      return false;
+    }
+    Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
+    if (comparisonRule_runtimes != null) {
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
+      }
+    }
+    comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
+    if (comparisonRule_runtimes != null) {
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
+      }
+    }
+    return false;
   }
 
 }

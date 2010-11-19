@@ -45,31 +45,32 @@ public class Inequalities {
   private InequalityMapPair myStrongInequalities;
   private InequalityMapPair myWeakCheckInequalities;
   private InequalityMapPair myStrongCheckInequalities;
+  private InequalityMapPair myComparable;
+  private InequalityMapPair myStrongComparable;
+
+  private boolean solveOnlyConcrete;
 
   private List<InequalityMapPair> myInequalities;
 
   public Inequalities(State state) {
     myState = state;
-    myWeakInequalities = new InequalityMapPair(myState, true, false);
-    myWeakCheckInequalities = new InequalityMapPair(myState, true, true);
-    myStrongInequalities = new InequalityMapPair(myState, false, false);
-    myStrongCheckInequalities = new InequalityMapPair(myState, false, true);
-
+    solveOnlyConcrete = true;
     myInequalities = new LinkedList<InequalityMapPair>();
-    myInequalities.add(myWeakInequalities);
-    myInequalities.add(myWeakCheckInequalities);
-    myInequalities.add(myStrongInequalities);
-    myInequalities.add(myStrongCheckInequalities);
+    myInequalities.add(myWeakInequalities = new InequalityMapPair(myState, true, false, false));
+    myInequalities.add(myWeakCheckInequalities = new InequalityMapPair(myState, true, true, false));
+    myInequalities.add(myStrongInequalities = new InequalityMapPair(myState, false, false, false));
+    myInequalities.add(myStrongCheckInequalities = new InequalityMapPair(myState, false, true, false));
+    myInequalities.add(myComparable = new InequalityMapPair(myState, true, true, true));
+    myInequalities.add(myStrongComparable = new InequalityMapPair(myState, false, true, true));
   }
 
   public void substitute(SNode var, SNode type) {
-    myWeakInequalities.substitute(var, type);
-    myStrongInequalities.substitute(var, type);
-    myWeakCheckInequalities.substitute(var, type);
-    myStrongCheckInequalities.substitute(var, type);
+    for (InequalityMapPair inequalityMapPair : myInequalities) {
+      inequalityMapPair.substitute(var, type);
+    }
   }
 
-  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean solveOnlyConcrete) {
+  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
     subType = myState.getRepresentative(subType);
     superType = myState.getRepresentative(superType);
 
@@ -107,6 +108,34 @@ public class Inequalities {
     }
   }
 
+  public void addComparableEquation(SNode left, SNode right, boolean isWeak,  EquationInfo info) {
+    left = myState.getRepresentative(left);
+    right = myState.getRepresentative(right);
+    if (left == null || right == null || left == right) {
+      return;
+    }
+    // if one of them is a var
+    if (!myState.isConcrete(left) || !myState.isConcrete(right)) {
+      System.out.println(left + " " + right + " " + myState.isConcrete(left) + myState.isConcrete(right));
+      addComparable(left, right, isWeak, info);
+      return;
+    }
+    //expand, if contains some vars.
+    left = myState.expand(left);
+    right = myState.expand(right);
+    SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+    // if subType or superType
+    if (subTyping.isComparableByRules(left, right, info, isWeak)||
+        subTyping.isSubTypeByReplacementRules(left, right) ||
+        subTyping.isSubTypeByReplacementRules(right, left) ||
+        subTyping.isSubType(left, right, info, isWeak, true) ||
+        subTyping.isSubType(right, left, info, isWeak, true)) {
+      myState.addDifference(new StringDifference(left + " is comparable with " + right), false);
+      return;
+    }
+    myState.getNodeMaps().reportComparableError(left, right, info, isWeak);
+  }
+
   public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
     InequalityMapPair inequality;
     if (isWeak) {
@@ -119,8 +148,15 @@ public class Inequalities {
     }
   }
 
+  public void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
+    InequalityMapPair inequality = isWeak ? myComparable : myStrongComparable;
+    if (!inequality.contains(subType, superType)) {
+      myState.addDifference(new SubTypingAdded(subType, superType, inequality, info), false);
+    }
+  }
 
   public void solveInequalities() {
+    solveOnlyConcrete = false;
     myWeakInequalities.expand();
     myStrongInequalities.expand();
 
@@ -145,6 +181,7 @@ public class Inequalities {
     for (InequalityMapPair inequalityMapPair : myInequalities) {
       inequalityMapPair.clear();
     }
+    solveOnlyConcrete = true;
   }
 
   private Set<SNode> getAllVariables() {
