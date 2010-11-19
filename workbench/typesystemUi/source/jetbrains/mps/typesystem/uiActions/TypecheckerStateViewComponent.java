@@ -46,7 +46,6 @@ public class TypecheckerStateViewComponent extends JPanel {
   private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
 
   private IOperationContext myOperationContext;
-  private EditorsProvider myEditorsProvider;
 
   private ISlicer mySlicer;
   private SNode myNodeToSliceWith = null;
