@@ -107,7 +107,6 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(reference);
         if (sm == null) return null;
 
-        SNode node = null;
         Condition<SNode> cond = new Condition<SNode>() {
           public boolean met(SNode node) {
             return node.getPresentation().equals(name);

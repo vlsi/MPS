@@ -42,10 +42,6 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
 
-  MPSNodeVirtualFile(@NotNull SNode node) {
-    this(new SNodePointer(node));
-  }
-
   MPSNodeVirtualFile(@NotNull SNodePointer nodePointer) {
     myNode = nodePointer;
     SModelDescriptor modelDescriptor = nodePointer.getModel();
