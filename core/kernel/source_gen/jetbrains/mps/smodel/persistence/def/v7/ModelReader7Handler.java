@@ -17,7 +17,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.persistence.def.BreakParseSAXException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.StaticReference;
 
 public class ModelReader7Handler extends DefaultHandler {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -37,13 +40,11 @@ public class ModelReader7Handler extends DefaultHandler {
   private Locator myLocator;
   private SModel myResult;
   private ModelLoadingState fieldstate;
-  private SModel fieldtoModel;
   private SModel fieldmodel;
   private VersionUtil fieldhelper;
 
-  public ModelReader7Handler(ModelLoadingState state, SModel toModel) {
+  public ModelReader7Handler(ModelLoadingState state) {
     fieldstate = state;
-    fieldtoModel = toModel;
   }
 
   public SModel getResult() {
@@ -157,11 +158,7 @@ public class ModelReader7Handler extends DefaultHandler {
 
     @Override
     protected SModel createObject(Attributes attrs) {
-      if (fieldtoModel == null) {
-        fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
-      } else {
-        fieldmodel = fieldtoModel;
-      }
+      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
@@ -238,6 +235,7 @@ public class ModelReader7Handler extends DefaultHandler {
         Object child = (Object) value;
         if (fieldstate == ModelLoadingState.ROOTS_LOADED) {
           fieldmodel.setLoading(false);
+          // <node> 
           throw new BreakParseSAXException();
         }
         return;
@@ -368,7 +366,7 @@ public class ModelReader7Handler extends DefaultHandler {
       Object result = (Object) resultObject;
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        if (fieldtoModel == null && child != null) {
+        if (child != null) {
           fieldmodel.addRoot(child);
         }
         return;
@@ -446,8 +444,16 @@ public class ModelReader7Handler extends DefaultHandler {
       if ("type".equals(name)) {
         return;
       }
+      if ("typeId".equals(name)) {
+        // helper.addNodeType(value, result) 
+        return;
+      }
       if ("role".equals(name)) {
         result.setRoleInParent(fieldhelper.readRole(value));
+        return;
+      }
+      if ("roleId".equals(name)) {
+        // helper.addNodeRole(value, result) 
         return;
       }
       if ("id".equals(name)) {
@@ -481,22 +487,30 @@ public class ModelReader7Handler extends DefaultHandler {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.readName(child[0]), child[1]);
+          result.setProperty(fieldhelper.readName(child[0]), child[1], false);
+          // helper.addPropName(child[2], result, child[0]) 
         }
         return;
       }
       if ("link".equals(tagName)) {
         String[] child = (String[]) value;
-        if (child[2] == null) {
+        SNodePointer ptr = fieldhelper.readLinkId(child[1]);
+        if (ptr == null || ptr.getModelReference() == null) {
           if (log.isErrorEnabled()) {
-            log.error("couldn't create reference '" + child[0] + "' : traget node id is null");
+            log.error("couldn't create reference '" + child[0] + "' from " + child[1]);
           }
           return;
         }
-        SReference ref = fieldhelper.readLink(result, child[0], child[2], child[1]);
-        if (ref != null) {
-          result.addReference(ref);
+        SReference ref;
+        if (ptr.getNodeId() == null) {
+          ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
+          // helper.addDynamicRef(ptr.getModelReference()) 
+        } else {
+          ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
+          // helper.addTarget(ptr, ref) 
         }
+        result.addReference(ref);
+        // helper.addRole(child[3], result) 
         return;
       }
       if ("node".equals(tagName)) {
@@ -530,6 +544,10 @@ public class ModelReader7Handler extends DefaultHandler {
       if ("name".equals(name)) {
         return;
       }
+      if ("nameId".equals(name)) {
+        // result[2] = value 
+        return;
+      }
       if ("value".equals(name)) {
         result[1] = value;
         return;
@@ -539,28 +557,35 @@ public class ModelReader7Handler extends DefaultHandler {
   }
 
   public class linkElementHandler extends ModelReader7Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"role", "targetNodeId"};
 
     public linkElementHandler() {
     }
 
     @Override
     protected String[] createObject(Attributes attrs) {
-      return new String[]{null, null, null};
+      return new String[]{attrs.getValue("role"), attrs.getValue("targetNodeId"), null, null};
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
     }
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
       if ("role".equals(name)) {
-        result[0] = value;
         return;
       }
-      if ("resolveInfo".equals(name)) {
-        result[1] = value;
+      if ("roleId".equals(name)) {
+        result[3] = value;
         return;
       }
       if ("targetNodeId".equals(name)) {
+        return;
+      }
+      if ("resolveInfo".equals(name)) {
         result[2] = value;
         return;
       }

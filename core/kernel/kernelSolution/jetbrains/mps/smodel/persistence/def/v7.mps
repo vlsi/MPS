@@ -37,12 +37,6 @@
         <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="8n6q.~ModelLoadingState" resolveInfo="ModelLoadingState" />
       </node>
     </node>
-    <node role="parameters" roleId="tark.2824634917103291789:4" type="tark.XMLSAXFieldDeclaration" typeId="tark.7707758858785994411:4" id="2824634917103365862">
-      <property name="name" nameId="yvnu.1169194664001:0" value="toModel" />
-      <node role="type" roleId="tark.7707758858785994413:4" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="2824634917103365864">
-        <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="8n6q.~SModel" resolveInfo="SModel" />
-      </node>
-    </node>
     <node role="fields" roleId="tark.7707758858785994425:4" type="tark.XMLSAXFieldDeclaration" typeId="tark.7707758858785994411:4" id="286176397450364063">
       <property name="name" nameId="yvnu.1169194664001:0" value="model" />
       <node role="type" roleId="tark.7707758858785994413:4" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="286176397450364064">
@@ -213,6 +207,11 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="8666712036583229537">
+                  <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.StatementCommentPart" typeId="yvor.6329021646629175143:3" id="8666712036583229538">
+                    <node role="commentedStatement" roleId="yvor.6329021646629175144:3" type="tark.XMLSAXBreakStatement" typeId="tark.8666712036582994511:4" id="8666712036583161962" />
+                  </node>
+                </node>
                 <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ThrowStatement" typeId="yvor.1164991038168:3" id="2824634917103356444">
                   <node role="throwable" roleId="yvor.1164991057263:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="2824634917103356446">
                     <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="6960946895180811329">
@@ -230,43 +229,19 @@
       </node>
       <node role="creator" roleId="tark.2268737274628969583:4" type="tark.XMLSAXNodeCreator" typeId="tark.2268737274628897541:4" id="286176397450364149">
         <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="286176397450364150">
-          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="2824634917103365866">
-            <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2824634917103365867">
-              <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364167">
-                <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="286176397450364168">
-                  <node role="lValue" roleId="yvor.1068498886295:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="286176397450364169">
-                    <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364063" resolveInfo="model" />
-                  </node>
-                  <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="286176397450364170">
-                    <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="286176397450364171">
-                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SModel%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelReference)" resolveInfo="SModel" />
-                      <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="286176397450364172">
-                        <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="8n6q.~SModelReference" resolveInfo="SModelReference" />
-                        <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SModelReference%dfromString(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="fromString" />
-                        <node role="actualArgument" roleId="yvor.1068499141038:3" type="tark.XMLSAXAttributeReference" typeId="tark.2286463592495220221:4" id="286176397450364173">
-                          <link role="attribute" roleId="tark.2286463592495220222:4" targetNodeId="286176397450364076" resolveInfo="modelUID" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364167">
+            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="286176397450364168">
+              <node role="lValue" roleId="yvor.1068498886295:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="286176397450364169">
+                <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364063" resolveInfo="model" />
               </node>
-            </node>
-            <node role="condition" roleId="yvor.1068580123160:3" type="yvor.EqualsExpression" typeId="yvor.1068580123152:3" id="2824634917103365871">
-              <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="2824634917103365874" />
-              <node role="leftExpression" roleId="yvor.1081773367580:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="2824634917103365870">
-                <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="2824634917103365862" resolveInfo="toModel" />
-              </node>
-            </node>
-            <node role="ifFalseStatement" roleId="yvor.1082485599094:3" type="yvor.BlockStatement" typeId="yvor.1082485599095:3" id="2824634917103365875">
-              <node role="statements" roleId="yvor.1082485599096:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2824634917103365876">
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="2824634917103365877">
-                  <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="2824634917103381265">
-                    <node role="rValue" roleId="yvor.1068498886297:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="2824634917103381268">
-                      <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="2824634917103365862" resolveInfo="toModel" />
-                    </node>
-                    <node role="lValue" roleId="yvor.1068498886295:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="2824634917103381264">
-                      <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364063" resolveInfo="model" />
+              <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="286176397450364170">
+                <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="286176397450364171">
+                  <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SModel%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelReference)" resolveInfo="SModel" />
+                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="286176397450364172">
+                    <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="8n6q.~SModelReference" resolveInfo="SModelReference" />
+                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SModelReference%dfromString(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="fromString" />
+                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="tark.XMLSAXAttributeReference" typeId="tark.2286463592495220221:4" id="286176397450364173">
+                      <link role="attribute" roleId="tark.2286463592495220222:4" targetNodeId="286176397450364076" resolveInfo="modelUID" />
                     </node>
                   </node>
                 </node>
@@ -348,7 +323,7 @@
           </node>
         </node>
       </node>
-      <node role="type" roleId="tark.4635390255047981675:4" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="5797832288566453203">
+      <node role="type" roleId="tark.4635390255047981675:4" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="8666712036583223832">
         <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="8n6q.~SModel" resolveInfo="SModel" />
       </node>
     </node>
@@ -462,17 +437,9 @@
         <node role="handler" roleId="tark.8640335038346803781:4" type="tark.XMLSAXChildHandler" typeId="tark.8640335038346803750:4" id="2301870845769311858">
           <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2301870845769311859">
             <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="2301870845769311860">
-              <node role="condition" roleId="yvor.1068580123160:3" type="yvor.AndExpression" typeId="yvor.1080120340718:3" id="4751353328907738503">
-                <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.EqualsExpression" typeId="yvor.1068580123152:3" id="4751353328907738507">
-                  <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="4751353328907738510" />
-                  <node role="leftExpression" roleId="yvor.1081773367580:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="4751353328907738506">
-                    <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="2824634917103365862" resolveInfo="toModel" />
-                  </node>
-                </node>
-                <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NotEqualsExpression" typeId="yvor.1073239437375:3" id="2301870845769311864">
-                  <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="2301870845769311867" />
-                  <node role="leftExpression" roleId="yvor.1081773367580:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="2301870845769311863" />
-                </node>
+              <node role="condition" roleId="yvor.1068580123160:3" type="yvor.NotEqualsExpression" typeId="yvor.1073239437375:3" id="2301870845769311864">
+                <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="2301870845769311867" />
+                <node role="leftExpression" roleId="yvor.1081773367580:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="2301870845769311863" />
               </node>
               <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2301870845769311862">
                 <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="2301870845769311868">
@@ -567,7 +534,7 @@
                   <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="286176397450364270">
                     <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364271" />
                     <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="286176397450364272">
-                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNode%dsetProperty(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="setProperty" />
+                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNode%dsetProperty(java%dlang%dString,java%dlang%dString,boolean)%cvoid" resolveInfo="setProperty" />
                       <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="286176397450364273">
                         <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="286176397450364274">
                           <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364065" resolveInfo="helper" />
@@ -588,7 +555,15 @@
                         </node>
                         <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="286176397450364281" />
                       </node>
+                      <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="8666712036583229541">
+                        <property name="value" nameId="yvor.1068580123138:3" value="false" />
+                      </node>
                     </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="8666712036583229526">
+                  <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="8666712036583229527">
+                    <property name="text" nameId="yvor.6329021646629104958:3" value="helper.addPropName(child[2], result, child[0])" />
                   </node>
                 </node>
               </node>
@@ -609,93 +584,220 @@
         <link role="rule" roleId="tark.8640335038346803761:4" targetNodeId="286176397450364419" resolveInfo="link" />
         <node role="handler" roleId="tark.8640335038346803781:4" type="tark.XMLSAXChildHandler" typeId="tark.8640335038346803750:4" id="286176397450364288">
           <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="286176397450364289">
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="286176397450364290">
-              <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="286176397450364291">
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvqp.LogStatement" typeId="yvqp.1167227138527:0" id="286176397450364292">
-                  <property name="severity" nameId="yvqp.1167245565795:0" value="error" />
-                  <node role="logExpression" roleId="yvqp.1167227463056:0" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="286176397450364293">
-                    <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="286176397450364294">
-                      <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364295">
-                        <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364296">
-                          <property name="value" nameId="yvor.1068580320021:3" value="0" />
-                        </node>
-                        <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="286176397450364297" />
-                      </node>
-                      <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="286176397450364298">
-                        <property name="value" nameId="yvor.1070475926801:3" value="couldn't create reference '" />
-                      </node>
-                    </node>
-                    <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="286176397450364299">
-                      <property name="value" nameId="yvor.1070475926801:3" value="' : traget node id is null" />
-                    </node>
-                  </node>
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="5132159629682542705">
+              <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="5132159629682542706">
+                <property name="name" nameId="yvnu.1169194664001:0" value="ptr" />
+                <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="5132159629682542707">
+                  <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="8n6q.~SNodePointer" resolveInfo="SNodePointer" />
                 </node>
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ReturnStatement" typeId="yvor.1068581242878:3" id="286176397450364300" />
-              </node>
-              <node role="condition" roleId="yvor.1068580123160:3" type="yvor.EqualsExpression" typeId="yvor.1068580123152:3" id="286176397450364301">
-                <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="286176397450364302" />
-                <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364303">
-                  <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364304">
-                    <property name="value" nameId="yvor.1068580320021:3" value="2" />
-                  </node>
-                  <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="286176397450364305" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="286176397450364306">
-              <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="286176397450364307">
-                <property name="name" nameId="yvnu.1169194664001:0" value="ref" />
-                <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="286176397450364308">
-                  <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="8n6q.~SReference" resolveInfo="SReference" />
-                </node>
-                <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="286176397450364309">
-                  <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="286176397450364310">
+                <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682542710">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="5132159629682542709">
                     <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364065" resolveInfo="helper" />
                   </node>
-                  <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="286176397450364311">
-                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="e2c1.~VersionUtil%dreadLink(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,java%dlang%dString,java%dlang%dString)%cjetbrains%dmps%dsmodel%dSReference" resolveInfo="readLink" />
-                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364312" />
-                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364313">
-                      <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364314">
-                        <property name="value" nameId="yvor.1068580320021:3" value="0" />
-                      </node>
-                      <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="286176397450364315" />
-                    </node>
-                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364316">
-                      <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364317">
-                        <property name="value" nameId="yvor.1068580320021:3" value="2" />
-                      </node>
-                      <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="286176397450364318" />
-                    </node>
-                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364319">
-                      <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364320">
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682542714">
+                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="e2c1.~VersionUtil%dreadLinkId(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="readLinkId" />
+                    <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682542716">
+                      <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682542715" />
+                      <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682547013">
                         <property name="value" nameId="yvor.1068580320021:3" value="1" />
                       </node>
-                      <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="286176397450364321" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="286176397450364322">
-              <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="286176397450364323">
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364324">
-                  <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="286176397450364325">
-                    <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364326" />
-                    <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="286176397450364327">
-                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNode%daddReference(jetbrains%dmps%dsmodel%dSReference)%cvoid" resolveInfo="addReference" />
-                      <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="286176397450364328">
-                        <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="286176397450364307" resolveInfo="ref" />
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="5132159629682542728">
+              <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5132159629682542729">
+                <node role="statement" roleId="yvor.1068581517665:3" type="yvqp.LogStatement" typeId="yvqp.1167227138527:0" id="5132159629682542730">
+                  <property name="severity" nameId="yvqp.1167245565795:0" value="error" />
+                  <node role="logExpression" roleId="yvqp.1167227463056:0" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="5132159629682546197">
+                    <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="5132159629682542731">
+                      <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="5132159629682542732">
+                        <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682542733">
+                          <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682542734">
+                            <property name="value" nameId="yvor.1068580320021:3" value="0" />
+                          </node>
+                          <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682542735" />
+                        </node>
+                        <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="5132159629682542736">
+                          <property name="value" nameId="yvor.1070475926801:3" value="couldn't create reference '" />
+                        </node>
                       </node>
+                      <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="5132159629682542737">
+                        <property name="value" nameId="yvor.1070475926801:3" value="' from " />
+                      </node>
+                    </node>
+                    <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682546201">
+                      <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682546204">
+                        <property name="value" nameId="yvor.1068580320021:3" value="1" />
+                      </node>
+                      <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682546200" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ReturnStatement" typeId="yvor.1068581242878:3" id="5132159629682542738" />
+              </node>
+              <node role="condition" roleId="yvor.1068580123160:3" type="yvor.OrExpression" typeId="yvor.1080223426719:3" id="5132159629682542748">
+                <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.EqualsExpression" typeId="yvor.1068580123152:3" id="5132159629682542757">
+                  <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682542752">
+                    <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682542751">
+                      <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542706" resolveInfo="ptr" />
+                    </node>
+                    <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682542756">
+                      <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%dgetModelReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getModelReference" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="5132159629682542761" />
+                </node>
+                <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.EqualsExpression" typeId="yvor.1068580123152:3" id="5132159629682542739">
+                  <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682542745">
+                    <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542706" resolveInfo="ptr" />
+                  </node>
+                  <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="5132159629682542740" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="5132159629682542771">
+              <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="5132159629682542772">
+                <property name="name" nameId="yvnu.1169194664001:0" value="ref" />
+                <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="5132159629682542773">
+                  <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="8n6q.~SReference" resolveInfo="SReference" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="5132159629682546207">
+              <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5132159629682546208">
+                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5132159629682546221">
+                  <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="5132159629682546223">
+                    <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="5132159629682546226">
+                      <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="5132159629682546228">
+                        <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~DynamicReference%d&lt;init&gt;(java%dlang%dString,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSModelReference,java%dlang%dString)" resolveInfo="DynamicReference" />
+                        <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682546946">
+                          <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="5132159629682546945">
+                            <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364065" resolveInfo="helper" />
+                          </node>
+                          <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682546950">
+                            <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="e2c1.~VersionUtil%dreadRole(java%dlang%dString)%cjava%dlang%dString" resolveInfo="readRole" />
+                            <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682546952">
+                              <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682546955">
+                                <property name="value" nameId="yvor.1068580320021:3" value="0" />
+                              </node>
+                              <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682546951" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="actualArgument" roleId="yvor.1068499141038:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="5132159629682546240" />
+                        <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682546243">
+                          <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546242">
+                            <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542706" resolveInfo="ptr" />
+                          </node>
+                          <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682546247">
+                            <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%dgetModelReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getModelReference" />
+                          </node>
+                        </node>
+                        <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682546250">
+                          <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682546253">
+                            <property name="value" nameId="yvor.1068580320021:3" value="2" />
+                          </node>
+                          <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682546249" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546222">
+                      <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542772" resolveInfo="ref" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="5132159629682547015">
+                  <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="5132159629682547016">
+                    <property name="text" nameId="yvor.6329021646629104958:3" value="helper.addDynamicRef(ptr.getModelReference())" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" roleId="yvor.1068580123160:3" type="yvor.EqualsExpression" typeId="yvor.1068580123152:3" id="5132159629682546217">
+                <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="5132159629682546220" />
+                <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682546212">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546211">
+                    <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542706" resolveInfo="ptr" />
+                  </node>
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682546216">
+                    <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%dgetNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getNodeId" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" roleId="yvor.1082485599094:3" type="yvor.BlockStatement" typeId="yvor.1082485599095:3" id="5132159629682546254">
+                <node role="statements" roleId="yvor.1082485599096:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5132159629682546255">
+                  <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5132159629682546256">
+                    <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="5132159629682546258">
+                      <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="5132159629682546261">
+                        <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ClassCreator" typeId="yvor.1212685548494:3" id="5132159629682546938">
+                          <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~StaticReference%d&lt;init&gt;(java%dlang%dString,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSModelReference,jetbrains%dmps%dsmodel%dSNodeId,java%dlang%dString)" resolveInfo="StaticReference" />
+                          <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682546958">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXFieldReference" typeId="tark.7707758858785994426:4" id="5132159629682546957">
+                              <link role="declaration" roleId="tark.7707758858785994427:4" targetNodeId="286176397450364065" resolveInfo="helper" />
+                            </node>
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682546962">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="e2c1.~VersionUtil%dreadRole(java%dlang%dString)%cjava%dlang%dString" resolveInfo="readRole" />
+                              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682546964">
+                                <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682546967">
+                                  <property name="value" nameId="yvor.1068580320021:3" value="0" />
+                                </node>
+                                <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682546963" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="actualArgument" roleId="yvor.1068499141038:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="5132159629682546969" />
+                          <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682546972">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546971">
+                              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542706" resolveInfo="ptr" />
+                            </node>
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682546976">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%dgetModelReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getModelReference" />
+                            </node>
+                          </node>
+                          <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5132159629682546979">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546978">
+                              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542706" resolveInfo="ptr" />
+                            </node>
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5132159629682546983">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNodePointer%dgetNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getNodeId" />
+                            </node>
+                          </node>
+                          <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682546986">
+                            <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682546989">
+                              <property name="value" nameId="yvor.1068580320021:3" value="2" />
+                            </node>
+                            <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXChildHandler_childObject" typeId="tark.8640335038346803753:4" id="5132159629682546985" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546257">
+                        <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542772" resolveInfo="ref" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="5132159629682546991">
+                    <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="5132159629682546992">
+                      <property name="text" nameId="yvor.6329021646629104958:3" value="helper.addTarget(ptr, ref)" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node role="condition" roleId="yvor.1068580123160:3" type="yvor.NotEqualsExpression" typeId="yvor.1073239437375:3" id="286176397450364329">
-                <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="286176397450364330" />
-                <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="286176397450364331">
-                  <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="286176397450364307" resolveInfo="ref" />
+            </node>
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364324">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="286176397450364325">
+                <node role="operand" roleId="yvor.1197027771414:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364326" />
+                <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="286176397450364327">
+                  <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~SNode%daddReference(jetbrains%dmps%dsmodel%dSReference)%cvoid" resolveInfo="addReference" />
+                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5132159629682546993">
+                    <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5132159629682542772" resolveInfo="ref" />
+                  </node>
                 </node>
+              </node>
+            </node>
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="8666712036583229529">
+              <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="8666712036583229530">
+                <property name="text" nameId="yvor.6329021646629104958:3" value="helper.addRole(child[3], result)" />
               </node>
             </node>
           </node>
@@ -727,6 +829,18 @@
         <property name="name" nameId="yvnu.1169194664001:0" value="type" />
         <property name="isRequired" nameId="tark.2268737274629028866:4" value="true" />
       </node>
+      <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="8666712036583229500">
+        <property name="name" nameId="yvnu.1169194664001:0" value="typeId" />
+        <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="8666712036583229502">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="8666712036583229503">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="8666712036583229504">
+              <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="8666712036583229505">
+                <property name="text" nameId="yvor.6329021646629104958:3" value="helper.addNodeType(value, result)" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="286176397450364348">
         <property name="name" nameId="yvnu.1169194664001:0" value="role" />
         <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="286176397450364349">
@@ -746,6 +860,18 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="8666712036583229507">
+        <property name="name" nameId="yvnu.1169194664001:0" value="roleId" />
+        <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="8666712036583229509">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="8666712036583229510">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="8666712036583229511">
+              <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="8666712036583229512">
+                <property name="text" nameId="yvor.6329021646629104958:3" value="helper.addNodeRole(value, result)" />
               </node>
             </node>
           </node>
@@ -840,6 +966,18 @@
         <property name="name" nameId="yvnu.1169194664001:0" value="name" />
         <property name="isRequired" nameId="tark.2268737274629028866:4" value="true" />
       </node>
+      <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="8666712036583229513">
+        <property name="name" nameId="yvnu.1169194664001:0" value="nameId" />
+        <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="8666712036583229515">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="8666712036583229516">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="8666712036583229517">
+              <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="8666712036583229519">
+                <property name="text" nameId="yvor.6329021646629104958:3" value="result[2] = value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="286176397450364400">
         <property name="name" nameId="yvnu.1169194664001:0" value="value" />
         <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="286176397450364401">
@@ -883,21 +1021,29 @@
       <property name="isCompact" nameId="tark.2286463592495362657:4" value="true" />
       <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="286176397450364420">
         <property name="name" nameId="yvnu.1169194664001:0" value="role" />
-        <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="286176397450364421">
-          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="286176397450364422">
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364423">
-              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="286176397450364424">
-                <node role="rValue" roleId="yvor.1068498886297:3" type="tark.XMLSAXAttributeHandler_value" typeId="tark.4635390255048078244:4" id="286176397450364425" />
-                <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364426">
-                  <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364427">
-                    <property name="value" nameId="yvor.1068580320021:3" value="0" />
+        <property name="isRequired" nameId="tark.2268737274629028866:4" value="true" />
+      </node>
+      <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="8666712036583229520">
+        <property name="name" nameId="yvnu.1169194664001:0" value="roleId" />
+        <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="8666712036583229521">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="8666712036583229522">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5132159629682546999">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="5132159629682547005">
+                <node role="rValue" roleId="yvor.1068498886297:3" type="tark.XMLSAXAttributeHandler_value" typeId="tark.4635390255048078244:4" id="5132159629682547008" />
+                <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5132159629682547001">
+                  <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682547004">
+                    <property name="value" nameId="yvor.1068580320021:3" value="3" />
                   </node>
-                  <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364428" />
+                  <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="5132159629682547000" />
                 </node>
               </node>
             </node>
           </node>
         </node>
+      </node>
+      <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="286176397450364438">
+        <property name="name" nameId="yvnu.1169194664001:0" value="targetNodeId" />
+        <property name="isRequired" nameId="tark.2268737274629028866:4" value="true" />
       </node>
       <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="286176397450364429">
         <property name="name" nameId="yvnu.1169194664001:0" value="resolveInfo" />
@@ -906,30 +1052,12 @@
             <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364432">
               <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="286176397450364433">
                 <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364434">
-                  <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364435">
-                    <property name="value" nameId="yvor.1068580320021:3" value="1" />
-                  </node>
                   <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364436" />
-                </node>
-                <node role="rValue" roleId="yvor.1068498886297:3" type="tark.XMLSAXAttributeHandler_value" typeId="tark.4635390255048078244:4" id="286176397450364437" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="attrs" roleId="tark.4635390255047981704:4" type="tark.XMLSAXAttributeRule" typeId="tark.4635390255047981693:4" id="286176397450364438">
-        <property name="name" nameId="yvnu.1169194664001:0" value="targetNodeId" />
-        <node role="handler" roleId="tark.4635390255048070858:4" type="tark.XMLSAXAttributeHandler" typeId="tark.4635390255048069776:4" id="286176397450364439">
-          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="286176397450364440">
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="286176397450364441">
-              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="286176397450364442">
-                <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="286176397450364443">
-                  <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="286176397450364444">
+                  <node role="index" roleId="yvor.1173175577737:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5132159629682546996">
                     <property name="value" nameId="yvor.1068580320021:3" value="2" />
                   </node>
-                  <node role="array" roleId="yvor.1173175590490:3" type="tark.XMLSAXHandler_resultObject" typeId="tark.4635390255048098081:4" id="286176397450364445" />
                 </node>
-                <node role="rValue" roleId="yvor.1068498886297:3" type="tark.XMLSAXAttributeHandler_value" typeId="tark.4635390255048078244:4" id="286176397450364446" />
+                <node role="rValue" roleId="yvor.1068498886297:3" type="tark.XMLSAXAttributeHandler_value" typeId="tark.4635390255048078244:4" id="286176397450364437" />
               </node>
             </node>
           </node>
@@ -944,9 +1072,14 @@
             <node role="expression" roleId="yvor.1068580123156:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="286176397450364452">
               <node role="creator" roleId="yvor.1145553007750:3" type="yvor.ArrayCreatorWithInitializer" typeId="yvor.1154542696413:3" id="286176397450364453">
                 <node role="componentType" roleId="yvor.1154542793668:3" type="yvor.StringType" typeId="yvor.1225271177708:3" id="286176397450364454" />
-                <node role="initValue" roleId="yvor.1154542803372:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="286176397450364455" />
-                <node role="initValue" roleId="yvor.1154542803372:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="286176397450364456" />
+                <node role="initValue" roleId="yvor.1154542803372:3" type="tark.XMLSAXAttributeReference" typeId="tark.2286463592495220221:4" id="5132159629682546994">
+                  <link role="attribute" roleId="tark.2286463592495220222:4" targetNodeId="286176397450364420" resolveInfo="role" />
+                </node>
+                <node role="initValue" roleId="yvor.1154542803372:3" type="tark.XMLSAXAttributeReference" typeId="tark.2286463592495220221:4" id="5132159629682546995">
+                  <link role="attribute" roleId="tark.2286463592495220222:4" targetNodeId="286176397450364438" resolveInfo="targetNodeId" />
+                </node>
                 <node role="initValue" roleId="yvor.1154542803372:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="286176397450364457" />
+                <node role="initValue" roleId="yvor.1154542803372:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="5132159629682546998" />
               </node>
             </node>
           </node>

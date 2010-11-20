@@ -24,7 +24,7 @@ import java.util.List;
 
 public class Handler7 extends ModelReader7Handler implements DefaultMPSHandler {
   public Handler7(ModelLoadingState state) {
-    super(state, null);
+    super(state);
   }
 
   public SModel getModel() {

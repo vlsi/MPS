@@ -116,21 +116,48 @@ public class ModelReader7 implements IModelReader {
       }
       node.setId(id);
     }
+//    myHelper.addTypeLoc(nodeElement.getAttributeValue(ModelPersistence.TYPE_ID), node);
 
     for (Element element : (List<Element>) nodeElement.getChildren(ModelPersistence.PROPERTY)) {
       String propertyName = myHelper.readName(element.getAttributeValue(ModelPersistence.NAME));
       String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
-        node.setProperty(propertyName, propertyValue);
+        node.setProperty(propertyName, propertyValue, false);
+//        myHelper.addNameLoc(element.getAttributeValue(ModelPersistence.NAME_ID), node, propertyName);
       }
     }
 
     for (Element link : (List<Element>) nodeElement.getChildren(ModelPersistence.LINK)) {
-      String role = link.getAttributeValue(ModelPersistence.ROLE);
+//      String role = link.getAttributeValue(ModelPersistence.ROLE);
       String target = link.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
       String resolveInfo = link.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-      SReference reference = myHelper.readLink(node, role, target, resolveInfo);
-      if (reference != null) node.addReference(reference);
+      String role = myHelper.readRole(link.getAttributeValue(ModelPersistence.ROLE));
+      SNodePointer ptr = myHelper.readLinkId(target);
+      if (ptr == null || ptr.getModelReference() == null) {
+        LOG.error("couldn't create reference '" + role + "' : from " + target);
+        continue;
+      }
+      if (ptr.getNodeId() == null) {
+        DynamicReference ref = new DynamicReference(role, node, ptr.getModelReference(), resolveInfo);
+//        myHelper.addDynRefLoc(ptr.getModelReference(), ref);
+        node.addReference(ref);
+//      myHelper.addRoleLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), ref);
+      } else {
+        StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ptr.getNodeId(), resolveInfo);
+//        myHelper.addRefLoc(ptr, ref);
+        node.addReference(ref);
+//      myHelper.addRoleLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), ref);
+      }
+
+//      SReference reference = myHelper.readLink(node, role, target, resolveInfo);
+//      if (reference != null) {
+//        node.addReference(reference);
+//        myHelper.addRefLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), new RefRoleLoc(reference));
+//        if (ptr.getNodeId() != null)
+//          myHelper.addRefLoc(ptr, new RefTargetLoc((StaticReference) reference));
+//        else
+//          myHelper.addDynRefTargetLoc(ptr.getModelReference(), new DynRefTargetLoc((DynamicReference) reference));
+//      }
     }
 
     if (!isRootStub)
@@ -141,12 +168,13 @@ public class ModelReader7 implements IModelReader {
 
   protected void readChildren(@NotNull SNode node, @NotNull Element nodeElement) {
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
-      String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       SNode childNode = readNode(child, node.getModel(), false);
+      String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {
         node.addChild(role, childNode);
+//        myHelper.addRoleLoc(child.getAttributeValue(ModelPersistence.ROLE_ID), childNode);
       }
     }
   }
