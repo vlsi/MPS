@@ -130,6 +130,17 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       session.removeChangeListener(myChangeListener);
     }
   };
+  private final EditorOpenListener myEditorOpenListener = new EditorOpenListener() {
+    @Override
+    public void editorOpened(MPSFileNodeEditor editor) {
+      editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
+    }
+
+    @Override
+    public void editorClosed(MPSFileNodeEditor editor) {
+      editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
+    }
+  };
 
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(BreakpointManagerComponent.class);
@@ -140,17 +151,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     myDebugInfoManager = debugInfoManager;
     myFileEditorManager = fileEditorManager;
     myEditorsProvider = new EditorsProvider(project);
-    myEditorsProvider.addEditorOpenListener(new EditorOpenListener() {
-      @Override
-      public void editorOpened(MPSFileNodeEditor editor) {
-        editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
-      }
-
-      @Override
-      public void editorClosed(MPSFileNodeEditor editor) {
-        editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
-      }
-    });
   }
 
   public void toggleBreakpoint(EditorCell cell) {
@@ -237,12 +237,15 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addCurrentDebugSessionListener(myDebugSessionListener);
+    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
   }
 
   @Override
   public void disposeComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeCurrentDebugSessionListener(myDebugSessionListener);
+    myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
+    myEditorsProvider.dispose();
   }
 
   private void editorComponentOpened(@Nullable EditorComponent editorComponent) {
