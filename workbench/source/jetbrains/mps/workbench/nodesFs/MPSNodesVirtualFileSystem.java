@@ -184,7 +184,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getRoot()));
       if (vf == null) return;
 
-      fireBeforeFileDeletion(this, vf);
+      if (vf.isValid()) {
+        fireBeforeFileDeletion(this, vf);
+      }
       fireFileDeleted(this, vf, vf.getName(), null);
       myVirtualFiles.remove(new SNodePointer(event.getRoot()));
     }
@@ -211,7 +213,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (vf == null) continue;
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            fireBeforeFileDeletion(this, vf);
+            if (vf.isValid()) {
+              fireBeforeFileDeletion(this, vf);
+            }
             fireFileDeleted(this, vf, vf.getName(), null);
             myVirtualFiles.remove(pointer);
           }
@@ -245,7 +249,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         SNode node = entry.getKey().getNode();
         MPSNodeVirtualFile file = entry.getValue();
         if (node == null) {
-          fireBeforeFileDeletion(this, file);
+          if (file.isValid()) {
+            fireBeforeFileDeletion(this, file);
+          }
           fireFileDeleted(this, file, file.getName(), null);
         } else {
           String oldName = file.getName();
