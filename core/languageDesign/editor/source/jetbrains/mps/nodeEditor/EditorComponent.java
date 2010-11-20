@@ -211,6 +211,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private List<CellSelectionListener> mySelectionListeners = new LinkedList<CellSelectionListener>();
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
+  private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
   private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
@@ -1079,6 +1080,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void dispose() {
     if (myDisposed) throw new IllegalStateException(myDisposedTrace);
+    fireEditorWillBeDisposed();
     myDisposed = true;
     myDisposedTrace = new Throwable("Editor was disposed by: ");
     if (!MPSCore.getInstance().isTestMode()) {
@@ -1630,6 +1632,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  private void fireEditorWillBeDisposed() {
+    for (EditorDisposeListener listener : new ArrayList<EditorDisposeListener>(myDisposeListeners)) {
+      listener.editorWillBeDisposed(this);
+    }
+  }
+
+  public void addDisposeListener(EditorDisposeListener listener) {
+    if (!myDisposeListeners.contains(listener)) {
+      myDisposeListeners.add(listener);
+    }
+  }
+
+  public void removeDisposeListener(EditorDisposeListener listener) {
+    myDisposeListeners.remove(listener);
+  }
 
   public void addRebuildListener(RebuildListener listener) {
     myRebuildListeners.add(listener);
@@ -2940,6 +2957,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(EditorCell cell);
+  }
+
+  public static interface EditorDisposeListener {
+    public void editorWillBeDisposed(EditorComponent component);
   }
 
   public void repaint() {

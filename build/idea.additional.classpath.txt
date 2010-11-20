@@ -1,7 +1,6 @@
 core/baseLanguage/baseLanguage/classes
 core/baseLanguage/baseLanguageInternal/classes
 core/baseLanguage/blTypes/classes
-platform/builders/classes_gen
 core/baseLanguage/checkDot/languages/checkedDots/classes_gen
 core/baseLanguage/classifiers/classes
 core/baseLanguage/closures/classes

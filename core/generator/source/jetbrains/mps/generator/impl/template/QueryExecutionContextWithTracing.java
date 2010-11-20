@@ -2,6 +2,8 @@ package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
@@ -184,6 +186,26 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("evaluate template argument query", query.getNode()), true);
       return wrapped.evaluateArgumentQuery(inputNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
+    try {
+      tracer.push("query in " + processor.getClass().getCanonicalName(), true);
+      wrapped.executeInContext(outputNode, context, processor);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
+    try {
+      tracer.push("query in " + mapper.getClass().getCanonicalName(), true);
+      return wrapped.executeInContext(outputNode, context, mapper);
     } finally {
       tracer.pop();
     }

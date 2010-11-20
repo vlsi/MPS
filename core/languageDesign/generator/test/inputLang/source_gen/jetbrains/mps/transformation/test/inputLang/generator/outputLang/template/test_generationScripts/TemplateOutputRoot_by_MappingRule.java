@@ -26,7 +26,7 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_jwmwuq_a0a0a1a0);
-      environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
+      environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
       tnode1.setProperty("name", "OutputRoot_by_MappingRule");
       tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "OutputRoot by MappingRule", propertyMacro_jwmwuq_c0b0b0a3a1a0, context, environment.getGenerator())));
 
@@ -35,7 +35,7 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
         try {
           environment.getTracer().pushMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a0);
           final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, copySrcListMacro_jwmwuq_a0a0a1a5a1a0, context, environment.getGenerator()));
-          tlist2 = environment.copyNodes(copyListInput2, null);
+          tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_jwmwuq_a0a0a1a5a1a0, null, context);
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a0);
         }

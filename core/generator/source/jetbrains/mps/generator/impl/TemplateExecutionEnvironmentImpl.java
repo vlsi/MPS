@@ -15,14 +15,18 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/10/10
@@ -56,17 +60,50 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return tracer;
   }
 
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, String mappingName) {
-    // TODO
-    return Collections.emptyList();
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
+    List<SNode> outputNodes = null;
+    for (SNode newInputNode : inputNodes) {
+      List<SNode> _outputNodes =
+        newInputNode.getModel() == generator.getInputModel() && newInputNode.isRegistered()
+          ? generator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, reductionContext, new boolean[]{false})
+          : generator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, reductionContext);
+      if (_outputNodes != null) {
+        // check node languages : prevent 'input node' query from returning node, which language was not counted when
+        // planning the generation steps.
+        for (SNode outputNode : _outputNodes) {
+          Language outputNodeLang = outputNode.getNodeLanguage();
+          if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
+            if (!outputNodeLang.getGenerators().isEmpty()) {
+              SNode tNode = templateNode.getNode();
+              generator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
+                GeneratorUtil.describe(tNode, "template"),
+                GeneratorUtil.describe(templateContext.getInput(), "input"),
+                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+            }
+          }
+        }
+        if (outputNodes == null) {
+          outputNodes = Collections.unmodifiableList(_outputNodes);
+        } else if (!(outputNodes instanceof ArrayList)) {
+          List<SNode> old = outputNodes;
+          outputNodes = new ArrayList<SNode>(old.size() + _outputNodes.size() + 16);
+          outputNodes.addAll(old);
+          outputNodes.addAll(_outputNodes);
+        } else {
+          outputNodes.addAll(_outputNodes);
+        }
+      }
+    }
+    return outputNodes == null ? Collections.<SNode>emptyList() : outputNodes;
   }
 
-  public void nodeCopied(SNode node, SNode outputNode, String templateNodeId) {
-//    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
-//    for (SNode historyInputNode : context.getInputHistory()) {
-//      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
-//    }
-//    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
+  public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
+    GeneratorMappings mappings = generator.getMappings();
+    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
+    for (SNode historyInputNode : context.getInputHistory()) {
+      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNodeId, outputNode);
+    }
+    mappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
   }
 
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
@@ -79,30 +116,64 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
   }
 
-  public void resolveInTemplateLater(SNode outputNode, String role, int parentIndex, TemplateContext context) {
-
+  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+    ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
+      outputNode,
+      role,
+      sourceNode,
+      parentIndex,
+      resolveInfo,
+      context);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
-  public void resolveInTemplateLater(SNode outputNode, String role, String templateNodeId, TemplateContext context) {
-
+  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
+    ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
+      outputNode,
+      role,
+      sourceNode,
+      templateNodeId,
+      resolveInfo,
+      context);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
-
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
+      resolver, outputNode,
+      role, context,
+      reductionContext);
+    PostponedReference postponedReference = new PostponedReference(
+      refInfo,
+      generator
+    );
+    outputNode.addReference(postponedReference);
   }
 
   /*
   *  returns temporary node
   */
-  public SNode insertLater(NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    return null;
+  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
+    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(mapper.getConceptFqName(), generator.getOutputModel(), generator.getScope(), false);
+    tracer.pushOutputNodeToReplaceLater(childToReplaceLater);
+    generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, reductionContext);
+    return childToReplaceLater;
   }
 
-  public void postProcess(PostProcessor processor, SNode outputNode, TemplateContext context) {
-
+  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
+    generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
   }
 
   public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {
+    // TODO
     return null;
   }
 }

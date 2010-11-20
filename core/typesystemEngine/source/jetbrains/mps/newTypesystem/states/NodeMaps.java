@@ -177,4 +177,23 @@ public class NodeMaps {
     // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
     myState.addError(nodeWithError, errorReporter, equationInfo);
   }
+
+  public void reportComparableError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
+    IErrorReporter errorReporter;
+    String errorString = equationInfo.getErrorString();
+    String ruleModel = equationInfo.getRuleModel();
+    String ruleId = equationInfo.getRuleId();
+    SNode nodeWithError = equationInfo.getNodeWithError();
+    if (errorString == null) {
+      String strongString = isWeak ? "" : " strongly";
+      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType, " is not" + strongString + " comparable with ",
+        superType, "", ruleModel, ruleId);
+    } else {
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+    }
+    errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
+    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
+    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.addError(nodeWithError, errorReporter, equationInfo);
+  }
 }

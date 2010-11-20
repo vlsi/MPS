@@ -17,11 +17,16 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Evgeny Gryaznov, 11/4/10
  */
 public interface ReferenceResolver {
 
-  Object resolve(SNode outputNode, TemplateContext context, ITemplateGenerator generator);
+  Object resolve(SNode outputNode, TemplateContext context);
+
+  SNodePointer getTemplateNode();
+
+  String getDefaultResolveInfo();
 }

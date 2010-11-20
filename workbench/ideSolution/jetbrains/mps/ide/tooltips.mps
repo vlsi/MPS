@@ -2045,7 +2045,7 @@
                 <node role="cls" roleId="yvor.1182160096073:3" type="yvor.AnonymousClass" typeId="yvor.1170345865475:3" id="6281853519869761381">
                   <property name="nonStatic" nameId="yvor.521412098689998745:3" value="true" />
                   <link role="classifier" roleId="yvor.1170346070688:3" targetNodeId="bqcs.~IdeTooltip" resolveInfo="IdeTooltip" />
-                  <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="bqcs.~IdeTooltip%d&lt;init&gt;(java%dawt%dComponent,java%dawt%dPoint,javax%dswing%dJComponent)" resolveInfo="IdeTooltip" />
+                  <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="bqcs.~IdeTooltip%d&lt;init&gt;(java%dawt%dComponent,java%dawt%dPoint,javax%dswing%dJComponent,java%dlang%dObject%d%d%d)" resolveInfo="IdeTooltip" />
                   <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="6281853519869761382" />
                   <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="6281853519869717700">
                     <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="78827631726060880" resolveInfo="component" />
@@ -2062,13 +2062,9 @@
                     <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.BooleanType" typeId="yvor.1070534644030:3" id="6281853519869763017" />
                     <node role="parameter" roleId="yvor.1068580123134:3" type="yvor.ParameterDeclaration" typeId="yvor.1068498886292:3" id="6281853519869763018">
                       <property name="name" nameId="yvnu.1169194664001:0" value="event" />
-                      <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="6281853519869763019">
-                        <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="46vv.~MouseEvent" resolveInfo="MouseEvent" />
+                      <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="6642915361308872732">
+                        <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="bqcs.~TooltipEvent" resolveInfo="TooltipEvent" />
                       </node>
-                    </node>
-                    <node role="parameter" roleId="yvor.1068580123134:3" type="yvor.ParameterDeclaration" typeId="yvor.1068498886292:3" id="6281853519869763020">
-                      <property name="name" nameId="yvnu.1169194664001:0" value="b" />
-                      <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.BooleanType" typeId="yvor.1070534644030:3" id="6281853519869763021" />
                     </node>
                     <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6281853519869763022">
                       <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ReturnStatement" typeId="yvor.1068581242878:3" id="6281853519869763028">
@@ -2093,9 +2089,12 @@
               <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="bqcs.~IdeTooltipManager" resolveInfo="IdeTooltipManager" />
             </node>
             <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="8917462567969266680">
-              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="bqcs.~IdeTooltipManager%dshowTipNow(com%dintellij%dide%dIdeTooltip)%ccom%dintellij%dide%dIdeTooltip" resolveInfo="showTipNow" />
+              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="bqcs.~IdeTooltipManager%dshow(com%dintellij%dide%dIdeTooltip,boolean)%ccom%dintellij%dide%dIdeTooltip" resolveInfo="show" />
               <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalInstanceFieldReference" typeId="yvor.7785501532031639928:3" id="6281853519869761379">
                 <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="6281853519869699210" resolveInfo="myIdeTooltip" />
+              </node>
+              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="6642915361308866897">
+                <property name="value" nameId="yvor.1068580123138:3" value="true" />
               </node>
             </node>
           </node>

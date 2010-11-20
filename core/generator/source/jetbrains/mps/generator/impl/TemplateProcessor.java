@@ -19,9 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
+import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -151,7 +149,7 @@ public class TemplateProcessor {
       if (templateChildNode instanceof PropertyMacro) {
         myReductionContext.getQueryExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, context.getInput(), templateNode, outputNode, context);
       } else if (templateChildNode instanceof ReferenceMacro) {
-        ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
+        ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroNode(
           outputNode, (ReferenceMacro) templateChildNode,
           templateNode,
           context, myReductionContext
@@ -220,11 +218,12 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
+      SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes =
           newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
-            ? myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myReductionContext, new boolean[]{false})
-            : myGenerator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, myReductionContext);
+            ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, newInputNode, myReductionContext, new boolean[]{false})
+            : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.

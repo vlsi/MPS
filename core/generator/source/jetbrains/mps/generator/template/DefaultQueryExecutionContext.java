@@ -2,6 +2,8 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -391,6 +393,17 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
     return null;
   }
+
+  @Override
+  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
+    processor.process(outputNode, context);
+  }
+
+  @Override
+  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
+    return mapper.map(outputNode, context);
+  }
+
 
   @Override
   public boolean isMultithreaded() {

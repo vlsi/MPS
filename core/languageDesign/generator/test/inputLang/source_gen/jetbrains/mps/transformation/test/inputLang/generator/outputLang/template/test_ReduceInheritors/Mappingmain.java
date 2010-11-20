@@ -48,7 +48,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0a);
-        environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460409521");
+        environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460409521");
         tnode1.setProperty("text", "output from base InputNode");
 
       } finally {
@@ -84,7 +84,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0b);
-        environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206461864724");
+        environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206461864724");
         tnode1.setProperty("text", "output from InputNode_B");
 
       } finally {
@@ -120,7 +120,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0c);
-        environment.nodeCopied(context.getInput(), tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460444836");
+        environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460444836");
         tnode1.setProperty("text", "output from InputNode_A");
 
       } finally {

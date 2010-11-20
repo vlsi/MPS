@@ -40,7 +40,7 @@ public class SubTypingAdded extends InequalityDifference {
   }
 
   public String getPresentation() {
-    return "SubTyping added " + mySubType + (myMapPair.isWeak() ? " <= " : " < ") + mySuperType;
+    return myMapPair.getTitle() +" added " + mySubType + myMapPair.getRelationSign() + mySuperType;
   }
 
   public Color getColor() {

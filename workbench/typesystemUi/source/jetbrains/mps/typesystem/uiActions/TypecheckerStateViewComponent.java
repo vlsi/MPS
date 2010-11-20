@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -23,8 +25,8 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -44,7 +46,6 @@ public class TypecheckerStateViewComponent extends JPanel {
   private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
 
   private IOperationContext myOperationContext;
-  private EditorsProvider myEditorsProvider;
 
   private ISlicer mySlicer;
   private SNode myNodeToSliceWith = null;
@@ -52,7 +53,6 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   public TypecheckerStateViewComponent(IOperationContext operationContext) {
     myOperationContext = operationContext;
-    myEditorsProvider = new EditorsProvider(operationContext.getProject());
     rebuild();
   }
 
@@ -71,7 +71,8 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        IEditor currentEditor = myEditorsProvider.getSelectedEditors().get(0);
+        Project project = myOperationContext.getProject();
+        IEditor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {
