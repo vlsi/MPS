@@ -16,10 +16,14 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
+import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -40,13 +44,13 @@ public class ModelPersistence6 extends ModelPersistence5 {
   }
 
   @Override
-  public DefaultMPSHandler getModelReaderHandler(ModelLoadingState state) {
+  public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {
     Handler6 handler = new Handler6();
     return handler.setPartialLoading(state) ? handler : null;
   }
 
   @Override
-  public DefaultMPSHandler getAnnotationReaderHandler() {
-    return new LineToContentHandler6();
+  public XMLSAXHandler<List<SNodeId>> getAnnotationReaderHandler() {
+    return new LineToContentMapReader6Handler();
   }
 }

@@ -36,6 +36,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
+import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -192,7 +193,7 @@ public class ModelPersistence {
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       // first try to use SAX parser
-      DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler(state);
+      XMLSAXHandler<SModel> handler = getModelPersistence(version).getModelReaderHandler(state);
       if (handler == null && state != ModelLoadingState.FULLY_LOADED) { // try SAX parser for full load
         state = ModelLoadingState.FULLY_LOADED;
         handler = getModelPersistence(version).getModelReaderHandler(state);
@@ -206,7 +207,7 @@ public class ModelPersistence {
           LOG.error(t);
           return new ModelLoadResult(new StubModel(new SModelReference(name, stereotype)), ModelLoadingState.NOT_LOADED);
         }
-        return new ModelLoadResult(handler.getModel(), state);
+        return new ModelLoadResult(handler.getResult(), state);
       }
       // then try to use DOM reader
       IModelReader reader = getModelPersistence(version).getModelReader();
@@ -221,12 +222,12 @@ public class ModelPersistence {
   @Nullable
   public static List<SNodeId> getLineNumberToNodeIdMap(int version, String content) {
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
-      DefaultMPSHandler handler = getModelPersistence(version).getAnnotationReaderHandler();
+      XMLSAXHandler<List<SNodeId>> handler = getModelPersistence(version).getAnnotationReaderHandler();
       if (handler != null) {
         try {
           SAXParser parser = JDOMUtil.createSAXParser();
           parser.parse(new ByteArrayInputStream(content.getBytes("UTF-8")), (DefaultHandler) handler);
-          return handler.getLineToIdMap();
+          return handler.getResult();
         } catch (Throwable t) {
           LOG.error(t);
         }

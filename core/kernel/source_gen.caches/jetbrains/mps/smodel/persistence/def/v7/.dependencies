@@ -20,7 +20,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v7.ElementHandler" />
-    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+    <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.DefaultXMLHandler" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler" file="ModelReader7Handler.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -47,7 +47,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.v7.ElementHandler" />
-    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+    <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.DefaultXMLHandler" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v7.StructureModificationInfo" file="StructureModificationInfo.java">
     <classNode dependClassName="java.lang.String" />
