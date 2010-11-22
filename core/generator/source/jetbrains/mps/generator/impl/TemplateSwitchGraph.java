@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class TemplateSwitchGraph {
 
-  private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
+  private Map<TemplateSwitch, Node> mySwitchToNode = new HashMap<TemplateSwitch, Node>();
 
   public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {
     for (SModelDescriptor templateModel : templateModels) {
@@ -34,69 +34,49 @@ public class TemplateSwitchGraph {
         if (!(root.getAdapter() instanceof TemplateSwitch)) continue;
 
         TemplateSwitch adapter = (TemplateSwitch) root.getAdapter();
-        if (myTemplateSwitchToGraphNodeMap.get(adapter) == null) {
-          addSwitch(adapter);
+        mySwitchToNode.put(adapter, new Node(adapter));
+      }
+    }
+    for (Node node : mySwitchToNode.values()) {
+      TemplateSwitch modifiedSwitch = node.mySwitch.getModifiedSwitch();
+      if(modifiedSwitch != null) {
+        node.myModified = mySwitchToNode.get(modifiedSwitch);
+      }
+      if(node.myModified == null) {
+        node.myRules = new LinkedList<TemplateSwitch>();
+      }
+    }
+    for (Node node : mySwitchToNode.values()) {
+      Node bottom = node;
+      int i = 256;
+      while(bottom.myModified != null && --i > 0) {
+        bottom = bottom.myModified;
+      }
+      if(node != bottom) {
+        node.myModified = bottom;
+        if(i == 0) {
+          throw new RuntimeException("Template switch loop in: " + node);     // TODO handle correctly
         }
       }
+      bottom.myRules.add(node.mySwitch);
     }
-  }
-
-  private TemplateSwitchGraphNode addSwitch(TemplateSwitch templateSwitch) {
-    if (myTemplateSwitchToGraphNodeMap.get(templateSwitch) != null) {
-      throw new RuntimeException("Couldn't add template switch more then once: " + templateSwitch.getDebugText());
-    }
-    //    System.out.println("add switch: " + templateSwitch.getDebugText());
-
-    TemplateSwitchGraphNode switchNode = new TemplateSwitchGraphNode(templateSwitch);
-    myTemplateSwitchToGraphNodeMap.put(templateSwitch, switchNode);
-    TemplateSwitch modifiedSwitch = templateSwitch.getModifiedSwitch();
-    if (modifiedSwitch != null) {
-      TemplateSwitchGraphNode modifiedSwitchNode = myTemplateSwitchToGraphNodeMap.get(modifiedSwitch);
-      if (modifiedSwitchNode == null) {
-        modifiedSwitchNode = addSwitch(modifiedSwitch);
-      }
-      switchNode.myModifiedSwitchNode = modifiedSwitchNode;
-      modifiedSwitchNode.myModifierSwitchNodes.add(switchNode);
-    }
-
-    return switchNode;
   }
 
   public List<TemplateSwitch> getSubgraphAsList(TemplateSwitch baseSwitch) {
-    TemplateSwitchGraphNode bottomSwitchNode = myTemplateSwitchToGraphNodeMap.get(baseSwitch);
-    if (bottomSwitchNode == bottomSwitchNode.myModifiedSwitchNode) {
-      throw new RuntimeException("Template switch declaration " + baseSwitch + " extends itself."); //TODO some kind of normal diagnostic message
+    Node bottom = mySwitchToNode.get(baseSwitch);
+    while (bottom.myModified != null) {
+      bottom = bottom.myModified;
     }
-    while (bottomSwitchNode.myModifiedSwitchNode != null) {
-      bottomSwitchNode = bottomSwitchNode.myModifiedSwitchNode;
-    }
-    List<TemplateSwitchGraphNode> graphNodes = new LinkedList<TemplateSwitchGraphNode>();
-    modifierSwitchesToList(bottomSwitchNode, graphNodes);
-    graphNodes.add(bottomSwitchNode);
-
-    List<TemplateSwitch> switches = new LinkedList<TemplateSwitch>();
-    for (TemplateSwitchGraphNode switchGraphNode : graphNodes) {
-      switches.add(switchGraphNode.myTemplateSwitch);
-    }
-    return switches;
+    return bottom.myRules;
   }
 
-  private void modifierSwitchesToList(TemplateSwitchGraphNode switchNode, List<TemplateSwitchGraphNode> list) {
-    if (!switchNode.myModifierSwitchNodes.isEmpty()) {
-      list.addAll(switchNode.myModifierSwitchNodes);
-      for (TemplateSwitchGraphNode modifierSwitchNode : switchNode.myModifierSwitchNodes) {
-        modifierSwitchesToList(modifierSwitchNode, list);
-      }
-    }
-  }
+  private static class Node {
+    final TemplateSwitch mySwitch;
+    Node myModified;
+    List<TemplateSwitch> myRules;
 
-  private static class TemplateSwitchGraphNode {
-    final TemplateSwitch myTemplateSwitch;
-    TemplateSwitchGraphNode myModifiedSwitchNode;
-    List<TemplateSwitchGraphNode> myModifierSwitchNodes = new LinkedList<TemplateSwitchGraphNode>();
-
-    public TemplateSwitchGraphNode(TemplateSwitch templateSwitch) {
-      this.myTemplateSwitch = templateSwitch;
+    public Node(TemplateSwitch switch_) {
+      this.mySwitch = switch_;
     }
   }
 }

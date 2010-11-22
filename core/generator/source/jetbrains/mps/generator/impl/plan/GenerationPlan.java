@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -22,6 +23,7 @@ public class GenerationPlan {
   private List<List<MappingConfiguration>> myPlan;
   private Set<MappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
+  private TemplateSwitchGraph myTemplateSwitchGraph;
 
   public GenerationPlan(@NotNull SModel inputModel) {
     myInputName = inputModel.getLongName();
@@ -108,5 +110,13 @@ public class GenerationPlan {
   private static String toString(MappingConfiguration mappingConfig) {
     SModel model = mappingConfig.getModel();
     return model.getLongName() + "#" + mappingConfig.getName();
+  }
+
+  public TemplateSwitchGraph getTemplateSwitchGraph() {
+    return myTemplateSwitchGraph;
+  }
+
+  public void createSwitchGraph() {
+    myTemplateSwitchGraph = new TemplateSwitchGraph(getTemplateModels());
   }
 }
