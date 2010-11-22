@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.tuples" uuid="a247e09e-2435-45ba-b8d2-07e93feba96a" java-stubs-enabled="true" compileInMPS="false" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.tuples" uuid="a247e09e-2435-45ba-b8d2-07e93feba96a" java-stubs-enabled="true" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.tuples" />
   </models>
@@ -34,12 +34,12 @@
     </generator>
   </generators>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/runtime/classes" include="false">
+    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/runtime/classes_gen" include="false">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
   <runtimeStubModels>
-    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/classes" include="false">
+    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/runtime/classes_gen" include="false">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </runtimeStubModels>

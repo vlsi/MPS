@@ -8,7 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.editor.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/editorTest/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
