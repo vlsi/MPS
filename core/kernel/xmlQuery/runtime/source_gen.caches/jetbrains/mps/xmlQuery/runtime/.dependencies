@@ -10,5 +10,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
+  <dependency className="jetbrains.mps.xmlQuery.runtime.BreakParseSAXException" file="BreakParseSAXException.java">
+    <classNode extendsClassName="org.xml.sax.SAXException" />
+  </dependency>
 </dependenciesRoot>
 
