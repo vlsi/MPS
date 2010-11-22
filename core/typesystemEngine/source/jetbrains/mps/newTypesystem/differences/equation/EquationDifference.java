@@ -35,5 +35,10 @@ public abstract class EquationDifference extends Difference {
     myEquations = equations;
   }
 
+  @Override
+  public String getShortPresentation() {
+    return myChild + " = " + myParent;
+  }
+
 
 }

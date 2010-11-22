@@ -139,6 +139,14 @@ public class Equations {
     myRepresentatives.put(child, parent);
   }
 
+  public Set<SNode> expandSet(Set<SNode> set) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (SNode node : set) {
+      result.add(expandNode(node));
+    }
+    return result;
+  }
+
   public SNode expandNode(SNode node) {
     return expandNode(node, new HashSet<SNode>());
   }

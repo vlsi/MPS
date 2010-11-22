@@ -72,7 +72,7 @@ public class State {
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, boolean comparable, EquationInfo info) {
+  public void addRelation(SNode subType, SNode superType, boolean isWeak, boolean check, boolean comparable, EquationInfo info) {
     if (!comparable) {
       myInequalities.addInequality(subType, superType, isWeak, check, info);
     } else {

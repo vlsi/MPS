@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.differences.inequality;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.InequalityMapPair;
+import jetbrains.mps.newTypesystem.states.RelationMapPair;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -26,12 +26,12 @@ import jetbrains.mps.smodel.SNode;
  * Time: 4:11:08 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class InequalityDifference extends Difference {
-  protected InequalityMapPair myMapPair;
+public abstract class RelationDifference extends Difference {
+  protected RelationMapPair myMapPair;
   protected SNode mySubType;
   protected SNode mySuperType;
 
-  public InequalityDifference(SNode subType, SNode superType, InequalityMapPair mapPair) {
+  public RelationDifference(SNode subType, SNode superType, RelationMapPair mapPair) {
     mySubType = subType;
     mySuperType = superType;
     myMapPair = mapPair;

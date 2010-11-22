@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.inequality.SubTypingRemoved;
+import jetbrains.mps.newTypesystem.differences.inequality.RelationRemoved;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -30,7 +30,7 @@ import java.util.*;
  * Time: 5:56:50 PM
  * To change this template use File | Settings | File Templates.
  */
-public class InequalityMapPair {
+public class RelationMapPair {
   protected State myState;
   private boolean isWeak;
   private boolean isCheckOnly;
@@ -38,7 +38,7 @@ public class InequalityMapPair {
   private Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
   private Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
-  public InequalityMapPair(State state, boolean weak, boolean checkOnly, boolean comparable) {
+  public RelationMapPair(State state, boolean weak, boolean checkOnly, boolean comparable) {
     myState = state;
     isWeak = weak;
     isCheckOnly = checkOnly;
@@ -88,11 +88,11 @@ public class InequalityMapPair {
       Map<SNode, EquationInfo> map = pairMap.get(value);
       EquationInfo info = map.get(var);
       if (reversed) {
-        myState.addDifference(new SubTypingRemoved(var, value, info, this), false);
-        myState.addInequality(type, value, isWeak, isCheckOnly, isComparable, info);
+        myState.addDifference(new RelationRemoved(var, value, info, this), false);
+        myState.addRelation(type, value, isWeak, isCheckOnly, isComparable, info);
       } else {
-        myState.addDifference(new SubTypingRemoved(value, var, info, this), false);
-        myState.addInequality(value, type, isWeak, isCheckOnly, isComparable, info);
+        myState.addDifference(new RelationRemoved(value, var, info, this), false);
+        myState.addRelation(value, type, isWeak, isCheckOnly, isComparable, info);
       }
     }
   }
@@ -165,7 +165,7 @@ public class InequalityMapPair {
   private void removeAndTrack(SNode subType, SNode superType) {
     EquationInfo info = mySubToSuper.get(subType).get(superType);
     remove(subType, superType);
-    myState.addDifference(new SubTypingRemoved(subType, superType, info, this), false);
+    myState.addDifference(new RelationRemoved(subType, superType, info, this), false);
   }
 
   public void check() {
@@ -213,7 +213,10 @@ public class InequalityMapPair {
     Solving iteration
   
   */
+
+
   private boolean iteration(boolean shallow, boolean sub) {
+
     Map<SNode, Map<SNode, EquationInfo>> map = sub ? mySubToSuper : mySuperToSub;
     SubTyping subTyping = new SubTyping(myState);
     boolean stateChanged = false;
@@ -226,9 +229,10 @@ public class InequalityMapPair {
       if (concreteTypes == null || concreteTypes.isEmpty()) {
         continue;
       }
+      Set<SNode> expandedConcreteTypes = myState.getEquations().expandSet(concreteTypes);
       if (TypesUtil.isVariable(node)) {
-        SNode type = sub ? subTyping.createMeet(concreteTypes) : subTyping.createLCS(concreteTypes);
-        for (SNode concreteType : concreteTypes) {
+        SNode type = sub ? subTyping.createMeet(expandedConcreteTypes) : subTyping.createLCS(expandedConcreteTypes);
+        for (SNode concreteType : expandedConcreteTypes) {
           EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
             removeAndTrack(node, concreteType);
@@ -238,14 +242,14 @@ public class InequalityMapPair {
         }
         myState.addEquation(node, type, null);
       } else if (myState.isConcrete(node, shallow)) {
-        for (SNode concreteType : concreteTypes) {
+        for (SNode concreteType : expandedConcreteTypes) {
           EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
             removeAndTrack(node, concreteType);
-            myState.addInequality(node, concreteType, isWeak, isCheckOnly, isComparable, info);
+            myState.addRelation(node, concreteType, isWeak, isCheckOnly, isComparable, info);
           } else {
             removeAndTrack(concreteType, node);
-            myState.addInequality(concreteType, node, isWeak, isCheckOnly, isComparable, info);
+            myState.addRelation(concreteType, node, isWeak, isCheckOnly, isComparable, info);
           }
         }
       }

@@ -84,7 +84,7 @@ public class NodeMaps {
     Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>();
     for (SNode key : myNodesToErrors.keySet()) {
       List<IErrorReporter> reporter = getNodeErrors(key);
-      if (!reporter.isEmpty()) {
+      if (key != null && !reporter.isEmpty()) {
         result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
       }
     }

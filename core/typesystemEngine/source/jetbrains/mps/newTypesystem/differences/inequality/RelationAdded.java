@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences.inequality;
 
-import jetbrains.mps.newTypesystem.states.InequalityMapPair;
+import jetbrains.mps.newTypesystem.states.RelationMapPair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -25,31 +25,30 @@ import java.awt.Color;
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 23, 2010
- * Time: 6:14:51 PM
+ * Time: 6:13:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SubTypingRemoved extends InequalityDifference {
-
-  public SubTypingRemoved(SNode subType, SNode superType, EquationInfo info, InequalityMapPair mapPair) {
+public class RelationAdded extends RelationDifference {
+  public RelationAdded(SNode subType, SNode superType, RelationMapPair mapPair, EquationInfo info) {
     super(subType, superType, mapPair);
     myEquationInfo = info;
   }
 
   @Override
   public void rollBack() {
-    myMapPair.add(mySubType, mySuperType, myEquationInfo);
-  }
-
-  @Override
-  public void play() {
     myMapPair.remove(mySubType, mySuperType);
   }
 
   public String getPresentation() {
-    return myMapPair.getTitle() + "removed " + mySubType + myMapPair.getRelationSign() + mySuperType;
+    return myMapPair.getTitle() +" added " + mySubType + myMapPair.getRelationSign() + mySuperType;
   }
 
   public Color getColor() {
-    return new Color(0x774400);
+    return new Color(0x000077);
+  }
+
+  @Override
+  public void play() {
+    myMapPair.add(mySubType, mySuperType, myEquationInfo);
   }
 }

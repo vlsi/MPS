@@ -59,8 +59,10 @@ public class EquationAdded extends EquationDifference {
 
   @Override
   public String getPresentation() {
-    return "Equation added " + myChild + " = " + myParent;
+    return "Equation added " + getShortPresentation();
   }
+
+
 
   @Override
   public Color getColor() {

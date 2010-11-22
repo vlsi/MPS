@@ -26,7 +26,7 @@ import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
 import jetbrains.mps.newTypesystem.differences.equation.EquationDifference;
-import jetbrains.mps.newTypesystem.differences.inequality.InequalityDifference;
+import jetbrains.mps.newTypesystem.differences.inequality.RelationDifference;
 import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
@@ -121,6 +121,9 @@ public class TypeSystemTraceTree extends MPSTree {
     if (mySelectedNode == null) {
       return true;
     }
+    if (diff.getSource() == mySelectedNode) {
+      return true;
+    }
     if (diff instanceof TypeDifference) {
       TypeDifference td = (TypeDifference) diff;
       if (myNodes.contains(td.getNode())) {
@@ -135,8 +138,8 @@ public class TypeSystemTraceTree extends MPSTree {
         return true;
       }
     }
-    if (diff instanceof InequalityDifference) {
-      InequalityDifference d = (InequalityDifference) diff;
+    if (diff instanceof RelationDifference) {
+      RelationDifference d = (RelationDifference) diff;
       if (myNodes.contains(d.getSubType())) {
         myNodes.add(d.getSuperType());
         return true;
@@ -146,7 +149,6 @@ public class TypeSystemTraceTree extends MPSTree {
         return true;
       }
     }
-
     return false;
   }
 
