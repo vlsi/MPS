@@ -27,6 +27,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -34,6 +35,7 @@ import java.util.*;
 public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
+  @NotNull
   private final NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
@@ -52,9 +54,7 @@ public class TypeCheckingContext {
 
   public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
-      LOG.error("root node in type checking context is null");
-      myNodeTypesComponent = null;
-      return;
+      throw new  NullPointerException("root node in type checking context is null");
     }
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
     myTypeChecker = typeChecker;
