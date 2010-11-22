@@ -19,8 +19,6 @@ public class BaseConcept extends BaseAdapter {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
-  public static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
 
   public BaseConcept(SNode node) {
     super(node);
@@ -48,22 +46,6 @@ public class BaseConcept extends BaseAdapter {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseConcept.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getRight_transform_hint() {
-    return this.getBooleanProperty(BaseConcept.RIGHT_TRANSFORM_HINT);
-  }
-
-  public void setRight_transform_hint(boolean value) {
-    this.setBooleanProperty(BaseConcept.RIGHT_TRANSFORM_HINT, value);
-  }
-
-  public boolean getLeft_transform_hint() {
-    return this.getBooleanProperty(BaseConcept.LEFT_TRANSFORM_HINT);
-  }
-
-  public void setLeft_transform_hint(boolean value) {
-    this.setBooleanProperty(BaseConcept.LEFT_TRANSFORM_HINT, value);
   }
 
   public static BaseConcept newInstance(SModel sm, boolean init) {
