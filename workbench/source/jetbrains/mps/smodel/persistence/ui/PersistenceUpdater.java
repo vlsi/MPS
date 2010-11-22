@@ -32,38 +32,39 @@ import java.util.List;
 import java.util.Set;
 
 public class PersistenceUpdater {
-  public void upgradePersistence(List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
-    for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
-      IFile file = modelDescriptor.getModelFile();
-      if (file != null && file.isReadOnly()) continue;
+  public void upgradePersistence(final List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
+          IFile file = modelDescriptor.getModelFile();
+          if (file != null && file.isReadOnly()) continue;
 
-      boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
-      if (wasInitialized) {
-        ModelAccess.instance().executeCommand(new Runnable() {
-          public void run() {
+          boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
+          if (wasInitialized) {
             modelDescriptor.save();
           }
-        });
+          if (modelDescriptor.getPersistenceVersion() >= toVersion) continue;
+          assert file != null;
+
+          int ver;
+          SModel model;
+          if (wasInitialized){
+            ver = modelDescriptor.getPersistenceVersion();
+            model = modelDescriptor.getSModel();
+          }else{
+            ver = ModelPersistence.loadDescriptor(file).getPersistenceVersion();
+            model = ModelPersistence.readModel(file);
+          }
+          if (ver >= toVersion) continue;
+
+          ModelPersistence.upgradePersistence(file, model, ver, toVersion);
+          if (!wasInitialized) continue;
+
+          modelDescriptor.reloadFromDisk();
+        }
       }
-      if (modelDescriptor.getPersistenceVersion() >= toVersion) continue;
-      assert file != null;
-
-      int ver;
-      SModel model;
-      if (wasInitialized){
-        ver = modelDescriptor.getPersistenceVersion();
-        model = modelDescriptor.getSModel();
-      }else{
-        ver = ModelPersistence.loadDescriptor(file).getPersistenceVersion();
-        model = ModelPersistence.readModel(file);
-      }
-      if (ver >= toVersion) continue;
-
-      ModelPersistence.upgradePersistence(file, model, ver, toVersion);
-      if (!wasInitialized) continue;
-
-      modelDescriptor.reloadFromDisk();
-    }
+    });
   }
 
   public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
