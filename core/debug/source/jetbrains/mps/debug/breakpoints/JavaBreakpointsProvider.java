@@ -22,6 +22,7 @@ import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.xmlb.XmlSerializer;
+import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
@@ -42,8 +43,12 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -113,19 +118,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
 
   @Override
   public IBreakpointPropertiesUi createPropertiesEditor(final IBreakpointKind kind) {
-    return new IBreakpointPropertiesUi() {
-      private JavaBreakpoint myBreakpoint;
-      private JLabel myUi = new JLabel(kind.getPresentation());
-      @Override
-      public void setBreakpoint(IBreakpoint breakpoint) {
-        myBreakpoint = (JavaBreakpoint) breakpoint;  // todo generics?
-      }
-
-      @Override
-      public JComponent getMainComponent() {
-        return myUi;
-      }
-    };
+    return new MyIBreakpointPropertiesUi();
   }
 
   private SNode findException(final String inputString, final List<BaseSNodeDescriptor> result) {
@@ -189,6 +182,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
           }
         });
         breakpoint.setCreationTime(breakpointInfo.myCreationTime);
+        breakpoint.setSuspendPolicy(breakpointInfo.mySuspendPolicy);
         return breakpoint;
       case EXCEPTION_BREAKPOINT:
         ExceptionBreakpointInfo exceptionBreakpointInfo = XmlSerializer.deserialize(state, ExceptionBreakpointInfo.class);
@@ -209,7 +203,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
       case LINE_BREAKPOINT:
         ILocationBreakpoint javaBreakpoint = (ILocationBreakpoint) breakpoint;
         SNodePointer nodePointer = javaBreakpoint.getNodePointer();
-        BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime());
+        BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime(), ((JavaBreakpoint)javaBreakpoint).getSuspendPolicy());
         return XmlSerializer.serialize(breakpointInfo);
     }
     return null;
@@ -229,5 +223,67 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
   @Override
   public void disposeComponent() {
     myProvidersManager.unregisterProvider(this);
+  }
+
+  private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi {
+    private JavaBreakpoint myBreakpoint;
+    private final JPanel myUi;
+    private final JRadioButton[] myButtons = new JRadioButton[SuspendPolicy.values().length];
+
+    public MyIBreakpointPropertiesUi() {
+      myUi = new JPanel(new FlowLayout(FlowLayout.LEADING));
+
+      myUi.setBorder(new TitledBorder("Suspend policy"));
+
+      ButtonGroup group = new ButtonGroup();
+      for (SuspendPolicy policy : SuspendPolicy.values()) {
+        JRadioButton button = new JRadioButton(policy.getName());
+        myButtons[policy.ordinal()] = button;
+        button.setActionCommand(policy.name());
+        button.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            SuspendPolicy suspendPolicy = SuspendPolicy.valueOf(e.getActionCommand());
+            if (suspendPolicy != null) {
+              myBreakpoint.setSuspendPolicy(suspendPolicy.myValue);
+            }
+          }
+        });
+        group.add(button);
+        myUi.add(button);
+      }
+    }
+
+    @Override
+    public void setBreakpoint(IBreakpoint breakpoint) {
+      myBreakpoint = (JavaBreakpoint) breakpoint;  // todo generics?
+      int suspendPolicy = ((JavaBreakpoint) breakpoint).getSuspendPolicy();
+      for (SuspendPolicy policy : SuspendPolicy.values()) {
+        if (policy.myValue == suspendPolicy) {
+          myButtons[policy.ordinal()].setSelected(true);
+        }
+      }
+    }
+
+    @Override
+    public JComponent getMainComponent() {
+      return myUi;
+    }
+
+    private static enum SuspendPolicy {
+      ALL(EventRequest.SUSPEND_ALL),
+      NONE(EventRequest.SUSPEND_NONE),
+      THREAD(EventRequest.SUSPEND_EVENT_THREAD);
+
+      private final int myValue;
+
+      SuspendPolicy(int value) {
+        myValue = value;
+      }
+
+      public String getName(){
+        return this.name().substring(0, 1) + this.name().toLowerCase().substring(1);
+      }
+    }
   }
 }

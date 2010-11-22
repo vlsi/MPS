@@ -87,14 +87,16 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   public static class ExceptionBreakpointInfo {
     public String myExceptionName;
     public long myCreationTime;
+    public int mySuspendPolicy;
 
     public ExceptionBreakpointInfo(ExceptionBreakpoint breakpoint) {
-      this(breakpoint.myExceptionName, breakpoint.myCreationTime);
+      this(breakpoint.myExceptionName, breakpoint.myCreationTime, breakpoint.getSuspendPolicy());
     }
 
-    public ExceptionBreakpointInfo(String exceptionName, long creationTime) {
+    public ExceptionBreakpointInfo(String exceptionName, long creationTime, int suspendPolicy) {
       myExceptionName = exceptionName;
       myCreationTime = creationTime;
+      mySuspendPolicy = suspendPolicy;
     }
 
     public ExceptionBreakpointInfo() {

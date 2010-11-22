@@ -4,16 +4,13 @@ public class BreakpointInfo {
   public String myModelReference;
   public String myNodeId;
   public long myCreationTime = -1;
+  public int mySuspendPolicy;
 
-  public BreakpointInfo(String modelReference, String nodeId) {
-    myModelReference = modelReference;
-    myNodeId = nodeId;
-  }
-
-  public BreakpointInfo(String modelReference, String nodeId, long creationTime) {
+  public BreakpointInfo(String modelReference, String nodeId, long creationTime, int suspendPolicy) {
     myModelReference = modelReference;
     myNodeId = nodeId;
     myCreationTime = creationTime;
+    mySuspendPolicy = suspendPolicy;
   }
 
   public BreakpointInfo() {

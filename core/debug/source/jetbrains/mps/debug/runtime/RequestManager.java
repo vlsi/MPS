@@ -19,7 +19,6 @@ import com.intellij.util.containers.HashMap;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.request.*;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
@@ -62,6 +61,7 @@ public class RequestManager implements DebugProcessListener {
     return request != null ? (Requestor) request.getProperty(REQUESTOR) : null;
   }
 
+  @NotNull
   public Set<EventRequest> findRequests(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
     if (!myRequestorToBelongedRequests.containsKey(requestor)) {
@@ -110,11 +110,9 @@ public class RequestManager implements DebugProcessListener {
           }
         }
         myEventRequestManager.deleteEventRequest(request);
-      }
-      catch (InvalidRequestStateException ignored) {
+      } catch (InvalidRequestStateException ignored) {
         // request is already deleted
-      }
-      catch (InternalException e) {
+      } catch (InternalException e) {
         LOG.error(e);
       }
     }
@@ -126,7 +124,7 @@ public class RequestManager implements DebugProcessListener {
   public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
     DebuggerManagerThread.assertIsManagerThread();
     BreakpointRequest req = myEventRequestManager.createBreakpointRequest(location);
-    req.setSuspendPolicy(EventRequest.SUSPEND_ALL);
+    req.setSuspendPolicy(requestor.getSuspendPolicy());
     registerRequestInternal(requestor, req);
     return req;
   }
@@ -134,7 +132,7 @@ public class RequestManager implements DebugProcessListener {
   public ExceptionRequest createExceptionRequest(ExceptionBreakpoint requestor, ReferenceType reference) {
     DebuggerManagerThread.assertIsManagerThread();
     ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
-    request.setSuspendPolicy(EventRequest.SUSPEND_ALL);
+    request.setSuspendPolicy(requestor.getSuspendPolicy());
     registerRequestInternal(requestor, request);
     return request;
   }
@@ -220,17 +218,14 @@ public class RequestManager implements DebugProcessListener {
 
   @Override
   public void connectorIsReady() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void paused(@NotNull SuspendContext suspendContext) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void resumed(@NotNull SuspendContext suspendContext) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override

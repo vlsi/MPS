@@ -14,7 +14,7 @@ public class SeveralThreads {
         int i = 0;
         _FunctionTypes._void_P0_E0 cl = new _FunctionTypes._void_P0_E0() {
           public void invoke() {
-            System.err.print("Other thread running");
+            System.err.println("Other thread running");
           }
         };
         while (true) {

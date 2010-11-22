@@ -17,18 +17,19 @@ package jetbrains.mps.debug.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.ReferenceType;
+import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.RequestManager;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
 
 public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
+  private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
+
   protected JavaBreakpoint(Project project) {
     super(project);
   }
@@ -85,5 +86,17 @@ public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements Cl
   @Override
   public void addToRunningSessions() {
     RequestManager.createClassPrepareRequests(this);
+  }
+
+  public int getSuspendPolicy() {
+    return mySuspendPolicy;
+  }
+
+  public void setSuspendPolicy(final int policy) {
+    if (policy != mySuspendPolicy) {
+      mySuspendPolicy = policy;
+      removeFromRunningSessions();
+      addToRunningSessions();
+    }
   }
 }
