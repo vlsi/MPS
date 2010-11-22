@@ -61,7 +61,6 @@ import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_5471562003147840954(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -1076,24 +1075,6 @@ __switch__:
   }
 
   public static void mappingScript_CodeBlock_9027273598492288378(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout"))) {
-      while (true) {
-        List<SNode> blocks = SNodeOperations.getDescendants(root, "jetbrains.mps.build.packaging.structure.BlockReference", false, new String[]{});
-        if (ListSequence.fromList(blocks).isEmpty()) {
-          break;
-        }
-        for (SNode blockRef : ListSequence.fromList(blocks)) {
-          SNode block = SLinkOperations.getTarget(blockRef, "block", false);
-          SNode place = blockRef;
-          for (SNode entry : ListSequence.fromList(SLinkOperations.getTargets(block, "entry", true))) {
-            SNode entryCopy = CopyUtil.copy(entry);
-            SNodeOperations.insertNextSiblingChild(place, entryCopy);
-            place = entryCopy;
-          }
-          SNodeOperations.deleteNode(blockRef);
-        }
-      }
-    }
     // blocks aren't generated so we delete them 
     for (SNode block : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Block"))) {
       SNodeOperations.deleteNode(block);

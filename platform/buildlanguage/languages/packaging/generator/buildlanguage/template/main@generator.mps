@@ -158,8 +158,8 @@
       <link role="applicableConcept" roleId="yvp6.1168285871518:2" targetNodeId="yvvm.2372113960322848946:7" resolveInfo="PropertyNodeImport" />
     </node>
     <node type="yvp6.MappingScript" typeId="yvp6.1195499912406:2" id="9027273598492288377">
-      <property name="name" nameId="yvnu.1169194664001:0" value="ResolveBlockReferences" />
-      <property name="scriptKind" nameId="yvp6.1195595592106:2" value="pre_processing" />
+      <property name="name" nameId="yvnu.1169194664001:0" value="DeleteBlocks" />
+      <property name="scriptKind" nameId="yvp6.1195595592106:2" value="post_processing" />
       <property name="modifiesModel" nameId="yvp6.1195595611951:2" value="true" />
     </node>
     <node type="yvp6.TemplateDeclaration" typeId="yvp6.1092059087312:2" id="4159241239519681839">
@@ -7266,150 +7266,6 @@
   <root id="9027273598492288377">
     <node role="codeBlock" roleId="yvp6.1195501105008:2" type="yvp6.MappingScript_CodeBlock" typeId="yvp6.1195500722856:2" id="9027273598492288378">
       <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="9027273598492288379">
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvix.ForEachStatement" typeId="yvix.1153943597977:7" id="9027273598492290745">
-          <node role="variable" roleId="yvix.1153944400369:7" type="yvix.ForEachVariable" typeId="yvix.1153944193378:7" id="9027273598492290746">
-            <property name="name" nameId="yvnu.1169194664001:0" value="root" />
-          </node>
-          <node role="inputSequence" roleId="yvix.1153944424730:7" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="9027273598492290751">
-            <node role="operand" roleId="yvor.1197027771414:3" type="yvo0.ConceptFunctionParameter_model" typeId="yvo0.1161622665029:0" id="9027273598492290750" />
-            <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Model_RootsOperation" typeId="yvim.1171315804604:16" id="9027273598492290756">
-              <link role="concept" roleId="yvim.1171315804605:16" targetNodeId="yvvm.1202916958754:7" resolveInfo="MPSLayout" />
-            </node>
-          </node>
-          <node role="body" roleId="yvor.1154032183016:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="9027273598492290748">
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.WhileStatement" typeId="yvor.1076505808687:3" id="9027273598492290759">
-              <node role="body" roleId="yvor.1154032183016:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="9027273598492290761">
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="9027273598492312153">
-                  <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="9027273598492312154">
-                    <property name="name" nameId="yvnu.1169194664001:0" value="blocks" />
-                    <node role="type" roleId="yvor.5680397130376446158:3" type="yvim.SNodeListType" typeId="yvim.1145383075378:16" id="9027273598492312155">
-                      <link role="elementConcept" roleId="yvim.1145383142433:16" targetNodeId="yvvm.701559220729139189:7" resolveInfo="BlockReference" />
-                    </node>
-                    <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="9027273598492312156">
-                      <node role="operand" roleId="yvor.1197027771414:3" type="yvix.ForEachVariableReference" typeId="yvix.1153944233411:7" id="9027273598492312157">
-                        <link role="variable" roleId="yvix.1153944258490:7" targetNodeId="9027273598492290746" resolveInfo="root" />
-                      </node>
-                      <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Node_GetDescendantsOperation" typeId="yvim.1171305280644:16" id="9027273598492312158">
-                        <node role="parameter" roleId="yvim.1144104376918:16" type="yvim.OperationParm_Concept" typeId="yvim.1144101972840:16" id="9027273598492312159">
-                          <node role="conceptArgument" roleId="yvim.1207343664468:16" type="yvim.RefConcept_Reference" typeId="yvim.1177026924588:16" id="9027273598492312160">
-                            <link role="conceptDeclaration" roleId="yvim.1177026940964:16" targetNodeId="yvvm.701559220729139189:7" resolveInfo="BlockReference" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="9027273598492312162">
-                  <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="9027273598492312163">
-                    <node role="statement" roleId="yvor.1068581517665:3" type="yvor.BreakStatement" typeId="yvor.1081855346303:3" id="9027273598492312173" />
-                  </node>
-                  <node role="condition" roleId="yvor.1068580123160:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="9027273598492312167">
-                    <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312166">
-                      <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312154" resolveInfo="blocks" />
-                    </node>
-                    <node role="operation" roleId="yvor.1197027833540:3" type="yvix.IsEmptyOperation" typeId="yvix.1165530316231:7" id="9027273598492312171" />
-                  </node>
-                </node>
-                <node role="statement" roleId="yvor.1068581517665:3" type="yvix.ForEachStatement" typeId="yvix.1153943597977:7" id="9027273598492312175">
-                  <node role="variable" roleId="yvix.1153944400369:7" type="yvix.ForEachVariable" typeId="yvix.1153944193378:7" id="9027273598492312176">
-                    <property name="name" nameId="yvnu.1169194664001:0" value="blockRef" />
-                  </node>
-                  <node role="inputSequence" roleId="yvix.1153944424730:7" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312180">
-                    <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312154" resolveInfo="blocks" />
-                  </node>
-                  <node role="body" roleId="yvor.1154032183016:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="9027273598492312178">
-                    <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="9027273598492312283">
-                      <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="9027273598492312284">
-                        <property name="name" nameId="yvnu.1169194664001:0" value="block" />
-                        <node role="type" roleId="yvor.5680397130376446158:3" type="yvim.SNodeType" typeId="yvim.1138055754698:16" id="9027273598492312285">
-                          <link role="concept" roleId="yvim.1138405853777:16" targetNodeId="yvvm.701559220729212645:7" resolveInfo="Block" />
-                        </node>
-                        <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="9027273598492312286">
-                          <node role="operand" roleId="yvor.1197027771414:3" type="yvix.ForEachVariableReference" typeId="yvix.1153944233411:7" id="9027273598492312287">
-                            <link role="variable" roleId="yvix.1153944258490:7" targetNodeId="9027273598492312176" resolveInfo="blockRef" />
-                          </node>
-                          <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SLinkAccess" typeId="yvim.1138056143562:16" id="9027273598492312288">
-                            <link role="link" roleId="yvim.1138056516764:16" targetNodeId="yvvm.701559220729212648:7" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="9027273598492312238">
-                      <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="9027273598492312239">
-                        <property name="name" nameId="yvnu.1169194664001:0" value="place" />
-                        <node role="type" roleId="yvor.5680397130376446158:3" type="yvim.SNodeType" typeId="yvim.1138055754698:16" id="9027273598492312240" />
-                        <node role="initializer" roleId="yvor.1068431790190:3" type="yvix.ForEachVariableReference" typeId="yvix.1153944233411:7" id="4062013737453542048">
-                          <link role="variable" roleId="yvix.1153944258490:7" targetNodeId="9027273598492312176" resolveInfo="blockRef" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement" roleId="yvor.1068581517665:3" type="yvix.ForEachStatement" typeId="yvix.1153943597977:7" id="9027273598492312232">
-                      <node role="variable" roleId="yvix.1153944400369:7" type="yvix.ForEachVariable" typeId="yvix.1153944193378:7" id="9027273598492312233">
-                        <property name="name" nameId="yvnu.1169194664001:0" value="entry" />
-                      </node>
-                      <node role="body" roleId="yvor.1154032183016:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="9027273598492312235">
-                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="9027273598492312337">
-                          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="9027273598492312338">
-                            <property name="name" nameId="yvnu.1169194664001:0" value="entryCopy" />
-                            <node role="type" roleId="yvor.5680397130376446158:3" type="yvim.SNodeType" typeId="yvim.1138055754698:16" id="9027273598492312345" />
-                            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.StaticMethodCall" typeId="yvor.1081236700937:3" id="9027273598492312340">
-                              <link role="classConcept" roleId="yvor.1144433194310:3" targetNodeId="8n6q.~CopyUtil" resolveInfo="CopyUtil" />
-                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="8n6q.~CopyUtil%dcopy(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copy" />
-                              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvix.ForEachVariableReference" typeId="yvix.1153944233411:7" id="9027273598492312341">
-                                <link role="variable" roleId="yvix.1153944258490:7" targetNodeId="9027273598492312233" resolveInfo="entry" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="9027273598492312250">
-                          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="9027273598492312254">
-                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312251">
-                              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312239" resolveInfo="place" />
-                            </node>
-                            <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Node_InsertNextSiblingOperation" typeId="yvim.1143224066846:16" id="9027273598492312260">
-                              <node role="insertedNode" roleId="yvim.1143224066849:16" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312343">
-                                <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312338" resolveInfo="entryCopy" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="9027273598492312265">
-                          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="9027273598492312267">
-                            <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312347">
-                              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312338" resolveInfo="entryCopy" />
-                            </node>
-                            <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312266">
-                              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312239" resolveInfo="place" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="inputSequence" roleId="yvix.1153944424730:7" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="9027273598492312244">
-                        <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="9027273598492312291">
-                          <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="9027273598492312284" resolveInfo="block" />
-                        </node>
-                        <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SLinkListAccess" typeId="yvim.1138056282393:16" id="9027273598492312295">
-                          <link role="link" roleId="yvim.1138056546658:16" targetNodeId="yvvm.701559220729212646:7" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="4062013737451917382">
-                      <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="4062013737451917386">
-                        <node role="operand" roleId="yvor.1197027771414:3" type="yvix.ForEachVariableReference" typeId="yvix.1153944233411:7" id="4062013737451917383">
-                          <link role="variable" roleId="yvix.1153944258490:7" targetNodeId="9027273598492312176" resolveInfo="blockRef" />
-                        </node>
-                        <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Node_DeleteOperation" typeId="yvim.1140133623887:16" id="4062013737451938752" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" roleId="yvor.1076505808688:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="9027273598492312136">
-                <property name="value" nameId="yvor.1068580123138:3" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="4169262926913100199">
           <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="4169262926913100200">
             <property name="text" nameId="yvor.6329021646629104958:3" value="blocks aren't generated so we delete them" />
@@ -7705,9 +7561,6 @@
         </node>
       </node>
     </node>
-    <node role="dropRootRule" roleId="yvp6.1219952894531:2" type="yvp6.DropRootRule" typeId="yvp6.1219952072943:2" id="1672810677919839063">
-      <link role="applicableConcept" roleId="yvp6.1219952338328:2" targetNodeId="yvvm.701559220729212645:7" resolveInfo="Block" />
-    </node>
     <node role="reductionMappingRule" roleId="yvp6.1167328349397:2" type="yvp6.Reduction_MappingRule" typeId="yvp6.1167327847730:2" id="1672810677919754484">
       <link role="applicableConcept" roleId="yvp6.1167169349424:2" targetNodeId="yvvm.701559220729139189:7" resolveInfo="BlockReference" />
       <node role="ruleConsequence" roleId="yvp6.1169672767469:2" type="yvp6.InlineTemplate_RuleConsequence" typeId="yvp6.1177093525992:2" id="1672810677919754485">
@@ -7818,6 +7671,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="postMappingScript" roleId="yvp6.1195502346405:2" type="yvp6.MappingScriptReference" typeId="yvp6.1195502151594:2" id="4382266938873448301">
+      <link role="mappingScript" roleId="yvp6.1195502167610:2" targetNodeId="9027273598492288377" resolveInfo="ResolveBlockReferences" />
     </node>
   </root>
   <root id="3028065460252927838">
