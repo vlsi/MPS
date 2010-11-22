@@ -44,9 +44,11 @@ public class MakeModel_Action extends GeneratedAction {
 
   private IOperationContext context;
   private List<SModelDescriptor> models;
+  private boolean cleanMake;
 
-  public MakeModel_Action() {
+  public MakeModel_Action(boolean cleanMake_par) {
     super("_Make", "", ICON);
+    this.cleanMake = cleanMake_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -56,9 +58,21 @@ public class MakeModel_Action extends GeneratedAction {
     return "";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    if (MakeModel_Action.this.cleanMake) {
+      event.getPresentation().setText("Build");
+    } else {
+      event.getPresentation().setText("Make");
+    }
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "MakeModel", t);
       this.disable(event.getPresentation());
@@ -105,10 +119,11 @@ public class MakeModel_Action extends GeneratedAction {
       };
       final IScript scr = scb.withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
         public void invoke(IParametersPool pool) {
-          Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> vars = (Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
+          Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> vars = (Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
           vars._0(MakeModel_Action.this.context.getProject());
           vars._1(MakeModel_Action.this.context);
           vars._2(MakeModel_Action.this.models);
+          vars._3(MakeModel_Action.this.cleanMake);
         }
       }).withMonitors(new IMonitors.Stub(cmon, jmon) {
         @Override
@@ -150,5 +165,15 @@ public class MakeModel_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeModel", t);
     }
+  }
+
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder(500);
+    res.append(MakeModel_Action.class.getName());
+    res.append("#");
+    res.append(((Object) this.cleanMake).toString());
+    res.append("!");
+    return res.toString();
   }
 }

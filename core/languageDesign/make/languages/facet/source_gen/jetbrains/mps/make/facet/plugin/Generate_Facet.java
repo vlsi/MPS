@@ -92,6 +92,10 @@ public class Generate_Facet implements IFacet {
                 logger.error("no models");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
+              if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake() == null) {
+                logger.error("no cleanMake");
+                return new IResult.FAILURE(_output_fi61u2_a0a);
+              }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0a);
           }
@@ -127,13 +131,13 @@ public class Generate_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
-    public static class Variables extends MultiTuple._3<Project, IOperationContext, Iterable<SModelDescriptor>> {
+    public static class Variables extends MultiTuple._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> {
       public Variables() {
         super();
       }
 
-      public Variables(Project project, IOperationContext operationContext, Iterable<SModelDescriptor> models) {
-        super(project, operationContext, models);
+      public Variables(Project project, IOperationContext operationContext, Iterable<SModelDescriptor> models, Boolean cleanMake) {
+        super(project, operationContext, models, cleanMake);
       }
 
       public Project project(Project value) {
@@ -148,6 +152,10 @@ public class Generate_Facet implements IFacet {
         return super._2(value);
       }
 
+      public Boolean cleanMake(Boolean value) {
+        return super._3(value);
+      }
+
       public Project project() {
         return super._0();
       }
@@ -160,8 +168,12 @@ public class Generate_Facet implements IFacet {
         return super._2();
       }
 
+      public Boolean cleanMake() {
+        return super._3();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> from) {
+      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> from) {
         return (Generate_Facet.Target_fi61u2_a.Variables) super.assign(from);
       }
     }
