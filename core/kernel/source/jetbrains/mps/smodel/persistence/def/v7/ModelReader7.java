@@ -128,7 +128,6 @@ public class ModelReader7 implements IModelReader {
     }
 
     for (Element link : (List<Element>) nodeElement.getChildren(ModelPersistence.LINK)) {
-//      String role = link.getAttributeValue(ModelPersistence.ROLE);
       String target = link.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
       String resolveInfo = link.getAttributeValue(ModelPersistence.RESOLVE_INFO);
       String role = myHelper.readRole(link.getAttributeValue(ModelPersistence.ROLE));
@@ -148,16 +147,6 @@ public class ModelReader7 implements IModelReader {
         node.addReference(ref);
 //      myHelper.addRoleLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), ref);
       }
-
-//      SReference reference = myHelper.readLink(node, role, target, resolveInfo);
-//      if (reference != null) {
-//        node.addReference(reference);
-//        myHelper.addRefLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), new RefRoleLoc(reference));
-//        if (ptr.getNodeId() != null)
-//          myHelper.addRefLoc(ptr, new RefTargetLoc((StaticReference) reference));
-//        else
-//          myHelper.addDynRefTargetLoc(ptr.getModelReference(), new DynRefTargetLoc((DynamicReference) reference));
-//      }
     }
 
     if (!isRootStub)

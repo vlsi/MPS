@@ -14,7 +14,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.persistence.def.BreakParseSAXException;
+import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -28,7 +28,7 @@ public class ModelReader7Handler extends DefaultHandler {
 
   private ModelReader7Handler.modelElementHandler modelhandler = new ModelReader7Handler.modelElementHandler();
   private ModelReader7Handler.persistenceElementHandler persistencehandler = new ModelReader7Handler.persistenceElementHandler();
-  private ModelReader7Handler.tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader7Handler.tag_with_namespaceElementHandler();
+  private ModelReader7Handler.module_referenceElementHandler module_referencehandler = new ModelReader7Handler.module_referenceElementHandler();
   private ModelReader7Handler.importElementHandler importhandler = new ModelReader7Handler.importElementHandler();
   private ModelReader7Handler.rootsElementHandler rootshandler = new ModelReader7Handler.rootsElementHandler();
   private ModelReader7Handler.rootContentElementHandler rootContenthandler = new ModelReader7Handler.rootContentElementHandler();
@@ -185,13 +185,13 @@ public class ModelReader7Handler extends DefaultHandler {
         return persistencehandler;
       }
       if ("language".equals(tagName)) {
-        return tag_with_namespacehandler;
+        return module_referencehandler;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
-        return tag_with_namespacehandler;
+        return module_referencehandler;
       }
       if ("devkit".equals(tagName)) {
-        return tag_with_namespacehandler;
+        return module_referencehandler;
       }
       if ("import".equals(tagName)) {
         return importhandler;
@@ -212,18 +212,18 @@ public class ModelReader7Handler extends DefaultHandler {
         return;
       }
       if ("language".equals(tagName)) {
-        String child = (String) value;
-        fieldmodel.addLanguage(ModuleReference.fromString(child));
+        ModuleReference child = (ModuleReference) value;
+        fieldmodel.addLanguage(child);
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
-        String child = (String) value;
-        fieldmodel.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ModuleReference child = (ModuleReference) value;
+        fieldmodel.addEngagedOnGenerationLanguage(child);
         return;
       }
       if ("devkit".equals(tagName)) {
-        String child = (String) value;
-        fieldmodel.addDevKit(ModuleReference.fromString(child));
+        ModuleReference child = (ModuleReference) value;
+        fieldmodel.addDevKit(child);
         return;
       }
       if ("import".equals(tagName)) {
@@ -235,7 +235,6 @@ public class ModelReader7Handler extends DefaultHandler {
         Object child = (Object) value;
         if (fieldstate == ModelLoadingState.ROOTS_LOADED) {
           fieldmodel.setLoading(false);
-          // <node> 
           throw new BreakParseSAXException();
         }
         return;
@@ -285,15 +284,15 @@ public class ModelReader7Handler extends DefaultHandler {
     }
   }
 
-  public class tag_with_namespaceElementHandler extends ModelReader7Handler.ElementHandler {
+  public class module_referenceElementHandler extends ModelReader7Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"namespace"};
 
-    public tag_with_namespaceElementHandler() {
+    public module_referenceElementHandler() {
     }
 
     @Override
-    protected String createObject(Attributes attrs) {
-      return attrs.getValue("namespace");
+    protected ModuleReference createObject(Attributes attrs) {
+      return ModuleReference.fromString(attrs.getValue("namespace"));
     }
 
     @Override
@@ -303,7 +302,7 @@ public class ModelReader7Handler extends DefaultHandler {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      String result = (String) resultObject;
+      ModuleReference result = (ModuleReference) resultObject;
       if ("namespace".equals(name)) {
         return;
       }
@@ -504,7 +503,7 @@ public class ModelReader7Handler extends DefaultHandler {
         SReference ref;
         if (ptr.getNodeId() == null) {
           ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
-          // helper.addDynamicRef(ptr.getModelReference()) 
+          // helper.addDynamicRef(ptr.getModelReference(), ref) 
         } else {
           ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
           // helper.addTarget(ptr, ref) 

@@ -145,6 +145,7 @@ public class VersionUtil {
   }
 
 
+
   private Map<String, ImportElement> myImportByIx;
   private int myMaxImportIndex = 0;
 
@@ -176,28 +177,6 @@ public class VersionUtil {
     return elem == null ? null : elem.getModelReference();
   }
 
-
-  private static class ParseResult {  // [modelID.]text[:version]
-    public String modelID;
-    public String text;
-    public int version;
-  }
-
-  private ParseResult parse(String src) {
-    int i0 = src.indexOf(MODEL_SEPARATOR_CHAR), i1 = src.lastIndexOf(VERSION_SEPARATOR_CHAR);
-    ParseResult res = new ParseResult();
-    res.text = decode(src.substring(i0 + 1, i1 < 0 ? src.length() : i1));
-    res.modelID = i0 < 0 ? "" : src.substring(0, i0);
-    res.version = i1 < 0 ? -1 : Integer.parseInt(src.substring(i1 + 1));
-    return res;
-  }
-
-  private static class ParseResultEx {  // [modelID.]text[:version]
-    public SModelReference modelRef;
-    public SNodeId nodeId;  // null for dynamic references
-    public int version;
-  }
-
   public SNodePointer readLinkId(String src) { // [modelID.]nodeID[:version] | [modelID.]^[:version]
     if (src == null)  return null;
     int i0 = src.indexOf(MODEL_SEPARATOR_CHAR), i1 = src.lastIndexOf(VERSION_SEPARATOR_CHAR);
@@ -225,131 +204,5 @@ public class VersionUtil {
 
   public String readName(String s) {
     return s;
-  }
-
-  public SReference readLink(SNode node, String rawRole, String rawTarget, String resolveInfo) {
-    String role = readRole(rawRole);
-    ParseResult target = parse(rawTarget);
-    SModelReference modelRef = getSModelReference(target.modelID);
-    if (modelRef == null) {
-      LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
-      return null;
-    } else if (target.text.equals("^")) {
-      return new DynamicReference(role, node, modelRef, resolveInfo);
-    } else {
-      return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
-    }
-  }
-
-
-
-  // to support Structure Modification after load
-
-  public static abstract class RefLoc {
-    public void update(SNodePointer newRef, String info) {}
-    public void delete() {}
-  }
-
-  public static class RefTargetLoc extends RefLoc {
-    private StaticReference myReference;
-    public RefTargetLoc(StaticReference ref) {
-      myReference = ref;
-    }
-    @Override
-    public void update(SNodePointer newRef, String info) {
-      myReference.setTargetSModelReference(newRef.getModelReference());
-      myReference.setTargetNodeId(newRef.getNodeId());
-    }
-  }
-
-  public static class DynRefTargetLoc extends RefLoc {
-    private DynamicReference myReference;
-    public DynRefTargetLoc(DynamicReference ref) {
-      myReference = ref;
-    }
-    @Override
-    public void update(SNodePointer newRef, String info) {
-      myReference.setTargetSModelReference(newRef.getModelReference());
-    }
-  }
-
-  public static class NodeTypeLoc extends RefLoc {
-    private SNode myNode;
-    public NodeTypeLoc(SNode node) {
-      myNode = node;
-    }
-    @Override
-    public void update(SNodePointer newRef, String info) {
-      HackSNodeUtil.setConceptFqName(myNode, info);
-    }
-  }
-
-  public static class RefRoleLoc extends RefLoc {
-    private SReference myReference;
-    public RefRoleLoc(SReference ref) {
-      myReference = ref;
-    }
-    @Override
-    public void update(SNodePointer newRef, String info) {
-      // todo: rename correspondent link attribute roles if exists
-      myReference.setRole(info);
-    }
-  }
-
-  public static class NodeRoleLoc extends RefLoc {
-    private SNode myNode;
-    public NodeRoleLoc(SNode node) {
-      myNode = node;
-    }
-    @Override
-    public void update(SNodePointer newRef, String info) {
-      // todo: rename correspondent link attribute roles
-      myNode.setRoleInParent(info);
-    }
-  }
-
-  public static class PropNameLoc extends RefLoc {
-    private SNode myNode;
-    private String myName;
-    public PropNameLoc(SNode node, String name) {
-      myNode = node;
-      myName = name;
-    }
-    @Override
-    public void update(SNodePointer newRef, String info) {
-      // todo: rename correspondent property attribute roles
-      String value = myNode.getPersistentProperty(myName);
-      myNode.setProperty(myName, null, false);
-      myName = info;
-      myNode.setProperty(myName, value, false);
-    }
-  }
-  private Map<SNodePointer, List<RefLoc>> myPtrMap;
-  private Map<SModelReference, List<DynRefTargetLoc>> myDynRefMap;
-  public void addRefLoc(SNodePointer ptr, RefLoc locator) {
-    List<RefLoc> list = myPtrMap.get(ptr);
-    if (list == null) {
-      list = new ArrayList<RefLoc>();
-      myPtrMap.put(ptr, list);
-    }
-    list.add(locator);
-  }
-  public void addRefLoc(String rawPtr, RefLoc locator) {
-    if (rawPtr == null) return;
-    SNodePointer ptr = readLinkId(rawPtr);
-    List<RefLoc> list = myPtrMap.get(ptr);
-    if (list == null) {
-      list = new ArrayList<RefLoc>();
-      myPtrMap.put(ptr, list);
-    }
-    list.add(locator);
-  }
-  public void addDynRefTargetLoc(SModelReference ref, DynRefTargetLoc locator) {
-    List<DynRefTargetLoc> list = myDynRefMap.get(ref);
-    if (list == null) {
-      list = new ArrayList<DynRefTargetLoc>();
-      myDynRefMap.put(ref, list);
-    }
-    list.add(locator);
   }
 }

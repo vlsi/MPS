@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;

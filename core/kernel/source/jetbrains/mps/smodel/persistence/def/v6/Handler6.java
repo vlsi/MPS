@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.BreakParseSAXException;
+import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
