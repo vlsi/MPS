@@ -46,9 +46,6 @@ public class IndexBasedModelDigest implements ApplicationComponent {
     ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
       @Override
       public Map<String, String> getGenerationHashes(final IOperationContext operationContext, @NotNull IFile modelFile) {
-        // TODO FIXME indices are broken, we need to fix them
-        if(true) return null;
-
         try {
           VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
           if (file == null) return null;
