@@ -120,7 +120,6 @@ public class RulesManager {
           mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
           Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystemDescriptor.getComparisonRules();
           myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
-          System.err.println("comparison rules : " + comparisonRule_runtimes.size());
           myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
           myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
           myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());
@@ -224,9 +223,7 @@ public class RulesManager {
       loadLanguage(node1.getLanguageNamespace());
       loadLanguage(node2.getLanguageNamespace());
       Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new HashSet<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
-      System.err.println("getting rules" + node1 + " " + node2);
       Set<ComparisonRule_Runtime> ruleSet = myComparisonRules.getRules(node1, node2);
-      System.err.println("size = " + ruleSet.size());
       for (ComparisonRule_Runtime rule : ruleSet) {
         if (isWeak || !rule.isWeak()) {
           IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
