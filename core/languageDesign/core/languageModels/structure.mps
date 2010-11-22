@@ -83,6 +83,14 @@
       <property name="name" nameId="1169194664001:0" value="virtualPackage" />
       <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="1082983041843:0" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" roleId="yvnr.1071489727084:0" type="yvnr.PropertyDeclaration" typeId="yvnr.1071489288299:0" id="3075270705225270507">
+      <property name="name" nameId="1169194664001:0" value="right_transform_hint" />
+      <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="1082983657063:0" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="yvnr.1071489727084:0" type="yvnr.PropertyDeclaration" typeId="yvnr.1071489288299:0" id="3075270705225270508">
+      <property name="name" nameId="1169194664001:0" value="left_transform_hint" />
+      <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="conceptPropertyDeclaration" roleId="yvnr.1137467167200:0" type="yvnr.BooleanConceptPropertyDeclaration" typeId="yvnr.1105725240314:0" id="1137473854053">
       <property name="name" nameId="1169194664001:0" value="abstract" />
     </node>
