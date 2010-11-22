@@ -9,7 +9,7 @@
     <orderEntry type="module-library" scope="RUNTIME">
       <library name="idea-patch">
         <CLASSES>
-          <root url="file://$MPS_HOME$/core/idea-patch/classes" />
+          <root url="file://$MODULE_DIR$/../core/idea-patch/classes" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -18,19 +18,19 @@
     <orderEntry type="module-library" scope="RUNTIME">
       <library name="mps-startup">
         <CLASSES>
-          <root url="file://$MPS_HOME$/core/kernel/classes" />
-          <root url="file://$MPS_HOME$/core/typesystemEngine/classes" />
-          <root url="file://$MPS_HOME$/core/debug/classes" />
-          <root url="file://$MPS_HOME$/core/make-runtime/classes" />
-          <root url="file://$MPS_HOME$/core/generator/classes" />
-          <root url="file://$MPS_HOME$/core/javaParser/classes" />
-          <root url="file://$MPS_HOME$/core/kernel/xmlQuery/runtime/classes" />
-          <root url="file://$MPS_HOME$/workbench/classes" />
-          <root url="file://$MPS_HOME$/core/debug-api/classes" />
-          <root url="file://$MPS_HOME$/core/runtime/classes" />
-          <root url="file://$MPS_HOME$/MPSPlugin/apiclasses" />
-          <root url="file://$MPS_HOME$/core/typesystemIntegration/classes" />
-          <root url="file://$MPS_HOME$/workbench/typesystemUi/classes" />
+          <root url="file://$MODULE_DIR$/../core/kernel/classes" />
+          <root url="file://$MODULE_DIR$/../core/typesystemEngine/classes" />
+          <root url="file://$MODULE_DIR$/../core/debug/classes" />
+          <root url="file://$MODULE_DIR$/../core/make-runtime/classes" />
+          <root url="file://$MODULE_DIR$/../core/generator/classes" />
+          <root url="file://$MODULE_DIR$/../core/javaParser/classes" />
+          <root url="file://$MODULE_DIR$/../core/kernel/xmlQuery/runtime/classes" />
+          <root url="file://$MODULE_DIR$/../workbench/classes" />
+          <root url="file://$MODULE_DIR$/../core/debug-api/classes" />
+          <root url="file://$MODULE_DIR$/../core/runtime/classes" />
+          <root url="file://$MODULE_DIR$/../MPSPlugin/apiclasses" />
+          <root url="file://$MODULE_DIR$/../core/typesystemIntegration/classes" />
+          <root url="file://$MODULE_DIR$/../workbench/typesystemUi/classes" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -40,10 +40,10 @@
     <orderEntry type="module-library" scope="RUNTIME">
       <library name="idea-startup">
         <CLASSES>
-          <root url="jar://$MPS_HOME$/lib/util.jar!/" />
-          <root url="jar://$MPS_HOME$/lib/boot.jar!/" />
-          <root url="jar://$MPS_HOME$/lib/extensions.jar!/" />
-          <root url="jar://$MPS_HOME$/lib/bootstrap.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/util.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/boot.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/extensions.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/bootstrap.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
