@@ -7673,6 +7673,37 @@
   <root id="1672810677919754483">
     <node role="createRootRule" roleId="yvp6.1167088157977:2" type="yvp6.CreateRootRule" typeId="yvp6.1167087469898:2" id="3028065460252959247">
       <link role="templateNode" roleId="yvp6.1167087469901:2" targetNodeId="3028065460252927838" resolveInfo="idea.additional.classpath" />
+      <node role="conditionFunction" roleId="yvp6.1167087469900:2" type="yvp6.CreateRootRule_Condition" typeId="yvp6.1167087518662:2" id="5471562003147840954">
+        <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5471562003147840955">
+          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="5471562003147840975">
+            <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="5471562003147840979">
+              <property name="text" nameId="yvor.6329021646629104958:3" value="we do not want to generate idea.classpath for user models, only for mpsautobuild" />
+            </node>
+          </node>
+          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.SingleLineComment" typeId="yvor.6329021646629104954:3" id="5471562003147909280">
+            <node role="commentPart" roleId="yvor.6329021646629175155:3" type="yvor.TextCommentPart" typeId="yvor.6329021646629104957:3" id="5471562003147909281">
+              <property name="text" nameId="yvor.6329021646629104958:3" value="todo remove this out of here: packaging is not a 'special language for building mps', should not know about mpsautobuild" />
+            </node>
+          </node>
+          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5471562003147840956">
+            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5471562003147840968">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5471562003147840963">
+                <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5471562003147840958">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="yvp3.TemplateFunctionParameter_generationContext" typeId="yvp3.1216860049635:0" id="5471562003147840957" />
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvp3.GenerationContextOp_GetOriginalInputModel" typeId="yvp3.1217026863835:0" id="5471562003147840962" />
+                </node>
+                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Model_GetLongNameOperation" typeId="yvim.1212008292747:16" id="5471562003147840967" />
+              </node>
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5471562003147840972">
+                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="5471562003147840973">
+                  <property name="value" nameId="yvor.1070475926801:3" value="jetbrains.mps.build.mpsautobuild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="dropRootRule" roleId="yvp6.1219952894531:2" type="yvp6.DropRootRule" typeId="yvp6.1219952072943:2" id="1672810677919839063">
       <link role="applicableConcept" roleId="yvp6.1219952338328:2" targetNodeId="yvvm.701559220729212645:7" resolveInfo="Block" />
