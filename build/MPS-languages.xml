@@ -171,15 +171,7 @@
       <zipfileset file="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.test_t2f0">
-    <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes" />
-    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" prefix="module" />
-      <zipfileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.baseLanguage.tuples_u2f0">
+  <target name="pack.jetbrains.mps.baseLanguage.tuples_t2f0">
     <mkdir dir="core/baseLanguage/tuples/runtime/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tuples.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/tuples/languages/tuples/tuples.mpl" prefix="module" />
@@ -190,7 +182,7 @@
       <fileset dir="core/baseLanguage/tuples/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.tuples.runtime_v2f0">
+  <target name="pack.jetbrains.mps.baseLanguage.tuples.runtime_u2f0">
     <mkdir dir="core/baseLanguage/tuples/runtime/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" prefix="module" />
@@ -198,7 +190,7 @@
       <zipfileset dir="core/baseLanguage/tuples/runtime/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.runConfigurations_w2f0">
+  <target name="pack.jetbrains.mps.baseLanguage.runConfigurations_v2f0">
     <mkdir dir="core/baseLanguage/runConfigurations/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runConfigurations.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/runConfigurations/runConfigurations.mpl" prefix="module" />

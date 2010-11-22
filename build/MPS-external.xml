@@ -191,10 +191,9 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest_q2f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime_r2f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.lib_s2f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.test_t2f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples_u2f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime_v2f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations_w2f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples_t2f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime_u2f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations_v2f0" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions_a3f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations_b3f0" />
