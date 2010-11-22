@@ -17,6 +17,7 @@
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="module" module-name="unitTest-runtime" />
   </component>
 </module>
 
