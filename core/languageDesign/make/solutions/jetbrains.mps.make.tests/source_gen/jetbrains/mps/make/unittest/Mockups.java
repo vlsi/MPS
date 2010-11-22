@@ -97,6 +97,10 @@ public class Mockups {
         this.will(returnValue(Mockups.DefaultJob));
         this.allowing(trg).createConfig();
         this.will(returnValue(Mockups.DefaultConfig));
+        this.allowing(trg).requiresInput();
+        this.will(returnValue(false));
+        this.allowing(trg).expectedResources();
+        this.will(returnValue(null));
       }
     });
   }

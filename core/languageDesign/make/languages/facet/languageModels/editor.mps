@@ -490,6 +490,130 @@
                 </node>
               </node>
             </node>
+            <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="7752758284337367526">
+              <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="7752758284337367527">
+                <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+              </node>
+              <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="7752758284337367530">
+                <property name="text" nameId="yvnl.1073389577007:32" value="requires input:" />
+                <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="7752758284337446356">
+                  <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+                </node>
+                <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.EditableStyleClassItem" typeId="yvnl.1186414860679:32" id="7752758284337446358">
+                  <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+                </node>
+              </node>
+              <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Alternation" typeId="yvnl.1088612959204:32" id="7752758284337367532">
+                <property name="vertical" nameId="yvnl.1088613081987:32" value="true" />
+                <node role="ifTrueCellModel" roleId="yvnl.1088612958265:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="7752758284337388486">
+                  <property name="text" nameId="yvnl.1073389577007:32" value="yes" />
+                  <property name="attractsFocus" nameId="yvnl.1130859485024:32" value="1" />
+                  <link role="styleClass" roleId="yvnl.1186406756722:32" targetNodeId="yvov.1186415544875" resolveInfo="KeyWord" />
+                  <node role="menuDescriptor" roleId="yvnl.1164826688380:32" type="yvnl.CellMenuDescriptor" typeId="yvnl.1164824717996:32" id="7752758284337388488">
+                    <node role="cellMenuPart" roleId="yvnl.1164824815888:32" type="yvnl.CellMenuPart_Generic_Item" typeId="yvnl.1165424453110:32" id="7752758284337388489">
+                      <property name="matchingText" nameId="yvnl.1165424453111:32" value="yes" />
+                      <node role="handlerFunction" roleId="yvnl.1165424453112:32" type="yvnl.CellMenuPart_Generic_Item_Handler" typeId="yvnl.1165424657443:32" id="7752758284337388490">
+                        <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7752758284337388491">
+                          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337388492">
+                            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="7752758284337388499">
+                              <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="7752758284337388502">
+                                <property name="value" nameId="yvor.1068580123138:3" value="true" />
+                              </node>
+                              <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337388494">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellMenuPart_Abstract_editedNode" typeId="yvnl.1163613822479:32" id="7752758284337388493" />
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="7752758284337388498">
+                                  <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7752758284337367517:1" resolveInfo="requiresInput" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="cellMenuPart" roleId="yvnl.1164824815888:32" type="yvnl.CellMenuPart_Generic_Item" typeId="yvnl.1165424453110:32" id="7752758284337388504">
+                      <property name="matchingText" nameId="yvnl.1165424453111:32" value="no" />
+                      <node role="handlerFunction" roleId="yvnl.1165424453112:32" type="yvnl.CellMenuPart_Generic_Item_Handler" typeId="yvnl.1165424657443:32" id="7752758284337388505">
+                        <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7752758284337388506">
+                          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337388507">
+                            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="7752758284337388518">
+                              <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="7752758284337388521">
+                                <property name="value" nameId="yvor.1068580123138:3" value="false" />
+                              </node>
+                              <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337388509">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellMenuPart_Abstract_editedNode" typeId="yvnl.1163613822479:32" id="7752758284337388508" />
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="7752758284337388513">
+                                  <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7752758284337367517:1" resolveInfo="requiresInput" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="alternationCondition" roleId="yvnl.1145918517974:32" type="yvnl.QueryFunction_NodeCondition" typeId="yvnl.1142886221719:32" id="7752758284337367534">
+                  <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7752758284337367535">
+                    <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337388479">
+                      <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337388481">
+                        <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.ConceptFunctionParameter_node" typeId="yvnl.1142886811589:32" id="7752758284337388480" />
+                        <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="7752758284337388485">
+                          <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7752758284337367517:1" resolveInfo="requiresInput" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="ifFalseCellModel" roleId="yvnl.1088612973955:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="7752758284337388487">
+                  <property name="text" nameId="yvnl.1073389577007:32" value="no" />
+                  <property name="attractsFocus" nameId="yvnl.1130859485024:32" value="1" />
+                  <link role="styleClass" roleId="yvnl.1186406756722:32" targetNodeId="yvov.1186415544875" resolveInfo="KeyWord" />
+                  <node role="menuDescriptor" roleId="yvnl.1164826688380:32" type="yvnl.CellMenuDescriptor" typeId="yvnl.1164824717996:32" id="7752758284337388522">
+                    <node role="cellMenuPart" roleId="yvnl.1164824815888:32" type="yvnl.CellMenuPart_Generic_Item" typeId="yvnl.1165424453110:32" id="7752758284337388523">
+                      <property name="matchingText" nameId="yvnl.1165424453111:32" value="yes" />
+                      <node role="handlerFunction" roleId="yvnl.1165424453112:32" type="yvnl.CellMenuPart_Generic_Item_Handler" typeId="yvnl.1165424657443:32" id="7752758284337388524">
+                        <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7752758284337388525">
+                          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337388526">
+                            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="7752758284337388527">
+                              <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="7752758284337388528">
+                                <property name="value" nameId="yvor.1068580123138:3" value="true" />
+                              </node>
+                              <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337388529">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellMenuPart_Abstract_editedNode" typeId="yvnl.1163613822479:32" id="7752758284337388530" />
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="7752758284337388531">
+                                  <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7752758284337367517:1" resolveInfo="requiresInput" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="cellMenuPart" roleId="yvnl.1164824815888:32" type="yvnl.CellMenuPart_Generic_Item" typeId="yvnl.1165424453110:32" id="7752758284337388532">
+                      <property name="matchingText" nameId="yvnl.1165424453111:32" value="no" />
+                      <node role="handlerFunction" roleId="yvnl.1165424453112:32" type="yvnl.CellMenuPart_Generic_Item_Handler" typeId="yvnl.1165424657443:32" id="7752758284337388533">
+                        <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7752758284337388534">
+                          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337388535">
+                            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="7752758284337388536">
+                              <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="7752758284337388537">
+                                <property name="value" nameId="yvor.1068580123138:3" value="false" />
+                              </node>
+                              <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337388538">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellMenuPart_Abstract_editedNode" typeId="yvnl.1163613822479:32" id="7752758284337388539" />
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="7752758284337388540">
+                                  <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7752758284337367517:1" resolveInfo="requiresInput" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="7752758284337367529" />
+            </node>
             <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="2360002718792633294">
               <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="2360002718792633295">
                 <property name="flag" nameId="yvnl.1186414551515:32" value="false" />

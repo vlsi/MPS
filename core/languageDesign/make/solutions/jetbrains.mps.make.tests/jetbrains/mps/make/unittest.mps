@@ -872,6 +872,64 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337360416">
+                          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337360424">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337360418">
+                              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.ThisExpression" typeId="yvor.1070475354124:3" id="7752758284337360417" />
+                              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="7752758284337360422">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="6761.~Expectations%dallowing(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="allowing" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="7752758284337360423">
+                                  <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5079576194953076064" resolveInfo="trg" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="7752758284337360428">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="z7hw.2878100257845887603" resolveInfo="requiresInput" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337366489">
+                          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337366491">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.ThisExpression" typeId="yvor.1070475354124:3" id="7752758284337366490" />
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="7752758284337366495">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="6761.~Expectations%dwill(org%djmock%dapi%dAction)%cvoid" resolveInfo="will" />
+                              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalStaticMethodCall" typeId="yvor.1172058436953:3" id="7752758284337366496">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="6761.~Expectations%dreturnValue(java%dlang%dObject)%corg%djmock%dapi%dAction" resolveInfo="returnValue" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="7752758284337366497">
+                                  <property name="value" nameId="yvor.1068580123138:3" value="false" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337366499">
+                          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337366507">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337366501">
+                              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.ThisExpression" typeId="yvor.1070475354124:3" id="7752758284337366500" />
+                              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="7752758284337366505">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="6761.~Expectations%dallowing(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="allowing" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="7752758284337366506">
+                                  <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5079576194953076064" resolveInfo="trg" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="7752758284337366511">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="z7hw.2878100257845887608" resolveInfo="expectedResources" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7752758284337366513">
+                          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7752758284337366515">
+                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.ThisExpression" typeId="yvor.1070475354124:3" id="7752758284337366514" />
+                            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="7752758284337366519">
+                              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="6761.~Expectations%dwill(org%djmock%dapi%dAction)%cvoid" resolveInfo="will" />
+                              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.LocalStaticMethodCall" typeId="yvor.1172058436953:3" id="7752758284337366520">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="6761.~Expectations%dreturnValue(java%dlang%dObject)%corg%djmock%dapi%dAction" resolveInfo="returnValue" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="7752758284337366521" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

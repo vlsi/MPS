@@ -60,6 +60,7 @@
   <root id="671853460608595941">
     <node role="targetDeclaration" roleId="zyxi.6418371274763146558:1" type="zyxi.TargetDeclaration" typeId="zyxi.6418371274763029565:1" id="2340850238541116081">
       <property name="name" nameId="yvnu.1169194664001:0" value="Configure" />
+      <property name="requiresInput" nameId="zyxi.7752758284337367517:1" value="false" />
       <node role="job" roleId="zyxi.2360002718792633290:1" type="x5v7.JobDeclaration" typeId="x5v7.505095865854384109" id="2340850238541116082">
         <node role="job" roleId="x5v7.505095865854384110" type="x5v7.JobDefinition" typeId="x5v7.2360002718792625579" id="2340850238541116083">
           <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2340850238541118466">

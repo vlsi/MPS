@@ -13,7 +13,7 @@
   <unitInfo fileName="TargetDependency.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependency" />
   <unitInfo fileName="TargetDependencyQualifier_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier_PropertySupport" />
   <unitInfo fileName="TargetDependencyQualifier.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependencyQualifier" />
-  <unitInfo fileName="TargetDeclaration.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
+  <unitInfo fileName="TargetDeclaration.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
   <unitInfo fileName="FacetDeclaration.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetDeclaration" />
 </debugInfo>
 

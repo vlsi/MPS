@@ -128,7 +128,14 @@ public class Script implements IScript {
             public Iterable<IResource> translate(IResult r) {
               return r.output();
             }
-          });
+          }).toListSequence();
+          if (trg.requiresInput()) {
+            if (Sequence.fromIterable(input).isEmpty()) {
+              LOG.info("No input. Stopping");
+              return;
+            }
+            // TODO: check for appropriate input class 
+          }
           IJob job = trg.createJob();
           IResult jr = job.execute(input, monit, pool);
           results.addResult(trg.getName(), jr);

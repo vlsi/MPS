@@ -91,6 +91,14 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
@@ -139,6 +147,14 @@ public class FFFFacet_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
@@ -185,6 +201,14 @@ public class FFFFacet_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
     }
 
     public <T> T createParameters(Class<T> cls) {

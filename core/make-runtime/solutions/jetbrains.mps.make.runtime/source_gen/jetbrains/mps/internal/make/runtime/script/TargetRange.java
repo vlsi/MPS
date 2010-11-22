@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
@@ -190,6 +191,14 @@ public class TargetRange {
     }
 
     public IConfig createConfig() {
+      return null;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
       return null;
     }
   }

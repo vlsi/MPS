@@ -12,6 +12,9 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -24,6 +27,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -31,10 +35,24 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
 
 public class TargetDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xfdsch_a(editorContext, node);
+  }
+
+  private EditorCell createAlternation_xfdsch_b6b1e0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = TargetDeclaration_Editor.renderingCondition_xfdsch_a1g1b4a(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createConstant_xfdsch_a1g1b4a(editorContext, node);
+    } else {
+      editorCell = this.createConstant_xfdsch_a1g1b4a_0(editorContext, node);
+    }
+    return editorCell;
   }
 
   private EditorCell createCollection_xfdsch_a(EditorContext editorContext, SNode node) {
@@ -98,6 +116,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_xfdsch_f1b4a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_xfdsch_g1b4a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_xfdsch_h1b4a(editorContext, node));
     return editorCell;
   }
 
@@ -144,7 +163,19 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNode_xfdsch_a6b1e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xfdsch_a6b1e0(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_xfdsch_b6b1e0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_xfdsch_h1b4a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_xfdsch_h1b4a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createRefNode_xfdsch_a7b1e0(editorContext, node));
     return editorCell;
   }
 
@@ -222,6 +253,29 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_xfdsch_a6b1e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "requires input:");
+    editorCell.setCellId("Constant_xfdsch_a6b1e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xfdsch_a1g1b4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "yes");
+    editorCell.setCellId("Constant_xfdsch_a1g1b4a");
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TargetDeclaration_Editor.TargetDeclaration_generic_cellMenu_a0a1g1b4a(), new TargetDeclaration_Editor.TargetDeclaration_generic_cellMenu_b0a1g1b4a()}));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xfdsch_a1g1b4a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no");
+    editorCell.setCellId("Constant_xfdsch_a1g1b4a_0");
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TargetDeclaration_Editor.TargetDeclaration_generic_cellMenu_a0a1g1b4a_0(), new TargetDeclaration_Editor.TargetDeclaration_generic_cellMenu_b0a1g1b4a_0()}));
+    return editorCell;
+  }
+
   private EditorCell createConstant_xfdsch_c4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_xfdsch_c4a");
@@ -290,7 +344,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_xfdsch_a6b1e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_xfdsch_a7b1e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("job");
     provider.setNoTargetText("<no job>");
@@ -343,6 +397,10 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_xfdsch_a5b1e0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "parameters", true) != null);
+  }
+
+  private static boolean renderingCondition_xfdsch_a1g1b4a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "requiresInput");
   }
 
   public static class _Inline_xfdsch_a3a extends InlineCellProvider {
@@ -424,6 +482,58 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_xfdsch_a1b1b4a");
       editorCell.setDefaultText("<no dependencies>");
       return editorCell;
+    }
+  }
+
+  public static class TargetDeclaration_generic_cellMenu_a0a1g1b4a extends AbstractCellMenuPart_Generic_Item {
+    public TargetDeclaration_generic_cellMenu_a0a1g1b4a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "requiresInput", "" + true);
+    }
+
+    public String getMatchingText() {
+      return "yes";
+    }
+  }
+
+  public static class TargetDeclaration_generic_cellMenu_b0a1g1b4a extends AbstractCellMenuPart_Generic_Item {
+    public TargetDeclaration_generic_cellMenu_b0a1g1b4a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "requiresInput", "" + false);
+    }
+
+    public String getMatchingText() {
+      return "no";
+    }
+  }
+
+  public static class TargetDeclaration_generic_cellMenu_a0a1g1b4a_0 extends AbstractCellMenuPart_Generic_Item {
+    public TargetDeclaration_generic_cellMenu_a0a1g1b4a_0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "requiresInput", "" + true);
+    }
+
+    public String getMatchingText() {
+      return "yes";
+    }
+  }
+
+  public static class TargetDeclaration_generic_cellMenu_b0a1g1b4a_0 extends AbstractCellMenuPart_Generic_Item {
+    public TargetDeclaration_generic_cellMenu_b0a1g1b4a_0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "requiresInput", "" + false);
+    }
+
+    public String getMatchingText() {
+      return "no";
     }
   }
 }
