@@ -99,6 +99,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         breakpointSelected(bp);
       }
     });
+
+    IBreakpoint selectedBreakpoint = myViews[myCurrentViewIndex].getSelectedBreakpoint();
+    if (selectedBreakpoint != null) {
+      breakpointSelected(selectedBreakpoint);
+    }
   }
 
   private void breakpointSelected(IBreakpoint breakpoint) {
