@@ -18,10 +18,10 @@ package jetbrains.mps.smodel.persistence.def.v0;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
@@ -47,7 +47,7 @@ public class ModelPersistence0 implements IModelPersistence {
     return null;
   }
 
-  public XMLSAXHandler<List<SNodeId>> getAnnotationReaderHandler() {
+  public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return null;
   }
 

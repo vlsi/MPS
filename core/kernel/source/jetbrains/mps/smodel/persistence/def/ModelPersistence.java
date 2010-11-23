@@ -24,6 +24,7 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.persistence.def.v0.ModelPersistence0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelPersistence1;
 import jetbrains.mps.smodel.persistence.def.v2.ModelPersistence2;
@@ -220,9 +221,9 @@ public class ModelPersistence {
   }
 
   @Nullable
-  public static List<SNodeId> getLineNumberToNodeIdMap(int version, String content) {
+  public static List<LineContent> getLineToContentMap(int version, String content) {
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
-      XMLSAXHandler<List<SNodeId>> handler = getModelPersistence(version).getAnnotationReaderHandler();
+      XMLSAXHandler<List<LineContent>> handler = getModelPersistence(version).getLineToContentMapReaderHandler();
       if (handler != null) {
         try {
           SAXParser parser = JDOMUtil.createSAXParser();
