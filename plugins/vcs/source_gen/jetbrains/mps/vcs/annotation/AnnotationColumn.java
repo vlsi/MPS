@@ -30,10 +30,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
+import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
+import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
+import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Collections;
 import java.awt.event.MouseEvent;
 import org.jetbrains.annotations.Nullable;
@@ -140,6 +143,18 @@ public class AnnotationColumn extends AbstractLeftColumn {
     return myWidth;
   }
 
+  private EditorCell findCellForNodeAndContent(EditorComponent component, SNode node, LineContent content) {
+    if (content instanceof NodeLineContent) {
+      return component.getBigValidCellForNode(node);
+    } else if (content instanceof PropertyLineContent) {
+      return CellFinder.getCellForProperty(component, node, ((PropertyLineContent) content).getName());
+    } else if (content instanceof ReferenceLineContent) {
+      return CellFinder.getCellForReference(component, node, ((ReferenceLineContent) content).getRole());
+    } else {
+      return null;
+    }
+  }
+
   public void relayout(final EditorComponent component) {
     if (component == null || component.isDisposed() || component.getGraphics() == null) {
       return;
@@ -169,19 +184,18 @@ public class AnnotationColumn extends AbstractLeftColumn {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = component.getEditedNode().getModel();
-        for (IMapping<SNodeId, Integer> nodeIdToFileLine : MapSequence.fromMap(myNodeIdToFileLine)) {
-          final SNode node = model.getNodeById(nodeIdToFileLine.key());
-          int fileLine = nodeIdToFileLine.value();
+        SNode editedNode = component.getEditedNode();
+        for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
+          LineContent content = ListSequence.fromList(myFileLineToContent).getElement(fileLine);
+          if (content == null) {
+            continue;
+          }
+          SNode node = model.getNodeById(content.getNodeId());
+          if (!(node.isDescendantOf(editedNode, true))) {
+            continue;
+          }
 
-          EditorCell cell = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).select(new ISelector<SNode, EditorCell>() {
-            public EditorCell select(SNode n) {
-              return component.findNodeCell(node);
-            }
-          }).findFirst(new IWhereFilter<EditorCell>() {
-            public boolean accept(EditorCell c) {
-              return c != null;
-            }
-          });
+          EditorCell cell = findCellForNodeAndContent(component, node, content);
           if (cell == null) {
             continue;
           }
@@ -197,6 +211,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
           }
           int widthCandidate = component.getGraphics().getFontMetrics(myFont).stringWidth(getTextForFileLine(fileLine)) + 3;
           myWidth = Math.max(myWidth, widthCandidate);
+
         }
       }
     });
