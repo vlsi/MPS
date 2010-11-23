@@ -31,6 +31,8 @@ import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class AnnotationManager extends AbstractProjectComponent {
   private ProjectLevelVcsManager myProjectLevelVcsManager;
@@ -116,6 +118,14 @@ public class AnnotationManager extends AbstractProjectComponent {
     };
     ProgressManager.getInstance().run(annotateTask);
     return true;
+  }
+
+  public void removeColumn(final AnnotationColumn column) {
+    MapSequence.fromMap(myEditorToColumn).removeKey(MapSequence.fromMap(myEditorToColumn).findFirst(new IWhereFilter<IMapping<EditorComponent, AnnotationColumn>>() {
+      public boolean accept(IMapping<EditorComponent, AnnotationColumn> m) {
+        return m.value() == column;
+      }
+    }).key());
   }
 
   public static AnnotationManager getInstance(Project project) {

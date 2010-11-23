@@ -228,6 +228,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
   }
 
+  @Override
+  protected void onClose() {
+    AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
+  }
+
   private int findPseudoLineByY(int y) {
     int pseudoLine = Collections.binarySearch(myPseudoLinesY, y);
     if (pseudoLine < 0) {
