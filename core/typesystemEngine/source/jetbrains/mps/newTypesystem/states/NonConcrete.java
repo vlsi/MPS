@@ -25,12 +25,11 @@ import java.util.List;
  * User: Ilya.Lintsbakh
  * Date: Sep 17, 2010
  * Time: 1:14:05 PM
- * To change this template use File | Settings | File Templates.
  */
 public class NonConcrete {
-  private State myState;
-  private NonConcreteMapPair myShallow;
-  private NonConcreteMapPair myDeep;
+  private final State myState;
+  private final NonConcreteMapPair myShallow;
+  private final NonConcreteMapPair myDeep;
 
   public NonConcrete(State state) {
     myState = state;

@@ -37,9 +37,9 @@ import java.util.*;
  * Time: 4:33:42 PM
  */
 public class Equations {
-  private Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
-  private Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
-  private State myState;
+  private final Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
+  private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
+  private final State myState;
 
   public Equations(State state) {
     myState = state;
@@ -231,7 +231,7 @@ public class Equations {
     myState.addError(nodeWithError, errorReporter, info);
   }
 
-  public void reportRecursiveType(SNode node) {
+  void reportRecursiveType(SNode node) {
     //todo IErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed", null, null);
   }
 
@@ -255,13 +255,4 @@ public class Equations {
     return result;
   }
 
-  public Set<SNode> getEquivalents(SNode node) {
-    Set<SNode> result = new HashSet<SNode>();
-    for (SNode var : new HashSet<SNode>(myRepresentatives.keySet())) {
-      if (getRepresentative(var) == getRepresentative(node)) {
-        result.add(var);
-      }
-    }
-    return result;
-  }
 }

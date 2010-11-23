@@ -92,8 +92,10 @@ public class NonConcreteMapPair {
 
   public void addWhenConcrete(WhenConcreteEntry e, SNode node) {
     SNode source = myState.getNodeMaps().getNode(node);
-    
-    myState.addDifference(new WhenConcreteAdded(e, node, this), true);
+    if (source == null) {
+      source = node;
+    }
+    myState.addDifference(new WhenConcreteAdded(e, node, source, this), true);
     List<SNode> variables = getChildAndReferentVariables(node);
     if (variables.isEmpty()) {
       becameConcrete(e);

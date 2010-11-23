@@ -35,9 +35,9 @@ public class WhenConcreteAdded extends Difference {
   private SNode myNode;
   private WhenConcreteEntry myEntry;
 
-  public WhenConcreteAdded(WhenConcreteEntry entry, SNode node, NonConcreteMapPair map) {
+  public WhenConcreteAdded(WhenConcreteEntry entry, SNode node, SNode source, NonConcreteMapPair map) {
     myNode = node;
-    mySource = node;
+    mySource = source;
     myEntry = entry;
     myMap = map;
     myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());

@@ -28,15 +28,14 @@ import java.util.*;
  * User: Ilya.Lintsbakh
  * Date: Sep 13, 2010
  * Time: 5:56:50 PM
- * To change this template use File | Settings | File Templates.
  */
 public class RelationMapPair {
-  protected State myState;
-  private boolean isWeak;
-  private boolean isCheckOnly;
-  private boolean isComparable;
-  private Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
-  private Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
+  private final State myState;
+  private final boolean isWeak;
+  private final boolean isCheckOnly;
+  private final boolean isComparable;
+  private final Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
+  private final Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
   public RelationMapPair(State state, boolean weak, boolean checkOnly, boolean comparable) {
     myState = state;
@@ -79,7 +78,7 @@ public class RelationMapPair {
     removeAndDelete(mySuperToSub, superType, subType);
   }
 
-  public void substituteInMap(Map<SNode, Map<SNode, EquationInfo>> baseMap,
+  void substituteInMap(Map<SNode, Map<SNode, EquationInfo>> baseMap,
                               Map<SNode, Map<SNode, EquationInfo>> pairMap,
                               SNode var, SNode type, boolean reversed) {
     Map<SNode, EquationInfo> values = baseMap.remove(var);
@@ -102,20 +101,6 @@ public class RelationMapPair {
     substituteInMap(mySuperToSub, mySubToSuper, var, type, false);
   }
 
-  public void print() {
-    for (SNode key : mySubToSuper.keySet()) {
-      for (SNode value : mySubToSuper.get(key).keySet()) {
-        System.out.println(key + (isWeak ? " <= " : " < ") + value + (isCheckOnly ? " check only" : ""));
-      }
-    }
-  }
-
-  public Set<SNode> getVertices() {
-    Set<SNode> result = new HashSet<SNode>(mySubToSuper.keySet());
-    result.addAll(mySuperToSub.keySet());
-    return result;
-  }
-
   public void clear() {
     clearMap(mySubToSuper);
     clearMap(mySuperToSub);
@@ -128,26 +113,6 @@ public class RelationMapPair {
     map.clear();
   }
 
-  public boolean isWeak() {
-    return isWeak;
-  }
-
-  public boolean isComparable() {
-    return isComparable;
-  }
-
-  public boolean isCheckOnly() {
-    return isCheckOnly;
-  }
-
-  public Map<SNode, EquationInfo> getSubTypes(SNode node) {
-    return mySuperToSub.get(node);
-  }
-
-  public Map<SNode, EquationInfo> getSuperTypes(SNode node) {
-    return mySubToSuper.get(node);
-  }
-
   private void expandKeySet(Map<SNode, Map<SNode, EquationInfo>> map) {
     for (SNode node : new HashSet<SNode>(map.keySet())) {
       SNode expanded = myState.getEquations().expandNode(node);
@@ -157,7 +122,7 @@ public class RelationMapPair {
     }
   }
 
-  public void expand() {
+  void expand() {
     expandKeySet(mySuperToSub);
     expandKeySet(mySubToSuper);
   }
@@ -186,7 +151,7 @@ public class RelationMapPair {
     }
   }
 
-  public Set<SNode> getConcrete(Set<SNode> set, boolean shallow) {
+  Set<SNode> getConcrete(Set<SNode> set, boolean shallow) {
     Set<SNode> result = new HashSet<SNode>();
     for (SNode node : set) {
       if (myState.isConcrete(node, shallow)) {
@@ -201,7 +166,7 @@ public class RelationMapPair {
     solve(true);
   }
 
-  public void solve(boolean shallow) {
+  void solve(boolean shallow) {
     for (int i = 1; i < 7; i++) {
       //todo more sensible loop, this is for debug 
       iteration(shallow, true);
@@ -233,7 +198,7 @@ public class RelationMapPair {
       if (TypesUtil.isVariable(node)) {
         SNode type = sub ? subTyping.createMeet(expandedConcreteTypes) : subTyping.createLCS(expandedConcreteTypes);
         for (SNode concreteType : expandedConcreteTypes) {
-          EquationInfo info = map.get(node).get(concreteType);
+        //  EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
             removeAndTrack(node, concreteType);
           } else {

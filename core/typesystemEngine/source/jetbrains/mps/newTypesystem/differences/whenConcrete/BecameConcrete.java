@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.differences.whenConcrete;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.Map;
 import java.util.Set;
@@ -36,6 +37,7 @@ public class BecameConcrete extends Difference {
   public BecameConcrete(Map<WhenConcreteEntry, Set<SNode>> map, WhenConcreteEntry entry) {
     myMap = map;
     myEntry = entry;
+    myEquationInfo = new EquationInfo(null, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override

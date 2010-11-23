@@ -36,19 +36,18 @@ import java.util.Stack;
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 6:09:38 PM
- * To change this template use File | Settings | File Templates.
  */
 public class State {
-  private TypeCheckingContextNew myTypeCheckingContext;
+  private final TypeCheckingContextNew myTypeCheckingContext;
 
-  private Equations myEquations;
-  private Inequalities myInequalities;
-  private NodeMaps myNodeMaps;
-  private NonConcrete myNonConcrete;
+  private final Equations myEquations;
+  private final Inequalities myInequalities;
+  private final NodeMaps myNodeMaps;
+  private final NonConcrete myNonConcrete;
 
-  private VariableIdentifier myVariableIdentifier;
+  private final VariableIdentifier myVariableIdentifier;
 
-  private Stack<Difference> myDifferenceStack = new Stack<Difference>();
+  private final Stack<Difference> myDifferenceStack = new Stack<Difference>();
   private Difference myDifference = new HeadDifference();
 
   public State(TypeCheckingContextNew tcc) {
@@ -214,10 +213,6 @@ public class State {
 
   public SNode getRepresentative(SNode node) {
     return myEquations.getRepresentative(node);
-  }
-
-  public Set<SNode> getEquivalents(SNode node) {
-    return myEquations.getEquivalents(myNodeMaps.getType(node));
   }
 
   public SNode createNewRuntimeTypesVariable() {
