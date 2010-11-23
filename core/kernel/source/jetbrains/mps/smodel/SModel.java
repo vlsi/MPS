@@ -209,7 +209,7 @@ public class SModel {
     }
   }
 
-  public boolean setLoading(boolean loading) {
+  public synchronized boolean setLoading(boolean loading) {
     boolean wasLoading = myLoading;
     myLoading = loading;
     if (wasLoading != loading) {
@@ -218,11 +218,11 @@ public class SModel {
     return wasLoading;
   }
 
-  public boolean isLoading() {
+  public synchronized boolean isLoading() {
     return myLoading;
   }
 
-  private boolean canFireEvent() {
+  private synchronized boolean canFireEvent() {
     return !myLoading;
   }
 
