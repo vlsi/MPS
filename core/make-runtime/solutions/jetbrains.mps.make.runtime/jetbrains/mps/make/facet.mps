@@ -147,6 +147,13 @@
       <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2878100257845887606" />
       <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.BooleanType" typeId="yvor.1070534644030:3" id="2878100257845887607" />
     </node>
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="7082294419594885835">
+      <property name="isAbstract" nameId="yvor.1178608670077:3" value="true" />
+      <property name="name" nameId="yvnu.1169194664001:0" value="producesOutput" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.BooleanType" typeId="yvor.1070534644030:3" id="7082294419594885839" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="7082294419594885837" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7082294419594885838" />
+    </node>
     <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="2878100257845887608">
       <property name="isAbstract" nameId="yvor.1178608670077:3" value="true" />
       <property name="name" nameId="yvnu.1169194664001:0" value="expectedResources" />

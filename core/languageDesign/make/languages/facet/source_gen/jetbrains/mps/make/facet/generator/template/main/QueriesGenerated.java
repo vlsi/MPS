@@ -44,6 +44,14 @@ public class QueriesGenerated {
     return _context.createUniqueName(_context.getTemplateValue(), SNodeOperations.getParent(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_3097736894717613589(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "requiresInput");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7082294419595105985(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "producesOutput");
+  }
+
   public static Object propertyMacro_GetPropertyValue_3868725017587329779(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return JavaNameUtil.fqClassName(SLinkOperations.getTarget(_context.getNode(), "parameters", true), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameters", true), "name"));
   }

@@ -33,6 +33,7 @@
     </node>
     <node role="targetDeclaration" roleId="zyxi.6418371274763146558:1" type="zyxi.TargetDeclaration" typeId="zyxi.6418371274763029565:1" id="8351679702044371556">
       <property name="name" nameId="yvnu.1169194664001:0" value="QQQ" />
+      <property name="requiresInput" nameId="zyxi.7752758284337367517:1" value="true" />
       <link role="overrides" roleId="zyxi.6418371274763029589:1" targetNodeId="8351679702044320281" resolveInfo="GenerateTarget" />
       <node role="dependency" roleId="zyxi.6418371274763146553:1" type="zyxi.TargetDependency" typeId="zyxi.6418371274763029600:1" id="395692171604530851">
         <property name="qualifier" nameId="zyxi.8351679702044326377:1" value="NOT_AFTER" />

@@ -189,6 +189,9 @@
           <node role="cellLayout" roleId="yvnl.1140524464360:32" type="yvnl.CellLayout_Vertical" typeId="yvnl.1106270571710:32" id="505095865854384122" />
           <node role="emptyCellModel" roleId="yvnl.1140524464359:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="127305800529604661">
             <property name="nullText" nameId="yvnl.1082639509531:32" value="&lt;no queries&gt;" />
+            <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.EditableStyleClassItem" typeId="yvnl.1186414860679:32" id="7082294419595100811">
+              <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
+            </node>
           </node>
         </node>
       </node>

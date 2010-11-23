@@ -274,6 +274,10 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_e0yr07_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_e0yr07_a1b0");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
       editorCell.setDefaultText("<no queries>");
       return editorCell;
     }

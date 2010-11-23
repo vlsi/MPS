@@ -89,6 +89,10 @@ public class Generate_Facet implements IFacet {
       return false;
     }
 
+    public boolean producesOutput() {
+      return false;
+    }
+
     public Class<? extends IResource> expectedResources() {
       return null;
     }

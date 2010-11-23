@@ -119,6 +119,10 @@
       <property name="name" nameId="yvnu.1169194664001:0" value="requiresInput" />
       <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="yvnu.1082983657063:0" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" roleId="yvnr.1071489727084:0" type="yvnr.PropertyDeclaration" typeId="yvnr.1071489288299:0" id="7082294419595069091">
+      <property name="name" nameId="yvnu.1169194664001:0" value="producesOutput" />
+      <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="yvnu.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" roleId="yvnr.1071489727083:0" type="yvnr.LinkDeclaration" typeId="yvnr.1071489288298:0" id="7320828025189219295">
       <property name="metaClass" nameId="yvnr.1071599937831:0" value="aggregation" />
       <property name="role" nameId="yvnr.1071599776563:0" value="parameters" />

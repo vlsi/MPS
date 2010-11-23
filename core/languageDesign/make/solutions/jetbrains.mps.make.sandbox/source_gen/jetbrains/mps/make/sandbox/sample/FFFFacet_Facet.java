@@ -92,6 +92,10 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
       return false;
     }
 
@@ -151,6 +155,10 @@ public class FFFFacet_Facet implements IFacet {
       return false;
     }
 
+    public boolean producesOutput() {
+      return false;
+    }
+
     public Class<? extends IResource> expectedResources() {
       return null;
     }
@@ -204,6 +212,10 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
       return false;
     }
 

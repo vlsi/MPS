@@ -198,6 +198,10 @@ public class TargetRange {
       return false;
     }
 
+    public boolean producesOutput() {
+      return false;
+    }
+
     public Class<? extends IResource> expectedResources() {
       return null;
     }

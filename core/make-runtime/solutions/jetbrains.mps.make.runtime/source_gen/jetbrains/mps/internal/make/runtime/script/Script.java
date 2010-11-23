@@ -132,12 +132,22 @@ public class Script implements IScript {
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
               LOG.info("No input. Stopping");
+              results.addResult(trg.getName(), new IResult.FAILURE(null));
               return;
             }
             // TODO: check for appropriate input class 
           }
           IJob job = trg.createJob();
           IResult jr = job.execute(input, monit, pool);
+          if (!(trg.producesOutput())) {
+            Iterable<IResource> output = jr.output();
+            if (Sequence.fromIterable(output).isNotEmpty()) {
+              LOG.info("Unexpected output. Stopping");
+              results.addResult(trg.getName(), new IResult.FAILURE(null));
+              return;
+            }
+            jr = new Script.CatOutputResult(jr, input);
+          }
           results.addResult(trg.getName(), jr);
           if (!(jr.isSucessful()) || monit.pleaseStop()) {
             LOG.info((jr.isSucessful() ?
@@ -178,6 +188,24 @@ public class Script implements IScript {
 
     public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       code.invoke(new IConfigMonitor.Stub());
+    }
+  }
+
+  private static class CatOutputResult implements IResult {
+    private IResult result;
+    private Iterable<IResource> output;
+
+    public CatOutputResult(IResult result, Iterable<IResource> output) {
+      this.result = result;
+      this.output = output;
+    }
+
+    public Iterable<IResource> output() {
+      return Sequence.fromIterable(result.output()).concat(Sequence.fromIterable(output));
+    }
+
+    public boolean isSucessful() {
+      return result.isSucessful();
     }
   }
 }
