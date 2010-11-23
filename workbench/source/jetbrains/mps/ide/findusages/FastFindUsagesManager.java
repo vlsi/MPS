@@ -319,7 +319,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
 //        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
           // report
 //          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        // use only the name part of type="abcd.name" or type="model.structure.name:0"
           int start = end;
           while (start >= offset && chars[start] != '.')  --start;
           offset = start + 1;
