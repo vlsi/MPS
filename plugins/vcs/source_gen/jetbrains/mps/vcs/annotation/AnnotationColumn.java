@@ -141,7 +141,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   public void relayout(final EditorComponent component) {
-    if (component == null || component.isDisposed()) {
+    if (component == null || component.isDisposed() || component.getGraphics() == null) {
       return;
     }
     Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
