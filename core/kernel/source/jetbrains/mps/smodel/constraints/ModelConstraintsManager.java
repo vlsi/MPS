@@ -564,7 +564,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  private Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
+  public Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
     final String fqName = parentNode.getConceptFqName();
     synchronized (myCanBeParentMethods) {
       Method result = myCanBeParentMethods.get(fqName);
@@ -616,6 +616,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     Method m = getCanBeParentMethod(parentNode, context);
+    return canBeParent(m, parentNode, childConcept, link, context);
+  }
+
+  public boolean canBeParent(Method m, SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     if (m != null) {
       try {
         return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
@@ -630,12 +634,16 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeParentBlock(SNode parentNode, IOperationContext context) {
     Method m = getCanBeParentMethod(parentNode, context);
+    return getCanBeParentBlock(context, m);
+  }
+
+  public SNode getCanBeParentBlock(IOperationContext context, Method m) {
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
     return BaseAdapter.fromAdapter(constraints.getCanBeParent());
   }
 
-  private Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
+  public Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
     synchronized (myCanBeChildMethods) {
       if (myCanBeChildMethods.containsKey(conceptFqName)) {
         return myCanBeChildMethods.get(conceptFqName);
@@ -677,8 +685,15 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
+      SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
+      return canBeChild(concept, method, context, parentNode, link);
+    }
+    return true;
+  }
+
+  public boolean canBeChild(SNode concept, Method method, IOperationContext context, SNode parentNode, SNode link) {
+    if (method != null) {
       try {
-        SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
         return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link, concept));
       } catch (IllegalAccessException e) {
         LOG.error(e);
@@ -691,13 +706,17 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeChildBlock(IOperationContext context, String conceptFqName) {
     Method m = getCanBeChildMethod(conceptFqName, context);
+    return getCanBeChildBlock(context, m);
+  }
+
+  public SNode getCanBeChildBlock(IOperationContext context, Method m) {
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
     return BaseAdapter.fromAdapter(constraints.getCanBeChild());
   }
 
   @Nullable
-  private Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
+  public Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
     synchronized (myCanBeRootMethods) {
       if (myCanBeRootMethods.containsKey(conceptFqName)) {
         return myCanBeRootMethods.get(conceptFqName);
@@ -751,6 +770,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeRootBlock(IOperationContext context, String conceptFqName) {
     Method m = getCanBeRootMethod(conceptFqName, context);
+    return getCanBeRootBlock(context, m);
+  }
+
+  public SNode getCanBeRootBlock(IOperationContext context, Method m) {
     if (m == null) return null;
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
@@ -762,9 +785,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (concept == null) {
       return false;
     }
+    Method method = getCanBeRootMethod(conceptFqName, context);
+    return canBeRoot(context, method, model, concept);
+  }
 
+   public boolean canBeRoot(IOperationContext context, Method method, SModel model, AbstractConceptDeclaration concept) {
     if (concept instanceof ConceptDeclaration && ((ConceptDeclaration) concept).getRootable()) {
-      Method method = getCanBeRootMethod(conceptFqName, context);
       if (method != null) {
         try {
           return (Boolean) method.invoke(null, context, new CanBeARootContext(model));

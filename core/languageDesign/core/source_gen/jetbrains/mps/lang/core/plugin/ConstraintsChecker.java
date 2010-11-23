@@ -7,8 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import java.lang.reflect.Method;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,15 +35,26 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         return;
       }
 
-      if (!(cm.canBeChild(node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link))) {
-        SNode rule = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
+      Method cbcMethod = cm.getCanBeChildMethod(node.getConceptFqName(), operationContext);
+      cm.canBeChild(node, cbcMethod, operationContext, SNodeOperations.getParent(node), link);
+      // todo start reading 
+      boolean canBeChild = cm.canBeChild(node, cbcMethod, operationContext, SNodeOperations.getParent(node), link);
+      // todo end reading 
+      if (!(canBeChild)) {
+        SNode rule = cm.getCanBeChildBlock(operationContext, cbcMethod);
         component.addError(node, "Node isn't applicable in the context", rule);
       }
     }
 
-    if (node.isRoot() && !(cm.canBeRoot(operationContext, node.getConceptFqName(), SNodeOperations.getModel(node)))) {
-      SNode rule = cm.getCanBeRootBlock(operationContext, node.getConceptFqName());
-      component.addError(node, "Not rootable concept added as root", rule);
+    if (node.isRoot()) {
+      Method method = cm.getCanBeRootMethod(node.getConceptFqName(), operationContext);
+      // todo start reading 
+      boolean canBeRoot = cm.canBeRoot(operationContext, method, SNodeOperations.getModel(node), ((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))));
+      // todo end reading 
+      if (!(canBeRoot)) {
+        SNode rule = cm.getCanBeRootBlock(operationContext, method);
+        component.addError(node, "Not rootable concept added as root", rule);
+      }
     }
 
     for (SNode child : SNodeOperations.getChildren(node)) {
@@ -52,8 +64,12 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       if (childLink == null) {
         continue;
       }
-      if (!(cm.canBeParent(node, childConcept, childLink, operationContext))) {
-        SNode rule = cm.getCanBeParentBlock(node, operationContext);
+      Method method = cm.getCanBeParentMethod(node, operationContext);
+      // todo start reading 
+      boolean canBeParent = cm.canBeParent(method, node, childConcept, childLink, operationContext);
+      // todo end reading 
+      if (!(canBeParent)) {
+        SNode rule = cm.getCanBeParentBlock(operationContext, method);
         component.addError(node, "Node isn't applicable in the context", rule);
       }
       SNode rule = cm.canBeAncestorReturnBlock(node, childConcept, operationContext);
@@ -78,7 +94,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         continue;
       }
       String value = ps.fromInternalValue(node.getProperty(propertyName));
-      if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope(), false))) {
+      // todo start reading 
+      boolean canSetValue = ps.canSetValue(node, p.getName(), value, operationContext.getScope(), false);
+      // todo end reading 
+      if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
         if ("name".equals(p.getName()) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
           continue;
