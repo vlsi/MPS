@@ -220,7 +220,8 @@ public class FastFindUsagesManager extends FindUsagesManager {
     if (!isExact) {
       Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
       for (String fqName : fqNames) {
-        candidates.addAll(getCandidates(scopeFiles, fqName));
+//        candidates.addAll(getCandidates(scopeFiles, fqName));
+        candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.')+1)));
       }
     }
     Set<SNode> result = new HashSet<SNode>();
@@ -313,17 +314,17 @@ public class FastFindUsagesManager extends FindUsagesManager {
         offset += TYPE_PREFIX.length();
         int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
         int end = indices[0];
-        int qend = indices[1];
-        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
+        // quick temporary fix for new persistences, todo: should be persistence dependent
+//        int qend = indices[1];
+//        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
           // report
-          // quick temporary fix for new persistences, todo: should be persistence dependent
 //          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
           result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
           int start = end;
           while (start >= offset && chars[start] != '.')  --start;
           offset = start + 1;
           result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-        }
+  //      }
       }
     }
 
