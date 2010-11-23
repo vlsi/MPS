@@ -76,7 +76,6 @@ public class BuildGeneratorUtil {
 
   public static Solution createSolutionFromFile(final MPSProject mpsProject, final IFile solutionDescriptorFile) {
     SolutionDescriptor descriptor = new SolutionDescriptor();
-    descriptor.setExternallyVisible(true);
     descriptor.setCompileInMPS(true);
     String fileName = solutionDescriptorFile.getName();
     descriptor.setNamespace(fileName.substring(0, fileName.length() - 4));

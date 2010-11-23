@@ -121,8 +121,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       descriptor.setCompileInMPS(false);
       descriptor.setEnableJavaStubs(true);
 
-      descriptor.setExternallyVisible(true);
-
       //todo what should be here?
       descriptor.setDontLoadClasses(true);
 

@@ -122,7 +122,7 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = newDescriptor;
 
     ModuleReference mp;
-    if (isExternallyVisible() && mySolutionDescriptor.getNamespace() != null) {
+    if (mySolutionDescriptor.getNamespace() != null) {
       mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getUUID());
     } else {
       assert myDescriptorFile != null;
@@ -162,10 +162,6 @@ public class Solution extends AbstractModule {
     assert myDescriptorFile != null;
     namespace = myDescriptorFile.getName();
     return namespace;
-  }
-
-  public boolean isExternallyVisible() {
-    return mySolutionDescriptor.isExternallyVisible();
   }
 
   public String getGeneratorOutputPath() {
