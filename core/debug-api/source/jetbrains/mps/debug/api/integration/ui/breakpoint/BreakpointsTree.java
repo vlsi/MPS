@@ -51,10 +51,6 @@ public class BreakpointsTree extends BreakpointsView {
   private final GroupKind myModelKind = new ModelGroupKind();
   private final GroupKind myRootKind = new RootGroupKind();
   private Collection<BreakpointNodeData> myData;
-  @NonNls
-  private static final String IS_VISIBLE = "_IS_VISIBLE";
-  @NonNls
-  private static final String BREAKPOINTS_TREE_STATE = "BREAKPOINTS_TREE_STATE";
 
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
     super(breakpointsManager);

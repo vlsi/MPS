@@ -24,8 +24,6 @@ import java.util.*;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
-  @NonNls
-  private static final String BREAKPOINTS_TREE_VIEW = "BREAKPOINTS_TREE_VIEW";
 
   private final JPanel myMainPanel;
   private JComponent myPropertiesEditorPanel;
