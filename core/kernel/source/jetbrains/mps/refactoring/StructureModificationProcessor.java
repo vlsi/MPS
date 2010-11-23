@@ -38,38 +38,49 @@ public class StructureModificationProcessor {
 
   /**
    * Silently update model with structure modifications from other models (without loading other models)
+   *
    * @param model - model to update
    * @return true if model was updated with refactoring
    */
-  public static boolean updateModelOnLoad(SModel model) {
-    assert model != null;
-    boolean result = false;
-    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
-      return false;
-    }
-    if (!SModelStereotype.isUserModel(model)) {
-      return false;
-    }
+  public static boolean updateModelOnLoad(@NotNull SModel model) {
+    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) return false;
+    if (!SModelStereotype.isUserModel(model)) return false;
     boolean wasLoading = model.setLoading(true);
+
+    boolean result = false;
     try {
       boolean played;
       do {
         played = false;
-//        for (SModelDescriptor usedModelDescriptor : SModelOperations.getDependenciesModels(model)) {
         for (ImportElement importElement : SModelOperations.getAllImportElements(model)) {
           SModelDescriptor usedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference());
-          if (!(usedModelDescriptor instanceof EditableSModelDescriptor
-            && importElement.getUsedVersion() < ((EditableSModelDescriptor) usedModelDescriptor).getVersion()))
-            continue;
-          if (playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) {
-            result = played = true;
-          }
+          if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
+          if (importElement.getUsedVersion() >= ((EditableSModelDescriptor) usedModelDescriptor).getVersion()) continue;
+          if (!playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) continue;
+          played = true;
+        }
+
+        if (played) {
+          result = true;
         }
       } while (played);
     } finally {
       model.setLoading(wasLoading);
     }
     return result;
+  }
+
+  public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
+    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) return false;
+    if (!SModelStereotype.isUserModel(model)) return false;
+
+    for (ImportElement importElement : SModelOperations.getAllImportElements(model)) {
+      SModelDescriptor usedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference());
+      if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
+      if (importElement.getUsedVersion() < ((EditableSModelDescriptor) usedModelDescriptor).getVersion()) return true;
+    }
+
+    return false;
   }
 
   // true if any refactoring was played
