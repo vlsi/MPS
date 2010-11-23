@@ -245,7 +245,10 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
-    final SNode root = node.getContainingRoot();
+    SNode root = node.getContainingRoot();
+    if (root == null) {
+      root = node.getTopmostAncestor();
+    }
     if (useNewTypeSystem) {
       return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
     }
