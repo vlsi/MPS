@@ -12,8 +12,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Iterator;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -30,7 +32,11 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
       Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenMethod = it.next()._0();
-        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(overridingMethod, "returnType", true), SLinkOperations.getTarget(overridenMethod, "returnType", true)))) {
+        SNode returnType = SLinkOperations.getTarget(overridenMethod, "returnType", true);
+        SNode ancestor = SNodeOperations.cast(SNodeOperations.getParent(overridenMethod), "jetbrains.mps.baseLanguage.structure.Classifier");
+        SNode descendant = SNodeOperations.cast(SNodeOperations.getParent(overridingMethod), "jetbrains.mps.baseLanguage.structure.Classifier");
+        SNode resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(descendant, returnType, ancestor);
+        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(overridingMethod, "returnType", true), resolvedReturnType))) {
           {
             BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();
