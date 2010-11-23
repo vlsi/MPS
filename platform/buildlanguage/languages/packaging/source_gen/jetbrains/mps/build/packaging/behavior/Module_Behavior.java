@@ -198,12 +198,6 @@ public class Module_Behavior {
   }
 
   public static String extractModuleProperName_1235487584035(IModule module) {
-    if (module instanceof Solution) {
-      Solution solution = (Solution) module;
-      if (!(solution.isExternallyVisible())) {
-        return Module_Behavior.replaceBadCharacters_1235487831795(solution.getModuleDescriptor().getNamespace());
-      }
-    }
     return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleFqName());
   }
 
