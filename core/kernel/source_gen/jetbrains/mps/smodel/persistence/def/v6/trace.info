@@ -1,98 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ModelReader6Handler.java" startLine="249" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$persistenceElementHandler" />
-  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="270" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$propertyElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="275" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$tag_with_namespaceElementHandler" />
-  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="296" startPosition="0" endLine="321" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$linkElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="421" startPosition="0" endLine="450" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$propertyElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="451" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$linkElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="114" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$ElementHandler" />
-  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="126" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$ElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="301" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$importElementHandler" />
-  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="160" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$modelElementHandler" />
-  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="206" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$nodeElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="337" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$nodeElementHandler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="148" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$modelElementHandler" />
-  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="20" startPosition="0" endLine="322" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler" />
-  <unitInfo fileName="ModelReader6Handler.java" startLine="20" startPosition="0" endLine="481" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="245" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$persistenceElementHandler" />
+  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="266" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$propertyElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="271" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$tag_with_namespaceElementHandler" />
+  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="292" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$linkElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="417" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$propertyElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="447" startPosition="0" endLine="476" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$linkElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="110" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$ElementHandler" />
+  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="122" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$ElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="297" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$importElementHandler" />
+  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="156" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$modelElementHandler" />
+  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="202" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$nodeElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="333" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$nodeElementHandler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="144" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler$modelElementHandler" />
+  <unitInfo fileName="LineToContentMapReader6Handler.java" startLine="20" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler" />
+  <unitInfo fileName="ModelReader6Handler.java" startLine="20" startPosition="0" endLine="477" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.ModelReader6Handler" />
   <root nodeId="651246788329803429">
-    <nodeInfo nodeId="651246788329803822" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LineToContentMapReader6Handler.java" startLine="114" startPosition="69" endLine="115" endPosition="47" />
-    <nodeInfo nodeId="651246788329803837" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="116" startPosition="70" endLine="117" endPosition="116" />
-    <nodeInfo nodeId="651246788329803846" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="118" startPosition="29" endLine="119" endPosition="65" />
-    <nodeInfo nodeId="651246788329803850" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="119" startPosition="65" endLine="120" endPosition="33" />
-    <nodeInfo nodeId="651246788329803518" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="167" startPosition="60" endLine="168" endPosition="76" />
-    <nodeInfo nodeId="651246788329803524" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="168" startPosition="76" endLine="169" endPosition="73" />
-    <nodeInfo nodeId="651246788329803530" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="169" startPosition="73" endLine="170" endPosition="29" />
-    <nodeInfo nodeId="651246788329803559" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineToContentMapReader6Handler.java" startLine="170" startPosition="29" endLine="171" endPosition="30" />
-    <nodeInfo nodeId="651246788329803736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="223" startPosition="30" endLine="224" endPosition="89" />
-    <nodeInfo nodeId="651246788329825959" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LineToContentMapReader6Handler.java" startLine="249" startPosition="28" endLine="250" endPosition="34" />
-    <nodeInfo nodeId="651246788329825956" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LineToContentMapReader6Handler.java" startLine="256" startPosition="28" endLine="257" endPosition="35" />
-    <nodeInfo nodeId="651246788329803702" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="262" startPosition="38" endLine="263" endPosition="30" />
-    <nodeInfo nodeId="651246788329825937" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineToContentMapReader6Handler.java" startLine="277" startPosition="53" endLine="278" endPosition="36" />
-    <nodeInfo nodeId="651246788329825940" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineToContentMapReader6Handler.java" startLine="303" startPosition="53" endLine="304" endPosition="36" />
-    <nodeInfo nodeId="651246788329803626" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineToContentMapReader6Handler.java" startLine="248" startPosition="38" endLine="251" endPosition="9" />
-    <nodeInfo nodeId="651246788329803649" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineToContentMapReader6Handler.java" startLine="255" startPosition="38" endLine="258" endPosition="9" />
-    <nodeInfo nodeId="651246788329803844" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineToContentMapReader6Handler.java" startLine="117" startPosition="116" endLine="121" endPosition="9" />
-    <nodeInfo nodeId="651246788329803830" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LineToContentMapReader6Handler.java" startLine="115" startPosition="47" endLine="122" endPosition="7" />
-    <nodeInfo nodeId="651246788329803820" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LineToContentMapReader6Handler.java" startLine="113" startPosition="56" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="651246788329803627" fileName="LineToContentMapReader6Handler.java" startLine="249" startPosition="28" endLine="250" endPosition="34" />
-    <scopeInfo nodeId="651246788329803650" fileName="LineToContentMapReader6Handler.java" startLine="256" startPosition="28" endLine="257" endPosition="35" />
-    <scopeInfo nodeId="651246788329803845" fileName="LineToContentMapReader6Handler.java" startLine="118" startPosition="29" endLine="120" endPosition="33" />
-    <scopeInfo nodeId="651246788329803836" fileName="LineToContentMapReader6Handler.java" startLine="116" startPosition="70" endLine="121" endPosition="9" />
-    <scopeInfo nodeId="651246788329803821" fileName="LineToContentMapReader6Handler.java" startLine="114" startPosition="69" endLine="122" endPosition="7">
+    <nodeInfo nodeId="651246788329803822" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LineToContentMapReader6Handler.java" startLine="110" startPosition="69" endLine="111" endPosition="47" />
+    <nodeInfo nodeId="651246788329803837" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="112" startPosition="70" endLine="113" endPosition="116" />
+    <nodeInfo nodeId="651246788329803846" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="114" startPosition="29" endLine="115" endPosition="65" />
+    <nodeInfo nodeId="651246788329803850" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="115" startPosition="65" endLine="116" endPosition="33" />
+    <nodeInfo nodeId="651246788329803518" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="163" startPosition="60" endLine="164" endPosition="76" />
+    <nodeInfo nodeId="651246788329803524" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="164" startPosition="76" endLine="165" endPosition="73" />
+    <nodeInfo nodeId="651246788329803530" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="165" startPosition="73" endLine="166" endPosition="29" />
+    <nodeInfo nodeId="651246788329803559" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineToContentMapReader6Handler.java" startLine="166" startPosition="29" endLine="167" endPosition="30" />
+    <nodeInfo nodeId="651246788329803736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="219" startPosition="30" endLine="220" endPosition="89" />
+    <nodeInfo nodeId="651246788329825959" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LineToContentMapReader6Handler.java" startLine="245" startPosition="28" endLine="246" endPosition="34" />
+    <nodeInfo nodeId="651246788329825956" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LineToContentMapReader6Handler.java" startLine="252" startPosition="28" endLine="253" endPosition="35" />
+    <nodeInfo nodeId="651246788329803702" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineToContentMapReader6Handler.java" startLine="258" startPosition="38" endLine="259" endPosition="30" />
+    <nodeInfo nodeId="651246788329825937" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineToContentMapReader6Handler.java" startLine="273" startPosition="53" endLine="274" endPosition="36" />
+    <nodeInfo nodeId="651246788329825940" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineToContentMapReader6Handler.java" startLine="299" startPosition="53" endLine="300" endPosition="36" />
+    <nodeInfo nodeId="651246788329803626" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineToContentMapReader6Handler.java" startLine="244" startPosition="38" endLine="247" endPosition="9" />
+    <nodeInfo nodeId="651246788329803649" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineToContentMapReader6Handler.java" startLine="251" startPosition="38" endLine="254" endPosition="9" />
+    <nodeInfo nodeId="651246788329803844" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineToContentMapReader6Handler.java" startLine="113" startPosition="116" endLine="117" endPosition="9" />
+    <nodeInfo nodeId="651246788329803830" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LineToContentMapReader6Handler.java" startLine="111" startPosition="47" endLine="118" endPosition="7" />
+    <nodeInfo nodeId="651246788329803820" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LineToContentMapReader6Handler.java" startLine="109" startPosition="56" endLine="119" endPosition="5" />
+    <scopeInfo nodeId="651246788329803627" fileName="LineToContentMapReader6Handler.java" startLine="245" startPosition="28" endLine="246" endPosition="34" />
+    <scopeInfo nodeId="651246788329803650" fileName="LineToContentMapReader6Handler.java" startLine="252" startPosition="28" endLine="253" endPosition="35" />
+    <scopeInfo nodeId="651246788329803845" fileName="LineToContentMapReader6Handler.java" startLine="114" startPosition="29" endLine="116" endPosition="33" />
+    <scopeInfo nodeId="651246788329803836" fileName="LineToContentMapReader6Handler.java" startLine="112" startPosition="70" endLine="117" endPosition="9" />
+    <scopeInfo nodeId="651246788329803821" fileName="LineToContentMapReader6Handler.java" startLine="110" startPosition="69" endLine="118" endPosition="7">
       <varInfo nodeId="651246788329803823" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="651246788329803820" fileName="LineToContentMapReader6Handler.java" startLine="113" startPosition="56" endLine="123" endPosition="5">
+    <scopeInfo nodeId="651246788329803820" fileName="LineToContentMapReader6Handler.java" startLine="109" startPosition="56" endLine="119" endPosition="5">
       <varInfo nodeId="651246788329803855" varName="i" />
     </scopeInfo>
   </root>
   <root nodeId="7319439566871678351">
-    <nodeInfo nodeId="7319439566871678483" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="155" startPosition="53" endLine="156" endPosition="86" />
-    <nodeInfo nodeId="7319439566871678490" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="156" startPosition="86" endLine="157" endPosition="42" />
-    <nodeInfo nodeId="7319439566871678495" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="157" startPosition="42" endLine="158" endPosition="34" />
-    <nodeInfo nodeId="8991412067520654786" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="158" startPosition="34" endLine="159" endPosition="69" />
-    <nodeInfo nodeId="1586605412047026034" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="159" startPosition="69" endLine="160" endPosition="24" />
-    <nodeInfo nodeId="7319439566871678403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="207" startPosition="38" endLine="208" endPosition="62" />
-    <nodeInfo nodeId="7319439566871678412" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="212" startPosition="38" endLine="213" endPosition="81" />
-    <nodeInfo nodeId="7319439566871678421" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="217" startPosition="38" endLine="218" endPosition="60" />
-    <nodeInfo nodeId="7089291479286711585" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="222" startPosition="42" endLine="223" endPosition="108" />
-    <nodeInfo nodeId="7319439566871678459" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="228" startPosition="28" endLine="229" endPosition="32" />
-    <nodeInfo nodeId="7319439566871678515" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="243" startPosition="73" endLine="244" endPosition="31" />
-    <nodeInfo nodeId="7319439566871678520" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="244" startPosition="31" endLine="245" endPosition="18" />
-    <nodeInfo nodeId="7319439566871678526" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="256" startPosition="54" endLine="257" endPosition="57" />
-    <nodeInfo nodeId="7319439566871678556" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="282" startPosition="53" endLine="283" endPosition="41" />
-    <nodeInfo nodeId="7089291479286711564" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="308" startPosition="55" endLine="309" endPosition="112" />
-    <nodeInfo nodeId="7319439566871696862" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="329" startPosition="36" endLine="330" endPosition="26" />
-    <nodeInfo nodeId="7319439566871683205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="344" startPosition="52" endLine="345" endPosition="81" />
-    <nodeInfo nodeId="7319439566871678651" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="359" startPosition="32" endLine="360" endPosition="60" />
-    <nodeInfo nodeId="7319439566871678665" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelReader6Handler.java" startLine="363" startPosition="30" endLine="364" endPosition="47" />
-    <nodeInfo nodeId="7319439566871678672" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="ModelReader6Handler.java" startLine="365" startPosition="25" endLine="366" endPosition="59" />
-    <nodeInfo nodeId="7319439566871678680" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="367" startPosition="9" endLine="368" endPosition="25" />
-    <nodeInfo nodeId="7319439566871678589" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="393" startPosition="31" endLine="394" endPosition="71" />
-    <nodeInfo nodeId="212199194136557556" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="401" startPosition="37" endLine="402" endPosition="95" />
-    <nodeInfo nodeId="212199194136557566" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="403" startPosition="11" endLine="404" endPosition="17" />
-    <nodeInfo nodeId="2791660890086899466" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelReader6Handler.java" startLine="405" startPosition="9" endLine="406" endPosition="84" />
-    <nodeInfo nodeId="2791660890086899504" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="407" startPosition="26" endLine="408" endPosition="35" />
-    <nodeInfo nodeId="7319439566871678639" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="413" startPosition="36" endLine="414" endPosition="49" />
-    <nodeInfo nodeId="7319439566871678726" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="428" startPosition="55" endLine="429" endPosition="56" />
-    <nodeInfo nodeId="7319439566871678716" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="443" startPosition="33" endLine="444" endPosition="26" />
-    <nodeInfo nodeId="7319439566871678764" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="458" startPosition="55" endLine="459" endPosition="44" />
-    <nodeInfo nodeId="7319439566871678736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="465" startPosition="32" endLine="466" endPosition="26" />
-    <nodeInfo nodeId="7319439566871678745" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="469" startPosition="39" endLine="470" endPosition="26" />
-    <nodeInfo nodeId="7319439566871678754" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="473" startPosition="40" endLine="474" endPosition="26" />
-    <nodeInfo nodeId="7319439566871678454" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="227" startPosition="36" endLine="230" endPosition="9" />
-    <nodeInfo nodeId="7319439566871678670" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="364" startPosition="47" endLine="367" endPosition="9" />
-    <nodeInfo nodeId="7319439566871678587" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="392" startPosition="42" endLine="395" endPosition="9" />
-    <nodeInfo nodeId="212199194136557556" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelReader6Handler.java" startLine="400" startPosition="31" endLine="403" endPosition="11" />
-    <nodeInfo nodeId="2791660890086899495" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="406" startPosition="84" endLine="409" endPosition="9" />
-    <nodeInfo nodeId="212199194136557543" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="399" startPosition="42" endLine="405" endPosition="9" />
-    <scopeInfo nodeId="7319439566871678458" fileName="ModelReader6Handler.java" startLine="228" startPosition="28" endLine="229" endPosition="32" />
-    <scopeInfo nodeId="7319439566871678671" fileName="ModelReader6Handler.java" startLine="365" startPosition="25" endLine="366" endPosition="59" />
-    <scopeInfo nodeId="7319439566871678588" fileName="ModelReader6Handler.java" startLine="393" startPosition="31" endLine="394" endPosition="71" />
-    <scopeInfo nodeId="212199194136557556" fileName="ModelReader6Handler.java" startLine="401" startPosition="37" endLine="402" endPosition="95" />
-    <scopeInfo nodeId="2791660890086899496" fileName="ModelReader6Handler.java" startLine="407" startPosition="26" endLine="408" endPosition="35" />
-    <scopeInfo nodeId="212199194136557556" fileName="ModelReader6Handler.java" startLine="400" startPosition="31" endLine="403" endPosition="11" />
-    <scopeInfo nodeId="212199194136557544" fileName="ModelReader6Handler.java" startLine="400" startPosition="31" endLine="404" endPosition="17" />
+    <nodeInfo nodeId="7319439566871678483" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="151" startPosition="53" endLine="152" endPosition="86" />
+    <nodeInfo nodeId="7319439566871678490" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="152" startPosition="86" endLine="153" endPosition="42" />
+    <nodeInfo nodeId="7319439566871678495" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="153" startPosition="42" endLine="154" endPosition="34" />
+    <nodeInfo nodeId="8991412067520654786" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="154" startPosition="34" endLine="155" endPosition="69" />
+    <nodeInfo nodeId="1586605412047026034" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="155" startPosition="69" endLine="156" endPosition="24" />
+    <nodeInfo nodeId="7319439566871678403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="203" startPosition="38" endLine="204" endPosition="62" />
+    <nodeInfo nodeId="7319439566871678412" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="208" startPosition="38" endLine="209" endPosition="81" />
+    <nodeInfo nodeId="7319439566871678421" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="213" startPosition="38" endLine="214" endPosition="60" />
+    <nodeInfo nodeId="7089291479286711585" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="218" startPosition="42" endLine="219" endPosition="108" />
+    <nodeInfo nodeId="7319439566871678459" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="224" startPosition="28" endLine="225" endPosition="32" />
+    <nodeInfo nodeId="7319439566871678515" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="239" startPosition="73" endLine="240" endPosition="31" />
+    <nodeInfo nodeId="7319439566871678520" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="240" startPosition="31" endLine="241" endPosition="18" />
+    <nodeInfo nodeId="7319439566871678526" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="252" startPosition="54" endLine="253" endPosition="57" />
+    <nodeInfo nodeId="7319439566871678556" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="278" startPosition="53" endLine="279" endPosition="41" />
+    <nodeInfo nodeId="7089291479286711564" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="304" startPosition="55" endLine="305" endPosition="112" />
+    <nodeInfo nodeId="7319439566871696862" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="325" startPosition="36" endLine="326" endPosition="26" />
+    <nodeInfo nodeId="7319439566871683205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="340" startPosition="52" endLine="341" endPosition="81" />
+    <nodeInfo nodeId="7319439566871678651" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="355" startPosition="32" endLine="356" endPosition="60" />
+    <nodeInfo nodeId="7319439566871678665" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelReader6Handler.java" startLine="359" startPosition="30" endLine="360" endPosition="47" />
+    <nodeInfo nodeId="7319439566871678672" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="ModelReader6Handler.java" startLine="361" startPosition="25" endLine="362" endPosition="59" />
+    <nodeInfo nodeId="7319439566871678680" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="363" startPosition="9" endLine="364" endPosition="25" />
+    <nodeInfo nodeId="7319439566871678589" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="389" startPosition="31" endLine="390" endPosition="71" />
+    <nodeInfo nodeId="212199194136557556" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="397" startPosition="37" endLine="398" endPosition="95" />
+    <nodeInfo nodeId="212199194136557566" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="399" startPosition="11" endLine="400" endPosition="17" />
+    <nodeInfo nodeId="2791660890086899466" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelReader6Handler.java" startLine="401" startPosition="9" endLine="402" endPosition="84" />
+    <nodeInfo nodeId="2791660890086899504" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="403" startPosition="26" endLine="404" endPosition="35" />
+    <nodeInfo nodeId="7319439566871678639" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="409" startPosition="36" endLine="410" endPosition="49" />
+    <nodeInfo nodeId="7319439566871678726" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="424" startPosition="55" endLine="425" endPosition="56" />
+    <nodeInfo nodeId="7319439566871678716" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="439" startPosition="33" endLine="440" endPosition="26" />
+    <nodeInfo nodeId="7319439566871678764" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelReader6Handler.java" startLine="454" startPosition="55" endLine="455" endPosition="44" />
+    <nodeInfo nodeId="7319439566871678736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="461" startPosition="32" endLine="462" endPosition="26" />
+    <nodeInfo nodeId="7319439566871678745" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="465" startPosition="39" endLine="466" endPosition="26" />
+    <nodeInfo nodeId="7319439566871678754" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ModelReader6Handler.java" startLine="469" startPosition="40" endLine="470" endPosition="26" />
+    <nodeInfo nodeId="7319439566871678454" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="223" startPosition="36" endLine="226" endPosition="9" />
+    <nodeInfo nodeId="7319439566871678670" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="360" startPosition="47" endLine="363" endPosition="9" />
+    <nodeInfo nodeId="7319439566871678587" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="388" startPosition="42" endLine="391" endPosition="9" />
+    <nodeInfo nodeId="212199194136557556" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelReader6Handler.java" startLine="396" startPosition="31" endLine="399" endPosition="11" />
+    <nodeInfo nodeId="2791660890086899495" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="402" startPosition="84" endLine="405" endPosition="9" />
+    <nodeInfo nodeId="212199194136557543" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader6Handler.java" startLine="395" startPosition="42" endLine="401" endPosition="9" />
+    <scopeInfo nodeId="7319439566871678458" fileName="ModelReader6Handler.java" startLine="224" startPosition="28" endLine="225" endPosition="32" />
+    <scopeInfo nodeId="7319439566871678671" fileName="ModelReader6Handler.java" startLine="361" startPosition="25" endLine="362" endPosition="59" />
+    <scopeInfo nodeId="7319439566871678588" fileName="ModelReader6Handler.java" startLine="389" startPosition="31" endLine="390" endPosition="71" />
+    <scopeInfo nodeId="212199194136557556" fileName="ModelReader6Handler.java" startLine="397" startPosition="37" endLine="398" endPosition="95" />
+    <scopeInfo nodeId="2791660890086899496" fileName="ModelReader6Handler.java" startLine="403" startPosition="26" endLine="404" endPosition="35" />
+    <scopeInfo nodeId="212199194136557556" fileName="ModelReader6Handler.java" startLine="396" startPosition="31" endLine="399" endPosition="11" />
+    <scopeInfo nodeId="212199194136557544" fileName="ModelReader6Handler.java" startLine="396" startPosition="31" endLine="400" endPosition="17" />
   </root>
 </debugInfo>
 

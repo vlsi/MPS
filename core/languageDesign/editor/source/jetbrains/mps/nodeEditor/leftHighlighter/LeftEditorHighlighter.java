@@ -622,7 +622,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     if (iconRenderer != null) {
       if (e.isPopupTrigger()) {
         JPopupMenu popupMenu = iconRenderer.getPopupMenu();
-        if (popupMenu != null && e.getID() == MouseEvent.MOUSE_CLICKED) {
+        if (popupMenu != null && e.getID() == MouseEvent.MOUSE_PRESSED) {
           e.consume();
           popupMenu.show(myEditorComponent, e.getX(), e.getY());
         }

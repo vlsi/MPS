@@ -50,7 +50,7 @@ public class EquationSubstituted extends Difference {
 
   @Override
   public String getPresentation() {
-    return "Equation " + myRemoved.getChild() + " = " + myRemoved.getParent() + " substituted with " +
-      myAdded.getChild() + " = " + myAdded.getParent();
+    return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
+      myAdded.getShortPresentation();
   }
 }

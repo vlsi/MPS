@@ -21,6 +21,7 @@ import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.Consumer;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
@@ -34,27 +35,35 @@ public class CharismaReporter extends ErrorReportSubmitter {
     return "Report To JetBrains MPS Tracker";
   }
 
-  public SubmittedReportInfo submit(IdeaLoggingEvent[] events, final Component parentComponent) {
+  @Override
+  public void submitAsync(IdeaLoggingEvent[] events, String additionalInfo, Component parentComponent, Consumer<SubmittedReportInfo> consumer) {
     assert ThreadUtils.isEventDispatchThread();
 
     if (events.length == 0) {
-      return new SubmittedReportInfo(null, null, SubmissionStatus.FAILED);
+      consumer.consume(new SubmittedReportInfo(null, null, SubmissionStatus.FAILED));
+      return;
     }
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(project, parentComponent);
     blameDialog.addEx(events[0].getThrowable());
     blameDialog.setIssueTitle(events[0].getMessage());
+    blameDialog.setDescription(additionalInfo);
 
     blameDialog.showDialog();
 
     if (blameDialog.isCancelled()) {
-      return new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED);
+      consumer.consume(new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED));
     } else {
       Response response = blameDialog.getResult();
       assert response != null : "Response must not be null";
       assert response.isSuccess() : "Response is not 'cancelled' or 'success'";
-      return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
+      consumer.consume(new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE));
     }
+  }
+
+  public SubmittedReportInfo submit(IdeaLoggingEvent[] events, Component parentComponent) {
+    // obsolete API
+    return new SubmittedReportInfo(null, "0", SubmittedReportInfo.SubmissionStatus.FAILED);
   }
 }

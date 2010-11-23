@@ -18,8 +18,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 
 public class SNodeEditorUtil {
-  public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
-  public static final String LEFT_TRANSFORM_HINT = "left_transfrom_hint";
+  public static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
+  public static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
 
 
   public static void addRightTransformHint(SNode node) {

@@ -19,6 +19,7 @@ import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.awt.Color;
 
@@ -39,6 +40,7 @@ public class WhenConcreteAdded extends Difference {
     mySource = node;
     myEntry = entry;
     myMap = map;
+    myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override

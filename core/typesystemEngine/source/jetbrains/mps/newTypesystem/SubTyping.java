@@ -70,8 +70,16 @@ public class SubTyping {
     return false;
   }
 
+  private boolean subOrSuperType(SNode left, SNode right, boolean sub) {
+    if (sub) {
+      return isInSuperTypes(left, right, null, true, true);
+    } else {
+      return isInSuperTypes(right, left, null, true, true);
+    }
+  }
+
   public boolean isSubType(SNode subType, SNode superType) {
-    return isInSuperTypes(subType, superType, null, true, true);  //todo
+    return isInSuperTypes(subType, superType, null, true, true);
   }
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
@@ -192,23 +200,81 @@ public class SubTyping {
     return result;
   }
 
-  public SNode createMeet(Set<SNode> types) {
-    if (types.size() >1) {
-      System.out.println("meet");
+  private SNode meet(SNode left, SNode right) {
+    if (isSubType(left, right)) {
+      return left;
     }
-    // if (types.size() == 1) {
+    if (isSubType(right, left)) {
+      return right;
+    }
+    return left;
+  }
+
+  private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
+    types = eliminateEqual(types);
+    Set<SNode> result = new HashSet<SNode>();
+    Set<SNode> toRemove = new HashSet<SNode>();
+    for (SNode type : types) {
+      boolean toAdd = true;
+      for (SNode resultType : result) {
+        if (subOrSuperType(resultType, type, sub)) {
+          toAdd = false;
+          break;
+        }
+        if (subOrSuperType(type, resultType, sub)) {
+          toRemove.add(resultType);
+        }
+      }
+      if (toAdd) {
+        result.add(type);
+      }
+      for (SNode removeType : toRemove) {
+        result.remove(removeType);
+      }
+    }
+    return result;
+  }
+
+  public Set<SNode> eliminateEqual(Set<SNode> types) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (SNode type : types) {
+      boolean toAdd = true;
+      for (SNode resultType : result) {
+        if (TypesUtil.match(resultType, type, null, null, true)) {
+          toAdd = false;
+          break;
+        }
+      }
+      if (toAdd) {
+        result.add(type);
+      }
+    }
+    return result;
+  }
+
+  public SNode createMeet(Set<SNode> types) {
+
+    if (types.size() >1) {
+      System.out.println("meet" + types);
+      types = eliminateSubOrSuperTypes(types, true);
+      System.out.println( types);
+
+    }
+    
       return types.iterator().next();
-   // }
+
    // todo implement check line & meet
   }
 
   public SNode createLCS(Set<SNode> types) {
-  //  if (types.size() == 1) {
+
     if (types.size() >1) {
-      System.out.println("lcs");
+      System.out.println("lcs" + types);
+      types = eliminateSubOrSuperTypes(types, false);
+      System.out.println( types);
     }
       return types.iterator().next();
-   // }
+
     // todo implement least common supertype
   }
 

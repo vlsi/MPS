@@ -21,6 +21,7 @@ import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyRemoved;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.util.*;
@@ -91,6 +92,7 @@ public class NonConcreteMapPair {
 
   public void addWhenConcrete(WhenConcreteEntry e, SNode node) {
     SNode source = myState.getNodeMaps().getNode(node);
+    
     myState.addDifference(new WhenConcreteAdded(e, node, this), true);
     List<SNode> variables = getChildAndReferentVariables(node);
     if (variables.isEmpty()) {

@@ -30,6 +30,7 @@
           <root url="file://$MODULE_DIR$/../core/runtime/classes" />
           <root url="file://$MODULE_DIR$/../MPSPlugin/apiclasses" />
           <root url="file://$MODULE_DIR$/../core/typesystemIntegration/classes" />
+          <root url="file://$MODULE_DIR$/../workbench/typesystemUi/classes" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

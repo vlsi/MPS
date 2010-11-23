@@ -19,6 +19,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.search.EverythingGlobalScope;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
@@ -31,24 +32,16 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
-/**
- * Evgeny Gryaznov, Sep 1, 2010
- */
 public class IndexBasedModelDigest implements ApplicationComponent {
   @NotNull
-  @Override
   public String getComponentName() {
     return "Index based model digest component";
   }
 
-  @Override
   public void initComponent() {
     ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
       @Override
       public Map<String, String> getGenerationHashes(final IOperationContext operationContext, @NotNull IFile modelFile) {
-        // TODO FIXME indices are broken, we need to fix them
-        if(true) return null;
-
         try {
           VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
           if (file == null) return null;
@@ -59,7 +52,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
               valueArray[0] = values;
               return true;
             }
-          }, GlobalSearchScope.allScope(operationContext.getProject()));
+          }, new EverythingGlobalScope());
           return valueArray[0];
         } catch (IndexNotReadyException e) {
         } catch (ProcessCanceledException e) {
@@ -70,7 +63,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
 
   }
 
-  @Override
   public void disposeComponent() {
+
   }
 }

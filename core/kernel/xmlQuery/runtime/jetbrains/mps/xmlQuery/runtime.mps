@@ -5,6 +5,8 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <import index="vhgx" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="eknx" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
+  <import index="c6l4" modelUID="f:java_stub#org.xml.sax(org.xml.sax@java_stub)" version="-1" />
+  <import index="cbac" modelUID="f:java_stub#org.xml.sax.helpers(org.xml.sax.helpers@java_stub)" version="-1" />
   <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="yvix" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -13,8 +15,19 @@
     <node type="yvor.ClassConcept" typeId="yvor.1068390468198:3" id="2603967516254988460">
       <property name="name" nameId="yvnu.1169194664001:0" value="AttributeUtils" />
     </node>
+    <node type="yvor.ClassConcept" typeId="yvor.1068390468198:3" id="8666712036583221658">
+      <property name="name" nameId="yvnu.1169194664001:0" value="BreakParseSAXException" />
+    </node>
+    <node type="yvor.ClassConcept" typeId="yvor.1068390468198:3" id="2084096332909492403">
+      <property name="name" nameId="yvnu.1169194664001:0" value="XMLSAXHandler" />
+    </node>
   </roots>
   <root id="2603967516254988460">
+    <node role="constructor" roleId="yvor.1068390468201:3" type="yvor.ConstructorDeclaration" typeId="yvor.1068580123140:3" id="2084096332909535950">
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="2084096332909535951" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="2084096332909535952" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2084096332909535953" />
+    </node>
     <node role="staticMethod" roleId="yvor.1070462273904:3" type="yvor.StaticMethodDeclaration" typeId="yvor.1081236700938:3" id="108366216419407638">
       <property name="name" nameId="yvnu.1169194664001:0" value="stringWithDefault" />
       <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.StringType" typeId="yvor.1225271177708:3" id="108366216419407642" />
@@ -200,6 +213,43 @@
       </node>
     </node>
     <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="2603967516254988461" />
+  </root>
+  <root id="8666712036583221658">
+    <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="8666712036583221659" />
+    <node role="constructor" roleId="yvor.1068390468201:3" type="yvor.ConstructorDeclaration" typeId="yvor.1068580123140:3" id="8666712036583221660">
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="8666712036583221661" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="8666712036583221662" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="8666712036583221663" />
+    </node>
+    <node role="superclass" roleId="yvor.1165602531693:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="8109134543120582931">
+      <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="c6l4.~SAXException" resolveInfo="SAXException" />
+    </node>
+  </root>
+  <root id="2084096332909492403">
+    <node role="method" roleId="yvor.1107880067339:3" type="yvor.InstanceMethodDeclaration" typeId="yvor.1068580123165:3" id="2084096332909495080">
+      <property name="name" nameId="yvnu.1169194664001:0" value="getResult" />
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.TypeVariableReference" typeId="yvor.1109283449304:3" id="2084096332909499887">
+        <link role="typeVariableDeclaration" roleId="yvor.1109283546497:3" targetNodeId="2084096332909499886" resolveInfo="R" />
+      </node>
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="2084096332909495082" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2084096332909495083">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ReturnStatement" typeId="yvor.1068581242878:3" id="2084096332909499883">
+          <node role="expression" roleId="yvor.1068581517676:3" type="yvor.NullLiteral" typeId="yvor.1070534058343:3" id="2084096332909499885" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="2084096332909492404" />
+    <node role="constructor" roleId="yvor.1068390468201:3" type="yvor.ConstructorDeclaration" typeId="yvor.1068580123140:3" id="2084096332909492405">
+      <node role="returnType" roleId="yvor.1068580123133:3" type="yvor.VoidType" typeId="yvor.1068581517677:3" id="2084096332909492406" />
+      <node role="visibility" roleId="yvor.1178549979242:3" type="yvor.PublicVisibility" typeId="yvor.1146644602865:3" id="2084096332909492407" />
+      <node role="body" roleId="yvor.1068580123135:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2084096332909492408" />
+    </node>
+    <node role="superclass" roleId="yvor.1165602531693:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="2084096332909495079">
+      <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="cbac.~DefaultHandler" resolveInfo="DefaultHandler" />
+    </node>
+    <node role="typeVariableDeclaration" roleId="yvor.1109279881614:3" type="yvor.TypeVariableDeclaration" typeId="yvor.1109279763828:3" id="2084096332909499886">
+      <property name="name" nameId="yvnu.1169194664001:0" value="R" />
+    </node>
   </root>
 </model>
 

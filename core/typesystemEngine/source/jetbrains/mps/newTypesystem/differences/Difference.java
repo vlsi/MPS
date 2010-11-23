@@ -59,6 +59,10 @@ public abstract class Difference {
     return "";
   }
 
+  public String getShortPresentation() {
+    return "";
+  }
+
   public Color getColor() {
     return Color.BLACK;
   }

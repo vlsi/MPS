@@ -133,6 +133,8 @@ public class GenerationSession {
       SModel currOutput = null;
 
       ttrace.push("steps", false);
+      myGenerationPlan.createSwitchGraph();
+
       for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
         if (myLogger.needsInfo()) {
           myLogger.info("executing step " + (myMajorStep + 1));

@@ -23,10 +23,7 @@ import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class VersionUtil {
   private static final Logger LOG = Logger.getLogger(VersionUtil.class);
@@ -59,6 +56,7 @@ public class VersionUtil {
 
   private void processImportElement(ImportElement elem) {
     SModelReference modelRef = elem.getModelReference();
+    //int hash = (modelRef.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
     int hash = (modelRef.hashCode() >>> 1) % HASH_SIZE;
     while (myUsedIndexes.contains(hash))  hash = (hash + 1) % HASH_SIZE;
     myUsedIndexes.add(hash);
@@ -147,6 +145,7 @@ public class VersionUtil {
   }
 
 
+
   private Map<String, ImportElement> myImportByIx;
   private int myMaxImportIndex = 0;
 
@@ -178,20 +177,13 @@ public class VersionUtil {
     return elem == null ? null : elem.getModelReference();
   }
 
-
-  private static class ParseResult {  // [modelID.]text[:version]
-    public String modelID;
-    public String text;
-    public int version;
-  }
-
-  private ParseResult parse(String src) {
+  public SNodePointer readLinkId(String src) { // [modelID.]nodeID[:version] | [modelID.]^[:version]
+    if (src == null)  return null;
     int i0 = src.indexOf(MODEL_SEPARATOR_CHAR), i1 = src.lastIndexOf(VERSION_SEPARATOR_CHAR);
-    ParseResult res = new ParseResult();
-    res.text = decode(src.substring(i0 + 1, i1 < 0 ? src.length() : i1));
-    res.modelID = i0 < 0 ? "" : src.substring(0, i0);
-    res.version = i1 < 0 ? -1 : Integer.parseInt(src.substring(i1 + 1));
-    return res;
+    String text = decode(src.substring(i0 + 1, i1 < 0 ? src.length() : i1));
+    SModelReference modelRef = i0 < 0 ? myModelRef : getSModelReference(src.substring(0, i0));
+    SNodeId nodeId = text.equals("^") ? null : SNodeId.fromString(text);
+    return new SNodePointer(modelRef, nodeId);
   }
 
   public String readType(String s) {
@@ -212,19 +204,5 @@ public class VersionUtil {
 
   public String readName(String s) {
     return s;
-  }
-
-  public SReference readLink(SNode node, String rawRole, String rawTarget, String resolveInfo) {
-    String role = readRole(rawRole);
-    ParseResult target = parse(rawTarget);
-    SModelReference modelRef = getSModelReference(target.modelID);
-    if (modelRef == null) {
-      LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
-      return null;
-    } else if (target.text.equals("^")) {
-      return new DynamicReference(role, node, modelRef, resolveInfo);
-    } else {
-      return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
-    }
   }
 }

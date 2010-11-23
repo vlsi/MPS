@@ -31,16 +31,18 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       if ((target == null) || linkDeclaration == null) {
         continue;
       }
+      component.addDependency(target);
+      component.addDependency(linkDeclaration.getNode());
       SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, linkDeclaration, operationContext);
       if (sss.isError()) {
         SetSequence.fromSet(new HashSet<SNode>());
-        component.addError(node, sss.getMessage(), (SNode) null, SetSequence.fromSet(new HashSet<SNode>()), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+        component.addError(node, sss.getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
         String name = target.getName();
         component.addError(node, "reference" + ((name == null ?
           "" :
           " " + name
-        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", sss.getReferenceValidatorNode(), SetSequence.fromSet(new HashSet<SNode>()), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", sss.getReferenceValidatorNode(), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       }
     }
   }

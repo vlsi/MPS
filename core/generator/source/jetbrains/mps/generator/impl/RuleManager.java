@@ -38,9 +38,7 @@ public class RuleManager {
   private FlattenIterable<PatternReduction_MappingRule> myPatternReduction_MappingRules;
   private FlattenIterable<DropRootRule> myDropRootRules;
 
-  private Object mySwitchLock = new Object();
   private TemplateSwitchGraph myTemplateSwitchGraph;
-  private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
 
   private List<MappingScript> myPreScripts;
   private List<MappingScript> myPostScripts;
@@ -53,6 +51,8 @@ public class RuleManager {
   public RuleManager(GenerationPlan plan, int step) {
     myMappings = plan.getMappingConfigurations(step);
     myPlan = plan;
+    myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
+    if(myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
     initialize(myMappings);
     myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myPatternReduction_MappingRules);
   }
@@ -124,19 +124,7 @@ public class RuleManager {
   public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch, @NotNull ReductionContext reductionContext, ITemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
 
-    List<TemplateSwitch> switches;
-    synchronized (mySwitchLock) {
-      if (myTemplateSwitchGraph == null) {
-        myTemplateSwitchGraph = new TemplateSwitchGraph(myPlan.getTemplateModels());
-        myTemplateSwitchToListCache = new HashMap<TemplateSwitch, List<TemplateSwitch>>();
-      }
-
-      switches = myTemplateSwitchToListCache.get(templateSwitch);
-      if (switches == null) {
-        switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
-        myTemplateSwitchToListCache.put(templateSwitch, switches);
-      }
-    }
+    List<TemplateSwitch> switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
 
     // for each template switch test conditions and choose template node
     for (TemplateSwitch aSwitch : switches) {

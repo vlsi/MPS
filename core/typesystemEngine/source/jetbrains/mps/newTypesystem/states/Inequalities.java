@@ -21,7 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.StringDifference;
-import jetbrains.mps.newTypesystem.differences.inequality.SubTypingAdded;
+import jetbrains.mps.newTypesystem.differences.inequality.RelationAdded;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -41,31 +41,31 @@ import java.util.Set;
 public class Inequalities {
   private State myState;
 
-  private InequalityMapPair myWeakInequalities;
-  private InequalityMapPair myStrongInequalities;
-  private InequalityMapPair myWeakCheckInequalities;
-  private InequalityMapPair myStrongCheckInequalities;
-  private InequalityMapPair myComparable;
-  private InequalityMapPair myStrongComparable;
+  private RelationMapPair myWeakInequalities;
+  private RelationMapPair myStrongInequalities;
+  private RelationMapPair myWeakCheckInequalities;
+  private RelationMapPair myStrongCheckInequalities;
+  private RelationMapPair myWeakComparable;
+  private RelationMapPair myStrongComparable;
 
   private boolean solveOnlyConcrete;
 
-  private List<InequalityMapPair> myInequalities;
+  private List<RelationMapPair> myInequalities;
 
   public Inequalities(State state) {
     myState = state;
     solveOnlyConcrete = true;
-    myInequalities = new LinkedList<InequalityMapPair>();
-    myInequalities.add(myWeakInequalities = new InequalityMapPair(myState, true, false, false));
-    myInequalities.add(myWeakCheckInequalities = new InequalityMapPair(myState, true, true, false));
-    myInequalities.add(myStrongInequalities = new InequalityMapPair(myState, false, false, false));
-    myInequalities.add(myStrongCheckInequalities = new InequalityMapPair(myState, false, true, false));
-    myInequalities.add(myComparable = new InequalityMapPair(myState, true, true, true));
-    myInequalities.add(myStrongComparable = new InequalityMapPair(myState, false, true, true));
+    myInequalities = new LinkedList<RelationMapPair>();
+    myInequalities.add(myWeakInequalities = new RelationMapPair(myState, true, false, false));
+    myInequalities.add(myWeakCheckInequalities = new RelationMapPair(myState, true, true, false));
+    myInequalities.add(myStrongInequalities = new RelationMapPair(myState, false, false, false));
+    myInequalities.add(myStrongCheckInequalities = new RelationMapPair(myState, false, true, false));
+    myInequalities.add(myWeakComparable = new RelationMapPair(myState, true, true, true));
+    myInequalities.add(myStrongComparable = new RelationMapPair(myState, false, true, true));
   }
 
   public void substitute(SNode var, SNode type) {
-    for (InequalityMapPair inequalityMapPair : myInequalities) {
+    for (RelationMapPair inequalityMapPair : myInequalities) {
       inequalityMapPair.substitute(var, type);
     }
   }
@@ -116,7 +116,6 @@ public class Inequalities {
     }
     // if one of them is a var
     if (!myState.isConcrete(left) || !myState.isConcrete(right)) {
-      System.out.println(left + " " + right + " " + myState.isConcrete(left) + myState.isConcrete(right));
       addComparable(left, right, isWeak, info);
       return;
     }
@@ -137,36 +136,33 @@ public class Inequalities {
   }
 
   public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    InequalityMapPair inequality;
+    RelationMapPair inequality;
     if (isWeak) {
       inequality = check ? myWeakCheckInequalities : myWeakInequalities;
     } else {
       inequality = check ? myStrongCheckInequalities : myStrongInequalities;
     }
     if (!inequality.contains(subType, superType)) {
-      myState.addDifference(new SubTypingAdded(subType, superType, inequality, info), false);
+      myState.addDifference(new RelationAdded(subType, superType, inequality, info), false);
     }
   }
 
   public void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    InequalityMapPair inequality = isWeak ? myComparable : myStrongComparable;
-    if (!inequality.contains(subType, superType)) {
-      myState.addDifference(new SubTypingAdded(subType, superType, inequality, info), false);
+    RelationMapPair comparable = isWeak ? myWeakComparable : myStrongComparable;
+    if (!comparable.contains(subType, superType)) {
+      myState.addDifference(new RelationAdded(subType, superType, comparable, info), false);
     }
   }
 
   public void solveInequalities() {
     solveOnlyConcrete = false;
-    myWeakInequalities.expand();
-    myStrongInequalities.expand();
-
     myWeakInequalities.solve();
     myStrongInequalities.solve();
   }
 
   public List<String> getListPresentation() {
     List<String> result = new LinkedList<String>();
-    for (InequalityMapPair inequalityMapPair : myInequalities) {
+    for (RelationMapPair inequalityMapPair : myInequalities) {
       result.addAll(inequalityMapPair.getListPresentation());
     }
     return result;
@@ -178,7 +174,7 @@ public class Inequalities {
   }
 
   public void clear() {
-    for (InequalityMapPair inequalityMapPair : myInequalities) {
+    for (RelationMapPair inequalityMapPair : myInequalities) {
       inequalityMapPair.clear();
     }
     solveOnlyConcrete = true;

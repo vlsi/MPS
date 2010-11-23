@@ -46,7 +46,7 @@ public class EquationRemoved extends EquationDifference {
 
   @Override
   public String getPresentation() {
-    return "Equation removed " + myChild + " = " + myParent;
+    return "Equation removed " + getShortPresentation();
   }
 
   public SNode getChild() {

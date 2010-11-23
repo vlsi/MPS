@@ -133,7 +133,7 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.textGen.ElementHandler" />
-    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+    <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.BaseAssignmentExpression_TextGen" file="BaseAssignmentExpression_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />

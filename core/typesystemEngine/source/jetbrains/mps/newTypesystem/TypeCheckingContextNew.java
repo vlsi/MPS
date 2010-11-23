@@ -169,7 +169,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
-
+  
     myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
   }
 
@@ -284,5 +284,20 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return getTypeOf(node, typeChecker);
   }
 
+  @Override
+  public SubtypingManager getSubtypingManager() {
+    return null;
+  }
 
+  @Override
+  public void dispose() {
+    super.dispose();
+    myState.clear(true);
+
+  }
+
+  @Override
+  protected SNode getTypeOf_normalMode(SNode node) {
+    return super.getTypeOf_normalMode(node);    //To change body of overridden methods use File | Settings | File Templates.
+  }
 }
