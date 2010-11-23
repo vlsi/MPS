@@ -381,7 +381,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNodeListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessage" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner" />
-    <classNode extendsClassName="jetbrains.mps.util.CounterMap.CounterMapHandler" />
+    <classNode extendsClassName="jetbrains.mps.util.CounterMapHandler" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager" file="RootNodeFileStatusManager.java">

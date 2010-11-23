@@ -14,6 +14,7 @@ import com.intellij.openapi.vcs.annotate.FileAnnotation;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -81,9 +82,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
   private SModelDescriptor myModelDescriptor;
-  private List<SNodeId> myFileLineToId;
+  private List<LineContent> myFileLineToContent;
 
-  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, List<SNodeId> fileLineToId, AbstractVcs vcs, VirtualFile modelVirtualFile) {
+  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, List<LineContent> fileLineToContent, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
@@ -91,9 +92,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }));
     SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
-    for (int line = 0; line < ListSequence.fromList(fileLineToId).count(); line++) {
+    for (int line = 0; line < ListSequence.fromList(fileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = ListSequence.fromList(fileLineToId).getElement(line);
+      SNodeId id = check_5mnya_a0b0d0a(ListSequence.fromList(fileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
@@ -108,7 +109,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
-    myFileLineToId = fileLineToId;
+    myFileLineToContent = fileLineToContent;
     myVcs = vcs;
   }
 
@@ -282,6 +283,13 @@ public class AnnotationColumn extends AbstractLeftColumn {
     return a;
   }
 
+  private static SNodeId check_5mnya_a0b0d0a(LineContent p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getNodeId();
+  }
+
   private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0a(Pair<CommittedChangeList, FilePath> p) {
     if (null == p) {
       return null;
@@ -301,6 +309,13 @@ public class AnnotationColumn extends AbstractLeftColumn {
       return null;
     }
     return p.getFirst();
+  }
+
+  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a0a(LineContent p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getNodeId();
   }
 
   private class ShowDiffFromAnnotationAction extends AbstractAction {
@@ -378,12 +393,13 @@ public class AnnotationColumn extends AbstractLeftColumn {
                 final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    SNodeId nodeId = ListSequence.fromList(myFileLineToId).getElement(myFileLine);
+                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0a(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     node.value = afterModel.getNodeById(nodeId);
                     if ((node.value == null)) {
                       node.value = beforeModel.value.getNodeById(nodeId);
                     }
                     node.value = SNodeOperations.getContainingRoot(node.value);
+
                   }
                 });
 
