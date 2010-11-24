@@ -17,7 +17,7 @@ package jetbrains.mps.debug.api.breakpoints;
 
 import org.jetbrains.annotations.NonNls;
 
-public interface IBreakpointKind {
+public interface IBreakpointKind<B extends IBreakpoint> {
   boolean supportsDisable();
   @NonNls
   String getName();

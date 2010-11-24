@@ -107,8 +107,7 @@ public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint
       }*/
       //todo here some expressions may be evaluated; later
       // runAction(evaluationContext, event);
-    }
-    catch (IncompatibleThreadStateException ex) {
+    } catch (IncompatibleThreadStateException ex) {
       LOG.error(ex);
       return false;
     }

@@ -18,7 +18,7 @@ package jetbrains.mps.debug.breakpoints;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import org.jetbrains.annotations.NonNls;
 
-public enum JavaBreakpointKind implements IBreakpointKind {
+public enum JavaBreakpointKind implements IBreakpointKind<JavaBreakpoint> {
   LINE_BREAKPOINT("Java Line Breakpoint"),
   EXCEPTION_BREAKPOINT("Java Exception Breakpoint");
   private static final String LANGUAGE_PREFIX = "JAVA_";

@@ -46,14 +46,15 @@ public class BreakpointProvidersManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  public void registerProvider(IBreakpointsProvider provider){
+  public void registerProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider){
+    // I just love generics in java
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.put(kind, provider);
       myNameToKind.put(kind.getName(), kind);
     }
   }
 
-  public void unregisterProvider(IBreakpointsProvider provider){
+  public void unregisterProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider){
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.remove(kind);
       myNameToKind.remove(kind.getName());

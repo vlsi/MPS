@@ -16,24 +16,22 @@
 package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.prefs.BackingStoreException;
 
-public interface IBreakpointsProvider {
+public interface IBreakpointsProvider<B extends IBreakpoint, K extends IBreakpointKind<B>> {
   @NotNull
-  List<JavaBreakpointKind> getAllKinds();
-  boolean canCreateFromUi(@NotNull IBreakpointKind kind);
+  List<K> getAllKinds();
+  boolean canCreateFromUi(@NotNull K kind);
   @Nullable
-  IBreakpoint createFromUi(@NotNull IBreakpointKind kind, Project project);
+  B createFromUi(@NotNull K kind, Project project);
   @Nullable
-  IBreakpointPropertiesUi createPropertiesEditor(IBreakpointKind kind);
+  IBreakpointPropertiesUi<B> createPropertiesEditor(K kind);
   @Nullable
-  IBreakpoint loadFromState(Element state, IBreakpointKind kind, Project project);
+  B loadFromState(Element state, K kind, Project project);
   @Nullable
-  Element saveToState(IBreakpoint breakpoint);
+  Element saveToState(B breakpoint);
 }

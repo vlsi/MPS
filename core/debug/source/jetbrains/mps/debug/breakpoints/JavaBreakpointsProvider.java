@@ -53,7 +53,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class JavaBreakpointsProvider implements IBreakpointsProvider, ApplicationComponent {
+public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpoint, JavaBreakpointKind>, ApplicationComponent {
   private final BreakpointProvidersManager myProvidersManager;
 
   public static JavaBreakpointsProvider getInstance() {
@@ -71,12 +71,13 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
   }
 
   @Override
-  public boolean canCreateFromUi(@NotNull IBreakpointKind kind) {
+  public boolean canCreateFromUi(@NotNull JavaBreakpointKind kind) {
     return kind.equals(JavaBreakpointKind.EXCEPTION_BREAKPOINT);
   }
 
   @Override
-  public IBreakpoint createFromUi(@NotNull IBreakpointKind kind, Project project) {
+  public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
+    // todo switch by kind, actually
     final List<BaseSNodeDescriptor> result = new ArrayList<BaseSNodeDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -117,7 +118,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
   }
 
   @Override
-  public IBreakpointPropertiesUi createPropertiesEditor(final IBreakpointKind kind) {
+  public IBreakpointPropertiesUi<JavaBreakpoint> createPropertiesEditor(final JavaBreakpointKind kind) {
     return new MyIBreakpointPropertiesUi();
   }
 
@@ -168,10 +169,8 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
 
   @Override
   @Nullable
-  public IBreakpoint loadFromState(Element state, IBreakpointKind kind, final Project project) {
-    if (!(kind instanceof JavaBreakpointKind)) return null;
-    JavaBreakpointKind javaKind = (JavaBreakpointKind) kind;
-    switch (javaKind) {
+  public JavaBreakpoint loadFromState(Element state, JavaBreakpointKind kind, final Project project) {
+    switch (kind) {
       case LINE_BREAKPOINT:
         final BreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, BreakpointInfo.class);
         MPSBreakpoint breakpoint = ModelAccess.instance().runReadAction(new Computable<MPSBreakpoint>() {
@@ -195,7 +194,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
 
   @Override
   @Nullable
-  public Element saveToState(IBreakpoint breakpoint) {
+  public Element saveToState(JavaBreakpoint breakpoint) {
     switch ((JavaBreakpointKind) breakpoint.getKind()) {
       case EXCEPTION_BREAKPOINT:
         ExceptionBreakpointInfo info = new ExceptionBreakpointInfo((ExceptionBreakpoint) breakpoint);
@@ -225,7 +224,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
     myProvidersManager.unregisterProvider(this);
   }
 
-  private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi {
+  private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi<JavaBreakpoint> {
     private JavaBreakpoint myBreakpoint;
     private final JPanel myUi;
     private final JRadioButton[] myButtons = new JRadioButton[SuspendPolicy.values().length];
@@ -255,9 +254,9 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider, Applicatio
     }
 
     @Override
-    public void setBreakpoint(IBreakpoint breakpoint) {
-      myBreakpoint = (JavaBreakpoint) breakpoint;  // todo generics?
-      int suspendPolicy = ((JavaBreakpoint) breakpoint).getSuspendPolicy();
+    public void setBreakpoint(JavaBreakpoint breakpoint) {
+      myBreakpoint = breakpoint;
+      int suspendPolicy = breakpoint.getSuspendPolicy();
       for (SuspendPolicy policy : SuspendPolicy.values()) {
         if (policy.myValue == suspendPolicy) {
           myButtons[policy.ordinal()].setSelected(true);
