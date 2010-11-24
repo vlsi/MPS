@@ -90,7 +90,7 @@ public class Script implements IScript {
     }
     LOG.info("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
-    final Script.VariablesPool pool = new Script.VariablesPool();
+    final Script.ParametersPool pool = new Script.ParametersPool();
     LOG.info("Initializing");
     if (init != null) {
       init.invoke(pool);
@@ -128,7 +128,7 @@ public class Script implements IScript {
             public Iterable<IResource> translate(IResult r) {
               return r.output();
             }
-          }).toListSequence();
+          }).distinct().toListSequence();
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
               LOG.info("No input. Stopping");
@@ -140,13 +140,11 @@ public class Script implements IScript {
           IJob job = trg.createJob();
           IResult jr = job.execute(input, monit, pool);
           if (!(trg.producesOutput())) {
-            Iterable<IResource> output = jr.output();
-            if (Sequence.fromIterable(output).isNotEmpty()) {
-              LOG.info("Unexpected output. Stopping");
-              results.addResult(trg.getName(), new IResult.FAILURE(null));
-              return;
-            }
-            jr = new Script.CatOutputResult(jr, input);
+            // ignore the output 
+            jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
+              null :
+              input
+            ));
           }
           results.addResult(trg.getName(), jr);
           if (!(jr.isSucessful()) || monit.pleaseStop()) {
@@ -163,10 +161,10 @@ public class Script implements IScript {
     return results;
   }
 
-  public class VariablesPool implements IParametersPool {
+  public class ParametersPool implements IParametersPool {
     private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
 
-    public VariablesPool() {
+    public ParametersPool() {
     }
 
     public <T> T parameters(ITarget.Name target, Class<T> cls) {
@@ -191,17 +189,17 @@ public class Script implements IScript {
     }
   }
 
-  private static class CatOutputResult implements IResult {
+  private static class SubsOutputResult implements IResult {
     private IResult result;
     private Iterable<IResource> output;
 
-    public CatOutputResult(IResult result, Iterable<IResource> output) {
+    public SubsOutputResult(IResult result, Iterable<IResource> output) {
       this.result = result;
       this.output = output;
     }
 
     public Iterable<IResource> output() {
-      return Sequence.fromIterable(result.output()).concat(Sequence.fromIterable(output));
+      return output;
     }
 
     public boolean isSucessful() {

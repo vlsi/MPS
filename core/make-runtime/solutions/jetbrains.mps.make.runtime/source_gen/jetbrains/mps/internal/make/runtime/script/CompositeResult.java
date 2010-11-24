@@ -10,7 +10,6 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class CompositeResult implements IResult {
   private Map<ITarget.Name, IResult> results = MapSequence.fromMap(new LinkedHashMap<ITarget.Name, IResult>(16, (float) 0.75, false));
@@ -35,10 +34,9 @@ public class CompositeResult implements IResult {
   }
 
   public Iterable<IResource> output() {
-    return Sequence.fromIterable(MapSequence.fromMap(results).values()).translate(new ITranslator2<IResult, IResource>() {
-      public Iterable<IResource> translate(IResult r) {
-        return r.output();
-      }
-    });
+    if (MapSequence.fromMap(results).isEmpty()) {
+      return null;
+    }
+    return Sequence.fromIterable(MapSequence.fromMap(results).values()).last().output();
   }
 }

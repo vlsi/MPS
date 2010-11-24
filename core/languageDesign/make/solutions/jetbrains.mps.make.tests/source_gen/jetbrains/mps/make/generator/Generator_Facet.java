@@ -92,11 +92,11 @@ public class Generator_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return true;
+      return false;
     }
 
     public boolean producesOutput() {
-      return true;
+      return false;
     }
 
     public Class<? extends IResource> expectedResources() {
@@ -182,7 +182,7 @@ public class Generator_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return true;
+      return false;
     }
 
     public boolean producesOutput() {

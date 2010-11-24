@@ -86,11 +86,11 @@ public class Maker_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return true;
+      return false;
     }
 
     public boolean producesOutput() {
-      return true;
+      return false;
     }
 
     public Class<? extends IResource> expectedResources() {
