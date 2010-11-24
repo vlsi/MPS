@@ -130,11 +130,6 @@ public class CommonPaths {
       result.add(getWorkbenchClassPath());
     }
 
-    IClassPathItem xmlQueryClassPath = getXmlQueryClassPath();
-    if (xmlQueryClassPath != null) {
-      result.add(getXmlQueryClassPath());
-    }
-
     IClassPathItem svnClassPath = getSVNSupportClasspath();
     if (svnClassPath != null) {
       result.add(svnClassPath);
@@ -248,17 +243,6 @@ public class CommonPaths {
 
     return null;
   }
-
-  private static IClassPathItem getXmlQueryClassPath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime" + File.separator + "classes";
-    if (new File(workbenchClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(workbenchClasses);
-    }
-
-    return null;
-  }
-
 
   private static IClassPathItem getSVNSupportClasspath() {
     String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
