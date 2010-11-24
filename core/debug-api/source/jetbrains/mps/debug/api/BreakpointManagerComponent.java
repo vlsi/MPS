@@ -450,6 +450,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
+  // TODO legacy method so the users code would compile -- remove
+  @Deprecated
+  public void notifyDebuggableConceptsAdded(){}
+
   private class MyBreakpointListener implements IBreakpointListener {
     @Override
     public void breakpointToggled(final IBreakpoint breakpoint, boolean enabled) {
