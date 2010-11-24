@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -165,7 +166,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
     SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).count() > 0 ?
-      ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1) :
+      IMethodLike_Behavior.call_getLastStatement_1239354409446(closure) :
       null
     );
     boolean returnsValue = !(ListSequence.fromList(allRets).isEmpty());
