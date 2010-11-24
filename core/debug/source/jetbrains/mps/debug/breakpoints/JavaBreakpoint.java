@@ -88,6 +88,7 @@ public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements Cl
     RequestManager.createClassPrepareRequests(this);
   }
 
+  @Override
   public int getSuspendPolicy() {
     return mySuspendPolicy;
   }

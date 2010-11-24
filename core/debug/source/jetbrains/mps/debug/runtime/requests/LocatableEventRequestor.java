@@ -5,4 +5,5 @@ import jetbrains.mps.debug.runtime.SuspendContextCommand;
 
 public interface LocatableEventRequestor extends Requestor {
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event);
+  int getSuspendPolicy();
 }

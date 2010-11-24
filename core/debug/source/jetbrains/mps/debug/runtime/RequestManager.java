@@ -123,17 +123,22 @@ public class RequestManager implements DebugProcessListener {
 
   public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
     DebuggerManagerThread.assertIsManagerThread();
-    BreakpointRequest req = myEventRequestManager.createBreakpointRequest(location);
-    req.setSuspendPolicy(requestor.getSuspendPolicy());
+    BreakpointRequest request = myEventRequestManager.createBreakpointRequest(location);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  private void initRequest(JavaBreakpoint requestor, EventRequest req) {
+    int suspendPolicy = requestor.getSuspendPolicy();
+    if (suspendPolicy == EventRequest.SUSPEND_NONE) suspendPolicy = EventRequest.SUSPEND_ALL; // we suspend all, do smth and then resume
+    req.setSuspendPolicy(suspendPolicy);
     registerRequestInternal(requestor, req);
-    return req;
   }
 
   public ExceptionRequest createExceptionRequest(ExceptionBreakpoint requestor, ReferenceType reference) {
     DebuggerManagerThread.assertIsManagerThread();
     ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
-    request.setSuspendPolicy(requestor.getSuspendPolicy());
-    registerRequestInternal(requestor, request);
+    initRequest(requestor, request);
     return request;
   }
 
