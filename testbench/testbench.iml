@@ -73,7 +73,6 @@
     <orderEntry type="module" module-name="uiLanguage" />
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="xmlDeprecated" />
-    <orderEntry type="module" module-name="xmlQuery-runtime" />
     <orderEntry type="module" module-name="YPath" />
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="YPath-solutions" />
