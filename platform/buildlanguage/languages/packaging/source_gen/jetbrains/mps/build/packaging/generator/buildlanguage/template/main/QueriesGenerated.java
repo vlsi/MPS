@@ -186,7 +186,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204022349926(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("pack." + SPropertyOperations.getString(_context.getNode(), "name").replace(File.separator, "_"), null);
+    return "pack." + SPropertyOperations.getString(_context.getNode(), "name").replace(File.separator, "_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1210098113087(final IOperationContext operationContext, final PropertyMacroContext _context) {
