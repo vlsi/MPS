@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -13,8 +15,6 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -45,7 +45,11 @@ public class Type_Behavior {
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return NameUtil.splitByCamels(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode));
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    for (String s : NameUtil.splitByCamels(BaseConcept_Behavior.call_getPresentation_1213877396640(thisNode))) {
+      ListSequence.fromList(result).addElement(s);
+    }
+    return result;
   }
 
   public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
