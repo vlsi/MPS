@@ -1155,10 +1155,14 @@ public class QueriesGenerated {
       IMatchingPattern pattern_x583g4_a0vi = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_x583g4_a0vi = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_x583g4_a0vi);
       if (coercedNode_x583g4_a0vi != null) {
-        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0vi, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") ?
-          SLinkOperations.getTarget(coercedNode_x583g4_a0vi, "elementType", true) :
-          ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_x583g4_a0vi, "elementType", true))
-        );
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_x583g4_a0vi, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+          return SLinkOperations.getTarget(coercedNode_x583g4_a0vi, "elementType", true);
+        }
+        SNode ct = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_x583g4_a0vi, "elementType", true));
+        if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+          return SLinkOperations.getTarget(SNodeOperations.cast(ct, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true);
+        }
+        return ct;
       } else {
       }
     }
