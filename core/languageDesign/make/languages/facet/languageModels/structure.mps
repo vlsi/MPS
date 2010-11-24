@@ -76,6 +76,11 @@
       <property name="name" nameId="yvnu.1169194664001:0" value="ForeignParametersComponentExpression" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvor.1197027756228:3" resolveInfo="DotExpression" />
     </node>
+    <node type="yvnr.EnumerationDataTypeDeclaration" typeId="yvnr.1082978164219:0" id="1675547159918562083">
+      <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="target" />
+      <property name="name" nameId="yvnu.1169194664001:0" value="ResourcesPolicy" />
+      <link role="memberDataType" roleId="yvnr.1083171729157:0" targetNodeId="yvnu.1082983041843:0" resolveInfo="string" />
+    </node>
   </roots>
   <root id="6418371274763029521" />
   <root id="6418371274763029523">
@@ -115,13 +120,9 @@
     </node>
   </root>
   <root id="6418371274763029565">
-    <node role="propertyDeclaration" roleId="yvnr.1071489727084:0" type="yvnr.PropertyDeclaration" typeId="yvnr.1071489288299:0" id="7752758284337367517">
-      <property name="name" nameId="yvnu.1169194664001:0" value="requiresInput" />
-      <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="yvnu.1082983657063:0" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="yvnr.1071489727084:0" type="yvnr.PropertyDeclaration" typeId="yvnr.1071489288299:0" id="7082294419595069091">
-      <property name="name" nameId="yvnu.1169194664001:0" value="producesOutput" />
-      <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="yvnu.1082983657063:0" resolveInfo="boolean" />
+    <node role="propertyDeclaration" roleId="yvnr.1071489727084:0" type="yvnr.PropertyDeclaration" typeId="yvnr.1071489288299:0" id="1675547159918562088">
+      <property name="name" nameId="yvnu.1169194664001:0" value="resourcesPolicy" />
+      <link role="dataType" roleId="yvnr.1082985295845:0" targetNodeId="1675547159918562083:1" resolveInfo="ResourcesPolicy" />
     </node>
     <node role="linkDeclaration" roleId="yvnr.1071489727083:0" type="yvnr.LinkDeclaration" typeId="yvnr.1071489288298:0" id="7320828025189219295">
       <property name="metaClass" nameId="yvnr.1071599937831:0" value="aggregation" />
@@ -233,6 +234,24 @@
       <property name="sourceCardinality" nameId="yvnr.1071599893252:0" value="1" />
       <link role="target" roleId="yvnr.1071599976176:0" targetNodeId="3344436107830227888:1" resolveInfo="ForeignVarialblesExpression" />
       <link role="specializedLink" roleId="yvnr.1071599698500:0" targetNodeId="yvor.1197027771414:3" />
+    </node>
+  </root>
+  <root id="1675547159918562083">
+    <node role="member" roleId="yvnr.1083172003582:0" type="yvnr.EnumerationMemberDeclaration" typeId="yvnr.1083171877298:0" id="1675547159918562084">
+      <property name="internalValue" nameId="yvnr.1083923523171:0" value="TRANSFORM" />
+      <property name="externalValue" nameId="yvnr.1083923523172:0" value="transform" />
+    </node>
+    <node role="member" roleId="yvnr.1083172003582:0" type="yvnr.EnumerationMemberDeclaration" typeId="yvnr.1083171877298:0" id="1675547159918562085">
+      <property name="internalValue" nameId="yvnr.1083923523171:0" value="PASSTHRU" />
+      <property name="externalValue" nameId="yvnr.1083923523172:0" value="pass through" />
+    </node>
+    <node role="member" roleId="yvnr.1083172003582:0" type="yvnr.EnumerationMemberDeclaration" typeId="yvnr.1083171877298:0" id="1675547159918562086">
+      <property name="internalValue" nameId="yvnr.1083923523171:0" value="CONSUME" />
+      <property name="externalValue" nameId="yvnr.1083923523172:0" value="consume" />
+    </node>
+    <node role="member" roleId="yvnr.1083172003582:0" type="yvnr.EnumerationMemberDeclaration" typeId="yvnr.1083171877298:0" id="1675547159918562087">
+      <property name="internalValue" nameId="yvnr.1083923523171:0" value="PRODUCE" />
+      <property name="externalValue" nameId="yvnr.1083923523172:0" value="produce" />
     </node>
   </root>
 </model>

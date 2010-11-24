@@ -891,14 +891,53 @@
                 <node role="propertyMacro$property_attribute$value" type="yvp6.PropertyMacro" typeId="yvp6.1087833241328:2" id="3097736894717613588">
                   <node role="propertyValueFunction" roleId="yvp6.1167756362303:2" type="yvp6.PropertyMacro_GetPropertyValue" typeId="yvp6.1167756080639:2" id="3097736894717613589">
                     <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="3097736894717613590">
-                      <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="3097736894717623030">
-                        <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="3097736894717623032">
-                          <node role="operand" roleId="yvor.1197027771414:3" type="yvp6.TemplateFunctionParameter_sourceNode" typeId="yvp6.1167169188348:2" id="3097736894717623031" />
-                          <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="3097736894717623036">
-                            <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7752758284337367517:1" resolveInfo="requiresInput" />
+                      <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="1675547159918601338">
+                        <node role="expression" roleId="yvor.1068580123156:3" type="yvor.ParenthesizedExpression" typeId="yvor.1079359253375:3" id="1675547159918601339">
+                          <node role="expression" roleId="yvor.1079359253376:3" type="yvor.OrExpression" typeId="yvor.1080223426719:3" id="1675547159918601340">
+                            <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601394">
+                              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601384">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvim.SEnumOperationInvocation" typeId="yvim.1240930118027:16" id="1675547159918601343">
+                                  <link role="enumDeclaration" roleId="yvim.1240930118028:16" targetNodeId="zyxi.1675547159918562083:1" resolveInfo="ResourcesPolicy" />
+                                  <node role="operation" roleId="yvim.1240930317927:16" type="yvim.SEnum_MemberOperation" typeId="yvim.1240930444945:16" id="1675547159918601344">
+                                    <link role="member" roleId="yvim.1240930444946:16" targetNodeId="zyxi.1675547159918562086:1" />
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.EnumMember_ValueOperation" typeId="yvim.1240171359678:16" id="1675547159918601389" />
+                              </node>
+                              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="1675547159918601402">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601405">
+                                  <node role="operand" roleId="yvor.1197027771414:3" type="yvp6.TemplateFunctionParameter_sourceNode" typeId="yvp6.1167169188348:2" id="1675547159918601406" />
+                                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="1675547159918601407">
+                                    <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resourcesPolicy" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601369">
+                              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601361">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvim.SEnumOperationInvocation" typeId="yvim.1240930118027:16" id="1675547159918601346">
+                                  <link role="enumDeclaration" roleId="yvim.1240930118028:16" targetNodeId="zyxi.1675547159918562083:1" resolveInfo="ResourcesPolicy" />
+                                  <node role="operation" roleId="yvim.1240930317927:16" type="yvim.SEnum_MemberOperation" typeId="yvim.1240930444945:16" id="1675547159918601347">
+                                    <link role="member" roleId="yvim.1240930444946:16" targetNodeId="zyxi.1675547159918562084:1" />
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.EnumMember_ValueOperation" typeId="yvim.1240171359678:16" id="1675547159918601365" />
+                              </node>
+                              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="1675547159918601376">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601379">
+                                  <node role="operand" roleId="yvor.1197027771414:3" type="yvp6.TemplateFunctionParameter_sourceNode" typeId="yvp6.1167169188348:2" id="1675547159918601380" />
+                                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="1675547159918601381">
+                                    <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resourcesPolicy" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
+                      <node role="statement" roleId="yvor.1068581517665:3" type="yvor.Statement" typeId="yvor.1068580123157:3" id="1675547159918601337" />
                     </node>
                   </node>
                 </node>
@@ -916,11 +955,49 @@
                 <node role="propertyMacro$property_attribute$value" type="yvp6.PropertyMacro" typeId="yvp6.1087833241328:2" id="7082294419595105984">
                   <node role="propertyValueFunction" roleId="yvp6.1167756362303:2" type="yvp6.PropertyMacro_GetPropertyValue" typeId="yvp6.1167756080639:2" id="7082294419595105985">
                     <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="7082294419595105986">
-                      <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="7082294419595105987">
-                        <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="7082294419595105989">
-                          <node role="operand" roleId="yvor.1197027771414:3" type="yvp6.TemplateFunctionParameter_sourceNode" typeId="yvp6.1167169188348:2" id="7082294419595105988" />
-                          <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="7082294419595105993">
-                            <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.7082294419595069091:1" resolveInfo="producesOutput" />
+                      <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="1675547159918601413">
+                        <node role="expression" roleId="yvor.1068580123156:3" type="yvor.ParenthesizedExpression" typeId="yvor.1079359253375:3" id="1675547159918601414">
+                          <node role="expression" roleId="yvor.1079359253376:3" type="yvor.OrExpression" typeId="yvor.1080223426719:3" id="1675547159918601415">
+                            <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601416">
+                              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601417">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvim.SEnumOperationInvocation" typeId="yvim.1240930118027:16" id="1675547159918601418">
+                                  <link role="enumDeclaration" roleId="yvim.1240930118028:16" targetNodeId="zyxi.1675547159918562083:1" resolveInfo="ResourcesPolicy" />
+                                  <node role="operation" roleId="yvim.1240930317927:16" type="yvim.SEnum_MemberOperation" typeId="yvim.1240930444945:16" id="1675547159918601419">
+                                    <link role="member" roleId="yvim.1240930444946:16" targetNodeId="zyxi.1675547159918562087:1" />
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.EnumMember_ValueOperation" typeId="yvim.1240171359678:16" id="1675547159918601420" />
+                              </node>
+                              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="1675547159918601421">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601422">
+                                  <node role="operand" roleId="yvor.1197027771414:3" type="yvp6.TemplateFunctionParameter_sourceNode" typeId="yvp6.1167169188348:2" id="1675547159918601423" />
+                                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="1675547159918601424">
+                                    <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resourcesPolicy" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601425">
+                              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601426">
+                                <node role="operand" roleId="yvor.1197027771414:3" type="yvim.SEnumOperationInvocation" typeId="yvim.1240930118027:16" id="1675547159918601427">
+                                  <link role="enumDeclaration" roleId="yvim.1240930118028:16" targetNodeId="zyxi.1675547159918562083:1" resolveInfo="ResourcesPolicy" />
+                                  <node role="operation" roleId="yvim.1240930317927:16" type="yvim.SEnum_MemberOperation" typeId="yvim.1240930444945:16" id="1675547159918601428">
+                                    <link role="member" roleId="yvim.1240930444946:16" targetNodeId="zyxi.1675547159918562084:1" />
+                                  </node>
+                                </node>
+                                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.EnumMember_ValueOperation" typeId="yvim.1240171359678:16" id="1675547159918601429" />
+                              </node>
+                              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="1675547159918601430">
+                                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="vhgx.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601431">
+                                  <node role="operand" roleId="yvor.1197027771414:3" type="yvp6.TemplateFunctionParameter_sourceNode" typeId="yvp6.1167169188348:2" id="1675547159918601432" />
+                                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="1675547159918601433">
+                                    <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resourcesPolicy" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>

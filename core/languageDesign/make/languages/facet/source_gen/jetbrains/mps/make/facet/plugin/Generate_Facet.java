@@ -128,11 +128,11 @@ public class Generate_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return false;
+      return true;
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Class<? extends IResource> expectedResources() {
@@ -239,11 +239,11 @@ public class Generate_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return false;
+      return true;
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Class<? extends IResource> expectedResources() {
@@ -341,11 +341,11 @@ public class Generate_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return false;
+      return true;
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Class<? extends IResource> expectedResources() {
@@ -466,11 +466,11 @@ public class Generate_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return false;
+      return true;
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Class<? extends IResource> expectedResources() {
