@@ -59,7 +59,6 @@
     <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/make-runtime/classes" />
     <path path="core/runtime/classes" />
     <path path="core/typesystemEngine/classes" />
@@ -1732,7 +1731,6 @@
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
-    <path path="platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -1816,7 +1814,6 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
-    <path path="platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
