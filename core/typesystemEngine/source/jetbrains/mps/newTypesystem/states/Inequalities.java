@@ -29,7 +29,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -92,7 +91,7 @@ public class Inequalities {
       myState.popDifference();
       return;
     }
-    
+
     subType = myState.getEquations().expandNode(subType);
     superType = myState.getEquations().expandNode(superType);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
@@ -107,7 +106,7 @@ public class Inequalities {
     }
   }
 
-  public void addComparableEquation(SNode left, SNode right, boolean isWeak,  EquationInfo info) {
+  public void addComparableEquation(SNode left, SNode right, boolean isWeak, EquationInfo info) {
     left = myState.getRepresentative(left);
     right = myState.getRepresentative(right);
     if (left == null || right == null || left == right) {
@@ -123,11 +122,11 @@ public class Inequalities {
     right = myState.expand(right);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     // if subType or superType
-    if (subTyping.isComparableByRules(left, right, info, isWeak)||
-        subTyping.isSubTypeByReplacementRules(left, right) ||
-        subTyping.isSubTypeByReplacementRules(right, left) ||
-        subTyping.isSubType(left, right, info, isWeak, true) ||
-        subTyping.isSubType(right, left, info, isWeak, true)) {
+    if (subTyping.isComparableByRules(left, right, info, isWeak) ||
+      subTyping.isSubTypeByReplacementRules(left, right) ||
+      subTyping.isSubTypeByReplacementRules(right, left) ||
+      subTyping.isSubType(left, right, info, isWeak, true) ||
+      subTyping.isSubType(right, left, info, isWeak, true)) {
       myState.addDifference(new StringDifference(left + " is comparable with " + right), false);
       return;
     }

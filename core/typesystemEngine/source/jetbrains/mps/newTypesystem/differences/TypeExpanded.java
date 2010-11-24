@@ -26,7 +26,6 @@ import java.util.Map;
  * User: Ilya.Lintsbakh
  * Date: Nov 17, 2010
  * Time: 2:46:01 PM
- * To change this template use File | Settings | File Templates.
  */
 public class TypeExpanded extends TypeDifference {
   private SNode myOldType;
@@ -43,7 +42,7 @@ public class TypeExpanded extends TypeDifference {
 
   @Override
   public String getPresentation() {
-    return "Type expanded: "+ myNode + " ------> " + myType;
+    return "Type expanded: " + myNode + " ------> " + myType;
   }
 
   @Override

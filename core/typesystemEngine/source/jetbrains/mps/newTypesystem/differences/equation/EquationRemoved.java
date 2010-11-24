@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public class EquationRemoved extends EquationDifference {
-  
+
   public EquationRemoved(SNode child, SNode parent, SNode source, Equations equations) {
     super(equations);
     myChild = child;

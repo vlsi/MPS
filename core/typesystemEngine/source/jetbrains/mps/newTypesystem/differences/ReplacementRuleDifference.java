@@ -20,10 +20,9 @@ package jetbrains.mps.newTypesystem.differences;
  * User: Ilya.Lintsbakh
  * Date: Nov 1, 2010
  * Time: 5:06:47 PM
- * To change this template use File | Settings | File Templates.
  */
 public class ReplacementRuleDifference extends Difference {
-  
+
 
   @Override
   public void rollBack() {

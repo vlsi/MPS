@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -80,7 +79,7 @@ public class State {
   }
 
   public void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    myInequalities.addComparableEquation(subType, superType, isWeak, info); 
+    myInequalities.addComparableEquation(subType, superType, isWeak, info);
   }
 
   public NodeMaps getNodeMaps() {
@@ -217,7 +216,7 @@ public class State {
 
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-    myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+      myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(myVariableIdentifier.getNewVarName());
 //  registerTypeVariable(typeVar);          todo ?
     return typeVar;

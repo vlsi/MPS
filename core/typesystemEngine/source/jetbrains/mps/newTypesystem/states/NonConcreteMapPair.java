@@ -21,7 +21,6 @@ import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyAdded;
 import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyRemoved;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.util.*;

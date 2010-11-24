@@ -40,7 +40,7 @@ public class RelationAdded extends RelationDifference {
   }
 
   public String getPresentation() {
-    return myMapPair.getTitle() +" added " + mySubType + myMapPair.getRelationSign() + mySuperType;
+    return myMapPair.getTitle() + " added " + mySubType + myMapPair.getRelationSign() + mySuperType;
   }
 
   public Color getColor() {

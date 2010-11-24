@@ -45,7 +45,7 @@ public class SubTyping {
     }
     return false;
   }
-  
+
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
     if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
@@ -254,26 +254,26 @@ public class SubTyping {
 
   public SNode createMeet(Set<SNode> types) {
 
-    if (types.size() >1) {
+    if (types.size() > 1) {
       System.out.println("meet" + types);
       types = eliminateSubOrSuperTypes(types, true);
-      System.out.println( types);
+      System.out.println(types);
 
     }
-    
-      return types.iterator().next();
 
-   // todo implement check line & meet
+    return types.iterator().next();
+
+    // todo implement meet
   }
 
   public SNode createLCS(Set<SNode> types) {
 
-    if (types.size() >1) {
+    if (types.size() > 1) {
       System.out.println("lcs" + types);
       types = eliminateSubOrSuperTypes(types, false);
-      System.out.println( types);
+      System.out.println(types);
     }
-      return types.iterator().next();
+    return types.iterator().next();
 
     // todo implement least common supertype
   }

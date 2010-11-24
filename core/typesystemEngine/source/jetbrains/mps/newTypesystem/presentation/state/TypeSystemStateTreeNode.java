@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem.presentation.state;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.

@@ -79,8 +79,8 @@ public class RelationMapPair {
   }
 
   void substituteInMap(Map<SNode, Map<SNode, EquationInfo>> baseMap,
-                              Map<SNode, Map<SNode, EquationInfo>> pairMap,
-                              SNode var, SNode type, boolean reversed) {
+                       Map<SNode, Map<SNode, EquationInfo>> pairMap,
+                       SNode var, SNode type, boolean reversed) {
     Map<SNode, EquationInfo> values = baseMap.remove(var);
     if (values == null) return;
     for (final SNode value : new HashSet<SNode>(values.keySet())) {
@@ -166,19 +166,13 @@ public class RelationMapPair {
     solve(true);
   }
 
-  void solve(boolean shallow) {
+  private void solve(boolean shallow) {
     for (int i = 1; i < 7; i++) {
       //todo more sensible loop, this is for debug 
       iteration(shallow, true);
       iteration(shallow, false);
     }
   }
-
-  /*
-    Solving iteration
-  
-  */
-
 
   private boolean iteration(boolean shallow, boolean sub) {
 
@@ -198,11 +192,11 @@ public class RelationMapPair {
       if (TypesUtil.isVariable(node)) {
         SNode type = sub ? subTyping.createMeet(expandedConcreteTypes) : subTyping.createLCS(expandedConcreteTypes);
         for (SNode concreteType : expandedConcreteTypes) {
-        //  EquationInfo info = map.get(node).get(concreteType);
+          //  EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
             removeAndTrack(node, concreteType);
           } else {
-            removeAndTrack(concreteType, node);         
+            removeAndTrack(concreteType, node);
           }
         }
         myState.addEquation(node, type, null);

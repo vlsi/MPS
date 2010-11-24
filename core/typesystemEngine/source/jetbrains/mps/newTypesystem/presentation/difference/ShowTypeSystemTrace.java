@@ -34,7 +34,7 @@ public class ShowTypeSystemTrace extends JDialog {
     t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
-    MPSTree tree = new TypeSystemTraceTree(operationContext, t, frame, this, node);
+    MPSTree tree = new TypeSystemTraceTree(operationContext, t, frame, node);
     JScrollPane scrollPane = new JScrollPane(tree);
     scrollPane.setBackground(this.getBackground());
     this.add(scrollPane, BorderLayout.CENTER);

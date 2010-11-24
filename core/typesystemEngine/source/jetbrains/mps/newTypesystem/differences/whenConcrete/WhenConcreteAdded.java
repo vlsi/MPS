@@ -55,7 +55,7 @@ public class WhenConcreteAdded extends Difference {
 
   @Override
   public void rollBack() {
-   
+
   }
 
   @Override
