@@ -21,13 +21,14 @@ import com.intellij.openapi.application.PathManager;
 
 import java.io.*;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Launcher {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws URISyntaxException {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", mpsInternal != null ? mpsInternal : "false");
     System.setProperty("idea.no.jre.check", "true");
@@ -39,7 +40,10 @@ public class Launcher {
 
     StringBuilder cp = new StringBuilder(System.getProperty("idea.additional.classpath", ""));
     for (URL p : paths) {
-      cp.append(File.pathSeparatorChar).append(p.getPath());
+      if (cp.length() != 0) {
+        cp.append(File.pathSeparatorChar);
+      }
+      cp.append(new File(p.toURI()).getAbsolutePath());
     }
     System.setProperty("idea.additional.classpath", cp.toString());
 
@@ -70,11 +74,11 @@ public class Launcher {
     }
   }
 
-  private static void readPaths (List<URL> classPath, File paths, String homePath, final URL selfRootUrl) throws MalformedURLException {
+  private static void readPaths(List<URL> classPath, File paths, String homePath, final URL selfRootUrl) throws MalformedURLException {
     try {
       Scanner sc;
       for (sc = new Scanner(paths, "UTF-8"); sc.hasNextLine();) {
-        File dir = new File (homePath, sc.nextLine());
+        File dir = new File(homePath, sc.nextLine());
         if (dir.isDirectory()) {
           final URL url = dir.toURI().toURL();
           if (!selfRootUrl.equals(url)) {
@@ -83,7 +87,8 @@ public class Launcher {
         }
       }
       sc.close();
-    } catch (FileNotFoundException ignore) {}
+    } catch (FileNotFoundException ignore) {
+    }
   }
 
 }
