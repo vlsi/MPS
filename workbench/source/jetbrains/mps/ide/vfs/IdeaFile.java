@@ -292,6 +292,7 @@ class IdeaFile implements IFileEx {
         String jarPath = myPath.substring(0, index);
         String entryPath = myPath.substring(index + 1);
 
+        entryPath = entryPath.replaceAll("\\\\", "/");
         if (entryPath.startsWith("/")) {
           entryPath = entryPath.substring(1);
         }
