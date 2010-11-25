@@ -49,7 +49,7 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
 
   @Override
   public void computeWidth(FontMetrics fontMetrics, Iterable<Integer> fileLines) {
-    super.computeWidth(fontMetrics, fileLines);
     computeNumbers(fileLines);
+    super.computeWidth(fontMetrics, fileLines);
   }
 }

@@ -616,8 +616,8 @@
     <nodeInfo nodeId="6566909625909004597" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CommitNumberSubcolumn.java" startLine="36" startPosition="51" endLine="37" endPosition="58" />
     <nodeInfo nodeId="6566909625909004637" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CommitNumberSubcolumn.java" startLine="41" startPosition="68" endLine="42" endPosition="30" />
     <nodeInfo nodeId="6566909625909090418" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CommitNumberSubcolumn.java" startLine="45" startPosition="78" endLine="46" endPosition="113" />
-    <nodeInfo nodeId="6566909625909090497" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CommitNumberSubcolumn.java" startLine="51" startPosition="82" endLine="52" endPosition="47" />
-    <nodeInfo nodeId="6566909625909090503" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CommitNumberSubcolumn.java" startLine="52" startPosition="47" endLine="53" endPosition="30" />
+    <nodeInfo nodeId="6566909625909090503" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CommitNumberSubcolumn.java" startLine="51" startPosition="82" endLine="52" endPosition="30" />
+    <nodeInfo nodeId="6566909625909090497" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CommitNumberSubcolumn.java" startLine="52" startPosition="30" endLine="53" endPosition="47" />
     <nodeInfo nodeId="6566909625909004646" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="CommitNumberSubcolumn.java" startLine="44" startPosition="13" endLine="47" endPosition="5" />
     <nodeInfo nodeId="6566909625908996010" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="CommitNumberSubcolumn.java" startLine="22" startPosition="0" endLine="26" endPosition="3" />
     <nodeInfo nodeId="6566909625909004591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CommitNumberSubcolumn.java" startLine="35" startPosition="215" endLine="39" endPosition="0" />
@@ -632,7 +632,7 @@
     <scopeInfo nodeId="6566909625909004631" fileName="CommitNumberSubcolumn.java" startLine="41" startPosition="68" endLine="42" endPosition="30" />
     <scopeInfo nodeId="6566909625909004647" fileName="CommitNumberSubcolumn.java" startLine="45" startPosition="78" endLine="46" endPosition="113" />
     <scopeInfo nodeId="6566909625908996013" fileName="CommitNumberSubcolumn.java" startLine="23" startPosition="63" endLine="25" endPosition="38" />
-    <scopeInfo nodeId="6566909625909090495" fileName="CommitNumberSubcolumn.java" startLine="51" startPosition="82" endLine="53" endPosition="30" />
+    <scopeInfo nodeId="6566909625909090495" fileName="CommitNumberSubcolumn.java" startLine="51" startPosition="82" endLine="53" endPosition="47" />
     <scopeInfo nodeId="6566909625909004646" fileName="CommitNumberSubcolumn.java" startLine="44" startPosition="13" endLine="47" endPosition="5">
       <varInfo nodeId="6566909625909004649" varName="i" />
     </scopeInfo>
