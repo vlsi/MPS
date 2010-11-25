@@ -42,6 +42,12 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     return ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
   }
 
+  public static boolean isAuxModel(SModel model) {
+    if (model == null) return false;
+    SModelDescriptor descriptor = getDescriptor();
+    return model.getModelDescriptor() == descriptor;
+  }
+
   private synchronized SModelDescriptor getDescriptor_internal() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE);
     if (modelDescriptor == null) {
