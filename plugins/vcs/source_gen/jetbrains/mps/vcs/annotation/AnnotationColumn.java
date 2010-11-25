@@ -281,6 +281,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   @Override
   protected void onClose() {
+    myFileAnnotation.dispose();
     AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
   }
 
