@@ -24,6 +24,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.FilePath" />
     <classNode dependClassName="com.intellij.openapi.vcs.FilePathImpl" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
+    <classNode dependClassName="com.intellij.openapi.vcs.actions.AnnotationColors" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.TextTransferrable" />
+    <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier" />
     <classNode dependClassName="com.intellij.openapi.vcs.versionBrowser.CommittedChangeList" />
@@ -74,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.messageTargets.CellFinder" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

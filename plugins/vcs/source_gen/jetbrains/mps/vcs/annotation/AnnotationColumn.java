@@ -12,7 +12,9 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.awt.Color;
 import com.intellij.openapi.vcs.annotate.FileAnnotation;
+import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -24,18 +26,19 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
-import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.vcs.history.VcsFileRevision;
+import com.intellij.openapi.vcs.actions.AnnotationColors;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
@@ -83,7 +86,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private List<Integer> myPseudoLinesY;
   private List<Integer> myPseudoLinesToFileLines;
   private Map<SNodeId, Integer> myNodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
+  private Map<String, Color> myAuthorsToColors = MapSequence.fromMap(new HashMap<String, Color>());
   private FileAnnotation myFileAnnotation;
+  private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
   private SModelDescriptor myModelDescriptor;
@@ -97,9 +102,14 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }));
     SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
+    myAuthorAnnotationAspect = Sequence.fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).findFirst(new IWhereFilter<LineAnnotationAspect>() {
+      public boolean accept(LineAnnotationAspect a) {
+        return LineAnnotationAspect.AUTHOR.equals(a.getId());
+      }
+    });
     for (int line = 0; line < ListSequence.fromList(fileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0d0a(ListSequence.fromList(fileLineToContent).getElement(line));
+      SNodeId id = check_5mnya_a0b0e0a(ListSequence.fromList(fileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
@@ -115,6 +125,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
     for (LineAnnotationAspect aspect : Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects()))) {
       ListSequence.fromList(myAspectSubcolumns).addElement(new AnnotationAspectSubcolumn(aspect));
     }
+    for (VcsFileRevision revision : ListSequence.fromList(myFileAnnotation.getRevisions())) {
+      String author = revision.getAuthor();
+      if (!(MapSequence.fromMap(myAuthorsToColors).containsKey(author))) {
+        MapSequence.fromMap(myAuthorsToColors).put(author, AnnotationColors.BG_COLORS[MapSequence.fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length]);
+      }
+    }
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myFileLineToContent = fileLineToContent;
@@ -129,12 +145,22 @@ public class AnnotationColumn extends AbstractLeftColumn {
     graphics.setFont(myFont);
     graphics.setColor(Color.BLACK);
     Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
-    int x = 0;
+    int x = 1;
     for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
       x += subcolumn.getWidth();
     }
     for (int i = 0; i < ListSequence.fromList(myPseudoLinesY).count(); i++) {
+      if (myAuthorAnnotationAspect != null) {
+        String author = myAuthorAnnotationAspect.getValue(ListSequence.fromList(myPseudoLinesToFileLines).getElement(i));
+        graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
+        int height = (i == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
+          component.getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
+          ListSequence.fromList(myPseudoLinesY).getElement(i + 1) - ListSequence.fromList(myPseudoLinesY).getElement(i)
+        );
+        graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(i), getWidth(), height);
+      }
+      graphics.setColor(StyleAttributes.TEXT_COLOR.combine(null, null));
       for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
         graphics.drawString(subcolumn.getTextForFileLine(ListSequence.fromList(myPseudoLinesToFileLines).getElement(i)), MapSequence.fromMap(subcolumnToX).get(subcolumn), graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(i));
       }
@@ -150,7 +176,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       public Integer combine(Integer a, Integer b) {
         return a + b;
       }
-    });
+    }) + 1;
   }
 
   private EditorCell findCellForNodeAndContent(EditorComponent component, SNode node, LineContent content) {
@@ -312,7 +338,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     return a;
   }
 
-  private static SNodeId check_5mnya_a0b0d0a(LineContent p) {
+  private static SNodeId check_5mnya_a0b0e0a(LineContent p) {
     if (null == p) {
       return null;
     }
