@@ -49,5 +49,9 @@
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
+  <dependency className="jetbrains.mps.debug.run.sandbox.UncaughtException" file="UncaughtException.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
 </dependenciesRoot>
 
