@@ -258,7 +258,7 @@ public class CommonPaths {
   }
 
   private static IClassPathItem getJavaConverterClasspath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
+    String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
       + File.separator + "javaParser"
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
