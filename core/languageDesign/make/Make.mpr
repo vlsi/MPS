@@ -24,7 +24,7 @@
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />
       <genConfModule name="script" moduleRef="jetbrains.mps.make.script" />
-      <genConfModule name="test" moduleRef="$PROJECT_DIR$/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" />
+      <genConfModule name="tests" moduleRef="jetbrains.mps.make.tests" />
     </genConfs>
   </component>
   <component name="ProjectModuleManager">
