@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn;
 import java.awt.Font;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,23 +21,22 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
+import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Color;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
 import java.awt.event.MouseEvent;
@@ -67,6 +68,7 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.plugin.VcsActionsHelper;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.ModuleContext;
@@ -77,7 +79,7 @@ import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
-  private int myWidth = 0;
+  private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.fromList(new ArrayList<AnnotationAspectSubcolumn>());
   private List<Integer> myPseudoLinesY;
   private List<Integer> myPseudoLinesToFileLines;
   private Map<SNodeId, Integer> myNodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
@@ -110,6 +112,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
         MapSequence.fromMap(myNodeIdToFileLine).put(id, line);
       }
     }
+    for (LineAnnotationAspect aspect : Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects()))) {
+      ListSequence.fromList(myAspectSubcolumns).addElement(new AnnotationAspectSubcolumn(aspect));
+    }
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myFileLineToContent = fileLineToContent;
@@ -123,24 +128,29 @@ public class AnnotationColumn extends AbstractLeftColumn {
   public void paint(Graphics graphics, EditorComponent component) {
     graphics.setFont(myFont);
     graphics.setColor(Color.BLACK);
+    Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
+    int x = 0;
+    for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
+      MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
+      x += subcolumn.getWidth();
+    }
     for (int i = 0; i < ListSequence.fromList(myPseudoLinesY).count(); i++) {
-      String text = getTextForFileLine(ListSequence.fromList(myPseudoLinesToFileLines).getElement(i));
-      graphics.drawString(text, 1, graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(i));
+      for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
+        graphics.drawString(subcolumn.getTextForFileLine(ListSequence.fromList(myPseudoLinesToFileLines).getElement(i)), MapSequence.fromMap(subcolumnToX).get(subcolumn), graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(i));
+      }
     }
   }
 
-  private String getTextForFileLine(final int fileLine) {
-    final StringBuffer sb = new StringBuffer();
-    Sequence.fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).visitAll(new IVisitor<LineAnnotationAspect>() {
-      public void visit(LineAnnotationAspect a) {
-        sb.append(" ").append(a.getValue(fileLine));
+  public int getWidth() {
+    return ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
+      public Integer select(AnnotationAspectSubcolumn s) {
+        return s.getWidth();
+      }
+    }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+      public Integer combine(Integer a, Integer b) {
+        return a + b;
       }
     });
-    return sb.substring(1);
-  }
-
-  public int getWidth() {
-    return myWidth;
   }
 
   private EditorCell findCellForNodeAndContent(EditorComponent component, SNode node, LineContent content) {
@@ -180,7 +190,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
         ListSequence.fromList(myPseudoLinesToFileLines).addElement(-1);
       }
     });
-    myWidth = 0;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = component.getEditedNode().getModel();
@@ -191,7 +200,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
             continue;
           }
           SNode node = model.getNodeById(content.getNodeId());
-          if (!(node.isDescendantOf(editedNode, true))) {
+          if (node == null || !(node.isDescendantOf(editedNode, true))) {
             continue;
           }
 
@@ -209,12 +218,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }
-          int widthCandidate = component.getGraphics().getFontMetrics(myFont).stringWidth(getTextForFileLine(fileLine)) + 3;
-          myWidth = Math.max(myWidth, widthCandidate);
-
         }
       }
     });
+    for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.fromList(myAspectSubcolumns)) {
+      aspectSubcolumn.computeWidth(component.getGraphics().getFontMetrics(myFont), myPseudoLinesToFileLines);
+    }
   }
 
   @Override
@@ -411,17 +420,17 @@ public class AnnotationColumn extends AbstractLeftColumn {
                 final SModel afterModel = VcsActionsHelper.loadModel(after.getContent(), myModelDescriptor);
 
                 final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
+                ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+                  public SNode invoke() {
                     SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0a(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     node.value = afterModel.getNodeById(nodeId);
                     if ((node.value == null)) {
                       node.value = beforeModel.value.getNodeById(nodeId);
                     }
-                    node.value = SNodeOperations.getContainingRoot(node.value);
+                    return node.value = SNodeOperations.getContainingRoot(node.value);
 
                   }
-                });
+                }));
 
                 final JFrame frame = WindowManager.getInstance().getFrame(project);
                 final ModuleContext operationContext = new ModuleContext(myModelDescriptor.getModule(), project);

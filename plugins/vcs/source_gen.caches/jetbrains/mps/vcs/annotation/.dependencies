@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" file="AnnotationAspectSubcolumn.java">
+    <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
+    <classNode dependClassName="java.awt.FontMetrics" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.AnnotationColumn" file="AnnotationColumn.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.ide.CopyPasteManager" />
@@ -37,11 +47,9 @@
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -52,6 +60,8 @@
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -74,8 +84,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.NodeLineContent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.PropertyLineContent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.ReferenceLineContent" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationManager" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.EditorUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation._Adapters" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
@@ -128,6 +140,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.annotation._Adapters" file="_Adapters.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
 </dependenciesRoot>
 
