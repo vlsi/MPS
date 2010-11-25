@@ -37,7 +37,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public ReductionRule0() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169"));
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;
@@ -45,6 +45,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public boolean applyToInheritors() {
       return false;
+    }
+
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public String getApplicableConcept() {

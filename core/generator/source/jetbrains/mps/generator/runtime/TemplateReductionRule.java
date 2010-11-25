@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.Collection;
 
@@ -24,11 +25,11 @@ import java.util.Collection;
  */
 public interface TemplateReductionRule {
 
+  SNodePointer getRuleNode();
+
   String getApplicableConcept();
 
   boolean applyToInheritors();
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
-
-  boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context);
+  Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

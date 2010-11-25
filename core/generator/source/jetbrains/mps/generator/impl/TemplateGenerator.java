@@ -27,18 +27,22 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
-import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.generator.structure.CreateRootRule;
+import jetbrains.mps.lang.generator.structure.DropRootRule;
+import jetbrains.mps.lang.generator.structure.Root_MappingRule;
+import jetbrains.mps.lang.generator.structure.Weaving_MappingRule;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -194,13 +198,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (templateNode == null) {
         showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
       } else {
-        myGenerationTracer.pushRule(createRootRule.getNode());
+        SNodePointer ruleNode = new SNodePointer(createRootRule.getNode());
+        myGenerationTracer.pushRule(ruleNode);
         try {
           createRootNodeFromTemplate(
             GeneratorUtil.getMappingName(createRootRule, null),
             BaseAdapter.fromAdapter(templateNode), null, false, executionContext);
         } finally {
-          myGenerationTracer.closeRule(createRootRule.getNode());
+          myGenerationTracer.closeRule(ruleNode);
         }
       }
     }
@@ -222,7 +227,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null && executionContext.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputNode);
-        myGenerationTracer.pushRule(rule.getNode());
+        myGenerationTracer.pushRule(new SNodePointer(rule.getNode()));
         try {
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
@@ -301,7 +306,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
       if (executionContext.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputRootNode);
-        myGenerationTracer.pushRule(rule.getNode());
+        myGenerationTracer.pushRule(new SNodePointer(rule.getNode()));
         myGenerationTracer.closeInputNode(inputRootNode);
         return true;
       }
@@ -345,64 +350,60 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * returns null if no reductions found
    */
   @Nullable
-  List<SNode> tryToReduce(SNode inputNode, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
-    ReductionRule reductionRule = null;
-    GeneratedMatchingPattern pattern = null;
+  Collection<SNode> tryToReduce(SNode inputNode, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+    TemplateReductionRule reductionRule = null;
     checkGenerationCanceledFast();
     try {
       // find rule
-      ReductionRule[] conceptRules = myRuleManager.getRuleFinder().findReductionRules(inputNode);
+      TemplateReductionRule[] conceptRules = myRuleManager.getRuleFinder().findReductionRules(inputNode);
       if (conceptRules == null) {
         return null;
       }
-      for (ReductionRule rule : conceptRules) {
+      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, reductionContext, getOperationContext(), getGenerationTracer());
+      for (TemplateReductionRule rule : conceptRules) {
+        reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, reductionContext)) {
-          if (rule instanceof Reduction_MappingRule) {
-            if (reductionContext.getQueryExecutor().checkCondition(((Reduction_MappingRule) rule).getConditionFunction(), false, inputNode, rule.getNode())) {
-              reductionRule = rule;
-              break;
+          Collection<SNode> outputNodes = rule.tryToApply(environment, new DefaultTemplateContext(inputNode));
+          if(outputNodes != null) {
+            if (outputNodes.size() == 1) {
+              SNode reducedNode = outputNodes.iterator().next();
+              // register copied node
+              getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
+              // output node should be accessible via 'findCopiedNode'
+              getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
+              // preserve user objects
+              reducedNode.putUserObjects(inputNode);
+              // keep track of 'original input node'
+              if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
+                reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+                reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
+              }
             }
-          } else if (rule instanceof PatternReduction_MappingRule) {
-            pattern = reductionContext.getQueryExecutor().checkIfApplicable(inputNode, (PatternReduction_MappingRule) rule, reductionContext);
-            if (pattern != null) {
-              reductionRule = rule;
-              break;
-            }
+            return outputNodes;
           }
         }
       }
 
-      // apply
-      if (reductionRule != null) {
-        List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule, pattern, new ReductionContext(reductionContext, inputNode, reductionRule));
-        if (outputNodes != null && outputNodes.size() == 1) {
-          SNode reducedNode = outputNodes.get(0);
-          // register copied node
-          getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
-          // output node should be accessible via 'findCopiedNode'
-          getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
-          // preserve user objects
-          reducedNode.putUserObjects(inputNode);
-          // keep track of 'original input node'
-          if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-            reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-            reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
-          }
-        }
-        return outputNodes;
-      }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
-      if (ex.isLoggingNeeded()) {
-        String messageText = "-- dismissed reduction rule: " + reductionRule.getDebugText();
+      if (ex.isLoggingNeeded() && reductionRule != null) {
+        SNode ruleNode = reductionRule.getRuleNode().getNode();
+        String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? ruleNode.getDebugText() : "unknown");
         if (ex.isInfo()) {
-          myLogger.info(reductionRule.getNode(), messageText);
+          myLogger.info(ruleNode, messageText);
         } else if (ex.isWarning()) {
-          myLogger.warning(reductionRule.getNode(), messageText);
+          myLogger.warning(ruleNode, messageText);
         } else {
-          myLogger.error(reductionRule.getNode(), messageText);
+          myLogger.error(ruleNode, messageText);
         }
       }
+    } catch (GenerationException ex) {
+      if(ex instanceof GenerationFailureException) {
+        throw (GenerationFailureException) ex;
+      } else if(ex instanceof GenerationCanceledException) {
+        throw (GenerationCanceledException) ex;
+      }
+      // ignore
     }
     return null;
   }
@@ -410,60 +411,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  @Nullable
-  private List<SNode> applyReductionRule(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern, @NotNull ReductionContext reductionContext) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    myGenerationTracer.pushRule(rule.getNode());
-    try {
-      return applyReductionRule_internal(inputNode, rule, pattern, reductionContext);
-    } catch (AbandonRuleInputException e) {
-      return Collections.emptyList();
-    } finally {
-      myGenerationTracer.closeRule(rule.getNode());
-    }
-  }
-
-  @Nullable
-  private List<SNode> applyReductionRule_internal(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern, @NotNull ReductionContext reductionContext)
-    throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
-
-    String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
-    RuleConsequence ruleConsequence = GeneratorUtil.getReductionConsequence(rule);
-    if (ruleConsequence == null) {
-      showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
-      return null;
-    }
-    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, pattern == null ? null : new DefaultTemplateContext(pattern, null, inputNode), reductionContext, ruleConsequence, inputNode, this);
-
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), reductionContext, this);
-    if (nodeAndMappingNamePairs == null) {
-      showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
-      return null;
-    }
-
-    List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(this, reductionContext);
-    for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
-      try {
-        result.addAll(templateProcessor.processTemplateNode(mappingName, templateNode, conseqContext));
-      } catch (DismissTopMappingRuleException e) {
-        throw e;
-      } catch (TemplateProcessingFailureException e) {
-        showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
-      } catch (GenerationFailureException e) {
-        throw e;
-      } catch (GenerationCanceledException e) {
-        throw e;
-      } catch (Throwable t) {
-        LOG.error(t, BaseAdapter.fromNode(templateNode));
-        showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
-      }
-    }
-    return result;
-  }
-
-  List<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     if (inputNode.isRegistered()) {
       // TODO fail in strict mode
       inputNode = CopyUtil.copy(inputNode);
@@ -485,10 +433,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return copyNodeFromInputNode(mappingName, templateNode, inputNode, reductionContext, new boolean[]{false});
   }
 
-  List<SNode> copyNodeFromInputNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> copyNodeFromInputNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
-      List<SNode> outputNodes = tryToReduce(inputNode, mappingName, reductionContext);
+      Collection<SNode> outputNodes = tryToReduce(inputNode, mappingName, reductionContext);
       if (outputNodes != null) {
         changed[0] = true;
         return outputNodes;
@@ -502,7 +450,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private SNode copyNodeFromInputNode_internal(SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+  private SNode copyNodeFromInputNode_internal(@Nullable SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
@@ -530,9 +478,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (targetModelReference == null) {
-          myLogger.error(templateNode.getNode(), "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)",
+          myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (target model is null)",
             GeneratorUtil.describeIfExists(inputNode, "input node"),
-            GeneratorUtil.describeIfExists(templateNode.getNode(), "template"));
+            GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
           continue;
         }
 
@@ -558,9 +506,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {
-        myLogger.error(templateNode.getNode(), "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
+        myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
           GeneratorUtil.describeIfExists(inputNode, "input node"),
-          GeneratorUtil.describeIfExists(templateNode.getNode(), "template"));
+          GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
         continue;
       }
       if (inputTargetNode.isRegistered() && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
@@ -577,9 +525,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } else if (inputTargetNode.isRegistered()) {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       } else {
-        myLogger.error(templateNode.getNode(), "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",
+        myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",
           GeneratorUtil.describeIfExists(inputNode, "input node"),
-          GeneratorUtil.describeIfExists(templateNode.getNode(), "template"));
+          GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
       }
     }
 
@@ -588,7 +536,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       assert childRole != null;
       myGenerationTracer.pushInputNode(inputChildNode);
       try {
-        List<SNode> outputChildNodes = tryToReduce(inputChildNode, null, reductionContext);
+        Collection<SNode> outputChildNodes = tryToReduce(inputChildNode, null, reductionContext);
         if (outputChildNodes != null) {
           changed[0] = true;
           for (SNode outputChildNode : outputChildNodes) {

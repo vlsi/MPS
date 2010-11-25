@@ -60,10 +60,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return tracer;
   }
 
+  public ReductionContext getReductionContext() {
+    return reductionContext;
+  }
+
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    List<SNode> outputNodes = null;
+    Collection<SNode> outputNodes = null;
     for (SNode newInputNode : inputNodes) {
-      List<SNode> _outputNodes =
+      Collection<SNode> _outputNodes =
         newInputNode.getModel() == generator.getInputModel() && newInputNode.isRegistered()
           ? generator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, reductionContext, new boolean[]{false})
           : generator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, reductionContext);
@@ -83,9 +87,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           }
         }
         if (outputNodes == null) {
-          outputNodes = Collections.unmodifiableList(_outputNodes);
+          outputNodes = Collections.unmodifiableCollection(_outputNodes);
         } else if (!(outputNodes instanceof ArrayList)) {
-          List<SNode> old = outputNodes;
+          Collection<SNode> old = outputNodes;
           outputNodes = new ArrayList<SNode>(old.size() + _outputNodes.size() + 16);
           outputNodes.addAll(old);
           outputNodes.addAll(_outputNodes);

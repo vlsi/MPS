@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -41,10 +40,10 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
+  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkIfApplicable(inputNode, patternRule, reductionContext);
+      return wrapped.checkIfApplicable(inputNode, patternRule);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

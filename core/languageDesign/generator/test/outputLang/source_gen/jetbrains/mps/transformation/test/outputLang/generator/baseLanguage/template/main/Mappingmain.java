@@ -58,10 +58,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule0() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604206699"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
@@ -105,10 +109,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule1 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule1() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8900764248744322643"));
       Collection<SNode> tlist1 = null;
       try {
@@ -163,10 +171,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule2 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule2() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209662301916"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
@@ -210,10 +222,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule3 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule3() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913379838"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
       try {
@@ -243,10 +259,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule4 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule4() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681229"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", false);
       try {

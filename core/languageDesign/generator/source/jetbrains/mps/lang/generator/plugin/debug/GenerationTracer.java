@@ -135,15 +135,15 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushRule(SNode node) {
+  public void pushRule(SNodePointer node) {
     if (!myActive) return;
-    push(new TracerNode(TracerNode.Kind.RULE, new SNodePointer(node)));
+    push(new TracerNode(TracerNode.Kind.RULE, node));
   }
 
   @Override
-  public void closeRule(SNode node) {
+  public void closeRule(SNodePointer node) {
     if (!myActive) return;
-    closeBranch(TracerNode.Kind.RULE, new SNodePointer(node));
+    closeBranch(TracerNode.Kind.RULE, node);
   }
 
   @Override

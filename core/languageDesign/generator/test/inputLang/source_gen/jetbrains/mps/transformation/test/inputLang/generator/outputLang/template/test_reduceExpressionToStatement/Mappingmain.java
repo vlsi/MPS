@@ -37,10 +37,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule0() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150677803"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false);
       try {

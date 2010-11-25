@@ -29,11 +29,11 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushRule(SNode node) {
+  public void pushRule(SNodePointer node) {
   }
 
   @Override
-  public void closeRule(SNode node) {
+  public void closeRule(SNodePointer node) {
   }
 
   @Override

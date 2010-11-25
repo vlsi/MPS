@@ -172,7 +172,7 @@ public class WeavingProcessor {
 
         boolean someOutputGenerated = true;
         myGenerationTracer.pushInputNode(applicableNode);
-        myGenerationTracer.pushRule(rule.getNode());
+        myGenerationTracer.pushRule(new SNodePointer(rule.getNode()));
         try {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {

@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -59,14 +58,14 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return false;
   }
 
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
+  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule) throws GenerationFailureException {
     final SNode ruleNode = patternRule.getNode();
     String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
     try {
       return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new PatternRuleContext(inputNode, ruleNode, generator, reductionContext.getQueryExecutor()),
+        new PatternRuleContext(inputNode, ruleNode, generator),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {

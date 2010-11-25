@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -24,7 +25,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Manages rules/templates of major step.
@@ -34,8 +37,6 @@ public class RuleManager {
   private FlattenIterable<CreateRootRule> myCreateRootRules;
   private FlattenIterable<Root_MappingRule> myRoot_MappingRules;
   private FlattenIterable<Weaving_MappingRule> myWeaving_MappingRules;
-  private FlattenIterable<Reduction_MappingRule> myReduction_MappingRules;
-  private FlattenIterable<PatternReduction_MappingRule> myPatternReduction_MappingRules;
   private FlattenIterable<DropRootRule> myDropRootRules;
 
   private TemplateSwitchGraph myTemplateSwitchGraph;
@@ -46,31 +47,25 @@ public class RuleManager {
   private List<MappingConfiguration> myMappings;
 
   private final FastRuleFinder myRuleFinder;
-  private final GenerationPlan myPlan;
 
   public RuleManager(GenerationPlan plan, int step) {
     myMappings = plan.getMappingConfigurations(step);
-    myPlan = plan;
     myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
-    if(myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
+    if (myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
     initialize(myMappings);
-    myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myPatternReduction_MappingRules);
+    myRuleFinder = initRules(myMappings);
   }
 
   private void initialize(List<MappingConfiguration> list) {
     myCreateRootRules = new FlattenIterable(new ArrayList<List<CreateRootRule>>(list.size()));
     myRoot_MappingRules = new FlattenIterable(new ArrayList<List<Root_MappingRule>>(list.size()));
     myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<Weaving_MappingRule>>(list.size()));
-    myReduction_MappingRules = new FlattenIterable(new ArrayList<List<Reduction_MappingRule>>(list.size()));
-    myPatternReduction_MappingRules = new FlattenIterable(new ArrayList<List<PatternReduction_MappingRule>>(list.size()));
     myDropRootRules = new FlattenIterable(new ArrayList<List<DropRootRule>>(list.size()));
 
     for (MappingConfiguration mappingConfig : list) {
       myCreateRootRules.add(mappingConfig.getCreateRootRules());
       myRoot_MappingRules.add(mappingConfig.getRootMappingRules());
       myWeaving_MappingRules.add(mappingConfig.getWeavingMappingRules());
-      myReduction_MappingRules.add(mappingConfig.getReductionMappingRules());
-      myPatternReduction_MappingRules.add(mappingConfig.getPatternReductionRules());
       myDropRootRules.add(mappingConfig.getDropRootRules());
     }
 
@@ -86,6 +81,30 @@ public class RuleManager {
         myPreScripts.add(scriptRef.getMappingScript());
       }
     }
+  }
+
+  private FastRuleFinder initRules(List<MappingConfiguration> configuration) {
+    int reductions = 0;
+    int patternReductions = 0;
+    for (MappingConfiguration c : configuration) {
+      reductions += c.getReductionMappingRulesCount();
+      patternReductions += c.getPatternReductionRulesCount();
+    }
+
+    List<TemplateReductionRule> rules = new ArrayList<TemplateReductionRule>(reductions + patternReductions);
+    for (MappingConfiguration c : configuration) {
+      SNode node = c.getNode();
+      for (SNode child : node.getChildrenIterable()) {
+        String role = child.getRole_();
+        if (role.equals(MappingConfiguration.REDUCTION_MAPPING_RULE)) {
+          rules.add(new TemplateReductionRuleInterpreted(child));
+        } else if (role.equals(MappingConfiguration.PATTERN_REDUCTION_RULE)) {
+          rules.add(new TemplateReductionPatternRuleInterpreted(child));
+        }
+      }
+    }
+
+    return new FastRuleFinder(rules);
   }
 
   public Iterable<CreateRootRule> getCreateRootRules() {

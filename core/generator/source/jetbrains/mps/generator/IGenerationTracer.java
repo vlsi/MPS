@@ -20,9 +20,9 @@ public interface IGenerationTracer {
 
   void popInputNode(SNode node);
 
-  void pushRule(SNode node);
+  void pushRule(SNodePointer node);
 
-  void closeRule(SNode node);
+  void closeRule(SNodePointer node);
 
   void pushRuleConsequence(SNodePointer node);
 

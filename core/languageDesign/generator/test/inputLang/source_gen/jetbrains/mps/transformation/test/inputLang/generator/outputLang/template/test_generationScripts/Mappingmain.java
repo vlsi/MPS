@@ -40,10 +40,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule0() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195172342079"));
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_1195172400866(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0a0, environment.getGenerator()))) {
@@ -94,10 +98,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public class ReductionRule1 implements TemplateReductionRule {
+    @Override
+    public SNodePointer getRuleNode() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
     public ReductionRule1() {
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1202781047034"));
       Collection<SNode> tlist1 = Collections.emptyList();
       return tlist1;

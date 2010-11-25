@@ -23,7 +23,7 @@ public interface QueryExecutionContext {
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 
-  GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException;
+  GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule) throws GenerationFailureException;
 
   boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException;
 

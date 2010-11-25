@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.smodel.SNode;
@@ -15,7 +16,7 @@ public class ReductionContext {
 
   private final ReductionContext myParent;
   private final SNode myInputNode;
-  private final ReductionRule myReductionRule;
+  private final TemplateReductionRule myReductionRule;
   private final QueryExecutionContext myExecutionContext;
 
   ReductionContext(@NotNull QueryExecutionContext executionContext) {
@@ -25,14 +26,14 @@ public class ReductionContext {
     myExecutionContext = executionContext;
   }
 
-  ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
+  ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull TemplateReductionRule reductionRule) {
     myParent = parent;
     myInputNode = inputNode;
     myReductionRule = reductionRule;
     myExecutionContext = parent.myExecutionContext;
   }
 
-  boolean isBlocked(SNode inputNode, ReductionRule rule) {
+  boolean isBlocked(SNode inputNode, TemplateReductionRule rule) {
     for (ReductionContext current = this; current != null; current = current.myParent) {
       if (current.myInputNode == inputNode && current.myReductionRule == rule) {
         return true;

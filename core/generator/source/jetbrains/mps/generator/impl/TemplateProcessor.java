@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -220,7 +221,7 @@ public class TemplateProcessor {
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
       SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes =
+        Collection<SNode> _outputNodes =
           newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
             ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, newInputNode, myReductionContext, new boolean[]{false})
             : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, newInputNode, myReductionContext);
@@ -258,11 +259,7 @@ public class TemplateProcessor {
               myGenerator.showErrorMessage(templateContext.getInput(), null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
             }
-//            SNode altTemplateNode = nodeAndMappingNamePairs.o1;
-//            if (nodeAndMappingNamePairs.o2 != null) {
-//              mappingName = nodeAndMappingNamePairs.o2;
-//            }
-//            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
+
             for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
               SNode altTemplateNode = nodeAndMappingNamePair.o1;
               String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
@@ -347,7 +344,7 @@ public class TemplateProcessor {
       generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
         List<SNode> _outputNodes = null;
-        RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myReductionContext, myGenerator);
+        RuleConsequence consequenceForCase = myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myReductionContext, myGenerator);
         if (consequenceForCase == null) {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
           _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
