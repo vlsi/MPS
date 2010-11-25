@@ -2166,11 +2166,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               if (sNode == null) {
                 return;
               }
+              TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
+              typeCheckingContext.clear();
               Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
               if (highlighter != null) {
                 highlighter.resetCheckedState(EditorComponent.this);
+              } else {
+                typeCheckingContext.checkRoot();
               }
-              getTypeCheckingContext().checkRoot(true);
               rebuildEditorContent();
             }
           });
