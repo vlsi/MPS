@@ -19,14 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
     return myAnnotationAspect.getValue(fileLine);
   }
 
-  public LineAnnotationAspect getMyAnnotationAspect() {
-    return myAnnotationAspect;
-  }
-
-  public void setMyAnnotationAspect(LineAnnotationAspect myAnnotationAspect1) {
-    myAnnotationAspect = myAnnotationAspect1;
-  }
-
   public int getWidth() {
     return myWidth;
   }

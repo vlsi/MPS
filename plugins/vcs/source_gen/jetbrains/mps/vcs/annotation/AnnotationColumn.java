@@ -125,6 +125,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     for (LineAnnotationAspect aspect : Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects()))) {
       ListSequence.fromList(myAspectSubcolumns).addElement(new AnnotationAspectSubcolumn(aspect));
     }
+    ListSequence.fromList(myAspectSubcolumns).addElement(new CommitNumberSubcolumn(myFileAnnotation));
     for (VcsFileRevision revision : ListSequence.fromList(myFileAnnotation.getRevisions())) {
       String author = revision.getAuthor();
       if (!(MapSequence.fromMap(myAuthorsToColors).containsKey(author))) {
