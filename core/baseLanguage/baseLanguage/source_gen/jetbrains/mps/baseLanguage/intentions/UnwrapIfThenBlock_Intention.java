@@ -17,7 +17,7 @@ public class UnwrapIfThenBlock_Intention extends BaseIntention implements Intent
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.Statement";
+    return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
 
   public boolean isParameterized() {
