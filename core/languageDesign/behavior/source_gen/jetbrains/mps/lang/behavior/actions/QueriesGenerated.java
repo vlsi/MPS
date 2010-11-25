@@ -27,7 +27,7 @@ import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1238617792565(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, true, false) != null;
+    return false && SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, true, false) != null;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SuperNodeExpression_7448026190102456641(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
