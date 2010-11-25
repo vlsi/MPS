@@ -315,7 +315,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return ActionPlace.PROJECT_PANE_SNODE;
     } else if (treeNode instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
-    } else if (treeNode instanceof ProjectTreeNode) {
+    } else if ((treeNode instanceof ProjectTreeNode) || (treeNode instanceof jetbrains.mps.ide.projectPane.ProjectTreeNode)) {
       return ActionPlace.PROJECT_PANE_PROJECT;
     } else if (treeNode instanceof GeneratorTreeNode) {
       return ActionPlace.PROJECT_PANE_GENERATOR;
