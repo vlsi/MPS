@@ -23,13 +23,13 @@
     <classNode dependClassName="com.intellij.openapi.vcs.CommittedChangesProvider" />
     <classNode dependClassName="com.intellij.openapi.vcs.FilePath" />
     <classNode dependClassName="com.intellij.openapi.vcs.FilePathImpl" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.AnnotationColors" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspect" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.BackgroundFromStartOption" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangesUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.TextTransferrable" />
@@ -56,12 +56,14 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -92,6 +94,11 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.EditorUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation._Adapters" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.Change" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
@@ -99,6 +106,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.AbstractAction" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.AnnotationManager" file="AnnotationManager.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
