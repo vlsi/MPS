@@ -1,12 +1,9 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.NodeMapper;
-import jetbrains.mps.generator.runtime.PostProcessor;
-import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JavaNameUtil;
@@ -14,6 +11,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -171,16 +169,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check if pattern rule is applicable", patternRule.getNode()), true);
-      return wrapped.checkIfApplicable(inputNode, patternRule);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
     try {
       tracer.push(taskName("evaluate template argument query", query.getNode()), true);
@@ -205,6 +193,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push("query in " + mapper.getClass().getCanonicalName(), true);
       return wrapped.executeInContext(outputNode, context, mapper);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    try {
+      tracer.push(taskName("trying to apply rule", rule.getRuleNode().getNode()), true);
+      return wrapped.tryToApply(rule, environment, context);
     } finally {
       tracer.pop();
     }

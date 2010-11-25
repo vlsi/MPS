@@ -26,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/10/10
@@ -62,6 +61,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   public ReductionContext getReductionContext() {
     return reductionContext;
+  }
+
+  @Override
+  public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
+    return new TemplateExecutionEnvironmentImpl(generator, new ReductionContext(reductionContext, inputNode, rule), operationContext, tracer);
   }
 
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {

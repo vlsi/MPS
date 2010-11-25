@@ -37,12 +37,13 @@ public interface TemplateExecutionEnvironment {
 
   public SModel getOutputModel();
 
-
   public TemplateGenerator getGenerator();
 
   public IGenerationTracer getTracer();
 
   public ReductionContext getReductionContext();
+
+  public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 

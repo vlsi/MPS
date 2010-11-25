@@ -1,10 +1,8 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.NodeMapper;
-import jetbrains.mps.generator.runtime.PostProcessor;
-import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -14,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -34,16 +33,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.checkCondition(condition, required, inputNode, ruleNode);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkIfApplicable(inputNode, patternRule);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -198,6 +187,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.executeInContext(outputNode, context, mapper);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.tryToApply(rule, environment, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

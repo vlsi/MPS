@@ -28,8 +28,8 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -38,7 +38,6 @@ import jetbrains.mps.lang.generator.structure.CreateRootRule;
 import jetbrains.mps.lang.generator.structure.DropRootRule;
 import jetbrains.mps.lang.generator.structure.Root_MappingRule;
 import jetbrains.mps.lang.generator.structure.Weaving_MappingRule;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -363,8 +362,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, reductionContext)) {
-          Collection<SNode> outputNodes = rule.tryToApply(environment, new DefaultTemplateContext(inputNode));
-          if(outputNodes != null) {
+          Collection<SNode> outputNodes = reductionContext.getQueryExecutor().tryToApply(rule, environment, new DefaultTemplateContext(inputNode));
+          if (outputNodes != null) {
             if (outputNodes.size() == 1) {
               SNode reducedNode = outputNodes.iterator().next();
               // register copied node
@@ -398,9 +397,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
     } catch (GenerationException ex) {
-      if(ex instanceof GenerationFailureException) {
+      if (ex instanceof GenerationFailureException) {
         throw (GenerationFailureException) ex;
-      } else if(ex instanceof GenerationCanceledException) {
+      } else if (ex instanceof GenerationCanceledException) {
         throw (GenerationCanceledException) ex;
       }
       // ignore
@@ -459,7 +458,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
 
-    if(templateNode != null) {
+    if (templateNode != null) {
       myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.getNode(), outputNode);
     }
     // output node should be accessible via 'findCopiedNode'
