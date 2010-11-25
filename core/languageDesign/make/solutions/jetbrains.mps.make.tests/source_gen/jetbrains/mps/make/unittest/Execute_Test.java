@@ -126,7 +126,6 @@ public class Execute_Test extends MockTestCase {
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
           public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
-            System.out.println("input: " + input);
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
             return result;
           }
