@@ -77,94 +77,17 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
 
   @Override
   public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
-    // todo switch by kind, actually
-    final List<BaseSNodeDescriptor> result = new ArrayList<BaseSNodeDescriptor>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
-          for (SModelDescriptor sd : m.getOwnModelDescriptors()) {
-            if (SModelStereotype.isStubModelStereotype(sd.getStereotype())) {
-              result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
-              break;
-            }
-          }
-        }
-      }
-    });
-
-    String input = Messages.showInputDialog("Enter exception class", "Enter Exception Class", null, "java.lang.Throwable", new InputValidator() {
-      @Override
-      public boolean checkInput(final String inputString) {
-        return inputString.length() <= 3 || findPossibleNodes(inputString, result) != null;
-      }
-
-      @Override
-      public boolean canClose(String inputString) {
-        SNode first = findException(inputString, result);
-        return first != null;
-      }
-    });
-
-    final SNode exception = findException(input, result);
-    if (exception == null) return null;
-    String nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        return INamedConcept_Behavior.call_getFqName_1213877404258(exception);
-      }
-    });
-    return new ExceptionBreakpoint(nodeName, project);
+    switch (kind){
+      case EXCEPTION_BREAKPOINT:
+        return BreakpointCreationUtil.createExceptionBreakpointFromUi(project);
+      default:
+        throw new IllegalArgumentException("Cannot create breakpoint for " + kind);
+    }
   }
 
   @Override
   public IBreakpointPropertiesUi<JavaBreakpoint> createPropertiesEditor(final JavaBreakpointKind kind) {
     return new MyIBreakpointPropertiesUi();
-  }
-
-  private SNode findException(final String inputString, final List<BaseSNodeDescriptor> result) {
-    return ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        BaseSNodeDescriptor descriptor = findPossibleNodes(inputString, result);
-        if (descriptor == null) return null;
-        SNode classifier = JavaModelUtil_new.findClassifier(descriptor.getModelReference().getLongName(), descriptor.getNodeName(), true);
-        if ((classifier != null) && isExceptionNode(classifier)) {
-          return classifier;
-        } else {
-          return null;
-        }
-      }
-    });
-  }
-
-  private BaseSNodeDescriptor findPossibleNodes(final String inputString, List<BaseSNodeDescriptor> result) {
-    return ListSequence.fromList(result).findFirst(new IWhereFilter<BaseSNodeDescriptor>() {
-      @Override
-      public boolean accept(BaseSNodeDescriptor d) {
-        SModelReference modelReference = d.getModelReference();
-        if (modelReference == null) return false;
-        String fullName = modelReference.getLongName() + "." + d.getNodeName();
-        return fullName.equals(inputString);
-      }
-    });
-  }
-
-  private boolean isExceptionNode(SNode node) {
-    SNode base = node;
-    while (base != null && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(INamedConcept_Behavior.call_getFqName_1213877404258(base).equals(Throwable.class.getCanonicalName()))) {
-      base = SLinkOperations.getTarget(SLinkOperations.getTarget(base, "superclass", true), "classifier", false);
-    }
-    return (base != null) && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-  }
-
-  public List<SNode> findInstances(SNode conceptDeclaration, final IScope scope) {
-    AbstractConceptDeclaration declarationAdapter = (AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration);
-    List<SNode> result = new ArrayList<SNode>();
-    for (SModelDescriptor model : scope.getModelDescriptors()) {
-      result.addAll(new ModelFindOperations(model).findInstances(declarationAdapter, scope));
-    }
-    return result;
   }
 
   @Override
