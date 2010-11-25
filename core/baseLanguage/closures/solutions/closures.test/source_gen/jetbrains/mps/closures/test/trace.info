@@ -3669,8 +3669,8 @@
     <nodeInfo nodeId="1207154763081" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="74" startPosition="5" endLine="75" endPosition="30" />
     <nodeInfo nodeId="1207154763087" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="75" startPosition="30" endLine="76" endPosition="38" />
     <nodeInfo nodeId="1215542895878" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ExternalReferences_Test.java" startLine="79" startPosition="61" endLine="80" endPosition="75" />
-    <nodeInfo nodeId="1215543306710" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="82" startPosition="28" endLine="83" endPosition="34" />
-    <nodeInfo nodeId="7376433222636453515" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ExternalReferences_Test.java" startLine="83" startPosition="34" endLine="84" endPosition="28" />
+    <nodeInfo nodeId="1215543306710" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExternalReferences_Test.java" startLine="82" startPosition="30" endLine="83" endPosition="41" />
+    <nodeInfo nodeId="7376433222636453515" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ExternalReferences_Test.java" startLine="83" startPosition="41" endLine="84" endPosition="28" />
     <nodeInfo nodeId="1215543157916" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="86" startPosition="15" endLine="87" endPosition="45" />
     <nodeInfo nodeId="1202834887923" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExternalReferences_Test.java" startLine="94" startPosition="34" endLine="95" endPosition="32" />
     <nodeInfo nodeId="1202834942837" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="99" startPosition="6" endLine="100" endPosition="56" />
@@ -3705,7 +3705,7 @@
     <nodeInfo nodeId="7668669956905402824" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ExternalReferences_Test.java" startLine="168" startPosition="43" endLine="172" endPosition="0" />
     <nodeInfo nodeId="1202834747930" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ExternalReferences_Test.java" startLine="14" startPosition="52" endLine="19" endPosition="15" />
     <nodeInfo nodeId="1207147635845" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="25" startPosition="34" endLine="30" endPosition="17" />
-    <nodeInfo nodeId="1215542924121" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ExternalReferences_Test.java" startLine="81" startPosition="38" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="1215542924121" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ExternalReferences_Test.java" startLine="81" startPosition="48" endLine="86" endPosition="0" />
     <nodeInfo nodeId="1202834879724" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExternalReferences_Test.java" startLine="92" startPosition="45" endLine="97" endPosition="19" />
     <nodeInfo nodeId="1219840070298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExternalReferences_Test.java" startLine="106" startPosition="68" endLine="111" endPosition="19" />
     <nodeInfo nodeId="1202835091859" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExternalReferences_Test.java" startLine="125" startPosition="30" endLine="130" endPosition="19" />
@@ -3755,7 +3755,7 @@
     <scopeInfo nodeId="7668669956905496039" fileName="ExternalReferences_Test.java" startLine="159" startPosition="40" endLine="160" endPosition="22" />
     <scopeInfo nodeId="7668669956905402825" fileName="ExternalReferences_Test.java" startLine="169" startPosition="25" endLine="170" endPosition="47" />
     <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="51" startPosition="30" endLine="53" endPosition="37" />
-    <scopeInfo nodeId="1215542924122" fileName="ExternalReferences_Test.java" startLine="82" startPosition="28" endLine="84" endPosition="28" />
+    <scopeInfo nodeId="1215542924122" fileName="ExternalReferences_Test.java" startLine="82" startPosition="30" endLine="84" endPosition="28" />
     <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="54" startPosition="29" endLine="57" endPosition="36" />
     <scopeInfo nodeId="1207247582944" fileName="ExternalReferences_Test.java" startLine="58" startPosition="29" endLine="61" endPosition="30" />
     <scopeInfo nodeId="1202834755155" fileName="ExternalReferences_Test.java" startLine="15" startPosition="59" endLine="19" endPosition="0" />
@@ -3768,7 +3768,7 @@
     <scopeInfo nodeId="7668669956905496038" fileName="ExternalReferences_Test.java" startLine="158" startPosition="89" endLine="162" endPosition="0" />
     <scopeInfo nodeId="7668669956905402824" fileName="ExternalReferences_Test.java" startLine="168" startPosition="43" endLine="172" endPosition="0" />
     <scopeInfo nodeId="1207147589492" fileName="ExternalReferences_Test.java" startLine="25" startPosition="34" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="81" startPosition="38" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1215542924121" fileName="ExternalReferences_Test.java" startLine="81" startPosition="48" endLine="86" endPosition="0" />
     <scopeInfo nodeId="1202834859555" fileName="ExternalReferences_Test.java" startLine="92" startPosition="45" endLine="97" endPosition="19" />
     <scopeInfo nodeId="1237139653264" fileName="ExternalReferences_Test.java" startLine="138" startPosition="81" endLine="143" endPosition="17" />
     <scopeInfo nodeId="9188746615686005183" fileName="ExternalReferences_Test.java" startLine="147" startPosition="47" endLine="153" endPosition="38">

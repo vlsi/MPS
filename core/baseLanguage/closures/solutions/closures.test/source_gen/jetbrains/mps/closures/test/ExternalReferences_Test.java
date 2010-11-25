@@ -78,9 +78,9 @@ __switch__:
 
   public void test_alteredLocalVariable3() throws Exception {
     final Wrappers._T<byte[]> bytes = new Wrappers._T<byte[]>(new byte[1]);
-    new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        bytes.value = new byte[3];
+    new _FunctionTypes._return_P0_E0<byte[]>() {
+      public byte[] invoke() {
+        return bytes.value = new byte[3];
         //  no return value 
       }
     }.invoke();
