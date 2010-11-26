@@ -66,8 +66,8 @@ public abstract class AbstractLeftColumn {
         menu.insert(new AbstractAction("Close " + getName()) {
           @Override
           public void actionPerformed(ActionEvent e) {
-            onClose();
             editorComponent.getLeftEditorHighlighter().removeTextColumn(AbstractLeftColumn.this);
+            dispose();
           }
         }, 0);
         if (menu.getSubElements().length != 1) {
@@ -89,7 +89,7 @@ public abstract class AbstractLeftColumn {
     return true;
   }
 
-  protected void onClose() {
+  public void dispose() {
   }
 
   public abstract String getName();

@@ -193,6 +193,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       painter.dispose();
     }
+    for (AbstractLeftColumn column : myTextColumns) {
+      column.dispose();
+    }
     BookmarkManager bookmarkManager = getBookmarkManager();
     if (bookmarkManager != null) {
       bookmarkManager.removeBookmarkListener(myListener);

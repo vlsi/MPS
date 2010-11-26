@@ -402,15 +402,11 @@ __switch__:
   }
 
   @Override
-  protected void onClose() {
-    dispose();
-    AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
-  }
-
   public void dispose() {
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
     ChangesManager.getInstance(myVcs.getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
+    AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
   }
 
   private int findPseudoLineByY(int y) {

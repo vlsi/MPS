@@ -131,7 +131,6 @@ public class AnnotationManager extends AbstractProjectComponent {
     final EditorComponent editorComponent = findEditorForColumn(column);
     editorComponent.getLeftEditorHighlighter().removeTextColumn(column);
     column.dispose();
-    MapSequence.fromMap(myEditorToColumn).removeKey(editorComponent);
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         annotate(editorComponent);
