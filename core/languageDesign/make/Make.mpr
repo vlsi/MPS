@@ -7,6 +7,7 @@
   <component name="MPSFavoritesManager">
     <favorites_list name="Make actions">
       <favorite_root model_ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" node_pointer="1204991218714" />
+      <favorite_root module_ref="cbfcab6a-ac80-4eb4-99de-c287e996dea7(jetbrains.mps.make.sandbox)" />
     </favorites_list>
   </component>
   <component name="MPSProject">

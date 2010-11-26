@@ -78,6 +78,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.GResource" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.GenerationHandler" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.GenerationStrategy" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MResource" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
@@ -144,6 +145,11 @@
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MResource" file="MResource.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.MakeModel_Action" file="MakeModel_Action.java">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
