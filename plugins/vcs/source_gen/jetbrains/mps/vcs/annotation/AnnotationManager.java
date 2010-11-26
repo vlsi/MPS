@@ -17,6 +17,10 @@ import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.vcs.changesmanager.ChangesManager;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.vcs.annotate.AnnotationProvider;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
@@ -38,14 +42,6 @@ public class AnnotationManager extends AbstractProjectComponent {
   public AnnotationManager(Project project, ProjectLevelVcsManager projectLevelVcsManager) {
     super(project);
     myProjectLevelVcsManager = projectLevelVcsManager;
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @Override
-  public void initComponent() {
   }
 
   public void annotate(EditorComponent editorComponent) {
@@ -77,6 +73,13 @@ public class AnnotationManager extends AbstractProjectComponent {
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     final AbstractVcs vcs = myProjectLevelVcsManager.getVcsFor(file);
     if (vcs == null) {
+      return false;
+    }
+    FileStatus fileStatus = FileStatusManager.getInstance(myProject).getStatus(file);
+    if (fileStatus == FileStatus.UNKNOWN || fileStatus == FileStatus.ADDED || fileStatus == FileStatus.IGNORED) {
+      return false;
+    }
+    if (ChangesManager.getInstance(myProject).getModelChangesManager(model).isAddedNode(new SNodePointer(root))) {
       return false;
     }
     final AnnotationProvider annotationProvider = vcs.getAnnotationProvider();
