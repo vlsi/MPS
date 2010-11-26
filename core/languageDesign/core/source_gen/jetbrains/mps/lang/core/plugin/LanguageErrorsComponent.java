@@ -23,6 +23,9 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.AbstractNodesReadListener;
+import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 
@@ -225,6 +228,40 @@ public class LanguageErrorsComponent {
     MapSequence.fromMap(myNodesToDependecies).clear();
     MapSequence.fromMap(myNodesToErrors).clear();
     removeModelListener();
+  }
+
+  public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
+    final Set<SNode> accessedNodes = SetSequence.fromSet(new HashSet<SNode>());
+    final Object[] result = new Object[1];
+    try {
+      AbstractNodesReadListener listener = new AbstractNodesReadListener() {
+        public void nodeUnclassifiedReadAccess(SNode node) {
+          SetSequence.fromSet(accessedNodes).addElement(node);
+        }
+
+        public void nodePropertyReadAccess(SNode node, String name, String value) {
+          SetSequence.fromSet(accessedNodes).addElement(node);
+        }
+
+        public void nodeReferentReadAccess(SNode node, String role, SNode referent) {
+          SetSequence.fromSet(accessedNodes).addElement(node);
+          SetSequence.fromSet(accessedNodes).addElement(referent);
+        }
+
+        public void nodeChildReadAccess(SNode node, String role, SNode child) {
+          SetSequence.fromSet(accessedNodes).addElement(node);
+          SetSequence.fromSet(accessedNodes).addElement(child);
+        }
+      };
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      result[0] = action.invoke();
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+    for (SNode accessedNode : accessedNodes) {
+      addDependency(accessedNode);
+    }
+    return (Result) result[0];
   }
 
   public class MyModelListener extends SModelAdapter {
