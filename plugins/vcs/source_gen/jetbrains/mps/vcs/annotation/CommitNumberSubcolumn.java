@@ -7,14 +7,15 @@ import java.util.Map;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import com.intellij.openapi.vcs.history.VcsFileRevision;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Comparator;
 import java.awt.FontMetrics;
+import java.util.Date;
 
 public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
   private FileAnnotation myFileAnnotation;
@@ -32,16 +33,25 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
 
   private void computeNumbers(Iterable<Integer> fileLines) {
     myRevisionsToNumbers = MapSequence.fromMap(new HashMap<VcsRevisionNumber, Integer>());
+    final Map<VcsRevisionNumber, VcsFileRevision> revisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
+    for (VcsFileRevision rev : ListSequence.fromList(myFileAnnotation.getRevisions())) {
+      MapSequence.fromMap(revisionNumberToRevision).put(rev.getRevisionNumber(), rev);
+    }
+
     List<VcsRevisionNumber> revisionNumbers = SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<VcsRevisionNumber>(), Sequence.fromIterable(fileLines).select(new ISelector<Integer, VcsRevisionNumber>() {
       public VcsRevisionNumber select(Integer fl) {
         return myFileAnnotation.getLineRevisionNumber(fl);
       }
-    }))).toListSequence();
-    ListSequence.fromList(revisionNumbers).sort(new Comparator<VcsRevisionNumber>() {
-      public int compare(VcsRevisionNumber a, VcsRevisionNumber b) {
-        return a.compareTo(b);
+    }))).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
+      public Comparable<?> select(VcsRevisionNumber rn) {
+        return MapSequence.fromMap(revisionNumberToRevision).get(rn).getRevisionDate();
       }
-    }, true);
+    }, true).toListSequence();
+    revisionNumbers = ListSequence.fromList(revisionNumbers).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
+      public Comparable<?> select(VcsRevisionNumber rn) {
+        return check_efout7_a0a0a0a0f0b(MapSequence.fromMap(revisionNumberToRevision).get(rn));
+      }
+    }, true).toListSequence();
     for (int i = 0; i < ListSequence.fromList(revisionNumbers).count(); i++) {
       MapSequence.fromMap(myRevisionsToNumbers).put(ListSequence.fromList(revisionNumbers).getElement(i), i + 1);
     }
@@ -51,5 +61,12 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
   public void computeWidth(FontMetrics fontMetrics, Iterable<Integer> fileLines) {
     computeNumbers(fileLines);
     super.computeWidth(fontMetrics, fileLines);
+  }
+
+  private static Date check_efout7_a0a0a0a0f0b(VcsFileRevision p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getRevisionDate();
   }
 }

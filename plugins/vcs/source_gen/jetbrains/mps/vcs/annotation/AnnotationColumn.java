@@ -13,6 +13,8 @@ import java.awt.Color;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.vcs.annotate.FileAnnotation;
+import com.intellij.openapi.vcs.history.VcsRevisionNumber;
+import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -30,7 +32,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
 import jetbrains.mps.vcs.changesmanager.ChangesManager;
 import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
@@ -61,7 +62,6 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.vcs.history.TextTransferrable;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
@@ -97,6 +97,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private List<Integer> myPseudoLinesToFileLines;
   private Map<String, Color> myAuthorsToColors = MapSequence.fromMap(new HashMap<String, Color>());
   private FileAnnotation myFileAnnotation;
+  private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
@@ -116,6 +117,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }));
     final SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
+    for (VcsFileRevision rev : ListSequence.fromList(fileAnnotation.getRevisions())) {
+      MapSequence.fromMap(myRevisionNumberToRevision).put(rev.getRevisionNumber(), rev);
+    }
     myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
     if (myFileLineToContent == null) {
       return;
@@ -129,7 +133,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
     for (int line = 0; line < ListSequence.fromList(myFileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0i0a(ListSequence.fromList(myFileLineToContent).getElement(line));
+      SNodeId id = check_5mnya_a0b0j0a(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
@@ -370,16 +374,20 @@ __switch__:
   @Override
   public String getTooltipText(MouseEvent event) {
     int fileLine = findFileLineByY(event.getY());
-    if (fileLine != -1) {
+    if (fileLine == -1) {
+      return null;
+    } else {
       return myFileAnnotation.getToolTip(fileLine);
     }
-    return null;
   }
 
   @Nullable
   @Override
   public Cursor getCursor(MouseEvent event, EditorComponent component) {
-    return new Cursor(Cursor.HAND_CURSOR);
+    return (findFileLineByY(event.getY()) == -1 ?
+      null :
+      new Cursor(Cursor.HAND_CURSOR)
+    );
   }
 
   @Override
@@ -418,23 +426,31 @@ __switch__:
 
   private int findFileLineByY(int y) {
     int pseudoLine = findPseudoLineByY(y);
-    if (pseudoLine != -1) {
+    if (pseudoLine == -1) {
+      return -1;
+    } else {
+      synchronized (myCurrentPseudoLinesLock) {
+        if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+          return -1;
+        }
+      }
       return ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
     }
-    return -1;
   }
 
   @Override
   public JPopupMenu getPopupMenu(MouseEvent event) {
     JPopupMenu menu = new JPopupMenu();
     final int fileLine = findFileLineByY(event.getY());
-    menu.add(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
-    menu.add(new AbstractAction("Copy revision number") {
-      public void actionPerformed(ActionEvent e) {
-        String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
-        CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
-      }
-    });
+    if (fileLine != -1) {
+      menu.add(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
+      menu.add(new AbstractAction("Copy revision number") {
+        public void actionPerformed(ActionEvent e) {
+          String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
+          CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
+        }
+      });
+    }
     return menu;
   }
 
@@ -454,13 +470,16 @@ __switch__:
       return b;
     }
     int c = aRevision.compareTo(bRevision);
+    if (MapSequence.fromMap(myRevisionNumberToRevision).get(aRevision) != null && MapSequence.fromMap(myRevisionNumberToRevision).get(bRevision) != null) {
+      c = MapSequence.fromMap(myRevisionNumberToRevision).get(aRevision).getRevisionDate().compareTo(MapSequence.fromMap(myRevisionNumberToRevision).get(bRevision).getRevisionDate());
+    }
     if (c < 0) {
       return b;
     }
     return a;
   }
 
-  private static SNodeId check_5mnya_a0b0i0a(LineContent p) {
+  private static SNodeId check_5mnya_a0b0j0a(LineContent p) {
     if (null == p) {
       return null;
     }
