@@ -805,7 +805,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "template", false), "templDeclarationClass"), "constructor", true)).first();
   }
 
-  public static Object referenceMacro_GetReferent_4484796796238903611(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1751251480823453085(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
@@ -1367,13 +1367,13 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1147906725605361055(final IOperationContext operationContext, final IfMacroContext _context) {
-    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-    return name != null;
+  public static boolean ifMacro_Condition_1751251480823453109(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
 
-  public static boolean ifMacro_Condition_4484796796238903629(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
+  public static boolean ifMacro_Condition_1751251480823453059(final IOperationContext operationContext, final IfMacroContext _context) {
+    String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
+    return name != null;
   }
 
   public static boolean ifMacro_Condition_5412006700504157845(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1607,11 +1607,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "templateNode", true);
   }
 
-  public static SNode sourceNodeQuery_1147906725605286191(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1751251480823453043(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
   }
 
-  public static SNode sourceNodeQuery_5809996624366819974(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1751251480823453052(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
   }
 
@@ -1850,7 +1850,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Object templateArgumentQuery_1147906725605286214(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_1751251480823453036(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new int[]{0};
   }
 
