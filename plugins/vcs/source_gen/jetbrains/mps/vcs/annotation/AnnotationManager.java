@@ -26,9 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
-import java.util.List;
-import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -51,7 +48,15 @@ public class AnnotationManager extends AbstractProjectComponent {
   public void initComponent() {
   }
 
-  public boolean annotate(final EditorComponent editorComponent, boolean dryRun) {
+  public void annotate(EditorComponent editorComponent) {
+    annotate(editorComponent, false);
+  }
+
+  public boolean isAnnotateable(EditorComponent editorComponent) {
+    return annotate(editorComponent, true);
+  }
+
+  private boolean annotate(final EditorComponent editorComponent, boolean dryRun) {
     if (MapSequence.fromMap(myEditorToColumn).containsKey(editorComponent)) {
       if (!(dryRun)) {
         editorComponent.getLeftEditorHighlighter().removeTextColumn(MapSequence.fromMap(myEditorToColumn).get(editorComponent));
@@ -106,10 +111,9 @@ public class AnnotationManager extends AbstractProjectComponent {
         }
 
         if (myFileAnnotation != null) {
-          final List<LineContent> lineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              MapSequence.fromMap(myEditorToColumn).put(editorComponent, new AnnotationColumn(root, myFileAnnotation, lineToContent, vcs, file));
+              MapSequence.fromMap(myEditorToColumn).put(editorComponent, new AnnotationColumn(root, myFileAnnotation, vcs, file));
               editorComponent.getLeftEditorHighlighter().addTextColumn(MapSequence.fromMap(myEditorToColumn).get(editorComponent));
             }
           });
@@ -120,12 +124,24 @@ public class AnnotationManager extends AbstractProjectComponent {
     return true;
   }
 
-  public void removeColumn(final AnnotationColumn column) {
-    MapSequence.fromMap(myEditorToColumn).removeKey(MapSequence.fromMap(myEditorToColumn).findFirst(new IWhereFilter<IMapping<EditorComponent, AnnotationColumn>>() {
+  public void reannotate(AnnotationColumn column) {
+    EditorComponent editorComponent = findEditorForColumn(column);
+    editorComponent.getLeftEditorHighlighter().removeTextColumn(column);
+    column.dispose();
+    MapSequence.fromMap(myEditorToColumn).removeKey(editorComponent);
+    annotate(editorComponent);
+  }
+
+  public void removeColumn(AnnotationColumn column) {
+    MapSequence.fromMap(myEditorToColumn).removeKey(findEditorForColumn(column));
+  }
+
+  private EditorComponent findEditorForColumn(final AnnotationColumn column) {
+    return MapSequence.fromMap(myEditorToColumn).findFirst(new IWhereFilter<IMapping<EditorComponent, AnnotationColumn>>() {
       public boolean accept(IMapping<EditorComponent, AnnotationColumn> m) {
         return m.value() == column;
       }
-    }).key());
+    }).key();
   }
 
   public static AnnotationManager getInstance(Project project) {

@@ -9,10 +9,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
+import java.awt.Color;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.awt.Color;
 import com.intellij.openapi.vcs.annotate.FileAnnotation;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
@@ -22,11 +21,13 @@ import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.changes.Change;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.history.VcsFileRevision;
@@ -64,6 +65,7 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
+import com.intellij.openapi.vcs.annotate.AnnotationListener;
 import jetbrains.mps.vcs.changesmanager.ChangeListener;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
@@ -93,7 +95,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.fromList(new ArrayList<AnnotationAspectSubcolumn>());
   private List<Integer> myPseudoLinesY;
   private List<Integer> myPseudoLinesToFileLines;
-  private Map<SNodeId, Integer> myNodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
   private Map<String, Color> myAuthorsToColors = MapSequence.fromMap(new HashMap<String, Color>());
   private FileAnnotation myFileAnnotation;
   private LineAnnotationAspect myAuthorAnnotationAspect;
@@ -105,8 +106,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private Set<Integer> myCurrentPseudoLines = null;
   private final Object myCurrentPseudoLinesLock = new Object();
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
+  private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
 
-  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, List<LineContent> fileLineToContent, AbstractVcs vcs, VirtualFile modelVirtualFile) {
+  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
@@ -114,24 +116,30 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }));
     final SModel model = SNodeOperations.getModel(root);
     myFileAnnotation = fileAnnotation;
+    myFileLineToContent = ModelPersistence.getLineToContentMap(myFileAnnotation.getAnnotatedContent());
+    if (myFileLineToContent == null) {
+      return;
+    }
+    myFileAnnotation.addListener(myAnnotationListener);
     myAuthorAnnotationAspect = Sequence.fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).findFirst(new IWhereFilter<LineAnnotationAspect>() {
       public boolean accept(LineAnnotationAspect a) {
         return LineAnnotationAspect.AUTHOR.equals(a.getId());
       }
     });
-    for (int line = 0; line < ListSequence.fromList(fileLineToContent).count(); line++) {
+    Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
+    for (int line = 0; line < ListSequence.fromList(myFileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0e0a(ListSequence.fromList(fileLineToContent).getElement(line));
+      SNodeId id = check_5mnya_a0b0i0a(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
       if (node == null) {
         continue;
       }
-      if (MapSequence.fromMap(myNodeIdToFileLine).containsKey(id)) {
-        MapSequence.fromMap(myNodeIdToFileLine).put(id, getFileLineWithMaxRevision(MapSequence.fromMap(myNodeIdToFileLine).get(id), line));
+      if (MapSequence.fromMap(nodeIdToFileLine).containsKey(id)) {
+        MapSequence.fromMap(nodeIdToFileLine).put(id, getFileLineWithMaxRevision(MapSequence.fromMap(nodeIdToFileLine).get(id), line));
       } else {
-        MapSequence.fromMap(myNodeIdToFileLine).put(id, line);
+        MapSequence.fromMap(nodeIdToFileLine).put(id, line);
       }
     }
     for (LineAnnotationAspect aspect : Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects()))) {
@@ -146,7 +154,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
-    myFileLineToContent = fileLineToContent;
     myVcs = vcs;
     final ChangesManager changesManager = ChangesManager.getInstance(myVcs.getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
@@ -388,9 +395,14 @@ __switch__:
 
   @Override
   protected void onClose() {
+    dispose();
+    AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
+  }
+
+  public void dispose() {
+    myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
     ChangesManager.getInstance(myVcs.getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
-    AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
   }
 
   private int findPseudoLineByY(int y) {
@@ -448,39 +460,48 @@ __switch__:
     return a;
   }
 
-  private static SNodeId check_5mnya_a0b0e0a(LineContent p) {
+  private static SNodeId check_5mnya_a0b0i0a(LineContent p) {
     if (null == p) {
       return null;
     }
     return p.getNodeId();
   }
 
-  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0b(Pair<CommittedChangeList, FilePath> p) {
+  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0c(Pair<CommittedChangeList, FilePath> p) {
     if (null == p) {
       return null;
     }
     return p.getSecond();
   }
 
-  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0a1(Pair<CommittedChangeList, FilePath> p) {
+  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0a2(Pair<CommittedChangeList, FilePath> p) {
     if (null == p) {
       return null;
     }
     return p.getSecond();
   }
 
-  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0a1(Pair<CommittedChangeList, FilePath> p) {
+  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0a2(Pair<CommittedChangeList, FilePath> p) {
     if (null == p) {
       return null;
     }
     return p.getFirst();
   }
 
-  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a0b(LineContent p) {
+  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(LineContent p) {
     if (null == p) {
       return null;
     }
     return p.getNodeId();
+  }
+
+  private class MyAnnotationListener implements AnnotationListener {
+    public MyAnnotationListener() {
+    }
+
+    public void onAnnotationChanged() {
+      AnnotationManager.getInstance(myVcs.getProject()).reannotate(AnnotationColumn.this);
+    }
   }
 
   private class MyChangeListener implements ChangeListener {
@@ -532,11 +553,11 @@ __switch__:
               if (provider != null) {
                 pair = provider.getOneList(myModelVirtualFile, revisionNumber);
               }
-              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0a1(pair) == null ?
+              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0a2(pair) == null ?
                 new FilePathImpl(myModelVirtualFile) :
-                check_5mnya_a0a2a2a0a0a0a1a1a0b(pair)
+                check_5mnya_a0a2a2a0a0a0a1a1a0c(pair)
               );
-              CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0a1(pair);
+              CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0a2(pair);
               if (cl == null) {
                 VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
                 return;
@@ -586,7 +607,7 @@ __switch__:
                 final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
                   public SNode invoke() {
-                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0b(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
+                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     node.value = afterModel.getNodeById(nodeId);
                     if ((node.value == null)) {
                       node.value = beforeModel.value.getNodeById(nodeId);

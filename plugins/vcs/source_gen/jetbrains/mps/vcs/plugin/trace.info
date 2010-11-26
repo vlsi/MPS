@@ -486,7 +486,7 @@
     <nodeInfo nodeId="8807724076671132220" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="Annotate_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="33" />
     <nodeInfo nodeId="8807724076671140448" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="Annotate_Action.java" startLine="20" startPosition="33" endLine="21" endPosition="26" />
     <nodeInfo nodeId="8955628568092691936" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Annotate_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="115" />
-    <nodeInfo nodeId="8955628568092691966" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Annotate_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="111" />
+    <nodeInfo nodeId="8955628568092691966" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Annotate_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="104" />
     <scopeInfo nodeId="8911222837206491199" fileName="Annotate_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="115" />
   </root>
   <root nodeId="8807724076671140453">

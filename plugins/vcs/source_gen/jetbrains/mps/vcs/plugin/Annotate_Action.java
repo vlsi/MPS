@@ -32,7 +32,7 @@ public class Annotate_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return AnnotationManager.getInstance(Annotate_Action.this.project).annotate(Annotate_Action.this.editor, true);
+    return AnnotationManager.getInstance(Annotate_Action.this.project).isAnnotateable(Annotate_Action.this.editor);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -72,7 +72,7 @@ public class Annotate_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      AnnotationManager.getInstance(Annotate_Action.this.project).annotate(Annotate_Action.this.editor, false);
+      AnnotationManager.getInstance(Annotate_Action.this.project).annotate(Annotate_Action.this.editor);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Annotate", t);
