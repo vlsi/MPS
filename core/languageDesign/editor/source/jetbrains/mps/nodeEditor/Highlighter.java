@@ -487,7 +487,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               Thread.sleep(200);
             }
             while (dumbService.isDumb()) {
-              Thread.sleep(200);
+              Thread.sleep(600);
             }
             long current = System.currentTimeMillis();
             long commandTime = myLastCommandTime;
