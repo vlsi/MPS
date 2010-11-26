@@ -159,6 +159,12 @@ public class VersionUtil {
       return;
     }
     SModelReference modelRef = ModelUtil.upgradeModelUID(SModelReference.fromString(modelUID));
+    int hash = (modelRef.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
+    if (!(Integer.toString(hash, HASH_BASE).equals(index))) {
+      int oldh = (modelRef.hashCode() >>> 1) % HASH_SIZE;
+      if (!(Integer.toString(oldh, HASH_BASE).equals(index)))
+        LOG.info("Hash clash:"+index+":"+Integer.toString(hash, HASH_BASE)+":"+Integer.toString(oldh, HASH_BASE) + " in " + model.getLongName() + " for model " + modelRef);
+    }
     ImportElement elem = new ImportElement(modelRef, ++myMaxImportIndex, version);
     model.setMaxImportIndex(myMaxImportIndex);
     myImports.put(modelRef, elem);
