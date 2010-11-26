@@ -212,6 +212,131 @@
               </node>
             </node>
           </node>
+          <node role="typeArgument" roleId="tpef.4972241301747169160" type="tpef.Type" typeId="tpef.1068431790189" id="3144630833542653273">
+            <node role="nodeMacro$attribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3144630833542653275">
+              <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3144630833542653276">
+                <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="3144630833542653277">
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="3144630833542654399">
+                    <node role="expression" roleId="tpef.1068580123156" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542654413">
+                      <node role="operand" roleId="tpef.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3144630833542654411">
+                        <property name="asCast" nameId="tp25.1238684351431" value="true" />
+                        <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
+                        <node role="leftExpression" roleId="tp25.1140138123956" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542654406">
+                          <node role="operand" roleId="tpef.1197027771414" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542654401">
+                            <node role="operand" roleId="tpef.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3144630833542654400" />
+                            <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542654405">
+                              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1201885182287" />
+                            </node>
+                          </node>
+                          <node role="operation" roleId="tpef.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="3144630833542654410" />
+                        </node>
+                      </node>
+                      <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542654417">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1199542457201" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.LocalVariableDeclarationStatement" typeId="tpef.1068581242864" id="3144630833542687586">
+                    <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="3144630833542687587">
+                      <property name="name" nameId="tpck.1169194664001" value="st" />
+                      <node role="type" roleId="tpef.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3144630833542687588">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1151689724996" resolveInfo="SequenceType" />
+                      </node>
+                      <node role="initializer" roleId="tpef.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3144630833542687589">
+                        <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3144630833542687590">
+                          <property name="name" nameId="tpck.1169194664001" value="sequenceType" />
+                          <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151689724996" resolveInfo="SequenceType" />
+                        </node>
+                        <node role="nodeToCoerce" roleId="tpd4.1178870894645" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687591">
+                          <node role="operand" roleId="tpef.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3144630833542687592">
+                            <property name="asCast" nameId="tp25.1238684351431" value="true" />
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
+                            <node role="leftExpression" roleId="tp25.1140138123956" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687593">
+                              <node role="operand" roleId="tpef.1197027771414" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687594">
+                                <node role="operand" roleId="tpef.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3144630833542687595" />
+                                <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687596">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1201885182287" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpef.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="3144630833542687597" />
+                            </node>
+                          </node>
+                          <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687598">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1199542457201" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.IfStatement" typeId="tpef.1068580123159" id="3144630833542687600">
+                    <node role="ifTrue" roleId="tpef.1068580123161" type="tpef.StatementList" typeId="tpef.1068580123136" id="3144630833542687601">
+                      <node role="statement" roleId="tpef.1068581517665" type="tpef.LocalVariableDeclarationStatement" typeId="tpef.1068581242864" id="3144630833542687618">
+                        <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="3144630833542687619">
+                          <property name="name" nameId="tpck.1169194664001" value="ct" />
+                          <node role="type" roleId="tpef.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3144630833542687620">
+                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpef.1068431790189" resolveInfo="Type" />
+                          </node>
+                          <node role="initializer" roleId="tpef.1068431790190" type="tpef.StaticMethodCall" typeId="tpef.1081236700937" id="3144630833542687621">
+                            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="tp2g.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                            <link role="classConcept" roleId="tpef.1144433194310" targetNodeId="tp2g.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                            <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687622">
+                              <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687623">
+                                <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687587" resolveInfo="st" />
+                              </node>
+                              <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687624">
+                                <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1151689745422" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" roleId="tpef.1068581517665" type="tpef.IfStatement" typeId="tpef.1068580123159" id="3144630833542687626">
+                        <node role="ifTrue" roleId="tpef.1068580123161" type="tpef.StatementList" typeId="tpef.1068580123136" id="3144630833542687627">
+                          <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="3144630833542687639">
+                            <node role="expression" roleId="tpef.1068581517676" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687648">
+                              <node role="operand" roleId="tpef.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3144630833542687646">
+                                <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpef.1171903916106" resolveInfo="UpperBoundType" />
+                                <node role="leftExpression" roleId="tp25.1140138123956" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687641">
+                                  <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687619" resolveInfo="ct" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687652">
+                                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpef.1171903916107" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" roleId="tpef.1068580123160" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687631">
+                          <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687630">
+                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687619" resolveInfo="ct" />
+                          </node>
+                          <node role="operation" roleId="tpef.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="3144630833542687636">
+                            <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3144630833542687638">
+                              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpef.1171903916106" resolveInfo="UpperBoundType" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="3144630833542687654">
+                        <node role="expression" roleId="tpef.1068581517676" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687656">
+                          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687619" resolveInfo="ct" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" roleId="tpef.1068580123160" type="tpef.NotEqualsExpression" typeId="tpef.1073239437375" id="3144630833542687605">
+                      <node role="rightExpression" roleId="tpef.1081773367579" type="tpef.NullLiteral" typeId="tpef.1070534058343" id="3144630833542687608" />
+                      <node role="leftExpression" roleId="tpef.1081773367580" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687604">
+                        <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687587" resolveInfo="st" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="3144630833542687658">
+                    <node role="expression" roleId="tpef.1068581517676" type="tpef.NullLiteral" typeId="tpef.1070534058343" id="3144630833542687660" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -230,6 +355,76 @@
                       <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1208624546692">
                         <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1202129035304" />
                       </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="typeArgument" roleId="tpef.4972241301747169160" type="tpef.Type" typeId="tpef.1068431790189" id="3144630833542619973">
+            <node role="nodeMacro$attribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3144630833542619975">
+              <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3144630833542619976">
+                <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="3144630833542619977">
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.LocalVariableDeclarationStatement" typeId="tpef.1068581242864" id="3144630833542687530">
+                    <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="3144630833542687531">
+                      <property name="name" nameId="tpck.1169194664001" value="ct" />
+                      <node role="type" roleId="tpef.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3144630833542687532">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpef.1068431790189" resolveInfo="Type" />
+                      </node>
+                      <node role="initializer" roleId="tpef.1068431790190" type="tpef.StaticMethodCall" typeId="tpef.1081236700937" id="3144630833542687533">
+                        <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="tp2g.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                        <link role="classConcept" roleId="tpef.1144433194310" targetNodeId="tp2g.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                        <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687534">
+                          <node role="operand" roleId="tpef.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3144630833542687535">
+                            <property name="asCast" nameId="tp25.1238684351431" value="true" />
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
+                            <node role="leftExpression" roleId="tp25.1140138123956" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687536">
+                              <node role="operand" roleId="tpef.1197027771414" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687537">
+                                <node role="operand" roleId="tpef.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3144630833542687538" />
+                                <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687539">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1202129035304" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpef.1197027833540" type="tpd4.Node_TypeOperation" typeId="tpd4.1176544042499" id="3144630833542687540" />
+                            </node>
+                          </node>
+                          <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687541">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1199542457201" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.IfStatement" typeId="tpef.1068580123159" id="3144630833542687543">
+                    <node role="ifTrue" roleId="tpef.1068580123161" type="tpef.StatementList" typeId="tpef.1068580123136" id="3144630833542687544">
+                      <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="3144630833542687555">
+                        <node role="expression" roleId="tpef.1068581517676" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687564">
+                          <node role="operand" roleId="tpef.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3144630833542687562">
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpef.1171903916106" resolveInfo="UpperBoundType" />
+                            <node role="leftExpression" roleId="tp25.1140138123956" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687557">
+                              <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687531" resolveInfo="ct" />
+                            </node>
+                          </node>
+                          <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3144630833542687568">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpef.1171903916107" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" roleId="tpef.1068580123160" type="tpef.DotExpression" typeId="tpef.1197027756228" id="3144630833542687548">
+                      <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687547">
+                        <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687531" resolveInfo="ct" />
+                      </node>
+                      <node role="operation" roleId="tpef.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="3144630833542687552">
+                        <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3144630833542687554">
+                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpef.1171903916106" resolveInfo="UpperBoundType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="3144630833542687570">
+                    <node role="expression" roleId="tpef.1068580123156" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="3144630833542687571">
+                      <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3144630833542687531" resolveInfo="ct" />
                     </node>
                   </node>
                 </node>

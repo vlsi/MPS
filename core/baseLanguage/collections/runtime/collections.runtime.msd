@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections.runtime" uuid="9b80526e-f0bf-4992-bdf5-cee39c1833f3" extenallyVisible="true" compileInMPS="false" java-stubs-enabled="true">
+<solution name="collections.runtime" uuid="9b80526e-f0bf-4992-bdf5-cee39c1833f3" compileInMPS="false" java-stubs-enabled="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
@@ -10,6 +10,7 @@
   <usedLanguages>
     <usedLanguage>a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)</usedLanguage>
     <usedLanguage>954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)</usedLanguage>
+    <usedLanguage>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguage>
   </usedLanguages>
 </solution>
 
