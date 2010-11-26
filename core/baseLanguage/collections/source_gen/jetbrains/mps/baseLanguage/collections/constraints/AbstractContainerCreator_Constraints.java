@@ -30,7 +30,7 @@ public class AbstractContainerCreator_Constraints {
         public boolean accept(SNode cl) {
           return SLinkOperations.getTarget(cl, "conceptLinkDeclaration", false) == avlbForCLdecl;
         }
-      }).select(new ISelector<SNode, SNode>() {
+      }).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode cl) {
           return (SNode) SLinkOperations.getTarget(SNodeOperations.cast(cl, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
         }

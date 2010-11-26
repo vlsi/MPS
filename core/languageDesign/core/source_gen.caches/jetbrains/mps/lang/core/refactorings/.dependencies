@@ -96,7 +96,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings.BaseChooserSettings" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.framework.paramchooser.mps.BaseChooserSettings" />
   </dependency>
 </dependenciesRoot>
 

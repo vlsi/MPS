@@ -125,7 +125,7 @@ public class Module_Behavior {
 
   public static List<SNode> call_getClassPath_1213877515083(SNode thisNode) {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<StubPath, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
       public String select(StubPath it) {
         return it.getPath();
       }
@@ -136,7 +136,7 @@ public class Module_Behavior {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
       List<StubPath> paths = ((Language) module).getRuntimeStubPaths();
-      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<StubPath, String>() {
+      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).<String>select(new ISelector<StubPath, String>() {
         public String select(StubPath it) {
           return it.getPath();
         }

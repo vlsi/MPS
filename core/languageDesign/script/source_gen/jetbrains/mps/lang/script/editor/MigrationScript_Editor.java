@@ -314,7 +314,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).select(new ISelector<SNode, String>() {
+      return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "category");
         }
@@ -327,7 +327,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> list = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).select(new ISelector<SNode, String>() {
+      List<String> list = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "migrationFromBuild");
         }

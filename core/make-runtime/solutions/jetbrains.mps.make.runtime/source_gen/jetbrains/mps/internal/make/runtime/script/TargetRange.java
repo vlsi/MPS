@@ -40,7 +40,7 @@ public class TargetRange {
   }
 
   public void addRelated(Iterable<ITarget> availableTargets) {
-    Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).translate(new ITranslator2<ITarget, ITarget.Name>() {
+    Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).<ITarget.Name>translate(new ITranslator2<ITarget, ITarget.Name>() {
       public Iterable<ITarget.Name> translate(ITarget trg) {
         return Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notBefore())).concat(Sequence.fromIterable(trg.after())).concat(Sequence.fromIterable(trg.notAfter()));
       }
@@ -74,7 +74,7 @@ public class TargetRange {
   }
 
   public Iterable<ITarget> sortedTargets() {
-    return Sequence.fromIterable(new TargetRange.TargetsGraph().topologicalSort()).select(new ISelector<ITarget.Name, ITarget>() {
+    return Sequence.fromIterable(new TargetRange.TargetsGraph().topologicalSort()).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
         return MapSequence.fromMap(targetsView).get(tn);
       }
@@ -85,7 +85,7 @@ public class TargetRange {
     if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
       throw new IllegalArgumentException("unknown target");
     }
-    return Sequence.fromIterable(new TargetRange.TargetsGraph().precursors(target)).select(new ISelector<ITarget.Name, ITarget>() {
+    return Sequence.fromIterable(new TargetRange.TargetsGraph().precursors(target)).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
         return MapSequence.fromMap(targetsView).get(tn);
       }
@@ -100,7 +100,7 @@ public class TargetRange {
       public boolean accept(ITarget.Name tn) {
         return MapSequence.fromMap(allRefs).containsKey(tn);
       }
-    }).select(new ISelector<ITarget.Name, ITarget>() {
+    }).<ITarget>select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
         return MapSequence.fromMap(targetsView).get(tn);
       }

@@ -549,8 +549,8 @@
     <nodeInfo nodeId="7482942963842063041" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="93" startPosition="219" endLine="94" endPosition="29" />
     <nodeInfo nodeId="7482942963842016904" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="80" startPosition="108" endLine="83" endPosition="9" />
     <nodeInfo nodeId="7482942963842016915" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="83" startPosition="9" endLine="86" endPosition="9" />
-    <nodeInfo nodeId="7482942963842028482" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CheckCoreRuntimeDeps_Action.java" startLine="70" startPosition="116" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="7482942963842028493" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CheckCoreRuntimeDeps_Action.java" startLine="74" startPosition="49" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="7482942963842028482" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CheckCoreRuntimeDeps_Action.java" startLine="70" startPosition="123" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="7482942963842028493" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CheckCoreRuntimeDeps_Action.java" startLine="74" startPosition="58" endLine="78" endPosition="0" />
     <nodeInfo nodeId="7482942963842028444" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="91" startPosition="71" endLine="95" endPosition="13" />
     <nodeInfo nodeId="7482942963842019673" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="89" startPosition="114" endLine="96" endPosition="11" />
     <nodeInfo nodeId="7482942963842028474" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="69" startPosition="0" endLine="78" endPosition="9" />
@@ -563,16 +563,16 @@
     <scopeInfo nodeId="7482942963842028445" fileName="CheckCoreRuntimeDeps_Action.java" startLine="92" startPosition="73" endLine="94" endPosition="29">
       <varInfo nodeId="7482942963842062844" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="7482942963842028482" fileName="CheckCoreRuntimeDeps_Action.java" startLine="70" startPosition="116" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="7482942963842028493" fileName="CheckCoreRuntimeDeps_Action.java" startLine="74" startPosition="49" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="7482942963842028482" fileName="CheckCoreRuntimeDeps_Action.java" startLine="70" startPosition="123" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="7482942963842028493" fileName="CheckCoreRuntimeDeps_Action.java" startLine="74" startPosition="58" endLine="78" endPosition="0" />
     <scopeInfo nodeId="7482942963842019676" fileName="CheckCoreRuntimeDeps_Action.java" startLine="90" startPosition="143" endLine="95" endPosition="13" />
     <scopeInfo nodeId="7482942963842016961" fileName="CheckCoreRuntimeDeps_Action.java" startLine="89" startPosition="114" endLine="96" endPosition="11" />
     <scopeInfo nodeId="7482942963842019673" fileName="CheckCoreRuntimeDeps_Action.java" startLine="89" startPosition="114" endLine="96" endPosition="11" />
     <scopeInfo nodeId="7482942963842016958" fileName="CheckCoreRuntimeDeps_Action.java" startLine="88" startPosition="74" endLine="97" endPosition="9" />
     <scopeInfo nodeId="7482942963841969139" fileName="CheckCoreRuntimeDeps_Action.java" startLine="80" startPosition="108" endLine="97" endPosition="9" />
     <scopeInfo nodeId="7482942963841969136" fileName="CheckCoreRuntimeDeps_Action.java" startLine="79" startPosition="0" endLine="98" endPosition="7" />
-    <unitInfo nodeId="7482942963842028482" fileName="CheckCoreRuntimeDeps_Action.java" startLine="70" startPosition="86" endLine="74" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CheckCoreRuntimeDeps_Action$1" />
-    <unitInfo nodeId="7482942963842028493" fileName="CheckCoreRuntimeDeps_Action.java" startLine="74" startPosition="20" endLine="78" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CheckCoreRuntimeDeps_Action$2" />
+    <unitInfo nodeId="7482942963842028482" fileName="CheckCoreRuntimeDeps_Action.java" startLine="70" startPosition="93" endLine="74" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CheckCoreRuntimeDeps_Action$1" />
+    <unitInfo nodeId="7482942963842028493" fileName="CheckCoreRuntimeDeps_Action.java" startLine="74" startPosition="29" endLine="78" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CheckCoreRuntimeDeps_Action$2" />
   </root>
 </debugInfo>
 

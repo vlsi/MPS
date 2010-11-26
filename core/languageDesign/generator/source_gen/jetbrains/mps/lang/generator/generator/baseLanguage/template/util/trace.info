@@ -14,7 +14,7 @@
     <nodeInfo nodeId="8285036680620283505" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenUtil.java" startLine="25" startPosition="115" endLine="29" endPosition="0" />
     <nodeInfo nodeId="8285036680620283515" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenUtil.java" startLine="29" startPosition="24" endLine="33" endPosition="6" />
     <nodeInfo nodeId="8285036680620283554" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenUtil.java" startLine="37" startPosition="86" endLine="41" endPosition="6" />
-    <nodeInfo nodeId="8294566892413665774" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenUtil.java" startLine="50" startPosition="171" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="8294566892413665774" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenUtil.java" startLine="50" startPosition="178" endLine="54" endPosition="0" />
     <nodeInfo nodeId="5659786285834681605" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GenUtil.java" startLine="57" startPosition="160" endLine="61" endPosition="0" />
     <nodeInfo nodeId="8285036680620283495" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenUtil.java" startLine="24" startPosition="88" endLine="29" endPosition="24" />
     <nodeInfo nodeId="5659786285834681599" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GenUtil.java" startLine="56" startPosition="5" endLine="61" endPosition="7" />
@@ -30,7 +30,7 @@
     <scopeInfo nodeId="5659786285834681606" fileName="GenUtil.java" startLine="58" startPosition="39" endLine="59" endPosition="62" />
     <scopeInfo nodeId="8285036680620268545" fileName="GenUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
     <scopeInfo nodeId="8285036680620283505" fileName="GenUtil.java" startLine="25" startPosition="115" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8294566892413665774" fileName="GenUtil.java" startLine="50" startPosition="171" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8294566892413665774" fileName="GenUtil.java" startLine="50" startPosition="178" endLine="54" endPosition="0" />
     <scopeInfo nodeId="5659786285834681605" fileName="GenUtil.java" startLine="57" startPosition="160" endLine="61" endPosition="0" />
     <scopeInfo nodeId="8285036680620283546" fileName="GenUtil.java" startLine="37" startPosition="86" endLine="46" endPosition="15">
       <varInfo nodeId="8285036680620283555" varName="original" />
@@ -54,7 +54,7 @@
       <varInfo nodeId="8294566892413615308" varName="model" />
     </scopeInfo>
     <unitInfo nodeId="8285036680620283505" fileName="GenUtil.java" startLine="25" startPosition="92" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$1" />
-    <unitInfo nodeId="8294566892413665774" fileName="GenUtil.java" startLine="50" startPosition="141" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$2" />
+    <unitInfo nodeId="8294566892413665774" fileName="GenUtil.java" startLine="50" startPosition="148" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil$2" />
     <unitInfo nodeId="5659786285834681605" fileName="GenUtil.java" startLine="57" startPosition="137" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.IWhereFilter$anonymous" />
     <unitInfo nodeId="8285036680620268543" fileName="GenUtil.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
   </root>

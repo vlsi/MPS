@@ -948,7 +948,7 @@ __switch__:
       public boolean accept(SNode blk) {
         return "core.baseLanguage".equals(SPropertyOperations.getString(blk, "name")) || "core.languageDesign".equals(SPropertyOperations.getString(blk, "name"));
       }
-    }).translate(new ITranslator2<SNode, SNode>() {
+    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
         return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder"), "entry", true);
       }

@@ -70,7 +70,7 @@
     <nodeInfo nodeId="2301870845769311860" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader7Handler.java" startLine="367" startPosition="36" endLine="370" endPosition="9" />
     <nodeInfo nodeId="2301870845769311884" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader7Handler.java" startLine="414" startPosition="36" endLine="417" endPosition="9" />
     <nodeInfo nodeId="286176397450364367" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader7Handler.java" startLine="459" startPosition="47" endLine="462" endPosition="9" />
-    <nodeInfo nodeId="5132159629682542730" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelReader7Handler.java" startLine="497" startPosition="61" endLine="500" endPosition="11" />
+    <nodeInfo nodeId="5132159629682542730" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader7Handler.java" startLine="497" startPosition="61" endLine="500" endPosition="11" />
     <nodeInfo nodeId="5132159629682546254" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelReader7Handler.java" startLine="507" startPosition="14" endLine="510" endPosition="9" />
     <nodeInfo nodeId="2824634917103356436" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader7Handler.java" startLine="235" startPosition="38" endLine="239" endPosition="9" />
     <nodeInfo nodeId="286176397450364267" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelReader7Handler.java" startLine="487" startPosition="42" endLine="491" endPosition="9" />

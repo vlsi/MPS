@@ -77,8 +77,8 @@
     <nodeInfo nodeId="7012097027058651058" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MoveNodes.java" startLine="117" startPosition="5" endLine="120" endPosition="5" />
     <nodeInfo nodeId="7012097027058650952" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MoveNodes.java" startLine="128" startPosition="54" endLine="131" endPosition="5" />
     <nodeInfo nodeId="3548249452606313529" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MoveNodes.java" startLine="64" startPosition="133" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="3548249452606313544" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MoveNodes.java" startLine="68" startPosition="61" endLine="72" endPosition="0" />
-    <nodeInfo nodeId="3548249452606313560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MoveNodes.java" startLine="73" startPosition="129" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="3548249452606313544" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MoveNodes.java" startLine="68" startPosition="68" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="3548249452606313560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MoveNodes.java" startLine="73" startPosition="137" endLine="77" endPosition="0" />
     <nodeInfo nodeId="7012097027058651009" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MoveNodes.java" startLine="108" startPosition="34" endLine="112" endPosition="5" />
     <nodeInfo nodeId="3548249452606313553" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MoveNodes.java" startLine="72" startPosition="13" endLine="77" endPosition="13" />
     <nodeInfo nodeId="3548249452606313587" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MoveNodes.java" startLine="83" startPosition="65" endLine="88" endPosition="15" />
@@ -110,8 +110,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7012097027058650952" fileName="MoveNodes.java" startLine="128" startPosition="54" endLine="131" endPosition="5" />
     <scopeInfo nodeId="3548249452606313529" fileName="MoveNodes.java" startLine="64" startPosition="133" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="3548249452606313544" fileName="MoveNodes.java" startLine="68" startPosition="61" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="3548249452606313560" fileName="MoveNodes.java" startLine="73" startPosition="129" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="3548249452606313544" fileName="MoveNodes.java" startLine="68" startPosition="68" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="3548249452606313560" fileName="MoveNodes.java" startLine="73" startPosition="137" endLine="77" endPosition="0" />
     <scopeInfo nodeId="7012097027058633822" fileName="MoveNodes_target_Chooser.java" startLine="34" startPosition="58" endLine="39" endPosition="97">
       <varInfo nodeId="4284078376668136074" varName="selectedObject" />
     </scopeInfo>
@@ -151,8 +151,8 @@
       <varInfo nodeId="3548249452606313661" varName="result" />
     </scopeInfo>
     <unitInfo nodeId="3548249452606313529" fileName="MoveNodes.java" startLine="64" startPosition="100" endLine="68" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
-    <unitInfo nodeId="3548249452606313544" fileName="MoveNodes.java" startLine="68" startPosition="24" endLine="72" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
-    <unitInfo nodeId="3548249452606313560" fileName="MoveNodes.java" startLine="73" startPosition="101" endLine="77" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
+    <unitInfo nodeId="3548249452606313544" fileName="MoveNodes.java" startLine="68" startPosition="31" endLine="72" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
+    <unitInfo nodeId="3548249452606313560" fileName="MoveNodes.java" startLine="73" startPosition="109" endLine="77" endPosition="11" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$2" />
     <unitInfo nodeId="3548249452606313472" fileName="MoveNodes.java" startLine="57" startPosition="45" endLine="101" endPosition="5" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes$1" />
   </root>
   <root nodeId="7012097027058828343">

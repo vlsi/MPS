@@ -46,7 +46,7 @@ public class JUnitConfigFromLanguageTestMethods extends BaseConfigCreator<List> 
       };
       _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(Sequence.fromIterable(parameter).first()) + ",...");
       _config.getStateObject().type = JUnitRunTypes.METHOD;
-      _config.getStateObject().testMethods = new ClonableList(Sequence.fromIterable(parameter).select(new ISelector<SNode, String>() {
+      _config.getStateObject().testMethods = new ClonableList(Sequence.fromIterable(parameter).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return TestUtils.pointerToString(new SNodePointer(it));
         }

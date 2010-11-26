@@ -120,11 +120,11 @@ public class Script implements IScript {
       public void invoke(IJobMonitor monit) {
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.info("Executing " + trg.getName());
-          Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).select(new ISelector<ITarget, IResult>() {
+          Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).<IResult>select(new ISelector<ITarget, IResult>() {
             public IResult select(ITarget t) {
               return results.getResult(t.getName());
             }
-          }).translate(new ITranslator2<IResult, IResource>() {
+          }).<IResource>translate(new ITranslator2<IResult, IResource>() {
             public Iterable<IResource> translate(IResult r) {
               return r.output();
             }

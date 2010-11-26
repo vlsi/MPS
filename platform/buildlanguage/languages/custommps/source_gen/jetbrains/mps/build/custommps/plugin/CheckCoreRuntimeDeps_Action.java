@@ -67,11 +67,11 @@ public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
       ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472902"));
       ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472907"));
 
-      Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).translate(new ITranslator2<SNode, SNode>() {
+      Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SNodeOperations.getDescendants(it, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
         }
-      }).select(new ISelector<SNode, IModule>() {
+      }).<IModule>select(new ISelector<SNode, IModule>() {
         public IModule select(SNode it) {
           return Module_Behavior.call_getModule_1213877515148(it);
         }

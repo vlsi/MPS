@@ -556,7 +556,7 @@
     <nodeInfo nodeId="1227316931925" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AttachMappingLabel_Intention.java" startLine="113" startPosition="46" endLine="153" endPosition="14" />
     <nodeInfo nodeId="1227316931925" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AttachMappingLabel_Intention.java" startLine="112" startPosition="39" endLine="155" endPosition="0" />
     <nodeInfo nodeId="1227316931925" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AttachMappingLabel_Intention.java" startLine="111" startPosition="57" endLine="155" endPosition="10" />
-    <nodeInfo nodeId="1227316931925" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AttachMappingLabel_Intention.java" startLine="110" startPosition="117" endLine="157" endPosition="0" />
+    <nodeInfo nodeId="1227316931925" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AttachMappingLabel_Intention.java" startLine="110" startPosition="125" endLine="157" endPosition="0" />
     <nodeInfo nodeId="1227316931918" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AttachMappingLabel_Intention.java" startLine="109" startPosition="5" endLine="157" endPosition="24" />
     <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="141" startPosition="27" endLine="141" endPosition="27" />
     <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="144" startPosition="27" endLine="144" endPosition="27" />
@@ -593,7 +593,7 @@
     <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="113" startPosition="46" endLine="153" endPosition="14" />
     <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="112" startPosition="39" endLine="155" endPosition="0" />
     <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="111" startPosition="57" endLine="155" endPosition="10" />
-    <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="110" startPosition="117" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="110" startPosition="125" endLine="157" endPosition="0" />
     <scopeInfo nodeId="1227291795690" fileName="AttachMappingLabel_Intention.java" startLine="101" startPosition="76" endLine="163" endPosition="7">
       <varInfo nodeId="1227316931919" varName="existingLabels" />
       <varInfo nodeId="1227315137583" varName="module" />
@@ -605,7 +605,7 @@
     <unitInfo nodeId="1227316931941" fileName="AttachMappingLabel_Intention.java" startLine="158" startPosition="35" endLine="163" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
     <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="114" startPosition="23" endLine="153" endPosition="13" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$5" />
     <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="112" startPosition="19" endLine="155" endPosition="9" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$4" />
-    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="110" startPosition="86" endLine="157" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$3" />
+    <unitInfo nodeId="1227316931925" fileName="AttachMappingLabel_Intention.java" startLine="110" startPosition="94" endLine="157" endPosition="5" unitName="jetbrains.mps.lang.generator.intentions.AttachMappingLabel_Intention$3" />
   </root>
   <root nodeId="1227305822695">
     <nodeInfo nodeId="1227305822892" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AttachMappingLabelDialog.java" startLine="26" startPosition="58" endLine="27" endPosition="42" />
@@ -1101,7 +1101,7 @@
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MacroIntentionsUtil.java" startLine="149" startPosition="13" endLine="150" endPosition="50" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MacroIntentionsUtil.java" startLine="150" startPosition="50" endLine="151" endPosition="73" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="128" endLine="153" endPosition="29" />
-    <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="15" endLine="155" endPosition="93" />
+    <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="15" endLine="155" endPosition="93" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroIntentionsUtil.java" startLine="159" startPosition="7" endLine="160" endPosition="18" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroIntentionsUtil.java" startLine="163" startPosition="40" endLine="164" endPosition="19" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MacroIntentionsUtil.java" startLine="168" startPosition="69" endLine="169" endPosition="86" />

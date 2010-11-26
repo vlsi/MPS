@@ -37,8 +37,8 @@ import jetbrains.mps.debug.DebuggerKeys;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -145,7 +145,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 List<ITestNodeWrapper> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(mpsProject);
 
                 if (javaRunParameters.getMake()) {
-                  RunUtil.makeBeforeRun(project_22042010, ListSequence.fromList(stuffToTest).select(new ISelector<ITestNodeWrapper, SNode>() {
+                  RunUtil.makeBeforeRun(project_22042010, ListSequence.fromList(stuffToTest).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
                     public SNode select(ITestNodeWrapper it) {
                       return it.getNode();
                     }

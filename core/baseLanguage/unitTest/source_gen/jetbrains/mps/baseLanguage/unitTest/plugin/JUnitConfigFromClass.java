@@ -34,7 +34,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   }
 
   private void createConfig(final SNode parameter) {
-    SNode testNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(parameter, Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts()).select(new ISelector<SNode, String>() {
+    SNode testNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(parameter, Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts()).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return INamedConcept_Behavior.call_getFqName_1213877404258(it);
       }
