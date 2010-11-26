@@ -130,11 +130,6 @@ public class CommonPaths {
       result.add(getWorkbenchClassPath());
     }
 
-    IClassPathItem svnClassPath = getSVNSupportClasspath();
-    if (svnClassPath != null) {
-      result.add(svnClassPath);
-    }
-
     IClassPathItem javaConverterClassPath = getJavaConverterClasspath();
     if (javaConverterClassPath != null) {
       result.add(javaConverterClassPath);
@@ -236,19 +231,6 @@ public class CommonPaths {
 
   private static IClassPathItem getWorkbenchClassPath() {
     String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
-      + File.separator + "classes";
-    if (new File(workbenchClasses).exists()) {
-      return ClassPathFactory.getInstance().createFromPath(workbenchClasses);
-    }
-
-    return null;
-  }
-
-  private static IClassPathItem getSVNSupportClasspath() {
-    String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
-      + File.separator + "kernel"
-      + File.separator + "vcs"
-      + File.separator + "svn"
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
       return ClassPathFactory.getInstance().createFromPath(workbenchClasses);
