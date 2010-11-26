@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TemplateSwitchGraph {
 
@@ -60,23 +59,44 @@ public class TemplateSwitchGraph {
       }
       bottom.myRules.add(node.mySwitch);
     }
+    for (Node node : mySwitchToNode.values()) {
+      if(node.myModified == null) {
+        node.createFinder();
+      }
+    }
   }
 
-  public List<TemplateSwitch> getSubgraphAsList(TemplateSwitch baseSwitch) {
+  public FastRuleFinder getRuleFinder(TemplateSwitch baseSwitch) {
     Node bottom = mySwitchToNode.get(baseSwitch);
     while (bottom.myModified != null) {
       bottom = bottom.myModified;
     }
-    return bottom.myRules;
+    return bottom.finder;
   }
 
   private static class Node {
     final TemplateSwitch mySwitch;
     Node myModified;
     List<TemplateSwitch> myRules;
+    FastRuleFinder finder;
 
     public Node(TemplateSwitch switch_) {
       this.mySwitch = switch_;
+    }
+
+    private void createFinder() {
+      int count = 0;
+      for(TemplateSwitch sw : myRules) {
+        count += sw.getReductionMappingRulesCount();
+      }
+
+      List<TemplateReductionRule> rules = new ArrayList<TemplateReductionRule>(count);
+      for(TemplateSwitch sw : myRules) {
+        for (Reduction_MappingRule reduction_mappingRule : sw.getReductionMappingRules()) {
+          rules.add(new TemplateReductionRuleInterpreted(reduction_mappingRule.getNode()));
+        }
+      }
+      this.finder = new FastRuleFinder(rules);
     }
   }
 }

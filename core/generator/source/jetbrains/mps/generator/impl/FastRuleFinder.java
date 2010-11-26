@@ -61,7 +61,7 @@ public class FastRuleFinder {
     }
   }
 
-  public TemplateReductionRule[] findReductionRules(SNode node) throws GenerationFailureException {
+  public TemplateReductionRule[] findReductionRules(SNode node) {
     return myApplicableRules.get(node.getConceptFqName());
   }
 

@@ -346,34 +346,47 @@ public class TemplateProcessor {
       }
       generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
-        List<SNode> _outputNodes = null;
-        RuleConsequence consequenceForCase = myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myReductionContext, myGenerator);
-        if (consequenceForCase == null) {
-          // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
-
-        } else {
-          List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myReductionContext, myGenerator);
-          if (nodeAndMappingNamePairs == null) {
-            myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
-            return null;
-          }
-
-          for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-            SNode templateNodeForCase = nodeAndMappingNamePair.o1;
-            String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-            List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(innerMappingName, templateNodeForCase, templateContext.subContext(innerMappingName, newInputNode));
-            if (__outputNodes != null) {
-              if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
-              _outputNodes.addAll(__outputNodes);
+        Collection<SNode> collection = myGenerator.tryToReduce(templateContext.subContext(mappingName, newInputNode), templateSwitch, mappingName, myReductionContext);
+        if (collection == null) {
+          // try the default case
+          RuleConsequence defaultConsequence = templateSwitch.getDefaultConsequence();
+          if(defaultConsequence == null) {
+            TemplateSwitch current = templateSwitch.getModifiedSwitch();
+            while(current != null && defaultConsequence == null) {
+              defaultConsequence = current.getDefaultConsequence();
+              current = current.getModifiedSwitch();
             }
+          }
+          if (defaultConsequence != null) {
+            collection = new ArrayList<SNode>();
+            try {
+              List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(defaultConsequence, newInputNode, nodeMacro.getNode(), myReductionContext, myGenerator);
+              if (nodeAndMappingNamePairs == null) {
+                myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), defaultConsequence.getNode(), "error processing $SWITCH$/default");
+                return null;
+              }
+
+              for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
+                SNode altTemplateNode = nodeAndMappingNamePair.o1;
+                String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
+                List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(innerMappingName, altTemplateNode, templateContext.subContext(innerMappingName, newInputNode));
+                if (__outputNodes != null) {
+                  collection.addAll(__outputNodes);
+                }
+              }
+            } catch (AbandonRuleInputException e) {
+              // it's ok. just ignore
+            }
+          } else {
+            // no switch-case found for the inputNode - continue with templateNode under the $switch$
+            collection = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
           }
         }
 
-        if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        if (collection != null) {
+          outputNodes.addAll(collection);
+        }
 
-      } catch (AbandonRuleInputException e) {
-        // it's ok. just ignore.
       } finally {
         if (inputChanged) {
           generationTracer.closeInputNode(newInputNode);

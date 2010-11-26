@@ -28,16 +28,14 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.structure.CreateRootRule;
-import jetbrains.mps.lang.generator.structure.DropRootRule;
-import jetbrains.mps.lang.generator.structure.Root_MappingRule;
-import jetbrains.mps.lang.generator.structure.Weaving_MappingRule;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -349,12 +347,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * returns null if no reductions found
    */
   @Nullable
-  Collection<SNode> tryToReduce(SNode inputNode, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(TemplateContext context, TemplateSwitch templateSwitch, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+    SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
     checkGenerationCanceledFast();
     try {
       // find rule
-      TemplateReductionRule[] conceptRules = myRuleManager.getRuleFinder().findReductionRules(inputNode);
+      TemplateReductionRule[] conceptRules =
+        templateSwitch != null
+          ? myRuleManager.getRuleFinder(templateSwitch).findReductionRules(inputNode)
+          : myRuleManager.getRuleFinder().findReductionRules(inputNode);
       if (conceptRules == null) {
         return null;
       }
@@ -362,20 +364,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, reductionContext)) {
-          Collection<SNode> outputNodes = reductionContext.getQueryExecutor().tryToApply(rule, environment, new DefaultTemplateContext(inputNode));
+          Collection<SNode> outputNodes = reductionContext.getQueryExecutor().tryToApply(rule, environment, context);
           if (outputNodes != null) {
             if (outputNodes.size() == 1) {
               SNode reducedNode = outputNodes.iterator().next();
               // register copied node
               getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
-              // output node should be accessible via 'findCopiedNode'
-              getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
-              // preserve user objects
-              reducedNode.putUserObjects(inputNode);
-              // keep track of 'original input node'
-              if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-                reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-                reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
+              if (templateSwitch == null) {
+                // output node should be accessible via 'findCopiedNode'
+                getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
+                // preserve user objects
+                reducedNode.putUserObjects(inputNode);
+                // keep track of 'original input node'
+                if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
+                  reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+                  reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
+                }
               }
             }
             return outputNodes;
@@ -435,7 +439,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   Collection<SNode> copyNodeFromInputNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
-      Collection<SNode> outputNodes = tryToReduce(inputNode, mappingName, reductionContext);
+      Collection<SNode> outputNodes = tryToReduce(new DefaultTemplateContext(inputNode), null, mappingName, reductionContext);
       if (outputNodes != null) {
         changed[0] = true;
         return outputNodes;
@@ -535,7 +539,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       assert childRole != null;
       myGenerationTracer.pushInputNode(inputChildNode);
       try {
-        Collection<SNode> outputChildNodes = tryToReduce(inputChildNode, null, reductionContext);
+        Collection<SNode> outputChildNodes = tryToReduce(new DefaultTemplateContext(inputChildNode), null, null, reductionContext);
         if (outputChildNodes != null) {
           changed[0] = true;
           for (SNode outputChildNode : outputChildNodes) {

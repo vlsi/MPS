@@ -77,7 +77,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     SNodePointer ruleNodeId = new SNodePointer(ruleNode);
     environment.getTracer().pushRule(ruleNodeId);
     try {
-      return apply(context.getInput(), environment.getEnvironment(context.getInput(), this));
+      return apply(context, environment.getEnvironment(context.getInput(), this));
     } catch (AbandonRuleInputException e) {
       return Collections.emptyList();
     } finally {
@@ -113,21 +113,21 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   }
 
   @Nullable
-  private Collection<SNode> apply(SNode inputNode, @NotNull TemplateExecutionEnvironment environment)
+  private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
     SNode labelDeclaration = ruleNode.getReferent(BaseMappingRule.LABEL_DECLARATION);
     String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
     SNode ruleConsequence = ruleNode.getChild(Reduction_MappingRule.RULE_CONSEQUENCE);
     if (ruleConsequence == null) {
-      environment.getGenerator().showErrorMessage(inputNode, null, ruleNode, "error processing reduction rule: no rule consequence");
+      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, null, environment.getReductionContext(), (RuleConsequence) ruleConsequence.getAdapter(), inputNode, environment.getGenerator());
+    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(context.getInput(), context, environment.getReductionContext(), (RuleConsequence) ruleConsequence.getAdapter(), context.getInput(), environment.getGenerator());
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence((RuleConsequence) ruleConsequence.getAdapter(), inputNode, ruleNode, environment.getReductionContext(), environment.getGenerator());
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence((RuleConsequence) ruleConsequence.getAdapter(), context.getInput(), ruleNode, environment.getReductionContext(), environment.getGenerator());
     if (nodeAndMappingNamePairs == null) {
-      environment.getGenerator().showErrorMessage(inputNode, null, ruleConsequence, "error processing reduction rule consequence");
+      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleConsequence, "error processing reduction rule consequence");
       return null;
     }
 
@@ -141,14 +141,14 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       } catch (DismissTopMappingRuleException e) {
         throw e;
       } catch (TemplateProcessingFailureException e) {
-        environment.getGenerator().showErrorMessage(inputNode, templateNode, ruleNode, "error processing reduction rule");
+        environment.getGenerator().showErrorMessage(context.getInput(), templateNode, ruleNode, "error processing reduction rule");
       } catch (GenerationFailureException e) {
         throw e;
       } catch (GenerationCanceledException e) {
         throw e;
       } catch (Throwable t) {
         environment.getGenerator().getLogger().handleException(t);
-        environment.getGenerator().showErrorMessage(inputNode, templateNode, ruleNode, "error processing reduction rule");
+        environment.getGenerator().showErrorMessage(context.getInput(), templateNode, ruleNode, "error processing reduction rule");
       }
     }
     return result;

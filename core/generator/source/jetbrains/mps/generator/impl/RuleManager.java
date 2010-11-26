@@ -132,51 +132,15 @@ public class RuleManager {
     return myRuleFinder;
   }
 
+  public FastRuleFinder getRuleFinder(TemplateSwitch switch_) {
+    return myTemplateSwitchGraph.getRuleFinder(switch_);
+  }
+
   public List<MappingScript> getPreMappingScripts() {
     return myPreScripts;
   }
 
   public List<MappingScript> getPostMappingScripts() {
     return myPostScripts;
-  }
-
-  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch, @NotNull ReductionContext reductionContext, ITemplateGenerator generator) throws GenerationFailureException {
-    AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
-
-    List<TemplateSwitch> switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
-
-    // for each template switch test conditions and choose template node
-    for (TemplateSwitch aSwitch : switches) {
-      List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
-      for (Reduction_MappingRule rule : rules) {
-        if (checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, reductionContext)) {
-          RuleConsequence ruleConsequence = rule.getRuleConsequence();
-          if (ruleConsequence == null) {
-            generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");
-          }
-          return ruleConsequence;
-        }
-      }
-
-      // default
-      RuleConsequence ruleConsequence = aSwitch.getDefaultConsequence();
-      if (ruleConsequence != null) {
-        return ruleConsequence;
-      }
-    }
-
-    return null;
-  }
-
-  private static boolean checkPremiseForBaseMappingRule(SNode inputNode, AbstractConceptDeclaration inputNodeConcept, BaseMappingRule rule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept != null) {
-      if (rule.getApplyToConceptInheritors()) {
-        if (!SModelUtil_new.isAssignableConcept(inputNodeConcept, applicableConcept)) return false;
-      } else {
-        if (inputNodeConcept != applicableConcept) return false;
-      }
-    }
-    return reductionContext.getQueryExecutor().checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode());
   }
 }

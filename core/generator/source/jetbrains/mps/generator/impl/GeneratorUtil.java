@@ -268,11 +268,11 @@ public class GeneratorUtil {
     final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
 
     if (arguments == null && parameters == null) {
-      return new DefaultTemplateContext(newInputNode);
+      return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
-      return new DefaultTemplateContext(newInputNode);
+      return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
