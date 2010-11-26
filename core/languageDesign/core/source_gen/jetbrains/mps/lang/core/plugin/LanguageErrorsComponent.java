@@ -45,10 +45,15 @@ public class LanguageErrorsComponent {
   }
 
   public void dispose() {
+    this.removeModelListener();
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+  }
+
+  private void removeModelListener() {
     for (SModelDescriptor modelDescriptor : myListenedModels) {
       modelDescriptor.removeModelListener(myModelListener);
     }
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+    SetSequence.fromSet(myListenedModels).clear();
   }
 
   public void addDependency(SNode dependency) {
@@ -209,6 +214,17 @@ public class LanguageErrorsComponent {
 
   public void processModelRemoved(SModelDescriptor modelDescriptor) {
     SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
+  }
+
+  public void clear() {
+    myCheckedRoot = false;
+    SetSequence.fromSet(myInvalidation).clear();
+    SetSequence.fromSet(myInvalidNodes).clear();
+    myCurrentNode = null;
+    MapSequence.fromMap(myDependenciesToNodes).clear();
+    MapSequence.fromMap(myNodesToDependecies).clear();
+    MapSequence.fromMap(myNodesToErrors).clear();
+    removeModelListener();
   }
 
   public class MyModelListener extends SModelAdapter {

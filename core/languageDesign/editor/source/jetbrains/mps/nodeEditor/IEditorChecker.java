@@ -43,4 +43,6 @@ public interface IEditorChecker {
   boolean isEarlierThan(IEditorChecker editorChecker);
 
   boolean messagesChanged();
+
+  void clear(SNode node, EditorComponent editor);
 }

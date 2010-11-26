@@ -73,4 +73,9 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     return createMessages(rootNode, operationContext, events, wasCheckedOnce);
   }
+
+  @Override
+  public void clear(SNode node, EditorComponent editor) {
+
+  }
 }

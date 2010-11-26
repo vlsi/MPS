@@ -182,6 +182,14 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     myMessagesChanged = false;
   }
 
+  @Override
+  public void clear(SNode node, EditorComponent editorComponent) {
+    if (node == null) return;
+    TypeCheckingContext context = editorComponent.getTypeCheckingContext();
+    if (context == null) return;
+    context.clear();
+  }
+
   public static class Owner implements EditorMessageOwner {
     private TypeCheckingContext myTypeCheckingContext;
     private TypesEditorChecker myTypesEditorChecker;
