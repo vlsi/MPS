@@ -81,7 +81,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public <T extends BaseGeneratedTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        List<BaseGeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
+        List<BaseGeneratedTool> tools = plugin.getTools();
         for (BaseGeneratedTool tool : tools) {
           if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
         }
@@ -93,7 +93,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        List<BaseProjectPrefsComponent> components = ((BaseProjectPlugin) plugin).getPrefsComponents();
+        List<BaseProjectPrefsComponent> components = plugin.getPrefsComponents();
         for (BaseProjectPrefsComponent component : components) {
           if (component.getClass().getName().equals(componentClass.getName())) return (T) component;
         }
@@ -114,7 +114,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           Set<IModule> modules = new HashSet<IModule>();
           modules.addAll(PluginUtil.collectPluginModules(myProject));
-          modules.addAll(PluginUtil.collectSolutionPlugins());
+          modules.addAll(PluginUtil.getBootstrapPluginModules());
           mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
