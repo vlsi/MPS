@@ -57,7 +57,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
   }
 
   public boolean needRegisterUndo(SModel model) {
-    return (!(model.isLoading()) /*|| AuxilaryRuntimeModel.isAuxModel(model)*/) && isInsideUndoableCommand();
+    return (!(model.isLoading()) || AuxilaryRuntimeModel.isAuxModel(model)) && isInsideUndoableCommand();
   }
 
   public boolean isInsideUndoableCommand() {
