@@ -70,7 +70,9 @@ public abstract class AbstractLeftColumn {
             editorComponent.getLeftEditorHighlighter().removeTextColumn(AbstractLeftColumn.this);
           }
         }, 0);
-        menu.insert(new JPopupMenu.Separator(), 1);
+        if (menu.getSubElements().length != 1) {
+          menu.insert(new JPopupMenu.Separator(), 1);
+        }
       }
       if (menu.getSubElements().length > 0) {
         LeftEditorHighlighter editorHighlighter = editorComponent.getLeftEditorHighlighter();
