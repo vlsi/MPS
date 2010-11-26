@@ -21,8 +21,8 @@ import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -62,7 +62,7 @@ public class QueriesGenerated {
               public boolean accept(SNode fct) {
                 return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(fct, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
               }
-            }).translate(new ITranslator2<SNode, Tuples._2<SNode, SNode>>() {
+            }).<Tuples._2<SNode, SNode>>translate(new ITranslator2<SNode, Tuples._2<SNode, SNode>>() {
               public Iterable<Tuples._2<SNode, SNode>> translate(final SNode td) {
                 return new Iterable<Tuples._2<SNode, SNode>>() {
                   public Iterator<Tuples._2<SNode, SNode>> iterator() {
@@ -184,7 +184,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "dependency", true)).select(new ISelector<SNode, SNode>() {
+            return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "dependency", true)).<SNode>select(new ISelector<SNode, SNode>() {
               public SNode select(SNode d) {
                 return SLinkOperations.getTarget(SLinkOperations.getTarget(d, "dependsOn", false), "parameters", true);
               }
@@ -192,7 +192,7 @@ __switch__:
               public boolean accept(SNode v) {
                 return (v != null);
               }
-            }).translate(new ITranslator2<SNode, SNode>() {
+            }).<SNode>translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode v) {
                 return SLinkOperations.getTargets(v, "component", true);
               }

@@ -194,7 +194,7 @@ public class QueriesGenerated {
       public boolean accept(SNode d) {
         return SPropertyOperations.getString_def(d, "qualifier", "BEFORE") == SEnumOperations.getEnumMemberValue(((SNode) _context.getVariable("qualifier")));
       }
-    }).select(new ISelector<SNode, SNode>() {
+    }).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode d) {
         return SLinkOperations.getTarget(d, "dependsOn", false);
       }
