@@ -34,19 +34,10 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
 
-  //-----------  introduced temporary for VCS plugin and other IDEA plugins containing mps plugins
-
-  private List<BaseApplicationPlugin> myPluginPlugins = new ArrayList<BaseApplicationPlugin>();
-
-  public void loadPlugin(BaseApplicationPlugin p) {
-    myPluginPlugins.add(p);
-  }
-
   //-------
 
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
-    mySortedPlugins.addAll(myPluginPlugins);
 
     BaseApplicationPlugin idePlugin = null;
 

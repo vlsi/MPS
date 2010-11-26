@@ -15,36 +15,26 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.diff.DiffManager;
-import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
-import jetbrains.mps.vcs.diff.ui.ModelMergeTool;
+import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin;
 import org.jetbrains.annotations.NotNull;
 
-public class ToolsAppComponent implements ApplicationComponent {
-  private final ModelDiffTool myModelDiffTool = new ModelDiffTool();
-  private final ModelMergeTool myModelMergeTool = new ModelMergeTool();
-  private final DiffManager myDiffManager;
-
-  public ToolsAppComponent(DiffManager diffManager) {
-    myDiffManager = diffManager;
+public class Plugin implements ApplicationComponent {
+  public Plugin() {
+    PluginUtil.addStandaloneAppPlugin(new Vcs_ApplicationPlugin());
   }
 
   @NotNull
   public String getComponentName() {
-    return ToolsAppComponent.class.getSimpleName();
+    return "VCS_" + "PluginInitilizer";
   }
 
   public void initComponent() {
-    myDiffManager.registerDiffTool(myModelDiffTool);
-    myDiffManager.registerDiffTool(myModelMergeTool);
+
   }
 
   public void disposeComponent() {
-    myDiffManager.unregisterDiffTool(myModelDiffTool);
-    myDiffManager.unregisterDiffTool(myModelMergeTool);
+
   }
 }
