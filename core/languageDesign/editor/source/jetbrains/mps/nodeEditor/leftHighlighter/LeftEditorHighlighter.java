@@ -603,7 +603,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         } else {
           mousePressedInIconsArea(e);
         }
-        if (!e.isConsumed() && e.isPopupTrigger()) {
+        if (!e.isConsumed() && e.getButton() == MouseEvent.BUTTON3 && e.getID() == MouseEvent.MOUSE_PRESSED) {
           BaseGroup actionGroup = ActionUtils.getGroup(EditorLeftPanelMenu_ActionGroup.ID);
           ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
           popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());
@@ -620,7 +620,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void mousePressedInIconsArea(MouseEvent e) {
     EditorMessageIconRenderer iconRenderer = getIconRendererUnderMouse(e);
     if (iconRenderer != null) {
-      if (e.isPopupTrigger()) {
+      if (e.getButton() == MouseEvent.BUTTON3) {
         JPopupMenu popupMenu = iconRenderer.getPopupMenu();
         if (popupMenu != null && e.getID() == MouseEvent.MOUSE_PRESSED) {
           e.consume();
