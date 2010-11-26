@@ -90,7 +90,7 @@ public class Make_Facet implements IFacet {
     }
 
     public boolean producesOutput() {
-      return true;
+      return false;
     }
 
     public Class<? extends IResource> expectedResources() {
