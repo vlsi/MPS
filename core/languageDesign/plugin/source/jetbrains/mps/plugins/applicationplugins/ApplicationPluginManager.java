@@ -89,18 +89,25 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    GroupAdjuster.adjustTopLevelGroups((BaseApplicationPlugin) idePlugin);
+    GroupAdjuster.adjustTopLevelGroups(idePlugin);
     GroupAdjuster.refreshCustomizations();
   }
 
   private List<BaseApplicationPlugin> createPlugins() {
+    List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
+
+    Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
+    result.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ApplicationPluginCreator()));
+
+    result.addAll(PluginUtil.getStandaloneAppPlugins());
+
     Set<IModule> modules = new HashSet<IModule>();
-    modules.addAll(PluginUtil.getBootstrapPluginModules());
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       modules.addAll(PluginUtil.collectPluginModules(p));
     }
+    result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
 
-    return PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
+    return result;
   }
 
   public void disposePlugins() {
