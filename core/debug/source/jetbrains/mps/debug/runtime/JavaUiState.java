@@ -4,19 +4,23 @@ import com.sun.jdi.LocalVariable;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
+import com.sun.jdi.event.Event;
+import com.sun.jdi.event.ExceptionEvent;
 import jetbrains.mps.debug.api.AbstractDebugSession.ExecutionState;
 import jetbrains.mps.debug.api.AbstractUiState;
+import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
+import jetbrains.mps.debug.api.programState.IValue;
+import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaExceptionWatchable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 // This class is immutable
 public class JavaUiState extends AbstractUiState {
@@ -214,5 +218,29 @@ public class JavaUiState extends AbstractUiState {
       return stackFrame.getStackFrame().getValue(variable);
     }
     return null;
+  }
+
+  @NotNull
+  private List<IWatchable> getAdditionalWatchables() {
+    List<IWatchable> watchables = new ArrayList<IWatchable>();
+    if (myContext != null) {
+      Iterator<Event> iterator = myContext.getEventSet().iterator();
+      while (iterator.hasNext()) {
+        Event event = iterator.next();
+        if (event instanceof ExceptionEvent) {
+          ObjectReference exception = ((ExceptionEvent) event).exception();
+          watchables.add(new JavaExceptionWatchable(exception, getStackFrame().getClassFqName(), getThread().getThread()));
+        }
+      }
+    }
+    return watchables;
+  }
+
+  @NotNull
+  public List<IWatchable> getWatchables() {
+    List<IWatchable> watchables = new ArrayList<IWatchable>();
+    watchables.addAll(super.getWatchables());
+    watchables.addAll(getAdditionalWatchables());
+    return watchables;
   }
 }

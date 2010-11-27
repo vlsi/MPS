@@ -99,6 +99,7 @@ public abstract class AbstractUiState {
     return Collections.emptyList();
   }
 
+  // todo is this method really used?
   @NotNull
   public Map<IWatchable, IValue> getWatchableValues() {
     IStackFrame stackFrame = getStackFrame();

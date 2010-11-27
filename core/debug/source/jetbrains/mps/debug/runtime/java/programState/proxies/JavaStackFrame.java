@@ -47,6 +47,10 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
   }
 
+  public String getClassFqName() {
+    return myClassFqName;
+  }
+
   @Override
   public Map<IWatchable, IValue> getWatchableValues() {
     try {
