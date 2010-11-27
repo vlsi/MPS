@@ -104,12 +104,14 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
           }
         });
         breakpoint.setCreationTime(breakpointInfo.myCreationTime);
+        breakpoint.setEnabled(breakpointInfo.myIsEnabled);
         breakpoint.setSuspendPolicy(breakpointInfo.mySuspendPolicy);
         return breakpoint;
       case EXCEPTION_BREAKPOINT:
         ExceptionBreakpointInfo exceptionBreakpointInfo = XmlSerializer.deserialize(state, ExceptionBreakpointInfo.class);
         ExceptionBreakpoint exceptionBreakpoint = new ExceptionBreakpoint(exceptionBreakpointInfo.myExceptionName, project);
         exceptionBreakpoint.setCreationTime(exceptionBreakpointInfo.myCreationTime);
+        exceptionBreakpoint.setEnabled(exceptionBreakpointInfo.myIsEnabled);
         return exceptionBreakpoint;
     }
     return null;
@@ -125,7 +127,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       case LINE_BREAKPOINT:
         ILocationBreakpoint javaBreakpoint = (ILocationBreakpoint) breakpoint;
         SNodePointer nodePointer = javaBreakpoint.getNodePointer();
-        BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime(), ((JavaBreakpoint)javaBreakpoint).getSuspendPolicy());
+        BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime(), breakpoint.isEnabled(), ((JavaBreakpoint)javaBreakpoint).getSuspendPolicy());
         return XmlSerializer.serialize(breakpointInfo);
     }
     return null;
