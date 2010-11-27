@@ -18,6 +18,7 @@ import java.util.List;
 public interface IDebuggableFramesSelector {
   @Nullable
   IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames);
+  int findDeepestDebuggableFrameIndex(List<IStackFrame> frames);
 
   boolean isDebuggableFrame(@NotNull IStackFrame frame);
 

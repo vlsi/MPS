@@ -34,12 +34,9 @@ public class JavaThread extends ProxyForJava implements IThread {
   @Override
   public List<IStackFrame> getFrames() {
     try {
-      List<StackFrame> stackFrameList = myThreadReference.frames();
       List<IStackFrame> frames = new ArrayList<IStackFrame>();
-      int i = 0;
-      for (StackFrame stackFrame : stackFrameList) {
+      for (int i = 0; i < myThreadReference.frameCount(); i++) {
         frames.add(new JavaStackFrame(myThreadReference, i));
-        i++;
       }
       return frames;
     } catch (IncompatibleThreadStateException ex) {

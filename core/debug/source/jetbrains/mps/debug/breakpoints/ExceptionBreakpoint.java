@@ -17,6 +17,7 @@ package jetbrains.mps.debug.breakpoints;
 
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
+import com.sun.jdi.event.ExceptionEvent;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.ExceptionRequest;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
@@ -64,7 +65,10 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
 
   @Override
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    System.err.println("Exception " + getClassNameToPrepare());
+    if (event instanceof ExceptionEvent) {
+      ObjectReference exception = ((ExceptionEvent) event).exception();
+      System.err.println("Exception event " + exception);
+    }
     return true;
   }
 
