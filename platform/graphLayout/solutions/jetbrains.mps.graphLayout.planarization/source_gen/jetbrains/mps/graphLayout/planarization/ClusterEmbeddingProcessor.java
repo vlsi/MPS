@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.graphLayout.planarGraph.Dart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.graphLayout.graph.EdgesHistoryManager;
 import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -41,7 +42,7 @@ public class ClusterEmbeddingProcessor {
   }
 
   public EmbeddedGraph constructEmbedding(List<INode> outerConnections) {
-    Iterable<INode> subclusters = Sequence.fromIterable(myCluster.getOutEdges()).select(new ISelector<IEdge, INode>() {
+    Iterable<INode> subclusters = Sequence.fromIterable(myCluster.getOutEdges()).<INode>select(new ISelector<IEdge, INode>() {
       public INode select(IEdge edge) {
         return edge.getTarget();
       }
@@ -71,6 +72,7 @@ public class ClusterEmbeddingProcessor {
     // Creating a subcluster graph, where each subcluster is represented by single node, 
     // and finding embedding for it. 
     mySubclustersGraph = new Graph();
+    EdgesHistoryManager historyManager = new EdgesHistoryManager(mySubclustersGraph);
     Map<INode, Node> nodeMap = MapSequence.fromMap(new HashMap<INode, Node>());
     mySubclustersMap = MapSequence.fromMap(new HashMap<INode, Node>());
     for (INode subcluster : Sequence.fromIterable(subclusters)) {
@@ -106,7 +108,7 @@ public class ClusterEmbeddingProcessor {
       Node prev = null;
       Face outerFace = new Face(mySubclustersGraph);
       for (INode node : ListSequence.fromList(outerConnections)) {
-        Node circleNode = mySubclustersGraph.addNode();
+        Node circleNode = mySubclustersGraph.createNode();
         if (prev != null) {
           Edge newEdge = mySubclustersGraph.connect(prev, circleNode);
           ListSequence.fromList(circle).addElement(newEdge);
@@ -147,7 +149,7 @@ public class ClusterEmbeddingProcessor {
         Edge edge = mySubclustersGraph.connect(outerNode, clusterNode);
         MapSequence.fromMap(outerEdgeConnections).put(edge, node);
         SetSequence.fromSet(initialEdges).addElement(edge);
-        edge.removeFromGraph();
+        mySubclustersGraph.removeEdge(edge);
         ShortestPathEmbeddingFinder.restoreEdge(mySubEmbeddedGraph, edge);
       }
     }
@@ -158,7 +160,7 @@ public class ClusterEmbeddingProcessor {
       MapSequence.fromMap(mySubOuterNodes).put(node, MapSequence.fromMap(new HashMap<Edge, INode>()));
     }
     for (Edge subclusterEdge : SetSequence.fromSet(initialEdges)) {
-      List<Edge> history = mySubEmbeddedGraph.findFullHistory(subclusterEdge);
+      List<Edge> history = historyManager.getHistory(subclusterEdge);
       Node node = subclusterEdge.getSource();
       MapSequence.fromMap(MapSequence.fromMap(mySubOuterNodes).get(node)).put(ListSequence.fromList(history).first(), findRealNode(subclusterEdge, node, invertedEdgesMap, outerEdgeConnections, nodeMap));
       node = subclusterEdge.getTarget();
