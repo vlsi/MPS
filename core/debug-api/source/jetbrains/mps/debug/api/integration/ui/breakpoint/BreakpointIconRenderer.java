@@ -6,7 +6,9 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.actions.DebugActionsUtil;
@@ -17,6 +19,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -43,6 +46,17 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   }
 
   public static Icon getIconFor(@NotNull IBreakpoint breakpoint) {
+    IBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(breakpoint.getKind());
+    if (provider != null) {
+      return provider.getIcon(breakpoint, null);
+    }
+    return getDefaultIconFor(breakpoint, null);
+  }
+
+  private static Icon getDefaultIconFor(@NotNull IBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
+    if (session != null && session.isMute()) {
+      return Icons.MUTED_BREAKPOINT;
+    }
     return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
   }
 
@@ -53,11 +67,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
 
   @Override
   public Icon getIcon() {
-    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent));
-    if (debugSession != null && debugSession.isMute()) {
-      return Icons.MUTED_BREAKPOINT;
-    }
-    return getIconFor(myBreakpoint);
+    return getDefaultIconFor(myBreakpoint, DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent)));
   }
 
   @Override

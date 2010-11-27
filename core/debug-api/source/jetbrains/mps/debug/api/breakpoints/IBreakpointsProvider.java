@@ -16,10 +16,12 @@
 package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
 import java.util.List;
 
 public interface IBreakpointsProvider<B extends IBreakpoint, K extends IBreakpointKind<B>> {
@@ -29,9 +31,10 @@ public interface IBreakpointsProvider<B extends IBreakpoint, K extends IBreakpoi
   @Nullable
   B createFromUi(@NotNull K kind, Project project);
   @Nullable
-  IBreakpointPropertiesUi<B> createPropertiesEditor(K kind);
+  IBreakpointPropertiesUi<B> createPropertiesEditor(@NotNull K kind);
   @Nullable
   B loadFromState(Element state, K kind, Project project);
   @Nullable
-  Element saveToState(B breakpoint);
+  Element saveToState(@NotNull B breakpoint);
+  Icon getIcon(@NotNull B breakpoint, @Nullable AbstractDebugSession session);
 }

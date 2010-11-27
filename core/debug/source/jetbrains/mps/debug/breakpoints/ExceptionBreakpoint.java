@@ -74,7 +74,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
 
   @NotNull
   @Override
-  public IBreakpointKind getKind() {
+  public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.EXCEPTION_BREAKPOINT;
   }
 

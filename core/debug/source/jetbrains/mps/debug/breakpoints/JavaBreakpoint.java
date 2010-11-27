@@ -24,6 +24,7 @@ import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.RequestManager;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -66,6 +67,10 @@ public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements Cl
   }
 
   protected abstract String getClassNameToPrepare();
+
+  // narrow return type
+  @NotNull
+  public abstract JavaBreakpointKind getKind();
 
   //this is called when a class for this ClassPrepareRequestor is prepared
   @Override

@@ -23,8 +23,10 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.sun.jdi.request.EventRequest;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.*;
+import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.generator.JavaModelUtil_new;
@@ -86,7 +88,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   }
 
   @Override
-  public IBreakpointPropertiesUi<JavaBreakpoint> createPropertiesEditor(final JavaBreakpointKind kind) {
+  public IBreakpointPropertiesUi<JavaBreakpoint> createPropertiesEditor(@NotNull final JavaBreakpointKind kind) {
     return new MyIBreakpointPropertiesUi();
   }
 
@@ -119,7 +121,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
 
   @Override
   @Nullable
-  public Element saveToState(JavaBreakpoint breakpoint) {
+  public Element saveToState(@NotNull JavaBreakpoint breakpoint) {
     switch ((JavaBreakpointKind) breakpoint.getKind()) {
       case EXCEPTION_BREAKPOINT:
         ExceptionBreakpointInfo info = new ExceptionBreakpointInfo((ExceptionBreakpoint) breakpoint);
@@ -129,6 +131,20 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         SNodePointer nodePointer = javaBreakpoint.getNodePointer();
         BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime(), breakpoint.isEnabled(), ((JavaBreakpoint)javaBreakpoint).getSuspendPolicy());
         return XmlSerializer.serialize(breakpointInfo);
+    }
+    return null;
+  }
+
+  @Override
+  public Icon getIcon(@NotNull JavaBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
+    if (session != null && session.isMute()) {
+      return Icons.MUTED_BREAKPOINT;
+    }
+    switch (breakpoint.getKind()) {
+      case EXCEPTION_BREAKPOINT:
+        return breakpoint.isValid() ? (breakpoint.isEnabled() ? jetbrains.mps.debug.integration.Icons.EXCEPTION_BREAKPOINT : jetbrains.mps.debug.integration.Icons.DISABLED_EXCEPTION_BREAKPOINT) : Icons.INV_BREAKPOINT;
+      case LINE_BREAKPOINT:
+        return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
     }
     return null;
   }
