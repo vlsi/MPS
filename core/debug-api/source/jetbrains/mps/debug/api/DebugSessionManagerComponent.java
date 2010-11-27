@@ -144,11 +144,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
     }
   }
 
-  // TODO this listener now looks strange
-
   public static interface DebugSessionListener {
-    //todo why don't listen DebugSessionManagerComponent?
-
     public void registered(AbstractDebugSession session);
 
     public void currentSessionChanged(AbstractDebugSession session);

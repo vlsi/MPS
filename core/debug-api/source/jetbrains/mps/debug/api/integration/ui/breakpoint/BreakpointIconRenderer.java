@@ -4,7 +4,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
@@ -48,7 +47,10 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   public static Icon getIconFor(@NotNull IBreakpoint breakpoint) {
     IBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(breakpoint.getKind());
     if (provider != null) {
-      return provider.getIcon(breakpoint, null);
+      Icon icon = provider.getIcon(breakpoint, null);
+      if (icon != null) {
+        return icon;
+      }
     }
     return getDefaultIconFor(breakpoint, null);
   }

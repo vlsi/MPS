@@ -36,5 +36,6 @@ public interface IBreakpointsProvider<B extends IBreakpoint, K extends IBreakpoi
   B loadFromState(Element state, K kind, Project project);
   @Nullable
   Element saveToState(@NotNull B breakpoint);
+  @Nullable
   Icon getIcon(@NotNull B breakpoint, @Nullable AbstractDebugSession session);
 }

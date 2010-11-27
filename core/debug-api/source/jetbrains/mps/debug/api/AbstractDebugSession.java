@@ -140,7 +140,7 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
   }
 
-  // todo make next two abstract in further versions (now we can not: will break users code)
+  // todo make next two abstract after 2.0 (now we can not: will break users code)
   public void muteBreakpoints(boolean mute) {
   }
 
