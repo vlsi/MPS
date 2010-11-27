@@ -195,6 +195,7 @@ public class JavaUiState extends AbstractUiState {
   @Nullable
   public JavaStackFrame getStackFrame() {
     if (myStackFrameIndex == NO_FRAME) return null;
+    assert myThread != null; // if we have a frame then we have a thread
     return (JavaStackFrame) myThread.getFrames().get(myStackFrameIndex);
   }
 
