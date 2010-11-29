@@ -303,7 +303,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         continue;
       }
       column.paint(g, myEditorComponent);
-      UIUtil.drawVDottedLine((Graphics2D) g, column.getX() + column.getWidth(),
+      UIUtil.drawVDottedLine((Graphics2D) g, column.getX() + column.getWidth() - 1,
         (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
   }
