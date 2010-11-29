@@ -128,7 +128,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         return XmlSerializer.serialize(info);
       case LINE_BREAKPOINT:
         ILocationBreakpoint javaBreakpoint = (ILocationBreakpoint) breakpoint;
-        SNodePointer nodePointer = javaBreakpoint.getNodePointer();
+        SNodePointer nodePointer = javaBreakpoint.getLocation().getNodePointer();
         BreakpointInfo breakpointInfo = new BreakpointInfo(nodePointer.getModel().toString(), nodePointer.getNodeId().toString(), breakpoint.getCreationTime(), breakpoint.isEnabled(), ((JavaBreakpoint)javaBreakpoint).getSuspendPolicy());
         return XmlSerializer.serialize(breakpointInfo);
     }

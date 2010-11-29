@@ -18,6 +18,7 @@ package jetbrains.mps.debug.api.breakpoints;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
@@ -34,7 +35,7 @@ public class BreakpointLocation {
     return myNodePointer;
   }
 
-  protected SNode getSNode() {
+  public SNode getSNode() {
     return myNodePointer.getNode();
   }
 
@@ -83,5 +84,9 @@ public class BreakpointLocation {
         }
       }
     });
+  }
+
+  public SModelReference getModelReference() {
+    return myNodePointer.getModelReference();
   }
 }

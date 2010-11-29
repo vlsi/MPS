@@ -145,16 +145,6 @@ public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint
   }
 
   @Override
-  public SNodePointer getNodePointer() {
-    return myLocation.getNodePointer();
-  }
-
-  @Override
-  public SNode getSNode() {
-    return myLocation.getNodePointer().getNode();
-  }
-
-  @Override
   public BreakpointLocation getLocation() {
     return myLocation;
   }

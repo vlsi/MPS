@@ -373,7 +373,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       public void run() {
         MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
         assert opener != null;
-        opener.openNode(((ILocationBreakpoint) breakpoint).getNodePointer().getNode(), myContext, focus, select);
+        opener.openNode(((ILocationBreakpoint) breakpoint).getLocation().getSNode(), myContext, focus, select);
       }
     }, project);
   }

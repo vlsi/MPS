@@ -226,7 +226,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     if (mpsBreakpointSet != null) {
       hasBreakpoint = false;
       for (ILocationBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-        if (mpsBreakpoint.getSNode() == node) {
+        if (mpsBreakpoint.getLocation().getSNode() == node) {
           hasBreakpoint = true;
           breakpoint = mpsBreakpoint;
           break;
@@ -265,7 +265,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    SNode node = breakpoint.getNodePointer().getNode();
+    SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
       SNode root = node.getContainingRoot();
       if (root != null) {
@@ -310,7 +310,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    SNode node = breakpoint.getSNode();
+    SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
       SNode root = node.getContainingRoot();
       if (root != null) {
@@ -326,7 +326,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
             SNode editedNode = editorComponent.getEditedNode();
             if (root == editedNode) {
               editorComponent.removeAdditionalPainterByItem(breakpoint);
-              editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getSNode(), BreakpointIconRenderer.TYPE);
+              editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
               editorComponent.repaint(); //todo should it be executed in ED thread?
             }
           }
@@ -461,7 +461,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         @Override
         public void run() {
           if (breakpoint instanceof ILocationBreakpoint) {
-            SNode node = ((ILocationBreakpoint) breakpoint).getNodePointer().getNode();
+            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
             if (node != null) {
               SNode root = node.getContainingRoot();
               if (root != null) {

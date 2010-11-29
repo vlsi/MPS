@@ -224,7 +224,7 @@ public class BreakpointsTree extends BreakpointsView {
     public IModule getGroup(BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        return SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getNodePointer().getModelReference()).getModule();
+        return SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference()).getModule();
       } else {
         return null;
       }
@@ -246,7 +246,7 @@ public class BreakpointsTree extends BreakpointsView {
     public SModelReference getGroup(BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        return ((ILocationBreakpoint) breakpoint).getNodePointer().getModelReference();
+        return ((ILocationBreakpoint) breakpoint).getLocation().getModelReference();
       } else {
         return null;
       }
@@ -273,7 +273,7 @@ public class BreakpointsTree extends BreakpointsView {
     public SNodePointer getGroup(BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        return new SNodePointer(((ILocationBreakpoint) breakpoint).getNodePointer().getNode().getContainingRoot());
+        return new SNodePointer(((ILocationBreakpoint) breakpoint).getLocation().getSNode().getContainingRoot());
       } else {
         return null;
       }

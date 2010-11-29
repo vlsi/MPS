@@ -19,7 +19,5 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 public interface ILocationBreakpoint extends IBreakpoint {
-  SNodePointer getNodePointer();
-  SNode getSNode();
   BreakpointLocation getLocation();
 }

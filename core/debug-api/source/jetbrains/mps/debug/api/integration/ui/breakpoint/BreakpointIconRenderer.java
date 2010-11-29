@@ -79,7 +79,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
 
   @Override
   public SNode getNode() {
-    return myBreakpoint.getNodePointer().getNode();
+    return myBreakpoint.getLocation().getSNode();
   }
 
   @Override

@@ -35,7 +35,7 @@ public class MPSBreakpointPainter extends EditorCellPainter<IBreakpoint> {
   @Override
   protected SNode getSNode() {
     if (myBreakpoint instanceof ILocationBreakpoint) {
-      return ((ILocationBreakpoint) myBreakpoint).getNodePointer().getNode();
+      return ((ILocationBreakpoint) myBreakpoint).getLocation().getSNode();
     } else {
       return null;
     }
