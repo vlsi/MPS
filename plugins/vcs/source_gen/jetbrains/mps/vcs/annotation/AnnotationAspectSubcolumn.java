@@ -21,7 +21,12 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   }
 
   public String getTextForFileLine(int fileLine) {
-    return myAnnotationAspect.getValue(fileLine);
+    String value = myAnnotationAspect.getValue(fileLine);
+    if (myAnnotationAspect.getId() == LineAnnotationAspect.AUTHOR && ViewAction.isSet(ViewAction.SHORTEN_NAMES)) {
+      return shortenName(value);
+    } else {
+      return value;
+    }
   }
 
   public int getWidth() {
@@ -51,5 +56,30 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
     VcsUtil.setAspectAvailability(getId(), enabled);
     myEnabled = enabled;
     myAnnotationColumn.invalidateLayout();
+  }
+
+  private static String shortenName(String longName) {
+    if (longName != null) {
+      String[] strings = longName.split(" ");
+      if (strings.length > 1) {
+        // Middle name check: Vasya S. Pupkin 
+        return (strings[1].length() < 3 && strings.length > 2 && strings[2].length() > 1 ?
+          strings[2] :
+          strings[1]
+        );
+      }
+      if (longName.contains(".")) {
+        strings = longName.split(".");
+        // vasya.pupkin case 
+        if (strings.length > 1) {
+          // Middle name check: Vasya.S.Pupkin 
+          return (strings[1].length() == 1 && strings.length > 2 && strings[2].length() > 1 ?
+            strings[2] :
+            strings[1]
+          );
+        }
+      }
+    }
+    return longName;
   }
 }

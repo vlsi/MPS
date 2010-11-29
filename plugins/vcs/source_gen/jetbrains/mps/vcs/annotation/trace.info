@@ -45,8 +45,8 @@
     <nodeInfo nodeId="6566909625909090462" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="163" startPosition="5" endLine="164" endPosition="108" />
     <nodeInfo nodeId="3494966540336933426" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="165" startPosition="93" endLine="166" endPosition="43" />
     <nodeInfo nodeId="3494966540336933450" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="167" startPosition="74" endLine="168" endPosition="171" />
-    <nodeInfo nodeId="4433480198085384898" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="170" startPosition="5" endLine="171" endPosition="82" />
-    <nodeInfo nodeId="4527744427438192208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="171" startPosition="82" endLine="172" endPosition="52" />
+    <nodeInfo nodeId="4433480198085384898" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="170" startPosition="5" endLine="171" endPosition="70" />
+    <nodeInfo nodeId="4527744427438192208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="171" startPosition="70" endLine="172" endPosition="52" />
     <nodeInfo nodeId="5841940560826281101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="172" startPosition="52" endLine="173" endPosition="42" />
     <nodeInfo nodeId="7590932940322163674" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="173" startPosition="42" endLine="174" endPosition="51" />
     <nodeInfo nodeId="8109277724594929530" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="174" startPosition="51" endLine="175" endPosition="16" />
@@ -68,7 +68,7 @@
     <nodeInfo nodeId="391337651435690256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="220" startPosition="34" endLine="221" endPosition="34" />
     <nodeInfo nodeId="8595271971828762262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="226" startPosition="49" endLine="227" endPosition="56" />
     <nodeInfo nodeId="8595271971828762265" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="228" startPosition="110" endLine="229" endPosition="98" />
-    <nodeInfo nodeId="3473830552709780169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="231" startPosition="53" endLine="232" endPosition="76" />
+    <nodeInfo nodeId="3473830552709780169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="231" startPosition="92" endLine="232" endPosition="76" />
     <nodeInfo nodeId="7792816422579953579" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="232" startPosition="76" endLine="233" endPosition="86" />
     <nodeInfo nodeId="7792816422579953611" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="237" startPosition="18" endLine="238" endPosition="119" />
     <nodeInfo nodeId="7792816422579953630" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AnnotationColumn.java" startLine="239" startPosition="15" endLine="240" endPosition="0" />
@@ -574,7 +574,7 @@
       <varInfo nodeId="8595271971828756380" varName="modelChangesManager" />
     </scopeInfo>
     <scopeInfo nodeId="8595271971828756482" fileName="AnnotationColumn.java" startLine="190" startPosition="38" endLine="197" endPosition="5" />
-    <scopeInfo nodeId="3473830552709780132" fileName="AnnotationColumn.java" startLine="231" startPosition="53" endLine="238" endPosition="119">
+    <scopeInfo nodeId="3473830552709780132" fileName="AnnotationColumn.java" startLine="231" startPosition="92" endLine="238" endPosition="119">
       <varInfo nodeId="3473830552709780170" varName="author" />
       <varInfo nodeId="7792816422579953585" varName="height" />
     </scopeInfo>
@@ -794,90 +794,122 @@
     <nodeInfo nodeId="4527744427438226018" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="17" startPosition="110" endLine="18" endPosition="42" />
     <nodeInfo nodeId="391337651435533989" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="18" startPosition="42" endLine="19" endPosition="42" />
     <nodeInfo nodeId="4433480198085380911" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="19" startPosition="42" endLine="20" endPosition="60" />
-    <nodeInfo nodeId="186350863690095729" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="23" startPosition="50" endLine="24" endPosition="49" />
-    <nodeInfo nodeId="391337651435638628" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="27" startPosition="25" endLine="28" endPosition="19" />
-    <nodeInfo nodeId="391337651435638686" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="33" startPosition="53" endLine="34" endPosition="82" />
-    <nodeInfo nodeId="4433480198085380395" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="46" startPosition="30" endLine="47" endPosition="21" />
-    <nodeInfo nodeId="4433480198085381947" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="50" startPosition="43" endLine="51" endPosition="52" />
-    <nodeInfo nodeId="4433480198085381940" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="51" startPosition="52" endLine="52" endPosition="24" />
-    <nodeInfo nodeId="4527744427438226025" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="52" startPosition="24" endLine="53" endPosition="42" />
-    <nodeInfo nodeId="391337651435534003" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="391337651435638624" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="391337651435638674" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="32" startPosition="100" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="4433480198085381902" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="39" startPosition="25" endLine="43" endPosition="6" />
-    <nodeInfo nodeId="4433480198085380386" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="736151805632552370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationAspectSubcolumn.java" startLine="23" startPosition="50" endLine="24" endPosition="57" />
+    <nodeInfo nodeId="736151805632552367" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="25" startPosition="114" endLine="26" endPosition="32" />
+    <nodeInfo nodeId="736151805632552381" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="27" startPosition="12" endLine="28" endPosition="19" />
+    <nodeInfo nodeId="391337651435638628" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="32" startPosition="25" endLine="33" endPosition="19" />
+    <nodeInfo nodeId="391337651435638686" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="38" startPosition="53" endLine="39" endPosition="82" />
+    <nodeInfo nodeId="4433480198085380395" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="51" startPosition="30" endLine="52" endPosition="21" />
+    <nodeInfo nodeId="4433480198085381947" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="55" startPosition="43" endLine="56" endPosition="52" />
+    <nodeInfo nodeId="4433480198085381940" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="56" startPosition="52" endLine="57" endPosition="24" />
+    <nodeInfo nodeId="4527744427438226025" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="57" startPosition="24" endLine="58" endPosition="42" />
+    <nodeInfo nodeId="736151805632552097" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationAspectSubcolumn.java" startLine="62" startPosition="27" endLine="63" endPosition="45" />
+    <nodeInfo nodeId="736151805632552121" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AnnotationAspectSubcolumn.java" startLine="64" startPosition="31" endLine="65" endPosition="46" />
+    <nodeInfo nodeId="736151805632552211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="71" startPosition="35" endLine="72" endPosition="38" />
+    <nodeInfo nodeId="736151805632552228" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AnnotationAspectSubcolumn.java" startLine="72" startPosition="38" endLine="73" endPosition="29" />
+    <nodeInfo nodeId="736151805632552250" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AnnotationAspectSubcolumn.java" startLine="74" startPosition="33" endLine="75" endPosition="47" />
+    <nodeInfo nodeId="736151805632552297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="82" startPosition="5" endLine="83" endPosition="20" />
+    <nodeInfo nodeId="736151805632552379" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AnnotationAspectSubcolumn.java" startLine="27" startPosition="10" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="391337651435638624" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="391337651435638674" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="37" startPosition="100" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="4433480198085381902" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="44" startPosition="25" endLine="48" endPosition="6" />
+    <nodeInfo nodeId="4433480198085380386" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="736151805632552124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="65" startPosition="46" endLine="69" endPosition="10" />
+    <nodeInfo nodeId="736151805632552252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationAspectSubcolumn.java" startLine="75" startPosition="47" endLine="79" endPosition="12" />
     <nodeInfo nodeId="391337651435533969" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="16" startPosition="0" endLine="21" endPosition="3" />
-    <nodeInfo nodeId="391337651435638649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="31" startPosition="88" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="4433480198085381934" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="4433480198085381897" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="391337651435638630" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="391337651435534006" fileName="AnnotationAspectSubcolumn.java" startLine="23" startPosition="50" endLine="24" endPosition="49" />
-    <scopeInfo nodeId="391337651435638627" fileName="AnnotationAspectSubcolumn.java" startLine="27" startPosition="25" endLine="28" endPosition="19" />
-    <scopeInfo nodeId="391337651435638675" fileName="AnnotationAspectSubcolumn.java" startLine="33" startPosition="53" endLine="34" endPosition="82" />
-    <scopeInfo nodeId="4433480198085380388" fileName="AnnotationAspectSubcolumn.java" startLine="46" startPosition="30" endLine="47" endPosition="21" />
+    <nodeInfo nodeId="736151805632552347" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationAspectSubcolumn.java" startLine="24" startPosition="57" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="391337651435638649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationAspectSubcolumn.java" startLine="36" startPosition="88" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="4433480198085381934" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="54" startPosition="0" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="4433480198085381897" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="736151805632552107" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationAspectSubcolumn.java" startLine="63" startPosition="45" endLine="70" endPosition="7" />
+    <nodeInfo nodeId="736151805632552282" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationAspectSubcolumn.java" startLine="73" startPosition="29" endLine="80" endPosition="9" />
+    <nodeInfo nodeId="391337651435638630" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="391337651435534003" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="736151805632552200" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationAspectSubcolumn.java" startLine="70" startPosition="7" endLine="81" endPosition="7" />
+    <nodeInfo nodeId="736151805632552075" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnnotationAspectSubcolumn.java" startLine="61" startPosition="54" endLine="82" endPosition="5" />
+    <nodeInfo nodeId="736151805632552064" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="AnnotationAspectSubcolumn.java" startLine="60" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="736151805632552348" fileName="AnnotationAspectSubcolumn.java" startLine="25" startPosition="114" endLine="26" endPosition="32" />
+    <scopeInfo nodeId="736151805632552380" fileName="AnnotationAspectSubcolumn.java" startLine="27" startPosition="12" endLine="28" endPosition="19" />
+    <scopeInfo nodeId="391337651435638627" fileName="AnnotationAspectSubcolumn.java" startLine="32" startPosition="25" endLine="33" endPosition="19" />
+    <scopeInfo nodeId="391337651435638675" fileName="AnnotationAspectSubcolumn.java" startLine="38" startPosition="53" endLine="39" endPosition="82" />
+    <scopeInfo nodeId="4433480198085380388" fileName="AnnotationAspectSubcolumn.java" startLine="51" startPosition="30" endLine="52" endPosition="21" />
     <scopeInfo nodeId="391337651435533973" fileName="AnnotationAspectSubcolumn.java" startLine="17" startPosition="110" endLine="20" endPosition="60" />
-    <scopeInfo nodeId="4433480198085381936" fileName="AnnotationAspectSubcolumn.java" startLine="50" startPosition="43" endLine="53" endPosition="42" />
-    <scopeInfo nodeId="391337651435534003" fileName="AnnotationAspectSubcolumn.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="391337651435638465" varName="fileLine" />
-    </scopeInfo>
-    <scopeInfo nodeId="391337651435638624" fileName="AnnotationAspectSubcolumn.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="391337651435638674" fileName="AnnotationAspectSubcolumn.java" startLine="32" startPosition="100" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4433480198085381899" fileName="AnnotationAspectSubcolumn.java" startLine="39" startPosition="25" endLine="43" endPosition="6" />
-    <scopeInfo nodeId="4433480198085380386" fileName="AnnotationAspectSubcolumn.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4433480198085381936" fileName="AnnotationAspectSubcolumn.java" startLine="55" startPosition="43" endLine="58" endPosition="42" />
+    <scopeInfo nodeId="391337651435638624" fileName="AnnotationAspectSubcolumn.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="391337651435638674" fileName="AnnotationAspectSubcolumn.java" startLine="37" startPosition="100" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4433480198085381899" fileName="AnnotationAspectSubcolumn.java" startLine="44" startPosition="25" endLine="48" endPosition="6" />
+    <scopeInfo nodeId="4433480198085380386" fileName="AnnotationAspectSubcolumn.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="391337651435533969" fileName="AnnotationAspectSubcolumn.java" startLine="16" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="4527744427438226010" varName="annotationColumn" />
       <varInfo nodeId="391337651435533987" varName="annotationAspect" />
     </scopeInfo>
-    <scopeInfo nodeId="391337651435638633" fileName="AnnotationAspectSubcolumn.java" startLine="31" startPosition="88" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="4433480198085381934" fileName="AnnotationAspectSubcolumn.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="391337651435638633" fileName="AnnotationAspectSubcolumn.java" startLine="36" startPosition="88" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="736151805632552108" fileName="AnnotationAspectSubcolumn.java" startLine="64" startPosition="31" endLine="69" endPosition="10" />
+    <scopeInfo nodeId="736151805632552283" fileName="AnnotationAspectSubcolumn.java" startLine="74" startPosition="33" endLine="79" endPosition="12" />
+    <scopeInfo nodeId="391337651435534006" fileName="AnnotationAspectSubcolumn.java" startLine="23" startPosition="50" endLine="29" endPosition="5">
+      <varInfo nodeId="736151805632552371" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4433480198085381934" fileName="AnnotationAspectSubcolumn.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4433480198085381938" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="4433480198085381897" fileName="AnnotationAspectSubcolumn.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="391337651435638630" fileName="AnnotationAspectSubcolumn.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="4433480198085381897" fileName="AnnotationAspectSubcolumn.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="391337651435638630" fileName="AnnotationAspectSubcolumn.java" startLine="35" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="391337651435638641" varName="fileLines" />
       <varInfo nodeId="391337651435638638" varName="fontMetrics" />
     </scopeInfo>
-    <unitInfo nodeId="391337651435638674" fileName="AnnotationAspectSubcolumn.java" startLine="32" startPosition="63" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn$1" />
-    <unitInfo nodeId="391337651435524407" fileName="AnnotationAspectSubcolumn.java" startLine="11" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
+    <scopeInfo nodeId="391337651435534003" fileName="AnnotationAspectSubcolumn.java" startLine="22" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="391337651435638465" varName="fileLine" />
+    </scopeInfo>
+    <scopeInfo nodeId="736151805632552201" fileName="AnnotationAspectSubcolumn.java" startLine="71" startPosition="35" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="736151805632552077" fileName="AnnotationAspectSubcolumn.java" startLine="62" startPosition="27" endLine="81" endPosition="7">
+      <varInfo nodeId="736151805632552098" varName="strings" />
+    </scopeInfo>
+    <scopeInfo nodeId="736151805632552066" fileName="AnnotationAspectSubcolumn.java" startLine="61" startPosition="54" endLine="83" endPosition="20" />
+    <scopeInfo nodeId="736151805632552064" fileName="AnnotationAspectSubcolumn.java" startLine="60" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="736151805632552069" varName="longName" />
+    </scopeInfo>
+    <unitInfo nodeId="391337651435638674" fileName="AnnotationAspectSubcolumn.java" startLine="37" startPosition="63" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn$1" />
+    <unitInfo nodeId="391337651435524407" fileName="AnnotationAspectSubcolumn.java" startLine="11" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
   </root>
   <root nodeId="4433480198085290549">
-    <nodeInfo nodeId="4433480198085380316" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ViewActionGroup.java" startLine="11" startPosition="53" endLine="12" endPosition="42" />
-    <nodeInfo nodeId="4433480198085380310" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ViewActionGroup.java" startLine="14" startPosition="105" endLine="15" endPosition="18" />
-    <nodeInfo nodeId="4433480198085380313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="15" startPosition="18" endLine="16" endPosition="19" />
-    <nodeInfo nodeId="4433480198085380324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="16" startPosition="19" endLine="17" endPosition="38" />
-    <nodeInfo nodeId="4433480198085381985" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="18" startPosition="83" endLine="19" endPosition="66" />
-    <nodeInfo nodeId="4433480198085380374" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ViewActionGroup.java" startLine="23" startPosition="62" endLine="24" endPosition="50" />
-    <nodeInfo nodeId="4433480198085381995" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ViewActionGroup.java" startLine="26" startPosition="73" endLine="27" endPosition="31" />
-    <nodeInfo nodeId="4433480198085380378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="27" startPosition="31" endLine="28" endPosition="30" />
-    <nodeInfo nodeId="4433480198085380384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="31" startPosition="68" endLine="32" endPosition="39" />
-    <nodeInfo nodeId="4433480198085381959" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ViewActionGroup.java" startLine="35" startPosition="52" endLine="36" endPosition="37" />
-    <nodeInfo nodeId="4433480198085381974" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ViewActionGroup.java" startLine="17" startPosition="38" endLine="20" endPosition="5" />
-    <nodeInfo nodeId="4433480198085380349" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ViewActionGroup.java" startLine="25" startPosition="0" endLine="29" endPosition="5" />
-    <nodeInfo nodeId="4433480198085380355" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ViewActionGroup.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="4433480198085380363" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ViewActionGroup.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="4433480198085290551" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ViewActionGroup.java" startLine="13" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="4433480198085381977" fileName="ViewActionGroup.java" startLine="18" startPosition="83" endLine="19" endPosition="66" />
-    <scopeInfo nodeId="4433480198085380362" fileName="ViewActionGroup.java" startLine="31" startPosition="68" endLine="32" endPosition="39" />
-    <scopeInfo nodeId="4433480198085380368" fileName="ViewActionGroup.java" startLine="35" startPosition="52" endLine="36" endPosition="37" />
-    <scopeInfo nodeId="4433480198085380352" fileName="ViewActionGroup.java" startLine="26" startPosition="73" endLine="28" endPosition="30" />
-    <scopeInfo nodeId="4433480198085381974" fileName="ViewActionGroup.java" startLine="17" startPosition="38" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="4433480198085380349" fileName="ViewActionGroup.java" startLine="25" startPosition="0" endLine="29" endPosition="5">
+    <nodeInfo nodeId="4433480198085380310" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ViewActionGroup.java" startLine="11" startPosition="109" endLine="12" endPosition="18" />
+    <nodeInfo nodeId="4433480198085380313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="12" startPosition="18" endLine="13" endPosition="19" />
+    <nodeInfo nodeId="4433480198085381985" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="14" startPosition="83" endLine="15" endPosition="66" />
+    <nodeInfo nodeId="736151805632551838" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="16" startPosition="5" endLine="17" endPosition="19" />
+    <nodeInfo nodeId="736151805632552033" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="17" startPosition="19" endLine="18" endPosition="68" />
+    <nodeInfo nodeId="736151805632552051" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="18" startPosition="68" endLine="19" endPosition="61" />
+    <nodeInfo nodeId="4433480198085380374" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ViewActionGroup.java" startLine="22" startPosition="62" endLine="23" endPosition="50" />
+    <nodeInfo nodeId="4433480198085381995" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ViewActionGroup.java" startLine="25" startPosition="73" endLine="26" endPosition="31" />
+    <nodeInfo nodeId="4433480198085380378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="26" startPosition="31" endLine="27" endPosition="30" />
+    <nodeInfo nodeId="4433480198085380384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewActionGroup.java" startLine="30" startPosition="68" endLine="31" endPosition="39" />
+    <nodeInfo nodeId="4433480198085381959" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ViewActionGroup.java" startLine="34" startPosition="52" endLine="35" endPosition="37" />
+    <nodeInfo nodeId="4433480198085381974" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ViewActionGroup.java" startLine="13" startPosition="19" endLine="16" endPosition="5" />
+    <nodeInfo nodeId="4433480198085380349" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ViewActionGroup.java" startLine="24" startPosition="0" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="4433480198085380355" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ViewActionGroup.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="4433480198085380363" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ViewActionGroup.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="4433480198085290551" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ViewActionGroup.java" startLine="10" startPosition="53" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="4433480198085381977" fileName="ViewActionGroup.java" startLine="14" startPosition="83" endLine="15" endPosition="66" />
+    <scopeInfo nodeId="4433480198085380362" fileName="ViewActionGroup.java" startLine="30" startPosition="68" endLine="31" endPosition="39" />
+    <scopeInfo nodeId="4433480198085380368" fileName="ViewActionGroup.java" startLine="34" startPosition="52" endLine="35" endPosition="37" />
+    <scopeInfo nodeId="4433480198085380352" fileName="ViewActionGroup.java" startLine="25" startPosition="73" endLine="27" endPosition="30" />
+    <scopeInfo nodeId="4433480198085381974" fileName="ViewActionGroup.java" startLine="13" startPosition="19" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="4433480198085380349" fileName="ViewActionGroup.java" startLine="24" startPosition="0" endLine="28" endPosition="5">
       <varInfo nodeId="4433480198085380372" varName="subcolumn" />
     </scopeInfo>
-    <scopeInfo nodeId="4433480198085380355" fileName="ViewActionGroup.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="4433480198085380355" fileName="ViewActionGroup.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4433480198085380360" varName="selected" />
       <varInfo nodeId="4433480198085380358" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4433480198085380363" fileName="ViewActionGroup.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="4433480198085380363" fileName="ViewActionGroup.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4433480198085380366" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4433480198085290554" fileName="ViewActionGroup.java" startLine="14" startPosition="105" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="4433480198085290551" fileName="ViewActionGroup.java" startLine="13" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="4433480198085290554" fileName="ViewActionGroup.java" startLine="11" startPosition="109" endLine="19" endPosition="61" />
+    <scopeInfo nodeId="4433480198085290551" fileName="ViewActionGroup.java" startLine="10" startPosition="53" endLine="20" endPosition="3">
       <varInfo nodeId="4433480198085381968" varName="subcolumns" />
-      <varInfo nodeId="4433480198085380321" varName="fileAnnotation" />
+      <varInfo nodeId="4433480198085380321" varName="annotationColumn" />
     </scopeInfo>
-    <unitInfo nodeId="4433480198085380347" fileName="ViewActionGroup.java" startLine="23" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ViewActionGroup$ShowHideSubcolumnAction" />
-    <unitInfo nodeId="4433480198085290549" fileName="ViewActionGroup.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ViewActionGroup" />
+    <unitInfo nodeId="4433480198085380347" fileName="ViewActionGroup.java" startLine="22" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ViewActionGroup$ShowHideSubcolumnAction" />
+    <unitInfo nodeId="4433480198085290549" fileName="ViewActionGroup.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ViewActionGroup" />
   </root>
   <root nodeId="6566909625908996008">
     <nodeInfo nodeId="6566909625909004533" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="CommitNumberSubcolumn.java" startLine="20" startPosition="70" endLine="21" endPosition="42" />
@@ -954,6 +986,43 @@
     <unitInfo nodeId="5838713064222208552" fileName="CommitNumberSubcolumn.java" startLine="45" startPosition="18" endLine="49" endPosition="5" unitName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn$2" />
     <unitInfo nodeId="5838713064222208528" fileName="CommitNumberSubcolumn.java" startLine="50" startPosition="70" endLine="54" endPosition="5" unitName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn$3" />
     <unitInfo nodeId="6566909625908996008" fileName="CommitNumberSubcolumn.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn" />
+  </root>
+  <root nodeId="736151805632466469">
+    <nodeInfo nodeId="736151805632466483" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ViewAction.java" startLine="14" startPosition="51" endLine="15" endPosition="60" />
+    <nodeInfo nodeId="736151805632466530" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ViewAction.java" startLine="15" startPosition="60" endLine="16" endPosition="63" />
+    <nodeInfo nodeId="736151805632466587" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ViewAction.java" startLine="16" startPosition="63" endLine="17" endPosition="192" />
+    <nodeInfo nodeId="736151805632466480" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ViewAction.java" startLine="18" startPosition="0" endLine="19" endPosition="36" />
+    <nodeInfo nodeId="736151805632466542" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ViewAction.java" startLine="19" startPosition="36" endLine="20" endPosition="23" />
+    <nodeInfo nodeId="736151805632466491" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ViewAction.java" startLine="22" startPosition="58" endLine="23" endPosition="56" />
+    <nodeInfo nodeId="736151805632466547" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewAction.java" startLine="23" startPosition="56" endLine="24" endPosition="16" />
+    <nodeInfo nodeId="736151805632466493" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewAction.java" startLine="24" startPosition="16" endLine="25" endPosition="22" />
+    <nodeInfo nodeId="736151805632466506" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ViewAction.java" startLine="28" startPosition="50" endLine="29" endPosition="24" />
+    <nodeInfo nodeId="736151805632466516" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewAction.java" startLine="32" startPosition="66" endLine="33" endPosition="80" />
+    <nodeInfo nodeId="736151805632466523" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ViewAction.java" startLine="33" startPosition="80" endLine="34" endPosition="32" />
+    <nodeInfo nodeId="736151805632466473" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ViewAction.java" startLine="37" startPosition="43" endLine="38" endPosition="67" />
+    <nodeInfo nodeId="736151805632466500" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ViewAction.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="736151805632466470" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ViewAction.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="736151805632466487" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ViewAction.java" startLine="21" startPosition="0" endLine="26" endPosition="3" />
+    <nodeInfo nodeId="736151805632466508" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ViewAction.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="736151805632466505" fileName="ViewAction.java" startLine="28" startPosition="50" endLine="29" endPosition="24" />
+    <scopeInfo nodeId="736151805632466472" fileName="ViewAction.java" startLine="37" startPosition="43" endLine="38" endPosition="67" />
+    <scopeInfo nodeId="736151805632466515" fileName="ViewAction.java" startLine="32" startPosition="66" endLine="34" endPosition="32" />
+    <scopeInfo nodeId="736151805632466490" fileName="ViewAction.java" startLine="22" startPosition="58" endLine="25" endPosition="22" />
+    <scopeInfo nodeId="736151805632466500" fileName="ViewAction.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="736151805632466503" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="736151805632466470" fileName="ViewAction.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="736151805632466527" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="736151805632466487" fileName="ViewAction.java" startLine="21" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="736151805632466497" varName="column" />
+      <varInfo nodeId="736151805632466534" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="736151805632466508" fileName="ViewAction.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="736151805632466513" varName="selected" />
+      <varInfo nodeId="736151805632466511" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="736151805632466469" fileName="ViewAction.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ViewAction" />
   </root>
   <root nodeId="8955628568092674522">
     <nodeInfo nodeId="8955628568092691906" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="AnnotationManager.java" startLine="39" startPosition="65" endLine="40" endPosition="58" />

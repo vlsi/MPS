@@ -168,7 +168,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
         MapSequence.fromMap(myAuthorsToColors).put(author, AnnotationColors.BG_COLORS[MapSequence.fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length]);
       }
     }
-    myViewActionGroup = new ViewActionGroup(myFileAnnotation, myAspectSubcolumns);
+    myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);
     myLeftEditorHighlighter = leftEditorHighlighter;
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
@@ -228,7 +228,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
           for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
             int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             if (!(SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine))) {
-              if (myAuthorAnnotationAspect != null) {
+              if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
                 String author = myAuthorAnnotationAspect.getValue(fileLine);
                 graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
                 int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
